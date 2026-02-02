@@ -24,7 +24,7 @@ else
     echo "No REPO_URL provided"
 fi
 
-exit
+cd /job
 
 # Point Pi to /job for auth.json
 export PI_CODING_AGENT_DIR=/job
@@ -33,12 +33,11 @@ export PI_CODING_AGENT_DIR=/job
 rm -rf ./workspace/tmp/*
 
 # Setup logs
-LOG_DIR="/job/workspace/logs"
+LOG_DIR="/job/workspace/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
 
 # 1. Run job (AGENTS.md provides behavior rules, job.md provides the task)
-pi -p "$(cat /job/AGENTS.md /job/workspace/job.md)" --session-dir "${LOG_DIR}"
-mv "${LOG_DIR}"/session-*.jsonl "${LOG_DIR}/${JOB_ID}.jsonl" 2>/dev/null || true
+pi -p "$(cat /job/workspace/job.md)" --session-dir "${LOG_DIR}"
 
 # 2. Commit changes + logs
 git add -A
@@ -46,11 +45,12 @@ git commit -m "popebot: job ${JOB_ID}" || true
 
 # 3. Merge (pi has memory of job via session)
 if [ -n "$REPO_URL" ] && [ -f "/job/MERGE_JOB.md" ]; then
-    pi -p "$(cat /job/MERGE_JOB.md)" --session "${LOG_DIR}/${JOB_ID}.jsonl"
+    echo "MERGED"
+    pi -p "$(cat /job/MERGE_JOB.md)" --session-dir "${LOG_DIR}" --continue
 fi
 
 # 4. Delete logs, commit "done."
-rm -f "${LOG_DIR}/${JOB_ID}.jsonl"
+rm -rf "${LOG_DIR}"
 git add workspace/logs/
 git commit -m "done." || true
 
