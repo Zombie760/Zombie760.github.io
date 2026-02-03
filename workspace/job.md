@@ -1,1 +1,1 @@
-review the HEARTBEAT.md in /job/operating_system and do what it says
+remove WEATHER.txt frorm /job
