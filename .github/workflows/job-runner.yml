@@ -17,4 +17,5 @@ jobs:
             -e REPO_URL="${{ github.server_url }}/${{ github.repository }}.git" \
             -e BRANCH="${{ github.ref_name }}" \
             -e GH_TOKEN="${{ secrets.GH_TOKEN }}" \
+            -e PI_AUTH="${{ secrets.PI_AUTH }}" \
             stephengpope/thepopebot:latest

@@ -34,6 +34,9 @@ cd /job
 # Point Pi to /job for auth.json
 export PI_CODING_AGENT_DIR=/job
 
+# Write PI_AUTH env var to auth.json
+echo "$PI_AUTH" > /job/auth.json
+
 # Clean workspace/tmp
 rm -rf ./workspace/tmp/*
 

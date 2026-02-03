@@ -3,6 +3,7 @@ const helmet = require('helmet');
 require('dotenv').config();
 
 const { createJob } = require('./tools/create-job');
+const { loadCrons } = require('./cron');
 
 const app = express();
 
@@ -40,4 +41,7 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+  loadCrons();
+});
