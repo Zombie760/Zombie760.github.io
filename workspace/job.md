@@ -1,1 +1,1 @@
-Remove the file /job/WEATHER.txt
+Read the file at operating_system/HEARTBEAT.md and complete the tasks described there.
