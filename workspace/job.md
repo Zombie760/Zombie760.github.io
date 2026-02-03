@@ -1,1 +1,1 @@
-take a screenshot of github.com
+create x.js with test in the file in /job folder
