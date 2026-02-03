@@ -35,16 +35,7 @@ cd /job
 export PI_CODING_AGENT_DIR=/job
 
 # Write PI_AUTH env var to auth.json (base64 encoded to preserve JSON quotes)
-echo "--- PI_AUTH Debug ---"
-if [ -z "$PI_AUTH" ]; then
-    echo "PI_AUTH is empty or not set"
-else
-    echo "PI_AUTH is set (length: ${#PI_AUTH})"
-fi
 echo "$PI_AUTH" | base64 -d > /job/auth.json
-echo "Wrote auth.json, contents:"
-cat /job/auth.json
-echo "--- End Debug ---"
 
 # Clean workspace/tmp
 rm -rf ./workspace/tmp/*
@@ -53,8 +44,16 @@ rm -rf ./workspace/tmp/*
 LOG_DIR="/job/workspace/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
 
-# 1. Run job (operating_system/AGENTS.md provides behavior rules, job.md provides the task)
-pi -p "$(cat /job/workspace/job.md)" --session-dir "${LOG_DIR}"
+# 1. Run job (AGENTS.md provides behavior rules, job.md provides the task)
+PROMPT="$(cat /job/operating_system/AGENTS.md)
+
+---
+
+# Your Job
+
+$(cat /job/workspace/job.md)"
+
+pi -p "$PROMPT" --session-dir "${LOG_DIR}"
 
 # 2. Commit changes + logs
 git add -A

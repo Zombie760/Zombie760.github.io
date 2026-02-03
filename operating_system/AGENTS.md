@@ -93,3 +93,52 @@ When you encounter errors:
 - Use file-based communication for status updates
 - Check for new instructions periodically
 - Document blockers in the task file or a dedicated status file
+
+## Scheduled Jobs (CRONS.json)
+
+The file `operating_system/CRONS.json` defines scheduled jobs that run automatically. When editing this file, use the exact format below.
+
+### Required Fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `name` | Yes | Display name for the cron job |
+| `schedule` | Yes | Cron expression (e.g., `*/30 * * * *` for every 30 mins) |
+| `job` | Yes | The task description string - this is what the agent will execute |
+| `enabled` | No | Set to `false` to disable (default: true) |
+
+### Example
+
+```json
+[
+  {
+    "name": "heartbeat",
+    "schedule": "*/30 * * * *",
+    "job": "Read operating_system/HEARTBEAT.md and complete the tasks there.",
+    "enabled": true
+  },
+  {
+    "name": "daily-report",
+    "schedule": "0 9 * * *",
+    "job": "Generate a daily summary of repository activity and save to workspace/reports/daily.md",
+    "enabled": true
+  }
+]
+```
+
+### How Scheduled Jobs Work
+
+1. The `job` string is written to `workspace/job.md`
+2. A new branch `job/{uuid}` is created
+3. The agent runs and executes the task
+4. Results are committed and merged to main
+
+### Common Cron Schedules
+
+| Expression | Description |
+|------------|-------------|
+| `*/30 * * * *` | Every 30 minutes |
+| `0 * * * *` | Every hour |
+| `0 9 * * *` | Daily at 9 AM |
+| `0 9 * * 1` | Every Monday at 9 AM |
+| `0 0 1 * *` | First day of each month |
