@@ -1,4 +1,0 @@
-[
-  { "name": "daily-cleanup", "schedule": "0 9 * * *", "job": "Run daily cleanup task", "enabled": false },
-  { "name": "weekly-report", "schedule": "0 10 * * 1", "job": "Generate weekly report", "enabled": false }
-]

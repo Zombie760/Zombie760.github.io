@@ -80,7 +80,7 @@ Supported providers: `anthropic`, `openai`, `groq`
 
 The task for the agent to execute. Be specific about what you want done.
 
-### nervous_system/
+### operating_system/
 
 Agent behavior and personality configuration:
 - **AGENTS.md** - Core behavioral instructions (what to do, workflow patterns)
@@ -101,7 +101,7 @@ Agent behavior and personality configuration:
 ```
 /
 ├── auth.json               # API credentials
-├── nervous_system/
+├── operating_system/
 │   ├── AGENTS.md           # Agent behavior rules
 │   ├── PERSONALITY.md      # Agent personality
 │   ├── HEARTBEAT.md        # Self-monitoring
@@ -138,9 +138,9 @@ Agent behavior and personality configuration:
 
 ## Customization
 
-### Customize the Nervous System
+### Customize the Operating System
 
-Edit files in `nervous_system/`:
+Edit files in `operating_system/`:
 - **AGENTS.md** - Git conventions, prohibited actions, error handling, protocols
 - **PERSONALITY.md** - Identity, traits, working style, values
 - **CRONS.json** - Scheduled job definitions

@@ -4,7 +4,7 @@ This document explains the thepopebot codebase for AI assistants working on this
 
 ## What is thepopebot?
 
-thepopebot is a **template repository** for creating custom autonomous AI agents. Users clone this repo, customize the configuration files (auth.json, nervous_system/, job.md), and run via Docker. The Docker container executes tasks autonomously using the Pi coding agent.
+thepopebot is a **template repository** for creating custom autonomous AI agents. Users clone this repo, customize the configuration files (auth.json, operating_system/, job.md), and run via Docker. The Docker container executes tasks autonomously using the Pi coding agent.
 
 ## Architecture Overview
 
@@ -29,7 +29,7 @@ When running in Docker, the repository is cloned to `/job`:
 ```
 /job/                       # Cloned repository root (PI_CODING_AGENT_DIR)
 ├── auth.json               # API credentials (Pi looks here)
-├── nervous_system/
+├── operating_system/
 │   ├── AGENTS.md           # Agent behavior instructions
 │   ├── PERSONALITY.md      # Agent personality traits
 │   ├── HEARTBEAT.md        # Periodic check instructions
@@ -50,7 +50,7 @@ When running in Docker, the repository is cloned to `/job`:
 | File | Purpose |
 |------|---------|
 | `auth.json` | API keys for Anthropic/OpenAI/Groq. Pi reads this via PI_CODING_AGENT_DIR |
-| `nervous_system/AGENTS.md` | Core instructions passed to the agent at runtime |
+| `operating_system/AGENTS.md` | Core instructions passed to the agent at runtime |
 | `workspace/job.md` | The specific task for the agent to execute |
 | `Dockerfile` | Builds the agent container (Node.js 22, Playwright, Pi) |
 | `entrypoint.sh` | Container startup script - clones repo, runs agent, commits results |
@@ -71,7 +71,7 @@ The Dockerfile creates a container with:
 3. Configure Git credentials (if GITHUB_TOKEN provided)
 4. Clone repository to `/job` (if REPO_URL provided)
 5. Set `PI_CODING_AGENT_DIR=/job` so Pi finds auth.json
-6. Run Pi with nervous_system/AGENTS.md + job.md as prompt
+6. Run Pi with operating_system/AGENTS.md + job.md as prompt
 7. Save session log as `{JOB_ID}.jsonl`
 8. Commit all changes with message `thepopebot: job {JOB_ID}`
 9. Optionally run merge job (if MERGE_JOB.md exists)
@@ -110,15 +110,15 @@ This means `auth.json` must be at `/job/auth.json` (the repository root).
 To create your own agent:
 
 1. **auth.json** - Add your API keys
-2. **nervous_system/AGENTS.md** - Modify agent behavior and rules
-3. **nervous_system/PERSONALITY.md** - Customize personality traits
-4. **nervous_system/CRONS.json** - Define scheduled jobs
+2. **operating_system/AGENTS.md** - Modify agent behavior and rules
+3. **operating_system/PERSONALITY.md** - Customize personality traits
+4. **operating_system/CRONS.json** - Define scheduled jobs
 5. **workspace/job.md** - Define the task to execute
 6. **roles/*.md** - Add or modify role-specific behaviors
 
-## The Nervous System
+## The Operating System
 
-These files in `nervous_system/` define the agent's character and behavior:
+These files in `operating_system/` define the agent's character and behavior:
 
 - **AGENTS.md** - Operational instructions (what to do, how to work)
 - **PERSONALITY.md** - Personality and values (who the agent is)
