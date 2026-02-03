@@ -1,13 +1,12 @@
 name: Run PopeBot Job
 
 on:
-  push:
-    branches:
-      - 'job/**'
+  create:
 
 jobs:
   run-agent:
     runs-on: ubuntu-latest
+    if: github.ref_type == 'branch' && startsWith(github.ref_name, 'job/')
     permissions:
       contents: write
 
