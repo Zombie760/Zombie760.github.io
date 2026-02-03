@@ -1,0 +1,21 @@
+name: Run PopeBot Job
+
+on:
+  push:
+    branches:
+      - 'job/**'
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Run PopeBot Agent
+        run: |
+          docker run --rm \
+            -e REPO_URL="${{ github.server_url }}/${{ github.repository }}.git" \
+            -e BRANCH="${{ github.ref_name }}" \
+            -e GH_TOKEN="${{ secrets.GH_TOKEN }}" \
+            stephengpope/popebot:latest
