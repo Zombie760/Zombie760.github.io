@@ -16,16 +16,22 @@ const { API_KEY, TELEGRAM_WEBHOOK_SECRET, TELEGRAM_BOT_TOKEN } = process.env;
 // Bot token from env, can be overridden by /telegram/register
 let telegramBotToken = TELEGRAM_BOT_TOKEN || null;
 
-// x-api-key auth middleware
-const authMiddleware = (req, res, next) => {
+// Routes that have their own authentication
+const PUBLIC_ROUTES = ['/telegram/webhook'];
+
+// Global x-api-key auth (skip for routes with their own auth)
+app.use((req, res, next) => {
+  if (PUBLIC_ROUTES.includes(req.path)) {
+    return next();
+  }
   if (req.headers['x-api-key'] !== API_KEY) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
   next();
-};
+});
 
 // POST /webhook - create a new job
-app.post('/webhook', authMiddleware, async (req, res) => {
+app.post('/webhook', async (req, res) => {
   const { job } = req.body;
   if (!job) return res.status(400).json({ error: 'Missing job field' });
 
@@ -39,7 +45,7 @@ app.post('/webhook', authMiddleware, async (req, res) => {
 });
 
 // POST /telegram/register - register a Telegram webhook
-app.post('/telegram/register', authMiddleware, async (req, res) => {
+app.post('/telegram/register', async (req, res) => {
   const { bot_token, webhook_url } = req.body;
   if (!bot_token || !webhook_url) {
     return res.status(400).json({ error: 'Missing bot_token or webhook_url' });
