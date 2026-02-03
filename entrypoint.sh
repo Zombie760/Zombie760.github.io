@@ -41,18 +41,24 @@ pi -p "$(cat /job/workspace/job.md)" --session-dir "${LOG_DIR}"
 
 # 2. Commit changes + logs
 git add -A
+git add -f "${LOG_DIR}"
 git commit -m "popebot: job ${JOB_ID}" || true
+git push origin
 
 # 3. Merge (pi has memory of job via session)
-if [ -n "$REPO_URL" ] && [ -f "/job/MERGE_JOB.md" ]; then
-    echo "MERGED"
-    pi -p "$(cat /job/MERGE_JOB.md)" --session-dir "${LOG_DIR}" --continue
-fi
+#if [ -n "$REPO_URL" ] && [ -f "/job/MERGE_JOB.md" ]; then
+#    echo "MERGED"
+#    pi -p "$(cat /job/MERGE_JOB.md)" --session-dir "${LOG_DIR}" --continue
+#fi
 
 # 4. Delete logs, commit "done."
-rm -rf "${LOG_DIR}"
-git add workspace/logs/
+git rm -rf "${LOG_DIR}"
 git commit -m "done." || true
+git push origin
+
+# 5. Create PR and auto-merge to main
+gh pr create --title "popebot: job ${JOB_ID}" --body "Automated job" --base main || true
+gh pr merge --auto --squash || true
 
 # Cleanup
 kill $CHROME_PID 2>/dev/null || true
