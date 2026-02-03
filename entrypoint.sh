@@ -51,11 +51,6 @@ git push origin
 #    pi -p "$(cat /job/MERGE_JOB.md)" --session-dir "${LOG_DIR}" --continue
 #fi
 
-# 4. Delete logs, commit "done."
-git rm -rf "${LOG_DIR}"
-git commit -m "done." || true
-git push origin
-
 # 5. Create PR and auto-merge to main
 gh pr create --title "popebot: job ${JOB_ID}" --body "Automated job" --base main || true
 gh pr merge --auto --squash || true
