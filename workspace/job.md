@@ -1,5 +1,3 @@
 # Test Job: Playwright Browser Control
 
-Use Playwright to connect to the browser on CDP port 9222 and take a screenshot of https://example.com
-
-Save a screenshot
+Add the file x.sh to /job/x.sh with the text "test"
