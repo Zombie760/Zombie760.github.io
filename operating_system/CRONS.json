@@ -1,3 +1,9 @@
 [
-
+  {
+    "name": "heartbeat",
+    "schedule": "*/30 * * * *",
+    "command": "create job",
+    "file": "operating_system/HEARTBEAT.md",
+    "description": "Run heartbeat tasks every 30 minutes"
+  }
 ]
