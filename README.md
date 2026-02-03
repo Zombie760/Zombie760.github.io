@@ -80,17 +80,13 @@ Supported providers: `anthropic`, `openai`, `groq`
 
 The task for the agent to execute. Be specific about what you want done.
 
-### nervous_system/AGENTS.md
+### nervous_system/
 
-Core behavioral instructions for the agent. Modify to change how the agent works, what it's allowed to do, and its workflow patterns.
-
-### nervous_system/PERSONALITY.md
-
-Personality traits and values. Customize to give your agent a distinct character.
-
-### nervous_system/CRONS.json
-
-Scheduled job definitions. Set `"enabled": true` to activate cron jobs.
+Agent behavior and personality configuration:
+- **AGENTS.md** - Core behavioral instructions (what to do, workflow patterns)
+- **PERSONALITY.md** - Personality traits and values
+- **HEARTBEAT.md** - Self-monitoring behavior
+- **CRONS.json** - Scheduled jobs (set `"enabled": true` to activate)
 
 ## Environment Variables
 
@@ -135,27 +131,19 @@ Scheduled job definitions. Set `"enabled": true` to activate cron jobs.
 1. Container starts Chrome in headless mode
 2. Clones your repository to `/job`
 3. Sets `PI_CODING_AGENT_DIR=/job` (so Pi finds auth.json)
-4. Runs Pi with nervous_system/AGENTS.md + job.md as instructions
+4. Runs Pi with AGENTS.md + job.md as instructions
 5. Commits all changes: `thepopebot: job {UUID}`
 6. Optionally runs merge operations
 7. Commits final state: `done.`
 
 ## Customization
 
-### Modify Agent Behavior
+### Customize the Nervous System
 
-Edit `nervous_system/AGENTS.md` to change:
-- Git conventions and commit rules
-- Prohibited actions
-- Error handling approach
-- Communication protocols
-
-### Add Personality
-
-Edit `nervous_system/PERSONALITY.md` to define:
-- Identity and traits
-- Working style preferences
-- Values and principles
+Edit files in `nervous_system/`:
+- **AGENTS.md** - Git conventions, prohibited actions, error handling, protocols
+- **PERSONALITY.md** - Identity, traits, working style, values
+- **CRONS.json** - Scheduled job definitions
 
 ### Define Tasks
 
