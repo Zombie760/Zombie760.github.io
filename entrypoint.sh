@@ -1,7 +1,12 @@
 #!/bin/bash
 set -e
 
-JOB_ID=$(cat /proc/sys/kernel/random/uuid)
+# Extract job ID from branch name (job/uuid -> uuid), fallback to random UUID
+if [[ "$BRANCH" == job/* ]]; then
+    JOB_ID="${BRANCH#job/}"
+else
+    JOB_ID=$(cat /proc/sys/kernel/random/uuid)
+fi
 echo "Job ID: ${JOB_ID}"
 
 # Start Chrome (using Playwright's chromium)
