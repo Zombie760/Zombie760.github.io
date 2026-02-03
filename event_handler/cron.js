@@ -11,8 +11,12 @@ const { createJob } = require('./tools/create-job');
  */
 function loadCrons() {
   const cronFile = path.join(__dirname, '..', 'operating_system', 'CRONS.json');
+
+  console.log('\n--- Cron Jobs ---');
+
   if (!fs.existsSync(cronFile)) {
-    console.log('No CRONS.json found, skipping cron setup');
+    console.log('No CRONS.json found');
+    console.log('-----------------\n');
     return [];
   }
 
@@ -23,7 +27,7 @@ function loadCrons() {
     if (enabled === false) continue;
 
     if (!cron.validate(schedule)) {
-      console.error(`Invalid cron schedule for "${name}": ${schedule}`);
+      console.error(`Invalid schedule for "${name}": ${schedule}`);
       continue;
     }
 
@@ -38,8 +42,17 @@ function loadCrons() {
     });
 
     tasks.push({ name, schedule, task });
-    console.log(`Scheduled cron: ${name} (${schedule})`);
   }
+
+  if (tasks.length === 0) {
+    console.log('No active cron jobs');
+  } else {
+    for (const { name, schedule } of tasks) {
+      console.log(`  ${name}: ${schedule}`);
+    }
+  }
+
+  console.log('-----------------\n');
 
   return tasks;
 }

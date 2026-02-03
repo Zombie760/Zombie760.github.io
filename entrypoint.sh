@@ -35,7 +35,17 @@ cd /job
 export PI_CODING_AGENT_DIR=/job
 
 # Write PI_AUTH env var to auth.json
+echo "--- PI_AUTH Debug ---"
+if [ -z "$PI_AUTH" ]; then
+    echo "PI_AUTH is empty or not set"
+else
+    echo "PI_AUTH is set (length: ${#PI_AUTH})"
+    echo "PI_AUTH first 20 chars: ${PI_AUTH:0:20}..."
+fi
 echo "$PI_AUTH" > /job/auth.json
+echo "Wrote auth.json, contents:"
+cat /job/auth.json
+echo "--- End Debug ---"
 
 # Clean workspace/tmp
 rm -rf ./workspace/tmp/*
