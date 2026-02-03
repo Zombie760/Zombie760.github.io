@@ -101,7 +101,7 @@ app.use((err, req, res, next) => {
 
 // Load and schedule crons
 function loadCrons() {
-  const cronFile = path.join(__dirname, '..', 'CRONS.json');
+  const cronFile = path.join(__dirname, '..', 'nervous_system', 'CRONS.json');
   if (!fs.existsSync(cronFile)) {
     console.log('No CRONS.json found, skipping cron setup');
     return;

@@ -41,7 +41,7 @@ rm -rf ./workspace/tmp/*
 LOG_DIR="/job/workspace/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
 
-# 1. Run job (AGENTS.md provides behavior rules, job.md provides the task)
+# 1. Run job (nervous_system/AGENTS.md provides behavior rules, job.md provides the task)
 pi -p "$(cat /job/workspace/job.md)" --session-dir "${LOG_DIR}"
 
 # 2. Commit changes + logs

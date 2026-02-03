@@ -80,13 +80,17 @@ Supported providers: `anthropic`, `openai`, `groq`
 
 The task for the agent to execute. Be specific about what you want done.
 
-### AGENTS.md
+### nervous_system/AGENTS.md
 
 Core behavioral instructions for the agent. Modify to change how the agent works, what it's allowed to do, and its workflow patterns.
 
-### SOUL.md
+### nervous_system/PERSONALITY.md
 
 Personality traits and values. Customize to give your agent a distinct character.
+
+### nervous_system/CRONS.json
+
+Scheduled job definitions. Set `"enabled": true` to activate cron jobs.
 
 ## Environment Variables
 
@@ -101,11 +105,13 @@ Personality traits and values. Customize to give your agent a distinct character
 ```
 /
 ├── auth.json               # API credentials
-├── AGENTS.md               # Agent behavior rules
-├── SOUL.md                 # Agent personality
+├── nervous_system/
+│   ├── AGENTS.md           # Agent behavior rules
+│   ├── PERSONALITY.md      # Agent personality
+│   ├── HEARTBEAT.md        # Self-monitoring
+│   └── CRONS.json          # Scheduled jobs
 ├── MEMORY.md               # Persistent knowledge
 ├── TOOLS.md                # Available tools
-├── HEARTBEAT.md            # Self-monitoring
 ├── MERGE_JOB.md            # Post-job merge instructions
 ├── Dockerfile              # Container definition
 ├── entrypoint.sh           # Startup script
@@ -129,7 +135,7 @@ Personality traits and values. Customize to give your agent a distinct character
 1. Container starts Chrome in headless mode
 2. Clones your repository to `/job`
 3. Sets `PI_CODING_AGENT_DIR=/job` (so Pi finds auth.json)
-4. Runs Pi with AGENTS.md + job.md as instructions
+4. Runs Pi with nervous_system/AGENTS.md + job.md as instructions
 5. Commits all changes: `thepopebot: job {UUID}`
 6. Optionally runs merge operations
 7. Commits final state: `done.`
@@ -138,7 +144,7 @@ Personality traits and values. Customize to give your agent a distinct character
 
 ### Modify Agent Behavior
 
-Edit `AGENTS.md` to change:
+Edit `nervous_system/AGENTS.md` to change:
 - Git conventions and commit rules
 - Prohibited actions
 - Error handling approach
@@ -146,7 +152,7 @@ Edit `AGENTS.md` to change:
 
 ### Add Personality
 
-Edit `SOUL.md` to define:
+Edit `nervous_system/PERSONALITY.md` to define:
 - Identity and traits
 - Working style preferences
 - Values and principles
