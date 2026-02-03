@@ -35,19 +35,18 @@ function loadCrons() {
     }
 
     const task = cron.schedule(schedule, async () => {
-      console.log(`Running cron: ${name}`);
       try {
         if (type === 'command') {
           const { stdout, stderr } = await execAsync(command);
-          if (stdout) console.log(`Cron ${name} output: ${stdout.trim()}`);
-          if (stderr) console.error(`Cron ${name} stderr: ${stderr.trim()}`);
-          console.log(`Cron ${name} command completed`);
+          const output = (stdout || stderr || '').trim();
+          console.log(`[CRON] ${name}: ${output || 'ran'}`);
         } else {
           const result = await createJob(job);
-          console.log(`Cron ${name} created job: ${result.job_id}`);
+          console.log(`[CRON] ${name}: job ${result.job_id}`);
         }
+        console.log(`[CRON] ${name}: completed!`);
       } catch (err) {
-        console.error(`Cron ${name} failed:`, err.message);
+        console.error(`[CRON] ${name}: error - ${err.message}`);
       }
     });
 
