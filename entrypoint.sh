@@ -58,7 +58,7 @@ git push origin
 
 # 5. Create PR and auto-merge to main
 gh pr create --title "popebot: job ${JOB_ID}" --body "Automated job" --base main || true
-gh pr merge --auto --squash || true
+gh pr merge --squash || true
 
 # Cleanup
 kill $CHROME_PID 2>/dev/null || true
