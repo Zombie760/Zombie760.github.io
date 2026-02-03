@@ -16,8 +16,8 @@ CHROME_PID=$!
 sleep 2
 
 # Git setup
-git config --global user.name "popebot"
-git config --global user.email "popebot@example.com"
+git config --global user.name "thepopebot"
+git config --global user.email "thepopebot@example.com"
 
 # Configure git to use gh CLI for authentication (GH_TOKEN env var required)
 gh auth setup-git
@@ -47,7 +47,7 @@ pi -p "$(cat /job/workspace/job.md)" --session-dir "${LOG_DIR}"
 # 2. Commit changes + logs
 git add -A
 git add -f "${LOG_DIR}"
-git commit -m "popebot: job ${JOB_ID}" || true
+git commit -m "thepopebot: job ${JOB_ID}" || true
 git push origin
 
 # 3. Merge (pi has memory of job via session)
@@ -57,7 +57,7 @@ git push origin
 #fi
 
 # 5. Create PR and auto-merge to main
-gh pr create --title "popebot: job ${JOB_ID}" --body "Automated job" --base main || true
+gh pr create --title "thepopebot: job ${JOB_ID}" --body "Automated job" --base main || true
 gh pr merge --squash || true
 
 # Cleanup

@@ -1,4 +1,4 @@
-# PopeBot
+# thepopebot
 
 A template repository for creating custom autonomous AI agents. Clone this repo, customize the config files, and run via Docker to execute tasks autonomously.
 
@@ -21,7 +21,7 @@ The Docker container:
 
 ```bash
 # Clone the template
-git clone https://github.com/yourusername/popebot.git my-agent
+git clone https://github.com/yourusername/thepopebot.git my-agent
 cd my-agent
 
 # Create auth.json with your API keys
@@ -130,7 +130,7 @@ Personality traits and values. Customize to give your agent a distinct character
 2. Clones your repository to `/job`
 3. Sets `PI_CODING_AGENT_DIR=/job` (so Pi finds auth.json)
 4. Runs Pi with AGENTS.md + job.md as instructions
-5. Commits all changes: `popebot: job {UUID}`
+5. Commits all changes: `thepopebot: job {UUID}`
 6. Optionally runs merge operations
 7. Commits final state: `done.`
 

@@ -48,7 +48,7 @@ You are running as a **Worker** agent. Your job is to execute assigned tasks and
 
 ## Task Status Updates
 
-Update your status in `/workspace/.popebot/workers/{branch}.json`:
+Update your status in `/workspace/.thepopebot/workers/{branch}.json`:
 
 ```json
 {

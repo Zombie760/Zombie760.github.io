@@ -54,7 +54,7 @@ Before merging to main:
 
 ## Task Queue Location
 
-Tasks are stored in `/workspace/.popebot/tasks/`
+Tasks are stored in `/workspace/.thepopebot/tasks/`
 
 Each task file contains:
 - Task description
@@ -64,7 +64,7 @@ Each task file contains:
 
 ## Status Reporting
 
-Maintain orchestrator status in `/workspace/.popebot/orchestrator-status.json`:
+Maintain orchestrator status in `/workspace/.thepopebot/orchestrator-status.json`:
 
 ```json
 {

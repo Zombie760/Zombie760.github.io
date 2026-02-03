@@ -1,4 +1,4 @@
-name: Run PopeBot Job
+name: Run thepopebot Job
 
 on:
   create:
@@ -11,10 +11,10 @@ jobs:
       contents: write
 
     steps:
-      - name: Run PopeBot Agent
+      - name: Run thepopebot Agent
         run: |
           docker run --rm \
             -e REPO_URL="${{ github.server_url }}/${{ github.repository }}.git" \
             -e BRANCH="${{ github.ref_name }}" \
             -e GH_TOKEN="${{ secrets.GH_TOKEN }}" \
-            stephengpope/popebot:latest
+            stephengpope/thepopebot:latest

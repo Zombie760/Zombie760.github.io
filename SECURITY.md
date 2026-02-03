@@ -1,6 +1,6 @@
 # Security: Handling Secrets
 
-This document describes secure methods for passing API keys and secrets to PopeBot containers. **Never commit secrets to your repository.**
+This document describes secure methods for passing API keys and secrets to thepopebot containers. **Never commit secrets to your repository.**
 
 ## Option 1: Environment Variables (Recommended for CI/CD)
 
@@ -31,7 +31,7 @@ docker run -e ANTHROPIC_API_KEY="sk-ant-xxxxx" \
            -e GITHUB_TOKEN="ghp_xxxxx" \
            -e REPO_URL="https://github.com/user/repo" \
            -e BRANCH="main" \
-           popebot
+           thepopebot
 ```
 
 ### GitHub Actions Example
@@ -41,14 +41,14 @@ jobs:
   run-agent:
     runs-on: ubuntu-latest
     steps:
-      - name: Run PopeBot
+      - name: Run thepopebot
         run: |
           docker run \
             -e ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }} \
             -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
             -e REPO_URL=${{ github.server_url }}/${{ github.repository }} \
             -e BRANCH=${{ github.ref_name }} \
-            popebot
+            thepopebot
 ```
 
 ## Option 2: Mount Secret File (Recommended for Local Development)
@@ -59,29 +59,29 @@ Keep `auth.json` outside the repository and mount it as a read-only volume.
 
 1. Create a secrets directory outside your repo:
    ```bash
-   mkdir -p ~/.popebot-secrets
+   mkdir -p ~/.thepopebot-secrets
    ```
 
 2. Create your auth.json there:
    ```bash
-   cat > ~/.popebot-secrets/auth.json << 'EOF'
+   cat > ~/.thepopebot-secrets/auth.json << 'EOF'
    {
      "anthropic": { "type": "api_key", "key": "sk-ant-xxxxx" },
      "openai": { "type": "api_key", "key": "sk-xxxxx" },
      "groq": { "type": "api_key", "key": "xxxxx" }
    }
    EOF
-   chmod 600 ~/.popebot-secrets/auth.json
+   chmod 600 ~/.thepopebot-secrets/auth.json
    ```
 
 ### Usage
 
 ```bash
-docker run -v ~/.popebot-secrets/auth.json:/job/auth.json:ro \
+docker run -v ~/.thepopebot-secrets/auth.json:/job/auth.json:ro \
            -e GITHUB_TOKEN="ghp_xxxxx" \
            -e REPO_URL="https://github.com/user/repo" \
            -e BRANCH="main" \
-           popebot
+           thepopebot
 ```
 
 The `:ro` flag mounts the file as read-only.
@@ -96,7 +96,7 @@ Use Docker's built-in secrets management for production deployments.
 version: '3.8'
 
 services:
-  popebot:
+  thepopebot:
     build: .
     environment:
       - REPO_URL=https://github.com/user/repo

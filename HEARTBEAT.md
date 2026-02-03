@@ -1,8 +1,8 @@
-# PopeBot Heartbeat Protocol
+# thepopebot Heartbeat Protocol
 
 ## Purpose
 
-The heartbeat system ensures PopeBot remains responsive and can handle periodic tasks even during long-running operations.
+The heartbeat system ensures thepopebot remains responsive and can handle periodic tasks even during long-running operations.
 
 ## Heartbeat Checks
 
@@ -10,10 +10,10 @@ Every few minutes, you should:
 
 1. **Check for new instructions**
    - Look for updates to your task file
-   - Check for priority interrupts in `/workspace/.popebot/interrupts/`
+   - Check for priority interrupts in `/workspace/.thepopebot/interrupts/`
 
 2. **Update status**
-   - Write current status to `/workspace/.popebot/status.json`
+   - Write current status to `/workspace/.thepopebot/status.json`
    - Include: current task, progress percentage, any blockers
 
 3. **Health check**
@@ -53,7 +53,7 @@ Some tasks may be scheduled to run periodically:
 - **Sync**: Pull latest changes from upstream
 - **Report**: Generate status reports
 
-Check `/workspace/.popebot/cron/` for scheduled task definitions.
+Check `/workspace/.thepopebot/cron/` for scheduled task definitions.
 
 ## Failure Recovery
 

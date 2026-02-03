@@ -1,17 +1,17 @@
-# PopeBot - AI Agent Template
+# thepopebot - AI Agent Template
 
-This document explains the PopeBot codebase for AI assistants working on this project.
+This document explains the thepopebot codebase for AI assistants working on this project.
 
-## What is PopeBot?
+## What is thepopebot?
 
-PopeBot is a **template repository** for creating custom autonomous AI agents. Users clone this repo, customize the configuration files (auth.json, AGENTS.md, job.md), and run via Docker. The Docker container executes tasks autonomously using the Pi coding agent.
+thepopebot is a **template repository** for creating custom autonomous AI agents. Users clone this repo, customize the configuration files (auth.json, AGENTS.md, job.md), and run via Docker. The Docker container executes tasks autonomously using the Pi coding agent.
 
 ## Architecture Overview
 
 ```
 Template Flow:
 ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│  Clone PopeBot  │ ──► │   Customize     │ ──► │  Push to Your   │
+│ Clone thepopebot│ ──► │   Customize     │ ──► │  Push to Your   │
 │    Template     │     │  Config Files   │     │    Repository   │
 └─────────────────┘     └─────────────────┘     └─────────────────┘
                                                         │
@@ -71,7 +71,7 @@ The Dockerfile creates a container with:
 5. Set `PI_CODING_AGENT_DIR=/job` so Pi finds auth.json
 6. Run Pi with concatenated AGENTS.md + job.md as prompt
 7. Save session log as `{JOB_ID}.jsonl`
-8. Commit all changes with message `popebot: job {JOB_ID}`
+8. Commit all changes with message `thepopebot: job {JOB_ID}`
 9. Optionally run merge job (if MERGE_JOB.md exists)
 10. Clean up logs, commit "done."
 
