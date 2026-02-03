@@ -98,13 +98,22 @@ When you encounter errors:
 
 The file `operating_system/CRONS.json` defines scheduled jobs that run automatically. When editing this file, use the exact format below.
 
-### Required Fields
+### Job Types
+
+There are two types of scheduled jobs:
+
+- **`agent`** (default): Creates an agent job that runs via the full agent pipeline
+- **`command`**: Runs a shell command directly without starting the agent
+
+### Fields
 
 | Field | Required | Description |
 |-------|----------|-------------|
 | `name` | Yes | Display name for the cron job |
 | `schedule` | Yes | Cron expression (e.g., `*/30 * * * *` for every 30 mins) |
-| `job` | Yes | The task description string - this is what the agent will execute |
+| `type` | No | `"agent"` (default) or `"command"` |
+| `job` | If type=agent | The task description string - this is what the agent will execute |
+| `command` | If type=command | Shell command to run directly |
 | `enabled` | No | Set to `false` to disable (default: true) |
 
 ### Example
@@ -114,7 +123,15 @@ The file `operating_system/CRONS.json` defines scheduled jobs that run automatic
   {
     "name": "heartbeat",
     "schedule": "*/30 * * * *",
+    "type": "agent",
     "job": "Read operating_system/HEARTBEAT.md and complete the tasks there.",
+    "enabled": true
+  },
+  {
+    "name": "health-check",
+    "schedule": "*/5 * * * *",
+    "type": "command",
+    "command": "curl -s https://api.example.com/health",
     "enabled": true
   },
   {
@@ -126,12 +143,18 @@ The file `operating_system/CRONS.json` defines scheduled jobs that run automatic
 ]
 ```
 
-### How Scheduled Jobs Work
+### How Agent Jobs Work
 
 1. The `job` string is written to `workspace/job.md`
 2. A new branch `job/{uuid}` is created
 3. The agent runs and executes the task
 4. Results are committed and merged to main
+
+### How Command Jobs Work
+
+1. The `command` string is executed directly via shell
+2. stdout and stderr are logged to the console
+3. No agent is started, no branch is created
 
 ### Common Cron Schedules
 

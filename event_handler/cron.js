@@ -1,8 +1,11 @@
 const cron = require('node-cron');
 const fs = require('fs');
 const path = require('path');
+const { exec } = require('child_process');
+const { promisify } = require('util');
 require('dotenv').config();
 
+const execAsync = promisify(exec);
 const { createJob } = require('./tools/create-job');
 
 /**
@@ -23,7 +26,7 @@ function loadCrons() {
   const crons = JSON.parse(fs.readFileSync(cronFile, 'utf8'));
   const tasks = [];
 
-  for (const { name, schedule, job, enabled } of crons) {
+  for (const { name, schedule, job, command, type = 'agent', enabled } of crons) {
     if (enabled === false) continue;
 
     if (!cron.validate(schedule)) {
@@ -34,21 +37,28 @@ function loadCrons() {
     const task = cron.schedule(schedule, async () => {
       console.log(`Running cron: ${name}`);
       try {
-        const result = await createJob(job);
-        console.log(`Cron ${name} created job: ${result.job_id}`);
+        if (type === 'command') {
+          const { stdout, stderr } = await execAsync(command);
+          if (stdout) console.log(`Cron ${name} output: ${stdout.trim()}`);
+          if (stderr) console.error(`Cron ${name} stderr: ${stderr.trim()}`);
+          console.log(`Cron ${name} command completed`);
+        } else {
+          const result = await createJob(job);
+          console.log(`Cron ${name} created job: ${result.job_id}`);
+        }
       } catch (err) {
         console.error(`Cron ${name} failed:`, err.message);
       }
     });
 
-    tasks.push({ name, schedule, task });
+    tasks.push({ name, schedule, type, task });
   }
 
   if (tasks.length === 0) {
     console.log('No active cron jobs');
   } else {
-    for (const { name, schedule } of tasks) {
-      console.log(`  ${name}: ${schedule}`);
+    for (const { name, schedule, type } of tasks) {
+      console.log(`  ${name}: ${schedule} (${type})`);
     }
   }
 
