@@ -1,1 +1,1 @@
-add the operating_system/HEARTBEAT.md to the operating_system/CRONS.json and have it runu every 30 minutes using create job
+Get the local weather for Claremont, CA and put it in /job/WEATHER.txt
