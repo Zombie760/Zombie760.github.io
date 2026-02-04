@@ -1,6 +1,14 @@
 # thepopebot
 
-A template repository for creating custom autonomous AI agents. Clone this repo, customize the config files, and run via Docker to execute tasks autonomously.
+An autonomous AI agent that lives entirely in Git.
+
+**The repository IS the agent** - code, configuration, personality, logs, and execution history all version-controlled in one place. No external databases. No config drift. Fork the repo and you fork the entire agent with its complete history.
+
+**GitHub Actions IS the compute** - Each job runs in an isolated Docker container on GitHub's infrastructure. Free, scalable execution - run one task or a thousand in parallel. The event handler is a lightweight orchestrator; GitHub does the heavy lifting.
+
+**Self-evolving by design** - The agent can modify its own code, refine its behavior, update its scheduled jobs, even adjust its personality. Every change flows through a PR, fully auditable and reversible.
+
+**Secure from the ground up** - All credentials stored in GitHub Secrets. Event handler validates every webhook with token authentication. No hardcoded secrets, no exposed keys.
 
 ## Two-Layer Architecture
 
@@ -41,53 +49,9 @@ thepopebot features a two-layer architecture:
 └───────────────────────────────────────────────────────────────────────┘
 ```
 
-## Quick Start
+## Installation
 
-### 1. Clone and Configure
-
-```bash
-# Clone the template
-git clone https://github.com/yourusername/thepopebot.git my-agent
-cd my-agent
-
-# Create auth.json with your API keys
-cp auth.example.json auth.json
-# Edit auth.json with your Anthropic API key
-```
-
-### 2. Define Your Task
-
-Edit `workspace/job.md`:
-
-```markdown
-# Task: Build a Landing Page
-
-Create a responsive landing page with:
-- Hero section with call-to-action
-- Features grid
-- Contact form
-```
-
-### 3. Push to Your Repository
-
-```bash
-git remote set-url origin https://github.com/yourusername/my-agent.git
-git push -u origin main
-```
-
-### 4. Run the Agent
-
-```bash
-docker build -t my-agent .
-docker run \
-  -e REPO_URL=https://github.com/yourusername/my-agent.git \
-  -e BRANCH=main \
-  -e GH_TOKEN=ghp_xxxx \
-  -e PI_AUTH=$(base64 < auth.json) \
-  my-agent
-```
-
-The agent will clone your repo, execute the task, create a PR, and auto-merge the results.
+PLACEHOLDER
 
 ## Configuration Files
 
@@ -256,6 +220,7 @@ Edit files in `operating_system/`:
 - **THEPOPEBOT.md** - Git conventions, prohibited actions, error handling, protocols
 - **SOUL.md** - Identity, traits, working style, values
 - **EVENT_HANDLER.md** - Telegram conversational behavior
+- **HEARTBEAT.md** - Periodic self-check behavior
 - **CRONS.json** - Scheduled job definitions
 
 ### Define Tasks
