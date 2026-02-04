@@ -121,13 +121,60 @@ function extractJobId(branchName) {
 }
 
 /**
+ * Fetch the last commit message from a PR
+ * @param {number} prNumber - PR number
+ * @returns {Promise<string|null>}
+ */
+async function getCommitMessage(prNumber) {
+  try {
+    const commits = await githubApi(
+      `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/pulls/${prNumber}/commits`
+    );
+    return commits[commits.length - 1]?.commit?.message || null;
+  } catch (err) {
+    console.error('Failed to fetch commit message:', err);
+    return null;
+  }
+}
+
+/**
+ * Fetch job.md content from a branch
+ * @param {string} branchRef - Branch ref
+ * @returns {Promise<string|null>}
+ */
+async function getJobDescription(branchRef) {
+  try {
+    const file = await githubApi(
+      `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/workspace/job.md?ref=${branchRef}`
+    );
+    return Buffer.from(file.content, 'base64').toString('utf-8');
+  } catch (err) {
+    console.error('Failed to fetch job.md:', err);
+    return null;
+  }
+}
+
+/**
  * Use Claude to summarize job logs
  * @param {string} logContent - Raw JSONL log content
+ * @param {Object} context - Additional context
+ * @param {string|null} context.jobDescription - Contents of job.md (the task)
+ * @param {string|null} context.commitMessage - Final commit message
  * @returns {Promise<{success: boolean, summary: string}>}
  */
-async function summarizeLogsWithClaude(logContent) {
+async function summarizeLogsWithClaude(logContent, context = {}) {
   try {
     const apiKey = getApiKey();
+    const { jobDescription, commitMessage } = context;
+
+    // Build context sections
+    let contextSection = '';
+    if (jobDescription) {
+      contextSection += `\nOriginal Task (job.md):\n${jobDescription.slice(0, 2000)}\n`;
+    }
+    if (commitMessage) {
+      contextSection += `\nCommit Message:\n${commitMessage}\n`;
+    }
 
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -141,11 +188,11 @@ async function summarizeLogsWithClaude(logContent) {
         max_tokens: 256,
         messages: [{
           role: 'user',
-          content: `Analyze this AI agent job log and provide a brief summary (1-2 sentences max). Focus on:
+          content: `Analyze this AI agent job and provide a brief summary (1-2 sentences max). Focus on:
 - Did it succeed or fail?
 - What was accomplished?
 - Any errors or issues?
-
+${contextSection}
 Respond in this exact format:
 SUCCESS: true or false
 SUMMARY: your brief summary here
@@ -181,9 +228,12 @@ ${logContent.slice(-50000)}` // Last 50k chars to stay within limits
  * Analyze job log file to determine success/failure and extract summary
  * @param {string} branchRef - Branch ref to fetch logs from
  * @param {string} jobId - Job ID (UUID)
+ * @param {Object} context - Additional context
+ * @param {string|null} context.jobDescription - Contents of job.md
+ * @param {string|null} context.commitMessage - Final commit message
  * @returns {Promise<{success: boolean, summary: string}>}
  */
-async function analyzeJobLog(branchRef, jobId) {
+async function analyzeJobLog(branchRef, jobId, context = {}) {
   try {
     // List files in workspace/logs/{jobId}/ directory on the PR branch
     const logsPath = `workspace/logs/${jobId}`;
@@ -210,7 +260,7 @@ async function analyzeJobLog(branchRef, jobId) {
     const content = Buffer.from(fileData.content, 'base64').toString('utf-8');
 
     // Use Claude to analyze and summarize
-    return await summarizeLogsWithClaude(content);
+    return await summarizeLogsWithClaude(content, context);
   } catch (err) {
     console.error('Failed to analyze job log:', err);
     return { success: true, summary: 'Job completed.' };
@@ -255,8 +305,18 @@ app.post('/github/webhook', async (req, res) => {
   }
 
   try {
-    // Analyze the job log
-    const { success, summary } = await analyzeJobLog(branchName, jobId);
+    // Fetch additional context in parallel
+    const prNumber = pr.number;
+    const [commitMessage, jobDescription] = await Promise.all([
+      getCommitMessage(prNumber),
+      getJobDescription(branchName)
+    ]);
+
+    // Analyze the job log with context
+    const { success, summary } = await analyzeJobLog(branchName, jobId, {
+      commitMessage,
+      jobDescription
+    });
 
     // Build notification message
     const shortJobId = jobId.slice(0, 8);

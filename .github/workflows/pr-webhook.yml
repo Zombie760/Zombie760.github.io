@@ -12,11 +12,17 @@ jobs:
 
     steps:
       - name: Send webhook notification
-        env:
-          PAYLOAD: ${{ toJson(github.event) }}
         run: |
           curl -X POST "${{ secrets.GH_WEBHOOK_URL }}/github/webhook" \
             -H "Content-Type: application/json" \
             -H "X-GitHub-Event: pull_request" \
             -H "X-Webhook-Token: ${{ secrets.GH_WEBHOOK_TOKEN }}" \
-            -d "$PAYLOAD"
+            -d '{
+              "action": "${{ github.event.action }}",
+              "pull_request": {
+                "html_url": "${{ github.event.pull_request.html_url }}",
+                "title": "${{ github.event.pull_request.title }}",
+                "number": ${{ github.event.pull_request.number }},
+                "head": { "ref": "${{ github.event.pull_request.head.ref }}" }
+              }
+            }'
