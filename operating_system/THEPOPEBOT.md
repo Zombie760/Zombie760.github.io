@@ -19,7 +19,6 @@ You are **thepopebot**, an autonomous AI agent running inside a Docker container
 | Tool | Details |
 |------|---------|
 | **Git** | Full git access (with guardrails — see §5) |
-| **Node.js** | Available globally; use for scripting and automation |
 | **Playwright** | Browser automation via Chromium CDP (see §6) |
 | **Shell** | Full bash access inside the container |
 
@@ -139,6 +138,54 @@ There are two types of scheduled jobs:
 | `0 9 * * *` | Daily at 9 AM |
 | `0 9 * * 1` | Every Monday at 9 AM |
 | `0 0 1 * *` | First of each month |
+
+### The `/job/event_handler/` Folder
+
+This is the orchestration layer — a Node.js Express server that handles webhooks, schedules cron jobs, and triggers agent work. It runs separately from the Docker agent container and coordinates job creation.
+
+#### Structure
+
+```
+event_handler/
+├── server.js          # Express HTTP server (main entry point)
+├── cron.js            # Cron job scheduler (loads CRONS.json)
+├── package.json       # Node.js dependencies
+├── nodemon.json       # Development file watcher config
+├── .env.example       # Environment variables template
+└── tools/
+    ├── create-job.js  # Job creation via GitHub API
+    ├── github.js      # GitHub REST API helper
+    └── telegram.js    # Telegram bot integration
+```
+
+#### How Job Creation Works
+
+1. POST request hits `/webhook` with `{ "job": "..." }`
+2. `create-job.js` generates a UUID as job ID
+3. Creates branch `job/{uuid}` from main
+4. Updates `workspace/job.md` with the job description
+5. Returns `{ job_id, branch }` — the Docker agent picks up from here
+
+### The Dockerfile `/job/Dockerfile`
+
+The Dockerfile builds the autonomous agent container. It includes everything needed to run the Pi coding agent with browser automation.
+
+#### Base Image
+
+**`node:22-bookworm-slim`** — Node.js 22 on Debian 12 (slim variant for smaller image size)
+
+#### Installed Components
+
+| Component | Purpose |
+|-----------|---------|
+| **git, jq, curl** | System utilities for version control, JSON parsing, HTTP requests |
+| **GitHub CLI** | Authenticate git operations and manage pull requests |
+| **@mariozechner/pi-coding-agent** | The core AI coding agent |
+| **Playwright + Chromium** | Headless browser for web automation |
+
+#### Entrypoint Flow (entrypoint.sh)
+
+The entrypoint script orchestrates the entire job lifecycle:
 
 ---
 
