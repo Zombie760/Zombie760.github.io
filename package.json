@@ -1,9 +1,10 @@
 {
-  "name": "job",
+  "name": "thepopebot",
   "version": "1.0.0",
   "description": "An autonomous AI agent infrastructure using Claude Code in Docker containers.",
   "main": "index.js",
   "scripts": {
+    "setup": "cd setup && npm install && node setup.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
