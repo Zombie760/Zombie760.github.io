@@ -10,25 +10,35 @@ thepopebot features a two-layer architecture:
 2. **Docker Agent Layer** - Pi coding agent container for autonomous task execution
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                     Event Handler Layer                      │
-│  Telegram Webhook │ Cron Scheduler │ Claude Chat            │
-│                            ↓                                 │
-│                      create-job (GitHub API)                │
-└─────────────────────────────┬───────────────────────────────┘
-                              │ Creates job/uuid branch
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                     GitHub Actions                           │
-│  job-runner.yml (on branch create) → runs Docker agent      │
-│  pr-webhook.yml (on PR opened) → notifies event handler     │
-└─────────────────────────────┬───────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                     Docker Agent Layer                       │
-│  1. Clone branch → 2. Run Pi → 3. Commit → 4. PR & Merge   │
-└─────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────────┐
+│                                                                       │
+│  ┌─────────────────┐         ┌─────────────────┐                     │
+│  │  Event Handler  │ ──1──►  │     GitHub      │                     │
+│  │  (creates job)  │         │ (job/* branch)  │                     │
+│  └────────▲────────┘         └────────┬────────┘                     │
+│           │                           │                              │
+│           │                           2 (triggers job-runner.yml)    │
+│           │                           │                              │
+│           │                           ▼                              │
+│           │                  ┌─────────────────┐                     │
+│           │                  │  Docker Agent   │                     │
+│           │                  │  (runs Pi, PRs) │                     │
+│           │                  └────────┬────────┘                     │
+│           │                           │                              │
+│           │                           3 (creates PR)                 │
+│           │                           │                              │
+│           │                           ▼                              │
+│           │                  ┌─────────────────┐                     │
+│           │                  │     GitHub      │                     │
+│           │                  │   (PR opened)   │                     │
+│           │                  └────────┬────────┘                     │
+│           │                           │                              │
+│           │                           4 (triggers pr-webhook.yml)    │
+│           │                           │                              │
+│           5 (Telegram notification)   │                              │
+│           └───────────────────────────┘                              │
+│                                                                       │
+└───────────────────────────────────────────────────────────────────────┘
 ```
 
 ## Quick Start
