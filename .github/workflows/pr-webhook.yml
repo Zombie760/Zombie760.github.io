@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Send webhook notification
         env:
-          WEBHOOK_URL: ${{ secrets.EVENT_HANDLER_URL }}
-          WEBHOOK_TOKEN: ${{ secrets.GITHUB_WEBHOOK_TOKEN }}
+          WEBHOOK_URL: ${{ secrets.GH_WEBHOOK_URL }}
+          WEBHOOK_TOKEN: ${{ secrets.GH_WEBHOOK_TOKEN }}
         run: |
           curl -X POST "${WEBHOOK_URL}/github/webhook" \
             -H "Content-Type: application/json" \

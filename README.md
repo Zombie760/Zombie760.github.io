@@ -12,11 +12,18 @@ thepopebot features a two-layer architecture:
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                     Event Handler Layer                      │
-│  Telegram Webhook │ GitHub Webhook │ Cron │ Claude Chat     │
+│  Telegram Webhook │ Cron Scheduler │ Claude Chat            │
 │                            ↓                                 │
 │                      create-job (GitHub API)                │
 └─────────────────────────────┬───────────────────────────────┘
                               │ Creates job/uuid branch
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                     GitHub Actions                           │
+│  job-runner.yml (on branch create) → runs Docker agent      │
+│  pr-webhook.yml (on PR opened) → notifies event handler     │
+└─────────────────────────────┬───────────────────────────────┘
+                              │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                     Docker Agent Layer                       │
@@ -104,6 +111,9 @@ Agent behavior and personality configuration:
 ```
 /
 ├── auth.json               # API credentials
+├── .github/workflows/
+│   ├── job-runner.yml      # Runs Docker agent on job/* branch creation
+│   └── pr-webhook.yml      # Notifies event handler on PR opened
 ├── operating_system/
 │   ├── THEPOPEBOT.md       # Agent behavior rules
 │   ├── SOUL.md             # Agent identity and personality
@@ -144,7 +154,7 @@ npm start
 |----------|--------|---------|
 | `/webhook` | POST | Generic webhook for job creation (requires API_KEY header) |
 | `/telegram/webhook` | POST | Telegram bot webhook for conversational interface |
-| `/github/webhook` | POST | GitHub webhook for PR/push notifications |
+| `/github/webhook` | POST | Receives notifications from GitHub Actions (pr-webhook.yml) |
 
 ### Environment Variables (Event Handler)
 
@@ -157,7 +167,7 @@ npm start
 | `PORT` | Server port (default: 3000) | No |
 | `TELEGRAM_BOT_TOKEN` | Telegram bot token from BotFather | For Telegram |
 | `TELEGRAM_WEBHOOK_SECRET` | Secret for webhook validation | No |
-| `GITHUB_WEBHOOK_TOKEN` | Token for GitHub webhook auth | For notifications |
+| `GH_WEBHOOK_TOKEN` | Token for GitHub Actions webhook auth | For notifications |
 | `ANTHROPIC_API_KEY` | Claude API key (or use auth.json) | For chat |
 | `EVENT_HANDLER_MODEL` | Claude model for chat (default: claude-sonnet-4) | No |
 
@@ -199,6 +209,34 @@ The Docker container executes tasks autonomously using the Pi coding agent.
 7. Commit all changes: `thepopebot: job {UUID}`
 8. Create PR and auto-merge to main
 9. Clean up
+
+## GitHub Actions
+
+GitHub Actions automate the entire job lifecycle. No manual webhook configuration needed in GitHub settings.
+
+### Workflows
+
+| Workflow | Trigger | Purpose |
+|----------|---------|---------|
+| `job-runner.yml` | `job/*` branch created | Runs Docker agent container |
+| `pr-webhook.yml` | PR opened from `job/*` branch | Notifies event handler → Telegram |
+
+### GitHub Secrets Required
+
+| Secret | Description |
+|--------|-------------|
+| `GH_TOKEN` | GitHub PAT for Docker agent authentication |
+| `PI_AUTH` | Base64-encoded auth.json (`base64 < auth.json`) |
+| `GH_WEBHOOK_URL` | Event handler URL (e.g., `https://your-server.com`) |
+| `GH_WEBHOOK_TOKEN` | Token to authenticate with event handler (must match event handler's `GH_WEBHOOK_TOKEN`) |
+
+### How It Works
+
+1. Event handler (or Telegram chat) creates a `job/uuid` branch via GitHub API
+2. GitHub Actions detects branch creation → runs `job-runner.yml`
+3. Docker agent executes task, commits results, creates PR
+4. GitHub Actions detects PR opened → runs `pr-webhook.yml`
+5. Event handler receives notification → sends Telegram message with job status
 
 ## Customization
 

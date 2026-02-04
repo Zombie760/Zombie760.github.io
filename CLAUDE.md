@@ -17,12 +17,12 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 │  │                    Event Handler Layer                       │    │
 │  │                  (Node.js Express Server)                    │    │
 │  │                                                              │    │
-│  │   ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │    │
-│  │   │ Telegram │  │  GitHub  │  │   Cron   │  │  Claude  │   │    │
-│  │   │ Webhook  │  │ Webhook  │  │Scheduler │  │   Chat   │   │    │
-│  │   └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘   │    │
-│  │        │             │             │             │          │    │
-│  │        └─────────────┴──────┬──────┴─────────────┘          │    │
+│  │   ┌──────────┐  ┌──────────┐  ┌──────────┐                  │    │
+│  │   │ Telegram │  │   Cron   │  │  Claude  │                  │    │
+│  │   │ Webhook  │  │Scheduler │  │   Chat   │                  │    │
+│  │   └────┬─────┘  └────┬─────┘  └────┬─────┘                  │    │
+│  │        │             │             │                         │    │
+│  │        └─────────────┴──────┬──────┘                         │    │
 │  │                             │                               │    │
 │  │                    ┌────────▼────────┐                      │    │
 │  │                    │   create-job    │                      │    │
@@ -32,6 +32,14 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 │                                │                                     │
 │                    Creates job/uuid branch                          │
 │                    Updates workspace/job.md                         │
+│                                │                                     │
+│                                ▼                                     │
+│  ┌─────────────────────────────────────────────────────────────┐    │
+│  │                      GitHub Actions                          │    │
+│  │                                                              │    │
+│  │   job-runner.yml: Triggers on job/* branch creation         │    │
+│  │   pr-webhook.yml: Notifies event handler on PR opened       │    │
+│  └─────────────────────────────┬────────────────────────────────┘    │
 │                                │                                     │
 │                                ▼                                     │
 │  ┌─────────────────────────────────────────────────────────────┐    │
@@ -55,6 +63,9 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 ```
 /
 ├── auth.json                   # API credentials (Pi looks here)
+├── .github/workflows/
+│   ├── job-runner.yml          # Runs Docker agent when job/* branch created
+│   └── pr-webhook.yml          # Notifies event handler when PR opened
 ├── operating_system/
 │   ├── THEPOPEBOT.md           # Agent behavior instructions
 │   ├── SOUL.md                 # Agent identity and personality
@@ -103,7 +114,7 @@ The Event Handler is a Node.js Express server that provides orchestration capabi
 |----------|--------|---------|
 | `/webhook` | POST | Generic webhook for job creation (requires API_KEY) |
 | `/telegram/webhook` | POST | Telegram bot webhook for conversational interface |
-| `/github/webhook` | POST | GitHub webhook for PR/push notifications |
+| `/github/webhook` | POST | Receives notifications from GitHub Actions (pr-webhook.yml) |
 
 ### Components
 
@@ -123,7 +134,7 @@ The Event Handler is a Node.js Express server that provides orchestration capabi
 | `PORT` | Server port (default: 3000) | No |
 | `TELEGRAM_BOT_TOKEN` | Telegram bot token from BotFather | For Telegram |
 | `TELEGRAM_WEBHOOK_SECRET` | Secret for webhook validation | No |
-| `GITHUB_WEBHOOK_TOKEN` | Token for GitHub webhook auth | For notifications |
+| `GH_WEBHOOK_TOKEN` | Token for GitHub Actions webhook auth | For notifications |
 | `ANTHROPIC_API_KEY` | Claude API key (or use auth.json) | For chat |
 | `EVENT_HANDLER_MODEL` | Claude model for chat (default: claude-sonnet-4) | No |
 
@@ -155,6 +166,41 @@ The Dockerfile creates a container with:
 | `BRANCH` | Branch to clone and work on (e.g., job/uuid) | Yes |
 | `GH_TOKEN` | GitHub token for gh CLI authentication | Yes |
 | `PI_AUTH` | Base64-encoded auth.json contents | Yes |
+
+## GitHub Actions
+
+GitHub Actions automate the job lifecycle. No manual webhook configuration needed.
+
+### job-runner.yml
+
+Triggers when a `job/*` branch is created. Runs the Docker agent container.
+
+```yaml
+on:
+  create:
+# Only runs if: branch name starts with "job/"
+```
+
+### pr-webhook.yml
+
+Triggers when a PR is opened from a `job/*` branch. Sends a notification to the event handler so it can notify Telegram.
+
+```yaml
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+# Only runs if: PR head branch starts with "job/"
+```
+
+### GitHub Secrets Required
+
+| Secret | Description |
+|--------|-------------|
+| `GH_TOKEN` | GitHub PAT for Docker agent authentication |
+| `PI_AUTH` | Base64-encoded auth.json contents |
+| `GH_WEBHOOK_URL` | Event handler URL (e.g., `https://your-server.com`) |
+| `GH_WEBHOOK_TOKEN` | Token to authenticate with event handler |
 
 ## How Pi Finds Credentials
 
