@@ -1,0 +1,23 @@
+name: PR Webhook Notification
+
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.pull_request.head.ref, 'job/')
+
+    steps:
+      - name: Send webhook notification
+        env:
+          WEBHOOK_URL: ${{ secrets.EVENT_HANDLER_URL }}
+          WEBHOOK_TOKEN: ${{ secrets.GITHUB_WEBHOOK_TOKEN }}
+        run: |
+          curl -X POST "${WEBHOOK_URL}/github/webhook" \
+            -H "Content-Type: application/json" \
+            -H "X-GitHub-Event: pull_request" \
+            -H "X-Webhook-Token: ${WEBHOOK_TOKEN}" \
+            -d '${{ toJson(github.event) }}'

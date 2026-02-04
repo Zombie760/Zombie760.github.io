@@ -5,19 +5,27 @@ require('dotenv').config();
 const { createJob } = require('./tools/create-job');
 const { loadCrons } = require('./cron');
 const { setWebhook, sendMessage } = require('./tools/telegram');
+const { chat, splitMessage } = require('./claude');
+const { toolDefinitions, toolExecutors } = require('./claude/tools');
+const { getHistory, updateHistory } = require('./claude/conversation');
+const { githubApi } = require('./tools/github');
+const { getApiKey } = require('./claude');
 
 const app = express();
 
 app.use(helmet());
 app.use(express.json());
 
-const { API_KEY, TELEGRAM_WEBHOOK_SECRET, TELEGRAM_BOT_TOKEN } = process.env;
+const { API_KEY, TELEGRAM_WEBHOOK_SECRET, TELEGRAM_BOT_TOKEN, GITHUB_WEBHOOK_TOKEN, GITHUB_OWNER, GITHUB_REPO } = process.env;
 
 // Bot token from env, can be overridden by /telegram/register
 let telegramBotToken = TELEGRAM_BOT_TOKEN || null;
 
+// Track last active chat for job notifications
+let lastChatId = null;
+
 // Routes that have their own authentication
-const PUBLIC_ROUTES = ['/telegram/webhook'];
+const PUBLIC_ROUTES = ['/telegram/webhook', '/github/webhook'];
 
 // Global x-api-key auth (skip for routes with their own auth)
 app.use((req, res, next) => {
@@ -74,16 +82,199 @@ app.post('/telegram/webhook', async (req, res) => {
   const update = req.body;
   const message = update.message || update.edited_message;
 
-  if (message && message.chat && telegramBotToken) {
+  if (message && message.text && message.chat && telegramBotToken) {
+    const chatId = String(message.chat.id);
+    lastChatId = chatId;
+
     try {
-      await sendMessage(telegramBotToken, message.chat.id, 'got it!');
+      // Get conversation history and process with Claude
+      const history = getHistory(chatId);
+      const { response, history: newHistory } = await chat(
+        message.text,
+        history,
+        toolDefinitions,
+        toolExecutors
+      );
+      updateHistory(chatId, newHistory);
+
+      // Handle Telegram message limits (4096 chars)
+      const chunks = splitMessage(response);
+      for (const chunk of chunks) {
+        await sendMessage(telegramBotToken, chatId, chunk);
+      }
     } catch (err) {
-      console.error('Failed to send Telegram message:', err);
+      console.error('Failed to process message with Claude:', err);
+      await sendMessage(telegramBotToken, chatId, 'Sorry, I encountered an error processing your message.').catch(() => {});
     }
   }
 
   // Always return 200 to acknowledge receipt
   res.status(200).json({ ok: true });
+});
+
+/**
+ * Extract job ID from branch name (e.g., "job/abc123" -> "abc123")
+ */
+function extractJobId(branchName) {
+  if (!branchName || !branchName.startsWith('job/')) return null;
+  return branchName.slice(4);
+}
+
+/**
+ * Use Claude to summarize job logs
+ * @param {string} logContent - Raw JSONL log content
+ * @returns {Promise<{success: boolean, summary: string}>}
+ */
+async function summarizeLogsWithClaude(logContent) {
+  try {
+    const apiKey = getApiKey();
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 256,
+        messages: [{
+          role: 'user',
+          content: `Analyze this AI agent job log and provide a brief summary (1-2 sentences max). Focus on:
+- Did it succeed or fail?
+- What was accomplished?
+- Any errors or issues?
+
+Respond in this exact format:
+SUCCESS: true or false
+SUMMARY: your brief summary here
+
+Log:
+${logContent.slice(-50000)}` // Last 50k chars to stay within limits
+        }],
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Claude API error: ${response.status}`);
+    }
+
+    const result = await response.json();
+    const text = result.content?.[0]?.text || '';
+
+    // Parse response
+    const successMatch = text.match(/SUCCESS:\s*(true|false)/i);
+    const summaryMatch = text.match(/SUMMARY:\s*(.+)/i);
+
+    return {
+      success: successMatch ? successMatch[1].toLowerCase() === 'true' : true,
+      summary: summaryMatch ? summaryMatch[1].trim() : 'Job completed.'
+    };
+  } catch (err) {
+    console.error('Failed to summarize with Claude:', err);
+    return { success: true, summary: 'Job completed.' };
+  }
+}
+
+/**
+ * Analyze job log file to determine success/failure and extract summary
+ * @param {string} branchRef - Branch ref to fetch logs from
+ * @param {string} jobId - Job ID (UUID)
+ * @returns {Promise<{success: boolean, summary: string}>}
+ */
+async function analyzeJobLog(branchRef, jobId) {
+  try {
+    // List files in workspace/logs/{jobId}/ directory on the PR branch
+    const logsPath = `workspace/logs/${jobId}`;
+    let logFiles;
+    try {
+      logFiles = await githubApi(
+        `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${logsPath}?ref=${branchRef}`
+      );
+    } catch (err) {
+      // Logs directory might not exist
+      return { success: true, summary: 'Job completed.' };
+    }
+
+    // Find the .jsonl file
+    const logFile = logFiles.find(f => f.name.endsWith('.jsonl'));
+    if (!logFile) {
+      return { success: true, summary: 'Job completed.' };
+    }
+
+    // Fetch the log file content
+    const fileData = await githubApi(
+      `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${logFile.path}?ref=${branchRef}`
+    );
+    const content = Buffer.from(fileData.content, 'base64').toString('utf-8');
+
+    // Use Claude to analyze and summarize
+    return await summarizeLogsWithClaude(content);
+  } catch (err) {
+    console.error('Failed to analyze job log:', err);
+    return { success: true, summary: 'Job completed.' };
+  }
+}
+
+// POST /github/webhook - receive GitHub PR notifications
+app.post('/github/webhook', async (req, res) => {
+  // Validate webhook token
+  if (GITHUB_WEBHOOK_TOKEN) {
+    const headerToken = req.headers['x-webhook-token'];
+    if (headerToken !== GITHUB_WEBHOOK_TOKEN) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+  }
+
+  const event = req.headers['x-github-event'];
+  const payload = req.body;
+
+  // Only handle pull_request opened events
+  if (event !== 'pull_request' || payload.action !== 'opened') {
+    return res.status(200).json({ ok: true, skipped: true });
+  }
+
+  const pr = payload.pull_request;
+  if (!pr) {
+    return res.status(200).json({ ok: true, skipped: true });
+  }
+
+  const branchName = pr.head?.ref;
+  const jobId = extractJobId(branchName);
+
+  // Only handle job branches
+  if (!jobId) {
+    return res.status(200).json({ ok: true, skipped: true, reason: 'not a job branch' });
+  }
+
+  // Skip if no chat ID to notify
+  if (!lastChatId || !telegramBotToken) {
+    console.log(`Job ${jobId} completed but no chat ID to notify`);
+    return res.status(200).json({ ok: true, skipped: true, reason: 'no chat to notify' });
+  }
+
+  try {
+    // Analyze the job log
+    const { success, summary } = await analyzeJobLog(branchName, jobId);
+
+    // Build notification message
+    const shortJobId = jobId.slice(0, 8);
+    const emoji = success ? '✅' : '⚠️';
+    const status = success ? 'done' : 'had errors';
+    const prUrl = pr.html_url;
+
+    const message = `${emoji} Job ${shortJobId} ${status}! ${summary}\n\nPR: ${prUrl}`;
+
+    // Send notification
+    await sendMessage(telegramBotToken, lastChatId, message);
+    console.log(`Notified chat ${lastChatId} about job ${shortJobId}`);
+
+    res.status(200).json({ ok: true, notified: true });
+  } catch (err) {
+    console.error('Failed to process GitHub webhook:', err);
+    res.status(500).json({ error: 'Failed to process webhook' });
+  }
 });
 
 // Error handler - don't leak stack traces
