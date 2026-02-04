@@ -27,11 +27,11 @@ function getApiKey() {
 }
 
 /**
- * Load system prompt from EVENT_HANDLER.md
+ * Load system prompt from CHATBOT.md
  * @returns {string} System prompt
  */
 function getSystemPrompt() {
-  const promptPath = path.join(__dirname, '..', '..', 'operating_system', 'EVENT_HANDLER.md');
+  const promptPath = path.join(__dirname, '..', '..', 'operating_system', 'CHATBOT.md');
   if (fs.existsSync(promptPath)) {
     return fs.readFileSync(promptPath, 'utf8');
   }

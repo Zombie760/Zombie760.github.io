@@ -312,9 +312,9 @@ async function main() {
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // Step 6: Telegram Setup (Optional)
+  // Step 6: Telegram Setup
   // ─────────────────────────────────────────────────────────────────────────────
-  printStep(++currentStep, TOTAL_STEPS, 'Telegram Setup (Optional)');
+  printStep(++currentStep, TOTAL_STEPS, 'Telegram Setup');
 
   telegramToken = await promptForTelegramToken();
 
@@ -421,13 +421,12 @@ async function main() {
   console.log('  • GH_WEBHOOK_TOKEN');
   console.log('  • GH_WEBHOOK_URL');
 
-  console.log(chalk.bold.green('\n  You\'re all set! Create your first job:\n'));
-  console.log(chalk.dim('     1. Edit workspace/job.md with your task'));
-  console.log(chalk.dim('     2. git checkout -b job/my-first-job'));
-  console.log(chalk.dim('     3. git push -u origin job/my-first-job'));
+  console.log(chalk.bold.green('\n  You\'re all set!\n'));
 
   if (telegramToken) {
-    console.log(chalk.bold.cyan('\n  Or just message your Telegram bot to create a job!'));
+    console.log(chalk.cyan('  Message your Telegram bot to create your first job!'));
+  } else {
+    console.log(chalk.dim('  Use the /webhook endpoint to create jobs.'));
   }
 
   console.log('\n');

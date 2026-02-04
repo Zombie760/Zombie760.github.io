@@ -61,7 +61,8 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 ├── operating_system/
 │   ├── THEPOPEBOT.md           # Agent behavior instructions
 │   ├── SOUL.md                 # Agent identity and personality
-│   ├── EVENT_HANDLER.md        # Telegram conversational interface instructions
+│   ├── CHATBOT.md              # Telegram chat system prompt
+│   ├── JOB_SUMMARY.md          # Job completion summary prompt
 │   ├── HEARTBEAT.md            # Periodic check instructions
 │   └── CRONS.json              # Scheduled job definitions
 ├── event_handler/              # Event Handler orchestration layer
@@ -91,7 +92,8 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 | `auth.json` | API keys for Anthropic/OpenAI/Groq. Pi reads this via PI_CODING_AGENT_DIR |
 | `operating_system/THEPOPEBOT.md` | Core behavior instructions passed to the agent at runtime |
 | `operating_system/SOUL.md` | Agent personality and identity |
-| `operating_system/EVENT_HANDLER.md` | Instructions for Telegram conversational interface |
+| `operating_system/CHATBOT.md` | System prompt for Telegram chat |
+| `operating_system/JOB_SUMMARY.md` | Prompt for summarizing completed jobs |
 | `workspace/job.md` | The specific task for the agent to execute |
 | `Dockerfile` | Builds the agent container (Node.js 22, Playwright, Pi) |
 | `entrypoint.sh` | Container startup script - clones repo, runs agent, commits results |
@@ -221,7 +223,7 @@ To create your own agent:
 1. **auth.json** - Add your API keys
 2. **operating_system/THEPOPEBOT.md** - Modify agent behavior and rules
 3. **operating_system/SOUL.md** - Customize personality and identity
-4. **operating_system/EVENT_HANDLER.md** - Configure Telegram chat behavior
+4. **operating_system/CHATBOT.md** - Configure Telegram chat behavior
 5. **operating_system/CRONS.json** - Define scheduled jobs
 6. **workspace/job.md** - Define the task to execute
 
@@ -231,7 +233,8 @@ These files in `operating_system/` define the agent's character and behavior:
 
 - **THEPOPEBOT.md** - Operational instructions (what to do, how to work)
 - **SOUL.md** - Personality, identity, and values (who the agent is)
-- **EVENT_HANDLER.md** - Instructions for conversational Telegram interface
+- **CHATBOT.md** - System prompt for Telegram chat
+- **JOB_SUMMARY.md** - Prompt for summarizing completed jobs
 - **HEARTBEAT.md** - Self-monitoring behavior
 - **CRONS.json** - Scheduled job definitions
 

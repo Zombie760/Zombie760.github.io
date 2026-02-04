@@ -1,5 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
+const fs = require('fs');
+const path = require('path');
 require('dotenv').config();
 
 const { createJob } = require('./tools/create-job');
@@ -176,6 +178,15 @@ async function summarizeLogsWithClaude(logContent, context = {}) {
       contextSection += `\nCommit Message:\n${commitMessage}\n`;
     }
 
+    // Load prompt template
+    const promptPath = path.join(__dirname, '..', 'operating_system', 'JOB_SUMMARY.md');
+    let promptTemplate = fs.readFileSync(promptPath, 'utf8');
+
+    // Replace placeholders
+    const prompt = promptTemplate
+      .replace('{{CONTEXT}}', contextSection)
+      .replace('{{LOG_CONTENT}}', logContent.slice(-50000)); // Last 50k chars to stay within limits
+
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
@@ -188,17 +199,7 @@ async function summarizeLogsWithClaude(logContent, context = {}) {
         max_tokens: 256,
         messages: [{
           role: 'user',
-          content: `Analyze this AI agent job and provide a brief summary (1-2 sentences max). Focus on:
-- Did it succeed or fail?
-- What was accomplished?
-- Any errors or issues?
-${contextSection}
-Respond in this exact format:
-SUCCESS: true or false
-SUMMARY: your brief summary here
-
-Log:
-${logContent.slice(-50000)}` // Last 50k chars to stay within limits
+          content: prompt
         }],
       }),
     });

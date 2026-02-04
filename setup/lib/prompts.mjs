@@ -123,7 +123,7 @@ export async function promptForTelegramToken() {
     {
       type: 'confirm',
       name: 'addTelegram',
-      message: 'Set up Telegram bot? (optional)',
+      message: 'Set up Telegram bot?',
       default: false,
     },
   ]);

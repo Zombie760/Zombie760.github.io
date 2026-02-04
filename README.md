@@ -53,6 +53,14 @@ thepopebot features a two-layer architecture:
 
 ### Quick Start
 
+**1. Create your own copy:**
+
+[![Use this template](https://img.shields.io/badge/Use%20this%20template-238636?style=for-the-badge&logo=github)](https://github.com/stephengpope/thepopebot/generate)
+
+Or fork: https://github.com/stephengpope/thepopebot/fork
+
+**2. Clone and run setup:**
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/thepopebot.git
 cd thepopebot
@@ -65,15 +73,11 @@ The wizard handles everything:
 3. Collects API keys (Anthropic required, OpenAI/Groq optional)
 4. Generates `auth.json` and `event_handler/.env`
 5. Sets all GitHub repository secrets
-6. Sets up Telegram bot (optional)
+6. Sets up Telegram bot
 7. Walks you through starting the server + ngrok
 8. Registers webhooks automatically
 
-After setup, create jobs by messaging your Telegram bot or:
-```bash
-git checkout -b job/my-task
-git push -u origin job/my-task
-```
+After setup, message your Telegram bot to create jobs!
 
 ### Prerequisites
 
@@ -113,7 +117,8 @@ The task for the agent to execute. Be specific about what you want done.
 Agent behavior and personality configuration:
 - **THEPOPEBOT.md** - Core behavioral instructions (what to do, workflow patterns)
 - **SOUL.md** - Agent identity, personality traits, and values
-- **EVENT_HANDLER.md** - Instructions for Telegram conversational interface
+- **CHATBOT.md** - System prompt for Telegram chat
+- **JOB_SUMMARY.md** - Prompt for summarizing completed jobs
 - **HEARTBEAT.md** - Self-monitoring behavior
 - **CRONS.json** - Scheduled jobs (set `"enabled": true` to activate)
 
@@ -131,7 +136,8 @@ Agent behavior and personality configuration:
 ├── operating_system/
 │   ├── THEPOPEBOT.md       # Agent behavior rules
 │   ├── SOUL.md             # Agent identity and personality
-│   ├── EVENT_HANDLER.md    # Telegram chat instructions
+│   ├── CHATBOT.md          # Telegram chat system prompt
+│   ├── JOB_SUMMARY.md      # Job summary prompt
 │   ├── HEARTBEAT.md        # Self-monitoring
 │   └── CRONS.json          # Scheduled jobs
 ├── event_handler/          # Event Handler orchestration layer
@@ -253,7 +259,7 @@ GitHub Actions automate the entire job lifecycle. No manual webhook configuratio
 Edit files in `operating_system/`:
 - **THEPOPEBOT.md** - Git conventions, prohibited actions, error handling, protocols
 - **SOUL.md** - Identity, traits, working style, values
-- **EVENT_HANDLER.md** - Telegram conversational behavior
+- **CHATBOT.md** - Telegram conversational behavior
 - **HEARTBEAT.md** - Periodic self-check behavior
 - **CRONS.json** - Scheduled job definitions
 
