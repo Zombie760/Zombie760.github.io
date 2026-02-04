@@ -16,9 +16,9 @@ This section is purely descriptive. It tells you where things are and what's ava
 
 ### Docker Container
 
-`/job` — this is the main root working directory.
+`/job` — this is the root folder.
 
-`/job/workspace/` is where we find information related to our current job
+`/job/workspace/` is where you find information related to your current job
 
 ```
 /job/workspace/
