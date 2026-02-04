@@ -2,18 +2,27 @@
 
 A template repository for creating custom autonomous AI agents. Clone this repo, customize the config files, and run via Docker to execute tasks autonomously.
 
-## How It Works
+## Two-Layer Architecture
+
+thepopebot features a two-layer architecture:
+
+1. **Event Handler Layer** - Node.js Express server for webhooks, Telegram chat, and cron scheduling
+2. **Docker Agent Layer** - Pi coding agent container for autonomous task execution
 
 ```
-1. Clone this template → 2. Customize config → 3. Push to your repo → 4. Run Docker
-                                                                            ↓
-                                             Your agent commits results ← Agent runs your task
+┌─────────────────────────────────────────────────────────────┐
+│                     Event Handler Layer                      │
+│  Telegram Webhook │ GitHub Webhook │ Cron │ Claude Chat     │
+│                            ↓                                 │
+│                      create-job (GitHub API)                │
+└─────────────────────────────┬───────────────────────────────┘
+                              │ Creates job/uuid branch
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                     Docker Agent Layer                       │
+│  1. Clone branch → 2. Run Pi → 3. Commit → 4. PR & Merge   │
+└─────────────────────────────────────────────────────────────┘
 ```
-
-The Docker container:
-1. Clones YOUR repository at runtime
-2. Runs the Pi coding agent with YOUR customizations
-3. Commits results back to YOUR repo
 
 ## Quick Start
 
@@ -56,11 +65,12 @@ docker build -t my-agent .
 docker run \
   -e REPO_URL=https://github.com/yourusername/my-agent.git \
   -e BRANCH=main \
-  -e GITHUB_TOKEN=ghp_xxxx \
+  -e GH_TOKEN=ghp_xxxx \
+  -e PI_AUTH=$(base64 < auth.json) \
   my-agent
 ```
 
-The agent will clone your repo, execute the task, and commit the results.
+The agent will clone your repo, execute the task, create a PR, and auto-merge the results.
 
 ## Configuration Files
 
@@ -83,18 +93,11 @@ The task for the agent to execute. Be specific about what you want done.
 ### operating_system/
 
 Agent behavior and personality configuration:
-- **AGENTS.md** - Core behavioral instructions (what to do, workflow patterns)
-- **PERSONALITY.md** - Personality traits and values
+- **THEPOPEBOT.md** - Core behavioral instructions (what to do, workflow patterns)
+- **SOUL.md** - Agent identity, personality traits, and values
+- **EVENT_HANDLER.md** - Instructions for Telegram conversational interface
 - **HEARTBEAT.md** - Self-monitoring behavior
 - **CRONS.json** - Scheduled jobs (set `"enabled": true` to activate)
-
-## Environment Variables
-
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `REPO_URL` | Your repository URL | Yes |
-| `BRANCH` | Branch to work on | Yes |
-| `GITHUB_TOKEN` | GitHub PAT for authentication | Yes (private repos) |
 
 ## File Structure
 
@@ -102,47 +105,109 @@ Agent behavior and personality configuration:
 /
 ├── auth.json               # API credentials
 ├── operating_system/
-│   ├── AGENTS.md           # Agent behavior rules
-│   ├── PERSONALITY.md      # Agent personality
+│   ├── THEPOPEBOT.md       # Agent behavior rules
+│   ├── SOUL.md             # Agent identity and personality
+│   ├── EVENT_HANDLER.md    # Telegram chat instructions
 │   ├── HEARTBEAT.md        # Self-monitoring
 │   └── CRONS.json          # Scheduled jobs
+├── event_handler/          # Event Handler orchestration layer
+│   ├── server.js           # Express HTTP server
+│   ├── cron.js             # Cron scheduler
+│   ├── claude/             # Claude API integration
+│   └── tools/              # Job creation, GitHub, Telegram utilities
 ├── MEMORY.md               # Persistent knowledge
 ├── TOOLS.md                # Available tools
-├── MERGE_JOB.md            # Post-job merge instructions
 ├── Dockerfile              # Container definition
 ├── entrypoint.sh           # Startup script
-├── roles/
-│   ├── orchestrator.md     # Orchestrator behavior
-│   └── worker.md           # Worker behavior
 └── workspace/
     ├── job.md              # Current task
     └── logs/               # Session logs
 ```
 
-## What's in the Container
+## Event Handler
+
+The Event Handler is a Node.js Express server that orchestrates job creation through various triggers.
+
+### Running the Event Handler
+
+```bash
+cd event_handler
+cp .env.example .env
+# Edit .env with your credentials
+npm install
+npm start
+```
+
+### API Endpoints
+
+| Endpoint | Method | Purpose |
+|----------|--------|---------|
+| `/webhook` | POST | Generic webhook for job creation (requires API_KEY header) |
+| `/telegram/webhook` | POST | Telegram bot webhook for conversational interface |
+| `/github/webhook` | POST | GitHub webhook for PR/push notifications |
+
+### Environment Variables (Event Handler)
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `API_KEY` | Authentication key for /webhook endpoint | Yes |
+| `GITHUB_TOKEN` | GitHub PAT for creating branches/files | Yes |
+| `GITHUB_OWNER` | GitHub repository owner | Yes |
+| `GITHUB_REPO` | GitHub repository name | Yes |
+| `PORT` | Server port (default: 3000) | No |
+| `TELEGRAM_BOT_TOKEN` | Telegram bot token from BotFather | For Telegram |
+| `TELEGRAM_WEBHOOK_SECRET` | Secret for webhook validation | No |
+| `GITHUB_WEBHOOK_TOKEN` | Token for GitHub webhook auth | For notifications |
+| `ANTHROPIC_API_KEY` | Claude API key (or use auth.json) | For chat |
+| `EVENT_HANDLER_MODEL` | Claude model for chat (default: claude-sonnet-4) | No |
+
+### Telegram Bot Setup
+
+1. Create a bot with [@BotFather](https://t.me/botfather) on Telegram
+2. Copy the bot token to `TELEGRAM_BOT_TOKEN`
+3. Set your webhook URL: `https://yourserver.com/telegram/webhook`
+4. Chat with your bot to create jobs via natural language
+
+## Docker Agent
+
+The Docker container executes tasks autonomously using the Pi coding agent.
+
+### What's in the Container
 
 - Node.js 22
 - Pi coding agent
 - Playwright + Chromium (headless browser, CDP port 9222)
 - Git + GitHub CLI
 
-## Runtime Flow
+### Environment Variables (Docker Agent)
 
-1. Container starts Chrome in headless mode
-2. Clones your repository to `/job`
-3. Sets `PI_CODING_AGENT_DIR=/job` (so Pi finds auth.json)
-4. Runs Pi with AGENTS.md + job.md as instructions
-5. Commits all changes: `thepopebot: job {UUID}`
-6. Optionally runs merge operations
-7. Commits final state: `done.`
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `REPO_URL` | Your repository URL | Yes |
+| `BRANCH` | Branch to work on (e.g., job/uuid) | Yes |
+| `GH_TOKEN` | GitHub token for gh CLI authentication | Yes |
+| `PI_AUTH` | Base64-encoded auth.json contents | Yes |
+
+### Runtime Flow
+
+1. Extract Job ID from branch name (job/uuid → uuid) or generate UUID
+2. Start Chrome in headless mode (CDP on port 9222)
+3. Configure Git credentials via `gh auth setup-git`
+4. Clone your repository branch to `/job`
+5. Set `PI_CODING_AGENT_DIR=/job` (so Pi finds auth.json)
+6. Run Pi with THEPOPEBOT.md + SOUL.md + job.md as instructions
+7. Commit all changes: `thepopebot: job {UUID}`
+8. Create PR and auto-merge to main
+9. Clean up
 
 ## Customization
 
 ### Customize the Operating System
 
 Edit files in `operating_system/`:
-- **AGENTS.md** - Git conventions, prohibited actions, error handling, protocols
-- **PERSONALITY.md** - Identity, traits, working style, values
+- **THEPOPEBOT.md** - Git conventions, prohibited actions, error handling, protocols
+- **SOUL.md** - Identity, traits, working style, values
+- **EVENT_HANDLER.md** - Telegram conversational behavior
 - **CRONS.json** - Scheduled job definitions
 
 ### Define Tasks
@@ -152,15 +217,6 @@ Edit `workspace/job.md` with:
 - Specific requirements
 - Expected outputs
 
-## Roles
-
-| Role | Description |
-|------|-------------|
-| `worker` | Executes tasks, writes code, makes commits |
-| `orchestrator` | Manages branches, merges PRs, resolves conflicts |
-
-Role-specific behaviors are defined in `roles/*.md`.
-
 ## Session Logs
 
-Each job creates a session log at `workspace/logs/{JOB_ID}.jsonl`. These can be used to resume sessions or review agent actions.
+Each job creates a session log at `workspace/logs/{JOB_ID}/`. These can be used to resume sessions or review agent actions.
