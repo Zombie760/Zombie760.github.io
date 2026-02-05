@@ -10,7 +10,7 @@ const { setWebhook, sendMessage } = require('./tools/telegram');
 const { chat, splitMessage } = require('./claude');
 const { toolDefinitions, toolExecutors } = require('./claude/tools');
 const { getHistory, updateHistory } = require('./claude/conversation');
-const { githubApi } = require('./tools/github');
+const { githubApi, getJobStatus } = require('./tools/github');
 const { getApiKey } = require('./claude');
 
 const app = express();
@@ -38,6 +38,17 @@ app.use((req, res, next) => {
     return res.status(401).json({ error: 'Unauthorized' });
   }
   next();
+});
+
+// GET /jobs/status - get running job status
+app.get('/jobs/status', async (req, res) => {
+  try {
+    const result = await getJobStatus(req.query.job_id);
+    res.json(result);
+  } catch (err) {
+    console.error('Failed to get job status:', err);
+    res.status(500).json({ error: 'Failed to get job status' });
+  }
 });
 
 // POST /webhook - create a new job

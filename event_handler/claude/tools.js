@@ -1,4 +1,5 @@
 const { createJob } = require('../tools/create-job');
+const { getJobStatus } = require('../tools/github');
 
 const toolDefinitions = [
   {
@@ -17,6 +18,22 @@ const toolDefinitions = [
       required: ['job_description'],
     },
   },
+  {
+    name: 'get_job_status',
+    description:
+      'Check status of running jobs. Returns list of active workflow runs with timing and current step. Use when user asks about job progress, running jobs, or job status.',
+    input_schema: {
+      type: 'object',
+      properties: {
+        job_id: {
+          type: 'string',
+          description:
+            'Optional: specific job ID to check. If omitted, returns all running jobs.',
+        },
+      },
+      required: [],
+    },
+  },
 ];
 
 const toolExecutors = {
@@ -27,6 +44,10 @@ const toolExecutors = {
       job_id: result.job_id,
       branch: result.branch,
     };
+  },
+  get_job_status: async (input) => {
+    const result = await getJobStatus(input.job_id);
+    return result;
   },
 };
 
