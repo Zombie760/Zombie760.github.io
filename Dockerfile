@@ -14,10 +14,8 @@ RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | d
 
 RUN npm install -g @mariozechner/pi-coding-agent
 
-# Create Pi config directory and install env-sanitizer extension
-RUN mkdir -p /root/.pi/agent/extensions
-COPY .pi/extensions/env-sanitizer/ /root/.pi/agent/extensions/env-sanitizer/
-RUN cd /root/.pi/agent/extensions/env-sanitizer && npm install --production
+# Create Pi config directory (extension loaded from repo at runtime)
+RUN mkdir -p /root/.pi/agent
 
 # Copy package files and install deps
 COPY package*.json ./

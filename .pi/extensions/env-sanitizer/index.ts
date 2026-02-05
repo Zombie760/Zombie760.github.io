@@ -45,27 +45,4 @@ export default function (pi: ExtensionAPI) {
   });
 
   pi.registerTool(bashTool);
-
-  // Notify on session start
-  pi.on("session_start", async (_event, ctx) => {
-    if (ctx.hasUI) {
-      ctx.ui.notify(
-        `Env sanitizer active: filtering ${secretKeys.length} secret keys from bash`,
-        "info"
-      );
-    }
-  });
-
-  // Command to show protection status
-  pi.registerCommand("secrets", {
-    description: "Show secrets protection status",
-    handler: async (_args, ctx) => {
-      const status = `Env Sanitizer Active:
-- Filtered from bash: ${secretKeys.join(", ")}
-- Main process: credentials available for SDK/extensions`;
-      if (ctx.hasUI) {
-        ctx.ui.notify(status, "info");
-      }
-    },
-  });
 }
