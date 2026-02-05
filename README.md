@@ -14,11 +14,13 @@ Other agent frameworks hand your credentials directly to the LLM and hope for th
 
 Simple subprocess filtering. No containers-in-containers, no VM sandboxing, no complexity.
 
-[![Use this template](https://img.shields.io/badge/Use%20this%20template-238636?style=for-the-badge&logo=github)](https://github.com/stephengpope/thepopebot/generate)
-
 ---
 
 ## Quick Start
+
+[![Use this template](https://img.shields.io/badge/Use%20this%20template-238636?style=for-the-badge&logo=github)](https://github.com/stephengpope/thepopebot/generate)
+
+Or fork: https://github.com/stephengpope/thepopebot/fork
 
 ### Prerequisites
 
