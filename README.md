@@ -331,12 +331,17 @@ Each job creates a session log at `workspace/logs/{JOB_ID}/`. These can be used 
 
 **What's Protected:**
 
-| Attack Vector | Protection |
-|---------------|------------|
-| `echo $ANTHROPIC_API_KEY` | Filtered from bash subprocess environment |
-| `echo $GH_TOKEN` | Filtered from bash subprocess environment |
-| `echo $SECRETS` | Filtered from bash subprocess environment |
-| `echo $ANY_CUSTOM_SECRET` | Filtered (any key in SECRETS JSON) |
+Any key in the `SECRETS` JSON is automatically filtered from the LLM's bash environment. The `SECRETS` variable itself is also filtered.
+
+```bash
+# If your SECRETS contains:
+{"GH_TOKEN": "...", "ANTHROPIC_API_KEY": "...", "MY_CUSTOM_KEY": "..."}
+
+# Then all of these return empty:
+echo $GH_TOKEN           # empty
+echo $ANTHROPIC_API_KEY  # empty
+echo $MY_CUSTOM_KEY      # empty
+```
 
 ### LLM-Accessible Secrets
 
