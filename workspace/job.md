@@ -1,1 +1,1 @@
-Read the file at operating_system/HEARTBEAT.md and complete the tasks described there.
+Create a WEATHER.txt file with the 7-day weather forecast for Claremont, CA. Include the current conditions, daily forecasts, temperatures, rain chances, and overall summary. Format it clearly and professionally for easy reading.
