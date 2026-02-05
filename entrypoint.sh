@@ -9,17 +9,25 @@ else
 fi
 echo "Job ID: ${JOB_ID}"
 
-# Start Chrome (using Playwright's chromium)
-CHROME_BIN=$(find /root/.cache/ms-playwright -name "chrome" -path "*/chrome-linux/*" | head -1)
+# Start Chrome (using Puppeteer's chromium from pi-skills browser-tools)
+CHROME_BIN=$(find /root/.cache/puppeteer -name "chrome" -type f | head -1)
 $CHROME_BIN --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 2>/dev/null &
 CHROME_PID=$!
 sleep 2
 
 # Export SECRETS (base64 JSON) as flat env vars (GH_TOKEN, ANTHROPIC_API_KEY, etc.)
+# These are filtered from LLM's bash subprocess by env-sanitizer extension
 if [ -n "$SECRETS" ]; then
     SECRETS_JSON=$(echo "$SECRETS" | base64 -d)
     eval $(echo "$SECRETS_JSON" | jq -r 'to_entries | .[] | "export \(.key)=\"\(.value)\""')
     export SECRETS="$SECRETS_JSON"  # Keep decoded for extension to parse
+fi
+
+# Export LLM_SECRETS (base64 JSON) as flat env vars
+# These are NOT filtered - LLM can access these (browser logins, skill API keys, etc.)
+if [ -n "$LLM_SECRETS" ]; then
+    LLM_SECRETS_JSON=$(echo "$LLM_SECRETS" | base64 -d)
+    eval $(echo "$LLM_SECRETS_JSON" | jq -r 'to_entries | .[] | "export \(.key)=\"\(.value)\""')
 fi
 
 # Git setup

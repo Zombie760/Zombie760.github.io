@@ -4,6 +4,25 @@ RUN apt-get update && apt-get install -y \
     git \
     jq \
     curl \
+    procps \
+    # Chrome/Chromium dependencies
+    libnss3 \
+    libnspr4 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libdrm2 \
+    libdbus-1-3 \
+    libxkbcommon0 \
+    libatspi2.0-0 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxfixes3 \
+    libxrandr2 \
+    libgbm1 \
+    libasound2 \
+    libpango-1.0-0 \
+    libcairo2 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install GitHub CLI
@@ -17,11 +36,10 @@ RUN npm install -g @mariozechner/pi-coding-agent
 # Create Pi config directory (extension loaded from repo at runtime)
 RUN mkdir -p /root/.pi/agent
 
-# Copy package files and install deps
-COPY package*.json ./
+# Clone pi-skills and install browser-tools (includes Puppeteer + Chromium)
+RUN git clone https://github.com/badlogic/pi-skills.git /pi-skills
+WORKDIR /pi-skills/browser-tools
 RUN npm install
-RUN npx playwright install-deps chromium
-RUN npx playwright install chromium
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

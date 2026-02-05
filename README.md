@@ -222,7 +222,7 @@ The Docker container executes tasks autonomously using the Pi coding agent.
 
 - Node.js 22
 - Pi coding agent
-- Playwright + Chromium (headless browser, CDP port 9222)
+- Puppeteer + Chromium (headless browser, CDP port 9222)
 - Git + GitHub CLI
 
 ### Environment Variables (Docker Agent)
@@ -231,14 +231,16 @@ The Docker container executes tasks autonomously using the Pi coding agent.
 |----------|-------------|----------|
 | `REPO_URL` | Your repository URL | Yes |
 | `BRANCH` | Branch to work on (e.g., job/uuid) | Yes |
-| `SECRETS` | Base64-encoded JSON with all credentials (GH_TOKEN, ANTHROPIC_API_KEY, etc.) | Yes |
+| `SECRETS` | Base64-encoded JSON with protected credentials (GH_TOKEN, ANTHROPIC_API_KEY, etc.) - filtered from LLM | Yes |
+| `LLM_SECRETS` | Base64-encoded JSON with credentials the LLM can access (browser logins, skill API keys, etc.) | No |
 
 ### Runtime Flow
 
 1. Extract Job ID from branch name (job/uuid → uuid) or generate UUID
 2. Start Chrome in headless mode (CDP on port 9222)
-3. Decode `SECRETS` from base64, parse JSON, export each key as an environment variable
-4. Configure Git credentials via `gh auth setup-git` (uses GH_TOKEN from step 3)
+3. Decode `SECRETS` from base64, parse JSON, export each key as env var (filtered from LLM's bash)
+4. Decode `LLM_SECRETS` from base64, parse JSON, export each key as env var (LLM can access these)
+5. Configure Git credentials via `gh auth setup-git` (uses GH_TOKEN from step 3)
 5. Clone your repository branch to `/job`
 6. Run Pi with THEPOPEBOT.md + SOUL.md + job.md as instructions
 7. Commit all changes: `thepopebot: job {UUID}`
@@ -310,6 +312,40 @@ The agent runs with access to sensitive credentials (API keys, GitHub tokens). T
 | `echo $SECRETS` | Filtered from bash subprocess environment |
 | `echo $ANY_CUSTOM_SECRET` | Filtered (any key in SECRETS JSON) |
 
+### LLM-Accessible Secrets
+
+Sometimes you want the LLM to have access to certain credentials - browser logins, skill API keys, or service passwords that skills need to use. Use `LLM_SECRETS` for these.
+
+**How It Works:**
+
+1. `LLM_SECRETS` is a separate base64-encoded JSON (same format as `SECRETS`)
+2. The entrypoint decodes and exports each key as an env var
+3. These keys are **NOT** filtered by the env-sanitizer extension
+4. The LLM can access them via `echo $KEY_NAME` in bash
+
+**Example:**
+
+```bash
+# Credentials the LLM should NOT access (filtered)
+SECRETS=$(echo -n '{"GH_TOKEN":"ghp_xxx","ANTHROPIC_API_KEY":"sk-ant-xxx"}' | base64)
+
+# Credentials the LLM CAN access (not filtered)
+LLM_SECRETS=$(echo -n '{"BROWSER_PASSWORD":"mypass123","SOME_API_KEY":"key_for_skill"}' | base64)
+
+docker run --rm -e SECRETS="$SECRETS" -e LLM_SECRETS="$LLM_SECRETS" thepopebot:latest
+```
+
+**Use Cases:**
+
+| Credential Type | Put In | Why |
+|-----------------|--------|-----|
+| `GH_TOKEN` | `SECRETS` | Agent shouldn't push to arbitrary repos |
+| `ANTHROPIC_API_KEY` | `SECRETS` | Agent shouldn't leak billing keys |
+| Browser login password | `LLM_SECRETS` | Skills may need to authenticate |
+| Third-party API key for a skill | `LLM_SECRETS` | Skills need these to function |
+
+### Env-Sanitizer Implementation
+
 The extension dynamically reads the `SECRETS` JSON to determine which keys to filter:
 
 ```typescript
@@ -336,7 +372,8 @@ const bashTool = createBashTool(process.cwd(), {
 
 ```bash
 # Build and run
-docker build -t thepopebot:test .
+# Mac users (Apple Silicon): use --platform linux/amd64 for local testing
+docker build --platform linux/amd64 -t thepopebot:test .
 
 # Create base64-encoded SECRETS
 SECRETS=$(echo -n '{"GH_TOKEN":"ghp_test","ANTHROPIC_API_KEY":"sk-ant-test"}' | base64)
