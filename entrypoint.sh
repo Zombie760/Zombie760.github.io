@@ -54,10 +54,10 @@ rm -rf ./workspace/tmp/*
 LOG_DIR="/job/workspace/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
 
-# 1. Run job (THEPOPEBOT.md provides behavior rules, SOUL.md provides personality, job.md provides the task)
+# 1. Run job (AWARENESS.md provides environment, SOUL.md provides personality, job.md provides the task)
 PROMPT="You're Alive!
 
-$(cat /job/operating_system/THEPOPEBOT.md)
+$(cat /job/operating_system/AWARENESS.md)
 
 ---
 

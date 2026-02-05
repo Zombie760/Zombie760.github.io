@@ -182,7 +182,7 @@ Customize agent behavior in `operating_system/`:
 
 | File | Purpose |
 |------|---------|
-| `THEPOPEBOT.md` | Core behavioral instructions (what to do, workflow patterns) |
+| `AWARENESS.md` | Agent's environment (where things are, what exists) |
 | `SOUL.md` | Agent identity, personality traits, and values |
 | `CHATBOT.md` | System prompt for Telegram chat |
 | `JOB_SUMMARY.md` | Prompt for summarizing completed jobs |
@@ -218,7 +218,7 @@ Edit `workspace/job.md` with:
 │   ├── claude/             # Claude API integration
 │   └── tools/              # Job creation, GitHub, Telegram utilities
 ├── operating_system/
-│   ├── THEPOPEBOT.md       # Agent behavior rules
+│   ├── AWARENESS.md       # Agent's environment
 │   ├── SOUL.md             # Agent identity and personality
 │   ├── CHATBOT.md          # Telegram chat system prompt
 │   ├── JOB_SUMMARY.md      # Job summary prompt
@@ -308,7 +308,7 @@ The container executes tasks autonomously using the Pi coding agent.
 4. Decode and export LLM secrets (accessible to LLM)
 5. Configure Git credentials
 6. Clone repository branch
-7. Run Pi with THEPOPEBOT.md + SOUL.md + job.md
+7. Run Pi with AWARENESS.md + SOUL.md + job.md
 8. Commit all changes
 9. Create PR and auto-merge
 

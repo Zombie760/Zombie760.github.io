@@ -73,7 +73,7 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 │       ├── github.js           # GitHub REST API helper + job status
 │       └── telegram.js         # Telegram bot integration
 ├── operating_system/
-│   ├── THEPOPEBOT.md           # Agent behavior instructions
+│   ├── AWARENESS.md           # Agent's environment
 │   ├── SOUL.md                 # Agent identity and personality
 │   ├── CHATBOT.md              # Telegram chat system prompt
 │   ├── JOB_SUMMARY.md          # Job completion summary prompt
@@ -94,7 +94,7 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 
 | File | Purpose |
 |------|---------|
-| `operating_system/THEPOPEBOT.md` | Core behavior instructions passed to the agent at runtime |
+| `operating_system/AWARENESS.md` | Agent's environment (where things are, what exists) |
 | `operating_system/SOUL.md` | Agent personality and identity |
 | `operating_system/CHATBOT.md` | System prompt for Telegram chat |
 | `operating_system/JOB_SUMMARY.md` | Prompt for summarizing completed jobs |
@@ -155,7 +155,7 @@ The Dockerfile creates a container with:
 4. Decode `LLM_SECRETS` from base64, parse JSON, export each key as env var (LLM can access these)
 5. Configure Git credentials via `gh auth setup-git` (uses GH_TOKEN from SECRETS)
 6. Clone repository branch to `/job`
-7. Run Pi with THEPOPEBOT.md + SOUL.md + job.md as prompt
+7. Run Pi with AWARENESS.md + SOUL.md + job.md as prompt
 8. Save session log to `workspace/logs/{JOB_ID}/`
 9. Commit all changes with message `thepopebot: job {JOB_ID}`
 10. Create PR and auto-merge to main with `gh pr create` and `gh pr merge --squash`
@@ -222,7 +222,7 @@ For credentials the LLM needs access to (browser logins, skill API keys), use `L
 To create your own agent:
 
 1. **GitHub Secrets** - Set `SECRETS` and optionally `LLM_SECRETS` with your API keys
-2. **operating_system/THEPOPEBOT.md** - Modify agent behavior and rules
+2. **operating_system/AWARENESS.md** - Define agent's environment awareness
 3. **operating_system/SOUL.md** - Customize personality and identity
 4. **operating_system/CHATBOT.md** - Configure Telegram chat behavior
 5. **operating_system/CRONS.json** - Define scheduled jobs
@@ -233,7 +233,7 @@ To create your own agent:
 
 These files in `operating_system/` define the agent's character and behavior:
 
-- **THEPOPEBOT.md** - Operational instructions (what to do, how to work)
+- **AWARENESS.md** - Environment facts (where things are, what exists)
 - **SOUL.md** - Personality, identity, and values (who the agent is)
 - **CHATBOT.md** - System prompt for Telegram chat
 - **JOB_SUMMARY.md** - Prompt for summarizing completed jobs
