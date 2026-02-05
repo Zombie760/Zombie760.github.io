@@ -1,1 +1,1 @@
-Find the current weather information for Claremont, California and save it to a file named weather.txt. The weather data should include current conditions like temperature, humidity, wind speed, and general weather description. Use a reliable weather API or service to get accurate current weather data for Claremont, CA.
+Read the file at operating_system/HEARTBEAT.md and complete the tasks described there.
