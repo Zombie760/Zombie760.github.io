@@ -2,17 +2,13 @@
 
 > **Autonomous AI agents. All the power. None of the leaked API keys.**
 
-Other agent frameworks hand your credentials directly to the LLM and hope for the best. thepopebot is different: the AI **literally cannot access your secrets**, even if it tries. Not through echo. Not through /proc. Not through clever prompt injection. The keys exist in a parallel universe the LLM can't reach.
+🔀 **The repository IS the agent** — Fork it and you fork everything: code, personality, logs, history.
 
-| What the AI tries | What happens |
-|-------------------|--------------|
-| `echo $ANTHROPIC_API_KEY` | Empty |
-| `echo $GH_TOKEN` | Empty |
-| `cat /proc/self/environ` | Secrets missing |
-| Claude API calls | ✅ Work normally |
-| GitHub CLI commands | ✅ Work normally |
+⚡ **GitHub Actions IS the compute** — Free, isolated containers. Run one task or a thousand in parallel.
 
-Simple subprocess filtering. No containers-in-containers, no VM sandboxing, no complexity.
+🔄 **Self-evolving** — The agent modifies its own code through PRs. Every change auditable, every change reversible.
+
+🔒 **Secure by default** — Other agent frameworks hand your credentials directly to the LLM and hope for the best. thepopebot is different: the AI **literally cannot access your secrets**, even if it tries.
 
 ---
 
@@ -26,10 +22,12 @@ Simple subprocess filtering. No containers-in-containers, no VM sandboxing, no c
 | Requirement | Install |
 |-------------|---------|
 | **Node.js 18+** | [nodejs.org](https://nodejs.org) |
-| **npm** or **pnpm** | Included with Node.js / [pnpm.io](https://pnpm.io) |
+| **npm** or **pnpm** | Included with Node.js |
 | **Git** | [git-scm.com](https://git-scm.com) |
-| **GitHub CLI** | `brew install gh` or [cli.github.com](https://cli.github.com) |
-| **ngrok** | `brew install ngrok/ngrok/ngrok` or [ngrok.com](https://ngrok.com/download) |
+| **GitHub CLI** | [cli.github.com](https://cli.github.com) |
+| **ngrok*** | [ngrok.com](https://ngrok.com/download) |
+
+*ngrok is only required for local development to expose your local server to the internet. Production deployments (Vercel, Railway, etc.) don't need it.
 
 ### Local Development Setup
 
@@ -131,12 +129,6 @@ thepopebot uses a two-layer architecture:
 │                                                                       │
 └───────────────────────────────────────────────────────────────────────┘
 ```
-
-**The repository IS the agent** — Fork it and you fork everything: code, personality, logs, history.
-
-**GitHub Actions IS the compute** — Free, isolated containers. Run one task or a thousand in parallel.
-
-**Self-evolving** — The agent modifies its own code through PRs. Every change auditable, every change reversible.
 
 ---
 
@@ -366,6 +358,14 @@ Each job creates a session log at `workspace/logs/{JOB_ID}/`. These can be used 
 ---
 
 ## Security
+
+| What the AI tries | What happens |
+|-------------------|--------------|
+| `echo $ANTHROPIC_API_KEY` | Empty |
+| `echo $GH_TOKEN` | Empty |
+| `cat /proc/self/environ` | Secrets missing |
+| Claude API calls | ✅ Work normally |
+| GitHub CLI commands | ✅ Work normally |
 
 ### How Secret Protection Works
 
