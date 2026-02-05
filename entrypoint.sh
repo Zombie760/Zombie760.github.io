@@ -30,12 +30,13 @@ if [ -n "$LLM_SECRETS" ]; then
     eval $(echo "$LLM_SECRETS_JSON" | jq -r 'to_entries | .[] | "export \(.key)=\"\(.value)\""')
 fi
 
-# Git setup
-git config --global user.name "thepopebot"
-git config --global user.email "thepopebot@example.com"
-
-# Configure git to use gh CLI for authentication (GH_TOKEN now in env from SECRETS)
+# Git setup - derive identity from GitHub token
 gh auth setup-git
+GH_USER_JSON=$(gh api user -q '{name: .name, login: .login, email: .email, id: .id}')
+GH_USER_NAME=$(echo "$GH_USER_JSON" | jq -r '.name // .login')
+GH_USER_EMAIL=$(echo "$GH_USER_JSON" | jq -r '.email // "\(.id)+\(.login)@users.noreply.github.com"')
+git config --global user.name "$GH_USER_NAME"
+git config --global user.email "$GH_USER_EMAIL"
 
 # Clone branch
 if [ -n "$REPO_URL" ]; then
