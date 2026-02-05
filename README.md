@@ -63,6 +63,34 @@ npm run setup-telegram
 
 This will verify your server is running, update the GitHub webhook URL, re-register the Telegram webhook, and optionally capture your chat ID for security.
 
+#### Manual Telegram Setup (Production)
+
+If you're deploying to a platform where you can't run the setup script (Vercel, Railway, etc.), configure Telegram manually:
+
+1. **Set environment variables:**
+   - `TELEGRAM_BOT_TOKEN` - Your bot token from @BotFather
+   - `TELEGRAM_WEBHOOK_SECRET` - Generate a random string (e.g., `openssl rand -hex 32`)
+   - `TELEGRAM_VERIFICATION` - A verification code like `verify-abc12345`
+
+2. **Deploy and register the webhook:**
+   ```bash
+   curl -X POST https://your-app.vercel.app/telegram/register \
+     -H "Content-Type: application/json" \
+     -H "x-api-key: YOUR_API_KEY" \
+     -d '{"bot_token": "YOUR_BOT_TOKEN", "webhook_url": "https://your-app.vercel.app/telegram/webhook"}'
+   ```
+   This registers your webhook with the secret from your env.
+
+3. **Get your chat ID:**
+   - Message your bot with your `TELEGRAM_VERIFICATION` code (e.g., `verify-abc12345`)
+   - The bot will reply with your chat ID
+
+4. **Set `TELEGRAM_CHAT_ID`:**
+   - Add the chat ID to your environment variables
+   - Redeploy
+
+Now your bot only responds to your authorized chat.
+
 ---
 
 ## How It Works
