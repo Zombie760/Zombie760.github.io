@@ -180,12 +180,16 @@ async function main() {
   // ─────────────────────────────────────────────────────────────────────────────
   printStep(++currentStep, TOTAL_STEPS, 'GitHub Personal Access Token');
 
-  console.log(chalk.dim('  The PAT needs these scopes: repo, workflow\n'));
+  console.log(chalk.dim('  Create a fine-grained PAT with these repository permissions:\n'));
+  console.log(chalk.dim('    • Actions: Read-only'));
+  console.log(chalk.dim('    • Contents: Read and write'));
+  console.log(chalk.dim('    • Metadata: Read-only (required, auto-selected)'));
+  console.log(chalk.dim('    • Pull requests: Read and write\n'));
 
   const openPATPage = await confirm('Open GitHub PAT creation page in browser?');
   if (openPATPage) {
     await open(getPATCreationURL());
-    printInfo('Opened in browser. Create a token with repo and workflow scopes.');
+    printInfo('Opened in browser. Select the permissions listed above.');
   }
 
   let patValid = false;
@@ -202,12 +206,16 @@ async function main() {
 
     const scopes = await checkPATScopes(pat);
     if (!scopes.hasRepo || !scopes.hasWorkflow) {
-      validateSpinner.fail('PAT missing required scopes (need: repo, workflow)');
+      validateSpinner.fail('PAT missing required scopes');
       printInfo(`Found scopes: ${scopes.scopes.join(', ') || 'none'}`);
       continue;
     }
 
-    validateSpinner.succeed(`PAT valid for user: ${validation.user}`);
+    if (scopes.isFineGrained) {
+      validateSpinner.succeed(`Fine-grained PAT valid for user: ${validation.user}`);
+    } else {
+      validateSpinner.succeed(`PAT valid for user: ${validation.user}`);
+    }
     patValid = true;
   }
 

@@ -24,7 +24,8 @@ export async function validatePAT(token) {
 }
 
 /**
- * Check PAT scopes
+ * Check PAT scopes/permissions
+ * Works with both classic tokens (x-oauth-scopes header) and fine-grained tokens
  */
 export async function checkPATScopes(token) {
   try {
@@ -35,14 +36,28 @@ export async function checkPATScopes(token) {
       },
     });
     const scopes = response.headers.get('x-oauth-scopes') || '';
-    const scopeList = scopes.split(',').map((s) => s.trim());
+    const scopeList = scopes.split(',').map((s) => s.trim()).filter(Boolean);
+
+    // Classic tokens have x-oauth-scopes header
+    if (scopeList.length > 0) {
+      return {
+        hasRepo: scopeList.includes('repo'),
+        hasWorkflow: scopeList.includes('workflow'),
+        scopes: scopeList,
+        isFineGrained: false,
+      };
+    }
+
+    // Fine-grained tokens don't have x-oauth-scopes header
+    // We can't check permissions directly, so we assume valid if token works
     return {
-      hasRepo: scopeList.includes('repo'),
-      hasWorkflow: scopeList.includes('workflow'),
-      scopes: scopeList,
+      hasRepo: true,
+      hasWorkflow: true,
+      scopes: [],
+      isFineGrained: true,
     };
   } catch {
-    return { hasRepo: false, hasWorkflow: false, scopes: [] };
+    return { hasRepo: false, hasWorkflow: false, scopes: [], isFineGrained: false };
   }
 }
 
@@ -103,5 +118,5 @@ export function generateWebhookToken() {
  * Get the GitHub PAT creation URL with pre-selected scopes
  */
 export function getPATCreationURL() {
-  return 'https://github.com/settings/tokens/new?scopes=repo,workflow&description=thepopebot';
+  return 'https://github.com/settings/personal-access-tokens/new';
 }

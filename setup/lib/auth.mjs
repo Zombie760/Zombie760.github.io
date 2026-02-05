@@ -88,7 +88,7 @@ export function writeEnvFile(config) {
 # Authentication key for /webhook endpoint
 API_KEY=${apiKey}
 
-# GitHub Personal Access Token (needs repo, workflow scopes)
+# GitHub Personal Access Token (fine-grained: Actions, Contents, Metadata, Pull requests)
 GH_TOKEN=${githubToken}
 
 # Repository info
