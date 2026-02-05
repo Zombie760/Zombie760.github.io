@@ -6,8 +6,8 @@ require('dotenv').config();
 
 const { createJob } = require('./tools/create-job');
 const { loadCrons } = require('./cron');
-const { setWebhook, sendMessage } = require('./tools/telegram');
-const { chat, splitMessage } = require('./claude');
+const { setWebhook, sendMessage, formatJobNotification } = require('./tools/telegram');
+const { chat } = require('./claude');
 const { toolDefinitions, toolExecutors } = require('./claude/tools');
 const { getHistory, updateHistory } = require('./claude/conversation');
 const { githubApi, getJobStatus } = require('./tools/github');
@@ -110,11 +110,9 @@ app.post('/telegram/webhook', async (req, res) => {
       );
       updateHistory(chatId, newHistory);
 
-      // Handle Telegram message limits (4096 chars)
-      const chunks = splitMessage(response);
-      for (const chunk of chunks) {
-        await sendMessage(telegramBotToken, chatId, chunk);
-      }
+      // Send response (auto-splits if needed)
+      console.log('[TELEGRAM] Sending:', response.slice(0, 200));
+      await sendMessage(telegramBotToken, chatId, response);
     } catch (err) {
       console.error('Failed to process message with Claude:', err);
       await sendMessage(telegramBotToken, chatId, 'Sorry, I encountered an error processing your message.').catch(() => {});
@@ -330,17 +328,16 @@ app.post('/github/webhook', async (req, res) => {
       jobDescription
     });
 
-    // Build notification message
-    const shortJobId = jobId.slice(0, 8);
-    const emoji = success ? '✅' : '⚠️';
-    const status = success ? 'done' : 'had errors';
-    const prUrl = pr.html_url;
+    // Build and send notification
+    const message = formatJobNotification({
+      jobId,
+      success,
+      summary,
+      prUrl: pr.html_url,
+    });
 
-    const message = `${emoji} Job ${shortJobId} ${status}! ${summary}\n\nPR: ${prUrl}`;
-
-    // Send notification
     await sendMessage(telegramBotToken, lastChatId, message);
-    console.log(`Notified chat ${lastChatId} about job ${shortJobId}`);
+    console.log(`Notified chat ${lastChatId} about job ${jobId.slice(0, 8)}`);
 
     res.status(200).json({ ok: true, notified: true });
   } catch (err) {

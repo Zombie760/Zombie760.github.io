@@ -1,8 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 
-const MAX_TELEGRAM_LENGTH = 4096;
 const DEFAULT_MODEL = 'claude-sonnet-4-20250514';
+
+// Web search tool definition (Anthropic built-in)
+const WEB_SEARCH_TOOL = {
+  type: 'web_search_20250305',
+  name: 'web_search',
+  max_uses: 5,
+};
 
 /**
  * Get Anthropic API key from environment
@@ -28,35 +34,6 @@ function getSystemPrompt() {
 }
 
 /**
- * Split a message into chunks that fit Telegram's limit
- * @param {string} text - Text to split
- * @returns {string[]} Array of chunks
- */
-function splitMessage(text) {
-  if (text.length <= MAX_TELEGRAM_LENGTH) return [text];
-
-  const chunks = [];
-  let remaining = text;
-
-  while (remaining.length > 0) {
-    let chunk = remaining.slice(0, MAX_TELEGRAM_LENGTH);
-
-    // Try to split at last newline if we have more text
-    if (remaining.length > MAX_TELEGRAM_LENGTH) {
-      const lastNewline = chunk.lastIndexOf('\n');
-      if (lastNewline > MAX_TELEGRAM_LENGTH * 0.5) {
-        chunk = remaining.slice(0, lastNewline);
-      }
-    }
-
-    chunks.push(chunk);
-    remaining = remaining.slice(chunk.length).trimStart();
-  }
-
-  return chunks;
-}
-
-/**
  * Call Claude API
  * @param {Array} messages - Conversation messages
  * @param {Array} tools - Tool definitions
@@ -67,19 +44,23 @@ async function callClaude(messages, tools) {
   const model = process.env.EVENT_HANDLER_MODEL || DEFAULT_MODEL;
   const systemPrompt = getSystemPrompt();
 
+  // Combine user tools with web search
+  const allTools = [WEB_SEARCH_TOOL, ...tools];
+
   const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'x-api-key': apiKey,
       'anthropic-version': '2023-06-01',
+      'anthropic-beta': 'web-search-2025-03-05',
     },
     body: JSON.stringify({
       model,
-      max_tokens: 1024,
+      max_tokens: 4096,
       system: systemPrompt,
       messages,
-      tools: tools.length > 0 ? tools : undefined,
+      tools: allTools,
     }),
   });
 
@@ -115,6 +96,11 @@ async function chat(userMessage, history, toolDefinitions, toolExecutors) {
 
     for (const block of assistantContent) {
       if (block.type === 'tool_use') {
+        // Skip web_search - it's a server-side tool executed by Anthropic
+        if (block.name === 'web_search') {
+          continue;
+        }
+
         const executor = toolExecutors[block.name];
         let result;
 
@@ -134,6 +120,11 @@ async function chat(userMessage, history, toolDefinitions, toolExecutors) {
           content: JSON.stringify(result),
         });
       }
+    }
+
+    // If no client-side tools to execute, we're done
+    if (toolResults.length === 0) {
+      break;
     }
 
     // Add tool results to messages
@@ -159,7 +150,6 @@ async function chat(userMessage, history, toolDefinitions, toolExecutors) {
 
 module.exports = {
   chat,
-  splitMessage,
   getApiKey,
   getSystemPrompt,
 };

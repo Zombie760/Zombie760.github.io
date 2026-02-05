@@ -1,14 +1,30 @@
 # thepopebot
 
-An autonomous AI agent that lives entirely in Git.
+> **Autonomous AI agents. All the power. None of the leaked API keys.**
 
-**The repository IS the agent** - code, configuration, personality, logs, and execution history all version-controlled in one place. No external databases. No config drift. Fork the repo and you fork the entire agent with its complete history.
+Other agent frameworks hand your credentials directly to the LLM and hope for the best. thepopebot is different: the AI **literally cannot access your secrets**, even if it tries. Not through echo. Not through /proc. Not through clever prompt injection. The keys exist in a parallel universe the LLM can't reach.
 
-**GitHub Actions IS the compute** - Each job runs in an isolated Docker container on GitHub's infrastructure. Free, scalable execution - run one task or a thousand in parallel. The event handler is a lightweight orchestrator; GitHub does the heavy lifting.
+## Security That Actually Works
 
-**Self-evolving by design** - The agent can modify its own code, refine its behavior, update its scheduled jobs, even adjust its personality. Every change flows through a PR, fully auditable and reversible.
+The AI can **use** your credentials (make API calls, push to GitHub) but can't **see** them. Every bash command runs in a sanitized environment with secrets stripped out.
 
-**Secure from the ground up** - All credentials stored in GitHub Secrets. Event handler validates every webhook with token authentication. No hardcoded secrets, no exposed keys.
+| What the AI tries | What happens |
+|-------------------|--------------|
+| `echo $ANTHROPIC_API_KEY` | Empty |
+| `echo $GH_TOKEN` | Empty |
+| `cat /proc/self/environ` | Secrets missing |
+| Claude API calls | ✅ Work normally |
+| GitHub CLI commands | ✅ Work normally |
+
+Simple subprocess filtering. No containers-in-containers, no VM sandboxing, no complexity.
+
+---
+
+**The repository IS the agent** — Fork it and you fork everything: code, personality, logs, history. No external databases. No config drift.
+
+**GitHub Actions IS the compute** — Free, isolated containers on Microsoft's dime. Run one task or a thousand in parallel.
+
+**Self-evolving** — The agent modifies its own code through PRs. Every change auditable, every change reversible.
 
 ## Two-Layer Architecture
 
@@ -179,7 +195,36 @@ npm start
 |----------|--------|---------|
 | `/webhook` | POST | Generic webhook for job creation (requires API_KEY header) |
 | `/telegram/webhook` | POST | Telegram bot webhook for conversational interface |
+| `/telegram/register` | POST | Register Telegram webhook URL |
 | `/github/webhook` | POST | Receives notifications from GitHub Actions (pr-webhook.yml) |
+| `/jobs/status` | GET | Check status of a running job |
+
+### API Examples
+
+**Create a job via webhook:**
+```bash
+curl -X POST http://localhost:3000/webhook \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{"job": "Update the README with installation instructions"}'
+```
+
+**Register Telegram webhook:**
+```bash
+curl -X POST http://localhost:3000/telegram/register \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "bot_token": "YOUR_BOT_TOKEN",
+    "webhook_url": "https://your-ngrok-url.ngrok-free.dev/telegram/webhook"
+  }'
+```
+
+**Check job status:**
+```bash
+curl "http://localhost:3000/jobs/status?job_id=abc123" \
+  -H "x-api-key: YOUR_API_KEY"
+```
 
 ### Environment Variables (Event Handler)
 

@@ -5,7 +5,7 @@ const toolDefinitions = [
   {
     name: 'create_job',
     description:
-      'Create an autonomous job for thepopebot to execute. Use when the user wants code changes, file updates, or tasks requiring the full agent. Returns the job ID and branch name.',
+      'Create an autonomous job for thepopebot to execute. Use this tool liberally - if the user asks for ANY task to be done, create a job. Jobs can handle code changes, file updates, research tasks, web scraping, data analysis, or anything requiring autonomous work. When the user explicitly asks for a job, ALWAYS use this tool. Returns the job ID and branch name.',
     input_schema: {
       type: 'object',
       properties: {

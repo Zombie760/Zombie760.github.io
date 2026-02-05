@@ -113,7 +113,9 @@ The Event Handler is a Node.js Express server that provides orchestration capabi
 |----------|--------|---------|
 | `/webhook` | POST | Generic webhook for job creation (requires API_KEY) |
 | `/telegram/webhook` | POST | Telegram bot webhook for conversational interface |
+| `/telegram/register` | POST | Register Telegram webhook URL |
 | `/github/webhook` | POST | Receives notifications from GitHub Actions (pr-webhook.yml) |
+| `/jobs/status` | GET | Check status of a running job |
 
 ### Components
 
