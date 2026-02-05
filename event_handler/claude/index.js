@@ -5,25 +5,14 @@ const MAX_TELEGRAM_LENGTH = 4096;
 const DEFAULT_MODEL = 'claude-sonnet-4-20250514';
 
 /**
- * Get Anthropic API key from environment or auth.json
+ * Get Anthropic API key from environment
  * @returns {string} API key
  */
 function getApiKey() {
-  // First check environment variable
   if (process.env.ANTHROPIC_API_KEY) {
     return process.env.ANTHROPIC_API_KEY;
   }
-
-  // Fall back to auth.json at project root
-  const authPath = path.join(__dirname, '..', '..', 'auth.json');
-  if (fs.existsSync(authPath)) {
-    const auth = JSON.parse(fs.readFileSync(authPath, 'utf8'));
-    if (auth.anthropic?.key) {
-      return auth.anthropic.key;
-    }
-  }
-
-  throw new Error('No Anthropic API key found. Set ANTHROPIC_API_KEY or add to auth.json');
+  throw new Error('ANTHROPIC_API_KEY environment variable is required');
 }
 
 /**

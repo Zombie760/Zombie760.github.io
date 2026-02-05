@@ -27,10 +27,8 @@ import {
 } from './lib/github.mjs';
 import {
   validateAnthropicKey,
-  writeAuthJson,
   writeEnvFile,
   encodeAuthJsonBase64,
-  isAuthJsonIgnored,
 } from './lib/auth.mjs';
 import { setTelegramWebhook, validateBotToken } from './lib/telegram.mjs';
 
@@ -71,7 +69,7 @@ function printInfo(message) {
 async function main() {
   printHeader();
 
-  const TOTAL_STEPS = 8;
+  const TOTAL_STEPS = 7;
   let currentStep = 0;
 
   // Collected values
@@ -248,29 +246,14 @@ async function main() {
     printSuccess(`Groq key added (${maskSecret(groqKey)})`);
   }
 
-  // ─────────────────────────────────────────────────────────────────────────────
-  // Step 4: Generate auth.json
-  // ─────────────────────────────────────────────────────────────────────────────
-  printStep(++currentStep, TOTAL_STEPS, 'Generate auth.json');
-
   const keys = {
     anthropic: anthropicKey,
     openai: openaiKey,
     groq: groqKey,
   };
 
-  // Check .gitignore
-  if (isAuthJsonIgnored()) {
-    printSuccess('auth.json is in .gitignore');
-  } else {
-    printWarning('auth.json may not be in .gitignore - check before committing!');
-  }
-
-  const authPath = writeAuthJson(keys);
-  printSuccess(`Created ${authPath}`);
-
   // ─────────────────────────────────────────────────────────────────────────────
-  // Step 5: Set GitHub Secrets
+  // Step 4: Set GitHub Secrets
   // ─────────────────────────────────────────────────────────────────────────────
   printStep(++currentStep, TOTAL_STEPS, 'Set GitHub Secrets');
 
@@ -312,7 +295,7 @@ async function main() {
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // Step 6: Telegram Setup
+  // Step 5: Telegram Setup
   // ─────────────────────────────────────────────────────────────────────────────
   printStep(++currentStep, TOTAL_STEPS, 'Telegram Setup');
 
@@ -348,7 +331,7 @@ async function main() {
   printSuccess(`Created ${envPath}`);
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // Step 7: Start Server & ngrok
+  // Step 6: Start Server & ngrok
   // ─────────────────────────────────────────────────────────────────────────────
   printStep(++currentStep, TOTAL_STEPS, 'Start Server & ngrok');
 
@@ -401,7 +384,7 @@ async function main() {
   }
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // Step 8: Summary
+  // Step 7: Summary
   // ─────────────────────────────────────────────────────────────────────────────
   printStep(++currentStep, TOTAL_STEPS, 'Setup Complete!');
 

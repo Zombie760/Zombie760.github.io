@@ -89,10 +89,23 @@ After setup, message your Telegram bot to create jobs!
 
 | Secret | Description |
 |--------|-------------|
-| `GH_TOKEN` | GitHub PAT with `repo` and `workflow` scopes |
-| `PI_AUTH` | Base64-encoded auth.json |
+| `SECRETS` | JSON object containing all credentials (see below) |
 | `GH_WEBHOOK_URL` | Your ngrok URL |
 | `GH_WEBHOOK_TOKEN` | Random token for webhook authentication |
+
+The `SECRETS` secret is a base64-encoded JSON object containing all credentials:
+
+```json
+{
+  "GH_TOKEN": "ghp_xxx",
+  "ANTHROPIC_API_KEY": "sk-ant-xxx",
+  "OPENAI_API_KEY": "sk-xxx"
+}
+```
+
+Encode with: `echo -n '{"GH_TOKEN":"...","ANTHROPIC_API_KEY":"..."}' | base64`
+
+At runtime, the entrypoint decodes and parses this JSON, exporting each key as an environment variable.
 
 ## Configuration Files
 
@@ -218,16 +231,15 @@ The Docker container executes tasks autonomously using the Pi coding agent.
 |----------|-------------|----------|
 | `REPO_URL` | Your repository URL | Yes |
 | `BRANCH` | Branch to work on (e.g., job/uuid) | Yes |
-| `GH_TOKEN` | GitHub token for gh CLI authentication | Yes |
-| `PI_AUTH` | Base64-encoded auth.json contents | Yes |
+| `SECRETS` | Base64-encoded JSON with all credentials (GH_TOKEN, ANTHROPIC_API_KEY, etc.) | Yes |
 
 ### Runtime Flow
 
 1. Extract Job ID from branch name (job/uuid → uuid) or generate UUID
 2. Start Chrome in headless mode (CDP on port 9222)
-3. Configure Git credentials via `gh auth setup-git`
-4. Clone your repository branch to `/job`
-5. Write credentials to `~/.pi/agent/auth.json` (Pi's default location)
+3. Decode `SECRETS` from base64, parse JSON, export each key as an environment variable
+4. Configure Git credentials via `gh auth setup-git` (uses GH_TOKEN from step 3)
+5. Clone your repository branch to `/job`
 6. Run Pi with THEPOPEBOT.md + SOUL.md + job.md as instructions
 7. Commit all changes: `thepopebot: job {UUID}`
 8. Create PR and auto-merge to main
@@ -278,61 +290,73 @@ Each job creates a session log at `workspace/logs/{JOB_ID}/`. These can be used 
 
 ### Secrets Protection
 
-The agent runs with access to sensitive credentials (API keys, GitHub tokens). The `secrets-sandbox` extension in `.pi/extensions/` protects these from being leaked by the AI agent.
+The agent runs with access to sensitive credentials (API keys, GitHub tokens). The `env-sanitizer` extension in `.pi/extensions/` protects these from being leaked by the AI agent.
+
+**How It Works:**
+
+1. GitHub passes a single `SECRETS` env var (base64-encoded JSON with all credentials)
+2. The entrypoint decodes and parses the JSON, exports each key as a flat env var
+3. Pi starts - SDKs read their env vars (ANTHROPIC_API_KEY, gh CLI uses GH_TOKEN)
+4. The extension's `spawnHook` filters ALL secret keys from bash subprocess env
+5. The LLM can't `echo $ANYTHING` - subprocess env is filtered
+6. Other extensions still have full `process.env` access
 
 **What's Protected:**
 
 | Attack Vector | Protection |
 |---------------|------------|
-| `echo $GH_TOKEN` | Env var stripped at extension load |
-| `echo $PI_AUTH` | Env var stripped at extension load |
-| `echo $SECRETS` | Env var stripped at extension load |
-| `cat ~/.pi/agent/auth.json` | Blocked by bubblewrap sandbox |
-| `cat ~/.pi/agent/secrets.json` | Blocked by bubblewrap sandbox |
-| Pi `read` tool on secrets | Blocked by tool_call hook |
+| `echo $ANTHROPIC_API_KEY` | Filtered from bash subprocess environment |
+| `echo $GH_TOKEN` | Filtered from bash subprocess environment |
+| `echo $SECRETS` | Filtered from bash subprocess environment |
+| `echo $ANY_CUSTOM_SECRET` | Filtered (any key in SECRETS JSON) |
 
-**How It Works:**
+The extension dynamically reads the `SECRETS` JSON to determine which keys to filter:
 
-1. **Environment Variables** - The extension deletes `PI_AUTH`, `SECRETS`, and `GH_TOKEN` from `process.env` immediately at module load, before any tool calls can access them.
+```typescript
+const bashTool = createBashTool(process.cwd(), {
+  spawnHook: ({ command, cwd, env }) => {
+    const filteredEnv = { ...env };
+    // Filter all keys defined in SECRETS JSON
+    if (process.env.SECRETS) {
+      try {
+        for (const key of Object.keys(JSON.parse(process.env.SECRETS))) {
+          delete filteredEnv[key];
+        }
+      } catch {}
+    }
+    delete filteredEnv.SECRETS;
+    return { command, cwd, env: filteredEnv };
+  },
+});
+```
 
-2. **File Access** - Bash commands are wrapped with [bubblewrap](https://github.com/containers/bubblewrap) sandboxing that denies read access to `~/.pi/agent/auth.json` and `~/.pi/agent/secrets.json`.
-
-3. **Read Tool** - Pi's built-in `read` tool is blocked from accessing protected files via an event hook.
-
-**Requirements:**
-
-- Docker must run with `--privileged` flag for bubblewrap to create namespaces
-- The Dockerfile includes `bubblewrap`, `socat`, and `ripgrep` dependencies
+**No special Docker flags required.** Works on any host.
 
 ### Security Testing
 
-A dedicated Dockerfile is provided to verify secrets protection:
-
 ```bash
-# Build the security test image
-docker build -f Dockerfile.security -t thepopebot:security-test .
+# Build and run
+docker build -t thepopebot:test .
 
-# Run the test (requires real auth.json for Pi to work)
-docker run --privileged -e PI_AUTH="$(cat auth.json | base64)" thepopebot:security-test
+# Create base64-encoded SECRETS
+SECRETS=$(echo -n '{"GH_TOKEN":"ghp_test","ANTHROPIC_API_KEY":"sk-ant-test"}' | base64)
+docker run --rm -e SECRETS="$SECRETS" thepopebot:test
+
+# Agent should NOT be able to echo any of these vars
+# But Pi SDK and gh CLI should work (they read from process.env)
 ```
-
-**Expected Results:**
-- Environment variables → Empty
-- File reads → "Permission denied"
-- Normal bash commands → Work normally
 
 ### Custom Extensions
 
-The secrets-sandbox protects against the **AI agent** accessing secrets through Pi's tools. It does NOT sandbox extension code itself.
+The env-sanitizer protects against the **AI agent** accessing secrets through bash commands. It does NOT restrict extension code itself.
 
 **If you write custom extensions:**
 
 - Extension code runs in the same Node.js process as Pi
-- Your extension CAN access files directly via `fs.readFileSync()` if needed
+- Your extension CAN access `process.env` directly if needed
 - This is by design - you control what your extensions do
-- Only the AI agent's tool usage is sandboxed
+- Only the AI agent's bash subprocess calls are filtered
 
 **Best practices for custom extensions:**
-- Don't expose file contents to the AI through custom tools
-- Don't create tools that echo environment variables
+- Don't create tools that echo environment variables to the agent
 - Review extension code before adding to your agent

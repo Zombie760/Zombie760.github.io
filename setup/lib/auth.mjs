@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -60,51 +60,11 @@ export function buildAuthJson(keys) {
 }
 
 /**
- * Write auth.json to the repository root
- */
-export function writeAuthJson(keys) {
-  const auth = buildAuthJson(keys);
-  const authPath = join(ROOT_DIR, 'auth.json');
-  writeFileSync(authPath, JSON.stringify(auth, null, 2) + '\n');
-  return authPath;
-}
-
-/**
- * Check if auth.json exists
- */
-export function authJsonExists() {
-  return existsSync(join(ROOT_DIR, 'auth.json'));
-}
-
-/**
- * Read existing auth.json
- */
-export function readAuthJson() {
-  const authPath = join(ROOT_DIR, 'auth.json');
-  if (!existsSync(authPath)) return null;
-  try {
-    return JSON.parse(readFileSync(authPath, 'utf-8'));
-  } catch {
-    return null;
-  }
-}
-
-/**
  * Encode auth.json to base64 for PI_AUTH secret
  */
 export function encodeAuthJsonBase64(keys) {
   const auth = buildAuthJson(keys);
   return Buffer.from(JSON.stringify(auth)).toString('base64');
-}
-
-/**
- * Check if auth.json is in .gitignore
- */
-export function isAuthJsonIgnored() {
-  const gitignorePath = join(ROOT_DIR, '.gitignore');
-  if (!existsSync(gitignorePath)) return false;
-  const content = readFileSync(gitignorePath, 'utf-8');
-  return content.includes('auth.json');
 }
 
 /**

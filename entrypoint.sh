@@ -15,11 +15,18 @@ $CHROME_BIN --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 2
 CHROME_PID=$!
 sleep 2
 
+# Export SECRETS (base64 JSON) as flat env vars (GH_TOKEN, ANTHROPIC_API_KEY, etc.)
+if [ -n "$SECRETS" ]; then
+    SECRETS_JSON=$(echo "$SECRETS" | base64 -d)
+    eval $(echo "$SECRETS_JSON" | jq -r 'to_entries | .[] | "export \(.key)=\"\(.value)\""')
+    export SECRETS="$SECRETS_JSON"  # Keep decoded for extension to parse
+fi
+
 # Git setup
 git config --global user.name "thepopebot"
 git config --global user.email "thepopebot@example.com"
 
-# Configure git to use gh CLI for authentication (GH_TOKEN env var required)
+# Configure git to use gh CLI for authentication (GH_TOKEN now in env from SECRETS)
 gh auth setup-git
 
 # Clone branch
@@ -30,14 +37,6 @@ else
 fi
 
 cd /job
-
-# Write credentials to Pi's default location (~/.pi/agent/)
-echo "$PI_AUTH" | base64 -d > /root/.pi/agent/auth.json
-
-# Write SECRETS env var to secrets.json (base64 encoded)
-if [ -n "$SECRETS" ]; then
-    echo "$SECRETS" | base64 -d > /root/.pi/agent/secrets.json
-fi
 
 # Clean workspace/tmp
 rm -rf ./workspace/tmp/*

@@ -4,9 +4,6 @@ RUN apt-get update && apt-get install -y \
     git \
     jq \
     curl \
-    bubblewrap \
-    socat \
-    ripgrep \
     && rm -rf /var/lib/apt/lists/*
 
 # Install GitHub CLI
@@ -17,10 +14,10 @@ RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | d
 
 RUN npm install -g @mariozechner/pi-coding-agent
 
-# Create Pi config directory and install secrets-sandbox extension
+# Create Pi config directory and install env-sanitizer extension
 RUN mkdir -p /root/.pi/agent/extensions
-COPY .pi/extensions/secrets-sandbox/ /root/.pi/agent/extensions/secrets-sandbox/
-RUN cd /root/.pi/agent/extensions/secrets-sandbox && npm install --production
+COPY .pi/extensions/env-sanitizer/ /root/.pi/agent/extensions/env-sanitizer/
+RUN cd /root/.pi/agent/extensions/env-sanitizer && npm install --production
 
 # Copy package files and install deps
 COPY package*.json ./
