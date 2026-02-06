@@ -11,8 +11,7 @@ Autonomous AI agents. All the power. None of the leaked API keys.
 
 ## Quick Start
 
-[![Use this template](https://img.shields.io/badge/Use%20this%20template-238636?style=for-the-badge&logo=github)](https://github.com/new?template_owner=stephengpope&template_name=thepopebot&visibility=private&description=Autonomous+AI+agents.+All+the+power.+None+of+the+leaked+API+keys.)
-[![Fork this repo](https://img.shields.io/badge/Fork-181717?style=for-the-badge&logo=github)](https://github.com/stephengpope/thepopebot/fork)
+[![Fork this repo](https://img.shields.io/badge/Fork-238636?style=for-the-badge&logo=github)](https://github.com/stephengpope/thepopebot/fork)
 
 ### Prerequisites
 
@@ -282,18 +281,25 @@ Edit `workspace/job.md` with:
 
 **Examples:**
 
+Create a job via webhook
+
 ```bash
-# Create a job via webhook
 curl -X POST http://localhost:3000/webhook \
   -H "Content-Type: application/json" \
   -H "x-api-key: YOUR_API_KEY" \
   -d '{"job": "Update the README with installation instructions"}'
+```
 
-# Check job status
+Check job status
+
+```bash
 curl "http://localhost:3000/jobs/status?job_id=abc123" \
   -H "x-api-key: YOUR_API_KEY"
+```
 
-# Register Telegram webhook
+Register Telegram webhook
+
+```bash
 curl -X POST http://localhost:3000/telegram/register \
   -H "Content-Type: application/json" \
   -H "x-api-key: YOUR_API_KEY" \
