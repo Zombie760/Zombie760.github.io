@@ -1,14 +1,11 @@
 # thepopebot
 
-> **Autonomous AI agents. All the power. None of the leaked API keys.**
+Autonomous AI agents. All the power. None of the leaked API keys.
 
-🔀 **The repository IS the agent** — Fork it and you fork everything: code, personality, logs, history.
-
-⚡ **GitHub Actions IS the compute** — Free, isolated containers. Run one task or a thousand in parallel.
-
-🔄 **Self-evolving** — The agent modifies its own code through PRs. Every change auditable, every change reversible.
-
-🔒 **Secure by default** — Other agent frameworks hand your credentials directly to the LLM and hope for the best. thepopebot is different: the AI **literally cannot access your secrets**, even if it tries.
+- 🔐 **Secure by default** — Other frameworks hand credentials to the LLM and hope for the best. thepopebot is different: the AI literally cannot access your secrets, even if it tries.
+- 🍴 **The repository IS the agent** — Fork it and you fork everything: code, personality, logs, history.
+- 🚀 **GitHub Actions IS the compute** — Free, isolated containers. Run one task or a thousand in parallel.
+- 🧬 **Self-evolving** — The agent modifies its own code through PRs. Every change auditable, every change reversible.
 
 ---
 
@@ -65,9 +62,9 @@ This will verify your server is running, update the GitHub webhook URL, re-regis
 
 If you're deploying to a platform where you can't run the setup script (Vercel, Railway, etc.), configure Telegram manually:
 
-1. **Set environment variables:**
+1. **Set environment variables** in your platform's dashboard (see `event_handler/.env.example` for reference):
    - `TELEGRAM_BOT_TOKEN` - Your bot token from @BotFather
-   - `TELEGRAM_WEBHOOK_SECRET` - Generate a random string (e.g., `openssl rand -hex 32`)
+   - `TELEGRAM_WEBHOOK_SECRET` - Generate with `openssl rand -hex 32`
    - `TELEGRAM_VERIFICATION` - A verification code like `verify-abc12345`
 
 2. **Deploy and register the webhook:**
@@ -275,14 +272,14 @@ Edit `workspace/job.md` with:
 
 ### API Endpoints
 
-| Endpoint | Method | Purpose |
-|----------|--------|---------|
-| `/ping` | GET | Health check (requires API_KEY header, returns `{"message": "Pong!"}`) |
-| `/webhook` | POST | Generic webhook for job creation (requires API_KEY header) |
-| `/telegram/webhook` | POST | Telegram bot webhook for conversational interface |
-| `/telegram/register` | POST | Register Telegram webhook URL |
-| `/github/webhook` | POST | Receives notifications from GitHub Actions |
-| `/jobs/status` | GET | Check status of a running job |
+| Endpoint | Method | API_KEY | Purpose |
+|----------|--------|---------|---------|
+| `/ping` | GET | Y | Health check, returns `{"message": "Pong!"}` |
+| `/webhook` | POST | Y | Generic webhook for job creation |
+| `/telegram/webhook` | POST | N | Telegram bot webhook (uses its own auth) |
+| `/telegram/register` | POST | Y | Register Telegram webhook URL |
+| `/github/webhook` | POST | N | Receives notifications from GitHub Actions |
+| `/jobs/status` | GET | Y | Check status of a running job |
 
 **Examples:**
 
@@ -431,20 +428,6 @@ const bashTool = createBashTool(process.cwd(), {
 ```
 
 No special Docker flags required. Works on any host.
-
-### Security Testing
-
-```bash
-# Build (Mac users: use --platform linux/amd64 for local testing)
-docker build --platform linux/amd64 -t thepopebot:test .
-
-# Run with test secrets
-SECRETS=$(echo -n '{"GH_TOKEN":"ghp_test","ANTHROPIC_API_KEY":"sk-ant-test"}' | base64)
-docker run --rm -e SECRETS="$SECRETS" thepopebot:test
-
-# Agent should NOT be able to echo any secret vars
-# But Pi SDK and gh CLI should work normally
-```
 
 ### Custom Extensions
 
