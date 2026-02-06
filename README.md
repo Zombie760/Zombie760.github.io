@@ -118,7 +118,8 @@ thepopebot uses a two-layer architecture:
 │           │                  │   (PR opened)   │                     │
 │           │                  └────────┬────────┘                     │
 │           │                           │                              │
-│           │                           4 (triggers update-event-handler.yml)    │
+│           │                           4a (update-event-handler.yml)  │
+│           │                           4b (auto-merge.yml)            │
 │           │                           │                              │
 │           5 (Telegram notification)   │                              │
 │           └───────────────────────────┘                              │
@@ -238,6 +239,7 @@ Edit `workspace/job.md` with:
 ```
 /
 ├── .github/workflows/
+│   ├── auto-merge.yml   # Auto-merges job PRs (checks AUTO_MERGE + ALLOWED_PATHS)
 │   ├── run-job.yml      # Runs Docker agent on job/* branch creation
 │   └── update-event-handler.yml      # Notifies event handler on PR opened
 ├── .pi/
@@ -315,13 +317,15 @@ curl -X POST http://localhost:3000/telegram/register \
 |----------|---------|---------|
 | `run-job.yml` | `job/*` branch created | Runs Docker agent container |
 | `update-event-handler.yml` | PR opened from `job/*` branch | Notifies event handler → Telegram |
+| `auto-merge.yml` | PR opened from `job/*` branch | Checks `AUTO_MERGE` + `ALLOWED_PATHS`, merges if allowed |
 
 **Flow:**
 1. Event handler creates a `job/uuid` branch via GitHub API
 2. GitHub Actions detects branch creation → runs `run-job.yml`
 3. Docker agent executes task, commits results, creates PR
-4. GitHub Actions detects PR opened → runs `update-event-handler.yml`
-5. Event handler receives notification → sends Telegram message
+4. GitHub Actions detects PR opened → runs in parallel:
+   - `update-event-handler.yml` → notifies event handler → Telegram
+   - `auto-merge.yml` → checks merge policy → squash merges (or leaves open)
 
 ### Docker Agent
 
@@ -351,11 +355,59 @@ The container executes tasks autonomously using the Pi coding agent.
 6. Clone repository branch
 7. Run Pi with SOUL.md + job.md
 8. Commit all changes
-9. Create PR and auto-merge
+9. Create PR (auto-merge handled by `auto-merge.yml` workflow)
 
 ### Session Logs
 
 Each job creates a session log at `workspace/logs/{JOB_ID}/`. These can be used to resume sessions or review agent actions.
+
+---
+
+## Auto-Merge Controls
+
+By default, job PRs that only modify files under `workspace/logs/` are automatically squash-merged. You can control this behavior with two **GitHub repository variables** (Settings → Secrets and variables → Actions → Variables tab):
+
+### `AUTO_MERGE`
+
+Kill switch for all auto-merging.
+
+| Value | Behavior |
+|-------|----------|
+| *(unset or any value)* | Auto-merge enabled |
+| `false` | Auto-merge disabled — all job PRs stay open for manual review |
+
+### `ALLOWED_PATHS`
+
+Comma-separated path prefixes that the agent is allowed to modify and still get auto-merged. If any changed file falls outside these prefixes, the PR stays open.
+
+| Value | Behavior |
+|-------|----------|
+| *(unset)* | Defaults to `/workspace/logs` — only log files auto-merge |
+| `/` | Everything allowed — all job PRs auto-merge |
+| `/workspace/,/operating_system/` | Only changes within those directories auto-merge |
+| `/workspace/logs/,/workspace/tmp/` | Restrict to specific subdirectories |
+
+Path prefixes are matched from the repo root. A leading `/` is optional (`workspace/logs` and `/workspace/logs` are equivalent).
+
+**Examples:**
+
+Allow all agent changes to auto-merge (original behavior):
+```
+AUTO_MERGE = (unset)
+ALLOWED_PATHS = /
+```
+
+Require manual review for everything:
+```
+AUTO_MERGE = false
+```
+
+Only auto-merge log and workspace changes:
+```
+ALLOWED_PATHS = /workspace/
+```
+
+If a PR is blocked, the workflow logs which files were outside the allowed paths so you can see exactly why.
 
 ---
 

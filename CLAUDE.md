@@ -43,8 +43,9 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 │                                                │       GitHub         │ │
 │                                                │    (PR opened)       │ │
 │                                                │                      │ │
-│                                                │ 4. update-event-handler.yml    │ │
-│                                                │    triggers          │ │
+│                                                │ 4a. update-event-handler.yml   │ │
+│                                                │ 4b. auto-merge.yml   │ │
+│                                                │     (parallel)       │ │
 │                                                └──────────────────────┘ │
 │                                                                          │
 └──────────────────────────────────────────────────────────────────────────┘
@@ -254,7 +255,7 @@ on:
 Triggers when a PR is opened from a `job/*` branch (runs in parallel with `update-event-handler.yml`). Checks two repository variables before merging:
 
 1. **`AUTO_MERGE`** — If set to `"false"`, skip merge entirely. Any other value (or unset) means auto-merge is enabled.
-2. **`ALLOWED_PATHS`** — Comma-separated path prefixes (e.g., `/workspace/,/operating_system/`). Only merges if all changed files fall within allowed prefixes. Defaults to `/` (all paths allowed) if unset.
+2. **`ALLOWED_PATHS`** — Comma-separated path prefixes (e.g., `/workspace/,/operating_system/`). Only merges if all changed files fall within allowed prefixes. Defaults to `/workspace/logs` if unset.
 
 If both checks pass, merges the PR with `--squash`. If there's a merge conflict, the merge fails and the PR stays open for manual review.
 
@@ -283,7 +284,7 @@ Configure these in **Settings → Secrets and variables → Actions → Variable
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `AUTO_MERGE` | Set to `false` to disable auto-merge of job PRs | Enabled (any value except `false`) |
-| `ALLOWED_PATHS` | Comma-separated path prefixes (e.g., `/workspace/logs/,/workspace/tmp/`). Use `/` for all paths. | `/` (all paths allowed) |
+| `ALLOWED_PATHS` | Comma-separated path prefixes (e.g., `/workspace/,/operating_system/`). Use `/` for all paths. | `/workspace/logs` |
 
 ## How Credentials Work
 
