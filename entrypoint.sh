@@ -54,14 +54,10 @@ rm -rf ./workspace/tmp/*
 LOG_DIR="/job/workspace/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
 
-# 1. Run job (SOUL.md provides personality, job.md provides the task)
+# 1. Run job (SOUL.md as system prompt, job.md as user prompt)
+cp /job/operating_system/SOUL.md /job/.pi/SYSTEM.md
+
 PROMPT="You're Alive!
-
-# Your Soul
-
-$(cat /job/operating_system/SOUL.md)
-
----
 
 # Your Job
 
