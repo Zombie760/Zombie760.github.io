@@ -190,7 +190,7 @@ Runs a shell command directly on the event handler server. No Docker container, 
 | `PORT` | Server port (default: 3000) | No |
 | `TELEGRAM_BOT_TOKEN` | Telegram bot token from BotFather | For Telegram |
 | `TELEGRAM_WEBHOOK_SECRET` | Secret for webhook validation | No |
-| `GH_WEBHOOK_TOKEN` | Token for GitHub Actions webhook auth | For notifications |
+| `GH_WEBHOOK_SECRET` | Secret for GitHub Actions webhook auth | For notifications |
 | `ANTHROPIC_API_KEY` | Claude API key for chat functionality | For chat |
 | `EVENT_HANDLER_MODEL` | Claude model for chat (default: claude-sonnet-4) | No |
 
@@ -275,7 +275,7 @@ on:
 | `SECRETS` | Base64-encoded JSON with protected credentials (GH_TOKEN, ANTHROPIC_API_KEY, etc.) |
 | `LLM_SECRETS` | Base64-encoded JSON with LLM-accessible credentials (optional) |
 | `GH_WEBHOOK_URL` | Event handler URL (e.g., `https://your-server.com`) |
-| `GH_WEBHOOK_TOKEN` | Token to authenticate with event handler |
+| `GH_WEBHOOK_SECRET` | Secret to authenticate with event handler |
 
 ### GitHub Repository Variables
 

@@ -195,7 +195,7 @@ All environment variables for the Event Handler (set in `event_handler/.env`):
 | `TELEGRAM_BOT_TOKEN` | Telegram bot token from BotFather | For Telegram |
 | `TELEGRAM_CHAT_ID` | Restricts bot to this chat only | For security |
 | `TELEGRAM_WEBHOOK_SECRET` | Secret for webhook validation | No |
-| `GH_WEBHOOK_TOKEN` | Token for GitHub Actions webhook auth | For notifications |
+| `GH_WEBHOOK_SECRET` | Secret for GitHub Actions webhook auth | For notifications |
 | `ANTHROPIC_API_KEY` | Claude API key for chat functionality | For chat |
 | `OPENAI_API_KEY` | OpenAI key for voice transcription | For voice |
 | `EVENT_HANDLER_MODEL` | Claude model for chat (default: claude-sonnet-4) | No |
@@ -209,7 +209,7 @@ Set automatically by the setup wizard:
 | `SECRETS` | Base64-encoded JSON with protected credentials |
 | `LLM_SECRETS` | Base64-encoded JSON with LLM-accessible credentials (optional) |
 | `GH_WEBHOOK_URL` | Your ngrok URL |
-| `GH_WEBHOOK_TOKEN` | Random token for webhook authentication |
+| `GH_WEBHOOK_SECRET` | Random secret for webhook authentication |
 
 ### Operating System Files
 

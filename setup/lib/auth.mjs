@@ -72,7 +72,7 @@ export function writeEnvFile(config) {
     githubRepo,
     telegramBotToken,
     telegramWebhookSecret,
-    ghWebhookToken,
+    ghWebhookSecret,
     anthropicApiKey,
     openaiApiKey,
     telegramChatId,
@@ -104,8 +104,8 @@ TELEGRAM_CHAT_ID=${telegramChatId || ''}
 # Telegram verification code (used during setup, can be removed after)
 TELEGRAM_VERIFICATION=${telegramVerification || ''}
 
-# Token for GitHub Actions webhook auth (must match GH_WEBHOOK_TOKEN secret)
-GH_WEBHOOK_TOKEN=${ghWebhookToken}
+# Secret for GitHub Actions webhook auth (must match GH_WEBHOOK_SECRET secret)
+GH_WEBHOOK_SECRET=${ghWebhookSecret}
 
 # Anthropic API key for Claude chat features
 ANTHROPIC_API_KEY=${anthropicApiKey}

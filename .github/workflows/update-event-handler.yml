@@ -85,5 +85,5 @@ jobs:
           curl -s -X POST "${{ secrets.GH_WEBHOOK_URL }}/github/webhook" \
             -H "Content-Type: application/json" \
             -H "X-GitHub-Event: pull_request" \
-            -H "X-Webhook-Token: ${{ secrets.GH_WEBHOOK_TOKEN }}" \
+            -H "X-GitHub-Webhook-Secret-Token: ${{ secrets.GH_WEBHOOK_SECRET }}" \
             -d @/tmp/payload.json

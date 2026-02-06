@@ -108,9 +108,9 @@ export async function listSecrets(owner, repo) {
 }
 
 /**
- * Generate a random webhook token
+ * Generate a random webhook secret
  */
-export function generateWebhookToken() {
+export function generateWebhookSecret() {
   return randomBytes(32).toString('hex');
 }
 

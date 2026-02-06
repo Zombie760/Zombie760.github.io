@@ -23,7 +23,7 @@ import {
   validatePAT,
   checkPATScopes,
   setSecrets,
-  generateWebhookToken,
+  generateWebhookSecret,
   getPATCreationURL,
 } from './lib/github.mjs';
 import {
@@ -82,7 +82,7 @@ async function main() {
   let groqKey = null;
   let telegramToken = null;
   let telegramWebhookSecret = null;
-  let webhookToken = null;
+  let webhookSecret = null;
   let owner = null;
   let repo = null;
 
@@ -279,12 +279,12 @@ async function main() {
     repo = answers.repo;
   }
 
-  webhookToken = generateWebhookToken();
+  webhookSecret = generateWebhookSecret();
   const secretsBase64 = encodeSecretsBase64(pat, keys);
 
   const secrets = {
     SECRETS: secretsBase64,
-    GH_WEBHOOK_TOKEN: webhookToken,
+    GH_WEBHOOK_SECRET: webhookSecret,
   };
 
   const secretSpinner = ora('Setting GitHub secrets...').start();
@@ -330,7 +330,7 @@ async function main() {
   // ─────────────────────────────────────────────────────────────────────────────
   // Write .env file for event_handler
   // ─────────────────────────────────────────────────────────────────────────────
-  const apiKey = generateWebhookToken().slice(0, 32); // Random API key for webhook endpoint
+  const apiKey = generateWebhookSecret().slice(0, 32); // Random API key for webhook endpoint
   const telegramVerification = telegramToken ? generateVerificationCode() : null;
   const envPath = writeEnvFile({
     apiKey,
@@ -339,7 +339,7 @@ async function main() {
     githubRepo: repo,
     telegramBotToken: telegramToken,
     telegramWebhookSecret,
-    ghWebhookToken: webhookToken,
+    ghWebhookSecret: webhookSecret,
     anthropicApiKey: anthropicKey,
     openaiApiKey: openaiKey,
     telegramChatId: null,
@@ -483,7 +483,7 @@ async function main() {
 
   console.log(chalk.bold('\n  GitHub Secrets Set:\n'));
   console.log('  • SECRETS');
-  console.log('  • GH_WEBHOOK_TOKEN');
+  console.log('  • GH_WEBHOOK_SECRET');
   console.log('  • GH_WEBHOOK_URL');
 
   console.log(chalk.bold.green('\n  You\'re all set!\n'));

@@ -20,7 +20,7 @@ const app = express();
 app.use(helmet());
 app.use(express.json());
 
-const { API_KEY, TELEGRAM_WEBHOOK_SECRET, TELEGRAM_BOT_TOKEN, GH_WEBHOOK_TOKEN, GH_OWNER, GH_REPO, TELEGRAM_CHAT_ID, TELEGRAM_VERIFICATION } = process.env;
+const { API_KEY, TELEGRAM_WEBHOOK_SECRET, TELEGRAM_BOT_TOKEN, GH_WEBHOOK_SECRET, GH_OWNER, GH_REPO, TELEGRAM_CHAT_ID, TELEGRAM_VERIFICATION } = process.env;
 
 // Bot token from env, can be overridden by /telegram/register
 let telegramBotToken = TELEGRAM_BOT_TOKEN || null;
@@ -232,10 +232,10 @@ async function summarizeJob(results) {
 
 // POST /github/webhook - receive GitHub PR notifications
 app.post('/github/webhook', async (req, res) => {
-  // Validate webhook token
-  if (GH_WEBHOOK_TOKEN) {
-    const headerToken = req.headers['x-webhook-token'];
-    if (headerToken !== GH_WEBHOOK_TOKEN) {
+  // Validate webhook secret
+  if (GH_WEBHOOK_SECRET) {
+    const headerSecret = req.headers['x-github-webhook-secret-token'];
+    if (headerSecret !== GH_WEBHOOK_SECRET) {
       return res.status(401).json({ error: 'Unauthorized' });
     }
   }
