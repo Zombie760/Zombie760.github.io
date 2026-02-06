@@ -22,6 +22,9 @@ workspace/tmp/*
 
 .claude/*
 
+# Pi system prompt (generated at runtime from SOUL.md)
+.pi/SYSTEM.md
+
 # Node
 node_modules/
 

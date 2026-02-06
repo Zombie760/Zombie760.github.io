@@ -57,7 +57,7 @@ mkdir -p "${LOG_DIR}"
 # 1. Run job (SOUL.md as system prompt, job.md as user prompt)
 cp /job/operating_system/SOUL.md /job/.pi/SYSTEM.md
 
-PROMPT="You're Alive!
+PROMPT="
 
 # Your Job
 
