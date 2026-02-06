@@ -40,6 +40,8 @@ RUN mkdir -p /root/.pi/agent
 RUN git clone https://github.com/badlogic/pi-skills.git /pi-skills
 WORKDIR /pi-skills/browser-tools
 RUN npm install
+WORKDIR /pi-skills/brave-search
+RUN npm install
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

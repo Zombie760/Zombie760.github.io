@@ -47,6 +47,9 @@ fi
 
 cd /job
 
+# Symlink pi-skills into .pi/skills/ so Pi discovers them
+ln -sf /pi-skills/brave-search /job/.pi/skills/brave-search
+
 # Clean workspace/tmp
 rm -rf ./workspace/tmp/*
 
