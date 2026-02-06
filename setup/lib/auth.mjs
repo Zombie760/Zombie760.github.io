@@ -41,30 +41,24 @@ export async function validateAnthropicKey(key) {
 }
 
 /**
- * Build auth.json content from API keys
+ * Build flat secrets JSON for SECRETS GitHub secret.
+ * Includes GH_TOKEN + API keys. entrypoint.sh decodes and exports each as an env var.
  */
-export function buildAuthJson(keys) {
-  const auth = {};
+export function buildSecretsJson(pat, keys) {
+  const secrets = { GH_TOKEN: pat, ANTHROPIC_API_KEY: keys.anthropic };
 
-  if (keys.anthropic) {
-    auth.anthropic = { type: 'api_key', key: keys.anthropic };
-  }
-  if (keys.openai) {
-    auth.openai = { type: 'api_key', key: keys.openai };
-  }
-  if (keys.groq) {
-    auth.groq = { type: 'api_key', key: keys.groq };
-  }
+  if (keys.openai) secrets.OPENAI_API_KEY = keys.openai;
+  if (keys.groq) secrets.GROQ_API_KEY = keys.groq;
 
-  return auth;
+  return secrets;
 }
 
 /**
- * Encode auth.json to base64 for PI_AUTH secret
+ * Encode secrets to base64 for SECRETS GitHub secret
  */
-export function encodeAuthJsonBase64(keys) {
-  const auth = buildAuthJson(keys);
-  return Buffer.from(JSON.stringify(auth)).toString('base64');
+export function encodeSecretsBase64(pat, keys) {
+  const secrets = buildSecretsJson(pat, keys);
+  return Buffer.from(JSON.stringify(secrets)).toString('base64');
 }
 
 /**

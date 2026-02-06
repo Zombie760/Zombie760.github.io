@@ -13,6 +13,7 @@ const { toolDefinitions, toolExecutors } = require('./claude/tools');
 const { getHistory, updateHistory } = require('./claude/conversation');
 const { githubApi, getJobStatus } = require('./tools/github');
 const { getApiKey } = require('./claude');
+const { render_md } = require('./utils/render-md');
 
 const app = express();
 
@@ -175,69 +176,34 @@ function extractJobId(branchName) {
 }
 
 /**
- * Fetch the last commit message from a PR
- * @param {number} prNumber - PR number
- * @returns {Promise<string|null>}
+ * Summarize a completed job using Claude — returns the raw message to send
+ * @param {Object} results - Job results from webhook payload
+ * @param {string} results.job - Original task (job.md)
+ * @param {string} results.commit_message - Final commit message
+ * @param {string[]} results.changed_files - List of changed file paths
+ * @param {string} results.pr_status - PR state (open, closed, merged)
+ * @param {string} results.log - Agent session log (JSONL)
+ * @param {string} results.pr_url - PR URL
+ * @returns {Promise<string>} The message to send to Telegram
  */
-async function getCommitMessage(prNumber) {
-  try {
-    const commits = await githubApi(
-      `/repos/${GH_OWNER}/${GH_REPO}/pulls/${prNumber}/commits`
-    );
-    return commits[commits.length - 1]?.commit?.message || null;
-  } catch (err) {
-    console.error('Failed to fetch commit message:', err);
-    return null;
-  }
-}
-
-/**
- * Fetch job.md content from a branch
- * @param {string} branchRef - Branch ref
- * @returns {Promise<string|null>}
- */
-async function getJobDescription(branchRef) {
-  try {
-    const file = await githubApi(
-      `/repos/${GH_OWNER}/${GH_REPO}/contents/workspace/job.md?ref=${branchRef}`
-    );
-    return Buffer.from(file.content, 'base64').toString('utf-8');
-  } catch (err) {
-    console.error('Failed to fetch job.md:', err);
-    return null;
-  }
-}
-
-/**
- * Use Claude to summarize job logs
- * @param {string} logContent - Raw JSONL log content
- * @param {Object} context - Additional context
- * @param {string|null} context.jobDescription - Contents of job.md (the task)
- * @param {string|null} context.commitMessage - Final commit message
- * @returns {Promise<{success: boolean, summary: string}>}
- */
-async function summarizeLogsWithClaude(logContent, context = {}) {
+async function summarizeJob(results) {
   try {
     const apiKey = getApiKey();
-    const { jobDescription, commitMessage } = context;
 
-    // Build context sections
-    let contextSection = '';
-    if (jobDescription) {
-      contextSection += `\nOriginal Task (job.md):\n${jobDescription.slice(0, 2000)}\n`;
-    }
-    if (commitMessage) {
-      contextSection += `\nCommit Message:\n${commitMessage}\n`;
-    }
+    // System prompt from JOB_SUMMARY.md (supports {{includes}})
+    const systemPrompt = render_md(
+      path.join(__dirname, '..', 'operating_system', 'JOB_SUMMARY.md')
+    );
 
-    // Load prompt template
-    const promptPath = path.join(__dirname, '..', 'operating_system', 'JOB_SUMMARY.md');
-    let promptTemplate = fs.readFileSync(promptPath, 'utf8');
-
-    // Replace placeholders
-    const prompt = promptTemplate
-      .replace('{{CONTEXT}}', contextSection)
-      .replace('{{LOG_CONTENT}}', logContent.slice(-50000)); // Last 50k chars to stay within limits
+    // User message: structured job results
+    const userMessage = [
+      results.job ? `## Task\n${results.job}` : '',
+      results.commit_message ? `## Commit Message\n${results.commit_message}` : '',
+      results.changed_files?.length ? `## Changed Files\n${results.changed_files.join('\n')}` : '',
+      results.pr_status ? `## PR Status\n${results.pr_status}` : '',
+      results.pr_url ? `## PR URL\n${results.pr_url}` : '',
+      results.log ? `## Agent Log\n${results.log}` : '',
+    ].filter(Boolean).join('\n\n');
 
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -247,76 +213,20 @@ async function summarizeLogsWithClaude(logContent, context = {}) {
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 256,
-        messages: [{
-          role: 'user',
-          content: prompt
-        }],
+        model: process.env.EVENT_HANDLER_MODEL || 'claude-sonnet-4-20250514',
+        max_tokens: 1024,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: userMessage }],
       }),
     });
 
-    if (!response.ok) {
-      throw new Error(`Claude API error: ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`Claude API error: ${response.status}`);
 
     const result = await response.json();
-    const text = result.content?.[0]?.text || '';
-
-    // Parse response
-    const successMatch = text.match(/SUCCESS:\s*(true|false)/i);
-    const summaryMatch = text.match(/SUMMARY:\s*(.+)/i);
-
-    return {
-      success: successMatch ? successMatch[1].toLowerCase() === 'true' : true,
-      summary: summaryMatch ? summaryMatch[1].trim() : 'Job completed.'
-    };
+    return (result.content?.[0]?.text || '').trim() || 'Job completed.';
   } catch (err) {
-    console.error('Failed to summarize with Claude:', err);
-    return { success: true, summary: 'Job completed.' };
-  }
-}
-
-/**
- * Analyze job log file to determine success/failure and extract summary
- * @param {string} branchRef - Branch ref to fetch logs from
- * @param {string} jobId - Job ID (UUID)
- * @param {Object} context - Additional context
- * @param {string|null} context.jobDescription - Contents of job.md
- * @param {string|null} context.commitMessage - Final commit message
- * @returns {Promise<{success: boolean, summary: string}>}
- */
-async function analyzeJobLog(branchRef, jobId, context = {}) {
-  try {
-    // List files in workspace/logs/{jobId}/ directory on the PR branch
-    const logsPath = `workspace/logs/${jobId}`;
-    let logFiles;
-    try {
-      logFiles = await githubApi(
-        `/repos/${GH_OWNER}/${GH_REPO}/contents/${logsPath}?ref=${branchRef}`
-      );
-    } catch (err) {
-      // Logs directory might not exist
-      return { success: true, summary: 'Job completed.' };
-    }
-
-    // Find the .jsonl file
-    const logFile = logFiles.find(f => f.name.endsWith('.jsonl'));
-    if (!logFile) {
-      return { success: true, summary: 'Job completed.' };
-    }
-
-    // Fetch the log file content
-    const fileData = await githubApi(
-      `/repos/${GH_OWNER}/${GH_REPO}/contents/${logFile.path}?ref=${branchRef}`
-    );
-    const content = Buffer.from(fileData.content, 'base64').toString('utf-8');
-
-    // Use Claude to analyze and summarize
-    return await summarizeLogsWithClaude(content, context);
-  } catch (err) {
-    console.error('Failed to analyze job log:', err);
-    return { success: true, summary: 'Job completed.' };
+    console.error('Failed to summarize job:', err);
+    return 'Job completed.';
   }
 }
 
@@ -333,51 +243,28 @@ app.post('/github/webhook', async (req, res) => {
   const event = req.headers['x-github-event'];
   const payload = req.body;
 
-  // Only handle pull_request opened events
   if (event !== 'pull_request' || payload.action !== 'opened') {
     return res.status(200).json({ ok: true, skipped: true });
   }
 
   const pr = payload.pull_request;
-  if (!pr) {
-    return res.status(200).json({ ok: true, skipped: true });
-  }
+  if (!pr) return res.status(200).json({ ok: true, skipped: true });
 
   const branchName = pr.head?.ref;
   const jobId = extractJobId(branchName);
+  if (!jobId) return res.status(200).json({ ok: true, skipped: true, reason: 'not a job branch' });
 
-  // Only handle job branches
-  if (!jobId) {
-    return res.status(200).json({ ok: true, skipped: true, reason: 'not a job branch' });
-  }
-
-  // Skip if no chat ID to notify
   if (!TELEGRAM_CHAT_ID || !telegramBotToken) {
     console.log(`Job ${jobId} completed but no chat ID to notify`);
     return res.status(200).json({ ok: true, skipped: true, reason: 'no chat to notify' });
   }
 
   try {
-    // Fetch additional context in parallel
-    const prNumber = pr.number;
-    const [commitMessage, jobDescription] = await Promise.all([
-      getCommitMessage(prNumber),
-      getJobDescription(branchName)
-    ]);
+    // All job data comes from the webhook payload — no GitHub API calls needed
+    const results = payload.job_results || {};
+    results.pr_url = pr.html_url;
 
-    // Analyze the job log with context
-    const { success, summary } = await analyzeJobLog(branchName, jobId, {
-      commitMessage,
-      jobDescription
-    });
-
-    // Build and send notification
-    const message = formatJobNotification({
-      jobId,
-      success,
-      summary,
-      prUrl: pr.html_url,
-    });
+    const message = await summarizeJob(results);
 
     await sendMessage(telegramBotToken, TELEGRAM_CHAT_ID, message);
     console.log(`Notified chat ${TELEGRAM_CHAT_ID} about job ${jobId.slice(0, 8)}`);

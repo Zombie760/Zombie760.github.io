@@ -316,7 +316,7 @@ curl -X POST http://localhost:3000/telegram/register \
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
 | `run-job.yml` | `job/*` branch created | Runs Docker agent container |
-| `update-event-handler.yml` | PR opened from `job/*` branch | Notifies event handler → Telegram |
+| `update-event-handler.yml` | PR opened from `job/*` branch | Gathers job data (job.md, logs, changed files) and sends to event handler → Telegram |
 | `auto-merge.yml` | PR opened from `job/*` branch | Checks `AUTO_MERGE` + `ALLOWED_PATHS`, merges if allowed |
 
 **Flow:**
@@ -324,7 +324,7 @@ curl -X POST http://localhost:3000/telegram/register \
 2. GitHub Actions detects branch creation → runs `run-job.yml`
 3. Docker agent executes task, commits results, creates PR
 4. GitHub Actions detects PR opened → runs in parallel:
-   - `update-event-handler.yml` → notifies event handler → Telegram
+   - `update-event-handler.yml` → gathers job data → sends to event handler → Telegram
    - `auto-merge.yml` → checks merge policy → squash merges (or leaves open)
 
 ### Docker Agent

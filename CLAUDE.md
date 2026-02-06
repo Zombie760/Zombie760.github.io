@@ -240,7 +240,7 @@ on:
 
 ### update-event-handler.yml
 
-Triggers when a PR is opened from a `job/*` branch. Sends a notification to the event handler so it can notify Telegram.
+Triggers when a PR is opened from a `job/*` branch. Checks out the PR branch, gathers all job data (job.md, commit message, changed files, session log), and sends a fat payload to the event handler. The event handler then summarizes via Claude and sends a Telegram notification — no additional GitHub API calls needed.
 
 ```yaml
 on:

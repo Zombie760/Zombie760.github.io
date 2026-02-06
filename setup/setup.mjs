@@ -29,7 +29,7 @@ import {
 import {
   validateAnthropicKey,
   writeEnvFile,
-  encodeAuthJsonBase64,
+  encodeSecretsBase64,
   updateEnvVariable,
 } from './lib/auth.mjs';
 import { setTelegramWebhook, validateBotToken, generateVerificationCode } from './lib/telegram.mjs';
@@ -280,11 +280,10 @@ async function main() {
   }
 
   webhookToken = generateWebhookToken();
-  const piAuth = encodeAuthJsonBase64(keys);
+  const secretsBase64 = encodeSecretsBase64(pat, keys);
 
   const secrets = {
-    GH_TOKEN: pat,
-    PI_AUTH: piAuth,
+    SECRETS: secretsBase64,
     GH_WEBHOOK_TOKEN: webhookToken,
   };
 
@@ -483,8 +482,7 @@ async function main() {
   if (telegramToken) console.log(`  ${chalk.dim('Telegram Bot:')}    Webhook registered`);
 
   console.log(chalk.bold('\n  GitHub Secrets Set:\n'));
-  console.log('  • GH_TOKEN');
-  console.log('  • PI_AUTH');
+  console.log('  • SECRETS');
   console.log('  • GH_WEBHOOK_TOKEN');
   console.log('  • GH_WEBHOOK_URL');
 
