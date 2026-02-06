@@ -19,11 +19,11 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 │   │  │  Telegram  │  │ ─────────────────────────►  ┌──────────────────┐ │
 │   │  │   Cron     │  │                             │      GitHub      │ │
 │   │  │   Chat     │  │ ◄─────────────────────────  │  (job/* branch)  │ │
-│   │  └────────────┘  │   5. pr-webhook.yml calls   └────────┬─────────┘ │
+│   │  └────────────┘  │   5. update-event-handler.yml calls   └────────┬─────────┘ │
 │   │                  │      /github/webhook                 │           │
 │   └──────────────────┘                                      │           │
 │            │                                                │           │
-│            │                           2. job-runner.yml    │           │
+│            │                           2. run-job.yml    │           │
 │            ▼                              triggers          │           │
 │   ┌──────────────────┐                                      │           │
 │   │ Telegram notifies│                                      ▼           │
@@ -43,7 +43,7 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 │                                                │       GitHub         │ │
 │                                                │    (PR opened)       │ │
 │                                                │                      │ │
-│                                                │ 4. pr-webhook.yml    │ │
+│                                                │ 4. update-event-handler.yml    │ │
 │                                                │    triggers          │ │
 │                                                └──────────────────────┘ │
 │                                                                          │
@@ -55,8 +55,8 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 ```
 /
 ├── .github/workflows/
-│   ├── job-runner.yml          # Runs Docker agent when job/* branch created
-│   └── pr-webhook.yml          # Notifies event handler when PR opened
+│   ├── run-job.yml          # Runs Docker agent when job/* branch created
+│   └── update-event-handler.yml          # Notifies event handler when PR opened
 ├── .pi/
 │   ├── extensions/             # Pi extensions (env-sanitizer for secret filtering)
 │   └── skills/                 # Custom skills for the agent
@@ -114,7 +114,7 @@ The Event Handler is a Node.js Express server that provides orchestration capabi
 | `/webhook` | POST | Generic webhook for job creation (requires API_KEY) |
 | `/telegram/webhook` | POST | Telegram bot webhook for conversational interface |
 | `/telegram/register` | POST | Register Telegram webhook URL |
-| `/github/webhook` | POST | Receives notifications from GitHub Actions (pr-webhook.yml) |
+| `/github/webhook` | POST | Receives notifications from GitHub Actions (update-event-handler.yml) |
 | `/jobs/status` | GET | Check status of a running job |
 
 ### Components
@@ -173,7 +173,7 @@ The Dockerfile creates a container with:
 
 GitHub Actions automate the job lifecycle. No manual webhook configuration needed.
 
-### job-runner.yml
+### run-job.yml
 
 Triggers when a `job/*` branch is created. Runs the Docker agent container.
 
@@ -183,7 +183,7 @@ on:
 # Only runs if: branch name starts with "job/"
 ```
 
-### pr-webhook.yml
+### update-event-handler.yml
 
 Triggers when a PR is opened from a `job/*` branch. Sends a notification to the event handler so it can notify Telegram.
 

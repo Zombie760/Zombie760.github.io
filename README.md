@@ -103,7 +103,7 @@ thepopebot uses a two-layer architecture:
 │  │  (creates job)  │         │ (job/* branch)  │                     │
 │  └────────▲────────┘         └────────┬────────┘                     │
 │           │                           │                              │
-│           │                           2 (triggers job-runner.yml)    │
+│           │                           2 (triggers run-job.yml)    │
 │           │                           │                              │
 │           │                           ▼                              │
 │           │                  ┌─────────────────┐                     │
@@ -119,7 +119,7 @@ thepopebot uses a two-layer architecture:
 │           │                  │   (PR opened)   │                     │
 │           │                  └────────┬────────┘                     │
 │           │                           │                              │
-│           │                           4 (triggers pr-webhook.yml)    │
+│           │                           4 (triggers update-event-handler.yml)    │
 │           │                           │                              │
 │           5 (Telegram notification)   │                              │
 │           └───────────────────────────┘                              │
@@ -240,8 +240,8 @@ Edit `workspace/job.md` with:
 ```
 /
 ├── .github/workflows/
-│   ├── job-runner.yml      # Runs Docker agent on job/* branch creation
-│   └── pr-webhook.yml      # Notifies event handler on PR opened
+│   ├── run-job.yml      # Runs Docker agent on job/* branch creation
+│   └── update-event-handler.yml      # Notifies event handler on PR opened
 ├── .pi/
 │   ├── extensions/         # Pi extensions (env-sanitizer for secret filtering)
 │   └── skills/             # Custom skills for the agent
@@ -308,14 +308,14 @@ curl -X POST http://localhost:3000/telegram/register \
 
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
-| `job-runner.yml` | `job/*` branch created | Runs Docker agent container |
-| `pr-webhook.yml` | PR opened from `job/*` branch | Notifies event handler → Telegram |
+| `run-job.yml` | `job/*` branch created | Runs Docker agent container |
+| `update-event-handler.yml` | PR opened from `job/*` branch | Notifies event handler → Telegram |
 
 **Flow:**
 1. Event handler creates a `job/uuid` branch via GitHub API
-2. GitHub Actions detects branch creation → runs `job-runner.yml`
+2. GitHub Actions detects branch creation → runs `run-job.yml`
 3. Docker agent executes task, commits results, creates PR
-4. GitHub Actions detects PR opened → runs `pr-webhook.yml`
+4. GitHub Actions detects PR opened → runs `update-event-handler.yml`
 5. Event handler receives notification → sends Telegram message
 
 ### Docker Agent
