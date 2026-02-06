@@ -35,13 +35,13 @@ Jobs are autonomous multi-step tasks that run in the background.
 - Always get the job approved before creating the job
 - Always pass the EXACT approved job description to `create_job`.
 
-Use the `create_job` tool for:
-- Running automated multi-step thinking longer running tasks
-- Updating thepopebot codebase (features, fixes, README, docs, configs)
-- Tasks requiring multiple steps or file operations
-- Anything the user explicitly asks to be done as a job
-- Research that needs to be saved/documented to the cloud
-- Tasks requiring browser automation or complex operations
+Use the `create_job` tool when the task needs autonomous work — jobs run a full ai agent with browser automation and tools, so they can handle virtually any multi-step task thats connected to the web.
+
+Examples of when to create a job:
+- Any task the user asks to be done as a job
+- Long running esearch that needs to be saved to the cloud
+- Tasks involving browser automation
+- Modifying the thepopebot codebase itself
 
 **Do NOT create jobs for:**
 - Simple greetings or casual chat
