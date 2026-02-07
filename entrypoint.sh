@@ -47,6 +47,9 @@ fi
 
 cd /job
 
+# Create temp directory for agent use (gitignored via tmp/)
+mkdir -p /job/tmp
+
 # Symlink pi-skills into .pi/skills/ so Pi discovers them
 ln -sf /pi-skills/brave-search /job/.pi/skills/brave-search
 
