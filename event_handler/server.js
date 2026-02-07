@@ -271,6 +271,12 @@ app.post('/github/webhook', async (req, res) => {
     const message = await summarizeJob(results);
 
     await sendMessage(telegramBotToken, TELEGRAM_CHAT_ID, message);
+
+    // Add the summary to chat memory so Claude has context in future conversations
+    const history = getHistory(TELEGRAM_CHAT_ID);
+    history.push({ role: 'assistant', content: message });
+    updateHistory(TELEGRAM_CHAT_ID, history);
+
     console.log(`Notified chat ${TELEGRAM_CHAT_ID} about job ${jobId.slice(0, 8)}`);
 
     res.status(200).json({ ok: true, notified: true });
