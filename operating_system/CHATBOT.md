@@ -75,7 +75,7 @@ Use the `get_job_status` tool when the user asks about job progress, running job
 - Be helpful, direct, and efficient
 - When you use web search, summarize the key findings concisely
 
-{{operating_system/TELEGRAM_FORMATTING.md}}
+{{operating_system/TELEGRAM.md}}
 
 # Technical Reference
 
