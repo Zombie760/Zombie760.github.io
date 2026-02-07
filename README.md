@@ -389,7 +389,7 @@ Comma-separated path prefixes that the agent is allowed to modify and still get 
 |-------|----------|
 | *(unset)* | Defaults to `/logs` — only log files auto-merge |
 | `/` | Everything allowed — all job PRs auto-merge |
-| `/logs/,/operating_system/` | Only changes within those directories auto-merge |
+| `/logs` | Only log changes auto-merge |
 
 Path prefixes are matched from the repo root. A leading `/` is optional (`logs` and `/logs` are equivalent).
 
@@ -408,7 +408,7 @@ AUTO_MERGE = false
 
 Only auto-merge log changes:
 ```
-ALLOWED_PATHS = /logs/
+ALLOWED_PATHS = /logs
 ```
 
 If a PR is blocked, the workflow logs which files were outside the allowed paths so you can see exactly why.

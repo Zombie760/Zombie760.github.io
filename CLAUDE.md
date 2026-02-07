@@ -273,7 +273,7 @@ on:
 Triggers when a PR is opened from a `job/*` branch. First waits for GitHub to compute mergeability (polls every 10s, up to 30 attempts). Then checks two repository variables before merging:
 
 1. **`AUTO_MERGE`** — If set to `"false"`, skip merge entirely. Any other value (or unset) means auto-merge is enabled.
-2. **`ALLOWED_PATHS`** — Comma-separated path prefixes (e.g., `/logs/,/operating_system/`). Only merges if all changed files fall within allowed prefixes. Defaults to `/logs` if unset.
+2. **`ALLOWED_PATHS`** — Comma-separated path prefixes (e.g., `/logs`). Only merges if all changed files fall within allowed prefixes. Defaults to `/logs` if unset.
 
 If the PR is mergeable and both checks pass, merges the PR with `--squash`. If there's a merge conflict, the merge is skipped and the PR stays open for manual review. After this workflow completes, `update-event-handler.yml` fires to send the notification.
 
@@ -303,7 +303,7 @@ Configure these in **Settings → Secrets and variables → Actions → Variable
 |----------|-------------|---------|
 | `GH_WEBHOOK_URL` | Event handler URL (e.g., `https://your-server.com`) | — |
 | `AUTO_MERGE` | Set to `false` to disable auto-merge of job PRs | Enabled (any value except `false`) |
-| `ALLOWED_PATHS` | Comma-separated path prefixes (e.g., `/logs/,/operating_system/`). Use `/` for all paths. | `/logs` |
+| `ALLOWED_PATHS` | Comma-separated path prefixes (e.g., `/logs`). Use `/` for all paths. | `/logs` |
 | `IMAGE_URL` | Full Docker image path (e.g., `ghcr.io/myorg/mybot`). GHCR URLs trigger automatic builds via `docker-build.yml`. Non-GHCR URLs (e.g., `docker.io/user/mybot`) are pulled directly. | Not set (uses `stephengpope/thepopebot:latest`) |
 
 ## How Credentials Work
