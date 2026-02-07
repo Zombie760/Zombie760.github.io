@@ -116,6 +116,43 @@ export async function promptForGroqKey() {
 }
 
 /**
+ * Prompt for optional Brave Search API key
+ */
+export async function promptForBraveKey() {
+  const { addKey } = await inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'addKey',
+      message: 'Add Brave Search API key? (free tier, greatly improves agent)',
+      default: true,
+    },
+  ]);
+
+  if (!addKey) return null;
+
+  console.log('\n  To get a free Brave Search API key:');
+  console.log('  1. Go to https://brave.com/search/api/');
+  console.log('  2. Click "Get Started"');
+  console.log('  3. Create an account (or sign in)');
+  console.log('  4. Subscribe to the "Free" plan (2,000 queries/month)');
+  console.log('  5. Copy your API key\n');
+
+  const { key } = await inquirer.prompt([
+    {
+      type: 'password',
+      name: 'key',
+      message: 'Enter your Brave Search API key:',
+      mask: '*',
+      validate: (input) => {
+        if (!input) return 'Key is required if adding';
+        return true;
+      },
+    },
+  ]);
+  return key;
+}
+
+/**
  * Prompt for Telegram bot token
  */
 export async function promptForTelegramToken() {

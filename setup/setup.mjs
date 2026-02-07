@@ -14,6 +14,7 @@ import {
   promptForAnthropicKey,
   promptForOpenAIKey,
   promptForGroqKey,
+  promptForBraveKey,
   promptForTelegramToken,
   generateTelegramWebhookSecret,
   confirm,
@@ -31,6 +32,7 @@ import {
   validateAnthropicKey,
   writeEnvFile,
   encodeSecretsBase64,
+  encodeLlmSecretsBase64,
   updateEnvVariable,
 } from './lib/auth.mjs';
 import { setTelegramWebhook, validateBotToken, generateVerificationCode } from './lib/telegram.mjs';
@@ -81,6 +83,7 @@ async function main() {
   let anthropicKey = null;
   let openaiKey = null;
   let groqKey = null;
+  let braveKey = null;
   let telegramToken = null;
   let telegramWebhookSecret = null;
   let webhookSecret = null;
@@ -259,10 +262,17 @@ async function main() {
     printSuccess(`Groq key added (${maskSecret(groqKey)})`);
   }
 
+  // Brave Search (optional, default: true since it's free)
+  braveKey = await promptForBraveKey();
+  if (braveKey) {
+    printSuccess(`Brave Search key added (${maskSecret(braveKey)})`);
+  }
+
   const keys = {
     anthropic: anthropicKey,
     openai: openaiKey,
     groq: groqKey,
+    brave: braveKey,
   };
 
   // ─────────────────────────────────────────────────────────────────────────────
@@ -282,11 +292,16 @@ async function main() {
 
   webhookSecret = generateWebhookSecret();
   const secretsBase64 = encodeSecretsBase64(pat, keys);
+  const llmSecretsBase64 = encodeLlmSecretsBase64(keys);
 
   const secrets = {
     SECRETS: secretsBase64,
     GH_WEBHOOK_SECRET: webhookSecret,
   };
+
+  if (llmSecretsBase64) {
+    secrets.LLM_SECRETS = llmSecretsBase64;
+  }
 
   const secretSpinner = ora('Setting GitHub secrets...').start();
   const secretResults = await setSecrets(owner, repo, secrets);
@@ -480,10 +495,12 @@ async function main() {
   console.log(`  ${chalk.dim('Anthropic Key:')}   ${maskSecret(anthropicKey)}`);
   if (openaiKey) console.log(`  ${chalk.dim('OpenAI Key:')}      ${maskSecret(openaiKey)}`);
   if (groqKey) console.log(`  ${chalk.dim('Groq Key:')}        ${maskSecret(groqKey)}`);
+  if (braveKey) console.log(`  ${chalk.dim('Brave Search:')}    ${maskSecret(braveKey)}`);
   if (telegramToken) console.log(`  ${chalk.dim('Telegram Bot:')}    Webhook registered`);
 
   console.log(chalk.bold('\n  GitHub Secrets Set:\n'));
   console.log('  • SECRETS');
+  if (llmSecretsBase64) console.log('  • LLM_SECRETS');
   console.log('  • GH_WEBHOOK_SECRET');
 
   console.log(chalk.bold('\n  GitHub Variables Set:\n'));

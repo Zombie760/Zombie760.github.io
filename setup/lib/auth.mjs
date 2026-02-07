@@ -62,6 +62,26 @@ export function encodeSecretsBase64(pat, keys) {
 }
 
 /**
+ * Build LLM secrets JSON for LLM_SECRETS GitHub secret.
+ * These credentials are accessible to the LLM (not filtered by env-sanitizer).
+ */
+export function buildLlmSecretsJson(keys) {
+  const secrets = {};
+  if (keys.brave) secrets.BRAVE_API_KEY = keys.brave;
+  return secrets;
+}
+
+/**
+ * Encode LLM secrets to base64 for LLM_SECRETS GitHub secret.
+ * Returns null if no LLM secrets are configured.
+ */
+export function encodeLlmSecretsBase64(keys) {
+  const secrets = buildLlmSecretsJson(keys);
+  if (Object.keys(secrets).length === 0) return null;
+  return Buffer.from(JSON.stringify(secrets)).toString('base64');
+}
+
+/**
  * Write .env file for event_handler
  */
 export function writeEnvFile(config) {
