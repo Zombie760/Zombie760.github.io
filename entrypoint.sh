@@ -50,11 +50,8 @@ cd /job
 # Symlink pi-skills into .pi/skills/ so Pi discovers them
 ln -sf /pi-skills/brave-search /job/.pi/skills/brave-search
 
-# Clean workspace/tmp
-rm -rf ./workspace/tmp/*
-
 # Setup logs
-LOG_DIR="/job/workspace/logs/${JOB_ID}"
+LOG_DIR="/job/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
 
 # 1. Build system prompt from operating_system MD files
@@ -71,7 +68,7 @@ PROMPT="
 
 # Your Job
 
-$(cat /job/workspace/job.md)"
+$(cat /job/logs/${JOB_ID}/job.md)"
 
 pi -p "$PROMPT" --session-dir "${LOG_DIR}"
 

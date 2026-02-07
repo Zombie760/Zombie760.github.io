@@ -6,20 +6,6 @@ secrets.json
 *.pem
 *.key
 
-# Workspace structure:
-#   workspace/job.md  - your task (tracked)
-#   workspace/logs/   - session logs (tracked)
-#   workspace/tmp/    - temporary files (NOT tracked)
-workspace/*
-!workspace/job.md
-!workspace/logs
-!workspace/tmp
-workspace/logs/*
-workspace/tmp/*
-!workspace/logs/*.jsonl
-!workspace/logs/.gitkeep
-!workspace/tmp/.gitkeep
-
 .claude/*
 
 # Pi system prompt (generated at runtime from SOUL.md)

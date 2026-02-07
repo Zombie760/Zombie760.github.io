@@ -91,9 +91,7 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 ├── setup/                      # Interactive setup wizard
 │   ├── setup.mjs               # Main wizard script
 │   └── lib/                    # Helper modules
-├── workspace/
-│   ├── job.md                  # Current task description
-│   └── logs/                   # Session logs (UUID.jsonl)
+├── logs/                       # Per-job directories (job.md + session logs)
 ├── Dockerfile                  # Container definition
 ├── entrypoint.sh               # Container startup script
 └── SECURITY.md                 # Security documentation
@@ -106,7 +104,7 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 | `operating_system/SOUL.md` | Agent personality and identity |
 | `operating_system/CHATBOT.md` | System prompt for Telegram chat |
 | `operating_system/JOB_SUMMARY.md` | Prompt for summarizing completed jobs |
-| `workspace/job.md` | The specific task for the agent to execute |
+| `logs/<JOB_ID>/job.md` | The specific task for the agent to execute |
 | `Dockerfile` | Builds the agent container (Node.js 22, Playwright, Pi) |
 | `entrypoint.sh` | Container startup script - clones repo, runs agent, commits results |
 | `.pi/extensions/env-sanitizer/` | Filters secrets from LLM's bash subprocess environment |
@@ -149,7 +147,7 @@ If the task needs to *think*, use `agent`. If it just needs to *do*, use `comman
 
 #### Type: `agent` (default)
 
-Creates a full Docker Agent job via `createJob()`. This pushes a `job/*` branch to GitHub, which triggers `run-job.yml` to spin up the Docker container with Pi. The `job` string is passed directly as-is to the LLM as its task prompt (written to `workspace/job.md` on the job branch).
+Creates a full Docker Agent job via `createJob()`. This pushes a `job/*` branch to GitHub, which triggers `run-job.yml` to spin up the Docker container with Pi. The `job` string is passed directly as-is to the LLM as its task prompt (written to `logs/<JOB_ID>/job.md` on the job branch).
 
 ```json
 {
@@ -218,7 +216,7 @@ The Dockerfile creates a container with:
 5. Configure Git credentials via `gh auth setup-git` (uses GH_TOKEN from SECRETS)
 6. Clone repository branch to `/job`
 7. Run Pi with SOUL.md + job.md as prompt
-8. Save session log to `workspace/logs/{JOB_ID}/`
+8. Save session log to `logs/{JOB_ID}/`
 9. Commit all changes with message `thepopebot: job {JOB_ID}`
 10. Create PR via `gh pr create` (auto-merge handled by `auto-merge.yml` workflow)
 
@@ -275,7 +273,7 @@ on:
 Triggers when a PR is opened from a `job/*` branch. First waits for GitHub to compute mergeability (polls every 10s, up to 30 attempts). Then checks two repository variables before merging:
 
 1. **`AUTO_MERGE`** — If set to `"false"`, skip merge entirely. Any other value (or unset) means auto-merge is enabled.
-2. **`ALLOWED_PATHS`** — Comma-separated path prefixes (e.g., `/workspace/,/operating_system/`). Only merges if all changed files fall within allowed prefixes. Defaults to `/workspace` if unset.
+2. **`ALLOWED_PATHS`** — Comma-separated path prefixes (e.g., `/logs/,/operating_system/`). Only merges if all changed files fall within allowed prefixes. Defaults to `/logs` if unset.
 
 If the PR is mergeable and both checks pass, merges the PR with `--squash`. If there's a merge conflict, the merge is skipped and the PR stays open for manual review. After this workflow completes, `update-event-handler.yml` fires to send the notification.
 
@@ -305,7 +303,7 @@ Configure these in **Settings → Secrets and variables → Actions → Variable
 |----------|-------------|---------|
 | `GH_WEBHOOK_URL` | Event handler URL (e.g., `https://your-server.com`) | — |
 | `AUTO_MERGE` | Set to `false` to disable auto-merge of job PRs | Enabled (any value except `false`) |
-| `ALLOWED_PATHS` | Comma-separated path prefixes (e.g., `/workspace/,/operating_system/`). Use `/` for all paths. | `/workspace` |
+| `ALLOWED_PATHS` | Comma-separated path prefixes (e.g., `/logs/,/operating_system/`). Use `/` for all paths. | `/logs` |
 | `IMAGE_URL` | Full Docker image path (e.g., `ghcr.io/myorg/mybot`). GHCR URLs trigger automatic builds via `docker-build.yml`. Non-GHCR URLs (e.g., `docker.io/user/mybot`) are pulled directly. | Not set (uses `stephengpope/thepopebot:latest`) |
 
 ## How Credentials Work
@@ -329,7 +327,7 @@ To create your own agent:
 2. **operating_system/SOUL.md** - Customize personality and identity
 4. **operating_system/CHATBOT.md** - Configure Telegram chat behavior
 5. **operating_system/CRONS.json** - Define scheduled jobs
-6. **workspace/job.md** - Define the task to execute
+6. **logs/<JOB_ID>/job.md** - Task description (created automatically per job)
 7. **.pi/skills/** - Add custom skills for the agent
 
 ## The Operating System
@@ -344,7 +342,7 @@ These files in `operating_system/` define the agent's character and behavior:
 
 ## Session Logs
 
-Each job creates a session log at `workspace/logs/{JOB_ID}/`. This directory contains the full conversation history and can be resumed for follow-up tasks via the `--session-dir` flag.
+Each job gets its own directory at `logs/{JOB_ID}/` containing both the job description (`job.md`) and session logs (`.jsonl`). This directory can be used to resume sessions for follow-up tasks via the `--session-dir` flag.
 
 ## Markdown File Includes
 

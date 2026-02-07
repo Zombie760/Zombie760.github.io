@@ -218,7 +218,7 @@ Configure in **Settings → Secrets and variables → Actions → Variables**:
 |----------|-------------|----------|---------|
 | `GH_WEBHOOK_URL` | Event handler URL (e.g., your ngrok URL) | Yes | — |
 | `AUTO_MERGE` | Set to `false` to disable auto-merge of job PRs | No | Enabled |
-| `ALLOWED_PATHS` | Comma-separated path prefixes for auto-merge | No | `/workspace/logs` |
+| `ALLOWED_PATHS` | Comma-separated path prefixes for auto-merge | No | `/logs` |
 | `IMAGE_URL` | Docker image path (e.g., `ghcr.io/myorg/mybot`) | No | `stephengpope/thepopebot:latest` |
 
 ### Operating System Files
@@ -235,10 +235,7 @@ Customize agent behavior in `operating_system/`:
 
 ### Task Definition
 
-Edit `workspace/job.md` with:
-- Clear task description
-- Specific requirements
-- Expected outputs
+Each job automatically gets its own `logs/<JOB_ID>/job.md` file created by the event handler. Jobs are created via Telegram chat, webhooks, or cron schedules.
 
 ---
 
@@ -272,9 +269,7 @@ Edit `workspace/job.md` with:
 ├── setup/                  # Interactive setup wizard
 │   ├── setup.mjs           # Main wizard script
 │   └── lib/                # Helper modules
-├── workspace/
-│   ├── job.md              # Current task
-│   └── logs/               # Session logs
+├── logs/                   # Per-job directories (job.md + session logs)
 ├── Dockerfile              # Container definition
 ├── entrypoint.sh           # Startup script
 └── SECURITY.md             # Security documentation
@@ -369,13 +364,13 @@ The container executes tasks autonomously using the Pi coding agent.
 
 ### Session Logs
 
-Each job creates a session log at `workspace/logs/{JOB_ID}/`. These can be used to resume sessions or review agent actions.
+Each job gets its own directory at `logs/{JOB_ID}/` containing both the job description (`job.md`) and session logs (`.jsonl`). These can be used to resume sessions or review agent actions.
 
 ---
 
 ## Auto-Merge Controls
 
-By default, job PRs that only modify files under `workspace/logs/` are automatically squash-merged. You can control this behavior with two **GitHub repository variables** (Settings → Secrets and variables → Actions → Variables tab):
+By default, job PRs that only modify files under `logs/` are automatically squash-merged. You can control this behavior with two **GitHub repository variables** (Settings → Secrets and variables → Actions → Variables tab):
 
 ### `AUTO_MERGE`
 
@@ -392,12 +387,11 @@ Comma-separated path prefixes that the agent is allowed to modify and still get 
 
 | Value | Behavior |
 |-------|----------|
-| *(unset)* | Defaults to `/workspace/logs` — only log files auto-merge |
+| *(unset)* | Defaults to `/logs` — only log files auto-merge |
 | `/` | Everything allowed — all job PRs auto-merge |
-| `/workspace/,/operating_system/` | Only changes within those directories auto-merge |
-| `/workspace/logs/,/workspace/tmp/` | Restrict to specific subdirectories |
+| `/logs/,/operating_system/` | Only changes within those directories auto-merge |
 
-Path prefixes are matched from the repo root. A leading `/` is optional (`workspace/logs` and `/workspace/logs` are equivalent).
+Path prefixes are matched from the repo root. A leading `/` is optional (`logs` and `/logs` are equivalent).
 
 **Examples:**
 
@@ -412,9 +406,9 @@ Require manual review for everything:
 AUTO_MERGE = false
 ```
 
-Only auto-merge log and workspace changes:
+Only auto-merge log changes:
 ```
-ALLOWED_PATHS = /workspace/
+ALLOWED_PATHS = /logs/
 ```
 
 If a PR is blocked, the workflow logs which files were outside the allowed paths so you can see exactly why.

@@ -25,20 +25,13 @@ async function createJob(jobDescription) {
     }),
   });
 
-  // 3. Get current job.md file SHA
-  const fileInfo = await githubApi(
-    `/repos/${GH_OWNER}/${GH_REPO}/contents/workspace/job.md?ref=${branch}`
-  );
-  const fileSha = fileInfo.sha;
-
-  // 4. Update workspace/job.md with job content
-  await githubApi(`/repos/${GH_OWNER}/${GH_REPO}/contents/workspace/job.md`, {
+  // 3. Create logs/${jobId}/job.md with job content
+  await githubApi(`/repos/${GH_OWNER}/${GH_REPO}/contents/logs/${jobId}/job.md`, {
     method: 'PUT',
     body: JSON.stringify({
       message: `job: ${jobId}`,
       content: Buffer.from(jobDescription).toString('base64'),
       branch: branch,
-      sha: fileSha,
     }),
   });
 

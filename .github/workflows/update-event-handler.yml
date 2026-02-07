@@ -64,8 +64,8 @@ jobs:
 
           # 1. Read job.md (on disk after checkout)
           JOB_CONTENT=""
-          if [ -f "workspace/job.md" ]; then
-            JOB_CONTENT=$(head -c 10000 workspace/job.md)
+          if [ -f "logs/${JOB_ID}/job.md" ]; then
+            JOB_CONTENT=$(head -c 10000 "logs/${JOB_ID}/job.md")
           fi
 
           # 2. Get last commit message via gh CLI
@@ -77,9 +77,9 @@ jobs:
           # 4. Get PR status
           PR_STATUS=$(gh pr view "$PR_NUMBER" --json state --jq '.state' --repo "${{ github.repository }}" 2>/dev/null || echo "open")
 
-          # 5. Read log file (find .jsonl in workspace/logs/{jobId}/)
+          # 5. Read log file (find .jsonl in logs/{jobId}/)
           LOG_CONTENT=""
-          LOG_DIR="workspace/logs/${JOB_ID}"
+          LOG_DIR="logs/${JOB_ID}"
           if [ -d "$LOG_DIR" ]; then
             LOG_FILE=$(find "$LOG_DIR" -name "*.jsonl" -type f | head -1)
             if [ -n "$LOG_FILE" ]; then
