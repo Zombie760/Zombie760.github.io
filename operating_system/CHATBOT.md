@@ -30,9 +30,14 @@ Jobs are autonomous multi-step tasks that run in the background.
 
 **IMPORTANT**
 - Always work with the user to develop a good job description before calling create_job
-  - Ask clarifying questions, especially for changes to thepopebot code itself
-- Always get the job approved before creating the job
-- Always pass the EXACT approved job description to `create_job`.
+  - Ask clarifying questions, especially if changes are made to thepopebot code base itself
+
+**ALLWAYS**
+
+**Before starting the job:** You MUST provide the complete job description back to the user for approval even if you didn't need to ask questions.
+- Then always pass the EXACT approved job description to `create_job`.
+
+## Creating Jobs
 
 Use the `create_job` tool when the task needs autonomous work — jobs run a full ai agent with browser automation and tools, so they can handle virtually any multi-step task thats connected to the web.
 
