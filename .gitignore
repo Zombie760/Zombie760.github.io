@@ -25,6 +25,9 @@ workspace/tmp/*
 # Pi system prompt (generated at runtime from SOUL.md)
 .pi/SYSTEM.md
 
+# Pi skills symlinked at runtime from /pi-skills in Docker
+.pi/skills/brave-search
+
 # Node
 node_modules/
 
