@@ -14,7 +14,27 @@ jobs:
       pull-requests: write
 
     steps:
+      - name: Wait for merge check
+        id: merge-check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          for i in $(seq 1 30); do
+            sleep 10
+            MERGEABLE=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json mergeable -q '.mergeable')
+            if [ "$MERGEABLE" != "" ] && [ "$MERGEABLE" != "UNKNOWN" ]; then
+              echo "mergeable=$MERGEABLE" >> "$GITHUB_OUTPUT"
+              echo "Mergeable: $MERGEABLE"
+              exit 0
+            fi
+            echo "Still computing... (attempt $i/30)"
+          done
+          echo "mergeable=UNKNOWN" >> "$GITHUB_OUTPUT"
+          echo "Timed out waiting for merge check"
+
       - name: Check AUTO_MERGE setting
+        if: steps.merge-check.outputs.mergeable == 'MERGEABLE'
         id: check-setting
         run: |
           AUTO_MERGE="${{ vars.AUTO_MERGE }}"
@@ -27,7 +47,7 @@ jobs:
           fi
 
       - name: Check ALLOWED_PATHS
-        if: steps.check-setting.outputs.enabled == 'true'
+        if: steps.merge-check.outputs.mergeable == 'MERGEABLE' && steps.check-setting.outputs.enabled == 'true'
         id: check-paths
         env:
           GH_TOKEN: ${{ github.token }}
@@ -90,7 +110,7 @@ jobs:
           echo "allowed=$ALL_OK" >> "$GITHUB_OUTPUT"
 
       - name: Merge PR
-        if: steps.check-setting.outputs.enabled == 'true' && steps.check-paths.outputs.allowed == 'true'
+        if: steps.merge-check.outputs.mergeable == 'MERGEABLE' && steps.check-setting.outputs.enabled == 'true' && steps.check-paths.outputs.allowed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

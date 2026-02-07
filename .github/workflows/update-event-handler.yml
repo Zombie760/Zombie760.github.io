@@ -1,31 +1,60 @@
 name: PR Webhook Notification
 
 on:
-  pull_request:
-    types: [opened]
-    branches: [main]
+  workflow_run:
+    workflows: ["Auto-Merge Job PR"]
+    types: [completed]
 
 jobs:
   notify:
     runs-on: ubuntu-latest
-    if: startsWith(github.event.pull_request.head.ref, 'job/')
+    if: startsWith(github.event.workflow_run.head_branch, 'job/')
     permissions:
       contents: read
       pull-requests: read
 
     steps:
+      - name: Get PR number
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="${{ github.event.workflow_run.head_branch }}"
+
+          # Try workflow_run.pull_requests first
+          PR_NUMBER=$(echo '${{ toJson(github.event.workflow_run.pull_requests) }}' | jq -r '.[0].number // empty')
+
+          # Fallback: look up PR by head branch
+          if [ -z "$PR_NUMBER" ]; then
+            PR_NUMBER=$(gh pr list --head "$BRANCH" --repo "${{ github.repository }}" --json number -q '.[0].number')
+          fi
+
+          if [ -z "$PR_NUMBER" ]; then
+            echo "No PR found for branch $BRANCH"
+            exit 1
+          fi
+
+          PR_URL=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json url -q '.url')
+          PR_TITLE=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json title -q '.title')
+
+          echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
+          echo "title=$PR_TITLE" >> "$GITHUB_OUTPUT"
+          echo "Found PR #$PR_NUMBER: $PR_TITLE"
+
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.workflow_run.head_sha }}
 
       - name: Gather job results and notify
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          PR_NUMBER="${{ github.event.pull_request.number }}"
-          BRANCH="${{ github.event.pull_request.head.ref }}"
+          PR_NUMBER="${{ steps.pr.outputs.number }}"
+          BRANCH="${{ github.event.workflow_run.head_branch }}"
           JOB_ID="${BRANCH#job/}"
+          MERGE_RESULT="${{ github.event.workflow_run.conclusion }}"
 
           # 1. Read job.md (on disk after checkout)
           JOB_CONTENT=""
@@ -54,16 +83,17 @@ jobs:
 
           # 6. Build JSON payload with jq (handles escaping safely)
           jq -n \
-            --arg action "${{ github.event.action }}" \
-            --arg html_url "${{ github.event.pull_request.html_url }}" \
-            --arg title "${{ github.event.pull_request.title }}" \
-            --argjson number "${{ github.event.pull_request.number }}" \
+            --arg action "${{ github.event.workflow_run.conclusion }}" \
+            --arg html_url "${{ steps.pr.outputs.url }}" \
+            --arg title "${{ steps.pr.outputs.title }}" \
+            --argjson number "$PR_NUMBER" \
             --arg head_ref "$BRANCH" \
             --arg job "$JOB_CONTENT" \
             --arg commit_message "$COMMIT_MSG" \
             --arg changed_files "$CHANGED_FILES" \
             --arg pr_status "$PR_STATUS" \
             --arg log "$LOG_CONTENT" \
+            --arg merge_result "$MERGE_RESULT" \
             '{
               action: $action,
               pull_request: {
@@ -77,7 +107,8 @@ jobs:
                 commit_message: $commit_message,
                 changed_files: ($changed_files | split("\n") | map(select(length > 0))),
                 pr_status: $pr_status,
-                log: $log
+                log: $log,
+                merge_result: $merge_result
               }
             }' > /tmp/payload.json
 

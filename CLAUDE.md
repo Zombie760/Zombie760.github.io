@@ -43,9 +43,15 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 │                                                │       GitHub         │ │
 │                                                │    (PR opened)       │ │
 │                                                │                      │ │
-│                                                │ 4a. update-event-handler.yml   │ │
-│                                                │ 4b. auto-merge.yml   │ │
-│                                                │     (parallel)       │ │
+│                                                │ 4. auto-merge.yml    │ │
+│                                                │    (waits for merge  │ │
+│                                                │     check, merges)   │ │
+│                                                │          │           │ │
+│                                                │          ▼           │ │
+│                                                │ 5. update-event-     │ │
+│                                                │    handler.yml       │ │
+│                                                │    (notifies after   │ │
+│                                                │     auto-merge done) │ │
 │                                                └──────────────────────┘ │
 │                                                                          │
 └──────────────────────────────────────────────────────────────────────────┘
@@ -253,24 +259,25 @@ on:
 
 ### update-event-handler.yml
 
-Triggers when a PR is opened from a `job/*` branch. Checks out the PR branch, gathers all job data (job.md, commit message, changed files, session log), and sends a fat payload to the event handler. The event handler then summarizes via Claude and sends a Telegram notification — no additional GitHub API calls needed.
+Triggers after `auto-merge.yml` completes (via `workflow_run`), not in parallel. Checks out the PR branch, gathers all job data (job.md, commit message, changed files, session log), and sends a fat payload to the event handler including the `merge_result` (`success`/`failure`). The event handler then summarizes via Claude and sends a Telegram notification — no additional GitHub API calls needed.
 
 ```yaml
 on:
-  pull_request:
-    types: [opened]
-    branches: [main]
-# Only runs if: PR head branch starts with "job/"
+  workflow_run:
+    workflows: ["Auto-Merge Job PR"]
+    types: [completed]
+# Only runs if: head branch starts with "job/"
+# Includes merge_result in payload (from auto-merge conclusion)
 ```
 
 ### auto-merge.yml
 
-Triggers when a PR is opened from a `job/*` branch (runs in parallel with `update-event-handler.yml`). Checks two repository variables before merging:
+Triggers when a PR is opened from a `job/*` branch. First waits for GitHub to compute mergeability (polls every 10s, up to 30 attempts). Then checks two repository variables before merging:
 
 1. **`AUTO_MERGE`** — If set to `"false"`, skip merge entirely. Any other value (or unset) means auto-merge is enabled.
 2. **`ALLOWED_PATHS`** — Comma-separated path prefixes (e.g., `/workspace/,/operating_system/`). Only merges if all changed files fall within allowed prefixes. Defaults to `/workspace` if unset.
 
-If both checks pass, merges the PR with `--squash`. If there's a merge conflict, the merge fails and the PR stays open for manual review.
+If the PR is mergeable and both checks pass, merges the PR with `--squash`. If there's a merge conflict, the merge is skipped and the PR stays open for manual review. After this workflow completes, `update-event-handler.yml` fires to send the notification.
 
 ```yaml
 on:
@@ -278,6 +285,7 @@ on:
     types: [opened]
     branches: [main]
 # Only runs if: PR head branch starts with "job/"
+# Waits for mergeability before attempting merge
 # Uses automatic GITHUB_TOKEN — no additional secrets needed
 ```
 
