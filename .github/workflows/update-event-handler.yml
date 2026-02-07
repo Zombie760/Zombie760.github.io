@@ -54,7 +54,13 @@ jobs:
           PR_NUMBER="${{ steps.pr.outputs.number }}"
           BRANCH="${{ github.event.workflow_run.head_branch }}"
           JOB_ID="${BRANCH#job/}"
-          MERGE_RESULT="${{ github.event.workflow_run.conclusion }}"
+          # Check actual PR merge state (workflow conclusion doesn't distinguish skipped merge from successful merge)
+          PR_MERGED=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json mergedAt -q '.mergedAt')
+          if [ -n "$PR_MERGED" ] && [ "$PR_MERGED" != "null" ]; then
+            MERGE_RESULT="merged"
+          else
+            MERGE_RESULT="not_merged"
+          fi
 
           # 1. Read job.md (on disk after checkout)
           JOB_CONTENT=""

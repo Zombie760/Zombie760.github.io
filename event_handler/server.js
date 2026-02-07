@@ -204,6 +204,7 @@ async function summarizeJob(results) {
       results.commit_message ? `## Commit Message\n${results.commit_message}` : '',
       results.changed_files?.length ? `## Changed Files\n${results.changed_files.join('\n')}` : '',
       results.pr_status ? `## PR Status\n${results.pr_status}` : '',
+      results.merge_result ? `## Merge Result\n${results.merge_result}` : '',
       results.pr_url ? `## PR URL\n${results.pr_url}` : '',
       results.log ? `## Agent Log\n${results.log}` : '',
     ].filter(Boolean).join('\n\n');
@@ -246,7 +247,7 @@ app.post('/github/webhook', async (req, res) => {
   const event = req.headers['x-github-event'];
   const payload = req.body;
 
-  if (event !== 'pull_request' || payload.action !== 'opened') {
+  if (event !== 'pull_request') {
     return res.status(200).json({ ok: true, skipped: true });
   }
 
