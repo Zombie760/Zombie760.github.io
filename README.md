@@ -11,8 +11,6 @@ Autonomous AI agents. All the power. None of the leaked API keys.
 
 ## Quick Start
 
-[![Fork this repo](https://img.shields.io/badge/Fork-238636?style=for-the-badge&logo=github)](https://github.com/stephengpope/thepopebot/fork)
-
 ### Prerequisites
 
 | Requirement | Install |
@@ -25,15 +23,21 @@ Autonomous AI agents. All the power. None of the leaked API keys.
 
 *ngrok is only required for local development to expose your local server to the internet. Production deployments (Vercel, Railway, etc.) don't need it.
 
-### Local Development Setup
+### Get Started
 
-> **Note:** These instructions are for local testing of the event handler. Production deployment instructions coming soon.
+> **Step 1** — Fork this repository to create your own agent:
+>
+> [![Fork this repo](https://img.shields.io/badge/Fork_this_repo-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stephengpope/thepopebot/fork)
+
+**Step 2** — Clone your fork and run the setup wizard:
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/thepopebot.git
 cd thepopebot
 npm run setup
 ```
+
+> **Note:** These instructions are for local testing of the event handler. Production deployment instructions coming soon.
 
 The wizard handles everything:
 1. Checks prerequisites
