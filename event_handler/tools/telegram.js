@@ -163,6 +163,18 @@ async function downloadFile(botToken, fileId) {
   return { buffer, filename };
 }
 
+/**
+ * React to a message with an emoji
+ * @param {string} botToken - Bot token from @BotFather
+ * @param {number|string} chatId - Chat ID
+ * @param {number} messageId - Message ID to react to
+ * @param {string} [emoji='👍'] - Emoji to react with
+ */
+async function reactToMessage(botToken, chatId, messageId, emoji = '👍') {
+  const b = getBot(botToken);
+  await b.api.setMessageReaction(chatId, messageId, [{ type: 'emoji', emoji }]);
+}
+
 module.exports = {
   getBot,
   setWebhook,
@@ -171,4 +183,5 @@ module.exports = {
   escapeHtml,
   formatJobNotification,
   downloadFile,
+  reactToMessage,
 };

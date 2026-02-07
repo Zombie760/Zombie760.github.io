@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const { createJob } = require('./tools/create-job');
 const { loadCrons } = require('./cron');
-const { setWebhook, sendMessage, formatJobNotification, downloadFile } = require('./tools/telegram');
+const { setWebhook, sendMessage, formatJobNotification, downloadFile, reactToMessage } = require('./tools/telegram');
 const { isWhisperEnabled, transcribeAudio } = require('./tools/openai');
 const { chat } = require('./claude');
 const { toolDefinitions, toolExecutors } = require('./claude/tools');
@@ -124,6 +124,9 @@ app.post('/telegram/webhook', async (req, res) => {
     if (chatId !== TELEGRAM_CHAT_ID) {
       return res.status(200).json({ ok: true });
     }
+
+    // Acknowledge receipt with a thumbs up
+    reactToMessage(telegramBotToken, chatId, message.message_id).catch(() => {});
 
     if (message.voice) {
       // Handle voice messages
