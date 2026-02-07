@@ -235,6 +235,12 @@ async function main() {
   console.log(chalk.dim('  Anthropic API key is required. Others are optional.\n'));
 
   // Anthropic (required)
+  const openAnthropicPage = await confirm('Open Anthropic API key page in browser?');
+  if (openAnthropicPage) {
+    await open('https://platform.claude.com/settings/keys');
+    printInfo('Opened in browser. Create an API key and copy it.');
+  }
+
   let anthropicValid = false;
   while (!anthropicValid) {
     anthropicKey = await promptForAnthropicKey();
@@ -387,7 +393,7 @@ async function main() {
   console.log(chalk.bold('  Now we need to start the server and expose it via ngrok.\n'));
   console.log(chalk.yellow('  Open TWO new terminal windows and run:\n'));
   console.log(chalk.bold('  Terminal 1:'));
-  console.log(chalk.cyan('     cd event_handler && npm install && npm start\n'));
+  console.log(chalk.cyan('     cd event_handler && npm install && npm run dev\n'));
   console.log(chalk.bold('  Terminal 2:'));
   console.log(chalk.cyan('     ngrok http 3000\n'));
 
@@ -433,9 +439,16 @@ async function main() {
           }
         }
       } else if (response.status === 401) {
-        healthSpinner.fail('Server responded but API key mismatch');
-        printWarning('The server should auto-restart to load the new .env file');
-        const retry = await confirm('Try again?');
+        healthSpinner.fail('Server is running but returned 401 (unauthorized)');
+        console.log('');
+        printWarning('This means the server is using an old API key that doesn\'t match the one we just generated.');
+        printInfo('The setup created a new .env file with a fresh API key, but your running server hasn\'t picked it up yet.');
+        console.log('');
+        console.log(chalk.bold('  To fix this, restart your server:\n'));
+        console.log(chalk.cyan('    1. Go to Terminal 1 (where the server is running)'));
+        console.log(chalk.cyan('    2. Press Ctrl+C to stop it'));
+        console.log(chalk.cyan('    3. Run: npm start\n'));
+        const retry = await confirm('Retry after restarting the server?');
         if (!retry) {
           ngrokUrl = testUrl;
         }
