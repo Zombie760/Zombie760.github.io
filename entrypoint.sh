@@ -57,8 +57,15 @@ rm -rf ./workspace/tmp/*
 LOG_DIR="/job/workspace/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
 
-# 1. Run job (SOUL.md as system prompt, job.md as user prompt)
-cp /job/operating_system/SOUL.md /job/.pi/SYSTEM.md
+# 1. Build system prompt from operating_system MD files
+SYSTEM_FILES=("SOUL.md" "CLOUD_AGENT.md")
+> /job/.pi/SYSTEM.md
+for i in "${!SYSTEM_FILES[@]}"; do
+    cat "/job/operating_system/${SYSTEM_FILES[$i]}" >> /job/.pi/SYSTEM.md
+    if [ "$i" -lt $((${#SYSTEM_FILES[@]} - 1)) ]; then
+        echo -e "\n\n" >> /job/.pi/SYSTEM.md
+    fi
+done
 
 PROMPT="
 
