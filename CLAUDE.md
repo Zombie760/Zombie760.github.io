@@ -57,6 +57,7 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 /
 ├── .github/workflows/
 │   ├── auto-merge.yml       # Auto-merges job PRs (checks AUTO_MERGE + ALLOWED_PATHS)
+│   ├── docker-build.yml     # Builds and pushes Docker image to GHCR
 │   ├── run-job.yml          # Runs Docker agent when job/* branch created
 │   └── update-event-handler.yml          # Notifies event handler when PR opened
 ├── .pi/
@@ -228,9 +229,21 @@ The Dockerfile creates a container with:
 
 GitHub Actions automate the job lifecycle. No manual webhook configuration needed.
 
+### docker-build.yml
+
+Triggers on push to `main`. Builds the Docker image and pushes it to GitHub Container Registry (GHCR). Only runs when `IMAGE_URL` is set to a GHCR URL (starts with `ghcr.io/`). Non-GHCR URLs skip this workflow entirely.
+
+```yaml
+on:
+  push:
+    branches: [main]
+# Only runs if: vars.IMAGE_URL is set AND starts with "ghcr.io/"
+# Pushes to: {IMAGE_URL}:latest
+```
+
 ### run-job.yml
 
-Triggers when a `job/*` branch is created. Runs the Docker agent container.
+Triggers when a `job/*` branch is created. Runs the Docker agent container. If `IMAGE_URL` is set, pulls from that registry (logs into GHCR automatically for `ghcr.io/` URLs); otherwise falls back to `stephengpope/thepopebot:latest` from Docker Hub.
 
 ```yaml
 on:
@@ -285,6 +298,7 @@ Configure these in **Settings → Secrets and variables → Actions → Variable
 |----------|-------------|---------|
 | `AUTO_MERGE` | Set to `false` to disable auto-merge of job PRs | Enabled (any value except `false`) |
 | `ALLOWED_PATHS` | Comma-separated path prefixes (e.g., `/workspace/,/operating_system/`). Use `/` for all paths. | `/workspace/logs` |
+| `IMAGE_URL` | Full Docker image path (e.g., `ghcr.io/myorg/mybot`). GHCR URLs trigger automatic builds via `docker-build.yml`. Non-GHCR URLs (e.g., `docker.io/user/mybot`) are pulled directly. | Not set (uses `stephengpope/thepopebot:latest`) |
 
 ## How Credentials Work
 
