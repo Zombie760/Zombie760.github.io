@@ -1,12 +1,9 @@
 const cron = require('node-cron');
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
 require('dotenv').config();
 
-const execAsync = promisify(exec);
-const { createJob } = require('./tools/create-job');
+const { executeAction } = require('./actions');
 const CRON_DIR = path.join(__dirname, 'cron');
 
 /**
@@ -27,7 +24,8 @@ function loadCrons() {
   const crons = JSON.parse(fs.readFileSync(cronFile, 'utf8'));
   const tasks = [];
 
-  for (const { name, schedule, job, command, type = 'agent', enabled } of crons) {
+  for (const cronEntry of crons) {
+    const { name, schedule, type = 'agent', enabled } = cronEntry;
     if (enabled === false) continue;
 
     if (!cron.validate(schedule)) {
@@ -37,14 +35,8 @@ function loadCrons() {
 
     const task = cron.schedule(schedule, async () => {
       try {
-        if (type === 'command') {
-          const { stdout, stderr } = await execAsync(command, { cwd: CRON_DIR });
-          const output = (stdout || stderr || '').trim();
-          console.log(`[CRON] ${name}: ${output || 'ran'}`);
-        } else {
-          const result = await createJob(job);
-          console.log(`[CRON] ${name}: job ${result.job_id}`);
-        }
+        const result = await executeAction(cronEntry, { cwd: CRON_DIR });
+        console.log(`[CRON] ${name}: ${result || 'ran'}`);
         console.log(`[CRON] ${name}: completed!`);
       } catch (err) {
         console.error(`[CRON] ${name}: error - ${err.message}`);

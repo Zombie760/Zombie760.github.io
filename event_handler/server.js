@@ -6,6 +6,7 @@ require('dotenv').config();
 
 const { createJob } = require('./tools/create-job');
 const { loadCrons } = require('./cron');
+const { loadTriggers } = require('./triggers');
 const { setWebhook, sendMessage, formatJobNotification, downloadFile, reactToMessage, startTypingIndicator } = require('./tools/telegram');
 const { isWhisperEnabled, transcribeAudio } = require('./tools/openai');
 const { chat } = require('./claude');
@@ -38,6 +39,8 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+app.use(loadTriggers());
 
 // GET /ping - health check endpoint
 app.get('/ping', (req, res) => {

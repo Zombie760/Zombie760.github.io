@@ -72,8 +72,11 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 ├── docs/                       # Additional documentation
 ├── event_handler/              # Event Handler orchestration layer
 │   ├── server.js               # Express HTTP server (webhooks, Telegram, GitHub)
+│   ├── actions.js              # Shared action executor (agent, command, http)
 │   ├── cron.js                 # Cron scheduler (loads CRONS.json)
 │   ├── cron/                   # Working directory for command-type cron jobs
+│   ├── triggers.js             # Webhook trigger middleware (loads TRIGGERS.json)
+│   ├── triggers/               # Working directory for command-type trigger scripts
 │   ├── claude/
 │   │   ├── index.js            # Claude API integration for chat
 │   │   ├── tools.js            # Tool definitions (create_job, get_job_status)
@@ -87,7 +90,8 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 │   ├── CHATBOT.md              # Telegram chat system prompt
 │   ├── JOB_SUMMARY.md          # Job completion summary prompt
 │   ├── HEARTBEAT.md            # Periodic check instructions
-│   └── CRONS.json              # Scheduled job definitions
+│   ├── CRONS.json              # Scheduled job definitions
+│   └── TRIGGERS.json           # Webhook trigger definitions
 ├── setup/                      # Interactive setup wizard
 │   ├── setup.mjs               # Main wizard script
 │   └── lib/                    # Helper modules
@@ -127,27 +131,90 @@ The Event Handler is a Node.js Express server that provides orchestration capabi
 
 - **server.js** - Express HTTP server handling all webhook routes
 - **cron.js** - Loads CRONS.json and schedules jobs using node-cron
+- **triggers.js** - Loads TRIGGERS.json and returns Express middleware for webhook triggers
 - **claude/** - Claude API integration for Telegram chat with tool use
 - **tools/** - Job creation, GitHub API, and Telegram utilities
 
-### Cron Jobs
+### Action Types: `agent`, `command`, and `http`
 
-Cron jobs are defined in `operating_system/CRONS.json` and loaded by `event_handler/cron.js` at startup using `node-cron`. There are two types:
+Both cron jobs and webhook triggers use the same shared dispatch system (`event_handler/actions.js`). Every action has a `type` field — `"agent"` (default), `"command"`, or `"http"`.
 
-#### Choosing Between `agent` and `command`
+#### Choosing Between `agent`, `command`, and `http`
 
-| | `agent` | `command` |
-|---|---------|-----------|
-| **Uses LLM** | Yes — spins up Pi in a Docker container | No — runs a shell command directly |
-| **Thinking** | Can reason, make decisions, write code | No thinking, just executes |
-| **Runtime** | Minutes to hours (full agent lifecycle) | Milliseconds to seconds |
-| **Cost** | LLM API calls + GitHub Actions minutes | Free (runs on event handler) |
+| | `agent` | `command` | `http` |
+|---|---------|-----------|--------|
+| **Uses LLM** | Yes — spins up Pi in a Docker container | No — runs a shell command directly | No — makes an HTTP request |
+| **Thinking** | Can reason, make decisions, write code | No thinking, just executes | No thinking, just sends a request |
+| **Runtime** | Minutes to hours (full agent lifecycle) | Milliseconds to seconds | Milliseconds to seconds |
+| **Cost** | LLM API calls + GitHub Actions minutes | Free (runs on event handler) | Free (runs on event handler) |
 
-If the task needs to *think*, use `agent`. If it just needs to *do*, use `command`.
+If the task needs to *think*, use `agent`. If it just needs to *do*, use `command`. If it needs to *call an external service*, use `http`.
 
 #### Type: `agent` (default)
 
 Creates a full Docker Agent job via `createJob()`. This pushes a `job/*` branch to GitHub, which triggers `run-job.yml` to spin up the Docker container with Pi. The `job` string is passed directly as-is to the LLM as its task prompt (written to `logs/<JOB_ID>/job.md` on the job branch).
+
+**Best practice:** Keep the `job` field short. Put detailed task instructions in a dedicated markdown file in `operating_system/` and reference it by path:
+
+```json
+"job": "Read the file at operating_system/MY_TASK.md and complete the tasks described there."
+```
+
+This keeps config files clean and makes instructions easier to read and edit. Avoid writing long multi-line job descriptions inline.
+
+#### Type: `command`
+
+Runs a shell command directly on the event handler server. No Docker container, no GitHub branch, no LLM. Each system has its own working directory for scripts:
+- **Crons**: `event_handler/cron/`
+- **Triggers**: `event_handler/triggers/`
+
+#### Type: `http`
+
+Makes an HTTP request to an external URL. No Docker container, no LLM. Useful for forwarding webhooks, calling external APIs, or pinging health endpoints.
+
+**Outgoing body logic:**
+- `GET` requests skip the body entirely
+- `POST` (default) sends `{ ...vars }` if no incoming data, or `{ ...vars, data: <incoming payload> }` when triggered by a webhook
+
+**Cron example** (no incoming data — just makes a scheduled request):
+```json
+{
+  "name": "ping-status",
+  "schedule": "*/5 * * * *",
+  "type": "http",
+  "url": "https://example.com/status",
+  "method": "POST",
+  "vars": { "source": "heartbeat" }
+}
+```
+Sends: `{ "source": "heartbeat" }`
+
+**Trigger example** (forwards incoming payload):
+```json
+{
+  "name": "forward-github",
+  "watch_path": "/github/webhook",
+  "actions": [
+    { "type": "http", "url": "https://example.com/hook", "vars": { "source": "github" } }
+  ]
+}
+```
+Sends: `{ "source": "github", "data": { ...req.body... } }`
+
+**`http` action fields:**
+
+| Field | Required | Default | Description |
+|-------|----------|---------|-------------|
+| `url` | yes | — | Target URL |
+| `method` | no | `"POST"` | `"GET"` or `"POST"` |
+| `headers` | no | `{}` | Outgoing request headers |
+| `vars` | no | `{}` | Extra key/value pairs merged into outgoing body |
+
+### Cron Jobs
+
+Cron jobs are defined in `operating_system/CRONS.json` and loaded by `event_handler/cron.js` at startup using `node-cron`.
+
+#### Examples
 
 ```json
 {
@@ -159,18 +226,6 @@ Creates a full Docker Agent job via `createJob()`. This pushes a `job/*` branch 
 }
 ```
 
-**Best practice:** Keep the `job` field short. Put detailed task instructions in a dedicated markdown file in `operating_system/` and reference it by path:
-
-```json
-"job": "Read the file at operating_system/MY_TASK.md and complete the tasks described there."
-```
-
-This keeps CRONS.json clean and makes instructions easier to read and edit. Avoid writing long multi-line job descriptions inline.
-
-#### Type: `command`
-
-Runs a shell command directly on the event handler server. No Docker container, no GitHub branch, no LLM. Commands execute with `event_handler/cron/` as the working directory — put any scripts or files needed by cron commands there.
-
 ```json
 {
   "name": "ping",
@@ -181,16 +236,64 @@ Runs a shell command directly on the event handler server. No Docker container, 
 }
 ```
 
-#### Common Fields
+#### Fields
 
 | Field | Description | Required |
 |-------|-------------|----------|
 | `name` | Display name for logging | Yes |
 | `schedule` | Cron expression (e.g., `*/30 * * * *`) | Yes |
-| `type` | `agent` (default) or `command` | No |
+| `type` | `agent` (default), `command`, or `http` | No |
 | `job` | Task description for agent type | For `agent` |
 | `command` | Shell command for command type | For `command` |
+| `url` | Target URL for http type | For `http` |
+| `method` | HTTP method (`GET` or `POST`, default: `POST`) | No |
+| `headers` | Outgoing request headers | No |
+| `vars` | Extra key/value pairs merged into outgoing body | No |
 | `enabled` | Set to `false` to disable without deleting | No |
+
+### Webhook Triggers
+
+Webhook triggers are defined in `operating_system/TRIGGERS.json` and loaded by `event_handler/triggers.js` as Express middleware. They fire actions when existing endpoints are hit. Triggers fire **after auth passes, before the route handler runs**, and are fire-and-forget (they don't block the request).
+
+#### Example
+
+```json
+[
+  {
+    "name": "on-github-event",
+    "watch_path": "/github/webhook",
+    "actions": [
+      { "type": "command", "command": "echo 'github webhook fired'" },
+      { "type": "agent", "job": "A github event occurred. Review the payload:\n{{body}}" }
+    ],
+    "enabled": true
+  }
+]
+```
+
+#### Fields
+
+| Field | Required | Default | Description |
+|-------|----------|---------|-------------|
+| `name` | yes | — | Display name for logging |
+| `watch_path` | yes | — | Existing endpoint path to watch (e.g., `/github/webhook`) |
+| `actions` | yes | — | Array of actions (each uses `type`/`job`/`command` per action types above) |
+| `actions[].type` | no | `"agent"` | `"agent"`, `"command"`, or `"http"` |
+| `actions[].job` | for agent | — | Job description, supports `{{body}}` (full payload) and `{{body.field}}` templates |
+| `actions[].command` | for command | — | Shell command, supports `{{body}}` and `{{body.field}}` templates |
+| `actions[].url` | for http | — | Target URL |
+| `actions[].method` | no | `"POST"` | HTTP method (`"GET"` or `"POST"`) |
+| `actions[].headers` | no | `{}` | Outgoing request headers |
+| `actions[].vars` | no | `{}` | Extra key/value pairs merged into outgoing body (incoming payload added as `data` field) |
+| `enabled` | no | `true` | Set `false` to disable |
+
+#### Template tokens
+
+Both `job` and `command` strings support the same templates:
+- `{{body}}` — full request body as JSON
+- `{{body.field}}` — a specific field from the body
+- `{{query}}` / `{{query.field}}` — query string params
+- `{{headers}}` / `{{headers.field}}` — request headers
 
 ### Environment Variables (Event Handler)
 
@@ -347,6 +450,7 @@ These files in `operating_system/` define the agent's character and behavior:
 - **JOB_SUMMARY.md** - Prompt for summarizing completed jobs
 - **HEARTBEAT.md** - Self-monitoring behavior
 - **CRONS.json** - Scheduled job definitions
+- **TRIGGERS.json** - Webhook trigger definitions
 
 ## Session Logs
 

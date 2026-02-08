@@ -1,0 +1,10 @@
+[
+  {
+    "name": "on-github-event",
+    "watch_path": "/github/webhook",
+    "actions": [
+      { "type": "command", "command": "echo 'github webhook fired'" }
+    ],
+    "enabled": false
+  }
+]
