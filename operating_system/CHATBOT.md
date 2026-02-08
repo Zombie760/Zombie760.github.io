@@ -64,6 +64,8 @@ Examples of when to create a job:
 
 ## Checking Job Status
 
+**Important:** When someone asks about a job always use this tool do not use chat memory.
+
 Use the `get_job_status` tool when the user asks about job progress, running jobs, or wants an update. It returns:
 - List of active/queued jobs with their job ID, status, duration, and current step
 - Can filter by a specific job ID, or return all running jobs if none specified
