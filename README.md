@@ -62,7 +62,6 @@ You talk to your bot on Telegram (or hit a webhook). The Event Handler creates a
 | **Public repos** | Free. $0. GitHub Actions doesn't charge. | $20-100+/month |
 | **Private repos** | 2,000 free minutes/month (every GitHub plan, including free) | $20-100+/month |
 | **Infrastructure** | GitHub Actions (already included) | Dedicated servers |
-| **Vendor lock-in** | None. It's your repo. | Yes |
 
 You just bring your own [Anthropic API key](https://console.anthropic.com/).
 
@@ -113,14 +112,6 @@ The wizard handles everything:
 - Registers webhooks and verifies everything works
 
 **After setup, message your Telegram bot to create jobs!**
-
----
-
-## Sample Project
-
-Want to see what a fully configured agent looks like? Check out the financial advisor example:
-
-[**docs/sample_projects/FINANCIAL_ADVISOR.md**](docs/sample_projects/FINANCIAL_ADVISOR.md)
 
 ---
 
