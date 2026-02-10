@@ -55,7 +55,7 @@ You talk to your bot on Telegram (or hit a webhook). The Event Handler creates a
 
 ---
 
-## Free to Run
+## Get FREE server time on Github!
 
 | | thepopebot | Other platforms |
 |---|---|---|
