@@ -8,9 +8,9 @@
 
 **Secure by default** — Other frameworks hand credentials to the LLM and hope for the best. thepopebot is different: the AI literally cannot access your secrets, even if it tries. Secrets are filtered at the process level before the agent's shell even starts.
 
-**The repository IS the agent** — Fork it and you fork everything: code, personality, scheduled jobs, logs, history. No external platform to configure. No vendor lock-in. Your agent lives in your repo.
+**The repository IS the agent** — Every action your agent takes is a git commit. You can see exactly what it did, when, and why. If it screws up, revert it. Want to clone your agent? Fork the repo — code, personality, scheduled jobs, full history, all of it. Nothing new to learn, nothing new to sign up for.
 
-**GitHub Actions IS the compute** — Every job runs in a fresh, isolated Docker container via GitHub Actions. Run one task or a thousand in parallel. No servers to manage, no infrastructure to maintain.
+**Free compute, built in** — Every GitHub account comes with free cloud computing time. thepopebot uses that to run your agent. One task or a hundred in parallel — the compute is already included.
 
 **Self-evolving** — The agent modifies its own code through pull requests. Every change is auditable, every change is reversible. You stay in control.
 
