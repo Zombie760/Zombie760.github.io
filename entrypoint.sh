@@ -73,7 +73,12 @@ PROMPT="
 
 $(cat /job/logs/${JOB_ID}/job.md)"
 
-pi --provider anthropic --model claude-sonnet-4-5-20250929 -p "$PROMPT" --session-dir "${LOG_DIR}"
+MODEL_FLAGS=""
+if [ -n "$MODEL" ]; then
+    MODEL_FLAGS="--provider anthropic --model $MODEL"
+fi
+
+pi $MODEL_FLAGS -p "$PROMPT" --session-dir "${LOG_DIR}"
 
 # 2. Commit changes + logs
 git add -A

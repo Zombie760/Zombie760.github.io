@@ -332,6 +332,7 @@ async function main() {
   const defaultVars = {
     AUTO_MERGE: 'true',
     ALLOWED_PATHS: '/logs',
+    MODEL: 'claude-sonnet-4-5-20250929',
   };
   const varResults = await setVariables(owner, repo, defaultVars);
   varsSpinner.stop();
@@ -536,6 +537,7 @@ async function main() {
   console.log('  • GH_WEBHOOK_URL');
   console.log('  • AUTO_MERGE = true');
   console.log('  • ALLOWED_PATHS = /logs');
+  console.log('  • MODEL = claude-sonnet-4-5-20250929');
 
   console.log(chalk.bold.green('\n  You\'re all set!\n'));
 

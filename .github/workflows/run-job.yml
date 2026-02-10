@@ -23,6 +23,7 @@ jobs:
       - name: Run thepopebot Agent
         env:
           IMAGE_URL: ${{ vars.IMAGE_URL }}
+          MODEL: ${{ vars.MODEL }}
         run: |
           if [ -n "$IMAGE_URL" ]; then
             IMAGE="${IMAGE_URL}:latest"
@@ -35,4 +36,5 @@ jobs:
             -e BRANCH="${{ github.ref_name }}" \
             -e SECRETS='${{ secrets.SECRETS }}' \
             -e LLM_SECRETS='${{ secrets.LLM_SECRETS }}' \
+            -e MODEL="${MODEL}" \
             "$IMAGE"

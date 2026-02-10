@@ -2,8 +2,6 @@
 
 **Autonomous AI agents. All the power. None of the leaked API keys.**
 
-[![Fork this repo](https://img.shields.io/badge/Fork_this_repo-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stephengpope/thepopebot/fork)
-
 ---
 
 ## Why thepopebot?
