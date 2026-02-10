@@ -235,6 +235,12 @@ async function main() {
   console.log(chalk.dim('  Anthropic API key is required. Others are optional.\n'));
 
   // Anthropic (required)
+  const openAnthropicPage = await confirm('Open Anthropic API key page in browser?');
+  if (openAnthropicPage) {
+    await open('https://platform.claude.com/settings/keys');
+    printInfo('Opened in browser. Create an API key and copy it.');
+  }
+
   let anthropicValid = false;
   while (!anthropicValid) {
     anthropicKey = await promptForAnthropicKey();
@@ -321,6 +327,23 @@ async function main() {
     printWarning('Some secrets failed - you may need to set them manually');
   }
 
+  // Set default GitHub repository variables
+  const varsSpinner = ora('Setting GitHub repository variables...').start();
+  const defaultVars = {
+    AUTO_MERGE: 'true',
+    ALLOWED_PATHS: '/logs',
+    MODEL: 'claude-sonnet-4-5-20250929',
+  };
+  const varResults = await setVariables(owner, repo, defaultVars);
+  varsSpinner.stop();
+  for (const [name, result] of Object.entries(varResults)) {
+    if (result.success) {
+      printSuccess(`Set ${name} = ${defaultVars[name]}`);
+    } else {
+      printError(`Failed to set ${name}: ${result.error}`);
+    }
+  }
+
   // ─────────────────────────────────────────────────────────────────────────────
   // Step 5: Telegram Setup
   // ─────────────────────────────────────────────────────────────────────────────
@@ -371,7 +394,7 @@ async function main() {
   console.log(chalk.bold('  Now we need to start the server and expose it via ngrok.\n'));
   console.log(chalk.yellow('  Open TWO new terminal windows and run:\n'));
   console.log(chalk.bold('  Terminal 1:'));
-  console.log(chalk.cyan('     cd event_handler && npm install && npm start\n'));
+  console.log(chalk.cyan('     cd event_handler && npm install && npm run dev\n'));
   console.log(chalk.bold('  Terminal 2:'));
   console.log(chalk.cyan('     ngrok http 3000\n'));
 
@@ -417,9 +440,16 @@ async function main() {
           }
         }
       } else if (response.status === 401) {
-        healthSpinner.fail('Server responded but API key mismatch');
-        printWarning('The server should auto-restart to load the new .env file');
-        const retry = await confirm('Try again?');
+        healthSpinner.fail('Server is running but returned 401 (unauthorized)');
+        console.log('');
+        printWarning('This means the server is using an old API key that doesn\'t match the one we just generated.');
+        printInfo('The setup created a new .env file with a fresh API key, but your running server hasn\'t picked it up yet.');
+        console.log('');
+        console.log(chalk.bold('  To fix this, restart your server:\n'));
+        console.log(chalk.cyan('    1. Go to Terminal 1 (where the server is running)'));
+        console.log(chalk.cyan('    2. Press Ctrl+C to stop it'));
+        console.log(chalk.cyan('    3. Run: npm start\n'));
+        const retry = await confirm('Retry after restarting the server?');
         if (!retry) {
           ngrokUrl = testUrl;
         }
@@ -505,6 +535,9 @@ async function main() {
 
   console.log(chalk.bold('\n  GitHub Variables Set:\n'));
   console.log('  • GH_WEBHOOK_URL');
+  console.log('  • AUTO_MERGE = true');
+  console.log('  • ALLOWED_PATHS = /logs');
+  console.log('  • MODEL = claude-sonnet-4-5-20250929');
 
   console.log(chalk.bold.green('\n  You\'re all set!\n'));
 

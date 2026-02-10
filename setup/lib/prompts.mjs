@@ -1,4 +1,5 @@
 import inquirer from 'inquirer';
+import open from 'open';
 
 /**
  * Mask a secret, showing only last 4 characters
@@ -67,6 +68,18 @@ export async function promptForOpenAIKey() {
 
   if (!addKey) return null;
 
+  const { openPage } = await inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'openPage',
+      message: 'Open OpenAI API key page in browser?',
+      default: true,
+    },
+  ]);
+  if (openPage) {
+    await open('https://platform.openai.com/settings/organization/api-keys');
+  }
+
   const { key } = await inquirer.prompt([
     {
       type: 'password',
@@ -131,11 +144,23 @@ export async function promptForBraveKey() {
   if (!addKey) return null;
 
   console.log('\n  To get a free Brave Search API key:');
-  console.log('  1. Go to https://brave.com/search/api/');
+  console.log('  1. Go to https://api-dashboard.search.brave.com/app/keys');
   console.log('  2. Click "Get Started"');
   console.log('  3. Create an account (or sign in)');
   console.log('  4. Subscribe to the "Free" plan (2,000 queries/month)');
   console.log('  5. Copy your API key\n');
+
+  const { openPage } = await inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'openPage',
+      message: 'Open Brave Search API page in browser?',
+      default: true,
+    },
+  ]);
+  if (openPage) {
+    await open('https://api-dashboard.search.brave.com/app/keys');
+  }
 
   const { key } = await inquirer.prompt([
     {

@@ -5,7 +5,7 @@ description: Use when a job requires modifying thepopebot's own code, configurat
 
 # Modify Self
 
-Before making any changes, read the project documentation for full context on the architecture, directory structure, and how everything fits together:
+Before making any changes, read thepopebot documentation for a full understanding of the system architecture, directory structure, and how everything fits together:
 
 ```bash
 cat /job/CLAUDE.md

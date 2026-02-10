@@ -101,6 +101,8 @@ function escapeHtml(text) {
  */
 async function sendMessage(botToken, chatId, text, options = {}) {
   const b = getBot(botToken);
+  // Strip HTML comments — Telegram's HTML parser doesn't support them
+  text = text.replace(/<!--[\s\S]*?-->/g, '');
   const chunks = smartSplit(text, MAX_LENGTH);
 
   let lastMessage;
@@ -175,6 +177,38 @@ async function reactToMessage(botToken, chatId, messageId, emoji = '👍') {
   await b.api.setMessageReaction(chatId, messageId, [{ type: 'emoji', emoji }]);
 }
 
+/**
+ * Start a repeating typing indicator for a chat.
+ * Returns a stop function. The indicator naturally expires after 5s,
+ * so we re-send with random gaps (5.5–8s) to look human.
+ * @param {string} botToken - Bot token from @BotFather
+ * @param {number|string} chatId - Chat ID
+ * @returns {Function} Call to stop the typing indicator
+ */
+function startTypingIndicator(botToken, chatId) {
+  const b = getBot(botToken);
+  let timeout;
+  let stopped = false;
+
+  function scheduleNext() {
+    if (stopped) return;
+    const delay = 5500 + Math.random() * 2500;
+    timeout = setTimeout(() => {
+      if (stopped) return;
+      b.api.sendChatAction(chatId, 'typing').catch(() => {});
+      scheduleNext();
+    }, delay);
+  }
+
+  b.api.sendChatAction(chatId, 'typing').catch(() => {});
+  scheduleNext();
+
+  return () => {
+    stopped = true;
+    clearTimeout(timeout);
+  };
+}
+
 module.exports = {
   getBot,
   setWebhook,
@@ -184,4 +218,5 @@ module.exports = {
   formatJobNotification,
   downloadFile,
   reactToMessage,
+  startTypingIndicator,
 };

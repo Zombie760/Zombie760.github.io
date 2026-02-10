@@ -6,7 +6,8 @@ require('dotenv').config();
 
 const { createJob } = require('./tools/create-job');
 const { loadCrons } = require('./cron');
-const { setWebhook, sendMessage, formatJobNotification, downloadFile, reactToMessage } = require('./tools/telegram');
+const { loadTriggers } = require('./triggers');
+const { setWebhook, sendMessage, formatJobNotification, downloadFile, reactToMessage, startTypingIndicator } = require('./tools/telegram');
 const { isWhisperEnabled, transcribeAudio } = require('./tools/openai');
 const { chat } = require('./claude');
 const { toolDefinitions, toolExecutors } = require('./claude/tools');
@@ -38,6 +39,8 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+app.use(loadTriggers());
 
 // GET /ping - health check endpoint
 app.get('/ping', (req, res) => {
@@ -125,8 +128,8 @@ app.post('/telegram/webhook', async (req, res) => {
       return res.status(200).json({ ok: true });
     }
 
-    // Acknowledge receipt with a thumbs up
-    reactToMessage(telegramBotToken, chatId, message.message_id).catch(() => {});
+    // Acknowledge receipt with a thumbs up (await so it completes before typing indicator starts)
+    await reactToMessage(telegramBotToken, chatId, message.message_id).catch(() => {});
 
     if (message.voice) {
       // Handle voice messages
@@ -145,7 +148,11 @@ app.post('/telegram/webhook', async (req, res) => {
       }
     }
 
+    // Acknowledge receipt immediately so Telegram doesn't wait/retry
+    res.status(200).json({ ok: true });
+
     if (messageText) {
+      const stopTyping = startTypingIndicator(telegramBotToken, chatId);
       try {
         // Get conversation history and process with Claude
         const history = getHistory(chatId);
@@ -162,12 +169,14 @@ app.post('/telegram/webhook', async (req, res) => {
       } catch (err) {
         console.error('Failed to process message with Claude:', err);
         await sendMessage(telegramBotToken, chatId, 'Sorry, I encountered an error processing your message.').catch(() => {});
+      } finally {
+        stopTyping();
       }
     }
+  } else {
+    // No message to process — still acknowledge
+    res.status(200).json({ ok: true });
   }
-
-  // Always return 200 to acknowledge receipt
-  res.status(200).json({ ok: true });
 });
 
 /**

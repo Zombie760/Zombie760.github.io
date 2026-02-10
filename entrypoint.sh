@@ -47,6 +47,9 @@ fi
 
 cd /job
 
+# Create temp directory for agent use (gitignored via tmp/)
+mkdir -p /job/tmp
+
 # Symlink pi-skills into .pi/skills/ so Pi discovers them
 ln -sf /pi-skills/brave-search /job/.pi/skills/brave-search
 
@@ -70,7 +73,12 @@ PROMPT="
 
 $(cat /job/logs/${JOB_ID}/job.md)"
 
-pi -p "$PROMPT" --session-dir "${LOG_DIR}"
+MODEL_FLAGS=""
+if [ -n "$MODEL" ]; then
+    MODEL_FLAGS="--provider anthropic --model $MODEL"
+fi
+
+pi $MODEL_FLAGS -p "$PROMPT" --session-dir "${LOG_DIR}"
 
 # 2. Commit changes + logs
 git add -A
