@@ -1,1 +1,0 @@
-Create a simple test job to verify the job creation and execution pipeline. The task is to execute a bash command that echoes the word "text" to demonstrate that the Docker agent can successfully run basic shell commands. This will help confirm that the job creation, Docker container execution, and result logging systems are functioning correctly.
