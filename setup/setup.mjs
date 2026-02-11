@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import { execSync } from 'child_process';
+import path from 'path';
 import chalk from 'chalk';
 import ora from 'ora';
 import open from 'open';
@@ -119,21 +121,13 @@ async function main() {
   }
 
   // Git
-  if (prereqs.git.installed) {
-    printSuccess('Git installed');
-    if (prereqs.git.remoteInfo) {
-      owner = prereqs.git.remoteInfo.owner;
-      repo = prereqs.git.remoteInfo.repo;
-      printSuccess(`Repository: ${owner}/${repo}`);
-    } else {
-      printWarning('Could not detect GitHub repository from git remote');
-    }
-  } else {
+  if (!prereqs.git.installed) {
     printError('Git not found');
     process.exit(1);
   }
+  printSuccess('Git installed');
 
-  // gh CLI
+  // gh CLI (needed before repo setup for auth)
   if (prereqs.gh.installed) {
     if (prereqs.gh.authenticated) {
       printSuccess('GitHub CLI authenticated');
@@ -160,7 +154,6 @@ async function main() {
     if (shouldInstall) {
       const installSpinner = ora('Installing gh CLI...').start();
       try {
-        const { execSync } = await import('child_process');
         execSync('brew install gh', { stdio: 'inherit' });
         installSpinner.succeed('gh CLI installed');
         runGhAuth();
@@ -169,6 +162,118 @@ async function main() {
         process.exit(1);
       }
     } else {
+      process.exit(1);
+    }
+  }
+
+  // Set up git credentials via gh so HTTPS push works without SSH
+  execSync('gh auth setup-git', { stdio: 'ignore' });
+
+  if (prereqs.git.remoteInfo) {
+    owner = prereqs.git.remoteInfo.owner;
+    repo = prereqs.git.remoteInfo.repo;
+    printSuccess(`Repository: ${owner}/${repo}`);
+  } else {
+    printWarning('No GitHub repository detected.');
+
+    // Initialize git repo if needed
+    try {
+      execSync('git rev-parse --git-dir', { stdio: 'ignore' });
+      printSuccess('Git repo already initialized');
+    } catch {
+      const initSpinner = ora('Initializing git repo...').start();
+      execSync('git init', { stdio: 'ignore' });
+      initSpinner.succeed('Git repo initialized');
+    }
+
+    // Stage and commit
+    execSync('git add .', { stdio: 'ignore' });
+    try {
+      execSync('git diff --cached --quiet', { stdio: 'ignore' });
+      printSuccess('Nothing new to commit');
+    } catch {
+      const commitSpinner = ora('Creating initial commit...').start();
+      execSync('git commit -m "initial commit"', { stdio: 'ignore' });
+      commitSpinner.succeed('Created initial commit');
+    }
+
+    // Ask for project name and create the repo on GitHub
+    const dirName = path.basename(process.cwd());
+    const { projectName } = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'projectName',
+        message: 'Name your project:',
+        default: dirName,
+        validate: (input) => input ? true : 'Name is required',
+      },
+    ]);
+
+    console.log(chalk.bold('\n  Create a GitHub repo:\n'));
+    console.log(chalk.cyan('    1. Create a new private repository'));
+    console.log(chalk.cyan('    2. Do NOT initialize with a README'));
+    console.log(chalk.cyan('    3. Copy the HTTPS URL\n'));
+
+    const openGitHub = await confirm('Open GitHub repo creation page in browser?');
+    if (openGitHub) {
+      await open(`https://github.com/new?name=${encodeURIComponent(projectName)}&visibility=private`);
+      printInfo('Opened in browser (name and private pre-filled).');
+    }
+
+    // Ask for the remote URL and add it
+    let remoteAdded = false;
+    while (!remoteAdded) {
+      const { remoteUrl } = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'remoteUrl',
+          message: 'Paste the HTTPS repository URL:',
+          validate: (input) => {
+            if (!input) return 'URL is required';
+            if (!input.startsWith('https://github.com/')) return 'Must be an HTTPS GitHub URL (https://github.com/...)';
+            return true;
+          },
+        },
+      ]);
+
+      try {
+        const url = remoteUrl.replace(/\/$/, '').replace(/\.git$/, '') + '.git';
+        execSync(`git remote add origin ${url}`, { stdio: 'ignore' });
+        remoteAdded = true;
+      } catch {
+        // Remote might already exist, update it
+        try {
+          const url = remoteUrl.replace(/\/$/, '').replace(/\.git$/, '') + '.git';
+          execSync(`git remote set-url origin ${url}`, { stdio: 'ignore' });
+          remoteAdded = true;
+        } catch {
+          printError('Failed to set remote. Try again.');
+        }
+      }
+    }
+
+    // Push to origin
+    const pushSpinner = ora('Pushing to GitHub...').start();
+    try {
+      execSync('git branch -M main', { stdio: 'ignore' });
+      execSync('git push -u origin main', { stdio: 'ignore' });
+      pushSpinner.succeed('Pushed to GitHub');
+    } catch (err) {
+      pushSpinner.fail('Failed to push — check that the repository exists and is empty');
+      printError(err.stderr?.toString().trim() || err.message);
+      console.log(chalk.dim('\n  Run npm run setup again after fixing the issue.\n'));
+      process.exit(1);
+    }
+
+    // Get owner/repo from the remote
+    const { getGitRemoteInfo } = await import('./lib/prerequisites.mjs');
+    const remoteInfo = getGitRemoteInfo();
+    if (remoteInfo) {
+      owner = remoteInfo.owner;
+      repo = remoteInfo.repo;
+      printSuccess(`Repository: ${owner}/${repo}`);
+    } else {
+      printError('Could not detect repository from remote.');
       process.exit(1);
     }
   }

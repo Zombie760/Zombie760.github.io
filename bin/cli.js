@@ -123,14 +123,11 @@ function init() {
     console.log('  To reset to default:  npx thepopebot reset <file>');
   }
 
-  if (created.length > 0 || !fs.existsSync(path.join(cwd, 'node_modules'))) {
-    console.log('\nDone! Next steps:\n');
-    console.log('  1. npm install');
-    console.log('  2. npm run setup');
-    console.log('  3. npm run dev\n');
-  } else {
-    console.log('\nDone!\n');
-  }
+  // Run npm install
+  console.log('\nInstalling dependencies...\n');
+  execSync('npm install', { stdio: 'inherit', cwd });
+
+  console.log('\nDone! Run: npm run setup\n');
 }
 
 /**
