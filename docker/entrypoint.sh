@@ -57,11 +57,11 @@ ln -sf /pi-skills/brave-search /job/.pi/skills/brave-search
 LOG_DIR="/job/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
 
-# 1. Build system prompt from operating_system MD files
+# 1. Build system prompt from config MD files
 SYSTEM_FILES=("SOUL.md" "AGENT.md")
 > /job/.pi/SYSTEM.md
 for i in "${!SYSTEM_FILES[@]}"; do
-    cat "/job/operating_system/${SYSTEM_FILES[$i]}" >> /job/.pi/SYSTEM.md
+    cat "/job/config/${SYSTEM_FILES[$i]}" >> /job/.pi/SYSTEM.md
     if [ "$i" -lt $((${#SYSTEM_FILES[@]} - 1)) ]; then
         echo -e "\n\n" >> /job/.pi/SYSTEM.md
     fi

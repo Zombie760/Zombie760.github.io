@@ -54,7 +54,7 @@ This is the user project structure after running `npx thepopebot init`:
 ├── .pi/
 │   ├── extensions/              # Pi extensions (env-sanitizer for secret filtering)
 │   └── skills/                  # Custom skills for the agent
-├── operating_system/
+├── config/
 │   ├── SOUL.md                  # Agent identity and personality
 │   ├── CHATBOT.md               # Telegram chat system prompt
 │   ├── JOB_SUMMARY.md           # Job summary prompt

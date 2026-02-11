@@ -100,7 +100,7 @@ thepopebot is an **NPM package** for creating custom autonomous AI agents. Users
 │   ├── app/                    # Next.js app (layout, page, catch-all API route)
 │   ├── .github/workflows/      # GitHub Actions (auto-merge, docker-build, run-job, update-event-handler)
 │   ├── .pi/                    # Pi extensions + skills
-│   └── operating_system/       # Agent config (SOUL, CHATBOT, CRONS, TRIGGERS, etc.)
+│   └── config/                 # Agent config (SOUL, CHATBOT, CRONS, TRIGGERS, etc.)
 ├── docs/                       # Extended documentation
 └── package.json                # NPM package definition
 ```
@@ -112,8 +112,8 @@ thepopebot is an **NPM package** for creating custom autonomous AI agents. Users
 | `api/index.js` | Next.js GET/POST route handlers for all `/api/*` endpoints |
 | `lib/paths.js` | Central path resolver — all paths resolve from user's `process.cwd()` |
 | `lib/actions.js` | Shared action dispatcher for agent/command/http actions |
-| `lib/cron.js` | Cron scheduler — loads `operating_system/CRONS.json` at server start |
-| `lib/triggers.js` | Trigger middleware — loads `operating_system/TRIGGERS.json` |
+| `lib/cron.js` | Cron scheduler — loads `config/CRONS.json` at server start |
+| `lib/triggers.js` | Trigger middleware — loads `config/TRIGGERS.json` |
 | `lib/utils/render-md.js` | Markdown `{{filepath}}` include processor |
 | `config/index.js` | `withThepopebot()` Next.js config wrapper |
 | `config/instrumentation.js` | `register()` server startup hook (loads .env, starts crons) |
@@ -149,7 +149,7 @@ When a user runs `npx thepopebot init`, the CLI scaffolds a Next.js project that
 2. **`instrumentation.js`** re-exports `register` from `thepopebot/instrumentation` — Next.js calls this on server start to load `.env` and start cron jobs
 3. **`app/api/[...thepopebot]/route.js`** re-exports `GET` and `POST` from `thepopebot/api` — catch-all route that handles all `/api/*` requests
 
-The user's project contains only configuration files (`operating_system/`, `.env`, `.github/workflows/`) and the thin Next.js wiring. All core logic lives in the npm package.
+The user's project contains only configuration files (`config/`, `.env`, `.github/workflows/`) and the thin Next.js wiring. All core logic lives in the npm package.
 
 ## Event Handler Layer
 
@@ -193,10 +193,10 @@ If the task needs to *think*, use `agent`. If it just needs to *do*, use `comman
 
 Creates a full Docker Agent job via `createJob()`. This pushes a `job/*` branch to GitHub, which triggers `run-job.yml` to spin up the Docker container with Pi. The `job` string is passed directly as-is to the LLM as its task prompt (written to `logs/<JOB_ID>/job.md` on the job branch).
 
-**Best practice:** Keep the `job` field short. Put detailed task instructions in a dedicated markdown file in `operating_system/` and reference it by path:
+**Best practice:** Keep the `job` field short. Put detailed task instructions in a dedicated markdown file in `config/` and reference it by path:
 
 ```json
-"job": "Read the file at operating_system/MY_TASK.md and complete the tasks described there."
+"job": "Read the file at config/MY_TASK.md and complete the tasks described there."
 ```
 
 This keeps config files clean and makes instructions easier to read and edit. Avoid writing long multi-line job descriptions inline.
@@ -251,7 +251,7 @@ Sends: `{ "source": "github", "data": { ...req.body... } }`
 
 ### Cron Jobs
 
-Cron jobs are defined in `operating_system/CRONS.json` and loaded by `lib/cron.js` at server startup (via the instrumentation hook) using `node-cron`.
+Cron jobs are defined in `config/CRONS.json` and loaded by `lib/cron.js` at server startup (via the instrumentation hook) using `node-cron`.
 
 #### Examples
 
@@ -260,7 +260,7 @@ Cron jobs are defined in `operating_system/CRONS.json` and loaded by `lib/cron.j
   "name": "heartbeat",
   "schedule": "*/30 * * * *",
   "type": "agent",
-  "job": "Read the file at operating_system/HEARTBEAT.md and complete the tasks described there.",
+  "job": "Read the file at config/HEARTBEAT.md and complete the tasks described there.",
   "enabled": true
 }
 ```
@@ -292,7 +292,7 @@ Cron jobs are defined in `operating_system/CRONS.json` and loaded by `lib/cron.j
 
 ### Webhook Triggers
 
-Webhook triggers are defined in `operating_system/TRIGGERS.json` and loaded by `lib/triggers.js`. They fire actions when existing endpoints are hit. Triggers fire **after auth passes, before the route handler runs**, and are fire-and-forget (they don't block the request).
+Webhook triggers are defined in `config/TRIGGERS.json` and loaded by `lib/triggers.js`. They fire actions when existing endpoints are hit. Triggers fire **after auth passes, before the route handler runs**, and are fire-and-forget (they don't block the request).
 
 #### Example
 
@@ -484,16 +484,16 @@ npm run setup
 
 The setup wizard handles API keys, GitHub secrets/variables, and Telegram bot configuration. Users customize their agent by editing:
 
-1. **operating_system/SOUL.md** - Agent personality and identity
-2. **operating_system/CHATBOT.md** - Telegram chat system prompt
-3. **operating_system/CRONS.json** - Scheduled job definitions
-4. **operating_system/TRIGGERS.json** - Webhook trigger definitions
+1. **config/SOUL.md** - Agent personality and identity
+2. **config/CHATBOT.md** - Telegram chat system prompt
+3. **config/CRONS.json** - Scheduled job definitions
+4. **config/TRIGGERS.json** - Webhook trigger definitions
 5. **.pi/skills/** - Custom skills for the agent
 6. **cron/** and **triggers/** - Shell scripts for command-type actions
 
 ## The Operating System
 
-These files in `operating_system/` define the agent's character and behavior (scaffolded from `templates/operating_system/`):
+These files in `config/` define the agent's character and behavior (scaffolded from `templates/config/`):
 
 - **SOUL.md** - Personality, identity, and values (who the agent is)
 - **CHATBOT.md** - System prompt for Telegram chat
@@ -510,7 +510,7 @@ Each job gets its own directory at `logs/{JOB_ID}/` containing both the job desc
 
 ## Markdown File Includes
 
-Markdown files in `operating_system/` support a `{{filepath}}` include syntax, powered by `lib/utils/render-md.js`.
+Markdown files in `config/` support a `{{filepath}}` include syntax, powered by `lib/utils/render-md.js`.
 
 - **Syntax**: `{{ filepath }}` — double curly braces around a file path
 - **Path resolution**: Paths resolve relative to the user's project root (`process.cwd()`)

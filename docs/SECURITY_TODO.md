@@ -143,7 +143,7 @@ const { stdout, stderr } = await new Promise((resolve, reject) => {
 });
 ```
 
-Note: `execFile` with `/bin/sh -c` still runs in a shell, but adding the `timeout` prevents runaway commands. The real protection is that CRONS.json lives in `operating_system/` which is not in `ALLOWED_PATHS`, so agents cannot modify it.
+Note: `execFile` with `/bin/sh -c` still runs in a shell, but adding the `timeout` prevents runaway commands. The real protection is that CRONS.json lives in `config/` which is not in `ALLOWED_PATHS`, so agents cannot modify it.
 
 ---
 

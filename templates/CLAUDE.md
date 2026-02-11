@@ -10,7 +10,7 @@ This is an autonomous AI agent powered by [thepopebot](https://github.com/stephe
 /
 ├── .github/workflows/          # CI/CD workflows (managed by thepopebot)
 ├── .pi/skills/                 # Custom Pi agent skills
-├── operating_system/           # Agent configuration
+├── config/                     # Agent configuration
 │   ├── SOUL.md                 # Agent personality and identity
 │   ├── CHATBOT.md              # Telegram chat system prompt
 │   ├── JOB_SUMMARY.md          # Job completion summary prompt
@@ -34,7 +34,7 @@ This is an autonomous AI agent powered by [thepopebot](https://github.com/stephe
 
 ## Customization
 
-- **operating_system/** — Agent personality, prompts, crons, triggers
+- **config/** — Agent personality, prompts, crons, triggers
 - **.pi/skills/** — Custom Pi agent skills
 - **cron/** and **triggers/** — Shell scripts for command-type actions
 - **app/** — Add Next.js pages, API routes, components

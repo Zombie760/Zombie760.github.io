@@ -2,7 +2,7 @@
 
 ## The Operating System
 
-The `operating_system/` directory is the agent's brain — it defines who the agent is and how it behaves.
+The `config/` directory is the agent's brain — it defines who the agent is and how it behaves.
 
 | File | Purpose |
 |------|---------|
@@ -54,7 +54,7 @@ curl -X POST http://localhost:3000/api/webhook \
 
 ### Scheduled Jobs
 
-Define recurring jobs in `operating_system/CRONS.json`:
+Define recurring jobs in `config/CRONS.json`:
 
 ```json
 [
