@@ -10,6 +10,8 @@ The `operating_system/` directory is the agent's brain — it defines who the ag
 | `CHATBOT.md` | System prompt for Telegram chat |
 | `JOB_SUMMARY.md` | Prompt for summarizing completed jobs |
 | `HEARTBEAT.md` | Self-monitoring behavior |
+| `TELEGRAM.md` | Telegram formatting guidelines |
+| `AGENT.md` | Agent runtime environment |
 | `CRONS.json` | Scheduled job definitions |
 | `TRIGGERS.json` | Webhook trigger definitions |
 
@@ -44,7 +46,7 @@ The bot automatically detects voice messages and transcribes them before process
 Create jobs programmatically via HTTP:
 
 ```bash
-curl -X POST http://localhost:3000/webhook \
+curl -X POST http://localhost:3000/api/webhook \
   -H "Content-Type: application/json" \
   -H "x-api-key: YOUR_API_KEY" \
   -d '{"job": "Update the README with installation instructions"}'

@@ -2,18 +2,18 @@
 
 ## Environment Variables
 
-All environment variables for the Event Handler (set in `event_handler/.env`):
+All environment variables for the Event Handler (set in `.env` in your project root):
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `API_KEY` | Authentication key for all endpoints (except `/telegram/webhook` and `/github/webhook` which use their own secrets) | Yes |
+| `API_KEY` | Authentication key for `/api/webhook` and other protected endpoints | Yes |
 | `GH_TOKEN` | GitHub PAT for creating branches/files | Yes |
 | `GH_OWNER` | GitHub repository owner | Yes |
 | `GH_REPO` | GitHub repository name | Yes |
-| `PORT` | Server port (default: 3000) | No |
 | `TELEGRAM_BOT_TOKEN` | Telegram bot token from BotFather | For Telegram |
 | `TELEGRAM_CHAT_ID` | Restricts bot to this chat only | For security |
 | `TELEGRAM_WEBHOOK_SECRET` | Secret for webhook validation | No |
+| `TELEGRAM_VERIFICATION` | Verification code for getting your chat ID | For Telegram setup |
 | `GH_WEBHOOK_SECRET` | Secret for GitHub Actions webhook auth | For notifications |
 | `ANTHROPIC_API_KEY` | Claude API key for chat functionality | For chat |
 | `OPENAI_API_KEY` | OpenAI key for voice transcription | For voice |
@@ -63,17 +63,17 @@ This will verify your server is running, update the GitHub webhook URL, re-regis
 
 If you're deploying to a platform where you can't run the setup script (Vercel, Railway, etc.), configure Telegram manually:
 
-1. **Set environment variables** in your platform's dashboard (see `event_handler/.env.example` for reference):
+1. **Set environment variables** in your platform's dashboard (see `.env.example` for reference):
    - `TELEGRAM_BOT_TOKEN` - Your bot token from @BotFather
    - `TELEGRAM_WEBHOOK_SECRET` - Generate with `openssl rand -hex 32`
    - `TELEGRAM_VERIFICATION` - A verification code like `verify-abc12345`
 
 2. **Deploy and register the webhook:**
    ```bash
-   curl -X POST https://your-app.vercel.app/telegram/register \
+   curl -X POST https://your-app.vercel.app/api/telegram/register \
      -H "Content-Type: application/json" \
      -H "x-api-key: YOUR_API_KEY" \
-     -d '{"bot_token": "YOUR_BOT_TOKEN", "webhook_url": "https://your-app.vercel.app/telegram/webhook"}'
+     -d '{"bot_token": "YOUR_BOT_TOKEN", "webhook_url": "https://your-app.vercel.app/api/telegram/webhook"}'
    ```
    This registers your webhook with the secret from your env.
 

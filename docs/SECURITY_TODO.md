@@ -1,8 +1,8 @@
-# Security Hardening Plan — Express Server (Internet-Facing on 443)
+# Security Hardening Plan — Next.js App (Internet-Facing)
 
 ## Context
 
-The Event Handler Express server (`event_handler/server.js`) is being deployed to the public internet on port 443. It handles webhook ingress (Telegram, GitHub, generic), job creation via GitHub API, and Claude API calls — all expensive or sensitive operations. This audit identified critical gaps that must be closed before exposure.
+The Event Handler Next.js application (`api/index.js`) is deployed to the public internet. It handles webhook ingress (Telegram, GitHub, generic), job creation via GitHub API, and Claude API calls — all expensive or sensitive operations. This audit identified critical gaps that must be closed before exposure.
 
 ---
 
@@ -10,26 +10,20 @@ The Event Handler Express server (`event_handler/server.js`) is being deployed t
 
 **Problem:** Zero rate limiting on any endpoint. An attacker can spam job creation (GitHub API + Docker runs), Telegram message processing (Claude API calls), or brute-force the API key.
 
-**File:** `event_handler/server.js`
+**File:** `api/index.js`
 
 **Changes:**
-- Install `express-rate-limit`
-- Add a global limiter (e.g., 100 req/min per IP)
-- Add stricter per-endpoint limiters:
-  - `/webhook` — 10 req/min (creates expensive Docker jobs)
-  - `/telegram/webhook` — 30 req/min (triggers Claude API calls)
-  - `/github/webhook` — 20 req/min
-  - `/jobs/status` — 30 req/min
+- Add rate limiting via Next.js middleware or per-handler logic (Next.js does not use Express middleware)
+- Add stricter per-endpoint limits:
+  - `/api/webhook` — 10 req/min (creates expensive Docker jobs)
+  - `/api/telegram/webhook` — 30 req/min (triggers Claude API calls)
+  - `/api/github/webhook` — 20 req/min
+  - `/api/jobs/status` — 30 req/min
 
-```js
-const rateLimit = require('express-rate-limit');
-
-const globalLimiter = rateLimit({ windowMs: 60_000, max: 100 });
-app.use(globalLimiter);
-
-const jobLimiter = rateLimit({ windowMs: 60_000, max: 10 });
-app.post('/webhook', jobLimiter, async (req, res) => { ... });
-```
+**Note:** Since this is a Next.js app (not Express), rate limiting needs a Next.js-compatible approach. Options include:
+- Next.js middleware (`middleware.js`) with an in-memory or Redis-backed store
+- Per-handler rate limiting using a library like `rate-limiter-flexible`
+- Edge middleware for deployment platforms like Vercel
 
 ---
 
@@ -37,7 +31,7 @@ app.post('/webhook', jobLimiter, async (req, res) => { ... });
 
 **Problem:** `req.headers['x-api-key'] !== API_KEY` is vulnerable to timing attacks.
 
-**File:** `event_handler/server.js:36`
+**File:** `api/index.js`
 
 **Change:** Replace string `!==` with `crypto.timingSafeEqual`:
 
@@ -53,7 +47,7 @@ function safeCompare(a, b) {
 }
 ```
 
-Apply the same fix to Telegram secret check (line 95) and GitHub webhook secret check (line 242).
+Apply the same fix to Telegram secret check and GitHub webhook secret check.
 
 ---
 
@@ -61,41 +55,50 @@ Apply the same fix to Telegram secret check (line 95) and GitHub webhook secret 
 
 **Problem:** Both `TELEGRAM_WEBHOOK_SECRET` and `GH_WEBHOOK_SECRET` are optional. If unset, anyone can POST to these endpoints and trigger expensive API calls.
 
-**File:** `event_handler/server.js:93, 240`
+**File:** `api/index.js`
 
 **Changes:**
-- If `TELEGRAM_WEBHOOK_SECRET` is not set, reject all `/telegram/webhook` requests (log a startup warning)
-- If `GH_WEBHOOK_SECRET` is not set, reject all `/github/webhook` requests (log a startup warning)
+- If `TELEGRAM_WEBHOOK_SECRET` is not set, reject all `/api/telegram/webhook` requests (log a startup warning)
+- If `GH_WEBHOOK_SECRET` is not set, reject all `/api/github/webhook` requests (log a startup warning)
 - Use `safeCompare` for both (from fix #2)
 
 ---
 
 ## 4. Request Body Size Limit (HIGH)
 
-**Problem:** `express.json()` defaults to 100kb, which is fine for most endpoints, but should be explicitly set and tightened.
+**Problem:** Request body size should be explicitly limited to prevent oversized payloads.
 
-**File:** `event_handler/server.js:21`
+**File:** `api/index.js`
 
-**Change:**
+**Change:** Next.js API routes handle body parsing automatically. To limit body size, configure the route segment config:
+
 ```js
-app.use(express.json({ limit: '50kb' }));
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '50kb',
+    },
+  },
+};
 ```
+
+Or validate body size manually in the POST handler.
 
 ---
 
 ## 5. Job Description Validation (HIGH)
 
-**Problem:** No length or type validation on the `job` field from `/webhook`. Could create huge files via GitHub API.
+**Problem:** No length or type validation on the `job` field from `/api/webhook`. Could create huge files via GitHub API.
 
-**File:** `event_handler/server.js:60-61`
+**File:** `api/index.js`
 
 **Changes:**
 - Validate `job` is a string
 - Enforce max length (e.g., 10,000 chars)
 
 ```js
-if (!job || typeof job !== 'string') return res.status(400).json({ error: 'Missing or invalid job field' });
-if (job.length > 10000) return res.status(400).json({ error: 'Job description too long' });
+if (!job || typeof job !== 'string') return Response.json({ error: 'Missing or invalid job field' }, { status: 400 });
+if (job.length > 10000) return Response.json({ error: 'Job description too long' }, { status: 400 });
 ```
 
 ---
@@ -104,7 +107,7 @@ if (job.length > 10000) return res.status(400).json({ error: 'Job description to
 
 **Problem:** `eval $(echo "$SECRETS_JSON" | jq -r 'to_entries | .[] | "export \(.key)=\"\(.value)\""')` is vulnerable to command injection if any secret value contains `$(...)`, backticks, or other shell metacharacters.
 
-**File:** `entrypoint.sh:22, 30`
+**File:** `docker/entrypoint.sh`
 
 **Change:** Use `jq` to produce `key=value` pairs and `export` them without `eval`:
 
@@ -118,7 +121,7 @@ if [ -n "$SECRETS" ]; then
 fi
 ```
 
-Apply the same pattern to the `LLM_SECRETS` block (line 28-31).
+Apply the same pattern to the `LLM_SECRETS` block.
 
 ---
 
@@ -126,7 +129,7 @@ Apply the same pattern to the `LLM_SECRETS` block (line 28-31).
 
 **Problem:** `execAsync(command, { cwd: CRON_DIR })` uses `child_process.exec()` which spawns a shell. While CRONS.json is developer-controlled today, this is a defense-in-depth issue.
 
-**File:** `event_handler/cron.js:41`
+**File:** `lib/cron.js`
 
 **Change:** Use `execFile` with explicit shell and validate that CRONS.json is not writable by agents (already enforced by `ALLOWED_PATHS=/logs` in auto-merge). Add a command length limit:
 
@@ -148,7 +151,7 @@ Note: `execFile` with `/bin/sh -c` still runs in a shell, but adding the `timeou
 
 **Problem:** `[[ "$file" == "$compare"* ]]` matches `logs` as a prefix, which means a file named `logs_malicious.js` would pass. Need a trailing `/` in the comparison.
 
-**File:** `.github/workflows/auto-merge.yml:98-99`
+**File:** `.github/workflows/auto-merge.yml`
 
 **Change:**
 ```bash
@@ -161,9 +164,9 @@ if [[ "$file" == "$compare"/* ]] || [[ "$file" == "$compare" ]]; then
 
 ## 9. Sanitize Error Messages (MEDIUM)
 
-**Problem:** `github.js:22` throws `GitHub API error: ${res.status} ${error}` which includes raw API response text. This could leak internal details to callers.
+**Problem:** `github.js` throws `GitHub API error: ${res.status} ${error}` which includes raw API response text. This could leak internal details to callers.
 
-**Files:** `event_handler/tools/github.js:22`
+**File:** `lib/tools/github.js`
 
 **Change:** Log the full error, throw a generic one:
 ```js
@@ -174,7 +177,7 @@ if (!res.ok) {
 }
 ```
 
-The Express error handler at `server.js:290` already catches unhandled errors and returns generic messages, so this is defense-in-depth.
+The error handler in `api/index.js` already catches unhandled errors and returns generic messages, so this is defense-in-depth.
 
 ---
 
@@ -182,37 +185,32 @@ The Express error handler at `server.js:290` already catches unhandled errors an
 
 **Problem:** No audit trail of who called what endpoint, when. Impossible to detect attacks or investigate incidents.
 
-**File:** `event_handler/server.js` (new middleware)
+**File:** `api/index.js` or Next.js `middleware.js`
 
-**Change:** Add minimal structured request logging:
+**Change:** Add minimal structured request logging. In a Next.js app, this can be done in the route handlers or via Next.js middleware:
+
 ```js
-app.use((req, res, next) => {
-  const start = Date.now();
-  res.on('finish', () => {
-    console.log(JSON.stringify({
-      method: req.method,
-      path: req.path,
-      status: res.statusCode,
-      ms: Date.now() - start,
-      ip: req.ip,
-    }));
-  });
-  next();
-});
+// In middleware.js or per-handler
+console.log(JSON.stringify({
+  method: req.method,
+  path: req.nextUrl.pathname,
+  status: response.status,
+  ip: req.headers.get('x-forwarded-for') || req.ip,
+}));
 ```
 
 ---
 
 ## 11. Restrict render_md to Repo Root (MEDIUM)
 
-**Problem:** `render_md` resolves `{{ filepath }}` relative to `REPO_ROOT` using `path.resolve()`, but doesn't verify the result stays within the repo. A `{{ ../../../etc/shadow.md }}` include would resolve outside.
+**Problem:** `render_md` resolves `{{ filepath }}` relative to the project root using `path.resolve()`, but doesn't verify the result stays within the project. A `{{ ../../../etc/shadow.md }}` include would resolve outside.
 
-**File:** `event_handler/utils/render-md.js:31`
+**File:** `lib/utils/render-md.js`
 
 **Change:** Add a bounds check:
 ```js
-const includeResolved = path.resolve(REPO_ROOT, includePath.trim());
-if (!includeResolved.startsWith(REPO_ROOT)) {
+const includeResolved = path.resolve(PROJECT_ROOT, includePath.trim());
+if (!includeResolved.startsWith(PROJECT_ROOT)) {
   console.log(`[render_md] Path traversal blocked: ${includePath}`);
   return match;
 }
@@ -224,7 +222,7 @@ if (!includeResolved.startsWith(REPO_ROOT)) {
 
 **Problem:** Container runs everything as root, including Chrome and the Pi agent.
 
-**File:** `Dockerfile`
+**File:** `docker/Dockerfile`
 
 **Change:** Add a non-root user after installing system dependencies:
 ```dockerfile
@@ -241,7 +239,7 @@ Note: This requires adjusting Chrome cache paths and the `/job` workdir ownershi
 
 **Problem:** `git clone https://github.com/badlogic/pi-skills.git` without a pinned commit means any upstream push changes what's in the Docker image.
 
-**File:** `Dockerfile:40`
+**File:** `docker/Dockerfile`
 
 **Change:**
 ```dockerfile
@@ -255,24 +253,23 @@ RUN git clone https://github.com/badlogic/pi-skills.git /pi-skills && \
 
 | File | Changes |
 |------|---------|
-| `event_handler/server.js` | Rate limiting, timing-safe compare, enforce secrets, body size limit, job validation, request logging |
-| `event_handler/package.json` | Add `express-rate-limit` dependency |
-| `event_handler/cron.js` | Add command timeout and length limit |
-| `event_handler/tools/github.js` | Sanitize error messages |
-| `event_handler/utils/render-md.js` | Path traversal guard |
-| `entrypoint.sh` | Replace `eval` with safe env export loop |
+| `api/index.js` | Rate limiting, timing-safe compare, enforce secrets, body size limit, job validation, request logging |
+| `lib/cron.js` | Add command timeout and length limit |
+| `lib/tools/github.js` | Sanitize error messages |
+| `lib/utils/render-md.js` | Path traversal guard |
+| `docker/entrypoint.sh` | Replace `eval` with safe env export loop |
 | `.github/workflows/auto-merge.yml` | Fix path prefix matching with trailing `/` |
-| `Dockerfile` | Add non-root user, pin pi-skills commit |
+| `docker/Dockerfile` | Add non-root user, pin pi-skills commit |
 
 ---
 
 ## Verification
 
-1. **Start server locally:** `cd event_handler && npm install && npm run dev`
-2. **Test rate limiting:** Send rapid requests to `/webhook` and verify 429 responses after limit
+1. **Start server locally:** `npm run dev`
+2. **Test rate limiting:** Send rapid requests to `/api/webhook` and verify 429 responses after limit
 3. **Test auth:** Send requests without API key, with wrong key — verify 401
-4. **Test webhook secrets:** Send to `/telegram/webhook` and `/github/webhook` without secrets — verify rejection
+4. **Test webhook secrets:** Send to `/api/telegram/webhook` and `/api/github/webhook` without secrets — verify rejection
 5. **Test job validation:** POST oversized `job` field — verify 400
-6. **Test entrypoint:** Run `entrypoint.sh` with secrets containing `$(echo pwned)` — verify no command execution
+6. **Test entrypoint:** Run `docker/entrypoint.sh` with secrets containing `$(echo pwned)` — verify no command execution
 7. **Test auto-merge paths:** Create a PR with a file named `logs_evil.js` — verify it's blocked
 8. **Test render_md:** Add `{{ ../../etc/passwd.md }}` to a test file — verify it's blocked

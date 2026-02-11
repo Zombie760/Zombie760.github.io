@@ -83,20 +83,16 @@ You just bring your own [Anthropic API key](https://console.anthropic.com/).
 
 ### Three steps
 
-**Step 1** — Fork this repository:
-
-[![Fork this repo](https://img.shields.io/badge/Fork_this_repo-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stephengpope/thepopebot/fork)
-
-> GitHub Actions are disabled by default on forks. Go to the **Actions** tab in your fork and enable them.
-
-**Step 2** — Clone your fork:
+**Step 1** — Create a new project:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/thepopebot.git
-cd thepopebot
+mkdir my-agent && cd my-agent
+npx thepopebot init
 ```
 
-**Step 3** — Run the setup wizard:
+This scaffolds a Next.js project with all the configuration files, GitHub Actions workflows, and agent templates.
+
+**Step 2** — Run the setup wizard:
 
 ```bash
 npm run setup
@@ -105,13 +101,13 @@ npm run setup
 The wizard handles everything:
 - Checks prerequisites (Node.js, Git, GitHub CLI, ngrok)
 - Creates a GitHub Personal Access Token
-- Collects API keys (Anthropic required; OpenAI, Groq, and [Brave Search](https://api-dashboard.search.brave.com/app/keys) optional)
+- Collects API keys (Anthropic required; OpenAI optional for voice messages)
 - Sets GitHub repository secrets and variables
 - Sets up Telegram bot
-- Starts the server + ngrok, generates `event_handler/.env`
+- Starts the dev server + ngrok, generates `.env`
 - Registers webhooks and verifies everything works
 
-**After setup, message your Telegram bot to create jobs!**
+**Step 3** — Message your Telegram bot to create jobs!
 
 ---
 

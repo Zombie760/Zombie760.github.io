@@ -1,10 +1,10 @@
-# thepopebot - AI Agent Template
+# thepopebot - AI Agent NPM Package
 
-This document explains the thepopebot codebase for AI assistants working on this project.
+This document explains the thepopebot codebase for AI assistants working on this package.
 
 ## What is thepopebot?
 
-thepopebot is a **template repository** for creating custom autonomous AI agents. It features a two-layer architecture: an Event Handler for orchestration (webhooks, Telegram chat, cron scheduling) and a Docker Agent for autonomous task execution via the Pi coding agent.
+thepopebot is an **NPM package** for creating custom autonomous AI agents. Users install it via `npx thepopebot init`, which scaffolds a Next.js project. It features a two-layer architecture: a Next.js Event Handler for orchestration (webhooks, Telegram chat, cron scheduling) and a Docker Agent for autonomous task execution via the Pi coding agent.
 
 ## Two-Layer Architecture
 
@@ -20,7 +20,7 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 │   │  │   Cron     │  │                             │      GitHub      │ │
 │   │  │   Chat     │  │ ◄─────────────────────────  │  (job/* branch)  │ │
 │   │  └────────────┘  │   5. update-event-handler.yml calls   └────────┬─────────┘ │
-│   │                  │      /github/webhook                 │           │
+│   │                  │      /api/github/webhook               │           │
 │   └──────────────────┘                                      │           │
 │            │                                                │           │
 │            │                           2. run-job.yml    │           │
@@ -61,83 +61,122 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 
 ```
 /
-├── .github/workflows/
-│   ├── auto-merge.yml       # Auto-merges job PRs (checks AUTO_MERGE + ALLOWED_PATHS)
-│   ├── docker-build.yml     # Builds and pushes Docker image to GHCR
-│   ├── run-job.yml          # Runs Docker agent when job/* branch created
-│   └── update-event-handler.yml          # Notifies event handler when PR opened
-├── .pi/
-│   ├── extensions/             # Pi extensions (env-sanitizer for secret filtering)
-│   └── skills/                 # Custom skills for the agent
-├── docs/                       # Additional documentation
-├── event_handler/              # Event Handler orchestration layer
-│   ├── server.js               # Express HTTP server (webhooks, Telegram, GitHub)
+├── api/                        # Next.js route handlers (exported as thepopebot/api)
+│   └── index.js                # GET/POST handlers for all /api/* routes
+├── lib/                        # Core implementation
 │   ├── actions.js              # Shared action executor (agent, command, http)
 │   ├── cron.js                 # Cron scheduler (loads CRONS.json)
-│   ├── cron/                   # Working directory for command-type cron jobs
 │   ├── triggers.js             # Webhook trigger middleware (loads TRIGGERS.json)
-│   ├── triggers/               # Working directory for command-type trigger scripts
+│   ├── paths.js                # Central path resolver (resolves from user's project root)
 │   ├── claude/
 │   │   ├── index.js            # Claude API integration for chat
 │   │   ├── tools.js            # Tool definitions (create_job, get_job_status)
 │   │   └── conversation.js     # Chat history management
-│   └── tools/
-│       ├── create-job.js       # Job creation via GitHub API
-│       ├── github.js           # GitHub REST API helper + job status
-│       └── telegram.js         # Telegram bot integration
-├── operating_system/
-│   ├── SOUL.md                 # Agent identity and personality
-│   ├── CHATBOT.md              # Telegram chat system prompt
-│   ├── JOB_SUMMARY.md          # Job completion summary prompt
-│   ├── HEARTBEAT.md            # Periodic check instructions
-│   ├── CRONS.json              # Scheduled job definitions
-│   └── TRIGGERS.json           # Webhook trigger definitions
+│   ├── tools/
+│   │   ├── create-job.js       # Job creation via GitHub API
+│   │   ├── github.js           # GitHub REST API helper + job status
+│   │   ├── telegram.js         # Telegram bot integration
+│   │   └── openai.js           # OpenAI Whisper transcription
+│   └── utils/
+│       └── render-md.js        # Markdown {{include}} processor
+├── config/
+│   ├── index.js                # withThepopebot() Next.js config wrapper
+│   └── instrumentation.js      # Server startup hook (loads .env, starts crons)
+├── bin/
+│   └── cli.js                  # CLI: init, setup, setup-telegram, reset, diff
 ├── setup/                      # Interactive setup wizard
 │   ├── setup.mjs               # Main wizard script
-│   └── lib/                    # Helper modules
-├── logs/                       # Per-job directories (job.md + session logs)
-├── Dockerfile                  # Container definition
-├── entrypoint.sh               # Container startup script
-└── SECURITY.md                 # Security documentation
+│   ├── setup-telegram.mjs      # Telegram-only reconfiguration
+│   └── lib/                    # Wizard helpers (prerequisites, github, auth, prompts, telegram)
+├── docker/
+│   ├── Dockerfile              # Agent container (Node.js 22, Pi, Playwright)
+│   └── entrypoint.sh           # Container startup script
+├── templates/                  # Files scaffolded to user projects by `thepopebot init`
+│   ├── CLAUDE.md               # User project AI assistant guide
+│   ├── .env.example
+│   ├── .gitignore
+│   ├── next.config.mjs
+│   ├── instrumentation.js
+│   ├── app/                    # Next.js app (layout, page, catch-all API route)
+│   ├── .github/workflows/      # GitHub Actions (auto-merge, docker-build, run-job, update-event-handler)
+│   ├── .pi/                    # Pi extensions + skills
+│   └── operating_system/       # Agent config (SOUL, CHATBOT, CRONS, TRIGGERS, etc.)
+├── docs/                       # Extended documentation
+└── package.json                # NPM package definition
 ```
 
 ## Key Files
 
 | File | Purpose |
 |------|---------|
-| `operating_system/SOUL.md` | Agent personality and identity |
-| `operating_system/CHATBOT.md` | System prompt for Telegram chat |
-| `operating_system/JOB_SUMMARY.md` | Prompt for summarizing completed jobs |
-| `logs/<JOB_ID>/job.md` | The specific task for the agent to execute |
-| `Dockerfile` | Builds the agent container (Node.js 22, Playwright, Pi) |
-| `entrypoint.sh` | Container startup script - clones repo, runs agent, commits results |
-| `.pi/extensions/env-sanitizer/` | Filters secrets from LLM's bash subprocess environment |
+| `api/index.js` | Next.js GET/POST route handlers for all `/api/*` endpoints |
+| `lib/paths.js` | Central path resolver — all paths resolve from user's `process.cwd()` |
+| `lib/actions.js` | Shared action dispatcher for agent/command/http actions |
+| `lib/cron.js` | Cron scheduler — loads `operating_system/CRONS.json` at server start |
+| `lib/triggers.js` | Trigger middleware — loads `operating_system/TRIGGERS.json` |
+| `lib/utils/render-md.js` | Markdown `{{filepath}}` include processor |
+| `config/index.js` | `withThepopebot()` Next.js config wrapper |
+| `config/instrumentation.js` | `register()` server startup hook (loads .env, starts crons) |
+| `bin/cli.js` | CLI entry point (`thepopebot init`, `setup`, `reset`, `diff`) |
+| `docker/Dockerfile` | Builds the agent container (Node.js 22, Playwright, Pi) |
+| `docker/entrypoint.sh` | Container startup — clones repo, runs agent, commits results |
+
+## NPM Package Exports
+
+The package exposes three entry points:
+
+| Import | Module | Purpose |
+|--------|--------|---------|
+| `thepopebot/api` | `api/index.js` | `GET` and `POST` route handlers — re-exported by the user's catch-all route |
+| `thepopebot/config` | `config/index.js` | `withThepopebot()` — wraps the user's Next.js config to mark server-only packages as external |
+| `thepopebot/instrumentation` | `config/instrumentation.js` | `register()` — Next.js instrumentation hook that loads `.env` and starts cron jobs on server start |
+
+## CLI Commands
+
+| Command | Description |
+|---------|-------------|
+| `thepopebot init` | Scaffold a new project — copies templates, creates `package.json`, runs `npm install` |
+| `thepopebot setup` | Run interactive setup wizard (API keys, GitHub secrets, Telegram bot) |
+| `thepopebot setup-telegram` | Reconfigure Telegram webhook only |
+| `thepopebot reset [file]` | Restore a template file to package default (or list all available templates) |
+| `thepopebot diff [file]` | Show differences between project files and package templates |
+
+## How User Projects Work
+
+When a user runs `npx thepopebot init`, the CLI scaffolds a Next.js project that wires into the package:
+
+1. **`next.config.mjs`** imports `withThepopebot` from `thepopebot/config` — marks server-only dependencies as external so they aren't bundled for the client
+2. **`instrumentation.js`** re-exports `register` from `thepopebot/instrumentation` — Next.js calls this on server start to load `.env` and start cron jobs
+3. **`app/api/[...thepopebot]/route.js`** re-exports `GET` and `POST` from `thepopebot/api` — catch-all route that handles all `/api/*` requests
+
+The user's project contains only configuration files (`operating_system/`, `.env`, `.github/workflows/`) and the thin Next.js wiring. All core logic lives in the npm package.
 
 ## Event Handler Layer
 
-The Event Handler is a Node.js Express server that provides orchestration capabilities:
+The Event Handler is a Next.js API route handler (`api/index.js`) that provides orchestration capabilities:
 
 ### Endpoints
 
 | Endpoint | Method | Purpose |
 |----------|--------|---------|
-| `/webhook` | POST | Generic webhook for job creation (requires API_KEY) |
-| `/telegram/webhook` | POST | Telegram bot webhook for conversational interface |
-| `/telegram/register` | POST | Register Telegram webhook URL |
-| `/github/webhook` | POST | Receives notifications from GitHub Actions (update-event-handler.yml) |
-| `/jobs/status` | GET | Check status of a running job |
+| `/api/webhook` | POST | Generic webhook for job creation (requires API_KEY) |
+| `/api/telegram/webhook` | POST | Telegram bot webhook for conversational interface |
+| `/api/telegram/register` | POST | Register Telegram webhook URL |
+| `/api/github/webhook` | POST | Receives notifications from GitHub Actions (update-event-handler.yml) |
+| `/api/jobs/status` | GET | Check status of a running job |
+| `/api/ping` | GET | Health check |
 
 ### Components
 
-- **server.js** - Express HTTP server handling all webhook routes
-- **cron.js** - Loads CRONS.json and schedules jobs using node-cron
-- **triggers.js** - Loads TRIGGERS.json and returns Express middleware for webhook triggers
-- **claude/** - Claude API integration for Telegram chat with tool use
-- **tools/** - Job creation, GitHub API, and Telegram utilities
+- **`api/index.js`** — Next.js route handlers (GET/POST) with auth and trigger middleware
+- **`lib/cron.js`** — Loads CRONS.json and schedules jobs using node-cron
+- **`lib/triggers.js`** — Loads TRIGGERS.json and fires actions when watched paths are hit
+- **`lib/claude/`** — Claude API integration for Telegram chat with tool use
+- **`lib/tools/`** — Job creation, GitHub API, Telegram, and OpenAI utilities
 
 ### Action Types: `agent`, `command`, and `http`
 
-Both cron jobs and webhook triggers use the same shared dispatch system (`event_handler/actions.js`). Every action has a `type` field — `"agent"` (default), `"command"`, or `"http"`.
+Both cron jobs and webhook triggers use the same shared dispatch system (`lib/actions.js`). Every action has a `type` field — `"agent"` (default), `"command"`, or `"http"`.
 
 #### Choosing Between `agent`, `command`, and `http`
 
@@ -164,9 +203,9 @@ This keeps config files clean and makes instructions easier to read and edit. Av
 
 #### Type: `command`
 
-Runs a shell command directly on the event handler server. No Docker container, no GitHub branch, no LLM. Each system has its own working directory for scripts:
-- **Crons**: `event_handler/cron/`
-- **Triggers**: `event_handler/triggers/`
+Runs a shell command directly on the event handler server. No Docker container, no GitHub branch, no LLM. Each system has its own working directory for scripts (in the user's project root):
+- **Crons**: `cron/`
+- **Triggers**: `triggers/`
 
 #### Type: `http`
 
@@ -212,7 +251,7 @@ Sends: `{ "source": "github", "data": { ...req.body... } }`
 
 ### Cron Jobs
 
-Cron jobs are defined in `operating_system/CRONS.json` and loaded by `event_handler/cron.js` at startup using `node-cron`.
+Cron jobs are defined in `operating_system/CRONS.json` and loaded by `lib/cron.js` at server startup (via the instrumentation hook) using `node-cron`.
 
 #### Examples
 
@@ -253,7 +292,7 @@ Cron jobs are defined in `operating_system/CRONS.json` and loaded by `event_hand
 
 ### Webhook Triggers
 
-Webhook triggers are defined in `operating_system/TRIGGERS.json` and loaded by `event_handler/triggers.js` as Express middleware. They fire actions when existing endpoints are hit. Triggers fire **after auth passes, before the route handler runs**, and are fire-and-forget (they don't block the request).
+Webhook triggers are defined in `operating_system/TRIGGERS.json` and loaded by `lib/triggers.js`. They fire actions when existing endpoints are hit. Triggers fire **after auth passes, before the route handler runs**, and are fire-and-forget (they don't block the request).
 
 #### Example
 
@@ -299,20 +338,22 @@ Both `job` and `command` strings support the same templates:
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `API_KEY` | Authentication key for /webhook endpoint | Yes |
+| `API_KEY` | Authentication key for /api/webhook endpoint | Yes |
 | `GH_TOKEN` | GitHub PAT for creating branches/files | Yes |
 | `GH_OWNER` | GitHub repository owner | Yes |
 | `GH_REPO` | GitHub repository name | Yes |
-| `PORT` | Server port (default: 3000) | No |
 | `TELEGRAM_BOT_TOKEN` | Telegram bot token from BotFather | For Telegram |
-| `TELEGRAM_WEBHOOK_SECRET` | Secret for webhook validation | No |
+| `TELEGRAM_WEBHOOK_SECRET` | Secret for validating Telegram webhooks | No |
+| `TELEGRAM_VERIFICATION` | Verification code for getting chat ID | For Telegram setup |
+| `TELEGRAM_CHAT_ID` | Default Telegram chat ID for notifications | For Telegram |
 | `GH_WEBHOOK_SECRET` | Secret for GitHub Actions webhook auth | For notifications |
 | `ANTHROPIC_API_KEY` | Claude API key for chat functionality | For chat |
+| `OPENAI_API_KEY` | OpenAI API key for Whisper voice transcription | For voice messages |
 | `EVENT_HANDLER_MODEL` | Claude model for chat (default: claude-sonnet-4) | No |
 
 ## Docker Agent Layer
 
-The Dockerfile creates a container with:
+The Dockerfile (`docker/Dockerfile`) creates a container with:
 - **Node.js 22** (Bookworm slim)
 - **Pi coding agent** (`@mariozechner/pi-coding-agent`)
 - **Playwright + Chromium** (headless browser automation)
@@ -342,7 +383,7 @@ The Dockerfile creates a container with:
 
 ## GitHub Actions
 
-GitHub Actions automate the job lifecycle. No manual webhook configuration needed.
+GitHub Actions are scaffolded into the user's project (from `templates/.github/workflows/`) and automate the job lifecycle. No manual webhook configuration needed.
 
 ### docker-build.yml
 
@@ -433,23 +474,33 @@ For credentials the LLM needs access to (browser logins, skill API keys), use `L
 
 ## Customization Points
 
-To create your own agent:
+Users create their agent project with:
 
-1. **GitHub Secrets** - Set `SECRETS` and optionally `LLM_SECRETS` with your API keys
-2. **operating_system/SOUL.md** - Customize personality and identity
-4. **operating_system/CHATBOT.md** - Configure Telegram chat behavior
-5. **operating_system/CRONS.json** - Define scheduled jobs
-6. **logs/<JOB_ID>/job.md** - Task description (created automatically per job)
-7. **.pi/skills/** - Add custom skills for the agent
+```bash
+mkdir my-agent && cd my-agent
+npx thepopebot init
+npm run setup
+```
+
+The setup wizard handles API keys, GitHub secrets/variables, and Telegram bot configuration. Users customize their agent by editing:
+
+1. **operating_system/SOUL.md** - Agent personality and identity
+2. **operating_system/CHATBOT.md** - Telegram chat system prompt
+3. **operating_system/CRONS.json** - Scheduled job definitions
+4. **operating_system/TRIGGERS.json** - Webhook trigger definitions
+5. **.pi/skills/** - Custom skills for the agent
+6. **cron/** and **triggers/** - Shell scripts for command-type actions
 
 ## The Operating System
 
-These files in `operating_system/` define the agent's character and behavior:
+These files in `operating_system/` define the agent's character and behavior (scaffolded from `templates/operating_system/`):
 
 - **SOUL.md** - Personality, identity, and values (who the agent is)
 - **CHATBOT.md** - System prompt for Telegram chat
 - **JOB_SUMMARY.md** - Prompt for summarizing completed jobs
 - **HEARTBEAT.md** - Self-monitoring behavior
+- **TELEGRAM.md** - Telegram formatting guidelines
+- **AGENT.md** - Agent runtime environment
 - **CRONS.json** - Scheduled job definitions
 - **TRIGGERS.json** - Webhook trigger definitions
 
@@ -459,10 +510,10 @@ Each job gets its own directory at `logs/{JOB_ID}/` containing both the job desc
 
 ## Markdown File Includes
 
-Markdown files in `operating_system/` support a `{{filepath}}` include syntax, powered by `event_handler/utils/render-md.js`.
+Markdown files in `operating_system/` support a `{{filepath}}` include syntax, powered by `lib/utils/render-md.js`.
 
 - **Syntax**: `{{ filepath }}` — double curly braces around a file path
-- **Path resolution**: Paths resolve relative to the repository root
+- **Path resolution**: Paths resolve relative to the user's project root (`process.cwd()`)
 - **Recursive**: Included files can themselves contain includes
 - **Circular protection**: If a circular include is detected, it is skipped and a warning is logged
 - **Missing files**: If a referenced file doesn't exist, the pattern is left as-is
