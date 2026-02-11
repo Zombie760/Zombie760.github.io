@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const command = process.argv[2];
+const args = process.argv.slice(3);
 
 function printUsage() {
   console.log(`
@@ -14,22 +15,28 @@ Commands:
   init               Scaffold a new thepopebot project
   setup              Run interactive setup wizard
   setup-telegram     Reconfigure Telegram webhook
-  update-workflows   Copy latest workflow files to .github/workflows/
+  reset [file]       Restore a template file (or list available templates)
 `);
 }
 
-function copyDirSync(src, dest) {
-  fs.mkdirSync(dest, { recursive: true });
-  const entries = fs.readdirSync(src, { withFileTypes: true });
-  for (const entry of entries) {
-    const srcPath = path.join(src, entry.name);
-    const destPath = path.join(dest, entry.name);
-    if (entry.isDirectory()) {
-      copyDirSync(srcPath, destPath);
-    } else {
-      fs.copyFileSync(srcPath, destPath);
+/**
+ * Collect all template files as relative paths.
+ */
+function getTemplateFiles(templatesDir) {
+  const files = [];
+  function walk(dir) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(fullPath);
+      } else {
+        files.push(path.relative(templatesDir, fullPath));
+      }
     }
   }
+  walk(templatesDir);
+  return files;
 }
 
 function init() {
@@ -39,44 +46,30 @@ function init() {
 
   console.log('\nScaffolding thepopebot project...\n');
 
-  // Copy template files
-  const templateEntries = [
-    'operating_system',
-    'app',
-    'cron',
-    'triggers',
-    'logs',
-    '.pi',
-    '.github',
-  ];
+  const templateFiles = getTemplateFiles(templatesDir);
+  const created = [];
+  const skipped = [];
+  const changed = [];
 
-  for (const entry of templateEntries) {
-    const src = path.join(templatesDir, entry);
-    const dest = path.join(cwd, entry);
-    if (fs.existsSync(src)) {
-      copyDirSync(src, dest);
-      console.log(`  Created ${entry}/`);
-    }
-  }
+  for (const relPath of templateFiles) {
+    const src = path.join(templatesDir, relPath);
+    const dest = path.join(cwd, relPath);
 
-  // Copy individual template files
-  const singleFiles = [
-    { src: 'next.config.mjs', dest: 'next.config.mjs' },
-    { src: '.env.example', dest: '.env.example' },
-    { src: '.gitignore', dest: '.gitignore' },
-    { src: 'CLAUDE.md', dest: 'CLAUDE.md' },
-    { src: 'instrumentation.js', dest: 'instrumentation.js' },
-  ];
-
-  for (const file of singleFiles) {
-    const src = path.join(templatesDir, file.src);
-    const dest = path.join(cwd, file.dest);
-    if (fs.existsSync(src)) {
-      if (!fs.existsSync(dest)) {
-        fs.copyFileSync(src, dest);
-        console.log(`  Created ${file.dest}`);
+    if (!fs.existsSync(dest)) {
+      // File doesn't exist — create it
+      fs.mkdirSync(path.dirname(dest), { recursive: true });
+      fs.copyFileSync(src, dest);
+      created.push(relPath);
+      console.log(`  Created ${relPath}`);
+    } else {
+      // File exists — check if template has changed
+      const srcContent = fs.readFileSync(src);
+      const destContent = fs.readFileSync(dest);
+      if (srcContent.equals(destContent)) {
+        skipped.push(relPath);
       } else {
-        console.log(`  Skipped ${file.dest} (already exists)`);
+        changed.push(relPath);
+        console.log(`  Skipped ${relPath} (already exists)`);
       }
     }
   }
@@ -94,11 +87,10 @@ function init() {
         start: 'next start',
         setup: 'thepopebot setup',
         'setup-telegram': 'thepopebot setup-telegram',
-        'update-workflows': 'thepopebot update-workflows',
       },
       dependencies: {
         thepopebot: '^1.0.0',
-        next: '^15.0.0',
+        next: '^16.0.0',
         react: '^19.0.0',
         'react-dom': '^19.0.0',
       },
@@ -108,9 +100,6 @@ function init() {
   } else {
     console.log('  Skipped package.json (already exists)');
   }
-
-  // Copy workflows
-  updateWorkflows();
 
   // Create .gitkeep files for empty dirs
   const gitkeepDirs = ['cron', 'triggers', 'logs'];
@@ -122,32 +111,138 @@ function init() {
     }
   }
 
-  console.log('\nDone! Next steps:\n');
-  console.log('  1. npm install');
-  console.log('  2. npm run setup');
-  console.log('  3. npm run dev\n');
+  // Report changed templates
+  if (changed.length > 0) {
+    console.log('\n  Updated templates available:');
+    console.log('  These files differ from the current package templates.');
+    console.log('  This may be from your edits, or from a thepopebot update.\n');
+    for (const file of changed) {
+      console.log(`    ${file}`);
+    }
+    console.log('\n  To view differences:  npx thepopebot diff <file>');
+    console.log('  To reset to default:  npx thepopebot reset <file>');
+  }
+
+  if (created.length > 0 || !fs.existsSync(path.join(cwd, 'node_modules'))) {
+    console.log('\nDone! Next steps:\n');
+    console.log('  1. npm install');
+    console.log('  2. npm run setup');
+    console.log('  3. npm run dev\n');
+  } else {
+    console.log('\nDone!\n');
+  }
 }
 
-function updateWorkflows() {
-  const cwd = process.cwd();
+/**
+ * List all available template files, or restore a specific one.
+ */
+function reset(filePath) {
   const packageDir = path.join(__dirname, '..');
-  const workflowsSrc = path.join(packageDir, 'workflows');
-  const workflowsDest = path.join(cwd, '.github', 'workflows');
+  const templatesDir = path.join(packageDir, 'templates');
+  const cwd = process.cwd();
 
-  if (!fs.existsSync(workflowsSrc)) {
-    console.log('  No workflow files found in package');
+  if (!filePath) {
+    console.log('\nAvailable template files:\n');
+    const files = getTemplateFiles(templatesDir);
+    for (const file of files) {
+      console.log(`  ${file}`);
+    }
+    console.log('\nUsage: thepopebot reset <file>');
+    console.log('Example: thepopebot reset operating_system/SOUL.md\n');
     return;
   }
 
-  fs.mkdirSync(workflowsDest, { recursive: true });
+  const src = path.join(templatesDir, filePath);
+  const dest = path.join(cwd, filePath);
 
-  const files = fs.readdirSync(workflowsSrc).filter(f => f.endsWith('.yml'));
-  for (const file of files) {
-    fs.copyFileSync(
-      path.join(workflowsSrc, file),
-      path.join(workflowsDest, file)
-    );
-    console.log(`  Updated .github/workflows/${file}`);
+  if (!fs.existsSync(src)) {
+    console.error(`\nTemplate not found: ${filePath}`);
+    console.log('Run "thepopebot reset" to see available templates.\n');
+    process.exit(1);
+  }
+
+  if (fs.statSync(src).isDirectory()) {
+    console.log(`\nRestoring ${filePath}/...\n`);
+    copyDirSyncForce(src, dest);
+  } else {
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.copyFileSync(src, dest);
+    console.log(`\nRestored ${filePath}\n`);
+  }
+}
+
+/**
+ * Show the diff between a user's file and the package template.
+ */
+function diff(filePath) {
+  const packageDir = path.join(__dirname, '..');
+  const templatesDir = path.join(packageDir, 'templates');
+  const cwd = process.cwd();
+
+  if (!filePath) {
+    // Show all files that differ
+    console.log('\nFiles that differ from package templates:\n');
+    const files = getTemplateFiles(templatesDir);
+    let anyDiff = false;
+    for (const file of files) {
+      const src = path.join(templatesDir, file);
+      const dest = path.join(cwd, file);
+      if (fs.existsSync(dest)) {
+        const srcContent = fs.readFileSync(src);
+        const destContent = fs.readFileSync(dest);
+        if (!srcContent.equals(destContent)) {
+          console.log(`  ${file}`);
+          anyDiff = true;
+        }
+      } else {
+        console.log(`  ${file} (missing)`);
+        anyDiff = true;
+      }
+    }
+    if (!anyDiff) {
+      console.log('  All files match package templates.');
+    }
+    console.log('\nUsage: thepopebot diff <file>');
+    console.log('Example: thepopebot diff operating_system/SOUL.md\n');
+    return;
+  }
+
+  const src = path.join(templatesDir, filePath);
+  const dest = path.join(cwd, filePath);
+
+  if (!fs.existsSync(src)) {
+    console.error(`\nTemplate not found: ${filePath}`);
+    process.exit(1);
+  }
+
+  if (!fs.existsSync(dest)) {
+    console.log(`\n${filePath} does not exist in your project.`);
+    console.log(`Run "thepopebot reset ${filePath}" to create it.\n`);
+    return;
+  }
+
+  try {
+    // Use git diff for nice colored output, fall back to plain diff
+    execSync(`git diff --no-index -- "${dest}" "${src}"`, { stdio: 'inherit' });
+    console.log('\nFiles are identical.\n');
+  } catch (e) {
+    // git diff exits with 1 when files differ (output already printed)
+    console.log(`\n  To reset: thepopebot reset ${filePath}\n`);
+  }
+}
+
+function copyDirSyncForce(src, dest) {
+  fs.mkdirSync(dest, { recursive: true });
+  const entries = fs.readdirSync(src, { withFileTypes: true });
+  for (const entry of entries) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+    if (entry.isDirectory()) {
+      copyDirSyncForce(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+      console.log(`  Restored ${path.relative(process.cwd(), destPath)}`);
+    }
   }
 }
 
@@ -171,10 +266,11 @@ switch (command) {
   case 'setup-telegram':
     setupTelegram();
     break;
-  case 'update-workflows':
-    console.log('\nUpdating workflow files...\n');
-    updateWorkflows();
-    console.log('\nDone!\n');
+  case 'reset':
+    reset(args[0]);
+    break;
+  case 'diff':
+    diff(args[0]);
     break;
   default:
     printUsage();

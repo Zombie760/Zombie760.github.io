@@ -14,13 +14,10 @@ const path = require('path');
 function withThepopebot(nextConfig = {}) {
   return {
     ...nextConfig,
-    experimental: {
-      ...nextConfig.experimental,
-      instrumentationHook: true,
-    },
     // Ensure server-only packages aren't bundled for client
     serverExternalPackages: [
       ...(nextConfig.serverExternalPackages || []),
+      'thepopebot',
       'grammy',
       '@grammyjs/parse-mode',
       'node-cron',
