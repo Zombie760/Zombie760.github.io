@@ -39,6 +39,25 @@ This is an autonomous AI agent powered by [thepopebot](https://github.com/stephe
 - **cron/** and **triggers/** — Shell scripts for command-type actions
 - **app/** — Add Next.js pages, API routes, components
 
+## CLI Commands
+
+| Command | Description |
+|---------|-------------|
+| `npx thepopebot init` | Scaffold or update the project — creates missing files, reports drifted templates |
+| `npx thepopebot diff [file]` | Show differences between your files and package templates |
+| `npx thepopebot reset [file]` | Restore a file (or directory) to the package default |
+| `npm run setup` | Run interactive setup wizard (API keys, GitHub secrets, Telegram bot) |
+| `npm run setup-telegram` | Reconfigure Telegram webhook only |
+
+### Updating thepopebot
+
+When the package is updated via `npm update thepopebot`, template changes are **not** applied automatically — your customizations are preserved. To check for updates:
+
+1. `npm update thepopebot` — updates the package
+2. `npx thepopebot init` — reports which templates have drifted (does not overwrite)
+3. `npx thepopebot diff <file>` — review what changed
+4. `npx thepopebot reset <file>` — accept the new template, or manually merge
+
 ## API Endpoints
 
 All API routes are under `/api/`:

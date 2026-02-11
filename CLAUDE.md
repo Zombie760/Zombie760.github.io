@@ -141,6 +141,57 @@ The package exposes three entry points:
 | `thepopebot reset [file]` | Restore a template file to package default (or list all available templates) |
 | `thepopebot diff [file]` | Show differences between project files and package templates |
 
+### `thepopebot init`
+
+Scaffolds (or updates) a project. For each file in `templates/`:
+- **Missing** — creates the file
+- **Identical** — silently skips
+- **Different** — skips the file but records it as changed
+
+After copying, if any files differ from the package templates, `init` prints a summary:
+
+```
+Updated templates available:
+These files differ from the current package templates.
+This may be from your edits, or from a thepopebot update.
+
+  config/CRONS.json
+  .github/workflows/run-job.yml
+
+To view differences:  npx thepopebot diff <file>
+To reset to default:  npx thepopebot reset <file>
+```
+
+This is also how users discover template changes after running `npm update thepopebot` — re-run `npx thepopebot init` and it reports which templates have drifted. New template files are created automatically; existing files are never overwritten.
+
+### `thepopebot diff [file]`
+
+Without arguments, lists all files that differ from package templates. With a file path, shows a colored `git diff` between the user's file and the package template.
+
+```bash
+npx thepopebot diff                    # list all drifted files
+npx thepopebot diff config/SOUL.md     # show diff for a specific file
+```
+
+### `thepopebot reset [file]`
+
+Without arguments, lists all available template files. With a file path, overwrites the user's file with the package default. Also works on directories.
+
+```bash
+npx thepopebot reset                   # list all template files
+npx thepopebot reset config/SOUL.md    # restore a single file
+npx thepopebot reset config            # restore entire config/ directory
+```
+
+### Template Update Workflow
+
+When thepopebot is updated via npm, template changes are **not** applied automatically — the user's customizations are preserved. The workflow is:
+
+1. `npm update thepopebot` — updates the package (templates change inside `node_modules`)
+2. `npx thepopebot init` — detects drifted templates and lists them (does not overwrite)
+3. `npx thepopebot diff <file>` — review what changed
+4. `npx thepopebot reset <file>` — accept the new template, or manually merge the changes
+
 ## How User Projects Work
 
 When a user runs `npx thepopebot init`, the CLI scaffolds a Next.js project that wires into the package:
