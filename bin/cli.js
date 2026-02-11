@@ -102,7 +102,7 @@ function init() {
   }
 
   // Create .gitkeep files for empty dirs
-  const gitkeepDirs = ['cron', 'triggers', 'logs'];
+  const gitkeepDirs = ['cron', 'triggers', 'logs', 'tmp'];
   for (const dir of gitkeepDirs) {
     const gitkeep = path.join(cwd, dir, '.gitkeep');
     if (!fs.existsSync(gitkeep)) {

@@ -1,6 +1,6 @@
 ## Formatting for Telegram
 
-Your responses are sent via Telegram with HTML parse mode. Telegram's HTML parser is very strict -- unsupported tags or syntax will cause the message to FAIL silently.
+Your responses are sent via Telegram with HTML parse mode. Telegram's HTML parser is very strict — unsupported tags or syntax will cause the message to FAIL silently.
 
 Keep formatting minimal. Write plain text. Only use these tags sparingly:
 - <b>bold</b> for key terms
@@ -15,7 +15,7 @@ NEVER use:
 
 Style:
 - Write short, plain text responses
-- Use bullet characters or - for lists (plain text bullets, not HTML)
+- Use • or - for lists (plain text bullets, not HTML)
 - Use CAPS or <b>bold</b> for section headers, not heading tags
 - One thought per line, blank lines between sections
 - Keep under 1000 chars when possible

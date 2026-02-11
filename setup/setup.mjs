@@ -20,6 +20,7 @@ import {
   promptForTelegramToken,
   generateTelegramWebhookSecret,
   confirm,
+  pressEnter,
   maskSecret,
 } from './lib/prompts.mjs';
 import {
@@ -77,7 +78,7 @@ function printInfo(message) {
 async function main() {
   printHeader();
 
-  const TOTAL_STEPS = 7;
+  const TOTAL_STEPS = 8;
   let currentStep = 0;
 
   // Collected values
@@ -324,28 +325,31 @@ async function main() {
 
   // Push to GitHub now that we have the PAT
   if (needsPush) {
-    // Configure git to use the PAT for HTTPS auth
     const remote = execSync('git remote get-url origin', { encoding: 'utf-8' }).trim();
-    const authedUrl = remote.replace('https://github.com/', `https://x-access-token:${pat}@github.com/`);
-    execSync(`git remote set-url origin ${authedUrl}`, { stdio: 'ignore' });
 
-    const pushSpinner = ora('Pushing to GitHub...').start();
-    try {
-      execSync('git branch -M main', { stdio: 'ignore' });
-      execSync('git push -u origin main 2>&1', { encoding: 'utf-8' });
-      pushSpinner.succeed('Pushed to GitHub');
-    } catch (err) {
-      pushSpinner.fail('Failed to push');
-      const output = (err.stdout || '') + (err.stderr || '');
-      if (output) printError(output.trim());
-      // Reset URL before exiting so token isn't left in .git/config
+    let pushed = false;
+    while (!pushed) {
+      const authedUrl = remote.replace('https://github.com/', `https://x-access-token:${pat}@github.com/`);
+      execSync(`git remote set-url origin ${authedUrl}`, { stdio: 'ignore' });
+
+      const pushSpinner = ora('Pushing to GitHub...').start();
+      try {
+        execSync('git branch -M main', { stdio: 'ignore' });
+        execSync('git push -u origin main 2>&1', { encoding: 'utf-8' });
+        pushSpinner.succeed('Pushed to GitHub');
+        pushed = true;
+      } catch (err) {
+        pushSpinner.fail('Failed to push');
+        const output = (err.stdout || '') + (err.stderr || '');
+        if (output) printError(output.trim());
+        execSync(`git remote set-url origin ${remote}`, { stdio: 'ignore' });
+        await pressEnter('Fix the issue, then press enter to retry');
+        continue;
+      }
+
+      // Reset remote URL back to clean HTTPS (no token embedded)
       execSync(`git remote set-url origin ${remote}`, { stdio: 'ignore' });
-      console.log(chalk.dim('\n  Run npm run setup again after fixing the issue.\n'));
-      process.exit(1);
     }
-
-    // Reset remote URL back to clean HTTPS (no token embedded)
-    execSync(`git remote set-url origin ${remote}`, { stdio: 'ignore' });
   }
 
   // Step 3: API Keys
@@ -426,38 +430,52 @@ async function main() {
     secrets.LLM_SECRETS = llmSecretsBase64;
   }
 
-  const secretSpinner = ora('Setting GitHub secrets...').start();
-  const secretResults = await setSecrets(owner, repo, secrets);
+  let allSecretsSet = false;
+  while (!allSecretsSet) {
+    const secretSpinner = ora('Setting GitHub secrets...').start();
+    const secretResults = await setSecrets(owner, repo, secrets);
+    secretSpinner.stop();
 
-  secretSpinner.stop();
-  let allSecretsSet = true;
-  for (const [name, result] of Object.entries(secretResults)) {
-    if (result.success) {
-      printSuccess(`Set ${name}`);
-    } else {
-      printError(`Failed to set ${name}: ${result.error}`);
-      allSecretsSet = false;
+    allSecretsSet = true;
+    for (const [name, result] of Object.entries(secretResults)) {
+      if (result.success) {
+        printSuccess(`Set ${name}`);
+      } else {
+        printError(`Failed to set ${name}: ${result.error}`);
+        allSecretsSet = false;
+      }
+    }
+
+    if (!allSecretsSet) {
+      await pressEnter('Fix the issue, then press enter to retry');
     }
   }
 
-  if (!allSecretsSet) {
-    printWarning('Some secrets failed - you may need to set them manually');
-  }
-
   // Set default GitHub repository variables
-  const varsSpinner = ora('Setting GitHub repository variables...').start();
   const defaultVars = {
     AUTO_MERGE: 'true',
     ALLOWED_PATHS: '/logs',
     MODEL: 'claude-sonnet-4-5-20250929',
   };
-  const varResults = await setVariables(owner, repo, defaultVars);
-  varsSpinner.stop();
-  for (const [name, result] of Object.entries(varResults)) {
-    if (result.success) {
-      printSuccess(`Set ${name} = ${defaultVars[name]}`);
-    } else {
-      printError(`Failed to set ${name}: ${result.error}`);
+
+  let allVarsSet = false;
+  while (!allVarsSet) {
+    const varsSpinner = ora('Setting GitHub repository variables...').start();
+    const varResults = await setVariables(owner, repo, defaultVars);
+    varsSpinner.stop();
+
+    allVarsSet = true;
+    for (const [name, result] of Object.entries(varResults)) {
+      if (result.success) {
+        printSuccess(`Set ${name} = ${defaultVars[name]}`);
+      } else {
+        printError(`Failed to set ${name}: ${result.error}`);
+        allVarsSet = false;
+      }
+    }
+
+    if (!allVarsSet) {
+      await pressEnter('Fix the issue, then press enter to retry');
     }
   }
 
@@ -499,23 +517,45 @@ async function main() {
   });
   printSuccess(`Created ${envPath}`);
 
-  // Step 6: Start Server & ngrok
-  printStep(++currentStep, TOTAL_STEPS, 'Start Server & ngrok');
+  // Step 6: Start Server
+  printStep(++currentStep, TOTAL_STEPS, 'Start Server');
 
-  console.log(chalk.bold('  Now we need to start the server and expose it via ngrok.\n'));
-  console.log(chalk.yellow('  Open TWO new terminal windows and run:\n'));
-  console.log(chalk.bold('  Terminal 1:'));
+  console.log(chalk.bold('  Start the dev server in a new terminal window:\n'));
   console.log(chalk.cyan('     npm run dev\n'));
-  console.log(chalk.bold('  Terminal 2:'));
-  console.log(chalk.cyan('     ngrok http 3000\n'));
 
+  let serverReachable = false;
+  while (!serverReachable) {
+    await pressEnter('Press enter once the server is running');
+    const serverSpinner = ora('Checking server...').start();
+    try {
+      const response = await fetch('http://localhost:3000/api/ping', {
+        method: 'GET',
+        headers: { 'x-api-key': apiKey },
+        signal: AbortSignal.timeout(5000),
+      });
+      if (response.ok) {
+        serverSpinner.succeed('Server is running');
+        serverReachable = true;
+      } else {
+        serverSpinner.fail(`Server returned status ${response.status}`);
+      }
+    } catch {
+      serverSpinner.fail('Could not reach server on localhost:3000');
+    }
+  }
+
+  // Step 7: ngrok
+  printStep(++currentStep, TOTAL_STEPS, 'Expose Server with ngrok');
+
+  console.log(chalk.bold('  Start ngrok in another terminal window:\n'));
+  console.log(chalk.cyan('     ngrok http 3000\n'));
   console.log(chalk.dim('  ngrok will show a "Forwarding" URL like: https://abc123.ngrok.io\n'));
   console.log(chalk.yellow('  Note: ') + chalk.dim('ngrok URLs change each time you restart it (unless you have a paid plan).'));
   console.log(chalk.dim('  When your URL changes, run: ') + chalk.cyan('npm run setup-telegram') + chalk.dim(' to reconfigure.\n'));
 
   let ngrokUrl = null;
   while (!ngrokUrl) {
-    const { url } = await inquirer.prompt([
+    const { url: ngrokInput } = await inquirer.prompt([
       {
         type: 'input',
         name: 'url',
@@ -528,98 +568,76 @@ async function main() {
         },
       },
     ]);
-    const testUrl = url.replace(/\/$/, '');
+    const candidate = ngrokInput.replace(/\/$/, '');
 
-    // Verify the server is reachable through ngrok
-    const healthSpinner = ora('Verifying server is reachable...').start();
+    const ngrokSpinner = ora('Verifying server is reachable through ngrok...').start();
     try {
-      const response = await fetch(`${testUrl}/api/ping`, {
+      const response = await fetch(`${candidate}/api/ping`, {
         method: 'GET',
         headers: { 'x-api-key': apiKey },
-        signal: AbortSignal.timeout(10000)
+        signal: AbortSignal.timeout(10000),
       });
       if (response.ok) {
-        const data = await response.json();
-        if (data.message === 'Pong!') {
-          healthSpinner.succeed('Server is reachable and authenticated');
-          ngrokUrl = testUrl;
-        } else {
-          healthSpinner.fail('Unexpected response from server');
-          const retry = await confirm('Try again?');
-          if (!retry) {
-            ngrokUrl = testUrl;
-          }
-        }
-      } else if (response.status === 401) {
-        healthSpinner.fail('Server is running but returned 401 (unauthorized)');
-        console.log('');
-        printWarning('This means the server is using an old API key that doesn\'t match the one we just generated.');
-        printInfo('The setup created a new .env file with a fresh API key, but your running server hasn\'t picked it up yet.');
-        console.log('');
-        console.log(chalk.bold('  To fix this, restart your server:\n'));
-        console.log(chalk.cyan('    1. Go to Terminal 1 (where the server is running)'));
-        console.log(chalk.cyan('    2. Press Ctrl+C to stop it'));
-        console.log(chalk.cyan('    3. Run: npm run dev\n'));
-        const retry = await confirm('Retry after restarting the server?');
-        if (!retry) {
-          ngrokUrl = testUrl;
-        }
+        ngrokSpinner.succeed('Server is reachable through ngrok');
+        ngrokUrl = candidate;
       } else {
-        healthSpinner.fail(`Server returned status ${response.status}`);
-        printWarning('Make sure the server is running (npm run dev)');
-        const retry = await confirm('Try again?');
-        if (!retry) {
-          ngrokUrl = testUrl;
-        }
+        ngrokSpinner.fail(`Server returned status ${response.status}`);
       }
-    } catch (error) {
-      healthSpinner.fail(`Could not reach server: ${error.message}`);
-      printWarning('Make sure both the server AND ngrok are running');
-      printInfo('Terminal 1: npm run dev');
-      printInfo('Terminal 2: ngrok http 3000');
-      const retry = await confirm('Try again?');
-      if (!retry) {
-        ngrokUrl = testUrl; // Continue anyway
-      }
+    } catch {
+      ngrokSpinner.fail('Could not reach server through ngrok');
     }
   }
 
   // Set GH_WEBHOOK_URL variable
-  const urlSpinner = ora('Setting GH_WEBHOOK_URL variable...').start();
-  const urlResult = await setVariables(owner, repo, { GH_WEBHOOK_URL: ngrokUrl });
-  if (urlResult.GH_WEBHOOK_URL.success) {
-    urlSpinner.succeed('GH_WEBHOOK_URL variable set');
-  } else {
-    urlSpinner.fail(`Failed: ${urlResult.GH_WEBHOOK_URL.error}`);
+  let webhookUrlSet = false;
+  while (!webhookUrlSet) {
+    const urlSpinner = ora('Setting GH_WEBHOOK_URL variable...').start();
+    const urlResult = await setVariables(owner, repo, { GH_WEBHOOK_URL: ngrokUrl });
+    if (urlResult.GH_WEBHOOK_URL.success) {
+      urlSpinner.succeed('GH_WEBHOOK_URL variable set');
+      webhookUrlSet = true;
+    } else {
+      urlSpinner.fail(`Failed: ${urlResult.GH_WEBHOOK_URL.error}`);
+      await pressEnter('Fix the issue, then press enter to retry');
+    }
   }
 
   // Register Telegram webhook if configured
   if (telegramToken) {
     const webhookUrl = `${ngrokUrl}/api/telegram/webhook`;
-    const tgSpinner = ora('Registering Telegram webhook...').start();
-    const tgResult = await setTelegramWebhook(telegramToken, webhookUrl, telegramWebhookSecret);
-    if (tgResult.ok) {
-      tgSpinner.succeed(`Telegram webhook registered: ${webhookUrl}`);
-    } else {
-      tgSpinner.fail(`Failed: ${tgResult.description}`);
+    let tgWebhookSet = false;
+    while (!tgWebhookSet) {
+      const tgSpinner = ora('Registering Telegram webhook...').start();
+      const tgResult = await setTelegramWebhook(telegramToken, webhookUrl, telegramWebhookSecret);
+      if (tgResult.ok) {
+        tgSpinner.succeed(`Telegram webhook registered: ${webhookUrl}`);
+        tgWebhookSet = true;
+      } else {
+        tgSpinner.fail(`Failed: ${tgResult.description}`);
+        await pressEnter('Fix the issue, then press enter to retry');
+      }
     }
 
     // Chat ID verification
-    const chatId = await runVerificationFlow(telegramVerification);
+    let chatVerified = false;
+    while (!chatVerified) {
+      const chatId = await runVerificationFlow(telegramVerification);
 
-    if (chatId) {
-      updateEnvVariable('TELEGRAM_CHAT_ID', chatId);
-      printSuccess(`Chat ID saved: ${chatId}`);
+      if (chatId) {
+        updateEnvVariable('TELEGRAM_CHAT_ID', chatId);
+        printSuccess(`Chat ID saved: ${chatId}`);
 
-      const verified = await verifyRestart(ngrokUrl, apiKey);
-      if (verified) {
-        printSuccess('Telegram bot is configured and working!');
+        const verified = await verifyRestart(ngrokUrl, apiKey);
+        if (verified) {
+          printSuccess('Telegram bot is configured and working!');
+        } else {
+          printWarning('Could not verify bot. Check your configuration.');
+        }
+        chatVerified = true;
       } else {
-        printWarning('Could not verify bot. Check your configuration.');
+        printWarning('Chat ID is required \u2014 the bot will not respond without it.');
+        await pressEnter('Fix the issue, then press enter to retry');
       }
-    } else {
-      printWarning('Chat ID is required \u2014 the bot will not respond without it.');
-      printInfo('Run npm run setup-telegram to complete setup.');
     }
   }
 

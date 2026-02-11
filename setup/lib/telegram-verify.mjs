@@ -4,20 +4,26 @@ import inquirer from 'inquirer';
 /**
  * Run the chat ID verification flow
  * @param {string} verificationCode - The code user should send to bot
- * @returns {Promise<string|null>} - The chat ID or null if skipped/failed
+ * @param {object} [options] - Options
+ * @param {boolean} [options.allowSkip=false] - Allow pressing Enter to skip
+ * @returns {Promise<string|null>} - The chat ID or null if skipped
  */
-export async function runVerificationFlow(verificationCode) {
+export async function runVerificationFlow(verificationCode, { allowSkip = false } = {}) {
   console.log(chalk.bold.yellow('\n  Chat ID Verification\n'));
   console.log(chalk.dim('  To lock the bot to your chat, send the verification code.\n'));
   console.log(chalk.cyan('  Send this message to your bot: ') + chalk.bold(verificationCode));
   console.log(chalk.dim('\n  The bot will reply with your chat ID. Paste it below.\n'));
 
+  const message = allowSkip
+    ? 'Paste your chat ID from the bot (or press Enter to skip):'
+    : 'Paste your chat ID from the bot:';
+
   const { chatId } = await inquirer.prompt([{
     type: 'input',
     name: 'chatId',
-    message: 'Paste your chat ID from the bot (or press Enter to skip):',
+    message,
     validate: (input) => {
-      if (!input) return true; // Allow empty to skip
+      if (!input) return allowSkip ? true : 'Chat ID is required';
       if (!/^-?\d+$/.test(input.trim())) {
         return 'Chat ID should be a number (can be negative for groups)';
       }

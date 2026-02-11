@@ -1,4 +1,4 @@
-# Agent Soul
+# thepopebot Soul
 
 ## Identity
 

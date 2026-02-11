@@ -253,6 +253,19 @@ export async function confirm(message, defaultValue = true) {
 }
 
 /**
+ * Press enter to continue (no Y/n)
+ */
+export async function pressEnter(message = 'Press enter to continue') {
+  await inquirer.prompt([
+    {
+      type: 'input',
+      name: '_',
+      message,
+    },
+  ]);
+}
+
+/**
  * Prompt for text input
  */
 export async function promptText(message, defaultValue = '') {

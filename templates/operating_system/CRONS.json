@@ -7,10 +7,48 @@
     "enabled": false
   },
   {
+    "name": "daily-check",
+    "schedule": "0 9 * * *",
+    "type": "agent",
+    "job": "Check for dependency updates in package.json and report any outdated packages.",
+    "enabled": false
+  },
+  {
     "name": "ping",
     "schedule": "*/1 * * * *",
     "type": "command",
     "command": "echo \"pong!\"",
+    "enabled": true
+  },
+  {
+    "name": "cleanup-logs",
+    "schedule": "0 0 * * 0",
+    "type": "command",
+    "command": "ls -la logs/",
     "enabled": false
+  },
+  {
+    "name": "ping-status",
+    "schedule": "*/5 * * * *",
+    "type": "http",
+    "url": "https://example.com/status",
+    "method": "POST",
+    "vars": { "source": "heartbeat" },
+    "enabled": false
+  },
+  {
+    "name": "health-check",
+    "schedule": "*/10 * * * *",
+    "type": "http",
+    "url": "https://example.com/health",
+    "method": "GET",
+    "enabled": false
+  },
+  {
+    "name": "daily-financial-research",
+    "schedule": "0 14 * * 1-5",
+    "type": "agent",
+    "job": "Read the file at operating_system/FINANCIAL_ADVISOR/FINANCIAL_ADVISOR.md and complete the tasks described there.",
+    "enabled": true
   }
 ]

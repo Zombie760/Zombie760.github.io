@@ -215,7 +215,7 @@ async function main() {
     console.log(chalk.yellow('\n  Waiting for server to restart with new verification code...\n'));
     await new Promise(resolve => setTimeout(resolve, 3000));
 
-    const chatId = await runVerificationFlow(verificationCode);
+    const chatId = await runVerificationFlow(verificationCode, { allowSkip: true });
 
     if (chatId) {
       updateEnvVariable('TELEGRAM_CHAT_ID', chatId);

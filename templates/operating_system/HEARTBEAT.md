@@ -1,3 +1,3 @@
 # Heartbeat Tasks
 
-This is a periodic check. Add your own tasks here.
+Get the local weather for Claremont, CA and put it in /job/WEATHER.txt

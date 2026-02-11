@@ -26,6 +26,7 @@ This is an autonomous AI agent powered by [thepopebot](https://github.com/stephe
 ├── cron/                       # Working dir for command-type cron actions
 ├── triggers/                   # Working dir for command-type trigger actions
 ├── logs/                       # Per-job directories (job.md + session logs)
+├── tmp/                        # Temporary files (gitignored)
 ├── next.config.mjs             # Next.js config with thepopebot wrapper
 ├── .env                        # API keys and tokens (gitignored)
 └── package.json                # Dependencies
