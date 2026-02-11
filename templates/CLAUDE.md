@@ -23,6 +23,9 @@ This is an autonomous AI agent powered by [thepopebot](https://github.com/stephe
 │   ├── layout.js               # Root layout
 │   ├── page.js                 # Home page
 │   └── api/[...thepopebot]/    # Framework API routes
+├── docker/
+│   ├── Dockerfile              # Agent container (customizable)
+│   └── entrypoint.sh           # Container startup script
 ├── cron/                       # Working dir for command-type cron actions
 ├── triggers/                   # Working dir for command-type trigger actions
 ├── logs/                       # Per-job directories (job.md + session logs)

@@ -67,6 +67,9 @@ This is the user project structure after running `npx thepopebot init`:
 │   ├── layout.js
 │   ├── page.js
 │   └── api/[...thepopebot]/     # Catch-all API route
+├── docker/
+│   ├── Dockerfile               # Agent container (customizable)
+│   └── entrypoint.sh            # Container startup script
 ├── cron/                        # Working dir for command-type cron jobs
 ├── triggers/                    # Working dir for command-type trigger scripts
 ├── logs/                        # Per-job directories (job.md + session logs)

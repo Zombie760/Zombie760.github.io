@@ -88,9 +88,6 @@ thepopebot is an **NPM package** for creating custom autonomous AI agents. Users
 │   ├── setup.mjs               # Main wizard script
 │   ├── setup-telegram.mjs      # Telegram-only reconfiguration
 │   └── lib/                    # Wizard helpers (prerequisites, github, auth, prompts, telegram)
-├── docker/
-│   ├── Dockerfile              # Agent container (Node.js 22, Pi, Playwright)
-│   └── entrypoint.sh           # Container startup script
 ├── templates/                  # Files scaffolded to user projects by `thepopebot init`
 │   ├── CLAUDE.md               # User project AI assistant guide
 │   ├── .env.example
@@ -100,6 +97,7 @@ thepopebot is an **NPM package** for creating custom autonomous AI agents. Users
 │   ├── app/                    # Next.js app (layout, page, catch-all API route)
 │   ├── .github/workflows/      # GitHub Actions (auto-merge, docker-build, run-job, update-event-handler)
 │   ├── .pi/                    # Pi extensions + skills
+│   ├── docker/                 # Dockerfile + entrypoint (scaffolded for custom builds)
 │   └── config/                 # Agent config (SOUL, CHATBOT, CRONS, TRIGGERS, etc.)
 ├── docs/                       # Extended documentation
 └── package.json                # NPM package definition
@@ -118,8 +116,8 @@ thepopebot is an **NPM package** for creating custom autonomous AI agents. Users
 | `config/index.js` | `withThepopebot()` Next.js config wrapper |
 | `config/instrumentation.js` | `register()` server startup hook (loads .env, starts crons) |
 | `bin/cli.js` | CLI entry point (`thepopebot init`, `setup`, `reset`, `diff`) |
-| `docker/Dockerfile` | Builds the agent container (Node.js 22, Playwright, Pi) |
-| `docker/entrypoint.sh` | Container startup — clones repo, runs agent, commits results |
+| `templates/docker/Dockerfile` | Builds the agent container (Node.js 22, Playwright, Pi) — scaffolded to user projects |
+| `templates/docker/entrypoint.sh` | Container startup — clones repo, runs agent, commits results — scaffolded to user projects |
 
 ## NPM Package Exports
 
@@ -404,7 +402,7 @@ Both `job` and `command` strings support the same templates:
 
 ## Docker Agent Layer
 
-The Dockerfile (`docker/Dockerfile`) creates a container with:
+The Dockerfile (`templates/docker/Dockerfile`, scaffolded to `docker/Dockerfile` in user projects) creates a container with:
 - **Node.js 22** (Bookworm slim)
 - **Pi coding agent** (`@mariozechner/pi-coding-agent`)
 - **Playwright + Chromium** (headless browser automation)
