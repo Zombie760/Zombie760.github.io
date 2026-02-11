@@ -166,9 +166,6 @@ async function main() {
     }
   }
 
-  // Set up git credentials via gh so HTTPS push works without SSH
-  execSync('gh auth setup-git', { stdio: 'ignore' });
-
   if (prereqs.git.remoteInfo) {
     owner = prereqs.git.remoteInfo.owner;
     repo = prereqs.git.remoteInfo.repo;
@@ -252,20 +249,7 @@ async function main() {
       }
     }
 
-    // Push to origin
-    const pushSpinner = ora('Pushing to GitHub...').start();
-    try {
-      execSync('git branch -M main', { stdio: 'ignore' });
-      execSync('git push -u origin main', { stdio: 'ignore' });
-      pushSpinner.succeed('Pushed to GitHub');
-    } catch (err) {
-      pushSpinner.fail('Failed to push — check that the repository exists and is empty');
-      printError(err.stderr?.toString().trim() || err.message);
-      console.log(chalk.dim('\n  Run npm run setup again after fixing the issue.\n'));
-      process.exit(1);
-    }
-
-    // Get owner/repo from the remote
+    // Get owner/repo from the remote we just added
     const { getGitRemoteInfo } = await import('./lib/prerequisites.mjs');
     const remoteInfo = getGitRemoteInfo();
     if (remoteInfo) {
@@ -276,6 +260,14 @@ async function main() {
       printError('Could not detect repository from remote.');
       process.exit(1);
     }
+  }
+
+  // Track whether we need to push after getting the PAT
+  let needsPush = false;
+  try {
+    execSync('git rev-parse --verify origin/main', { stdio: 'ignore' });
+  } catch {
+    needsPush = true;
   }
 
   // ngrok check (informational only)
@@ -289,16 +281,18 @@ async function main() {
   // Step 2: GitHub PAT
   printStep(++currentStep, TOTAL_STEPS, 'GitHub Personal Access Token');
 
-  console.log(chalk.dim('  Create a fine-grained PAT with these repository permissions:\n'));
+  console.log(chalk.dim(`  Create a fine-grained PAT scoped to ${chalk.bold(`${owner}/${repo}`)} only:\n`));
+  console.log(chalk.dim('    \u2022 Repository access: Only select repositories \u2192 ') + chalk.bold(`${owner}/${repo}`));
   console.log(chalk.dim('    \u2022 Actions: Read-only'));
   console.log(chalk.dim('    \u2022 Contents: Read and write'));
   console.log(chalk.dim('    \u2022 Metadata: Read-only (required, auto-selected)'));
-  console.log(chalk.dim('    \u2022 Pull requests: Read and write\n'));
+  console.log(chalk.dim('    \u2022 Pull requests: Read and write'));
+  console.log(chalk.dim('    \u2022 Workflows: Read and write\n'));
 
   const openPATPage = await confirm('Open GitHub PAT creation page in browser?');
   if (openPATPage) {
     await open(getPATCreationURL());
-    printInfo('Opened in browser. Select the permissions listed above.');
+    printInfo('Opened in browser. Scope it to ' + chalk.bold(`${owner}/${repo}`) + ' only.');
   }
 
   let patValid = false;
@@ -326,6 +320,32 @@ async function main() {
       validateSpinner.succeed(`PAT valid for user: ${validation.user}`);
     }
     patValid = true;
+  }
+
+  // Push to GitHub now that we have the PAT
+  if (needsPush) {
+    // Configure git to use the PAT for HTTPS auth
+    const remote = execSync('git remote get-url origin', { encoding: 'utf-8' }).trim();
+    const authedUrl = remote.replace('https://github.com/', `https://x-access-token:${pat}@github.com/`);
+    execSync(`git remote set-url origin ${authedUrl}`, { stdio: 'ignore' });
+
+    const pushSpinner = ora('Pushing to GitHub...').start();
+    try {
+      execSync('git branch -M main', { stdio: 'ignore' });
+      execSync('git push -u origin main 2>&1', { encoding: 'utf-8' });
+      pushSpinner.succeed('Pushed to GitHub');
+    } catch (err) {
+      pushSpinner.fail('Failed to push');
+      const output = (err.stdout || '') + (err.stderr || '');
+      if (output) printError(output.trim());
+      // Reset URL before exiting so token isn't left in .git/config
+      execSync(`git remote set-url origin ${remote}`, { stdio: 'ignore' });
+      console.log(chalk.dim('\n  Run npm run setup again after fixing the issue.\n'));
+      process.exit(1);
+    }
+
+    // Reset remote URL back to clean HTTPS (no token embedded)
+    execSync(`git remote set-url origin ${remote}`, { stdio: 'ignore' });
   }
 
   // Step 3: API Keys

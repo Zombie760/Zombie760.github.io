@@ -245,12 +245,20 @@ function copyDirSyncForce(src, dest) {
 
 function setup() {
   const setupScript = path.join(__dirname, '..', 'setup', 'setup.mjs');
-  execSync(`node ${setupScript}`, { stdio: 'inherit', cwd: process.cwd() });
+  try {
+    execSync(`node ${setupScript}`, { stdio: 'inherit', cwd: process.cwd() });
+  } catch {
+    process.exit(1);
+  }
 }
 
 function setupTelegram() {
   const setupScript = path.join(__dirname, '..', 'setup', 'setup-telegram.mjs');
-  execSync(`node ${setupScript}`, { stdio: 'inherit', cwd: process.cwd() });
+  try {
+    execSync(`node ${setupScript}`, { stdio: 'inherit', cwd: process.cwd() });
+  } catch {
+    process.exit(1);
+  }
 }
 
 switch (command) {
