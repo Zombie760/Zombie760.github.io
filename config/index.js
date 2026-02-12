@@ -22,6 +22,11 @@ function withThepopebot(nextConfig = {}) {
       '@grammyjs/parse-mode',
       'node-cron',
       'uuid',
+      '@langchain/langgraph',
+      '@langchain/anthropic',
+      '@langchain/core',
+      'zod',
+      'better-sqlite3',
     ],
   };
 }

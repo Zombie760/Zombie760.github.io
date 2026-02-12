@@ -1,12 +1,8 @@
-const paths = require('../lib/paths');
-const { render_md } = require('../lib/utils/render-md');
 const { createJob } = require('../lib/tools/create-job');
-const { setWebhook, sendMessage, downloadFile, reactToMessage, startTypingIndicator } = require('../lib/tools/telegram');
-const { isWhisperEnabled, transcribeAudio } = require('../lib/tools/openai');
-const { chat, getApiKey } = require('../lib/claude');
-const { toolDefinitions, toolExecutors } = require('../lib/claude/tools');
-const { getHistory, updateHistory } = require('../lib/claude/conversation');
+const { setWebhook, sendMessage } = require('../lib/tools/telegram');
 const { getJobStatus } = require('../lib/tools/github');
+const { getTelegramAdapter } = require('../lib/channels');
+const { chat, summarizeJob, addToThread } = require('../lib/ai');
 
 // Bot token from env, can be overridden by /telegram/register
 let telegramBotToken = null;
@@ -57,55 +53,6 @@ function extractJobId(branchName) {
   return branchName.slice(4);
 }
 
-/**
- * Summarize a completed job using Claude
- * @param {Object} results - Job results from webhook payload
- * @returns {Promise<string>} The message to send to Telegram
- */
-async function summarizeJob(results) {
-  try {
-    const apiKey = getApiKey();
-
-    // System prompt from JOB_SUMMARY.md (supports {{includes}})
-    const systemPrompt = render_md(paths.jobSummaryMd);
-
-    // User message: structured job results
-    const userMessage = [
-      results.job ? `## Task\n${results.job}` : '',
-      results.commit_message ? `## Commit Message\n${results.commit_message}` : '',
-      results.changed_files?.length ? `## Changed Files\n${results.changed_files.join('\n')}` : '',
-      results.status ? `## Status\n${results.status}` : '',
-      results.merge_result ? `## Merge Result\n${results.merge_result}` : '',
-      results.pr_url ? `## PR URL\n${results.pr_url}` : '',
-      results.run_url ? `## Run URL\n${results.run_url}` : '',
-      results.log ? `## Agent Log\n${results.log}` : '',
-    ].filter(Boolean).join('\n\n');
-
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: process.env.EVENT_HANDLER_MODEL || 'claude-sonnet-4-20250514',
-        max_tokens: 1024,
-        system: systemPrompt,
-        messages: [{ role: 'user', content: userMessage }],
-      }),
-    });
-
-    if (!response.ok) throw new Error(`Claude API error: ${response.status}`);
-
-    const result = await response.json();
-    return (result.content?.[0]?.text || '').trim() || 'Job finished.';
-  } catch (err) {
-    console.error('Failed to summarize job:', err);
-    return 'Job finished.';
-  }
-}
-
 // ─────────────────────────────────────────────────────────────────────────────
 // Route handlers
 // ─────────────────────────────────────────────────────────────────────────────
@@ -142,100 +89,42 @@ async function handleTelegramRegister(request) {
 }
 
 async function handleTelegramWebhook(request) {
-  const { TELEGRAM_WEBHOOK_SECRET, TELEGRAM_CHAT_ID, TELEGRAM_VERIFICATION } = process.env;
   const botToken = getTelegramBotToken();
+  if (!botToken) return Response.json({ ok: true });
 
-  // Validate secret token if configured
-  // Always return 200 to prevent Telegram retry loops on mismatch
-  if (TELEGRAM_WEBHOOK_SECRET) {
-    const headerSecret = request.headers.get('x-telegram-bot-api-secret-token');
-    if (headerSecret !== TELEGRAM_WEBHOOK_SECRET) {
-      return Response.json({ ok: true });
-    }
-  }
+  const adapter = getTelegramAdapter(botToken);
+  const normalized = await adapter.receive(request);
+  if (!normalized) return Response.json({ ok: true });
 
-  const update = await request.json();
-  const message = update.message || update.edited_message;
-
-  if (message && message.chat && botToken) {
-    const chatId = String(message.chat.id);
-
-    let messageText = null;
-
-    if (message.text) {
-      messageText = message.text;
-    }
-
-    // Check for verification code - this works even before TELEGRAM_CHAT_ID is set
-    if (TELEGRAM_VERIFICATION && messageText === TELEGRAM_VERIFICATION) {
-      await sendMessage(botToken, chatId, `Your chat ID:\n<code>${chatId}</code>`);
-      return Response.json({ ok: true });
-    }
-
-    // Security: if no TELEGRAM_CHAT_ID configured, ignore all messages (except verification above)
-    if (!TELEGRAM_CHAT_ID) {
-      return Response.json({ ok: true });
-    }
-
-    // Security: only accept messages from configured chat
-    if (chatId !== TELEGRAM_CHAT_ID) {
-      return Response.json({ ok: true });
-    }
-
-    // Acknowledge receipt with a thumbs up (await so it completes before typing indicator starts)
-    await reactToMessage(botToken, chatId, message.message_id).catch(() => {});
-
-    if (message.voice) {
-      // Handle voice messages
-      if (!isWhisperEnabled()) {
-        await sendMessage(botToken, chatId, 'Voice messages are not supported. Please set OPENAI_API_KEY to enable transcription.');
-        return Response.json({ ok: true });
-      }
-
-      try {
-        const { buffer, filename } = await downloadFile(botToken, message.voice.file_id);
-        messageText = await transcribeAudio(buffer, filename);
-      } catch (err) {
-        console.error('Failed to transcribe voice:', err);
-        await sendMessage(botToken, chatId, 'Sorry, I could not transcribe your voice message.');
-        return Response.json({ ok: true });
-      }
-    }
-
-    if (messageText) {
-      // Process message asynchronously (don't block the response)
-      processMessage(botToken, chatId, messageText).catch(err => {
-        console.error('Failed to process message:', err);
-      });
-    }
-  }
+  // Process message asynchronously (don't block the webhook response)
+  processChannelMessage(adapter, normalized).catch((err) => {
+    console.error('Failed to process message:', err);
+  });
 
   return Response.json({ ok: true });
 }
 
 /**
- * Process a Telegram message with Claude (async, non-blocking)
+ * Process a normalized message through the AI layer with channel UX.
  */
-async function processMessage(botToken, chatId, messageText) {
-  const stopTyping = startTypingIndicator(botToken, chatId);
-  try {
-    // Get conversation history and process with Claude
-    const history = getHistory(chatId);
-    const { response, history: newHistory } = await chat(
-      messageText,
-      history,
-      toolDefinitions,
-      toolExecutors
-    );
-    updateHistory(chatId, newHistory);
+async function processChannelMessage(adapter, normalized) {
+  await adapter.acknowledge(normalized.metadata);
+  const stopIndicator = adapter.startProcessingIndicator(normalized.metadata);
 
-    // Send response (auto-splits if needed)
-    await sendMessage(botToken, chatId, response);
+  try {
+    const response = await chat(normalized.threadId, normalized.text, normalized.attachments);
+    await adapter.sendResponse(normalized.threadId, response, normalized.metadata);
   } catch (err) {
-    console.error('Failed to process message with Claude:', err);
-    await sendMessage(botToken, chatId, 'Sorry, I encountered an error processing your message.').catch(() => {});
+    console.error('Failed to process message with AI:', err);
+    await adapter
+      .sendResponse(
+        normalized.threadId,
+        'Sorry, I encountered an error processing your message.',
+        normalized.metadata
+      )
+      .catch(() => {});
   } finally {
-    stopTyping();
+    stopIndicator();
   }
 }
 
@@ -276,10 +165,8 @@ async function handleGithubWebhook(request) {
 
     await sendMessage(botToken, TELEGRAM_CHAT_ID, message);
 
-    // Add the summary to chat memory so Claude has context in future conversations
-    const history = getHistory(TELEGRAM_CHAT_ID);
-    history.push({ role: 'assistant', content: message });
-    updateHistory(TELEGRAM_CHAT_ID, history);
+    // Add the summary to chat memory so the agent has context in future conversations
+    await addToThread(TELEGRAM_CHAT_ID, message);
 
     console.log(`Notified chat ${TELEGRAM_CHAT_ID} about job ${jobId.slice(0, 8)}`);
 
