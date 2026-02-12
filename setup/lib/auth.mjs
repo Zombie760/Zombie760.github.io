@@ -1,4 +1,4 @@
-import { writeFileSync, readFileSync, existsSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
 
 const ROOT_DIR = process.cwd();
@@ -40,22 +40,18 @@ export async function validateAnthropicKey(key) {
 
 /**
  * Build flat secrets JSON for SECRETS GitHub secret.
- * Includes GH_TOKEN + API keys. entrypoint.sh decodes and exports each as an env var.
+ * Takes a flat { ENV_VAR: value } map of collected keys.
+ * entrypoint.sh decodes and exports each as an env var.
  */
-export function buildSecretsJson(pat, keys) {
-  const secrets = { GH_TOKEN: pat, ANTHROPIC_API_KEY: keys.anthropic };
-
-  if (keys.openai) secrets.OPENAI_API_KEY = keys.openai;
-  if (keys.groq) secrets.GROQ_API_KEY = keys.groq;
-
-  return secrets;
+export function buildSecretsJson(pat, collectedKeys) {
+  return { GH_TOKEN: pat, ...collectedKeys };
 }
 
 /**
  * Encode secrets to base64 for SECRETS GitHub secret
  */
-export function encodeSecretsBase64(pat, keys) {
-  const secrets = buildSecretsJson(pat, keys);
+export function encodeSecretsBase64(pat, collectedKeys) {
+  const secrets = buildSecretsJson(pat, collectedKeys);
   return Buffer.from(JSON.stringify(secrets)).toString('base64');
 }
 
@@ -63,20 +59,38 @@ export function encodeSecretsBase64(pat, keys) {
  * Build LLM secrets JSON for LLM_SECRETS GitHub secret.
  * These credentials are accessible to the LLM (not filtered by env-sanitizer).
  */
-export function buildLlmSecretsJson(keys) {
-  const secrets = {};
-  if (keys.brave) secrets.BRAVE_API_KEY = keys.brave;
-  return secrets;
+export function buildLlmSecretsJson(llmKeys) {
+  return { ...llmKeys };
 }
 
 /**
  * Encode LLM secrets to base64 for LLM_SECRETS GitHub secret.
  * Returns null if no LLM secrets are configured.
  */
-export function encodeLlmSecretsBase64(keys) {
-  const secrets = buildLlmSecretsJson(keys);
+export function encodeLlmSecretsBase64(llmKeys) {
+  const secrets = buildLlmSecretsJson(llmKeys);
   if (Object.keys(secrets).length === 0) return null;
   return Buffer.from(JSON.stringify(secrets)).toString('base64');
+}
+
+/**
+ * Generate .pi/agent/models.json for providers not built into PI.
+ * PI resolves the apiKey field as an env var name at runtime ($ENV_VAR).
+ */
+export function writeModelsJson(providerName, { baseUrl, apiKey, api, models }) {
+  const config = {
+    providers: {
+      [providerName]: {
+        baseUrl,
+        apiKey,
+        api: api || 'openai-completions',
+        models: models.map((m) => ({ id: m })),
+      },
+    },
+  };
+  const dir = join(ROOT_DIR, '.pi', 'agent');
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, 'models.json'), JSON.stringify(config, null, 2));
 }
 
 /**

@@ -1,5 +1,6 @@
 import inquirer from 'inquirer';
 import open from 'open';
+import { PROVIDERS } from './providers.mjs';
 
 /**
  * Mask a secret, showing only last 4 characters
@@ -32,19 +33,89 @@ export async function promptForPAT() {
 }
 
 /**
- * Prompt for Anthropic API key
+ * Prompt for LLM provider selection
  */
-export async function promptForAnthropicKey() {
+export async function promptForProvider() {
+  const choices = Object.entries(PROVIDERS).map(([key, p]) => ({
+    name: p.label,
+    value: key,
+  }));
+  choices.push({ name: 'Custom / Local', value: 'custom' });
+
+  const { provider } = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'provider',
+      message: 'Which LLM for your agent?',
+      choices,
+    },
+  ]);
+  return provider;
+}
+
+/**
+ * Prompt for model selection from a provider's model list
+ */
+export async function promptForModel(providerKey) {
+  const provider = PROVIDERS[providerKey];
+  const choices = provider.models.map((m) => ({
+    name: m.default ? `${m.name} (recommended)` : m.name,
+    value: m.id,
+  }));
+  choices.push({ name: 'Custom (enter model ID)', value: '__custom__' });
+
+  const { model } = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'model',
+      message: 'Which model?',
+      choices,
+    },
+  ]);
+
+  if (model === '__custom__') {
+    const { customModel } = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'customModel',
+        message: `Enter ${provider.name} model ID:`,
+        validate: (input) => input ? true : 'Model ID is required',
+      },
+    ]);
+    return customModel;
+  }
+
+  return model;
+}
+
+/**
+ * Prompt for an API key for a known provider
+ */
+export async function promptForApiKey(providerKey) {
+  const provider = PROVIDERS[providerKey];
+
+  const { openPage } = await inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'openPage',
+      message: `Open ${provider.name} API key page in browser?`,
+      default: true,
+    },
+  ]);
+  if (openPage) {
+    await open(provider.keyPage);
+  }
+
   const { key } = await inquirer.prompt([
     {
       type: 'password',
       name: 'key',
-      message: 'Enter your Anthropic API key:',
+      message: `Enter your ${provider.name} API key:`,
       mask: '*',
       validate: (input) => {
-        if (!input) return 'Anthropic API key is required';
-        if (!input.startsWith('sk-ant-')) {
-          return 'Invalid format. Should start with sk-ant-';
+        if (!input) return `${provider.name} API key is required`;
+        if (provider.keyPrefix && !input.startsWith(provider.keyPrefix)) {
+          return `Invalid format. Should start with ${provider.keyPrefix}`;
         }
         return true;
       },
@@ -54,14 +125,16 @@ export async function promptForAnthropicKey() {
 }
 
 /**
- * Prompt for optional OpenAI API key
+ * Prompt for an optional API key with a purpose description
  */
-export async function promptForOpenAIKey() {
+export async function promptForOptionalKey(providerKey, purpose) {
+  const provider = PROVIDERS[providerKey];
+
   const { addKey } = await inquirer.prompt([
     {
       type: 'confirm',
       name: 'addKey',
-      message: 'Add OpenAI API key? (optional)',
+      message: `Add ${provider.name} API key for ${purpose}? (optional)`,
       default: false,
     },
   ]);
@@ -72,24 +145,24 @@ export async function promptForOpenAIKey() {
     {
       type: 'confirm',
       name: 'openPage',
-      message: 'Open OpenAI API key page in browser?',
+      message: `Open ${provider.name} API key page in browser?`,
       default: true,
     },
   ]);
   if (openPage) {
-    await open('https://platform.openai.com/settings/organization/api-keys');
+    await open(provider.keyPage);
   }
 
   const { key } = await inquirer.prompt([
     {
       type: 'password',
       name: 'key',
-      message: 'Enter your OpenAI API key:',
+      message: `Enter your ${provider.name} API key:`,
       mask: '*',
       validate: (input) => {
         if (!input) return 'Key is required if adding';
-        if (!input.startsWith('sk-')) {
-          return 'Invalid format. Should start with sk-';
+        if (provider.keyPrefix && !input.startsWith(provider.keyPrefix)) {
+          return `Invalid format. Should start with ${provider.keyPrefix}`;
         }
         return true;
       },
@@ -99,33 +172,44 @@ export async function promptForOpenAIKey() {
 }
 
 /**
- * Prompt for optional Groq API key
+ * Prompt for custom/local LLM provider details
  */
-export async function promptForGroqKey() {
-  const { addKey } = await inquirer.prompt([
+export async function promptForCustomProvider() {
+  const { baseUrl } = await inquirer.prompt([
     {
-      type: 'confirm',
-      name: 'addKey',
-      message: 'Add Groq API key? (optional)',
-      default: false,
-    },
-  ]);
-
-  if (!addKey) return null;
-
-  const { key } = await inquirer.prompt([
-    {
-      type: 'password',
-      name: 'key',
-      message: 'Enter your Groq API key:',
-      mask: '*',
+      type: 'input',
+      name: 'baseUrl',
+      message: 'API base URL (e.g., http://myhost.ddns.net:11434/v1):',
       validate: (input) => {
-        if (!input) return 'Key is required if adding';
+        if (!input) return 'Base URL is required';
+        if (!input.startsWith('http://') && !input.startsWith('https://')) {
+          return 'URL must start with http:// or https://';
+        }
         return true;
       },
     },
   ]);
-  return key;
+
+  const { model } = await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'model',
+      message: 'Model ID (e.g., llama3.3:70b):',
+      validate: (input) => input ? true : 'Model ID is required',
+    },
+  ]);
+
+  const { apiKey } = await inquirer.prompt([
+    {
+      type: 'password',
+      name: 'apiKey',
+      message: 'API key:',
+      mask: '*',
+      validate: (input) => input ? true : 'API key is required',
+    },
+  ]);
+
+  return { baseUrl, model, apiKey };
 }
 
 /**

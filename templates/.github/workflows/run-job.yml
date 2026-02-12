@@ -24,9 +24,10 @@ jobs:
         env:
           IMAGE_URL: ${{ vars.IMAGE_URL }}
           MODEL: ${{ vars.MODEL }}
+          PROVIDER: ${{ vars.PROVIDER }}
         run: |
           if [ -n "$IMAGE_URL" ]; then
-            IMAGE="${IMAGE_URL}:latest"
+            IMAGE="${IMAGE_URL}"
           else
             IMAGE="stephengpope/thepopebot:latest"
           fi
@@ -37,4 +38,5 @@ jobs:
             -e SECRETS='${{ secrets.SECRETS }}' \
             -e LLM_SECRETS='${{ secrets.LLM_SECRETS }}' \
             -e MODEL="${MODEL}" \
+            -e PROVIDER="${PROVIDER}" \
             "$IMAGE"

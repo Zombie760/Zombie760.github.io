@@ -13,9 +13,11 @@ import {
 } from './lib/prerequisites.mjs';
 import {
   promptForPAT,
-  promptForAnthropicKey,
-  promptForOpenAIKey,
-  promptForGroqKey,
+  promptForProvider,
+  promptForModel,
+  promptForApiKey,
+  promptForOptionalKey,
+  promptForCustomProvider,
   promptForBraveKey,
   promptForTelegramToken,
   generateTelegramWebhookSecret,
@@ -23,6 +25,7 @@ import {
   pressEnter,
   maskSecret,
 } from './lib/prompts.mjs';
+import { PROVIDERS } from './lib/providers.mjs';
 import {
   validatePAT,
   checkPATScopes,
@@ -34,6 +37,7 @@ import {
 import {
   validateAnthropicKey,
   writeEnvFile,
+  writeModelsJson,
   encodeSecretsBase64,
   encodeLlmSecretsBase64,
   updateEnvVariable,
@@ -83,9 +87,9 @@ async function main() {
 
   // Collected values
   let pat = null;
-  let anthropicKey = null;
-  let openaiKey = null;
-  let groqKey = null;
+  let agentProvider = null;
+  let agentModel = null;
+  const collectedKeys = {};
   let braveKey = null;
   let telegramToken = null;
   let telegramWebhookSecret = null;
@@ -355,54 +359,82 @@ async function main() {
   // Step 3: API Keys
   printStep(++currentStep, TOTAL_STEPS, 'API Keys');
 
-  console.log(chalk.dim('  Anthropic API key is required. Others are optional.\n'));
+  // Step 3a: Agent LLM
+  console.log(chalk.dim('  Choose the LLM provider for your agent.\n'));
 
-  // Anthropic (required)
-  const openAnthropicPage = await confirm('Open Anthropic API key page in browser?');
-  if (openAnthropicPage) {
-    await open('https://platform.claude.com/settings/keys');
-    printInfo('Opened in browser. Create an API key and copy it.');
+  agentProvider = await promptForProvider();
+
+  if (agentProvider === 'custom') {
+    const custom = await promptForCustomProvider();
+    agentModel = custom.model;
+    writeModelsJson('custom', {
+      baseUrl: custom.baseUrl,
+      apiKey: 'CUSTOM_API_KEY',
+      api: 'openai-completions',
+      models: [custom.model],
+    });
+    collectedKeys['CUSTOM_API_KEY'] = custom.apiKey;
+    printSuccess(`Custom provider configured: ${custom.model}`);
+  } else {
+    const providerConfig = PROVIDERS[agentProvider];
+    agentModel = await promptForModel(agentProvider);
+    const agentApiKey = await promptForApiKey(agentProvider);
+    collectedKeys[providerConfig.envKey] = agentApiKey;
+
+    // Non-builtin providers need models.json (e.g., OpenAI)
+    if (!providerConfig.builtin) {
+      writeModelsJson(agentProvider, {
+        baseUrl: providerConfig.baseUrl,
+        apiKey: providerConfig.envKey,
+        api: providerConfig.api,
+        models: providerConfig.models.map((m) => m.id),
+      });
+      printSuccess(`Generated .pi/agent/models.json for ${providerConfig.name}`);
+    }
+
+    printSuccess(`${providerConfig.name} key added (${maskSecret(agentApiKey)})`);
   }
 
-  let anthropicValid = false;
-  while (!anthropicValid) {
-    anthropicKey = await promptForAnthropicKey();
+  // Step 3b: Event Handler (Anthropic required)
+  if (collectedKeys['ANTHROPIC_API_KEY']) {
+    printSuccess('Using your Anthropic key for the chatbot too.');
+  } else {
+    console.log('');
+    printInfo('Your chatbot requires an Anthropic (Claude) API key.');
 
-    const validateSpinner = ora('Validating Anthropic API key...').start();
-    const validation = await validateAnthropicKey(anthropicKey);
+    let anthropicValid = false;
+    while (!anthropicValid) {
+      const anthropicKey = await promptForApiKey('anthropic');
 
-    if (validation.valid) {
-      validateSpinner.succeed('Anthropic API key valid');
-      anthropicValid = true;
-    } else {
-      validateSpinner.fail(`Invalid key: ${validation.error}`);
+      const validateSpinner = ora('Validating Anthropic API key...').start();
+      const validation = await validateAnthropicKey(anthropicKey);
+
+      if (validation.valid) {
+        validateSpinner.succeed('Anthropic API key valid');
+        collectedKeys['ANTHROPIC_API_KEY'] = anthropicKey;
+        anthropicValid = true;
+      } else {
+        validateSpinner.fail(`Invalid key: ${validation.error}`);
+      }
     }
   }
 
-  // OpenAI (optional)
-  openaiKey = await promptForOpenAIKey();
-  if (openaiKey) {
-    printSuccess(`OpenAI key added (${maskSecret(openaiKey)})`);
+  // Step 3c: Voice Messages (OpenAI optional)
+  if (collectedKeys['OPENAI_API_KEY']) {
+    printSuccess('Your OpenAI key can also power voice messages.');
+  } else {
+    const result = await promptForOptionalKey('openai', 'voice messages');
+    if (result) {
+      collectedKeys['OPENAI_API_KEY'] = result;
+      printSuccess(`OpenAI key added (${maskSecret(result)})`);
+    }
   }
 
-  // Groq (optional)
-  groqKey = await promptForGroqKey();
-  if (groqKey) {
-    printSuccess(`Groq key added (${maskSecret(groqKey)})`);
-  }
-
-  // Brave Search (optional, default: true since it's free)
+  // Step 3d: Brave Search (optional, default: true since it's free)
   braveKey = await promptForBraveKey();
   if (braveKey) {
     printSuccess(`Brave Search key added (${maskSecret(braveKey)})`);
   }
-
-  const keys = {
-    anthropic: anthropicKey,
-    openai: openaiKey,
-    groq: groqKey,
-    brave: braveKey,
-  };
 
   // Step 4: Set GitHub Secrets
   printStep(++currentStep, TOTAL_STEPS, 'Set GitHub Secrets');
@@ -418,8 +450,10 @@ async function main() {
   }
 
   webhookSecret = generateWebhookSecret();
-  const secretsBase64 = encodeSecretsBase64(pat, keys);
-  const llmSecretsBase64 = encodeLlmSecretsBase64(keys);
+  const secretsBase64 = encodeSecretsBase64(pat, collectedKeys);
+  const llmKeys = {};
+  if (braveKey) llmKeys.BRAVE_API_KEY = braveKey;
+  const llmSecretsBase64 = encodeLlmSecretsBase64(llmKeys);
 
   const secrets = {
     SECRETS: secretsBase64,
@@ -455,7 +489,8 @@ async function main() {
   const defaultVars = {
     AUTO_MERGE: 'true',
     ALLOWED_PATHS: '/logs',
-    MODEL: 'claude-sonnet-4-5-20250929',
+    PROVIDER: agentProvider,
+    MODEL: agentModel,
   };
 
   let allVarsSet = false;
@@ -510,8 +545,8 @@ async function main() {
     telegramBotToken: telegramToken,
     telegramWebhookSecret,
     ghWebhookSecret: webhookSecret,
-    anthropicApiKey: anthropicKey,
-    openaiApiKey: openaiKey,
+    anthropicApiKey: collectedKeys['ANTHROPIC_API_KEY'] || '',
+    openaiApiKey: collectedKeys['OPENAI_API_KEY'] || '',
     telegramChatId: null,
     telegramVerification,
   });
@@ -646,12 +681,14 @@ async function main() {
 
   console.log(chalk.bold.green('\n  Configuration Summary:\n'));
 
+  const providerLabel = agentProvider === 'custom' ? 'Custom / Local' : PROVIDERS[agentProvider].label;
   console.log(`  ${chalk.dim('Repository:')}      ${owner}/${repo}`);
   console.log(`  ${chalk.dim('Webhook URL:')}     ${ngrokUrl}`);
+  console.log(`  ${chalk.dim('Agent LLM:')}       ${providerLabel} (${agentModel})`);
   console.log(`  ${chalk.dim('GitHub PAT:')}      ${maskSecret(pat)}`);
-  console.log(`  ${chalk.dim('Anthropic Key:')}   ${maskSecret(anthropicKey)}`);
-  if (openaiKey) console.log(`  ${chalk.dim('OpenAI Key:')}      ${maskSecret(openaiKey)}`);
-  if (groqKey) console.log(`  ${chalk.dim('Groq Key:')}        ${maskSecret(groqKey)}`);
+  for (const [envVar, value] of Object.entries(collectedKeys)) {
+    console.log(`  ${chalk.dim(`${envVar}:`)}  ${maskSecret(value)}`);
+  }
   if (braveKey) console.log(`  ${chalk.dim('Brave Search:')}    ${maskSecret(braveKey)}`);
   if (telegramToken) console.log(`  ${chalk.dim('Telegram Bot:')}    Webhook registered`);
 
@@ -664,7 +701,8 @@ async function main() {
   console.log('  \u2022 GH_WEBHOOK_URL');
   console.log('  \u2022 AUTO_MERGE = true');
   console.log('  \u2022 ALLOWED_PATHS = /logs');
-  console.log('  \u2022 MODEL = claude-sonnet-4-5-20250929');
+  console.log(`  \u2022 PROVIDER = ${agentProvider}`);
+  console.log(`  \u2022 MODEL = ${agentModel}`);
 
   console.log(chalk.bold.green('\n  You\'re all set!\n'));
 

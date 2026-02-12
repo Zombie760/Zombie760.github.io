@@ -73,9 +73,17 @@ PROMPT="
 
 $(cat /job/logs/${JOB_ID}/job.md)"
 
-MODEL_FLAGS=""
+PROVIDER="${PROVIDER:-anthropic}"
+
+MODEL_FLAGS="--provider $PROVIDER"
 if [ -n "$MODEL" ]; then
-    MODEL_FLAGS="--provider anthropic --model $MODEL"
+    MODEL_FLAGS="$MODEL_FLAGS --model $MODEL"
+fi
+
+# Copy custom models.json to PI's global config if present in repo
+if [ -f "/job/.pi/agent/models.json" ]; then
+    mkdir -p /root/.pi/agent
+    cp /job/.pi/agent/models.json /root/.pi/agent/models.json
 fi
 
 pi $MODEL_FLAGS -p "$PROMPT" --session-dir "${LOG_DIR}"
