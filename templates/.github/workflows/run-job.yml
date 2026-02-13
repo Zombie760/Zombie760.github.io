@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Login to GHCR
-        if: startsWith(vars.IMAGE_URL, 'ghcr.io/')
+        if: startsWith(vars.DOCKER_IMAGE_URL, 'ghcr.io/')
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
@@ -22,12 +22,12 @@ jobs:
 
       - name: Run thepopebot Agent
         env:
-          IMAGE_URL: ${{ vars.IMAGE_URL }}
-          MODEL: ${{ vars.MODEL }}
-          PROVIDER: ${{ vars.PROVIDER }}
+          DOCKER_IMAGE_URL: ${{ vars.DOCKER_IMAGE_URL }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          LLM_PROVIDER: ${{ vars.LLM_PROVIDER }}
         run: |
-          if [ -n "$IMAGE_URL" ]; then
-            IMAGE="${IMAGE_URL}"
+          if [ -n "$DOCKER_IMAGE_URL" ]; then
+            IMAGE="${DOCKER_IMAGE_URL}"
           else
             IMAGE="stephengpope/thepopebot:latest"
           fi
@@ -37,6 +37,6 @@ jobs:
             -e BRANCH="${{ github.ref_name }}" \
             -e SECRETS='${{ secrets.SECRETS }}' \
             -e LLM_SECRETS='${{ secrets.LLM_SECRETS }}' \
-            -e MODEL="${MODEL}" \
-            -e PROVIDER="${PROVIDER}" \
+            -e LLM_MODEL="${LLM_MODEL}" \
+            -e LLM_PROVIDER="${LLM_PROVIDER}" \
             "$IMAGE"

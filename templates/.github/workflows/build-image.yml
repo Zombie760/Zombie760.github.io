@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: vars.IMAGE_URL != '' && startsWith(vars.IMAGE_URL, 'ghcr.io/')
+    if: vars.DOCKER_IMAGE_URL != '' && startsWith(vars.DOCKER_IMAGE_URL, 'ghcr.io/')
     permissions:
       contents: read
       packages: write
@@ -31,4 +31,4 @@ jobs:
         with:
           context: ./docker
           push: true
-          tags: ${{ vars.IMAGE_URL }}:latest
+          tags: ${{ vars.DOCKER_IMAGE_URL }}:latest

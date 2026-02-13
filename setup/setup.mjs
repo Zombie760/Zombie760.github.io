@@ -35,7 +35,6 @@ import {
   getPATCreationURL,
 } from './lib/github.mjs';
 import {
-  validateAnthropicKey,
   writeEnvFile,
   writeModelsJson,
   encodeSecretsBase64,
@@ -395,31 +394,7 @@ async function main() {
     printSuccess(`${providerConfig.name} key added (${maskSecret(agentApiKey)})`);
   }
 
-  // Step 3b: Event Handler (Anthropic required)
-  if (collectedKeys['ANTHROPIC_API_KEY']) {
-    printSuccess('Using your Anthropic key for the chatbot too.');
-  } else {
-    console.log('');
-    printInfo('Your chatbot requires an Anthropic (Claude) API key.');
-
-    let anthropicValid = false;
-    while (!anthropicValid) {
-      const anthropicKey = await promptForApiKey('anthropic');
-
-      const validateSpinner = ora('Validating Anthropic API key...').start();
-      const validation = await validateAnthropicKey(anthropicKey);
-
-      if (validation.valid) {
-        validateSpinner.succeed('Anthropic API key valid');
-        collectedKeys['ANTHROPIC_API_KEY'] = anthropicKey;
-        anthropicValid = true;
-      } else {
-        validateSpinner.fail(`Invalid key: ${validation.error}`);
-      }
-    }
-  }
-
-  // Step 3c: Voice Messages (OpenAI optional)
+  // Step 3b: Voice Messages (OpenAI optional)
   if (collectedKeys['OPENAI_API_KEY']) {
     printSuccess('Your OpenAI key can also power voice messages.');
   } else {
@@ -430,7 +405,7 @@ async function main() {
     }
   }
 
-  // Step 3d: Brave Search (optional, default: true since it's free)
+  // Step 3c: Brave Search (optional, default: true since it's free)
   braveKey = await promptForBraveKey();
   if (braveKey) {
     printSuccess(`Brave Search key added (${maskSecret(braveKey)})`);
@@ -489,8 +464,8 @@ async function main() {
   const defaultVars = {
     AUTO_MERGE: 'true',
     ALLOWED_PATHS: '/logs',
-    PROVIDER: agentProvider,
-    MODEL: agentModel,
+    LLM_PROVIDER: agentProvider,
+    LLM_MODEL: agentModel,
   };
 
   let allVarsSet = false;
@@ -537,6 +512,8 @@ async function main() {
   // Write .env file (now at project root, not event_handler/)
   const apiKey = generateWebhookSecret().slice(0, 32); // Random API key for webhook endpoint
   const telegramVerification = telegramToken ? generateVerificationCode() : null;
+  const providerConfig = agentProvider !== 'custom' ? PROVIDERS[agentProvider] : null;
+  const providerEnvKey = providerConfig ? providerConfig.envKey : 'CUSTOM_API_KEY';
   const envPath = writeEnvFile({
     apiKey,
     githubToken: pat,
@@ -545,7 +522,10 @@ async function main() {
     telegramBotToken: telegramToken,
     telegramWebhookSecret,
     ghWebhookSecret: webhookSecret,
-    anthropicApiKey: collectedKeys['ANTHROPIC_API_KEY'] || '',
+    llmProvider: agentProvider,
+    llmModel: agentModel,
+    providerEnvKey,
+    providerApiKey: collectedKeys[providerEnvKey] || '',
     openaiApiKey: collectedKeys['OPENAI_API_KEY'] || '',
     telegramChatId: null,
     telegramVerification,
@@ -701,8 +681,8 @@ async function main() {
   console.log('  \u2022 GH_WEBHOOK_URL');
   console.log('  \u2022 AUTO_MERGE = true');
   console.log('  \u2022 ALLOWED_PATHS = /logs');
-  console.log(`  \u2022 PROVIDER = ${agentProvider}`);
-  console.log(`  \u2022 MODEL = ${agentModel}`);
+  console.log(`  \u2022 LLM_PROVIDER = ${agentProvider}`);
+  console.log(`  \u2022 LLM_MODEL = ${agentModel}`);
 
   console.log(chalk.bold.green('\n  You\'re all set!\n'));
 

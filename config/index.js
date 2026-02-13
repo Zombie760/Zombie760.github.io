@@ -24,6 +24,8 @@ function withThepopebot(nextConfig = {}) {
       'uuid',
       '@langchain/langgraph',
       '@langchain/anthropic',
+      '@langchain/openai',
+      '@langchain/google-genai',
       '@langchain/core',
       'zod',
       'better-sqlite3',

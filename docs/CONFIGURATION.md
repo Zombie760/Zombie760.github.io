@@ -15,9 +15,11 @@ All environment variables for the Event Handler (set in `.env` in your project r
 | `TELEGRAM_WEBHOOK_SECRET` | Secret for webhook validation | No |
 | `TELEGRAM_VERIFICATION` | Verification code for getting your chat ID | For Telegram setup |
 | `GH_WEBHOOK_SECRET` | Secret for GitHub Actions webhook auth | For notifications |
-| `ANTHROPIC_API_KEY` | Claude API key for chat functionality | For chat |
-| `OPENAI_API_KEY` | OpenAI key for voice transcription | For voice |
-| `EVENT_HANDLER_MODEL` | Claude model for chat (default: claude-sonnet-4) | No |
+| `LLM_PROVIDER` | LLM provider: `anthropic`, `openai`, or `google` (default: `anthropic`) | No |
+| `LLM_MODEL` | LLM model name override (provider-specific default if unset) | No |
+| `ANTHROPIC_API_KEY` | API key for Anthropic provider | For anthropic provider |
+| `OPENAI_API_KEY` | API key for OpenAI provider / Whisper voice transcription | For openai provider or voice |
+| `GOOGLE_API_KEY` | API key for Google provider | For google provider |
 
 ---
 
@@ -42,8 +44,9 @@ Configure in **Settings → Secrets and variables → Actions → Variables**:
 | `GH_WEBHOOK_URL` | Event handler URL (e.g., your ngrok URL) | Yes | — |
 | `AUTO_MERGE` | Set to `false` to disable auto-merge of job PRs | No | Enabled |
 | `ALLOWED_PATHS` | Comma-separated path prefixes for auto-merge | No | `/logs` |
-| `IMAGE_URL` | Docker image path (e.g., `ghcr.io/myorg/mybot`) | No | `stephengpope/thepopebot:latest` |
-| `MODEL` | Anthropic model ID for the Pi agent (e.g., `claude-sonnet-4-5-20250929`) | No | Pi default |
+| `DOCKER_IMAGE_URL` | Docker image path (e.g., `ghcr.io/myorg/mybot`) | No | `stephengpope/thepopebot:latest` |
+| `LLM_PROVIDER` | LLM provider (`anthropic`, `openai`, `google`) | No | `anthropic` |
+| `LLM_MODEL` | LLM model name for the Pi agent | No | Provider default |
 
 ---
 

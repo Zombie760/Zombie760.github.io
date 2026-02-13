@@ -396,9 +396,11 @@ Both `job` and `command` strings support the same templates:
 | `TELEGRAM_VERIFICATION` | Verification code for getting chat ID | For Telegram setup |
 | `TELEGRAM_CHAT_ID` | Default Telegram chat ID for notifications | For Telegram |
 | `GH_WEBHOOK_SECRET` | Secret for GitHub Actions webhook auth | For notifications |
-| `ANTHROPIC_API_KEY` | Claude API key for chat functionality | For chat |
-| `OPENAI_API_KEY` | OpenAI API key for Whisper voice transcription | For voice messages |
-| `EVENT_HANDLER_MODEL` | Claude model for chat (default: claude-sonnet-4) | No |
+| `LLM_PROVIDER` | LLM provider: `anthropic`, `openai`, or `google` (default: `anthropic`) | No |
+| `LLM_MODEL` | LLM model name override (provider-specific default if unset) | No |
+| `ANTHROPIC_API_KEY` | API key for Anthropic provider | For anthropic provider |
+| `OPENAI_API_KEY` | API key for OpenAI provider / Whisper voice transcription | For openai provider or voice |
+| `GOOGLE_API_KEY` | API key for Google provider | For google provider |
 
 ## Docker Agent Layer
 
@@ -429,6 +431,8 @@ The Dockerfile (`templates/docker/Dockerfile`, scaffolded to `docker/Dockerfile`
 | `BRANCH` | Branch to clone and work on (e.g., job/uuid) | Yes |
 | `SECRETS` | Base64-encoded JSON with protected credentials (GH_TOKEN, ANTHROPIC_API_KEY, etc.) - filtered from LLM | Yes |
 | `LLM_SECRETS` | Base64-encoded JSON with credentials the LLM can access (browser logins, skill API keys) | No |
+| `LLM_PROVIDER` | LLM provider for the Pi agent (`anthropic`, `openai`, `google`) | No (default: `anthropic`) |
+| `LLM_MODEL` | LLM model name for the Pi agent | No (provider default) |
 
 ## GitHub Actions
 
@@ -436,19 +440,19 @@ GitHub Actions are scaffolded into the user's project (from `templates/.github/w
 
 ### docker-build.yml
 
-Triggers on push to `main`. Builds the Docker image and pushes it to GitHub Container Registry (GHCR). Only runs when `IMAGE_URL` is set to a GHCR URL (starts with `ghcr.io/`). Non-GHCR URLs skip this workflow entirely.
+Triggers on push to `main`. Builds the Docker image and pushes it to GitHub Container Registry (GHCR). Only runs when `DOCKER_IMAGE_URL` is set to a GHCR URL (starts with `ghcr.io/`). Non-GHCR URLs skip this workflow entirely.
 
 ```yaml
 on:
   push:
     branches: [main]
-# Only runs if: vars.IMAGE_URL is set AND starts with "ghcr.io/"
-# Pushes to: {IMAGE_URL}:latest
+# Only runs if: vars.DOCKER_IMAGE_URL is set AND starts with "ghcr.io/"
+# Pushes to: {DOCKER_IMAGE_URL}:latest
 ```
 
 ### run-job.yml
 
-Triggers when a `job/*` branch is created. Runs the Docker agent container. If `IMAGE_URL` is set, pulls from that registry (logs into GHCR automatically for `ghcr.io/` URLs); otherwise falls back to `stephengpope/thepopebot:latest` from Docker Hub.
+Triggers when a `job/*` branch is created. Runs the Docker agent container. If `DOCKER_IMAGE_URL` is set, pulls from that registry (logs into GHCR automatically for `ghcr.io/` URLs); otherwise falls back to `stephengpope/thepopebot:latest` from Docker Hub.
 
 ```yaml
 on:
@@ -505,8 +509,9 @@ Configure these in **Settings → Secrets and variables → Actions → Variable
 | `GH_WEBHOOK_URL` | Event handler URL (e.g., `https://your-server.com`) | — |
 | `AUTO_MERGE` | Set to `false` to disable auto-merge of job PRs | Enabled (any value except `false`) |
 | `ALLOWED_PATHS` | Comma-separated path prefixes (e.g., `/logs`). Use `/` for all paths. | `/logs` |
-| `IMAGE_URL` | Full Docker image path (e.g., `ghcr.io/myorg/mybot`). GHCR URLs trigger automatic builds via `docker-build.yml`. Non-GHCR URLs (e.g., `docker.io/user/mybot`) are pulled directly. | Not set (uses `stephengpope/thepopebot:latest`) |
-| `MODEL` | Anthropic model ID for the Pi agent (e.g., `claude-sonnet-4-5-20250929`) | Not set (Pi default) |
+| `DOCKER_IMAGE_URL` | Full Docker image path (e.g., `ghcr.io/myorg/mybot`). GHCR URLs trigger automatic builds via `docker-build.yml`. Non-GHCR URLs (e.g., `docker.io/user/mybot`) are pulled directly. | Not set (uses `stephengpope/thepopebot:latest`) |
+| `LLM_PROVIDER` | LLM provider for the Pi agent (`anthropic`, `openai`, `google`) | Not set (default: `anthropic`) |
+| `LLM_MODEL` | LLM model name for the Pi agent (e.g., `claude-sonnet-4-5-20250929`) | Not set (provider default) |
 
 ## How Credentials Work
 

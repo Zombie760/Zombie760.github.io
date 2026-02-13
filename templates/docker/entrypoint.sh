@@ -73,11 +73,11 @@ PROMPT="
 
 $(cat /job/logs/${JOB_ID}/job.md)"
 
-PROVIDER="${PROVIDER:-anthropic}"
+LLM_PROVIDER="${LLM_PROVIDER:-anthropic}"
 
-MODEL_FLAGS="--provider $PROVIDER"
-if [ -n "$MODEL" ]; then
-    MODEL_FLAGS="$MODEL_FLAGS --model $MODEL"
+MODEL_FLAGS="--provider $LLM_PROVIDER"
+if [ -n "$LLM_MODEL" ]; then
+    MODEL_FLAGS="$MODEL_FLAGS --model $LLM_MODEL"
 fi
 
 # Copy custom models.json to PI's global config if present in repo
