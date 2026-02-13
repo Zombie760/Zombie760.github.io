@@ -98,6 +98,7 @@ function init() {
         thepopebot: '^1.0.0',
         next: '^15.5.12',
         'next-auth': '5.0.0-beta.25',
+        'next-themes': '^0.4.0',
         react: '^19.0.0',
         'react-dom': '^19.0.0',
         tailwindcss: '^4.0.0',
