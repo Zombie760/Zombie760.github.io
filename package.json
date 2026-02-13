@@ -1,6 +1,7 @@
 {
   "name": "thepopebot",
   "version": "1.2.0",
+  "type": "module",
   "description": "Create autonomous AI agents with a two-layer architecture: Next.js Event Handler + Docker Agent.",
   "bin": {
     "thepopebot": "./bin/cli.js"
@@ -9,7 +10,10 @@
   "exports": {
     "./api": "./api/index.js",
     "./config": "./config/index.js",
-    "./instrumentation": "./config/instrumentation.js"
+    "./instrumentation": "./config/instrumentation.js",
+    "./auth": "./lib/auth/index.js",
+    "./auth/setup": "./lib/auth/setup.js",
+    "./db": "./lib/db/index.js"
   },
   "files": [
     "bin/",
@@ -43,9 +47,11 @@
     "@langchain/openai": "^1.2.7",
     "@langchain/langgraph": "^1.1.4",
     "@langchain/langgraph-checkpoint-sqlite": "^1.0.1",
+    "bcrypt-ts": "^6.0.0",
     "better-sqlite3": "^12.6.2",
     "chalk": "^5.3.0",
     "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.44.0",
     "grammy": "^1.39.3",
     "inquirer": "^9.2.12",
     "node-cron": "^3.0.3",
@@ -56,8 +62,14 @@
   },
   "peerDependencies": {
     "next": ">=15.0.0",
+    "next-auth": "5.0.0-beta.25",
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "next-auth": {
+      "optional": false
+    }
   },
   "engines": {
     "node": ">=18.0.0"

@@ -1,3 +1,5 @@
+import './globals.css';
+
 export const metadata = {
   title: 'thepopebot',
   description: 'AI Agent',
@@ -6,7 +8,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, overflow: 'hidden' }}>{children}</body>
+      <body className="min-h-screen bg-background text-foreground antialiased">
+        {children}
+      </body>
     </html>
   );
 }

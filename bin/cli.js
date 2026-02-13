@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+import { execSync } from 'child_process';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const command = process.argv[2];
 const args = process.argv.slice(3);
@@ -15,6 +19,7 @@ Commands:
   init               Scaffold a new thepopebot project
   setup              Run interactive setup wizard
   setup-telegram     Reconfigure Telegram webhook
+  reset-auth         Regenerate AUTH_SECRET (invalidates all sessions)
   reset [file]       Restore a template file (or list available templates)
 `);
 }
@@ -82,17 +87,21 @@ function init() {
       name: dirName,
       private: true,
       scripts: {
-        dev: 'next dev',
+        dev: 'next dev --turbopack',
         build: 'next build',
         start: 'next start',
         setup: 'thepopebot setup',
         'setup-telegram': 'thepopebot setup-telegram',
+        'reset-auth': 'thepopebot reset-auth',
       },
       dependencies: {
         thepopebot: '^1.0.0',
-        next: '^16.0.0',
+        next: '^15.5.12',
+        'next-auth': '5.0.0-beta.25',
         react: '^19.0.0',
         'react-dom': '^19.0.0',
+        tailwindcss: '^4.0.0',
+        '@tailwindcss/postcss': '^4.0.0',
       },
     };
     fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
@@ -102,7 +111,7 @@ function init() {
   }
 
   // Create .gitkeep files for empty dirs
-  const gitkeepDirs = ['cron', 'triggers', 'logs', 'tmp'];
+  const gitkeepDirs = ['cron', 'triggers', 'logs', 'tmp', 'data'];
   for (const dir of gitkeepDirs) {
     const gitkeep = path.join(cwd, dir, '.gitkeep');
     if (!fs.existsSync(gitkeep)) {
@@ -261,6 +270,23 @@ function setupTelegram() {
   }
 }
 
+async function resetAuth() {
+  const { randomBytes } = await import('crypto');
+  const { updateEnvVariable } = await import(path.join(__dirname, '..', 'setup', 'lib', 'auth.mjs'));
+
+  const envPath = path.join(process.cwd(), '.env');
+  if (!fs.existsSync(envPath)) {
+    console.error('\n  No .env file found. Run "npm run setup" first.\n');
+    process.exit(1);
+  }
+
+  const newSecret = randomBytes(32).toString('base64');
+  updateEnvVariable('AUTH_SECRET', newSecret);
+  console.log('\n  AUTH_SECRET regenerated.');
+  console.log('  All existing sessions have been invalidated.');
+  console.log('  Restart your server for the change to take effect.\n');
+}
+
 switch (command) {
   case 'init':
     init();
@@ -270,6 +296,9 @@ switch (command) {
     break;
   case 'setup-telegram':
     setupTelegram();
+    break;
+  case 'reset-auth':
+    await resetAuth();
     break;
   case 'reset':
     reset(args[0]);

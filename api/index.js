@@ -1,8 +1,9 @@
-const { createJob } = require('../lib/tools/create-job');
-const { setWebhook, sendMessage } = require('../lib/tools/telegram');
-const { getJobStatus } = require('../lib/tools/github');
-const { getTelegramAdapter } = require('../lib/channels');
-const { chat, summarizeJob, addToThread } = require('../lib/ai');
+import { createJob } from '../lib/tools/create-job.js';
+import { setWebhook, sendMessage } from '../lib/tools/telegram.js';
+import { getJobStatus } from '../lib/tools/github.js';
+import { getTelegramAdapter } from '../lib/channels/index.js';
+import { chat, summarizeJob, addToThread } from '../lib/ai/index.js';
+import { loadTriggers } from '../lib/triggers.js';
 
 // Bot token from env, can be overridden by /telegram/register
 let telegramBotToken = null;
@@ -19,7 +20,6 @@ function getTelegramBotToken() {
 
 function getFireTriggers() {
   if (!_fireTriggers) {
-    const { loadTriggers } = require('../lib/triggers');
     const result = loadTriggers();
     _fireTriggers = result.fireTriggers;
   }
@@ -239,4 +239,4 @@ async function GET(request) {
   }
 }
 
-module.exports = { GET, POST };
+export { GET, POST };
