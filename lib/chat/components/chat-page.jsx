@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { AppSidebar } from './app-sidebar.js';
 import { Chat } from './chat.js';
 import { SidebarProvider, SidebarInset } from './ui/sidebar.js';
+import { ChatNavProvider } from './chat-nav-context.js';
 import { getChatMessages } from '../actions.js';
 
 /**
@@ -12,20 +13,43 @@ import { getChatMessages } from '../actions.js';
  * @param {object} props
  * @param {object|null} props.session - Auth session (null = not logged in)
  * @param {boolean} props.needsSetup - Whether setup is needed
- * @param {string} [props.chatId] - Chat ID (undefined = new chat)
+ * @param {string} [props.chatId] - Chat ID from URL (only used for initial mount)
  */
 export function ChatPage({ session, needsSetup, chatId }) {
+  const [activeChatId, setActiveChatId] = useState(chatId || null);
+  const [resolvedChatId, setResolvedChatId] = useState(() => chatId ? null : crypto.randomUUID());
   const [initialMessages, setInitialMessages] = useState([]);
-  const [resolvedChatId, setResolvedChatId] = useState(() => chatId || crypto.randomUUID());
-  const [messagesLoaded, setMessagesLoaded] = useState(!chatId);
 
-  // Load existing messages when chatId changes
+  const navigateToChat = useCallback((id) => {
+    if (id) {
+      window.history.pushState({}, '', `/chat/${id}`);
+    } else {
+      window.history.pushState({}, '', '/');
+    }
+    setActiveChatId(id);
+  }, []);
+
+  // Browser back/forward
   useEffect(() => {
-    if (chatId) {
-      setMessagesLoaded(false);
-      setResolvedChatId(chatId);
-      getChatMessages(chatId).then((dbMessages) => {
-        // Convert DB messages to AI SDK UIMessage format
+    const onPopState = () => {
+      const match = window.location.pathname.match(/^\/chat\/(.+)/);
+      setActiveChatId(match ? match[1] : null);
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  // Load messages when activeChatId changes
+  useEffect(() => {
+    if (activeChatId) {
+      getChatMessages(activeChatId).then((dbMessages) => {
+        if (dbMessages.length === 0) {
+          // Stale chat (e.g. after login with old UUID) — start fresh
+          setInitialMessages([]);
+          setResolvedChatId(crypto.randomUUID());
+          window.history.replaceState({}, '', '/');
+          return;
+        }
         const uiMessages = dbMessages.map((msg) => ({
           id: msg.id,
           role: msg.role,
@@ -34,32 +58,32 @@ export function ChatPage({ session, needsSetup, chatId }) {
           createdAt: new Date(msg.createdAt),
         }));
         setInitialMessages(uiMessages);
-        setMessagesLoaded(true);
+        setResolvedChatId(activeChatId);
       });
     } else {
       setInitialMessages([]);
       setResolvedChatId(crypto.randomUUID());
-      setMessagesLoaded(true);
     }
-  }, [chatId]);
+  }, [activeChatId]);
 
-  // If not authenticated, don't render chat (page.js handles login/setup)
   if (needsSetup || !session) {
     return null;
   }
 
   return (
-    <SidebarProvider>
-      <AppSidebar user={session.user} />
-      <SidebarInset>
-        {messagesLoaded && (
-          <Chat
-            key={resolvedChatId}
-            chatId={resolvedChatId}
-            initialMessages={initialMessages}
-          />
-        )}
-      </SidebarInset>
-    </SidebarProvider>
+    <ChatNavProvider value={{ activeChatId: resolvedChatId, navigateToChat }}>
+      <SidebarProvider>
+        <AppSidebar user={session.user} />
+        <SidebarInset>
+          {resolvedChatId && (
+            <Chat
+              key={resolvedChatId}
+              chatId={resolvedChatId}
+              initialMessages={initialMessages}
+            />
+          )}
+        </SidebarInset>
+      </SidebarProvider>
+    </ChatNavProvider>
   );
 }

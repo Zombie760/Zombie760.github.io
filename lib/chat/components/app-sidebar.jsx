@@ -1,8 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import { PlusIcon, TrashIcon } from './icons.js';
+import { SquarePenIcon, PanelLeftIcon } from './icons.js';
 import { SidebarHistory } from './sidebar-history.js';
 import { SidebarUserNav } from './sidebar-user-nav.js';
 import {
@@ -10,85 +8,82 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
+  SidebarGroup,
+  SidebarGroupLabel,
   SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
   useSidebar,
 } from './ui/sidebar.js';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip.js';
-import { deleteAllChats } from '../actions.js';
+import { useChatNav } from './chat-nav-context.js';
 
 export function AppSidebar({ user }) {
-  const router = useRouter();
-  const { setOpenMobile } = useSidebar();
-  const [showDeleteAll, setShowDeleteAll] = useState(false);
-
-  const handleDeleteAll = async () => {
-    if (!confirm('Delete all chats? This cannot be undone.')) return;
-    await deleteAllChats();
-    setShowDeleteAll(false);
-    router.push('/');
-  };
+  const { navigateToChat } = useChatNav();
+  const { state, open, setOpenMobile, toggleSidebar } = useSidebar();
+  const collapsed = state === 'collapsed';
 
   return (
-    <Sidebar className="group-data-[side=left]:border-r-0">
+    <Sidebar>
       <SidebarHeader>
+        {/* Top row: brand name + toggle icon (open) or just toggle icon (collapsed) */}
+        <div className={collapsed ? 'flex justify-center' : 'flex items-center justify-between'}>
+          {!collapsed && (
+            <span className="px-2 font-semibold text-lg">The Pope Bot</span>
+          )}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button
+                className="inline-flex shrink-0 items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-background hover:text-foreground"
+                onClick={toggleSidebar}
+              >
+                <PanelLeftIcon size={16} />
+              </button>
+            </TooltipTrigger>
+            <TooltipContent side={collapsed ? 'right' : 'bottom'}>
+              {collapsed ? 'Open sidebar' : 'Close sidebar'}
+            </TooltipContent>
+          </Tooltip>
+        </div>
+
         <SidebarMenu>
-          <div className="flex flex-row items-center justify-between">
-            <a
-              className="flex flex-row items-center gap-3 cursor-pointer"
-              href="/"
-              onClick={(e) => {
-                e.preventDefault();
-                setOpenMobile(false);
-                router.push('/');
-              }}
-            >
-              <span className="rounded-md px-2 font-semibold text-lg hover:bg-background">
-                Chat
-              </span>
-            </a>
-            <div className="flex flex-row gap-1">
-              {user && (
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button
-                      className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-background hover:text-foreground"
-                      onClick={handleDeleteAll}
-                      type="button"
-                    >
-                      <TrashIcon size={16} />
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent align="end" className="hidden md:block">
-                    Delete All Chats
-                  </TooltipContent>
-                </Tooltip>
+          {/* New chat */}
+          <SidebarMenuItem>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SidebarMenuButton
+                  className={collapsed ? 'justify-center' : ''}
+                  onClick={() => {
+                    navigateToChat(null);
+                    setOpenMobile(false);
+                  }}
+                >
+                  <SquarePenIcon size={16} />
+                  {!collapsed && <span>New chat</span>}
+                </SidebarMenuButton>
+              </TooltipTrigger>
+              {collapsed && (
+                <TooltipContent side="right">New chat</TooltipContent>
               )}
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <button
-                    className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-background hover:text-foreground"
-                    onClick={() => {
-                      setOpenMobile(false);
-                      router.push('/');
-                    }}
-                    type="button"
-                  >
-                    <PlusIcon size={16} />
-                  </button>
-                </TooltipTrigger>
-                <TooltipContent align="end" className="hidden md:block">
-                  New Chat
-                </TooltipContent>
-              </Tooltip>
-            </div>
-          </div>
+            </Tooltip>
+          </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent>
-        <SidebarHistory />
-      </SidebarContent>
+
+      {!collapsed && (
+        <SidebarContent>
+          <SidebarGroup className="pt-0">
+            <SidebarGroupLabel>Chats</SidebarGroupLabel>
+          </SidebarGroup>
+          <SidebarHistory />
+        </SidebarContent>
+      )}
+
+      {/* Spacer when collapsed to push footer down */}
+      {collapsed && <div className="flex-1" />}
+
       <SidebarFooter>
-        {user && <SidebarUserNav user={user} />}
+        {user && <SidebarUserNav user={user} collapsed={collapsed} />}
       </SidebarFooter>
     </Sidebar>
   );

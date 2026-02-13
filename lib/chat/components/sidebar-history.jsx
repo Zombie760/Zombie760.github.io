@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
 import { SidebarHistoryItem } from './sidebar-history-item.js';
 import { SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu } from './ui/sidebar.js';
+import { useChatNav } from './chat-nav-context.js';
 import { getChats, deleteChat } from '../actions.js';
 
 function groupChatsByDate(chats) {
@@ -42,9 +42,7 @@ function groupChatsByDate(chats) {
 export function SidebarHistory() {
   const [chats, setChats] = useState([]);
   const [loading, setLoading] = useState(true);
-  const params = useParams();
-  const router = useRouter();
-  const activeChatId = params?.chatId;
+  const { activeChatId, navigateToChat } = useChatNav();
 
   const loadChats = async () => {
     try {
@@ -62,11 +60,11 @@ export function SidebarHistory() {
     loadChats();
   }, [activeChatId]);
 
-  // Reload when a new chat is created (fired from Chat component)
+  // Reload when chats change (new chat created or title updated)
   useEffect(() => {
     const handler = () => loadChats();
-    window.addEventListener('chatcreated', handler);
-    return () => window.removeEventListener('chatcreated', handler);
+    window.addEventListener('chatsupdated', handler);
+    return () => window.removeEventListener('chatsupdated', handler);
   }, []);
 
   const handleDelete = async (chatId) => {
@@ -74,7 +72,7 @@ export function SidebarHistory() {
     if (success) {
       setChats((prev) => prev.filter((c) => c.id !== chatId));
       if (chatId === activeChatId) {
-        router.push('/');
+        navigateToChat(null);
       }
     }
   };

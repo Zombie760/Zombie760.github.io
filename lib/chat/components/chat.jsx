@@ -38,7 +38,9 @@ export function Chat({ chatId, initialMessages = [] }) {
     if (!hasNavigated.current && messages.length >= 2 && !window.location.pathname.includes(chatId)) {
       hasNavigated.current = true;
       window.history.replaceState({}, '', `/chat/${chatId}`);
-      window.dispatchEvent(new Event('chatcreated'));
+      window.dispatchEvent(new Event('chatsupdated'));
+      // Dispatch again after delay to pick up async title update
+      setTimeout(() => window.dispatchEvent(new Event('chatsupdated')), 5000);
     }
   }, [messages.length, chatId]);
 

@@ -51,9 +51,11 @@ export function TooltipContent({ children, className, align = 'center', side = '
         'animate-in fade-in-0 zoom-in-95',
         side === 'bottom' && 'top-full mt-1',
         side === 'top' && 'bottom-full mb-1',
-        align === 'center' && 'left-1/2 -translate-x-1/2',
-        align === 'end' && 'right-0',
-        align === 'start' && 'left-0',
+        side === 'right' && 'left-full ml-1 top-1/2 -translate-y-1/2',
+        side === 'left' && 'right-full mr-1 top-1/2 -translate-y-1/2',
+        side !== 'right' && side !== 'left' && align === 'center' && 'left-1/2 -translate-x-1/2',
+        side !== 'right' && side !== 'left' && align === 'end' && 'right-0',
+        side !== 'right' && side !== 'left' && align === 'start' && 'left-0',
         className
       )}
       {...props}

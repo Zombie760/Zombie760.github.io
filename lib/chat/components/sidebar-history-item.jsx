@@ -1,13 +1,13 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { MessageIcon, TrashIcon } from './icons.js';
 import { SidebarMenuButton, SidebarMenuItem, useSidebar } from './ui/sidebar.js';
+import { useChatNav } from './chat-nav-context.js';
 import { cn } from '../utils.js';
 
 export function SidebarHistoryItem({ chat, isActive, onDelete }) {
-  const router = useRouter();
+  const { navigateToChat } = useChatNav();
   const { setOpenMobile } = useSidebar();
   const [showDelete, setShowDelete] = useState(false);
 
@@ -21,7 +21,7 @@ export function SidebarHistoryItem({ chat, isActive, onDelete }) {
         <SidebarMenuButton
           isActive={isActive}
           onClick={() => {
-            router.push(`/chat/${chat.id}`);
+            navigateToChat(chat.id);
             setOpenMobile(false);
           }}
         >

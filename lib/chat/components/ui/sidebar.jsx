@@ -3,9 +3,9 @@
 import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
 import { cn } from '../../utils.js';
 import { Sheet, SheetContent } from './sheet.js';
-import { PanelLeft } from 'lucide-react';
 
 const SIDEBAR_WIDTH = '16rem';
+const SIDEBAR_WIDTH_ICON = '3rem';
 const SIDEBAR_WIDTH_MOBILE = '18rem';
 const SIDEBAR_COOKIE_NAME = 'sidebar:state';
 const SIDEBAR_KEYBOARD_SHORTCUT = 'b';
@@ -38,7 +38,6 @@ export function SidebarProvider({
       } else {
         _setOpen(newOpen);
       }
-      // Save to cookie
       try {
         document.cookie = `${SIDEBAR_COOKIE_NAME}=${newOpen}; path=/; max-age=${60 * 60 * 24 * 7}`;
       } catch (e) {
@@ -97,6 +96,7 @@ export function SidebarProvider({
         className="group/sidebar-wrapper flex min-h-svh w-full"
         style={{
           '--sidebar-width': SIDEBAR_WIDTH,
+          '--sidebar-width-icon': SIDEBAR_WIDTH_ICON,
           '--sidebar-width-mobile': SIDEBAR_WIDTH_MOBILE,
         }}
         data-sidebar-state={state}
@@ -127,11 +127,18 @@ export function Sidebar({ children, className, side = 'left' }) {
     <div
       className={cn(
         'flex h-svh flex-col border-r border-border bg-muted transition-[width] duration-200',
-        open ? 'w-[var(--sidebar-width)]' : 'w-0 overflow-hidden',
+        open ? 'w-[var(--sidebar-width)]' : 'w-[var(--sidebar-width-icon)]',
         className
       )}
     >
-      <div className="flex h-full w-[var(--sidebar-width)] flex-col">{children}</div>
+      <div
+        className={cn(
+          'flex h-full flex-col overflow-hidden',
+          open ? 'w-[var(--sidebar-width)]' : 'w-[var(--sidebar-width-icon)]'
+        )}
+      >
+        {children}
+      </div>
     </div>
   );
 }
@@ -217,7 +224,10 @@ export function SidebarTrigger({ className, ...props }) {
       onClick={toggleSidebar}
       {...props}
     >
-      <PanelLeft className="size-4" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="size-4">
+        <rect width="18" height="18" x="3" y="3" rx="2" />
+        <path d="M9 3v18" />
+      </svg>
       <span className="sr-only">Toggle Sidebar</span>
     </button>
   );
