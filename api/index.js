@@ -2,7 +2,7 @@ import { createJob } from '../lib/tools/create-job.js';
 import { setWebhook, sendMessage } from '../lib/tools/telegram.js';
 import { getJobStatus } from '../lib/tools/github.js';
 import { getTelegramAdapter } from '../lib/channels/index.js';
-import { chat, summarizeJob, addToThread } from '../lib/ai/index.js';
+import { chat, chatStream, summarizeJob, addToThread } from '../lib/ai/index.js';
 import { loadTriggers } from '../lib/triggers.js';
 
 // Bot token from env, can be overridden by /telegram/register
@@ -29,6 +29,9 @@ function getFireTriggers() {
 // Routes that have their own authentication
 const PUBLIC_ROUTES = ['/telegram/webhook', '/github/webhook'];
 
+// Routes that use session auth (not API_KEY)
+const SESSION_AUTH_ROUTES = ['/chat'];
+
 /**
  * Check API key authentication
  * @param {string} routePath - The route path
@@ -37,6 +40,7 @@ const PUBLIC_ROUTES = ['/telegram/webhook', '/github/webhook'];
  */
 function checkAuth(routePath, request) {
   if (PUBLIC_ROUTES.includes(routePath)) return null;
+  if (SESSION_AUTH_ROUTES.includes(routePath)) return null; // Session auth handled in handler
 
   const apiKey = request.headers.get('x-api-key');
   if (apiKey !== process.env.API_KEY) {
@@ -56,6 +60,81 @@ function extractJobId(branchName) {
 // ─────────────────────────────────────────────────────────────────────────────
 // Route handlers
 // ─────────────────────────────────────────────────────────────────────────────
+
+async function handleChat(request) {
+  // Session auth
+  const { auth } = await import('../lib/auth/index.js');
+  const session = await auth();
+  if (!session?.user?.id) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  const body = await request.json();
+  const { messages, chatId: rawChatId } = body;
+
+  if (!messages?.length) {
+    return Response.json({ error: 'No messages' }, { status: 400 });
+  }
+
+  // Get the last user message — AI SDK v5 sends UIMessage[] with parts
+  const lastUserMessage = [...messages].reverse().find((m) => m.role === 'user');
+  if (!lastUserMessage) {
+    return Response.json({ error: 'No user message' }, { status: 400 });
+  }
+
+  // Extract text from message parts (AI SDK v5+) or fall back to content
+  const userText =
+    lastUserMessage.parts
+      ?.filter((p) => p.type === 'text')
+      .map((p) => p.text)
+      .join('\n') ||
+    lastUserMessage.content ||
+    '';
+
+  if (!userText.trim()) {
+    return Response.json({ error: 'Empty message' }, { status: 400 });
+  }
+
+  // Map web channel to thread_id — AI layer handles DB persistence
+  const threadId = rawChatId || crypto.randomUUID();
+  const { createUIMessageStream, createUIMessageStreamResponse } = await import('ai');
+
+  const stream = createUIMessageStream({
+    onError: (error) => {
+      console.error('Chat stream error:', error);
+      return 'An error occurred while processing your message.';
+    },
+    execute: async ({ writer }) => {
+      // chatStream handles: save user msg, invoke agent, save assistant msg, auto-title
+      const chunks = chatStream(threadId, userText, {
+        userId: session.user.id,
+      });
+
+      // Signal start of assistant message
+      writer.write({ type: 'start' });
+
+      const textId = crypto.randomUUID();
+      let textStarted = false;
+
+      for await (const chunk of chunks) {
+        if (!textStarted) {
+          writer.write({ type: 'text-start', id: textId });
+          textStarted = true;
+        }
+        writer.write({ type: 'text-delta', id: textId, delta: chunk });
+      }
+
+      if (textStarted) {
+        writer.write({ type: 'text-end', id: textId });
+      }
+
+      // Signal end of assistant message
+      writer.write({ type: 'finish' });
+    },
+  });
+
+  return createUIMessageStreamResponse({ stream });
+}
 
 async function handleWebhook(request) {
   const body = await request.json();
@@ -106,13 +185,19 @@ async function handleTelegramWebhook(request) {
 
 /**
  * Process a normalized message through the AI layer with channel UX.
+ * Message persistence is handled centrally by the AI layer.
  */
 async function processChannelMessage(adapter, normalized) {
   await adapter.acknowledge(normalized.metadata);
   const stopIndicator = adapter.startProcessingIndicator(normalized.metadata);
 
   try {
-    const response = await chat(normalized.threadId, normalized.text, normalized.attachments);
+    const response = await chat(
+      normalized.threadId,
+      normalized.text,
+      normalized.attachments,
+      { userId: 'telegram', chatTitle: 'Telegram' }
+    );
     await adapter.sendResponse(normalized.threadId, response, normalized.metadata);
   } catch (err) {
     console.error('Failed to process message with AI:', err);
@@ -220,6 +305,7 @@ async function POST(request) {
     case '/telegram/webhook':   return handleTelegramWebhook(request);
     case '/telegram/register':  return handleTelegramRegister(request);
     case '/github/webhook':     return handleGithubWebhook(request);
+    case '/chat':               return handleChat(request);
     default:                    return Response.json({ error: 'Not found' }, { status: 404 });
   }
 }

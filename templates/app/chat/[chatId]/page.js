@@ -1,10 +1,11 @@
 import { getPageAuthState } from 'thepopebot/auth';
-import { AsciiLogo } from './components/ascii-logo';
-import { SetupForm } from './components/setup-form';
-import { LoginForm } from './components/login-form';
+import { AsciiLogo } from '../../components/ascii-logo';
+import { SetupForm } from '../../components/setup-form';
+import { LoginForm } from '../../components/login-form';
 import { ChatPage } from 'thepopebot/chat';
 
-export default async function Home() {
+export default async function ChatRoute({ params }) {
+  const { chatId } = await params;
   const { session, needsSetup } = await getPageAuthState();
 
   if (needsSetup) {
@@ -25,5 +26,5 @@ export default async function Home() {
     );
   }
 
-  return <ChatPage session={session} needsSetup={false} />;
+  return <ChatPage session={session} needsSetup={false} chatId={chatId} />;
 }
