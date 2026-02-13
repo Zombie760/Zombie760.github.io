@@ -48,11 +48,11 @@ function getGitRemoteInfo() {
     // Handle both HTTPS and SSH formats
     // https://github.com/owner/repo.git
     // git@github.com:owner/repo.git
-    const httpsMatch = remote.match(/github\.com\/([^/]+)\/([^/.]+)/);
-    const sshMatch = remote.match(/github\.com:([^/]+)\/([^/.]+)/);
+    const httpsMatch = remote.match(/github\.com\/([^/]+)\/(.+?)(?:\.git)?$/);
+    const sshMatch = remote.match(/github\.com:([^/]+)\/(.+?)(?:\.git)?$/);
     const match = httpsMatch || sshMatch;
     if (match) {
-      return { owner: match[1], repo: match[2].replace('.git', '') };
+      return { owner: match[1], repo: match[2] };
     }
     return null;
   } catch {
@@ -109,6 +109,13 @@ export async function checkPrerequisites() {
   // Check git
   results.git.installed = commandExists('git');
   if (results.git.installed) {
+    // Initialize git repo if needed (must happen before remote check)
+    try {
+      execSync('git rev-parse --git-dir', { stdio: 'ignore' });
+      results.git.initialized = true;
+    } catch {
+      results.git.initialized = false;
+    }
     results.git.remoteInfo = getGitRemoteInfo();
   }
 

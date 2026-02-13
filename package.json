@@ -24,7 +24,7 @@
     "templates/"
   ],
   "scripts": {
-    "dev": "bash bin/dev.sh",
+    "local": "bash bin/local.sh",
     "postinstall": "node bin/postinstall.js",
     "test": "echo \"No tests yet\" && exit 0"
   },

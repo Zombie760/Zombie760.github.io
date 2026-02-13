@@ -9,7 +9,7 @@ export function ThemeToggle() {
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <div className="w-8 h-8" />;
+  if (!mounted) return <div className="h-[34px] w-[106px]" />;
 
   const options = [
     { value: 'light', label: '☀️' },

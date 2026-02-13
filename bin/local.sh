@@ -2,7 +2,7 @@
 set -e
 
 PACKAGE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-DEV_DIR="${1:-/tmp/thepopebot}"
+DEV_DIR="${1:-/tmp/local.thepopebot}"
 ENV_BACKUP="/tmp/env.$(uuidgen)"
 
 HAS_ENV=false
@@ -21,6 +21,7 @@ sed -i '' "s|\"thepopebot\": \".*\"|\"thepopebot\": \"file:$PACKAGE_DIR\"|" pack
 
 rm -rf node_modules package-lock.json
 npm install --install-links
+
 
 if [ "$HAS_ENV" = true ]; then
   mv "$ENV_BACKUP" .env

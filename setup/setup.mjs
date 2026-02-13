@@ -170,22 +170,19 @@ async function main() {
     }
   }
 
+  // Initialize git repo if needed
+  if (!prereqs.git.initialized) {
+    const initSpinner = ora('Initializing git repo...').start();
+    execSync('git init', { stdio: 'ignore' });
+    initSpinner.succeed('Git repo initialized');
+  }
+
   if (prereqs.git.remoteInfo) {
     owner = prereqs.git.remoteInfo.owner;
     repo = prereqs.git.remoteInfo.repo;
     printSuccess(`Repository: ${owner}/${repo}`);
   } else {
-    printWarning('No GitHub repository detected.');
-
-    // Initialize git repo if needed
-    try {
-      execSync('git rev-parse --git-dir', { stdio: 'ignore' });
-      printSuccess('Git repo already initialized');
-    } catch {
-      const initSpinner = ora('Initializing git repo...').start();
-      execSync('git init', { stdio: 'ignore' });
-      initSpinner.succeed('Git repo initialized');
-    }
+    printWarning('No GitHub remote detected. We\'ll set one up.');
 
     // Stage and commit
     execSync('git add .', { stdio: 'ignore' });
@@ -346,7 +343,8 @@ async function main() {
         const output = (err.stdout || '') + (err.stderr || '');
         if (output) printError(output.trim());
         execSync(`git remote set-url origin ${remote}`, { stdio: 'ignore' });
-        await pressEnter('Fix the issue, then press enter to retry');
+        printInfo('Your PAT may not have write access to this repository.');
+        pat = await promptForPAT();
         continue;
       }
 
