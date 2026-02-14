@@ -1,6 +1,6 @@
 import { createJob } from '../lib/tools/create-job.js';
 import { setWebhook } from '../lib/tools/telegram.js';
-import { getJobStatus } from '../lib/tools/github.js';
+import { getJobStatus, getSwarmStatus, cancelWorkflowRun, rerunWorkflowRun } from '../lib/tools/github.js';
 import { getTelegramAdapter } from '../lib/channels/index.js';
 import { chat, chatStream, summarizeJob } from '../lib/ai/index.js';
 import { createNotification } from '../lib/db/notifications.js';
@@ -31,7 +31,7 @@ function getFireTriggers() {
 const PUBLIC_ROUTES = ['/telegram/webhook', '/github/webhook'];
 
 // Routes that use session auth (not API_KEY)
-const SESSION_AUTH_ROUTES = ['/chat'];
+const SESSION_AUTH_ROUTES = ['/chat', '/swarm/status', '/swarm/config', '/swarm/cancel', '/swarm/rerun'];
 
 /**
  * Check API key authentication
@@ -84,7 +84,7 @@ async function handleChat(request) {
   }
 
   // Extract text from message parts (AI SDK v5+) or fall back to content
-  const userText =
+  let userText =
     lastUserMessage.parts
       ?.filter((p) => p.type === 'text')
       .map((p) => p.text)
@@ -92,7 +92,31 @@ async function handleChat(request) {
     lastUserMessage.content ||
     '';
 
-  if (!userText.trim()) {
+  // Extract file parts from message
+  const fileParts = lastUserMessage.parts?.filter((p) => p.type === 'file') || [];
+  const attachments = [];
+
+  for (const part of fileParts) {
+    const { mediaType, url } = part;
+    if (!mediaType || !url) continue;
+
+    if (mediaType.startsWith('image/') || mediaType === 'application/pdf') {
+      // Images and PDFs → pass as visual attachments for the LLM
+      attachments.push({ category: 'image', mimeType: mediaType, dataUrl: url });
+    } else if (mediaType.startsWith('text/') || mediaType === 'application/json') {
+      // Text files → decode base64 data URL and inline into message text
+      try {
+        const base64Data = url.split(',')[1];
+        const textContent = Buffer.from(base64Data, 'base64').toString('utf-8');
+        const fileName = part.name || 'file';
+        userText += `\n\nFile: ${fileName}\n\`\`\`\n${textContent}\n\`\`\``;
+      } catch (e) {
+        console.error('Failed to decode text file:', e);
+      }
+    }
+  }
+
+  if (!userText.trim() && attachments.length === 0) {
     return Response.json({ error: 'Empty message' }, { status: 400 });
   }
 
@@ -103,11 +127,11 @@ async function handleChat(request) {
   const stream = createUIMessageStream({
     onError: (error) => {
       console.error('Chat stream error:', error);
-      return 'An error occurred while processing your message.';
+      return error?.message || 'An error occurred while processing your message.';
     },
     execute: async ({ writer }) => {
       // chatStream handles: save user msg, invoke agent, save assistant msg, auto-title
-      const chunks = chatStream(threadId, userText, {
+      const chunks = chatStream(threadId, userText, attachments, {
         userId: session.user.id,
       });
 
@@ -253,6 +277,81 @@ async function handleGithubWebhook(request) {
   }
 }
 
+async function handleSwarmStatus() {
+  const { auth } = await import('../lib/auth/index.js');
+  const session = await auth();
+  if (!session?.user?.id) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  try {
+    const result = await getSwarmStatus();
+    return Response.json(result);
+  } catch (err) {
+    console.error('Failed to get swarm status:', err);
+    return Response.json({ error: 'Failed to get swarm status' }, { status: 500 });
+  }
+}
+
+async function handleSwarmConfig() {
+  const { auth } = await import('../lib/auth/index.js');
+  const session = await auth();
+  if (!session?.user?.id) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  try {
+    const { cronsFile, triggersFile } = await import('../lib/paths.js');
+    const fs = await import('fs');
+    let crons = [];
+    let triggers = [];
+    try { crons = JSON.parse(fs.readFileSync(cronsFile, 'utf8')); } catch {}
+    try { triggers = JSON.parse(fs.readFileSync(triggersFile, 'utf8')); } catch {}
+    return Response.json({ crons, triggers });
+  } catch (err) {
+    console.error('Failed to get swarm config:', err);
+    return Response.json({ error: 'Failed to get swarm config' }, { status: 500 });
+  }
+}
+
+async function handleSwarmCancel(request) {
+  const { auth } = await import('../lib/auth/index.js');
+  const session = await auth();
+  if (!session?.user?.id) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  try {
+    const body = await request.json();
+    const { run_id } = body;
+    if (!run_id) return Response.json({ error: 'Missing run_id' }, { status: 400 });
+    const result = await cancelWorkflowRun(run_id);
+    return Response.json(result);
+  } catch (err) {
+    console.error('Failed to cancel workflow run:', err);
+    return Response.json({ error: 'Failed to cancel workflow run' }, { status: 500 });
+  }
+}
+
+async function handleSwarmRerun(request) {
+  const { auth } = await import('../lib/auth/index.js');
+  const session = await auth();
+  if (!session?.user?.id) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  try {
+    const body = await request.json();
+    const { run_id, failed_only } = body;
+    if (!run_id) return Response.json({ error: 'Missing run_id' }, { status: 400 });
+    const result = await rerunWorkflowRun(run_id, !!failed_only);
+    return Response.json(result);
+  } catch (err) {
+    console.error('Failed to rerun workflow:', err);
+    return Response.json({ error: 'Failed to rerun workflow' }, { status: 500 });
+  }
+}
+
 async function handleJobStatus(request) {
   try {
     const url = new URL(request.url);
@@ -297,6 +396,8 @@ async function POST(request) {
     case '/telegram/register':  return handleTelegramRegister(request);
     case '/github/webhook':     return handleGithubWebhook(request);
     case '/chat':               return handleChat(request);
+    case '/swarm/cancel':       return handleSwarmCancel(request);
+    case '/swarm/rerun':        return handleSwarmRerun(request);
     default:                    return Response.json({ error: 'Not found' }, { status: 404 });
   }
 }
@@ -310,9 +411,11 @@ async function GET(request) {
   if (authError) return authError;
 
   switch (routePath) {
-    case '/ping':         return Response.json({ message: 'Pong!' });
-    case '/jobs/status':  return handleJobStatus(request);
-    default:              return Response.json({ error: 'Not found' }, { status: 404 });
+    case '/ping':           return Response.json({ message: 'Pong!' });
+    case '/jobs/status':    return handleJobStatus(request);
+    case '/swarm/status':   return handleSwarmStatus();
+    case '/swarm/config':   return handleSwarmConfig();
+    default:                return Response.json({ error: 'Not found' }, { status: 404 });
   }
 }
 

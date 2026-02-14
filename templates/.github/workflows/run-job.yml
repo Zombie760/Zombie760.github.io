@@ -12,6 +12,19 @@ jobs:
       packages: read
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          sparse-checkout: package-lock.json
+          sparse-checkout-cone-mode: false
+
+      - name: Get thepopebot version
+        id: version
+        run: |
+          VERSION=$(node -p "require('./package-lock.json').packages['node_modules/thepopebot']?.version || 'latest'")
+          echo "tag=$VERSION" >> $GITHUB_OUTPUT
+
       - name: Login to GHCR
         if: startsWith(vars.DOCKER_IMAGE_URL, 'ghcr.io/')
         uses: docker/login-action@v3
@@ -23,13 +36,14 @@ jobs:
       - name: Run thepopebot Agent
         env:
           DOCKER_IMAGE_URL: ${{ vars.DOCKER_IMAGE_URL }}
+          THEPOPEBOT_VERSION: ${{ steps.version.outputs.tag }}
           LLM_MODEL: ${{ vars.LLM_MODEL }}
           LLM_PROVIDER: ${{ vars.LLM_PROVIDER }}
         run: |
           if [ -n "$DOCKER_IMAGE_URL" ]; then
-            IMAGE="${DOCKER_IMAGE_URL}"
+            IMAGE="${DOCKER_IMAGE_URL}:latest"
           else
-            IMAGE="stephengpope/thepopebot:latest"
+            IMAGE="stephengpope/thepopebot:${THEPOPEBOT_VERSION}"
           fi
           echo "Using image: $IMAGE"
           docker run --rm \

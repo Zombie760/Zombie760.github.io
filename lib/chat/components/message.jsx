@@ -1,7 +1,8 @@
 'use client';
 
+import { Streamdown } from 'streamdown';
 import { cn } from '../utils.js';
-import { SpinnerIcon } from './icons.js';
+import { SpinnerIcon, FileTextIcon } from './icons.js';
 
 export function PreviewMessage({ message, isLoading }) {
   const isUser = message.role === 'user';
@@ -14,6 +15,11 @@ export function PreviewMessage({ message, isLoading }) {
       .join('\n') ||
     message.content ||
     '';
+
+  // Extract file parts
+  const fileParts = message.parts?.filter((p) => p.type === 'file') || [];
+  const imageParts = fileParts.filter((p) => p.mediaType?.startsWith('image/'));
+  const otherFileParts = fileParts.filter((p) => !p.mediaType?.startsWith('image/'));
 
   return (
     <div
@@ -30,7 +36,45 @@ export function PreviewMessage({ message, isLoading }) {
             : 'bg-muted text-foreground'
         )}
       >
-        <div className="whitespace-pre-wrap break-words">{text}</div>
+        {imageParts.length > 0 && (
+          <div className="mb-2 flex flex-wrap gap-2">
+            {imageParts.map((part, i) => (
+              <img
+                key={i}
+                src={part.url}
+                alt="attachment"
+                className="max-h-64 max-w-full rounded-lg object-contain"
+              />
+            ))}
+          </div>
+        )}
+        {otherFileParts.length > 0 && (
+          <div className="mb-2 flex flex-wrap gap-2">
+            {otherFileParts.map((part, i) => (
+              <div
+                key={i}
+                className={cn(
+                  'inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs',
+                  isUser
+                    ? 'bg-primary-foreground/20'
+                    : 'bg-foreground/10'
+                )}
+              >
+                <FileTextIcon size={12} />
+                <span className="max-w-[150px] truncate">
+                  {part.name || part.mediaType || 'file'}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+        {text ? (
+          isUser ? (
+            <div className="whitespace-pre-wrap break-words">{text}</div>
+          ) : (
+            <Streamdown mode={isLoading ? 'streaming' : 'static'}>{text}</Streamdown>
+          )
+        ) : null}
       </div>
     </div>
   );

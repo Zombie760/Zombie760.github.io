@@ -9,6 +9,7 @@ import { ChatHeader } from './chat-header.js';
 
 export function Chat({ chatId, initialMessages = [] }) {
   const [input, setInput] = useState('');
+  const [files, setFiles] = useState([]);
   const hasNavigated = useRef(false);
 
   const transport = useMemo(
@@ -45,10 +46,24 @@ export function Chat({ chatId, initialMessages = [] }) {
   }, [messages.length, chatId]);
 
   const handleSend = () => {
-    if (!input.trim()) return;
+    if (!input.trim() && files.length === 0) return;
     const text = input;
+    const currentFiles = files;
     setInput('');
-    sendMessage({ text });
+    setFiles([]);
+
+    if (currentFiles.length === 0) {
+      sendMessage({ text });
+    } else {
+      // Build FileUIPart[] from pre-read data URLs (File[] isn't a valid type)
+      const fileParts = currentFiles.map((f) => ({
+        type: 'file',
+        mediaType: f.file.type || 'text/plain',
+        url: f.previewUrl,
+        filename: f.file.name,
+      }));
+      sendMessage({ text: text || undefined, files: fileParts });
+    }
   };
 
   return (
@@ -58,7 +73,7 @@ export function Chat({ chatId, initialMessages = [] }) {
       {error && (
         <div className="mx-auto w-full max-w-4xl px-2 md:px-4">
           <div className="rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-2 text-sm text-destructive">
-            Something went wrong. Please try again.
+            {error.message || 'Something went wrong. Please try again.'}
           </div>
         </div>
       )}
@@ -68,6 +83,8 @@ export function Chat({ chatId, initialMessages = [] }) {
         onSubmit={handleSend}
         status={status}
         stop={stop}
+        files={files}
+        setFiles={setFiles}
       />
     </div>
   );

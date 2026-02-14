@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { SquarePenIcon, PanelLeftIcon, MessageIcon, BellIcon } from './icons.js';
+import { SquarePenIcon, PanelLeftIcon, MessageIcon, BellIcon, SwarmIcon } from './icons.js';
 import { getUnreadNotificationCount } from '../actions.js';
 import { SidebarHistory } from './sidebar-history.js';
 import { SidebarUserNav } from './sidebar-user-nav.js';
@@ -127,6 +127,26 @@ export function AppSidebar({ user }) {
               </TooltipTrigger>
               {collapsed && (
                 <TooltipContent side="right">Notifications</TooltipContent>
+              )}
+            </Tooltip>
+          </SidebarMenuItem>
+
+          {/* Swarm */}
+          <SidebarMenuItem>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SidebarMenuButton
+                  className={collapsed ? 'justify-center' : ''}
+                  onClick={() => {
+                    window.location.href = '/swarm';
+                  }}
+                >
+                  <SwarmIcon size={16} />
+                  {!collapsed && <span>Swarm</span>}
+                </SidebarMenuButton>
+              </TooltipTrigger>
+              {collapsed && (
+                <TooltipContent side="right">Swarm</TooltipContent>
               )}
             </Tooltip>
           </SidebarMenuItem>
