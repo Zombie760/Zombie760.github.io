@@ -1,6 +1,6 @@
 'use client';
 
-import { SquarePenIcon, PanelLeftIcon } from './icons.js';
+import { SquarePenIcon, PanelLeftIcon, MessageIcon } from './icons.js';
 import { SidebarHistory } from './sidebar-history.js';
 import { SidebarUserNav } from './sidebar-user-nav.js';
 import {
@@ -64,6 +64,26 @@ export function AppSidebar({ user }) {
               </TooltipTrigger>
               {collapsed && (
                 <TooltipContent side="right">New chat</TooltipContent>
+              )}
+            </Tooltip>
+          </SidebarMenuItem>
+
+          {/* Chats history */}
+          <SidebarMenuItem>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SidebarMenuButton
+                  className={collapsed ? 'justify-center' : ''}
+                  onClick={() => {
+                    window.location.href = '/chats';
+                  }}
+                >
+                  <MessageIcon size={16} />
+                  {!collapsed && <span>Chats</span>}
+                </SidebarMenuButton>
+              </TooltipTrigger>
+              {collapsed && (
+                <TooltipContent side="right">Chats</TooltipContent>
               )}
             </Tooltip>
           </SidebarMenuItem>

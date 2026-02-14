@@ -118,9 +118,9 @@ Several catch blocks return generic messages like `"Failed to create job"` with 
 
 ### Undocumented config variables
 
-`MEMORY_BACKEND`, `MEMORY_PATH`, `LLM_PROVIDER`, and `LLM_MODEL` are supported by code but absent from `.env.example`.
+`LLM_PROVIDER` and `LLM_MODEL` are supported by code but absent from `.env.example`.
 
-**Files:** `templates/.env.example`, `lib/ai/model.js`, `lib/ai/memory.js`
+**Files:** `templates/.env.example`, `lib/ai/model.js`
 
 ---
 
