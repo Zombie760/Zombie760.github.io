@@ -1,8 +1,9 @@
 import { createJob } from '../lib/tools/create-job.js';
-import { setWebhook, sendMessage } from '../lib/tools/telegram.js';
+import { setWebhook } from '../lib/tools/telegram.js';
 import { getJobStatus } from '../lib/tools/github.js';
 import { getTelegramAdapter } from '../lib/channels/index.js';
-import { chat, chatStream, summarizeJob, addToThread } from '../lib/ai/index.js';
+import { chat, chatStream, summarizeJob } from '../lib/ai/index.js';
+import { createNotification } from '../lib/db/notifications.js';
 import { loadTriggers } from '../lib/triggers.js';
 
 // Bot token from env, can be overridden by /telegram/register
@@ -214,8 +215,7 @@ async function processChannelMessage(adapter, normalized) {
 }
 
 async function handleGithubWebhook(request) {
-  const { GH_WEBHOOK_SECRET, TELEGRAM_CHAT_ID } = process.env;
-  const botToken = getTelegramBotToken();
+  const { GH_WEBHOOK_SECRET } = process.env;
 
   // Validate webhook secret
   if (GH_WEBHOOK_SECRET) {
@@ -228,11 +228,6 @@ async function handleGithubWebhook(request) {
   const payload = await request.json();
   const jobId = payload.job_id || extractJobId(payload.branch);
   if (!jobId) return Response.json({ ok: true, skipped: true, reason: 'not a job' });
-
-  if (!TELEGRAM_CHAT_ID || !botToken) {
-    console.log(`Job ${jobId} completed but no chat ID to notify`);
-    return Response.json({ ok: true, skipped: true, reason: 'no chat to notify' });
-  }
 
   try {
     const results = {
@@ -247,13 +242,9 @@ async function handleGithubWebhook(request) {
     };
 
     const message = await summarizeJob(results);
+    await createNotification(message, payload);
 
-    await sendMessage(botToken, TELEGRAM_CHAT_ID, message);
-
-    // Add the summary to chat memory so the agent has context in future conversations
-    await addToThread(TELEGRAM_CHAT_ID, message);
-
-    console.log(`Notified chat ${TELEGRAM_CHAT_ID} about job ${jobId.slice(0, 8)}`);
+    console.log(`Notification saved for job ${jobId.slice(0, 8)}`);
 
     return Response.json({ ok: true, notified: true });
   } catch (err) {

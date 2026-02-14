@@ -1,6 +1,8 @@
 'use client';
 
-import { SquarePenIcon, PanelLeftIcon, MessageIcon } from './icons.js';
+import { useState, useEffect } from 'react';
+import { SquarePenIcon, PanelLeftIcon, MessageIcon, BellIcon } from './icons.js';
+import { getUnreadNotificationCount } from '../actions.js';
 import { SidebarHistory } from './sidebar-history.js';
 import { SidebarUserNav } from './sidebar-user-nav.js';
 import {
@@ -22,6 +24,13 @@ export function AppSidebar({ user }) {
   const { navigateToChat } = useChatNav();
   const { state, open, setOpenMobile, toggleSidebar } = useSidebar();
   const collapsed = state === 'collapsed';
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  useEffect(() => {
+    getUnreadNotificationCount()
+      .then((count) => setUnreadCount(count))
+      .catch(() => {});
+  }, []);
 
   return (
     <Sidebar>
@@ -84,6 +93,40 @@ export function AppSidebar({ user }) {
               </TooltipTrigger>
               {collapsed && (
                 <TooltipContent side="right">Chats</TooltipContent>
+              )}
+            </Tooltip>
+          </SidebarMenuItem>
+
+          {/* Notifications */}
+          <SidebarMenuItem>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SidebarMenuButton
+                  className={collapsed ? 'justify-center' : ''}
+                  onClick={() => {
+                    window.location.href = '/notifications';
+                  }}
+                >
+                  <BellIcon size={16} />
+                  {!collapsed && (
+                    <span className="flex items-center gap-2">
+                      Notifications
+                      {unreadCount > 0 && (
+                        <span className="inline-flex items-center justify-center rounded-full bg-destructive px-1.5 py-0.5 text-[10px] font-medium leading-none text-destructive-foreground">
+                          {unreadCount}
+                        </span>
+                      )}
+                    </span>
+                  )}
+                  {collapsed && unreadCount > 0 && (
+                    <span className="absolute -top-1 -right-1 inline-flex h-4 w-4 items-center justify-center rounded-full bg-destructive text-[10px] font-medium text-destructive-foreground">
+                      {unreadCount}
+                    </span>
+                  )}
+                </SidebarMenuButton>
+              </TooltipTrigger>
+              {collapsed && (
+                <TooltipContent side="right">Notifications</TooltipContent>
               )}
             </Tooltip>
           </SidebarMenuItem>
