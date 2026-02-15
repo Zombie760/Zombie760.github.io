@@ -141,6 +141,10 @@ function init() {
     console.log('  Created .gitignore');
   }
 
+  // Run npm install
+  console.log('\nInstalling dependencies...\n');
+  execSync('npm install', { stdio: 'inherit', cwd });
+
   // Update THEPOPEBOT_VERSION in .env if it exists
   const envPath = path.join(cwd, '.env');
   if (fs.existsSync(envPath)) {
