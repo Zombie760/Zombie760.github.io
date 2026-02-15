@@ -233,7 +233,7 @@ The Event Handler is a Next.js API route handler (`api/index.js`) that provides 
 
 **Browser UI uses Server Actions.** All authenticated browser-to-server calls (data fetching, mutations) MUST use Next.js Server Actions (`'use server'` functions in `lib/chat/actions.js` or `lib/auth/actions.js`), not `/api` fetch calls. Server Actions use the `requireAuth()` pattern which validates the session cookie internally.
 
-**The one exception is chat streaming.** The AI SDK's `DefaultChatTransport` requires an HTTP endpoint for streaming responses. Chat has its own dedicated route handler at `lib/chat/api.js` (mapped to `/api/chat` via `templates/app/api/chat/route.js`) with its own session auth. This is separate from the catch-all `api/index.js`.
+**The one exception is chat streaming.** The AI SDK's `DefaultChatTransport` requires an HTTP endpoint for streaming responses. Chat has its own dedicated route handler at `lib/chat/api.js` (mapped to `/stream/chat` via `templates/app/stream/chat/route.js`) with its own session auth. This lives outside `/api` entirely, so it doesn't hit the catch-all `api/index.js`.
 
 | Caller | Mechanism | Auth | Location |
 |--------|-----------|------|----------|

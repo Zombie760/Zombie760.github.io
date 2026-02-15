@@ -15,7 +15,7 @@ export function Chat({ chatId, initialMessages = [] }) {
   const transport = useMemo(
     () =>
       new DefaultChatTransport({
-        api: '/api/chat',
+        api: '/stream/chat',
         body: { chatId },
       }),
     [chatId]
