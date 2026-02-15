@@ -11,4 +11,4 @@ ENV NODE_PATH=/deps/node_modules
 WORKDIR /app
 
 EXPOSE 80
-CMD ["npx", "next", "start", "-p", "80"]
+CMD ["node", "/deps/node_modules/.bin/next", "start", "-p", "80"]
