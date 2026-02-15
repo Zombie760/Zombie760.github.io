@@ -129,6 +129,7 @@ export function writeEnvFile(config) {
 
 # Auth.js secret (used for session encryption)
 AUTH_SECRET=${authSecret}
+AUTH_TRUST_HOST=true
 
 # GitHub Personal Access Token (fine-grained: Actions, Contents, Metadata, Pull requests)
 GH_TOKEN=${githubToken}
