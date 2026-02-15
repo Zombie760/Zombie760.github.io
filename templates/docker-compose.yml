@@ -22,8 +22,13 @@ services:
   event_handler:
     image: ${EVENT_HANDLER_IMAGE_URL:-stephengpope/thepopebot:event-handler-${THEPOPEBOT_VERSION:-latest}}
     volumes:
-      - .:/app
-      - /app/node_modules
+      - ./.next:/app/.next:ro
+      - ./config:/app/config:ro
+      - ./data:/app/data
+      - ./.env:/app/.env:ro
+      - ./cron:/app/cron
+      - ./triggers:/app/triggers
+      - ./logs:/app/logs:ro
     labels:
       - traefik.enable=true
       # Set APP_HOSTNAME in .env to the domain from APP_URL (e.g., mybot.example.com)
