@@ -1,29 +1,7 @@
-import { getPageAuthState } from 'thepopebot/auth';
-import { AsciiLogo } from '../components/ascii-logo';
-import { SetupForm } from '../components/setup-form';
-import { LoginForm } from '../components/login-form';
+import { auth } from 'thepopebot/auth';
 import { ChatsPage } from 'thepopebot/chat';
 
 export default async function ChatsRoute() {
-  const { session, needsSetup } = await getPageAuthState();
-
-  if (needsSetup) {
-    return (
-      <main className="min-h-screen flex flex-col items-center justify-center p-8">
-        <AsciiLogo />
-        <SetupForm />
-      </main>
-    );
-  }
-
-  if (!session) {
-    return (
-      <main className="min-h-screen flex flex-col items-center justify-center p-8">
-        <AsciiLogo />
-        <LoginForm />
-      </main>
-    );
-  }
-
+  const session = await auth();
   return <ChatsPage session={session} />;
 }

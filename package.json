@@ -12,10 +12,12 @@
     "./config": "./config/index.js",
     "./instrumentation": "./config/instrumentation.js",
     "./auth": "./lib/auth/index.js",
-    "./auth/setup": "./lib/auth/setup.js",
+    "./auth/actions": "./lib/auth/actions.js",
+    "./chat/api": "./lib/chat/api.js",
     "./db": "./lib/db/index.js",
     "./chat": "./lib/chat/components/index.js",
-    "./chat/actions": "./lib/chat/actions.js"
+    "./chat/actions": "./lib/chat/actions.js",
+    "./middleware": "./lib/auth/middleware.js"
   },
   "files": [
     "bin/",

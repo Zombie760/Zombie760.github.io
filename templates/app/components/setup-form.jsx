@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/card';
+import { setupAdmin } from 'thepopebot/auth/actions';
 
 export function SetupForm() {
   const router = useRouter();
@@ -21,32 +21,16 @@ export function SetupForm() {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/auth/setup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
+      const result = await setupAdmin(email, password);
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        setError(data.error || 'Setup failed.');
+      if (result.error) {
+        setError(result.error);
         setLoading(false);
         return;
       }
 
-      // Auto sign-in after setup
-      const result = await signIn('credentials', {
-        email,
-        password,
-        redirect: false,
-      });
-
-      if (result?.error) {
-        setError('Account created but sign-in failed. Please refresh and log in.');
-      } else {
-        router.refresh();
-      }
+      // Redirect to login — admin must authenticate through the normal flow
+      router.push('/login');
     } catch {
       setError('Something went wrong. Please try again.');
     } finally {

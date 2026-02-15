@@ -64,7 +64,7 @@ thepopebot is an **NPM package** for creating custom autonomous AI agents. Users
 ├── api/                        # Next.js route handlers (exported as thepopebot/api)
 │   └── index.js                # GET/POST handlers for all /api/* routes
 ├── lib/                        # Core implementation
-│   ├── actions.js              # Shared action executor (agent, command, http)
+│   ├── actions.js              # Shared action executor (agent, command, webhook)
 │   ├── cron.js                 # Cron scheduler (loads CRONS.json)
 │   ├── triggers.js             # Webhook trigger middleware (loads TRIGGERS.json)
 │   ├── paths.js                # Central path resolver (resolves from user's project root)
@@ -109,7 +109,7 @@ thepopebot is an **NPM package** for creating custom autonomous AI agents. Users
 |------|---------|
 | `api/index.js` | Next.js GET/POST route handlers for all `/api/*` endpoints |
 | `lib/paths.js` | Central path resolver — all paths resolve from user's `process.cwd()` |
-| `lib/actions.js` | Shared action dispatcher for agent/command/http actions |
+| `lib/actions.js` | Shared action dispatcher for agent/command/webhook actions |
 | `lib/cron.js` | Cron scheduler — loads `config/CRONS.json` at server start |
 | `lib/triggers.js` | Trigger middleware — loads `config/TRIGGERS.json` |
 | `lib/utils/render-md.js` | Markdown `{{filepath}}` include processor |
@@ -121,13 +121,18 @@ thepopebot is an **NPM package** for creating custom autonomous AI agents. Users
 
 ## NPM Package Exports
 
-The package exposes three entry points:
-
 | Import | Module | Purpose |
 |--------|--------|---------|
 | `thepopebot/api` | `api/index.js` | `GET` and `POST` route handlers — re-exported by the user's catch-all route |
 | `thepopebot/config` | `config/index.js` | `withThepopebot()` — wraps the user's Next.js config to mark server-only packages as external |
 | `thepopebot/instrumentation` | `config/instrumentation.js` | `register()` — Next.js instrumentation hook that loads `.env` and starts cron jobs on server start |
+| `thepopebot/auth` | `lib/auth/index.js` | Auth helpers (`auth()`, `getPageAuthState()`) |
+| `thepopebot/auth/actions` | `lib/auth/actions.js` | Server action for admin setup (`setupAdmin()`) |
+| `thepopebot/chat` | `lib/chat/components/index.js` | Chat UI components |
+| `thepopebot/chat/actions` | `lib/chat/actions.js` | Server actions for chats, notifications, and swarm |
+| `thepopebot/chat/api` | `lib/chat/api.js` | Dedicated chat streaming route handler (session auth) |
+| `thepopebot/db` | `lib/db/index.js` | Database access |
+| `thepopebot/middleware` | `lib/auth/middleware.js` | Auth middleware |
 
 ## CLI Commands
 
@@ -215,6 +220,20 @@ The Event Handler is a Next.js API route handler (`api/index.js`) that provides 
 | `/api/jobs/status` | GET | Check status of a running job |
 | `/api/ping` | GET | Health check |
 
+### Security: /api vs Server Actions
+
+**`/api` routes are for external callers only.** They authenticate via `API_KEY` header or their own webhook secrets (Telegram, GitHub). Never add session/cookie auth to `/api` routes.
+
+**Browser UI uses Server Actions.** All authenticated browser-to-server calls (data fetching, mutations) MUST use Next.js Server Actions (`'use server'` functions in `lib/chat/actions.js` or `lib/auth/actions.js`), not `/api` fetch calls. Server Actions use the `requireAuth()` pattern which validates the session cookie internally.
+
+**The one exception is chat streaming.** The AI SDK's `DefaultChatTransport` requires an HTTP endpoint for streaming responses. Chat has its own dedicated route handler at `lib/chat/api.js` (mapped to `/api/chat` via `templates/app/api/chat/route.js`) with its own session auth. This is separate from the catch-all `api/index.js`.
+
+| Caller | Mechanism | Auth | Location |
+|--------|-----------|------|----------|
+| External (cURL, GitHub Actions, Telegram) | `/api` route handler | `API_KEY` header or webhook secret | `api/index.js` |
+| Browser UI (data/mutations) | Server Action | `requireAuth()` session check | `lib/chat/actions.js`, `lib/auth/actions.js` |
+| Browser UI (chat streaming) | Dedicated route handler | `auth()` session check | `lib/chat/api.js` |
+
 ### Components
 
 - **`api/index.js`** — Next.js route handlers (GET/POST) with auth and trigger middleware
@@ -223,20 +242,20 @@ The Event Handler is a Next.js API route handler (`api/index.js`) that provides 
 - **`lib/claude/`** — Claude API integration for Telegram chat with tool use
 - **`lib/tools/`** — Job creation, GitHub API, Telegram, and OpenAI utilities
 
-### Action Types: `agent`, `command`, and `http`
+### Action Types: `agent`, `command`, and `webhook`
 
-Both cron jobs and webhook triggers use the same shared dispatch system (`lib/actions.js`). Every action has a `type` field — `"agent"` (default), `"command"`, or `"http"`.
+Both cron jobs and webhook triggers use the same shared dispatch system (`lib/actions.js`). Every action has a `type` field — `"agent"` (default), `"command"`, or `"webhook"`.
 
-#### Choosing Between `agent`, `command`, and `http`
+#### Choosing Between `agent`, `command`, and `webhook`
 
-| | `agent` | `command` | `http` |
+| | `agent` | `command` | `webhook` |
 |---|---------|-----------|--------|
 | **Uses LLM** | Yes — spins up Pi in a Docker container | No — runs a shell command directly | No — makes an HTTP request |
 | **Thinking** | Can reason, make decisions, write code | No thinking, just executes | No thinking, just sends a request |
 | **Runtime** | Minutes to hours (full agent lifecycle) | Milliseconds to seconds | Milliseconds to seconds |
 | **Cost** | LLM API calls + GitHub Actions minutes | Free (runs on event handler) | Free (runs on event handler) |
 
-If the task needs to *think*, use `agent`. If it just needs to *do*, use `command`. If it needs to *call an external service*, use `http`.
+If the task needs to *think*, use `agent`. If it just needs to *do*, use `command`. If it needs to *call an external service*, use `webhook`.
 
 #### Type: `agent` (default)
 
@@ -256,7 +275,7 @@ Runs a shell command directly on the event handler server. No Docker container, 
 - **Crons**: `cron/`
 - **Triggers**: `triggers/`
 
-#### Type: `http`
+#### Type: `webhook`
 
 Makes an HTTP request to an external URL. No Docker container, no LLM. Useful for forwarding webhooks, calling external APIs, or pinging health endpoints.
 
@@ -269,7 +288,7 @@ Makes an HTTP request to an external URL. No Docker container, no LLM. Useful fo
 {
   "name": "ping-status",
   "schedule": "*/5 * * * *",
-  "type": "http",
+  "type": "webhook",
   "url": "https://example.com/status",
   "method": "POST",
   "vars": { "source": "heartbeat" }
@@ -283,13 +302,13 @@ Sends: `{ "source": "heartbeat" }`
   "name": "forward-github",
   "watch_path": "/github/webhook",
   "actions": [
-    { "type": "http", "url": "https://example.com/hook", "vars": { "source": "github" } }
+    { "type": "webhook", "url": "https://example.com/hook", "vars": { "source": "github" } }
   ]
 }
 ```
 Sends: `{ "source": "github", "data": { ...req.body... } }`
 
-**`http` action fields:**
+**`webhook` action fields:**
 
 | Field | Required | Default | Description |
 |-------|----------|---------|-------------|
@@ -330,10 +349,10 @@ Cron jobs are defined in `config/CRONS.json` and loaded by `lib/cron.js` at serv
 |-------|-------------|----------|
 | `name` | Display name for logging | Yes |
 | `schedule` | Cron expression (e.g., `*/30 * * * *`) | Yes |
-| `type` | `agent` (default), `command`, or `http` | No |
+| `type` | `agent` (default), `command`, or `webhook` | No |
 | `job` | Task description for agent type | For `agent` |
 | `command` | Shell command for command type | For `command` |
-| `url` | Target URL for http type | For `http` |
+| `url` | Target URL for webhook type | For `webhook` |
 | `method` | HTTP method (`GET` or `POST`, default: `POST`) | No |
 | `headers` | Outgoing request headers | No |
 | `vars` | Extra key/value pairs merged into outgoing body | No |
@@ -366,10 +385,10 @@ Webhook triggers are defined in `config/TRIGGERS.json` and loaded by `lib/trigge
 | `name` | yes | — | Display name for logging |
 | `watch_path` | yes | — | Existing endpoint path to watch (e.g., `/github/webhook`) |
 | `actions` | yes | — | Array of actions (each uses `type`/`job`/`command` per action types above) |
-| `actions[].type` | no | `"agent"` | `"agent"`, `"command"`, or `"http"` |
+| `actions[].type` | no | `"agent"` | `"agent"`, `"command"`, or `"webhook"` |
 | `actions[].job` | for agent | — | Job description, supports `{{body}}` (full payload) and `{{body.field}}` templates |
 | `actions[].command` | for command | — | Shell command, supports `{{body}}` and `{{body.field}}` templates |
-| `actions[].url` | for http | — | Target URL |
+| `actions[].url` | for webhook | — | Target URL |
 | `actions[].method` | no | `"POST"` | HTTP method (`"GET"` or `"POST"`) |
 | `actions[].headers` | no | `{}` | Outgoing request headers |
 | `actions[].vars` | no | `{}` | Extra key/value pairs merged into outgoing body (incoming payload added as `data` field) |

@@ -35,7 +35,7 @@
     "name": "forward-github",
     "watch_path": "/github/webhook",
     "actions": [
-      { "type": "http", "url": "https://example.com/hook", "method": "POST", "vars": { "source": "github" } }
+      { "type": "webhook", "url": "https://example.com/hook", "method": "POST", "vars": { "source": "github" } }
     ],
     "enabled": false
   },
@@ -43,7 +43,7 @@
     "name": "forward-webhook",
     "watch_path": "/webhook",
     "actions": [
-      { "type": "http", "url": "https://example.com/hook", "method": "POST", "vars": { "source": "webhook" } }
+      { "type": "webhook", "url": "https://example.com/hook", "method": "POST", "vars": { "source": "webhook" } }
     ],
     "enabled": false
   }

@@ -30,7 +30,7 @@
   {
     "name": "ping-status",
     "schedule": "*/5 * * * *",
-    "type": "http",
+    "type": "webhook",
     "url": "https://example.com/status",
     "method": "POST",
     "vars": { "source": "heartbeat" },
@@ -39,7 +39,7 @@
   {
     "name": "health-check",
     "schedule": "*/10 * * * *",
-    "type": "http",
+    "type": "webhook",
     "url": "https://example.com/health",
     "method": "GET",
     "enabled": false

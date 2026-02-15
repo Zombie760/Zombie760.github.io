@@ -4,7 +4,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { AppSidebar } from './app-sidebar.js';
 import { SidebarProvider, SidebarInset } from './ui/sidebar.js';
 import { ChatNavProvider } from './chat-nav-context.js';
-import { StopIcon, SpinnerIcon } from './icons.js';
+import { StopIcon, SpinnerIcon, RefreshIcon } from './icons.js';
+import { getSwarmStatus, cancelSwarmJob, rerunSwarmJob } from '../actions.js';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Utilities
@@ -57,7 +58,7 @@ function SwarmSummaryCards({ counts }) {
   const cards = [
     { label: 'Running', value: counts.running, color: 'border-l-green-500', text: 'text-green-500' },
     { label: 'Queued', value: counts.queued, color: 'border-l-yellow-500', text: 'text-yellow-500' },
-    { label: 'Completed', value: counts.completed, color: 'border-l-blue-500', text: 'text-blue-500' },
+    { label: 'Succeeded', value: counts.succeeded, color: 'border-l-blue-500', text: 'text-blue-500' },
     { label: 'Failed', value: counts.failed, color: 'border-l-red-500', text: 'text-red-500' },
   ];
 
@@ -245,116 +246,13 @@ function SwarmJobHistory({ jobs, onRerun }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Config Section
-// ─────────────────────────────────────────────────────────────────────────────
-
-function SwarmConfig({ config }) {
-  const [cronsOpen, setCronsOpen] = useState(false);
-  const [triggersOpen, setTriggersOpen] = useState(false);
-
-  if (!config) return null;
-
-  const { crons = [], triggers = [] } = config;
-
-  return (
-    <div className="flex flex-col gap-2">
-      {/* Cron Jobs */}
-      <button
-        onClick={() => setCronsOpen(!cronsOpen)}
-        className="flex items-center justify-between w-full text-left rounded-md border bg-card p-3 hover:bg-accent/50"
-      >
-        <span className="text-sm font-medium">Cron Jobs ({crons.length})</span>
-        <span className="text-xs text-muted-foreground">{cronsOpen ? '−' : '+'}</span>
-      </button>
-      {cronsOpen && (
-        <div className="flex flex-col divide-y divide-border rounded-md border bg-card">
-          {crons.length === 0 ? (
-            <p className="text-sm text-muted-foreground p-3">No cron jobs configured.</p>
-          ) : (
-            crons.map((cron, i) => (
-              <div key={i} className="flex items-center gap-3 p-3">
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium truncate">{cron.name}</p>
-                  <p className="text-xs text-muted-foreground">
-                    <span className="font-mono">{cron.schedule}</span>
-                    {cron.type && cron.type !== 'agent' && (
-                      <span className="ml-2">({cron.type})</span>
-                    )}
-                  </p>
-                </div>
-                <span
-                  className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium ${
-                    cron.enabled === false
-                      ? 'bg-muted text-muted-foreground'
-                      : 'bg-green-500/10 text-green-500'
-                  }`}
-                >
-                  {cron.enabled === false ? 'disabled' : 'enabled'}
-                </span>
-              </div>
-            ))
-          )}
-        </div>
-      )}
-
-      {/* Triggers */}
-      <button
-        onClick={() => setTriggersOpen(!triggersOpen)}
-        className="flex items-center justify-between w-full text-left rounded-md border bg-card p-3 hover:bg-accent/50"
-      >
-        <span className="text-sm font-medium">Triggers ({triggers.length})</span>
-        <span className="text-xs text-muted-foreground">{triggersOpen ? '−' : '+'}</span>
-      </button>
-      {triggersOpen && (
-        <div className="flex flex-col divide-y divide-border rounded-md border bg-card">
-          {triggers.length === 0 ? (
-            <p className="text-sm text-muted-foreground p-3">No triggers configured.</p>
-          ) : (
-            triggers.map((trigger, i) => {
-              const actionTypes = (trigger.actions || [])
-                .map((a) => a.type || 'agent')
-                .filter((v, idx, arr) => arr.indexOf(v) === idx)
-                .join(', ');
-
-              return (
-                <div key={i} className="flex items-center gap-3 p-3">
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium truncate">{trigger.name}</p>
-                    <p className="text-xs text-muted-foreground">
-                      <span className="font-mono">{trigger.watch_path}</span>
-                      <span className="ml-2">
-                        {(trigger.actions || []).length} action{(trigger.actions || []).length !== 1 ? 's' : ''}
-                        {actionTypes && ` (${actionTypes})`}
-                      </span>
-                    </p>
-                  </div>
-                  <span
-                    className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium ${
-                      trigger.enabled === false
-                        ? 'bg-muted text-muted-foreground'
-                        : 'bg-green-500/10 text-green-500'
-                    }`}
-                  >
-                    {trigger.enabled === false ? 'disabled' : 'enabled'}
-                  </span>
-                </div>
-              );
-            })
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
 // Main Page
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function SwarmPage({ session }) {
   const [swarmData, setSwarmData] = useState(null);
-  const [config, setConfig] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
 
   const navigateToChat = (id) => {
     if (id) {
@@ -366,11 +264,8 @@ export function SwarmPage({ session }) {
 
   const fetchStatus = useCallback(async () => {
     try {
-      const res = await fetch('/api/swarm/status');
-      if (res.ok) {
-        const data = await res.json();
-        setSwarmData(data);
-      }
+      const data = await getSwarmStatus();
+      setSwarmData(data);
     } catch (err) {
       console.error('Failed to fetch swarm status:', err);
     } finally {
@@ -379,25 +274,20 @@ export function SwarmPage({ session }) {
   }, []);
 
   useEffect(() => {
-    // Fetch config once
-    fetch('/api/swarm/config')
-      .then((r) => r.ok ? r.json() : null)
-      .then((data) => { if (data) setConfig(data); })
-      .catch(() => {});
-
-    // Fetch status on mount + poll every 10s
     fetchStatus();
     const interval = setInterval(fetchStatus, 10000);
     return () => clearInterval(interval);
   }, [fetchStatus]);
 
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    await fetchStatus();
+    setRefreshing(false);
+  };
+
   const handleCancel = async (runId) => {
     try {
-      await fetch('/api/swarm/cancel', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ run_id: runId }),
-      });
+      await cancelSwarmJob(runId);
       await fetchStatus();
     } catch (err) {
       console.error('Failed to cancel job:', err);
@@ -406,11 +296,7 @@ export function SwarmPage({ session }) {
 
   const handleRerun = async (runId, failedOnly) => {
     try {
-      await fetch('/api/swarm/rerun', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ run_id: runId, failed_only: failedOnly }),
-      });
+      await rerunSwarmJob(runId, failedOnly);
       await fetchStatus();
     } catch (err) {
       console.error('Failed to rerun job:', err);
@@ -428,10 +314,21 @@ export function SwarmPage({ session }) {
               <h1 className="text-2xl font-semibold">Swarm</h1>
               {!loading && (
                 <button
-                  onClick={fetchStatus}
-                  className="text-xs text-muted-foreground hover:text-foreground"
+                  onClick={handleRefresh}
+                  disabled={refreshing}
+                  className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-medium border border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
                 >
-                  Refresh
+                  {refreshing ? (
+                    <>
+                      <SpinnerIcon size={14} />
+                      Refreshing...
+                    </>
+                  ) : (
+                    <>
+                      <RefreshIcon size={14} />
+                      Refresh
+                    </>
+                  )}
                 </button>
               )}
             </div>
@@ -465,14 +362,6 @@ export function SwarmPage({ session }) {
                     jobs={swarmData?.completed}
                     onRerun={handleRerun}
                   />
-                </div>
-
-                {/* Config */}
-                <div>
-                  <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
-                    Configuration
-                  </h2>
-                  <SwarmConfig config={config} />
                 </div>
               </div>
             )}

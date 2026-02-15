@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { SquarePenIcon, PanelLeftIcon, MessageIcon, BellIcon, SwarmIcon } from './icons.js';
+import { SquarePenIcon, PanelLeftIcon, MessageIcon, BellIcon, SwarmIcon, ClockIcon, ZapIcon } from './icons.js';
 import { getUnreadNotificationCount } from '../actions.js';
 import { SidebarHistory } from './sidebar-history.js';
 import { SidebarUserNav } from './sidebar-user-nav.js';
@@ -147,6 +147,46 @@ export function AppSidebar({ user }) {
               </TooltipTrigger>
               {collapsed && (
                 <TooltipContent side="right">Swarm</TooltipContent>
+              )}
+            </Tooltip>
+          </SidebarMenuItem>
+
+          {/* Cron Jobs */}
+          <SidebarMenuItem>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SidebarMenuButton
+                  className={collapsed ? 'justify-center' : ''}
+                  onClick={() => {
+                    window.location.href = '/crons';
+                  }}
+                >
+                  <ClockIcon size={16} />
+                  {!collapsed && <span>Cron Jobs</span>}
+                </SidebarMenuButton>
+              </TooltipTrigger>
+              {collapsed && (
+                <TooltipContent side="right">Cron Jobs</TooltipContent>
+              )}
+            </Tooltip>
+          </SidebarMenuItem>
+
+          {/* Triggers */}
+          <SidebarMenuItem>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SidebarMenuButton
+                  className={collapsed ? 'justify-center' : ''}
+                  onClick={() => {
+                    window.location.href = '/triggers';
+                  }}
+                >
+                  <ZapIcon size={16} />
+                  {!collapsed && <span>Triggers</span>}
+                </SidebarMenuButton>
+              </TooltipTrigger>
+              {collapsed && (
+                <TooltipContent side="right">Triggers</TooltipContent>
               )}
             </Tooltip>
           </SidebarMenuItem>
