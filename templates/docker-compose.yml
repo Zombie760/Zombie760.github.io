@@ -38,7 +38,7 @@ services:
     restart: unless-stopped
 
   runner:
-    image: ${RUNNER_IMAGE_URL:-stephengpope/thepopebot-runner:latest}
+    image: myoung34/github-actions-runner:latest
     environment:
       REPO_URL: https://github.com/${GH_OWNER}/${GH_REPO}
       ACCESS_TOKEN: ${GH_TOKEN}
