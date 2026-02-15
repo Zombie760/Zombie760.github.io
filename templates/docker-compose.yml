@@ -23,6 +23,7 @@ services:
     image: ${EVENT_HANDLER_IMAGE_URL:-stephengpope/thepopebot:event-handler-${THEPOPEBOT_VERSION:-latest}}
     volumes:
       - .:/app
+      - /app/node_modules
     labels:
       - traefik.enable=true
       # Set APP_HOSTNAME in .env to the domain from APP_URL (e.g., mybot.example.com)
@@ -33,7 +34,7 @@ services:
     restart: unless-stopped
 
   runner:
-    image: myoung34/github-actions-runner:latest
+    image: myoung34/github-runner:latest
     environment:
       REPO_URL: https://github.com/${GH_OWNER}/${GH_REPO}
       ACCESS_TOKEN: ${GH_TOKEN}
