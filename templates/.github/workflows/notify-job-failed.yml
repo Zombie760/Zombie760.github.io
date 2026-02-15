@@ -7,7 +7,7 @@ on:
 
 jobs:
   notify-failure:
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RUNS_ON || 'ubuntu-latest' }}
     if: >
       github.event.workflow_run.conclusion != 'success' &&
       startsWith(github.event.workflow_run.head_branch, 'job/')
@@ -60,7 +60,7 @@ jobs:
               merge_result: ""
             }' > /tmp/payload.json
 
-          curl -s -X POST "${{ vars.GH_WEBHOOK_URL }}/api/github/webhook" \
+          curl -s -X POST "${{ vars.APP_URL }}/api/github/webhook" \
             -H "Content-Type: application/json" \
             -H "X-GitHub-Webhook-Secret-Token: ${{ secrets.GH_WEBHOOK_SECRET }}" \
             -d @/tmp/payload.json

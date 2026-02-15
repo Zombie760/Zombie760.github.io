@@ -107,7 +107,7 @@ if (job.length > 10000) return Response.json({ error: 'Job description too long'
 
 **Problem:** `eval $(echo "$SECRETS_JSON" | jq -r 'to_entries | .[] | "export \(.key)=\"\(.value)\""')` is vulnerable to command injection if any secret value contains `$(...)`, backticks, or other shell metacharacters.
 
-**File:** `docker/entrypoint.sh`
+**File:** `docker/job/entrypoint.sh`
 
 **Change:** Use `jq` to produce `key=value` pairs and `export` them without `eval`:
 
@@ -222,7 +222,7 @@ if (!includeResolved.startsWith(PROJECT_ROOT)) {
 
 **Problem:** Container runs everything as root, including Chrome and the Pi agent.
 
-**File:** `docker/Dockerfile`
+**File:** `docker/job/Dockerfile`
 
 **Change:** Add a non-root user after installing system dependencies:
 ```dockerfile
@@ -239,7 +239,7 @@ Note: This requires adjusting Chrome cache paths and the `/job` workdir ownershi
 
 **Problem:** `git clone https://github.com/badlogic/pi-skills.git` without a pinned commit means any upstream push changes what's in the Docker image.
 
-**File:** `docker/Dockerfile`
+**File:** `docker/job/Dockerfile`
 
 **Change:**
 ```dockerfile
@@ -257,9 +257,9 @@ RUN git clone https://github.com/badlogic/pi-skills.git /pi-skills && \
 | `lib/cron.js` | Add command timeout and length limit |
 | `lib/tools/github.js` | Sanitize error messages |
 | `lib/utils/render-md.js` | Path traversal guard |
-| `docker/entrypoint.sh` | Replace `eval` with safe env export loop |
+| `docker/job/entrypoint.sh` | Replace `eval` with safe env export loop |
 | `.github/workflows/auto-merge.yml` | Fix path prefix matching with trailing `/` |
-| `docker/Dockerfile` | Add non-root user, pin pi-skills commit |
+| `docker/job/Dockerfile` | Add non-root user, pin pi-skills commit |
 
 ---
 
@@ -270,6 +270,6 @@ RUN git clone https://github.com/badlogic/pi-skills.git /pi-skills && \
 3. **Test auth:** Send requests without API key, with wrong key — verify 401
 4. **Test webhook secrets:** Send to `/api/telegram/webhook` and `/api/github/webhook` without secrets — verify rejection
 5. **Test job validation:** POST oversized `job` field — verify 400
-6. **Test entrypoint:** Run `docker/entrypoint.sh` with secrets containing `$(echo pwned)` — verify no command execution
+6. **Test entrypoint:** Run `docker/job/entrypoint.sh` with secrets containing `$(echo pwned)` — verify no command execution
 7. **Test auto-merge paths:** Create a PR with a file named `logs_evil.js` — verify it's blocked
 8. **Test render_md:** Add `{{ ../../etc/passwd.md }}` to a test file — verify it's blocked

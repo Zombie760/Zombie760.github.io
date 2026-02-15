@@ -97,7 +97,9 @@ thepopebot is an **NPM package** for creating custom autonomous AI agents. Users
 │   ├── app/                    # Next.js app (layout, page, catch-all API route)
 │   ├── .github/workflows/      # GitHub Actions (auto-merge, docker-build, run-job, update-event-handler)
 │   ├── .pi/                    # Pi extensions + skills
-│   ├── docker/                 # Dockerfile + entrypoint (scaffolded for custom builds)
+│   ├── docker/                 # Docker files for job, event_handler, and runner containers
+│   ├── docker-compose.yml      # Production deployment with Traefik, event handler, runner
+│   ├── .dockerignore            # Docker build exclusions
 │   └── config/                 # Agent config (SOUL, CHATBOT, CRONS, TRIGGERS, etc.)
 ├── docs/                       # Extended documentation
 └── package.json                # NPM package definition
@@ -116,8 +118,8 @@ thepopebot is an **NPM package** for creating custom autonomous AI agents. Users
 | `config/index.js` | `withThepopebot()` Next.js config wrapper |
 | `config/instrumentation.js` | `register()` server startup hook (loads .env, starts crons) |
 | `bin/cli.js` | CLI entry point (`thepopebot init`, `setup`, `reset`, `diff`) |
-| `templates/docker/Dockerfile` | Builds the agent container (Node.js 22, Playwright, Pi) — scaffolded to user projects |
-| `templates/docker/entrypoint.sh` | Container startup — clones repo, runs agent, commits results — scaffolded to user projects |
+| `templates/docker/job/Dockerfile` | Builds the job agent container (Node.js 22, Playwright, Pi) — scaffolded to user projects |
+| `templates/docker/job/entrypoint.sh` | Container startup — clones repo, runs agent, commits results — scaffolded to user projects |
 
 ## NPM Package Exports
 
@@ -411,6 +413,7 @@ Both `job` and `command` strings support the same templates:
 
 | Variable | Description | Required |
 |----------|-------------|----------|
+| `APP_URL` | Public URL for webhooks, Telegram, and Traefik hostname | Yes |
 | `API_KEY` | Authentication key for /api/create-job endpoint | Yes |
 | `GH_TOKEN` | GitHub PAT for creating branches/files | Yes |
 | `GH_OWNER` | GitHub repository owner | Yes |
@@ -428,7 +431,7 @@ Both `job` and `command` strings support the same templates:
 
 ## Docker Agent Layer
 
-The Dockerfile (`templates/docker/Dockerfile`, scaffolded to `docker/Dockerfile` in user projects) creates a container with:
+The Dockerfile (`templates/docker/job/Dockerfile`, scaffolded to `docker/job/Dockerfile` in user projects) creates a container with:
 - **Node.js 22** (Bookworm slim)
 - **Pi coding agent** (`@mariozechner/pi-coding-agent`)
 - **Playwright + Chromium** (headless browser automation)
@@ -464,19 +467,19 @@ GitHub Actions are scaffolded into the user's project (from `templates/.github/w
 
 ### docker-build.yml
 
-Triggers on push to `main`. Builds the Docker image and pushes it to GitHub Container Registry (GHCR). Only runs when `DOCKER_IMAGE_URL` is set to a GHCR URL (starts with `ghcr.io/`). Non-GHCR URLs skip this workflow entirely.
+Triggers on push to `main`. Builds the Docker image and pushes it to GitHub Container Registry (GHCR). Only runs when `JOB_IMAGE_URL` is set to a GHCR URL (starts with `ghcr.io/`). Non-GHCR URLs skip this workflow entirely.
 
 ```yaml
 on:
   push:
     branches: [main]
-# Only runs if: vars.DOCKER_IMAGE_URL is set AND starts with "ghcr.io/"
-# Pushes to: {DOCKER_IMAGE_URL}:latest
+# Only runs if: vars.JOB_IMAGE_URL is set AND starts with "ghcr.io/"
+# Pushes to: {JOB_IMAGE_URL}:latest
 ```
 
 ### run-job.yml
 
-Triggers when a `job/*` branch is created. Runs the Docker agent container. If `DOCKER_IMAGE_URL` is set, pulls from that registry (logs into GHCR automatically for `ghcr.io/` URLs); otherwise falls back to `stephengpope/thepopebot:latest` from Docker Hub.
+Triggers when a `job/*` branch is created. Runs the Docker agent container. If `JOB_IMAGE_URL` is set, pulls from that registry (logs into GHCR automatically for `ghcr.io/` URLs); otherwise falls back to `stephengpope/thepopebot:latest` from Docker Hub.
 
 ```yaml
 on:
@@ -530,10 +533,12 @@ Configure these in **Settings → Secrets and variables → Actions → Variable
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `GH_WEBHOOK_URL` | Event handler URL (e.g., `https://your-server.com`) | — |
+| `APP_URL` | Public URL for the event handler (e.g., `https://mybot.example.com`) | — |
 | `AUTO_MERGE` | Set to `false` to disable auto-merge of job PRs | Enabled (any value except `false`) |
 | `ALLOWED_PATHS` | Comma-separated path prefixes (e.g., `/logs`). Use `/` for all paths. | `/logs` |
-| `DOCKER_IMAGE_URL` | Full Docker image path (e.g., `ghcr.io/myorg/mybot`). GHCR URLs trigger automatic builds via `docker-build.yml`. Non-GHCR URLs (e.g., `docker.io/user/mybot`) are pulled directly. | Not set (uses `stephengpope/thepopebot:latest`) |
+| `JOB_IMAGE_URL` | Full Docker image path for the job agent (e.g., `ghcr.io/myorg/mybot`). GHCR URLs trigger automatic builds via `docker-build.yml`. Non-GHCR URLs (e.g., `docker.io/user/mybot`) are pulled directly. | Not set (uses `stephengpope/thepopebot:latest`) |
+| `EVENT_HANDLER_IMAGE_URL` | Docker image path for the event handler | Not set (uses `stephengpope/thepopebot-event-handler:latest`) |
+| `RUNS_ON` | GitHub Actions runner label (e.g., `self-hosted` for docker-compose runner) | `ubuntu-latest` |
 | `LLM_PROVIDER` | LLM provider for the Pi agent (`anthropic`, `openai`, `google`) | Not set (default: `anthropic`) |
 | `LLM_MODEL` | LLM model name for the Pi agent (e.g., `claude-sonnet-4-5-20250929`) | Not set (provider default) |
 

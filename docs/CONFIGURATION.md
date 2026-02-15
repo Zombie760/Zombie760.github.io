@@ -6,6 +6,7 @@ All environment variables for the Event Handler (set in `.env` in your project r
 
 | Variable | Description | Required |
 |----------|-------------|----------|
+| `APP_URL` | Public URL for webhooks, Telegram, and Traefik hostname | Yes |
 | `API_KEY` | Authentication key for `/api/create-job` and other protected endpoints | Yes |
 | `GH_TOKEN` | GitHub PAT for creating branches/files | Yes |
 | `GH_OWNER` | GitHub repository owner | Yes |
@@ -20,6 +21,9 @@ All environment variables for the Event Handler (set in `.env` in your project r
 | `ANTHROPIC_API_KEY` | API key for Anthropic provider | For anthropic provider |
 | `OPENAI_API_KEY` | API key for OpenAI provider / Whisper voice transcription | For openai provider or voice |
 | `GOOGLE_API_KEY` | API key for Google provider | For google provider |
+| `LETSENCRYPT_EMAIL` | Email for Let's Encrypt SSL (docker-compose only) | No |
+| `EVENT_HANDLER_IMAGE_URL` | Custom event handler Docker image | No |
+| `JOB_IMAGE_URL` | Custom job agent Docker image | No |
 
 ---
 
@@ -41,24 +45,45 @@ Configure in **Settings → Secrets and variables → Actions → Variables**:
 
 | Variable | Description | Required | Default |
 |----------|-------------|----------|---------|
-| `GH_WEBHOOK_URL` | Event handler URL (e.g., your ngrok URL) | Yes | — |
+| `APP_URL` | Public URL for the event handler (e.g., `https://mybot.example.com`) | Yes | — |
 | `AUTO_MERGE` | Set to `false` to disable auto-merge of job PRs | No | Enabled |
 | `ALLOWED_PATHS` | Comma-separated path prefixes for auto-merge | No | `/logs` |
-| `DOCKER_IMAGE_URL` | Docker image path (e.g., `ghcr.io/myorg/mybot`) | No | `stephengpope/thepopebot:latest` |
+| `JOB_IMAGE_URL` | Docker image path for job agent (e.g., `ghcr.io/myorg/mybot`) | No | `stephengpope/thepopebot:latest` |
+| `EVENT_HANDLER_IMAGE_URL` | Docker image path for event handler | No | `stephengpope/thepopebot-event-handler:latest` |
+| `RUNS_ON` | GitHub Actions runner label (e.g., `self-hosted`) | No | `ubuntu-latest` |
 | `LLM_PROVIDER` | LLM provider (`anthropic`, `openai`, `google`) | No | `anthropic` |
 | `LLM_MODEL` | LLM model name for the Pi agent | No | Provider default |
 
 ---
 
-## ngrok URL Changes
+## Docker Compose Deployment
 
-ngrok assigns a new URL each time you restart it (unless you have a paid plan with a static domain). When your ngrok URL changes, run:
+For self-hosted deployment on a VPS, use docker-compose:
+
+```bash
+docker compose up -d
+```
+
+This starts three services:
+- **Traefik** — Reverse proxy with automatic SSL (Let's Encrypt if `LETSENCRYPT_EMAIL` is set)
+- **Event Handler** — Next.js server with your config volume-mounted
+- **Runner** — Self-hosted GitHub Actions runner
+
+Set `RUNS_ON=self-hosted` as a GitHub repository variable to route workflows to your runner.
+
+See the [Architecture docs](ARCHITECTURE.md) for more details.
+
+---
+
+## APP_URL Changes
+
+If your public URL changes (e.g., after restarting ngrok), run:
 
 ```bash
 npm run setup-telegram
 ```
 
-This will verify your server is running, update the GitHub webhook URL, re-register the Telegram webhook, and optionally capture your chat ID for security.
+This will update the APP_URL, re-register the Telegram webhook, and update the GitHub repository variable.
 
 ---
 

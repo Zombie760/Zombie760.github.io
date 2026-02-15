@@ -3,13 +3,13 @@ name: Build and Push Docker Image
 on:
   push:
     branches: [main]
-    paths: ['docker/**']
+    paths: ['docker/job/**']
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    if: vars.DOCKER_IMAGE_URL != '' && startsWith(vars.DOCKER_IMAGE_URL, 'ghcr.io/')
+    runs-on: ${{ vars.RUNS_ON || 'ubuntu-latest' }}
+    if: vars.JOB_IMAGE_URL != '' && startsWith(vars.JOB_IMAGE_URL, 'ghcr.io/')
     permissions:
       contents: read
       packages: write
@@ -31,6 +31,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./docker
+          context: ./docker/job
           push: true
-          tags: ${{ vars.DOCKER_IMAGE_URL }}:latest
+          tags: ${{ vars.JOB_IMAGE_URL }}:latest

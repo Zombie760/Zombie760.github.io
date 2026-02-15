@@ -1,0 +1,52 @@
+services:
+  traefik:
+    image: traefik:v3
+    command:
+      - --providers.docker=true
+      - --providers.docker.exposedByDefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+      - --certificatesresolvers.letsencrypt.acme.email=${LETSENCRYPT_EMAIL:-}
+      - --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
+      - --certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik_certs:/letsencrypt
+    restart: unless-stopped
+
+  event_handler:
+    image: ${EVENT_HANDLER_IMAGE_URL:-stephengpope/thepopebot-event-handler:latest}
+    volumes:
+      - ./.env:/app/.env
+      - ./config:/app/config
+      - ./data:/app/data
+      - ./cron:/app/cron
+      - ./triggers:/app/triggers
+      - ./logs:/app/logs
+    labels:
+      - traefik.enable=true
+      # Set APP_HOSTNAME in .env to the domain from APP_URL (e.g., mybot.example.com)
+      - traefik.http.routers.event_handler.rule=Host(`${APP_HOSTNAME}`)
+      - traefik.http.routers.event_handler.entrypoints=websecure
+      - traefik.http.routers.event_handler.tls.certresolver=letsencrypt
+      - traefik.http.services.event_handler.loadbalancer.server.port=80
+    restart: unless-stopped
+
+  runner:
+    image: ${RUNNER_IMAGE_URL:-stephengpope/thepopebot-runner:latest}
+    environment:
+      REPO_URL: https://github.com/${GH_OWNER}/${GH_REPO}
+      ACCESS_TOKEN: ${GH_TOKEN}
+      RUNNER_SCOPE: repo
+      LABELS: self-hosted,thepopebot
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+volumes:
+  traefik_certs:

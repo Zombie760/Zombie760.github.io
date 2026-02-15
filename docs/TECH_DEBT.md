@@ -106,9 +106,9 @@ Several catch blocks return generic messages like `"Failed to create job"` with 
 
 ### Docker layer caching
 
-`templates/docker/Dockerfile` clones pi-skills repos and runs npm install without caching those layers effectively. Every build re-clones and reinstalls.
+`templates/docker/job/Dockerfile` clones pi-skills repos and runs npm install without caching those layers effectively. Every build re-clones and reinstalls.
 
-**Files:** `templates/docker/Dockerfile:40-44`
+**Files:** `templates/docker/job/Dockerfile:40-44`
 
 ### Hardcoded HEARTBEAT.md location
 
@@ -160,9 +160,9 @@ Core package uses CJS (`require`). Setup scripts use ESM (`.mjs` with `import`).
 
 ### Dead code in entrypoint.sh
 
-`templates/docker/entrypoint.sh` has commented-out merge logic referencing a non-existent `MERGE_JOB.md`.
+`templates/docker/job/entrypoint.sh` has commented-out merge logic referencing a non-existent `MERGE_JOB.md`.
 
-**Files:** `templates/docker/entrypoint.sh:97-101`
+**Files:** `templates/docker/job/entrypoint.sh:97-101`
 
 ### Commented-out OpenAI provider
 

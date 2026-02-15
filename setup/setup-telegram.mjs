@@ -48,7 +48,7 @@ function loadEnvFile() {
 
 async function main() {
   console.log(chalk.bold.cyan('\n  Telegram Webhook Setup\n'));
-  console.log(chalk.dim('  Use this to reconfigure Telegram after restarting ngrok.\n'));
+  console.log(chalk.dim('  Use this to reconfigure the Telegram webhook.\n'));
 
   // Check prerequisites
   const prereqs = await checkPrerequisites();
@@ -64,55 +64,50 @@ async function main() {
   // Load existing config
   const env = loadEnvFile();
 
-  // Get ngrok URL first (verify server is up)
-  console.log(chalk.yellow('\n  Make sure your server is running:\n'));
-  console.log(chalk.dim('  Terminal 1: ') + chalk.cyan('npm run dev'));
-  console.log(chalk.dim('  Terminal 2: ') + chalk.cyan('ngrok http 3000\n'));
+  // Get APP_URL (verify server is up)
+  console.log(chalk.yellow('\n  Make sure your server is running and publicly accessible.\n'));
 
-  let ngrokUrl = null;
-  while (!ngrokUrl) {
+  let appUrl = null;
+
+  // Try to read APP_URL from .env first
+  const existingAppUrl = env?.APP_URL;
+  if (existingAppUrl) {
+    printInfo(`Found APP_URL in .env: ${existingAppUrl}`);
+    const useExisting = await confirm('Use this URL?');
+    if (useExisting) {
+      appUrl = existingAppUrl;
+    }
+  }
+
+  while (!appUrl) {
     const { url } = await inquirer.prompt([
       {
         type: 'input',
         name: 'url',
-        message: 'Paste your ngrok URL (https://...ngrok...):',
+        message: 'Enter your APP_URL (https://...):',
         validate: (input) => {
           if (!input) return 'URL is required';
           if (!input.startsWith('https://')) return 'URL must start with https://';
-          if (!input.includes('ngrok')) return 'URL should be an ngrok URL';
           return true;
         },
       },
     ]);
-    const testUrl = url.replace(/\/$/, '');
-
-    // Verify the server is reachable through ngrok
-    const healthSpinner = ora('Verifying server is reachable...').start();
-    try {
-      await fetch(`${testUrl}/api/ping`, {
-        method: 'GET',
-        signal: AbortSignal.timeout(10000)
-      });
-      // Any HTTP response means the server is reachable
-      healthSpinner.succeed('Server is reachable');
-      ngrokUrl = testUrl;
-    } catch (error) {
-      healthSpinner.fail(`Could not reach server: ${error.message}`);
-      printWarning('Make sure both the server AND ngrok are running');
-      const retry = await confirm('Try again?');
-      if (!retry) {
-        ngrokUrl = testUrl;
-      }
-    }
+    appUrl = url.replace(/\/$/, '');
   }
 
-  // Set GH_WEBHOOK_URL variable
-  const urlSpinner = ora('Updating GH_WEBHOOK_URL variable...').start();
-  const urlResult = await setVariables(owner, repo, { GH_WEBHOOK_URL: ngrokUrl });
-  if (urlResult.GH_WEBHOOK_URL.success) {
-    urlSpinner.succeed('GH_WEBHOOK_URL variable updated');
+  // Update APP_URL and APP_HOSTNAME in .env
+  const appHostname = new URL(appUrl).hostname;
+  updateEnvVariable('APP_URL', appUrl);
+  updateEnvVariable('APP_HOSTNAME', appHostname);
+  printSuccess('APP_URL saved to .env');
+
+  // Set APP_URL variable on GitHub
+  const urlSpinner = ora('Updating APP_URL variable...').start();
+  const urlResult = await setVariables(owner, repo, { APP_URL: appUrl });
+  if (urlResult.APP_URL.success) {
+    urlSpinner.succeed('APP_URL variable updated');
   } else {
-    urlSpinner.fail(`Failed: ${urlResult.GH_WEBHOOK_URL.error}`);
+    urlSpinner.fail(`Failed: ${urlResult.APP_URL.error}`);
   }
 
   // Get Telegram token - try .env first
@@ -167,7 +162,7 @@ async function main() {
   }
 
   // Register Telegram webhook
-  const webhookUrl = `${ngrokUrl}/api/telegram/webhook`;
+  const webhookUrl = `${appUrl}/api/telegram/webhook`;
   const tgSpinner = ora('Registering Telegram webhook...').start();
   const tgResult = await setTelegramWebhook(token, webhookUrl, webhookSecret);
   if (tgResult.ok) {

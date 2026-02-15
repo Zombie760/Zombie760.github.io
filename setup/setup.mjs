@@ -551,63 +551,55 @@ async function main() {
     }
   }
 
-  // Step 7: ngrok
-  printStep(++currentStep, TOTAL_STEPS, 'Expose Server with ngrok');
+  // Step 7: APP_URL
+  printStep(++currentStep, TOTAL_STEPS, 'App URL');
 
-  console.log(chalk.bold('  Start ngrok in another terminal window:\n'));
-  console.log(chalk.cyan('     ngrok http 3000\n'));
-  console.log(chalk.dim('  ngrok will show a "Forwarding" URL like: https://abc123.ngrok.io\n'));
-  console.log(chalk.yellow('  Note: ') + chalk.dim('ngrok URLs change each time you restart it (unless you have a paid plan).'));
-  console.log(chalk.dim('  When your URL changes, run: ') + chalk.cyan('npm run setup-telegram') + chalk.dim(' to reconfigure.\n'));
+  console.log(chalk.dim('  Your app needs a public URL for GitHub webhooks and Telegram.\n'));
+  console.log(chalk.dim('  Examples:'));
+  console.log(chalk.dim('    \u2022 ngrok: ') + chalk.cyan('https://abc123.ngrok.io'));
+  console.log(chalk.dim('    \u2022 VPS:   ') + chalk.cyan('https://mybot.example.com'));
+  console.log(chalk.dim('    \u2022 PaaS:  ') + chalk.cyan('https://mybot.vercel.app\n'));
 
-  let ngrokUrl = null;
-  while (!ngrokUrl) {
-    const { url: ngrokInput } = await inquirer.prompt([
+  let appUrl = null;
+  while (!appUrl) {
+    const { url: urlInput } = await inquirer.prompt([
       {
         type: 'input',
         name: 'url',
-        message: 'Paste your ngrok URL (https://...ngrok...):',
+        message: 'Enter your APP_URL (https://...):',
         validate: (input) => {
           if (!input) return 'URL is required';
           if (!input.startsWith('https://')) return 'URL must start with https://';
-          if (!input.includes('ngrok')) return 'URL should be an ngrok URL';
           return true;
         },
       },
     ]);
-    const candidate = ngrokInput.replace(/\/$/, '');
-
-    const ngrokSpinner = ora('Verifying server is reachable through ngrok...').start();
-    try {
-      const response = await fetch(`${candidate}/api/ping`, {
-        method: 'GET',
-        signal: AbortSignal.timeout(10000),
-      });
-      // Any HTTP response means the server is reachable (even 401)
-      ngrokSpinner.succeed('Server is reachable through ngrok');
-      ngrokUrl = candidate;
-    } catch {
-      ngrokSpinner.fail('Could not reach server through ngrok');
-    }
+    appUrl = urlInput.replace(/\/$/, '');
   }
 
-  // Set GH_WEBHOOK_URL variable
-  let webhookUrlSet = false;
-  while (!webhookUrlSet) {
-    const urlSpinner = ora('Setting GH_WEBHOOK_URL variable...').start();
-    const urlResult = await setVariables(owner, repo, { GH_WEBHOOK_URL: ngrokUrl });
-    if (urlResult.GH_WEBHOOK_URL.success) {
-      urlSpinner.succeed('GH_WEBHOOK_URL variable set');
-      webhookUrlSet = true;
+  // Save APP_URL and APP_HOSTNAME to .env
+  const appHostname = new URL(appUrl).hostname;
+  updateEnvVariable('APP_URL', appUrl);
+  updateEnvVariable('APP_HOSTNAME', appHostname);
+  printSuccess(`APP_URL saved to .env`);
+
+  // Set APP_URL variable on GitHub
+  let appUrlSet = false;
+  while (!appUrlSet) {
+    const urlSpinner = ora('Setting APP_URL variable...').start();
+    const urlResult = await setVariables(owner, repo, { APP_URL: appUrl });
+    if (urlResult.APP_URL.success) {
+      urlSpinner.succeed('APP_URL variable set');
+      appUrlSet = true;
     } else {
-      urlSpinner.fail(`Failed: ${urlResult.GH_WEBHOOK_URL.error}`);
+      urlSpinner.fail(`Failed: ${urlResult.APP_URL.error}`);
       await pressEnter('Fix the issue, then press enter to retry');
     }
   }
 
   // Register Telegram webhook if configured
   if (telegramToken) {
-    const webhookUrl = `${ngrokUrl}/api/telegram/webhook`;
+    const webhookUrl = `${appUrl}/api/telegram/webhook`;
     let tgWebhookSet = false;
     while (!tgWebhookSet) {
       const tgSpinner = ora('Registering Telegram webhook...').start();
@@ -630,7 +622,7 @@ async function main() {
         updateEnvVariable('TELEGRAM_CHAT_ID', chatId);
         printSuccess(`Chat ID saved: ${chatId}`);
 
-        const verified = await verifyRestart(ngrokUrl);
+        const verified = await verifyRestart(appUrl);
         if (verified) {
           printSuccess('Telegram bot is configured and working!');
         } else {
@@ -651,7 +643,7 @@ async function main() {
 
   const providerLabel = agentProvider === 'custom' ? 'Custom / Local' : PROVIDERS[agentProvider].label;
   console.log(`  ${chalk.dim('Repository:')}      ${owner}/${repo}`);
-  console.log(`  ${chalk.dim('Webhook URL:')}     ${ngrokUrl}`);
+  console.log(`  ${chalk.dim('App URL:')}         ${appUrl}`);
   console.log(`  ${chalk.dim('Agent LLM:')}       ${providerLabel} (${agentModel})`);
   console.log(`  ${chalk.dim('GitHub PAT:')}      ${maskSecret(pat)}`);
   for (const [envVar, value] of Object.entries(collectedKeys)) {
@@ -666,7 +658,7 @@ async function main() {
   console.log('  \u2022 GH_WEBHOOK_SECRET');
 
   console.log(chalk.bold('\n  GitHub Variables Set:\n'));
-  console.log('  \u2022 GH_WEBHOOK_URL');
+  console.log('  \u2022 APP_URL');
   console.log('  \u2022 AUTO_MERGE = true');
   console.log('  \u2022 ALLOWED_PATHS = /logs');
   console.log(`  \u2022 LLM_PROVIDER = ${agentProvider}`);
