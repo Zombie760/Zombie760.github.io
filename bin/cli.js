@@ -137,6 +137,23 @@ function init() {
   console.log('\nInstalling dependencies...\n');
   execSync('npm install', { stdio: 'inherit', cwd });
 
+  // Update THEPOPEBOT_VERSION in .env if it exists
+  const envPath = path.join(cwd, '.env');
+  if (fs.existsSync(envPath)) {
+    try {
+      const thepopebotPkg = JSON.parse(fs.readFileSync(path.join(cwd, 'node_modules', 'thepopebot', 'package.json'), 'utf8'));
+      const version = thepopebotPkg.version;
+      let envContent = fs.readFileSync(envPath, 'utf8');
+      if (envContent.match(/^THEPOPEBOT_VERSION=.*/m)) {
+        envContent = envContent.replace(/^THEPOPEBOT_VERSION=.*/m, `THEPOPEBOT_VERSION=${version}`);
+      } else {
+        envContent = envContent.trimEnd() + `\nTHEPOPEBOT_VERSION=${version}\n`;
+      }
+      fs.writeFileSync(envPath, envContent);
+      console.log(`  Updated THEPOPEBOT_VERSION to ${version}`);
+    } catch {}
+  }
+
   console.log('\nDone! Run: npm run setup\n');
 }
 

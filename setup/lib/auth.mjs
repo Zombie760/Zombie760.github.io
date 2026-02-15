@@ -157,11 +157,24 @@ TELEGRAM_VERIFICATION=${telegramVerification || ''}
 GH_WEBHOOK_SECRET=${ghWebhookSecret}
 
 ${apiKeyLines}
+
+# thepopebot version (used by docker-compose and run-job for image tags)
+THEPOPEBOT_VERSION=${getThepopebotVersion()}
 `;
 
   const envPath = join(ROOT_DIR, '.env');
   writeFileSync(envPath, envContent);
   return envPath;
+}
+
+function getThepopebotVersion() {
+  try {
+    const pkgPath = join(ROOT_DIR, 'node_modules', 'thepopebot', 'package.json');
+    const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'));
+    return pkg.version;
+  } catch {
+    return 'latest';
+  }
 }
 
 /**
