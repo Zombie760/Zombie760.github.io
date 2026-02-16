@@ -143,7 +143,7 @@ The `templates/` directory contains **only files that get scaffolded into user p
 │   │   ├── settings/secrets/   # API key management
 │   │   ├── stream/chat/        # Chat streaming route
 │   │   └── api/                # Catch-all API + NextAuth routes
-│   ├── .github/workflows/      # GitHub Actions (auto-merge, build-image, run-job, notify-pr-complete, notify-job-failed)
+│   ├── .github/workflows/      # GitHub Actions (auto-merge, build-image, deploy, run-job, notify-pr-complete, notify-job-failed)
 │   ├── .pi/                    # Pi extensions + skills
 │   ├── docker/                 # Docker files for job, event_handler, and runner containers
 │   ├── docker-compose.yml      # Production deployment with Traefik, event handler, runner
@@ -330,7 +330,7 @@ The Event Handler is a Next.js API route handler (`api/index.js`) that provides 
 | `/api/telegram/register` | POST | Register Telegram webhook URL |
 | `/api/github/webhook` | POST | Receives notifications from GitHub Actions (notify-pr-complete.yml, notify-job-failed.yml) |
 | `/api/jobs/status` | GET | Check status of a running job |
-| `/api/ping` | GET | Health check |
+| `/api/ping` | GET | Health check (public — no API key required) |
 
 ### Security: /api vs Server Actions
 
@@ -595,16 +595,29 @@ docker-compose up      # Start Traefik + event handler + runner
 | Service | Image | Purpose |
 |---------|-------|---------|
 | **traefik** | `traefik:v3` | Reverse proxy with automatic HTTPS (Let's Encrypt) |
-| **event_handler** | `stephengpope/thepopebot:event-handler-${THEPOPEBOT_VERSION}` | Next.js app running `next start` on port 80 |
+| **event-handler** | `stephengpope/thepopebot:event-handler-${THEPOPEBOT_VERSION}` | Next.js app running under PM2 on port 80 |
 | **runner** | `myoung34/github-runner:latest` | Self-hosted GitHub Actions runner for executing jobs |
 
-The event handler Dockerfile is minimal — it installs dependencies and runs `next start`. The pre-built `.next/` directory and all project files are bind-mounted from the host (`.:/app`), with `node_modules` protected by an anonymous volume. This means config changes (CRONS.json, SOUL.md, etc.) take effect without rebuilding.
+The event handler container runs Next.js under PM2 (`pm2-runtime` with `ecosystem.config.cjs`). PM2 enables zero-downtime reloads — `pm2 reload all` sends SIGINT, waits up to 2 minutes for active requests (including SSE chat streams) to drain, then restarts Next.js. The `redeploy-event-handler.yml` workflow uses `docker exec` to pull code, rebuild, and `pm2 reload` without restarting the container. All project files are bind-mounted from the host (`.:/app`), with `node_modules` protected by an anonymous volume. Config changes (CRONS.json, SOUL.md, etc.) take effect without rebuilding.
 
 The runner service registers as a self-hosted GitHub Actions runner, enabling `run-job.yml` to spin up Docker agent containers directly on your server.
 
 ## GitHub Actions
 
 GitHub Actions are scaffolded into the user's project (from `templates/.github/workflows/`) and automate the job lifecycle. No manual webhook configuration needed.
+
+### redeploy-event-handler.yml
+
+Triggers on push to `main`. Runs on the self-hosted runner and uses `docker exec` to pull changes, rebuild, and reload Next.js inside the event handler container via PM2. Skips rebuild for logs-only changes.
+
+```yaml
+on:
+  push:
+    branches: [main]
+# concurrency: group: deploy, cancel-in-progress: true
+# Checks changed files — skips rebuild if only logs/ changed
+# Runs: git reset --hard → npm install → npm run build → pm2 reload
+```
 
 ### build-image.yml
 

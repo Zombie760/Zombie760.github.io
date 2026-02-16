@@ -1,0 +1,37 @@
+name: Deploy Event Handler
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Deploy event handler
+        run: |
+          docker exec thepopebot-event-handler bash -c '
+            # Authenticate git via GitHub CLI
+            echo "${GH_TOKEN}" | gh auth login --with-token
+            gh auth setup-git
+
+            # Check if there are code changes (not just logs)
+            git fetch origin main
+            CHANGED=$(git diff --name-only HEAD origin/main)
+            if ! echo "$CHANGED" | grep -qv "^logs/"; then
+              echo "Logs-only change, skipping rebuild"
+              git reset --hard origin/main
+              exit 0
+            fi
+
+            # Pull, build, reload
+            git reset --hard origin/main
+            npm install --omit=dev
+            npm run build
+            echo "Rebuild complete, reloading Next.js..."
+            npx pm2 reload all
+          '

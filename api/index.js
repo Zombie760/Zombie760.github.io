@@ -30,7 +30,7 @@ function getFireTriggers() {
 }
 
 // Routes that have their own authentication
-const PUBLIC_ROUTES = ['/telegram/webhook', '/github/webhook'];
+const PUBLIC_ROUTES = ['/telegram/webhook', '/github/webhook', '/ping'];
 
 /**
  * Timing-safe string comparison.

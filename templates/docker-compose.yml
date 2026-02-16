@@ -21,7 +21,8 @@ services:
       - traefik_certs:/letsencrypt
     restart: unless-stopped
 
-  event_handler:
+  event-handler:
+    container_name: thepopebot-event-handler
     image: ${EVENT_HANDLER_IMAGE_URL:-stephengpope/thepopebot:event-handler-${THEPOPEBOT_VERSION:-latest}}
     volumes:
       - .:/app
@@ -29,12 +30,19 @@ services:
     labels:
       - traefik.enable=true
       # Set APP_HOSTNAME in .env to the domain from APP_URL (e.g., mybot.example.com)
-      - traefik.http.routers.event_handler.rule=Host(`${APP_HOSTNAME}`)
-      - traefik.http.routers.event_handler.entrypoints=web
-      - traefik.http.services.event_handler.loadbalancer.server.port=80
+      - traefik.http.routers.event-handler.rule=Host(`${APP_HOSTNAME}`)
+      - traefik.http.routers.event-handler.entrypoints=web
+      - traefik.http.services.event-handler.loadbalancer.server.port=80
       ## Uncomment the following lines to enable TLS via Let's Encrypt:
-      # - traefik.http.routers.event_handler.entrypoints=websecure
-      # - traefik.http.routers.event_handler.tls.certresolver=letsencrypt
+      # - traefik.http.routers.event-handler.entrypoints=websecure
+      # - traefik.http.routers.event-handler.tls.certresolver=letsencrypt
+    stop_grace_period: 120s
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/api/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
     restart: unless-stopped
 
   runner:
