@@ -19,8 +19,6 @@ import {
   promptForOptionalKey,
   promptForCustomProvider,
   promptForBraveKey,
-  promptForTelegramToken,
-  generateTelegramWebhookSecret,
   confirm,
   pressEnter,
   maskSecret,
@@ -41,8 +39,6 @@ import {
   encodeLlmSecretsBase64,
   updateEnvVariable,
 } from './lib/auth.mjs';
-import { setTelegramWebhook, validateBotToken, generateVerificationCode } from './lib/telegram.mjs';
-import { runVerificationFlow, verifyRestart } from './lib/telegram-verify.mjs';
 
 const logo = `
  _____ _          ____                  ____        _
@@ -81,7 +77,7 @@ function printInfo(message) {
 async function main() {
   printHeader();
 
-  const TOTAL_STEPS = 8;
+  const TOTAL_STEPS = 7;
   let currentStep = 0;
 
   // Collected values
@@ -90,8 +86,6 @@ async function main() {
   let agentModel = null;
   const collectedKeys = {};
   let braveKey = null;
-  let telegramToken = null;
-  let telegramWebhookSecret = null;
   let webhookSecret = null;
   let owner = null;
   let repo = null;
@@ -488,36 +482,21 @@ async function main() {
     }
   }
 
-  // Step 5: Telegram Setup
-  printStep(++currentStep, TOTAL_STEPS, 'Telegram Setup');
+  // Chat Interfaces (informational)
+  console.log(chalk.dim('\n  Your agent includes a web chat interface at your APP_URL.'));
+  console.log(chalk.dim('  You can also connect additional chat interfaces:\n'));
+  console.log(chalk.dim('    \u2022 Telegram:  ') + chalk.cyan('npm run setup-telegram'));
+  console.log('');
 
-  telegramToken = await promptForTelegramToken();
-
-  if (telegramToken) {
-    const validateSpinner = ora('Validating bot token...').start();
-    const validation = await validateBotToken(telegramToken);
-
-    if (!validation.valid) {
-      validateSpinner.fail(`Invalid token: ${validation.error}`);
-      telegramToken = null;
-    } else {
-      validateSpinner.succeed(`Bot: @${validation.botInfo.username}`);
-      telegramWebhookSecret = await generateTelegramWebhookSecret();
-    }
-  } else {
-    printInfo('Skipped Telegram setup');
-  }
-
-  // Write .env file (now at project root, not event_handler/)
-  const telegramVerification = telegramToken ? generateVerificationCode() : null;
+  // Write .env file
   const providerConfig = agentProvider !== 'custom' ? PROVIDERS[agentProvider] : null;
   const providerEnvKey = providerConfig ? providerConfig.envKey : 'CUSTOM_API_KEY';
   const envPath = writeEnvFile({
     githubToken: pat,
     githubOwner: owner,
     githubRepo: repo,
-    telegramBotToken: telegramToken,
-    telegramWebhookSecret,
+    telegramBotToken: null,
+    telegramWebhookSecret: null,
     ghWebhookSecret: webhookSecret,
     llmProvider: agentProvider,
     llmModel: agentModel,
@@ -525,11 +504,11 @@ async function main() {
     providerApiKey: collectedKeys[providerEnvKey] || '',
     openaiApiKey: collectedKeys['OPENAI_API_KEY'] || '',
     telegramChatId: null,
-    telegramVerification,
+    telegramVerification: null,
   });
   printSuccess(`Created ${envPath}`);
 
-  // Step 6: Start Server
+  // Step 5: Start Server
   printStep(++currentStep, TOTAL_STEPS, 'Start Server');
 
   console.log(chalk.bold('  Start the dev server in a new terminal window:\n'));
@@ -552,10 +531,10 @@ async function main() {
     }
   }
 
-  // Step 7: APP_URL
+  // Step 6: APP_URL
   printStep(++currentStep, TOTAL_STEPS, 'App URL');
 
-  console.log(chalk.dim('  Your app needs a public URL for GitHub webhooks and Telegram.\n'));
+  console.log(chalk.dim('  Your app needs a public URL for GitHub webhooks.\n'));
   console.log(chalk.dim('  Examples:'));
   console.log(chalk.dim('    \u2022 ngrok: ') + chalk.cyan('https://abc123.ngrok.io'));
   console.log(chalk.dim('    \u2022 VPS:   ') + chalk.cyan('https://mybot.example.com'));
@@ -598,45 +577,6 @@ async function main() {
     }
   }
 
-  // Register Telegram webhook if configured
-  if (telegramToken) {
-    const webhookUrl = `${appUrl}/api/telegram/webhook`;
-    let tgWebhookSet = false;
-    while (!tgWebhookSet) {
-      const tgSpinner = ora('Registering Telegram webhook...').start();
-      const tgResult = await setTelegramWebhook(telegramToken, webhookUrl, telegramWebhookSecret);
-      if (tgResult.ok) {
-        tgSpinner.succeed(`Telegram webhook registered: ${webhookUrl}`);
-        tgWebhookSet = true;
-      } else {
-        tgSpinner.fail(`Failed: ${tgResult.description}`);
-        await pressEnter('Fix the issue, then press enter to retry');
-      }
-    }
-
-    // Chat ID verification
-    let chatVerified = false;
-    while (!chatVerified) {
-      const chatId = await runVerificationFlow(telegramVerification);
-
-      if (chatId) {
-        updateEnvVariable('TELEGRAM_CHAT_ID', chatId);
-        printSuccess(`Chat ID saved: ${chatId}`);
-
-        const verified = await verifyRestart(appUrl);
-        if (verified) {
-          printSuccess('Telegram bot is configured and working!');
-        } else {
-          printWarning('Could not verify bot. Check your configuration.');
-        }
-        chatVerified = true;
-      } else {
-        printWarning('Chat ID is required \u2014 the bot will not respond without it.');
-        await pressEnter('Fix the issue, then press enter to retry');
-      }
-    }
-  }
-
   // Step 7: Summary
   printStep(++currentStep, TOTAL_STEPS, 'Setup Complete!');
 
@@ -651,7 +591,6 @@ async function main() {
     console.log(`  ${chalk.dim(`${envVar}:`)}  ${maskSecret(value)}`);
   }
   if (braveKey) console.log(`  ${chalk.dim('Brave Search:')}    ${maskSecret(braveKey)}`);
-  if (telegramToken) console.log(`  ${chalk.dim('Telegram Bot:')}    Webhook registered`);
 
   console.log(chalk.bold('\n  GitHub Secrets Set:\n'));
   console.log('  \u2022 SECRETS');
@@ -667,11 +606,8 @@ async function main() {
 
   console.log(chalk.bold.green('\n  You\'re all set!\n'));
 
-  if (telegramToken) {
-    console.log(chalk.cyan('  Message your Telegram bot to create your first job!'));
-  } else {
-    console.log(chalk.dim('  Use the /api/create-job endpoint to create jobs.'));
-  }
+  console.log(chalk.dim('  Chat with your agent at ') + chalk.cyan(appUrl));
+  console.log(chalk.dim('  To connect Telegram: ') + chalk.cyan('npm run setup-telegram'));
 
   console.log('\n');
 }
