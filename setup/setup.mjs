@@ -285,6 +285,7 @@ async function main() {
   console.log(chalk.dim(`  Create a fine-grained PAT scoped to ${chalk.bold(`${owner}/${repo}`)} only:\n`));
   console.log(chalk.dim('    \u2022 Repository access: Only select repositories \u2192 ') + chalk.bold(`${owner}/${repo}`));
   console.log(chalk.dim('    \u2022 Actions: Read and write'));
+  console.log(chalk.dim('    \u2022 Administration: Read and write (required for self-hosted runners)'));
   console.log(chalk.dim('    \u2022 Contents: Read and write'));
   console.log(chalk.dim('    \u2022 Metadata: Read-only (required, auto-selected)'));
   console.log(chalk.dim('    \u2022 Pull requests: Read and write'));

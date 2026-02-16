@@ -131,7 +131,7 @@ export function writeEnvFile(config) {
 AUTH_SECRET=${authSecret}
 AUTH_TRUST_HOST=true
 
-# GitHub Personal Access Token (fine-grained: Actions, Contents, Metadata, Pull requests)
+# GitHub Personal Access Token (fine-grained: Actions, Administration, Contents, Metadata, Pull requests)
 GH_TOKEN=${githubToken}
 
 # Repository info
