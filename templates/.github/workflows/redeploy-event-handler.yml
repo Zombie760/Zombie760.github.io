@@ -15,7 +15,8 @@ jobs:
       - name: Deploy event handler
         run: |
           docker exec thepopebot-event-handler bash -c '
-            # Authenticate git via GitHub CLI
+            # Load GH_TOKEN and authenticate git via GitHub CLI
+            export GH_TOKEN=$(grep "^GH_TOKEN=" /app/.env | cut -d= -f2-)
             echo "${GH_TOKEN}" | gh auth login --with-token
             gh auth setup-git
 
