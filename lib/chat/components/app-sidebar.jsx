@@ -97,6 +97,26 @@ export function AppSidebar({ user }) {
             </Tooltip>
           </SidebarMenuItem>
 
+          {/* Swarm */}
+          <SidebarMenuItem>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SidebarMenuButton
+                  className={collapsed ? 'justify-center' : ''}
+                  onClick={() => {
+                    window.location.href = '/swarm';
+                  }}
+                >
+                  <SwarmIcon size={16} />
+                  {!collapsed && <span>Swarm</span>}
+                </SidebarMenuButton>
+              </TooltipTrigger>
+              {collapsed && (
+                <TooltipContent side="right">Swarm</TooltipContent>
+              )}
+            </Tooltip>
+          </SidebarMenuItem>
+
           {/* Notifications */}
           <SidebarMenuItem>
             <Tooltip>
@@ -127,26 +147,6 @@ export function AppSidebar({ user }) {
               </TooltipTrigger>
               {collapsed && (
                 <TooltipContent side="right">Notifications</TooltipContent>
-              )}
-            </Tooltip>
-          </SidebarMenuItem>
-
-          {/* Swarm */}
-          <SidebarMenuItem>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <SidebarMenuButton
-                  className={collapsed ? 'justify-center' : ''}
-                  onClick={() => {
-                    window.location.href = '/swarm';
-                  }}
-                >
-                  <SwarmIcon size={16} />
-                  {!collapsed && <span>Swarm</span>}
-                </SidebarMenuButton>
-              </TooltipTrigger>
-              {collapsed && (
-                <TooltipContent side="right">Swarm</TooltipContent>
               )}
             </Tooltip>
           </SidebarMenuItem>
