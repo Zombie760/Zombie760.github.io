@@ -43,15 +43,16 @@
 │           │                  └────────┬────────┘                     │
 │           │                           │                              │
 │           │                           4a (auto-merge.yml)            │
-│           │                           4b (update-event-handler.yml)  │
+│           │                           4b (rebuild-event-handler.yml) │
 │           │                           │                              │
-│           5 (Telegram notification)   │                              │
+│           5 (notify-pr-complete.yml / │                              │
+│           │  notify-job-failed.yml)   │                              │
 │           └───────────────────────────┘                              │
 │                                                                      │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
-You talk to your bot on Telegram (or hit a webhook). The Event Handler creates a job branch. GitHub Actions spins up a Docker container with the Pi coding agent. The agent does the work, commits the results, and opens a PR. Auto-merge handles the rest. You get a Telegram notification when it's done.
+You interact with your bot via the web chat interface or Telegram (optional). The Event Handler creates a job branch. GitHub Actions spins up a Docker container with the Pi coding agent. The agent does the work, commits the results, and opens a PR. Auto-merge handles the rest. You get a notification when it's done.
 
 ---
 
@@ -77,9 +78,10 @@ You just bring your own [Anthropic API key](https://console.anthropic.com/).
 | **npm** | Included with Node.js |
 | **Git** | [git-scm.com](https://git-scm.com) |
 | **GitHub CLI** | [cli.github.com](https://cli.github.com) |
+| **Docker + Docker Compose** | [docker.com](https://docs.docker.com/get-docker/) |
 | **ngrok*** | [ngrok.com](https://ngrok.com/download) |
 
-*\*ngrok is only required for local development. Production deployments don't need it.*
+*\*ngrok is only required for local installs without port forwarding. VPS/cloud deployments don't need it.*
 
 ### Three steps
 
@@ -99,20 +101,26 @@ npm run setup
 ```
 
 The wizard walks you through everything:
-- Checks prerequisites (Node.js, Git, GitHub CLI, ngrok)
+- Checks prerequisites (Node.js, Git, GitHub CLI)
 - Creates a GitHub repository and pushes your initial commit
 - Creates a GitHub Personal Access Token (scoped to your repo)
-- Collects API keys (Anthropic required; OpenAI, Groq, Brave optional)
+- Collects API keys (Anthropic required; OpenAI, Brave optional)
 - Sets GitHub repository secrets and variables
-- Sets up a Telegram bot (optional)
-- Starts the dev server + ngrok, generates `.env`
-- Registers webhooks and verifies everything works
+- Generates `.env`
+- Builds the project
 
-**Step 3** — Start using your agent:
+**Step 3** — Start your agent:
 
-- **Telegram**: Message your bot to create jobs conversationally. Ask it to do tasks, check job status, or just chat.
-- **Webhook**: Send a POST to `/api/create-job` with your API key to create jobs programmatically.
-- **Cron**: Edit `config/CRONS.json` to schedule recurring jobs.
+```bash
+docker compose up -d
+```
+
+- **Web Chat**: Visit your APP_URL to chat with your agent, create jobs, upload files
+- **Telegram** (optional): Run `npm run setup-telegram` to connect a Telegram bot
+- **Webhook**: Send a POST to `/api/create-job` with your API key to create jobs programmatically
+- **Cron**: Edit `config/CRONS.json` to schedule recurring jobs
+
+> **Local installs**: Your server needs to be reachable from the internet for GitHub webhooks and Telegram. On a VPS/cloud server, your APP_URL is just your domain. For local development, use [ngrok](https://ngrok.com) (`ngrok http 80`) or port forwarding to expose your machine. If your ngrok URL changes, update APP_URL in `.env` and the GitHub repository variable, and re-run `npm run setup-telegram` if Telegram is configured.
 
 ---
 
@@ -165,6 +173,12 @@ npx thepopebot reset config/CRONS.json   # accept the new template
 
 Or manually merge the changes if you want to keep some of your edits.
 
+After updating, restart Docker to pick up new image versions:
+
+```bash
+docker compose up -d
+```
+
 ---
 
 ## Docs
@@ -174,6 +188,6 @@ Or manually merge the changes if you want to keep some of your edits.
 | [Architecture](docs/ARCHITECTURE.md) | Two-layer design, file structure, API endpoints, GitHub Actions, Docker agent |
 | [Configuration](docs/CONFIGURATION.md) | Environment variables, GitHub secrets, repo variables, ngrok, Telegram setup |
 | [Customization](docs/CUSTOMIZATION.md) | Personality, skills, operating system files, using your bot, security details |
+| [Chat Integrations](docs/CHAT_INTEGRATIONS.md) | Web chat, Telegram, adding new channels |
 | [Auto-Merge](docs/AUTO_MERGE.md) | Auto-merge controls, ALLOWED_PATHS configuration |
 | [How to Use Pi](docs/HOW_TO_USE_PI.md) | Guide to the Pi coding agent |
-| [Security](docs/SECURITY_TODO.md) | Security hardening plan |

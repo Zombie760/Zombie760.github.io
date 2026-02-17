@@ -7,7 +7,7 @@ The `config/` directory is the agent's brain — it defines who the agent is and
 | File | Purpose |
 |------|---------|
 | `SOUL.md` | Agent identity, personality traits, and values |
-| `CHATBOT.md` | System prompt for Telegram chat |
+| `CHATBOT.md` | System prompt for all chat (web + Telegram) |
 | `JOB_SUMMARY.md` | Prompt for summarizing completed jobs |
 | `HEARTBEAT.md` | Self-monitoring behavior |
 | `AGENT.md` | Agent runtime environment |
@@ -20,14 +20,31 @@ Each job automatically gets its own `logs/<JOB_ID>/job.md` file created by the e
 
 ## Using Your Bot
 
-There are currently two ways to trigger jobs — Telegram and webhooks — with more integrations coming soon.
+There are several ways to interact with your agent — web chat, Telegram, webhooks, and scheduled jobs. See [Chat Integrations](CHAT_INTEGRATIONS.md) for details on adding other channels.
 
-### Telegram Chat
+### Web Chat
 
-Message your bot directly to chat or create jobs. The bot uses Claude to understand your requests and can:
+Visit your APP_URL to access the built-in web chat interface. Features include:
 
-- **Chat** - Have a conversation, ask questions, get information
-- **Create jobs** - Say "create a job to..." and the bot will spawn an autonomous agent
+- **Streaming responses** — AI responses stream in real-time
+- **File uploads** — Send images, PDFs, and text files
+- **Chat history** — Browse and resume past conversations
+- **Job management** — Create and monitor agent jobs from the Swarm page
+
+The web chat is available out of the box after setup — no additional configuration needed.
+
+### Telegram Chat (Optional)
+
+Connect a Telegram bot to chat with your agent on the go. Set up with:
+
+```bash
+npm run setup-telegram
+```
+
+The bot uses your LLM to understand requests and can:
+
+- **Chat** — Have a conversation, ask questions, get information
+- **Create jobs** — Say "create a job to..." and the bot will spawn an autonomous agent
 
 **Security:** During setup, you'll verify your chat ID. Once configured, the bot only responds to messages from your authorized chat and ignores everyone else.
 
@@ -45,11 +62,13 @@ The bot automatically detects voice messages and transcribes them before process
 Create jobs programmatically via HTTP:
 
 ```bash
-curl -X POST http://localhost:3000/api/create-job \
+curl -X POST https://your-app-url/api/create-job \
   -H "Content-Type: application/json" \
   -H "x-api-key: YOUR_API_KEY" \
   -d '{"job": "Update the README with installation instructions"}'
 ```
+
+API keys are managed via the web UI Settings page.
 
 ### Scheduled Jobs
 

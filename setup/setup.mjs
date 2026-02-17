@@ -508,18 +508,27 @@ async function main() {
   });
   printSuccess(`Created ${envPath}`);
 
-  // Step 5: Start Server
-  printStep(++currentStep, TOTAL_STEPS, 'Start Server');
+  // Step 5: Build & Start Server
+  printStep(++currentStep, TOTAL_STEPS, 'Build & Start Server');
 
-  console.log(chalk.bold('  Start the dev server in a new terminal window:\n'));
-  console.log(chalk.cyan('     npm run dev\n'));
+  // Build
+  console.log(chalk.dim('  Building Next.js...\n'));
+  try {
+    execSync('npm run build', { stdio: 'inherit' });
+    printSuccess('Build complete');
+  } catch {
+    printError('Build failed — run npm run build manually');
+  }
+
+  console.log(chalk.bold('\n  Start Docker in a new terminal window:\n'));
+  console.log(chalk.cyan('     docker compose up -d\n'));
 
   let serverReachable = false;
   while (!serverReachable) {
-    await pressEnter('Press enter once the server is running');
+    await pressEnter('Press enter once Docker is running');
     const serverSpinner = ora('Checking server...').start();
     try {
-      const response = await fetch('http://localhost:3000/api/ping', {
+      const response = await fetch('http://localhost:80/api/ping', {
         method: 'GET',
         signal: AbortSignal.timeout(5000),
       });
@@ -527,7 +536,7 @@ async function main() {
       serverSpinner.succeed('Server is running');
       serverReachable = true;
     } catch {
-      serverSpinner.fail('Could not reach server on localhost:3000');
+      serverSpinner.fail('Could not reach server on localhost:80');
     }
   }
 
@@ -603,15 +612,6 @@ async function main() {
   console.log('  \u2022 ALLOWED_PATHS = /logs');
   console.log(`  \u2022 LLM_PROVIDER = ${agentProvider}`);
   console.log(`  \u2022 LLM_MODEL = ${agentModel}`);
-
-  // Build
-  console.log(chalk.dim('\n  Building Next.js...\n'));
-  try {
-    execSync('npm run build', { stdio: 'inherit' });
-    printSuccess('Build complete');
-  } catch {
-    printError('Build failed — run npm run build manually');
-  }
 
   console.log(chalk.bold.green('\n  You\'re all set!\n'));
 
