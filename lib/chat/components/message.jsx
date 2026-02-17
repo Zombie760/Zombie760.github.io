@@ -1,11 +1,16 @@
 'use client';
 
+import { useState, useRef, useEffect } from 'react';
 import { Streamdown } from 'streamdown';
 import { cn } from '../utils.js';
-import { SpinnerIcon, FileTextIcon } from './icons.js';
+import { SpinnerIcon, FileTextIcon, CopyIcon, CheckIcon, RefreshIcon, SquarePenIcon } from './icons.js';
 
-export function PreviewMessage({ message, isLoading }) {
+export function PreviewMessage({ message, isLoading, onRetry, onEdit }) {
   const isUser = message.role === 'user';
+  const [copied, setCopied] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [editText, setEditText] = useState('');
+  const textareaRef = useRef(null);
 
   // Extract text from parts (AI SDK v5+) or fall back to content
   const text =
@@ -21,65 +26,183 @@ export function PreviewMessage({ message, isLoading }) {
   const imageParts = fileParts.filter((p) => p.mediaType?.startsWith('image/'));
   const otherFileParts = fileParts.filter((p) => !p.mediaType?.startsWith('image/'));
 
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {}
+  };
+
+  const handleEditStart = () => {
+    setEditText(text);
+    setEditing(true);
+  };
+
+  const handleEditCancel = () => {
+    setEditing(false);
+    setEditText('');
+  };
+
+  const handleEditSubmit = () => {
+    const trimmed = editText.trim();
+    if (trimmed && trimmed !== text) {
+      onEdit?.(message, trimmed);
+    }
+    setEditing(false);
+    setEditText('');
+  };
+
+  // Auto-resize and focus textarea when entering edit mode
+  useEffect(() => {
+    if (editing && textareaRef.current) {
+      const ta = textareaRef.current;
+      ta.focus();
+      ta.style.height = 'auto';
+      ta.style.height = `${ta.scrollHeight}px`;
+      // Move cursor to end
+      ta.setSelectionRange(ta.value.length, ta.value.length);
+    }
+  }, [editing]);
+
   return (
     <div
       className={cn(
-        'flex gap-4 w-full',
+        'group flex gap-4 w-full',
         isUser ? 'justify-end' : 'justify-start'
       )}
     >
-      <div
-        className={cn(
-          'max-w-[85%] rounded-xl px-4 py-3 text-sm leading-relaxed',
-          isUser
-            ? 'bg-primary text-primary-foreground'
-            : 'bg-muted text-foreground'
-        )}
-      >
-        {imageParts.length > 0 && (
-          <div className="mb-2 flex flex-wrap gap-2">
-            {imageParts.map((part, i) => (
-              <img
-                key={i}
-                src={part.url}
-                alt="attachment"
-                className="max-h-64 max-w-full rounded-lg object-contain"
-              />
-            ))}
+      <div className="flex flex-col max-w-[80%]">
+        {editing ? (
+          <div className="flex flex-col gap-2">
+            <textarea
+              ref={textareaRef}
+              value={editText}
+              onChange={(e) => {
+                setEditText(e.target.value);
+                e.target.style.height = 'auto';
+                e.target.style.height = `${e.target.scrollHeight}px`;
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  handleEditSubmit();
+                }
+                if (e.key === 'Escape') {
+                  handleEditCancel();
+                }
+              }}
+              className="w-full resize-none rounded-xl border border-border bg-muted px-4 py-3 text-sm leading-relaxed text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+              rows={1}
+            />
+            <div className="flex justify-end gap-2">
+              <button
+                onClick={handleEditCancel}
+                className="rounded-md px-3 py-1 text-xs text-muted-foreground hover:text-foreground"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleEditSubmit}
+                className="rounded-md bg-primary px-3 py-1 text-xs text-primary-foreground hover:opacity-80"
+              >
+                Send
+              </button>
+            </div>
           </div>
-        )}
-        {otherFileParts.length > 0 && (
-          <div className="mb-2 flex flex-wrap gap-2">
-            {otherFileParts.map((part, i) => (
+        ) : (
+          <>
+            <div
+              className={cn(
+                'rounded-xl px-4 py-3 text-sm leading-relaxed',
+                isUser
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-muted text-foreground'
+              )}
+            >
+              {imageParts.length > 0 && (
+                <div className="mb-2 flex flex-wrap gap-2">
+                  {imageParts.map((part, i) => (
+                    <img
+                      key={i}
+                      src={part.url}
+                      alt="attachment"
+                      className="max-h-64 max-w-full rounded-lg object-contain"
+                    />
+                  ))}
+                </div>
+              )}
+              {otherFileParts.length > 0 && (
+                <div className="mb-2 flex flex-wrap gap-2">
+                  {otherFileParts.map((part, i) => (
+                    <div
+                      key={i}
+                      className={cn(
+                        'inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs',
+                        isUser
+                          ? 'bg-primary-foreground/20'
+                          : 'bg-foreground/10'
+                      )}
+                    >
+                      <FileTextIcon size={12} />
+                      <span className="max-w-[150px] truncate">
+                        {part.name || part.mediaType || 'file'}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {text ? (
+                isUser ? (
+                  <div className="whitespace-pre-wrap break-words">{text}</div>
+                ) : (
+                  <Streamdown mode={isLoading ? 'streaming' : 'static'}>{text}</Streamdown>
+                )
+              ) : isLoading ? (
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <SpinnerIcon size={14} />
+                  <span>Working...</span>
+                </div>
+              ) : null}
+            </div>
+
+            {/* Action toolbar */}
+            {!isLoading && text && (
               <div
-                key={i}
                 className={cn(
-                  'inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs',
-                  isUser
-                    ? 'bg-primary-foreground/20'
-                    : 'bg-foreground/10'
+                  'flex gap-1 mt-1 opacity-0 transition-opacity group-hover:opacity-100',
+                  isUser ? 'justify-end' : 'justify-start'
                 )}
               >
-                <FileTextIcon size={12} />
-                <span className="max-w-[150px] truncate">
-                  {part.name || part.mediaType || 'file'}
-                </span>
+                <button
+                  onClick={handleCopy}
+                  className="rounded-md p-1 text-muted-foreground hover:text-foreground hover:bg-muted"
+                  aria-label="Copy message"
+                >
+                  {copied ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
+                </button>
+                {onRetry && (
+                  <button
+                    onClick={() => onRetry(message)}
+                    className="rounded-md p-1 text-muted-foreground hover:text-foreground hover:bg-muted"
+                    aria-label="Retry"
+                  >
+                    <RefreshIcon size={14} />
+                  </button>
+                )}
+                {isUser && onEdit && (
+                  <button
+                    onClick={handleEditStart}
+                    className="rounded-md p-1 text-muted-foreground hover:text-foreground hover:bg-muted"
+                    aria-label="Edit message"
+                  >
+                    <SquarePenIcon size={14} />
+                  </button>
+                )}
               </div>
-            ))}
-          </div>
+            )}
+          </>
         )}
-        {text ? (
-          isUser ? (
-            <div className="whitespace-pre-wrap break-words">{text}</div>
-          ) : (
-            <Streamdown mode={isLoading ? 'streaming' : 'static'}>{text}</Streamdown>
-          )
-        ) : isLoading ? (
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <SpinnerIcon size={14} />
-            <span>Working...</span>
-          </div>
-        ) : null}
       </div>
     </div>
   );

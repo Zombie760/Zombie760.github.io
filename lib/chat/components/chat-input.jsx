@@ -115,7 +115,7 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
   const canSend = input.trim() || files.length > 0;
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-2 pb-4 md:px-4">
+    <div className="mx-auto w-full max-w-4xl px-4 pb-4 md:px-6">
       <form onSubmit={handleSubmit} className="relative">
         <div
           className={cn(

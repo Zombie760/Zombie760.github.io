@@ -5,7 +5,7 @@ import { PreviewMessage, ThinkingMessage } from './message.js';
 import { Greeting } from './greeting.js';
 import { ArrowDown } from 'lucide-react';
 
-export function Messages({ messages, status }) {
+export function Messages({ messages, status, onRetry, onEdit }) {
   const containerRef = useRef(null);
   const endRef = useRef(null);
   const [isAtBottom, setIsAtBottom] = useState(true);
@@ -41,7 +41,7 @@ export function Messages({ messages, status }) {
         className="absolute inset-0 touch-pan-y overflow-y-auto"
         ref={containerRef}
       >
-        <div className="mx-auto flex min-w-0 max-w-4xl flex-col gap-4 px-2 py-4 md:gap-6 md:px-4">
+        <div className="mx-auto flex min-w-0 max-w-4xl flex-col gap-4 px-4 py-4 md:gap-6 md:px-6">
           {messages.length === 0 && <Greeting />}
 
           {messages.map((message, index) => (
@@ -49,6 +49,8 @@ export function Messages({ messages, status }) {
               key={message.id}
               message={message}
               isLoading={status === 'streaming' && index === messages.length - 1}
+              onRetry={onRetry}
+              onEdit={onEdit}
             />
           ))}
 

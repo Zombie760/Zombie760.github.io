@@ -2,7 +2,7 @@
 
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { Messages } from './messages.js';
 import { ChatInput } from './chat-input.js';
 import { ChatHeader } from './chat-header.js';
@@ -28,6 +28,8 @@ export function Chat({ chatId, initialMessages = [] }) {
     stop,
     error,
     sendMessage,
+    regenerate,
+    setMessages,
   } = useChat({
     id: chatId,
     messages: initialMessages,
@@ -35,16 +37,16 @@ export function Chat({ chatId, initialMessages = [] }) {
     onError: (err) => console.error('Chat error:', err),
   });
 
-  // After first exchange, update URL and notify sidebar
+  // After first message sent, update URL and notify sidebar
   useEffect(() => {
-    if (!hasNavigated.current && messages.length >= 2 && !window.location.pathname.includes(chatId)) {
+    if (!hasNavigated.current && messages.length >= 1 && status !== 'ready' && window.location.pathname !== `/chat/${chatId}`) {
       hasNavigated.current = true;
       window.history.replaceState({}, '', `/chat/${chatId}`);
       window.dispatchEvent(new Event('chatsupdated'));
       // Dispatch again after delay to pick up async title update
       setTimeout(() => window.dispatchEvent(new Event('chatsupdated')), 5000);
     }
-  }, [messages.length, chatId]);
+  }, [messages.length, status, chatId]);
 
   const handleSend = () => {
     if (!input.trim() && files.length === 0) return;
@@ -67,11 +69,44 @@ export function Chat({ chatId, initialMessages = [] }) {
     }
   };
 
+  const handleRetry = useCallback((message) => {
+    if (message.role === 'assistant') {
+      regenerate({ messageId: message.id });
+    } else {
+      // User message — find the next assistant message and regenerate it
+      const idx = messages.findIndex((m) => m.id === message.id);
+      const nextAssistant = messages.slice(idx + 1).find((m) => m.role === 'assistant');
+      if (nextAssistant) {
+        regenerate({ messageId: nextAssistant.id });
+      } else {
+        // No assistant response yet — extract text and resend
+        const text =
+          message.parts
+            ?.filter((p) => p.type === 'text')
+            .map((p) => p.text)
+            .join('\n') ||
+          message.content ||
+          '';
+        if (text.trim()) {
+          sendMessage({ text });
+        }
+      }
+    }
+  }, [messages, regenerate, sendMessage]);
+
+  const handleEdit = useCallback((message, newText) => {
+    const idx = messages.findIndex((m) => m.id === message.id);
+    if (idx === -1) return;
+    // Truncate conversation to before this message, then send edited text
+    setMessages(messages.slice(0, idx));
+    sendMessage({ text: newText });
+  }, [messages, setMessages, sendMessage]);
+
   return (
     <div className="flex h-svh flex-col">
       <ChatHeader chatId={chatId} />
       {messages.length === 0 ? (
-        <div className="flex flex-1 flex-col items-center justify-center px-2 md:px-4">
+        <div className="flex flex-1 flex-col items-center justify-center px-4 md:px-6">
           <div className="w-full max-w-4xl">
             <Greeting />
             {error && (
@@ -94,7 +129,7 @@ export function Chat({ chatId, initialMessages = [] }) {
         </div>
       ) : (
         <>
-          <Messages messages={messages} status={status} />
+          <Messages messages={messages} status={status} onRetry={handleRetry} onEdit={handleEdit} />
           {error && (
             <div className="mx-auto w-full max-w-4xl px-2 md:px-4">
               <div className="rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-2 text-sm text-destructive">
