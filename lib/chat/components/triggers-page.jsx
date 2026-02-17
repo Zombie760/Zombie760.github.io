@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { PageLayout } from './page-layout.js';
 import { ZapIcon, ChevronDownIcon } from './icons.js';
 import { getSwarmConfig } from '../actions.js';
 
@@ -10,6 +9,31 @@ const typeBadgeStyles = {
   command: 'bg-blue-500/10 text-blue-500',
   webhook: 'bg-orange-500/10 text-orange-500',
 };
+
+const typeOrder = { agent: 0, command: 1, webhook: 2 };
+
+function sortByType(items) {
+  return [...items].sort((a, b) => {
+    const actions_a = a.actions || [];
+    const actions_b = b.actions || [];
+    const ta = typeOrder[(actions_a[0]?.type) || 'agent'] ?? 99;
+    const tb = typeOrder[(actions_b[0]?.type) || 'agent'] ?? 99;
+    return ta - tb;
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Group Header
+// ─────────────────────────────────────────────────────────────────────────────
+
+function GroupHeader({ label, count }) {
+  return (
+    <div className="flex items-center gap-2 pt-2 pb-1">
+      <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{label}</span>
+      <span className="text-xs text-muted-foreground">({count})</span>
+    </div>
+  );
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Action Card (nested inside trigger)
@@ -122,7 +146,7 @@ function TriggerCard({ trigger }) {
 // Main Page
 // ─────────────────────────────────────────────────────────────────────────────
 
-export function TriggersPage({ session }) {
+export function TriggersPage() {
   const [triggers, setTriggers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -135,19 +159,16 @@ export function TriggersPage({ session }) {
       .finally(() => setLoading(false));
   }, []);
 
-  const enabledCount = triggers.filter((t) => t.enabled !== false).length;
+  const enabled = sortByType(triggers.filter((t) => t.enabled !== false));
+  const disabled = sortByType(triggers.filter((t) => t.enabled === false));
 
   return (
-    <PageLayout session={session}>
-      {/* Header */}
-      <div className="mb-6">
-        <h1 className="text-2xl font-semibold">Triggers</h1>
-        {!loading && (
-          <p className="text-sm text-muted-foreground mt-1">
-            {triggers.length} trigger{triggers.length !== 1 ? 's' : ''} configured, {enabledCount} enabled
-          </p>
-        )}
-      </div>
+    <>
+      {!loading && (
+        <p className="text-sm text-muted-foreground mb-4">
+          {triggers.length} trigger{triggers.length !== 1 ? 's' : ''} configured, {enabled.length} enabled
+        </p>
+      )}
 
       {loading ? (
         <div className="flex flex-col gap-3">
@@ -167,11 +188,24 @@ export function TriggersPage({ session }) {
         </div>
       ) : (
         <div className="flex flex-col gap-3">
-          {triggers.map((trigger, i) => (
-            <TriggerCard key={i} trigger={trigger} />
-          ))}
+          {enabled.length > 0 && (
+            <>
+              <GroupHeader label="Enabled" count={enabled.length} />
+              {enabled.map((trigger, i) => (
+                <TriggerCard key={`enabled-${i}`} trigger={trigger} />
+              ))}
+            </>
+          )}
+          {disabled.length > 0 && (
+            <>
+              <GroupHeader label="Disabled" count={disabled.length} />
+              {disabled.map((trigger, i) => (
+                <TriggerCard key={`disabled-${i}`} trigger={trigger} />
+              ))}
+            </>
+          )}
         </div>
       )}
-    </PageLayout>
+    </>
   );
 }

@@ -1,7 +1,5 @@
-import { auth } from 'thepopebot/auth';
-import { TriggersPage } from 'thepopebot/chat';
+import { redirect } from 'next/navigation';
 
-export default async function TriggersRoute() {
-  const session = await auth();
-  return <TriggersPage session={session} />;
+export default function TriggersRoute() {
+  redirect('/settings/triggers');
 }

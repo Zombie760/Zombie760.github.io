@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { SidebarHistoryItem } from './sidebar-history-item.js';
 import { SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu } from './ui/sidebar.js';
 import { useChatNav } from './chat-nav-context.js';
-import { getChats, deleteChat } from '../actions.js';
+import { getChats, deleteChat, renameChat, starChat } from '../actions.js';
 
 function groupChatsByDate(chats) {
   const now = new Date();
@@ -14,6 +14,7 @@ function groupChatsByDate(chats) {
   const last30Days = new Date(today.getTime() - 30 * 86400000);
 
   const groups = {
+    Starred: [],
     Today: [],
     Yesterday: [],
     'Last 7 Days': [],
@@ -22,6 +23,10 @@ function groupChatsByDate(chats) {
   };
 
   for (const chat of chats) {
+    if (chat.starred) {
+      groups.Starred.push(chat);
+      continue;
+    }
     const date = new Date(chat.updatedAt);
     if (date >= today) {
       groups.Today.push(chat);
@@ -68,13 +73,31 @@ export function SidebarHistory() {
   }, []);
 
   const handleDelete = async (chatId) => {
+    setChats((prev) => prev.filter((c) => c.id !== chatId));
     const { success } = await deleteChat(chatId);
     if (success) {
-      setChats((prev) => prev.filter((c) => c.id !== chatId));
       if (chatId === activeChatId) {
         navigateToChat(null);
       }
+    } else {
+      loadChats();
     }
+  };
+
+  const handleStar = async (chatId) => {
+    setChats((prev) =>
+      prev.map((c) => (c.id === chatId ? { ...c, starred: c.starred ? 0 : 1 } : c))
+    );
+    const { success } = await starChat(chatId);
+    if (!success) loadChats();
+  };
+
+  const handleRename = async (chatId, title) => {
+    setChats((prev) =>
+      prev.map((c) => (c.id === chatId ? { ...c, title } : c))
+    );
+    const { success } = await renameChat(chatId, title);
+    if (!success) loadChats();
   };
 
   if (loading && chats.length === 0) {
@@ -120,6 +143,8 @@ export function SidebarHistory() {
                       chat={chat}
                       isActive={chat.id === activeChatId}
                       onDelete={handleDelete}
+                      onStar={handleStar}
+                      onRename={handleRename}
                     />
                   ))}
                 </SidebarMenu>

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { PageLayout } from './page-layout.js';
 import { ClockIcon, SpinnerIcon, ChevronDownIcon } from './icons.js';
 import { getSwarmConfig } from '../actions.js';
 
@@ -57,6 +56,29 @@ const typeBadgeStyles = {
   command: 'bg-blue-500/10 text-blue-500',
   webhook: 'bg-orange-500/10 text-orange-500',
 };
+
+const typeOrder = { agent: 0, command: 1, webhook: 2 };
+
+function sortByType(items) {
+  return [...items].sort((a, b) => {
+    const ta = typeOrder[a.type || 'agent'] ?? 99;
+    const tb = typeOrder[b.type || 'agent'] ?? 99;
+    return ta - tb;
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Group Header
+// ─────────────────────────────────────────────────────────────────────────────
+
+function GroupHeader({ label, count }) {
+  return (
+    <div className="flex items-center gap-2 pt-2 pb-1">
+      <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{label}</span>
+      <span className="text-xs text-muted-foreground">({count})</span>
+    </div>
+  );
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Cron Card
@@ -149,7 +171,7 @@ function CronCard({ cron }) {
 // Main Page
 // ─────────────────────────────────────────────────────────────────────────────
 
-export function CronsPage({ session }) {
+export function CronsPage() {
   const [crons, setCrons] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -162,19 +184,16 @@ export function CronsPage({ session }) {
       .finally(() => setLoading(false));
   }, []);
 
-  const enabledCount = crons.filter((c) => c.enabled !== false).length;
+  const enabled = sortByType(crons.filter((c) => c.enabled !== false));
+  const disabled = sortByType(crons.filter((c) => c.enabled === false));
 
   return (
-    <PageLayout session={session}>
-      {/* Header */}
-      <div className="mb-6">
-        <h1 className="text-2xl font-semibold">Cron Jobs</h1>
-        {!loading && (
-          <p className="text-sm text-muted-foreground mt-1">
-            {crons.length} job{crons.length !== 1 ? 's' : ''} configured, {enabledCount} enabled
-          </p>
-        )}
-      </div>
+    <>
+      {!loading && (
+        <p className="text-sm text-muted-foreground mb-4">
+          {crons.length} job{crons.length !== 1 ? 's' : ''} configured, {enabled.length} enabled
+        </p>
+      )}
 
       {loading ? (
         <div className="flex flex-col gap-3">
@@ -194,11 +213,24 @@ export function CronsPage({ session }) {
         </div>
       ) : (
         <div className="flex flex-col gap-3">
-          {crons.map((cron, i) => (
-            <CronCard key={i} cron={cron} />
-          ))}
+          {enabled.length > 0 && (
+            <>
+              <GroupHeader label="Enabled" count={enabled.length} />
+              {enabled.map((cron, i) => (
+                <CronCard key={`enabled-${i}`} cron={cron} />
+              ))}
+            </>
+          )}
+          {disabled.length > 0 && (
+            <>
+              <GroupHeader label="Disabled" count={disabled.length} />
+              {disabled.map((cron, i) => (
+                <CronCard key={`disabled-${i}`} cron={cron} />
+              ))}
+            </>
+          )}
         </div>
       )}
-    </PageLayout>
+    </>
   );
 }

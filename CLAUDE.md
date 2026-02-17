@@ -22,52 +22,36 @@ The `templates/` directory contains **only files that get scaffolded into user p
 ## Two-Layer Architecture
 
 ```
-┌──────────────────────────────────────────────────────────────────────────┐
-│                          thepopebot Architecture                          │
-├──────────────────────────────────────────────────────────────────────────┤
-│                                                                          │
-│   ┌──────────────────┐                                                   │
-│   │  Event Handler   │                                                   │
-│   │  ┌────────────┐  │         1. create-job                            │
-│   │  │  Telegram  │  │ ─────────────────────────►  ┌──────────────────┐ │
-│   │  │   Cron     │  │                             │      GitHub      │ │
-│   │  │   Chat     │  │ ◄─────────────────────────  │  (job/* branch)  │ │
-│   │  └────────────┘  │   5. notify-pr-complete.yml calls      └────────┬─────────┘ │
-│   │                  │      /api/github/webhook               │           │
-│   └──────────────────┘                                      │           │
-│            │                                                │           │
-│            │                           2. run-job.yml    │           │
-│            ▼                              triggers          │           │
-│   ┌──────────────────┐                                      │           │
-│   │ Telegram notifies│                                      ▼           │
-│   │ user of job done │                         ┌──────────────────────┐ │
-│   └──────────────────┘                         │    Docker Agent      │ │
-│                                                │  ┌────────────────┐  │ │
-│                                                │  │ 1. Clone       │  │ │
-│                                                │  │ 2. Run Pi      │  │ │
-│                                                │  │ 3. Commit      │  │ │
-│                                                │  │ 4. Create PR   │  │ │
-│                                                │  └────────────────┘  │ │
-│                                                └──────────┬───────────┘ │
-│                                                           │             │
-│                                                           │ 3. PR opens │
-│                                                           ▼             │
-│                                                ┌──────────────────────┐ │
-│                                                │       GitHub         │ │
-│                                                │    (PR opened)       │ │
-│                                                │                      │ │
-│                                                │ 4. auto-merge.yml    │ │
-│                                                │    (waits for merge  │ │
-│                                                │     check, merges)   │ │
-│                                                │          │           │ │
-│                                                │          ▼           │ │
-│                                                │ 5. notify-pr-        │ │
-│                                                │    complete.yml      │ │
-│                                                │    (notifies after   │ │
-│                                                │     auto-merge done) │ │
-│                                                └──────────────────────┘ │
-│                                                                          │
-└──────────────────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────────┐
+│                                                                       │
+│  ┌─────────────────┐         ┌─────────────────┐                     │
+│  │  Event Handler  │ ──1──►  │     GitHub      │                     │
+│  │  (creates job)  │         │ (job/* branch)  │                     │
+│  └────────▲────────┘         └────────┬────────┘                     │
+│           │                           │                              │
+│           │                           2 (triggers run-job.yml)       │
+│           │                           │                              │
+│           │                           ▼                              │
+│           │                  ┌─────────────────┐                     │
+│           │                  │  Docker Agent   │                     │
+│           │                  │  (runs Pi, PRs) │                     │
+│           │                  └────────┬────────┘                     │
+│           │                           │                              │
+│           │                           3 (creates PR)                 │
+│           │                           │                              │
+│           │                           ▼                              │
+│           │                  ┌─────────────────┐                     │
+│           │                  │     GitHub      │                     │
+│           │                  │   (PR opened)   │                     │
+│           │                  └────────┬────────┘                     │
+│           │                           │                              │
+│           │                           4a (rebuild-event-handler.yml) │
+│           │                           4b (auto-merge.yml)            │
+│           │                           │                              │
+│           5 (Telegram notification)   │                              │
+│           └───────────────────────────┘                              │
+│                                                                       │
+└───────────────────────────────────────────────────────────────────────┘
 ```
 
 ## Directory Structure
@@ -81,36 +65,12 @@ The `templates/` directory contains **only files that get scaffolded into user p
 │   ├── cron.js                 # Cron scheduler (loads CRONS.json)
 │   ├── triggers.js             # Webhook trigger middleware (loads TRIGGERS.json)
 │   ├── paths.js                # Central path resolver (resolves from user's project root)
-│   ├── ai/
-│   │   ├── index.js            # Chat, streaming, and job summary functions
-│   │   ├── agent.js            # LangGraph agent with SQLite checkpointing
-│   │   ├── model.js            # Multi-provider LLM factory (anthropic/openai/google)
-│   │   └── tools.js            # Tool definitions (create_job, get_job_status)
-│   ├── auth/
-│   │   ├── config.js           # NextAuth configuration (Credentials provider)
-│   │   ├── index.js            # Auth helpers (auth(), getPageAuthState())
-│   │   ├── middleware.js        # Auth middleware for protected routes
-│   │   └── actions.js          # Server actions (setupAdmin)
-│   ├── channels/
-│   │   ├── base.js             # ChannelAdapter base class
-│   │   ├── telegram.js         # Telegram adapter (messages, voice, photos)
-│   │   └── index.js            # Channel factory (getTelegramAdapter)
-│   ├── chat/
-│   │   ├── api.js              # Streaming chat route handler (session auth)
-│   │   ├── actions.js          # Server actions (chats, notifications, API keys, swarm)
-│   │   └── components/         # React UI components (exported via thepopebot/chat)
-│   ├── db/
-│   │   ├── index.js            # Database initialization (SQLite via Drizzle)
-│   │   ├── schema.js           # Drizzle schema definitions
-│   │   ├── users.js            # User operations
-│   │   ├── chats.js            # Chat persistence
-│   │   ├── api-keys.js         # API key management (SHA-256 hashed)
-│   │   └── notifications.js    # Notification persistence
-│   ├── tools/
-│   │   ├── create-job.js       # Job creation via GitHub API
-│   │   ├── github.js           # GitHub REST API helper + job status
-│   │   ├── telegram.js         # Telegram bot integration
-│   │   └── openai.js           # OpenAI Whisper transcription
+│   ├── ai/                     # LLM integration (chat, streaming, agent, model, tools)
+│   ├── auth/                   # NextAuth config, helpers, middleware, server actions
+│   ├── channels/               # Channel adapters (base class, Telegram, factory)
+│   ├── chat/                   # Chat route handler, server actions, React UI components
+│   ├── db/                     # SQLite via Drizzle (schema, users, chats, api-keys, notifications)
+│   ├── tools/                  # Job creation, GitHub API, Telegram, OpenAI Whisper
 │   └── utils/
 │       └── render-md.js        # Markdown {{include}} processor
 ├── config/
@@ -119,35 +79,10 @@ The `templates/` directory contains **only files that get scaffolded into user p
 ├── bin/
 │   └── cli.js                  # CLI: init, setup, setup-telegram, reset, diff
 ├── setup/                      # Interactive setup wizard
-│   ├── setup.mjs               # Main wizard script
-│   ├── setup-telegram.mjs      # Telegram-only reconfiguration
-│   └── lib/                    # Wizard helpers (prerequisites, github, auth, prompts, telegram)
 ├── templates/                  # Files scaffolded to user projects by `thepopebot init`
-│   ├── CLAUDE.md               # User project AI assistant guide
-│   ├── .env.example
-│   ├── .gitignore
-│   ├── next.config.mjs
-│   ├── instrumentation.js
-│   ├── middleware.js            # Auth middleware (re-exports from thepopebot/middleware)
-│   ├── postcss.config.mjs      # Tailwind CSS PostCSS config
 │   ├── app/                    # Next.js app (pages, API routes, components)
-│   │   ├── layout.js           # Root layout with ThemeProvider
-│   │   ├── page.js             # Home (chat interface)
-│   │   ├── login/              # Login / admin setup page
-│   │   ├── chat/[chatId]/      # Individual chat page
-│   │   ├── chats/              # Chat history page
-│   │   ├── crons/              # Crons dashboard
-│   │   ├── triggers/           # Triggers dashboard
-│   │   ├── notifications/      # Job notifications page
-│   │   ├── swarm/              # Active/completed job monitor
-│   │   ├── settings/secrets/   # API key management
-│   │   ├── stream/chat/        # Chat streaming route
-│   │   └── api/                # Catch-all API + NextAuth routes
-│   ├── .github/workflows/      # GitHub Actions (auto-merge, build-image, deploy, run-job, notify-pr-complete, notify-job-failed)
-│   ├── .pi/                    # Pi extensions + skills
-│   ├── docker/                 # Docker files for job, event_handler, and runner containers
-│   ├── docker-compose.yml      # Production deployment with Traefik, event handler, runner
-│   ├── .dockerignore            # Docker build exclusions
+│   ├── .github/workflows/      # GitHub Actions (auto-merge, build-image, deploy, run-job, notify)
+│   ├── docker/                 # Docker files for job and event-handler containers
 │   └── config/                 # Agent config (SOUL, CHATBOT, CRONS, TRIGGERS, etc.)
 ├── docs/                       # Extended documentation
 └── package.json                # NPM package definition
@@ -205,57 +140,6 @@ Example: `createdAt: integer('created_at')` — use `createdAt` in JS, SQL colum
 | `thepopebot diff [file]` | Show differences between project files and package templates |
 | `thepopebot reset-auth` | Regenerate AUTH_SECRET (invalidates all sessions) |
 
-### `thepopebot init`
-
-Scaffolds (or updates) a project. For each file in `templates/`:
-- **Missing** — creates the file
-- **Identical** — silently skips
-- **Different** — skips the file but records it as changed
-
-After copying, if any files differ from the package templates, `init` prints a summary:
-
-```
-Updated templates available:
-These files differ from the current package templates.
-This may be from your edits, or from a thepopebot update.
-
-  config/CRONS.json
-  .github/workflows/run-job.yml
-
-To view differences:  npx thepopebot diff <file>
-To reset to default:  npx thepopebot reset <file>
-```
-
-This is also how users discover template changes after running `npm update thepopebot` — re-run `npx thepopebot init` and it reports which templates have drifted. New template files are created automatically; existing files are never overwritten.
-
-### `thepopebot diff [file]`
-
-Without arguments, lists all files that differ from package templates. With a file path, shows a colored `git diff` between the user's file and the package template.
-
-```bash
-npx thepopebot diff                    # list all drifted files
-npx thepopebot diff config/SOUL.md     # show diff for a specific file
-```
-
-### `thepopebot reset [file]`
-
-Without arguments, lists all available template files. With a file path, overwrites the user's file with the package default. Also works on directories.
-
-```bash
-npx thepopebot reset                   # list all template files
-npx thepopebot reset config/SOUL.md    # restore a single file
-npx thepopebot reset config            # restore entire config/ directory
-```
-
-### Template Update Workflow
-
-When thepopebot is updated via npm, template changes are **not** applied automatically — the user's customizations are preserved. The workflow is:
-
-1. `npm update thepopebot` — updates the package (templates change inside `node_modules`)
-2. `npx thepopebot init` — detects drifted templates and lists them (does not overwrite)
-3. `npx thepopebot diff <file>` — review what changed
-4. `npx thepopebot reset <file>` — accept the new template, or manually merge the changes
-
 ## How User Projects Work
 
 When a user runs `npx thepopebot init`, the CLI scaffolds a Next.js project that wires into the package:
@@ -279,8 +163,8 @@ thepopebot includes a full web interface for managing the agent, accessible afte
 | Chat | `/` | AI chat with streaming responses, file uploads (images, PDFs, text) |
 | Chat History | `/chats` | Browse past conversations grouped by date |
 | Individual Chat | `/chat/[chatId]` | Resume a specific conversation |
-| Crons | `/crons` | View scheduled jobs from CRONS.json |
-| Triggers | `/triggers` | View webhook triggers from TRIGGERS.json |
+| Crons | `/settings/crons` | View scheduled jobs from CRONS.json |
+| Triggers | `/settings/triggers` | View webhook triggers from TRIGGERS.json |
 | Swarm | `/swarm` | Monitor active/completed agent jobs with cancel/rerun controls |
 | Notifications | `/notifications` | Job completion alerts with unread badges |
 | Settings | `/settings/secrets` | Generate and manage API keys |
@@ -313,9 +197,8 @@ thepopebot uses SQLite (via Drizzle ORM) for all persistence. The database is st
 | `chats` | Chat sessions (user_id, title, timestamps) |
 | `messages` | Chat messages (chat_id, role, content) |
 | `notifications` | Job completion notifications |
-| `api_keys` | API keys (SHA-256 hash, prefix, last_used_at) |
 | `subscriptions` | Channel subscriptions |
-| `settings` | Key-value configuration store |
+| `settings` | Key-value configuration store (also stores API keys) |
 
 ## Event Handler Layer
 
@@ -359,8 +242,6 @@ The Event Handler is a Next.js API route handler (`api/index.js`) that provides 
 
 Both cron jobs and webhook triggers use the same shared dispatch system (`lib/actions.js`). Every action has a `type` field — `"agent"` (default), `"command"`, or `"webhook"`.
 
-#### Choosing Between `agent`, `command`, and `webhook`
-
 | | `agent` | `command` | `webhook` |
 |---|---------|-----------|--------|
 | **Uses LLM** | Yes — spins up Pi in a Docker container | No — runs a shell command directly | No — makes an HTTP request |
@@ -380,8 +261,6 @@ Creates a full Docker Agent job via `createJob()`. This pushes a `job/*` branch 
 "job": "Read the file at config/MY_TASK.md and complete the tasks described there."
 ```
 
-This keeps config files clean and makes instructions easier to read and edit. Avoid writing long multi-line job descriptions inline.
-
 #### Type: `command`
 
 Runs a shell command directly on the event handler server. No Docker container, no GitHub branch, no LLM. Each system has its own working directory for scripts (in the user's project root):
@@ -390,38 +269,7 @@ Runs a shell command directly on the event handler server. No Docker container, 
 
 #### Type: `webhook`
 
-Makes an HTTP request to an external URL. No Docker container, no LLM. Useful for forwarding webhooks, calling external APIs, or pinging health endpoints.
-
-**Outgoing body logic:**
-- `GET` requests skip the body entirely
-- `POST` (default) sends `{ ...vars }` if no incoming data, or `{ ...vars, data: <incoming payload> }` when triggered by a webhook
-
-**Cron example** (no incoming data — just makes a scheduled request):
-```json
-{
-  "name": "ping-status",
-  "schedule": "*/5 * * * *",
-  "type": "webhook",
-  "url": "https://example.com/status",
-  "method": "POST",
-  "vars": { "source": "heartbeat" }
-}
-```
-Sends: `{ "source": "heartbeat" }`
-
-**Trigger example** (forwards incoming payload):
-```json
-{
-  "name": "forward-github",
-  "watch_path": "/github/webhook",
-  "actions": [
-    { "type": "webhook", "url": "https://example.com/hook", "vars": { "source": "github" } }
-  ]
-}
-```
-Sends: `{ "source": "github", "data": { ...req.body... } }`
-
-**`webhook` action fields:**
+Makes an HTTP request to an external URL. No Docker container, no LLM. Useful for forwarding webhooks, calling external APIs, or pinging health endpoints. `GET` requests skip the body; `POST` (default) sends `{ ...vars }` if no incoming data, or `{ ...vars, data: <incoming payload> }` when triggered by a webhook.
 
 | Field | Required | Default | Description |
 |-------|----------|---------|-------------|
@@ -433,30 +281,6 @@ Sends: `{ "source": "github", "data": { ...req.body... } }`
 ### Cron Jobs
 
 Cron jobs are defined in `config/CRONS.json` and loaded by `lib/cron.js` at server startup (via the instrumentation hook) using `node-cron`.
-
-#### Examples
-
-```json
-{
-  "name": "heartbeat",
-  "schedule": "*/30 * * * *",
-  "type": "agent",
-  "job": "Read the file at config/HEARTBEAT.md and complete the tasks described there.",
-  "enabled": true
-}
-```
-
-```json
-{
-  "name": "ping",
-  "schedule": "*/1 * * * *",
-  "type": "command",
-  "command": "echo \"pong!\"",
-  "enabled": true
-}
-```
-
-#### Fields
 
 | Field | Description | Required |
 |-------|-------------|----------|
@@ -474,24 +298,6 @@ Cron jobs are defined in `config/CRONS.json` and loaded by `lib/cron.js` at serv
 ### Webhook Triggers
 
 Webhook triggers are defined in `config/TRIGGERS.json` and loaded by `lib/triggers.js`. They fire actions when existing endpoints are hit. Triggers fire **after auth passes, before the route handler runs**, and are fire-and-forget (they don't block the request).
-
-#### Example
-
-```json
-[
-  {
-    "name": "on-github-event",
-    "watch_path": "/github/webhook",
-    "actions": [
-      { "type": "command", "command": "echo 'github webhook fired'" },
-      { "type": "agent", "job": "A github event occurred. Review the payload:\n{{body}}" }
-    ],
-    "enabled": true
-  }
-]
-```
-
-#### Fields
 
 | Field | Required | Default | Description |
 |-------|----------|---------|-------------|
@@ -581,8 +387,6 @@ npm run dev    # Next.js dev server
 
 ### Production (Docker Compose)
 
-The deployment workflow builds Next.js outside Docker, then mounts the built project:
-
 ```bash
 npx thepopebot init   # Scaffold project
 npm run setup          # Configure .env, GitHub secrets, Telegram
@@ -598,75 +402,31 @@ docker-compose up      # Start Traefik + event handler + runner
 | **event-handler** | `stephengpope/thepopebot:event-handler-${THEPOPEBOT_VERSION}` | Next.js app running under PM2 on port 80 |
 | **runner** | `myoung34/github-runner:latest` | Self-hosted GitHub Actions runner for executing jobs |
 
-The event handler container runs Next.js under PM2 (`pm2-runtime` with `ecosystem.config.cjs`). PM2 enables zero-downtime reloads — `pm2 reload all` sends SIGINT, waits up to 2 minutes for active requests (including SSE chat streams) to drain, then restarts Next.js. The `redeploy-event-handler.yml` workflow uses `docker exec` to pull code, rebuild, and `pm2 reload` without restarting the container. All project files are bind-mounted from the host (`.:/app`), with `node_modules` protected by an anonymous volume. Config changes (CRONS.json, SOUL.md, etc.) take effect without rebuilding.
-
-The runner service registers as a self-hosted GitHub Actions runner, enabling `run-job.yml` to spin up Docker agent containers directly on your server.
+The event handler runs Next.js under PM2 for zero-downtime reloads. Project files are bind-mounted from the host; `node_modules` is protected by an anonymous volume. The runner registers as a self-hosted GitHub Actions runner, enabling `run-job.yml` to spin up Docker agent containers directly on your server.
 
 ## GitHub Actions
 
 GitHub Actions are scaffolded into the user's project (from `templates/.github/workflows/`) and automate the job lifecycle. No manual webhook configuration needed.
 
-### redeploy-event-handler.yml
+### rebuild-event-handler.yml
 
 Triggers on push to `main`. Runs on the self-hosted runner and uses `docker exec` to pull changes, rebuild, and reload Next.js inside the event handler container via PM2. Skips rebuild for logs-only changes.
-
-```yaml
-on:
-  push:
-    branches: [main]
-# concurrency: group: deploy, cancel-in-progress: true
-# Checks changed files — skips rebuild if only logs/ changed
-# Runs: git reset --hard → npm install → npm run build → pm2 reload
-```
 
 ### build-image.yml
 
 Triggers on push to `main` (when `docker/job/**` files change), or via manual `workflow_dispatch`. Builds the Docker image and pushes it to GitHub Container Registry (GHCR). Only runs when `JOB_IMAGE_URL` is set to a GHCR URL (starts with `ghcr.io/`). Non-GHCR URLs skip this workflow entirely.
 
-```yaml
-on:
-  push:
-    branches: [main]
-    paths: ['docker/job/**']
-  workflow_dispatch:
-# Only runs if: vars.JOB_IMAGE_URL is set AND starts with "ghcr.io/"
-# Pushes to: {JOB_IMAGE_URL}:latest
-```
-
 ### run-job.yml
 
 Triggers when a `job/*` branch is created. Runs the Docker agent container. If `JOB_IMAGE_URL` is set, pulls from that registry (logs into GHCR automatically for `ghcr.io/` URLs); otherwise falls back to `stephengpope/thepopebot:job-${THEPOPEBOT_VERSION}` (version-pinned from package-lock.json).
 
-```yaml
-on:
-  create:
-# Only runs if: branch name starts with "job/"
-```
-
 ### notify-pr-complete.yml
 
-Triggers after `auto-merge.yml` completes (via `workflow_run`), not in parallel. Checks out the PR branch, gathers all job data (job.md, commit message, changed files, session log), and sends a fat payload to the event handler including the `merge_result` (`success`/`failure`). The event handler then summarizes via the LLM and sends a Telegram notification — no additional GitHub API calls needed.
-
-```yaml
-on:
-  workflow_run:
-    workflows: ["Auto-Merge Job PR"]
-    types: [completed]
-# Only runs if: head branch starts with "job/"
-# Includes merge_result in payload (from auto-merge conclusion)
-```
+Triggers after `auto-merge.yml` completes (via `workflow_run`), not in parallel. Checks out the PR branch, gathers all job data (job.md, commit message, changed files, session log), and sends a fat payload to the event handler including the `merge_result` (`merged`/`not_merged`). The event handler then summarizes via the LLM and sends a Telegram notification.
 
 ### notify-job-failed.yml
 
 Triggers when `run-job.yml` fails (via `workflow_run`). Sends a notification payload to the event handler containing the job description and a link to the GitHub Actions run log, so the user is alerted to job failures.
-
-```yaml
-on:
-  workflow_run:
-    workflows: ["Run Job"]
-    types: [completed]
-# Only runs if: run-job conclusion is "failure" and branch starts with "job/"
-```
 
 ### auto-merge.yml
 
@@ -676,16 +436,6 @@ Triggers when a PR is opened from a `job/*` branch. First waits for GitHub to co
 2. **`ALLOWED_PATHS`** — Comma-separated path prefixes (e.g., `/logs`). Only merges if all changed files fall within allowed prefixes. Defaults to `/logs` if unset.
 
 If the PR is mergeable and both checks pass, merges the PR with `--squash`. If there's a merge conflict, the merge is skipped and the PR stays open for manual review. After this workflow completes, `notify-pr-complete.yml` fires to send the notification.
-
-```yaml
-on:
-  pull_request:
-    types: [opened]
-    branches: [main]
-# Only runs if: PR head branch starts with "job/"
-# Waits for mergeability before attempting merge
-# Uses automatic GITHUB_TOKEN — no additional secrets needed
-```
 
 ### GitHub Secrets Required
 
@@ -712,47 +462,21 @@ Configure these in **Settings → Secrets and variables → Actions → Variable
 
 ## How Credentials Work
 
-Credentials are passed via base64-encoded JSON in the `SECRETS` environment variable:
-
-```bash
-# Encode credentials
-SECRETS=$(echo -n '{"GH_TOKEN":"ghp_xxx","ANTHROPIC_API_KEY":"sk-ant-xxx"}' | base64)
-```
-
-At runtime, entrypoint.sh decodes and exports each key as a flat environment variable. The `env-sanitizer` extension filters these from the LLM's bash subprocess, so the agent can't `echo $ANTHROPIC_API_KEY`.
-
-For credentials the LLM needs access to (browser logins, skill API keys), use `LLM_SECRETS` instead - these are NOT filtered.
+Credentials are passed via base64-encoded JSON in the `SECRETS` environment variable. At runtime, `entrypoint.sh` decodes and exports each key as a flat environment variable. The `env-sanitizer` extension filters these from the LLM's bash subprocess, so the agent can't access them directly. For credentials the LLM needs access to (browser logins, skill API keys), use `LLM_SECRETS` instead — these are NOT filtered.
 
 ## Customization Points
 
-Users create their agent project with:
+Users create their agent project with `npx thepopebot init` then `npm run setup`. The setup wizard handles API keys, GitHub secrets/variables, and Telegram bot configuration. Users customize their agent by editing:
 
-```bash
-mkdir my-agent && cd my-agent
-npx thepopebot init
-npm run setup
-```
-
-The setup wizard handles API keys, GitHub secrets/variables, and Telegram bot configuration. Users customize their agent by editing:
-
-1. **config/SOUL.md** - Agent personality and identity
-2. **config/CHATBOT.md** - Chat system prompt (web + Telegram)
-3. **config/CRONS.json** - Scheduled job definitions
-4. **config/TRIGGERS.json** - Webhook trigger definitions
-5. **.pi/skills/** - Custom skills for the agent
-6. **cron/** and **triggers/** - Shell scripts for command-type actions
-
-## The Operating System
-
-These files in `config/` define the agent's character and behavior (scaffolded from `templates/config/`):
-
-- **SOUL.md** - Personality, identity, and values (who the agent is)
-- **CHATBOT.md** - System prompt for all chat (web + Telegram)
-- **JOB_SUMMARY.md** - Prompt for summarizing completed jobs
-- **HEARTBEAT.md** - Self-monitoring behavior
-- **AGENT.md** - Agent runtime environment
-- **CRONS.json** - Scheduled job definitions
-- **TRIGGERS.json** - Webhook trigger definitions
+- **config/SOUL.md** — Personality, identity, and values (who the agent is)
+- **config/CHATBOT.md** — System prompt for all chat (web + Telegram)
+- **config/JOB_SUMMARY.md** — Prompt for summarizing completed jobs
+- **config/HEARTBEAT.md** — Self-monitoring behavior
+- **config/AGENT.md** — Agent runtime environment
+- **config/CRONS.json** — Scheduled job definitions
+- **config/TRIGGERS.json** — Webhook trigger definitions
+- **.pi/skills/** — Custom skills for the agent
+- **cron/** and **triggers/** — Shell scripts for command-type actions
 
 ## Session Logs
 

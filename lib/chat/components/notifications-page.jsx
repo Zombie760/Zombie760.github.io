@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { Streamdown } from 'streamdown';
 import { PageLayout } from './page-layout.js';
 import { BellIcon } from './icons.js';
 import { getNotifications, markNotificationsRead } from '../actions.js';
@@ -62,14 +63,16 @@ export function NotificationsPage({ session }) {
           No notifications yet.
         </p>
       ) : (
-        <div className="flex flex-col divide-y divide-border">
+        <div className="flex flex-col gap-3">
           {notifications.map((n) => (
-            <div key={n.id} className="flex items-start gap-3 px-3 py-3">
+            <div key={n.id} className="flex items-start gap-3 p-4 border border-border rounded-lg">
               <div className="mt-0.5 shrink-0 text-muted-foreground">
                 <BellIcon size={16} />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm whitespace-pre-wrap">{n.notification}</p>
+                <div className="text-sm prose-sm">
+                  <Streamdown mode="static">{n.notification}</Streamdown>
+                </div>
                 <span className="text-xs text-muted-foreground">
                   {timeAgo(n.createdAt)}
                 </span>

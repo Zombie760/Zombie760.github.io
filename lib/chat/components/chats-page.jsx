@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { PageLayout } from './page-layout.js';
-import { MessageIcon, TrashIcon, SearchIcon, PlusIcon } from './icons.js';
-import { getChats, deleteChat } from '../actions.js';
+import { MessageIcon, TrashIcon, SearchIcon, PlusIcon, MoreHorizontalIcon, StarIcon, StarFilledIcon, PencilIcon } from './icons.js';
+import { getChats, deleteChat, renameChat, starChat } from '../actions.js';
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from './ui/dropdown-menu.js';
 import { cn } from '../utils.js';
 
 function groupChatsByDate(chats) {
@@ -14,6 +15,7 @@ function groupChatsByDate(chats) {
   const last30Days = new Date(today.getTime() - 30 * 86400000);
 
   const groups = {
+    Starred: [],
     Today: [],
     Yesterday: [],
     'Last 7 Days': [],
@@ -22,6 +24,10 @@ function groupChatsByDate(chats) {
   };
 
   for (const chat of chats) {
+    if (chat.starred) {
+      groups.Starred.push(chat);
+      continue;
+    }
     const date = new Date(chat.updatedAt);
     if (date >= today) {
       groups.Today.push(chat);
@@ -83,10 +89,25 @@ export function ChatsPage({ session }) {
   }, []);
 
   const handleDelete = async (chatId) => {
+    setChats((prev) => prev.filter((c) => c.id !== chatId));
     const { success } = await deleteChat(chatId);
-    if (success) {
-      setChats((prev) => prev.filter((c) => c.id !== chatId));
-    }
+    if (!success) loadChats();
+  };
+
+  const handleStar = async (chatId) => {
+    setChats((prev) =>
+      prev.map((c) => (c.id === chatId ? { ...c, starred: c.starred ? 0 : 1 } : c))
+    );
+    const { success } = await starChat(chatId);
+    if (!success) loadChats();
+  };
+
+  const handleRename = async (chatId, title) => {
+    setChats((prev) =>
+      prev.map((c) => (c.id === chatId ? { ...c, title } : c))
+    );
+    const { success } = await renameChat(chatId, title);
+    if (!success) loadChats();
   };
 
   const filtered = query
@@ -154,6 +175,8 @@ export function ChatsPage({ session }) {
                       chat={chat}
                       onNavigate={navigateToChat}
                       onDelete={handleDelete}
+                      onStar={handleStar}
+                      onRename={handleRename}
                     />
                   ))}
                 </div>
@@ -166,37 +189,121 @@ export function ChatsPage({ session }) {
   );
 }
 
-function ChatRow({ chat, onNavigate, onDelete }) {
-  const [showDelete, setShowDelete] = useState(false);
+function ChatRow({ chat, onNavigate, onDelete, onStar, onRename }) {
+  const [showMenu, setShowMenu] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [editTitle, setEditTitle] = useState(chat.title || '');
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (editing && inputRef.current) {
+      inputRef.current.focus();
+      inputRef.current.select();
+    }
+  }, [editing]);
+
+  const startRename = () => {
+    setEditTitle(chat.title || '');
+    setEditing(true);
+  };
+
+  const saveRename = () => {
+    const trimmed = editTitle.trim();
+    if (trimmed && trimmed !== chat.title) {
+      onRename(chat.id, trimmed);
+    }
+    setEditing(false);
+  };
+
+  const cancelRename = () => {
+    setEditing(false);
+    setEditTitle(chat.title || '');
+  };
 
   return (
     <div
       className="relative group flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-muted/50 rounded-md"
-      onMouseEnter={() => setShowDelete(true)}
-      onMouseLeave={() => setShowDelete(false)}
-      onClick={() => onNavigate(chat.id)}
+      onMouseEnter={() => setShowMenu(true)}
+      onMouseLeave={() => setShowMenu(false)}
+      onClick={() => !editing && onNavigate(chat.id)}
     >
       <MessageIcon size={16} />
       <div className="flex-1 min-w-0">
-        <span className="text-sm truncate block">{chat.title || 'New Chat'}</span>
+        {editing ? (
+          <input
+            ref={inputRef}
+            type="text"
+            value={editTitle}
+            onChange={(e) => setEditTitle(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') saveRename();
+              if (e.key === 'Escape') cancelRename();
+            }}
+            onBlur={saveRename}
+            onClick={(e) => e.stopPropagation()}
+            className="w-full text-sm bg-background border border-input rounded px-1.5 py-0.5 focus:outline-none focus:ring-2 focus:ring-ring"
+          />
+        ) : (
+          <span
+            className="text-sm truncate block"
+            onDoubleClick={(e) => {
+              e.stopPropagation();
+              startRename();
+            }}
+          >
+            {chat.title || 'New Chat'}
+          </span>
+        )}
         <span className="text-xs text-muted-foreground">
           Last message {timeAgo(chat.updatedAt)}
         </span>
       </div>
-      {showDelete && (
-        <button
-          className={cn(
-            'shrink-0 rounded-md p-1.5',
-            'text-muted-foreground hover:text-destructive hover:bg-muted'
-          )}
-          onClick={(e) => {
-            e.stopPropagation();
-            onDelete(chat.id);
-          }}
-          aria-label="Delete chat"
-        >
-          <TrashIcon size={14} />
-        </button>
+      {showMenu && !editing && (
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button
+              className={cn(
+                'shrink-0 rounded-md p-1.5',
+                'text-muted-foreground hover:text-foreground hover:bg-muted'
+              )}
+              onClick={(e) => e.stopPropagation()}
+              aria-label="Chat options"
+            >
+              <MoreHorizontalIcon size={14} />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" side="bottom">
+            <DropdownMenuItem
+              onClick={(e) => {
+                e.stopPropagation();
+                onStar(chat.id);
+              }}
+            >
+              {chat.starred ? <StarFilledIcon size={14} /> : <StarIcon size={14} />}
+              {chat.starred ? 'Unstar' : 'Star'}
+            </DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={(e) => {
+                e.stopPropagation();
+                startRename();
+              }}
+            >
+              <PencilIcon size={14} />
+              Rename
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem
+              className="text-destructive hover:text-destructive"
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete(chat.id);
+              }}
+            >
+              <TrashIcon size={14} />
+              Delete
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       )}
     </div>
   );

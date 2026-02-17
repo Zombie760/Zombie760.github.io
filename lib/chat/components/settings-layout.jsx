@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { PageLayout } from './page-layout.js';
-import { KeyIcon } from './icons.js';
+import { ClockIcon, ZapIcon, KeyIcon } from './icons.js';
 
 const TABS = [
+  { id: 'crons', label: 'Crons', href: '/settings/crons', icon: ClockIcon },
+  { id: 'triggers', label: 'Triggers', href: '/settings/triggers', icon: ZapIcon },
   { id: 'secrets', label: 'Secrets', href: '/settings/secrets', icon: KeyIcon },
 ];
 

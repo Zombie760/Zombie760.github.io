@@ -1,7 +1,5 @@
-import { auth } from 'thepopebot/auth';
-import { CronsPage } from 'thepopebot/chat';
+import { redirect } from 'next/navigation';
 
-export default async function CronsRoute() {
-  const session = await auth();
-  return <CronsPage session={session} />;
+export default function CronsRoute() {
+  redirect('/settings/crons');
 }
