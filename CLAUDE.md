@@ -394,15 +394,28 @@ npm run build          # Next.js build → generates .next/
 docker-compose up      # Start Traefik + event handler + runner
 ```
 
+### Event Handler Docker Image
+
+The event handler Dockerfile (`templates/docker/event-handler/Dockerfile`) is **not a self-contained application image**. It only provides the Node.js runtime, system dependencies (git, gh, python3, build tools), PM2, and pre-installed `node_modules`. It does **not** contain the Next.js app code and does **not** run `next build`.
+
+**How it works:**
+
+1. The Docker image installs Node.js 22, PM2, and runs `npm install` to pre-build `node_modules` (including native modules like `better-sqlite3` compiled for Linux)
+2. At runtime, `docker-compose.yml` bind-mounts the user's project directory (`.:/app`), overlaying the container's `/app` with the host's project files (app pages, config, `.next/`, etc.)
+3. An anonymous volume (`/app/node_modules`) preserves the container's pre-built `node_modules`, preventing the host's macOS/Windows `node_modules` from overriding the Linux-compiled native modules
+4. PM2 starts `next start -p 80`, which serves the pre-built `.next/` directory from the host mount
+
+**The build must happen outside the container.** Before running `docker-compose up`, the user must run `npm run build` on the host to generate `.next/`. If the container starts without a valid `.next/` build, PM2 will crash-loop with "Could not find a production build" until a build is available on the host. After code changes, `rebuild-event-handler.yml` runs `next build` inside the container via `docker exec` (using the container's `node_modules`).
+
 ### docker-compose.yml Services
 
 | Service | Image | Purpose |
 |---------|-------|---------|
 | **traefik** | `traefik:v3` | Reverse proxy with automatic HTTPS (Let's Encrypt) |
-| **event-handler** | `stephengpope/thepopebot:event-handler-${THEPOPEBOT_VERSION}` | Next.js app running under PM2 on port 80 |
+| **event-handler** | `stephengpope/thepopebot:event-handler-${THEPOPEBOT_VERSION}` | Node.js runtime + PM2, serves the bind-mounted Next.js app on port 80 |
 | **runner** | `myoung34/github-runner:latest` | Self-hosted GitHub Actions runner for executing jobs |
 
-The event handler runs Next.js under PM2 for zero-downtime reloads. Project files are bind-mounted from the host; `node_modules` is protected by an anonymous volume. The runner registers as a self-hosted GitHub Actions runner, enabling `run-job.yml` to spin up Docker agent containers directly on your server.
+The runner registers as a self-hosted GitHub Actions runner, enabling `run-job.yml` to spin up Docker agent containers directly on your server.
 
 ## GitHub Actions
 

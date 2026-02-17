@@ -5,6 +5,7 @@ import { PageLayout } from './page-layout.js';
 import { MessageIcon, TrashIcon, SearchIcon, PlusIcon, MoreHorizontalIcon, StarIcon, StarFilledIcon, PencilIcon } from './icons.js';
 import { getChats, deleteChat, renameChat, starChat } from '../actions.js';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from './ui/dropdown-menu.js';
+import { ConfirmDialog } from './ui/confirm-dialog.js';
 import { cn } from '../utils.js';
 
 function groupChatsByDate(chats) {
@@ -190,10 +191,14 @@ export function ChatsPage({ session }) {
 }
 
 function ChatRow({ chat, onNavigate, onDelete, onStar, onRename }) {
-  const [showMenu, setShowMenu] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [confirmDelete, setConfirmDelete] = useState(false);
   const [editing, setEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(chat.title || '');
   const inputRef = useRef(null);
+
+  const showMenu = hovered || dropdownOpen;
 
   useEffect(() => {
     if (editing && inputRef.current) {
@@ -223,8 +228,8 @@ function ChatRow({ chat, onNavigate, onDelete, onStar, onRename }) {
   return (
     <div
       className="relative group flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-muted/50 rounded-md"
-      onMouseEnter={() => setShowMenu(true)}
-      onMouseLeave={() => setShowMenu(false)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       onClick={() => !editing && onNavigate(chat.id)}
     >
       <MessageIcon size={16} />
@@ -258,53 +263,68 @@ function ChatRow({ chat, onNavigate, onDelete, onStar, onRename }) {
           Last message {timeAgo(chat.updatedAt)}
         </span>
       </div>
-      {showMenu && !editing && (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <button
-              className={cn(
-                'shrink-0 rounded-md p-1.5',
-                'text-muted-foreground hover:text-foreground hover:bg-muted'
-              )}
-              onClick={(e) => e.stopPropagation()}
-              aria-label="Chat options"
-            >
-              <MoreHorizontalIcon size={14} />
-            </button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" side="bottom">
-            <DropdownMenuItem
-              onClick={(e) => {
-                e.stopPropagation();
-                onStar(chat.id);
-              }}
-            >
-              {chat.starred ? <StarFilledIcon size={14} /> : <StarIcon size={14} />}
-              {chat.starred ? 'Unstar' : 'Star'}
-            </DropdownMenuItem>
-            <DropdownMenuItem
-              onClick={(e) => {
-                e.stopPropagation();
-                startRename();
-              }}
-            >
-              <PencilIcon size={14} />
-              Rename
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem
-              className="text-destructive hover:text-destructive"
-              onClick={(e) => {
-                e.stopPropagation();
-                onDelete(chat.id);
-              }}
-            >
-              <TrashIcon size={14} />
-              Delete
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+      {!editing && (
+        <div className={cn(
+          'shrink-0',
+          showMenu ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        )}>
+          <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
+            <DropdownMenuTrigger>
+              <button
+                className={cn(
+                  'rounded-md p-1.5',
+                  'text-muted-foreground hover:text-foreground hover:bg-muted'
+                )}
+                aria-label="Chat options"
+              >
+                <MoreHorizontalIcon size={14} />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" side="bottom">
+              <DropdownMenuItem
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onStar(chat.id);
+                }}
+              >
+                {chat.starred ? <StarFilledIcon size={14} /> : <StarIcon size={14} />}
+                {chat.starred ? 'Unstar' : 'Star'}
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={(e) => {
+                  e.stopPropagation();
+                  startRename();
+                }}
+              >
+                <PencilIcon size={14} />
+                Rename
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                className="text-destructive hover:text-destructive"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setConfirmDelete(true);
+                }}
+              >
+                <TrashIcon size={14} />
+                Delete
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       )}
+      <ConfirmDialog
+        open={confirmDelete}
+        title="Delete chat?"
+        description="This will permanently delete this chat and all its messages."
+        confirmLabel="Delete"
+        onConfirm={() => {
+          setConfirmDelete(false);
+          onDelete(chat.id);
+        }}
+        onCancel={() => setConfirmDelete(false)}
+      />
     </div>
   );
 }
