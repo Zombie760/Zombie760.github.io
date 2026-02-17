@@ -6,6 +6,7 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import { Messages } from './messages.js';
 import { ChatInput } from './chat-input.js';
 import { ChatHeader } from './chat-header.js';
+import { Greeting } from './greeting.js';
 
 export function Chat({ chatId, initialMessages = [] }) {
   const [input, setInput] = useState('');
@@ -69,23 +70,44 @@ export function Chat({ chatId, initialMessages = [] }) {
   return (
     <div className="flex h-svh flex-col">
       <ChatHeader chatId={chatId} />
-      <Messages messages={messages} status={status} />
-      {error && (
-        <div className="mx-auto w-full max-w-4xl px-2 md:px-4">
-          <div className="rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-2 text-sm text-destructive">
-            {error.message || 'Something went wrong. Please try again.'}
+      {messages.length === 0 ? (
+        <div className="flex flex-1 flex-col items-center justify-center px-2 md:px-4">
+          <div className="w-full max-w-4xl">
+            <Greeting />
+            <div className="mt-4">
+              <ChatInput
+                input={input}
+                setInput={setInput}
+                onSubmit={handleSend}
+                status={status}
+                stop={stop}
+                files={files}
+                setFiles={setFiles}
+              />
+            </div>
           </div>
         </div>
+      ) : (
+        <>
+          <Messages messages={messages} status={status} />
+          {error && (
+            <div className="mx-auto w-full max-w-4xl px-2 md:px-4">
+              <div className="rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-2 text-sm text-destructive">
+                {error.message || 'Something went wrong. Please try again.'}
+              </div>
+            </div>
+          )}
+          <ChatInput
+            input={input}
+            setInput={setInput}
+            onSubmit={handleSend}
+            status={status}
+            stop={stop}
+            files={files}
+            setFiles={setFiles}
+          />
+        </>
       )}
-      <ChatInput
-        input={input}
-        setInput={setInput}
-        onSubmit={handleSend}
-        status={status}
-        stop={stop}
-        files={files}
-        setFiles={setFiles}
-      />
     </div>
   );
 }
