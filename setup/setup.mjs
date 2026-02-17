@@ -604,6 +604,15 @@ async function main() {
   console.log(`  \u2022 LLM_PROVIDER = ${agentProvider}`);
   console.log(`  \u2022 LLM_MODEL = ${agentModel}`);
 
+  // Build
+  console.log(chalk.dim('\n  Building Next.js...\n'));
+  try {
+    execSync('npm run build', { stdio: 'inherit' });
+    printSuccess('Build complete');
+  } catch {
+    printError('Build failed — run npm run build manually');
+  }
+
   console.log(chalk.bold.green('\n  You\'re all set!\n'));
 
   console.log(chalk.dim('  Chat with your agent at ') + chalk.cyan(appUrl));
