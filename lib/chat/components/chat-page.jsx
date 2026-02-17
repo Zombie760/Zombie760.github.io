@@ -23,21 +23,30 @@ export function ChatPage({ session, needsSetup, chatId }) {
   const navigateToChat = useCallback((id) => {
     if (id) {
       window.history.pushState({}, '', `/chat/${id}`);
+      setResolvedChatId(null);
+      setInitialMessages([]);
+      setActiveChatId(id);
     } else {
       window.history.pushState({}, '', '/');
+      setInitialMessages([]);
+      setActiveChatId(null);
+      setResolvedChatId(crypto.randomUUID());
     }
-    // Clear current chat immediately — unmounts Chat via the
-    // {resolvedChatId && ...} guard before the effect runs
-    setResolvedChatId(null);
-    setInitialMessages([]);
-    setActiveChatId(id || null);
   }, []);
 
   // Browser back/forward
   useEffect(() => {
     const onPopState = () => {
       const match = window.location.pathname.match(/^\/chat\/(.+)/);
-      setActiveChatId(match ? match[1] : null);
+      if (match) {
+        setResolvedChatId(null);
+        setInitialMessages([]);
+        setActiveChatId(match[1]);
+      } else {
+        setInitialMessages([]);
+        setActiveChatId(null);
+        setResolvedChatId(crypto.randomUUID());
+      }
     };
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
@@ -64,9 +73,6 @@ export function ChatPage({ session, needsSetup, chatId }) {
         setInitialMessages(uiMessages);
         setResolvedChatId(activeChatId);
       });
-    } else {
-      setInitialMessages([]);
-      setResolvedChatId(crypto.randomUUID());
     }
   }, [activeChatId]);
 
