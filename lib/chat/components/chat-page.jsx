@@ -26,7 +26,11 @@ export function ChatPage({ session, needsSetup, chatId }) {
     } else {
       window.history.pushState({}, '', '/');
     }
-    setActiveChatId(id);
+    // Clear current chat immediately — unmounts Chat via the
+    // {resolvedChatId && ...} guard before the effect runs
+    setResolvedChatId(null);
+    setInitialMessages([]);
+    setActiveChatId(id || null);
   }, []);
 
   // Browser back/forward
