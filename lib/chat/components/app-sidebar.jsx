@@ -19,6 +19,7 @@ import {
 } from './ui/sidebar.js';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip.js';
 import { useChatNav } from './chat-nav-context.js';
+import pkg from '../../../package.json';
 
 export function AppSidebar({ user }) {
   const { navigateToChat } = useChatNav();
@@ -38,7 +39,7 @@ export function AppSidebar({ user }) {
         {/* Top row: brand name + toggle icon (open) or just toggle icon (collapsed) */}
         <div className={collapsed ? 'flex justify-center' : 'flex items-center justify-between'}>
           {!collapsed && (
-            <span className="px-2 font-semibold text-lg">The Pope Bot</span>
+            <span className="px-2 font-semibold text-lg">The Pope Bot <span className="text-xs font-normal text-muted-foreground">v{pkg.version}</span></span>
           )}
           <Tooltip>
             <TooltipTrigger asChild>
