@@ -70,6 +70,7 @@ export function SidebarHistoryItem({ chat, isActive, onDelete, onStar, onRename 
           </div>
         ) : (
           <SidebarMenuButton
+            className="pr-8"
             isActive={isActive}
             onClick={() => {
               navigateToChat(chat.id);
@@ -100,11 +101,12 @@ export function SidebarHistoryItem({ chat, isActive, onDelete, onStar, onRename 
                 <button
                   className={cn(
                     'rounded-md p-1',
-                    'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    'text-muted-foreground hover:text-foreground',
+                    'bg-foreground/10 hover:bg-foreground/15'
                   )}
                   aria-label="Chat options"
                 >
-                  <MoreHorizontalIcon size={14} />
+                  <MoreHorizontalIcon size={16} />
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" side="bottom">

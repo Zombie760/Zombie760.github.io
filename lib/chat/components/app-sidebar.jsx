@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { SquarePenIcon, PanelLeftIcon, MessageIcon, BellIcon, SwarmIcon } from './icons.js';
-import { getUnreadNotificationCount } from '../actions.js';
+import { CirclePlusIcon, PanelLeftIcon, MessageIcon, BellIcon, SwarmIcon } from './icons.js';
+import { getUnreadNotificationCount, getAppVersion } from '../actions.js';
 import { SidebarHistory } from './sidebar-history.js';
 import { SidebarUserNav } from './sidebar-user-nav.js';
 import {
@@ -19,17 +19,20 @@ import {
 } from './ui/sidebar.js';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip.js';
 import { useChatNav } from './chat-nav-context.js';
-import pkg from '../../../package.json';
 
 export function AppSidebar({ user }) {
   const { navigateToChat } = useChatNav();
   const { state, open, setOpenMobile, toggleSidebar } = useSidebar();
   const collapsed = state === 'collapsed';
   const [unreadCount, setUnreadCount] = useState(0);
+  const [version, setVersion] = useState('');
 
   useEffect(() => {
     getUnreadNotificationCount()
       .then((count) => setUnreadCount(count))
+      .catch(() => {});
+    getAppVersion()
+      .then(setVersion)
       .catch(() => {});
   }, []);
 
@@ -39,7 +42,7 @@ export function AppSidebar({ user }) {
         {/* Top row: brand name + toggle icon (open) or just toggle icon (collapsed) */}
         <div className={collapsed ? 'flex justify-center' : 'flex items-center justify-between'}>
           {!collapsed && (
-            <span className="px-2 font-semibold text-lg">The Pope Bot <span className="text-[11px] font-normal text-muted-foreground">v{pkg.version}</span></span>
+            <span className="px-2 font-semibold text-lg">The Pope Bot{version && <span className="text-[11px] font-normal text-muted-foreground"> v{version}</span>}</span>
           )}
           <Tooltip>
             <TooltipTrigger asChild>
@@ -58,7 +61,7 @@ export function AppSidebar({ user }) {
 
         <SidebarMenu>
           {/* New chat */}
-          <SidebarMenuItem>
+          <SidebarMenuItem className="mb-2">
             <Tooltip>
               <TooltipTrigger asChild>
                 <SidebarMenuButton
@@ -68,7 +71,7 @@ export function AppSidebar({ user }) {
                     setOpenMobile(false);
                   }}
                 >
-                  <SquarePenIcon size={16} />
+                  <CirclePlusIcon size={16} />
                   {!collapsed && <span>New chat</span>}
                 </SidebarMenuButton>
               </TooltipTrigger>
