@@ -132,41 +132,44 @@ docker compose up -d
 
 ## Updating
 
-Your customizations are always preserved — template changes are never applied automatically.
-
 **1. Update the package**
 
 ```bash
 npm update thepopebot
 ```
 
-**2. Scaffold new templates**
+**2. Scaffold and update templates**
 
 ```bash
 npx thepopebot init
 ```
 
-This scaffolds any new template files (existing files are never overwritten), runs `npm install`, and updates `THEPOPEBOT_VERSION` in your local `.env`. It also reports which templates have drifted:
+This scaffolds any new template files, runs `npm install`, and updates `THEPOPEBOT_VERSION` in your local `.env`.
+
+**Managed files** — Infrastructure files tightly coupled to the package version (GitHub Actions workflows, docker-compose, event-handler Dockerfile) are **auto-updated** to match the new package version. These files must stay in your project because GitHub and Docker require them at specific paths, but they shouldn't drift from the package.
+
+**User-editable files** — Configuration and app files you're expected to customize (`config/`, `app/`, job Dockerfile) are **never overwritten**. If they differ from the package template, `init` reports the drift so you can review at your own pace:
 
 ```
 Updated templates available:
 These files differ from the current package templates.
 
   config/CRONS.json
-  .github/workflows/run-job.yml
 
 To view differences:  npx thepopebot diff <file>
 To reset to default:  npx thepopebot reset <file>
 ```
-
-Review and accept changes at your own pace:
 
 ```bash
 npx thepopebot diff config/CRONS.json    # see what changed
 npx thepopebot reset config/CRONS.json   # accept the new template
 ```
 
-Or manually merge the changes if you want to keep some of your edits.
+If you customize managed files (e.g., adding steps to a workflow), use `--no-managed` to skip auto-updates and handle them yourself:
+
+```bash
+npx thepopebot init --no-managed
+```
 
 **3. Rebuild for local dev**
 

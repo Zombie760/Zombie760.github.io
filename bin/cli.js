@@ -11,6 +11,20 @@ const __dirname = path.dirname(__filename);
 const command = process.argv[2];
 const args = process.argv.slice(3);
 
+// Files tightly coupled to the package version that are auto-updated by init.
+// These live in the user's project because GitHub/Docker require them at specific paths,
+// but they shouldn't drift from the package version.
+const MANAGED_PATHS = [
+  '.github/workflows/',
+  'docker/event-handler/',
+  'docker-compose.yml',
+  '.dockerignore',
+];
+
+function isManaged(relPath) {
+  return MANAGED_PATHS.some(p => relPath === p || relPath.startsWith(p));
+}
+
 function printUsage() {
   console.log(`
 Usage: thepopebot <command>
@@ -48,6 +62,7 @@ function init() {
   const cwd = process.cwd();
   const packageDir = path.join(__dirname, '..');
   const templatesDir = path.join(packageDir, 'templates');
+  const noManaged = args.includes('--no-managed');
 
   console.log('\nScaffolding thepopebot project...\n');
 
@@ -55,6 +70,7 @@ function init() {
   const created = [];
   const skipped = [];
   const changed = [];
+  const updated = [];
 
   for (const relPath of templateFiles) {
     const src = path.join(templatesDir, relPath);
@@ -72,6 +88,12 @@ function init() {
       const destContent = fs.readFileSync(dest);
       if (srcContent.equals(destContent)) {
         skipped.push(relPath);
+      } else if (!noManaged && isManaged(relPath)) {
+        // Managed file differs — auto-update to match package
+        fs.mkdirSync(path.dirname(dest), { recursive: true });
+        fs.copyFileSync(src, dest);
+        updated.push(relPath);
+        console.log(`  Updated ${relPath}`);
       } else {
         changed.push(relPath);
         console.log(`  Skipped ${relPath} (already exists)`);
@@ -118,6 +140,14 @@ function init() {
     if (!fs.existsSync(gitkeep)) {
       fs.mkdirSync(path.join(cwd, dir), { recursive: true });
       fs.writeFileSync(gitkeep, '');
+    }
+  }
+
+  // Report updated managed files
+  if (updated.length > 0) {
+    console.log('\n  Updated managed files:');
+    for (const file of updated) {
+      console.log(`    ${file}`);
     }
   }
 

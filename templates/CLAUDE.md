@@ -55,12 +55,19 @@ This is an autonomous AI agent powered by [thepopebot](https://github.com/stephe
 
 ### Updating thepopebot
 
-When the package is updated via `npm update thepopebot`, template changes are **not** applied automatically — your customizations are preserved. To check for updates:
+When the package is updated via `npm update thepopebot`, run `npx thepopebot init` to apply changes:
 
-1. `npm update thepopebot` — updates the package
-2. `npx thepopebot init` — reports which templates have drifted (does not overwrite)
-3. `npx thepopebot diff <file>` — review what changed
-4. `npx thepopebot reset <file>` — accept the new template, or manually merge
+- **Managed files** (GitHub workflows, docker-compose, event-handler Dockerfile) are **auto-updated** to match the package version. These are infrastructure files that must stay in the project but shouldn't drift.
+- **User-editable files** (config, app pages, job Dockerfile) are **never overwritten**. Drifted files are reported so you can review them.
+
+```
+1. npm update thepopebot         — updates the package
+2. npx thepopebot init           — auto-updates managed files, reports drifted user files
+3. npx thepopebot diff <file>    — review what changed in a user-editable file
+4. npx thepopebot reset <file>   — accept the new template, or manually merge
+```
+
+Use `npx thepopebot init --no-managed` to skip auto-updates of managed files (for power users who customize workflows).
 
 ## API Endpoints
 
