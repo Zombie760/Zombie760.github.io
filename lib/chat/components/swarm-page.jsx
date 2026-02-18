@@ -35,8 +35,8 @@ function timeAgo(timestamp) {
 function LoadingSkeleton() {
   return (
     <div className="flex flex-col gap-4">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        {[...Array(4)].map((_, i) => (
+      <div className="grid grid-cols-2 gap-3">
+        {[...Array(2)].map((_, i) => (
           <div key={i} className="h-20 animate-pulse rounded-md bg-border/50" />
         ))}
       </div>
@@ -56,12 +56,10 @@ function SwarmSummaryCards({ counts }) {
   const cards = [
     { label: 'Running', value: counts.running, color: 'border-l-green-500', text: 'text-green-500' },
     { label: 'Queued', value: counts.queued, color: 'border-l-yellow-500', text: 'text-yellow-500' },
-    { label: 'Succeeded', value: counts.succeeded, color: 'border-l-blue-500', text: 'text-blue-500' },
-    { label: 'Failed', value: counts.failed, color: 'border-l-red-500', text: 'text-red-500' },
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+    <div className="grid grid-cols-2 gap-3">
       {cards.map((card) => (
         <div
           key={card.label}
@@ -248,20 +246,37 @@ function SwarmJobHistory({ jobs, onRerun }) {
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function SwarmPage({ session }) {
-  const [swarmData, setSwarmData] = useState(null);
+  const [active, setActive] = useState([]);
+  const [completed, setCompleted] = useState([]);
+  const [counts, setCounts] = useState({ running: 0, queued: 0 });
+  const [hasMore, setHasMore] = useState(false);
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
   const fetchStatus = useCallback(async () => {
     try {
       const data = await getSwarmStatus();
-      setSwarmData(data);
+      setActive(data.active || []);
+      setCounts(data.counts || { running: 0, queued: 0 });
+      setHasMore(data.hasMore || false);
+      // On auto-refresh, replace page 1 completed jobs but keep any loaded beyond page 1
+      setCompleted((prev) => {
+        const firstPage = data.completed || [];
+        // If user hasn't loaded beyond page 1, just use page 1 results
+        if (page <= 1) return firstPage;
+        // Keep accumulated jobs beyond page 1
+        const beyondPage1 = prev.slice(firstPage.length);
+        return [...firstPage, ...beyondPage1];
+      });
+      setPage((prev) => Math.max(prev, 1));
     } catch (err) {
       console.error('Failed to fetch swarm status:', err);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [page]);
 
   useEffect(() => {
     fetchStatus();
@@ -271,8 +286,32 @@ export function SwarmPage({ session }) {
 
   const handleRefresh = async () => {
     setRefreshing(true);
-    await fetchStatus();
+    // Reset to page 1
+    setPage(1);
+    try {
+      const data = await getSwarmStatus();
+      setActive(data.active || []);
+      setCounts(data.counts || { running: 0, queued: 0 });
+      setCompleted(data.completed || []);
+      setHasMore(data.hasMore || false);
+    } catch (err) {
+      console.error('Failed to fetch swarm status:', err);
+    }
     setRefreshing(false);
+  };
+
+  const handleLoadMore = async () => {
+    const nextPage = page + 1;
+    setLoadingMore(true);
+    try {
+      const data = await getSwarmStatus(nextPage);
+      setCompleted((prev) => [...prev, ...(data.completed || [])]);
+      setHasMore(data.hasMore || false);
+      setPage(nextPage);
+    } catch (err) {
+      console.error('Failed to load more:', err);
+    }
+    setLoadingMore(false);
   };
 
   const handleCancel = async (runId) => {
@@ -324,9 +363,7 @@ export function SwarmPage({ session }) {
       ) : (
         <div className="flex flex-col gap-6">
           {/* Summary Cards */}
-          {swarmData?.counts && (
-            <SwarmSummaryCards counts={swarmData.counts} />
-          )}
+          <SwarmSummaryCards counts={counts} />
 
           {/* Active Jobs */}
           <div>
@@ -334,7 +371,7 @@ export function SwarmPage({ session }) {
               Active Jobs
             </h2>
             <SwarmActiveJobs
-              jobs={swarmData?.active}
+              jobs={active}
               onCancel={handleCancel}
             />
           </div>
@@ -342,12 +379,30 @@ export function SwarmPage({ session }) {
           {/* Job History */}
           <div>
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
-              Recent History
+              Job History
             </h2>
             <SwarmJobHistory
-              jobs={swarmData?.completed}
+              jobs={completed}
               onRerun={handleRerun}
             />
+            {hasMore && (
+              <div className="flex justify-center mt-4">
+                <button
+                  onClick={handleLoadMore}
+                  disabled={loadingMore}
+                  className="inline-flex items-center gap-1.5 rounded-md px-4 py-2 text-sm font-medium border border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
+                >
+                  {loadingMore ? (
+                    <>
+                      <SpinnerIcon size={14} />
+                      Loading...
+                    </>
+                  ) : (
+                    'Load more'
+                  )}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}

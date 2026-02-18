@@ -174,13 +174,13 @@ export function AppSidebar({ user }) {
                     <span className="relative">
                       <ArrowUpCircleIcon size={16} />
                       {collapsed && (
-                        <span className="absolute -top-1 -right-1 inline-block h-2 w-2 rounded-full bg-blue-500" />
+                        <span className="absolute -top-1 -right-1 inline-block h-2 w-2 rounded-full bg-emerald-500" />
                       )}
                     </span>
                     {!collapsed && (
                       <span className="flex items-center gap-2">
                         Upgrade
-                        <span className="inline-flex items-center justify-center rounded-full bg-blue-500 px-1.5 py-0.5 text-[10px] font-medium leading-none text-white">
+                        <span className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-1.5 py-0.5 text-[10px] font-medium leading-none text-white">
                           v{updateAvailable}
                         </span>
                       </span>
