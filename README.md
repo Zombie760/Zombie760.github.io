@@ -130,18 +130,6 @@ docker compose up -d
 
 ---
 
-## CLI Commands
-
-| Command | Description |
-|---------|-------------|
-| `npx thepopebot init` | Scaffold a new project, or check for updated templates in an existing one |
-| `npx thepopebot diff [file]` | List files that differ from package templates, or show the diff for a specific file |
-| `npx thepopebot reset [file]` | List all template files, or restore a specific file (or directory) to the package default |
-| `npm run setup` | Run the full interactive setup wizard |
-| `npm run setup-telegram` | Reconfigure the Telegram webhook (useful when your ngrok URL changes) |
-
----
-
 ## Updating
 
 Your customizations are always preserved — template changes are never applied automatically.
@@ -194,6 +182,18 @@ git push
 ```
 
 Pushing to `main` triggers the `rebuild-event-handler.yml` workflow on your server. It detects the version change, runs `thepopebot init`, updates `THEPOPEBOT_VERSION` in the server's `.env`, pulls the new Docker image, restarts the container, rebuilds `.next`, and reloads PM2 — no manual `docker compose` needed.
+
+---
+
+## CLI Commands
+
+| Command | Description |
+|---------|-------------|
+| `npx thepopebot init` | Scaffold a new project, or check for updated templates in an existing one |
+| `npx thepopebot diff [file]` | List files that differ from package templates, or show the diff for a specific file |
+| `npx thepopebot reset [file]` | List all template files, or restore a specific file (or directory) to the package default |
+| `npm run setup` | Run the full interactive setup wizard |
+| `npm run setup-telegram` | Reconfigure the Telegram webhook (useful when your ngrok URL changes) |
 
 ---
 
