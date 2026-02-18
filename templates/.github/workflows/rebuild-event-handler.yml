@@ -85,11 +85,11 @@ jobs:
       - name: Pull new image and restart container
         if: steps.pull.outputs.status == 'VERSION_CHANGED'
         run: |
-          cd /project
-          docker compose pull event-handler
+          HOST_DIR=$(docker inspect thepopebot-event-handler --format '{{index .Config.Labels "com.docker.compose.project.working_dir"}}')
+          docker compose -f /project/docker-compose.yml --project-directory "$HOST_DIR" --env-file /project/.env pull event-handler
           docker stop thepopebot-event-handler || true
           docker rm thepopebot-event-handler || true
-          docker compose up -d event-handler
+          docker compose -f /project/docker-compose.yml --project-directory "$HOST_DIR" --env-file /project/.env up -d event-handler
 
       - name: Rebuild in new container
         if: steps.pull.outputs.status == 'VERSION_CHANGED'
@@ -111,7 +111,7 @@ jobs:
             mv .next .next-old 2>/dev/null || true
             mv .next-new .next
 
-            npx pm2 reload all
+            npx pm2 restart all
 
             rm -rf .next-old
           '
