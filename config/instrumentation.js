@@ -42,5 +42,16 @@ export async function register() {
   const { loadCrons } = await import('../lib/cron.js');
   loadCrons();
 
+  // Start built-in crons (version check)
+  const { startBuiltinCrons, setUpdateAvailable } = await import('../lib/cron.js');
+  startBuiltinCrons();
+
+  // Warm in-memory flag from DB (covers the window before the async cron fetch completes)
+  try {
+    const { getAvailableVersion } = await import('../lib/db/update-check.js');
+    const stored = getAvailableVersion();
+    if (stored) setUpdateAvailable(stored);
+  } catch {}
+
   console.log('thepopebot initialized');
 }

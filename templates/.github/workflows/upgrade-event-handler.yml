@@ -1,0 +1,39 @@
+name: Upgrade Event Handler
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  upgrade:
+    runs-on: self-hosted
+    steps:
+      - name: Upgrade thepopebot
+        run: |
+          docker exec thepopebot-event-handler bash -c '
+            export GH_TOKEN=$(grep "^GH_TOKEN=" /app/.env | cut -d= -f2-)
+            echo "${GH_TOKEN}" | gh auth login --with-token
+            gh auth setup-git
+
+            git fetch origin main
+            git reset --hard origin/main
+
+            # Update thepopebot package
+            npm update thepopebot
+            npm install --omit=dev
+
+            # Atomic swap build (same pattern as rebuild-event-handler)
+            rm -rf .next-new .next-old
+            NEXT_BUILD_DIR=.next-new npm run build
+
+            mv .next .next-old 2>/dev/null || true
+            mv .next-new .next
+
+            echo "Upgrade complete, reloading..."
+            npx pm2 reload all
+
+            rm -rf .next-old
+          '

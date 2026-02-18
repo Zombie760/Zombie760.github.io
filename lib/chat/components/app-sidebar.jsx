@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CirclePlusIcon, PanelLeftIcon, MessageIcon, BellIcon, SwarmIcon } from './icons.js';
+import { CirclePlusIcon, PanelLeftIcon, MessageIcon, BellIcon, SwarmIcon, ArrowUpCircleIcon } from './icons.js';
 import { getUnreadNotificationCount, getAppVersion } from '../actions.js';
 import { SidebarHistory } from './sidebar-history.js';
 import { SidebarUserNav } from './sidebar-user-nav.js';
@@ -26,13 +26,17 @@ export function AppSidebar({ user }) {
   const collapsed = state === 'collapsed';
   const [unreadCount, setUnreadCount] = useState(0);
   const [version, setVersion] = useState('');
+  const [updateAvailable, setUpdateAvailable] = useState(null);
 
   useEffect(() => {
     getUnreadNotificationCount()
       .then((count) => setUnreadCount(count))
       .catch(() => {});
     getAppVersion()
-      .then(setVersion)
+      .then(({ version, updateAvailable }) => {
+        setVersion(version);
+        setUpdateAvailable(updateAvailable);
+      })
       .catch(() => {});
   }, []);
 
@@ -154,6 +158,40 @@ export function AppSidebar({ user }) {
               )}
             </Tooltip>
           </SidebarMenuItem>
+
+          {/* Upgrade (only when update is available) */}
+          {updateAvailable && (
+            <SidebarMenuItem>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <SidebarMenuButton
+                    className={collapsed ? 'justify-center' : ''}
+                    onClick={() => {
+                      window.location.href = '/upgrade';
+                    }}
+                  >
+                    <span className="relative">
+                      <ArrowUpCircleIcon size={16} />
+                      {collapsed && (
+                        <span className="absolute -top-1 -right-1 inline-block h-2 w-2 rounded-full bg-blue-500" />
+                      )}
+                    </span>
+                    {!collapsed && (
+                      <span className="flex items-center gap-2">
+                        Upgrade
+                        <span className="inline-flex items-center justify-center rounded-full bg-blue-500 px-1.5 py-0.5 text-[10px] font-medium leading-none text-white">
+                          v{updateAvailable}
+                        </span>
+                      </span>
+                    )}
+                  </SidebarMenuButton>
+                </TooltipTrigger>
+                {collapsed && (
+                  <TooltipContent side="right">Upgrade to v{updateAvailable}</TooltipContent>
+                )}
+              </Tooltip>
+            </SidebarMenuItem>
+          )}
 
         </SidebarMenu>
       </SidebarHeader>
