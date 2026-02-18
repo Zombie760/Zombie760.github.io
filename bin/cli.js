@@ -25,6 +25,26 @@ function isManaged(relPath) {
   return MANAGED_PATHS.some(p => relPath === p || relPath.startsWith(p));
 }
 
+// Files that must never be scaffolded directly (use .template suffix instead).
+const EXCLUDED_FILENAMES = ['CLAUDE.md'];
+
+// Files ending in .template are scaffolded with the suffix stripped.
+// e.g. .gitignore.template → .gitignore, CLAUDE.md.template → CLAUDE.md
+function destPath(templateRelPath) {
+  if (templateRelPath.endsWith('.template')) {
+    return templateRelPath.slice(0, -'.template'.length);
+  }
+  return templateRelPath;
+}
+
+function templatePath(userPath, templatesDir) {
+  const withSuffix = userPath + '.template';
+  if (fs.existsSync(path.join(templatesDir, withSuffix))) {
+    return withSuffix;
+  }
+  return userPath;
+}
+
 function printUsage() {
   console.log(`
 Usage: thepopebot <command>
@@ -49,7 +69,7 @@ function getTemplateFiles(templatesDir) {
       const fullPath = path.join(dir, entry.name);
       if (entry.isDirectory()) {
         walk(fullPath);
-      } else {
+      } else if (!EXCLUDED_FILENAMES.includes(entry.name)) {
         files.push(path.relative(templatesDir, fullPath));
       }
     }
@@ -74,29 +94,30 @@ function init() {
 
   for (const relPath of templateFiles) {
     const src = path.join(templatesDir, relPath);
-    const dest = path.join(cwd, relPath);
+    const outPath = destPath(relPath);
+    const dest = path.join(cwd, outPath);
 
     if (!fs.existsSync(dest)) {
       // File doesn't exist — create it
       fs.mkdirSync(path.dirname(dest), { recursive: true });
       fs.copyFileSync(src, dest);
-      created.push(relPath);
-      console.log(`  Created ${relPath}`);
+      created.push(outPath);
+      console.log(`  Created ${outPath}`);
     } else {
       // File exists — check if template has changed
       const srcContent = fs.readFileSync(src);
       const destContent = fs.readFileSync(dest);
       if (srcContent.equals(destContent)) {
-        skipped.push(relPath);
-      } else if (!noManaged && isManaged(relPath)) {
+        skipped.push(outPath);
+      } else if (!noManaged && isManaged(outPath)) {
         // Managed file differs — auto-update to match package
         fs.mkdirSync(path.dirname(dest), { recursive: true });
         fs.copyFileSync(src, dest);
-        updated.push(relPath);
-        console.log(`  Updated ${relPath}`);
+        updated.push(outPath);
+        console.log(`  Updated ${outPath}`);
       } else {
-        changed.push(relPath);
-        console.log(`  Skipped ${relPath} (already exists)`);
+        changed.push(outPath);
+        console.log(`  Skipped ${outPath} (already exists)`);
       }
     }
   }
@@ -163,14 +184,6 @@ function init() {
     console.log('  To reset to default:  npx thepopebot reset <file>');
   }
 
-  // Handle gitignore rename (npm strips .gitignore from packages)
-  const gitignoreSrc = path.join(templatesDir, 'gitignore');
-  const gitignoreDest = path.join(cwd, '.gitignore');
-  if (fs.existsSync(gitignoreSrc) && !fs.existsSync(gitignoreDest)) {
-    fs.copyFileSync(gitignoreSrc, gitignoreDest);
-    console.log('  Created .gitignore');
-  }
-
   // Run npm install
   console.log('\nInstalling dependencies...\n');
   execSync('npm install', { stdio: 'inherit', cwd });
@@ -207,14 +220,15 @@ function reset(filePath) {
     console.log('\nAvailable template files:\n');
     const files = getTemplateFiles(templatesDir);
     for (const file of files) {
-      console.log(`  ${file}`);
+      console.log(`  ${destPath(file)}`);
     }
     console.log('\nUsage: thepopebot reset <file>');
     console.log('Example: thepopebot reset config/SOUL.md\n');
     return;
   }
 
-  const src = path.join(templatesDir, filePath);
+  const tmplPath = templatePath(filePath, templatesDir);
+  const src = path.join(templatesDir, tmplPath);
   const dest = path.join(cwd, filePath);
 
   if (!fs.existsSync(src)) {
@@ -225,7 +239,7 @@ function reset(filePath) {
 
   if (fs.statSync(src).isDirectory()) {
     console.log(`\nRestoring ${filePath}/...\n`);
-    copyDirSyncForce(src, dest);
+    copyDirSyncForce(src, dest, tmplPath);
   } else {
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.copyFileSync(src, dest);
@@ -248,16 +262,17 @@ function diff(filePath) {
     let anyDiff = false;
     for (const file of files) {
       const src = path.join(templatesDir, file);
-      const dest = path.join(cwd, file);
+      const outPath = destPath(file);
+      const dest = path.join(cwd, outPath);
       if (fs.existsSync(dest)) {
         const srcContent = fs.readFileSync(src);
         const destContent = fs.readFileSync(dest);
         if (!srcContent.equals(destContent)) {
-          console.log(`  ${file}`);
+          console.log(`  ${outPath}`);
           anyDiff = true;
         }
       } else {
-        console.log(`  ${file} (missing)`);
+        console.log(`  ${outPath} (missing)`);
         anyDiff = true;
       }
     }
@@ -269,7 +284,8 @@ function diff(filePath) {
     return;
   }
 
-  const src = path.join(templatesDir, filePath);
+  const tmplPath = templatePath(filePath, templatesDir);
+  const src = path.join(templatesDir, tmplPath);
   const dest = path.join(cwd, filePath);
 
   if (!fs.existsSync(src)) {
@@ -293,17 +309,22 @@ function diff(filePath) {
   }
 }
 
-function copyDirSyncForce(src, dest) {
+function copyDirSyncForce(src, dest, templateRelBase = '') {
   fs.mkdirSync(dest, { recursive: true });
   const entries = fs.readdirSync(src, { withFileTypes: true });
   for (const entry of entries) {
+    if (EXCLUDED_FILENAMES.includes(entry.name)) continue;
     const srcPath = path.join(src, entry.name);
-    const destPath = path.join(dest, entry.name);
+    const templateRel = templateRelBase
+      ? path.join(templateRelBase, entry.name)
+      : entry.name;
+    const outName = path.basename(destPath(templateRel));
+    const destFile = path.join(dest, outName);
     if (entry.isDirectory()) {
-      copyDirSyncForce(srcPath, destPath);
+      copyDirSyncForce(srcPath, destFile, templateRel);
     } else {
-      fs.copyFileSync(srcPath, destPath);
-      console.log(`  Restored ${path.relative(process.cwd(), destPath)}`);
+      fs.copyFileSync(srcPath, destFile);
+      console.log(`  Restored ${path.relative(process.cwd(), destFile)}`);
     }
   }
 }

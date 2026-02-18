@@ -200,6 +200,22 @@ Pushing to `main` triggers the `rebuild-event-handler.yml` workflow on your serv
 
 ---
 
+## Template File Conventions
+
+The `templates/` directory contains files scaffolded into user projects by `thepopebot init`. Two naming conventions handle files that npm or AI tools would otherwise misinterpret:
+
+**`.template` suffix** — Files ending in `.template` are scaffolded with the suffix stripped. This is used for files that npm mangles (`.gitignore`) or that AI tools would pick up as real project docs (`CLAUDE.md`).
+
+| In `templates/` | Scaffolded as |
+|-----------------|---------------|
+| `.gitignore.template` | `.gitignore` |
+| `CLAUDE.md.template` | `CLAUDE.md` |
+| `api/CLAUDE.md.template` | `api/CLAUDE.md` |
+
+**`CLAUDE.md` exclusion** — The scaffolding walker skips any file named `CLAUDE.md` (without the `.template` suffix). This is a safety net so a bare `CLAUDE.md` accidentally added to `templates/` never gets copied into user projects where AI tools would confuse it with real project instructions.
+
+---
+
 ## Docs
 
 | Document | Description |

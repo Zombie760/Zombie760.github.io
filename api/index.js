@@ -161,12 +161,9 @@ async function processChannelMessage(adapter, normalized) {
 async function handleGithubWebhook(request) {
   const { GH_WEBHOOK_SECRET } = process.env;
 
-  // Validate webhook secret (timing-safe)
-  if (GH_WEBHOOK_SECRET) {
-    const headerSecret = request.headers.get('x-github-webhook-secret-token');
-    if (!safeCompare(headerSecret, GH_WEBHOOK_SECRET)) {
-      return Response.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+  // Validate webhook secret (timing-safe, required)
+  if (!GH_WEBHOOK_SECRET || !safeCompare(request.headers.get('x-github-webhook-secret-token'), GH_WEBHOOK_SECRET)) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   const payload = await request.json();
