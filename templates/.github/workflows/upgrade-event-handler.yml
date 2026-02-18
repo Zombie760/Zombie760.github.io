@@ -26,7 +26,7 @@ jobs:
             git config user.name "thepopebot"
             git config user.email "thepopebot@users.noreply.github.com"
 
-            npm install
+            npm install --omit=dev
             OLD_VERSION=$(node -p "require(\"./node_modules/thepopebot/package.json\").version")
             npm update thepopebot
             NEW_VERSION=$(node -p "require(\"./node_modules/thepopebot/package.json\").version")

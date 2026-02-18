@@ -144,14 +144,21 @@ docker compose up -d
 
 ## Updating
 
-When thepopebot is updated via npm, your customizations are always preserved — template changes are never applied automatically. To update:
+Your customizations are always preserved — template changes are never applied automatically.
+
+**1. Update the package**
 
 ```bash
 npm update thepopebot
+```
+
+**2. Scaffold new templates**
+
+```bash
 npx thepopebot init
 ```
 
-`init` will report which templates have drifted (new files are created automatically, existing files are never overwritten):
+This scaffolds any new template files (existing files are never overwritten), runs `npm install`, and updates `THEPOPEBOT_VERSION` in your local `.env`. It also reports which templates have drifted:
 
 ```
 Updated templates available:
@@ -173,11 +180,20 @@ npx thepopebot reset config/CRONS.json   # accept the new template
 
 Or manually merge the changes if you want to keep some of your edits.
 
-After updating, restart Docker to pick up new image versions:
+**3. Rebuild for local dev**
 
 ```bash
-docker compose up -d
+npm run build
 ```
+
+**4. Commit and push**
+
+```bash
+git add -A && git commit -m "upgrade thepopebot to vX.X.X"
+git push
+```
+
+Pushing to `main` triggers the `rebuild-event-handler.yml` workflow on your server. It detects the version change, runs `thepopebot init`, updates `THEPOPEBOT_VERSION` in the server's `.env`, pulls the new Docker image, restarts the container, rebuilds `.next`, and reloads PM2 — no manual `docker compose` needed.
 
 ---
 
