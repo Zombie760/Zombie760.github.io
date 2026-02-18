@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { PageLayout } from './page-layout.js';
-import { StopIcon, SpinnerIcon, RefreshIcon } from './icons.js';
-import { getSwarmStatus, cancelSwarmJob, rerunSwarmJob } from '../actions.js';
+import { SpinnerIcon, RefreshIcon } from './icons.js';
+import { getSwarmStatus } from '../actions.js';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Utilities
@@ -84,7 +84,7 @@ const conclusionBadgeStyles = {
   skipped: 'bg-muted text-muted-foreground',
 };
 
-function SwarmWorkflowList({ runs, onCancel, onRerun }) {
+function SwarmWorkflowList({ runs }) {
   if (!runs || runs.length === 0) {
     return (
       <div className="text-sm text-muted-foreground py-4 text-center">
@@ -134,44 +134,17 @@ function SwarmWorkflowList({ runs, onCancel, onRerun }) {
             {/* Spacer */}
             <div className="flex-1" />
 
-            {/* Actions */}
-            <div className="flex items-center gap-2 shrink-0">
-              {run.html_url && (
-                <a
-                  href={run.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-blue-500 hover:underline"
-                >
-                  View
-                </a>
-              )}
-              {isActive && (
-                <button
-                  onClick={() => onCancel(run.run_id)}
-                  className="inline-flex items-center justify-center rounded-md p-1.5 text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
-                  title="Cancel"
-                >
-                  <StopIcon size={14} />
-                </button>
-              )}
-              {!isActive && (
-                <button
-                  onClick={() => onRerun(run.run_id, false)}
-                  className="text-xs rounded-md px-2 py-1 border hover:bg-accent"
-                >
-                  Rerun
-                </button>
-              )}
-              {!isActive && run.conclusion === 'failure' && (
-                <button
-                  onClick={() => onRerun(run.run_id, true)}
-                  className="text-xs rounded-md px-2 py-1 border text-red-500 hover:bg-red-500/10"
-                >
-                  Rerun failed
-                </button>
-              )}
-            </div>
+            {/* Link */}
+            {run.html_url && (
+              <a
+                href={run.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-blue-500 hover:underline shrink-0"
+              >
+                View
+              </a>
+            )}
           </div>
         );
       })}
@@ -246,24 +219,6 @@ export function SwarmPage({ session }) {
     setLoadingMore(false);
   };
 
-  const handleCancel = async (runId) => {
-    try {
-      await cancelSwarmJob(runId);
-      await fetchStatus();
-    } catch (err) {
-      console.error('Failed to cancel job:', err);
-    }
-  };
-
-  const handleRerun = async (runId, failedOnly) => {
-    try {
-      await rerunSwarmJob(runId, failedOnly);
-      await fetchStatus();
-    } catch (err) {
-      console.error('Failed to rerun job:', err);
-    }
-  };
-
   return (
     <PageLayout session={session}>
       {/* Header */}
@@ -302,11 +257,7 @@ export function SwarmPage({ session }) {
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
               Workflow Runs
             </h2>
-            <SwarmWorkflowList
-              runs={runs}
-              onCancel={handleCancel}
-              onRerun={handleRerun}
-            />
+            <SwarmWorkflowList runs={runs} />
             {hasMore && (
               <div className="flex justify-center mt-4">
                 <button
