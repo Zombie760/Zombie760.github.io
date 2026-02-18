@@ -200,6 +200,28 @@ thepopebot uses SQLite (via Drizzle ORM) for all persistence. The database is st
 | `subscriptions` | Channel subscriptions |
 | `settings` | Key-value configuration store (also stores API keys) |
 
+## Database Migrations
+
+This project uses Drizzle Kit for database schema management. **All schema changes MUST go through the migration workflow.**
+
+### Rules
+- **NEVER** write raw `CREATE TABLE`, `ALTER TABLE`, or any DDL SQL manually
+- **NEVER** modify `initDatabase()` to add schema changes
+- **ALWAYS** make schema changes by editing `lib/db/schema.js` then running `npm run db:generate`
+
+### Workflow
+1. Edit `lib/db/schema.js` (add/modify tables or columns using Drizzle's schema builders)
+2. Run `npm run db:generate` to create a versioned migration file in `drizzle/`
+3. Review the generated SQL in `drizzle/XXXX_*.sql`
+4. Commit both the schema change and the migration file
+5. Migrations auto-apply on server startup via `migrate()` in `initDatabase()`
+
+### Key Files
+- `lib/db/schema.js` — Single source of truth for the database schema
+- `drizzle/` — Generated migration SQL files (committed to repo, shipped with package)
+- `drizzle.config.js` — Drizzle Kit config (used by `db:generate`)
+- `lib/db/index.js` — `initDatabase()` calls `migrate()` to apply pending migrations
+
 ## Event Handler Layer
 
 The Event Handler is a Next.js API route handler (`api/index.js`) that provides orchestration capabilities:

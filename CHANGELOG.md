@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.57
+
+### Drizzle Kit migrations
+
+Database schema changes are now managed by Drizzle Kit instead of hand-written SQL. The old `initDatabase()` with raw `CREATE TABLE` and `ALTER TABLE` statements has been replaced by `migrate()`, which applies versioned migration files from `drizzle/`. Migrations run automatically on server startup — users upgrading thepopebot get schema changes applied seamlessly without any manual steps.
+
+Migration files ship inside the npm package, so they resolve from `node_modules/thepopebot/drizzle/` at runtime regardless of the user's working directory.
+
+**For package developers:** edit `lib/db/schema.js`, then run `npm run db:generate` to create a new migration file. Never write DDL SQL by hand.
+
+---
+
 ## 1.2.x — The NPM Package Release
 
 **Released: February 2026**
