@@ -5,6 +5,7 @@ import { CirclePlusIcon, PanelLeftIcon, MessageIcon, BellIcon, SwarmIcon, ArrowU
 import { getUnreadNotificationCount, getAppVersion } from '../actions.js';
 import { SidebarHistory } from './sidebar-history.js';
 import { SidebarUserNav } from './sidebar-user-nav.js';
+import { UpgradeDialog } from './upgrade-dialog.js';
 import {
   Sidebar,
   SidebarContent,
@@ -27,6 +28,7 @@ export function AppSidebar({ user }) {
   const [unreadCount, setUnreadCount] = useState(0);
   const [version, setVersion] = useState('');
   const [updateAvailable, setUpdateAvailable] = useState(null);
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
 
   useEffect(() => {
     getUnreadNotificationCount()
@@ -41,6 +43,7 @@ export function AppSidebar({ user }) {
   }, []);
 
   return (
+    <>
     <Sidebar>
       <SidebarHeader>
         {/* Top row: brand name + toggle icon (open) or just toggle icon (collapsed) */}
@@ -166,9 +169,7 @@ export function AppSidebar({ user }) {
                 <TooltipTrigger asChild>
                   <SidebarMenuButton
                     className={collapsed ? 'justify-center' : ''}
-                    onClick={() => {
-                      window.location.href = '/upgrade';
-                    }}
+                    onClick={() => setUpgradeOpen(true)}
                   >
                     <span className="relative">
                       <ArrowUpCircleIcon size={16} />
@@ -212,5 +213,7 @@ export function AppSidebar({ user }) {
         {user && <SidebarUserNav user={user} collapsed={collapsed} />}
       </SidebarFooter>
     </Sidebar>
+    <UpgradeDialog open={upgradeOpen} onClose={() => setUpgradeOpen(false)} version={version} updateAvailable={updateAvailable} />
+    </>
   );
 }
