@@ -54,6 +54,7 @@ services:
       LABELS: self-hosted
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - .:/project:ro
     restart: unless-stopped
 
 volumes:

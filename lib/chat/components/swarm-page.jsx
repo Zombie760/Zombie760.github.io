@@ -42,7 +42,7 @@ function LoadingSkeleton() {
       </div>
       <div className="h-8 w-32 animate-pulse rounded-md bg-border/50" />
       {[...Array(3)].map((_, i) => (
-        <div key={i} className="h-24 animate-pulse rounded-md bg-border/50" />
+        <div key={i} className="h-14 animate-pulse rounded-md bg-border/50" />
       ))}
     </div>
   );
@@ -74,169 +74,107 @@ function SwarmSummaryCards({ counts }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Active Jobs
+// Unified Workflow List
 // ─────────────────────────────────────────────────────────────────────────────
 
-function SwarmActiveJobs({ jobs, onCancel }) {
-  if (!jobs || jobs.length === 0) {
+const conclusionBadgeStyles = {
+  success: 'bg-green-500/10 text-green-500',
+  failure: 'bg-red-500/10 text-red-500',
+  cancelled: 'bg-yellow-500/10 text-yellow-500',
+  skipped: 'bg-muted text-muted-foreground',
+};
+
+function SwarmWorkflowList({ runs, onCancel, onRerun }) {
+  if (!runs || runs.length === 0) {
     return (
       <div className="text-sm text-muted-foreground py-4 text-center">
-        No active jobs.
+        No workflow runs.
       </div>
     );
   }
-
-  return (
-    <div className="flex flex-col gap-3">
-      {jobs.map((job) => {
-        const isRunning = job.status === 'in_progress';
-        const progress = job.steps_total > 0
-          ? Math.round((job.steps_completed / job.steps_total) * 100)
-          : 0;
-
-        return (
-          <div key={job.run_id} className="rounded-md border bg-card p-4">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-2">
-                {/* Status dot */}
-                <span
-                  className={`inline-block h-2.5 w-2.5 rounded-full ${
-                    isRunning ? 'bg-green-500 animate-pulse' : 'bg-yellow-500'
-                  }`}
-                />
-                <span className="font-mono text-sm font-medium">
-                  {job.job_id.slice(0, 8)}
-                </span>
-                {job.workflow_name && (
-                  <span className="text-xs text-muted-foreground">
-                    {job.workflow_name}
-                  </span>
-                )}
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-muted-foreground">
-                  {formatDuration(job.duration_seconds)}
-                </span>
-                {job.html_url && (
-                  <a
-                    href={job.html_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-blue-500 hover:underline"
-                  >
-                    View
-                  </a>
-                )}
-                <button
-                  onClick={() => onCancel(job.run_id)}
-                  className="inline-flex items-center justify-center rounded-md p-1.5 text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
-                  title="Cancel job"
-                >
-                  <StopIcon size={14} />
-                </button>
-              </div>
-            </div>
-
-            {/* Current step */}
-            {job.current_step && (
-              <p className="text-xs text-muted-foreground mb-2 truncate">
-                {job.current_step}
-              </p>
-            )}
-
-            {/* Progress bar */}
-            {job.steps_total > 0 && (
-              <div className="flex items-center gap-2">
-                <div className="flex-1 h-1.5 rounded-full bg-border overflow-hidden">
-                  <div
-                    className="h-full rounded-full bg-green-500 transition-all duration-500"
-                    style={{ width: `${progress}%` }}
-                  />
-                </div>
-                <span className="text-xs text-muted-foreground shrink-0">
-                  {job.steps_completed}/{job.steps_total}
-                </span>
-              </div>
-            )}
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Job History
-// ─────────────────────────────────────────────────────────────────────────────
-
-function SwarmJobHistory({ jobs, onRerun }) {
-  if (!jobs || jobs.length === 0) {
-    return (
-      <div className="text-sm text-muted-foreground py-4 text-center">
-        No completed jobs.
-      </div>
-    );
-  }
-
-  const badgeStyles = {
-    success: 'bg-green-500/10 text-green-500',
-    failure: 'bg-red-500/10 text-red-500',
-    cancelled: 'bg-yellow-500/10 text-yellow-500',
-  };
 
   return (
     <div className="flex flex-col divide-y divide-border">
-      {jobs.map((job) => (
-        <div key={job.run_id} className="flex items-center gap-3 py-3 px-1">
-          {/* Conclusion badge */}
-          <span
-            className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase ${
-              badgeStyles[job.conclusion] || 'bg-muted text-muted-foreground'
-            }`}
-          >
-            {job.conclusion || 'unknown'}
-          </span>
+      {runs.map((run) => {
+        const isActive = run.status === 'in_progress' || run.status === 'queued';
+        const isRunning = run.status === 'in_progress';
+        const isQueued = run.status === 'queued';
 
-          {/* Job ID */}
-          <span className="font-mono text-sm">{job.job_id.slice(0, 8)}</span>
-
-          {/* Time ago */}
-          <span className="text-xs text-muted-foreground">
-            {timeAgo(job.updated_at || job.started_at)}
-          </span>
-
-          {/* Spacer */}
-          <div className="flex-1" />
-
-          {/* Actions */}
-          <div className="flex items-center gap-2">
-            {job.html_url && (
-              <a
-                href={job.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-blue-500 hover:underline"
-              >
-                View
-              </a>
+        return (
+          <div key={run.run_id} className="flex items-center gap-3 py-3 px-1">
+            {/* Status indicator */}
+            {isRunning && (
+              <span className="inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-green-500 animate-pulse" />
             )}
-            <button
-              onClick={() => onRerun(job.run_id, false)}
-              className="text-xs rounded-md px-2 py-1 border hover:bg-accent"
-            >
-              Rerun
-            </button>
-            {job.conclusion === 'failure' && (
-              <button
-                onClick={() => onRerun(job.run_id, true)}
-                className="text-xs rounded-md px-2 py-1 border text-red-500 hover:bg-red-500/10"
-              >
-                Rerun failed
-              </button>
+            {isQueued && (
+              <span className="inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-yellow-500" />
             )}
+            {!isActive && (
+              <span
+                className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase shrink-0 ${
+                  conclusionBadgeStyles[run.conclusion] || 'bg-muted text-muted-foreground'
+                }`}
+              >
+                {run.conclusion || 'unknown'}
+              </span>
+            )}
+
+            {/* Workflow name */}
+            <span className="text-sm font-medium truncate">
+              {run.workflow_name || run.branch}
+            </span>
+
+            {/* Duration or time ago */}
+            <span className="text-xs text-muted-foreground shrink-0">
+              {isActive
+                ? formatDuration(run.duration_seconds)
+                : timeAgo(run.updated_at || run.started_at)}
+            </span>
+
+            {/* Spacer */}
+            <div className="flex-1" />
+
+            {/* Actions */}
+            <div className="flex items-center gap-2 shrink-0">
+              {run.html_url && (
+                <a
+                  href={run.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-blue-500 hover:underline"
+                >
+                  View
+                </a>
+              )}
+              {isActive && (
+                <button
+                  onClick={() => onCancel(run.run_id)}
+                  className="inline-flex items-center justify-center rounded-md p-1.5 text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
+                  title="Cancel"
+                >
+                  <StopIcon size={14} />
+                </button>
+              )}
+              {!isActive && (
+                <button
+                  onClick={() => onRerun(run.run_id, false)}
+                  className="text-xs rounded-md px-2 py-1 border hover:bg-accent"
+                >
+                  Rerun
+                </button>
+              )}
+              {!isActive && run.conclusion === 'failure' && (
+                <button
+                  onClick={() => onRerun(run.run_id, true)}
+                  className="text-xs rounded-md px-2 py-1 border text-red-500 hover:bg-red-500/10"
+                >
+                  Rerun failed
+                </button>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -246,8 +184,7 @@ function SwarmJobHistory({ jobs, onRerun }) {
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function SwarmPage({ session }) {
-  const [active, setActive] = useState([]);
-  const [completed, setCompleted] = useState([]);
+  const [runs, setRuns] = useState([]);
   const [counts, setCounts] = useState({ running: 0, queued: 0 });
   const [hasMore, setHasMore] = useState(false);
   const [page, setPage] = useState(1);
@@ -258,15 +195,12 @@ export function SwarmPage({ session }) {
   const fetchStatus = useCallback(async () => {
     try {
       const data = await getSwarmStatus();
-      setActive(data.active || []);
       setCounts(data.counts || { running: 0, queued: 0 });
       setHasMore(data.hasMore || false);
-      // On auto-refresh, replace page 1 completed jobs but keep any loaded beyond page 1
-      setCompleted((prev) => {
-        const firstPage = data.completed || [];
-        // If user hasn't loaded beyond page 1, just use page 1 results
+      // On auto-refresh, replace page 1 runs but keep any loaded beyond page 1
+      setRuns((prev) => {
+        const firstPage = data.runs || [];
         if (page <= 1) return firstPage;
-        // Keep accumulated jobs beyond page 1
         const beyondPage1 = prev.slice(firstPage.length);
         return [...firstPage, ...beyondPage1];
       });
@@ -286,13 +220,11 @@ export function SwarmPage({ session }) {
 
   const handleRefresh = async () => {
     setRefreshing(true);
-    // Reset to page 1
     setPage(1);
     try {
       const data = await getSwarmStatus();
-      setActive(data.active || []);
       setCounts(data.counts || { running: 0, queued: 0 });
-      setCompleted(data.completed || []);
+      setRuns(data.runs || []);
       setHasMore(data.hasMore || false);
     } catch (err) {
       console.error('Failed to fetch swarm status:', err);
@@ -305,7 +237,7 @@ export function SwarmPage({ session }) {
     setLoadingMore(true);
     try {
       const data = await getSwarmStatus(nextPage);
-      setCompleted((prev) => [...prev, ...(data.completed || [])]);
+      setRuns((prev) => [...prev, ...(data.runs || [])]);
       setHasMore(data.hasMore || false);
       setPage(nextPage);
     } catch (err) {
@@ -365,24 +297,14 @@ export function SwarmPage({ session }) {
           {/* Summary Cards */}
           <SwarmSummaryCards counts={counts} />
 
-          {/* Active Jobs */}
+          {/* Workflow Runs */}
           <div>
             <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
-              Active Jobs
+              Workflow Runs
             </h2>
-            <SwarmActiveJobs
-              jobs={active}
+            <SwarmWorkflowList
+              runs={runs}
               onCancel={handleCancel}
-            />
-          </div>
-
-          {/* Job History */}
-          <div>
-            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
-              Job History
-            </h2>
-            <SwarmJobHistory
-              jobs={completed}
               onRerun={handleRerun}
             />
             {hasMore && (

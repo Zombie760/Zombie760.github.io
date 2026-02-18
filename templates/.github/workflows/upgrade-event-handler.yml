@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Upgrade thepopebot
         run: |
+          # Phase 1: Update package and build (but don't swap yet)
           docker exec thepopebot-event-handler bash -c '
             export GH_TOKEN=$(grep "^GH_TOKEN=" /app/.env | cut -d= -f2-)
             echo "${GH_TOKEN}" | gh auth login --with-token
@@ -21,19 +22,23 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
 
-            # Update thepopebot package
             npm update thepopebot
+            npx thepopebot init
             npm install --omit=dev
 
-            # Atomic swap build (same pattern as rebuild-event-handler)
-            rm -rf .next-new .next-old
+            rm -rf .next-new
             NEXT_BUILD_DIR=.next-new npm run build
+          '
 
+          # Phase 2: Pull new image and restart container
+          cd /project
+          docker compose pull event-handler
+          docker compose up -d event-handler
+
+          # Phase 3: Swap build and reload inside new container
+          docker exec thepopebot-event-handler bash -c '
             mv .next .next-old 2>/dev/null || true
             mv .next-new .next
-
-            echo "Upgrade complete, reloading..."
             npx pm2 reload all
-
             rm -rf .next-old
           '

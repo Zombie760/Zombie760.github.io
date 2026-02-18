@@ -422,7 +422,7 @@ So the host's node_modules (compiled for macOS) are never used inside the contai
 | **event-handler** | `stephengpope/thepopebot:event-handler-${THEPOPEBOT_VERSION}` | Node.js runtime + PM2, serves the bind-mounted Next.js app on port 80 |
 | **runner** | `myoung34/github-runner:latest` | Self-hosted GitHub Actions runner for executing jobs |
 
-The runner registers as a self-hosted GitHub Actions runner, enabling `run-job.yml` to spin up Docker agent containers directly on your server.
+The runner registers as a self-hosted GitHub Actions runner, enabling `run-job.yml` to spin up Docker agent containers directly on your server. It also has a read-only volume mount (`.:/project:ro`) so `upgrade-event-handler.yml` can run `docker compose` commands against the project's compose file.
 
 ## GitHub Actions
 
@@ -431,6 +431,16 @@ GitHub Actions are scaffolded into the user's project (from `templates/.github/w
 ### rebuild-event-handler.yml
 
 Triggers on push to `main`. Runs on the self-hosted runner and uses `docker exec` to pull changes, rebuild, and reload Next.js inside the event handler container via PM2. Skips rebuild for logs-only changes.
+
+### upgrade-event-handler.yml
+
+Triggers via manual `workflow_dispatch`. Upgrades the thepopebot package and restarts the event handler container with the new image. Uses a three-phase approach:
+
+1. **Phase 1** (inside old container): Git pull, `npm update thepopebot`, `npx thepopebot init`, `npm install --omit=dev`, build `.next-new` (old `.next` keeps serving)
+2. **Phase 2** (from runner): `docker compose pull event-handler` + `docker compose up -d event-handler` (recreates container with new image tag from updated `.env`)
+3. **Phase 3** (inside new container): Swap `.next-new` → `.next`, PM2 reload
+
+This ensures `THEPOPEBOT_VERSION` in `.env` stays in sync with the running container image. The runner service has a read-only volume mount (`.:/project:ro`) to access `docker-compose.yml` and `.env` for the pull/restart step.
 
 ### build-image.yml
 
