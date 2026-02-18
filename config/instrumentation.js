@@ -16,6 +16,11 @@ export async function register() {
   if (typeof window !== 'undefined' || initialized) return;
   initialized = true;
 
+  // Skip database init and cron scheduling during `next build` —
+  // these are runtime-only concerns that keep the event loop alive
+  // and can cause build output corruption.
+  if (process.argv.includes('build')) return;
+
   // Load .env from project root
   const dotenv = await import('dotenv');
   dotenv.config();
