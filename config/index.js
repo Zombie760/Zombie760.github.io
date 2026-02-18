@@ -12,6 +12,7 @@
 export function withThepopebot(nextConfig = {}) {
   return {
     ...nextConfig,
+    distDir: process.env.NEXT_BUILD_DIR || '.next',
     serverExternalPackages: [
       ...(nextConfig.serverExternalPackages || []),
       'better-sqlite3',

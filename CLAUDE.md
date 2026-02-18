@@ -398,14 +398,21 @@ docker-compose up      # Start Traefik + event handler + runner
 
 The event handler Dockerfile (`templates/docker/event-handler/Dockerfile`) is **not a self-contained application image**. It only provides the Node.js runtime, system dependencies (git, gh, python3, build tools), PM2, and pre-installed `node_modules`. It does **not** contain the Next.js app code and does **not** run `next build`.
 
-**How it works:**
+**How the two volume mounts work together:**
 
-1. The Docker image installs Node.js 22, PM2, and runs `npm install` to pre-build `node_modules` (including native modules like `better-sqlite3` compiled for Linux)
-2. At runtime, `docker-compose.yml` bind-mounts the user's project directory (`.:/app`), overlaying the container's `/app` with the host's project files (app pages, config, `.next/`, etc.)
-3. An anonymous volume (`/app/node_modules`) preserves the container's pre-built `node_modules`, preventing the host's macOS/Windows `node_modules` from overriding the Linux-compiled native modules
-4. PM2 starts `next start -p 80`, which serves the pre-built `.next/` directory from the host mount
+```yaml
+volumes:
+  - .:/app              # bind mount: host project → /app
+  - /app/node_modules   # anonymous volume: preserves container's node_modules
+```
 
-**The build must happen outside the container.** Before running `docker-compose up`, the user must run `npm run build` on the host to generate `.next/`. If the container starts without a valid `.next/` build, PM2 will crash-loop with "Could not find a production build" until a build is available on the host. After code changes, `rebuild-event-handler.yml` runs `next build` inside the container via `docker exec` (using the container's `node_modules`).
+The bind mount (`.:/app`) overlays the entire `/app` directory with the host's project files — app pages, config, `.next/`, `.env`, everything. This **would** also clobber the container's `/app/node_modules` with the host's macOS-compiled node_modules. But the anonymous volume (`/app/node_modules`) shields that specific path from the bind mount. Docker processes volume mounts so the anonymous volume "wins" for `/app/node_modules`. The first time the container starts, Docker copies the image's node_modules into the anonymous volume, and from then on it persists there independently.
+
+So the host's node_modules (compiled for macOS) are never used inside the container. The container always uses its own Linux-compiled modules.
+
+**Why thepopebot is installed twice (host and container):** The user runs `npm install` on the host (macOS) to get thepopebot and all dependencies. This is needed because `next build` must resolve all `thepopebot/*` imports to compile the app — without thepopebot in local node_modules, the build fails immediately on unresolved imports. The `.next/` output is just bundled JavaScript — it's platform-independent, so building on macOS and running on Linux is fine. But Next.js still needs `node_modules` at **runtime** for native modules (like `better-sqlite3`) and server-side requires that aren't bundled. Those native modules must be compiled for Linux, which is why the Docker image has its own separate `npm install`. Different purposes, different platforms, both necessary.
+
+**The build must happen before the container starts.** Before running `docker-compose up`, the user must run `npm run build` on the host to generate `.next/`. If the container starts without a valid `.next/` build, PM2 will crash-loop with "Could not find a production build" until a build is available. After code changes, `rebuild-event-handler.yml` runs `next build` inside the container via `docker exec` (using the container's node_modules).
 
 ### docker-compose.yml Services
 

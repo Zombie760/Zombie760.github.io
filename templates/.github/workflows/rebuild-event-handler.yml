@@ -29,10 +29,21 @@ jobs:
               exit 0
             fi
 
-            # Pull, build, reload
+            # Pull latest code and install dependencies
             git reset --hard origin/main
             npm install --omit=dev
-            npm run build
+
+            # Clean build to a separate directory (no stale cache)
+            rm -rf .next-new .next-old
+            NEXT_BUILD_DIR=.next-new npm run build
+
+            # Atomic swap: old .next keeps serving until pm2 reload
+            mv .next .next-old 2>/dev/null || true
+            mv .next-new .next
+
             echo "Rebuild complete, reloading Next.js..."
             npx pm2 reload all
+
+            # Cleanup
+            rm -rf .next-old
           '
