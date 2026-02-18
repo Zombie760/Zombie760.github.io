@@ -5,6 +5,7 @@ import { MessageIcon, TrashIcon, MoreHorizontalIcon, StarIcon, StarFilledIcon, P
 import { SidebarMenuButton, SidebarMenuItem, useSidebar } from './ui/sidebar.js';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from './ui/dropdown-menu.js';
 import { ConfirmDialog } from './ui/confirm-dialog.js';
+import { RenameDialog } from './ui/rename-dialog.js';
 import { useChatNav } from './chat-nav-context.js';
 import { cn } from '../utils.js';
 
@@ -14,9 +15,11 @@ export function SidebarHistoryItem({ chat, isActive, onDelete, onStar, onRename 
   const [hovered, setHovered] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
+  const [renameDialogOpen, setRenameDialogOpen] = useState(false);
   const [editing, setEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(chat.title || '');
   const inputRef = useRef(null);
+  const clickTimer = useRef(null);
 
   const showMenu = hovered || dropdownOpen;
 
@@ -26,6 +29,12 @@ export function SidebarHistoryItem({ chat, isActive, onDelete, onStar, onRename 
       inputRef.current.select();
     }
   }, [editing]);
+
+  useEffect(() => {
+    return () => {
+      if (clickTimer.current) clearTimeout(clickTimer.current);
+    };
+  }, []);
 
   const startRename = () => {
     setEditTitle(chat.title || '');
@@ -73,8 +82,10 @@ export function SidebarHistoryItem({ chat, isActive, onDelete, onStar, onRename 
             className="pr-8"
             isActive={isActive}
             onClick={() => {
-              navigateToChat(chat.id);
-              setOpenMobile(false);
+              clickTimer.current = setTimeout(() => {
+                navigateToChat(chat.id);
+                setOpenMobile(false);
+              }, 250);
             }}
           >
             <MessageIcon size={14} />
@@ -83,6 +94,7 @@ export function SidebarHistoryItem({ chat, isActive, onDelete, onStar, onRename 
               onDoubleClick={(e) => {
                 e.stopPropagation();
                 e.preventDefault();
+                if (clickTimer.current) clearTimeout(clickTimer.current);
                 startRename();
               }}
             >
@@ -122,7 +134,7 @@ export function SidebarHistoryItem({ chat, isActive, onDelete, onStar, onRename 
                 <DropdownMenuItem
                   onClick={(e) => {
                     e.stopPropagation();
-                    startRename();
+                    setRenameDialogOpen(true);
                   }}
                 >
                   <PencilIcon size={14} />
@@ -154,6 +166,12 @@ export function SidebarHistoryItem({ chat, isActive, onDelete, onStar, onRename 
           onDelete(chat.id);
         }}
         onCancel={() => setConfirmDelete(false)}
+      />
+      <RenameDialog
+        open={renameDialogOpen}
+        currentValue={chat.title || ''}
+        onSave={(newTitle) => onRename(chat.id, newTitle)}
+        onCancel={() => setRenameDialogOpen(false)}
       />
     </SidebarMenuItem>
   );
