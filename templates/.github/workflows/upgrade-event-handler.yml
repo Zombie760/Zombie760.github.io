@@ -23,12 +23,15 @@ jobs:
             git clone --depth 1 "$REPO_URL" "$WORK_DIR"
             cd "$WORK_DIR"
 
+            git config user.name "thepopebot"
+            git config user.email "thepopebot@users.noreply.github.com"
+
             npm install
             npm update thepopebot
 
             git add -A
             if ! git diff --cached --quiet; then
-              VERSION=$(node -p "require('./node_modules/thepopebot/package.json').version")
+              VERSION=$(node -p "require(\"./node_modules/thepopebot/package.json\").version")
               BRANCH="upgrade/thepopebot-${VERSION}-$(date +%s)"
               git checkout -b "$BRANCH"
               git commit -m "chore: upgrade thepopebot"
