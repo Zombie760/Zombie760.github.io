@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 concurrency:
-  group: deploy
+  group: rebuild
   cancel-in-progress: true
 
 jobs:
@@ -87,6 +87,8 @@ jobs:
         run: |
           cd /project
           docker compose pull event-handler
+          docker stop thepopebot-event-handler || true
+          docker rm thepopebot-event-handler || true
           docker compose up -d event-handler
 
       - name: Rebuild in new container
