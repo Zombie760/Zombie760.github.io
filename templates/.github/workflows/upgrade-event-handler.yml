@@ -27,14 +27,15 @@ jobs:
             git config user.email "thepopebot@users.noreply.github.com"
 
             npm install
+            OLD_VERSION=$(node -p "require(\"./node_modules/thepopebot/package.json\").version")
             npm update thepopebot
+            NEW_VERSION=$(node -p "require(\"./node_modules/thepopebot/package.json\").version")
 
-            git add -A
-            if ! git diff --cached --quiet; then
-              VERSION=$(node -p "require(\"./node_modules/thepopebot/package.json\").version")
-              BRANCH="upgrade/thepopebot-${VERSION}-$(date +%s)"
+            if [ "$OLD_VERSION" != "$NEW_VERSION" ]; then
+              BRANCH="upgrade/thepopebot-${NEW_VERSION}-$(date +%s)"
+              git add -A
               git checkout -b "$BRANCH"
-              git commit -m "chore: upgrade thepopebot"
+              git commit -m "chore: upgrade thepopebot to $NEW_VERSION"
               git push origin "$BRANCH"
               gh pr create --title "chore: upgrade thepopebot" --body "Automated upgrade via upgrade-event-handler workflow." --base main --head "$BRANCH"
               gh pr merge "$BRANCH" --squash --auto --delete-branch

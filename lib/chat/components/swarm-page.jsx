@@ -35,13 +35,7 @@ function timeAgo(timestamp) {
 function LoadingSkeleton() {
   return (
     <div className="flex flex-col gap-4">
-      <div className="grid grid-cols-2 gap-3">
-        {[...Array(2)].map((_, i) => (
-          <div key={i} className="h-20 animate-pulse rounded-md bg-border/50" />
-        ))}
-      </div>
-      <div className="h-8 w-32 animate-pulse rounded-md bg-border/50" />
-      {[...Array(3)].map((_, i) => (
+      {[...Array(5)].map((_, i) => (
         <div key={i} className="h-14 animate-pulse rounded-md bg-border/50" />
       ))}
     </div>
@@ -49,32 +43,7 @@ function LoadingSkeleton() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Summary Cards
-// ─────────────────────────────────────────────────────────────────────────────
-
-function SwarmSummaryCards({ counts }) {
-  const cards = [
-    { label: 'Running', value: counts.running, color: 'border-l-green-500', text: 'text-green-500' },
-    { label: 'Queued', value: counts.queued, color: 'border-l-yellow-500', text: 'text-yellow-500' },
-  ];
-
-  return (
-    <div className="grid grid-cols-2 gap-3">
-      {cards.map((card) => (
-        <div
-          key={card.label}
-          className={`rounded-md border border-l-4 ${card.color} bg-card p-4`}
-        >
-          <p className="text-xs text-muted-foreground uppercase tracking-wide">{card.label}</p>
-          <p className={`text-2xl font-bold mt-1 ${card.text}`}>{card.value}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Unified Workflow List
+// Workflow List
 // ─────────────────────────────────────────────────────────────────────────────
 
 const conclusionBadgeStyles = {
@@ -158,66 +127,33 @@ function SwarmWorkflowList({ runs }) {
 
 export function SwarmPage({ session }) {
   const [runs, setRuns] = useState([]);
-  const [counts, setCounts] = useState({ running: 0, queued: 0 });
   const [hasMore, setHasMore] = useState(false);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [loadingMore, setLoadingMore] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
-  const fetchStatus = useCallback(async () => {
+  const fetchPage = useCallback(async (p) => {
     try {
-      const data = await getSwarmStatus();
-      setCounts(data.counts || { running: 0, queued: 0 });
+      const data = await getSwarmStatus(p);
+      setRuns(data.runs || []);
       setHasMore(data.hasMore || false);
-      // On auto-refresh, replace page 1 runs but keep any loaded beyond page 1
-      setRuns((prev) => {
-        const firstPage = data.runs || [];
-        if (page <= 1) return firstPage;
-        const beyondPage1 = prev.slice(firstPage.length);
-        return [...firstPage, ...beyondPage1];
-      });
-      setPage((prev) => Math.max(prev, 1));
+      setPage(p);
     } catch (err) {
       console.error('Failed to fetch swarm status:', err);
     } finally {
       setLoading(false);
+      setRefreshing(false);
     }
-  }, [page]);
+  }, []);
 
+  // Initial load
+  useEffect(() => { fetchPage(1); }, [fetchPage]);
+
+  // Auto-refresh current page every 10s
   useEffect(() => {
-    fetchStatus();
-    const interval = setInterval(fetchStatus, 10000);
+    const interval = setInterval(() => fetchPage(page), 10000);
     return () => clearInterval(interval);
-  }, [fetchStatus]);
-
-  const handleRefresh = async () => {
-    setRefreshing(true);
-    setPage(1);
-    try {
-      const data = await getSwarmStatus();
-      setCounts(data.counts || { running: 0, queued: 0 });
-      setRuns(data.runs || []);
-      setHasMore(data.hasMore || false);
-    } catch (err) {
-      console.error('Failed to fetch swarm status:', err);
-    }
-    setRefreshing(false);
-  };
-
-  const handleLoadMore = async () => {
-    const nextPage = page + 1;
-    setLoadingMore(true);
-    try {
-      const data = await getSwarmStatus(nextPage);
-      setRuns((prev) => [...prev, ...(data.runs || [])]);
-      setHasMore(data.hasMore || false);
-      setPage(nextPage);
-    } catch (err) {
-      console.error('Failed to load more:', err);
-    }
-    setLoadingMore(false);
-  };
+  }, [fetchPage, page]);
 
   return (
     <PageLayout session={session}>
@@ -226,7 +162,7 @@ export function SwarmPage({ session }) {
         <h1 className="text-2xl font-semibold">Swarm</h1>
         {!loading && (
           <button
-            onClick={handleRefresh}
+            onClick={() => { setRefreshing(true); fetchPage(1); }}
             disabled={refreshing}
             className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-medium border border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
           >
@@ -248,34 +184,25 @@ export function SwarmPage({ session }) {
       {loading ? (
         <LoadingSkeleton />
       ) : (
-        <div className="flex flex-col gap-6">
-          {/* Summary Cards */}
-          <SwarmSummaryCards counts={counts} />
-
-          {/* Workflow Runs */}
-          <div>
-            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">
-              Workflow Runs
-            </h2>
-            <SwarmWorkflowList runs={runs} />
-            {hasMore && (
-              <div className="flex justify-center mt-4">
-                <button
-                  onClick={handleLoadMore}
-                  disabled={loadingMore}
-                  className="inline-flex items-center gap-1.5 rounded-md px-4 py-2 text-sm font-medium border border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
-                >
-                  {loadingMore ? (
-                    <>
-                      <SpinnerIcon size={14} />
-                      Loading...
-                    </>
-                  ) : (
-                    'Load more'
-                  )}
-                </button>
-              </div>
-            )}
+        <div>
+          <SwarmWorkflowList runs={runs} />
+          {/* Pagination */}
+          <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
+            <button
+              onClick={() => { setRefreshing(true); fetchPage(page - 1); }}
+              disabled={page <= 1 || refreshing}
+              className="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium border border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
+            >
+              Previous
+            </button>
+            <span className="text-sm text-muted-foreground">Page {page}</span>
+            <button
+              onClick={() => { setRefreshing(true); fetchPage(page + 1); }}
+              disabled={!hasMore || refreshing}
+              className="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium border border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
+            >
+              Next
+            </button>
           </div>
         </div>
       )}
