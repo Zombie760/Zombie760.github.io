@@ -89,7 +89,7 @@ You just bring your own [Anthropic API key](https://console.anthropic.com/).
 
 ```bash
 mkdir my-agent && cd my-agent
-npx thepopebot init
+npx thepopebot@latest init
 ```
 
 This creates a Next.js project with configuration files, GitHub Actions workflows, and agent templates. You don't need to create a GitHub repo first — the setup wizard handles that.
@@ -135,13 +135,13 @@ docker compose up -d
 **1. Update the package**
 
 ```bash
-npm update thepopebot
+npm install thepopebot@latest
 ```
 
 **2. Scaffold and update templates**
 
 ```bash
-npx thepopebot init
+npx thepopebot@latest init
 ```
 
 This scaffolds any new template files, runs `npm install`, and updates `THEPOPEBOT_VERSION` in your local `.env`.

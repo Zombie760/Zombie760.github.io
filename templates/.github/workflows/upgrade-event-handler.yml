@@ -28,7 +28,7 @@ jobs:
 
             npm install --omit=dev
             OLD_VERSION=$(node -p "require(\"./node_modules/thepopebot/package.json\").version")
-            npm update thepopebot
+            npm update thepopebot --prefer-online
             NEW_VERSION=$(node -p "require(\"./node_modules/thepopebot/package.json\").version")
 
             if [ "$OLD_VERSION" != "$NEW_VERSION" ]; then

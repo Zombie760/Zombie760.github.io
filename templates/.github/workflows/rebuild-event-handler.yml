@@ -39,7 +39,7 @@ jobs:
 
             if [ -n "$OLD_TPB" ] && [ "$OLD_TPB" != "$NEW_TPB" ]; then
               # Version changed — run thepopebot init to scaffold new templates
-              npx thepopebot init
+              npx --yes thepopebot@latest init
 
               # Commit any template changes from init
               git add -A

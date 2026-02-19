@@ -2,6 +2,7 @@
 
 import { execSync } from 'child_process';
 import path from 'path';
+import { readFileSync, existsSync } from 'fs';
 import chalk from 'chalk';
 import ora from 'ora';
 import open from 'open';
@@ -34,6 +35,7 @@ import {
 } from './lib/github.mjs';
 import {
   writeEnvFile,
+  updateEnvVariable,
   writeModelsJson,
   encodeSecretsBase64,
   encodeLlmSecretsBase64,
@@ -73,11 +75,38 @@ function printInfo(message) {
   console.log(chalk.dim('  \u2192 ') + message);
 }
 
+/**
+ * Parse .env file and return object, or null if no .env exists
+ */
+function loadEnvFile() {
+  const envPath = path.join(process.cwd(), '.env');
+  if (!existsSync(envPath)) {
+    return null;
+  }
+  const content = readFileSync(envPath, 'utf-8');
+  const env = {};
+  for (const line of content.split('\n')) {
+    const match = line.match(/^([^#=]+)=(.*)$/);
+    if (match) {
+      env[match[1].trim()] = match[2].trim();
+    }
+  }
+  return env;
+}
+
 async function main() {
   printHeader();
 
   const TOTAL_STEPS = 7;
   let currentStep = 0;
+
+  // Load existing .env for re-run detection
+  const env = loadEnvFile();
+  const isRerun = env !== null;
+
+  if (isRerun) {
+    console.log(chalk.dim('  Existing .env detected \u2014 previously configured values can be skipped.\n'));
+  }
 
   // Collected values
   let pat = null;
@@ -88,6 +117,10 @@ async function main() {
   let webhookSecret = null;
   let owner = null;
   let repo = null;
+
+  // Track what changed for selective .env updates and GitHub secrets
+  let credentialsChanged = false;
+  const changedVars = {};
 
   // Step 1: Prerequisites Check
   printStep(++currentStep, TOTAL_STEPS, 'Checking prerequisites');
@@ -256,6 +289,12 @@ async function main() {
     }
   }
 
+  // Track owner/repo changes for re-runs
+  if (isRerun) {
+    if (owner !== env.GH_OWNER) changedVars['GH_OWNER'] = owner;
+    if (repo !== env.GH_REPO) changedVars['GH_REPO'] = repo;
+  }
+
   // Track whether we need to push after getting the PAT
   let needsPush = false;
   try {
@@ -275,46 +314,61 @@ async function main() {
   // Step 2: GitHub PAT
   printStep(++currentStep, TOTAL_STEPS, 'GitHub Personal Access Token');
 
-  console.log(chalk.dim(`  Create a fine-grained PAT scoped to ${chalk.bold(`${owner}/${repo}`)} only:\n`));
-  console.log(chalk.dim('    \u2022 Repository access: Only select repositories \u2192 ') + chalk.bold(`${owner}/${repo}`));
-  console.log(chalk.dim('    \u2022 Actions: Read and write'));
-  console.log(chalk.dim('    \u2022 Administration: Read and write (required for self-hosted runners)'));
-  console.log(chalk.dim('    \u2022 Contents: Read and write'));
-  console.log(chalk.dim('    \u2022 Metadata: Read-only (required, auto-selected)'));
-  console.log(chalk.dim('    \u2022 Pull requests: Read and write'));
-  console.log(chalk.dim('    \u2022 Workflows: Read and write\n'));
-
-  const openPATPage = await confirm('Open GitHub PAT creation page in browser?');
-  if (openPATPage) {
-    await open(getPATCreationURL());
-    printInfo('Opened in browser. Scope it to ' + chalk.bold(`${owner}/${repo}`) + ' only.');
+  // Skip if PAT already configured
+  if (isRerun && env?.GH_TOKEN) {
+    printSuccess(`GitHub PAT configured (${maskSecret(env.GH_TOKEN)})`);
+    if (!await confirm('Reconfigure?', false)) {
+      pat = env.GH_TOKEN;
+    }
   }
 
-  let patValid = false;
-  while (!patValid) {
-    pat = await promptForPAT();
+  if (!pat) {
+    console.log(chalk.dim(`  Create a fine-grained PAT scoped to ${chalk.bold(`${owner}/${repo}`)} only:\n`));
+    console.log(chalk.dim('    \u2022 Repository access: Only select repositories \u2192 ') + chalk.bold(`${owner}/${repo}`));
+    console.log(chalk.dim('    \u2022 Actions: Read and write'));
+    console.log(chalk.dim('    \u2022 Administration: Read and write (required for self-hosted runners)'));
+    console.log(chalk.dim('    \u2022 Contents: Read and write'));
+    console.log(chalk.dim('    \u2022 Metadata: Read-only (required, auto-selected)'));
+    console.log(chalk.dim('    \u2022 Pull requests: Read and write'));
+    console.log(chalk.dim('    \u2022 Workflows: Read and write\n'));
 
-    const validateSpinner = ora('Validating PAT...').start();
-    const validation = await validatePAT(pat);
-
-    if (!validation.valid) {
-      validateSpinner.fail(`Invalid PAT: ${validation.error}`);
-      continue;
+    const openPATPage = await confirm('Open GitHub PAT creation page in browser?');
+    if (openPATPage) {
+      await open(getPATCreationURL());
+      printInfo('Opened in browser. Scope it to ' + chalk.bold(`${owner}/${repo}`) + ' only.');
     }
 
-    const scopes = await checkPATScopes(pat);
-    if (!scopes.hasRepo || !scopes.hasWorkflow) {
-      validateSpinner.fail('PAT missing required scopes');
-      printInfo(`Found scopes: ${scopes.scopes.join(', ') || 'none'}`);
-      continue;
+    let patValid = false;
+    while (!patValid) {
+      pat = await promptForPAT();
+
+      const validateSpinner = ora('Validating PAT...').start();
+      const validation = await validatePAT(pat);
+
+      if (!validation.valid) {
+        validateSpinner.fail(`Invalid PAT: ${validation.error}`);
+        continue;
+      }
+
+      const scopes = await checkPATScopes(pat);
+      if (!scopes.hasRepo || !scopes.hasWorkflow) {
+        validateSpinner.fail('PAT missing required scopes');
+        printInfo(`Found scopes: ${scopes.scopes.join(', ') || 'none'}`);
+        continue;
+      }
+
+      if (scopes.isFineGrained) {
+        validateSpinner.succeed(`Fine-grained PAT valid for user: ${validation.user}`);
+      } else {
+        validateSpinner.succeed(`PAT valid for user: ${validation.user}`);
+      }
+      patValid = true;
     }
 
-    if (scopes.isFineGrained) {
-      validateSpinner.succeed(`Fine-grained PAT valid for user: ${validation.user}`);
-    } else {
-      validateSpinner.succeed(`PAT valid for user: ${validation.user}`);
+    credentialsChanged = true;
+    if (isRerun) {
+      changedVars['GH_TOKEN'] = pat;
     }
-    patValid = true;
   }
 
   // Push to GitHub now that we have the PAT
@@ -350,56 +404,113 @@ async function main() {
   // Step 3: API Keys
   printStep(++currentStep, TOTAL_STEPS, 'API Keys');
 
-  // Step 3a: Agent LLM
-  console.log(chalk.dim('  Choose the LLM provider for your agent.\n'));
+  // Step 3a: Agent LLM — skip if provider + key already configured
+  if (isRerun && env?.LLM_PROVIDER && env?.LLM_MODEL) {
+    let existingEnvKey = null;
+    let existingKey = null;
 
-  agentProvider = await promptForProvider();
-
-  if (agentProvider === 'custom') {
-    const custom = await promptForCustomProvider();
-    agentModel = custom.model;
-    writeModelsJson('custom', {
-      baseUrl: custom.baseUrl,
-      apiKey: 'CUSTOM_API_KEY',
-      api: 'openai-completions',
-      models: [custom.model],
-    });
-    collectedKeys['CUSTOM_API_KEY'] = custom.apiKey;
-    printSuccess(`Custom provider configured: ${custom.model}`);
-  } else {
-    const providerConfig = PROVIDERS[agentProvider];
-    agentModel = await promptForModel(agentProvider);
-    const agentApiKey = await promptForApiKey(agentProvider);
-    collectedKeys[providerConfig.envKey] = agentApiKey;
-
-    // Non-builtin providers need models.json (e.g., OpenAI)
-    if (!providerConfig.builtin) {
-      writeModelsJson(agentProvider, {
-        baseUrl: providerConfig.baseUrl,
-        apiKey: providerConfig.envKey,
-        api: providerConfig.api,
-        models: providerConfig.models.map((m) => m.id),
-      });
-      printSuccess(`Generated .pi/agent/models.json for ${providerConfig.name}`);
+    if (env.LLM_PROVIDER === 'custom') {
+      existingEnvKey = 'CUSTOM_API_KEY';
+      existingKey = env.CUSTOM_API_KEY;
+    } else if (PROVIDERS[env.LLM_PROVIDER]) {
+      existingEnvKey = PROVIDERS[env.LLM_PROVIDER].envKey;
+      existingKey = env[existingEnvKey];
     }
 
-    printSuccess(`${providerConfig.name} key added (${maskSecret(agentApiKey)})`);
+    if (existingKey) {
+      const providerLabel = env.LLM_PROVIDER === 'custom'
+        ? 'Custom / Local'
+        : (PROVIDERS[env.LLM_PROVIDER]?.label || env.LLM_PROVIDER);
+      printSuccess(`LLM: ${providerLabel} / ${env.LLM_MODEL} (${maskSecret(existingKey)})`);
+      if (!await confirm('Reconfigure?', false)) {
+        agentProvider = env.LLM_PROVIDER;
+        agentModel = env.LLM_MODEL;
+        collectedKeys[existingEnvKey] = existingKey;
+      }
+    }
+  }
+
+  if (!agentProvider) {
+    console.log(chalk.dim('  Choose the LLM provider for your agent.\n'));
+
+    agentProvider = await promptForProvider();
+
+    if (agentProvider === 'custom') {
+      const custom = await promptForCustomProvider();
+      agentModel = custom.model;
+      writeModelsJson('custom', {
+        baseUrl: custom.baseUrl,
+        apiKey: 'CUSTOM_API_KEY',
+        api: 'openai-completions',
+        models: [custom.model],
+      });
+      collectedKeys['CUSTOM_API_KEY'] = custom.apiKey;
+      printSuccess(`Custom provider configured: ${custom.model}`);
+    } else {
+      const providerConfig = PROVIDERS[agentProvider];
+      agentModel = await promptForModel(agentProvider);
+      const agentApiKey = await promptForApiKey(agentProvider);
+      collectedKeys[providerConfig.envKey] = agentApiKey;
+
+      // Non-builtin providers need models.json (e.g., OpenAI)
+      if (!providerConfig.builtin) {
+        writeModelsJson(agentProvider, {
+          baseUrl: providerConfig.baseUrl,
+          apiKey: providerConfig.envKey,
+          api: providerConfig.api,
+          models: providerConfig.models.map((m) => m.id),
+        });
+        printSuccess(`Generated .pi/agent/models.json for ${providerConfig.name}`);
+      }
+
+      printSuccess(`${providerConfig.name} key added (${maskSecret(agentApiKey)})`);
+    }
+
+    credentialsChanged = true;
+    if (isRerun) {
+      const providerEnvKey = agentProvider !== 'custom'
+        ? PROVIDERS[agentProvider].envKey
+        : 'CUSTOM_API_KEY';
+      changedVars['LLM_PROVIDER'] = agentProvider;
+      changedVars['LLM_MODEL'] = agentModel;
+      changedVars[providerEnvKey] = collectedKeys[providerEnvKey];
+    }
   }
 
   // Step 3b: Voice Messages (OpenAI optional)
   if (collectedKeys['OPENAI_API_KEY']) {
     printSuccess('Your OpenAI key can also power voice messages.');
+  } else if (isRerun && env?.OPENAI_API_KEY) {
+    // OpenAI key exists from a previous setup (for voice), offer to keep
+    printSuccess(`OpenAI key for voice configured (${maskSecret(env.OPENAI_API_KEY)})`);
+    if (await confirm('Reconfigure?', false)) {
+      const result = await promptForOptionalKey('openai', 'voice messages');
+      if (result) {
+        collectedKeys['OPENAI_API_KEY'] = result;
+        credentialsChanged = true;
+        changedVars['OPENAI_API_KEY'] = result;
+        printSuccess(`OpenAI key updated (${maskSecret(result)})`);
+      }
+    } else {
+      collectedKeys['OPENAI_API_KEY'] = env.OPENAI_API_KEY;
+    }
   } else {
     const result = await promptForOptionalKey('openai', 'voice messages');
     if (result) {
       collectedKeys['OPENAI_API_KEY'] = result;
+      if (isRerun) {
+        credentialsChanged = true;
+        changedVars['OPENAI_API_KEY'] = result;
+      }
       printSuccess(`OpenAI key added (${maskSecret(result)})`);
     }
   }
 
   // Step 3c: Brave Search (optional, default: true since it's free)
+  // Brave key lives in LLM_SECRETS on GitHub, not in .env — always ask
   braveKey = await promptForBraveKey();
   if (braveKey) {
+    if (isRerun) credentialsChanged = true;
     printSuccess(`Brave Search key added (${maskSecret(braveKey)})`);
   }
 
@@ -416,68 +527,79 @@ async function main() {
     repo = answers.repo;
   }
 
-  webhookSecret = generateWebhookSecret();
-  const secretsBase64 = encodeSecretsBase64(pat, collectedKeys);
-  const llmKeys = {};
-  if (braveKey) llmKeys.BRAVE_API_KEY = braveKey;
-  const llmSecretsBase64 = encodeLlmSecretsBase64(llmKeys);
+  // Skip GitHub secrets if nothing changed on re-run
+  let llmSecretsBase64 = null;
+  if (isRerun && !credentialsChanged && env?.GH_WEBHOOK_SECRET) {
+    printSuccess('GitHub secrets unchanged');
+    webhookSecret = env.GH_WEBHOOK_SECRET;
+  } else {
+    webhookSecret = generateWebhookSecret();
+    const secretsBase64 = encodeSecretsBase64(pat, collectedKeys);
+    const llmKeys = {};
+    if (braveKey) llmKeys.BRAVE_API_KEY = braveKey;
+    llmSecretsBase64 = encodeLlmSecretsBase64(llmKeys);
 
-  const secrets = {
-    SECRETS: secretsBase64,
-    GH_WEBHOOK_SECRET: webhookSecret,
-  };
+    const secrets = {
+      SECRETS: secretsBase64,
+      GH_WEBHOOK_SECRET: webhookSecret,
+    };
 
-  if (llmSecretsBase64) {
-    secrets.LLM_SECRETS = llmSecretsBase64;
-  }
+    if (llmSecretsBase64) {
+      secrets.LLM_SECRETS = llmSecretsBase64;
+    }
 
-  let allSecretsSet = false;
-  while (!allSecretsSet) {
-    const secretSpinner = ora('Setting GitHub secrets...').start();
-    const secretResults = await setSecrets(owner, repo, secrets);
-    secretSpinner.stop();
+    let allSecretsSet = false;
+    while (!allSecretsSet) {
+      const secretSpinner = ora('Setting GitHub secrets...').start();
+      const secretResults = await setSecrets(owner, repo, secrets);
+      secretSpinner.stop();
 
-    allSecretsSet = true;
-    for (const [name, result] of Object.entries(secretResults)) {
-      if (result.success) {
-        printSuccess(`Set ${name}`);
-      } else {
-        printError(`Failed to set ${name}: ${result.error}`);
-        allSecretsSet = false;
+      allSecretsSet = true;
+      for (const [name, result] of Object.entries(secretResults)) {
+        if (result.success) {
+          printSuccess(`Set ${name}`);
+        } else {
+          printError(`Failed to set ${name}: ${result.error}`);
+          allSecretsSet = false;
+        }
+      }
+
+      if (!allSecretsSet) {
+        await pressEnter('Fix the issue, then press enter to retry');
       }
     }
 
-    if (!allSecretsSet) {
-      await pressEnter('Fix the issue, then press enter to retry');
-    }
-  }
+    // Set default GitHub repository variables
+    const defaultVars = {
+      AUTO_MERGE: 'true',
+      ALLOWED_PATHS: '/logs',
+      LLM_PROVIDER: agentProvider,
+      LLM_MODEL: agentModel,
+    };
 
-  // Set default GitHub repository variables
-  const defaultVars = {
-    AUTO_MERGE: 'true',
-    ALLOWED_PATHS: '/logs',
-    LLM_PROVIDER: agentProvider,
-    LLM_MODEL: agentModel,
-  };
+    let allVarsSet = false;
+    while (!allVarsSet) {
+      const varsSpinner = ora('Setting GitHub repository variables...').start();
+      const varResults = await setVariables(owner, repo, defaultVars);
+      varsSpinner.stop();
 
-  let allVarsSet = false;
-  while (!allVarsSet) {
-    const varsSpinner = ora('Setting GitHub repository variables...').start();
-    const varResults = await setVariables(owner, repo, defaultVars);
-    varsSpinner.stop();
+      allVarsSet = true;
+      for (const [name, result] of Object.entries(varResults)) {
+        if (result.success) {
+          printSuccess(`Set ${name} = ${defaultVars[name]}`);
+        } else {
+          printError(`Failed to set ${name}: ${result.error}`);
+          allVarsSet = false;
+        }
+      }
 
-    allVarsSet = true;
-    for (const [name, result] of Object.entries(varResults)) {
-      if (result.success) {
-        printSuccess(`Set ${name} = ${defaultVars[name]}`);
-      } else {
-        printError(`Failed to set ${name}: ${result.error}`);
-        allVarsSet = false;
+      if (!allVarsSet) {
+        await pressEnter('Fix the issue, then press enter to retry');
       }
     }
 
-    if (!allVarsSet) {
-      await pressEnter('Fix the issue, then press enter to retry');
+    if (isRerun) {
+      changedVars['GH_WEBHOOK_SECRET'] = webhookSecret;
     }
   }
 
@@ -490,96 +612,149 @@ async function main() {
   // Step 5: APP_URL (must be set before Docker starts — Traefik needs APP_HOSTNAME)
   printStep(++currentStep, TOTAL_STEPS, 'App URL');
 
-  console.log(chalk.dim('  Your app needs a public URL for GitHub webhooks and Traefik routing.\n'));
-  console.log(chalk.dim('  Examples:'));
-  console.log(chalk.dim('    \u2022 ngrok: ') + chalk.cyan('https://abc123.ngrok.io'));
-  console.log(chalk.dim('    \u2022 VPS:   ') + chalk.cyan('https://mybot.example.com'));
-  console.log(chalk.dim('    \u2022 PaaS:  ') + chalk.cyan('https://mybot.vercel.app\n'));
-
   let appUrl = null;
-  while (!appUrl) {
-    const { url: urlInput } = await inquirer.prompt([
-      {
-        type: 'input',
-        name: 'url',
-        message: 'Enter your APP_URL (https://...):',
-        validate: (input) => {
-          if (!input) return 'URL is required';
-          if (!input.startsWith('https://')) return 'URL must start with https://';
-          return true;
+
+  // Skip if APP_URL already configured
+  if (isRerun && env?.APP_URL) {
+    printSuccess(`APP_URL: ${env.APP_URL}`);
+    if (!await confirm('Reconfigure?', false)) {
+      appUrl = env.APP_URL;
+    }
+  }
+
+  if (!appUrl) {
+    console.log(chalk.dim('  Your app needs a public URL for GitHub webhooks and Traefik routing.\n'));
+    console.log(chalk.dim('  Examples:'));
+    console.log(chalk.dim('    \u2022 ngrok: ') + chalk.cyan('https://abc123.ngrok.io'));
+    console.log(chalk.dim('    \u2022 VPS:   ') + chalk.cyan('https://mybot.example.com'));
+    console.log(chalk.dim('    \u2022 PaaS:  ') + chalk.cyan('https://mybot.vercel.app\n'));
+
+    while (!appUrl) {
+      const { url: urlInput } = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'url',
+          message: 'Enter your APP_URL (https://...):',
+          validate: (input) => {
+            if (!input) return 'URL is required';
+            if (!input.startsWith('https://')) return 'URL must start with https://';
+            return true;
+          },
         },
-      },
-    ]);
-    appUrl = urlInput.replace(/\/$/, '');
+      ]);
+      appUrl = urlInput.replace(/\/$/, '');
+    }
+
+    if (isRerun) {
+      const appHostname = new URL(appUrl).hostname;
+      changedVars['APP_URL'] = appUrl;
+      changedVars['APP_HOSTNAME'] = appHostname;
+    }
+
+    // Set APP_URL variable on GitHub
+    let appUrlSet = false;
+    while (!appUrlSet) {
+      const urlSpinner = ora('Setting APP_URL variable...').start();
+      const urlResult = await setVariables(owner, repo, { APP_URL: appUrl });
+      if (urlResult.APP_URL.success) {
+        urlSpinner.succeed('APP_URL variable set');
+        appUrlSet = true;
+      } else {
+        urlSpinner.fail(`Failed: ${urlResult.APP_URL.error}`);
+        await pressEnter('Fix the issue, then press enter to retry');
+      }
+    }
   }
 
   const appHostname = new URL(appUrl).hostname;
 
-  // Set APP_URL variable on GitHub
-  let appUrlSet = false;
-  while (!appUrlSet) {
-    const urlSpinner = ora('Setting APP_URL variable...').start();
-    const urlResult = await setVariables(owner, repo, { APP_URL: appUrl });
-    if (urlResult.APP_URL.success) {
-      urlSpinner.succeed('APP_URL variable set');
-      appUrlSet = true;
-    } else {
-      urlSpinner.fail(`Failed: ${urlResult.APP_URL.error}`);
-      await pressEnter('Fix the issue, then press enter to retry');
+  // Write .env — fresh install uses writeEnvFile(), re-runs update only changed values
+  if (!isRerun) {
+    const providerConfig = agentProvider !== 'custom' ? PROVIDERS[agentProvider] : null;
+    const providerEnvKey = providerConfig ? providerConfig.envKey : 'CUSTOM_API_KEY';
+    const envPath = writeEnvFile({
+      githubToken: pat,
+      githubOwner: owner,
+      githubRepo: repo,
+      telegramBotToken: null,
+      telegramWebhookSecret: null,
+      ghWebhookSecret: webhookSecret,
+      llmProvider: agentProvider,
+      llmModel: agentModel,
+      providerEnvKey,
+      providerApiKey: collectedKeys[providerEnvKey] || '',
+      openaiApiKey: collectedKeys['OPENAI_API_KEY'] || '',
+      telegramChatId: null,
+      telegramVerification: null,
+      appUrl,
+      appHostname,
+    });
+    printSuccess(`Created ${envPath}`);
+  } else if (Object.keys(changedVars).length > 0) {
+    for (const [key, value] of Object.entries(changedVars)) {
+      updateEnvVariable(key, value);
     }
+    printSuccess(`Updated .env (${Object.keys(changedVars).join(', ')})`);
+  } else {
+    printSuccess('.env unchanged');
   }
-
-  // Write .env file (includes APP_URL and APP_HOSTNAME for Docker/Traefik)
-  const providerConfig = agentProvider !== 'custom' ? PROVIDERS[agentProvider] : null;
-  const providerEnvKey = providerConfig ? providerConfig.envKey : 'CUSTOM_API_KEY';
-  const envPath = writeEnvFile({
-    githubToken: pat,
-    githubOwner: owner,
-    githubRepo: repo,
-    telegramBotToken: null,
-    telegramWebhookSecret: null,
-    ghWebhookSecret: webhookSecret,
-    llmProvider: agentProvider,
-    llmModel: agentModel,
-    providerEnvKey,
-    providerApiKey: collectedKeys[providerEnvKey] || '',
-    openaiApiKey: collectedKeys['OPENAI_API_KEY'] || '',
-    telegramChatId: null,
-    telegramVerification: null,
-    appUrl,
-    appHostname,
-  });
-  printSuccess(`Created ${envPath}`);
 
   // Step 6: Build & Start Server
   printStep(++currentStep, TOTAL_STEPS, 'Build & Start Server');
 
-  // Build
-  console.log(chalk.dim('  Building Next.js...\n'));
+  // Check if server is already running
+  let serverAlreadyRunning = false;
   try {
-    execSync('npm run build', { stdio: 'inherit' });
-    printSuccess('Build complete');
+    await fetch('http://localhost:80/api/ping', {
+      method: 'GET',
+      signal: AbortSignal.timeout(3000),
+    });
+    serverAlreadyRunning = true;
   } catch {
-    printError('Build failed — run npm run build manually');
+    // Server not reachable
   }
 
-  console.log(chalk.bold('\n  Start Docker in a new terminal window:\n'));
-  console.log(chalk.cyan('     docker compose up -d\n'));
-
-  let serverReachable = false;
-  while (!serverReachable) {
-    await pressEnter('Press enter once Docker is running');
-    const serverSpinner = ora('Checking server...').start();
+  if (serverAlreadyRunning) {
+    printSuccess('Server is already running');
+    if (!await confirm('Rebuild and restart anyway?', false)) {
+      // Skip build & start
+    } else {
+      console.log(chalk.dim('\n  Rebuilding Next.js...\n'));
+      try {
+        execSync('npm run build', { stdio: 'inherit' });
+        printSuccess('Build complete');
+      } catch {
+        printError('Build failed \u2014 run npm run build manually');
+      }
+    }
+  } else {
+    // Build
+    console.log(chalk.dim('  Building Next.js...\n'));
     try {
-      const response = await fetch('http://localhost:80/api/ping', {
-        method: 'GET',
-        signal: AbortSignal.timeout(5000),
-      });
-      // Any HTTP response means the server is running (even 401)
-      serverSpinner.succeed('Server is running');
-      serverReachable = true;
+      execSync('npm run build', { stdio: 'inherit' });
+      printSuccess('Build complete');
     } catch {
-      serverSpinner.fail('Could not reach server on localhost:80');
+      printError('Build failed \u2014 run npm run build manually');
+    }
+
+    console.log(chalk.bold('\n  Start Docker in a new terminal window:\n'));
+    console.log(chalk.cyan('     docker compose up -d\n'));
+
+    let serverReachable = false;
+    while (!serverReachable) {
+      await pressEnter('Press enter once Docker is running');
+      const serverSpinner = ora('Checking server...').start();
+      try {
+        await fetch('http://localhost:80/api/ping', {
+          method: 'GET',
+          signal: AbortSignal.timeout(5000),
+        });
+        // Any HTTP response means the server is running (even 401)
+        serverSpinner.succeed('Server is running');
+        serverReachable = true;
+      } catch {
+        serverSpinner.fail('Could not reach server on localhost:80');
+      }
     }
   }
 
@@ -598,17 +773,19 @@ async function main() {
   }
   if (braveKey) console.log(`  ${chalk.dim('Brave Search:')}    ${maskSecret(braveKey)}`);
 
-  console.log(chalk.bold('\n  GitHub Secrets Set:\n'));
-  console.log('  \u2022 SECRETS');
-  if (llmSecretsBase64) console.log('  \u2022 LLM_SECRETS');
-  console.log('  \u2022 GH_WEBHOOK_SECRET');
+  if (!isRerun || credentialsChanged) {
+    console.log(chalk.bold('\n  GitHub Secrets Set:\n'));
+    console.log('  \u2022 SECRETS');
+    if (llmSecretsBase64) console.log('  \u2022 LLM_SECRETS');
+    console.log('  \u2022 GH_WEBHOOK_SECRET');
 
-  console.log(chalk.bold('\n  GitHub Variables Set:\n'));
-  console.log('  \u2022 APP_URL');
-  console.log('  \u2022 AUTO_MERGE = true');
-  console.log('  \u2022 ALLOWED_PATHS = /logs');
-  console.log(`  \u2022 LLM_PROVIDER = ${agentProvider}`);
-  console.log(`  \u2022 LLM_MODEL = ${agentModel}`);
+    console.log(chalk.bold('\n  GitHub Variables Set:\n'));
+    console.log('  \u2022 APP_URL');
+    console.log('  \u2022 AUTO_MERGE = true');
+    console.log('  \u2022 ALLOWED_PATHS = /logs');
+    console.log(`  \u2022 LLM_PROVIDER = ${agentProvider}`);
+    console.log(`  \u2022 LLM_MODEL = ${agentModel}`);
+  }
 
   console.log(chalk.bold.green('\n  You\'re all set!\n'));
 

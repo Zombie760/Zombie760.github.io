@@ -29,8 +29,8 @@ export function SetupForm() {
         return;
       }
 
-      // Redirect to login — admin must authenticate through the normal flow
-      router.push('/login');
+      // Redirect to login with success indicator — admin must authenticate through the normal flow
+      router.push('/login?created=1');
     } catch {
       setError('Something went wrong. Please try again.');
     } finally {

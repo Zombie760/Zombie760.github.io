@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu.js';
 import { SidebarMenu, SidebarMenuItem, SidebarMenuButton } from './ui/sidebar.js';
-import { SettingsIcon, SunIcon, MoonIcon, LogOutIcon } from './icons.js';
+import { SettingsIcon, SunIcon, MoonIcon, BugIcon, LogOutIcon } from './icons.js';
 import { cn } from '../utils.js';
 
 export function SidebarUserNav({ user, collapsed }) {
@@ -53,6 +53,12 @@ export function SidebarUserNav({ user, collapsed }) {
                 <span className="ml-2">{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
               </DropdownMenuItem>
             )}
+            <DropdownMenuItem asChild>
+              <a href="https://github.com/stephengpope/thepopebot/issues" target="_blank" rel="noopener noreferrer">
+                <BugIcon size={14} />
+                <span className="ml-2">Report Issues</span>
+              </a>
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem
               onClick={() => signOut({ callbackUrl: '/' })}
