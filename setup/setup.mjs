@@ -444,8 +444,9 @@ async function main() {
     agentProvider = await promptForProvider();
 
     if (agentProvider === 'custom') {
-      printInfo('If the model runs on this machine, use http://host.docker.internal:<port>');
-      printInfo('instead of localhost (localhost won\'t work from inside Docker)\n');
+      printInfo('If the model runs on this machine, use http://host.docker.internal:<port>/v1');
+      printInfo('instead of localhost (localhost won\'t work from inside Docker)');
+      printInfo('Ollama example: http://host.docker.internal:11434/v1\n');
       const custom = await promptForCustomProvider();
       agentModel = custom.model;
       openaiBaseUrl = custom.baseUrl;
@@ -498,8 +499,9 @@ async function main() {
   if ((agentProvider === 'openai' || agentProvider === 'custom') && isRerun && env?.OPENAI_BASE_URL && !openaiBaseUrl) {
     printSuccess(`Custom LLM URL: ${env.OPENAI_BASE_URL}`);
     if (await confirm('Reconfigure?', false)) {
-      printInfo('If the model runs on this machine, use http://host.docker.internal:<port>');
-      printInfo('instead of localhost (localhost won\'t work from inside Docker)\n');
+      printInfo('If the model runs on this machine, use http://host.docker.internal:<port>/v1');
+      printInfo('instead of localhost (localhost won\'t work from inside Docker)');
+      printInfo('Ollama example: http://host.docker.internal:11434/v1\n');
       const { baseUrl } = await inquirer.prompt([
         {
           type: 'input',

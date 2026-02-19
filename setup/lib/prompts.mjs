@@ -179,7 +179,7 @@ export async function promptForCustomProvider() {
     {
       type: 'input',
       name: 'baseUrl',
-      message: 'API base URL (e.g., http://myhost.ddns.net:11434/v1):',
+      message: 'API base URL (e.g., http://host.docker.internal:11434/v1):',
       validate: (input) => {
         if (!input) return 'Base URL is required';
         if (!input.startsWith('http://') && !input.startsWith('https://')) {
@@ -194,7 +194,7 @@ export async function promptForCustomProvider() {
     {
       type: 'input',
       name: 'model',
-      message: 'Model ID (e.g., llama3.3:70b):',
+      message: 'Model ID (e.g., qwen3:8b):',
       validate: (input) => input ? true : 'Model ID is required',
     },
   ]);
