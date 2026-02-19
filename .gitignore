@@ -13,6 +13,9 @@
 # Pi skills symlinked at runtime from /pi-skills in Docker
 .pi/skills/brave-search
 
+# Database
+data/
+
 # Node
 node_modules/
 
