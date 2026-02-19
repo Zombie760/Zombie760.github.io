@@ -451,13 +451,88 @@ async function main() {
       });
       collectedKeys['CUSTOM_API_KEY'] = custom.apiKey;
       printSuccess(`Custom provider configured: ${custom.model}`);
+    } else if (agentProvider === 'openai') {
+      // Ask about custom URL FIRST — changes the entire prompt flow
+      const useCustomUrl = await confirm('Use your own OpenAI-compatible LLM? (e.g. Ollama, vLLM)', false);
+
+      if (useCustomUrl) {
+        // Custom URL flow: URL → model → key (optional)
+        printInfo('If the model runs on this machine, use http://host.docker.internal:<port>');
+        printInfo('instead of localhost (localhost won\'t work from inside Docker)\n');
+        const { baseUrl } = await inquirer.prompt([
+          {
+            type: 'input',
+            name: 'baseUrl',
+            message: 'API base URL:',
+            validate: (input) => {
+              if (!input) return 'URL is required';
+              if (!input.startsWith('http://') && !input.startsWith('https://')) {
+                return 'URL must start with http:// or https://';
+              }
+              return true;
+            },
+          },
+        ]);
+        openaiBaseUrl = baseUrl;
+        printSuccess(`Custom base URL: ${openaiBaseUrl}`);
+
+        const { model } = await inquirer.prompt([
+          {
+            type: 'input',
+            name: 'model',
+            message: 'Model ID (e.g. qwen3:8b):',
+            validate: (input) => input ? true : 'Model ID is required',
+          },
+        ]);
+        agentModel = model;
+
+        const { key } = await inquirer.prompt([
+          {
+            type: 'password',
+            name: 'key',
+            message: 'API key (leave blank if not needed):',
+            mask: '*',
+          },
+        ]);
+        collectedKeys['OPENAI_API_KEY'] = key || '';
+
+        writeModelsJson('openai', {
+          baseUrl: openaiBaseUrl,
+          apiKey: 'OPENAI_API_KEY',
+          api: 'openai-completions',
+          models: [agentModel],
+        });
+        printSuccess(`Generated .pi/agent/models.json for custom OpenAI-compatible LLM`);
+        if (key) {
+          printSuccess(`OpenAI key added (${maskSecret(key)})`);
+        }
+      } else {
+        // Standard OpenAI flow — model list, browser page, sk- validation
+        agentModel = await promptForModel('openai');
+        const agentApiKey = await promptForApiKey('openai');
+        collectedKeys['OPENAI_API_KEY'] = agentApiKey;
+
+        writeModelsJson('openai', {
+          baseUrl: PROVIDERS.openai.baseUrl,
+          apiKey: PROVIDERS.openai.envKey,
+          api: PROVIDERS.openai.api,
+          models: PROVIDERS.openai.models.map((m) => m.id),
+        });
+        printSuccess(`Generated .pi/agent/models.json for OpenAI`);
+        printSuccess(`OpenAI key added (${maskSecret(agentApiKey)})`);
+
+        // Clear any previous custom base URL
+        if (isRerun && env?.OPENAI_BASE_URL) {
+          changedVars['OPENAI_BASE_URL'] = '';
+        }
+      }
     } else {
+      // Non-OpenAI providers (Anthropic, Google)
       const providerConfig = PROVIDERS[agentProvider];
       agentModel = await promptForModel(agentProvider);
       const agentApiKey = await promptForApiKey(agentProvider);
       collectedKeys[providerConfig.envKey] = agentApiKey;
 
-      // Non-builtin providers need models.json (e.g., OpenAI)
       if (!providerConfig.builtin) {
         writeModelsJson(agentProvider, {
           baseUrl: providerConfig.baseUrl,
@@ -479,46 +554,17 @@ async function main() {
       changedVars['LLM_PROVIDER'] = agentProvider;
       changedVars['LLM_MODEL'] = agentModel;
       changedVars[providerEnvKey] = collectedKeys[providerEnvKey];
+      if (openaiBaseUrl) {
+        changedVars['OPENAI_BASE_URL'] = openaiBaseUrl;
+      }
     }
   }
 
-  // OpenAI custom base URL (event handler only, not the Docker agent)
-  if (agentProvider === 'openai') {
-    if (isRerun && env?.OPENAI_BASE_URL) {
-      // Existing base URL — offer to reconfigure
-      printSuccess(`Custom API URL: ${env.OPENAI_BASE_URL}`);
-      if (await confirm('Reconfigure?', false)) {
-        const useCustomUrl = await confirm('Use a custom OpenAI-compatible API URL?', false);
-        if (useCustomUrl) {
-          printInfo('If the model runs on this machine, use http://host.docker.internal:<port>');
-          printInfo('instead of localhost (localhost won\'t work from inside Docker)\n');
-          const { baseUrl } = await inquirer.prompt([
-            {
-              type: 'input',
-              name: 'baseUrl',
-              message: 'OpenAI-compatible base URL:',
-              validate: (input) => {
-                if (!input) return 'URL is required';
-                if (!input.startsWith('http://') && !input.startsWith('https://')) {
-                  return 'URL must start with http:// or https://';
-                }
-                return true;
-              },
-            },
-          ]);
-          openaiBaseUrl = baseUrl;
-          changedVars['OPENAI_BASE_URL'] = openaiBaseUrl;
-          printSuccess(`Custom base URL: ${openaiBaseUrl}`);
-        } else {
-          // Clear existing base URL
-          changedVars['OPENAI_BASE_URL'] = '';
-        }
-      } else {
-        openaiBaseUrl = env.OPENAI_BASE_URL;
-      }
-    } else if (!openaiBaseUrl) {
-      // No existing base URL — ask if they want one
-      const useCustomUrl = await confirm('Use a custom OpenAI-compatible API URL? (e.g. Ollama, vLLM)', false);
+  // Re-run: reconfigure existing OPENAI_BASE_URL if provider was kept (not freshly configured)
+  if (agentProvider === 'openai' && isRerun && env?.OPENAI_BASE_URL && !openaiBaseUrl) {
+    printSuccess(`Custom LLM URL: ${env.OPENAI_BASE_URL}`);
+    if (await confirm('Reconfigure?', false)) {
+      const useCustomUrl = await confirm('Use a custom OpenAI-compatible API URL?', false);
       if (useCustomUrl) {
         printInfo('If the model runs on this machine, use http://host.docker.internal:<port>');
         printInfo('instead of localhost (localhost won\'t work from inside Docker)\n');
@@ -537,11 +583,14 @@ async function main() {
           },
         ]);
         openaiBaseUrl = baseUrl;
-        if (isRerun) {
-          changedVars['OPENAI_BASE_URL'] = openaiBaseUrl;
-        }
+        changedVars['OPENAI_BASE_URL'] = openaiBaseUrl;
         printSuccess(`Custom base URL: ${openaiBaseUrl}`);
+      } else {
+        // Clear existing base URL
+        changedVars['OPENAI_BASE_URL'] = '';
       }
+    } else {
+      openaiBaseUrl = env.OPENAI_BASE_URL;
     }
   }
 
