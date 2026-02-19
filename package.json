@@ -17,7 +17,8 @@
     "./db": "./lib/db/index.js",
     "./chat": "./lib/chat/components/index.js",
     "./chat/actions": "./lib/chat/actions.js",
-    "./middleware": "./lib/auth/middleware.js"
+    "./middleware": "./lib/auth/middleware.js",
+    "./package.json": "./package.json"
   },
   "files": [
     "bin/",

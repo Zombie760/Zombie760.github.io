@@ -37,7 +37,6 @@ import {
   writeModelsJson,
   encodeSecretsBase64,
   encodeLlmSecretsBase64,
-  updateEnvVariable,
 } from './lib/auth.mjs';
 
 const logo = `
@@ -488,7 +487,49 @@ async function main() {
   console.log(chalk.dim('    \u2022 Telegram:  ') + chalk.cyan('npm run setup-telegram'));
   console.log('');
 
-  // Write .env file
+  // Step 5: APP_URL (must be set before Docker starts — Traefik needs APP_HOSTNAME)
+  printStep(++currentStep, TOTAL_STEPS, 'App URL');
+
+  console.log(chalk.dim('  Your app needs a public URL for GitHub webhooks and Traefik routing.\n'));
+  console.log(chalk.dim('  Examples:'));
+  console.log(chalk.dim('    \u2022 ngrok: ') + chalk.cyan('https://abc123.ngrok.io'));
+  console.log(chalk.dim('    \u2022 VPS:   ') + chalk.cyan('https://mybot.example.com'));
+  console.log(chalk.dim('    \u2022 PaaS:  ') + chalk.cyan('https://mybot.vercel.app\n'));
+
+  let appUrl = null;
+  while (!appUrl) {
+    const { url: urlInput } = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'url',
+        message: 'Enter your APP_URL (https://...):',
+        validate: (input) => {
+          if (!input) return 'URL is required';
+          if (!input.startsWith('https://')) return 'URL must start with https://';
+          return true;
+        },
+      },
+    ]);
+    appUrl = urlInput.replace(/\/$/, '');
+  }
+
+  const appHostname = new URL(appUrl).hostname;
+
+  // Set APP_URL variable on GitHub
+  let appUrlSet = false;
+  while (!appUrlSet) {
+    const urlSpinner = ora('Setting APP_URL variable...').start();
+    const urlResult = await setVariables(owner, repo, { APP_URL: appUrl });
+    if (urlResult.APP_URL.success) {
+      urlSpinner.succeed('APP_URL variable set');
+      appUrlSet = true;
+    } else {
+      urlSpinner.fail(`Failed: ${urlResult.APP_URL.error}`);
+      await pressEnter('Fix the issue, then press enter to retry');
+    }
+  }
+
+  // Write .env file (includes APP_URL and APP_HOSTNAME for Docker/Traefik)
   const providerConfig = agentProvider !== 'custom' ? PROVIDERS[agentProvider] : null;
   const providerEnvKey = providerConfig ? providerConfig.envKey : 'CUSTOM_API_KEY';
   const envPath = writeEnvFile({
@@ -505,10 +546,12 @@ async function main() {
     openaiApiKey: collectedKeys['OPENAI_API_KEY'] || '',
     telegramChatId: null,
     telegramVerification: null,
+    appUrl,
+    appHostname,
   });
   printSuccess(`Created ${envPath}`);
 
-  // Step 5: Build & Start Server
+  // Step 6: Build & Start Server
   printStep(++currentStep, TOTAL_STEPS, 'Build & Start Server');
 
   // Build
@@ -537,52 +580,6 @@ async function main() {
       serverReachable = true;
     } catch {
       serverSpinner.fail('Could not reach server on localhost:80');
-    }
-  }
-
-  // Step 6: APP_URL
-  printStep(++currentStep, TOTAL_STEPS, 'App URL');
-
-  console.log(chalk.dim('  Your app needs a public URL for GitHub webhooks.\n'));
-  console.log(chalk.dim('  Examples:'));
-  console.log(chalk.dim('    \u2022 ngrok: ') + chalk.cyan('https://abc123.ngrok.io'));
-  console.log(chalk.dim('    \u2022 VPS:   ') + chalk.cyan('https://mybot.example.com'));
-  console.log(chalk.dim('    \u2022 PaaS:  ') + chalk.cyan('https://mybot.vercel.app\n'));
-
-  let appUrl = null;
-  while (!appUrl) {
-    const { url: urlInput } = await inquirer.prompt([
-      {
-        type: 'input',
-        name: 'url',
-        message: 'Enter your APP_URL (https://...):',
-        validate: (input) => {
-          if (!input) return 'URL is required';
-          if (!input.startsWith('https://')) return 'URL must start with https://';
-          return true;
-        },
-      },
-    ]);
-    appUrl = urlInput.replace(/\/$/, '');
-  }
-
-  // Save APP_URL and APP_HOSTNAME to .env
-  const appHostname = new URL(appUrl).hostname;
-  updateEnvVariable('APP_URL', appUrl);
-  updateEnvVariable('APP_HOSTNAME', appHostname);
-  printSuccess(`APP_URL saved to .env`);
-
-  // Set APP_URL variable on GitHub
-  let appUrlSet = false;
-  while (!appUrlSet) {
-    const urlSpinner = ora('Setting APP_URL variable...').start();
-    const urlResult = await setVariables(owner, repo, { APP_URL: appUrl });
-    if (urlResult.APP_URL.success) {
-      urlSpinner.succeed('APP_URL variable set');
-      appUrlSet = true;
-    } else {
-      urlSpinner.fail(`Failed: ${urlResult.APP_URL.error}`);
-      await pressEnter('Fix the issue, then press enter to retry');
     }
   }
 
