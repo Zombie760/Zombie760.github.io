@@ -168,12 +168,10 @@ export function AppSidebar({ user }) {
               <TooltipTrigger asChild>
                 <SidebarMenuButton
                   className={collapsed ? 'justify-center' : ''}
-                  asChild
+                  onClick={() => window.open('https://www.skool.com/ai-architects', '_blank')}
                 >
-                  <a href="https://www.skool.com/ai-architects" target="_blank" rel="noopener noreferrer">
-                    <LifeBuoyIcon size={16} />
-                    {!collapsed && <span>Support</span>}
-                  </a>
+                  <LifeBuoyIcon size={16} />
+                  {!collapsed && <span>Support</span>}
                 </SidebarMenuButton>
               </TooltipTrigger>
               {collapsed && (

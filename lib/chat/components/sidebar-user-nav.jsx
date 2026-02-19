@@ -53,11 +53,9 @@ export function SidebarUserNav({ user, collapsed }) {
                 <span className="ml-2">{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
               </DropdownMenuItem>
             )}
-            <DropdownMenuItem asChild>
-              <a href="https://github.com/stephengpope/thepopebot/issues" target="_blank" rel="noopener noreferrer">
-                <BugIcon size={14} />
-                <span className="ml-2">Report Issues</span>
-              </a>
+            <DropdownMenuItem onClick={() => window.open('https://github.com/stephengpope/thepopebot/issues', '_blank')}>
+              <BugIcon size={14} />
+              <span className="ml-2">Report Issues</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem

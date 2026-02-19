@@ -141,14 +141,37 @@ npm install thepopebot@latest
 **2. Scaffold and update templates**
 
 ```bash
-npx thepopebot@latest init
+npx thepopebot init
 ```
 
-This scaffolds any new template files, runs `npm install`, and updates `THEPOPEBOT_VERSION` in your local `.env`.
+For most people, that's it — `init` handles everything. It updates your project files, runs `npm install`, and updates `THEPOPEBOT_VERSION` in your local `.env`.
 
-**Managed files** — Infrastructure files tightly coupled to the package version (GitHub Actions workflows, docker-compose, event-handler Dockerfile) are **auto-updated** to match the new package version. These files must stay in your project because GitHub and Docker require them at specific paths, but they shouldn't drift from the package.
+#### How your project is structured
 
-**User-editable files** — Configuration and app files you're expected to customize (`config/`, `app/`, job Dockerfile) are **never overwritten**. If they differ from the package template, `init` reports the drift so you can review at your own pace:
+When you ran `thepopebot init` the first time, it scaffolded a project folder with two kinds of files:
+
+**Your files** — These are yours to customize. `init` will never overwrite them:
+
+| Files | What they do |
+|-------|-------------|
+| `config/SOUL.md`, `CHATBOT.md`, `AGENT.md`, etc. | Your agent's personality, behavior, and prompts |
+| `config/CRONS.json`, `TRIGGERS.json` | Your scheduled jobs and webhook triggers |
+| `app/` | Next.js pages and UI components |
+| `docker/job/` | The Dockerfile for your agent's job container |
+
+**Managed files** — These are infrastructure files that need to stay in sync with the package version. `init` auto-updates them for you:
+
+| Files | What they do |
+|-------|-------------|
+| `.github/workflows/` | GitHub Actions that run jobs, auto-merge PRs, rebuild on deploy |
+| `docker-compose.yml` | Defines how your containers run together (Traefik, event handler, runner) |
+| `docker/event-handler/` | The Dockerfile for the event handler container |
+| `.dockerignore` | Keeps unnecessary files out of Docker builds |
+
+#### What happens when you run `init`
+
+1. **Managed files** are updated automatically to match the new package version
+2. **Your files** are left alone — but if the package ships new defaults (e.g., a new field in `CRONS.json`), `init` lets you know:
 
 ```
 Updated templates available:
@@ -160,12 +183,16 @@ To view differences:  npx thepopebot diff <file>
 To reset to default:  npx thepopebot reset <file>
 ```
 
+You can review at your own pace:
+
 ```bash
 npx thepopebot diff config/CRONS.json    # see what changed
 npx thepopebot reset config/CRONS.json   # accept the new template
 ```
 
-If you customize managed files (e.g., adding steps to a workflow), use `--no-managed` to skip auto-updates and handle them yourself:
+#### If you've modified managed files
+
+If you've made custom changes to managed files (e.g., added extra steps to a GitHub Actions workflow), use `--no-managed` so `init` doesn't overwrite your changes:
 
 ```bash
 npx thepopebot init --no-managed
