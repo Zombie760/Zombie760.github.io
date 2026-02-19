@@ -110,6 +110,7 @@ export function writeEnvFile(config) {
     providerEnvKey,
     providerApiKey,
     openaiApiKey,
+    openaiBaseUrl,
     telegramChatId,
     telegramVerification,
     appUrl,
@@ -122,6 +123,7 @@ export function writeEnvFile(config) {
   if (providerEnvKey !== 'OPENAI_API_KEY') {
     apiKeyLines += `\n\n# OpenAI API key for Whisper voice transcription (optional)\nOPENAI_API_KEY=${openaiApiKey || ''}`;
   }
+  apiKeyLines += `\n\n# OpenAI-compatible base URL (optional, event handler only)\nOPENAI_BASE_URL=${openaiBaseUrl || ''}`;
 
   // Generate AUTH_SECRET (32 random bytes, base64 encoded)
   const authSecret = randomBytes(32).toString('base64');

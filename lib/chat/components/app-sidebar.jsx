@@ -162,24 +162,6 @@ export function AppSidebar({ user }) {
             </Tooltip>
           </SidebarMenuItem>
 
-          {/* Support */}
-          <SidebarMenuItem>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <SidebarMenuButton
-                  className={collapsed ? 'justify-center' : ''}
-                  onClick={() => window.open('https://www.skool.com/ai-architects', '_blank')}
-                >
-                  <LifeBuoyIcon size={16} />
-                  {!collapsed && <span>Support</span>}
-                </SidebarMenuButton>
-              </TooltipTrigger>
-              {collapsed && (
-                <TooltipContent side="right">Support</TooltipContent>
-              )}
-            </Tooltip>
-          </SidebarMenuItem>
-
           {/* Upgrade (only when update is available) */}
           {updateAvailable && (
             <SidebarMenuItem>
@@ -211,6 +193,24 @@ export function AppSidebar({ user }) {
               </Tooltip>
             </SidebarMenuItem>
           )}
+
+          {/* Support */}
+          <SidebarMenuItem>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SidebarMenuButton
+                  className={collapsed ? 'justify-center' : ''}
+                  onClick={() => window.open('https://www.skool.com/ai-architects', '_blank')}
+                >
+                  <LifeBuoyIcon size={16} />
+                  {!collapsed && <span>Support</span>}
+                </SidebarMenuButton>
+              </TooltipTrigger>
+              {collapsed && (
+                <TooltipContent side="right">Support</TooltipContent>
+              )}
+            </Tooltip>
+          </SidebarMenuItem>
 
         </SidebarMenu>
       </SidebarHeader>

@@ -114,6 +114,7 @@ async function main() {
   let agentModel = null;
   const collectedKeys = {};
   let braveKey = null;
+  let openaiBaseUrl = null;
   let webhookSecret = null;
   let owner = null;
   let repo = null;
@@ -421,7 +422,11 @@ async function main() {
       const providerLabel = env.LLM_PROVIDER === 'custom'
         ? 'Custom / Local'
         : (PROVIDERS[env.LLM_PROVIDER]?.label || env.LLM_PROVIDER);
-      printSuccess(`LLM: ${providerLabel} / ${env.LLM_MODEL} (${maskSecret(existingKey)})`);
+      let llmDisplay = `LLM: ${providerLabel} / ${env.LLM_MODEL} (${maskSecret(existingKey)})`;
+      if (env.LLM_PROVIDER === 'openai' && env.OPENAI_BASE_URL) {
+        llmDisplay += ` @ ${env.OPENAI_BASE_URL}`;
+      }
+      printSuccess(llmDisplay);
       if (!await confirm('Reconfigure?', false)) {
         agentProvider = env.LLM_PROVIDER;
         agentModel = env.LLM_MODEL;
@@ -474,6 +479,69 @@ async function main() {
       changedVars['LLM_PROVIDER'] = agentProvider;
       changedVars['LLM_MODEL'] = agentModel;
       changedVars[providerEnvKey] = collectedKeys[providerEnvKey];
+    }
+  }
+
+  // OpenAI custom base URL (event handler only, not the Docker agent)
+  if (agentProvider === 'openai') {
+    if (isRerun && env?.OPENAI_BASE_URL) {
+      // Existing base URL — offer to reconfigure
+      printSuccess(`Custom API URL: ${env.OPENAI_BASE_URL}`);
+      if (await confirm('Reconfigure?', false)) {
+        const useCustomUrl = await confirm('Use a custom OpenAI-compatible API URL?', false);
+        if (useCustomUrl) {
+          printInfo('If the model runs on this machine, use http://host.docker.internal:<port>');
+          printInfo('instead of localhost (localhost won\'t work from inside Docker)\n');
+          const { baseUrl } = await inquirer.prompt([
+            {
+              type: 'input',
+              name: 'baseUrl',
+              message: 'OpenAI-compatible base URL:',
+              validate: (input) => {
+                if (!input) return 'URL is required';
+                if (!input.startsWith('http://') && !input.startsWith('https://')) {
+                  return 'URL must start with http:// or https://';
+                }
+                return true;
+              },
+            },
+          ]);
+          openaiBaseUrl = baseUrl;
+          changedVars['OPENAI_BASE_URL'] = openaiBaseUrl;
+          printSuccess(`Custom base URL: ${openaiBaseUrl}`);
+        } else {
+          // Clear existing base URL
+          changedVars['OPENAI_BASE_URL'] = '';
+        }
+      } else {
+        openaiBaseUrl = env.OPENAI_BASE_URL;
+      }
+    } else if (!openaiBaseUrl) {
+      // No existing base URL — ask if they want one
+      const useCustomUrl = await confirm('Use a custom OpenAI-compatible API URL? (e.g. Ollama, vLLM)', false);
+      if (useCustomUrl) {
+        printInfo('If the model runs on this machine, use http://host.docker.internal:<port>');
+        printInfo('instead of localhost (localhost won\'t work from inside Docker)\n');
+        const { baseUrl } = await inquirer.prompt([
+          {
+            type: 'input',
+            name: 'baseUrl',
+            message: 'OpenAI-compatible base URL:',
+            validate: (input) => {
+              if (!input) return 'URL is required';
+              if (!input.startsWith('http://') && !input.startsWith('https://')) {
+                return 'URL must start with http:// or https://';
+              }
+              return true;
+            },
+          },
+        ]);
+        openaiBaseUrl = baseUrl;
+        if (isRerun) {
+          changedVars['OPENAI_BASE_URL'] = openaiBaseUrl;
+        }
+        printSuccess(`Custom base URL: ${openaiBaseUrl}`);
+      }
     }
   }
 
@@ -684,6 +752,7 @@ async function main() {
       providerEnvKey,
       providerApiKey: collectedKeys[providerEnvKey] || '',
       openaiApiKey: collectedKeys['OPENAI_API_KEY'] || '',
+      openaiBaseUrl: openaiBaseUrl || '',
       telegramChatId: null,
       telegramVerification: null,
       appUrl,
