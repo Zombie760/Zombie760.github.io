@@ -35,6 +35,7 @@ jobs:
 
       - name: Run thepopebot Agent
         env:
+          ALL_SECRETS: ${{ toJson(secrets) }}
           JOB_IMAGE_URL: ${{ vars.JOB_IMAGE_URL }}
           THEPOPEBOT_VERSION: ${{ steps.version.outputs.tag }}
           LLM_MODEL: ${{ vars.LLM_MODEL }}
@@ -47,11 +48,22 @@ jobs:
             IMAGE="stephengpope/thepopebot:job-${THEPOPEBOT_VERSION}"
           fi
           echo "Using image: $IMAGE"
+
+          # Build SECRETS JSON from AGENT_* (excluding AGENT_LLM_*) secrets
+          export SECRETS=$(echo "$ALL_SECRETS" | jq -c '
+            [to_entries[] | select(.key | startswith("AGENT_")) | select(.key | startswith("AGENT_LLM_") | not)]
+            | map({key: (.key | sub("^AGENT_"; "")), value: .value}) | from_entries')
+
+          # Build LLM_SECRETS JSON from AGENT_LLM_* secrets
+          export LLM_SECRETS=$(echo "$ALL_SECRETS" | jq -c '
+            [to_entries[] | select(.key | startswith("AGENT_LLM_"))]
+            | map({key: (.key | sub("^AGENT_LLM_"; "")), value: .value}) | from_entries')
+
           docker run --rm \
             -e REPO_URL="${{ github.server_url }}/${{ github.repository }}.git" \
             -e BRANCH="${{ github.ref_name }}" \
-            -e SECRETS='${{ secrets.SECRETS }}' \
-            -e LLM_SECRETS='${{ secrets.LLM_SECRETS }}' \
+            -e SECRETS \
+            -e LLM_SECRETS \
             -e LLM_MODEL="${LLM_MODEL}" \
             -e LLM_PROVIDER="${LLM_PROVIDER}" \
             -e OPENAI_BASE_URL="${OPENAI_BASE_URL}" \

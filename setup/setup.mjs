@@ -37,8 +37,6 @@ import {
   writeEnvFile,
   updateEnvVariable,
   writeModelsJson,
-  encodeSecretsBase64,
-  encodeLlmSecretsBase64,
 } from './lib/auth.mjs';
 
 const logo = `
@@ -575,24 +573,24 @@ async function main() {
   }
 
   // Skip GitHub secrets if nothing changed on re-run
-  let llmSecretsBase64 = null;
+  let secrets = null;
   if (isRerun && !credentialsChanged && env?.GH_WEBHOOK_SECRET) {
     printSuccess('GitHub secrets unchanged');
     webhookSecret = env.GH_WEBHOOK_SECRET;
   } else {
     webhookSecret = generateWebhookSecret();
-    const secretsBase64 = encodeSecretsBase64(pat, collectedKeys);
-    const llmKeys = {};
-    if (braveKey) llmKeys.BRAVE_API_KEY = braveKey;
-    llmSecretsBase64 = encodeLlmSecretsBase64(llmKeys);
 
-    const secrets = {
-      SECRETS: secretsBase64,
+    secrets = {
       GH_WEBHOOK_SECRET: webhookSecret,
+      AGENT_GH_TOKEN: pat,
     };
 
-    if (llmSecretsBase64) {
-      secrets.LLM_SECRETS = llmSecretsBase64;
+    for (const [key, value] of Object.entries(collectedKeys)) {
+      if (value) secrets[`AGENT_${key}`] = value;
+    }
+
+    if (braveKey) {
+      secrets.AGENT_LLM_BRAVE_API_KEY = braveKey;
     }
 
     let allSecretsSet = false;
@@ -827,11 +825,11 @@ async function main() {
   }
   if (braveKey) console.log(`  ${chalk.dim('Brave Search:')}    ${maskSecret(braveKey)}`);
 
-  if (!isRerun || credentialsChanged) {
+  if (secrets) {
     console.log(chalk.bold('\n  GitHub Secrets Set:\n'));
-    console.log('  \u2022 SECRETS');
-    if (llmSecretsBase64) console.log('  \u2022 LLM_SECRETS');
-    console.log('  \u2022 GH_WEBHOOK_SECRET');
+    for (const name of Object.keys(secrets)) {
+      console.log(`  \u2022 ${name}`);
+    }
 
     console.log(chalk.bold('\n  GitHub Variables Set:\n'));
     console.log('  \u2022 APP_URL');

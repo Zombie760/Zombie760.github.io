@@ -40,41 +40,6 @@ export async function validateAnthropicKey(key) {
 }
 
 /**
- * Build flat secrets JSON for SECRETS GitHub secret.
- * Takes a flat { ENV_VAR: value } map of collected keys.
- * entrypoint.sh decodes and exports each as an env var.
- */
-export function buildSecretsJson(pat, collectedKeys) {
-  return { GH_TOKEN: pat, ...collectedKeys };
-}
-
-/**
- * Encode secrets to base64 for SECRETS GitHub secret
- */
-export function encodeSecretsBase64(pat, collectedKeys) {
-  const secrets = buildSecretsJson(pat, collectedKeys);
-  return Buffer.from(JSON.stringify(secrets)).toString('base64');
-}
-
-/**
- * Build LLM secrets JSON for LLM_SECRETS GitHub secret.
- * These credentials are accessible to the LLM (not filtered by env-sanitizer).
- */
-export function buildLlmSecretsJson(llmKeys) {
-  return { ...llmKeys };
-}
-
-/**
- * Encode LLM secrets to base64 for LLM_SECRETS GitHub secret.
- * Returns null if no LLM secrets are configured.
- */
-export function encodeLlmSecretsBase64(llmKeys) {
-  const secrets = buildLlmSecretsJson(llmKeys);
-  if (Object.keys(secrets).length === 0) return null;
-  return Buffer.from(JSON.stringify(secrets)).toString('base64');
-}
-
-/**
  * Generate .pi/agent/models.json for providers not built into PI.
  * PI resolves the apiKey field as an env var name at runtime ($ENV_VAR).
  */

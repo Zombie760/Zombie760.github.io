@@ -50,11 +50,15 @@ function printUsage() {
 Usage: thepopebot <command>
 
 Commands:
-  init               Scaffold a new thepopebot project
-  setup              Run interactive setup wizard
-  setup-telegram     Reconfigure Telegram webhook
-  reset-auth         Regenerate AUTH_SECRET (invalidates all sessions)
-  reset [file]       Restore a template file (or list available templates)
+  init                              Scaffold a new thepopebot project
+  setup                             Run interactive setup wizard
+  setup-telegram                    Reconfigure Telegram webhook
+  reset-auth                        Regenerate AUTH_SECRET (invalidates all sessions)
+  reset [file]                      Restore a template file (or list available templates)
+  diff [file]                       Show differences between project files and package templates
+  set-agent-secret <KEY> [VALUE]    Set a GitHub secret with AGENT_ prefix (also updates .env)
+  set-agent-llm-secret <KEY> [VALUE]  Set a GitHub secret with AGENT_LLM_ prefix
+  set-var <KEY> [VALUE]             Set a GitHub repository variable
 `);
 }
 
@@ -196,6 +200,17 @@ async function init() {
     if (!fs.existsSync(gitkeep)) {
       fs.mkdirSync(path.join(cwd, dir), { recursive: true });
       fs.writeFileSync(gitkeep, '');
+    }
+  }
+
+  // Create default skill symlinks (brave-search, browser-tools)
+  const defaultSkills = ['brave-search', 'browser-tools'];
+  for (const skill of defaultSkills) {
+    const symlink = path.join(cwd, '.pi', 'skills', skill);
+    if (!fs.existsSync(symlink)) {
+      fs.mkdirSync(path.dirname(symlink), { recursive: true });
+      fs.symlinkSync(`../../pi-skills/${skill}`, symlink);
+      console.log(`  Created .pi/skills/${skill} → ../../pi-skills/${skill}`);
     }
   }
 
@@ -399,6 +414,115 @@ async function resetAuth() {
   console.log('  Restart your server for the change to take effect.\n');
 }
 
+/**
+ * Load GH_OWNER and GH_REPO from .env
+ */
+function loadRepoInfo() {
+  const envPath = path.join(process.cwd(), '.env');
+  if (!fs.existsSync(envPath)) {
+    console.error('\n  No .env file found. Run "npm run setup" first.\n');
+    process.exit(1);
+  }
+  const content = fs.readFileSync(envPath, 'utf-8');
+  const env = {};
+  for (const line of content.split('\n')) {
+    const match = line.match(/^([^#=]+)=(.*)$/);
+    if (match) env[match[1].trim()] = match[2].trim();
+  }
+  if (!env.GH_OWNER || !env.GH_REPO) {
+    console.error('\n  GH_OWNER and GH_REPO not found in .env. Run "npm run setup" first.\n');
+    process.exit(1);
+  }
+  return { owner: env.GH_OWNER, repo: env.GH_REPO };
+}
+
+/**
+ * Prompt for a secret value interactively if not provided as an argument
+ */
+async function promptForValue(key) {
+  const { default: inquirer } = await import('inquirer');
+  const { value } = await inquirer.prompt([{
+    type: 'password',
+    name: 'value',
+    message: `Enter value for ${key}:`,
+    mask: '*',
+    validate: (input) => input ? true : 'Value is required',
+  }]);
+  return value;
+}
+
+async function setAgentSecret(key, value) {
+  if (!key) {
+    console.error('\n  Usage: thepopebot set-agent-secret <KEY> [VALUE]\n');
+    console.error('  Example: thepopebot set-agent-secret ANTHROPIC_API_KEY\n');
+    process.exit(1);
+  }
+
+  if (!value) value = await promptForValue(key);
+
+  const { owner, repo } = loadRepoInfo();
+  const prefixedName = `AGENT_${key}`;
+
+  const { setSecret } = await import(path.join(__dirname, '..', 'setup', 'lib', 'github.mjs'));
+  const { updateEnvVariable } = await import(path.join(__dirname, '..', 'setup', 'lib', 'auth.mjs'));
+
+  const result = await setSecret(owner, repo, prefixedName, value);
+  if (result.success) {
+    console.log(`\n  Set GitHub secret: ${prefixedName}`);
+    updateEnvVariable(key, value);
+    console.log(`  Updated .env: ${key}`);
+    console.log('');
+  } else {
+    console.error(`\n  Failed to set ${prefixedName}: ${result.error}\n`);
+    process.exit(1);
+  }
+}
+
+async function setAgentLlmSecret(key, value) {
+  if (!key) {
+    console.error('\n  Usage: thepopebot set-agent-llm-secret <KEY> [VALUE]\n');
+    console.error('  Example: thepopebot set-agent-llm-secret BRAVE_API_KEY\n');
+    process.exit(1);
+  }
+
+  if (!value) value = await promptForValue(key);
+
+  const { owner, repo } = loadRepoInfo();
+  const prefixedName = `AGENT_LLM_${key}`;
+
+  const { setSecret } = await import(path.join(__dirname, '..', 'setup', 'lib', 'github.mjs'));
+
+  const result = await setSecret(owner, repo, prefixedName, value);
+  if (result.success) {
+    console.log(`\n  Set GitHub secret: ${prefixedName}\n`);
+  } else {
+    console.error(`\n  Failed to set ${prefixedName}: ${result.error}\n`);
+    process.exit(1);
+  }
+}
+
+async function setVar(key, value) {
+  if (!key) {
+    console.error('\n  Usage: thepopebot set-var <KEY> [VALUE]\n');
+    console.error('  Example: thepopebot set-var LLM_MODEL claude-sonnet-4-5-20250929\n');
+    process.exit(1);
+  }
+
+  if (!value) value = await promptForValue(key);
+
+  const { owner, repo } = loadRepoInfo();
+
+  const { setVariable } = await import(path.join(__dirname, '..', 'setup', 'lib', 'github.mjs'));
+
+  const result = await setVariable(owner, repo, key, value);
+  if (result.success) {
+    console.log(`\n  Set GitHub variable: ${key}\n`);
+  } else {
+    console.error(`\n  Failed to set ${key}: ${result.error}\n`);
+    process.exit(1);
+  }
+}
+
 switch (command) {
   case 'init':
     await init();
@@ -417,6 +541,15 @@ switch (command) {
     break;
   case 'diff':
     diff(args[0]);
+    break;
+  case 'set-agent-secret':
+    await setAgentSecret(args[0], args[1]);
+    break;
+  case 'set-agent-llm-secret':
+    await setAgentLlmSecret(args[0], args[1]);
+    break;
+  case 'set-var':
+    await setVar(args[0], args[1]);
     break;
   default:
     printUsage();

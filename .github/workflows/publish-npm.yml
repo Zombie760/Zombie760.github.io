@@ -21,6 +21,17 @@ jobs:
 
       - run: npm ci
 
-      - run: npm publish
+      - name: Detect release channel
+        id: channel
+        run: |
+          TAG=$(node -p "
+            const v = require('./package.json').version;
+            const pre = v.split('-')[1];
+            pre ? pre.replace(/[^a-zA-Z].*/g, '') || 'pre' : 'latest'
+          ")
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "Publishing $(node -p "require('./package.json').version") to dist-tag: $TAG"
+
+      - run: npm publish --tag ${{ steps.channel.outputs.tag }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

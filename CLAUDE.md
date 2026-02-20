@@ -83,6 +83,7 @@ The `templates/` directory contains **only files that get scaffolded into user p
 │   ├── app/                    # Next.js app (pages, API routes, components)
 │   ├── .github/workflows/      # GitHub Actions (auto-merge, build-image, deploy, run-job, notify)
 │   ├── docker/                 # Docker files for job and event-handler containers
+│   ├── pi-skills/              # Git submodule — Pi agent skills (brave-search, browser-tools, etc.)
 │   └── config/                 # Agent config (SOUL, CHATBOT, CRONS, TRIGGERS, etc.)
 ├── docs/                       # Extended documentation
 └── package.json                # NPM package definition
@@ -100,7 +101,7 @@ The `templates/` directory contains **only files that get scaffolded into user p
 | `lib/utils/render-md.js` | Markdown `{{filepath}}` include processor |
 | `config/index.js` | `withThepopebot()` Next.js config wrapper |
 | `config/instrumentation.js` | `register()` server startup hook (loads .env, validates AUTH_SECRET, initializes database, starts crons) |
-| `bin/cli.js` | CLI entry point (`thepopebot init`, `setup`, `reset`, `diff`) |
+| `bin/cli.js` | CLI entry point (`thepopebot init`, `setup`, `reset`, `diff`, `set-agent-secret`, `set-agent-llm-secret`, `set-var`) |
 | `lib/ai/index.js` | Chat, streaming, and job summary functions |
 | `lib/ai/agent.js` | LangGraph agent with SQLite checkpointing and tool use |
 | `lib/channels/base.js` | Channel adapter base class (normalize messages across platforms) |
@@ -139,6 +140,9 @@ Example: `createdAt: integer('created_at')` — use `createdAt` in JS, SQL colum
 | `thepopebot reset [file]` | Restore a template file to package default (or list all available templates) |
 | `thepopebot diff [file]` | Show differences between project files and package templates |
 | `thepopebot reset-auth` | Regenerate AUTH_SECRET (invalidates all sessions) |
+| `thepopebot set-agent-secret <KEY> [VALUE]` | Set a GitHub secret with `AGENT_` prefix and update `.env` |
+| `thepopebot set-agent-llm-secret <KEY> [VALUE]` | Set a GitHub secret with `AGENT_LLM_` prefix |
+| `thepopebot set-var <KEY> [VALUE]` | Set a GitHub repository variable |
 
 ## How User Projects Work
 
@@ -370,18 +374,20 @@ Both `job` and `command` strings support the same templates:
 The Dockerfile (`templates/docker/job/Dockerfile`, scaffolded to `docker/job/Dockerfile` in user projects) creates a container with:
 - **Node.js 22** (Bookworm slim)
 - **Pi coding agent** (`@mariozechner/pi-coding-agent`)
-- **Puppeteer + Chromium** (headless browser automation, installed via pi-skills browser-tools)
+- **Chrome/Chromium dependencies** (shared libs for headless browser; actual Chrome binary installed at runtime by browser-tools skill via Puppeteer)
 - **Git + GitHub CLI** (for repository operations)
+
+Pi skills (brave-search, browser-tools, etc.) are **not baked into the Docker image**. They live in the user's repo under `pi-skills/` and are symlinked into `.pi/skills/`. The entrypoint runs `npm install` for each symlinked skill at container startup to compile native dependencies for Linux.
 
 ### Runtime Flow (entrypoint.sh)
 
 1. Extract Job ID from branch name (job/uuid → uuid) or generate UUID
-2. Start headless Chrome (Puppeteer's Chromium via pi-skills browser-tools, CDP on port 9222)
-3. Decode `SECRETS` from base64, parse JSON, export each key as env var (filtered from LLM's bash)
-4. Decode `LLM_SECRETS` from base64, parse JSON, export each key as env var (LLM can access these)
-5. Configure Git credentials via `gh auth setup-git` (uses GH_TOKEN from SECRETS)
-6. Clone repository branch to `/job`
-7. Symlink pi-skills (brave-search) into `.pi/skills/`
+2. Parse `SECRETS` JSON, export each key as env var (filtered from LLM's bash)
+3. Parse `LLM_SECRETS` JSON, export each key as env var (LLM can access these)
+4. Configure Git credentials via `gh auth setup-git` (uses GH_TOKEN from SECRETS)
+5. Clone repository branch to `/job`
+6. Install npm dependencies for each symlinked skill in `.pi/skills/`
+7. Start headless Chrome (conditional — only if browser-tools installed Puppeteer)
 8. Build SYSTEM.md from `config/SOUL.md` + `config/AGENT.md`
 9. Run Pi with SYSTEM.md + job.md as prompt
 10. Save session log to `logs/{JOB_ID}/`
@@ -394,8 +400,8 @@ The Dockerfile (`templates/docker/job/Dockerfile`, scaffolded to `docker/job/Doc
 |----------|-------------|----------|
 | `REPO_URL` | Git repository URL to clone | Yes |
 | `BRANCH` | Branch to clone and work on (e.g., job/uuid) | Yes |
-| `SECRETS` | Base64-encoded JSON with protected credentials (GH_TOKEN, ANTHROPIC_API_KEY, etc.) - filtered from LLM | Yes |
-| `LLM_SECRETS` | Base64-encoded JSON with credentials the LLM can access (browser logins, skill API keys) | No |
+| `SECRETS` | JSON with protected credentials (GH_TOKEN, ANTHROPIC_API_KEY, etc.) — built at runtime from `AGENT_*` GitHub secrets, filtered from LLM | Yes |
+| `LLM_SECRETS` | JSON with credentials the LLM can access (browser logins, skill API keys) — built at runtime from `AGENT_LLM_*` GitHub secrets | No |
 | `LLM_PROVIDER` | LLM provider for the Pi agent (`anthropic`, `openai`, `google`) | No (default: `anthropic`) |
 | `LLM_MODEL` | LLM model name for the Pi agent | No (provider default) |
 
@@ -495,11 +501,13 @@ If the PR is mergeable and both checks pass, merges the PR with `--squash`. If t
 
 ### GitHub Secrets Required
 
-| Secret | Description |
-|--------|-------------|
-| `SECRETS` | Base64-encoded JSON with protected credentials (GH_TOKEN, ANTHROPIC_API_KEY, etc.) |
-| `LLM_SECRETS` | Base64-encoded JSON with LLM-accessible credentials (optional) |
-| `GH_WEBHOOK_SECRET` | Secret to authenticate with event handler |
+Individual GitHub secrets use a prefix-based naming convention:
+
+| Prefix | Purpose | Filtered from LLM? | Example |
+|--------|---------|---------------------|---------|
+| `AGENT_` | Protected secrets for the Docker agent container | Yes (env-sanitizer) | `AGENT_GH_TOKEN`, `AGENT_ANTHROPIC_API_KEY` |
+| `AGENT_LLM_` | LLM-accessible secrets for the Docker agent container | No | `AGENT_LLM_BRAVE_API_KEY` |
+| *(none)* | Workflow-only secrets (never passed to container) | N/A | `GH_WEBHOOK_SECRET` |
 
 ### GitHub Repository Variables
 
@@ -518,7 +526,9 @@ Configure these in **Settings → Secrets and variables → Actions → Variable
 
 ## How Credentials Work
 
-Credentials are passed via base64-encoded JSON in the `SECRETS` environment variable. At runtime, `entrypoint.sh` decodes and exports each key as a flat environment variable. The `env-sanitizer` extension filters these from the LLM's bash subprocess, so the agent can't access them directly. For credentials the LLM needs access to (browser logins, skill API keys), use `LLM_SECRETS` instead — these are NOT filtered.
+Each credential is stored as an individual GitHub secret with a naming prefix (`AGENT_*` or `AGENT_LLM_*`). At runtime, `run-job.yml` uses `jq` to filter `${{ toJson(secrets) }}` by prefix, strips the prefix, and builds plain JSON objects for `SECRETS` and `LLM_SECRETS`. These are passed to the Docker container as environment variables.
+
+Inside the container, `entrypoint.sh` parses the JSON and exports each key as a flat environment variable. The `env-sanitizer` extension reads `process.env.SECRETS` (still the original JSON string) and filters those keys from the LLM's bash subprocess. `AGENT_LLM_*` secrets are stored in `LLM_SECRETS` and are NOT filtered.
 
 ## Customization Points
 
@@ -531,7 +541,8 @@ Users create their agent project with `npx thepopebot init` then `npm run setup`
 - **config/AGENT.md** — Agent runtime environment
 - **config/CRONS.json** — Scheduled job definitions
 - **config/TRIGGERS.json** — Webhook trigger definitions
-- **.pi/skills/** — Custom skills for the agent
+- **pi-skills/** — All available Pi agent skills (scaffolded from package submodule)
+- **.pi/skills/** — Symlinks to active skills (e.g., `.pi/skills/brave-search` → `../../pi-skills/brave-search`)
 - **cron/** and **triggers/** — Shell scripts for command-type actions
 
 ## Session Logs

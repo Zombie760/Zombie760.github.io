@@ -36,13 +36,6 @@ RUN npm install -g @mariozechner/pi-coding-agent
 # Create Pi config directory (extension loaded from repo at runtime)
 RUN mkdir -p /root/.pi/agent
 
-# Clone pi-skills and install browser-tools (includes Puppeteer + Chromium)
-RUN git clone https://github.com/badlogic/pi-skills.git /pi-skills
-WORKDIR /pi-skills/browser-tools
-RUN npm install
-WORKDIR /pi-skills/brave-search
-RUN npm install
-
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 

@@ -9,16 +9,15 @@
  * To get a value, use: echo $KEY_NAME
  */
 
-const secretsBase64 = process.env.LLM_SECRETS;
+const secretsJson = process.env.LLM_SECRETS;
 
-if (!secretsBase64) {
+if (!secretsJson) {
   console.log('No LLM_SECRETS configured.');
   process.exit(0);
 }
 
 try {
-  const decoded = Buffer.from(secretsBase64, 'base64').toString('utf-8');
-  const parsed = JSON.parse(decoded);
+  const parsed = JSON.parse(secretsJson);
   const keys = Object.keys(parsed);
 
   if (keys.length === 0) {

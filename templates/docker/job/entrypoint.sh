@@ -9,25 +9,16 @@ else
 fi
 echo "Job ID: ${JOB_ID}"
 
-# Start Chrome (using Puppeteer's chromium from pi-skills browser-tools)
-CHROME_BIN=$(find /root/.cache/puppeteer -name "chrome" -type f | head -1)
-$CHROME_BIN --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 2>/dev/null &
-CHROME_PID=$!
-sleep 2
-
-# Export SECRETS (base64 JSON) as flat env vars (GH_TOKEN, ANTHROPIC_API_KEY, etc.)
+# Export SECRETS (JSON) as flat env vars (GH_TOKEN, ANTHROPIC_API_KEY, etc.)
 # These are filtered from LLM's bash subprocess by env-sanitizer extension
 if [ -n "$SECRETS" ]; then
-    SECRETS_JSON=$(echo "$SECRETS" | base64 -d)
-    eval $(echo "$SECRETS_JSON" | jq -r 'to_entries | .[] | "export \(.key)=\"\(.value)\""')
-    export SECRETS="$SECRETS_JSON"  # Keep decoded for extension to parse
+    eval $(echo "$SECRETS" | jq -r 'to_entries | .[] | "export \(.key)=\"\(.value)\""')
 fi
 
-# Export LLM_SECRETS (base64 JSON) as flat env vars
+# Export LLM_SECRETS (JSON) as flat env vars
 # These are NOT filtered - LLM can access these (browser logins, skill API keys, etc.)
 if [ -n "$LLM_SECRETS" ]; then
-    LLM_SECRETS_JSON=$(echo "$LLM_SECRETS" | base64 -d)
-    eval $(echo "$LLM_SECRETS_JSON" | jq -r 'to_entries | .[] | "export \(.key)=\"\(.value)\""')
+    eval $(echo "$LLM_SECRETS" | jq -r 'to_entries | .[] | "export \(.key)=\"\(.value)\""')
 fi
 
 # Git setup - derive identity from GitHub token
@@ -50,8 +41,22 @@ cd /job
 # Create temp directory for agent use (gitignored via tmp/)
 mkdir -p /job/tmp
 
-# Symlink pi-skills into .pi/skills/ so Pi discovers them
-ln -sf /pi-skills/brave-search /job/.pi/skills/brave-search
+# Install npm deps for symlinked skills (native deps need correct Linux arch)
+for skill_dir in /job/.pi/skills/*/; do
+    if [ -f "${skill_dir}package.json" ]; then
+        echo "Installing skill deps: $(basename "$skill_dir")"
+        (cd "$skill_dir" && npm install --production)
+    fi
+done
+
+# Start Chrome if available (installed by browser-tools skill via Puppeteer)
+CHROME_PID=""
+CHROME_BIN=$(find /root/.cache/puppeteer -name "chrome" -type f 2>/dev/null | head -1)
+if [ -n "$CHROME_BIN" ]; then
+    $CHROME_BIN --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 2>/dev/null &
+    CHROME_PID=$!
+    sleep 2
+fi
 
 # Setup logs
 LOG_DIR="/job/logs/${JOB_ID}"
@@ -127,5 +132,7 @@ git push origin
 gh pr create --title "thepopebot: job ${JOB_ID}" --body "Automated job" --base main || true
 
 # Cleanup
-kill $CHROME_PID 2>/dev/null || true
+if [ -n "$CHROME_PID" ]; then
+    kill $CHROME_PID 2>/dev/null || true
+fi
 echo "Done. Job ID: ${JOB_ID}"
