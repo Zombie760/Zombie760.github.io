@@ -31,6 +31,8 @@
   ],
   "scripts": {
     "build": "esbuild lib/chat/components/*.jsx lib/chat/components/**/*.jsx --outdir=lib/chat/components --format=esm --jsx=automatic --outbase=lib/chat/components",
+    "prepack": "[ -f templates/pi-skills/.git ] && rm templates/pi-skills/.git || true",
+    "postpack": "git submodule update --init templates/pi-skills 2>/dev/null || true",
     "prepublishOnly": "npm run build",
     "local": "bash bin/local.sh",
     "postinstall": "if [ -f bin/postinstall.js ]; then node bin/postinstall.js; fi",
