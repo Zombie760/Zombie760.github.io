@@ -328,6 +328,12 @@ Ports 80 and 443 must be open on your server. Port 80 is required even with HTTP
 | [Auto-Merge](docs/AUTO_MERGE.md) | Auto-merge controls, ALLOWED_PATHS configuration |
 | [How to Use Pi](docs/HOW_TO_USE_PI.md) | Guide to the Pi coding agent |
 
+### Maintainer
+
+| Document | Description |
+|----------|-------------|
+| [NPM](docs/NPM.md) | Updating pi-skills, versioning, and publishing releases |
+
 ---
 
 ## Pre-Release Versions
