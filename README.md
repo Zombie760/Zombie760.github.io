@@ -217,13 +217,39 @@ Pushing to `main` triggers the `rebuild-event-handler.yml` workflow on your serv
 
 ## CLI Commands
 
+All commands are run via `npx thepopebot <command>` (or the `npm run` shortcuts where noted).
+
+**Project setup:**
+
 | Command | Description |
 |---------|-------------|
-| `npx thepopebot init` | Scaffold a new project, or check for updated templates in an existing one |
-| `npx thepopebot diff [file]` | List files that differ from package templates, or show the diff for a specific file |
-| `npx thepopebot reset [file]` | List all template files, or restore a specific file (or directory) to the package default |
-| `npm run setup` | Run the full interactive setup wizard |
-| `npm run setup-telegram` | Reconfigure the Telegram webhook (useful when your ngrok URL changes) |
+| `init` | Scaffold a new project, or update templates in an existing one |
+| `setup` | Run the full interactive setup wizard (`npm run setup`) |
+| `setup-telegram` | Reconfigure the Telegram webhook (`npm run setup-telegram`) |
+| `reset-auth` | Regenerate AUTH_SECRET, invalidating all sessions |
+
+**Templates:**
+
+| Command | Description |
+|---------|-------------|
+| `diff [file]` | List files that differ from package templates, or diff a specific file |
+| `reset [file]` | List all template files, or restore a specific one to package default |
+
+**Secrets & variables:**
+
+These commands set individual GitHub repository secrets/variables using the `gh` CLI. They read `GH_OWNER` and `GH_REPO` from your `.env`. If VALUE is omitted, you'll be prompted with masked input (keeps secrets out of shell history).
+
+| Command | Description |
+|---------|-------------|
+| `set-agent-secret KEY [VALUE]` | Set `AGENT_<KEY>` GitHub secret and update `.env` |
+| `set-agent-llm-secret KEY [VALUE]` | Set `AGENT_LLM_<KEY>` GitHub secret |
+| `set-var KEY [VALUE]` | Set a GitHub repository variable |
+
+GitHub secrets use a prefix convention so the workflow can route them correctly:
+
+- **`AGENT_`** — Protected secrets passed to the Docker container (filtered from LLM). Example: `AGENT_GH_TOKEN`, `AGENT_ANTHROPIC_API_KEY`
+- **`AGENT_LLM_`** — LLM-accessible secrets (not filtered). Example: `AGENT_LLM_BRAVE_API_KEY`
+- **No prefix** — Workflow-only secrets, never passed to container. Example: `GH_WEBHOOK_SECRET`
 
 ---
 
@@ -286,9 +312,14 @@ The `docker-compose.yml` has Let's Encrypt support built in but commented out. T
 LETSENCRYPT_EMAIL=you@example.com
 ```
 
-**b) Uncomment the TLS lines in the traefik service command:**
+**b) In `docker-compose.yml`, remove the `#` from the TLS lines in the traefik service command:**
 
 ```yaml
+# Before (commented out):
+# - --entrypoints.web.http.redirections.entrypoint.to=websecure
+# ...
+
+# After (uncommented):
 - --entrypoints.web.http.redirections.entrypoint.to=websecure
 - --entrypoints.web.http.redirections.entrypoint.scheme=https
 - --certificatesresolvers.letsencrypt.acme.email=${LETSENCRYPT_EMAIL}
@@ -296,11 +327,17 @@ LETSENCRYPT_EMAIL=you@example.com
 - --certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web
 ```
 
-**c) Switch the event-handler labels from HTTP to HTTPS:**
+**c) In the event-handler labels, switch from HTTP to HTTPS:**
 
-Comment out the HTTP entrypoint and uncomment the two HTTPS lines:
+Add a `#` to comment out the HTTP entrypoint, and remove the `#` from the two HTTPS lines:
 
 ```yaml
+# Before:
+- traefik.http.routers.event-handler.entrypoints=web
+# - traefik.http.routers.event-handler.entrypoints=websecure
+# - traefik.http.routers.event-handler.tls.certresolver=letsencrypt
+
+# After:
 # - traefik.http.routers.event-handler.entrypoints=web
 - traefik.http.routers.event-handler.entrypoints=websecure
 - traefik.http.routers.event-handler.tls.certresolver=letsencrypt
