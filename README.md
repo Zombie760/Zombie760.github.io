@@ -130,7 +130,7 @@ docker compose up -d
 
 ---
 
-## Updating
+## Manual Updating
 
 **1. Update the package**
 
