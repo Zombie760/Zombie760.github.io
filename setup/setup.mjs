@@ -2,11 +2,9 @@
 
 import { execSync } from 'child_process';
 import path from 'path';
-import { readFileSync, existsSync } from 'fs';
 import chalk from 'chalk';
-import ora from 'ora';
 import open from 'open';
-import inquirer from 'inquirer';
+import * as clack from '@clack/prompts';
 
 import {
   checkPrerequisites,
@@ -23,21 +21,18 @@ import {
   confirm,
   pressEnter,
   maskSecret,
+  keepOrReconfigure,
 } from './lib/prompts.mjs';
 import { PROVIDERS } from './lib/providers.mjs';
 import {
   validatePAT,
   checkPATScopes,
-  setSecrets,
-  setVariables,
   generateWebhookSecret,
   getPATCreationURL,
 } from './lib/github.mjs';
-import {
-  writeEnvFile,
-  updateEnvVariable,
-  writeModelsJson,
-} from './lib/auth.mjs';
+import { writeModelsJson } from './lib/auth.mjs';
+import { loadEnvFile } from './lib/env.mjs';
+import { syncConfig } from './lib/sync.mjs';
 
 const logo = `
  _____ _          ____                  ____        _
@@ -48,146 +43,94 @@ const logo = `
                             |_|
 `;
 
-function printHeader() {
-  console.log(chalk.cyan(logo));
-  console.log(chalk.bold('Interactive Setup Wizard\n'));
-}
-
-function printStep(step, total, title) {
-  console.log(chalk.bold.blue(`\n[${step}/${total}] ${title}\n`));
-}
-
-function printSuccess(message) {
-  console.log(chalk.green('  \u2713 ') + message);
-}
-
-function printWarning(message) {
-  console.log(chalk.yellow('  \u26a0 ') + message);
-}
-
-function printError(message) {
-  console.log(chalk.red('  \u2717 ') + message);
-}
-
-function printInfo(message) {
-  console.log(chalk.dim('  \u2192 ') + message);
-}
-
-/**
- * Parse .env file and return object, or null if no .env exists
- */
-function loadEnvFile() {
-  const envPath = path.join(process.cwd(), '.env');
-  if (!existsSync(envPath)) {
-    return null;
-  }
-  const content = readFileSync(envPath, 'utf-8');
-  const env = {};
-  for (const line of content.split('\n')) {
-    const match = line.match(/^([^#=]+)=(.*)$/);
-    if (match) {
-      env[match[1].trim()] = match[2].trim();
-    }
-  }
-  return env;
-}
-
 async function main() {
-  printHeader();
+  console.log(chalk.cyan(logo));
+  clack.intro('Interactive Setup Wizard');
 
   const TOTAL_STEPS = 7;
   let currentStep = 0;
 
-  // Load existing .env for re-run detection
+  // Load existing .env (always exists after init — seed .env has AUTH_SECRET etc.)
   const env = loadEnvFile();
-  const isRerun = env !== null;
 
-  if (isRerun) {
-    console.log(chalk.dim('  Existing .env detected \u2014 previously configured values can be skipped.\n'));
+  if (env) {
+    clack.log.info('Existing .env detected — previously configured values can be skipped.');
   }
 
-  // Collected values
-  let pat = null;
-  let agentProvider = null;
-  let agentModel = null;
-  const collectedKeys = {};
-  let braveKey = null;
-  let openaiBaseUrl = null;
-  let webhookSecret = null;
+  // Flat object collecting all config values for sync
+  const collected = {};
   let owner = null;
   let repo = null;
 
-  // Track what changed for selective .env updates and GitHub secrets
-  let credentialsChanged = false;
-  const changedVars = {};
+  // ─── Step 1: Prerequisites ───────────────────────────────────────────
+  clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] Checking prerequisites`);
 
-  // Step 1: Prerequisites Check
-  printStep(++currentStep, TOTAL_STEPS, 'Checking prerequisites');
-
-  const spinner = ora('Checking system requirements...').start();
+  const s = clack.spinner();
+  s.start('Checking system requirements...');
   const prereqs = await checkPrerequisites();
-  spinner.stop();
+  s.stop('Prerequisites checked');
 
   // Node.js
   if (prereqs.node.ok) {
-    printSuccess(`Node.js ${prereqs.node.version}`);
+    clack.log.success(`Node.js ${prereqs.node.version}`);
   } else if (prereqs.node.installed) {
-    printError(`Node.js ${prereqs.node.version} (need >= 18)`);
-    console.log(chalk.red('\n  Please upgrade Node.js to version 18 or higher.'));
+    clack.log.error(`Node.js ${prereqs.node.version} (need >= 18)`);
+    clack.cancel('Please upgrade Node.js to version 18 or higher.');
     process.exit(1);
   } else {
-    printError('Node.js not found');
-    console.log(chalk.red('\n  Please install Node.js 18+: https://nodejs.org'));
+    clack.log.error('Node.js not found');
+    clack.cancel('Please install Node.js 18+: https://nodejs.org');
     process.exit(1);
   }
 
   // Package manager
   if (prereqs.packageManager.installed) {
-    printSuccess(`Package manager: ${prereqs.packageManager.name}`);
+    clack.log.success(`Package manager: ${prereqs.packageManager.name}`);
   } else {
-    printError('No package manager found (need pnpm or npm)');
+    clack.log.error('No package manager found (need pnpm or npm)');
     process.exit(1);
   }
 
   // Git
   if (!prereqs.git.installed) {
-    printError('Git not found');
+    clack.log.error('Git not found');
     process.exit(1);
   }
-  printSuccess('Git installed');
+  clack.log.success('Git installed');
 
-  // gh CLI (needed before repo setup for auth)
+  // gh CLI
   if (prereqs.gh.installed) {
     if (prereqs.gh.authenticated) {
-      printSuccess('GitHub CLI authenticated');
+      clack.log.success('GitHub CLI authenticated');
     } else {
-      printWarning('GitHub CLI installed but not authenticated');
+      clack.log.warn('GitHub CLI installed but not authenticated');
       const shouldAuth = await confirm('Run gh auth login now?');
       if (shouldAuth) {
         try {
           runGhAuth();
-          printSuccess('GitHub CLI authenticated');
+          clack.log.success('GitHub CLI authenticated');
         } catch {
-          printError('Failed to authenticate gh CLI');
+          clack.log.error('Failed to authenticate gh CLI');
           process.exit(1);
         }
       } else {
-        printError('GitHub CLI authentication required');
+        clack.log.error('GitHub CLI authentication required');
         process.exit(1);
       }
     }
   } else {
-    printError('GitHub CLI (gh) not found');
-    printInfo('Install with: brew install gh');
+    clack.log.error('GitHub CLI (gh) not found');
+    clack.log.info('Install with: brew install gh');
     const shouldInstall = await confirm('Try to install gh with homebrew?');
     if (shouldInstall) {
-      const installSpinner = ora('Installing gh CLI...').start();
+      const installSpinner = clack.spinner();
+      installSpinner.start('Installing gh CLI...');
       try {
         execSync('brew install gh', { stdio: 'inherit' });
-        installSpinner.succeed('gh CLI installed');
+        installSpinner.stop('gh CLI installed');
         runGhAuth();
       } catch {
-        installSpinner.fail('Failed to install gh CLI');
+        installSpinner.stop('Failed to install gh CLI');
         process.exit(1);
       }
     } else {
@@ -197,102 +140,101 @@ async function main() {
 
   // Initialize git repo if needed
   if (!prereqs.git.initialized) {
-    const initSpinner = ora('Initializing git repo...').start();
+    const initSpinner = clack.spinner();
+    initSpinner.start('Initializing git repo...');
     execSync('git init', { stdio: 'ignore' });
-    initSpinner.succeed('Git repo initialized');
+    initSpinner.stop('Git repo initialized');
   }
 
   if (prereqs.git.remoteInfo) {
     owner = prereqs.git.remoteInfo.owner;
     repo = prereqs.git.remoteInfo.repo;
-    printSuccess(`Repository: ${owner}/${repo}`);
+    clack.log.success(`Repository: ${owner}/${repo}`);
   } else {
-    printWarning('No GitHub remote detected. We\'ll set one up.');
+    clack.log.warn('No GitHub remote detected. We\'ll set one up.');
 
     // Stage and commit
     execSync('git add .', { stdio: 'ignore' });
     try {
       execSync('git diff --cached --quiet', { stdio: 'ignore' });
-      printSuccess('Nothing new to commit');
+      clack.log.success('Nothing new to commit');
     } catch {
-      const commitSpinner = ora('Creating initial commit...').start();
+      const commitSpinner = clack.spinner();
+      commitSpinner.start('Creating initial commit...');
       execSync('git commit -m "initial commit"', { stdio: 'ignore' });
-      commitSpinner.succeed('Created initial commit');
+      commitSpinner.stop('Created initial commit');
     }
 
-    // Ask for project name and create the repo on GitHub
+    // Ask for project name
     const dirName = path.basename(process.cwd());
-    const { projectName } = await inquirer.prompt([
-      {
-        type: 'input',
-        name: 'projectName',
-        message: 'Name your project:',
-        default: dirName,
-        validate: (input) => input ? true : 'Name is required',
+    const projectName = await clack.text({
+      message: 'Name your project:',
+      defaultValue: dirName,
+      validate: (input) => {
+        if (!input) return 'Name is required';
       },
-    ]);
+    });
+    if (clack.isCancel(projectName)) {
+      clack.cancel('Setup cancelled.');
+      process.exit(0);
+    }
 
-    console.log(chalk.bold('\n  Create a GitHub repo:\n'));
-    console.log(chalk.cyan('    1. Create a new private repository'));
-    console.log(chalk.cyan('    2. Do NOT initialize with a README'));
-    console.log(chalk.cyan('    3. Copy the HTTPS URL\n'));
+    clack.log.info('Create a GitHub repo:');
+    clack.log.info('  1. Create a new private repository');
+    clack.log.info('  2. Do NOT initialize with a README');
+    clack.log.info('  3. Copy the HTTPS URL');
 
     const openGitHub = await confirm('Open GitHub repo creation page in browser?');
     if (openGitHub) {
       await open(`https://github.com/new?name=${encodeURIComponent(projectName)}&visibility=private`);
-      printInfo('Opened in browser (name and private pre-filled).');
+      clack.log.info('Opened in browser (name and private pre-filled).');
     }
 
     // Ask for the remote URL and add it
     let remoteAdded = false;
     while (!remoteAdded) {
-      const { remoteUrl } = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'remoteUrl',
-          message: 'Paste the HTTPS repository URL:',
-          validate: (input) => {
-            if (!input) return 'URL is required';
-            if (!input.startsWith('https://github.com/')) return 'Must be an HTTPS GitHub URL (https://github.com/...)';
-            return true;
-          },
+      const remoteUrl = await clack.text({
+        message: 'Paste the HTTPS repository URL:',
+        validate: (input) => {
+          if (!input) return 'URL is required';
+          if (!input.startsWith('https://github.com/')) return 'Must be an HTTPS GitHub URL (https://github.com/...)';
         },
-      ]);
+      });
+      if (clack.isCancel(remoteUrl)) {
+        clack.cancel('Setup cancelled.');
+        process.exit(0);
+      }
 
       try {
         const url = remoteUrl.replace(/\/$/, '').replace(/\.git$/, '') + '.git';
         execSync(`git remote add origin ${url}`, { stdio: 'ignore' });
         remoteAdded = true;
       } catch {
-        // Remote might already exist, update it
         try {
           const url = remoteUrl.replace(/\/$/, '').replace(/\.git$/, '') + '.git';
           execSync(`git remote set-url origin ${url}`, { stdio: 'ignore' });
           remoteAdded = true;
         } catch {
-          printError('Failed to set remote. Try again.');
+          clack.log.error('Failed to set remote. Try again.');
         }
       }
     }
 
-    // Get owner/repo from the remote we just added
     const { getGitRemoteInfo } = await import('./lib/prerequisites.mjs');
     const remoteInfo = getGitRemoteInfo();
     if (remoteInfo) {
       owner = remoteInfo.owner;
       repo = remoteInfo.repo;
-      printSuccess(`Repository: ${owner}/${repo}`);
+      clack.log.success(`Repository: ${owner}/${repo}`);
     } else {
-      printError('Could not detect repository from remote.');
+      clack.log.error('Could not detect repository from remote.');
       process.exit(1);
     }
   }
 
-  // Track owner/repo changes for re-runs
-  if (isRerun) {
-    if (owner !== env.GH_OWNER) changedVars['GH_OWNER'] = owner;
-    if (repo !== env.GH_REPO) changedVars['GH_REPO'] = repo;
-  }
+  // Add owner/repo to collected
+  collected.GH_OWNER = owner;
+  collected.GH_REPO = repo;
 
   // Track whether we need to push after getting the PAT
   let needsPush = false;
@@ -304,71 +246,68 @@ async function main() {
 
   // ngrok check (informational only)
   if (prereqs.ngrok.installed) {
-    printSuccess('ngrok installed');
+    clack.log.success('ngrok installed');
   } else {
-    printWarning('ngrok not installed (needed to expose local server)');
-    printInfo('Install with: brew install ngrok/ngrok/ngrok');
+    clack.log.warn('ngrok not installed (needed to expose local server)');
+    clack.log.info('Install with: brew install ngrok/ngrok/ngrok');
   }
 
-  // Step 2: GitHub PAT
-  printStep(++currentStep, TOTAL_STEPS, 'GitHub Personal Access Token');
+  // ─── Step 2: GitHub PAT ──────────────────────────────────────────────
+  clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] GitHub Personal Access Token`);
 
-  // Skip if PAT already configured
-  if (isRerun && env?.GH_TOKEN) {
-    printSuccess(`GitHub PAT configured (${maskSecret(env.GH_TOKEN)})`);
-    if (!await confirm('Reconfigure?', false)) {
-      pat = env.GH_TOKEN;
-    }
+  let pat = null;
+  if (await keepOrReconfigure('GitHub PAT', env?.GH_TOKEN ? maskSecret(env.GH_TOKEN) : null)) {
+    pat = env.GH_TOKEN;
   }
 
   if (!pat) {
-    console.log(chalk.dim(`  Create a fine-grained PAT scoped to ${chalk.bold(`${owner}/${repo}`)} only:\n`));
-    console.log(chalk.dim('    \u2022 Repository access: Only select repositories \u2192 ') + chalk.bold(`${owner}/${repo}`));
-    console.log(chalk.dim('    \u2022 Actions: Read and write'));
-    console.log(chalk.dim('    \u2022 Administration: Read and write (required for self-hosted runners)'));
-    console.log(chalk.dim('    \u2022 Contents: Read and write'));
-    console.log(chalk.dim('    \u2022 Metadata: Read-only (required, auto-selected)'));
-    console.log(chalk.dim('    \u2022 Pull requests: Read and write'));
-    console.log(chalk.dim('    \u2022 Workflows: Read and write\n'));
+    clack.log.info(
+      `Create a fine-grained PAT scoped to ${owner}/${repo} only:\n` +
+      `  Repository access: Only select repositories > ${owner}/${repo}\n` +
+      '  Actions: Read and write\n' +
+      '  Administration: Read and write (required for self-hosted runners)\n' +
+      '  Contents: Read and write\n' +
+      '  Metadata: Read-only (required, auto-selected)\n' +
+      '  Pull requests: Read and write\n' +
+      '  Workflows: Read and write'
+    );
 
     const openPATPage = await confirm('Open GitHub PAT creation page in browser?');
     if (openPATPage) {
       await open(getPATCreationURL());
-      printInfo('Opened in browser. Scope it to ' + chalk.bold(`${owner}/${repo}`) + ' only.');
+      clack.log.info(`Opened in browser. Scope it to ${owner}/${repo} only.`);
     }
 
     let patValid = false;
     while (!patValid) {
       pat = await promptForPAT();
 
-      const validateSpinner = ora('Validating PAT...').start();
+      const validateSpinner = clack.spinner();
+      validateSpinner.start('Validating PAT...');
       const validation = await validatePAT(pat);
 
       if (!validation.valid) {
-        validateSpinner.fail(`Invalid PAT: ${validation.error}`);
+        validateSpinner.stop(`Invalid PAT: ${validation.error}`);
         continue;
       }
 
       const scopes = await checkPATScopes(pat);
       if (!scopes.hasRepo || !scopes.hasWorkflow) {
-        validateSpinner.fail('PAT missing required scopes');
-        printInfo(`Found scopes: ${scopes.scopes.join(', ') || 'none'}`);
+        validateSpinner.stop('PAT missing required scopes');
+        clack.log.info(`Found scopes: ${scopes.scopes.join(', ') || 'none'}`);
         continue;
       }
 
       if (scopes.isFineGrained) {
-        validateSpinner.succeed(`Fine-grained PAT valid for user: ${validation.user}`);
+        validateSpinner.stop(`Fine-grained PAT valid for user: ${validation.user}`);
       } else {
-        validateSpinner.succeed(`PAT valid for user: ${validation.user}`);
+        validateSpinner.stop(`PAT valid for user: ${validation.user}`);
       }
       patValid = true;
     }
-
-    credentialsChanged = true;
-    if (isRerun) {
-      changedVars['GH_TOKEN'] = pat;
-    }
   }
+
+  collected.GH_TOKEN = pat;
 
   // Push to GitHub now that we have the PAT
   if (needsPush) {
@@ -379,19 +318,21 @@ async function main() {
       const authedUrl = remote.replace('https://github.com/', `https://x-access-token:${pat}@github.com/`);
       execSync(`git remote set-url origin ${authedUrl}`, { stdio: 'ignore' });
 
-      const pushSpinner = ora('Pushing to GitHub...').start();
+      const pushSpinner = clack.spinner();
+      pushSpinner.start('Pushing to GitHub...');
       try {
         execSync('git branch -M main', { stdio: 'ignore' });
         execSync('git push -u origin main 2>&1', { encoding: 'utf-8' });
-        pushSpinner.succeed('Pushed to GitHub');
+        pushSpinner.stop('Pushed to GitHub');
         pushed = true;
       } catch (err) {
-        pushSpinner.fail('Failed to push');
+        pushSpinner.stop('Failed to push');
         const output = (err.stdout || '') + (err.stderr || '');
-        if (output) printError(output.trim());
+        if (output) clack.log.error(output.trim());
         execSync(`git remote set-url origin ${remote}`, { stdio: 'ignore' });
-        printInfo('Your PAT may not have write access to this repository.');
+        clack.log.info('Your PAT may not have write access to this repository.');
         pat = await promptForPAT();
+        collected.GH_TOKEN = pat;
         continue;
       }
 
@@ -400,51 +341,59 @@ async function main() {
     }
   }
 
-  // Step 3: API Keys
-  printStep(++currentStep, TOTAL_STEPS, 'API Keys');
+  // ─── Step 3: API Keys ────────────────────────────────────────────────
+  clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] API Keys`);
 
-  // Step 3a: Agent LLM — skip if provider + key already configured
-  if (isRerun && env?.LLM_PROVIDER && env?.LLM_MODEL) {
-    let existingEnvKey = null;
-    let existingKey = null;
+  // Step 3a: Agent LLM
+  let agentProvider = null;
+  let agentModel = null;
+  let openaiBaseUrl = null;
 
-    if (env.LLM_PROVIDER === 'custom') {
-      existingEnvKey = 'CUSTOM_API_KEY';
-      existingKey = env.CUSTOM_API_KEY;
-    } else if (PROVIDERS[env.LLM_PROVIDER]) {
-      existingEnvKey = PROVIDERS[env.LLM_PROVIDER].envKey;
-      existingKey = env[existingEnvKey];
-    }
+  // Build display string for existing LLM config
+  let llmDisplay = null;
+  if (env?.LLM_PROVIDER && env?.LLM_MODEL) {
+    const existingEnvKey = env.LLM_PROVIDER === 'custom'
+      ? 'CUSTOM_API_KEY'
+      : PROVIDERS[env.LLM_PROVIDER]?.envKey;
 
-    // For custom providers the API key is optional, so check existingEnvKey instead
-    if (existingKey || (env.LLM_PROVIDER === 'custom' && existingEnvKey)) {
+    if (existingEnvKey) {
+      const existingKey = env[existingEnvKey];
       const providerLabel = env.LLM_PROVIDER === 'custom'
         ? 'Local (OpenAI Compatible API)'
         : (PROVIDERS[env.LLM_PROVIDER]?.label || env.LLM_PROVIDER);
-      let llmDisplay = existingKey
-        ? `LLM: ${providerLabel} / ${env.LLM_MODEL} (${maskSecret(existingKey)})`
-        : `LLM: ${providerLabel} / ${env.LLM_MODEL}`;
+      llmDisplay = existingKey
+        ? `${providerLabel} / ${env.LLM_MODEL} (${maskSecret(existingKey)})`
+        : `${providerLabel} / ${env.LLM_MODEL}`;
       if ((env.LLM_PROVIDER === 'openai' || env.LLM_PROVIDER === 'custom') && env.OPENAI_BASE_URL) {
         llmDisplay += ` @ ${env.OPENAI_BASE_URL}`;
-      }
-      printSuccess(llmDisplay);
-      if (!await confirm('Reconfigure?', false)) {
-        agentProvider = env.LLM_PROVIDER;
-        agentModel = env.LLM_MODEL;
-        collectedKeys[existingEnvKey] = existingKey || '';
       }
     }
   }
 
-  if (!agentProvider) {
-    console.log(chalk.dim('  Choose the LLM provider for your agent.\n'));
+  if (llmDisplay && await keepOrReconfigure('LLM', llmDisplay)) {
+    // Keep existing LLM config
+    agentProvider = env.LLM_PROVIDER;
+    agentModel = env.LLM_MODEL;
+    const existingEnvKey = agentProvider === 'custom'
+      ? 'CUSTOM_API_KEY'
+      : PROVIDERS[agentProvider].envKey;
+    collected.LLM_PROVIDER = agentProvider;
+    collected.LLM_MODEL = agentModel;
+    collected[existingEnvKey] = env[existingEnvKey] || '';
+    if (env.OPENAI_BASE_URL) {
+      openaiBaseUrl = env.OPENAI_BASE_URL;
+      collected.OPENAI_BASE_URL = openaiBaseUrl;
+    }
+  } else {
+    // Prompt for new LLM config
+    clack.log.info('Choose the LLM provider for your agent.');
 
     agentProvider = await promptForProvider();
 
     if (agentProvider === 'custom') {
-      printInfo('If the model runs on this machine, use http://host.docker.internal:<port>/v1');
-      printInfo('instead of localhost (localhost won\'t work from inside Docker)');
-      printInfo('Ollama example: http://host.docker.internal:11434/v1\n');
+      clack.log.info('If the model runs on this machine, use http://host.docker.internal:<port>/v1');
+      clack.log.info('instead of localhost (localhost won\'t work from inside Docker)');
+      clack.log.info('Ollama example: http://host.docker.internal:11434/v1');
       const custom = await promptForCustomProvider();
       agentModel = custom.model;
       openaiBaseUrl = custom.baseUrl;
@@ -454,18 +403,19 @@ async function main() {
         api: 'openai-completions',
         models: [custom.model],
       });
-      collectedKeys['CUSTOM_API_KEY'] = custom.apiKey || '';
-      printSuccess(`Custom provider configured: ${custom.model} @ ${custom.baseUrl}`);
+      collected.CUSTOM_API_KEY = custom.apiKey || '';
+      collected.OPENAI_BASE_URL = openaiBaseUrl;
+      clack.log.success(`Custom provider configured: ${custom.model} @ ${custom.baseUrl}`);
       if (custom.apiKey) {
-        printSuccess(`API key added (${maskSecret(custom.apiKey)})`);
+        clack.log.success(`API key added (${maskSecret(custom.apiKey)})`);
       }
     } else {
       const providerConfig = PROVIDERS[agentProvider];
       agentModel = await promptForModel(agentProvider);
       const agentApiKey = await promptForApiKey(agentProvider);
-      collectedKeys[providerConfig.envKey] = agentApiKey;
+      collected[providerConfig.envKey] = agentApiKey;
 
-      // Non-builtin providers need models.json (e.g., OpenAI)
+      // Non-builtin providers need models.json
       if (!providerConfig.builtin) {
         writeModelsJson(agentProvider, {
           baseUrl: providerConfig.baseUrl,
@@ -473,286 +423,131 @@ async function main() {
           api: providerConfig.api,
           models: providerConfig.models.map((m) => m.id),
         });
-        printSuccess(`Generated .pi/agent/models.json for ${providerConfig.name}`);
+        clack.log.success(`Generated .pi/agent/models.json for ${providerConfig.name}`);
       }
 
-      printSuccess(`${providerConfig.name} key added (${maskSecret(agentApiKey)})`);
+      clack.log.success(`${providerConfig.name} key added (${maskSecret(agentApiKey)})`);
     }
 
-    credentialsChanged = true;
-    if (isRerun) {
-      const providerEnvKey = agentProvider !== 'custom'
-        ? PROVIDERS[agentProvider].envKey
-        : 'CUSTOM_API_KEY';
-      changedVars['LLM_PROVIDER'] = agentProvider;
-      changedVars['LLM_MODEL'] = agentModel;
-      changedVars[providerEnvKey] = collectedKeys[providerEnvKey];
-      if (openaiBaseUrl) {
-        changedVars['OPENAI_BASE_URL'] = openaiBaseUrl;
-      }
+    collected.LLM_PROVIDER = agentProvider;
+    collected.LLM_MODEL = agentModel;
+
+    if (agentProvider === 'custom') {
+      collected.RUNS_ON = 'self-hosted';
     }
   }
 
-  // Re-run: reconfigure existing OPENAI_BASE_URL if provider was kept (not freshly configured)
-  if ((agentProvider === 'openai' || agentProvider === 'custom') && isRerun && env?.OPENAI_BASE_URL && !openaiBaseUrl) {
-    printSuccess(`Custom LLM URL: ${env.OPENAI_BASE_URL}`);
-    if (await confirm('Reconfigure?', false)) {
-      printInfo('If the model runs on this machine, use http://host.docker.internal:<port>/v1');
-      printInfo('instead of localhost (localhost won\'t work from inside Docker)');
-      printInfo('Ollama example: http://host.docker.internal:11434/v1\n');
-      const { baseUrl } = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'baseUrl',
-          message: 'API base URL:',
-          validate: (input) => {
-            if (!input) return 'URL is required';
-            if (!input.startsWith('http://') && !input.startsWith('https://')) {
-              return 'URL must start with http:// or https://';
-            }
-            return true;
-          },
+  // Re-run: reconfigure existing OPENAI_BASE_URL if provider was kept
+  if ((agentProvider === 'openai' || agentProvider === 'custom') && env?.OPENAI_BASE_URL && !collected.OPENAI_BASE_URL) {
+    if (!await keepOrReconfigure('Custom LLM URL', env.OPENAI_BASE_URL)) {
+      clack.log.info('If the model runs on this machine, use http://host.docker.internal:<port>/v1');
+      clack.log.info('instead of localhost (localhost won\'t work from inside Docker)');
+      clack.log.info('Ollama example: http://host.docker.internal:11434/v1');
+      const baseUrl = await clack.text({
+        message: 'API base URL:',
+        validate: (input) => {
+          if (!input) return 'URL is required';
+          if (!input.startsWith('http://') && !input.startsWith('https://')) {
+            return 'URL must start with http:// or https://';
+          }
         },
-      ]);
+      });
+      if (clack.isCancel(baseUrl)) {
+        clack.cancel('Setup cancelled.');
+        process.exit(0);
+      }
       openaiBaseUrl = baseUrl;
-      changedVars['OPENAI_BASE_URL'] = openaiBaseUrl;
-      printSuccess(`Custom base URL: ${openaiBaseUrl}`);
+      collected.OPENAI_BASE_URL = openaiBaseUrl;
+      clack.log.success(`Custom base URL: ${openaiBaseUrl}`);
     } else {
       openaiBaseUrl = env.OPENAI_BASE_URL;
+      collected.OPENAI_BASE_URL = openaiBaseUrl;
     }
   }
 
   // Step 3b: Voice Messages (OpenAI optional)
-  if (collectedKeys['OPENAI_API_KEY']) {
-    printSuccess('Your OpenAI key can also power voice messages.');
-  } else if (isRerun && env?.OPENAI_API_KEY) {
-    // OpenAI key exists from a previous setup (for voice), offer to keep
-    printSuccess(`OpenAI key for voice configured (${maskSecret(env.OPENAI_API_KEY)})`);
-    if (await confirm('Reconfigure?', false)) {
-      const result = await promptForOptionalKey('openai', 'voice messages');
-      if (result) {
-        collectedKeys['OPENAI_API_KEY'] = result;
-        credentialsChanged = true;
-        changedVars['OPENAI_API_KEY'] = result;
-        printSuccess(`OpenAI key updated (${maskSecret(result)})`);
-      }
-    } else {
-      collectedKeys['OPENAI_API_KEY'] = env.OPENAI_API_KEY;
-    }
-  } else {
+  if (collected['OPENAI_API_KEY']) {
+    clack.log.success('Your OpenAI key can also power voice messages.');
+  } else if (env?.OPENAI_API_KEY && await keepOrReconfigure('OpenAI key for voice', maskSecret(env.OPENAI_API_KEY))) {
+    collected['OPENAI_API_KEY'] = env.OPENAI_API_KEY;
+  } else if (!collected['OPENAI_API_KEY']) {
     const result = await promptForOptionalKey('openai', 'voice messages');
     if (result) {
-      collectedKeys['OPENAI_API_KEY'] = result;
-      if (isRerun) {
-        credentialsChanged = true;
-        changedVars['OPENAI_API_KEY'] = result;
-      }
-      printSuccess(`OpenAI key added (${maskSecret(result)})`);
+      collected['OPENAI_API_KEY'] = result;
+      clack.log.success(`OpenAI key added (${maskSecret(result)})`);
     }
   }
 
-  // Step 3c: Brave Search (optional, default: true since it's free)
-  // Brave key lives in LLM_SECRETS on GitHub, not in .env — always ask
-  braveKey = await promptForBraveKey();
+  // Step 3c: Brave Search (optional — not in .env, always ask)
+  const braveKey = await promptForBraveKey();
   if (braveKey) {
-    if (isRerun) credentialsChanged = true;
-    printSuccess(`Brave Search key added (${maskSecret(braveKey)})`);
+    collected.BRAVE_API_KEY = braveKey;
+    clack.log.success(`Brave Search key added (${maskSecret(braveKey)})`);
   }
 
-  // Step 4: Set GitHub Secrets
-  printStep(++currentStep, TOTAL_STEPS, 'Set GitHub Secrets');
-
-  if (!owner || !repo) {
-    printWarning('Could not detect repository. Please enter manually.');
-    const answers = await inquirer.prompt([
-      { type: 'input', name: 'owner', message: 'GitHub owner/org:' },
-      { type: 'input', name: 'repo', message: 'Repository name:' },
-    ]);
-    owner = answers.owner;
-    repo = answers.repo;
-  }
-
-  // Skip GitHub secrets if nothing changed on re-run
-  let secrets = null;
-  if (isRerun && !credentialsChanged && env?.GH_WEBHOOK_SECRET) {
-    printSuccess('GitHub secrets unchanged');
-    webhookSecret = env.GH_WEBHOOK_SECRET;
-  } else {
-    webhookSecret = (isRerun && env?.GH_WEBHOOK_SECRET) ? env.GH_WEBHOOK_SECRET : generateWebhookSecret();
-
-    secrets = {
-      GH_WEBHOOK_SECRET: webhookSecret,
-      AGENT_GH_TOKEN: pat,
-    };
-
-    for (const [key, value] of Object.entries(collectedKeys)) {
-      if (value) secrets[`AGENT_${key}`] = value;
-    }
-
-    if (braveKey) {
-      secrets.AGENT_LLM_BRAVE_API_KEY = braveKey;
-    }
-
-    let allSecretsSet = false;
-    while (!allSecretsSet) {
-      const secretSpinner = ora('Setting GitHub secrets...').start();
-      const secretResults = await setSecrets(owner, repo, secrets);
-      secretSpinner.stop();
-
-      allSecretsSet = true;
-      for (const [name, result] of Object.entries(secretResults)) {
-        if (result.success) {
-          printSuccess(`Set ${name}`);
-        } else {
-          printError(`Failed to set ${name}: ${result.error}`);
-          allSecretsSet = false;
-        }
-      }
-
-      if (!allSecretsSet) {
-        await pressEnter('Fix the issue, then press enter to retry');
-      }
-    }
-
-    // Set default GitHub repository variables
-    const defaultVars = {
-      AUTO_MERGE: 'true',
-      ALLOWED_PATHS: '/logs',
-      LLM_PROVIDER: agentProvider,
-      LLM_MODEL: agentModel,
-    };
-    if (openaiBaseUrl) {
-      defaultVars.OPENAI_BASE_URL = openaiBaseUrl;
-    }
-    if (agentProvider === 'custom') {
-      defaultVars.RUNS_ON = 'self-hosted';
-    }
-
-    let allVarsSet = false;
-    while (!allVarsSet) {
-      const varsSpinner = ora('Setting GitHub repository variables...').start();
-      const varResults = await setVariables(owner, repo, defaultVars);
-      varsSpinner.stop();
-
-      allVarsSet = true;
-      for (const [name, result] of Object.entries(varResults)) {
-        if (result.success) {
-          printSuccess(`Set ${name} = ${defaultVars[name]}`);
-        } else {
-          printError(`Failed to set ${name}: ${result.error}`);
-          allVarsSet = false;
-        }
-      }
-
-      if (!allVarsSet) {
-        await pressEnter('Fix the issue, then press enter to retry');
-      }
-    }
-
-    if (isRerun) {
-      changedVars['GH_WEBHOOK_SECRET'] = webhookSecret;
-    }
-  }
-
-  // Chat Interfaces (informational)
-  console.log(chalk.dim('\n  Your agent includes a web chat interface at your APP_URL.'));
-  console.log(chalk.dim('  You can also connect additional chat interfaces:\n'));
-  console.log(chalk.dim('    \u2022 Telegram:  ') + chalk.cyan('npm run setup-telegram'));
-  console.log('');
-
-  // Step 5: APP_URL (must be set before Docker starts — Traefik needs APP_HOSTNAME)
-  printStep(++currentStep, TOTAL_STEPS, 'App URL');
+  // ─── Step 4: App URL ─────────────────────────────────────────────────
+  clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] App URL`);
 
   let appUrl = null;
 
-  // Skip if APP_URL already configured
-  if (isRerun && env?.APP_URL) {
-    printSuccess(`APP_URL: ${env.APP_URL}`);
-    if (!await confirm('Reconfigure?', false)) {
-      appUrl = env.APP_URL;
-    }
+  if (await keepOrReconfigure('APP_URL', env?.APP_URL || null)) {
+    appUrl = env.APP_URL;
   }
 
   if (!appUrl) {
-    console.log(chalk.dim('  Your app needs a public URL for GitHub webhooks and Traefik routing.\n'));
-    console.log(chalk.dim('  Examples:'));
-    console.log(chalk.dim('    \u2022 ngrok: ') + chalk.cyan('https://abc123.ngrok.io'));
-    console.log(chalk.dim('    \u2022 VPS:   ') + chalk.cyan('https://mybot.example.com'));
-    console.log(chalk.dim('    \u2022 PaaS:  ') + chalk.cyan('https://mybot.vercel.app\n'));
+    clack.log.info(
+      'Your app needs a public URL for GitHub webhooks and Traefik routing.\n' +
+      '  Examples:\n' +
+      '    ngrok: https://abc123.ngrok.io\n' +
+      '    VPS:   https://mybot.example.com\n' +
+      '    PaaS:  https://mybot.vercel.app'
+    );
 
     while (!appUrl) {
-      const { url: urlInput } = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'url',
-          message: 'Enter your APP_URL (https://...):',
-          validate: (input) => {
-            if (!input) return 'URL is required';
-            if (!input.startsWith('https://')) return 'URL must start with https://';
-            return true;
-          },
+      const urlInput = await clack.text({
+        message: 'Enter your APP_URL (https://...):',
+        validate: (input) => {
+          if (!input) return 'URL is required';
+          if (!input.startsWith('https://')) return 'URL must start with https://';
         },
-      ]);
+      });
+      if (clack.isCancel(urlInput)) {
+        clack.cancel('Setup cancelled.');
+        process.exit(0);
+      }
       appUrl = urlInput.replace(/\/$/, '');
     }
-
-    if (isRerun) {
-      const appHostname = new URL(appUrl).hostname;
-      changedVars['APP_URL'] = appUrl;
-      changedVars['APP_HOSTNAME'] = appHostname;
-    }
-
-    // Set APP_URL variable on GitHub
-    let appUrlSet = false;
-    while (!appUrlSet) {
-      const urlSpinner = ora('Setting APP_URL variable...').start();
-      const urlResult = await setVariables(owner, repo, { APP_URL: appUrl });
-      if (urlResult.APP_URL.success) {
-        urlSpinner.succeed('APP_URL variable set');
-        appUrlSet = true;
-      } else {
-        urlSpinner.fail(`Failed: ${urlResult.APP_URL.error}`);
-        await pressEnter('Fix the issue, then press enter to retry');
-      }
-    }
   }
 
-  const appHostname = new URL(appUrl).hostname;
+  collected.APP_URL = appUrl;
+  collected.APP_HOSTNAME = new URL(appUrl).hostname;
 
-  // Write .env — fresh install uses writeEnvFile(), re-runs update only changed values
-  if (!isRerun) {
-    const providerConfig = agentProvider !== 'custom' ? PROVIDERS[agentProvider] : null;
-    const providerEnvKey = providerConfig ? providerConfig.envKey : 'CUSTOM_API_KEY';
-    const envPath = writeEnvFile({
-      githubToken: pat,
-      githubOwner: owner,
-      githubRepo: repo,
-      telegramBotToken: null,
-      telegramWebhookSecret: null,
-      ghWebhookSecret: webhookSecret,
-      llmProvider: agentProvider,
-      llmModel: agentModel,
-      providerEnvKey,
-      providerApiKey: collectedKeys[providerEnvKey] || '',
-      openaiApiKey: collectedKeys['OPENAI_API_KEY'] || '',
-      openaiBaseUrl: openaiBaseUrl || '',
-      telegramChatId: null,
-      telegramVerification: null,
-      appUrl,
-      appHostname,
-    });
-    printSuccess(`Created ${envPath}`);
-  } else if (Object.keys(changedVars).length > 0) {
-    for (const [key, value] of Object.entries(changedVars)) {
-      updateEnvVariable(key, value);
-    }
-    printSuccess(`Updated .env (${Object.keys(changedVars).join(', ')})`);
-  } else {
-    printSuccess('.env unchanged');
+  // Generate GH_WEBHOOK_SECRET if missing
+  collected.GH_WEBHOOK_SECRET = env?.GH_WEBHOOK_SECRET || generateWebhookSecret();
+
+  // ─── Step 5: Sync Config ─────────────────────────────────────────────
+  clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] Sync config`);
+
+  if (!owner || !repo) {
+    clack.log.warn('Could not detect repository. Please enter manually.');
+    const ownerInput = await clack.text({ message: 'GitHub owner/org:' });
+    if (clack.isCancel(ownerInput)) { clack.cancel('Setup cancelled.'); process.exit(0); }
+    owner = ownerInput;
+    const repoInput = await clack.text({ message: 'Repository name:' });
+    if (clack.isCancel(repoInput)) { clack.cancel('Setup cancelled.'); process.exit(0); }
+    repo = repoInput;
+    collected.GH_OWNER = owner;
+    collected.GH_REPO = repo;
   }
 
-  // Step 6: Build & Start Server
-  printStep(++currentStep, TOTAL_STEPS, 'Build & Start Server');
+  const report = await syncConfig(env, collected, { owner, repo });
+
+  // Chat interfaces (informational)
+  clack.log.info('Your agent includes a web chat interface at your APP_URL.');
+  clack.log.info('You can also connect Telegram: npm run setup-telegram');
+
+  // ─── Step 6: Build & Start Server ────────────────────────────────────
+  clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] Build & Start Server`);
 
   // Check if server is already running
   let serverAlreadyRunning = false;
@@ -767,89 +562,72 @@ async function main() {
   }
 
   if (serverAlreadyRunning) {
-    printSuccess('Server is already running');
-    if (!await confirm('Rebuild and restart anyway?', false)) {
-      // Skip build & start
-    } else {
-      console.log(chalk.dim('\n  Rebuilding Next.js...\n'));
+    clack.log.success('Server is already running');
+    if (await confirm('Rebuild and restart anyway?', false)) {
+      clack.log.info('Rebuilding Next.js...');
       try {
         execSync('npm run build', { stdio: 'inherit' });
-        printSuccess('Build complete');
+        clack.log.success('Build complete');
       } catch {
-        printError('Build failed \u2014 run npm run build manually');
+        clack.log.error('Build failed — run npm run build manually');
       }
     }
   } else {
-    // Build
-    console.log(chalk.dim('  Building Next.js...\n'));
+    clack.log.info('Building Next.js...');
     try {
       execSync('npm run build', { stdio: 'inherit' });
-      printSuccess('Build complete');
+      clack.log.success('Build complete');
     } catch {
-      printError('Build failed \u2014 run npm run build manually');
+      clack.log.error('Build failed — run npm run build manually');
     }
 
-    console.log(chalk.bold('\n  Start Docker in a new terminal window:\n'));
-    console.log(chalk.cyan('     docker compose up -d\n'));
+    clack.log.info('Start Docker in a new terminal window:\n\n     docker compose up -d');
 
     let serverReachable = false;
     while (!serverReachable) {
       await pressEnter('Press enter once Docker is running');
-      const serverSpinner = ora('Checking server...').start();
+      const serverSpinner = clack.spinner();
+      serverSpinner.start('Checking server...');
       try {
         await fetch('http://localhost:80/api/ping', {
           method: 'GET',
           signal: AbortSignal.timeout(5000),
         });
-        // Any HTTP response means the server is running (even 401)
-        serverSpinner.succeed('Server is running');
+        serverSpinner.stop('Server is running');
         serverReachable = true;
       } catch {
-        serverSpinner.fail('Could not reach server on localhost:80');
+        serverSpinner.stop('Could not reach server on localhost:80');
       }
     }
   }
 
-  // Step 7: Summary
-  printStep(++currentStep, TOTAL_STEPS, 'Setup Complete!');
-
-  console.log(chalk.bold.green('\n  Configuration Summary:\n'));
+  // ─── Step 7: Summary ─────────────────────────────────────────────────
+  clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] Setup Complete!`);
 
   const providerLabel = agentProvider === 'custom' ? 'Local (OpenAI Compatible API)' : PROVIDERS[agentProvider].label;
-  console.log(`  ${chalk.dim('Repository:')}      ${owner}/${repo}`);
-  console.log(`  ${chalk.dim('App URL:')}         ${appUrl}`);
-  console.log(`  ${chalk.dim('Agent LLM:')}       ${providerLabel} (${agentModel})`);
-  console.log(`  ${chalk.dim('GitHub PAT:')}      ${maskSecret(pat)}`);
-  for (const [envVar, value] of Object.entries(collectedKeys)) {
-    console.log(`  ${chalk.dim(`${envVar}:`)}  ${maskSecret(value)}`);
+
+  let summary = '';
+  summary += `Repository:   ${owner}/${repo}\n`;
+  summary += `App URL:      ${appUrl}\n`;
+  summary += `Agent LLM:    ${providerLabel} (${agentModel})\n`;
+  summary += `GitHub PAT:   ${maskSecret(pat)}`;
+
+  clack.note(summary, 'Configuration');
+
+  if (report.secrets.length > 0) {
+    clack.log.info(`GitHub secrets set: ${report.secrets.join(', ')}`);
   }
-  if (braveKey) console.log(`  ${chalk.dim('Brave Search:')}    ${maskSecret(braveKey)}`);
-
-  if (secrets) {
-    console.log(chalk.bold('\n  GitHub Secrets Set:\n'));
-    for (const name of Object.keys(secrets)) {
-      console.log(`  \u2022 ${name}`);
-    }
-
-    console.log(chalk.bold('\n  GitHub Variables Set:\n'));
-    console.log('  \u2022 APP_URL');
-    console.log('  \u2022 AUTO_MERGE = true');
-    console.log('  \u2022 ALLOWED_PATHS = /logs');
-    console.log(`  \u2022 LLM_PROVIDER = ${agentProvider}`);
-    console.log(`  \u2022 LLM_MODEL = ${agentModel}`);
-    if (openaiBaseUrl) console.log(`  \u2022 OPENAI_BASE_URL = ${openaiBaseUrl}`);
-    if (agentProvider === 'custom') console.log('  \u2022 RUNS_ON = self-hosted');
+  if (report.variables.length > 0) {
+    clack.log.info(`GitHub variables set: ${report.variables.join(', ')}`);
   }
 
-  console.log(chalk.bold.green('\n  You\'re all set!\n'));
-
-  console.log(chalk.dim('  Chat with your agent at ') + chalk.cyan(appUrl));
-  console.log(chalk.dim('  To connect Telegram: ') + chalk.cyan('npm run setup-telegram'));
-
-  console.log('\n');
+  clack.outro(
+    `Chat with your agent at ${appUrl}\n` +
+    '  To connect Telegram: npm run setup-telegram'
+  );
 }
 
 main().catch((error) => {
-  console.error(chalk.red('\nSetup failed:'), error.message);
+  clack.log.error(`Setup failed: ${error.message}`);
   process.exit(1);
 });

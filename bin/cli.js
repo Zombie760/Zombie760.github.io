@@ -106,15 +106,15 @@ async function init() {
 
     if (!isExistingProject) {
       console.log('\nThis directory is not empty.');
-      const { default: inquirer } = await import('inquirer');
-      const { dirName } = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'dirName',
-          message: 'Project directory name:',
-          default: 'my-popebot',
-        },
-      ]);
+      const { text, isCancel } = await import('@clack/prompts');
+      const dirName = await text({
+        message: 'Project directory name:',
+        defaultValue: 'my-popebot',
+      });
+      if (isCancel(dirName)) {
+        console.log('\nCancelled.\n');
+        process.exit(0);
+      }
       const newDir = path.resolve(cwd, dirName);
       fs.mkdirSync(newDir, { recursive: true });
       process.chdir(newDir);
@@ -240,12 +240,27 @@ async function init() {
   console.log('\nInstalling dependencies...\n');
   execSync('npm install', { stdio: 'inherit', cwd });
 
-  // Update THEPOPEBOT_VERSION in .env if it exists
+  // Create or update .env with auto-generated infrastructure values
   const envPath = path.join(cwd, '.env');
-  if (fs.existsSync(envPath)) {
+  const { randomBytes } = await import('crypto');
+  const thepopebotPkg = JSON.parse(fs.readFileSync(path.join(packageDir, 'package.json'), 'utf8'));
+  const version = thepopebotPkg.version;
+
+  if (!fs.existsSync(envPath)) {
+    // Seed .env for new projects
+    const authSecret = randomBytes(32).toString('base64');
+    const seedEnv = `# thepopebot Configuration
+# Run "npm run setup" to complete configuration
+
+AUTH_SECRET=${authSecret}
+AUTH_TRUST_HOST=true
+THEPOPEBOT_VERSION=${version}
+`;
+    fs.writeFileSync(envPath, seedEnv);
+    console.log(`  Created .env (AUTH_SECRET, THEPOPEBOT_VERSION=${version})`);
+  } else {
+    // Update THEPOPEBOT_VERSION in existing .env
     try {
-      const thepopebotPkg = JSON.parse(fs.readFileSync(path.join(packageDir, 'package.json'), 'utf8'));
-      const version = thepopebotPkg.version;
       let envContent = fs.readFileSync(envPath, 'utf8');
       if (envContent.match(/^THEPOPEBOT_VERSION=.*/m)) {
         envContent = envContent.replace(/^THEPOPEBOT_VERSION=.*/m, `THEPOPEBOT_VERSION=${version}`);
@@ -442,14 +457,17 @@ function loadRepoInfo() {
  * Prompt for a secret value interactively if not provided as an argument
  */
 async function promptForValue(key) {
-  const { default: inquirer } = await import('inquirer');
-  const { value } = await inquirer.prompt([{
-    type: 'password',
-    name: 'value',
+  const { password, isCancel } = await import('@clack/prompts');
+  const value = await password({
     message: `Enter value for ${key}:`,
-    mask: '*',
-    validate: (input) => input ? true : 'Value is required',
-  }]);
+    validate: (input) => {
+      if (!input) return 'Value is required';
+    },
+  });
+  if (isCancel(value)) {
+    console.log('\nCancelled.\n');
+    process.exit(0);
+  }
   return value;
 }
 

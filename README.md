@@ -364,12 +364,22 @@ Ports 80 and 443 must be open on your server. Port 80 is required even with HTTP
 | [Chat Integrations](docs/CHAT_INTEGRATIONS.md) | Web chat, Telegram, adding new channels |
 | [Auto-Merge](docs/AUTO_MERGE.md) | Auto-merge controls, ALLOWED_PATHS configuration |
 | [How to Use Pi](docs/HOW_TO_USE_PI.md) | Guide to the Pi coding agent |
+| [Security](docs/SECURITY.md) | Security disclaimer, local development risks |
+| [Upgrading](docs/UPGRADE.md) | Automated upgrades, recovering from failed upgrades |
 
 ### Maintainer
 
 | Document | Description |
 |----------|-------------|
 | [NPM](docs/NPM.md) | Updating pi-skills, versioning, and publishing releases |
+
+---
+
+## Security
+
+thepopebot includes API key authentication, webhook secret validation (fail-closed), session encryption, secret filtering in the Docker agent, and auto-merge path restrictions. However, all software carries risk — thepopebot is provided as-is, and you are responsible for securing your own infrastructure. If you're running locally with a tunnel (ngrok, Cloudflare Tunnel, port forwarding), be aware that your dev server endpoints are publicly accessible with no rate limiting and no TLS on the local hop.
+
+See [docs/SECURITY.md](docs/SECURITY.md) for full details on what's exposed, the risks, and recommendations.
 
 ---
 

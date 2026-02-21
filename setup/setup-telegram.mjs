@@ -1,10 +1,6 @@
 #!/usr/bin/env node
 
-import chalk from 'chalk';
-import ora from 'ora';
-import inquirer from 'inquirer';
-import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
+import * as clack from '@clack/prompts';
 
 import { checkPrerequisites } from './lib/prerequisites.mjs';
 import { setVariables } from './lib/github.mjs';
@@ -12,67 +8,35 @@ import { setTelegramWebhook, validateBotToken, generateVerificationCode } from '
 import { confirm, generateTelegramWebhookSecret } from './lib/prompts.mjs';
 import { updateEnvVariable } from './lib/auth.mjs';
 import { runVerificationFlow } from './lib/telegram-verify.mjs';
-
-const ROOT_DIR = process.cwd();
-
-function printSuccess(message) {
-  console.log(chalk.green('  \u2713 ') + message);
-}
-
-function printWarning(message) {
-  console.log(chalk.yellow('  \u26a0 ') + message);
-}
-
-function printInfo(message) {
-  console.log(chalk.dim('  \u2192 ') + message);
-}
-
-/**
- * Parse .env file and return object
- */
-function loadEnvFile() {
-  const envPath = join(ROOT_DIR, '.env');
-  if (!existsSync(envPath)) {
-    return null;
-  }
-  const content = readFileSync(envPath, 'utf-8');
-  const env = {};
-  for (const line of content.split('\n')) {
-    const match = line.match(/^([^#=]+)=(.*)$/);
-    if (match) {
-      env[match[1].trim()] = match[2].trim();
-    }
-  }
-  return env;
-}
+import { loadEnvFile } from './lib/env.mjs';
 
 async function main() {
-  console.log(chalk.bold.cyan('\n  Telegram Webhook Setup\n'));
-  console.log(chalk.dim('  Use this to reconfigure the Telegram webhook.\n'));
+  clack.intro('Telegram Webhook Setup');
+  clack.log.info('Use this to reconfigure the Telegram webhook.');
 
   // Check prerequisites
   const prereqs = await checkPrerequisites();
 
   if (!prereqs.git.remoteInfo) {
-    console.log(chalk.red('Could not detect GitHub repository from git remote.'));
+    clack.log.error('Could not detect GitHub repository from git remote.');
     process.exit(1);
   }
 
   const { owner, repo } = prereqs.git.remoteInfo;
-  printInfo(`Repository: ${owner}/${repo}`);
+  clack.log.info(`Repository: ${owner}/${repo}`);
 
   // Load existing config
   const env = loadEnvFile();
 
   // Get APP_URL (verify server is up)
-  console.log(chalk.yellow('\n  Make sure your server is running and publicly accessible.\n'));
+  clack.log.warn('Make sure your server is running and publicly accessible.');
 
   let appUrl = null;
 
   // Try to read APP_URL from .env first
   const existingAppUrl = env?.APP_URL;
   if (existingAppUrl) {
-    printInfo(`Found APP_URL in .env: ${existingAppUrl}`);
+    clack.log.info(`Found APP_URL in .env: ${existingAppUrl}`);
     const useExisting = await confirm('Use this URL?');
     if (useExisting) {
       appUrl = existingAppUrl;
@@ -80,18 +44,17 @@ async function main() {
   }
 
   while (!appUrl) {
-    const { url } = await inquirer.prompt([
-      {
-        type: 'input',
-        name: 'url',
-        message: 'Enter your APP_URL (https://...):',
-        validate: (input) => {
-          if (!input) return 'URL is required';
-          if (!input.startsWith('https://')) return 'URL must start with https://';
-          return true;
-        },
+    const url = await clack.text({
+      message: 'Enter your APP_URL (https://...):',
+      validate: (input) => {
+        if (!input) return 'URL is required';
+        if (!input.startsWith('https://')) return 'URL must start with https://';
       },
-    ]);
+    });
+    if (clack.isCancel(url)) {
+      clack.cancel('Setup cancelled.');
+      process.exit(0);
+    }
     appUrl = url.replace(/\/$/, '');
   }
 
@@ -99,107 +62,107 @@ async function main() {
   const appHostname = new URL(appUrl).hostname;
   updateEnvVariable('APP_URL', appUrl);
   updateEnvVariable('APP_HOSTNAME', appHostname);
-  printSuccess('APP_URL saved to .env');
+  clack.log.success('APP_URL saved to .env');
 
   // Set APP_URL variable on GitHub
-  const urlSpinner = ora('Updating APP_URL variable...').start();
+  const s = clack.spinner();
+  s.start('Updating APP_URL variable...');
   const urlResult = await setVariables(owner, repo, { APP_URL: appUrl });
   if (urlResult.APP_URL.success) {
-    urlSpinner.succeed('APP_URL variable updated');
+    s.stop('APP_URL variable updated');
   } else {
-    urlSpinner.fail(`Failed: ${urlResult.APP_URL.error}`);
+    s.stop(`Failed: ${urlResult.APP_URL.error}`);
   }
 
   // Get Telegram token - try .env first
   let token = env?.TELEGRAM_BOT_TOKEN;
   if (token) {
-    printInfo('Using Telegram token from .env');
-    const validateSpinner = ora('Validating bot token...').start();
+    clack.log.info('Using Telegram token from .env');
+    const validateSpinner = clack.spinner();
+    validateSpinner.start('Validating bot token...');
     const validation = await validateBotToken(token);
     if (validation.valid) {
-      validateSpinner.succeed(`Bot: @${validation.botInfo.username}`);
+      validateSpinner.stop(`Bot: @${validation.botInfo.username}`);
     } else {
-      validateSpinner.fail(`Invalid token in .env: ${validation.error}`);
+      validateSpinner.stop(`Invalid token in .env: ${validation.error}`);
       token = null;
     }
   }
 
   if (!token) {
-    const { inputToken } = await inquirer.prompt([
-      {
-        type: 'password',
-        name: 'inputToken',
-        message: 'Telegram bot token:',
-        mask: '*',
-        validate: (input) => {
-          if (!input) return 'Token is required';
-          if (!/^\d+:[A-Za-z0-9_-]+$/.test(input)) {
-            return 'Invalid format. Should be like 123456789:ABC-DEF...';
-          }
-          return true;
-        },
+    const inputToken = await clack.password({
+      message: 'Telegram bot token:',
+      validate: (input) => {
+        if (!input) return 'Token is required';
+        if (!/^\d+:[A-Za-z0-9_-]+$/.test(input)) {
+          return 'Invalid format. Should be like 123456789:ABC-DEF...';
+        }
       },
-    ]);
+    });
+    if (clack.isCancel(inputToken)) {
+      clack.cancel('Setup cancelled.');
+      process.exit(0);
+    }
     token = inputToken;
 
-    const validateSpinner = ora('Validating bot token...').start();
+    const validateSpinner = clack.spinner();
+    validateSpinner.start('Validating bot token...');
     const validation = await validateBotToken(token);
     if (!validation.valid) {
-      validateSpinner.fail(`Invalid token: ${validation.error}`);
+      validateSpinner.stop(`Invalid token: ${validation.error}`);
       process.exit(1);
     }
-    validateSpinner.succeed(`Bot: @${validation.botInfo.username}`);
+    validateSpinner.stop(`Bot: @${validation.botInfo.username}`);
   }
 
   // Handle webhook secret
   let webhookSecret = env?.TELEGRAM_WEBHOOK_SECRET;
   if (webhookSecret) {
-    printInfo('Using existing webhook secret');
+    clack.log.info('Using existing webhook secret');
   } else {
     webhookSecret = await generateTelegramWebhookSecret();
     updateEnvVariable('TELEGRAM_WEBHOOK_SECRET', webhookSecret);
-    printSuccess('Generated webhook secret');
+    clack.log.success('Generated webhook secret');
   }
 
   // Register Telegram webhook
   const webhookUrl = `${appUrl}/api/telegram/webhook`;
-  const tgSpinner = ora('Registering Telegram webhook...').start();
+  const tgSpinner = clack.spinner();
+  tgSpinner.start('Registering Telegram webhook...');
   const tgResult = await setTelegramWebhook(token, webhookUrl, webhookSecret);
   if (tgResult.ok) {
-    tgSpinner.succeed('Telegram webhook registered');
+    tgSpinner.stop('Telegram webhook registered');
   } else {
-    tgSpinner.fail(`Failed: ${tgResult.description}`);
+    tgSpinner.stop(`Failed: ${tgResult.description}`);
   }
 
-  // Handle chat ID verification (required — bot ignores all messages without it)
+  // Handle chat ID verification
   let telegramChatId = env?.TELEGRAM_CHAT_ID;
 
   if (telegramChatId) {
-    printInfo(`Using existing chat ID: ${telegramChatId}`);
+    clack.log.info(`Using existing chat ID: ${telegramChatId}`);
   } else {
-    // Generate new code and update .env
     const verificationCode = generateVerificationCode();
     updateEnvVariable('TELEGRAM_VERIFICATION', verificationCode);
 
-    console.log(chalk.yellow('\n  Waiting for server to restart with new verification code...\n'));
+    clack.log.warn('Waiting for server to restart with new verification code...');
     await new Promise(resolve => setTimeout(resolve, 3000));
 
     const chatId = await runVerificationFlow(verificationCode, { allowSkip: true });
 
     if (chatId) {
       updateEnvVariable('TELEGRAM_CHAT_ID', chatId);
-      printSuccess(`Chat ID saved: ${chatId}`);
+      clack.log.success(`Chat ID saved: ${chatId}`);
     } else {
-      printWarning('Chat ID is required \u2014 the bot will not respond without it.');
-      printInfo('Run npm run setup-telegram again to complete setup.');
+      clack.log.warn('Chat ID is required — the bot will not respond without it.');
+      clack.log.info('Run npm run setup-telegram again to complete setup.');
     }
   }
 
-  console.log(chalk.green('\n  Done!\n'));
-  console.log(chalk.dim(`  Webhook URL: ${webhookUrl}\n`));
+  clack.outro(`Webhook URL: ${webhookUrl}`);
 }
 
 main().catch((error) => {
-  console.error(chalk.red('\nFailed:'), error.message);
+  clack.log.error(`Failed: ${error.message}`);
   process.exit(1);
 });
