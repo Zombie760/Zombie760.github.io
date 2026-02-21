@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Streamdown } from 'streamdown';
 import { cn } from '../utils.js';
 import { SpinnerIcon, FileTextIcon, CopyIcon, CheckIcon, RefreshIcon, SquarePenIcon } from './icons.js';
+import { ToolCall } from './tool-call.jsx';
 
 export function PreviewMessage({ message, isLoading, onRetry, onEdit }) {
   const isUser = message.role === 'user';
@@ -25,6 +26,7 @@ export function PreviewMessage({ message, isLoading, onRetry, onEdit }) {
   const fileParts = message.parts?.filter((p) => p.type === 'file') || [];
   const imageParts = fileParts.filter((p) => p.mediaType?.startsWith('image/'));
   const otherFileParts = fileParts.filter((p) => !p.mediaType?.startsWith('image/'));
+  const hasToolParts = message.parts?.some((p) => p.type?.startsWith('tool-')) || false;
 
   const handleCopy = async () => {
     try {
@@ -120,50 +122,76 @@ export function PreviewMessage({ message, isLoading, onRetry, onEdit }) {
                   : 'bg-muted text-foreground'
               )}
             >
-              {imageParts.length > 0 && (
-                <div className="mb-2 flex flex-wrap gap-2">
-                  {imageParts.map((part, i) => (
-                    <img
-                      key={i}
-                      src={part.url}
-                      alt="attachment"
-                      className="max-h-64 max-w-full rounded-lg object-contain"
-                    />
-                  ))}
-                </div>
-              )}
-              {otherFileParts.length > 0 && (
-                <div className="mb-2 flex flex-wrap gap-2">
-                  {otherFileParts.map((part, i) => (
-                    <div
-                      key={i}
-                      className={cn(
-                        'inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs',
-                        isUser
-                          ? 'bg-primary-foreground/20'
-                          : 'bg-foreground/10'
-                      )}
-                    >
-                      <FileTextIcon size={12} />
-                      <span className="max-w-[150px] truncate">
-                        {part.name || part.mediaType || 'file'}
-                      </span>
+              {isUser ? (
+                <>
+                  {imageParts.length > 0 && (
+                    <div className="mb-2 flex flex-wrap gap-2">
+                      {imageParts.map((part, i) => (
+                        <img
+                          key={i}
+                          src={part.url}
+                          alt="attachment"
+                          className="max-h-64 max-w-full rounded-lg object-contain"
+                        />
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  )}
+                  {otherFileParts.length > 0 && (
+                    <div className="mb-2 flex flex-wrap gap-2">
+                      {otherFileParts.map((part, i) => (
+                        <div
+                          key={i}
+                          className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs bg-primary-foreground/20"
+                        >
+                          <FileTextIcon size={12} />
+                          <span className="max-w-[150px] truncate">
+                            {part.name || part.mediaType || 'file'}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {text ? (
+                    <div className="whitespace-pre-wrap break-words">{text}</div>
+                  ) : null}
+                </>
+              ) : (
+                <>
+                  {message.parts?.length > 0 ? (
+                    message.parts.map((part, i) => {
+                      if (part.type === 'text') {
+                        return <Streamdown key={i} mode={isLoading ? 'streaming' : 'static'}>{part.text}</Streamdown>;
+                      }
+                      if (part.type === 'file') {
+                        if (part.mediaType?.startsWith('image/')) {
+                          return (
+                            <div key={i} className="mb-2">
+                              <img src={part.url} alt="attachment" className="max-h-64 max-w-full rounded-lg object-contain" />
+                            </div>
+                          );
+                        }
+                        return (
+                          <div key={i} className="mb-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs bg-foreground/10">
+                            <FileTextIcon size={12} />
+                            <span className="max-w-[150px] truncate">{part.name || part.mediaType || 'file'}</span>
+                          </div>
+                        );
+                      }
+                      if (part.type?.startsWith('tool-')) {
+                        return <ToolCall key={part.toolCallId || i} part={part} />;
+                      }
+                      return null;
+                    })
+                  ) : text ? (
+                    <Streamdown mode={isLoading ? 'streaming' : 'static'}>{text}</Streamdown>
+                  ) : isLoading && !hasToolParts ? (
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <SpinnerIcon size={14} />
+                      <span>Working...</span>
+                    </div>
+                  ) : null}
+                </>
               )}
-              {text ? (
-                isUser ? (
-                  <div className="whitespace-pre-wrap break-words">{text}</div>
-                ) : (
-                  <Streamdown mode={isLoading ? 'streaming' : 'static'}>{text}</Streamdown>
-                )
-              ) : isLoading ? (
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <SpinnerIcon size={14} />
-                  <span>Working...</span>
-                </div>
-              ) : null}
             </div>
 
             {/* Action toolbar */}
