@@ -1,12 +1,6 @@
 # thepopebot
 
-**Autonomous AI agents. All the power. None of the leaked API keys.**
-
----
-
 ## Why thepopebot?
-
-**Secure by default** — Other frameworks hand credentials to the LLM and hope for the best. thepopebot is different: the AI literally cannot access your secrets, even if it tries. Secrets are filtered at the process level before the agent's shell even starts.
 
 **The repository IS the agent** — Every action your agent takes is a git commit. You can see exactly what it did, when, and why. If it screws up, revert it. Want to clone your agent? Fork the repo — code, personality, scheduled jobs, full history, all of it goes with your fork.
 
@@ -56,15 +50,9 @@ You interact with your bot via the web chat interface or Telegram (optional). Th
 
 ---
 
-## Get FREE server time on Github!
+## Star History
 
-| | thepopebot | Other platforms |
-|---|---|---|
-| **Public repos** | Free. $0. GitHub Actions doesn't charge. | $20-100+/month |
-| **Private repos** | 2,000 free minutes/month (every GitHub plan, including free) | $20-100+/month |
-| **Infrastructure** | GitHub Actions (already included) | Dedicated servers |
-
-You just bring your own [Anthropic API key](https://console.anthropic.com/).
+[![Star History Chart](https://api.star-history.com/svg?repos=stephengpope/thepopebot&type=date&legend=top-left)](https://www.star-history.com/#stephengpope/thepopebot&type=date&legend=top-left)
 
 ---
 
@@ -121,12 +109,6 @@ docker compose up -d
 - **Cron**: Edit `config/CRONS.json` to schedule recurring jobs
 
 > **Local installs**: Your server needs to be reachable from the internet for GitHub webhooks and Telegram. On a VPS/cloud server, your APP_URL is just your domain. For local development, use [ngrok](https://ngrok.com) (`ngrok http 80`) or port forwarding to expose your machine. If your ngrok URL changes, update APP_URL in `.env` and the GitHub repository variable, and re-run `npm run setup-telegram` if Telegram is configured.
-
----
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=stephengpope/thepopebot&type=date&legend=top-left)](https://www.star-history.com/#stephengpope/thepopebot&type=date&legend=top-left)
 
 ---
 
@@ -269,88 +251,11 @@ The `templates/` directory contains files scaffolded into user projects by `thep
 
 ---
 
-## Production Deployment
+## Security
 
-Deploy your agent to a cloud VPS with HTTPS.
+thepopebot includes API key authentication, webhook secret validation (fail-closed), session encryption, secret filtering in the Docker agent, and auto-merge path restrictions. However, all software carries risk — thepopebot is provided as-is, and you are responsible for securing your own infrastructure. If you're running locally with a tunnel (ngrok, Cloudflare Tunnel, port forwarding), be aware that your dev server endpoints are publicly accessible with no rate limiting and no TLS on the local hop.
 
-### 1. Server prerequisites
-
-You need a VPS (any provider — Hetzner, DigitalOcean, AWS, etc.) with:
-
-- Docker + Docker Compose
-- Node.js 18+
-- Git
-- GitHub CLI (`gh`)
-
-Point a domain (e.g., `mybot.example.com`) to your server's IP address with a DNS A record.
-
-### 2. Scaffold and configure
-
-SSH into your server and scaffold the project:
-
-```bash
-mkdir my-agent && cd my-agent
-npx thepopebot@latest init
-npm run setup
-```
-
-When the setup wizard asks for `APP_URL`, enter your production URL with `https://` (e.g., `https://mybot.example.com`).
-
-Set the `RUNS_ON` GitHub variable so workflows use your server's self-hosted runner instead of GitHub-hosted runners:
-
-```bash
-gh variable set RUNS_ON --body "self-hosted" --repo OWNER/REPO
-```
-
-### 3. Enable HTTPS (Let's Encrypt)
-
-The `docker-compose.yml` has Let's Encrypt support built in but commented out. Three edits to enable it:
-
-**a) Add your email to `.env`:**
-
-```
-LETSENCRYPT_EMAIL=you@example.com
-```
-
-**b) In `docker-compose.yml`, remove the `#` from the TLS lines in the traefik service command:**
-
-```yaml
-# Before (commented out):
-# - --entrypoints.web.http.redirections.entrypoint.to=websecure
-# ...
-
-# After (uncommented):
-- --entrypoints.web.http.redirections.entrypoint.to=websecure
-- --entrypoints.web.http.redirections.entrypoint.scheme=https
-- --certificatesresolvers.letsencrypt.acme.email=${LETSENCRYPT_EMAIL}
-- --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
-- --certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web
-```
-
-**c) In the event-handler labels, switch from HTTP to HTTPS:**
-
-Add a `#` to comment out the HTTP entrypoint, and remove the `#` from the two HTTPS lines:
-
-```yaml
-# Before:
-- traefik.http.routers.event-handler.entrypoints=web
-# - traefik.http.routers.event-handler.entrypoints=websecure
-# - traefik.http.routers.event-handler.tls.certresolver=letsencrypt
-
-# After:
-# - traefik.http.routers.event-handler.entrypoints=web
-- traefik.http.routers.event-handler.entrypoints=websecure
-- traefik.http.routers.event-handler.tls.certresolver=letsencrypt
-```
-
-### 4. Build and launch
-
-```bash
-npm run build
-docker compose up -d
-```
-
-Ports 80 and 443 must be open on your server. Port 80 is required even with HTTPS — Let's Encrypt uses it for the ACME HTTP challenge to verify domain ownership.
+See [docs/SECURITY.md](docs/SECURITY.md) for full details on what's exposed, the risks, and recommendations.
 
 ---
 
@@ -363,7 +268,9 @@ Ports 80 and 443 must be open on your server. Port 80 is required even with HTTP
 | [Customization](docs/CUSTOMIZATION.md) | Personality, skills, operating system files, using your bot, security details |
 | [Chat Integrations](docs/CHAT_INTEGRATIONS.md) | Web chat, Telegram, adding new channels |
 | [Auto-Merge](docs/AUTO_MERGE.md) | Auto-merge controls, ALLOWED_PATHS configuration |
+| [Deployment](docs/DEPLOYMENT.md) | VPS setup, Docker Compose, HTTPS with Let's Encrypt |
 | [How to Use Pi](docs/HOW_TO_USE_PI.md) | Guide to the Pi coding agent |
+| [Pre-Release](docs/PRE_RELEASE.md) | Installing beta/alpha builds, going back to stable |
 | [Security](docs/SECURITY.md) | Security disclaimer, local development risks |
 | [Upgrading](docs/UPGRADE.md) | Automated upgrades, recovering from failed upgrades |
 
@@ -372,45 +279,3 @@ Ports 80 and 443 must be open on your server. Port 80 is required even with HTTP
 | Document | Description |
 |----------|-------------|
 | [NPM](docs/NPM.md) | Updating pi-skills, versioning, and publishing releases |
-
----
-
-## Security
-
-thepopebot includes API key authentication, webhook secret validation (fail-closed), session encryption, secret filtering in the Docker agent, and auto-merge path restrictions. However, all software carries risk — thepopebot is provided as-is, and you are responsible for securing your own infrastructure. If you're running locally with a tunnel (ngrok, Cloudflare Tunnel, port forwarding), be aware that your dev server endpoints are publicly accessible with no rate limiting and no TLS on the local hop.
-
-See [docs/SECURITY.md](docs/SECURITY.md) for full details on what's exposed, the risks, and recommendations.
-
----
-
-## Pre-Release Versions
-
-Pre-release builds (beta, alpha, rc) are published to separate npm dist-tags. They won't be installed by normal `npm update` or `thepopebot init` — you have to opt in explicitly.
-
-**Install the latest pre-release:**
-
-```bash
-mkdir my-agent && cd my-agent
-npx thepopebot@beta init
-```
-
-**Install a specific version:**
-
-```bash
-npx thepopebot@1.3.0-beta.1 init
-```
-
-**Check available versions:**
-
-```bash
-npm info thepopebot
-```
-
-**Go back to stable:**
-
-```bash
-npm install thepopebot@latest
-npx thepopebot init
-```
-
-Pre-releases may contain breaking changes or incomplete features. Use them for testing and feedback — not production agents.
