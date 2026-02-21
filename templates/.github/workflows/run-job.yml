@@ -22,7 +22,7 @@ jobs:
       - name: Get thepopebot version
         id: version
         run: |
-          VERSION=$(node -p "require('./package-lock.json').packages['node_modules/thepopebot']?.version || 'latest'")
+          VERSION=$(jq -r '.packages["node_modules/thepopebot"].version // "latest"' package-lock.json)
           echo "tag=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Login to GHCR

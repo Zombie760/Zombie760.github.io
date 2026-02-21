@@ -578,7 +578,7 @@ async function main() {
     printSuccess('GitHub secrets unchanged');
     webhookSecret = env.GH_WEBHOOK_SECRET;
   } else {
-    webhookSecret = generateWebhookSecret();
+    webhookSecret = (isRerun && env?.GH_WEBHOOK_SECRET) ? env.GH_WEBHOOK_SECRET : generateWebhookSecret();
 
     secrets = {
       GH_WEBHOOK_SECRET: webhookSecret,
