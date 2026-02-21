@@ -165,6 +165,8 @@ async function init() {
   const pkgPath = path.join(cwd, 'package.json');
   if (!fs.existsSync(pkgPath)) {
     const dirName = path.basename(cwd);
+    const { version } = JSON.parse(fs.readFileSync(path.join(packageDir, 'package.json'), 'utf8'));
+    const thepopebotDep = version.includes('-') ? version : '^1.0.0';
     const pkg = {
       name: dirName,
       private: true,
@@ -177,7 +179,7 @@ async function init() {
         'reset-auth': 'thepopebot reset-auth',
       },
       dependencies: {
-        thepopebot: '^1.0.0',
+        thepopebot: thepopebotDep,
         next: '^15.5.12',
         'next-auth': '5.0.0-beta.30',
         'next-themes': '^0.4.0',
