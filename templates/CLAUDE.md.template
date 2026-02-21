@@ -13,7 +13,7 @@ This is an autonomous AI agent powered by [thepopebot](https://github.com/stephe
 ├── pi-skills/                  # All available Pi agent skills (from thepopebot package)
 ├── config/                     # Agent configuration
 │   ├── SOUL.md                 # Agent personality and identity
-│   ├── CHATBOT.md              # Telegram chat system prompt
+│   ├── EVENT_HANDLER.md        # Event handler system prompt
 │   ├── JOB_SUMMARY.md          # Job completion summary prompt
 │   ├── HEARTBEAT.md            # Periodic check instructions
 │   ├── AGENT.md                # Agent runtime environment

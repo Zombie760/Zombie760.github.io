@@ -84,7 +84,7 @@ The `templates/` directory contains **only files that get scaffolded into user p
 │   ├── .github/workflows/      # GitHub Actions (auto-merge, build-image, deploy, run-job, notify)
 │   ├── docker/                 # Docker files for job and event-handler containers
 │   ├── pi-skills/              # Git submodule — Pi agent skills (brave-search, browser-tools, etc.)
-│   └── config/                 # Agent config (SOUL, CHATBOT, CRONS, TRIGGERS, etc.)
+│   └── config/                 # Agent config (SOUL, EVENT_HANDLER, CRONS, TRIGGERS, etc.)
 ├── docs/                       # Extended documentation
 └── package.json                # NPM package definition
 ```
@@ -506,7 +506,7 @@ Inside the container, `entrypoint.sh` parses the JSON and exports each key as a 
 Users create their agent project with `npx thepopebot init` then `npm run setup`. The setup wizard handles API keys, GitHub secrets/variables, and Telegram bot configuration. Users customize their agent by editing:
 
 - **config/SOUL.md** — Personality, identity, and values (who the agent is)
-- **config/CHATBOT.md** — System prompt for all chat (web + Telegram)
+- **config/EVENT_HANDLER.md** — Event handler system prompt
 - **config/JOB_SUMMARY.md** — Prompt for summarizing completed jobs
 - **config/HEARTBEAT.md** — Self-monitoring behavior
 - **config/AGENT.md** — Agent runtime environment
@@ -530,4 +530,4 @@ Markdown files in `config/` support a `{{filepath}}` include syntax, powered by 
 - **Circular protection**: If a circular include is detected, it is skipped and a warning is logged
 - **Missing files**: If a referenced file doesn't exist, the pattern is left as-is
 
-Currently used by the Event Handler to load CHATBOT.md (which includes CLAUDE.md) as the LLM system prompt.
+Currently used by the Event Handler to load EVENT_HANDLER.md as the LLM system prompt.

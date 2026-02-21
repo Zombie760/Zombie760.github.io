@@ -7,7 +7,7 @@ The `config/` directory is the agent's brain — it defines who the agent is and
 | File | Purpose |
 |------|---------|
 | `SOUL.md` | Agent identity, personality traits, and values |
-| `CHATBOT.md` | System prompt for all chat (web + Telegram) |
+| `EVENT_HANDLER.md` | Event handler system prompt |
 | `JOB_SUMMARY.md` | Prompt for summarizing completed jobs |
 | `HEARTBEAT.md` | Self-monitoring behavior |
 | `AGENT.md` | Agent runtime environment |
