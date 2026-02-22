@@ -124,7 +124,24 @@ npm install thepopebot@latest
 npx thepopebot init
 ```
 
-For most people, that's it — `init` handles everything. It updates your project files, runs `npm install`, and updates `THEPOPEBOT_VERSION` in your local `.env`.
+For most people, that's it — `init` handles everything. It updates your project files, runs `npm install`, and updates `THEPOPEBOT_VERSION` in your local `.env`. See [Understanding `init`](#understanding-init) below for details on what this updates and how to handle custom changes.
+
+**3. Rebuild for local dev**
+
+```bash
+npm run build
+```
+
+**4. Commit and push**
+
+```bash
+git add -A && git commit -m "upgrade thepopebot to vX.X.X"
+git push
+```
+
+Pushing to `main` triggers the `rebuild-event-handler.yml` workflow on your server. It detects the version change, runs `thepopebot init`, updates `THEPOPEBOT_VERSION` in the server's `.env`, pulls the new Docker image, restarts the container, rebuilds `.next`, and reloads PM2 — no manual `docker compose` needed.
+
+### Understanding `init`
 
 #### How your project is structured
 
@@ -177,21 +194,6 @@ If you've made custom changes to managed files (e.g., added extra steps to a Git
 ```bash
 npx thepopebot init --no-managed
 ```
-
-**3. Rebuild for local dev**
-
-```bash
-npm run build
-```
-
-**4. Commit and push**
-
-```bash
-git add -A && git commit -m "upgrade thepopebot to vX.X.X"
-git push
-```
-
-Pushing to `main` triggers the `rebuild-event-handler.yml` workflow on your server. It detects the version change, runs `thepopebot init`, updates `THEPOPEBOT_VERSION` in the server's `.env`, pulls the new Docker image, restarts the container, rebuilds `.next`, and reloads PM2 — no manual `docker compose` needed.
 
 ---
 
