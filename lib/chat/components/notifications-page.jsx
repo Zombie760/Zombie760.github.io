@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Streamdown } from 'streamdown';
 import { PageLayout } from './page-layout.js';
 import { BellIcon } from './icons.js';
+import { linkSafety } from './message.js';
 import { getNotifications, markNotificationsRead } from '../actions.js';
 
 function timeAgo(ts) {
@@ -71,7 +72,7 @@ export function NotificationsPage({ session }) {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="text-sm prose-sm">
-                  <Streamdown mode="static">{n.notification}</Streamdown>
+                  <Streamdown mode="static" linkSafety={linkSafety}>{n.notification}</Streamdown>
                 </div>
                 <span className="text-xs text-muted-foreground">
                   {timeAgo(n.createdAt)}

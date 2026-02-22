@@ -1,9 +1,68 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Streamdown } from 'streamdown';
 import { cn } from '../utils.js';
 import { SpinnerIcon, FileTextIcon, CopyIcon, CheckIcon, RefreshIcon, SquarePenIcon, WrenchIcon, XIcon, ChevronDownIcon } from './icons.js';
+
+function LinkSafetyModal({ url, isOpen, onClose, onConfirm }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {}
+  }, [url]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+      onClick={onClose}
+    >
+      <div
+        className="relative mx-4 flex w-full flex-col gap-3 rounded-lg border border-border bg-background p-4 shadow-lg"
+        style={{ maxWidth: '340px' }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="font-medium text-sm text-foreground">Open external link?</div>
+        <div className="break-all rounded bg-muted px-2.5 py-2 font-mono text-xs text-foreground">
+          {url}
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={handleCopy}
+            className="flex flex-1 items-center justify-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-xs font-medium text-foreground hover:bg-muted"
+          >
+            {copied ? <CheckIcon size={12} /> : <CopyIcon size={12} />}
+            <span>{copied ? 'Copied' : 'Copy'}</span>
+          </button>
+          <button
+            onClick={() => { onConfirm(); onClose(); }}
+            className="flex flex-1 items-center justify-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground hover:opacity-90"
+          >
+            <span>Open</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export const linkSafety = {
+  enabled: true,
+  renderModal: (props) => <LinkSafetyModal {...props} />,
+};
 
 const TOOL_DISPLAY_NAMES = {
   create_job: 'Create Job',
@@ -257,7 +316,7 @@ export function PreviewMessage({ message, isLoading, onRetry, onEdit }) {
                   {message.parts?.length > 0 ? (
                     message.parts.map((part, i) => {
                       if (part.type === 'text') {
-                        return <Streamdown key={i} mode={isLoading ? 'streaming' : 'static'}>{part.text}</Streamdown>;
+                        return <Streamdown key={i} mode={isLoading ? 'streaming' : 'static'} linkSafety={linkSafety}>{part.text}</Streamdown>;
                       }
                       if (part.type === 'file') {
                         if (part.mediaType?.startsWith('image/')) {
@@ -280,7 +339,7 @@ export function PreviewMessage({ message, isLoading, onRetry, onEdit }) {
                       return null;
                     })
                   ) : text ? (
-                    <Streamdown mode={isLoading ? 'streaming' : 'static'}>{text}</Streamdown>
+                    <Streamdown mode={isLoading ? 'streaming' : 'static'} linkSafety={linkSafety}>{text}</Streamdown>
                   ) : isLoading && !hasToolParts ? (
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <SpinnerIcon size={14} />
