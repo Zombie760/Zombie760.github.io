@@ -5,12 +5,13 @@ on:
     branches: [main]
 
 concurrency:
-  group: rebuild
-  cancel-in-progress: true
+  group: event-handler-deploy
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: self-hosted
+    timeout-minutes: 20
     steps:
       - name: Pull latest and detect version change
         id: pull

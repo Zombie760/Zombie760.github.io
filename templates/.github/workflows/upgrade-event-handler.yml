@@ -4,12 +4,13 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: upgrade
-  cancel-in-progress: true
+  group: event-handler-deploy
+  cancel-in-progress: false
 
 jobs:
   upgrade:
     runs-on: self-hosted
+    timeout-minutes: 20
     steps:
       - name: Upgrade thepopebot
         run: |
