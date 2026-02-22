@@ -45,7 +45,7 @@ function ToolCall({ part }) {
         onClick={() => setExpanded(!expanded)}
         className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm hover:bg-muted/50 rounded-lg"
       >
-        <WrenchIcon size={14} />
+        <WrenchIcon size={14} className="text-muted-foreground shrink-0" />
         <span className="font-medium text-foreground">{displayName}</span>
         <span className="ml-auto flex items-center gap-1.5 text-xs text-muted-foreground">
           {isRunning && (
@@ -56,19 +56,23 @@ function ToolCall({ part }) {
           )}
           {isDone && (
             <>
-              <CheckIcon size={12} />
+              <CheckIcon size={12} className="text-green-500" />
               <span>Done</span>
             </>
           )}
           {isError && (
             <>
-              <XIcon size={12} />
+              <XIcon size={12} className="text-red-500" />
               <span>Error</span>
             </>
           )}
         </span>
         <ChevronDownIcon
           size={14}
+          className={cn(
+            'text-muted-foreground transition-transform shrink-0',
+            expanded && 'rotate-180'
+          )}
         />
       </button>
 

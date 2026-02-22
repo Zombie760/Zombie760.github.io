@@ -205,7 +205,7 @@ export function PaperclipIcon({ size = 16 }) {
   );
 }
 
-export function XIcon({ size = 16 }) {
+export function XIcon({ size = 16, className = '' }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -217,6 +217,7 @@ export function XIcon({ size = 16 }) {
       strokeLinejoin="round"
       width={size}
       height={size}
+      className={className}
     >
       <path d="M18 6 6 18" />
       <path d="m6 6 12 12" />
@@ -304,7 +305,7 @@ export function RefreshIcon({ size = 16 }) {
   );
 }
 
-export function ChevronDownIcon({ size = 16 }) {
+export function ChevronDownIcon({ size = 16, className = '' }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -316,6 +317,7 @@ export function ChevronDownIcon({ size = 16 }) {
       strokeLinejoin="round"
       width={size}
       height={size}
+      className={className}
     >
       <path d="m6 9 6 6 6-6" />
     </svg>
@@ -380,7 +382,7 @@ export function CopyIcon({ size = 16 }) {
   );
 }
 
-export function CheckIcon({ size = 16 }) {
+export function CheckIcon({ size = 16, className = '' }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -392,6 +394,7 @@ export function CheckIcon({ size = 16 }) {
       strokeLinejoin="round"
       width={size}
       height={size}
+      className={className}
     >
       <path d="M20 6 9 17l-5-5" />
     </svg>
@@ -626,7 +629,7 @@ export function LifeBuoyIcon({ size = 16 }) {
   );
 }
 
-export function WrenchIcon({ size = 16 }) {
+export function WrenchIcon({ size = 16, className = '' }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -638,6 +641,7 @@ export function WrenchIcon({ size = 16 }) {
       strokeLinejoin="round"
       width={size}
       height={size}
+      className={className}
     >
       <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
     </svg>
