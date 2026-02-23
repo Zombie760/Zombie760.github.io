@@ -249,7 +249,11 @@ async function main() {
     clack.log.success('ngrok installed');
   } else {
     clack.log.warn('ngrok not installed (needed to expose local server)');
-    clack.log.info('Install with: brew install ngrok/ngrok/ngrok');
+    clack.log.info(
+      'Install with: brew install ngrok/ngrok/ngrok\n' +
+      '  Sign up for a free account at https://dashboard.ngrok.com/signup\n' +
+      '  Then run: ngrok config add-authtoken <YOUR_TOKEN>'
+    );
   }
 
   // ─── Step 2: GitHub PAT ──────────────────────────────────────────────
@@ -559,25 +563,41 @@ async function main() {
     // Server not reachable
   }
 
+  // Helper: run build with retry on failure
+  async function runBuildWithRetry() {
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        execSync('npm run build', { stdio: 'inherit' });
+        clack.log.success('Build complete');
+        return true;
+      } catch {
+        if (attempt === 1) {
+          clack.log.error('Build failed.');
+          const retry = await confirm('Retry build?');
+          if (!retry) break;
+        } else {
+          clack.log.error('Build failed again.');
+        }
+      }
+    }
+    clack.log.error(
+      'Cannot continue without a successful build.\n' +
+      '  Fix the error above, then run:\n\n' +
+      '    npm run build\n' +
+      '    docker compose up -d'
+    );
+    process.exit(1);
+  }
+
   if (serverAlreadyRunning) {
     clack.log.success('Server is already running');
     if (await confirm('Rebuild and restart anyway?', false)) {
       clack.log.info('Rebuilding Next.js...');
-      try {
-        execSync('npm run build', { stdio: 'inherit' });
-        clack.log.success('Build complete');
-      } catch {
-        clack.log.error('Build failed — run npm run build manually');
-      }
+      await runBuildWithRetry();
     }
   } else {
     clack.log.info('Building Next.js...');
-    try {
-      execSync('npm run build', { stdio: 'inherit' });
-      clack.log.success('Build complete');
-    } catch {
-      clack.log.error('Build failed — run npm run build manually');
-    }
+    await runBuildWithRetry();
 
     clack.log.info('Start Docker in a new terminal window:\n\n     docker compose up -d');
 

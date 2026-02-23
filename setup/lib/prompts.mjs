@@ -189,18 +189,18 @@ export async function promptForCustomProvider() {
  */
 export async function promptForBraveKey() {
   const addKey = handleCancel(await clack.confirm({
-    message: 'Add Brave Search API key? (free tier, greatly improves agent)',
+    message: 'Add Brave Search API key? (optional, greatly improves agent)',
     initialValue: true,
   }));
 
   if (!addKey) return null;
 
   clack.log.info(
-    'To get a free Brave Search API key:\n' +
+    'To get a Brave Search API key:\n' +
     '  1. Go to https://api-dashboard.search.brave.com/app/keys\n' +
     '  2. Click "Get Started"\n' +
     '  3. Create an account (or sign in)\n' +
-    '  4. Subscribe to the "Free" plan (2,000 queries/month)\n' +
+    '  4. Subscribe to a plan (free credits may be available)\n' +
     '  5. Copy your API key'
   );
 

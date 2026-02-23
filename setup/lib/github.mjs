@@ -1,6 +1,7 @@
 import { execSync, exec } from 'child_process';
 import { promisify } from 'util';
 import { randomBytes } from 'crypto';
+import { ghEnv } from './prerequisites.mjs';
 
 const execAsync = promisify(exec);
 
@@ -69,7 +70,7 @@ export async function setSecret(owner, repo, name, value) {
     // Use stdin to pass the secret value securely
     const { stdout, stderr } = await execAsync(
       `echo "${value.replace(/"/g, '\\"')}" | gh secret set ${name} --repo ${owner}/${repo}`,
-      { encoding: 'utf-8' }
+      { encoding: 'utf-8', env: ghEnv() }
     );
     return { success: true };
   } catch (error) {
@@ -95,6 +96,7 @@ export async function listSecrets(owner, repo) {
   try {
     const { stdout } = await execAsync(`gh secret list --repo ${owner}/${repo}`, {
       encoding: 'utf-8',
+      env: ghEnv(),
     });
     const secrets = stdout
       .trim()
@@ -114,7 +116,7 @@ export async function setVariable(owner, repo, name, value) {
   try {
     const { stdout, stderr } = await execAsync(
       `echo "${value.replace(/"/g, '\\"')}" | gh variable set ${name} --repo ${owner}/${repo}`,
-      { encoding: 'utf-8' }
+      { encoding: 'utf-8', env: ghEnv() }
     );
     return { success: true };
   } catch (error) {

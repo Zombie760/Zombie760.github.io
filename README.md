@@ -64,10 +64,10 @@ You interact with your bot via the web chat interface or Telegram (optional). Th
 | **npm** | Included with Node.js |
 | **Git** | [git-scm.com](https://git-scm.com) |
 | **GitHub CLI** | [cli.github.com](https://cli.github.com) |
-| **Docker + Docker Compose** | [docker.com](https://docs.docker.com/get-docker/) |
-| **ngrok*** | [ngrok.com](https://ngrok.com/download) |
+| **Docker + Docker Compose** | [docker.com](https://docs.docker.com/get-docker/) (installer requires admin password) |
+| **ngrok*** | [ngrok.com](https://ngrok.com/download) (free account + authtoken required) |
 
-*\*ngrok is only required for local installs without port forwarding. VPS/cloud deployments don't need it.*
+*\*ngrok is only required for local installs without port forwarding. VPS/cloud deployments don't need it. [Sign up](https://dashboard.ngrok.com/signup) for a free ngrok account, then run `ngrok config add-authtoken <YOUR_TOKEN>` before starting setup.*
 
 ### Three steps
 
@@ -106,7 +106,16 @@ docker compose up -d
 - **Webhook**: Send a POST to `/api/create-job` with your API key to create jobs programmatically
 - **Cron**: Edit `config/CRONS.json` to schedule recurring jobs
 
-> **Local installs**: Your server needs to be reachable from the internet for GitHub webhooks and Telegram. On a VPS/cloud server, your APP_URL is just your domain. For local development, use [ngrok](https://ngrok.com) (`ngrok http 80`) or port forwarding to expose your machine. If your ngrok URL changes, update APP_URL in `.env` and the GitHub repository variable, and re-run `npm run setup-telegram` if Telegram is configured.
+> **Local installs**: Your server needs to be reachable from the internet for GitHub webhooks and Telegram. On a VPS/cloud server, your APP_URL is just your domain. For local development, use [ngrok](https://ngrok.com) (`ngrok http 80`) or port forwarding to expose your machine.
+>
+> **If your ngrok URL changes** (it changes every time you restart ngrok on the free plan), you must update APP_URL everywhere:
+>
+> ```bash
+> # Update .env and GitHub variable in one command:
+> npx thepopebot set-var APP_URL https://your-new-url.ngrok.io
+> # If Telegram is configured, re-register the webhook:
+> npm run setup-telegram
+> ```
 
 ---
 

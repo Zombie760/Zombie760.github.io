@@ -4,6 +4,18 @@ import { promisify } from 'util';
 const execAsync = promisify(exec);
 
 /**
+ * Return process.env without GITHUB_TOKEN and GH_TOKEN.
+ * The gh CLI auto-uses these env vars, which can shadow interactive login
+ * and cause secret/variable operations to fail with the wrong identity.
+ */
+export function ghEnv() {
+  const env = { ...process.env };
+  delete env.GITHUB_TOKEN;
+  delete env.GH_TOKEN;
+  return env;
+}
+
+/**
  * Check if a command exists
  */
 function commandExists(cmd) {
@@ -32,7 +44,7 @@ function getNodeVersion() {
  */
 async function isGhAuthenticated() {
   try {
-    await execAsync('gh auth status');
+    await execAsync('gh auth status', { env: ghEnv() });
     return true;
   } catch {
     return false;
@@ -136,7 +148,7 @@ export async function installGlobalPackage(packageName) {
  */
 export async function runGhAuth() {
   // This needs to be interactive, so we use execSync
-  execSync('gh auth login', { stdio: 'inherit' });
+  execSync('gh auth login', { stdio: 'inherit', env: ghEnv() });
 }
 
 export { commandExists, getGitRemoteInfo, getPackageManager };
