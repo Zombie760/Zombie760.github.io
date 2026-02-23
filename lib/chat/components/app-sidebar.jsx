@@ -28,6 +28,7 @@ export function AppSidebar({ user }) {
   const [unreadCount, setUnreadCount] = useState(0);
   const [version, setVersion] = useState('');
   const [updateAvailable, setUpdateAvailable] = useState(null);
+  const [changelog, setChangelog] = useState(null);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
 
   useEffect(() => {
@@ -35,9 +36,10 @@ export function AppSidebar({ user }) {
       .then((count) => setUnreadCount(count))
       .catch(() => {});
     getAppVersion()
-      .then(({ version, updateAvailable }) => {
+      .then(({ version, updateAvailable, changelog }) => {
         setVersion(version);
         setUpdateAvailable(updateAvailable);
+        setChangelog(changelog);
       })
       .catch(() => {});
   }, []);
@@ -231,7 +233,7 @@ export function AppSidebar({ user }) {
         {user && <SidebarUserNav user={user} collapsed={collapsed} />}
       </SidebarFooter>
     </Sidebar>
-    <UpgradeDialog open={upgradeOpen} onClose={() => setUpgradeOpen(false)} version={version} updateAvailable={updateAvailable} />
+    <UpgradeDialog open={upgradeOpen} onClose={() => setUpgradeOpen(false)} version={version} updateAvailable={updateAvailable} changelog={changelog} />
     </>
   );
 }

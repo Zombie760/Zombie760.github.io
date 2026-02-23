@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { ArrowUpCircleIcon, SpinnerIcon, CheckIcon, XIcon } from './icons.js';
 import { triggerUpgrade } from '../actions.js';
 
-export function UpgradeDialog({ open, onClose, version, updateAvailable }) {
+export function UpgradeDialog({ open, onClose, version, updateAvailable, changelog }) {
   const [upgrading, setUpgrading] = useState(false);
   const [result, setResult] = useState(null);
 
@@ -44,7 +44,7 @@ export function UpgradeDialog({ open, onClose, version, updateAvailable }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="fixed inset-0 bg-black/50" onClick={handleClose} />
-      <div className="relative z-50 w-full max-w-sm rounded-lg border border-border bg-background p-6 shadow-lg" onClick={(e) => e.stopPropagation()}>
+      <div className="relative z-50 w-full max-w-md rounded-lg border border-border bg-background p-6 shadow-lg" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold">Upgrade Available</h3>
           <button onClick={handleClose} className="text-muted-foreground hover:text-foreground">
@@ -65,6 +65,15 @@ export function UpgradeDialog({ open, onClose, version, updateAvailable }) {
             Version <span className="font-mono text-emerald-500">v{updateAvailable}</span> is available
           </p>
         </div>
+
+        {changelog && (
+          <div className="mb-4">
+            <p className="text-sm font-medium mb-2">What's new</p>
+            <div className="max-h-48 overflow-y-auto rounded-md border border-border bg-muted/30 p-3 text-sm text-muted-foreground whitespace-pre-wrap">
+              {changelog}
+            </div>
+          </div>
+        )}
 
         <button
           onClick={handleUpgrade}
