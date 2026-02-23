@@ -77,15 +77,8 @@ jobs:
           # 4. Get PR status
           PR_STATUS=$(gh pr view "$PR_NUMBER" --json state --jq '.state' --repo "${{ github.repository }}" 2>/dev/null || echo "open")
 
-          # 5. Read log file (find .jsonl in logs/{jobId}/)
-          LOG_CONTENT=""
-          LOG_DIR="logs/${JOB_ID}"
-          if [ -d "$LOG_DIR" ]; then
-            LOG_FILE=$(find "$LOG_DIR" -name "*.jsonl" -type f | head -1)
-            if [ -n "$LOG_FILE" ]; then
-              LOG_CONTENT=$(cat "$LOG_FILE")
-            fi
-          fi
+          # 5. Commit SHA for server-side log fetching
+          COMMIT_SHA="${{ github.event.workflow_run.head_sha }}"
 
           # Determine status based on merge result and PR state
           if [ "$MERGE_RESULT" = "merged" ]; then
@@ -104,7 +97,7 @@ jobs:
             --arg pr_url "${{ steps.pr.outputs.url }}" \
             --arg commit_message "$COMMIT_MSG" \
             --arg changed_files "$CHANGED_FILES" \
-            --arg log "$LOG_CONTENT" \
+            --arg commit_sha "$COMMIT_SHA" \
             --arg merge_result "$MERGE_RESULT" \
             '{
               job_id: $job_id,
@@ -115,7 +108,7 @@ jobs:
               pr_url: $pr_url,
               changed_files: ($changed_files | split("\n") | map(select(length > 0))),
               commit_message: $commit_message,
-              log: $log,
+              commit_sha: $commit_sha,
               merge_result: $merge_result
             }' > /tmp/payload.json
 

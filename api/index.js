@@ -1,7 +1,7 @@
 import { createHash, timingSafeEqual } from 'crypto';
 import { createJob } from '../lib/tools/create-job.js';
 import { setWebhook } from '../lib/tools/telegram.js';
-import { getJobStatus } from '../lib/tools/github.js';
+import { getJobStatus, fetchJobLog } from '../lib/tools/github.js';
 import { getTelegramAdapter } from '../lib/channels/index.js';
 import { chat, summarizeJob } from '../lib/ai/index.js';
 import { createNotification } from '../lib/db/notifications.js';
@@ -171,13 +171,19 @@ async function handleGithubWebhook(request) {
   if (!jobId) return Response.json({ ok: true, skipped: true, reason: 'not a job' });
 
   try {
+    // Fetch log from repo via API (no longer sent in payload)
+    let log = payload.log || '';
+    if (!log) {
+      log = await fetchJobLog(jobId, payload.commit_sha);
+    }
+
     const results = {
       job: payload.job || '',
       pr_url: payload.pr_url || payload.run_url || '',
       run_url: payload.run_url || '',
       status: payload.status || '',
       merge_result: payload.merge_result || '',
-      log: payload.log || '',
+      log,
       changed_files: payload.changed_files || [],
       commit_message: payload.commit_message || '',
     };

@@ -16,7 +16,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.ref_name }}
-          sparse-checkout: package-lock.json
+          sparse-checkout: |
+            package-lock.json
+            logs/*/job.config.json
           sparse-checkout-cone-mode: false
 
       - name: Get thepopebot version
@@ -24,6 +26,17 @@ jobs:
         run: |
           VERSION=$(jq -r '.packages["node_modules/thepopebot"].version // "latest"' package-lock.json)
           echo "tag=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Read job config overrides
+        id: job-config
+        run: |
+          JOB_ID="${{ github.ref_name }}"
+          JOB_ID="${JOB_ID#job/}"
+          CONFIG_FILE="logs/${JOB_ID}/job.config.json"
+          if [ -f "$CONFIG_FILE" ]; then
+            echo "llm_provider=$(jq -r '.llm_provider // empty' "$CONFIG_FILE")" >> $GITHUB_OUTPUT
+            echo "llm_model=$(jq -r '.llm_model // empty' "$CONFIG_FILE")" >> $GITHUB_OUTPUT
+          fi
 
       - name: Login to GHCR
         if: startsWith(vars.JOB_IMAGE_URL, 'ghcr.io/')
@@ -38,8 +51,8 @@ jobs:
           ALL_SECRETS: ${{ toJson(secrets) }}
           JOB_IMAGE_URL: ${{ vars.JOB_IMAGE_URL }}
           THEPOPEBOT_VERSION: ${{ steps.version.outputs.tag }}
-          LLM_MODEL: ${{ vars.LLM_MODEL }}
-          LLM_PROVIDER: ${{ vars.LLM_PROVIDER }}
+          LLM_MODEL: ${{ steps.job-config.outputs.llm_model || vars.LLM_MODEL }}
+          LLM_PROVIDER: ${{ steps.job-config.outputs.llm_provider || vars.LLM_PROVIDER }}
           OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL }}
         run: |
           if [ -n "$JOB_IMAGE_URL" ]; then

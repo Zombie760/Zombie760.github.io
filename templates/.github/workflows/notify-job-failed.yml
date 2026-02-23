@@ -35,9 +35,7 @@ jobs:
             JOB_CONTENT=$(cat "logs/${JOB_ID}/job.md")
           fi
 
-          # Fetch the GitHub Actions run log (Docker container output)
-          RUN_LOG=$(gh run view "$RUN_ID" --repo "${{ github.repository }}" --log 2>/dev/null || echo "")
-
+          COMMIT_SHA=$(git rev-parse HEAD)
           STATUS="${{ github.event.workflow_run.conclusion }}"
 
           jq -n \
@@ -46,7 +44,7 @@ jobs:
             --arg status "$STATUS" \
             --arg job "$JOB_CONTENT" \
             --arg run_url "$RUN_URL" \
-            --arg log "$RUN_LOG" \
+            --arg commit_sha "$COMMIT_SHA" \
             '{
               job_id: $job_id,
               branch: $branch,
@@ -56,7 +54,7 @@ jobs:
               pr_url: "",
               changed_files: [],
               commit_message: "",
-              log: $log,
+              commit_sha: $commit_sha,
               merge_result: ""
             }' > /tmp/payload.json
 

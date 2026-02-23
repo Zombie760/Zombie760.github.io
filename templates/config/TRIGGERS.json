@@ -46,5 +46,13 @@
       { "type": "webhook", "url": "https://example.com/hook", "method": "POST", "vars": { "source": "webhook" } }
     ],
     "enabled": false
+  },
+  {
+    "name": "review-with-openai",
+    "watch_path": "/github/webhook",
+    "actions": [
+      { "type": "agent", "job": "Review the GitHub event and summarize what happened:\n{{body}}", "llm_provider": "openai", "llm_model": "gpt-4o" }
+    ],
+    "enabled": false
   }
 ]

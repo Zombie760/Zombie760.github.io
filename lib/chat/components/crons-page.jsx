@@ -133,6 +133,14 @@ function CronCard({ cron }) {
               <pre className="text-xs bg-muted rounded-md p-3 whitespace-pre-wrap break-words font-mono overflow-auto max-h-48">
                 {cron.job}
               </pre>
+              {(cron.llm_provider || cron.llm_model) && (
+                <div className="flex items-center gap-2 mt-2">
+                  <span className="text-xs font-medium text-muted-foreground">LLM:</span>
+                  <span className="inline-flex items-center rounded-full bg-purple-500/10 text-purple-500 px-2 py-0.5 text-[10px] font-medium">
+                    {[cron.llm_provider, cron.llm_model].filter(Boolean).join(' / ')}
+                  </span>
+                </div>
+              )}
             </div>
           )}
           {type === 'command' && cron.command && (
