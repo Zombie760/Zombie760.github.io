@@ -37,7 +37,7 @@ jobs:
 
             TARGET="${{ github.event.inputs.target_version }}"
             if [ -n "$TARGET" ] && echo "$TARGET" | grep -q "-"; then
-              # Beta: npm update won't upgrade an exact-pinned dependency, must use install
+              # Beta: npm update cannot upgrade an exact-pinned dependency, must use install
               npm install "thepopebot@${TARGET}" --prefer-online
             else
               # Stable: npm update resolves to latest within semver range
