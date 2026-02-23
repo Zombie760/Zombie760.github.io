@@ -436,9 +436,7 @@ async function main() {
     collected.LLM_PROVIDER = agentProvider;
     collected.LLM_MODEL = agentModel;
 
-    if (agentProvider === 'custom') {
-      collected.RUNS_ON = 'self-hosted';
-    }
+    collected.RUNS_ON = 'self-hosted';
   }
 
   // Re-run: reconfigure existing OPENAI_BASE_URL if provider was kept
