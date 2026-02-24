@@ -48,7 +48,7 @@ services:
   runner:
     image: myoung34/github-runner:latest
     deploy:
-      replicas: ${RUNNER_REPLICAS:-1}
+      replicas: ${RUNNER_REPLICAS:-2}
     environment:
       REPO_URL: https://github.com/${GH_OWNER}/${GH_REPO}
       ACCESS_TOKEN: ${GH_TOKEN}
