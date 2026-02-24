@@ -45,6 +45,21 @@ function templatePath(userPath, templatesDir) {
   return userPath;
 }
 
+function createDirLink(target, linkPath) {
+  if (process.platform !== 'win32') {
+    fs.symlinkSync(target, linkPath);
+    return;
+  }
+  // Junctions require absolute targets but don't require admin privileges
+  const absoluteTarget = path.resolve(path.dirname(linkPath), target);
+  try {
+    fs.symlinkSync(absoluteTarget, linkPath, 'junction');
+  } catch {
+    fs.cpSync(absoluteTarget, linkPath, { recursive: true });
+    console.log('    (copied — symlinks unavailable on this system)');
+  }
+}
+
 function printUsage() {
   console.log(`
 Usage: thepopebot <command>
@@ -211,7 +226,7 @@ async function init() {
     const symlink = path.join(cwd, '.pi', 'skills', skill);
     if (!fs.existsSync(symlink)) {
       fs.mkdirSync(path.dirname(symlink), { recursive: true });
-      fs.symlinkSync(`../../pi-skills/${skill}`, symlink);
+      createDirLink(`../../pi-skills/${skill}`, symlink);
       console.log(`  Created .pi/skills/${skill} → ../../pi-skills/${skill}`);
     }
   }

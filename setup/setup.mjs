@@ -120,20 +120,48 @@ async function main() {
     }
   } else {
     clack.log.error('GitHub CLI (gh) not found');
-    clack.log.info('Install with: brew install gh');
-    const shouldInstall = await confirm('Try to install gh with homebrew?');
-    if (shouldInstall) {
-      const installSpinner = clack.spinner();
-      installSpinner.start('Installing gh CLI...');
-      try {
-        execSync('brew install gh', { stdio: 'inherit' });
-        installSpinner.stop('gh CLI installed');
-        runGhAuth();
-      } catch {
-        installSpinner.stop('Failed to install gh CLI');
+    if (process.platform === 'darwin') {
+      clack.log.info('Install with: brew install gh');
+      const shouldInstall = await confirm('Try to install gh with homebrew?');
+      if (shouldInstall) {
+        const installSpinner = clack.spinner();
+        installSpinner.start('Installing gh CLI...');
+        try {
+          execSync('brew install gh', { stdio: 'inherit' });
+          installSpinner.stop('gh CLI installed');
+          runGhAuth();
+        } catch {
+          installSpinner.stop('Failed to install gh CLI');
+          process.exit(1);
+        }
+      } else {
+        process.exit(1);
+      }
+    } else if (process.platform === 'win32') {
+      clack.log.info('Install with: winget install GitHub.cli');
+      const shouldInstall = await confirm('Try to install gh with winget?');
+      if (shouldInstall) {
+        const installSpinner = clack.spinner();
+        installSpinner.start('Installing gh CLI...');
+        try {
+          execSync('winget install GitHub.cli', { stdio: 'inherit' });
+          installSpinner.stop('gh CLI installed');
+          clack.log.warn('You may need to restart your terminal before gh is available.');
+          runGhAuth();
+        } catch {
+          installSpinner.stop('Failed to install gh CLI');
+          process.exit(1);
+        }
+      } else {
         process.exit(1);
       }
     } else {
+      clack.log.info(
+        'Install the GitHub CLI for your platform:\n' +
+        '  Debian/Ubuntu: sudo apt install gh\n' +
+        '  Fedora: sudo dnf install gh\n' +
+        '  Other: https://github.com/cli/cli/blob/trunk/docs/install_linux.md'
+      );
       process.exit(1);
     }
   }
@@ -249,8 +277,13 @@ async function main() {
     clack.log.success('ngrok installed');
   } else {
     clack.log.warn('ngrok not installed (needed to expose local server)');
+    const ngrokInstallCmd = process.platform === 'win32'
+      ? 'winget install ngrok.ngrok'
+      : process.platform === 'darwin'
+        ? 'brew install ngrok/ngrok/ngrok'
+        : 'See https://ngrok.com/download';
     clack.log.info(
-      'Install with: brew install ngrok/ngrok/ngrok\n' +
+      `Install with: ${ngrokInstallCmd}\n` +
       '  Sign up for a free account at https://dashboard.ngrok.com/signup\n' +
       '  Then run: ngrok config add-authtoken <YOUR_TOKEN>'
     );

@@ -19,18 +19,11 @@ export function ghEnv() {
  * Check if a command exists
  */
 function commandExists(cmd) {
+  const checkCmd = process.platform === 'win32' ? 'where' : 'which';
   try {
-    execSync(`which ${cmd}`, { stdio: 'ignore' });
+    execSync(`${checkCmd} ${cmd}`, { stdio: 'ignore' });
     return true;
   } catch {
-    if (process.platform === 'win32') {
-      try {
-        execSync(`where ${cmd}`, { stdio: 'ignore' });
-        return true;
-      } catch {
-        return false;
-      }
-    }
     return false;
   }
 }
