@@ -516,6 +516,20 @@ async function main() {
       fs.mkdirSync(path.dirname(braveSymlink), { recursive: true });
       createDirLink('../../pi-skills/brave-search', braveSymlink);
       clack.log.success('Enabled brave-search skill');
+
+      // Commit and push the symlink so the Docker agent can use it
+      try {
+        execSync('git add .pi/skills/brave-search', { stdio: 'ignore' });
+        execSync('git commit -m "enable brave-search skill [no ci]"', { stdio: 'ignore' });
+        const remote = execSync('git remote get-url origin', { encoding: 'utf-8' }).trim();
+        const authedUrl = remote.replace('https://github.com/', `https://x-access-token:${pat}@github.com/`);
+        execSync(`git remote set-url origin "${authedUrl}"`, { stdio: 'ignore' });
+        execSync('git push origin main', { stdio: 'ignore' });
+        execSync(`git remote set-url origin "${remote}"`, { stdio: 'ignore' });
+        clack.log.success('Pushed brave-search skill to GitHub');
+      } catch {
+        clack.log.warn('Could not push brave-search symlink — you may need to push manually');
+      }
     }
   }
 
