@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LYFERS — Tools. Knowledge. Edge.</title>
+  <meta name="description" content="Cybersecurity education, crypto intelligence, and digital security services for those who take their future seriously." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080810;
+      --bg2: #0f0f1a;
+      --bg3: #141428;
+      --card: #12121f;
+      --border: #1e1e3a;
+      --blue: #00b4ff;
+      --blue-dim: #0088cc;
+      --purple: #7c3aed;
+      --purple-dim: #5b21b6;
+      --green: #00e5a0;
+      --text: #e8eaf0;
+      --muted: #8892a4;
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(8,8,16,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem; font-weight: 700; letter-spacing: 0.12em;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--blue); color: #000; padding: 0.5rem 1.25rem;
+      border-radius: 8px; font-weight: 600; font-size: 0.85rem;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+    .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; }
+    .nav-mobile-btn span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); margin: 4px 0; transition: 0.3s;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(0,180,255,0.08) 0%, transparent 70%),
+                  radial-gradient(ellipse 60% 40% at 80% 80%, rgba(124,58,237,0.06) 0%, transparent 60%);
+    }
+    .hero-inner { position: relative; max-width: 860px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(0,180,255,0.1); border: 1px solid rgba(0,180,255,0.25);
+      color: var(--blue); font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800; line-height: 1.05; letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .hero h1 .accent {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--muted); max-width: 560px; margin: 0 auto 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dim));
+      color: #000; font-weight: 700; padding: 0.875rem 2rem;
+      border-radius: 10px; text-decoration: none; font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 24px rgba(0,180,255,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 32px rgba(0,180,255,0.5); }
+    .btn-secondary {
+      background: transparent; color: var(--text); font-weight: 600;
+      padding: 0.875rem 2rem; border-radius: 10px; text-decoration: none;
+      font-size: 0.95rem; border: 1px solid var(--border);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--blue); background: rgba(0,180,255,0.05); }
+    .hero-stats {
+      display: flex; justify-content: center; gap: 3rem;
+      margin-top: 4rem; flex-wrap: wrap;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat strong {
+      display: block; font-size: 2rem; font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-stat span { font-size: 0.82rem; color: var(--muted); font-weight: 500; }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 700; line-height: 1.15; margin-bottom: 1rem;
+    }
+    .section-sub { color: var(--muted); font-size: 1.05rem; max-width: 520px; }
+
+    /* SERVICES */
+    #services { background: var(--bg2); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .service-card:hover { border-color: var(--blue); transform: translateY(-4px); }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1.25rem;
+    }
+    .icon-blue { background: rgba(0,180,255,0.12); }
+    .icon-purple { background: rgba(124,58,237,0.12); }
+    .icon-green { background: rgba(0,229,160,0.12); }
+    .service-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+    /* COURSE */
+    #course { background: var(--bg); }
+    .course-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start; margin-top: 3rem;
+    }
+    .module-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .module-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1rem 1.25rem;
+      transition: border-color 0.2s;
+    }
+    .module-item:hover { border-color: rgba(0,180,255,0.4); }
+    .module-num {
+      font-size: 0.72rem; font-weight: 700; color: var(--blue);
+      background: rgba(0,180,255,0.1); border-radius: 6px;
+      padding: 0.25rem 0.5rem; white-space: nowrap; flex-shrink: 0;
+    }
+    .module-item h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .module-item p { font-size: 0.82rem; color: var(--muted); }
+    .course-details { position: sticky; top: 6rem; }
+    .course-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .course-card-header {
+      background: linear-gradient(135deg, rgba(0,180,255,0.15), rgba(124,58,237,0.15));
+      padding: 2rem; border-bottom: 1px solid var(--border);
+    }
+    .course-card-header h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem;
+    }
+    .course-card-header .price {
+      font-size: 2.5rem; font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif; color: var(--blue);
+    }
+    .course-card-header .price span { font-size: 1rem; color: var(--muted); font-weight: 400; }
+    .course-card-body { padding: 1.5rem; }
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+    .feature-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; }
+    .feature-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .btn-full {
+      display: block; width: 100%; text-align: center;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dim));
+      color: #000; font-weight: 700; padding: 0.875rem;
+      border-radius: 10px; text-decoration: none; font-size: 0.95rem;
+      transition: opacity 0.2s; box-shadow: 0 0 20px rgba(0,180,255,0.25);
+    }
+    .btn-full:hover { opacity: 0.85; }
+    .btn-full-purple {
+      display: block; width: 100%; text-align: center;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dim));
+      color: #fff; font-weight: 700; padding: 0.875rem;
+      border-radius: 10px; text-decoration: none; font-size: 0.95rem;
+      transition: opacity 0.2s; margin-top: 0.75rem;
+    }
+    .btn-full-purple:hover { opacity: 0.85; }
+
+    /* CRYPTO */
+    #crypto { background: var(--bg2); }
+    .crypto-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .crypto-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      transition: border-color 0.3s;
+    }
+    .crypto-card:hover { border-color: var(--purple); }
+    .crypto-card .tag {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.3rem 0.75rem;
+      border-radius: 100px; margin-bottom: 1rem; display: inline-block;
+    }
+    .tag-free { background: rgba(0,229,160,0.1); color: var(--green); }
+    .tag-pro { background: rgba(124,58,237,0.1); color: #a78bfa; }
+    .crypto-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .crypto-card p { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.25rem; line-height: 1.7; }
+    .crypto-price {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem;
+    }
+    .crypto-price .per { font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+
+    /* PRICING */
+    #pricing { background: var(--bg); }
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3rem; align-items: start;
+    }
+    .pricing-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      transition: transform 0.3s;
+    }
+    .pricing-card:hover { transform: translateY(-4px); }
+    .pricing-card.featured {
+      border-color: var(--blue);
+      box-shadow: 0 0 40px rgba(0,180,255,0.12);
+      position: relative;
+    }
+    .featured-badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--blue); color: #000; font-size: 0.72rem;
+      font-weight: 700; padding: 0.3rem 0.9rem; border-radius: 100px;
+      letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;
+    }
+    .pricing-card h3 { font-size: 1rem; font-weight: 600; color: var(--muted); margin-bottom: 0.5rem; }
+    .pricing-card .price {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem; font-weight: 800; margin-bottom: 0.25rem;
+    }
+    .pricing-card .price-note { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem; }
+    .pricing-features li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; }
+    .pricing-features li::before { content: '✓'; color: var(--green); font-weight: 700; }
+    .pricing-features li.off { color: var(--muted); }
+    .pricing-features li.off::before { content: '✕'; color: #4a4a6a; }
+
+    /* ABOUT */
+    #about { background: var(--bg2); }
+    .about-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+    .about-values { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .value-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .value-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue); flex-shrink: 0; margin-top: 7px;
+    }
+    .value-item h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .value-item p { font-size: 0.85rem; color: var(--muted); }
+    .about-visual {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem; font-family: monospace; font-size: 0.82rem;
+    }
+    .term-line { margin-bottom: 0.4rem; }
+    .term-prompt { color: var(--green); }
+    .term-cmd { color: var(--text); }
+    .term-out { color: var(--muted); }
+    .term-blue { color: var(--blue); }
+    .term-cursor { display: inline-block; width: 8px; height: 14px; background: var(--blue); animation: blink 1s infinite; vertical-align: middle; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* CTA */
+    #contact {
+      background: linear-gradient(135deg, rgba(0,180,255,0.06) 0%, rgba(124,58,237,0.06) 100%);
+      border-top: 1px solid var(--border);
+    }
+    .cta-inner { text-align: center; max-width: 600px; margin: 0 auto; }
+    .cta-inner h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem;
+    }
+    .cta-inner p { color: var(--muted); margin-bottom: 2rem; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg); border-top: 1px solid var(--border);
+      padding: 2rem; text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem; font-weight: 700; letter-spacing: 0.1em;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    footer p { font-size: 0.8rem; color: var(--muted); }
+    footer a { color: var(--blue); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-mobile-btn { display: block; }
+      .course-layout { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; }
+      .course-details { position: static; }
+      .hero-stats { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">LYFERS</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#course">Course</a></li>
+    <li><a href="#crypto">Crypto</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a class="nav-cta" href="#pricing">Get Started</a>
+  <button class="nav-mobile-btn" onclick="document.querySelector('.nav-links').style.display='flex'">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Security · Intelligence · Income</div>
+    <h1>Know the System.<br><span class="accent">Own the Edge.</span></h1>
+    <p class="hero-sub">Cybersecurity education, crypto intelligence, and digital security services — built for people who take their future seriously.</p>
+    <div class="hero-btns">
+      <a href="#course" class="btn-primary">Start Learning →</a>
+      <a href="#crypto" class="btn-secondary">Crypto Signals</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>7</strong><span>Course Modules</span></div>
+      <div class="hero-stat"><strong>35+</strong><span>Lessons</span></div>
+      <div class="hero-stat"><strong>24/7</strong><span>Signal Alerts</span></div>
+      <div class="hero-stat"><strong>$0</strong><span>To Start</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <p class="section-label">What We Offer</p>
+    <h2 class="section-title">Three ways to level up.</h2>
+    <p class="section-sub">From learning the fundamentals to monitoring the markets — LYFERS has you covered.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon icon-blue">🛡️</div>
+        <h3>Cybersecurity Education</h3>
+        <p>Hands-on courses covering network hacking, OSINT, wireless attacks, and penetration testing. Real tools. Real skills. Certifiable knowledge.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-purple">📊</div>
+        <h3>Crypto Intelligence</h3>
+        <p>Automated market signals, Fear & Greed analysis, and real-time alerts delivered straight to your Telegram. Never miss a move again.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-green">🔍</div>
+        <h3>Security Services</h3>
+        <p>OSINT research, network assessments, and security audits for individuals and small businesses. Professional reports. Actionable results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE -->
+<section id="course">
+  <div class="container">
+    <p class="section-label">Flagship Course</p>
+    <h2 class="section-title">Intro to Network Hacking</h2>
+    <p class="section-sub">Go from zero to running your first penetration test. ~8 hours of content, real lab exercises, and a certificate.</p>
+    <div class="course-layout">
+      <div class="module-list">
+        <div class="module-item">
+          <span class="module-num">01</span>
+          <div><h4>Understanding Networks</h4><p>TCP/IP, OSI model, ports, protocols, and lab setup</p></div>
+        </div>
+        <div class="module-item">
+          <span class="module-num">02</span>
+          <div><h4>Reconnaissance & OSINT</h4><p>Google dorking, Shodan, DNS enumeration, target profiling</p></div>
+        </div>
+        <div class="module-item">
+          <span class="module-num">03</span>
+          <div><h4>Scanning & Enumeration</h4><p>Nmap mastery, NSE scripts, service detection, web recon</p></div>
+        </div>
+        <div class="module-item">
+          <span class="module-num">04</span>
+          <div><h4>Wireless Network Attacks</h4><p>WPA2 handshake capture, PMKID, evil twin, deauth attacks</p></div>
+        </div>
+        <div class="module-item">
+          <span class="module-num">05</span>
+          <div><h4>Traffic Analysis</h4><p>Wireshark, ARP poisoning, MITM, SSL stripping with Bettercap</p></div>
+        </div>
+        <div class="module-item">
+          <span class="module-num">06</span>
+          <div><h4>Exploitation Basics</h4><p>Metasploit, CVE databases, password attacks, post-exploitation</p></div>
+        </div>
+        <div class="module-item">
+          <span class="module-num">07</span>
+          <div><h4>Reporting & Career Path</h4><p>Pentest reports, certifications roadmap, getting clients</p></div>
+        </div>
+      </div>
+      <div class="course-details">
+        <div class="course-card">
+          <div class="course-card-header">
+            <h3>Intro to Network Hacking</h3>
+            <div class="price">$49.99 <span>one-time</span></div>
+            <p style="color:var(--muted);font-size:0.85rem;margin-top:0.5rem">Lifetime access · Free updates</p>
+          </div>
+          <div class="course-card-body">
+            <ul class="feature-list">
+              <li>7 modules, 35+ lessons (~8 hours)</li>
+              <li>Hands-on lab exercises</li>
+              <li>Kali Linux command cheat sheet</li>
+              <li>Certificate of Completion</li>
+              <li>Private Telegram community</li>
+              <li>Lifetime access + free updates</li>
+            </ul>
+            <!-- REPLACE href WITH YOUR STRIPE PAYMENT LINK -->
+            <a href="#pricing" class="btn-full">Enroll Now — $49.99</a>
+            <a href="#pricing" class="btn-full-purple">See All Pricing Tiers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRYPTO -->
+<section id="crypto">
+  <div class="container">
+    <p class="section-label">Crypto Intelligence</p>
+    <h2 class="section-title">Signals while you sleep.</h2>
+    <p class="section-sub">Automated market analysis delivered to your Telegram. BTC, ETH, SOL, XMR — covered around the clock.</p>
+    <div class="crypto-grid">
+      <div class="crypto-card">
+        <span class="tag tag-free">Free</span>
+        <h3>Daily Market Brief</h3>
+        <p>Every morning at 8am — top coins, 24h and 7-day performance, Fear & Greed index, and a plain-English market summary.</p>
+        <div class="crypto-price">$0 <span class="per">/ month</span></div>
+        <a href="#contact" class="btn-full" style="margin-top:1rem">Join Telegram Channel</a>
+      </div>
+      <div class="crypto-card">
+        <span class="tag tag-pro">Pro</span>
+        <h3>Signal Alerts</h3>
+        <p>Real-time alerts when Fear & Greed hits extremes, price crosses key levels, or unusual volume is detected. Includes buy/hold/watch guidance.</p>
+        <div class="crypto-price">$9.99 <span class="per">/ month</span></div>
+        <!-- REPLACE href WITH YOUR STRIPE PAYMENT LINK -->
+        <a href="#pricing" class="btn-full-purple" style="margin-top:1rem">Subscribe to Signals</a>
+      </div>
+      <div class="crypto-card">
+        <span class="tag tag-pro">Pro+</span>
+        <h3>Full Intelligence</h3>
+        <p>Everything in Signals plus weekly deep-dive reports, OSINT-backed project research, on-chain data analysis, and priority Telegram access.</p>
+        <div class="crypto-price">$24.99 <span class="per">/ month</span></div>
+        <!-- REPLACE href WITH YOUR STRIPE PAYMENT LINK -->
+        <a href="#pricing" class="btn-full-purple" style="margin-top:1rem">Get Full Intel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <p class="section-label">Pricing</p>
+    <h2 class="section-title">Straightforward. No surprises.</h2>
+    <p class="section-sub">Pick the level that fits where you are right now. Upgrade anytime.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <div class="price">$29.99</div>
+        <p class="price-note">One-time · Lifetime access</p>
+        <ul class="pricing-features">
+          <li>Full course access (7 modules)</li>
+          <li>Lab exercise guides</li>
+          <li>Certificate of Completion</li>
+          <li class="off">Cheat sheet bundle</li>
+          <li class="off">Crypto signal alerts</li>
+          <li class="off">Live Q&A sessions</li>
+        </ul>
+        <!-- REPLACE href WITH STRIPE PAYMENT LINK FOR BASIC ($29.99) -->
+        <a href="#" class="btn-secondary" style="display:block;text-align:center;padding:0.875rem;border-radius:10px;text-decoration:none;font-weight:600">Get Basic</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <h3>Standard</h3>
+        <div class="price" style="color:var(--blue)">$49.99</div>
+        <p class="price-note">One-time · Lifetime access</p>
+        <ul class="pricing-features">
+          <li>Full course access (7 modules)</li>
+          <li>Lab exercise guides</li>
+          <li>Certificate of Completion</li>
+          <li>Cheat sheet bundle</li>
+          <li>1 month crypto signals free</li>
+          <li class="off">Live Q&A sessions</li>
+        </ul>
+        <!-- REPLACE href WITH STRIPE PAYMENT LINK FOR STANDARD ($49.99) -->
+        <a href="#" class="btn-full">Get Standard</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Premium</h3>
+        <div class="price">$99.99</div>
+        <p class="price-note">One-time · Lifetime access</p>
+        <ul class="pricing-features">
+          <li>Full course access (7 modules)</li>
+          <li>Lab exercise guides</li>
+          <li>Certificate of Completion</li>
+          <li>Cheat sheet bundle</li>
+          <li>3 months crypto signals free</li>
+          <li>2 live Q&A sessions via Telegram</li>
+        </ul>
+        <!-- REPLACE href WITH STRIPE PAYMENT LINK FOR PREMIUM ($99.99) -->
+        <a href="#" class="btn-full-purple">Get Premium</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="section-label">About LYFERS</p>
+        <h2 class="section-title">Built by someone in the field.</h2>
+        <p>LYFERS was built by a practitioner — not a content farm. The knowledge here comes from real hands-on work with networks, tools, and markets.</p>
+        <p>The mission is simple: give people the skills and information they need to protect themselves, build income, and stay ahead in a world that moves fast.</p>
+        <div class="about-values">
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div><h4>No fluff</h4><p>Every lesson has a purpose. You learn by doing, not watching slideshows.</p></div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div><h4>Legally and ethically grounded</h4><p>All techniques are taught for authorized, defensive, and educational use only.</p></div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div><h4>Community-driven</h4><p>Private Telegram access means you learn alongside others and get real answers.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="term-line"><span class="term-prompt">lyfers@system</span><span class="term-cmd"> ~ $ nmap -sV target</span></div>
+        <div class="term-line"><span class="term-out">Starting Nmap scan...</span></div>
+        <div class="term-line"><span class="term-blue">PORT    STATE  SERVICE  VERSION</span></div>
+        <div class="term-line"><span class="term-out">22/tcp  open   ssh      OpenSSH 8.9</span></div>
+        <div class="term-line"><span class="term-out">80/tcp  open   http     nginx 1.23</span></div>
+        <div class="term-line"><span class="term-out">443/tcp open   https    nginx 1.23</span></div>
+        <div class="term-line" style="margin-top:0.75rem"><span class="term-prompt">lyfers@system</span><span class="term-cmd"> ~ $ curl fng-api</span></div>
+        <div class="term-line"><span class="term-blue">Fear & Greed: 11 — Extreme Fear</span></div>
+        <div class="term-line"><span class="term-out">→ Historically: accumulation zone</span></div>
+        <div class="term-line" style="margin-top:0.75rem"><span class="term-prompt">lyfers@system</span><span class="term-cmd"> ~ $ <span class="term-cursor"></span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>Ready to get started?</h2>
+      <p>Pick a course, join the Telegram channel, or reach out for a custom security assessment. Everything starts with the first step.</p>
+      <div class="cta-btns">
+        <a href="#pricing" class="btn-primary">View Pricing</a>
+        <!-- REPLACE WITH YOUR TELEGRAM CHANNEL LINK -->
+        <a href="https://t.me/lyfers" class="btn-secondary">Join Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">LYFERS</div>
+  <p>© 2026 LYFERS. All rights reserved. &nbsp;·&nbsp;
+    All security content is for authorized and educational use only.
+    &nbsp;·&nbsp; <a href="mailto:contact@lyfers.com">contact@lyfers.com</a>
+  </p>
+</footer>
+
+</body>
+</html>
