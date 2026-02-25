@@ -48,9 +48,15 @@ jobs:
         run: |
           CURRENT_TAG=${GITHUB_REF#refs/tags/}
 
-          # List all releases, exclude the current tag, take the most recent one
-          PREV_TAG=$(gh release list --json tagName \
-            --jq '[.[].tagName | select(. != "'"${CURRENT_TAG}"'")] | first // empty')
+          # For stable releases, compare against previous stable (not beta).
+          # For beta releases, compare against the most recent previous release of any kind.
+          if echo "$CURRENT_TAG" | grep -q '-'; then
+            PREV_TAG=$(gh release list --limit 100 --json tagName \
+              --jq '[.[].tagName | select(. != "'"${CURRENT_TAG}"'")] | first // empty')
+          else
+            PREV_TAG=$(gh release list --limit 100 --json tagName \
+              --jq '[.[].tagName | select(. != "'"${CURRENT_TAG}"'" and (contains("-") | not))] | first // empty')
+          fi
 
           if [ -z "$PREV_TAG" ]; then
             echo "Initial release" > /tmp/release_notes.md
@@ -113,4 +119,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           TAG=${GITHUB_REF#refs/tags/}
-          gh release create "$TAG" --title "$TAG" --notes-file /tmp/release_notes.md
+          PRERELEASE_FLAG=""
+          if echo "$TAG" | grep -q '-'; then
+            PRERELEASE_FLAG="--prerelease"
+          fi
+          gh release create "$TAG" $PRERELEASE_FLAG --title "$TAG" --notes-file /tmp/release_notes.md

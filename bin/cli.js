@@ -18,6 +18,7 @@ const args = process.argv.slice(3);
 const MANAGED_PATHS = [
   '.github/workflows/',
   'docker/event-handler/',
+  'docker/job/',
   'docker-compose.yml',
   '.dockerignore',
 ];
