@@ -175,6 +175,7 @@ When you ran `thepopebot init` the first time, it scaffolded a project folder wi
 | `docker-compose.yml` | Defines how your containers run together (Traefik, event handler, runner) |
 | `docker/event-handler/` | The Dockerfile for the event handler container |
 | `.dockerignore` | Keeps unnecessary files out of Docker builds |
+| `CLAUDE.md` | AI assistant context for your project |
 
 #### What happens when you run `init`
 

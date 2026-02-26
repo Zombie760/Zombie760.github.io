@@ -20,6 +20,7 @@ const MANAGED_PATHS = [
   'docker/event-handler/',
   'docker-compose.yml',
   '.dockerignore',
+  'CLAUDE.md',
 ];
 
 function isManaged(relPath) {
