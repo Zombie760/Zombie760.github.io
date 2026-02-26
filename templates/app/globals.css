@@ -69,3 +69,21 @@
   background-color: var(--border);
   border-radius: 3px;
 }
+
+/* Code block horizontal scroll (overrides streamdown's overflow-hidden) */
+[data-streamdown="code-block"] {
+  overflow-x: auto;
+}
+
+[data-streamdown="code-block"]::-webkit-scrollbar {
+  height: 6px;
+}
+
+[data-streamdown="code-block"]::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[data-streamdown="code-block"]::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 3px;
+}
