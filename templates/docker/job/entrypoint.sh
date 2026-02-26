@@ -75,11 +75,16 @@ done
 # Resolve {{datetime}} variable in SYSTEM.md
 sed -i "s/{{datetime}}/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/g" /job/.pi/SYSTEM.md
 
+# Read job metadata from job.config.json
+JOB_CONFIG="/job/logs/${JOB_ID}/job.config.json"
+TITLE=$(jq -r '.title // empty' "$JOB_CONFIG")
+JOB_DESCRIPTION=$(jq -r '.job // empty' "$JOB_CONFIG")
+
 PROMPT="
 
 # Your Job
 
-$(cat /job/logs/${JOB_ID}/job.md)"
+${JOB_DESCRIPTION}"
 
 LLM_PROVIDER="${LLM_PROVIDER:-anthropic}"
 
@@ -124,12 +129,12 @@ if [ $PI_EXIT -ne 0 ]; then
     # Pi failed — only commit session logs, not partial code changes
     git reset || true
     git add -f "${LOG_DIR}"
-    git commit -m "thepopebot: job ${JOB_ID} (failed)" || true
+    git commit -m "🤖 Agent Job: ${TITLE} (failed)" || true
 else
     # Pi succeeded — commit everything
     git add -A
     git add -f "${LOG_DIR}"
-    git commit -m "thepopebot: job ${JOB_ID}" || true
+    git commit -m "🤖 Agent Job: ${TITLE}" || true
 fi
 
 git push origin
@@ -142,7 +147,7 @@ set -e
 #fi
 
 # 5. Create PR (auto-merge handled by GitHub Actions workflow)
-gh pr create --title "thepopebot: job ${JOB_ID}" --body "Automated job" --base main || true
+gh pr create --title "🤖 Agent Job: ${TITLE}" --body "${JOB_DESCRIPTION}" --base main || true
 
 # Cleanup
 if [ -n "$CHROME_PID" ]; then
