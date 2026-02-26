@@ -300,11 +300,11 @@ Makes an HTTP request to an external URL. No Docker container, no LLM. Useful fo
 
 ### Cron Jobs
 
-Defined in `config/CRONS.json`, loaded by `lib/cron.js` at server startup via `node-cron`. Each entry has `name`, `schedule` (cron expression), `type` (`agent`/`command`/`webhook`), and the corresponding action fields (`job`, `command`, or `url`/`method`/`headers`/`vars`). Set `enabled: false` to disable.
+Defined in `config/CRONS.json`, loaded by `lib/cron.js` at server startup via `node-cron`. Each entry has `name`, `schedule` (cron expression), `type` (`agent`/`command`/`webhook`), and the corresponding action fields (`job`, `command`, or `url`/`method`/`headers`/`vars`). Set `enabled: false` to disable. Agent-type cron entries also support optional `llm_provider` and `llm_model` fields to override the default LLM for that specific cron (e.g., `"llm_provider": "custom"`, `"llm_model": "qwen3:8b"` for Ollama). These per-cron overrides are passed through to the Docker agent via `job.config.json`.
 
 ### Webhook Triggers
 
-Defined in `config/TRIGGERS.json`, loaded by `lib/triggers.js`. Each trigger watches an endpoint path (`watch_path`) and fires an array of actions (fire-and-forget, after auth, before route handler). Actions use the same `type`/`job`/`command`/`url` fields as cron jobs. Action `job` and `command` strings support template tokens: `{{body}}`, `{{body.field}}`, `{{query}}`, `{{query.field}}`, `{{headers}}`, `{{headers.field}}`.
+Defined in `config/TRIGGERS.json`, loaded by `lib/triggers.js`. Each trigger watches an endpoint path (`watch_path`) and fires an array of actions (fire-and-forget, after auth, before route handler). Actions use the same `type`/`job`/`command`/`url` fields as cron jobs, including the optional `llm_provider`/`llm_model` overrides for agent-type actions. Action `job` and `command` strings support template tokens: `{{body}}`, `{{body.field}}`, `{{query}}`, `{{query.field}}`, `{{headers}}`, `{{headers.field}}`.
 
 ### Environment Variables (Event Handler)
 

@@ -66,6 +66,7 @@ async function main() {
 
   // ─── Step 1: Prerequisites ───────────────────────────────────────────
   clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] Checking prerequisites`);
+  clack.log.info('Your agent needs a few tools installed on your machine. Let\'s make sure everything is ready.');
 
   const s = clack.spinner();
   s.start('Checking system requirements...');
@@ -122,50 +123,14 @@ async function main() {
     }
   } else {
     clack.log.error('GitHub CLI (gh) not found');
-    if (process.platform === 'darwin') {
-      clack.log.info('Install with: brew install gh');
-      const shouldInstall = await confirm('Try to install gh with homebrew?');
-      if (shouldInstall) {
-        const installSpinner = clack.spinner();
-        installSpinner.start('Installing gh CLI...');
-        try {
-          execSync('brew install gh', { stdio: 'inherit' });
-          installSpinner.stop('gh CLI installed');
-          runGhAuth();
-        } catch {
-          installSpinner.stop('Failed to install gh CLI');
-          process.exit(1);
-        }
-      } else {
-        process.exit(1);
-      }
-    } else if (process.platform === 'win32') {
-      clack.log.info('Install with: winget install GitHub.cli');
-      const shouldInstall = await confirm('Try to install gh with winget?');
-      if (shouldInstall) {
-        const installSpinner = clack.spinner();
-        installSpinner.start('Installing gh CLI...');
-        try {
-          execSync('winget install GitHub.cli', { stdio: 'inherit' });
-          installSpinner.stop('gh CLI installed');
-          clack.log.warn('You may need to restart your terminal before gh is available.');
-          runGhAuth();
-        } catch {
-          installSpinner.stop('Failed to install gh CLI');
-          process.exit(1);
-        }
-      } else {
-        process.exit(1);
-      }
-    } else {
-      clack.log.info(
-        'Install the GitHub CLI for your platform:\n' +
-        '  Debian/Ubuntu: sudo apt install gh\n' +
-        '  Fedora: sudo dnf install gh\n' +
-        '  Other: https://github.com/cli/cli/blob/trunk/docs/install_linux.md'
-      );
-      process.exit(1);
-    }
+    const installCmd = process.platform === 'darwin'
+      ? 'brew install gh'
+      : process.platform === 'win32'
+        ? 'winget install GitHub.cli'
+        : 'sudo apt install gh  (or see https://github.com/cli/cli#installation)';
+    clack.log.info(`Install the GitHub CLI, then re-run setup:\n\n  ${installCmd}\n`);
+    clack.cancel('Missing prerequisite: gh CLI');
+    process.exit(1);
   }
 
   // Initialize git repo if needed
@@ -293,6 +258,7 @@ async function main() {
 
   // ─── Step 2: GitHub PAT ──────────────────────────────────────────────
   clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] GitHub Personal Access Token`);
+  clack.log.info('Your agent needs permission to create branches and pull requests in your GitHub repo. A Personal Access Token (PAT) grants this access.');
 
   let pat = null;
   if (await keepOrReconfigure('GitHub PAT', env?.GH_TOKEN ? maskSecret(env.GH_TOKEN) : null)) {
@@ -382,6 +348,7 @@ async function main() {
 
   // ─── Step 3: API Keys ────────────────────────────────────────────────
   clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] API Keys`);
+  clack.log.info('Your agent uses a large language model (LLM) to think and write code. You\'ll choose a provider and enter an API key from them.');
 
   // Step 3a: Agent LLM
   let agentProvider = null;
@@ -535,6 +502,7 @@ async function main() {
 
   // ─── Step 4: App URL ─────────────────────────────────────────────────
   clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] App URL`);
+  clack.log.info('Your agent runs as a web server that receives notifications from GitHub when jobs finish. It needs a public URL to receive those webhooks.');
 
   let appUrl = null;
 
@@ -544,7 +512,7 @@ async function main() {
 
   if (!appUrl) {
     clack.log.info(
-      'Your app needs a public URL for GitHub webhooks and Traefik routing.\n' +
+      'Your app needs a public URL so GitHub can send webhook notifications.\n' +
       '  Examples:\n' +
       '    ngrok: https://abc123.ngrok.io\n' +
       '    VPS:   https://mybot.example.com\n' +
@@ -594,6 +562,7 @@ async function main() {
 
   // ─── Step 6: Build & Start Server ────────────────────────────────────
   clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] Build & Start Server`);
+  clack.log.info('Now we\'ll build your agent\'s web interface. Then you\'ll start the server with Docker so it can receive webhooks and serve the chat UI.');
 
   // Check if server is already running
   let serverAlreadyRunning = false;

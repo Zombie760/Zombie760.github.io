@@ -25,6 +25,11 @@ export async function register() {
   const dotenv = await import('dotenv');
   dotenv.config();
 
+  // Set AUTH_URL from APP_URL so NextAuth redirects to the correct host (e.g., on sign-out)
+  if (process.env.APP_URL && !process.env.AUTH_URL) {
+    process.env.AUTH_URL = process.env.APP_URL;
+  }
+
   // Validate AUTH_SECRET is set (required by Auth.js for session encryption)
   if (!process.env.AUTH_SECRET) {
     console.error('\n  ERROR: AUTH_SECRET is not set in your .env file.');

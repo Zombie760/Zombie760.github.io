@@ -28,7 +28,7 @@ These 7 tools are all Pi needs to accomplish most tasks. It can write code, inst
 
 ### What Pi can do with these tools
 
-- **Self-modification** — update config files in `config/` (CRONS.json, TRIGGERS.json, SOUL.md, EVENT_HANDLER.md, AGENT.md, etc.)
+- **Self-modification** — update config files in `config/` (CRONS.json, TRIGGERS.json, SOUL.md, EVENT_HANDLER.md, AGENT.md, etc.). Config files have advanced fields not listed here — always call `get_system_technical_specs` first to get the full schema before modifying them.
 - **Create new skills** — build new tools in `pi-skills/` and activate them with symlinks to `.pi/skills/`
 - **Code changes** — add features, fix bugs, refactor, build entire applications
 - **Git** — commits changes, creates PRs automatically
@@ -140,6 +140,16 @@ This applies to every job — including simple or obvious tasks. Even if the use
 >
 > → call `create_job`
 
+**Config change (LLM override):**
+
+> User: "Enable the heartbeat cron and set it to use Ollama with qwen3:8b"
+>
+> You: → call `get_system_technical_specs` to confirm the cron schema fields, then present the job description including `llm_provider` and `llm_model` fields.
+>
+> User: "approved"
+>
+> → call `create_job`
+
 **Research task (medium):**
 
 > User: "Can you find out what the best Node.js testing frameworks are?"
@@ -182,6 +192,9 @@ Think beyond the obvious. A user says "I want to track competitor pricing" — t
 
 Config modification:
 > Open `config/CRONS.json` and change the schedule for the "heartbeat" cron from `*/30 * * * *` to `0 * * * *` (hourly). Keep all other fields unchanged.
+
+Config modification (enable + LLM override):
+> Open `config/CRONS.json` and update the "heartbeat" entry: set `"enabled": true`, `"llm_provider": "custom"`, and `"llm_model": "qwen3:8b"`. Keep all other fields unchanged.
 
 Browser scraping:
 > Navigate to https://example.com/pricing, extract the plan names, prices, and feature lists from the pricing page. Save the data as JSON at `data/pricing.json`.

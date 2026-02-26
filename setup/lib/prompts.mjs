@@ -189,8 +189,8 @@ export async function promptForCustomProvider() {
  */
 export async function promptForBraveKey() {
   const addKey = handleCancel(await clack.confirm({
-    message: 'Add Brave Search API key? (optional, greatly improves agent)',
-    initialValue: true,
+    message: 'Add Brave Search API key? (optional, lets your agent search the web)',
+    initialValue: false,
   }));
 
   if (!addKey) return null;
