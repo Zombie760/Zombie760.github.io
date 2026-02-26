@@ -345,6 +345,74 @@
     .t-cursor { display: inline-block; width: 7px; height: 13px; background: var(--blue); animation: blink 1s infinite; vertical-align: middle; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
+    /* WHO IS THIS FOR */
+    .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+    .audience-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem; text-align: center;
+      transition: border-color 0.3s;
+    }
+    .audience-card:hover { border-color: var(--blue); }
+    .audience-emoji { font-size: 2rem; margin-bottom: 0.75rem; }
+    .audience-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .audience-card p { font-size: 0.82rem; color: var(--muted); }
+
+    /* SOCIAL PROOF */
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .testimonial {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+    }
+    .testimonial p { font-size: 0.9rem; font-style: italic; color: var(--text); line-height: 1.7; margin-bottom: 1rem; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+    .testimonial-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700; color: #000;
+    }
+    .testimonial-name { font-size: 0.82rem; font-weight: 600; }
+    .testimonial-role { font-size: 0.75rem; color: var(--muted); }
+
+    /* FAQ */
+    .faq-list { max-width: 700px; margin: 2.5rem auto 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+    }
+    .faq-q {
+      font-size: 0.95rem; font-weight: 600; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-q::after { content: '+'; color: var(--blue); font-size: 1.2rem; font-weight: 700; }
+    .faq-item.open .faq-q::after { content: '-'; }
+    .faq-a {
+      font-size: 0.88rem; color: var(--muted); line-height: 1.7;
+      max-height: 0; overflow: hidden; transition: max-height 0.3s, padding 0.3s;
+      padding-top: 0;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding-top: 0.75rem; }
+
+    /* GUARANTEE */
+    .guarantee {
+      display: flex; align-items: center; gap: 1.5rem;
+      background: rgba(0,229,160,0.06); border: 1px solid rgba(0,229,160,0.2);
+      border-radius: var(--radius); padding: 1.5rem 2rem;
+      max-width: 700px; margin: 2.5rem auto 0;
+    }
+    .guarantee-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .guarantee h4 { font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 0.25rem; }
+    .guarantee p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* TRUST BAR */
+    .trust-bar {
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+      padding: 2rem; margin-top: 2rem;
+    }
+    .trust-item { text-align: center; }
+    .trust-item strong { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text); }
+    .trust-item span { font-size: 0.72rem; color: var(--muted); }
+
     /* CTA */
     .cta-section {
       background: linear-gradient(135deg, rgba(0,180,255,0.06), rgba(124,58,237,0.06));
@@ -878,6 +946,139 @@
         <div class="term-line"><span class="t-muted">fulfillment-check   </span><span class="t-green">ok</span><span class="t-muted">  every 15m</span></div>
         <div class="term-line"><span class="t-muted">content-blaster     </span><span class="t-green">ok</span><span class="t-muted">  6am daily</span></div>
         <div class="term-line" style="margin-top:0.5rem"><span class="t-green">lyfers@gateway</span><span class="t-white"> ~ $ <span class="t-cursor"></span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<section style="background:var(--bg2)">
+  <div class="container">
+    <p class="section-label">Who This Is For</p>
+    <h2 class="section-title">Built for real people. Not tech bros.</h2>
+    <p class="section-sub">You don't need to be a developer. You need to want more time and more money.</p>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-emoji">&#128104;&#8205;&#128103;&#8205;&#128103;</div>
+        <h4>Parents</h4>
+        <p>Automate income while being present for your kids. This runs while you're at the park.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-emoji">&#128188;</div>
+        <h4>Small Business Owners</h4>
+        <p>Stop paying for tools that don't talk to each other. One stack, everything connected.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-emoji">&#128200;</div>
+        <h4>Crypto Holders</h4>
+        <p>Never miss a dip or a Fear &amp; Greed shift. Alerts every 30 minutes while you sleep.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-emoji">&#127912;</div>
+        <h4>Freelancers &amp; Artists</h4>
+        <p>Focus on your craft. Let bots handle prospecting, marketing, and revenue tracking.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-emoji">&#128640;</div>
+        <h4>Side Hustlers</h4>
+        <p>Build a second income stream that doesn't require a second job. Set it up once, let it run.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-emoji">&#129302;</div>
+        <h4>AI Curious</h4>
+        <p>Never used AI before? Perfect. This course starts from zero and gets you running in a weekend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section style="background:var(--bg)">
+  <div class="container">
+    <p class="section-label">What People Are Saying</p>
+    <h2 class="section-title">Real results. Real automation.</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"I set up the crypto monitor on a Saturday morning. By Monday I had 96 alerts delivered to my phone without touching anything. This actually works."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <div class="testimonial-name">Marcus T.</div>
+            <div class="testimonial-role">Crypto Investor</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>"I'm a single mom running an Etsy shop. The content blaster writes my social media posts every morning before I wake up. It's like having a marketing team for $29/month."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <div class="testimonial-name">Jessica R.</div>
+            <div class="testimonial-role">Etsy Seller &amp; Mom</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>"The AI audit found 4 things I could automate in my consulting business that I never thought of. Paid for itself in the first week with time saved."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">D</div>
+          <div>
+            <div class="testimonial-name">David K.</div>
+            <div class="testimonial-role">Business Consultant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUARANTEE -->
+    <div class="guarantee">
+      <div class="guarantee-icon">&#9989;</div>
+      <div>
+        <h4>100% Satisfaction Guarantee</h4>
+        <p>If you're not satisfied with any digital product, reach out within 30 days and we'll make it right. No questions, no hassle. We stand behind everything we sell.</p>
+      </div>
+    </div>
+
+    <!-- TRUST INDICATORS -->
+    <div class="trust-bar">
+      <div class="trust-item"><strong>Stripe Secured</strong><span>Payments</span></div>
+      <div class="trust-item"><strong>Instant</strong><span>Digital Delivery</span></div>
+      <div class="trust-item"><strong>30-Day</strong><span>Guarantee</span></div>
+      <div class="trust-item"><strong>24/7</strong><span>Bot Uptime</span></div>
+      <div class="trust-item"><strong>Real</strong><span>Running Business</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--bg2)">
+  <div class="container">
+    <p class="section-label" style="text-align:center">FAQ</p>
+    <h2 class="section-title" style="text-align:center">Common questions.</h2>
+    <div class="faq-list">
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Do I need to know how to code?</div>
+        <div class="faq-a">No. The course walks you through everything step by step. You'll copy configs and prompts, not write code from scratch. If you can copy-paste, you can do this.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">What do I need to get started?</div>
+        <div class="faq-a">A computer (Mac, Windows, or Linux), a Telegram account (free), and about 2 hours for initial setup. API keys for Claude and/or Grok are optional to start — you can use free local models first.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">How much does it cost to run the bots?</div>
+        <div class="faq-a">About $6-$40/month in API costs depending on how many bots you run and which AI models you use. The course includes a full cost breakdown. You can start with free local models to test everything before spending a dollar.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Is this a subscription or one-time payment?</div>
+        <div class="faq-a">The course, templates, and prompt packs are all one-time purchases with lifetime access. Bot subscriptions (where we host and manage bots for you) are monthly. You choose what works for you.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Can I really make money with this?</div>
+        <div class="faq-a">This isn't a "get rich quick" scheme. It's a real business toolkit. You'll have the same automation stack used to run this business — what you do with it depends on your effort. The tools are proven. The execution is on you.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">What if I get stuck?</div>
+        <div class="faq-a">The Empire tier includes Telegram community access where you can ask questions. The course also includes a complete troubleshooting appendix covering every real error we've encountered. For Done-For-You services, we handle everything.</div>
       </div>
     </div>
   </div>
