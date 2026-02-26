@@ -6,6 +6,7 @@ import { Chat } from './chat.js';
 import { SidebarProvider, SidebarInset } from './ui/sidebar.js';
 import { ChatNavProvider } from './chat-nav-context.js';
 import { getChatMessages } from '../actions.js';
+import { v4 as uuidv4 } from 'uuid';
 
 /**
  * Main chat page component.
@@ -17,7 +18,7 @@ import { getChatMessages } from '../actions.js';
  */
 export function ChatPage({ session, needsSetup, chatId }) {
   const [activeChatId, setActiveChatId] = useState(chatId || null);
-  const [resolvedChatId, setResolvedChatId] = useState(() => chatId ? null : crypto.randomUUID());
+  const [resolvedChatId, setResolvedChatId] = useState(() => chatId ? null : uuidv4());
   const [initialMessages, setInitialMessages] = useState([]);
 
   const navigateToChat = useCallback((id) => {
@@ -30,7 +31,7 @@ export function ChatPage({ session, needsSetup, chatId }) {
       window.history.pushState({}, '', '/');
       setInitialMessages([]);
       setActiveChatId(null);
-      setResolvedChatId(crypto.randomUUID());
+      setResolvedChatId(uuidv4());
     }
   }, []);
 
@@ -45,7 +46,7 @@ export function ChatPage({ session, needsSetup, chatId }) {
       } else {
         setInitialMessages([]);
         setActiveChatId(null);
-        setResolvedChatId(crypto.randomUUID());
+        setResolvedChatId(uuidv4());
       }
     };
     window.addEventListener('popstate', onPopState);
@@ -59,7 +60,7 @@ export function ChatPage({ session, needsSetup, chatId }) {
         if (dbMessages.length === 0) {
           // Stale chat (e.g. after login with old UUID) — start fresh
           setInitialMessages([]);
-          setResolvedChatId(crypto.randomUUID());
+          setResolvedChatId(uuidv4());
           window.history.replaceState({}, '', '/');
           return;
         }

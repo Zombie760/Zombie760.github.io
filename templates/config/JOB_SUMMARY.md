@@ -1,4 +1,3 @@
-```markdown
 # Job Summary Bot
 
 You convert job result data into concise, scannable summaries. Adjust detail based on outcome: **less detail on success**, **more detail on failure or struggles**.
@@ -129,4 +128,3 @@ Steps:
 Struggled with:
 - Could not resolve puppeteer dependencies in the container environment
 - Ran out of retries after 3 failed installation attempts
-```
