@@ -3,154 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Done-For-You AI Bot Services — We Build It, You Profit | SGKx1904</title>
-  <meta name="description" content="Done-for-you AI bot setup, custom development, and migration services. We build your automated business system. From $99." />
-  <meta name="keywords" content="done for you AI bots, custom bot development, bot setup service, AI automation service, hire bot developer, Telegram bot developer" />
-  <meta property="og:title" content="Done-For-You AI Bot Services — SGKx1904" />
-  <meta property="og:description" content="We build your AI bot system. You profit. From $99." />
-  <meta property="og:url" content="https://lyfer1904.github.io/done-for-you" />
-  <meta property="og:type" content="product" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@Lyfergang1904" />
-  <link rel="canonical" href="https://lyfer1904.github.io/done-for-you" />
-  <link rel="icon" type="image/jpeg" href="icon-dark-final.jpg" />
+  <title>Done-For-You AI Systems — We Build It, You Profit | SGKx1904</title>
+  <meta name="description" content="We build your entire AI automation system. Custom assistants, Stripe integration, content bots — handed to you running. From $149." />
+  <meta property="og:title" content="Done-For-You AI Systems — SGKx1904" />
+  <meta property="og:description" content="We build your AI system. You profit. Built by a plumber who automates everything." />
+  <link rel="icon" type="image/png" href="img/icon-matrix.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@300;400;500;600;700;800&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --black: #0a0a0a; --card: #131313; --border: #2a2a2a; --gold: #d4af37; --gold-dim: #b8962e; --gold-bright: #f0d060; --bone: #f0e6d3; --muted: #7a7a6e; --radius: 8px; }
+    :root {
+      --black: #080808; --black2: #0c0c0c; --black3: #111111;
+      --card: #0e0e0e; --border: #1a1111;
+      --crimson: #dc143c; --crimson-dim: #a01030; --crimson-bright: #ff1a4a; --crimson-glow: rgba(220,20,60,0.15);
+      --gold: #d4af37; --gold-dim: #b8962e; --gold-glow: rgba(212,175,55,0.15);
+      --bone: #e8dcc8; --muted: #8a7a6a; --ghost: #3a2a2a; --radius: 3px;
+    }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; }
-    ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: var(--black); } ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--crimson-dim); border-radius: 3px; }
     a { color: var(--gold); }
-    .topbar { padding: 0.8rem 2rem; background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-    .topbar a { text-decoration: none; }
-    .brand { font-family: 'Pirata One', cursive; font-size: 1.6rem; color: var(--gold); letter-spacing: 2px; }
-    .back { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; } .back:hover { color: var(--gold); }
-    .hero-lp { padding: 6rem 2rem 4rem; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.08) 0%, transparent 60%); }
-    .hero-lp h1 { font-family: 'Pirata One', cursive; font-size: clamp(2.5rem, 6vw, 4rem); color: var(--gold); margin-bottom: 1rem; text-shadow: 0 0 40px rgba(212,175,55,0.3); }
-    .hero-lp .sub { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--bone); opacity: 0.8; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; }
-    .hero-lp p { max-width: 650px; margin: 0 auto 2rem; color: var(--muted); font-size: 1.05rem; }
-    .btn-gold { display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--gold), var(--gold-dim)); color: var(--black); font-weight: 800; text-decoration: none; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; transition: all 0.3s; }
-    .btn-gold:hover { background: linear-gradient(135deg, var(--gold-bright), var(--gold)); box-shadow: 0 0 20px rgba(212,175,55,0.4); transform: translateY(-2px); }
-    .btn-outline { display: inline-block; padding: 0.85rem 2rem; background: transparent; color: var(--gold); font-weight: 700; text-decoration: none; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; border: 1px solid var(--gold-dim); transition: all 0.3s; }
-    .btn-outline:hover { background: rgba(212,175,55,0.1); border-color: var(--gold); }
-    section { padding: 4rem 2rem; } .inner { max-width: 1000px; margin: 0 auto; }
-    h2 { font-family: 'Pirata One', cursive; font-size: 2.2rem; color: var(--gold); text-align: center; margin-bottom: 2rem; }
-    .divider { text-align: center; padding: 1.5rem 0; color: var(--gold); font-size: 1.5rem; letter-spacing: 0.5rem; opacity: 0.6; }
+
+    .embers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+    .ember { position: absolute; width: 2px; height: 2px; background: var(--crimson); border-radius: 50%; opacity: 0; animation: emberFloat linear infinite; box-shadow: 0 0 6px var(--crimson), 0 0 12px rgba(220,20,60,0.3); }
+    @keyframes emberFloat { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.3; } 100% { transform: translateY(-20vh) translateX(30px); opacity: 0; } }
+    .scanlines::after { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px); pointer-events: none; z-index: 9999; }
+    .divider { text-align: center; padding: 1.5rem 0; color: var(--crimson-dim); font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.8rem; opacity: 0.4; }
+
+    .topbar { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 2rem; background: rgba(8,8,8,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .brand { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 900; color: var(--gold); text-decoration: none; letter-spacing: 4px; }
+    .back { color: var(--muted); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+    .back:hover { color: var(--crimson); }
+
+    .btn-blood { display: inline-block; padding: 0.9rem 2.2rem; background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-weight: 800; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; transition: all 0.3s; position: relative; overflow: hidden; }
+    .btn-blood::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transition: left 0.5s; }
+    .btn-blood:hover::before { left: 100%; }
+    .btn-blood:hover { background: var(--crimson-bright); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-2px); }
+    .btn-bone { display: inline-block; padding: 0.85rem 2rem; background: transparent; color: var(--gold); font-family: 'Cinzel', serif; font-weight: 600; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; border: 1px solid var(--gold-dim); transition: all 0.3s; }
+    .btn-bone:hover { background: rgba(212,175,55,0.08); border-color: var(--gold); box-shadow: 0 0 20px var(--gold-glow); }
+
+    .hero-lp { padding: 6rem 2rem 4rem; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(220,20,60,0.04), transparent 70%); position: relative; z-index: 1; }
+    .hero-badge { display: inline-block; background: rgba(220,20,60,0.15); border: 1px solid rgba(220,20,60,0.3); color: var(--crimson); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; padding: 0.4rem 1.2rem; border-radius: 2px; margin-bottom: 1.5rem; }
+    .hero-lp h1 { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 900; color: var(--bone); letter-spacing: 3px; line-height: 1.1; margin-bottom: 0.5rem; }
+    .hero-lp h1 span { color: var(--crimson); }
+    .hero-lp .sub { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--gold); letter-spacing: 5px; text-transform: uppercase; margin-bottom: 1.5rem; opacity: 0.9; }
+    .hero-lp p { max-width: 600px; margin: 0 auto 2rem; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    section { padding: 3.5rem 2rem; position: relative; z-index: 1; }
+    .inner { max-width: 1000px; margin: 0 auto; }
+    .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; text-align: center; margin-bottom: 0.5rem; color: var(--bone); letter-spacing: 3px; }
+    .section-sub { text-align: center; color: var(--muted); font-size: 0.9rem; max-width: 500px; margin: 0 auto 2rem; }
+
     .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .tier { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; transition: border-color 0.3s; }
-    .tier:hover { border-color: var(--gold-dim); }
-    .tier.featured { border-color: var(--gold); box-shadow: 0 0 30px rgba(212,175,55,0.15); }
-    .tier h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.3rem; margin-bottom: 0.5rem; }
-    .tier .price { font-size: 2.5rem; font-weight: 800; color: var(--bone); margin: 1rem 0; } .tier .price span { font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+    .tier { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; transition: all 0.3s; position: relative; }
+    .tier:hover { border-color: var(--crimson-dim); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-4px); }
+    .tier.featured { border-color: var(--crimson); box-shadow: 0 0 40px var(--crimson-glow); }
+    .tier.featured::before { content: 'MOST POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-size: 0.55rem; font-weight: 800; letter-spacing: 2px; padding: 4px 14px; border-radius: 2px; }
+    .tier h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+    .tier .price { font-size: 2.5rem; font-weight: 800; color: var(--bone); margin: 0.8rem 0 0.3rem; font-family: 'Cinzel', serif; }
+    .tier .price-note { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-bottom: 1rem; }
     .tier ul { list-style: none; text-align: left; margin: 1.5rem 0; }
-    .tier ul li { padding: 0.4rem 0; color: var(--muted); font-size: 0.9rem; border-bottom: 1px solid var(--border); } .tier ul li::before { content: "\2713 "; color: var(--gold); font-weight: 700; }
-    .tier .best { background: var(--gold); color: var(--black); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; padding: 0.3rem 1rem; border-radius: 2px; display: inline-block; margin-bottom: 0.5rem; }
-    .who { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .who-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
-    .who-card h4 { color: var(--gold); margin-bottom: 0.5rem; font-family: 'Cinzel', serif; } .who-card p { color: var(--muted); font-size: 0.9rem; }
-    footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); }
-    footer .brand { font-size: 1.2rem; } footer p { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; } footer a { color: var(--gold); text-decoration: none; }
+    .tier ul li { padding: 0.4rem 0; color: var(--muted); font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .tier ul li::before { content: '\2020'; color: var(--crimson); margin-right: 8px; font-weight: bold; }
+
+    .who { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+    .who-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: all 0.3s; }
+    .who-card:hover { border-color: var(--crimson-dim); box-shadow: 0 0 25px var(--crimson-glow); }
+    .who-card h4 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 0.4rem; }
+    .who-card p { color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+
+    footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); position: relative; z-index: 1; background: var(--black2); }
+    .footer-brand { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 900; color: var(--gold); letter-spacing: 4px; margin-bottom: 1rem; }
+    footer p { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { color: var(--crimson); }
+
+    @media (max-width: 640px) {
+      .topbar { padding: 0.6rem 1rem; }
+      .hero-lp { padding: 4rem 1.5rem 3rem; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .btn-blood, .btn-bone { width: 100%; text-align: center; }
+      .tiers { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
-<body>
-<div class="topbar"><a href="index.html" class="brand">SGKx1904</a><a href="index.html" class="back">&larr; Back to Home</a></div>
+<body class="scanlines">
 
-<div class="hero-lp">
-  <h1>Done-For-You</h1>
-  <div class="sub">We Build It. You Profit.</div>
-  <p>Don't want to learn the stack? We'll build your entire AI bot system, configure Stripe payments, and hand you a running business. You just approve and collect.</p>
-  <a href="https://buy.stripe.com/bJe6oGbnz77E4Kr51MgrS09" class="btn-gold">Bot Setup — $149</a>
+<div class="embers" id="embers" aria-hidden="true"></div>
+
+<div class="topbar">
+  <a href="index.html" class="brand">SGKx1904</a>
+  <a href="index.html" class="back">&larr; Home</a>
 </div>
 
-<div class="divider">&#9760; &#9760; &#9760;</div>
+<div class="hero-lp">
+  <div class="hero-badge">Hands-off setup</div>
+  <h1>Done <span>For You</span></h1>
+  <div class="sub">We Build It. You Profit.</div>
+  <p>Don't want to learn the stack? We'll build your entire AI system &mdash; custom assistants, Stripe payments, content automation &mdash; and hand you a running business. Built by the same plumber who automated his own.</p>
+  <div class="hero-btns">
+    <a href="https://buy.stripe.com/aFa5kC1MZ9fM1yf51MgrS0u" class="btn-blood">Full Custom Build &mdash; $299</a>
+    <a href="#services" class="btn-bone">See All Services</a>
+  </div>
+</div>
 
-<section>
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<section id="services">
   <div class="inner">
-    <h2>Services</h2>
+    <h2 class="section-title">Services</h2>
+    <p class="section-sub">Pick your level. We handle the tech. You handle the business.</p>
     <div class="tiers">
       <div class="tier">
         <h3>Migration</h3>
-        <div class="price">$99 <span>one-time</span></div>
+        <div class="price">$99</div>
+        <div class="price-note">one-time</div>
         <ul>
-          <li>Move existing automations to OpenClaw</li>
+          <li>Move existing automations to your system</li>
           <li>Preserve all logic & schedules</li>
           <li>Telegram delivery setup</li>
           <li>Testing & verification</li>
           <li>3-5 day turnaround</li>
         </ul>
-        <a href="https://buy.stripe.com/14A8wOcrD8bI7WDem6grS0a" class="btn-outline">Get Migration</a>
+        <a href="https://buy.stripe.com/14A8wOcrD8bI7WDem6grS0a" class="btn-bone" style="width:100%;text-align:center;">Get Migration</a>
       </div>
       <div class="tier featured">
-        <div class="best">Most Popular</div>
         <h3>Bot Setup</h3>
-        <div class="price">$149 <span>one-time</span></div>
+        <div class="price">$149</div>
+        <div class="price-note">one-time</div>
         <ul>
-          <li>1 custom bot built to your specs</li>
+          <li>1 custom AI assistant built to your specs</li>
           <li>AI provider configuration</li>
           <li>Telegram delivery & scheduling</li>
           <li>Stripe payment link (if selling)</li>
           <li>Testing & deployment</li>
           <li>7-day support after delivery</li>
         </ul>
-        <a href="https://buy.stripe.com/bJe6oGbnz77E4Kr51MgrS09" class="btn-gold">Get Bot Setup</a>
+        <a href="https://buy.stripe.com/bJe6oGbnz77E4Kr51MgrS09" class="btn-blood" style="width:100%;text-align:center;">Get Bot Setup</a>
       </div>
       <div class="tier">
-        <h3>Custom Development</h3>
-        <div class="price">$299 <span>one-time</span></div>
+        <h3>Full Custom Build</h3>
+        <div class="price">$299</div>
+        <div class="price-note">one-time</div>
         <ul>
-          <li>Multi-bot system (up to 5 bots)</li>
+          <li>Multi-bot system (up to 5 AI assistants)</li>
           <li>Custom prompt engineering</li>
-          <li>Stripe integration & fulfillment</li>
+          <li>Stripe integration & auto-fulfillment</li>
           <li>Content automation pipeline</li>
           <li>Full business automation stack</li>
           <li>14-day support after delivery</li>
         </ul>
-        <a href="https://buy.stripe.com/aFa5kC1MZ9fM1yf51MgrS0u" class="btn-outline">Get Custom Build</a>
+        <a href="https://buy.stripe.com/aFa5kC1MZ9fM1yf51MgrS0u" class="btn-bone" style="width:100%;text-align:center;">Get Custom Build</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &#9760; &#9760;</div>
+<div class="divider">&dagger; &dagger; &dagger;</div>
 
-<section>
+<section style="background: var(--black2);">
   <div class="inner">
-    <h2>Who This Is For</h2>
+    <h2 class="section-title">Who This Is For</h2>
+    <p class="section-sub">You know AI can help. You just don't want to build it yourself.</p>
     <div class="who">
       <div class="who-card">
-        <h4>Busy Entrepreneurs</h4>
-        <p>You know AI can help but don't have time to learn the stack. We handle the tech — you handle the business.</p>
+        <h4>Busy Business Owners</h4>
+        <p>You're running a business, not learning tech stacks. We handle the AI so you can handle your customers.</p>
       </div>
       <div class="who-card">
         <h4>Service Providers</h4>
-        <p>Coaches, consultants, agencies — automate client onboarding, content delivery, and follow-ups with custom bots.</p>
+        <p>Coaches, consultants, agencies &mdash; automate client onboarding, content delivery, and follow-ups with custom bots.</p>
       </div>
       <div class="who-card">
         <h4>Creators & Sellers</h4>
-        <p>Selling digital products? We'll wire up auto-fulfillment, content marketing bots, and revenue tracking.</p>
+        <p>Selling digital products? We'll wire up auto-fulfillment, content marketing, and revenue tracking. You make it, we automate it.</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &#9760; &#9760;</div>
+<div class="divider">&dagger; &dagger; &dagger;</div>
 
-<section>
-  <div class="inner" style="text-align:center;">
-    <h2>Not Sure What You Need?</h2>
-    <p style="color:var(--muted);max-width:500px;margin:0 auto 2rem;">Start with a Quick Audit ($49). We'll analyze your business and tell you exactly which bots to build and why.</p>
-    <a href="ai-business-audit.html" class="btn-outline" style="margin-right:0.5rem;">Get an Audit First</a>
-    <a href="https://t.me/moneymakiingmitch1904_bot" class="btn-outline">DM Us on Telegram</a>
+<section style="text-align:center;">
+  <div class="inner">
+    <h2 class="section-title">Not Sure What You Need?</h2>
+    <p class="section-sub">Start with a conversation. DM the bot and tell us about your business. We'll tell you exactly what to build and why.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://buy.stripe.com/fZu9AS9frajQ1yf4LwgrS0e" class="btn-bone">Consultation &mdash; $49</a>
+      <a href="https://t.me/moneymakingmitch1904_bot" class="btn-blood">DM Us Free on Telegram</a>
+    </div>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--ghost);margin-top:1rem;">Or start with a $9/mo subscription: <a href="index.html#pricing">see plans</a></p>
   </div>
 </section>
 
 <footer>
-  <div class="brand">SGKx1904</div>
-  <p><a href="https://t.me/MoneyMakingMitchell1904">Telegram</a> &bull; <a href="https://x.com/Lyfergang1904">X / Twitter</a> &bull; <a href="index.html">Home</a></p>
+  <div class="footer-brand">SGKx1904</div>
+  <p>
+    <a href="https://t.me/MoneyMakingMitchell1904">Telegram</a> &bull;
+    <a href="https://x.com/Lyfergang1904">X / Twitter</a> &bull;
+    <a href="index.html">Home</a> &bull;
+    <a href="free-guide.html">Free Guide</a>
+  </p>
+  <p>Built by a plumber. Powered by AI. No corporate middleman.</p>
   <p>&copy; 2026 SGKx1904. All rights reserved.</p>
 </footer>
+
+<script>
+const embers = document.getElementById('embers');
+for (let i = 0; i < 20; i++) {
+  const e = document.createElement('div');
+  e.className = 'ember';
+  e.style.left = Math.random() * 100 + '%';
+  e.style.animationDuration = (8 + Math.random() * 12) + 's';
+  e.style.animationDelay = Math.random() * 10 + 's';
+  e.style.width = (1 + Math.random() * 2) + 'px';
+  e.style.height = e.style.width;
+  embers.appendChild(e);
+}
+</script>
+
 </body>
 </html>

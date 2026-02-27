@@ -3,139 +3,258 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Automation Empire Course — Build Bots That Make Money While You Sleep | SGK1904</title>
-  <meta name="description" content="Learn to build an AI bot empire from scratch. 9 modules covering OpenClaw setup, bot automation, Stripe payments, content marketing, and scaling. From $29.99." />
-  <meta name="keywords" content="AI automation course, bot building, make money with AI, OpenClaw tutorial, Telegram bot business, passive income AI, AI empire" />
-  <meta property="og:title" content="AI Automation Empire Course — SGK1904" />
-  <meta property="og:description" content="Build bots that run your business 24/7. 9 modules. Real configs. From $29.99." />
+  <title>AI Automation Empire Course — Build Bots That Make Money While You Sleep | SGKx1904</title>
+  <meta name="description" content="Learn to build an AI bot empire from scratch. 10 modules covering OpenClaw setup, bot automation, Stripe payments, content marketing, and scaling. From $29.99." />
+  <meta name="keywords" content="AI automation course, bot building, make money with AI, OpenClaw tutorial, Telegram bot business, passive income AI, AI empire, SGKx1904" />
+  <meta property="og:title" content="AI Automation Empire Course — SGKx1904 — AI For the Rest of Us" />
+  <meta property="og:description" content="Built by a plumber. Not a programmer. 10 modules. Real configs. From $29.99." />
   <meta property="og:url" content="https://lyfer1904.github.io/ai-empire-course" />
   <meta property="og:type" content="product" />
+  <meta property="og:image" content="img/icon-matrix.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@Lyfergang1904" />
   <link rel="canonical" href="https://lyfer1904.github.io/ai-empire-course" />
-  <link rel="icon" type="image/jpeg" href="icon-dark-final.jpg" />
+  <link rel="icon" type="image/png" href="img/icon-matrix.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@300;400;500;600;700;800&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --black: #0a0a0a; --black2: #111111; --black3: #1a1a1a; --card: #131313;
-      --border: #2a2a2a; --gold: #d4af37; --gold-dim: #b8962e; --gold-bright: #f0d060;
-      --red: #8b0000; --bone: #f0e6d3; --muted: #7a7a6e; --radius: 8px;
+      --black: #080808; --black2: #0c0c0c; --black3: #111111;
+      --card: #0e0e0e; --card-hover: #141414;
+      --border: #1a1111; --border-bright: rgba(220,20,60,0.2);
+      --crimson: #dc143c; --crimson-dim: #a01030; --crimson-bright: #ff1a4a; --crimson-glow: rgba(220,20,60,0.15);
+      --gold: #d4af37; --gold-dim: #b8962e; --gold-glow: rgba(212,175,55,0.15);
+      --bone: #e8dcc8; --muted: #8a7a6a; --ghost: #3a2a2a; --radius: 3px;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; }
-    ::-webkit-scrollbar { width: 8px; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--black); }
-    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: var(--crimson-dim); border-radius: 3px; }
     a { color: var(--gold); }
-    .topbar { padding: 0.8rem 2rem; background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-    .topbar a { text-decoration: none; }
-    .brand { font-family: 'Pirata One', cursive; font-size: 1.6rem; color: var(--gold); letter-spacing: 2px; }
-    .back { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
-    .back:hover { color: var(--gold); }
 
-    .hero-lp {
-      padding: 6rem 2rem 4rem; text-align: center;
-      background: radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.08) 0%, transparent 60%);
-    }
-    .hero-lp h1 { font-family: 'Pirata One', cursive; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--gold); margin-bottom: 1rem; text-shadow: 0 0 40px rgba(212,175,55,0.3); }
-    .hero-lp .sub { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--bone); opacity: 0.8; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; }
-    .hero-lp p { max-width: 650px; margin: 0 auto 2rem; color: var(--muted); font-size: 1.05rem; }
-    .btn-gold { display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--gold), var(--gold-dim)); color: var(--black); font-weight: 800; text-decoration: none; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; transition: all 0.3s; }
-    .btn-gold:hover { background: linear-gradient(135deg, var(--gold-bright), var(--gold)); box-shadow: 0 0 20px rgba(212,175,55,0.4); transform: translateY(-2px); }
-    .btn-outline { display: inline-block; padding: 1rem 2.5rem; background: transparent; color: var(--gold); font-weight: 700; text-decoration: none; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; border: 1px solid var(--gold-dim); transition: all 0.3s; }
-    .btn-outline:hover { background: rgba(212,175,55,0.1); border-color: var(--gold); }
+    /* EMBERS + SCANLINES */
+    .embers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+    .ember { position: absolute; width: 2px; height: 2px; background: var(--crimson); border-radius: 50%; opacity: 0; animation: emberFloat linear infinite; box-shadow: 0 0 6px var(--crimson), 0 0 12px rgba(220,20,60,0.3); }
+    @keyframes emberFloat { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.3; } 100% { transform: translateY(-20vh) translateX(30px); opacity: 0; } }
+    .scanlines::after { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px); pointer-events: none; z-index: 9999; }
 
-    section { padding: 4rem 2rem; }
-    .inner { max-width: 900px; margin: 0 auto; }
-    h2 { font-family: 'Pirata One', cursive; font-size: 2.2rem; color: var(--gold); text-align: center; margin-bottom: 2rem; }
-    .divider { text-align: center; padding: 1.5rem 0; color: var(--gold); font-size: 1.5rem; letter-spacing: 0.5rem; opacity: 0.6; }
+    .divider { text-align: center; padding: 1.5rem 0; color: var(--crimson-dim); font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.8rem; opacity: 0.4; }
 
-    .modules { list-style: none; counter-reset: mod; }
-    .modules li { counter-increment: mod; padding: 1.2rem 1.5rem; border-left: 3px solid var(--gold-dim); margin-bottom: 1rem; background: var(--card); border-radius: 0 var(--radius) var(--radius) 0; }
-    .modules li::before { content: "Module " counter(mod, decimal-leading-zero); font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 0.3rem; }
-    .modules li strong { color: var(--bone); font-size: 1.1rem; }
-    .modules li p { color: var(--muted); font-size: 0.9rem; margin-top: 0.3rem; }
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 2rem; background: rgba(8,8,8,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-brand { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 900; color: var(--gold); text-decoration: none; letter-spacing: 4px; text-shadow: 0 0 20px var(--gold-glow); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
+    .nav-links a:hover { color: var(--crimson); }
+    .nav-cta { background: var(--crimson) !important; color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 2px; font-weight: 700 !important; font-family: 'Cinzel', serif !important; font-size: 0.65rem !important; letter-spacing: 2px !important; }
+    .nav-cta:hover { background: var(--crimson-bright) !important; box-shadow: 0 0 20px var(--crimson-glow); }
+    .nav-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
 
-    .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .tier { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; transition: border-color 0.3s; }
-    .tier:hover { border-color: var(--gold-dim); }
-    .tier.featured { border-color: var(--gold); box-shadow: 0 0 30px rgba(212,175,55,0.15); }
-    .tier h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.3rem; margin-bottom: 0.5rem; }
-    .tier .price { font-size: 2.5rem; font-weight: 800; color: var(--bone); margin: 1rem 0; }
-    .tier .price span { font-size: 0.9rem; color: var(--muted); font-weight: 400; }
-    .tier ul { list-style: none; text-align: left; margin: 1.5rem 0; }
-    .tier ul li { padding: 0.4rem 0; color: var(--muted); font-size: 0.9rem; border-bottom: 1px solid var(--border); }
-    .tier ul li::before { content: "\2713 "; color: var(--gold); font-weight: 700; }
+    /* BUTTONS */
+    .btn-blood { display: inline-block; padding: 0.9rem 2.2rem; background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-weight: 800; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; transition: all 0.3s; border: none; cursor: pointer; position: relative; overflow: hidden; }
+    .btn-blood::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transition: left 0.5s; }
+    .btn-blood:hover::before { left: 100%; }
+    .btn-blood:hover { background: var(--crimson-bright); box-shadow: 0 0 30px var(--crimson-glow), 0 0 60px rgba(220,20,60,0.1); transform: translateY(-2px); }
+    .btn-bone { display: inline-block; padding: 0.85rem 2rem; background: transparent; color: var(--gold); font-family: 'Cinzel', serif; font-weight: 600; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; border: 1px solid var(--gold-dim); transition: all 0.3s; }
+    .btn-bone:hover { background: rgba(212,175,55,0.08); border-color: var(--gold); box-shadow: 0 0 20px var(--gold-glow); }
+    .btn-sm { padding: 0.5rem 1.2rem; font-size: 0.65rem; letter-spacing: 2px; font-family: 'Cinzel', serif; font-weight: 700; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; cursor: pointer; border: 1px solid var(--crimson-dim); color: var(--crimson); background: transparent; }
+    .btn-sm:hover { background: var(--crimson); color: #fff; }
 
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 6rem 2rem 3rem; background: radial-gradient(ellipse at 50% 30%, rgba(220,20,60,0.04), transparent 70%); }
+    .hero-inner { max-width: 900px; text-align: center; position: relative; z-index: 1; }
+    .hero-badge { display: inline-block; background: rgba(220,20,60,0.15); border: 1px solid rgba(220,20,60,0.3); color: var(--crimson); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; padding: 0.4rem 1.2rem; border-radius: 2px; margin-bottom: 2rem; }
+    .hero-story { font-family: 'Inter', sans-serif; font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--muted); max-width: 700px; margin: 0 auto 1.5rem; line-height: 1.7; }
+    .hero-story strong { color: var(--bone); }
+    .hero-story em { color: var(--gold); font-style: normal; }
+    h1 { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 900; color: var(--bone); letter-spacing: 3px; line-height: 1.05; margin-bottom: 1.5rem; }
+    h1 span { color: var(--crimson); }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 650px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .hero-sub strong { color: var(--gold); }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .price-hint { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--ghost); margin-top: 1rem; }
+
+    /* SECTIONS */
+    .section-inner { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+    .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; text-align: center; margin-bottom: 0.5rem; color: var(--bone); letter-spacing: 3px; }
+    .section-sub { text-align: center; color: var(--muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 2.5rem; }
+
+    /* MODULES */
+    .modules { list-style: none; counter-reset: mod; max-width: 800px; margin: 0 auto; }
+    .modules li { counter-increment: mod; padding: 1.2rem 1.5rem; border-left: 3px solid var(--crimson-dim); margin-bottom: 1rem; background: var(--card); border-radius: 0 var(--radius) var(--radius) 0; transition: all 0.3s; }
+    .modules li:hover { border-left-color: var(--crimson); box-shadow: 0 0 20px var(--crimson-glow); }
+    .modules li::before { content: "Module " counter(mod, decimal-leading-zero); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--crimson); text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 0.3rem; }
+    .modules li strong { color: var(--bone); font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 1px; }
+    .modules li p { color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem; }
+
+    /* TIERS */
+    .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+    .tier { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; position: relative; }
+    .tier:hover { border-color: var(--crimson-dim); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-4px); }
+    .tier.featured { border-color: var(--crimson); box-shadow: 0 0 40px var(--crimson-glow); }
+    .tier.featured::before { content: 'BEST VALUE'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-size: 0.55rem; font-weight: 800; letter-spacing: 2px; padding: 4px 14px; border-radius: 2px; }
+    .tier h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 0.3rem; }
+    .tier .price { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 900; color: var(--bone); margin: 0.5rem 0 0.2rem; }
+    .tier .price span { font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+    .tier .price-period { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-bottom: 1rem; }
+    .tier ul { list-style: none; text-align: left; margin-bottom: 1.5rem; }
+    .tier ul li { padding: 0.35rem 0; color: var(--muted); font-size: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .tier ul li::before { content: '\2020'; color: var(--crimson); margin-right: 8px; font-weight: bold; }
+
+    /* FAQ */
     .faq { max-width: 700px; margin: 0 auto; }
-    .faq details { margin-bottom: 1rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); }
-    .faq summary { padding: 1rem 1.5rem; cursor: pointer; color: var(--bone); font-weight: 600; }
-    .faq details[open] summary { color: var(--gold); border-bottom: 1px solid var(--border); }
-    .faq details p { padding: 1rem 1.5rem; color: var(--muted); font-size: 0.9rem; }
+    .faq details { margin-bottom: 1rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); transition: all 0.3s; }
+    .faq details:hover { border-color: var(--crimson-dim); }
+    .faq summary { padding: 1rem 1.5rem; cursor: pointer; color: var(--bone); font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; }
+    .faq details[open] summary { color: var(--crimson); border-bottom: 1px solid var(--border); }
+    .faq details p { padding: 1rem 1.5rem; color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
 
-    footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); }
-    footer .brand { font-size: 1.2rem; }
-    footer p { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; }
-    footer a { color: var(--gold); text-decoration: none; }
+    /* TERMINAL */
+    .terminal { background: var(--black2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--bone); max-width: 600px; margin: 2rem auto; line-height: 1.8; }
+    .terminal .prompt { color: var(--crimson); }
+    .terminal .output { color: var(--gold); }
+    .terminal .dim { color: var(--muted); }
+
+    /* FOOTER */
+    footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border); background: var(--black2); }
+    .footer-brand { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 900; color: var(--gold); letter-spacing: 4px; margin-bottom: 1rem; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--crimson); }
+    .footer-copy { color: var(--ghost); font-size: 0.75rem; }
+
+    /* ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.4s; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 5rem 1.5rem 3rem; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .btn-blood, .btn-bone { width: 100%; text-align: center; }
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(8,8,8,0.98); padding: 1rem 2rem; gap: 1rem; border-bottom: 1px solid var(--border); }
+      .tiers { grid-template-columns: 1fr; }
+      .modules li { padding: 1rem; }
+    }
   </style>
 </head>
-<body>
+<body class="scanlines">
 
-<div class="topbar">
-  <a href="index.html" class="brand">SGKx1904</a>
-  <a href="index.html" class="back">&larr; Back to Home</a>
-</div>
+<div class="embers" id="embers" aria-hidden="true"></div>
 
-<div class="hero-lp">
-  <h1>AI Automation Empire</h1>
-  <div class="sub">The Course</div>
-  <p>9 modules that teach you to build a fully automated AI business from scratch. Built by a plumber with zero coding experience. Real bot configs. Real Stripe integration. Real revenue. No fluff — just the system that runs SGKx1904.</p>
-  <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-gold">Get the Builder Tier — $49.99</a>
-</div>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">SGKx1904</a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links">
+    <a href="#modules">Modules</a>
+    <a href="#tiers">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="index.html">Home</a>
+    <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="nav-cta">Get the Course</a>
+  </div>
+</nav>
 
-<div class="divider">&#9760; &#9760; &#9760;</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner fade-in">
+    <div class="hero-badge">Built by a plumber. Not a programmer.</div>
+    <div class="hero-story">
+      I'm a <strong>plumber</strong>. No CS degree. No coding bootcamp. I built <em>9 AI bots</em> in <em>48 hours</em> that run an entire automated business while I sleep. This course is the exact system I used &mdash; every config, every prompt, every workflow &mdash; handed to <strong>you</strong>.
+    </div>
+    <h1>AI Automation <span>Empire</span></h1>
+    <p class="hero-sub">10 modules. Real bot configs. Real Stripe integration. Real revenue. No fluff &mdash; just the system that runs <strong>SGKx1904</strong>. Learn to build bots that make money while you sleep.</p>
+    <div class="hero-btns">
+      <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-blood">Get the Builder Tier &mdash; $49.99</a>
+      <a href="#tiers" class="btn-bone">Compare All Tiers</a>
+    </div>
+    <div class="price-hint">One-time purchase. Lifetime access. Starting at $29.99.</div>
+  </div>
+</section>
 
-<section>
-  <div class="inner">
-    <h2>What You Learn</h2>
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- WHAT YOU GET -->
+<section style="background: var(--black2);">
+  <div class="section-inner">
+    <h2 class="section-title fade-in">What You Get</h2>
+    <p class="section-sub fade-in">This isn't a theory course. It's the exact playbook a plumber used to build a fully automated AI business from zero.</p>
+    <div class="terminal fade-in" style="text-align:left;">
+      <div><span class="prompt">$</span> <span class="output">cat course-contents.txt</span></div>
+      <div><span class="dim">---</span></div>
+      <div><span class="dim">// 10 modules of step-by-step instruction</span></div>
+      <div><span class="dim">// Real OpenClaw configs — copy, paste, deploy</span></div>
+      <div><span class="dim">// Stripe payment integration walkthrough</span></div>
+      <div><span class="dim">// Content automation & funnel blueprints</span></div>
+      <div><span class="dim">// Scaling playbook for multiple revenue streams</span></div>
+      <div><span class="dim">// Zero coding required — JSON configs only</span></div>
+      <div><span class="dim">---</span></div>
+      <div><span class="prompt">$</span> <span class="output">echo "If a plumber can do it, so can you."</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- MODULES -->
+<section id="modules">
+  <div class="section-inner">
+    <h2 class="section-title fade-in">What You Learn</h2>
+    <p class="section-sub fade-in">10 modules. From zero to a fully automated, revenue-generating AI empire.</p>
     <ol class="modules">
-      <li><strong>The Story</strong><p>Why this system exists and how one person built a 9-bot automated business in 48 hours.</p></li>
-      <li><strong>The Stack</strong><p>OpenClaw, Telegram, Stripe, xAI — every tool and how they connect.</p></li>
-      <li><strong>Gateway Setup</strong><p>Install and configure your AI gateway from zero to running.</p></li>
-      <li><strong>AI Providers</strong><p>Free local models vs paid APIs. How to route the right model to the right job.</p></li>
-      <li><strong>Your First Bot</strong><p>Build, test, and deploy a working bot in under 30 minutes.</p></li>
-      <li><strong>Automation</strong><p>Cron schedules, multi-bot coordination, error handling.</p></li>
-      <li><strong>Getting Paid</strong><p>Stripe products, payment links, revenue tracking, auto-fulfillment.</p></li>
-      <li><strong>Content Machine</strong><p>Auto-generate and post marketing content across platforms daily.</p></li>
-      <li><strong>The Funnel</strong><p>Website, Telegram channel, social proof — turn visitors into buyers.</p></li>
-      <li><strong>Scaling Up</strong><p>Add products, optimize pricing, expand to new channels.</p></li>
+      <li class="fade-in"><strong>The Story</strong><p>Why this system exists and how one person built a 9-bot automated business in 48 hours.</p></li>
+      <li class="fade-in"><strong>The Stack</strong><p>OpenClaw, Telegram, Stripe, xAI &mdash; every tool and how they connect.</p></li>
+      <li class="fade-in"><strong>Gateway Setup</strong><p>Install and configure your AI gateway from zero to running.</p></li>
+      <li class="fade-in"><strong>AI Providers</strong><p>Free local models vs paid APIs. How to route the right model to the right job.</p></li>
+      <li class="fade-in"><strong>Your First Bot</strong><p>Build, test, and deploy a working bot in under 30 minutes.</p></li>
+      <li class="fade-in"><strong>Automation</strong><p>Cron schedules, multi-bot coordination, error handling.</p></li>
+      <li class="fade-in"><strong>Getting Paid</strong><p>Stripe products, payment links, revenue tracking, auto-fulfillment.</p></li>
+      <li class="fade-in"><strong>Content Machine</strong><p>Auto-generate and post marketing content across platforms daily.</p></li>
+      <li class="fade-in"><strong>The Funnel</strong><p>Website, Telegram channel, social proof &mdash; turn visitors into buyers.</p></li>
+      <li class="fade-in"><strong>Scaling Up</strong><p>Add products, optimize pricing, expand to new channels.</p></li>
     </ol>
   </div>
 </section>
 
-<div class="divider">&#9760; &#9760; &#9760;</div>
+<div class="divider">&dagger; &dagger; &dagger;</div>
 
-<section>
-  <div class="inner">
-    <h2>Choose Your Tier</h2>
+<!-- TIERS -->
+<section id="tiers" style="background: var(--black2);">
+  <div class="section-inner">
+    <h2 class="section-title fade-in">Choose Your Tier</h2>
+    <p class="section-sub fade-in">One-time purchase. Lifetime access. No subscriptions. No upsells.</p>
+    <div style="text-align:center;margin-bottom:2rem;padding:1.2rem;background:rgba(220,20,60,0.06);border:1px solid rgba(220,20,60,0.15);border-radius:var(--radius);">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--crimson);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.3rem;">Launch Pricing</div>
+      <div style="font-size:0.85rem;color:var(--muted);">Hiring a dev to build this system: <strong style="color:var(--bone);text-decoration:line-through;">$25,000 - $75,000</strong></div>
+      <div style="font-size:0.85rem;color:var(--muted);">Other AI courses with less content: <strong style="color:var(--bone);text-decoration:line-through;">$500 - $2,000</strong></div>
+      <div style="font-size:0.95rem;color:var(--gold);margin-top:0.4rem;">The full system: <strong>from $29.99</strong></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--ghost);margin-top:0.5rem;">Prices increase after first 100 buyers.</div>
+    </div>
     <div class="tiers">
-      <div class="tier">
+
+      <div class="tier fade-in">
         <h3>Starter</h3>
-        <div class="price">$29.99 <span>one-time</span></div>
+        <div class="price">$29.99</div>
+        <div class="price-period">one-time</div>
         <ul>
           <li>Modules 1-3 (Foundation)</li>
           <li>Stack overview & gateway setup</li>
           <li>AI provider configuration</li>
           <li>Community access</li>
         </ul>
-        <a href="https://buy.stripe.com/fZu3cuajv9fMfp5fqagrS0b" class="btn-outline">Get Starter</a>
+        <a href="https://buy.stripe.com/fZu3cuajv9fMfp5fqagrS0b" class="btn-bone" style="width:100%;text-align:center">Get Starter</a>
       </div>
-      <div class="tier featured">
+
+      <div class="tier featured fade-in d2">
         <h3>Builder</h3>
-        <div class="price">$49.99 <span>one-time</span></div>
+        <div class="price">$49.99</div>
+        <div class="price-period">one-time</div>
         <ul>
           <li>Modules 1-6 (Full Build)</li>
           <li>Every bot config & prompt</li>
@@ -143,63 +262,108 @@
           <li>Copy-paste deployment</li>
           <li>Priority support</li>
         </ul>
-        <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-gold">Get Builder</a>
+        <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-blood" style="width:100%;text-align:center">Get Builder</a>
       </div>
-      <div class="tier">
+
+      <div class="tier fade-in d3">
         <h3>Empire</h3>
-        <div class="price">$99.99 <span>one-time</span></div>
+        <div class="price">$99.99</div>
+        <div class="price-period">one-time</div>
         <ul>
-          <li>All 9 modules + appendices</li>
+          <li>All 10 modules + appendices</li>
           <li>Webhook setup & real-time alerts</li>
           <li>Content & funnel automation</li>
           <li>Scaling playbook</li>
           <li>Config review by the builder</li>
         </ul>
-        <a href="https://buy.stripe.com/00w3cuezL3Vs0ubcdYgrS0d" class="btn-outline">Get Empire</a>
+        <a href="https://buy.stripe.com/00w3cuezL3Vs0ubcdYgrS0d" class="btn-bone" style="width:100%;text-align:center">Get Empire</a>
       </div>
+
     </div>
+    <p style="text-align:center;margin-top:2rem;font-size:0.85rem;color:var(--muted);">Want a managed AI assistant instead? <a href="index.html#pricing" style="color:var(--crimson);">See subscription plans &rarr;</a></p>
   </div>
 </section>
 
-<div class="divider">&#9760; &#9760; &#9760;</div>
+<div class="divider">&dagger; &dagger; &dagger;</div>
 
-<section>
-  <div class="inner">
-    <h2>Questions</h2>
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <h2 class="section-title fade-in">Questions</h2>
+    <p class="section-sub fade-in">Straight answers. No corporate speak.</p>
     <div class="faq">
-      <details>
+      <details class="fade-in">
         <summary>Do I need coding experience?</summary>
-        <p>No. The course uses JSON configs and copy-paste prompts. If you can edit a text file, you can build bots.</p>
+        <p>No. The course uses JSON configs and copy-paste prompts. If you can edit a text file, you can build bots. I'm a plumber &mdash; if I can do it, so can you.</p>
       </details>
-      <details>
+      <details class="fade-in">
         <summary>What AI models does this work with?</summary>
         <p>The course covers xAI Grok (paid) and free local models via LM Studio. You choose based on your budget.</p>
       </details>
-      <details>
+      <details class="fade-in">
         <summary>How fast can I start making money?</summary>
-        <p>Module 6 covers Stripe payments. Most people have their first payment link live within a weekend.</p>
+        <p>Module 7 covers Stripe payments. Most people have their first payment link live within a weekend.</p>
       </details>
-      <details>
+      <details class="fade-in">
         <summary>Is this just theory or real configs?</summary>
-        <p>Real configs. The Builder and Empire tiers include every prompt, every JSON config, every template — ready to deploy.</p>
+        <p>Real configs. The Builder and Empire tiers include every prompt, every JSON config, every template &mdash; ready to deploy.</p>
       </details>
-      <details>
+      <details class="fade-in">
         <summary>Can I get a refund?</summary>
-        <p>Digital products are non-refundable due to instant delivery. But if you're stuck, DM @moneymakiingmitch1904_bot for help.</p>
+        <p>Digital products are non-refundable due to instant delivery. But if you're stuck, message us on Telegram for help.</p>
+      </details>
+      <details class="fade-in">
+        <summary>What's the difference between this course and the subscription plans?</summary>
+        <p>The <a href="index.html#pricing">subscription plans</a> give you a done-for-you AI assistant on Telegram. This course teaches you to build the entire system yourself. Own it. Run it. Scale it.</p>
       </details>
     </div>
   </div>
 </section>
 
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- FINAL CTA -->
+<section style="padding:5rem 2rem;text-align:center;background:radial-gradient(ellipse at 50% 50%, rgba(220,20,60,0.05), transparent 70%);">
+  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:var(--bone);letter-spacing:3px;margin-bottom:0.8rem;">AI For <span style="color:var(--crimson);">The Rest</span> of Us.</h2>
+  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:900;color:var(--gold);letter-spacing:3px;margin-bottom:1.5rem;">The Course That Teaches You to Build the Empire.</h2>
+  <p style="color:var(--muted);max-width:550px;margin:0 auto 2rem;font-size:1rem;">If a plumber with zero coding experience can build 9 AI bots in 48 hours, what could <strong style="color:var(--bone);">you</strong> build?</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-blood">Get the Builder Tier &mdash; $49.99</a>
+    <a href="index.html#pricing" class="btn-bone">See Subscription Plans</a>
+  </div>
+  <div class="price-hint" style="margin-top:1.5rem;">One-time purchase. Lifetime access. No recurring fees.</div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="brand">SGKx1904</div>
-  <p>
-    <a href="https://t.me/MoneyMakingMitchell1904">Telegram</a> &bull;
-    <a href="https://x.com/Lyfergang1904">X / Twitter</a> &bull;
+  <div class="footer-brand">SGKx1904</div>
+  <div class="footer-links">
     <a href="index.html">Home</a>
-  </p>
-  <p>&copy; 2026 SGKx1904. All rights reserved.</p>
+    <a href="https://t.me/moneymakingmitch1904_bot" target="_blank">Talk to AI</a>
+    <a href="https://t.me/MoneyMakingMitchell1904" target="_blank">Channel</a>
+    <a href="https://x.com/Lyfergang1904" target="_blank">X / Twitter</a>
+    <a href="index.html#pricing">Subscription Plans</a>
+  </div>
+  <p class="footer-copy">Built by a plumber. Powered by AI. No corporate middleman.</p>
+  <p class="footer-copy" style="margin-top:0.5rem;">&copy; 2026 SGKx1904. All rights reserved.</p>
 </footer>
 
+<script>
+const embers = document.getElementById('embers');
+for (let i = 0; i < 30; i++) {
+  const e = document.createElement('div');
+  e.className = 'ember';
+  e.style.left = Math.random() * 100 + '%';
+  e.style.animationDuration = (8 + Math.random() * 12) + 's';
+  e.style.animationDelay = Math.random() * 10 + 's';
+  e.style.width = (1 + Math.random() * 2) + 'px';
+  e.style.height = e.style.width;
+  embers.appendChild(e);
+}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
