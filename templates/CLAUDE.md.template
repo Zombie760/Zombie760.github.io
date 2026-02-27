@@ -31,14 +31,16 @@ project-root/
 │   ├── AGENT.md                       # Agent runtime environment docs
 │   ├── JOB_SUMMARY.md                 # Prompt for summarizing completed jobs
 │   ├── HEARTBEAT.md                   # Self-monitoring / heartbeat behavior
-│   ├── PI_SKILL_GUIDE.md             # Guide for Pi agent skills
+│   ├── SKILL_BUILDING_GUIDE.md             # Guide for building agent skills
 │   ├── CRONS.json                     # Scheduled job definitions
 │   └── TRIGGERS.json                  # Webhook trigger definitions
 │
 ├── .github/workflows/                 # GitHub Actions
 ├── docker/                            # Docker files (job agent + event handler)
-├── .pi/skills/                        # Symlinks to active skills
-├── pi-skills/                         # All available Pi agent skills
+├── skills/                            # All available agent skills
+│   └── active/                        # Symlinks to active skills (shared by Pi + Claude Code)
+├── .pi/skills → skills/active         # Pi reads skills from here
+├── .claude/skills → skills/active     # Claude Code reads skills from here
 ├── cron/                              # Scripts for command-type cron actions
 ├── triggers/                          # Scripts for command-type trigger actions
 ├── logs/                              # Per-job output (logs/<JOB_ID>/job.md + session .jsonl)
@@ -290,9 +292,9 @@ SQLite via Drizzle ORM at `data/thepopebot.sqlite`. Auto-initialized and auto-mi
 
 ## Customization
 
-User-editable config files in `config/`: `SOUL.md` (personality), `EVENT_HANDLER.md` (LLM system prompt), `AGENT.md` (runtime docs), `JOB_SUMMARY.md` (job summaries), `HEARTBEAT.md` (self-monitoring), `PI_SKILL_GUIDE.md` (skill guide), `CRONS.json` (scheduled jobs), `TRIGGERS.json` (webhook triggers).
+User-editable config files in `config/`: `SOUL.md` (personality), `EVENT_HANDLER.md` (LLM system prompt), `AGENT.md` (runtime docs), `JOB_SUMMARY.md` (job summaries), `HEARTBEAT.md` (self-monitoring), `SKILL_BUILDING_GUIDE.md` (skill guide), `CRONS.json` (scheduled jobs), `TRIGGERS.json` (webhook triggers).
 
-Skills in `pi-skills/` are activated by symlinking into `.pi/skills/`. Scripts for command-type actions go in `cron/` and `triggers/`.
+Skills in `skills/` are activated by symlinking into `skills/active/`. Both `.pi/skills` and `.claude/skills` point to `skills/active/`. Scripts for command-type actions go in `cron/` and `triggers/`.
 
 ### Markdown includes and variables
 
@@ -302,4 +304,4 @@ Config markdown files support includes and built-in variables (processed by the 
 |--------|-------------|
 | `{{ filepath.md }}` | Include another file (relative to project root, recursive with circular detection) |
 | `{{datetime}}` | Current ISO timestamp |
-| `{{skills}}` | Dynamic bullet list of active skill descriptions from `.pi/skills/*/SKILL.md` frontmatter — never hardcode skill names, this is resolved at runtime |
+| `{{skills}}` | Dynamic bullet list of active skill descriptions from `skills/active/*/SKILL.md` frontmatter — never hardcode skill names, this is resolved at runtime |

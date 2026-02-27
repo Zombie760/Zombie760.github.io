@@ -289,7 +289,7 @@ See [docs/RUNNING_DIFFERENT_MODELS.md](docs/RUNNING_DIFFERENT_MODELS.md) for the
 | [Auto-Merge](docs/AUTO_MERGE.md) | Auto-merge controls, ALLOWED_PATHS configuration |
 | [Deployment](docs/DEPLOYMENT.md) | VPS setup, Docker Compose, HTTPS with Let's Encrypt |
 | [Claude Code vs Pi](docs/CLAUDE_CODE_VS_PI.md) | Comparing the two agent backends (subscription vs API credits) |
-| [How to Use Pi](docs/HOW_TO_USE_PI.md) | Guide to the Pi coding agent |
+| [How to Build Skills](docs/HOW_TO_BUILD_SKILLS.md) | Guide to building and activating agent skills |
 | [Pre-Release](docs/PRE_RELEASE.md) | Installing beta/alpha builds |
 | [Security](docs/SECURITY.md) | Security disclaimer, local development risks |
 | [Upgrading](docs/UPGRADE.md) | Automated upgrades, recovering from failed upgrades |
@@ -298,4 +298,4 @@ See [docs/RUNNING_DIFFERENT_MODELS.md](docs/RUNNING_DIFFERENT_MODELS.md) for the
 
 | Document | Description |
 |----------|-------------|
-| [NPM](docs/NPM.md) | Updating pi-skills, versioning, and publishing releases |
+| [NPM](docs/NPM.md) | Updating skills, versioning, and publishing releases |

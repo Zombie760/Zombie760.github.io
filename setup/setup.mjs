@@ -601,15 +601,15 @@ async function main() {
     clack.log.success(`Brave Search key added (${maskSecret(braveKey)})`);
 
     // Enable brave-search skill symlink
-    const braveSymlink = path.join(process.cwd(), '.pi', 'skills', 'brave-search');
+    const braveSymlink = path.join(process.cwd(), 'skills', 'active', 'brave-search');
     if (!fs.existsSync(braveSymlink)) {
       fs.mkdirSync(path.dirname(braveSymlink), { recursive: true });
-      createDirLink('../../pi-skills/brave-search', braveSymlink);
+      createDirLink('../brave-search', braveSymlink);
       clack.log.success('Enabled brave-search skill');
 
       // Commit and push the symlink so the Docker agent can use it
       try {
-        execSync('git add .pi/skills/brave-search', { stdio: 'ignore' });
+        execSync('git add skills/active/brave-search', { stdio: 'ignore' });
         execSync('git commit -m "enable brave-search skill [no ci]"', { stdio: 'ignore' });
         const remote = execSync('git remote get-url origin', { encoding: 'utf-8' }).trim();
         const authedUrl = remote.replace('https://github.com/', `https://x-access-token:${pat}@github.com/`);

@@ -41,6 +41,14 @@ fi
 
 cd /job
 
+# Install npm deps for active skills (native deps need correct Linux arch)
+for skill_dir in /job/skills/active/*/; do
+    if [ -f "${skill_dir}package.json" ]; then
+        echo "Installing skill deps: $(basename "$skill_dir")"
+        (cd "$skill_dir" && npm install --omit=dev --no-package-lock)
+    fi
+done
+
 # Setup logs
 LOG_DIR="/job/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
