@@ -3,226 +3,636 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free AI Bot Blueprint — Build Your First Bot in 5 Minutes | SGK1904</title>
-  <meta name="description" content="Free guide: build an AI bot that runs 24/7 and delivers market updates to your phone. No coding required. Copy-paste config included. Get it free via Telegram." />
-  <meta name="keywords" content="free AI bot, Telegram bot tutorial, AI automation free, bot blueprint, make money AI bots, free bot template, OpenClaw guide" />
-  <meta property="og:title" content="Free AI Bot Blueprint — SGK1904" />
+  <title>Free AI Bot Blueprint — Build Your First Bot in 5 Minutes | SGKx1904</title>
+  <meta name="description" content="Free guide: build an AI bot that runs 24/7 and delivers updates to your phone. No coding required. Copy-paste config included. Get it free via Telegram." />
+  <meta name="keywords" content="free AI bot, Telegram bot tutorial, AI automation free, bot blueprint, personalized AI assistant, free bot template" />
+  <meta property="og:title" content="Free AI Bot Blueprint — SGKx1904" />
   <meta property="og:description" content="Build your first AI bot in 5 minutes. Free guide with copy-paste config." />
   <meta property="og:url" content="https://lyfer1904.github.io/free-guide" />
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@Lyfergang1904" />
   <link rel="canonical" href="https://lyfer1904.github.io/free-guide" />
-  <link rel="icon" type="image/jpeg" href="icon-dark-final.jpg" />
+  <link rel="icon" type="image/png" href="img/icon-matrix.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@300;400;500;600;700;800&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --black: #0a0a0a; --black2: #111111; --black3: #1a1a1a; --card: #131313;
-      --border: #2a2a2a; --gold: #d4af37; --gold-dim: #b8962e; --gold-bright: #f0d060;
-      --red: #8b0000; --bone: #f0e6d3; --muted: #7a7a6e; --radius: 8px;
+      --black: #080808;
+      --black2: #0c0c0c;
+      --black3: #111111;
+      --card: #0e0e0e;
+      --card-hover: #141414;
+      --border: #1a1111;
+      --border-bright: rgba(220,20,60,0.2);
+      --crimson: #dc143c;
+      --crimson-dim: #a01030;
+      --crimson-bright: #ff1a4a;
+      --crimson-glow: rgba(220,20,60,0.15);
+      --gold: #d4af37;
+      --gold-dim: #b8962e;
+      --gold-glow: rgba(212,175,55,0.15);
+      --bone: #e8dcc8;
+      --muted: #8a7a6a;
+      --ghost: #3a2a2a;
+      --radius: 3px;
     }
+
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; }
-    ::-webkit-scrollbar { width: 8px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--bone);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--black); }
-    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: var(--crimson-dim); border-radius: 3px; }
+
     a { color: var(--gold); }
-    .topbar { padding: 0.8rem 2rem; background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-    .topbar a { text-decoration: none; }
-    .brand { font-family: 'Pirata One', cursive; font-size: 1.6rem; color: var(--gold); letter-spacing: 2px; }
-    .back { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
-    .back:hover { color: var(--gold); }
 
+    /* EMBER PARTICLES */
+    .embers {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 0; overflow: hidden;
+    }
+    .ember {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: var(--crimson);
+      border-radius: 50%;
+      opacity: 0;
+      animation: emberFloat linear infinite;
+      box-shadow: 0 0 6px var(--crimson), 0 0 12px rgba(220,20,60,0.3);
+    }
+    @keyframes emberFloat {
+      0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.3; }
+      100% { transform: translateY(-20vh) translateX(30px); opacity: 0; }
+    }
+
+    .scanlines::after {
+      content: '';
+      position: fixed; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px);
+      pointer-events: none; z-index: 9999;
+    }
+
+    /* DIVIDER */
+    .divider {
+      text-align: center;
+      padding: 1.5rem 0;
+      color: var(--crimson-dim);
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.8rem;
+      opacity: 0.4;
+    }
+
+    /* NAV */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.7rem 2rem;
+      background: rgba(8,8,8,0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 4px;
+      text-shadow: 0 0 20px var(--gold-glow);
+    }
+    .back {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+    }
+    .back:hover { color: var(--crimson); }
+
+    /* BUTTONS */
+    .btn-blood {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      background: var(--crimson);
+      color: #fff;
+      font-family: 'Cinzel', serif;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-blood::before {
+      content: '';
+      position: absolute; top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.5s;
+    }
+    .btn-blood:hover::before { left: 100%; }
+    .btn-blood:hover {
+      background: var(--crimson-bright);
+      box-shadow: 0 0 30px var(--crimson-glow), 0 0 60px rgba(220,20,60,0.1);
+      transform: translateY(-2px);
+    }
+    .btn-bone {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      border: 1px solid var(--gold-dim);
+      transition: all 0.3s;
+    }
+    .btn-bone:hover {
+      background: rgba(212,175,55,0.08);
+      border-color: var(--gold);
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+
+    /* HERO */
     .hero-lp {
-      padding: 6rem 2rem 4rem; text-align: center;
-      background: radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.08) 0%, transparent 60%);
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 30%, rgba(220,20,60,0.04), transparent 70%);
+      position: relative;
+      z-index: 1;
     }
-    .hero-lp h1 { font-family: 'Pirata One', cursive; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--gold); margin-bottom: 1rem; text-shadow: 0 0 40px rgba(212,175,55,0.3); }
-    .hero-lp .sub { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--bone); opacity: 0.8; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; }
-    .hero-lp p { max-width: 600px; margin: 0 auto 2rem; color: var(--muted); font-size: 1.05rem; }
-    .btn-gold { display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--gold), var(--gold-dim)); color: var(--black); font-weight: 800; text-decoration: none; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; transition: all 0.3s; }
-    .btn-gold:hover { background: linear-gradient(135deg, var(--gold-bright), var(--gold)); box-shadow: 0 0 20px rgba(212,175,55,0.4); transform: translateY(-2px); }
-    .btn-outline { display: inline-block; padding: 0.85rem 2rem; background: transparent; color: var(--gold); font-weight: 700; text-decoration: none; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; border: 1px solid var(--gold-dim); transition: all 0.3s; }
-    .btn-outline:hover { background: rgba(212,175,55,0.1); border-color: var(--gold); }
+    .free-badge {
+      display: inline-block;
+      background: var(--crimson);
+      color: #fff;
+      font-family: 'Cinzel', serif;
+      font-weight: 800;
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 0.3rem 1.2rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-lp h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 900;
+      color: var(--bone);
+      letter-spacing: 3px;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+    }
+    .hero-lp h1 span { color: var(--crimson); }
+    .hero-lp .tagline {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      color: var(--gold);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+    .hero-lp p {
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    section { padding: 4rem 2rem; }
+    /* SECTIONS */
+    section { padding: 3rem 2rem; position: relative; z-index: 1; }
     .inner { max-width: 800px; margin: 0 auto; }
-    h2 { font-family: 'Pirata One', cursive; font-size: 2.2rem; color: var(--gold); text-align: center; margin-bottom: 2rem; }
-    .divider { text-align: center; padding: 1.5rem 0; color: var(--gold); font-size: 1.5rem; letter-spacing: 0.5rem; opacity: 0.6; }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      color: var(--bone);
+      letter-spacing: 3px;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
 
-    .value-list { list-style: none; max-width: 600px; margin: 0 auto; }
+    /* VALUE LIST */
+    .value-list { list-style: none; max-width: 620px; margin: 0 auto; }
     .value-list li {
-      padding: 1rem 1.5rem; margin-bottom: 0.75rem;
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      font-size: 1rem; color: var(--bone);
-      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.1rem 1.5rem;
+      margin-bottom: 0.6rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: all 0.3s;
     }
-    .value-list li .check { color: var(--gold); font-weight: 700; font-size: 1.3rem; flex-shrink: 0; }
-    .value-list li span { color: var(--muted); font-size: 0.85rem; display: block; margin-top: 0.2rem; }
+    .value-list li:hover {
+      border-color: var(--crimson-dim);
+      box-shadow: 0 0 20px var(--crimson-glow);
+    }
+    .value-list li .icon {
+      color: var(--crimson);
+      font-weight: 700;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      font-family: 'Cinzel', serif;
+    }
+    .value-list li strong { display: block; font-size: 0.95rem; margin-bottom: 0.15rem; }
+    .value-list li .detail { color: var(--muted); font-size: 0.82rem; }
 
-    .how { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; text-align: center; }
-    .how-step .num { font-family: 'Pirata One', cursive; font-size: 3rem; color: var(--gold); opacity: 0.5; }
-    .how-step strong { display: block; margin: 0.5rem 0 0.3rem; font-size: 1.1rem; }
-    .how-step p { color: var(--muted); font-size: 0.9rem; }
+    /* HOW STEPS */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius);
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .step:hover {
+      border-color: var(--crimson-dim);
+      box-shadow: 0 0 30px var(--crimson-glow);
+    }
+    .step-num {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--crimson);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+    .step h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    .step p { color: var(--muted); font-size: 0.85rem; }
 
-    .math-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
-    .math-table th { text-align: left; padding: 0.8rem 1rem; color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--gold-dim); }
-    .math-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); color: var(--muted); font-size: 0.95rem; }
-    .math-table tr:last-child td { color: var(--bone); font-weight: 700; border-bottom: 2px solid var(--gold-dim); }
+    /* MATH TABLE */
+    .math-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .math-table th {
+      text-align: left;
+      padding: 0.8rem 1rem;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 1px solid var(--crimson-dim);
+    }
+    .math-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .math-table tr:last-child td {
+      color: var(--bone);
+      font-weight: 700;
+      border-bottom: 1px solid var(--crimson-dim);
+    }
 
+    /* TERMINAL */
+    .terminal {
+      background: var(--black2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0;
+      margin: 2rem 0;
+      overflow: hidden;
+    }
+    .terminal-bar {
+      background: var(--black3);
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .terminal-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--crimson-dim);
+    }
+    .terminal-body {
+      padding: 1.2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+    .terminal-body .cmd { color: var(--crimson); }
+    .terminal-body .out { color: var(--gold); }
+    .terminal-body .ok { color: #3a8; }
+
+    /* CTA BOX */
     .cta-box {
-      background: var(--card); border: 2px solid var(--gold); border-radius: var(--radius);
-      padding: 3rem; text-align: center; margin: 2rem 0;
-      box-shadow: 0 0 40px rgba(212,175,55,0.1);
+      background: var(--card);
+      border: 1px solid var(--crimson);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      box-shadow: 0 0 60px var(--crimson-glow);
+      position: relative;
     }
-    .cta-box h3 { font-family: 'Pirata One', cursive; font-size: 2rem; color: var(--gold); margin-bottom: 1rem; }
-    .cta-box p { color: var(--muted); max-width: 500px; margin: 0 auto 1.5rem; }
-    .cta-box .free-tag { display: inline-block; background: var(--gold); color: var(--black); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; padding: 0.3rem 1rem; border-radius: 2px; margin-bottom: 1rem; }
+    .cta-box h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--bone);
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+    }
+    .cta-box h3 span { color: var(--crimson); }
+    .cta-box p { color: var(--muted); max-width: 500px; margin: 0 auto 1.5rem; font-size: 0.95rem; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); }
-    footer .brand { font-size: 1.2rem; }
-    footer p { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    /* UPSELL */
+    .upsell {
+      background: linear-gradient(180deg, var(--black2) 0%, var(--black) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .upsell h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+    }
+    .upsell p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .upsell-grid { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    footer .brand { font-size: 1rem; display: block; margin-bottom: 0.5rem; }
+    footer p { color: var(--muted); font-size: 0.8rem; }
     footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { color: var(--crimson); }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      .topbar { padding: 0.6rem 1rem; }
+      .hero-lp { padding: 4rem 1.5rem 3rem; }
+      .steps { grid-template-columns: 1fr; }
+      .hero-btns, .cta-btns { flex-direction: column; align-items: center; }
+      .btn-blood, .btn-bone { width: 100%; text-align: center; }
+    }
   </style>
 </head>
-<body>
+<body class="scanlines">
+
+<div class="embers" id="embers"></div>
 
 <div class="topbar">
-  <a href="index.html" class="brand">SGK1904</a>
-  <a href="index.html" class="back">&larr; Back to Home</a>
+  <a href="index.html" class="brand">SGKx1904</a>
+  <a href="index.html" class="back">&larr; Home</a>
 </div>
 
 <div class="hero-lp">
-  <h1>Free AI Bot Blueprint</h1>
-  <div class="sub">5 Minutes. Zero Code. One Working Bot.</div>
-  <p>Get a copy-paste bot config that runs 24/7 and delivers AI-powered market briefings to your phone every morning. Plus the 3-bot starter stack blueprint.</p>
-  <a href="https://t.me/Deth1_bot?start=setup" class="btn-gold">Get It Free via Telegram</a>
+  <div class="free-badge">100% Free</div>
+  <h1>Summon Your <span>First</span> AI</h1>
+  <div class="tagline">5 Minutes. Zero Code. One Working Bot.</div>
+  <p>Get a copy-paste bot config that runs 24/7 and delivers AI-powered briefings straight to your Telegram. Plus the 3-bot starter blueprint to build on.</p>
+  <div class="hero-btns">
+    <a href="https://t.me/moneymakiingmitch1904_bot?start=setup" class="btn-blood">Get It Free via Telegram</a>
+    <a href="#what-you-get" class="btn-bone">See What's Inside</a>
+  </div>
 </div>
 
-<div class="divider">&#9760; &#9760; &#9760;</div>
+<div class="divider">+ + + + +</div>
 
-<section>
+<section id="what-you-get">
   <div class="inner">
-    <h2>What You Get</h2>
+    <h2 class="section-title">What You Get</h2>
+    <p class="section-sub">Everything you need to deploy your first AI assistant in minutes.</p>
     <ul class="value-list">
       <li>
-        <div class="check">&#10003;</div>
+        <div class="icon">I</div>
         <div>
           <strong>Working bot config (copy-paste ready)</strong>
-          <span>A real JSON config file you can deploy in minutes. Not theory — an actual running bot.</span>
+          <div class="detail">A real JSON config file you can deploy immediately. Not theory — an actual running bot.</div>
         </div>
       </li>
       <li>
-        <div class="check">&#10003;</div>
+        <div class="icon">II</div>
         <div>
           <strong>The 3-bot starter stack</strong>
-          <span>Morning briefing + content generator + revenue tracker. The minimum system that runs itself.</span>
+          <div class="detail">Morning briefing + content generator + revenue tracker. The minimum system that runs itself.</div>
         </div>
       </li>
       <li>
-        <div class="check">&#10003;</div>
+        <div class="icon">III</div>
         <div>
           <strong>The setup walkthrough</strong>
-          <span>Telegram bot, AI provider, OpenClaw gateway — step by step, nothing skipped.</span>
+          <div class="detail">Telegram bot, AI provider, gateway — step by step, nothing skipped.</div>
         </div>
       </li>
       <li>
-        <div class="check">&#10003;</div>
+        <div class="icon">IV</div>
         <div>
           <strong>The ROI math</strong>
-          <span>How 3 bots costing $0.007/day can save you 243 hours/year ($12,150 at $50/hr).</span>
+          <div class="detail">See how 3 bots costing pennies a day can save you 243 hours a year.</div>
         </div>
       </li>
       <li>
-        <div class="check">&#10003;</div>
+        <div class="icon">V</div>
         <div>
-          <strong>Links to go deeper</strong>
-          <span>Ready for more? The full 7-bot system, templates, and course are one click away.</span>
+          <strong>Upgrade path</strong>
+          <div class="detail">Ready for more? Templates, the full course, and done-for-you builds are one click away.</div>
         </div>
       </li>
     </ul>
   </div>
 </section>
 
-<div class="divider">&#9760; &#9760; &#9760;</div>
+<div class="divider">+ + + + +</div>
 
 <section>
   <div class="inner">
-    <h2>How It Works</h2>
-    <div class="how">
-      <div class="how-step">
-        <div class="num">I</div>
-        <strong>DM the Bot</strong>
-        <p>Message @Deth1_bot on Telegram and say "SETUP"</p>
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">I</div>
+        <h3>Message</h3>
+        <p>DM @moneymakiingmitch1904_bot on Telegram and say "SETUP"</p>
       </div>
-      <div class="how-step">
-        <div class="num">II</div>
-        <strong>Get the Guide</strong>
+      <div class="step">
+        <div class="step-num">II</div>
+        <h3>Receive</h3>
         <p>Full blueprint delivered instantly to your chat</p>
       </div>
-      <div class="how-step">
-        <div class="num">III</div>
-        <strong>Deploy</strong>
-        <p>Copy the config, paste into OpenClaw, bot goes live</p>
+      <div class="step">
+        <div class="step-num">III</div>
+        <h3>Deploy</h3>
+        <p>Copy the config, paste into your gateway, bot goes live</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &#9760; &#9760;</div>
+<div class="divider">+ + + + +</div>
 
 <section>
   <div class="inner">
-    <h2>The Math</h2>
+    <h2 class="section-title">The Math</h2>
+    <p class="section-sub">What you're doing manually vs. what a bot does for pennies.</p>
     <table class="math-table">
       <thead>
         <tr><th>Manual Task</th><th>Time / Day</th><th>Bot Cost / Day</th></tr>
       </thead>
       <tbody>
-        <tr><td>Check crypto prices & news</td><td>15 min</td><td>$0.002</td></tr>
+        <tr><td>Research market updates</td><td>15 min</td><td>$0.002</td></tr>
         <tr><td>Write a social media post</td><td>20 min</td><td>$0.003</td></tr>
-        <tr><td>Check Stripe dashboard</td><td>5 min</td><td>$0.002</td></tr>
+        <tr><td>Check revenue dashboard</td><td>5 min</td><td>$0.002</td></tr>
         <tr><td><strong>Total</strong></td><td><strong>40 min</strong></td><td><strong>$0.007</strong></td></tr>
       </tbody>
     </table>
-    <p style="text-align:center;color:var(--muted);font-size:0.95rem;">40 minutes saved daily = <strong style="color:var(--bone);">243 hours/year</strong>. At $50/hr, that's <strong style="color:var(--gold);">$12,150</strong> in reclaimed time.</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.9rem;">40 minutes saved daily = <strong style="color:var(--bone);">243 hours/year</strong>. At $50/hr, that's <strong style="color:var(--crimson);">$12,150</strong> in reclaimed time.</p>
   </div>
 </section>
 
-<div class="divider">&#9760; &#9760; &#9760;</div>
+<div class="divider">+ + + + +</div>
+
+<section>
+  <div class="inner">
+    <h2 class="section-title">Preview</h2>
+    <p class="section-sub">This is what your bot delivers every morning.</p>
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="terminal-dot"></span>
+        telegram — @YourBot
+      </div>
+      <div class="terminal-body">
+        <span class="cmd">[06:00 AM]</span> Good morning. Here's your daily briefing:<br><br>
+        <span class="out">Market Summary</span><br>
+        BTC: $67,482 (+2.3%) | ETH: $3,891 (+1.1%)<br>
+        Top mover: SOL +8.7% on DEX volume spike<br><br>
+        <span class="out">Revenue</span><br>
+        Yesterday: $847.20 (12 charges) | MRR: $4,290<br>
+        Failed payments: 0 | Refunds: 0<br><br>
+        <span class="out">Content Ready</span><br>
+        Twitter thread (5 tweets) — <span class="ok">ready to post</span><br>
+        Reddit value post — <span class="ok">ready to post</span><br><br>
+        <span class="cmd">// delivered automatically. every day. for $0.007.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">+ + + + +</div>
 
 <section>
   <div class="inner">
     <div class="cta-box">
-      <div class="free-tag">100% Free</div>
-      <h3>Get the Blueprint Now</h3>
-      <p>No email required. No signup form. Just DM the bot, say "SETUP", and get the full guide delivered instantly to your Telegram.</p>
-      <a href="https://t.me/Deth1_bot?start=setup" class="btn-gold" style="margin-right:1rem;">DM @Deth1_bot</a>
-      <a href="https://t.me/MoneyMakingMitchell1904" class="btn-outline">Join the Channel</a>
+      <div class="free-badge" style="margin-bottom:1.2rem;">Free Blueprint</div>
+      <h3>Ready to <span>Summon</span>?</h3>
+      <p>No email required. No signup form. DM the bot, say "SETUP", and get the full guide delivered to your Telegram instantly.</p>
+      <div class="cta-btns">
+        <a href="https://t.me/moneymakiingmitch1904_bot?start=setup" class="btn-blood">DM @moneymakiingmitch1904_bot Now</a>
+        <a href="https://t.me/MoneyMakingMitchell1904" class="btn-bone">Join the Channel</a>
+      </div>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="inner" style="text-align:center;">
-    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1rem;">Ready for the full system?</p>
-    <a href="ai-empire-course.html" class="btn-outline" style="margin-right:0.5rem;">AI Empire Course</a>
-    <a href="bot-templates.html" class="btn-outline">Bot Templates</a>
+  <div class="inner">
+    <div class="upsell">
+      <h3>Want the Full System?</h3>
+      <p>The free blueprint gets you started. These get you dangerous.</p>
+      <div class="upsell-grid">
+        <a href="https://buy.stripe.com/aFadR8ezL77EccTfqagrS06" class="btn-bone">Starter — $29/mo</a>
+        <a href="https://buy.stripe.com/6oU7sKdvHfEa1yf7XIgrS0p" class="btn-bone">5-Bot Stack — $79.99</a>
+        <a href="index.html#pricing" class="btn-bone">See All Plans</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="brand">SGK1904</div>
+  <a href="index.html" class="brand">SGKx1904</a>
   <p>
     <a href="https://t.me/MoneyMakingMitchell1904">Telegram</a> &bull;
     <a href="https://x.com/Lyfergang1904">X / Twitter</a> &bull;
     <a href="index.html">Home</a>
   </p>
-  <p>&copy; 2026 SGK1904. All rights reserved.</p>
+  <p>&copy; 2026 SGKx1904. All rights reserved.</p>
 </footer>
+
+<script>
+(function(){
+  var c = document.getElementById('embers');
+  for (var i = 0; i < 25; i++) {
+    var e = document.createElement('div');
+    e.className = 'ember';
+    e.style.left = Math.random() * 100 + '%';
+    e.style.animationDuration = (6 + Math.random() * 10) + 's';
+    e.style.animationDelay = Math.random() * 8 + 's';
+    e.style.width = e.style.height = (1 + Math.random() * 2) + 'px';
+    c.appendChild(e);
+  }
+})();
+</script>
 
 </body>
 </html>
