@@ -3,29 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SGK1904 — AI Automation Empire</title>
-  <meta name="description" content="SGK1904 builds automated AI empires. Bots that work while you sleep. Courses, templates, prompts, and done-for-you services." />
-  <link rel="icon" type="image/jpeg" href="icon-dark-final.jpg" />
+  <title>SGKx1904 — Death to Manual Labor</title>
+  <meta name="description" content="SGKx1904 builds fully automated AI empires. Bots that work while you sleep. Santa Muerte meets The Matrix. Courses, templates, prompts, and done-for-you services." />
+  <meta name="keywords" content="AI automation, Telegram bots, AI business, bot templates, prompt engineering, SGKx1904" />
+  <meta property="og:title" content="SGKx1904 — Death to Manual Labor" />
+  <meta property="og:description" content="AI bots that run your business 24/7. Built by one. Now available to you." />
+  <meta property="og:image" content="img/hero-matrix.png" />
+  <link rel="icon" type="image/png" href="img/icon-matrix.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@300;400;500;600;700;800&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Share+Tech+Mono&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --black: #0a0a0a;
-      --black2: #111111;
-      --black3: #1a1a1a;
-      --card: #131313;
-      --border: #2a2a2a;
-      --gold: #d4af37;
-      --gold-dim: #b8962e;
-      --gold-bright: #f0d060;
-      --red: #8b0000;
-      --red-bright: #cc1111;
-      --bone: #f0e6d3;
-      --muted: #7a7a6e;
-      --radius: 8px;
+      --black2: #080808;
+      --black3: #111111;
+      --card: #0d0d0d;
+      --card-hover: #111;
+      --border: #1a3a1a;
+      --border-bright: #00ff4133;
+      --green: #00ff41;
+      --green-dim: #00cc33;
+      --green-bright: #39ff78;
+      --green-glow: rgba(0,255,65,0.15);
+      --green-glow2: rgba(0,255,65,0.08);
+      --red: #ff0040;
+      --red-dim: #cc0033;
+      --bone: #e0e0e0;
+      --muted: #7a8a7a;
+      --ghost: #3a4a3a;
+      --radius: 4px;
     }
 
     html { scroll-behavior: smooth; }
@@ -38,19 +47,69 @@
       overflow-x: hidden;
     }
 
-    /* SCROLLBAR */
-    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--black); }
-    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 3px; }
 
-    /* ORNAMENTAL DIVIDER */
+    /* MATRIX RAIN */
+    .matrix-rain {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.06;
+    }
+    .matrix-col {
+      position: absolute;
+      top: -100%;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 14px;
+      color: var(--green);
+      writing-mode: vertical-rl;
+      animation: matrixFall linear infinite;
+      text-shadow: 0 0 8px var(--green);
+    }
+
+    @keyframes matrixFall {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(calc(100vh + 100%)); }
+    }
+
+    /* GLITCH TEXT */
+    @keyframes glitch {
+      0%, 100% { text-shadow: 2px 0 var(--green), -2px 0 var(--red); }
+      25% { text-shadow: -2px 0 var(--green), 2px 0 var(--red); }
+      50% { text-shadow: 2px 2px var(--green), -2px -2px var(--red); }
+      75% { text-shadow: -2px 2px var(--green), 2px -2px var(--red); }
+    }
+
+    /* SCANLINE OVERLAY */
+    .scanlines::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.03) 2px,
+        rgba(0,0,0,0.03) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* DIVIDER */
     .divider {
       text-align: center;
-      padding: 2rem 0;
-      color: var(--gold);
-      font-size: 1.5rem;
+      padding: 1.5rem 0;
+      color: var(--green);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
       letter-spacing: 0.5rem;
-      opacity: 0.6;
+      opacity: 0.4;
       user-select: none;
     }
 
@@ -58,38 +117,98 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0.8rem 2rem;
-      background: rgba(10,10,10,0.95);
-      backdrop-filter: blur(12px);
+      padding: 0.7rem 2rem;
+      background: rgba(5,5,5,0.92);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
     .nav-brand {
-      font-family: 'Pirata One', cursive;
-      font-size: 1.6rem;
-      color: var(--gold);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--green);
       text-decoration: none;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px var(--green-glow);
     }
     .nav-links { display: flex; gap: 1.5rem; align-items: center; }
     .nav-links a {
       color: var(--muted);
       text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      transition: color 0.3s;
+      transition: all 0.3s;
     }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover { color: var(--green); text-shadow: 0 0 8px var(--green-glow); }
     .nav-cta {
-      background: var(--gold) !important;
+      background: var(--green) !important;
       color: var(--black) !important;
-      padding: 0.5rem 1.2rem;
-      border-radius: 4px;
+      padding: 0.45rem 1.1rem;
+      border-radius: 2px;
       font-weight: 700 !important;
+      font-family: 'Orbitron', sans-serif !important;
+      font-size: 0.7rem !important;
+      letter-spacing: 2px !important;
     }
-    .nav-cta:hover { background: var(--gold-bright) !important; }
-    .nav-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+    .nav-cta:hover { background: var(--green-bright) !important; box-shadow: 0 0 20px var(--green-glow); }
+    .nav-toggle { display: none; background: none; border: none; color: var(--green); font-size: 1.5rem; cursor: pointer; }
+
+    /* BUTTONS */
+    .btn-matrix {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      background: var(--green);
+      color: var(--black);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-matrix::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    .btn-matrix:hover::before { left: 100%; }
+    .btn-matrix:hover {
+      background: var(--green-bright);
+      box-shadow: 0 0 30px var(--green-glow), 0 0 60px rgba(0,255,65,0.1);
+      transform: translateY(-2px);
+    }
+    .btn-ghost {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--green);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      border: 1px solid var(--green-dim);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .btn-ghost:hover {
+      background: var(--green-glow2);
+      border-color: var(--green);
+      box-shadow: 0 0 20px var(--green-glow);
+    }
 
     /* HERO */
     .hero {
@@ -101,19 +220,25 @@
       overflow: hidden;
       padding: 6rem 2rem 4rem;
     }
-    .hero::before {
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('img/hero-matrix.png') center/cover no-repeat;
+      opacity: 0.35;
+      filter: brightness(0.8);
+    }
+    .hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 80%, rgba(139,0,0,0.06) 0%, transparent 50%);
-      pointer-events: none;
+        linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.8) 100%),
+        radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(0,0,0,0.6) 100%);
     }
     .hero-inner {
       display: flex;
       align-items: center;
-      gap: 4rem;
+      gap: 3rem;
       max-width: 1200px;
       width: 100%;
       position: relative;
@@ -121,136 +246,189 @@
     }
     .hero-text { flex: 1; }
     .hero-text h1 {
-      font-family: 'Pirata One', cursive;
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      color: var(--gold);
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      color: var(--green);
       line-height: 1.1;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 40px rgba(212,175,55,0.3);
+      margin-bottom: 0.3rem;
+      text-shadow: 0 0 40px var(--green-glow), 0 0 80px rgba(0,255,65,0.08);
+      letter-spacing: 4px;
+      animation: glitch 4s ease-in-out infinite;
     }
     .hero-text .tagline {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1rem, 2vw, 1.3rem);
-      color: var(--bone);
-      opacity: 0.8;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      color: var(--green-dim);
       margin-bottom: 1.5rem;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       text-transform: uppercase;
+      opacity: 0.9;
     }
+    .hero-text .tagline::before { content: '> '; opacity: 0.5; }
     .hero-text p {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--muted);
-      max-width: 500px;
+      max-width: 520px;
       margin-bottom: 2rem;
-      line-height: 1.7;
+      line-height: 1.8;
     }
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-gold {
-      display: inline-block;
-      padding: 0.85rem 2rem;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
-      color: var(--black);
-      font-weight: 800;
+    .hero-icon {
+      flex: 0 0 280px;
+      max-width: 280px;
+    }
+    .hero-icon img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 30px var(--green-glow));
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* LIVE DEMO BANNER */
+    .demo-banner {
+      background: linear-gradient(90deg, var(--black2), rgba(0,255,65,0.05), var(--black2));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .demo-banner p {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .demo-banner a {
+      color: var(--green);
       text-decoration: none;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.9rem;
-      transition: all 0.3s;
-      border: none; cursor: pointer;
-    }
-    .btn-gold:hover {
-      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
-      box-shadow: 0 0 20px rgba(212,175,55,0.4);
-      transform: translateY(-1px);
-    }
-    .btn-outline {
-      display: inline-block;
-      padding: 0.85rem 2rem;
-      background: transparent;
-      color: var(--gold);
       font-weight: 700;
-      text-decoration: none;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.9rem;
-      border: 1px solid var(--gold-dim);
+      border-bottom: 1px solid var(--green-dim);
       transition: all 0.3s;
-      cursor: pointer;
     }
-    .btn-outline:hover {
-      background: rgba(212,175,55,0.1);
-      border-color: var(--gold);
+    .demo-banner a:hover { text-shadow: 0 0 8px var(--green-glow); }
+    .demo-banner .pulse {
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-right: 8px;
+      animation: pulse 2s ease-in-out infinite;
+      vertical-align: middle;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--green-glow); }
+      50% { opacity: 0.5; box-shadow: 0 0 0 8px transparent; }
     }
 
     /* SECTIONS */
-    section { padding: 5rem 2rem; }
-    .section-inner { max-width: 1200px; margin: 0 auto; }
+    section { padding: 5rem 2rem; position: relative; z-index: 1; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
     .section-title {
-      font-family: 'Pirata One', cursive;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--gold);
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--green);
       text-align: center;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px var(--green-glow);
     }
     .section-sub {
       text-align: center;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85rem;
       margin-bottom: 3rem;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+    }
+    .section-sub::before { content: '// '; opacity: 0.3; }
+
+    /* STATS BAR */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+    .stat {
+      text-align: center;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      min-width: 140px;
+      transition: all 0.3s;
+    }
+    .stat:hover {
+      border-color: var(--green-dim);
+      box-shadow: 0 0 20px var(--green-glow2);
+    }
+    .stat-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--green);
+      display: block;
+      text-shadow: 0 0 10px var(--green-glow);
+    }
+    .stat-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-top: 0.3rem;
     }
 
     /* ABOUT */
     .about { background: var(--black2); }
     .about-grid {
       display: grid;
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 3rem;
       align-items: center;
     }
+    .about-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .about-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: brightness(0.9);
+      transition: filter 0.3s;
+    }
+    .about-img:hover img { filter: brightness(1); }
     .about-content h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.4rem;
-      color: var(--gold);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: var(--green);
       margin-bottom: 1rem;
-      text-transform: uppercase;
       letter-spacing: 2px;
+      text-transform: uppercase;
     }
     .about-content p {
       color: var(--muted);
       margin-bottom: 1rem;
       line-height: 1.8;
-    }
-    .about-stats {
-      display: flex;
-      gap: 2rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-    .stat {
-      text-align: center;
-    }
-    .stat-num {
-      font-family: 'Pirata One', cursive;
-      font-size: 2.2rem;
-      color: var(--gold);
-      display: block;
-    }
-    .stat-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     /* PRODUCT CARDS */
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 1.5rem;
     }
     .card {
@@ -258,7 +436,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 2rem;
-      transition: all 0.3s;
+      transition: all 0.4s;
       position: relative;
       overflow: hidden;
     }
@@ -267,50 +445,67 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity 0.4s;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(ellipse at top, var(--green-glow2), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
     }
     .card:hover {
-      border-color: var(--gold-dim);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      border-color: var(--green-dim);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 30px var(--green-glow2);
     }
-    .card:hover::before { opacity: 1; }
+    .card:hover::before, .card:hover::after { opacity: 1; }
     .card-badge {
       display: inline-block;
-      background: var(--red);
-      color: var(--bone);
-      font-size: 0.65rem;
+      font-family: 'Orbitron', sans-serif;
+      background: var(--border);
+      color: var(--green);
+      font-size: 0.6rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 0.25rem 0.6rem;
-      border-radius: 3px;
+      letter-spacing: 2px;
+      padding: 0.25rem 0.7rem;
+      border-radius: 2px;
       margin-bottom: 1rem;
+      border: 1px solid var(--border);
     }
-    .card-badge.gold { background: var(--gold-dim); color: var(--black); }
-    .card-badge.popular { background: var(--red-bright); }
+    .card-badge.hot { background: var(--red-dim); color: #fff; border-color: var(--red-dim); }
+    .card-badge.best { background: var(--green-dim); color: var(--black); border-color: var(--green); }
     .card h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.15rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
       color: var(--bone);
       margin-bottom: 0.5rem;
+      letter-spacing: 1px;
     }
     .card .price {
-      font-family: 'Pirata One', cursive;
+      font-family: 'Orbitron', sans-serif;
       font-size: 2rem;
-      color: var(--gold);
+      font-weight: 900;
+      color: var(--green);
       margin-bottom: 0.75rem;
+      text-shadow: 0 0 10px var(--green-glow);
     }
     .card .price small {
       font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
       color: var(--muted);
+      font-weight: 400;
     }
     .card p {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-bottom: 1.5rem;
       line-height: 1.6;
     }
@@ -319,147 +514,109 @@
       margin-bottom: 1.5rem;
     }
     .card ul li {
-      padding: 0.3rem 0;
+      padding: 0.35rem 0;
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+      padding-left: 1.5rem;
       position: relative;
-      padding-left: 1.3rem;
     }
     .card ul li::before {
-      content: '\2620';
+      content: '>';
       position: absolute;
       left: 0;
-      color: var(--gold);
-      font-size: 0.8rem;
+      color: var(--green);
+      font-family: 'Share Tech Mono', monospace;
+      font-weight: 700;
     }
-    .card .btn-gold { width: 100%; text-align: center; display: block; }
+    .card .btn-matrix { width: 100%; text-align: center; display: block; }
 
-    /* FEATURED (Empire Course) */
+    /* FEATURED TIER CARDS */
     .featured { background: var(--black2); }
     .featured-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
     }
-    .featured-card {
+    .tier-card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 2.5rem 2rem;
       text-align: center;
-      transition: all 0.3s;
+      transition: all 0.4s;
       position: relative;
     }
-    .featured-card.highlight {
-      border-color: var(--gold-dim);
-      background: linear-gradient(180deg, rgba(212,175,55,0.05) 0%, var(--card) 40%);
+    .tier-card.highlight {
+      border-color: var(--green-dim);
+      background: linear-gradient(180deg, rgba(0,255,65,0.03) 0%, var(--card) 50%);
     }
-    .featured-card.highlight::after {
+    .tier-card.highlight::after {
       content: 'MOST POPULAR';
       position: absolute;
       top: -12px; left: 50%; transform: translateX(-50%);
-      background: var(--gold);
+      background: var(--green);
       color: var(--black);
-      font-size: 0.65rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.55rem;
       font-weight: 800;
       padding: 0.3rem 1rem;
-      border-radius: 3px;
-      letter-spacing: 1px;
+      border-radius: 2px;
+      letter-spacing: 2px;
     }
-    .featured-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+    .tier-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.5), 0 0 30px var(--green-glow2);
+      border-color: var(--green-dim);
     }
-    .featured-card .tier {
-      font-family: 'Cinzel', serif;
-      font-size: 0.85rem;
+    .tier-card .tier-name {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 3px;
       color: var(--muted);
       margin-bottom: 0.5rem;
     }
-    .featured-card h3 {
-      font-family: 'Pirata One', cursive;
-      font-size: 1.8rem;
+    .tier-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
       color: var(--bone);
       margin-bottom: 0.5rem;
     }
-    .featured-card .price {
-      font-family: 'Pirata One', cursive;
-      font-size: 2.8rem;
-      color: var(--gold);
-      margin-bottom: 1rem;
+    .tier-card .price {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px var(--green-glow);
     }
-    .featured-card ul {
+    .tier-card ul {
       list-style: none;
       text-align: left;
       margin-bottom: 2rem;
     }
-    .featured-card ul li {
+    .tier-card ul li {
       padding: 0.4rem 0;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--muted);
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(0,255,65,0.05);
       padding-left: 1.5rem;
       position: relative;
     }
-    .featured-card ul li::before {
-      content: '\2620';
+    .tier-card ul li::before {
+      content: '>';
       position: absolute;
       left: 0;
-      color: var(--gold);
+      color: var(--green);
+      font-family: 'Share Tech Mono', monospace;
     }
-    .featured-card .btn-gold { width: 100%; text-align: center; }
+    .tier-card .btn-matrix { width: 100%; text-align: center; }
 
-    /* HERO SKULL ICON (CSS-only) */
-    .hero-icon {
-      flex: 0 0 320px;
-      max-width: 320px;
-      text-align: center;
-      font-size: 14rem;
-      color: var(--gold);
-      text-shadow: 0 0 60px rgba(212,175,55,0.2), 0 0 120px rgba(212,175,55,0.08);
-      line-height: 1;
-      user-select: none;
-      position: relative;
-    }
-    .hero-icon::after {
-      content: 'SGK';
-      display: block;
-      font-family: 'Pirata One', cursive;
-      font-size: 2.2rem;
-      color: var(--gold-dim);
-      letter-spacing: 8px;
-      margin-top: -1rem;
-    }
-
-    /* ABOUT ICON (CSS-only) */
-    .about-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 8rem;
-      color: var(--gold);
-      text-shadow: 0 0 40px rgba(212,175,55,0.15);
-      border: 2px solid var(--border);
-      border-radius: 8px;
-      background: var(--card);
-      padding: 2rem;
-      user-select: none;
-      position: relative;
-    }
-    .about-icon::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%);
-      border-radius: 8px;
-    }
-
-    /* SMALL PRODUCT GRID */
+    /* SMALL GRID CARDS */
     .sm-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1.2rem;
     }
     .sm-card {
@@ -470,19 +627,23 @@
       transition: all 0.3s;
     }
     .sm-card:hover {
-      border-color: var(--gold-dim);
-      transform: translateY(-2px);
+      border-color: var(--green-dim);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 15px var(--green-glow2);
     }
     .sm-card h4 {
-      font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
       color: var(--bone);
       margin-bottom: 0.3rem;
+      letter-spacing: 1px;
     }
     .sm-card .price {
-      font-family: 'Pirata One', cursive;
-      font-size: 1.5rem;
-      color: var(--gold);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--green);
       margin-bottom: 0.5rem;
     }
     .sm-card p {
@@ -491,12 +652,42 @@
       margin-bottom: 1rem;
       line-height: 1.5;
     }
-    .sm-card .btn-gold {
-      width: 100%;
-      text-align: center;
-      display: block;
-      padding: 0.6rem 1rem;
+    .sm-card .btn-matrix {
+      width: 100%; text-align: center; display: block;
+      padding: 0.6rem 1rem; font-size: 0.7rem;
+    }
+
+    /* TERMINAL BLOCK */
+    .terminal {
+      background: #0a0a0a;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      font-family: 'Share Tech Mono', monospace;
       font-size: 0.8rem;
+      color: var(--green);
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 2rem auto;
+      position: relative;
+    }
+    .terminal::before {
+      content: 'HOMIEE@SGKx1904:~$';
+      display: block;
+      color: var(--green-dim);
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+    .terminal .cursor {
+      display: inline-block;
+      width: 8px; height: 16px;
+      background: var(--green);
+      animation: blink 1s step-end infinite;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
     }
 
     /* FOOTER */
@@ -505,16 +696,21 @@
       border-top: 1px solid var(--border);
       padding: 3rem 2rem;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
     .footer-brand {
-      font-family: 'Pirata One', cursive;
-      font-size: 2rem;
-      color: var(--gold);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--green);
       margin-bottom: 0.5rem;
+      letter-spacing: 4px;
+      text-shadow: 0 0 15px var(--green-glow);
     }
     footer p {
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       margin-bottom: 0.5rem;
     }
     .footer-links {
@@ -527,47 +723,49 @@
     .footer-links a {
       color: var(--muted);
       text-decoration: none;
-      font-size: 0.8rem;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       transition: color 0.3s;
     }
-    .footer-links a:hover { color: var(--gold); }
+    .footer-links a:hover { color: var(--green); }
     .footer-skull {
-      font-size: 2rem;
+      font-size: 1.5rem;
       margin: 1rem 0;
-      opacity: 0.3;
+      opacity: 0.15;
+      color: var(--green);
     }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-inner { flex-direction: column-reverse; text-align: center; }
-      .hero-icon { flex: none; max-width: 200px; font-size: 8rem; }
-      .hero-icon::after { font-size: 1.5rem; }
+      .hero-icon { flex: none; max-width: 200px; }
       .hero-btns { justify-content: center; }
       .hero-text p { margin-left: auto; margin-right: auto; }
-      .about-grid { grid-template-columns: 1fr; text-align: center; }
-      .about-icon { max-width: 250px; margin: 0 auto; font-size: 5rem; }
-      .about-stats { justify-content: center; }
-      .featured-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img { max-width: 500px; margin: 0 auto; }
+      .featured-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+      .stats-bar { gap: 1rem; }
+      .stat { min-width: 120px; padding: 1rem; }
       .nav-links { display: none; }
       .nav-links.open {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: 100%; left: 0; right: 0;
-        background: rgba(10,10,10,0.98);
+        background: rgba(5,5,5,0.98);
         padding: 1.5rem 2rem;
         border-bottom: 1px solid var(--border);
         gap: 1rem;
       }
       .nav-toggle { display: block; }
     }
-
     @media (max-width: 600px) {
       section { padding: 3rem 1rem; }
       .products-grid { grid-template-columns: 1fr; }
       .sm-grid { grid-template-columns: 1fr; }
+      .stat-num { font-size: 1.5rem; }
     }
 
     /* ANIMATIONS */
@@ -579,106 +777,121 @@
       opacity: 0;
       animation: fadeUp 0.8s ease forwards;
     }
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.2s; }
-    .delay-3 { animation-delay: 0.3s; }
-    .delay-4 { animation-delay: 0.4s; }
-
-    /* SKULL WATERMARK */
-    .skull-watermark {
-      position: fixed;
-      bottom: -5%;
-      right: -5%;
-      font-size: 30rem;
-      opacity: 0.015;
-      pointer-events: none;
-      z-index: 0;
-      user-select: none;
-    }
+    .d1 { animation-delay: 0.1s; }
+    .d2 { animation-delay: 0.2s; }
+    .d3 { animation-delay: 0.3s; }
+    .d4 { animation-delay: 0.4s; }
   </style>
 </head>
-<body>
+<body class="scanlines">
 
-<!-- SKULL WATERMARK -->
-<div class="skull-watermark" aria-hidden="true">&#9760;</div>
+<!-- MATRIX RAIN BACKGROUND -->
+<div class="matrix-rain" id="matrixRain" aria-hidden="true"></div>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-brand">SGK1904</a>
+  <a href="#" class="nav-brand">SGKx1904</a>
   <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
   <div class="nav-links">
     <a href="#about">About</a>
-    <a href="ai-empire-course.html">Course</a>
-    <a href="bot-templates.html">Bots</a>
+    <a href="#empire">Course</a>
+    <a href="#bots">Bots</a>
     <a href="#prompts">Prompts</a>
-    <a href="ai-business-audit.html">Audit</a>
     <a href="#services">Services</a>
-    <a href="ai-empire-course.html" class="nav-cta">Get Started</a>
+    <a href="https://t.me/Deth1_bot" target="_blank">Live Demo</a>
+    <a href="free-guide.html" class="nav-cta">Get Started</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero-text fade-in">
-      <h1>SGK1904</h1>
+      <h1>SGKx1904</h1>
       <div class="tagline">Death to Manual Labor</div>
-      <p>AI bots that run your business 24/7. Automated marketing, revenue tracking, market intelligence, and fulfillment — all hitting your Telegram while you sleep. Built by one person. Now available to you.</p>
+      <p>7 AI bots running 24/7. Automated marketing, revenue tracking, market intelligence, and instant fulfillment &mdash; all hitting your Telegram while you sleep. Built by one person. Now available to you.</p>
       <div class="hero-btns">
-        <a href="free-guide.html" class="btn-gold">Free Bot Blueprint</a>
-        <a href="https://t.me/MoneyMakingMitchell1904" target="_blank" class="btn-outline">Join Free Channel</a>
+        <a href="free-guide.html" class="btn-matrix">Free Bot Blueprint</a>
+        <a href="https://t.me/Deth1_bot" target="_blank" class="btn-ghost">Try Live Bot Demo</a>
+        <a href="https://t.me/MoneyMakingMitchell1904" target="_blank" class="btn-ghost">Join Channel</a>
       </div>
     </div>
-    <div class="hero-icon fade-in delay-2" aria-hidden="true">&#9760;</div>
+    <div class="hero-icon fade-in d2">
+      <img src="img/icon-matrix.png" alt="SGKx1904 Logo" />
+    </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &mdash;&mdash;&mdash; &#9760; &mdash;&mdash;&mdash; &#9760;</div>
+<!-- LIVE DEMO BANNER -->
+<div class="demo-banner">
+  <p><span class="pulse"></span> <strong style="color:var(--green)">BOTS ARE LIVE RIGHT NOW</strong> &mdash; Message <a href="https://t.me/Deth1_bot" target="_blank">@Deth1_bot</a> on Telegram to see automation in action. Say <strong style="color:var(--green)">SETUP</strong> for a free bot blueprint.</p>
+</div>
+
+<!-- STATS -->
+<section style="padding: 3rem 2rem;">
+  <div class="stats-bar fade-in">
+    <div class="stat">
+      <span class="stat-num">7</span>
+      <span class="stat-label">Active Bots</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">24/7</span>
+      <span class="stat-label">Uptime</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">1,036+</span>
+      <span class="stat-label">Actions / Week</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">~$30</span>
+      <span class="stat-label">Total AI Cost</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">30+</span>
+      <span class="stat-label">Products</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider">// ---- SYSTEM.INIT ---- //</div>
 
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <div class="about-icon fade-in" aria-hidden="true">&#9760;</div>
-      <div class="about-content fade-in delay-2">
-        <h3>Stay Positive. Automate Everything.</h3>
-        <p>SGK1904 is one person running an entire automated business with AI. Six bots. Coordinated schedules. Revenue flowing through Stripe. Monitoring on Telegram. Marketing content generated daily. Market intelligence delivered every morning.</p>
+      <div class="about-img fade-in">
+        <img src="img/banner-matrix.png" alt="SGKx1904 Server Room" />
+      </div>
+      <div class="about-content fade-in d2">
+        <h3>One Person. Full Automation.</h3>
+        <p>SGKx1904 is one person running an entire automated business with AI. Seven bots. Coordinated schedules. Revenue flowing through Stripe. Real-time monitoring on Telegram. Marketing content generated daily. Market intelligence delivered every morning.</p>
         <p>The system runs itself. I built it over months of iteration. Now I sell the blueprints, the templates, and the done-for-you setups so you can skip the trial-and-error and go straight to revenue.</p>
-        <div class="about-stats">
-          <div class="stat">
-            <span class="stat-num">6</span>
-            <span class="stat-label">Active Bots</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">24/7</span>
-            <span class="stat-label">Uptime</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">4,440+</span>
-            <span class="stat-label">Runs / Month</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">~$30</span>
-            <span class="stat-label">Total AI Cost</span>
-          </div>
+        <div class="terminal">
+          <span style="color:var(--muted)">$ openclaw status</span><br>
+          <span style="color:var(--green-dim)">Gateway:</span> running (pid 18076)<br>
+          <span style="color:var(--green-dim)">Bots:</span> 7 active, 0 errors<br>
+          <span style="color:var(--green-dim)">Actions today:</span> 148<br>
+          <span style="color:var(--green-dim)">Revenue (24h):</span> checking...<br>
+          <span style="color:var(--green-dim)">Uptime:</span> 99.9%<br>
+          <span style="color:var(--green)">All systems operational.</span><span class="cursor"></span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &mdash;&mdash;&mdash; &#9760; &mdash;&mdash;&mdash; &#9760;</div>
+<div class="divider">// ---- PRODUCTS.LOAD ---- //</div>
 
 <!-- AI EMPIRE COURSE -->
 <section class="featured" id="empire">
   <div class="section-inner">
     <h2 class="section-title">AI Automation Empire</h2>
-    <p class="section-sub">The complete system for building an automated AI business. From zero to six bots generating revenue on autopilot.</p>
+    <p class="section-sub">The complete system for building an automated AI business from zero to seven bots on autopilot</p>
 
     <div class="featured-grid">
-      <!-- Starter -->
-      <div class="featured-card fade-in delay-1">
-        <div class="tier">Starter</div>
+      <div class="tier-card fade-in d1">
+        <div class="tier-name">Starter</div>
         <h3>The Blueprint</h3>
         <div class="price">$29.99</div>
         <ul>
@@ -688,28 +901,26 @@
           <li>Scheduling & automation guide</li>
           <li>Troubleshooting appendix</li>
         </ul>
-        <a href="https://buy.stripe.com/fZu3cuajv9fMfp5fqagrS0b" class="btn-gold">Get Starter</a>
+        <a href="https://buy.stripe.com/fZu3cuajv9fMfp5fqagrS0b" class="btn-matrix">Get Starter</a>
       </div>
 
-      <!-- Builder -->
-      <div class="featured-card highlight fade-in delay-2">
-        <div class="tier">Builder</div>
+      <div class="tier-card highlight fade-in d2">
+        <div class="tier-name">Builder</div>
         <h3>The Arsenal</h3>
         <div class="price">$49.99</div>
         <ul>
           <li>Everything in Starter</li>
-          <li>All 6 production-tested prompts</li>
+          <li>All 7 production-tested prompts</li>
           <li>Copy-paste bot configs</li>
           <li>Exact API endpoints & auth</li>
-          <li>Monitoring dashboard one-liner</li>
+          <li>Monitoring dashboard setup</li>
           <li>Content-blaster templates</li>
         </ul>
-        <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-gold">Get Builder</a>
+        <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-matrix">Get Builder</a>
       </div>
 
-      <!-- Empire -->
-      <div class="featured-card fade-in delay-3">
-        <div class="tier">Empire</div>
+      <div class="tier-card fade-in d3">
+        <div class="tier-name">Empire</div>
         <h3>The Throne</h3>
         <div class="price">$99.99</div>
         <ul>
@@ -720,19 +931,19 @@
           <li>Private Telegram support</li>
           <li>Future module updates free</li>
         </ul>
-        <a href="https://buy.stripe.com/00w3cuezL3Vs0ubcdYgrS0d" class="btn-gold">Get Empire</a>
+        <a href="https://buy.stripe.com/00w3cuezL3Vs0ubcdYgrS0d" class="btn-matrix">Get Empire</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &mdash;&mdash;&mdash; &#9760; &mdash;&mdash;&mdash; &#9760;</div>
+<div class="divider">// ---- BOTS.DEPLOY ---- //</div>
 
 <!-- BOT TEMPLATES -->
 <section id="bots">
   <div class="section-inner">
     <h2 class="section-title">Bot Templates</h2>
-    <p class="section-sub">Production-ready bot configs with complete prompts. Paste the JSON, set your API keys, and you're live.</p>
+    <p class="section-sub">Production-ready configs. Paste the JSON, set your API keys, go live in minutes</p>
 
     <div class="products-grid">
       <div class="card fade-in">
@@ -746,10 +957,10 @@
           <li>Telegram delivery config</li>
           <li>Complete production prompt</li>
         </ul>
-        <a href="https://buy.stripe.com/00w8wO0IV4ZwdgXfqagrS0l" class="btn-gold">Buy Template</a>
+        <a href="https://buy.stripe.com/00w8wO0IV4ZwdgXfqagrS0l" class="btn-matrix">Buy Template</a>
       </div>
 
-      <div class="card fade-in delay-1">
+      <div class="card fade-in d1">
         <span class="card-badge">Template</span>
         <h3>News Digest Bot</h3>
         <div class="price">$19.99</div>
@@ -760,24 +971,24 @@
           <li>Customizable topics</li>
           <li>Grok-powered web access</li>
         </ul>
-        <a href="https://buy.stripe.com/dRmbJ04ZbfEa90HguegrS0m" class="btn-gold">Buy Template</a>
+        <a href="https://buy.stripe.com/dRmbJ04ZbfEa90HguegrS0m" class="btn-matrix">Buy Template</a>
       </div>
 
-      <div class="card fade-in delay-2">
-        <span class="card-badge gold">Popular</span>
+      <div class="card fade-in d2">
+        <span class="card-badge hot">Popular</span>
         <h3>Content Generator Bot</h3>
         <div class="price">$29.99</div>
         <ul>
           <li>Daily multi-platform content</li>
-          <li>Twitter, Reddit, Instagram, Telegram</li>
+          <li>Twitter, Reddit, IG, Telegram</li>
           <li>Day-of-week content rotation</li>
           <li>Brand voice customization</li>
           <li>Hashtag & CTA automation</li>
         </ul>
-        <a href="https://buy.stripe.com/3cI28q4ZbfEa5OvfqagrS0n" class="btn-gold">Buy Template</a>
+        <a href="https://buy.stripe.com/3cI28q4ZbfEa5OvfqagrS0n" class="btn-matrix">Buy Template</a>
       </div>
 
-      <div class="card fade-in delay-3">
+      <div class="card fade-in d3">
         <span class="card-badge">Template</span>
         <h3>Revenue Tracker Bot</h3>
         <div class="price">$24.99</div>
@@ -788,242 +999,242 @@
           <li>Refund tracking</li>
           <li>Threshold-based alerts</li>
         </ul>
-        <a href="https://buy.stripe.com/6oU4gy77j9fMdgXfqagrS0o" class="btn-gold">Buy Template</a>
+        <a href="https://buy.stripe.com/6oU4gy77j9fMdgXfqagrS0o" class="btn-matrix">Buy Template</a>
       </div>
 
-      <div class="card fade-in delay-4">
-        <span class="card-badge popular">Best Value</span>
+      <div class="card fade-in d4">
+        <span class="card-badge best">Best Value</span>
         <h3>Complete 5-Bot Stack</h3>
         <div class="price">$79.99</div>
         <p>All 5 bots in one package. Staggered schedule, combined .env template, architecture diagram, and 30-minute setup guide. Save $35.</p>
-        <a href="https://buy.stripe.com/6oU7sKdvHfEa1yf7XIgrS0p" class="btn-gold">Buy Full Stack</a>
+        <a href="https://buy.stripe.com/6oU7sKdvHfEa1yf7XIgrS0p" class="btn-matrix">Buy Full Stack</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &mdash;&mdash;&mdash; &#9760; &mdash;&mdash;&mdash; &#9760;</div>
+<div class="divider">// ---- PROMPTS.LOAD ---- //</div>
 
 <!-- PROMPT PACKS -->
 <section id="prompts" style="background: var(--black2);">
   <div class="section-inner">
     <h2 class="section-title">Prompt Engineering Packs</h2>
-    <p class="section-sub">Battle-tested prompts refined over months of daily production use. Copy, paste, profit.</p>
+    <p class="section-sub">Battle-tested prompts refined over months of daily production use</p>
 
     <div class="sm-grid">
       <div class="sm-card fade-in">
-        <h4>Crypto Trading Prompts</h4>
+        <h4>Crypto Trading</h4>
         <div class="price">$9.99</div>
         <p>Price analysis, sentiment scoring, alert formatting, and risk assessment prompts.</p>
-        <a href="https://buy.stripe.com/aFa7sKcrD9fM4Kr7XIgrS0q" class="btn-gold">Buy Pack</a>
+        <a href="https://buy.stripe.com/aFa7sKcrD9fM4Kr7XIgrS0q" class="btn-matrix">Buy Pack</a>
       </div>
 
-      <div class="sm-card fade-in delay-1">
-        <h4>Content Marketing Prompts</h4>
+      <div class="sm-card fade-in d1">
+        <h4>Content Marketing</h4>
         <div class="price">$9.99</div>
         <p>Multi-platform content generation, brand voice templates, engagement hooks.</p>
-        <a href="https://buy.stripe.com/9B6fZg77j4Zwel15PAgrS0r" class="btn-gold">Buy Pack</a>
+        <a href="https://buy.stripe.com/9B6fZg77j4Zwel15PAgrS0r" class="btn-matrix">Buy Pack</a>
       </div>
 
-      <div class="sm-card fade-in delay-1">
-        <h4>Business Intelligence Prompts</h4>
+      <div class="sm-card fade-in d2">
+        <h4>Business Intelligence</h4>
         <div class="price">$9.99</div>
-        <p>Market research, competitor analysis, opportunity identification, and trend spotting.</p>
-        <a href="https://buy.stripe.com/14AaEW63f2RoccT91MgrS0s" class="btn-gold">Buy Pack</a>
+        <p>Market research, competitor analysis, opportunity ID, and trend spotting.</p>
+        <a href="https://buy.stripe.com/14AaEW63f2RoccT91MgrS0s" class="btn-matrix">Buy Pack</a>
       </div>
 
-      <div class="sm-card fade-in delay-2">
+      <div class="sm-card fade-in d3">
         <h4>Complete Prompt Vault</h4>
         <div class="price">$24.99</div>
         <p>Every prompt pack combined. All categories, all use cases. Save $5.</p>
-        <a href="https://buy.stripe.com/8x228q63f77E1yffqagrS0t" class="btn-gold">Buy Vault</a>
+        <a href="https://buy.stripe.com/8x228q63f77E1yffqagrS0t" class="btn-matrix">Buy Vault</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &mdash;&mdash;&mdash; &#9760; &mdash;&mdash;&mdash; &#9760;</div>
+<div class="divider">// ---- SERVICES.INIT ---- //</div>
 
 <!-- DESIGN SERVICES -->
 <section id="design">
   <div class="section-inner">
     <h2 class="section-title">Design Services</h2>
-    <p class="section-sub">RIOT.PSD — Custom design work for brands that refuse to look generic.</p>
+    <p class="section-sub">RIOT.PSD &mdash; Custom design for brands that refuse to look generic</p>
 
     <div class="sm-grid">
       <div class="sm-card fade-in">
         <h4>Logo Pack</h4>
         <div class="price">$29</div>
         <p>5 logo variations. Vector files. Print and web ready.</p>
-        <a href="https://buy.stripe.com/28E3cu4ZbajQb8P6TEgrS0i" class="btn-gold">Order Now</a>
+        <a href="https://buy.stripe.com/28E3cu4ZbajQb8P6TEgrS0i" class="btn-matrix">Order Now</a>
       </div>
 
-      <div class="sm-card fade-in delay-1">
+      <div class="sm-card fade-in d1">
         <h4>Social Media Kit</h4>
         <div class="price">$39</div>
         <p>20 custom posts. Stories, carousels, banners. Platform-optimized.</p>
-        <a href="https://buy.stripe.com/28EbJ0dvHeA6a4L6TEgrS0j" class="btn-gold">Order Now</a>
+        <a href="https://buy.stripe.com/28EbJ0dvHeA6a4L6TEgrS0j" class="btn-matrix">Order Now</a>
       </div>
 
-      <div class="sm-card fade-in delay-2">
+      <div class="sm-card fade-in d2">
         <h4>Brand Identity Kit</h4>
         <div class="price">$99</div>
         <p>Complete brand package. Logo, colors, typography, templates, style guide.</p>
-        <a href="https://buy.stripe.com/6oUbJ0bnzdw25Ovdi2grS0k" class="btn-gold">Order Now</a>
+        <a href="https://buy.stripe.com/6oUbJ0bnzdw25Ovdi2grS0k" class="btn-matrix">Order Now</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &mdash;&mdash;&mdash; &#9760; &mdash;&mdash;&mdash; &#9760;</div>
+<div class="divider">// ---- CONSULTING.CONNECT ---- //</div>
 
 <!-- AI BUSINESS AUDIT -->
 <section id="services" style="background: var(--black2);">
   <div class="section-inner">
     <h2 class="section-title">AI Business Audit</h2>
-    <p class="section-sub">I look at your business and tell you exactly where AI can replace manual work, cut costs, and generate revenue.</p>
+    <p class="section-sub">I analyze your business and tell you exactly where AI replaces manual work</p>
 
     <div class="products-grid">
       <div class="card fade-in">
         <span class="card-badge">Consulting</span>
         <h3>Quick Audit</h3>
         <div class="price">$49</div>
-        <p>30-minute analysis of your current workflows. You get a prioritized list of automation opportunities with estimated ROI.</p>
-        <a href="https://buy.stripe.com/fZu9AS9frajQ1yf4LwgrS0e" class="btn-gold">Book Audit</a>
+        <p>30-minute analysis. Prioritized automation opportunities with estimated ROI.</p>
+        <a href="https://buy.stripe.com/fZu9AS9frajQ1yf4LwgrS0e" class="btn-matrix">Book Audit</a>
       </div>
 
-      <div class="card fade-in delay-1">
-        <span class="card-badge gold">Popular</span>
+      <div class="card fade-in d1">
+        <span class="card-badge hot">Popular</span>
         <h3>Deep Audit</h3>
         <div class="price">$149</div>
-        <p>Full business analysis. Detailed automation roadmap, tool recommendations, cost projections, and implementation timeline.</p>
-        <a href="https://buy.stripe.com/eVq7sK9fr63A1yfb9UgrS0f" class="btn-gold">Book Audit</a>
+        <p>Full business analysis. Automation roadmap, tool recs, cost projections, timeline.</p>
+        <a href="https://buy.stripe.com/eVq7sK9fr63A1yfb9UgrS0f" class="btn-matrix">Book Audit</a>
       </div>
 
-      <div class="card fade-in delay-2">
-        <span class="card-badge popular">Premium</span>
+      <div class="card fade-in d2">
+        <span class="card-badge best">Premium</span>
         <h3>Strategy + Build</h3>
         <div class="price">$499</div>
-        <p>Deep audit plus I build the first automation for you. Strategy, implementation, testing, and handoff. Walk away with a working system.</p>
-        <a href="https://buy.stripe.com/cNi6oG4ZbajQ5Ovem6grS0g" class="btn-gold">Book Now</a>
+        <p>Deep audit plus I build the first automation for you. Walk away with a working system.</p>
+        <a href="https://buy.stripe.com/cNi6oG4ZbajQ5Ovem6grS0g" class="btn-matrix">Book Now</a>
       </div>
     </div>
 
-    <div style="max-width: 400px; margin: 2rem auto 0;">
-      <div class="card fade-in delay-3">
+    <div style="max-width: 380px; margin: 2rem auto 0;">
+      <div class="card fade-in d3">
         <span class="card-badge">Recurring</span>
         <h3>Monthly Advisor</h3>
         <div class="price">$199 <small>/month</small></div>
-        <p>Ongoing AI strategy. Monthly calls, priority support, continuous optimization of your automation stack.</p>
-        <a href="https://buy.stripe.com/14A9ASfDP1Nkfp5fqagrS0h" class="btn-gold">Subscribe</a>
+        <p>Ongoing AI strategy. Monthly calls, priority support, continuous optimization.</p>
+        <a href="https://buy.stripe.com/14A9ASfDP1Nkfp5fqagrS0h" class="btn-matrix">Subscribe</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &mdash;&mdash;&mdash; &#9760; &mdash;&mdash;&mdash; &#9760;</div>
+<div class="divider">// ---- DFY.EXECUTE ---- //</div>
 
 <!-- DONE-FOR-YOU -->
 <section id="dfy">
   <div class="section-inner">
     <h2 class="section-title">Done-For-You</h2>
-    <p class="section-sub">Don't want to build it yourself? I'll do it. You get a working system, deployed and delivering.</p>
+    <p class="section-sub">Don't want to build it? I'll do it. You get a working system, deployed and delivering</p>
 
     <div class="sm-grid">
       <div class="sm-card fade-in">
         <h4>Migration</h4>
         <div class="price">$99</div>
         <p>Move your existing automations to OpenClaw. Clean configs, tested, running.</p>
-        <a href="https://buy.stripe.com/14A8wOcrD8bI7WDem6grS0a" class="btn-gold">Order</a>
+        <a href="https://buy.stripe.com/14A8wOcrD8bI7WDem6grS0a" class="btn-matrix">Order</a>
       </div>
 
-      <div class="sm-card fade-in delay-1">
+      <div class="sm-card fade-in d1">
         <h4>Bot Setup</h4>
         <div class="price">$149</div>
-        <p>One custom bot built and deployed. Your use case, your data sources, your Telegram.</p>
-        <a href="https://buy.stripe.com/bJe6oGbnz77E4Kr91MgrS09" class="btn-gold">Order</a>
+        <p>One custom bot built and deployed. Your use case, your data, your Telegram.</p>
+        <a href="https://buy.stripe.com/bJe6oGbnz77E4Kr91MgrS09" class="btn-matrix">Order</a>
       </div>
 
-      <div class="sm-card fade-in delay-2">
-        <h4>Custom Bot Development</h4>
+      <div class="sm-card fade-in d2">
+        <h4>Custom Bot Dev</h4>
         <div class="price">$299</div>
-        <p>Complex multi-source bot with custom logic. Webhook integration, advanced routing, the works.</p>
-        <a href="https://buy.stripe.com/aFa5kC1MZ9fM1yf91MgrS0u" class="btn-gold">Order</a>
+        <p>Complex multi-source bot with custom logic. Webhook integration, advanced routing.</p>
+        <a href="https://buy.stripe.com/aFa5kC1MZ9fM1yf91MgrS0u" class="btn-matrix">Order</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &mdash;&mdash;&mdash; &#9760; &mdash;&mdash;&mdash; &#9760;</div>
+<div class="divider">// ---- SUBSCRIPTIONS.ACTIVATE ---- //</div>
 
 <!-- BOT SUBSCRIPTIONS -->
 <section style="background: var(--black2);">
   <div class="section-inner">
     <h2 class="section-title">Bot Subscriptions</h2>
-    <p class="section-sub">Managed bots running on our infrastructure. You get the output, we handle everything else.</p>
+    <p class="section-sub">Managed bots on our infrastructure. You get the output, we handle everything</p>
 
     <div class="featured-grid">
-      <div class="featured-card fade-in delay-1">
-        <div class="tier">Starter</div>
+      <div class="tier-card fade-in d1">
+        <div class="tier-name">Starter</div>
         <h3>One Bot</h3>
-        <div class="price">$29<small style="font-family:Inter;font-size:0.9rem;color:var(--muted)">/mo</small></div>
+        <div class="price">$29<small style="font-family:Inter;font-size:0.8rem;color:var(--muted)">/mo</small></div>
         <ul>
           <li>One custom bot</li>
           <li>Basic scheduling</li>
           <li>Telegram delivery</li>
           <li>Email support</li>
         </ul>
-        <a href="https://buy.stripe.com/aFadR8ezL77EccTfqagrS06" class="btn-gold">Subscribe</a>
+        <a href="https://buy.stripe.com/aFadR8ezL77EccTfqagrS06" class="btn-matrix">Subscribe</a>
       </div>
 
-      <div class="featured-card highlight fade-in delay-2">
-        <div class="tier">Pro</div>
+      <div class="tier-card highlight fade-in d2">
+        <div class="tier-name">Pro</div>
         <h3>Three Bots</h3>
-        <div class="price">$79<small style="font-family:Inter;font-size:0.9rem;color:var(--muted)">/mo</small></div>
+        <div class="price">$79<small style="font-family:Inter;font-size:0.8rem;color:var(--muted)">/mo</small></div>
         <ul>
           <li>Three custom bots</li>
           <li>Priority support</li>
           <li>Custom prompts</li>
           <li>Advanced scheduling</li>
         </ul>
-        <a href="https://buy.stripe.com/6oUbJ01MZdw2a4Ldi2grS07" class="btn-gold">Subscribe</a>
+        <a href="https://buy.stripe.com/6oUbJ01MZdw2a4Ldi2grS07" class="btn-matrix">Subscribe</a>
       </div>
 
-      <div class="featured-card fade-in delay-3">
-        <div class="tier">Agency</div>
+      <div class="tier-card fade-in d3">
+        <div class="tier-name">Agency</div>
         <h3>Unlimited</h3>
-        <div class="price">$199<small style="font-family:Inter;font-size:0.9rem;color:var(--muted)">/mo</small></div>
+        <div class="price">$199<small style="font-family:Inter;font-size:0.8rem;color:var(--muted)">/mo</small></div>
         <ul>
           <li>Unlimited bots</li>
           <li>White-label option</li>
           <li>Dedicated setup call</li>
           <li>Priority everything</li>
         </ul>
-        <a href="https://buy.stripe.com/7sY4gydvH8bI2Cja5QgrS08" class="btn-gold">Subscribe</a>
+        <a href="https://buy.stripe.com/7sY4gydvH8bI2Cja5QgrS08" class="btn-matrix">Subscribe</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider">&#9760; &mdash;&mdash;&mdash; &#9760; &mdash;&mdash;&mdash; &#9760;</div>
+<div class="divider">// ---- DIGITAL.DOWNLOAD ---- //</div>
 
 <!-- DIGITAL PRODUCTS -->
 <section>
   <div class="section-inner">
     <h2 class="section-title">Digital Products</h2>
-    <div class="sm-grid" style="max-width: 600px; margin: 2rem auto 0;">
+    <div class="sm-grid" style="max-width: 550px; margin: 2rem auto 0;">
       <div class="sm-card fade-in">
-        <h4>Digital Wallpaper Pack</h4>
+        <h4>Wallpaper Pack</h4>
         <div class="price">$4.99</div>
-        <p>Dark aesthetic wallpapers. Phone and desktop. Santa Muerte vibes.</p>
-        <a href="https://buy.stripe.com/bJedR8ajv4Zw5Ov3HsgrS0v" class="btn-gold">Buy Pack</a>
+        <p>Dark aesthetic wallpapers. Phone + desktop. Santa Muerte x Matrix vibes.</p>
+        <a href="https://buy.stripe.com/bJedR8ajv4Zw5Ov3HsgrS0v" class="btn-matrix">Buy Pack</a>
       </div>
 
-      <div class="sm-card fade-in delay-1">
-        <h4>Security Training Course</h4>
+      <div class="sm-card fade-in d1">
+        <h4>Security Training</h4>
         <div class="price">$29.99</div>
-        <p>13-module cybersecurity course. From fundamentals to advanced threat detection.</p>
-        <a href="https://buy.stripe.com/fZu00i8bn4Zw2Cj4LwgrS0w" class="btn-gold">Buy Course</a>
+        <p>13-module cybersecurity course. Fundamentals to advanced threat detection.</p>
+        <a href="https://buy.stripe.com/fZu00i8bn4Zw2Cj4LwgrS0w" class="btn-matrix">Buy Course</a>
       </div>
     </div>
   </div>
@@ -1031,12 +1242,14 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand">SGK1904</div>
-  <p>Death to manual labor. Long live automation.</p>
-  <p>
-    <a href="https://t.me/MoneyMakingMitchell1904" target="_blank" style="color:var(--gold);text-decoration:none;font-weight:600;">Telegram</a>
+  <div class="footer-brand">SGKx1904</div>
+  <p style="font-family:'Share Tech Mono',monospace; color:var(--green-dim); font-size:0.75rem; letter-spacing:2px;">DEATH TO MANUAL LABOR</p>
+  <p style="margin-top:1rem;">
+    <a href="https://t.me/Deth1_bot" target="_blank" style="color:var(--green);text-decoration:none;font-weight:600;">Live Bot Demo</a>
     &nbsp;&bull;&nbsp;
-    <a href="https://x.com/Lyfergang1904" target="_blank" style="color:var(--gold);text-decoration:none;font-weight:600;">X / Twitter</a>
+    <a href="https://t.me/MoneyMakingMitchell1904" target="_blank" style="color:var(--green);text-decoration:none;font-weight:600;">Telegram</a>
+    &nbsp;&bull;&nbsp;
+    <a href="https://x.com/Lyfergang1904" target="_blank" style="color:var(--green);text-decoration:none;font-weight:600;">X / Twitter</a>
   </p>
   <div class="footer-skull" aria-hidden="true">&#9760;</div>
   <div class="footer-links">
@@ -1045,12 +1258,34 @@
     <a href="#prompts">Prompt Packs</a>
     <a href="#services">Consulting</a>
     <a href="#design">Design</a>
+    <a href="#dfy">Done-For-You</a>
   </div>
-  <p style="margin-top: 1.5rem; opacity: 0.4; font-size: 0.75rem;">&copy; 2026 SGK1904. All rights reserved.</p>
+  <p style="margin-top: 1.5rem; opacity: 0.3; font-size: 0.7rem; font-family:'Share Tech Mono',monospace;">&copy; 2026 SGKx1904. All rights reserved. Powered by HOMIEE.</p>
 </footer>
 
 <script>
-// Simple scroll-triggered fade-in
+// Matrix Rain Effect
+(function() {
+  const rain = document.getElementById('matrixRain');
+  const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
+  const cols = Math.floor(window.innerWidth / 20);
+  for (let i = 0; i < cols; i++) {
+    const col = document.createElement('div');
+    col.className = 'matrix-col';
+    col.style.left = (i * 20) + 'px';
+    col.style.animationDuration = (8 + Math.random() * 12) + 's';
+    col.style.animationDelay = (Math.random() * 10) + 's';
+    let text = '';
+    const len = 10 + Math.floor(Math.random() * 20);
+    for (let j = 0; j < len; j++) {
+      text += chars[Math.floor(Math.random() * chars.length)] + '\n';
+    }
+    col.textContent = text;
+    rain.appendChild(col);
+  }
+})();
+
+// Scroll-triggered fade-in
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
