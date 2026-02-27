@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SGKx1904 — AI For the Rest of Us</title>
-  <meta name="description" content="A plumber built 9 AI assistants in 48 hours. No coding. No degree. Now he's showing everyone else how. Custom AI on your phone starting at $9/mo." />
-  <meta name="keywords" content="personal AI assistant, custom AI bot, Telegram AI, blue collar AI, no code AI, affordable AI assistant, SGKx1904" />
-  <meta property="og:title" content="SGKx1904 — AI For the Rest of Us" />
-  <meta property="og:description" content="Built by a plumber. For everyone. Custom AI assistants on your phone starting at $9/mo." />
+  <title>SGKx1904 — Private AI. No Surveillance. No Big Tech. Your Rules.</title>
+  <meta name="description" content="A plumber built 9 private AI assistants on an old laptop with home wifi. No Google. No Amazon. No surveillance. Open-source, off-grid AI that answers to YOU. For the ones who don't want to conform." />
+  <meta name="keywords" content="private AI, off-grid AI, no surveillance AI, self-hosted AI, anti Big Tech, open source AI, personal AI assistant, SGKx1904, DIY AI" />
+  <meta property="og:title" content="SGKx1904 — Private AI. No Surveillance. Your Rules." />
+  <meta property="og:description" content="Zero Big Tech. Zero surveillance. A plumber built 9 private AI assistants for $0.02/day on an old laptop. Your data never leaves your machine." />
   <meta property="og:image" content="img/icon-matrix.png" />
   <link rel="icon" type="image/png" href="img/icon-matrix.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -62,10 +62,11 @@
     .hero-story em { color: var(--gold); font-style: normal; }
     h1 { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 900; color: var(--bone); letter-spacing: 3px; line-height: 1.05; margin-bottom: 1.5rem; }
     h1 span { color: var(--crimson); }
-    .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 650px; margin: 0 auto 2.5rem; line-height: 1.7; }
     .hero-sub strong { color: var(--gold); }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .price-hint { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--ghost); margin-top: 1rem; }
+    .hero-tagline { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--crimson-dim); letter-spacing: 4px; text-transform: uppercase; margin-top: 1.5rem; opacity: 0.7; }
 
     .demo-banner { background: linear-gradient(90deg, var(--crimson-dim), #1a0a0a, var(--crimson-dim)); padding: 0.8rem 2rem; text-align: center; font-size: 0.85rem; border-top: 1px solid rgba(220,20,60,0.2); border-bottom: 1px solid rgba(220,20,60,0.2); }
     .demo-banner a { color: var(--gold); text-decoration: underline; }
@@ -75,6 +76,25 @@
     .section-inner { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
     .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; text-align: center; margin-bottom: 0.5rem; color: var(--bone); letter-spacing: 3px; }
     .section-sub { text-align: center; color: var(--muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 2.5rem; }
+
+    /* MANIFESTO */
+    .manifesto { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .manifesto-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; transition: all 0.3s; }
+    .manifesto-card:hover { border-color: var(--crimson-dim); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-4px); }
+    .manifesto-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .manifesto-card h3 { font-family: 'Cinzel', serif; color: var(--crimson); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 0.5rem; text-transform: uppercase; }
+    .manifesto-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+    .manifesto-card strong { color: var(--bone); }
+
+    /* COMPARISON */
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+    .compare-table th { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); padding: 1rem; border-bottom: 2px solid var(--crimson-dim); text-align: left; }
+    .compare-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); }
+    .compare-table tr:hover td { background: rgba(220,20,60,0.03); }
+    .compare-table .check { color: var(--crimson); font-weight: bold; font-size: 1.1rem; }
+    .compare-table .x { color: var(--ghost); }
+    .compare-table .them { color: var(--ghost); }
+    .compare-table .us { color: var(--gold); font-weight: 600; }
 
     /* CONVERSATION */
     .convo { background: var(--black2); border: 1px solid var(--border); border-radius: var(--radius); max-width: 500px; margin: 2rem auto; overflow: hidden; }
@@ -117,7 +137,7 @@
     .price-card .compare { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--ghost); margin-top: 0.8rem; }
 
     /* TERMINAL */
-    .terminal { background: var(--black2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--bone); max-width: 600px; margin: 2rem auto; line-height: 1.8; }
+    .terminal { background: var(--black2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--bone); max-width: 650px; margin: 2rem auto; line-height: 1.8; }
     .terminal .prompt { color: var(--crimson); }
     .terminal .output { color: var(--gold); }
     .terminal .dim { color: var(--muted); }
@@ -129,6 +149,18 @@
     .ot-card h3 { font-family: 'Cinzel', serif; color: var(--bone); font-size: 0.95rem; letter-spacing: 1px; margin-bottom: 0.3rem; }
     .ot-card .ot-price { font-family: 'Cinzel', serif; color: var(--crimson); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
     .ot-card p { color: var(--muted); font-size: 0.82rem; margin-bottom: 1rem; line-height: 1.5; }
+
+    /* ORIGIN */
+    .origin-story { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 2rem; }
+    .origin-text { }
+    .origin-text h3 { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 1rem; }
+    .origin-text p { color: var(--muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1rem; }
+    .origin-text strong { color: var(--bone); }
+    .origin-text em { color: var(--crimson); font-style: normal; font-weight: 700; }
+    .origin-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .origin-stat { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; }
+    .origin-stat .num { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 900; color: var(--crimson); }
+    .origin-stat .label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.3rem; }
 
     footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border); background: var(--black2); }
     .footer-brand { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 900; color: var(--gold); letter-spacing: 4px; margin-bottom: 1rem; }
@@ -151,6 +183,8 @@
       .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(8,8,8,0.98); padding: 1rem 2rem; gap: 1rem; border-bottom: 1px solid var(--border); }
       .who-grid { grid-template-columns: 1fr; }
       .pricing { grid-template-columns: 1fr; }
+      .manifesto { grid-template-columns: 1fr; }
+      .origin-story { grid-template-columns: 1fr; }
       .msg { max-width: 95%; }
     }
   </style>
@@ -164,9 +198,10 @@
   <a href="#" class="nav-brand">SGKx1904</a>
   <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
   <div class="nav-links">
-    <a href="#see-it">See It Work</a>
+    <a href="#why-private">Why Private</a>
     <a href="#pricing">Pricing</a>
-    <a href="#blueprint">Blueprint</a>
+    <a href="#origin">Our Story</a>
+    <a href="enterprise.html">Enterprise</a>
     <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="nav-cta">Try Free</a>
   </div>
 </nav>
@@ -174,24 +209,110 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner fade-in">
-    <div class="hero-badge">Built by a plumber. Not a programmer.</div>
+    <div class="hero-badge">Zero Big Tech. Zero Surveillance. 100% Yours.</div>
     <div class="hero-story">
-      I'm a <strong>plumber</strong>. No CS degree. No coding bootcamp. I built <em>9 AI assistants</em> in <em>48 hours</em> that run my entire business while I sleep. Now I'm putting that same power in <strong>your</strong> hands.
+      While Google, Amazon, and OpenAI read <strong>every word you type</strong>, we built AI that runs on <em>your machine</em>. No cloud. No tracking. No corporate backdoors. A <strong>plumber</strong> built this on an old laptop with <em>home wifi</em>. If he can do it, you don't need Silicon Valley's permission either.
     </div>
     <h1>AI For <span>The Rest</span> of Us</h1>
-    <p class="hero-sub">Ever wanted your own personal AI you could talk to like a friend? A master coder? A graphic designer? An expert in medicine, law, finance &mdash; <strong>anything you can imagine</strong>? Open Telegram. Say hello. It's that simple.</p>
+    <p class="hero-sub">Private AI assistants that answer to <strong>you</strong> &mdash; not shareholders, not data brokers, not three-letter agencies. Built with open-source tools. Running on hardware you control. Starting at <strong>$9/month</strong>.</p>
     <div class="hero-btns">
       <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="btn-blood">Talk to the AI Free</a>
-      <a href="#pricing" class="btn-bone">Plans from $9/mo</a>
+      <a href="#why-private" class="btn-bone">See Why It Matters</a>
     </div>
-    <div class="price-hint">No credit card needed. No signup. Just open Telegram.</div>
+    <div class="price-hint">No signup. No data harvesting. Just open Telegram.</div>
+    <div class="hero-tagline">For the ones who don't want to conform</div>
   </div>
 </section>
 
 <!-- DEMO BANNER -->
 <div class="demo-banner">
-  <p><span class="pulse"></span> <strong style="color:var(--crimson)">LIVE</strong> &mdash; <a href="https://t.me/moneymakingmitch1904_bot" target="_blank">@moneymakingmitch1904_bot</a> is online right now. Message it. See for yourself.</p>
+  <p><span class="pulse"></span> <strong style="color:var(--crimson)">LIVE</strong> &mdash; <a href="https://t.me/moneymakingmitch1904_bot" target="_blank">@moneymakingmitch1904_bot</a> is online right now. Your conversation stays private. Always.</p>
 </div>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- WHY PRIVATE AI -->
+<section id="why-private">
+  <div class="section-inner">
+    <h2 class="section-title">Why Private AI Matters</h2>
+    <p class="section-sub">Every "free" AI tool is the product &mdash; and you're the data mine. We built the alternative.</p>
+    <div class="manifesto">
+      <div class="manifesto-card fade-in">
+        <div class="manifesto-icon">&#128274;</div>
+        <h3>No Surveillance</h3>
+        <p>Your conversations, your data, your business secrets &mdash; they stay on <strong>your machine</strong>. Not on Google's servers. Not in Amazon's cloud. Not in any government database. Zero data leaves your control.</p>
+      </div>
+      <div class="manifesto-card fade-in d2">
+        <div class="manifesto-icon">&#128736;</div>
+        <h3>Open Source</h3>
+        <p>Built on tools anyone can inspect, verify, and trust. No black boxes. No proprietary lock-in. No CEO can flip a switch and cut you off. <strong>You own the code. You own the AI.</strong></p>
+      </div>
+      <div class="manifesto-card fade-in d3">
+        <div class="manifesto-icon">&#9889;</div>
+        <h3>Off The Grid</h3>
+        <p>Runs on local hardware. Home wifi. An old laptop. <strong>Kali Linux</strong>. No corporate data center required. No monthly ransom to Big Tech. Total independence for <strong>$0.02/day</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- THEM VS US -->
+<section style="background: var(--black2);">
+  <div class="section-inner">
+    <h2 class="section-title">Their AI vs. Our AI</h2>
+    <p class="section-sub">Know what you're really signing up for when you use "free" AI.</p>
+    <div style="overflow-x:auto;">
+      <table class="compare-table fade-in">
+        <thead>
+          <tr>
+            <th style="width:40%"></th>
+            <th class="them">Big Tech AI</th>
+            <th class="us">SGKx1904</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Your data stays private</td>
+            <td class="x">They read everything</td>
+            <td><span class="check">&#10003;</span> Zero data leaves your machine</td>
+          </tr>
+          <tr>
+            <td>Who owns your conversations</td>
+            <td class="x">They do (read the ToS)</td>
+            <td><span class="check">&#10003;</span> You do. Period.</td>
+          </tr>
+          <tr>
+            <td>Can they shut you off</td>
+            <td class="x">Anytime, any reason</td>
+            <td><span class="check">&#10003;</span> Your hardware, your rules</td>
+          </tr>
+          <tr>
+            <td>Government data requests</td>
+            <td class="x">Comply every time</td>
+            <td><span class="check">&#10003;</span> Nothing to hand over</td>
+          </tr>
+          <tr>
+            <td>Monthly cost</td>
+            <td class="x">$20-200/mo + your data</td>
+            <td><span class="check">&#10003;</span> From $9/mo, no data tax</td>
+          </tr>
+          <tr>
+            <td>Censorship / content filters</td>
+            <td class="x">Heavy-handed, opaque</td>
+            <td><span class="check">&#10003;</span> Your AI, your boundaries</td>
+          </tr>
+          <tr>
+            <td>Works without internet</td>
+            <td class="x">Cloud-dependent</td>
+            <td><span class="check">&#10003;</span> Local models run offline</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
 <div class="divider">&dagger; &dagger; &dagger;</div>
 
@@ -199,11 +320,11 @@
 <section id="see-it">
   <div class="section-inner">
     <h2 class="section-title">See It Work</h2>
-    <p class="section-sub">This is a real conversation on Telegram. Your AI remembers you, knows your field, and responds in seconds.</p>
+    <p class="section-sub">Real conversation. Private AI. No data harvested. No corporate middleman listening in.</p>
     <div class="convo fade-in">
       <div class="convo-bar">
         <span class="convo-dot"></span>
-        <span class="convo-name">Your Personal AI</span>
+        <span class="convo-name">Your Private AI &mdash; encrypted, local</span>
       </div>
       <div class="convo-body">
         <div class="msg msg-user">I need to write a bid for a commercial plumbing job. 3-story building, 24 units.</div>
@@ -212,7 +333,7 @@
         <div class="msg msg-ai"><strong>Copper is at $4.23/lb, up 3.1% this week.</strong> I've adjusted the bid to reflect current pricing. Your total comes to $211,400. I'll format it as a PDF-ready proposal. Sending now.</div>
       </div>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:0.85rem;margin-top:1rem;">This isn't ChatGPT. This is <em style="color:var(--gold);">your</em> AI &mdash; trained on your trade, your data, your way of doing things.</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.85rem;margin-top:1rem;">This conversation never touched Google's servers. Never trained someone else's AI. <em style="color:var(--gold);">It stayed between you and your machine.</em></p>
   </div>
 </section>
 
@@ -222,33 +343,94 @@
 <section style="background: var(--black2);">
   <div class="section-inner">
     <h2 class="section-title">Who This Is For</h2>
-    <p class="section-sub">Not just tech people. This is for anyone who works for a living and wants AI working for them.</p>
+    <p class="section-sub">Not Silicon Valley. Not tech bros. This is for people who work for a living and refuse to be someone else's data product.</p>
     <div class="who-grid">
       <div class="who-card fade-in">
+        <h4>Privacy-First People</h4>
+        <p>Tired of being tracked, profiled, and sold to advertisers. You want AI that works for YOU without reporting to anyone else.</p>
+      </div>
+      <div class="who-card fade-in">
         <h4>Contractors &amp; Tradesmen</h4>
-        <p>Bid estimates, material lookups, scheduling, invoice drafting. An assistant that knows your trade inside out.</p>
+        <p>Bid estimates, material lookups, scheduling, invoice drafting. An AI that knows your trade &mdash; and doesn't share your pricing with competitors.</p>
       </div>
       <div class="who-card fade-in">
         <h4>Small Business Owners</h4>
-        <p>Revenue tracking, marketing content, customer follow-ups, inventory alerts. Automate the back office.</p>
+        <p>Revenue tracking, marketing, customer follow-ups. Private AI means your business data stays your business. Not Amazon's training data.</p>
       </div>
       <div class="who-card fade-in">
-        <h4>Realtors &amp; Agents</h4>
-        <p>Property descriptions, market analysis, client outreach, CRM summaries delivered to your phone every morning.</p>
+        <h4>Veterans &amp; First Responders</h4>
+        <p>You served to protect freedom. Now protect your data. Private AI for personal business, transitions, and building the next chapter.</p>
       </div>
       <div class="who-card fade-in">
-        <h4>Freelancers &amp; Creators</h4>
-        <p>Content generation, social media scheduling, client proposals, invoicing. Your virtual business partner.</p>
+        <h4>Independent Thinkers</h4>
+        <p>The Shawn Ryan listeners. The JRE crowd. Anyone who questions the narrative and wants tools that don't come with strings attached.</p>
       </div>
       <div class="who-card fade-in">
-        <h4>Students &amp; Learners</h4>
-        <p>A tutor that never sleeps. Explains any subject, quizzes you, helps with research. Like having a professor in your pocket.</p>
-      </div>
-      <div class="who-card fade-in">
-        <h4>Side Hustlers</h4>
-        <p>Crypto alerts, market trends, product research, passive income strategies. Your AI scans opportunities 24/7 so you don't have to.</p>
+        <h4>Off-Grid &amp; Self-Reliant</h4>
+        <p>Homesteaders, preppers, freedom advocates. AI that works without the cloud, without Big Tech, without anyone's permission.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- ORIGIN STORY -->
+<section id="origin">
+  <div class="section-inner">
+    <h2 class="section-title">The Origin Story</h2>
+    <p class="section-sub">This didn't start in a Silicon Valley garage. It started in a plumber's kitchen.</p>
+    <div class="origin-story fade-in">
+      <div class="origin-text">
+        <h3>A Plumber, a Laptop, and a Few Days Off</h3>
+        <p>Kyle Jimenez is a <strong>plumber</strong>. No CS degree. No coding bootcamp. No VC funding. Just a guy with an old laptop, home wifi, and a few days off work who was tired of Big Tech treating regular people like data cattle.</p>
+        <p>In <em>48 hours</em>, he downloaded open-source AI models, installed <strong>Kali Linux</strong>, and built 9 AI assistants that run his entire operation &mdash; content creation, customer service, lead generation, market analysis, social media &mdash; all running privately on his own hardware.</p>
+        <p>No Google. No Amazon. No Microsoft. No corporate data center. Just a working-class guy who proved that <strong>you don't need Silicon Valley's permission to use AI</strong>.</p>
+        <p>Total daily cost: <em>$0.02</em>. That's not a typo.</p>
+        <p>Now he's putting that same power in your hands. Because if a plumber can do it, the gatekeeping is officially over.</p>
+      </div>
+      <div class="origin-stats">
+        <div class="origin-stat">
+          <div class="num">9</div>
+          <div class="label">Private AI Bots</div>
+        </div>
+        <div class="origin-stat">
+          <div class="num">48h</div>
+          <div class="label">Build Time</div>
+        </div>
+        <div class="origin-stat">
+          <div class="num">$0.02</div>
+          <div class="label">Daily Cost</div>
+        </div>
+        <div class="origin-stat">
+          <div class="num">0</div>
+          <div class="label">Data Sent to Big Tech</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- PROOF -->
+<section style="background: var(--black2);">
+  <div class="section-inner" style="text-align:center;">
+    <h2 class="section-title">9 Bots. Zero Corporate Overlords.</h2>
+    <p class="section-sub">All running privately. All open-source. All answering to one person &mdash; the owner.</p>
+    <div class="terminal fade-in" style="text-align:left;">
+      <div><span class="prompt">[status]</span> <span class="output">system</span> <span class="dim">// running on local hardware &mdash; 0 bytes sent to cloud</span></div>
+      <div><span class="prompt">[06:00]</span> <span class="output">content-ai</span> <span class="dim">// wrote marketing posts for 4 platforms &mdash; privately</span></div>
+      <div><span class="prompt">[07:00]</span> <span class="output">market-intel</span> <span class="dim">// found 3 opportunities &mdash; no one else sees this data</span></div>
+      <div><span class="prompt">[08:00]</span> <span class="output">crypto-analyst</span> <span class="dim">// BTC $67K (+2.4%) &mdash; your portfolio, your eyes only</span></div>
+      <div><span class="prompt">[09:00]</span> <span class="output">finance-ai</span> <span class="dim">// revenue tracking &mdash; encrypted, never shared</span></div>
+      <div><span class="prompt">[10:00]</span> <span class="output">growth-ai</span> <span class="dim">// social media automation &mdash; no third-party access</span></div>
+      <div><span class="prompt">[12:00]</span> <span class="output">nurture-ai</span> <span class="dim">// customer engagement &mdash; your leads, not Facebook's</span></div>
+      <div><span class="prompt">[17:00]</span> <span class="output">proof-ai</span> <span class="dim">// 1,000+ actions/week &mdash; all on sovereign hardware</span></div>
+      <div><span class="prompt">[24/7]</span> <span class="output">sales-ai</span> <span class="dim">// auto-delivery &mdash; no Shopify taking 30% + your data</span></div>
+      <div><span class="prompt">[24/7]</span> <span class="output">price-watch</span> <span class="dim">// alerts every 30 min &mdash; off-grid, always running</span></div>
+    </div>
+    <p style="color:var(--muted);font-size:0.85rem;margin-top:1.5rem;">Total daily cost: <strong style="color:var(--gold);">$0.02</strong>. Built by a plumber. Running on home wifi. <strong style="color:var(--crimson);">Zero data leaves the machine.</strong></p>
   </div>
 </section>
 
@@ -258,22 +440,22 @@
 <section>
   <div class="section-inner">
     <h2 class="section-title">How It Works</h2>
-    <p class="section-sub">No installs. No coding. No tech skills needed.</p>
+    <p class="section-sub">No installs. No coding. No handing your data to strangers.</p>
     <div class="steps">
       <div class="step fade-in">
         <div class="step-num">I</div>
         <h3>Tell Us What You Need</h3>
-        <p>"I need an AI that knows plumbing codes and can draft bids." That's all we need. You describe it, we build it.</p>
+        <p>"I need an AI that knows plumbing codes and keeps my data private." That's all. You describe it, we build it on your terms.</p>
       </div>
       <div class="step fade-in d2">
         <div class="step-num">II</div>
-        <h3>We Build Your AI</h3>
-        <p>We train it on your field, your preferences, your tools. It goes live on Telegram or WhatsApp &mdash; ready to talk.</p>
+        <h3>We Build Your Private AI</h3>
+        <p>Open-source models. Your specifications. Delivered via Telegram or WhatsApp. No data touches any corporate server. Ever.</p>
       </div>
       <div class="step fade-in d3">
         <div class="step-num">III</div>
-        <h3>Talk to It Like a Friend</h3>
-        <p>Open your phone. Send a message. Get expert answers in seconds. It works while you sleep, learns what you like, and never takes a day off.</p>
+        <h3>You Own It. Forever.</h3>
+        <p>Talk to your AI like a friend. It works 24/7, learns your preferences, and never sends a single byte to Google, Amazon, or anyone else.</p>
       </div>
     </div>
   </div>
@@ -284,13 +466,13 @@
 <!-- PRICING -->
 <section id="pricing" style="background: var(--black2);">
   <div class="section-inner">
-    <h2 class="section-title">Simple Pricing</h2>
-    <p class="section-sub">Start free. Upgrade when you're hooked. Cancel anytime.</p>
+    <h2 class="section-title">Simple Pricing. No Data Tax.</h2>
+    <p class="section-sub">Big Tech charges you money AND takes your data. We just charge you money. Fair deal.</p>
     <div style="text-align:center;margin-bottom:2rem;padding:1.2rem;background:rgba(220,20,60,0.06);border:1px solid rgba(220,20,60,0.15);border-radius:var(--radius);">
       <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--crimson);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.3rem;">Beta Launch Pricing</div>
-      <div style="font-size:0.85rem;color:var(--muted);">Hiring a developer to build this: <strong style="color:var(--bone);text-decoration:line-through;">$25,000 - $75,000</strong></div>
-      <div style="font-size:0.85rem;color:var(--muted);">ChatGPT Pro subscription: <strong style="color:var(--bone);text-decoration:line-through;">$200/month</strong></div>
-      <div style="font-size:0.95rem;color:var(--gold);margin-top:0.4rem;">Your personal AI assistant: <strong>from $9/month</strong></div>
+      <div style="font-size:0.85rem;color:var(--muted);">ChatGPT Pro + your data: <strong style="color:var(--bone);text-decoration:line-through;">$200/month</strong></div>
+      <div style="font-size:0.85rem;color:var(--muted);">Google Gemini + your data: <strong style="color:var(--bone);text-decoration:line-through;">$20/month</strong></div>
+      <div style="font-size:0.95rem;color:var(--gold);margin-top:0.4rem;">Your PRIVATE AI assistant: <strong>from $9/month. Zero data harvested.</strong></div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--ghost);margin-top:0.5rem;">Beta pricing locks in for life. Prices increase after first 100 users.</div>
     </div>
     <div class="pricing">
@@ -301,8 +483,8 @@
         <div class="price-period">forever</div>
         <ul class="price-features">
           <li>Talk to our demo AI on Telegram</li>
-          <li>See what's possible</li>
-          <li>No signup required</li>
+          <li>See what private AI feels like</li>
+          <li>No signup. No data collected.</li>
         </ul>
         <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="btn-blood" style="width:100%;text-align:center">Try Now</a>
         <div class="compare">just open Telegram</div>
@@ -313,9 +495,9 @@
         <div class="price">$9</div>
         <div class="price-period">per month</div>
         <ul class="price-features">
-          <li>1 personal AI assistant</li>
+          <li>1 private AI assistant</li>
           <li>Choose your specialty</li>
-          <li>Telegram delivery</li>
+          <li>Zero data shared with anyone</li>
           <li>Daily automated tasks</li>
           <li>Email support</li>
         </ul>
@@ -328,15 +510,15 @@
         <div class="price">$29</div>
         <div class="price-period">per month</div>
         <ul class="price-features">
-          <li>3 AI assistants</li>
+          <li>3 private AI assistants</li>
           <li>Full customization</li>
           <li>Telegram + WhatsApp</li>
-          <li>Real-time + scheduled</li>
+          <li>All data stays local</li>
           <li>Priority support</li>
           <li>Monthly optimization</li>
         </ul>
         <a href="https://buy.stripe.com/9B6aEW2R377E0ubcdYgrS0z" class="btn-blood" style="width:100%;text-align:center">Start</a>
-        <div class="compare">less than a Netflix subscription</div>
+        <div class="compare">less than one hour of Big Tech consulting</div>
       </div>
 
       <div class="price-card fade-in d3">
@@ -344,67 +526,45 @@
         <div class="price">$79</div>
         <div class="price-period">per month</div>
         <ul class="price-features">
-          <li>Unlimited AI assistants</li>
-          <li>Private server option</li>
+          <li>Unlimited private AI assistants</li>
+          <li>Self-hosted server option</li>
           <li>API integrations (Stripe, etc.)</li>
-          <li>Automated workflows</li>
+          <li>Fully automated workflows</li>
           <li>Dedicated support</li>
           <li>White-label available</li>
         </ul>
         <a href="https://buy.stripe.com/bJecN40IVbnU2Cj1zkgrS0A" class="btn-blood" style="width:100%;text-align:center">Start</a>
-        <div class="compare">less than one hour of consulting</div>
+        <div class="compare">own your entire AI stack</div>
       </div>
 
     </div>
-  </div>
-</section>
-
-<div class="divider">&dagger; &dagger; &dagger;</div>
-
-<!-- PROOF -->
-<section>
-  <div class="section-inner" style="text-align:center;">
-    <h2 class="section-title">This Is What I Built in 48 Hours</h2>
-    <p class="section-sub">9 AI assistants. Running every day. On one machine. For pennies.</p>
-    <div class="terminal fade-in" style="text-align:left;">
-      <div><span class="prompt">[06:00]</span> <span class="output">content-ai</span> <span class="dim">// wrote today's marketing posts for 4 platforms</span></div>
-      <div><span class="prompt">[07:00]</span> <span class="output">market-intel</span> <span class="dim">// found 3 business opportunities, flagged 1 competitor</span></div>
-      <div><span class="prompt">[08:00]</span> <span class="output">crypto-analyst</span> <span class="dim">// BTC $67K (+2.4%) | market fear: 42 | "accumulate zone"</span></div>
-      <div><span class="prompt">[09:00]</span> <span class="output">finance-ai</span> <span class="dim">// revenue: $187 | subscribers: 12 | MRR: $948</span></div>
-      <div><span class="prompt">[10:00]</span> <span class="output">growth-ai</span> <span class="dim">// generated Reddit posts + Twitter thread + 3 tweets</span></div>
-      <div><span class="prompt">[12:00]</span> <span class="output">nurture-ai</span> <span class="dim">// posted value tip to channel followers</span></div>
-      <div><span class="prompt">[17:00]</span> <span class="output">proof-ai</span> <span class="dim">// shared weekly stats: 1,000+ automated actions</span></div>
-      <div><span class="prompt">[24/7]</span> <span class="output">sales-ai</span> <span class="dim">// auto-delivers products when someone buys</span></div>
-      <div><span class="prompt">[24/7]</span> <span class="output">price-watch</span> <span class="dim">// crypto alerts every 30 minutes</span></div>
-    </div>
-    <p style="color:var(--muted);font-size:0.85rem;margin-top:1.5rem;">Total daily cost: <strong style="color:var(--gold);">$0.02</strong>. A plumber built this. Imagine what yours could do.</p>
   </div>
 </section>
 
 <div class="divider">&dagger; &dagger; &dagger;</div>
 
 <!-- BLUEPRINT + DONE FOR YOU -->
-<section id="blueprint" style="background: var(--black2);">
+<section id="blueprint">
   <div class="section-inner">
-    <h2 class="section-title">Want to Build It Yourself?</h2>
-    <p class="section-sub">The subscriptions are the easy path. These are for builders who want to own the whole system.</p>
+    <h2 class="section-title">Want to Own the Whole System?</h2>
+    <p class="section-sub">Go fully independent. Build and run your own private AI empire &mdash; no subscriptions to anyone.</p>
     <div class="onetime">
       <div class="ot-card fade-in">
         <h3>The Full Blueprint</h3>
         <div class="ot-price">$149</div>
-        <p>Everything I know. The complete system &mdash; every config, every prompt template, every automation workflow. Build your own AI empire from scratch and never pay a subscription.</p>
+        <p>Every config, every prompt, every automation. Build your own private AI empire from scratch on your own hardware. Complete independence. No recurring fees to Big Tech or anyone else.</p>
         <a href="https://buy.stripe.com/8x25kCgHT8bI7WDguegrS0B" class="btn-sm">Get Blueprint</a>
       </div>
       <div class="ot-card fade-in d2">
         <h3>Done For You</h3>
         <div class="ot-price">$299</div>
-        <p>We build your entire AI system on your hardware. Custom assistants, integrations, workflows &mdash; you walk away with a working empire. Hands-off setup.</p>
+        <p>We build your entire private AI system on your hardware. Custom assistants, integrations, workflows &mdash; you walk away with a sovereign AI operation. Completely off-grid capable.</p>
         <a href="https://buy.stripe.com/aFa5kC1MZ9fM1yf51MgrS0u" class="btn-sm">Book Build</a>
       </div>
       <div class="ot-card fade-in d3">
         <h3>Consultation</h3>
         <div class="ot-price">from $49</div>
-        <p>Not sure what you need? 30-minute call. I'll analyze your business and tell you exactly which AI assistants to build and why. Actionable plan in 48 hours.</p>
+        <p>30-minute strategy call. We'll analyze your situation and design a private AI system that replaces your Big Tech dependencies. Actionable independence plan in 48 hours.</p>
         <a href="https://buy.stripe.com/fZu9AS9frajQ1yf4LwgrS0e" class="btn-sm">Book Call</a>
       </div>
     </div>
@@ -415,14 +575,16 @@
 
 <!-- FINAL CTA -->
 <section style="padding:5rem 2rem;text-align:center;background:radial-gradient(ellipse at 50% 50%, rgba(220,20,60,0.05), transparent 70%);">
-  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:var(--bone);letter-spacing:3px;margin-bottom:0.8rem;">The Tech World Built AI for Themselves.</h2>
-  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:var(--crimson);letter-spacing:3px;margin-bottom:1.5rem;">We're Bringing It to Everyone Else.</h2>
-  <p style="color:var(--muted);max-width:550px;margin:0 auto 2rem;font-size:1rem;">If a plumber with zero coding experience can build 9 AI assistants in 48 hours, what could <strong style="color:var(--bone);">you</strong> build?</p>
+  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:var(--bone);letter-spacing:3px;margin-bottom:0.8rem;">They Built AI to Watch You.</h2>
+  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:var(--crimson);letter-spacing:3px;margin-bottom:1.5rem;">We Built AI to Free You.</h2>
+  <p style="color:var(--muted);max-width:600px;margin:0 auto 1rem;font-size:1rem;">A plumber with an old laptop proved you don't need Google's permission to have world-class AI. No surveillance. No corporate middlemen. No data harvesting.</p>
+  <p style="color:var(--bone);max-width:550px;margin:0 auto 2rem;font-size:1.1rem;font-weight:600;">Sick of billionaires winning? <strong style="color:var(--crimson);">Build your own.</strong></p>
   <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-    <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="btn-blood">Try It Free on Telegram</a>
-    <a href="https://t.me/MoneyMakingMitchell1904" target="_blank" class="btn-bone">Join the Community</a>
+    <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="btn-blood">Try Private AI Free</a>
+    <a href="https://t.me/MoneyMakingMitchell1904" target="_blank" class="btn-bone">Join the Movement</a>
   </div>
-  <div class="price-hint" style="margin-top:1.5rem;">No signup. No credit card. Just open Telegram and say hello.</div>
+  <div class="price-hint" style="margin-top:1.5rem;">No signup. No data harvesting. No corporate overlords. Just you and your AI.</div>
+  <div class="hero-tagline">For the ones who don't want to conform.</div>
 </section>
 
 <!-- FOOTER -->
@@ -432,9 +594,11 @@
     <a href="https://t.me/moneymakingmitch1904_bot" target="_blank">Talk to AI</a>
     <a href="https://t.me/MoneyMakingMitchell1904" target="_blank">Channel</a>
     <a href="https://x.com/Lyfergang1904" target="_blank">X / Twitter</a>
+    <a href="enterprise.html">Enterprise</a>
     <a href="free-guide.html">Free Guide</a>
   </div>
-  <p class="footer-copy">Built by a plumber. Powered by AI. No corporate middleman.</p>
+  <p class="footer-copy">Built by a plumber on an old laptop. Open-source. Private. No corporate middleman. No surveillance.</p>
+  <p class="footer-copy" style="margin-top:0.3rem;">Your data is yours. Always was. Always will be.</p>
   <p class="footer-copy" style="margin-top:0.5rem;">&copy; 2026 SGKx1904. All rights reserved.</p>
 </footer>
 
