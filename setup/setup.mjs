@@ -34,7 +34,7 @@ import {
   setSecret,
   setVariable,
 } from './lib/github.mjs';
-import { writeModelsJson } from './lib/auth.mjs';
+import { writeModelsJson, updateEnvVariable } from './lib/auth.mjs';
 import { loadEnvFile } from './lib/env.mjs';
 import { syncConfig } from './lib/sync.mjs';
 
@@ -521,6 +521,13 @@ async function main() {
           if (skipOAuth) {
             collected.CLAUDE_CODE_OAUTH_TOKEN = env.CLAUDE_CODE_OAUTH_TOKEN;
             collected.AGENT_BACKEND = env.AGENT_BACKEND || 'claude-code';
+
+            // OAuth replaces the API key for agent jobs — don't push it to GitHub.
+            if (collected.ANTHROPIC_API_KEY) {
+              updateEnvVariable('ANTHROPIC_API_KEY', collected.ANTHROPIC_API_KEY);
+              delete collected.ANTHROPIC_API_KEY;
+            }
+            delete collected['__agentApiKey'];
           }
         }
 
@@ -532,9 +539,8 @@ async function main() {
               'You can use your subscription for agent jobs instead of API credits.\n' +
               '  This switches your job runner from Pi to Claude Code CLI.\n' +
               '  See docs/CLAUDE_CODE_VS_PI.md for details.\n\n' +
-              '  The API key above is still required — Anthropic only allows OAuth\n' +
-              '  tokens with Claude Code, not the Messages API.\n' +
-              '  Details: https://code.claude.com/docs/en/legal-and-compliance'
+              '  Your API key will only be saved locally for chat — it won\'t be\n' +
+              '  pushed to GitHub since agent jobs will use the OAuth token instead.'
             );
 
             // Check if claude CLI is installed
@@ -581,6 +587,15 @@ async function main() {
             if (oauthToken) {
               collected.CLAUDE_CODE_OAUTH_TOKEN = oauthToken;
               collected.AGENT_BACKEND = 'claude-code';
+
+              // OAuth replaces the API key for agent jobs — don't push it to GitHub.
+              // The key is still needed in .env for the event handler chat, so write it directly.
+              if (collected.ANTHROPIC_API_KEY) {
+                updateEnvVariable('ANTHROPIC_API_KEY', collected.ANTHROPIC_API_KEY);
+                delete collected.ANTHROPIC_API_KEY;
+              }
+              delete collected['__agentApiKey'];
+
               clack.log.success(`Claude OAuth token added (${maskSecret(oauthToken)})`);
               clack.log.info('Agent jobs will use Claude Code CLI with your subscription.');
             }
