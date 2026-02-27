@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SGKx1904 Enterprise — AI Workforce Deployment</title>
+  <meta name="description" content="Deploy a custom AI workforce for your business. 9 AI agents, 1000+ automated actions/week, $0.02/day operating cost. Built by SGKx1904." />
+  <meta name="keywords" content="enterprise AI automation, AI workforce, business automation, custom AI agents, AI deployment, white label AI" />
+  <meta property="og:title" content="SGKx1904 Enterprise — AI Workforce Deployment" />
+  <meta property="og:description" content="We build your AI workforce. 9 agents. 1000+ actions/week. Pennies to run." />
+  <link rel="icon" type="image/png" href="img/icon-matrix.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808; --black2: #0c0c0c; --black3: #111111;
+      --card: #0e0e0e; --card-hover: #141414;
+      --border: #1a1111; --border-bright: rgba(220,20,60,0.2);
+      --crimson: #dc143c; --crimson-dim: #a01030; --crimson-bright: #ff1a4a; --crimson-glow: rgba(220,20,60,0.15);
+      --gold: #d4af37; --gold-dim: #b8962e; --gold-glow: rgba(212,175,55,0.15);
+      --bone: #e8dcc8; --muted: #8a7a6a; --ghost: #3a2a2a; --radius: 3px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--crimson-dim); border-radius: 3px; }
+
+    .embers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+    .ember { position: absolute; width: 2px; height: 2px; background: var(--crimson); border-radius: 50%; opacity: 0; animation: emberFloat linear infinite; box-shadow: 0 0 6px var(--crimson), 0 0 12px rgba(220,20,60,0.3); }
+    @keyframes emberFloat { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.3; } 100% { transform: translateY(-20vh) translateX(30px); opacity: 0; } }
+    .scanlines::after { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px); pointer-events: none; z-index: 9999; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s ease forwards; }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 2rem; background: rgba(8,8,8,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-brand { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 900; color: var(--gold); text-decoration: none; letter-spacing: 4px; text-shadow: 0 0 20px var(--gold-glow); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
+    .nav-links a:hover { color: var(--crimson); }
+
+    .btn-blood { display: inline-block; padding: 0.9rem 2.2rem; background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-weight: 800; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; transition: all 0.3s; border: none; cursor: pointer; position: relative; overflow: hidden; }
+    .btn-blood::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transition: left 0.5s; }
+    .btn-blood:hover::before { left: 100%; }
+    .btn-blood:hover { background: var(--crimson-bright); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-2px); }
+    .btn-bone { display: inline-block; padding: 0.85rem 2rem; background: transparent; color: var(--gold); font-family: 'Cinzel', serif; font-weight: 600; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; border: 1px solid var(--gold-dim); transition: all 0.3s; }
+    .btn-bone:hover { background: rgba(212,175,55,0.08); border-color: var(--gold); box-shadow: 0 0 20px var(--gold-glow); }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 6rem 2rem 3rem; background: radial-gradient(ellipse at 50% 30%, rgba(220,20,60,0.04), transparent 70%); }
+    .hero-inner { max-width: 900px; text-align: center; position: relative; z-index: 1; }
+    .hero-badge { display: inline-block; background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.3); color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; padding: 0.4rem 1.2rem; border-radius: 2px; margin-bottom: 2rem; }
+    h1 { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 900; color: var(--bone); letter-spacing: 3px; line-height: 1.1; margin-bottom: 1.5rem; }
+    h1 span { color: var(--crimson); }
+    .hero-sub { font-size: 1.15rem; color: var(--muted); max-width: 650px; margin: 0 auto 2.5rem; line-height: 1.8; }
+    .hero-sub strong { color: var(--bone); }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+    .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; text-align: center; margin-bottom: 0.5rem; color: var(--bone); letter-spacing: 3px; }
+    .section-sub { text-align: center; color: var(--muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 2.5rem; }
+    .divider { text-align: center; padding: 1.5rem 0; color: var(--crimson-dim); font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.8rem; opacity: 0.4; }
+
+    /* METRICS */
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 3rem 0; }
+    .metric { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; }
+    .metric:hover { border-color: var(--border-bright); transform: translateY(-3px); }
+    .metric-num { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 900; color: var(--crimson); line-height: 1; }
+    .metric-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-top: 0.5rem; }
+
+    /* AGENTS */
+    .agents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .agent-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: all 0.3s; }
+    .agent-card:hover { border-color: var(--border-bright); }
+    .agent-name { font-family: 'Cinzel', serif; font-weight: 700; color: var(--gold); font-size: 1rem; margin-bottom: 0.3rem; letter-spacing: 1px; }
+    .agent-role { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--crimson); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
+    .agent-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* COMPARISON */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+    .compare-table th { font-family: 'Cinzel', serif; font-weight: 700; color: var(--gold); text-align: left; padding: 1rem; border-bottom: 2px solid var(--crimson-dim); font-size: 0.85rem; letter-spacing: 1px; }
+    .compare-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); }
+    .compare-table tr:hover td { background: rgba(220,20,60,0.03); }
+    .compare-table .highlight { color: var(--crimson); font-weight: 700; }
+    .compare-table .dim { color: var(--ghost); }
+
+    /* TIERS */
+    .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .tier { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; transition: all 0.3s; position: relative; }
+    .tier:hover { border-color: var(--border-bright); transform: translateY(-3px); }
+    .tier.featured { border-color: var(--crimson-dim); background: linear-gradient(180deg, rgba(220,20,60,0.05), var(--card)); }
+    .tier.featured::before { content: 'MOST POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--crimson); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; padding: 0.2rem 0.8rem; border-radius: 2px; letter-spacing: 2px; }
+    .tier-name { font-family: 'Cinzel', serif; font-weight: 800; font-size: 1.2rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 0.5rem; }
+    .tier-price { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 900; color: var(--bone); }
+    .tier-price span { font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+    .tier-desc { font-size: 0.8rem; color: var(--muted); margin: 1rem 0; line-height: 1.6; }
+    .tier-features { list-style: none; text-align: left; margin: 1.5rem 0; }
+    .tier-features li { font-size: 0.8rem; color: var(--muted); padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .tier-features li::before { content: '+'; color: var(--crimson); margin-right: 0.5rem; font-weight: 700; }
+
+    /* CTA */
+    .cta-section { text-align: center; padding: 4rem 2rem; background: linear-gradient(180deg, transparent, rgba(220,20,60,0.03)); }
+    .cta-section h2 { font-family: 'Cinzel', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; color: var(--bone); letter-spacing: 3px; margin-bottom: 1rem; }
+    .cta-section p { color: var(--muted); max-width: 600px; margin: 0 auto 2rem; }
+
+    footer { text-align: center; padding: 2rem; font-size: 0.7rem; color: var(--ghost); border-top: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; }
+    footer a { color: var(--crimson-dim); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0.7rem 1rem; }
+      .nav-links { display: none; }
+      .section-inner { padding: 2.5rem 1rem; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body class="scanlines">
+  <div class="embers" id="embers"></div>
+
+  <nav>
+    <a href="index.html" class="nav-brand">SGKx1904</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#agents">Agents</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://t.me/moneymakingmitch1904_bot" class="btn-blood" style="padding:0.4rem 1rem; font-size:0.65rem;">Talk to Us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge fade-in">Enterprise AI Deployment</div>
+      <h1 class="fade-in delay-1">We Build Your<br><span>AI Workforce</span></h1>
+      <p class="hero-sub fade-in delay-2">
+        <strong>9 AI agents. 1,000+ automated actions per week. $0.02/day operating cost.</strong><br>
+        We built it for ourselves. Now we build it for your business.
+      </p>
+      <div class="hero-btns fade-in delay-3">
+        <a href="https://t.me/moneymakingmitch1904_bot" class="btn-blood">Schedule a Demo</a>
+        <a href="#proof" class="btn-bone">See the Proof</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF — LIVE METRICS -->
+  <section id="proof">
+    <div class="section-inner">
+      <div class="section-title fade-in">Live System Metrics</div>
+      <div class="section-sub fade-in">These aren't projections. This is our production system running right now.</div>
+
+      <div class="metrics fade-in">
+        <div class="metric">
+          <div class="metric-num">9</div>
+          <div class="metric-label">AI Agents Active</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">1,036</div>
+          <div class="metric-label">Actions / Week</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">$0.02</div>
+          <div class="metric-label">Daily Operating Cost</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">48h</div>
+          <div class="metric-label">Time to Deploy</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">0</div>
+          <div class="metric-label">Lines of Code Written</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">24/7</div>
+          <div class="metric-label">Uptime</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">+ + + + +</div>
+
+  <!-- AI AGENTS -->
+  <section id="agents">
+    <div class="section-inner">
+      <div class="section-title fade-in">The AI Workforce</div>
+      <div class="section-sub fade-in">Each agent runs autonomously. No human intervention. No breaks. No sick days.</div>
+
+      <div class="agents-grid">
+        <div class="agent-card fade-in">
+          <div class="agent-name">Revenue Tracker</div>
+          <div class="agent-role">Finance Agent</div>
+          <div class="agent-desc">Monitors Stripe in real-time. Daily MRR reports, failed charge alerts, subscriber analytics. Knows your numbers before you do.</div>
+        </div>
+        <div class="agent-card fade-in delay-1">
+          <div class="agent-name">Market Intelligence</div>
+          <div class="agent-role">Research Agent</div>
+          <div class="agent-desc">Scans markets daily for business opportunities, competitor moves, and industry trends. Delivers actionable briefings every morning.</div>
+        </div>
+        <div class="agent-card fade-in delay-2">
+          <div class="agent-name">Content Machine</div>
+          <div class="agent-role">Marketing Agent</div>
+          <div class="agent-desc">Generates AI content with custom images. Posts to Twitter every 45 minutes, Telegram channel twice daily, Nostr continuously. 21+ posts/day on autopilot.</div>
+        </div>
+        <div class="agent-card fade-in delay-3">
+          <div class="agent-name">Lead Nurture Engine</div>
+          <div class="agent-role">Sales Agent</div>
+          <div class="agent-desc">Auto-delivers lead magnets, runs 7-day drip sequences, personalizes each message with AI. Converts cold leads to customers while you sleep.</div>
+        </div>
+        <div class="agent-card fade-in">
+          <div class="agent-name">Fulfillment Bot</div>
+          <div class="agent-role">Operations Agent</div>
+          <div class="agent-desc">Checks Stripe every 15 minutes. Instant product delivery on purchase. Welcome sequences. Zero manual fulfillment.</div>
+        </div>
+        <div class="agent-card fade-in delay-1">
+          <div class="agent-name">Crypto Monitor</div>
+          <div class="agent-role">Analytics Agent</div>
+          <div class="agent-desc">30-minute crypto price updates, daily market briefings, threshold alerts. Your portfolio watched around the clock.</div>
+        </div>
+        <div class="agent-card fade-in delay-2">
+          <div class="agent-name">Social Proof Generator</div>
+          <div class="agent-role">Growth Agent</div>
+          <div class="agent-desc">Auto-publishes live system stats, bot performance metrics, and customer wins to your public channels. Trust built automatically.</div>
+        </div>
+        <div class="agent-card fade-in delay-3">
+          <div class="agent-name">Customer Gateway</div>
+          <div class="agent-role">Service Agent</div>
+          <div class="agent-desc">Interactive AI chatbot that handles customer inquiries 24/7. Answers questions, gives demos, processes interest. Your always-on sales team.</div>
+        </div>
+        <div class="agent-card fade-in">
+          <div class="agent-name">Growth Engine</div>
+          <div class="agent-role">Expansion Agent</div>
+          <div class="agent-desc">Cross-platform posting to Nostr, Reddit, and emerging platforms. Finds relevant conversations and engages. Grows your audience on autopilot.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">+ + + + +</div>
+
+  <!-- COST COMPARISON -->
+  <section>
+    <div class="section-inner">
+      <div class="section-title fade-in">The Math</div>
+      <div class="section-sub fade-in">What you're paying now vs. what we deploy</div>
+
+      <table class="compare-table fade-in">
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Traditional Cost</th>
+            <th>AI Workforce</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Social Media Manager</td>
+            <td class="dim">$3,000-5,000/mo</td>
+            <td class="highlight">$0.44/day</td>
+          </tr>
+          <tr>
+            <td>Sales Development Rep</td>
+            <td class="dim">$4,000-6,000/mo</td>
+            <td class="highlight">$0.01/day</td>
+          </tr>
+          <tr>
+            <td>Customer Service Rep</td>
+            <td class="dim">$2,500-4,000/mo</td>
+            <td class="highlight">$0.00/day</td>
+          </tr>
+          <tr>
+            <td>Financial Analyst</td>
+            <td class="dim">$5,000-8,000/mo</td>
+            <td class="highlight">$0.01/day</td>
+          </tr>
+          <tr>
+            <td>Market Researcher</td>
+            <td class="dim">$3,000-5,000/mo</td>
+            <td class="highlight">$0.01/day</td>
+          </tr>
+          <tr>
+            <td>Content Writer</td>
+            <td class="dim">$2,000-4,000/mo</td>
+            <td class="highlight">$0.02/day</td>
+          </tr>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td class="dim"><strong>$17,500-32,000/mo</strong></td>
+            <td class="highlight"><strong>$15/mo</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="divider">+ + + + +</div>
+
+  <!-- ENTERPRISE PRICING -->
+  <section id="pricing">
+    <div class="section-inner">
+      <div class="section-title fade-in">Enterprise Plans</div>
+      <div class="section-sub fade-in">Deployed in 48 hours. Customized for your business.</div>
+
+      <div class="tiers">
+        <div class="tier fade-in">
+          <div class="tier-name">Starter</div>
+          <div class="tier-price">$499<span>/mo</span></div>
+          <div class="tier-desc">Perfect for small businesses ready to automate</div>
+          <ul class="tier-features">
+            <li>3 custom AI agents</li>
+            <li>Social media automation</li>
+            <li>Customer service chatbot</li>
+            <li>Daily analytics reports</li>
+            <li>Telegram + 1 platform</li>
+            <li>Email support</li>
+          </ul>
+          <a href="https://t.me/moneymakingmitch1904_bot" class="btn-blood" style="width:100%; text-align:center;">Get Started</a>
+        </div>
+        <div class="tier featured fade-in delay-1">
+          <div class="tier-name">Growth</div>
+          <div class="tier-price">$1,499<span>/mo</span></div>
+          <div class="tier-desc">Full AI workforce — the same system we run</div>
+          <ul class="tier-features">
+            <li>9 custom AI agents</li>
+            <li>Multi-platform content machine</li>
+            <li>Lead nurture + drip sequences</li>
+            <li>Revenue tracking + alerts</li>
+            <li>Auto-fulfillment pipeline</li>
+            <li>All platforms (Twitter, Telegram, Nostr)</li>
+            <li>Priority support + monthly strategy call</li>
+          </ul>
+          <a href="https://t.me/moneymakingmitch1904_bot" class="btn-blood" style="width:100%; text-align:center;">Schedule Demo</a>
+        </div>
+        <div class="tier fade-in delay-2">
+          <div class="tier-name">White Label</div>
+          <div class="tier-price">$4,999<span>/mo</span></div>
+          <div class="tier-desc">Resell AI automation under your own brand</div>
+          <ul class="tier-features">
+            <li>Everything in Growth</li>
+            <li>Your brand, your domain</li>
+            <li>Custom agent development</li>
+            <li>API access + integrations</li>
+            <li>Unlimited sub-accounts</li>
+            <li>Dedicated account manager</li>
+            <li>Source code license available</li>
+          </ul>
+          <a href="https://t.me/moneymakingmitch1904_bot" class="btn-blood" style="width:100%; text-align:center;">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">+ + + + +</div>
+
+  <!-- ORIGIN STORY -->
+  <section>
+    <div class="section-inner" style="max-width:700px;">
+      <div class="section-title fade-in">The Origin</div>
+      <div style="color:var(--muted); line-height:1.8; font-size:0.95rem; margin-top:2rem;" class="fade-in delay-1">
+        <p>A plumber with zero coding experience built 9 AI assistants in 48 hours.</p>
+        <p style="margin-top:1rem;">No computer science degree. No engineering team. No venture capital. Just open-source tools, a laptop, and the stubborn belief that AI shouldn't require a PhD to use.</p>
+        <p style="margin-top:1rem;">The system costs <strong style="color:var(--crimson);">$0.02 per day</strong> to operate. It handles over 1,000 actions per week — marketing, sales, customer service, analytics, fulfillment — all on autopilot.</p>
+        <p style="margin-top:1rem;">That plumber now builds the same system for businesses that are tired of paying $30,000/month for work that AI does for pennies.</p>
+        <p style="margin-top:1.5rem; color:var(--gold); font-family:'Cinzel',serif; font-weight:700; letter-spacing:2px;">The system works. That's the pitch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section">
+    <h2 class="fade-in">See It Running. Live.</h2>
+    <p class="fade-in delay-1">DM our bot. Ask it anything. Watch it work. Then imagine that running for your business.</p>
+    <div class="fade-in delay-2" style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="https://t.me/moneymakingmitch1904_bot" class="btn-blood">Talk to the AI</a>
+      <a href="mailto:lyfer1904@gmail.com?subject=Enterprise%20AI%20Inquiry" class="btn-bone">Email Us</a>
+    </div>
+    <p style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--ghost); margin-top:1.5rem;">lyfer1904@gmail.com &nbsp;|&nbsp; @lyfer1904 &nbsp;|&nbsp; t.me/MoneyMakingMitchell1904</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 SGKx1904 &mdash; AI For The Rest of Us &nbsp;|&nbsp; <a href="index.html">Home</a> &nbsp;|&nbsp; <a href="free-guide.html">Free Guide</a> &nbsp;|&nbsp; <a href="enterprise.html">Enterprise</a></p>
+  </footer>
+
+  <script>
+    const container = document.getElementById('embers');
+    for (let i = 0; i < 30; i++) {
+      const ember = document.createElement('div');
+      ember.className = 'ember';
+      ember.style.left = Math.random() * 100 + '%';
+      ember.style.animationDuration = (8 + Math.random() * 15) + 's';
+      ember.style.animationDelay = Math.random() * 10 + 's';
+      ember.style.width = ember.style.height = (1 + Math.random() * 2) + 'px';
+      container.appendChild(ember);
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.style.animationPlayState = 'running'; });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
