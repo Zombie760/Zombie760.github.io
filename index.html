@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SGKx1904 — Your Personal AI Assistant</title>
-  <meta name="description" content="Ever wanted your own personal AI assistant you can talk to like a friend? A master coder, graphic designer, or expert in medicine, law, finance — anything you can imagine. Custom AI assistants on Telegram and WhatsApp." />
-  <meta name="keywords" content="personal AI assistant, custom AI, Telegram AI bot, WhatsApp AI assistant, AI coder, AI designer, AI expert, SGKx1904" />
-  <meta property="og:title" content="SGKx1904 — Your Personal AI Assistant" />
-  <meta property="og:description" content="What if you had a personal AI that knows everything about your field? Talk to it like a friend on Telegram. We make it happen." />
+  <title>SGKx1904 — AI For the Rest of Us</title>
+  <meta name="description" content="A plumber built 9 AI assistants in 48 hours. No coding. No degree. Now he's showing everyone else how. Custom AI on your phone starting at $9/mo." />
+  <meta name="keywords" content="personal AI assistant, custom AI bot, Telegram AI, blue collar AI, no code AI, affordable AI assistant, SGKx1904" />
+  <meta property="og:title" content="SGKx1904 — AI For the Rest of Us" />
+  <meta property="og:description" content="Built by a plumber. For everyone. Custom AI assistants on your phone starting at $9/mo." />
   <meta property="og:image" content="img/icon-matrix.png" />
   <link rel="icon" type="image/png" href="img/icon-matrix.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,48 +15,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --black: #080808;
-      --black2: #0c0c0c;
-      --black3: #111111;
-      --card: #0e0e0e;
-      --card-hover: #141414;
-      --border: #1a1111;
-      --border-bright: rgba(220,20,60,0.2);
-      --crimson: #dc143c;
-      --crimson-dim: #a01030;
-      --crimson-bright: #ff1a4a;
-      --crimson-glow: rgba(220,20,60,0.15);
-      --gold: #d4af37;
-      --gold-dim: #b8962e;
-      --gold-glow: rgba(212,175,55,0.15);
-      --bone: #e8dcc8;
-      --muted: #8a7a6a;
-      --ghost: #3a2a2a;
-      --radius: 3px;
+      --black: #080808; --black2: #0c0c0c; --black3: #111111;
+      --card: #0e0e0e; --card-hover: #141414;
+      --border: #1a1111; --border-bright: rgba(220,20,60,0.2);
+      --crimson: #dc143c; --crimson-dim: #a01030; --crimson-bright: #ff1a4a; --crimson-glow: rgba(220,20,60,0.15);
+      --gold: #d4af37; --gold-dim: #b8962e; --gold-glow: rgba(212,175,55,0.15);
+      --bone: #e8dcc8; --muted: #8a7a6a; --ghost: #3a2a2a; --radius: 3px;
     }
-
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; overflow-x: hidden; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--black); }
     ::-webkit-scrollbar-thumb { background: var(--crimson-dim); border-radius: 3px; }
 
-    /* EMBER PARTICLES */
     .embers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
     .ember { position: absolute; width: 2px; height: 2px; background: var(--crimson); border-radius: 50%; opacity: 0; animation: emberFloat linear infinite; box-shadow: 0 0 6px var(--crimson), 0 0 12px rgba(220,20,60,0.3); }
-    @keyframes emberFloat {
-      0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-      10% { opacity: 0.8; }
-      90% { opacity: 0.3; }
-      100% { transform: translateY(-20vh) translateX(30px); opacity: 0; }
-    }
-
+    @keyframes emberFloat { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.3; } 100% { transform: translateY(-20vh) translateX(30px); opacity: 0; } }
     .scanlines::after { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px); pointer-events: none; z-index: 9999; }
     .divider { text-align: center; padding: 1.5rem 0; color: var(--crimson-dim); font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.8rem; opacity: 0.4; }
 
-    /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 2rem; background: rgba(8,8,8,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
     .nav-brand { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 900; color: var(--gold); text-decoration: none; letter-spacing: 4px; text-shadow: 0 0 20px var(--gold-glow); }
     .nav-links { display: flex; gap: 1.5rem; align-items: center; }
@@ -66,7 +44,6 @@
     .nav-cta:hover { background: var(--crimson-bright) !important; box-shadow: 0 0 20px var(--crimson-glow); }
     .nav-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
 
-    /* BUTTONS */
     .btn-blood { display: inline-block; padding: 0.9rem 2.2rem; background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-weight: 800; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; transition: all 0.3s; border: none; cursor: pointer; position: relative; overflow: hidden; }
     .btn-blood::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transition: left 0.5s; }
     .btn-blood:hover::before { left: 100%; }
@@ -78,44 +55,28 @@
 
     /* HERO */
     .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 6rem 2rem 3rem; background: radial-gradient(ellipse at 50% 30%, rgba(220,20,60,0.04), transparent 70%); }
-    .hero-inner { max-width: 1100px; display: flex; align-items: center; gap: 4rem; position: relative; z-index: 1; }
-    .hero-text { flex: 1; }
-    .hero-text .question { font-family: 'Inter', sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); color: var(--gold); font-weight: 400; font-style: italic; margin-bottom: 1rem; opacity: 0.9; }
-    .hero-text h1 { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 900; color: var(--bone); letter-spacing: 3px; line-height: 1.1; margin-bottom: 1.5rem; }
-    .hero-text h1 span { color: var(--crimson); }
-    .hero-text p { font-size: 1.05rem; color: var(--muted); max-width: 520px; margin-bottom: 2rem; line-height: 1.7; }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .hero-icon { flex: 0 0 280px; max-width: 280px; }
-    .hero-icon img { width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 0 60px var(--crimson-glow), 0 20px 60px rgba(0,0,0,0.6); }
+    .hero-inner { max-width: 900px; text-align: center; position: relative; z-index: 1; }
+    .hero-badge { display: inline-block; background: rgba(220,20,60,0.15); border: 1px solid rgba(220,20,60,0.3); color: var(--crimson); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; padding: 0.4rem 1.2rem; border-radius: 2px; margin-bottom: 2rem; }
+    .hero-story { font-family: 'Inter', sans-serif; font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--muted); max-width: 700px; margin: 0 auto 1.5rem; line-height: 1.7; }
+    .hero-story strong { color: var(--bone); }
+    .hero-story em { color: var(--gold); font-style: normal; }
+    h1 { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 900; color: var(--bone); letter-spacing: 3px; line-height: 1.05; margin-bottom: 1.5rem; }
+    h1 span { color: var(--crimson); }
+    .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .hero-sub strong { color: var(--gold); }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .price-hint { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--ghost); margin-top: 1rem; }
 
-    /* DEMO BANNER */
     .demo-banner { background: linear-gradient(90deg, var(--crimson-dim), #1a0a0a, var(--crimson-dim)); padding: 0.8rem 2rem; text-align: center; font-size: 0.85rem; border-top: 1px solid rgba(220,20,60,0.2); border-bottom: 1px solid rgba(220,20,60,0.2); }
     .demo-banner a { color: var(--gold); text-decoration: underline; }
     .pulse { display: inline-block; width: 8px; height: 8px; background: var(--crimson); border-radius: 50%; animation: pulse 2s ease-in-out infinite; vertical-align: middle; margin-right: 6px; }
     @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(220,20,60,0.6); } 50% { box-shadow: 0 0 0 10px rgba(220,20,60,0); } }
 
-    /* SECTIONS */
     .section-inner { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
     .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; text-align: center; margin-bottom: 0.5rem; color: var(--bone); letter-spacing: 3px; }
     .section-sub { text-align: center; color: var(--muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 2.5rem; }
 
-    /* IMAGINE GRID */
-    .imagine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
-    .imagine-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.2rem; text-align: center; transition: all 0.3s; }
-    .imagine-card:hover { border-color: var(--crimson-dim); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-3px); }
-    .imagine-card .emoji { font-size: 2rem; margin-bottom: 0.5rem; }
-    .imagine-card h4 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 0.3rem; }
-    .imagine-card p { color: var(--muted); font-size: 0.78rem; line-height: 1.4; }
-
-    /* HOW IT WORKS */
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 2rem; }
-    .step { background: var(--card); border: 1px solid var(--border); padding: 2rem; border-radius: var(--radius); text-align: center; transition: all 0.3s; }
-    .step:hover { border-color: var(--crimson-dim); box-shadow: 0 0 30px var(--crimson-glow); }
-    .step-num { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 900; color: var(--crimson); line-height: 1; margin-bottom: 0.8rem; }
-    .step h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
-    .step p { color: var(--muted); font-size: 0.9rem; }
-
-    /* CONVERSATION DEMO */
+    /* CONVERSATION */
     .convo { background: var(--black2); border: 1px solid var(--border); border-radius: var(--radius); max-width: 500px; margin: 2rem auto; overflow: hidden; }
     .convo-bar { background: var(--black3); padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.6rem; }
     .convo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--crimson); }
@@ -126,35 +87,49 @@
     .msg-ai { background: var(--card); border: 1px solid var(--border); color: var(--muted); border-radius: 8px 8px 8px 2px; }
     .msg-ai strong { color: var(--gold); }
 
-    /* PRICING CARDS */
-    .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .price-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem 2rem; text-align: center; transition: all 0.3s; position: relative; }
+    /* WHO ITS FOR */
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+    .who-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: all 0.3s; }
+    .who-card:hover { border-color: var(--crimson-dim); box-shadow: 0 0 25px var(--crimson-glow); }
+    .who-card h4 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 0.4rem; }
+    .who-card p { color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+
+    /* HOW STEPS */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .step { background: var(--card); border: 1px solid var(--border); padding: 2rem; border-radius: var(--radius); text-align: center; transition: all 0.3s; }
+    .step:hover { border-color: var(--crimson-dim); box-shadow: 0 0 30px var(--crimson-glow); }
+    .step-num { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 900; color: var(--crimson); line-height: 1; margin-bottom: 0.8rem; }
+    .step h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+    .step p { color: var(--muted); font-size: 0.85rem; }
+
+    /* PRICING */
+    .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
+    .price-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; position: relative; }
     .price-card:hover { border-color: var(--crimson-dim); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-4px); }
     .price-card.featured { border-color: var(--crimson); box-shadow: 0 0 40px var(--crimson-glow); }
-    .price-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 800; letter-spacing: 2px; padding: 4px 16px; border-radius: 2px; }
-    .price-card h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.1rem; letter-spacing: 3px; margin-bottom: 0.5rem; }
-    .price { font-family: 'Cinzel', serif; font-size: 2.8rem; font-weight: 900; color: var(--bone); margin: 0.5rem 0 0.3rem; }
-    .price-period { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); margin-bottom: 1.5rem; }
-    .price-features { list-style: none; text-align: left; margin-bottom: 2rem; }
-    .price-features li { padding: 0.4rem 0; color: var(--muted); font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .price-card.featured::before { content: 'BEST VALUE'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-size: 0.55rem; font-weight: 800; letter-spacing: 2px; padding: 4px 14px; border-radius: 2px; }
+    .price-card h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 0.3rem; }
+    .price-card .price { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 900; color: var(--bone); margin: 0.3rem 0 0.2rem; }
+    .price-card .price-period { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-bottom: 1rem; }
+    .price-features { list-style: none; text-align: left; margin-bottom: 1.5rem; }
+    .price-features li { padding: 0.35rem 0; color: var(--muted); font-size: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
     .price-features li::before { content: '\2020'; color: var(--crimson); margin-right: 8px; font-weight: bold; }
-
-    /* PRODUCT GRID */
-    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-    .product-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: all 0.3s; }
-    .product-card:hover { border-color: var(--gold-dim); box-shadow: 0 0 20px var(--gold-glow); transform: translateY(-3px); }
-    .product-card h3 { font-family: 'Cinzel', serif; color: var(--bone); font-size: 0.95rem; letter-spacing: 1px; margin-bottom: 0.5rem; }
-    .product-card .product-price { font-family: 'Cinzel', serif; color: var(--crimson); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
-    .product-card p { color: var(--muted); font-size: 0.85rem; margin-bottom: 1.2rem; }
-    .product-card a { display: inline-block; }
+    .price-card .compare { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--ghost); margin-top: 0.8rem; }
 
     /* TERMINAL */
-    .terminal { background: var(--black2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--bone); max-width: 600px; margin: 2rem auto; line-height: 1.8; }
+    .terminal { background: var(--black2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--bone); max-width: 600px; margin: 2rem auto; line-height: 1.8; }
     .terminal .prompt { color: var(--crimson); }
     .terminal .output { color: var(--gold); }
     .terminal .dim { color: var(--muted); }
 
-    /* FOOTER */
+    /* ONE-TIME */
+    .onetime { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+    .ot-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: all 0.3s; }
+    .ot-card:hover { border-color: var(--gold-dim); box-shadow: 0 0 20px var(--gold-glow); transform: translateY(-3px); }
+    .ot-card h3 { font-family: 'Cinzel', serif; color: var(--bone); font-size: 0.95rem; letter-spacing: 1px; margin-bottom: 0.3rem; }
+    .ot-card .ot-price { font-family: 'Cinzel', serif; color: var(--crimson); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .ot-card p { color: var(--muted); font-size: 0.82rem; margin-bottom: 1rem; line-height: 1.5; }
+
     footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border); background: var(--black2); }
     .footer-brand { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 900; color: var(--gold); letter-spacing: 4px; margin-bottom: 1rem; }
     .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
@@ -162,29 +137,26 @@
     .footer-links a:hover { color: var(--crimson); }
     .footer-copy { color: var(--ghost); font-size: 0.75rem; }
 
-    /* FADE IN */
     .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
     .d2 { transition-delay: 0.2s; }
     .d3 { transition-delay: 0.4s; }
 
-    /* MOBILE */
     @media (max-width: 768px) {
-      .hero-inner { flex-direction: column; text-align: center; gap: 2rem; }
-      .hero-icon { flex: 0 0 200px; max-width: 200px; }
-      .hero-btns { justify-content: center; }
-      .hero-text p { margin-left: auto; margin-right: auto; }
+      .hero { padding: 5rem 1.5rem 3rem; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .btn-blood, .btn-bone { width: 100%; text-align: center; }
       .nav-links { display: none; }
       .nav-toggle { display: block; }
       .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(8,8,8,0.98); padding: 1rem 2rem; gap: 1rem; border-bottom: 1px solid var(--border); }
-      .imagine-grid { grid-template-columns: repeat(2, 1fr); }
+      .who-grid { grid-template-columns: 1fr; }
+      .pricing { grid-template-columns: 1fr; }
       .msg { max-width: 95%; }
     }
   </style>
 </head>
 <body class="scanlines">
 
-<!-- EMBERS -->
 <div class="embers" id="embers" aria-hidden="true"></div>
 
 <!-- NAV -->
@@ -192,150 +164,117 @@
   <a href="#" class="nav-brand">SGKx1904</a>
   <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
   <div class="nav-links">
-    <a href="#imagine">What It Can Be</a>
-    <a href="#how">How It Works</a>
+    <a href="#see-it">See It Work</a>
     <a href="#pricing">Pricing</a>
-    <a href="#diy">DIY</a>
-    <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="nav-cta">Try It Free</a>
+    <a href="#blueprint">Blueprint</a>
+    <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="nav-cta">Try Free</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-text fade-in">
-      <div class="question">Ever wanted your own personal AI you could talk to like a friend?</div>
-      <h1>Your AI. <span>Your Rules.</span></h1>
-      <p>Imagine an AI assistant that lives in your Telegram or WhatsApp &mdash; one you can talk to anytime, about anything. Want it to be a master coder? A graphic designer? An expert in medicine, law, finance, or anything you can dream up? That's exactly what we build. Custom AI assistants, fully personalized to you.</p>
-      <div class="hero-btns">
-        <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="btn-blood">Meet the AI</a>
-        <a href="#imagine" class="btn-bone">See What's Possible</a>
-      </div>
+  <div class="hero-inner fade-in">
+    <div class="hero-badge">Built by a plumber. Not a programmer.</div>
+    <div class="hero-story">
+      I'm a <strong>plumber</strong>. No CS degree. No coding bootcamp. I built <em>9 AI assistants</em> in <em>48 hours</em> that run my entire business while I sleep. Now I'm putting that same power in <strong>your</strong> hands.
     </div>
-    <div class="hero-icon fade-in d2">
-      <img src="img/icon-matrix.png" alt="SGKx1904 — Your Personal AI" />
+    <h1>AI For <span>The Rest</span> of Us</h1>
+    <p class="hero-sub">Ever wanted your own personal AI you could talk to like a friend? A master coder? A graphic designer? An expert in medicine, law, finance &mdash; <strong>anything you can imagine</strong>? Open Telegram. Say hello. It's that simple.</p>
+    <div class="hero-btns">
+      <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="btn-blood">Talk to the AI Free</a>
+      <a href="#pricing" class="btn-bone">Plans from $9/mo</a>
     </div>
+    <div class="price-hint">No credit card needed. No signup. Just open Telegram.</div>
   </div>
 </section>
 
 <!-- DEMO BANNER -->
 <div class="demo-banner">
-  <p><span class="pulse"></span> <strong style="color:var(--crimson)">LIVE RIGHT NOW</strong> &mdash; Message <a href="https://t.me/moneymakingmitch1904_bot" target="_blank">@moneymakingmitch1904_bot</a> on Telegram and have a conversation with a real AI assistant.</p>
+  <p><span class="pulse"></span> <strong style="color:var(--crimson)">LIVE</strong> &mdash; <a href="https://t.me/moneymakingmitch1904_bot" target="_blank">@moneymakingmitch1904_bot</a> is online right now. Message it. See for yourself.</p>
 </div>
 
 <div class="divider">&dagger; &dagger; &dagger;</div>
 
-<!-- IMAGINE YOUR AI -->
-<section id="imagine">
+<!-- SEE IT WORK -->
+<section id="see-it">
   <div class="section-inner">
-    <h2 class="section-title">Imagine Your AI</h2>
-    <p class="section-sub">What would you build if you could create your own personal AI expert? Here are just a few ideas &mdash; yours can be anything.</p>
-    <div class="imagine-grid">
-      <div class="imagine-card fade-in">
-        <div class="emoji">&#128187;</div>
-        <h4>The Coder</h4>
-        <p>A senior developer in your pocket. Debug code, write scripts, explain errors &mdash; in any language.</p>
+    <h2 class="section-title">See It Work</h2>
+    <p class="section-sub">This is a real conversation on Telegram. Your AI remembers you, knows your field, and responds in seconds.</p>
+    <div class="convo fade-in">
+      <div class="convo-bar">
+        <span class="convo-dot"></span>
+        <span class="convo-name">Your Personal AI</span>
       </div>
-      <div class="imagine-card fade-in">
-        <div class="emoji">&#127912;</div>
-        <h4>The Designer</h4>
-        <p>Brainstorm logos, critique layouts, generate color palettes, write CSS. Your creative partner.</p>
-      </div>
-      <div class="imagine-card fade-in">
-        <div class="emoji">&#9878;</div>
-        <h4>The Lawyer</h4>
-        <p>Contract review, legal research, compliance questions. Trained on the law so you don't have to be.</p>
-      </div>
-      <div class="imagine-card fade-in">
-        <div class="emoji">&#129657;</div>
-        <h4>The Doctor</h4>
-        <p>Symptom lookup, medication info, wellness plans. A medical knowledge base at your fingertips.</p>
-      </div>
-      <div class="imagine-card fade-in">
-        <div class="emoji">&#128200;</div>
-        <h4>The Trader</h4>
-        <p>Market analysis, price alerts, Fear &amp; Greed tracking. Your personal financial analyst, 24/7.</p>
-      </div>
-      <div class="imagine-card fade-in">
-        <div class="emoji">&#9997;</div>
-        <h4>The Writer</h4>
-        <p>Blog posts, social media, emails, ad copy. Your brand voice, automated and on-demand.</p>
-      </div>
-      <div class="imagine-card fade-in">
-        <div class="emoji">&#127891;</div>
-        <h4>The Tutor</h4>
-        <p>Math, science, history, languages. A patient teacher that adapts to how you learn.</p>
-      </div>
-      <div class="imagine-card fade-in">
-        <div class="emoji">&#128640;</div>
-        <h4>The Anything</h4>
-        <p>Real estate, cooking, fitness, music production &mdash; if knowledge exists, your AI can master it.</p>
+      <div class="convo-body">
+        <div class="msg msg-user">I need to write a bid for a commercial plumbing job. 3-story building, 24 units.</div>
+        <div class="msg msg-ai"><strong>Got it.</strong> Based on current material costs in your area, a 24-unit commercial job typically runs $180-240K. I'll draft the bid with line items for rough-in, fixtures, labor, permits, and a 15% margin. Want me to include the backflow preventer specs?</div>
+        <div class="msg msg-user">Yeah and also check if copper prices went up this week</div>
+        <div class="msg msg-ai"><strong>Copper is at $4.23/lb, up 3.1% this week.</strong> I've adjusted the bid to reflect current pricing. Your total comes to $211,400. I'll format it as a PDF-ready proposal. Sending now.</div>
       </div>
     </div>
+    <p style="text-align:center;color:var(--muted);font-size:0.85rem;margin-top:1rem;">This isn't ChatGPT. This is <em style="color:var(--gold);">your</em> AI &mdash; trained on your trade, your data, your way of doing things.</p>
   </div>
 </section>
 
 <div class="divider">&dagger; &dagger; &dagger;</div>
 
-<!-- CONVERSATION PREVIEW -->
+<!-- WHO ITS FOR -->
 <section style="background: var(--black2);">
-  <div class="section-inner" style="text-align:center;">
-    <h2 class="section-title">Talk to It Like a Friend</h2>
-    <p class="section-sub">This is what it actually looks like. A real conversation on Telegram with your personal AI.</p>
-    <div class="convo fade-in">
-      <div class="convo-bar">
-        <span class="convo-dot"></span>
-        <span class="convo-name">Your AI Assistant</span>
+  <div class="section-inner">
+    <h2 class="section-title">Who This Is For</h2>
+    <p class="section-sub">Not just tech people. This is for anyone who works for a living and wants AI working for them.</p>
+    <div class="who-grid">
+      <div class="who-card fade-in">
+        <h4>Contractors &amp; Tradesmen</h4>
+        <p>Bid estimates, material lookups, scheduling, invoice drafting. An assistant that knows your trade inside out.</p>
       </div>
-      <div class="convo-body">
-        <div class="msg msg-user">Hey, can you review this contract and tell me if there are any red flags?</div>
-        <div class="msg msg-ai"><strong>Absolutely.</strong> Send it over and I'll break it down clause by clause. I'll flag anything unusual &mdash; termination clauses, liability caps, non-competes, auto-renewals. Give me 30 seconds.</div>
-        <div class="msg msg-user">Also can you draft a response email to the client? Professional but firm.</div>
-        <div class="msg msg-ai"><strong>On it.</strong> I'll match the tone of your previous emails. Want me to include the revised terms we discussed yesterday?</div>
+      <div class="who-card fade-in">
+        <h4>Small Business Owners</h4>
+        <p>Revenue tracking, marketing content, customer follow-ups, inventory alerts. Automate the back office.</p>
+      </div>
+      <div class="who-card fade-in">
+        <h4>Realtors &amp; Agents</h4>
+        <p>Property descriptions, market analysis, client outreach, CRM summaries delivered to your phone every morning.</p>
+      </div>
+      <div class="who-card fade-in">
+        <h4>Freelancers &amp; Creators</h4>
+        <p>Content generation, social media scheduling, client proposals, invoicing. Your virtual business partner.</p>
+      </div>
+      <div class="who-card fade-in">
+        <h4>Students &amp; Learners</h4>
+        <p>A tutor that never sleeps. Explains any subject, quizzes you, helps with research. Like having a professor in your pocket.</p>
+      </div>
+      <div class="who-card fade-in">
+        <h4>Side Hustlers</h4>
+        <p>Crypto alerts, market trends, product research, passive income strategies. Your AI scans opportunities 24/7 so you don't have to.</p>
       </div>
     </div>
-    <p style="color:var(--muted);font-size:0.85rem;margin-top:1.5rem;">This isn't ChatGPT. This is <em>your</em> AI &mdash; trained on your context, your preferences, your history.</p>
   </div>
 </section>
 
 <div class="divider">&dagger; &dagger; &dagger;</div>
 
 <!-- HOW IT WORKS -->
-<section id="how">
+<section>
   <div class="section-inner">
     <h2 class="section-title">How It Works</h2>
-    <p class="section-sub">Three steps. No coding required. Your AI is live in days, not months.</p>
+    <p class="section-sub">No installs. No coding. No tech skills needed.</p>
     <div class="steps">
       <div class="step fade-in">
         <div class="step-num">I</div>
-        <h3>Tell Us Who Your AI Should Be</h3>
-        <p>A coder? A financial advisor? A medical expert? Describe your ideal assistant and what you need it to know. We handle the rest.</p>
+        <h3>Tell Us What You Need</h3>
+        <p>"I need an AI that knows plumbing codes and can draft bids." That's all we need. You describe it, we build it.</p>
       </div>
       <div class="step fade-in d2">
         <div class="step-num">II</div>
-        <h3>We Build and Train It</h3>
-        <p>We configure your AI with the right knowledge, personality, and tools. It goes live on Telegram or WhatsApp &mdash; ready to chat.</p>
+        <h3>We Build Your AI</h3>
+        <p>We train it on your field, your preferences, your tools. It goes live on Telegram or WhatsApp &mdash; ready to talk.</p>
       </div>
       <div class="step fade-in d3">
         <div class="step-num">III</div>
-        <h3>Talk to It Anytime</h3>
-        <p>Open Telegram. Send a message. Get an expert response in seconds. It remembers your conversations. It learns your preferences. It never sleeps.</p>
+        <h3>Talk to It Like a Friend</h3>
+        <p>Open your phone. Send a message. Get expert answers in seconds. It works while you sleep, learns what you like, and never takes a day off.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider">&dagger; &dagger; &dagger;</div>
-
-<!-- WHY NOT CHATGPT -->
-<section style="background: var(--black2);">
-  <div class="section-inner" style="text-align:center;">
-    <h2 class="section-title">Why Not Just Use ChatGPT?</h2>
-    <p class="section-sub" style="max-width:700px;">ChatGPT is generic. It doesn't know your business, your writing style, your medical history, or your code. Your personal AI does.</p>
-    <div class="terminal fade-in" style="text-align:left;">
-      <div><span class="prompt">ChatGPT:</span> <span class="dim">Generic responses. Forgets everything. Same for everyone. $20/month for a chat window.</span></div>
-      <div style="margin:0.5rem 0;color:var(--ghost);">vs.</div>
-      <div><span class="output">Your AI:</span> <span class="dim">Trained on YOUR data. Remembers YOUR context. Lives in YOUR Telegram. Runs 24/7 on YOUR schedule. Does tasks while you sleep.</span></div>
     </div>
   </div>
 </section>
@@ -343,53 +282,72 @@
 <div class="divider">&dagger; &dagger; &dagger;</div>
 
 <!-- PRICING -->
-<section id="pricing">
+<section id="pricing" style="background: var(--black2);">
   <div class="section-inner">
-    <h2 class="section-title">Get Your AI</h2>
-    <p class="section-sub">We build it. We host it. We maintain it. You just talk to it.</p>
+    <h2 class="section-title">Simple Pricing</h2>
+    <p class="section-sub">Start free. Upgrade when you're hooked. Cancel anytime.</p>
     <div class="pricing">
+
       <div class="price-card fade-in">
-        <h3>Apprentice</h3>
-        <div class="price">$29</div>
+        <h3>Free</h3>
+        <div class="price">$0</div>
+        <div class="price-period">forever</div>
+        <ul class="price-features">
+          <li>Talk to our demo AI on Telegram</li>
+          <li>See what's possible</li>
+          <li>No signup required</li>
+        </ul>
+        <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="btn-blood" style="width:100%;text-align:center">Try Now</a>
+        <div class="compare">just open Telegram</div>
+      </div>
+
+      <div class="price-card fade-in d2">
+        <h3>Rookie</h3>
+        <div class="price">$9</div>
         <div class="price-period">per month</div>
         <ul class="price-features">
           <li>1 personal AI assistant</li>
-          <li>Telegram or WhatsApp</li>
-          <li>Custom personality and knowledge</li>
+          <li>Choose your specialty</li>
+          <li>Telegram delivery</li>
           <li>Daily automated tasks</li>
           <li>Email support</li>
         </ul>
-        <a href="https://buy.stripe.com/aFadR8ezL77EccTfqagrS06" class="btn-blood" style="width:100%;text-align:center">Get Started</a>
+        <a href="https://buy.stripe.com/aFadR8ezL77EccTfqagrS06" class="btn-blood" style="width:100%;text-align:center">Start</a>
+        <div class="compare">less than a Spotify subscription</div>
       </div>
+
       <div class="price-card featured fade-in d2">
-        <h3>Reaper</h3>
-        <div class="price">$79</div>
+        <h3>Builder</h3>
+        <div class="price">$29</div>
         <div class="price-period">per month</div>
         <ul class="price-features">
-          <li>3 AI assistants (different specialties)</li>
+          <li>3 AI assistants</li>
+          <li>Full customization</li>
           <li>Telegram + WhatsApp</li>
-          <li>Real-time + scheduled responses</li>
-          <li>Deep customization and memory</li>
+          <li>Real-time + scheduled</li>
           <li>Priority support</li>
           <li>Monthly optimization</li>
         </ul>
-        <a href="https://buy.stripe.com/6oUbJ01MZdw2a4Ldi2grS07" class="btn-blood" style="width:100%;text-align:center">Get Started</a>
+        <a href="https://buy.stripe.com/6oUbJ01MZdw2a4Ldi2grS07" class="btn-blood" style="width:100%;text-align:center">Start</a>
+        <div class="compare">less than a Netflix subscription</div>
       </div>
+
       <div class="price-card fade-in d3">
-        <h3>Empire</h3>
-        <div class="price">$199</div>
+        <h3>Boss</h3>
+        <div class="price">$79</div>
         <div class="price-period">per month</div>
         <ul class="price-features">
           <li>Unlimited AI assistants</li>
-          <li>All platforms</li>
-          <li>API integrations (Stripe, databases)</li>
+          <li>Private server option</li>
+          <li>API integrations (Stripe, etc.)</li>
           <li>Automated workflows</li>
           <li>Dedicated support</li>
-          <li>Weekly strategy calls</li>
-          <li>White-label option</li>
+          <li>White-label available</li>
         </ul>
-        <a href="https://buy.stripe.com/7sY4gydvH8bI2Cja5QgrS08" class="btn-blood" style="width:100%;text-align:center">Get Started</a>
+        <a href="https://buy.stripe.com/7sY4gydvH8bI2Cja5QgrS08" class="btn-blood" style="width:100%;text-align:center">Start</a>
+        <div class="compare">less than one hour of consulting</div>
       </div>
+
     </div>
   </div>
 </section>
@@ -399,148 +357,48 @@
 <!-- PROOF -->
 <section>
   <div class="section-inner" style="text-align:center;">
-    <h2 class="section-title">We Run 9 AI Assistants. Every Day.</h2>
-    <p class="section-sub">This is what our own system does daily. Fully automated. No human involved.</p>
+    <h2 class="section-title">This Is What I Built in 48 Hours</h2>
+    <p class="section-sub">9 AI assistants. Running every day. On one machine. For pennies.</p>
     <div class="terminal fade-in" style="text-align:left;">
-      <div><span class="prompt">[06:00]</span> <span class="output">content-ai</span> <span class="dim">// wrote today's social media posts across 4 platforms</span></div>
-      <div><span class="prompt">[07:00]</span> <span class="output">market-intel</span> <span class="dim">// scanned web, found 3 opportunities, flagged 1 competitor</span></div>
-      <div><span class="prompt">[08:00]</span> <span class="output">crypto-analyst</span> <span class="dim">// BTC +2.4% | ETH -0.8% | market sentiment: 42 (fear)</span></div>
-      <div><span class="prompt">[09:00]</span> <span class="output">finance-ai</span> <span class="dim">// revenue: $187 | 12 active subscribers | MRR: $948</span></div>
-      <div><span class="prompt">[10:00]</span> <span class="output">growth-ai</span> <span class="dim">// generated 2 Reddit posts + Twitter thread + 3 tweets</span></div>
-      <div><span class="prompt">[12:00]</span> <span class="output">nurture-ai</span> <span class="dim">// posted value tip to 400+ channel followers</span></div>
+      <div><span class="prompt">[06:00]</span> <span class="output">content-ai</span> <span class="dim">// wrote today's marketing posts for 4 platforms</span></div>
+      <div><span class="prompt">[07:00]</span> <span class="output">market-intel</span> <span class="dim">// found 3 business opportunities, flagged 1 competitor</span></div>
+      <div><span class="prompt">[08:00]</span> <span class="output">crypto-analyst</span> <span class="dim">// BTC $67K (+2.4%) | market fear: 42 | "accumulate zone"</span></div>
+      <div><span class="prompt">[09:00]</span> <span class="output">finance-ai</span> <span class="dim">// revenue: $187 | subscribers: 12 | MRR: $948</span></div>
+      <div><span class="prompt">[10:00]</span> <span class="output">growth-ai</span> <span class="dim">// generated Reddit posts + Twitter thread + 3 tweets</span></div>
+      <div><span class="prompt">[12:00]</span> <span class="output">nurture-ai</span> <span class="dim">// posted value tip to channel followers</span></div>
       <div><span class="prompt">[17:00]</span> <span class="output">proof-ai</span> <span class="dim">// shared weekly stats: 1,000+ automated actions</span></div>
-      <div><span class="prompt">[24/7]</span> <span class="output">fulfillment</span> <span class="dim">// auto-delivers products when someone buys</span></div>
-      <div><span class="prompt">[24/7]</span> <span class="output">price-watch</span> <span class="dim">// monitoring crypto every 30 min, alerts on big moves</span></div>
+      <div><span class="prompt">[24/7]</span> <span class="output">sales-ai</span> <span class="dim">// auto-delivers products when someone buys</span></div>
+      <div><span class="prompt">[24/7]</span> <span class="output">price-watch</span> <span class="dim">// crypto alerts every 30 minutes</span></div>
     </div>
-    <p style="color:var(--muted);font-size:0.85rem;margin-top:1.5rem;">Total cost: about <strong style="color:var(--gold);">$0.02/day</strong>. Yours can do the same.</p>
+    <p style="color:var(--muted);font-size:0.85rem;margin-top:1.5rem;">Total daily cost: <strong style="color:var(--gold);">$0.02</strong>. A plumber built this. Imagine what yours could do.</p>
   </div>
 </section>
 
 <div class="divider">&dagger; &dagger; &dagger;</div>
 
-<!-- DIY SECTION -->
-<section id="diy" style="background: var(--black2);">
+<!-- BLUEPRINT + DONE FOR YOU -->
+<section id="blueprint" style="background: var(--black2);">
   <div class="section-inner">
-    <h2 class="section-title">Build It Yourself</h2>
-    <p class="section-sub">Want to learn the system and do it on your own? Grab our course, templates, or prompt packs.</p>
-
-    <h3 style="font-family:'Cinzel',serif;color:var(--gold);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;font-size:1rem;">AI ASSISTANT COURSE</h3>
-    <div class="pricing" style="margin-bottom:3rem;">
-      <div class="product-card">
-        <h3>Starter</h3>
-        <div class="product-price">$29.99</div>
-        <p>Learn the stack, set up your first AI assistant, connect it to Telegram. Zero to working bot.</p>
-        <a href="https://buy.stripe.com/fZu3cuajv9fMfp5fqagrS0b" class="btn-sm">Get Started</a>
+    <h2 class="section-title">Want to Build It Yourself?</h2>
+    <p class="section-sub">The subscriptions are the easy path. These are for builders who want to own the whole system.</p>
+    <div class="onetime">
+      <div class="ot-card fade-in">
+        <h3>The Full Blueprint</h3>
+        <div class="ot-price">$149</div>
+        <p>Everything I know. The complete system &mdash; every config, every prompt template, every automation workflow. Build your own AI empire from scratch and never pay a subscription.</p>
+        <a href="https://buy.stripe.com/00w3cuezL3Vs0ubcdYgrS0d" class="btn-sm">Get Blueprint</a>
       </div>
-      <div class="product-card">
-        <h3>Builder</h3>
-        <div class="product-price">$49.99</div>
-        <p>Full build &mdash; every config, every prompt, automation workflows, and getting paid with Stripe.</p>
-        <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-sm">Get Builder</a>
-      </div>
-      <div class="product-card">
-        <h3>Empire</h3>
-        <div class="product-price">$99.99</div>
-        <p>Everything + scaling, webhooks, funnel automation, content machine, and personal config review.</p>
-        <a href="https://buy.stripe.com/00w3cuezL3Vs0ubcdYgrS0d" class="btn-sm">Get Empire</a>
-      </div>
-    </div>
-
-    <h3 style="font-family:'Cinzel',serif;color:var(--gold);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;font-size:1rem;">AI TEMPLATES</h3>
-    <div class="products" style="margin-bottom:3rem;">
-      <div class="product-card">
-        <h3>Crypto Alert AI</h3>
-        <div class="product-price">$19.99</div>
-        <p>30-min price monitoring with Fear &amp; Greed analysis</p>
-        <a href="https://buy.stripe.com/00w8wO0IV4ZwdgXfqagrS0l" class="btn-sm">Get Template</a>
-      </div>
-      <div class="product-card">
-        <h3>News Digest AI</h3>
-        <div class="product-price">$19.99</div>
-        <p>Daily curated news digest on your chosen topics</p>
-        <a href="https://buy.stripe.com/dRmbJ04ZbfEa90HguegrS0m" class="btn-sm">Get Template</a>
-      </div>
-      <div class="product-card">
-        <h3>Content Writer AI</h3>
-        <div class="product-price">$29.99</div>
-        <p>7-day content rotation across 4 platforms</p>
-        <a href="https://buy.stripe.com/3cI28q4ZbfEa5OvfqagrS0n" class="btn-sm">Get Template</a>
-      </div>
-      <div class="product-card">
-        <h3>Revenue Tracker AI</h3>
-        <div class="product-price">$24.99</div>
-        <p>Stripe integration with daily revenue reports</p>
-        <a href="https://buy.stripe.com/6oU4gy77j9fMdgXfqagrS0o" class="btn-sm">Get Template</a>
-      </div>
-      <div class="product-card">
-        <h3>Complete 5-AI Stack</h3>
-        <div class="product-price">$79.99</div>
-        <p>All 5 AI assistants + exclusive Sales Alert AI. Full system.</p>
-        <a href="https://buy.stripe.com/6oU7sKdvHfEa1yf7XIgrS0p" class="btn-sm">Get Stack</a>
-      </div>
-    </div>
-
-    <h3 style="font-family:'Cinzel',serif;color:var(--gold);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;font-size:1rem;">PROMPT PACKS</h3>
-    <div class="products">
-      <div class="product-card">
-        <h3>Crypto Trading</h3>
-        <div class="product-price">$9.99</div>
-        <p>20 battle-tested prompts for crypto analysis</p>
-        <a href="https://buy.stripe.com/aFa7sKcrD9fM4Kr7XIgrS0q" class="btn-sm">Get Pack</a>
-      </div>
-      <div class="product-card">
-        <h3>Content Marketing</h3>
-        <div class="product-price">$9.99</div>
-        <p>20 prompts for social media and content strategy</p>
-        <a href="https://buy.stripe.com/9B6fZg77j4Zwel15PAgrS0r" class="btn-sm">Get Pack</a>
-      </div>
-      <div class="product-card">
-        <h3>Business Intelligence</h3>
-        <div class="product-price">$9.99</div>
-        <p>20 prompts for market research and strategy</p>
-        <a href="https://buy.stripe.com/14AaEW63f2RoccT91MgrS0s" class="btn-sm">Get Pack</a>
-      </div>
-      <div class="product-card">
-        <h3>Complete Vault</h3>
-        <div class="product-price">$24.99</div>
-        <p>All 60 prompts + 15 exclusive vault-only prompts</p>
-        <a href="https://buy.stripe.com/8x228q63f77E1yffqagrS0t" class="btn-sm">Get Vault</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider">&dagger; &dagger; &dagger;</div>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-inner">
-    <h2 class="section-title">Done For You</h2>
-    <p class="section-sub">Don't want to learn the system? We'll build your AI from scratch.</p>
-    <div class="products">
-      <div class="product-card">
-        <h3>AI Consultation</h3>
-        <div class="product-price">from $49</div>
-        <p>We analyze your needs and tell you exactly what AI assistant to build and why. Actionable plan in 48 hours.</p>
-        <a href="https://buy.stripe.com/fZu9AS9frajQ1yf4LwgrS0e" class="btn-sm">Book Call</a>
-      </div>
-      <div class="product-card">
-        <h3>AI Setup Service</h3>
-        <div class="product-price">$149</div>
-        <p>We deploy your personal AI end-to-end. You tell us what you need, we hand you a working assistant.</p>
-        <a href="https://buy.stripe.com/bJe6oGbnz77E4Kr91MgrS09" class="btn-sm">Book Setup</a>
-      </div>
-      <div class="product-card">
-        <h3>Custom AI Build</h3>
-        <div class="product-price">$299</div>
-        <p>Fully custom AI assistant with unique knowledge, integrations, and workflows built to your specification.</p>
+      <div class="ot-card fade-in d2">
+        <h3>Done For You</h3>
+        <div class="ot-price">$299</div>
+        <p>We build your entire AI system on your hardware. Custom assistants, integrations, workflows &mdash; you walk away with a working empire. Hands-off setup.</p>
         <a href="https://buy.stripe.com/aFa5kC1MZ9fM1yf51MgrS0u" class="btn-sm">Book Build</a>
       </div>
-      <div class="product-card">
-        <h3>Brand Design</h3>
-        <div class="product-price">from $29</div>
-        <p>Logo packs, social media kits, and full brand identity for your AI-powered business.</p>
-        <a href="https://buy.stripe.com/28E3cu4ZbajQb8P6TEgrS0i" class="btn-sm">Get Design</a>
+      <div class="ot-card fade-in d3">
+        <h3>Consultation</h3>
+        <div class="ot-price">from $49</div>
+        <p>Not sure what you need? 30-minute call. I'll analyze your business and tell you exactly which AI assistants to build and why. Actionable plan in 48 hours.</p>
+        <a href="https://buy.stripe.com/fZu9AS9frajQ1yf4LwgrS0e" class="btn-sm">Book Call</a>
       </div>
     </div>
   </div>
@@ -550,12 +408,14 @@
 
 <!-- FINAL CTA -->
 <section style="padding:5rem 2rem;text-align:center;background:radial-gradient(ellipse at 50% 50%, rgba(220,20,60,0.05), transparent 70%);">
-  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.5rem);font-weight:900;color:var(--bone);letter-spacing:3px;margin-bottom:0.5rem;">What Would <span style="color:var(--crimson)">Your</span> AI Know?</h2>
-  <p style="color:var(--muted);max-width:550px;margin:0 auto 2rem;font-size:1rem;">Medicine? Law? Code? Finance? Cooking? Music? Whatever you need &mdash; your personal AI assistant is one conversation away.</p>
+  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:var(--bone);letter-spacing:3px;margin-bottom:0.8rem;">The Tech World Built AI for Themselves.</h2>
+  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:var(--crimson);letter-spacing:3px;margin-bottom:1.5rem;">We're Bringing It to Everyone Else.</h2>
+  <p style="color:var(--muted);max-width:550px;margin:0 auto 2rem;font-size:1rem;">If a plumber with zero coding experience can build 9 AI assistants in 48 hours, what could <strong style="color:var(--bone);">you</strong> build?</p>
   <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-    <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="btn-blood">Talk to the AI Now</a>
+    <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="btn-blood">Try It Free on Telegram</a>
     <a href="https://t.me/MoneyMakingMitchell1904" target="_blank" class="btn-bone">Join the Community</a>
   </div>
+  <div class="price-hint" style="margin-top:1.5rem;">No signup. No credit card. Just open Telegram and say hello.</div>
 </section>
 
 <!-- FOOTER -->
@@ -567,12 +427,11 @@
     <a href="https://x.com/Lyfergang1904" target="_blank">X / Twitter</a>
     <a href="free-guide.html">Free Guide</a>
   </div>
-  <p class="footer-copy">Your AI. Your rules. No corporate middleman.</p>
+  <p class="footer-copy">Built by a plumber. Powered by AI. No corporate middleman.</p>
   <p class="footer-copy" style="margin-top:0.5rem;">&copy; 2026 SGKx1904. All rights reserved.</p>
 </footer>
 
 <script>
-// Ember particles
 const embers = document.getElementById('embers');
 for (let i = 0; i < 30; i++) {
   const e = document.createElement('div');
@@ -584,12 +443,8 @@ for (let i = 0; i < 30; i++) {
   e.style.height = e.style.width;
   embers.appendChild(e);
 }
-
-// Fade in on scroll
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
