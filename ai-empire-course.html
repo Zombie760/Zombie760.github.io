@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Automation Empire Course — Build Bots That Make Money While You Sleep | SGKx1904</title>
-  <meta name="description" content="Learn to build an AI bot empire from scratch. 10 modules covering OpenClaw setup, bot automation, Stripe payments, content marketing, and scaling. From $29.99." />
-  <meta name="keywords" content="AI automation course, bot building, make money with AI, OpenClaw tutorial, Telegram bot business, passive income AI, AI empire, SGKx1904" />
-  <meta property="og:title" content="AI Automation Empire Course — SGKx1904 — AI For the Rest of Us" />
-  <meta property="og:description" content="Built by a plumber. Not a programmer. 10 modules. Real configs. From $29.99." />
+  <title>Build Your Own Private AI Empire — Zero Big Tech. Zero Surveillance. 100% Yours. | SGKx1904</title>
+  <meta name="description" content="Learn to build private AI systems on YOUR hardware. No Google. No Amazon. No Microsoft. A plumber built 9 private AI assistants on an old laptop with Kali Linux and open-source tools. Now he teaches you how." />
+  <meta name="keywords" content="private AI, self-hosted AI, off-grid AI, digital sovereignty, LM Studio, open-source AI, Kali Linux AI, no big tech, data privacy, AI independence, SGKx1904" />
+  <meta property="og:title" content="Build Your Own Private AI Empire — AI For The Rest of Us | SGKx1904" />
+  <meta property="og:description" content="Zero Big Tech. Zero Surveillance. 100% Private. Built by a plumber on an old laptop. 10 modules. From $29.99." />
   <meta property="og:url" content="https://lyfer1904.github.io/ai-empire-course" />
   <meta property="og:type" content="product" />
   <meta property="og:image" content="img/icon-matrix.png" />
@@ -82,6 +82,14 @@
     .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; text-align: center; margin-bottom: 0.5rem; color: var(--bone); letter-spacing: 3px; }
     .section-sub { text-align: center; color: var(--muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 2.5rem; }
 
+    /* MANIFESTO */
+    .manifesto { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+    .manifesto-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; transition: all 0.3s; }
+    .manifesto-card:hover { border-color: var(--crimson-dim); box-shadow: 0 0 20px var(--crimson-glow); transform: translateY(-3px); }
+    .manifesto-card .icon { font-size: 1.8rem; margin-bottom: 0.7rem; }
+    .manifesto-card h4 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 0.4rem; }
+    .manifesto-card p { color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+
     /* MODULES */
     .modules { list-style: none; counter-reset: mod; max-width: 800px; margin: 0 auto; }
     .modules li { counter-increment: mod; padding: 1.2rem 1.5rem; border-left: 3px solid var(--crimson-dim); margin-bottom: 1rem; background: var(--card); border-radius: 0 var(--radius) var(--radius) 0; transition: all 0.3s; }
@@ -141,6 +149,7 @@
       .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(8,8,8,0.98); padding: 1rem 2rem; gap: 1rem; border-bottom: 1px solid var(--border); }
       .tiers { grid-template-columns: 1fr; }
       .modules li { padding: 1rem; }
+      .manifesto { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -164,38 +173,65 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner fade-in">
-    <div class="hero-badge">Built by a plumber. Not a programmer.</div>
+    <div class="hero-badge">Zero Big Tech. Zero Surveillance. 100% Private.</div>
     <div class="hero-story">
-      I'm a <strong>plumber</strong>. No CS degree. No coding bootcamp. I built <em>9 AI bots</em> in <em>48 hours</em> that run an entire automated business while I sleep. This course is the exact system I used &mdash; every config, every prompt, every workflow &mdash; handed to <strong>you</strong>.
+      My name is <strong>Kyle Jimenez</strong>. I'm a <strong>plumber</strong>. No CS degree. No Silicon Valley connections. I built <em>9 private AI assistants</em> on an <em>old laptop</em> with home wifi, <em>Kali Linux</em>, and open-source tools &mdash; no Google, no Amazon, no Microsoft touching any of it. Every byte of data stays on <strong>my machine</strong>. This course shows you exactly how I did it.
     </div>
-    <h1>AI Automation <span>Empire</span></h1>
-    <p class="hero-sub">10 modules. Real bot configs. Real Stripe integration. Real revenue. No fluff &mdash; just the system that runs <strong>SGKx1904</strong>. Learn to build bots that make money while you sleep.</p>
+    <h1>AI For <span>The Rest</span> of Us</h1>
+    <p class="hero-sub">For the ones who don't want to conform. 10 modules that teach you to build your own <strong>private AI empire</strong> &mdash; self-hosted, off-grid, fully independent from Big Tech. Your data. Your hardware. Your rules.</p>
     <div class="hero-btns">
       <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-blood">Get the Builder Tier &mdash; $49.99</a>
       <a href="#tiers" class="btn-bone">Compare All Tiers</a>
     </div>
-    <div class="price-hint">One-time purchase. Lifetime access. Starting at $29.99.</div>
+    <div class="price-hint">One-time purchase. Lifetime access. Starting at $29.99. No subscription. No cloud dependency.</div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- THE PROBLEM -->
+<section style="background: var(--black2);">
+  <div class="section-inner">
+    <h2 class="section-title fade-in">The Problem With "AI" Today</h2>
+    <p class="section-sub fade-in">Every major AI tool funnels your data straight to Big Tech servers. They read your prompts. They train on your input. They own your workflow. You own nothing.</p>
+    <div class="manifesto">
+      <div class="manifesto-card fade-in">
+        <div class="icon" style="color:var(--crimson);">&#9888;</div>
+        <h4>They Watch Everything</h4>
+        <p>ChatGPT, Gemini, Copilot &mdash; every keystroke goes to corporate servers. Your private thoughts become their training data.</p>
+      </div>
+      <div class="manifesto-card fade-in d2">
+        <div class="icon" style="color:var(--crimson);">&#128274;</div>
+        <h4>They Control Access</h4>
+        <p>One policy change and your AI tools vanish. They can throttle you, censor you, or shut you off entirely. You have zero leverage.</p>
+      </div>
+      <div class="manifesto-card fade-in d3">
+        <div class="icon" style="color:var(--gold);">&#9733;</div>
+        <h4>There Is Another Way</h4>
+        <p>Open-source models. Self-hosted on your own hardware. No accounts. No API keys from trillion-dollar corporations. Total sovereignty.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <div class="divider">&dagger; &dagger; &dagger;</div>
 
 <!-- WHAT YOU GET -->
-<section style="background: var(--black2);">
+<section>
   <div class="section-inner">
     <h2 class="section-title fade-in">What You Get</h2>
-    <p class="section-sub fade-in">This isn't a theory course. It's the exact playbook a plumber used to build a fully automated AI business from zero.</p>
+    <p class="section-sub fade-in">This is not a theory course. It is the exact system a plumber named Kyle Jimenez used to build 9 private AI assistants that run entirely on his own hardware &mdash; no cloud, no corporate dependency.</p>
     <div class="terminal fade-in" style="text-align:left;">
-      <div><span class="prompt">$</span> <span class="output">cat course-contents.txt</span></div>
+      <div><span class="prompt">root@kali:~#</span> <span class="output">cat private-ai-stack.txt</span></div>
       <div><span class="dim">---</span></div>
-      <div><span class="dim">// 10 modules of step-by-step instruction</span></div>
-      <div><span class="dim">// Real OpenClaw configs — copy, paste, deploy</span></div>
-      <div><span class="dim">// Stripe payment integration walkthrough</span></div>
-      <div><span class="dim">// Content automation & funnel blueprints</span></div>
-      <div><span class="dim">// Scaling playbook for multiple revenue streams</span></div>
-      <div><span class="dim">// Zero coding required — JSON configs only</span></div>
+      <div><span class="dim">// 10 modules &mdash; from zero to fully self-hosted AI</span></div>
+      <div><span class="dim">// LM Studio + open-source models (Llama, Mistral, etc.)</span></div>
+      <div><span class="dim">// Kali Linux hardened setup &mdash; privacy by default</span></div>
+      <div><span class="dim">// Real configs &mdash; copy, paste, deploy on YOUR machine</span></div>
+      <div><span class="dim">// Stripe payment integration &mdash; monetize what you build</span></div>
+      <div><span class="dim">// Zero data leaves your network. Ever.</span></div>
       <div><span class="dim">---</span></div>
-      <div><span class="prompt">$</span> <span class="output">echo "If a plumber can do it, so can you."</span></div>
+      <div><span class="prompt">root@kali:~#</span> <span class="output">echo "No Google. No Amazon. No Microsoft. Just you."</span></div>
     </div>
   </div>
 </section>
@@ -206,18 +242,18 @@
 <section id="modules">
   <div class="section-inner">
     <h2 class="section-title fade-in">What You Learn</h2>
-    <p class="section-sub fade-in">10 modules. From zero to a fully automated, revenue-generating AI empire.</p>
+    <p class="section-sub fade-in">10 modules. From zero to a fully private, self-hosted AI empire that no corporation can take from you.</p>
     <ol class="modules">
-      <li class="fade-in"><strong>The Story</strong><p>Why this system exists and how one person built a 9-bot automated business in 48 hours.</p></li>
-      <li class="fade-in"><strong>The Stack</strong><p>OpenClaw, Telegram, Stripe, xAI &mdash; every tool and how they connect.</p></li>
-      <li class="fade-in"><strong>Gateway Setup</strong><p>Install and configure your AI gateway from zero to running.</p></li>
-      <li class="fade-in"><strong>AI Providers</strong><p>Free local models vs paid APIs. How to route the right model to the right job.</p></li>
-      <li class="fade-in"><strong>Your First Bot</strong><p>Build, test, and deploy a working bot in under 30 minutes.</p></li>
-      <li class="fade-in"><strong>Automation</strong><p>Cron schedules, multi-bot coordination, error handling.</p></li>
-      <li class="fade-in"><strong>Getting Paid</strong><p>Stripe products, payment links, revenue tracking, auto-fulfillment.</p></li>
-      <li class="fade-in"><strong>Content Machine</strong><p>Auto-generate and post marketing content across platforms daily.</p></li>
-      <li class="fade-in"><strong>The Funnel</strong><p>Website, Telegram channel, social proof &mdash; turn visitors into buyers.</p></li>
-      <li class="fade-in"><strong>Scaling Up</strong><p>Add products, optimize pricing, expand to new channels.</p></li>
+      <li class="fade-in"><strong>Why Privacy Matters</strong><p>The surveillance economy explained. How Big Tech monetizes your data &mdash; and why building private AI is an act of digital self-defense. Kyle's story: plumber to private AI operator.</p></li>
+      <li class="fade-in"><strong>The Sovereign Stack</strong><p>Kali Linux, LM Studio, open-source models, Telegram, Stripe &mdash; every tool in the private AI stack and how they connect without touching a corporate cloud.</p></li>
+      <li class="fade-in"><strong>Hardened Setup</strong><p>Install and configure your private AI gateway on your own hardware. Kali Linux basics. Locking down your machine so nothing phones home.</p></li>
+      <li class="fade-in"><strong>Open-Source AI Models</strong><p>LM Studio walkthrough. Downloading and running Llama, Mistral, and other open-weight models locally. No API keys. No usage limits. No one reading your prompts.</p></li>
+      <li class="fade-in"><strong>Your First Private Assistant</strong><p>Build, test, and deploy a fully functional AI assistant that runs on your hardware &mdash; in under 30 minutes. Zero external dependencies.</p></li>
+      <li class="fade-in"><strong>Automation &amp; Multi-Agent Ops</strong><p>Cron schedules, multi-bot coordination, error handling &mdash; all running locally. Your AI fleet works while you sleep, answering to no one but you.</p></li>
+      <li class="fade-in"><strong>Getting Paid</strong><p>Stripe products, payment links, revenue tracking, auto-fulfillment. Monetize your private AI skills without giving Big Tech a cut of your business.</p></li>
+      <li class="fade-in"><strong>Content Machine</strong><p>Auto-generate and distribute marketing content across platforms &mdash; powered by your own AI, not someone else's. Your message. Your voice. Unfiltered.</p></li>
+      <li class="fade-in"><strong>The Funnel</strong><p>Website, Telegram channel, social proof &mdash; build a pipeline that turns freedom-minded people into paying customers.</p></li>
+      <li class="fade-in"><strong>Scaling Your Empire</strong><p>Add more private assistants, expand services, optimize pricing. Grow without ever handing your keys to a corporation.</p></li>
     </ol>
   </div>
 </section>
@@ -228,12 +264,12 @@
 <section id="tiers" style="background: var(--black2);">
   <div class="section-inner">
     <h2 class="section-title fade-in">Choose Your Tier</h2>
-    <p class="section-sub fade-in">One-time purchase. Lifetime access. No subscriptions. No upsells.</p>
+    <p class="section-sub fade-in">One-time purchase. Lifetime access. No subscriptions. No upsells. No data harvesting.</p>
     <div style="text-align:center;margin-bottom:2rem;padding:1.2rem;background:rgba(220,20,60,0.06);border:1px solid rgba(220,20,60,0.15);border-radius:var(--radius);">
       <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--crimson);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.3rem;">Launch Pricing</div>
-      <div style="font-size:0.85rem;color:var(--muted);">Hiring a dev to build this system: <strong style="color:var(--bone);text-decoration:line-through;">$25,000 - $75,000</strong></div>
-      <div style="font-size:0.85rem;color:var(--muted);">Other AI courses with less content: <strong style="color:var(--bone);text-decoration:line-through;">$500 - $2,000</strong></div>
-      <div style="font-size:0.95rem;color:var(--gold);margin-top:0.4rem;">The full system: <strong>from $29.99</strong></div>
+      <div style="font-size:0.85rem;color:var(--muted);">Hiring a dev to build private AI infrastructure: <strong style="color:var(--bone);text-decoration:line-through;">$25,000 - $75,000</strong></div>
+      <div style="font-size:0.85rem;color:var(--muted);">Big Tech "AI courses" that still lock you into their cloud: <strong style="color:var(--bone);text-decoration:line-through;">$500 - $2,000</strong></div>
+      <div style="font-size:0.95rem;color:var(--gold);margin-top:0.4rem;">The full private AI system: <strong>from $29.99</strong></div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--ghost);margin-top:0.5rem;">Prices increase after first 100 buyers.</div>
     </div>
     <div class="tiers">
@@ -244,8 +280,9 @@
         <div class="price-period">one-time</div>
         <ul>
           <li>Modules 1-3 (Foundation)</li>
-          <li>Stack overview & gateway setup</li>
-          <li>AI provider configuration</li>
+          <li>Privacy threat landscape overview</li>
+          <li>Kali Linux &amp; LM Studio setup</li>
+          <li>Open-source model installation</li>
           <li>Community access</li>
         </ul>
         <a href="https://buy.stripe.com/fZu3cuajv9fMfp5fqagrS0b" class="btn-bone" style="width:100%;text-align:center">Get Starter</a>
@@ -256,10 +293,11 @@
         <div class="price">$49.99</div>
         <div class="price-period">one-time</div>
         <ul>
-          <li>Modules 1-6 (Full Build)</li>
-          <li>Every bot config & prompt</li>
-          <li>Stripe integration guide</li>
-          <li>Copy-paste deployment</li>
+          <li>Modules 1-6 (Full Private Build)</li>
+          <li>Every config &amp; prompt template</li>
+          <li>Self-hosted deployment guide</li>
+          <li>Multi-agent automation setup</li>
+          <li>Copy-paste private AI deployment</li>
           <li>Priority support</li>
         </ul>
         <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-blood" style="width:100%;text-align:center">Get Builder</a>
@@ -271,16 +309,16 @@
         <div class="price-period">one-time</div>
         <ul>
           <li>All 10 modules + appendices</li>
-          <li>Webhook setup & real-time alerts</li>
-          <li>Content & funnel automation</li>
-          <li>Scaling playbook</li>
-          <li>Config review by the builder</li>
+          <li>Full monetization playbook</li>
+          <li>Content &amp; funnel automation</li>
+          <li>Scaling to multiple AI agents</li>
+          <li>Config review by Kyle himself</li>
         </ul>
         <a href="https://buy.stripe.com/00w3cuezL3Vs0ubcdYgrS0d" class="btn-bone" style="width:100%;text-align:center">Get Empire</a>
       </div>
 
     </div>
-    <p style="text-align:center;margin-top:2rem;font-size:0.85rem;color:var(--muted);">Want a managed AI assistant instead? <a href="index.html#pricing" style="color:var(--crimson);">See subscription plans &rarr;</a></p>
+    <p style="text-align:center;margin-top:2rem;font-size:0.85rem;color:var(--muted);">Want a managed private AI assistant instead? <a href="index.html#pricing" style="color:var(--crimson);">See subscription plans &rarr;</a></p>
   </div>
 </section>
 
@@ -294,27 +332,39 @@
     <div class="faq">
       <details class="fade-in">
         <summary>Do I need coding experience?</summary>
-        <p>No. The course uses JSON configs and copy-paste prompts. If you can edit a text file, you can build bots. I'm a plumber &mdash; if I can do it, so can you.</p>
+        <p>No. The course uses JSON configs and copy-paste prompts. If you can edit a text file, you can build private AI systems. Kyle is a plumber &mdash; if he can do it on an old laptop, so can you.</p>
       </details>
       <details class="fade-in">
-        <summary>What AI models does this work with?</summary>
-        <p>The course covers xAI Grok (paid) and free local models via LM Studio. You choose based on your budget.</p>
+        <summary>What hardware do I need?</summary>
+        <p>An old laptop or desktop works. Kyle built his entire system on consumer hardware with home wifi. No $10,000 GPU rig. No cloud server. If your machine can run a web browser, it can run local AI models through LM Studio.</p>
+      </details>
+      <details class="fade-in">
+        <summary>What AI models does this use?</summary>
+        <p>Open-source, open-weight models like Llama and Mistral &mdash; downloaded and run locally through LM Studio. No OpenAI account. No Google API key. No data leaves your machine. The course also covers optional paid APIs for those who want them, but the entire system works 100% offline and private.</p>
+      </details>
+      <details class="fade-in">
+        <summary>Is my data really private?</summary>
+        <p>Yes. Everything runs on your hardware. Your prompts, your data, your conversations &mdash; none of it touches a corporate server. That is the entire point. This is not a wrapper around ChatGPT. This is real self-hosted AI.</p>
+      </details>
+      <details class="fade-in">
+        <summary>Why Kali Linux?</summary>
+        <p>Kali Linux is built for security professionals. It comes hardened out of the box with tools for network monitoring and privacy. If you are serious about keeping your data sovereign, it is the right foundation. The course walks you through everything from installation to configuration.</p>
       </details>
       <details class="fade-in">
         <summary>How fast can I start making money?</summary>
-        <p>Module 7 covers Stripe payments. Most people have their first payment link live within a weekend.</p>
+        <p>Module 7 covers Stripe payments. Most people have their first payment link live within a weekend. You are not just learning AI &mdash; you are building a business that you fully own and control.</p>
       </details>
       <details class="fade-in">
         <summary>Is this just theory or real configs?</summary>
-        <p>Real configs. The Builder and Empire tiers include every prompt, every JSON config, every template &mdash; ready to deploy.</p>
+        <p>Real configs. The Builder and Empire tiers include every prompt, every JSON config, every template &mdash; the same ones running Kyle's 9 private AI assistants right now. Ready to deploy on your machine.</p>
       </details>
       <details class="fade-in">
         <summary>Can I get a refund?</summary>
-        <p>Digital products are non-refundable due to instant delivery. But if you're stuck, message us on Telegram for help.</p>
+        <p>Digital products are non-refundable due to instant delivery. But if you are stuck, message us on Telegram for help.</p>
       </details>
       <details class="fade-in">
-        <summary>What's the difference between this course and the subscription plans?</summary>
-        <p>The <a href="index.html#pricing">subscription plans</a> give you a done-for-you AI assistant on Telegram. This course teaches you to build the entire system yourself. Own it. Run it. Scale it.</p>
+        <summary>What is the difference between this course and the subscription plans?</summary>
+        <p>The <a href="index.html#pricing">subscription plans</a> give you a done-for-you private AI assistant on Telegram. This course teaches you to build the entire system yourself from the ground up. Own it. Host it. Control it. No middleman.</p>
       </details>
     </div>
   </div>
@@ -324,14 +374,14 @@
 
 <!-- FINAL CTA -->
 <section style="padding:5rem 2rem;text-align:center;background:radial-gradient(ellipse at 50% 50%, rgba(220,20,60,0.05), transparent 70%);">
-  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:var(--bone);letter-spacing:3px;margin-bottom:0.8rem;">AI For <span style="color:var(--crimson);">The Rest</span> of Us.</h2>
-  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:900;color:var(--gold);letter-spacing:3px;margin-bottom:1.5rem;">The Course That Teaches You to Build the Empire.</h2>
-  <p style="color:var(--muted);max-width:550px;margin:0 auto 2rem;font-size:1rem;">If a plumber with zero coding experience can build 9 AI bots in 48 hours, what could <strong style="color:var(--bone);">you</strong> build?</p>
+  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:var(--bone);letter-spacing:3px;margin-bottom:0.8rem;">AI For <span style="color:var(--crimson);">The Rest</span> of Us</h2>
+  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:900;color:var(--gold);letter-spacing:3px;margin-bottom:1.5rem;">For the Ones Who Don't Want to Conform.</h2>
+  <p style="color:var(--muted);max-width:600px;margin:0 auto 2rem;font-size:1rem;">A plumber built 9 private AI assistants on an old laptop with Kali Linux and home wifi. No Google. No Amazon. No Microsoft. If <strong style="color:var(--bone);">he</strong> can claim digital sovereignty, what could <strong style="color:var(--bone);">you</strong> build?</p>
   <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
     <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-blood">Get the Builder Tier &mdash; $49.99</a>
     <a href="index.html#pricing" class="btn-bone">See Subscription Plans</a>
   </div>
-  <div class="price-hint" style="margin-top:1.5rem;">One-time purchase. Lifetime access. No recurring fees.</div>
+  <div class="price-hint" style="margin-top:1.5rem;">One-time purchase. Lifetime access. No recurring fees. No corporate strings attached.</div>
 </section>
 
 <!-- FOOTER -->
@@ -344,7 +394,7 @@
     <a href="https://x.com/Lyfergang1904" target="_blank">X / Twitter</a>
     <a href="index.html#pricing">Subscription Plans</a>
   </div>
-  <p class="footer-copy">Built by a plumber. Powered by AI. No corporate middleman.</p>
+  <p class="footer-copy">Built by a plumber on an old laptop. Open-source. Private. No corporate middleman.</p>
   <p class="footer-copy" style="margin-top:0.5rem;">&copy; 2026 SGKx1904. All rights reserved.</p>
 </footer>
 

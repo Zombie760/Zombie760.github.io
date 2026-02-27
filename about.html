@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Mission — AI For The Rest of Us | SGKx1904</title>
+  <meta name="description" content="A plumber built 9 private AI assistants on an old laptop. No Google. No Amazon. No surveillance. For the ones who don't want to conform. The SGKx1904 manifesto." />
+  <meta name="keywords" content="SGKx1904 mission, private AI, anti surveillance AI, off grid AI, plumber AI, Kyle Jimenez, AI manifesto, freedom AI" />
+  <meta property="og:title" content="Our Mission — For The Ones Who Don't Want to Conform | SGKx1904" />
+  <meta property="og:description" content="A plumber vs. Silicon Valley. Private AI built on an old laptop. No Big Tech. No surveillance. This is the story." />
+  <link rel="icon" type="image/png" href="img/icon-matrix.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808; --black2: #0c0c0c; --black3: #111111;
+      --card: #0e0e0e;
+      --border: #1a1111;
+      --crimson: #dc143c; --crimson-dim: #a01030; --crimson-bright: #ff1a4a; --crimson-glow: rgba(220,20,60,0.15);
+      --gold: #d4af37; --gold-dim: #b8962e; --gold-glow: rgba(212,175,55,0.15);
+      --bone: #e8dcc8; --muted: #8a7a6a; --ghost: #3a2a2a; --radius: 3px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--crimson-dim); border-radius: 3px; }
+    a { color: var(--gold); }
+
+    .embers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+    .ember { position: absolute; width: 2px; height: 2px; background: var(--crimson); border-radius: 50%; opacity: 0; animation: emberFloat linear infinite; box-shadow: 0 0 6px var(--crimson), 0 0 12px rgba(220,20,60,0.3); }
+    @keyframes emberFloat { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.3; } 100% { transform: translateY(-20vh) translateX(30px); opacity: 0; } }
+    .scanlines::after { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px); pointer-events: none; z-index: 9999; }
+    .divider { text-align: center; padding: 1.5rem 0; color: var(--crimson-dim); font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.8rem; opacity: 0.4; }
+
+    .topbar { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 2rem; background: rgba(8,8,8,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .brand { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 900; color: var(--gold); text-decoration: none; letter-spacing: 4px; text-shadow: 0 0 20px var(--gold-glow); }
+    .back { color: var(--muted); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
+    .back:hover { color: var(--crimson); }
+
+    .btn-blood { display: inline-block; padding: 0.9rem 2.2rem; background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-weight: 800; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; transition: all 0.3s; position: relative; overflow: hidden; }
+    .btn-blood::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transition: left 0.5s; }
+    .btn-blood:hover::before { left: 100%; }
+    .btn-blood:hover { background: var(--crimson-bright); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-2px); }
+    .btn-bone { display: inline-block; padding: 0.85rem 2rem; background: transparent; color: var(--gold); font-family: 'Cinzel', serif; font-weight: 600; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; border: 1px solid var(--gold-dim); transition: all 0.3s; }
+    .btn-bone:hover { background: rgba(212,175,55,0.08); border-color: var(--gold); box-shadow: 0 0 20px var(--gold-glow); }
+
+    section { padding: 0; position: relative; z-index: 1; }
+    .inner { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+
+    /* HERO */
+    .manifesto-hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6rem 2rem 4rem; background: radial-gradient(ellipse at 50% 30%, rgba(220,20,60,0.06), transparent 70%); }
+    .manifesto-hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 900; color: var(--bone); letter-spacing: 4px; line-height: 1.05; margin-bottom: 1.5rem; }
+    .manifesto-hero h1 span { color: var(--crimson); display: block; }
+    .manifesto-hero .sub { font-family: 'Cinzel', serif; font-size: clamp(0.9rem, 1.5vw, 1.1rem); color: var(--gold); letter-spacing: 5px; text-transform: uppercase; opacity: 0.8; }
+
+    /* PROSE */
+    .prose { max-width: 700px; margin: 0 auto; }
+    .prose h2 { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 900; color: var(--bone); letter-spacing: 3px; margin-bottom: 1.5rem; text-align: center; }
+    .prose h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 800; color: var(--gold); letter-spacing: 2px; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .prose p { color: var(--muted); font-size: 1.05rem; line-height: 1.9; margin-bottom: 1.2rem; }
+    .prose p strong { color: var(--bone); }
+    .prose p em { color: var(--crimson); font-style: normal; font-weight: 600; }
+    .prose .highlight { background: rgba(220,20,60,0.06); border-left: 3px solid var(--crimson); padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0 3px 3px 0; }
+    .prose .highlight p { margin-bottom: 0; color: var(--bone); font-size: 1.1rem; }
+
+    /* PRINCIPLES */
+    .principles { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 2rem 0; }
+    .principle { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 2rem; display: flex; align-items: flex-start; gap: 1rem; transition: all 0.3s; }
+    .principle:hover { border-color: var(--crimson-dim); box-shadow: 0 0 20px var(--crimson-glow); }
+    .principle .num { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 900; color: var(--crimson); flex-shrink: 0; width: 40px; }
+    .principle .text { }
+    .principle .text h4 { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 0.3rem; }
+    .principle .text p { color: var(--muted); font-size: 0.9rem; margin: 0; line-height: 1.6; }
+
+    /* TIMELINE */
+    .timeline { margin: 2rem 0; border-left: 2px solid var(--crimson-dim); padding-left: 2rem; }
+    .timeline-item { margin-bottom: 2rem; position: relative; }
+    .timeline-item::before { content: ''; position: absolute; left: -2rem; top: 0.5rem; width: 10px; height: 10px; background: var(--crimson); border-radius: 50%; margin-left: -4px; }
+    .timeline-item .time { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--crimson); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.3rem; }
+    .timeline-item h4 { font-family: 'Cinzel', serif; font-size: 0.95rem; color: var(--gold); letter-spacing: 1px; margin-bottom: 0.3rem; }
+    .timeline-item p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+
+    footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
+    footer .brand { font-size: 1rem; display: block; margin-bottom: 0.5rem; }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { color: var(--crimson); }
+
+    @media (max-width: 640px) {
+      .manifesto-hero { padding: 5rem 1.5rem 3rem; min-height: 60vh; }
+      .inner { padding: 3rem 1.5rem; }
+      .principle { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body class="scanlines">
+
+<div class="embers" id="embers"></div>
+
+<div class="topbar">
+  <a href="index.html" class="brand">SGKx1904</a>
+  <a href="index.html" class="back">&larr; Home</a>
+</div>
+
+<!-- HERO -->
+<section class="manifesto-hero">
+  <div>
+    <h1>For the Ones Who <span>Don't Want to Conform</span></h1>
+    <div class="sub">The SGKx1904 Manifesto</div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- THE PROBLEM -->
+<section>
+  <div class="inner">
+    <div class="prose">
+      <h2>The Problem</h2>
+      <p>Every time you type a question into ChatGPT, <strong>OpenAI stores it on their servers.</strong> Every time you ask Google Gemini for help, <strong>Google adds it to your advertising profile.</strong> Every time you use Amazon's AI, <strong>your data trains their models</strong> and makes Jeff Bezos richer.</p>
+      <p>They call it "free." But you're paying with something more valuable than money. You're paying with <strong>your data, your privacy, and your independence.</strong></p>
+      <p>Your business conversations. Your financial questions. Your medical concerns. Your legal worries. Your creative ideas. <em>All of it.</em> Stored on servers you don't control, in jurisdictions that can subpoena them, accessible to employees who can read them.</p>
+
+      <div class="highlight">
+        <p>They built AI to watch you. We built AI to free you.</p>
+      </div>
+
+      <p>This isn't paranoia. It's in the Terms of Service. Go read them. OpenAI's privacy policy says they use your conversations to "improve their models." Google's says your data helps them "provide, maintain, and improve services." Translation: <strong>they own your words and they profit from them.</strong></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- THE FOUNDER -->
+<section style="background: var(--black2);">
+  <div class="inner">
+    <div class="prose">
+      <h2>The Founder</h2>
+      <p>Kyle Jimenez is a <strong>plumber</strong>. Not a programmer. Not a data scientist. Not a Stanford dropout with $10 million in VC money. A plumber.</p>
+      <p>He lives in a regular house. He has regular wifi. He owns an old laptop that was probably outdated when he bought it. He runs <strong>Kali Linux</strong> &mdash; an operating system built for people who take security seriously.</p>
+      <p>One day he took a few days off work and asked a simple question: <em>Why do I need Google's permission to use AI?</em></p>
+      <p>He downloaded open-source AI models. Free. Legal. No account needed. He installed them on his laptop. He built automation scripts that connected everything together. In <strong>48 hours</strong>, he had 9 AI assistants running his entire operation.</p>
+      <p>Content creation. Customer service. Lead generation. Market analysis. Financial tracking. Social media. All automated. All private. All running on a machine he could hold in his hands.</p>
+      <p><strong>Total daily cost: $0.02.</strong></p>
+      <p>No Google. No Amazon. No Microsoft. No corporate data center. No venture capital. No computer science degree. Just a working-class guy with a laptop and a refusal to accept that AI belongs only to Silicon Valley.</p>
+
+      <div class="highlight">
+        <p>If a plumber with home wifi can build this, the gatekeeping is officially over.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- THE MISSION -->
+<section>
+  <div class="inner">
+    <div class="prose">
+      <h2>The Mission</h2>
+      <p><strong>AI For The Rest of Us.</strong></p>
+      <p>Not AI for tech companies. Not AI for billionaires. Not AI for people who already have everything. AI for the plumber, the electrician, the small business owner, the veteran starting their next chapter, the freelancer working from a kitchen table, the independent thinker who's done being someone else's data product.</p>
+      <p>We believe three things:</p>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="num">I</div>
+        <div class="text">
+          <h4>Your Data Is Yours</h4>
+          <p>Your conversations, your business data, your ideas &mdash; they belong to you. Not to a corporation. Not to a government. Not to an algorithm deciding what ads to show you. When you use our AI, nothing leaves your machine. Period.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="num">II</div>
+        <div class="text">
+          <h4>AI Should Be Accessible</h4>
+          <p>You shouldn't need a CS degree to use AI. You shouldn't need $200/month. You shouldn't need to read 40 pages of documentation. If you can send a text message, you can use AI. We removed every barrier between regular people and this technology.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="num">III</div>
+        <div class="text">
+          <h4>Independence Is Non-Negotiable</h4>
+          <p>No corporation should be able to cut you off from your own AI. No government should be able to subpoena your conversations. No CEO should profit from your words. We use open-source tools that nobody controls and nobody can shut down.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- HOW WE'RE DIFFERENT -->
+<section style="background: var(--black2);">
+  <div class="inner">
+    <div class="prose">
+      <h2>How We Built It</h2>
+      <p>No cloud. No corporate infrastructure. Just tools that anyone can download and run.</p>
+
+      <h3>The Hardware</h3>
+      <p>An old laptop. The kind you'd find at a pawn shop. Nothing special about it. <strong>If your computer can run a web browser, it can run private AI.</strong> That's the point. You don't need a $5,000 gaming rig. You don't need a server rack. You need what you already have.</p>
+
+      <h3>The Software</h3>
+      <p><strong>Kali Linux</strong> &mdash; a security-focused operating system. Open-source AI models downloaded from the internet, free and legal. <strong>LM Studio</strong> for running models locally. Python scripts for automation. Telegram for delivery. Every single tool is open-source, inspectable, and free.</p>
+
+      <h3>The Network</h3>
+      <p>Home wifi. Not a data center. Not AWS. Not Google Cloud. <strong>The same internet connection you use to watch Netflix.</strong> The AI runs locally on the laptop. It doesn't need the internet to think. It only needs it to send you the results.</p>
+
+      <h3>The Cost</h3>
+      <p><strong>$0.02 per day.</strong> Two cents. That's the electricity cost to run 9 AI assistants 24 hours a day. For context, a single cup of coffee costs 250 times more. A ChatGPT Pro subscription costs 10,000 times more. And ChatGPT reads your data. Ours doesn't.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- THE TIMELINE -->
+<section>
+  <div class="inner">
+    <div class="prose">
+      <h2>48 Hours</h2>
+      <p>This is what a plumber with zero coding experience built in two days:</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="time">Hour 0</div>
+        <h4>Downloaded open-source AI models</h4>
+        <p>Free. Legal. No account needed. Just download files to a laptop.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="time">Hour 4</div>
+        <h4>First private AI conversation</h4>
+        <p>Talking to an AI that runs entirely on the laptop. No internet needed. No data sent anywhere.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="time">Hour 8</div>
+        <h4>Connected AI to Telegram</h4>
+        <p>Now the AI is accessible from a phone. Ask it anything, get answers in seconds. Still private.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="time">Hour 16</div>
+        <h4>Built 5 specialized bots</h4>
+        <p>Content writer. Market analyst. Financial tracker. Customer service. Lead generator. All running simultaneously.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="time">Hour 24</div>
+        <h4>Full automation online</h4>
+        <p>Bots posting content, tracking markets, handling inquiries &mdash; all automatically. Zero manual work.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="time">Hour 36</div>
+        <h4>9 bots, full pipeline</h4>
+        <p>Content creation, social media, lead nurturing, revenue tracking, crypto alerts, customer delivery. The complete system.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="time">Hour 48</div>
+        <h4>Open for business</h4>
+        <p>Website live. Subscriptions active. 1,000+ automated actions per week. Daily cost: $0.02. Zero Big Tech involved.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- WHO THIS IS FOR -->
+<section style="background: var(--black2);">
+  <div class="inner">
+    <div class="prose">
+      <h2>Who This Is For</h2>
+      <p>This is for the people who listen to Shawn Ryan and nod their heads. The ones who watch JRE and think "something's not right." The ones who've read the privacy policies and realized <em>they're the product.</em></p>
+      <p>This is for veterans who served to protect freedom and want to keep it. For tradespeople who build things with their hands and don't need Silicon Valley telling them what they can and can't do. For small business owners who refuse to hand their customer data to Amazon. For parents who don't want their kids' conversations stored on corporate servers.</p>
+      <p>This is for <strong>anyone who's fed up with being watched, tracked, profiled, and sold.</strong></p>
+      <p>You don't need to be technical. You don't need to understand code. You don't even need to know what "open-source" means. You just need to know one thing:</p>
+
+      <div class="highlight">
+        <p>There's an alternative. It exists. A plumber built it. And it costs $9 a month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- FINAL -->
+<section style="text-align:center; padding: 5rem 2rem;">
+  <div style="max-width:700px; margin:0 auto;">
+    <h2 style="font-family:'Cinzel',serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:900; color:var(--bone); letter-spacing:3px; margin-bottom:0.8rem;">Sick of Billionaires Winning?</h2>
+    <h2 style="font-family:'Cinzel',serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:900; color:var(--crimson); letter-spacing:3px; margin-bottom:1.5rem;">Build Your Own.</h2>
+    <p style="color:var(--muted); font-size:1.05rem; line-height:1.8; margin-bottom:2rem;">They spent $100 billion building AI to control you. We spent $0.02/day building AI to free you. The tools are open-source. The knowledge is here. <strong style="color:var(--bone);">The only question is whether you're ready to stop asking permission.</strong></p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:1.5rem;">
+      <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="btn-blood">Try Private AI Free</a>
+      <a href="free-guide.html" class="btn-bone">DIY Setup Guide</a>
+    </div>
+    <p style="font-family:'Cinzel',serif; font-size:1rem; color:var(--crimson-dim); letter-spacing:4px; text-transform:uppercase; margin-top:2rem; opacity:0.7;">For the ones who don't want to conform.</p>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="brand">SGKx1904</a>
+  <p>
+    <a href="https://t.me/MoneyMakingMitchell1904">Telegram</a> &bull;
+    <a href="https://x.com/Lyfergang1904">X / Twitter</a> &bull;
+    <a href="index.html">Home</a> &bull;
+    <a href="enterprise.html">Enterprise</a>
+  </p>
+  <p>Built by a plumber on an old laptop. Open-source. Private. No corporate middleman.</p>
+  <p>Your data is yours. Always was. Always will be.</p>
+  <p>&copy; 2026 SGKx1904. All rights reserved.</p>
+</footer>
+
+<script>
+(function(){
+  var c = document.getElementById('embers');
+  for (var i = 0; i < 25; i++) {
+    var e = document.createElement('div');
+    e.className = 'ember';
+    e.style.left = Math.random() * 100 + '%';
+    e.style.animationDuration = (6 + Math.random() * 10) + 's';
+    e.style.animationDelay = Math.random() * 8 + 's';
+    e.style.width = e.style.height = (1 + Math.random() * 2) + 'px';
+    c.appendChild(e);
+  }
+})();
+</script>
+
+</body>
+</html>
