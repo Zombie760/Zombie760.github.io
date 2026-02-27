@@ -71,12 +71,15 @@ PROMPT="
 ${JOB_DESCRIPTION}"
 
 # Run Claude Code — capture exit code instead of letting set -e kill the script
+# stream-json gives the full conversation trace (thinking, tool calls, results)
+# similar to Pi's .jsonl session logs
 set +e
 claude -p "$PROMPT" \
     --append-system-prompt-file "$SYSTEM_PROMPT_FILE" \
     --dangerously-skip-permissions \
-    --output-format json \
-    > "${LOG_DIR}/claude-session.json" 2>"${LOG_DIR}/claude-stderr.log"
+    --verbose \
+    --output-format stream-json \
+    > "${LOG_DIR}/claude-session.jsonl" 2>"${LOG_DIR}/claude-stderr.log"
 AGENT_EXIT=$?
 
 # Commit based on outcome
