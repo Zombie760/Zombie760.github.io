@@ -128,7 +128,7 @@ claude setup-token
 
 Paste the token (starts with `sk-ant-oat01-`) into the setup wizard. Your agent jobs will now run through your subscription. Note that usage counts toward your Claude.ai limits, and you still need an API key for the chat side.
 
-See [docs/CLAUDE_CODE_VS_PI.md](docs/CLAUDE_CODE_VS_PI.md) for more details on the two agent backends.
+See [Claude Code vs Pi](docs/CLAUDE_CODE_VS_PI.md) for more details on the two agent backends.
 
 > **Local installs**: Your server needs to be reachable from the internet for GitHub webhooks and Telegram. On a VPS/cloud server, your APP_URL is just your domain. For local development, use [ngrok](https://ngrok.com) (`ngrok http 80`) or port forwarding to expose your machine.
 >
@@ -289,7 +289,7 @@ GitHub secrets use a prefix convention so the workflow can route them correctly:
 
 thepopebot includes API key authentication, webhook secret validation (fail-closed), session encryption, secret filtering in the Docker agent, and auto-merge path restrictions. However, all software carries risk — thepopebot is provided as-is, and you are responsible for securing your own infrastructure. If you're running locally with a tunnel (ngrok, Cloudflare Tunnel, port forwarding), be aware that your dev server endpoints are publicly accessible with no rate limiting and no TLS on the local hop.
 
-See [docs/SECURITY.md](docs/SECURITY.md) for full details on what's exposed, the risks, and recommendations.
+See [Security](docs/SECURITY.md) for full details on what's exposed, the risks, and recommendations.
 
 ---
 
@@ -297,7 +297,7 @@ See [docs/SECURITY.md](docs/SECURITY.md) for full details on what's exposed, the
 
 The Event Handler (chat, Telegram, webhooks) and Jobs (Docker agent) are two independent layers — each can run a different LLM. Use Claude for interactive chat and a cheaper or local model for long-running jobs, mix providers per cron entry, or run everything on a single model.
 
-See [docs/RUNNING_DIFFERENT_MODELS.md](docs/RUNNING_DIFFERENT_MODELS.md) for the full guide: Event Handler config, job defaults, per-job overrides, provider table, and custom provider setup.
+See [Running Different Models](docs/RUNNING_DIFFERENT_MODELS.md) for the full guide: Event Handler config, job defaults, per-job overrides, provider table, and custom provider setup.
 
 ---
 
