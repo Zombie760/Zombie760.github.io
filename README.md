@@ -1,4 +1,4 @@
-# LYFERS Website
+# SGK1904 Website
 
 Deploy to GitHub Pages:
 
