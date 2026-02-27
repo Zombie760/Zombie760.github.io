@@ -32,6 +32,7 @@ import {
   generateWebhookSecret,
   getPATCreationURL,
   setSecret,
+  setVariable,
 } from './lib/github.mjs';
 import { writeModelsJson } from './lib/auth.mjs';
 import { loadEnvFile } from './lib/env.mjs';
@@ -50,7 +51,7 @@ async function main() {
   console.log(chalk.cyan(logo));
   clack.intro('Interactive Setup Wizard');
 
-  const TOTAL_STEPS = 7;
+  const TOTAL_STEPS = 8;
   let currentStep = 0;
 
   // Load existing .env (always exists after init — seed .env has AUTH_SECRET etc.)
@@ -422,7 +423,7 @@ async function main() {
       }
     } else {
       const providerConfig = PROVIDERS[chatProvider];
-      chatModel = await promptForModel(chatProvider);
+      chatModel = await promptForModel(chatProvider, { defaultModelId: 'claude-sonnet-4-6' });
       const chatApiKey = await promptForApiKey(chatProvider);
       collected[providerConfig.envKey] = chatApiKey;
 
@@ -495,8 +496,6 @@ async function main() {
       });
       if (clack.isCancel(customModel)) { clack.cancel('Setup cancelled.'); process.exit(0); }
       agentModel = customModel;
-      collected.AGENT_LLM_PROVIDER = agentProvider;
-      collected.AGENT_LLM_MODEL = agentModel;
       collected.RUNS_ON = 'self-hosted';
     } else {
       const agentProviderConfig = PROVIDERS[agentProvider];
@@ -510,9 +509,6 @@ async function main() {
         collected['__agentApiKey'] = { provider: agentProvider, key: agentApiKey, secretName: `AGENT_${agentProviderConfig.envKey}` };
         clack.log.success(`Agent ${agentProviderConfig.name} key added (${maskSecret(agentApiKey)})`);
       }
-
-      collected.AGENT_LLM_PROVIDER = agentProvider;
-      collected.AGENT_LLM_MODEL = agentModel;
 
       // OAuth prompt — only when agent provider is Anthropic
       if (agentProviderConfig.oauthSupported) {
@@ -685,6 +681,15 @@ async function main() {
 
   const report = await syncConfig(env, collected, { owner, repo });
 
+  // If agent uses a different model/provider, overwrite the GitHub variable
+  // (.env keeps chatModel for the event handler, GitHub variable gets agentModel for jobs)
+  if (agentModel && agentModel !== chatModel) {
+    await setVariable(owner, repo, 'LLM_MODEL', agentModel);
+  }
+  if (agentProvider && agentProvider !== chatProvider) {
+    await setVariable(owner, repo, 'LLM_PROVIDER', agentProvider);
+  }
+
   // Set agent API key as a separate GitHub secret (not in .env)
   if (agentApiKeyInfo) {
     const s2 = clack.spinner();
@@ -700,26 +705,14 @@ async function main() {
 
   clack.log.info('Your agent includes a web chat interface at your APP_URL.');
 
-  // ─── Step 6: Build & Start Server ────────────────────────────────────
-  clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] Build & Start Server`);
-  clack.log.info('Now we\'ll build your agent\'s web interface. Then you\'ll start the server with Docker so it can receive webhooks and serve the chat UI.');
-
-  // Check if server is already running
-  let serverAlreadyRunning = false;
-  try {
-    await fetch('http://localhost:80/api/ping', {
-      method: 'GET',
-      signal: AbortSignal.timeout(3000),
-    });
-    serverAlreadyRunning = true;
-  } catch {
-    // Server not reachable
-  }
+  // ─── Step 6: Build ──────────────────────────────────────────────────
+  clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] Build`);
 
   // Helper: run build with retry on failure
   async function runBuildWithRetry() {
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
+        fs.rmSync(path.join(process.cwd(), '.next'), { recursive: true, force: true });
         execSync('npm run build', { stdio: 'inherit' });
         clack.log.success('Build complete');
         return true;
@@ -736,43 +729,66 @@ async function main() {
     clack.log.error(
       'Cannot continue without a successful build.\n' +
       '  Fix the error above, then run:\n\n' +
-      '    npm run build\n' +
-      '    docker compose up -d'
+      '    npm run build'
     );
     process.exit(1);
   }
 
-  if (serverAlreadyRunning) {
-    clack.log.success('Server is already running');
-    if (await confirm('Rebuild and restart anyway?', false)) {
-      clack.log.info('Rebuilding Next.js...');
+  const hasExistingBuild = fs.existsSync(path.join(process.cwd(), '.next'));
+
+  if (hasExistingBuild) {
+    if (await confirm('Existing build found. Rebuild?')) {
+      clack.log.info('Building Next.js...');
       await runBuildWithRetry();
+    } else {
+      clack.log.info('Skipping build');
     }
   } else {
     clack.log.info('Building Next.js...');
     await runBuildWithRetry();
+  }
 
-    clack.log.info('Start Docker in a new terminal window:\n\n     docker compose up -d');
+  // ─── Step 7: Start Server ─────────────────────────────────────────────
+  clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] Start Server`);
 
-    let serverReachable = false;
-    while (!serverReachable) {
-      await pressEnter('Press enter once Docker is running');
-      const serverSpinner = clack.spinner();
-      serverSpinner.start('Checking server...');
+  let serverRunning = false;
+  try {
+    await fetch('http://localhost:80/api/ping', {
+      method: 'GET',
+      signal: AbortSignal.timeout(3000),
+    });
+    serverRunning = true;
+  } catch {
+    // Server not reachable
+  }
+
+  if (serverRunning) {
+    if (await confirm('Server is already running. Restart?')) {
+      const restartSpinner = clack.spinner();
+      restartSpinner.start('Restarting server...');
       try {
-        await fetch('http://localhost:80/api/ping', {
-          method: 'GET',
-          signal: AbortSignal.timeout(5000),
-        });
-        serverSpinner.stop('Server is running');
-        serverReachable = true;
+        execSync('docker compose down && docker compose up -d', { stdio: 'ignore' });
+        restartSpinner.stop('Server restarted');
       } catch {
-        serverSpinner.stop('Could not reach server on localhost:80');
+        restartSpinner.stop('Failed to restart server');
+        clack.log.warn('Run manually: docker compose down && docker compose up -d');
       }
+    }
+  } else {
+    const startSpinner = clack.spinner();
+    startSpinner.start('Starting server...');
+    try {
+      execSync('docker compose up -d', { stdio: 'ignore' });
+      startSpinner.stop('Server started');
+    } catch {
+      startSpinner.stop('Failed to start server');
+      clack.log.warn('Run manually: docker compose up -d');
     }
   }
 
-  // ─── Step 7: Summary ─────────────────────────────────────────────────
+  clack.log.info(`Server starting — visit ${appUrl} (may take 10-20 seconds to load)`);
+
+  // ─── Step 8: Summary ─────────────────────────────────────────────────
   clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] Setup Complete!`);
 
   const chatProviderLabel = chatProvider === 'custom' ? 'Local (OpenAI Compatible API)' : PROVIDERS[chatProvider].label;
@@ -781,18 +797,15 @@ async function main() {
   summary += `Repository:   ${owner}/${repo}\n`;
   summary += `App URL:      ${appUrl}\n`;
 
-  if (agentProvider && agentProvider !== chatProvider) {
-    // Different providers for chat and agent
-    const agentProviderLabel = agentProvider === 'custom' ? 'Local (OpenAI Compatible API)' : PROVIDERS[agentProvider].label;
-    summary += `Chat LLM:     ${chatProviderLabel} (${chatModel})\n`;
-    summary += `Agent LLM:    ${agentProviderLabel} (${agentModel})\n`;
-  } else if (agentModel && agentModel !== chatModel) {
-    // Same provider, different model
-    summary += `Chat LLM:     ${chatProviderLabel} (${chatModel})\n`;
-    summary += `Agent LLM:    ${chatProviderLabel} (${agentModel})\n`;
+  if (agentProvider || agentModel) {
+    const agentProviderLabel = agentProvider
+      ? (agentProvider === 'custom' ? 'Local (OpenAI Compatible API)' : PROVIDERS[agentProvider].label)
+      : chatProviderLabel;
+    const agentModelDisplay = agentModel || chatModel;
+    summary += `Chat LLM:     ${chatProviderLabel} (${chatModel})  [.env]\n`;
+    summary += `Agent LLM:    ${agentProviderLabel} (${agentModelDisplay})  [GitHub var]\n`;
   } else {
-    // Same config for both
-    summary += `Agent LLM:    ${chatProviderLabel} (${chatModel})\n`;
+    summary += `LLM:          ${chatProviderLabel} (${chatModel})\n`;
   }
 
   if (collected.AGENT_BACKEND) {
@@ -809,11 +822,7 @@ async function main() {
     clack.log.info(`GitHub variables set: ${report.variables.join(', ')}`);
   }
 
-  clack.outro(
-    `Start your server:\n\n` +
-    `  docker compose up -d\n\n` +
-    `Then chat with your agent at ${appUrl}`
-  );
+  clack.outro(`Chat with your agent at ${appUrl}`);
 }
 
 main().catch((error) => {

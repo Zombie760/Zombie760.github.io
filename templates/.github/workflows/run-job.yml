@@ -52,8 +52,8 @@ jobs:
           ALL_SECRETS: ${{ toJson(secrets) }}
           JOB_IMAGE_URL: ${{ vars.JOB_IMAGE_URL }}
           THEPOPEBOT_VERSION: ${{ steps.version.outputs.tag }}
-          LLM_MODEL: ${{ steps.job-config.outputs.llm_model || vars.AGENT_LLM_MODEL || vars.LLM_MODEL }}
-          LLM_PROVIDER: ${{ steps.job-config.outputs.llm_provider || vars.AGENT_LLM_PROVIDER || vars.LLM_PROVIDER }}
+          LLM_MODEL: ${{ steps.job-config.outputs.llm_model || vars.LLM_MODEL }}
+          LLM_PROVIDER: ${{ steps.job-config.outputs.llm_provider || vars.LLM_PROVIDER }}
           OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL }}
           AGENT_BACKEND: ${{ steps.job-config.outputs.agent_backend || vars.AGENT_BACKEND || '' }}
         run: |

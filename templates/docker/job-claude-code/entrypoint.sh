@@ -49,6 +49,15 @@ for skill_dir in /job/skills/active/*/; do
     fi
 done
 
+# Start Chrome if puppeteer installed it (needed by browser-tools skill)
+CHROME_PID=""
+CHROME_BIN=$(find /home/agent/.cache/puppeteer -name "chrome" -type f 2>/dev/null | head -1)
+if [ -n "$CHROME_BIN" ]; then
+    $CHROME_BIN --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 2>/dev/null &
+    CHROME_PID=$!
+    sleep 2
+fi
+
 # Setup logs
 LOG_DIR="/job/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
@@ -78,11 +87,18 @@ PROMPT="
 
 ${JOB_DESCRIPTION}"
 
+# Build --model flag if LLM_MODEL is set
+MODEL_FLAG=""
+if [ -n "$LLM_MODEL" ]; then
+    MODEL_FLAG="--model $LLM_MODEL"
+fi
+
 # Run Claude Code — capture exit code instead of letting set -e kill the script
 # stream-json gives the full conversation trace (thinking, tool calls, results)
 # similar to Pi's .jsonl session logs
 set +e
 claude -p "$PROMPT" \
+    $MODEL_FLAG \
     --append-system-prompt-file "$SYSTEM_PROMPT_FILE" \
     --dangerously-skip-permissions \
     --verbose \
@@ -105,6 +121,11 @@ fi
 
 git push origin
 set -e
+
+# Cleanup Chrome
+if [ -n "$CHROME_PID" ]; then
+    kill $CHROME_PID 2>/dev/null || true
+fi
 
 # Create PR (auto-merge handled by GitHub Actions workflow)
 gh pr create --title "🤖 Agent Job: ${TITLE}" --body "${JOB_DESCRIPTION}" --base main || true

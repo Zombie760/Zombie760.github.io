@@ -24,9 +24,6 @@ export const CONFIG_TARGETS = {
   CUSTOM_API_KEY:        { env: true, secret: 'AGENT_CUSTOM_API_KEY' },
   OPENAI_BASE_URL:       { env: true, variable: true },
 
-  AGENT_LLM_PROVIDER:     { variable: true },
-  AGENT_LLM_MODEL:        { variable: true },
-
   CLAUDE_CODE_OAUTH_TOKEN: { env: true, secret: 'AGENT_CLAUDE_CODE_OAUTH_TOKEN' },
   AGENT_BACKEND:           { env: true, variable: true },
 

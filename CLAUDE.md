@@ -171,3 +171,12 @@ Currently used by the Event Handler to load EVENT_HANDLER.md as the LLM system p
 ## Authentication
 
 NextAuth v5 with Credentials provider (email/password), JWT in httpOnly cookies. First visit creates admin account. `requireAuth()` validates sessions in server actions. API routes use `x-api-key` header. `AUTH_SECRET` env var required for session encryption.
+
+## Config Variable Architecture
+
+`LLM_MODEL` and `LLM_PROVIDER` exist in two separate systems using the same names:
+
+- **`.env`** — read by the event handler (chat). Set by `setup/lib/sync.mjs`.
+- **GitHub repository variables** — read by `run-job.yml` (agent jobs). Set by `setup/lib/sync.mjs`.
+
+These are independent environments. They use the same variable names. They can hold different values (e.g. chat uses sonnet, jobs use opus). Do NOT create separate `AGENT_LLM_*` variable names — just set different values in `.env` vs GitHub variables.
