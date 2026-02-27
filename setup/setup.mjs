@@ -564,7 +564,7 @@ async function main() {
 
             let oauthToken = null;
             while (!oauthToken) {
-              const tokenInput = await clack.text({
+              const tokenInput = await clack.password({
                 message: 'Paste your token here (starts with sk-ant-oat01-):',
                 validate: (input) => {
                   if (!input) return 'Token is required (or press Ctrl+C to skip)';
