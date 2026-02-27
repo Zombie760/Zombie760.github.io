@@ -69,7 +69,7 @@ You interact with your bot via the web chat interface or Telegram (optional). Th
 
 *\*ngrok is only required for local installs without port forwarding. VPS/cloud deployments don't need it. [Sign up](https://dashboard.ngrok.com/signup) for a free ngrok account, then run `ngrok config add-authtoken <YOUR_TOKEN>` before starting setup.*
 
-### Three steps
+### Two steps
 
 **Step 1** — Scaffold a new project:
 
@@ -93,18 +93,42 @@ The wizard walks you through everything:
 - Collects API keys (Anthropic required; OpenAI, Brave optional)
 - Sets GitHub repository secrets and variables
 - Generates `.env`
-- Builds the project
+- Builds the project and starts Docker for you
 
-**Step 3** — Start your agent:
-
-```bash
-docker compose up -d
-```
+**That's it.** Visit your APP_URL when the wizard finishes.
 
 - **Web Chat**: Visit your APP_URL to chat with your agent, create jobs, upload files
 - **Telegram** (optional): Run `npm run setup-telegram` to connect a Telegram bot
 - **Webhook**: Send a POST to `/api/create-job` with your API key to create jobs programmatically
 - **Cron**: Edit `config/CRONS.json` to schedule recurring jobs
+
+### Chat vs Agent LLM
+
+Your bot has two sides — a **chat** side and an **agent** side.
+
+**Chat** is the conversational part. When you talk to your bot in the web UI or Telegram, it uses the chat LLM. This runs on your server and responds in real time.
+
+**Agent** is the worker. When your bot needs to write code, modify files, or do a bigger task, it spins up a separate job that runs in a Docker container on GitHub. That job uses the agent LLM.
+
+By default, both use the same model. But during setup, you can choose different models for each — for example, a faster model for chat and a more capable one for agent jobs. The wizard asks "Would you like agent jobs to use different LLM settings?" and lets you pick.
+
+### Using a Claude Subscription (OAuth Token)
+
+If you have a Claude Pro ($20/mo) or Max ($100+/mo) subscription, you can use it to power your agent jobs instead of paying per API call. During setup, choose Anthropic as your agent provider and say yes when asked about a subscription.
+
+You'll need to generate a token:
+
+```bash
+# Install Claude Code CLI (if you don't have it)
+npm install -g @anthropic-ai/claude-code
+
+# Generate your token (opens browser to log in)
+claude setup-token
+```
+
+Paste the token (starts with `sk-ant-oat01-`) into the setup wizard. Your agent jobs will now run through your subscription. Note that usage counts toward your Claude.ai limits, and you still need an API key for the chat side.
+
+See [docs/CLAUDE_CODE_VS_PI.md](docs/CLAUDE_CODE_VS_PI.md) for more details on the two agent backends.
 
 > **Local installs**: Your server needs to be reachable from the internet for GitHub webhooks and Telegram. On a VPS/cloud server, your APP_URL is just your domain. For local development, use [ngrok](https://ngrok.com) (`ngrok http 80`) or port forwarding to expose your machine.
 >
