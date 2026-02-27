@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free AI Bot Blueprint — Build Your First Bot in 5 Minutes | SGK1904</title>
+  <meta name="description" content="Free guide: build an AI bot that runs 24/7 and delivers market updates to your phone. No coding required. Copy-paste config included. Get it free via Telegram." />
+  <meta name="keywords" content="free AI bot, Telegram bot tutorial, AI automation free, bot blueprint, make money AI bots, free bot template, OpenClaw guide" />
+  <meta property="og:title" content="Free AI Bot Blueprint — SGK1904" />
+  <meta property="og:description" content="Build your first AI bot in 5 minutes. Free guide with copy-paste config." />
+  <meta property="og:url" content="https://lyfer1904.github.io/free-guide" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@Lyfergang1904" />
+  <link rel="canonical" href="https://lyfer1904.github.io/free-guide" />
+  <link rel="icon" type="image/jpeg" href="icon-dark-final.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@300;400;500;600;700;800&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a; --black2: #111111; --black3: #1a1a1a; --card: #131313;
+      --border: #2a2a2a; --gold: #d4af37; --gold-dim: #b8962e; --gold-bright: #f0d060;
+      --red: #8b0000; --bone: #f0e6d3; --muted: #7a7a6e; --radius: 8px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
+    a { color: var(--gold); }
+    .topbar { padding: 0.8rem 2rem; background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .topbar a { text-decoration: none; }
+    .brand { font-family: 'Pirata One', cursive; font-size: 1.6rem; color: var(--gold); letter-spacing: 2px; }
+    .back { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+    .back:hover { color: var(--gold); }
+
+    .hero-lp {
+      padding: 6rem 2rem 4rem; text-align: center;
+      background: radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.08) 0%, transparent 60%);
+    }
+    .hero-lp h1 { font-family: 'Pirata One', cursive; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--gold); margin-bottom: 1rem; text-shadow: 0 0 40px rgba(212,175,55,0.3); }
+    .hero-lp .sub { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--bone); opacity: 0.8; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .hero-lp p { max-width: 600px; margin: 0 auto 2rem; color: var(--muted); font-size: 1.05rem; }
+    .btn-gold { display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--gold), var(--gold-dim)); color: var(--black); font-weight: 800; text-decoration: none; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; transition: all 0.3s; }
+    .btn-gold:hover { background: linear-gradient(135deg, var(--gold-bright), var(--gold)); box-shadow: 0 0 20px rgba(212,175,55,0.4); transform: translateY(-2px); }
+    .btn-outline { display: inline-block; padding: 0.85rem 2rem; background: transparent; color: var(--gold); font-weight: 700; text-decoration: none; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; border: 1px solid var(--gold-dim); transition: all 0.3s; }
+    .btn-outline:hover { background: rgba(212,175,55,0.1); border-color: var(--gold); }
+
+    section { padding: 4rem 2rem; }
+    .inner { max-width: 800px; margin: 0 auto; }
+    h2 { font-family: 'Pirata One', cursive; font-size: 2.2rem; color: var(--gold); text-align: center; margin-bottom: 2rem; }
+    .divider { text-align: center; padding: 1.5rem 0; color: var(--gold); font-size: 1.5rem; letter-spacing: 0.5rem; opacity: 0.6; }
+
+    .value-list { list-style: none; max-width: 600px; margin: 0 auto; }
+    .value-list li {
+      padding: 1rem 1.5rem; margin-bottom: 0.75rem;
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      font-size: 1rem; color: var(--bone);
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .value-list li .check { color: var(--gold); font-weight: 700; font-size: 1.3rem; flex-shrink: 0; }
+    .value-list li span { color: var(--muted); font-size: 0.85rem; display: block; margin-top: 0.2rem; }
+
+    .how { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; text-align: center; }
+    .how-step .num { font-family: 'Pirata One', cursive; font-size: 3rem; color: var(--gold); opacity: 0.5; }
+    .how-step strong { display: block; margin: 0.5rem 0 0.3rem; font-size: 1.1rem; }
+    .how-step p { color: var(--muted); font-size: 0.9rem; }
+
+    .math-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+    .math-table th { text-align: left; padding: 0.8rem 1rem; color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--gold-dim); }
+    .math-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); color: var(--muted); font-size: 0.95rem; }
+    .math-table tr:last-child td { color: var(--bone); font-weight: 700; border-bottom: 2px solid var(--gold-dim); }
+
+    .cta-box {
+      background: var(--card); border: 2px solid var(--gold); border-radius: var(--radius);
+      padding: 3rem; text-align: center; margin: 2rem 0;
+      box-shadow: 0 0 40px rgba(212,175,55,0.1);
+    }
+    .cta-box h3 { font-family: 'Pirata One', cursive; font-size: 2rem; color: var(--gold); margin-bottom: 1rem; }
+    .cta-box p { color: var(--muted); max-width: 500px; margin: 0 auto 1.5rem; }
+    .cta-box .free-tag { display: inline-block; background: var(--gold); color: var(--black); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; padding: 0.3rem 1rem; border-radius: 2px; margin-bottom: 1rem; }
+
+    footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); }
+    footer .brand { font-size: 1.2rem; }
+    footer p { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="brand">SGK1904</a>
+  <a href="index.html" class="back">&larr; Back to Home</a>
+</div>
+
+<div class="hero-lp">
+  <h1>Free AI Bot Blueprint</h1>
+  <div class="sub">5 Minutes. Zero Code. One Working Bot.</div>
+  <p>Get a copy-paste bot config that runs 24/7 and delivers AI-powered market briefings to your phone every morning. Plus the 3-bot starter stack blueprint.</p>
+  <a href="https://t.me/Deth1_bot?start=setup" class="btn-gold">Get It Free via Telegram</a>
+</div>
+
+<div class="divider">&#9760; &#9760; &#9760;</div>
+
+<section>
+  <div class="inner">
+    <h2>What You Get</h2>
+    <ul class="value-list">
+      <li>
+        <div class="check">&#10003;</div>
+        <div>
+          <strong>Working bot config (copy-paste ready)</strong>
+          <span>A real JSON config file you can deploy in minutes. Not theory — an actual running bot.</span>
+        </div>
+      </li>
+      <li>
+        <div class="check">&#10003;</div>
+        <div>
+          <strong>The 3-bot starter stack</strong>
+          <span>Morning briefing + content generator + revenue tracker. The minimum system that runs itself.</span>
+        </div>
+      </li>
+      <li>
+        <div class="check">&#10003;</div>
+        <div>
+          <strong>The setup walkthrough</strong>
+          <span>Telegram bot, AI provider, OpenClaw gateway — step by step, nothing skipped.</span>
+        </div>
+      </li>
+      <li>
+        <div class="check">&#10003;</div>
+        <div>
+          <strong>The ROI math</strong>
+          <span>How 3 bots costing $0.007/day can save you 243 hours/year ($12,150 at $50/hr).</span>
+        </div>
+      </li>
+      <li>
+        <div class="check">&#10003;</div>
+        <div>
+          <strong>Links to go deeper</strong>
+          <span>Ready for more? The full 7-bot system, templates, and course are one click away.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider">&#9760; &#9760; &#9760;</div>
+
+<section>
+  <div class="inner">
+    <h2>How It Works</h2>
+    <div class="how">
+      <div class="how-step">
+        <div class="num">I</div>
+        <strong>DM the Bot</strong>
+        <p>Message @Deth1_bot on Telegram and say "SETUP"</p>
+      </div>
+      <div class="how-step">
+        <div class="num">II</div>
+        <strong>Get the Guide</strong>
+        <p>Full blueprint delivered instantly to your chat</p>
+      </div>
+      <div class="how-step">
+        <div class="num">III</div>
+        <strong>Deploy</strong>
+        <p>Copy the config, paste into OpenClaw, bot goes live</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&#9760; &#9760; &#9760;</div>
+
+<section>
+  <div class="inner">
+    <h2>The Math</h2>
+    <table class="math-table">
+      <thead>
+        <tr><th>Manual Task</th><th>Time / Day</th><th>Bot Cost / Day</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Check crypto prices & news</td><td>15 min</td><td>$0.002</td></tr>
+        <tr><td>Write a social media post</td><td>20 min</td><td>$0.003</td></tr>
+        <tr><td>Check Stripe dashboard</td><td>5 min</td><td>$0.002</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>40 min</strong></td><td><strong>$0.007</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="text-align:center;color:var(--muted);font-size:0.95rem;">40 minutes saved daily = <strong style="color:var(--bone);">243 hours/year</strong>. At $50/hr, that's <strong style="color:var(--gold);">$12,150</strong> in reclaimed time.</p>
+  </div>
+</section>
+
+<div class="divider">&#9760; &#9760; &#9760;</div>
+
+<section>
+  <div class="inner">
+    <div class="cta-box">
+      <div class="free-tag">100% Free</div>
+      <h3>Get the Blueprint Now</h3>
+      <p>No email required. No signup form. Just DM the bot, say "SETUP", and get the full guide delivered instantly to your Telegram.</p>
+      <a href="https://t.me/Deth1_bot?start=setup" class="btn-gold" style="margin-right:1rem;">DM @Deth1_bot</a>
+      <a href="https://t.me/MoneyMakingMitchell1904" class="btn-outline">Join the Channel</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="inner" style="text-align:center;">
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1rem;">Ready for the full system?</p>
+    <a href="ai-empire-course.html" class="btn-outline" style="margin-right:0.5rem;">AI Empire Course</a>
+    <a href="bot-templates.html" class="btn-outline">Bot Templates</a>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">SGK1904</div>
+  <p>
+    <a href="https://t.me/MoneyMakingMitchell1904">Telegram</a> &bull;
+    <a href="https://x.com/Lyfergang1904">X / Twitter</a> &bull;
+    <a href="index.html">Home</a>
+  </p>
+  <p>&copy; 2026 SGK1904. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
