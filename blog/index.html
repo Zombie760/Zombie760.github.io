@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — SGKx1904 | AI For The Rest of Us</title>
+  <meta name="description" content="AI automation tips, tutorials, and insights from a plumber who built 9 AI bots with zero coding. Small business AI, no-code automation, and more." />
+  <meta name="keywords" content="AI blog, small business AI, no-code AI, AI automation tips, AI bots, SGKx1904, AI for beginners" />
+  <meta property="og:title" content="Blog — SGKx1904" />
+  <meta property="og:description" content="AI automation tips and insights from a plumber who built 9 AI bots with zero coding." />
+  <meta property="og:url" content="https://lyfer1904.github.io/blog/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@Lyfergang1904" />
+  <link rel="canonical" href="https://lyfer1904.github.io/blog/" />
+  <link rel="icon" type="image/png" href="../img/icon-matrix.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808; --black2: #0c0c0c; --black3: #111111;
+      --card: #0e0e0e; --card-hover: #141414;
+      --border: #1a1111; --border-bright: rgba(220,20,60,0.2);
+      --crimson: #dc143c; --crimson-dim: #a01030; --crimson-bright: #ff1a4a; --crimson-glow: rgba(220,20,60,0.15);
+      --gold: #d4af37; --gold-dim: #b8962e; --gold-glow: rgba(212,175,55,0.15);
+      --bone: #e8dcc8; --muted: #8a7a6a; --ghost: #3a2a2a; --radius: 3px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--crimson-dim); border-radius: 3px; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--crimson); }
+
+    .embers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+    .ember { position: absolute; width: 2px; height: 2px; background: var(--crimson); border-radius: 50%; opacity: 0; animation: emberFloat linear infinite; box-shadow: 0 0 6px var(--crimson), 0 0 12px rgba(220,20,60,0.3); }
+    @keyframes emberFloat { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.3; } 100% { transform: translateY(-20vh) translateX(30px); opacity: 0; } }
+    .scanlines::after { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px); pointer-events: none; z-index: 9999; }
+    .divider { text-align: center; padding: 1.5rem 0; color: var(--crimson-dim); font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.8rem; opacity: 0.4; }
+
+    .topbar { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 2rem; background: rgba(8,8,8,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .brand { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 900; color: var(--gold); text-decoration: none; letter-spacing: 4px; text-shadow: 0 0 20px var(--gold-glow); }
+    .nav-right { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-right a { color: var(--muted); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
+    .nav-right a:hover { color: var(--crimson); }
+
+    .page-header { padding: 5rem 2rem 3rem; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(220,20,60,0.04), transparent 70%); position: relative; z-index: 1; }
+    .page-header h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: var(--bone); letter-spacing: 3px; margin-bottom: 0.5rem; }
+    .page-header h1 span { color: var(--crimson); }
+    .page-header p { color: var(--muted); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+
+    .blog-grid { max-width: 1000px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; position: relative; z-index: 1; }
+
+    .post-card { display: block; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; text-decoration: none; }
+    .post-card:hover { border-color: var(--crimson-dim); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-4px); }
+    .post-img { width: 100%; height: 180px; overflow: hidden; }
+    .post-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .post-card:hover .post-img img { transform: scale(1.05); }
+    .post-content { padding: 1.2rem 1.5rem 1.5rem; }
+    .post-date { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--crimson); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
+    .post-content h3 { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 800; color: var(--bone); letter-spacing: 1px; margin-bottom: 0.5rem; line-height: 1.3; }
+    .post-content p { color: var(--muted); font-size: 0.82rem; line-height: 1.5; margin-bottom: 0.8rem; }
+    .read-more { font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; }
+    .post-card:hover .read-more { color: var(--crimson); }
+
+    .btn-blood { display: inline-block; padding: 0.9rem 2.2rem; background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-weight: 800; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; transition: all 0.3s; }
+    .btn-blood:hover { background: var(--crimson-bright); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-2px); color: #fff; }
+
+    footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); background: var(--black2); position: relative; z-index: 1; }
+    .footer-brand { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 900; color: var(--gold); letter-spacing: 4px; margin-bottom: 0.8rem; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.8rem; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--crimson); }
+    .footer-copy { color: var(--ghost); font-size: 0.7rem; }
+
+    @media (max-width: 640px) {
+      .topbar { padding: 0.6rem 1rem; }
+      .blog-grid { grid-template-columns: 1fr; padding: 1.5rem; }
+      .nav-right { gap: 0.8rem; }
+    }
+  </style>
+</head>
+<body class="scanlines">
+
+<div class="embers" id="embers" aria-hidden="true"></div>
+
+<div class="topbar">
+  <a href="../index.html" class="brand">SGKx1904</a>
+  <div class="nav-right">
+    <a href="../index.html">Home</a>
+    <a href="../free-guide.html">Free Guide</a>
+    <a href="https://t.me/moneymakingmitch1904_bot" target="_blank">Try AI</a>
+  </div>
+</div>
+
+<div class="page-header">
+  <h1>The <span>SGKx1904</span> Blog</h1>
+  <p>AI automation tips, tutorials, and real-world insights from a plumber who built 9 AI bots with zero coding experience.</p>
+</div>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<div class="blog-grid">
+  
+      <a href="blog-2026-02-27-why-freelancers-are-switching-from-chatgpt-to-custom-ai-assistants.html" class="post-card">
+        
+        <div class="post-img">
+          <img src="img/blog-2026-02-27-why-freelancers-are-switching-from-chatgpt-to-custom-ai-assistants.png" alt="Why Freelancers Are Switching from ChatGPT to Custom AI Assistants" loading="lazy" />
+        </div>
+        <div class="post-content">
+          <div class="post-date">February 27, 2026</div>
+          <h3>Why Freelancers Are Switching from ChatGPT to Custom AI Assistants</h3>
+          <p>Freelancers are rapidly switching from ChatGPT to custom AI assistants for tailored automation that saves time and money. As the creator of SGKx1904, I built 9 AI bots in 48 hours without coding, running my business for just $0.02/day.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+</div>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<section style="padding:4rem 2rem;text-align:center;position:relative;z-index:1;">
+  <h2 style="font-family:'Cinzel',serif;font-size:1.5rem;font-weight:900;color:var(--bone);letter-spacing:3px;margin-bottom:0.8rem;">Want Your Own AI Assistant?</h2>
+  <p style="color:var(--muted);max-width:500px;margin:0 auto 1.5rem;">Start free. No coding. No credit card. Just open Telegram and say hello.</p>
+  <a href="https://t.me/moneymakingmitch1904_bot" target="_blank" class="btn-blood">Try It Free</a>
+</section>
+
+<footer>
+  <div class="footer-brand">SGKx1904</div>
+  <div class="footer-links">
+    <a href="https://t.me/moneymakingmitch1904_bot" target="_blank">Talk to AI</a>
+    <a href="https://t.me/MoneyMakingMitchell1904" target="_blank">Channel</a>
+    <a href="https://x.com/Lyfergang1904" target="_blank">X / Twitter</a>
+    <a href="../free-guide.html">Free Guide</a>
+    <a href="../index.html">Home</a>
+  </div>
+  <p class="footer-copy">Built by a plumber. Powered by AI. No corporate middleman.</p>
+  <p class="footer-copy" style="margin-top:0.5rem;">&copy; 2026 SGKx1904. All rights reserved.</p>
+</footer>
+
+<script>
+(function() {
+  var c = document.getElementById('embers');
+  for (var i = 0; i < 20; i++) {
+    var e = document.createElement('div');
+    e.className = 'ember';
+    e.style.left = Math.random() * 100 + '%';
+    e.style.animationDuration = (8 + Math.random() * 12) + 's';
+    e.style.animationDelay = Math.random() * 10 + 's';
+    e.style.width = e.style.height = (1 + Math.random() * 2) + 'px';
+    c.appendChild(e);
+  }
+})();
+</script>
+
+</body>
+</html>
