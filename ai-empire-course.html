@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Automation Empire Course — Build Bots That Make Money While You Sleep | SGK1904</title>
+  <meta name="description" content="Learn to build an AI bot empire from scratch. 9 modules covering OpenClaw setup, bot automation, Stripe payments, content marketing, and scaling. From $29.99." />
+  <meta name="keywords" content="AI automation course, bot building, make money with AI, OpenClaw tutorial, Telegram bot business, passive income AI, AI empire" />
+  <meta property="og:title" content="AI Automation Empire Course — SGK1904" />
+  <meta property="og:description" content="Build bots that run your business 24/7. 9 modules. Real configs. From $29.99." />
+  <meta property="og:url" content="https://lyfer1904.github.io/ai-empire-course" />
+  <meta property="og:type" content="product" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@Lyfergang1904" />
+  <link rel="canonical" href="https://lyfer1904.github.io/ai-empire-course" />
+  <link rel="icon" type="image/jpeg" href="icon-dark-final.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@300;400;500;600;700;800&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a; --black2: #111111; --black3: #1a1a1a; --card: #131313;
+      --border: #2a2a2a; --gold: #d4af37; --gold-dim: #b8962e; --gold-bright: #f0d060;
+      --red: #8b0000; --bone: #f0e6d3; --muted: #7a7a6e; --radius: 8px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
+    a { color: var(--gold); }
+    .topbar { padding: 0.8rem 2rem; background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .topbar a { text-decoration: none; }
+    .brand { font-family: 'Pirata One', cursive; font-size: 1.6rem; color: var(--gold); letter-spacing: 2px; }
+    .back { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+    .back:hover { color: var(--gold); }
+
+    .hero-lp {
+      padding: 6rem 2rem 4rem; text-align: center;
+      background: radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.08) 0%, transparent 60%);
+    }
+    .hero-lp h1 { font-family: 'Pirata One', cursive; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--gold); margin-bottom: 1rem; text-shadow: 0 0 40px rgba(212,175,55,0.3); }
+    .hero-lp .sub { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--bone); opacity: 0.8; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .hero-lp p { max-width: 650px; margin: 0 auto 2rem; color: var(--muted); font-size: 1.05rem; }
+    .btn-gold { display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--gold), var(--gold-dim)); color: var(--black); font-weight: 800; text-decoration: none; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; transition: all 0.3s; }
+    .btn-gold:hover { background: linear-gradient(135deg, var(--gold-bright), var(--gold)); box-shadow: 0 0 20px rgba(212,175,55,0.4); transform: translateY(-2px); }
+    .btn-outline { display: inline-block; padding: 1rem 2.5rem; background: transparent; color: var(--gold); font-weight: 700; text-decoration: none; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; border: 1px solid var(--gold-dim); transition: all 0.3s; }
+    .btn-outline:hover { background: rgba(212,175,55,0.1); border-color: var(--gold); }
+
+    section { padding: 4rem 2rem; }
+    .inner { max-width: 900px; margin: 0 auto; }
+    h2 { font-family: 'Pirata One', cursive; font-size: 2.2rem; color: var(--gold); text-align: center; margin-bottom: 2rem; }
+    .divider { text-align: center; padding: 1.5rem 0; color: var(--gold); font-size: 1.5rem; letter-spacing: 0.5rem; opacity: 0.6; }
+
+    .modules { list-style: none; counter-reset: mod; }
+    .modules li { counter-increment: mod; padding: 1.2rem 1.5rem; border-left: 3px solid var(--gold-dim); margin-bottom: 1rem; background: var(--card); border-radius: 0 var(--radius) var(--radius) 0; }
+    .modules li::before { content: "Module " counter(mod, decimal-leading-zero); font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 0.3rem; }
+    .modules li strong { color: var(--bone); font-size: 1.1rem; }
+    .modules li p { color: var(--muted); font-size: 0.9rem; margin-top: 0.3rem; }
+
+    .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .tier { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; transition: border-color 0.3s; }
+    .tier:hover { border-color: var(--gold-dim); }
+    .tier.featured { border-color: var(--gold); box-shadow: 0 0 30px rgba(212,175,55,0.15); }
+    .tier h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .tier .price { font-size: 2.5rem; font-weight: 800; color: var(--bone); margin: 1rem 0; }
+    .tier .price span { font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+    .tier ul { list-style: none; text-align: left; margin: 1.5rem 0; }
+    .tier ul li { padding: 0.4rem 0; color: var(--muted); font-size: 0.9rem; border-bottom: 1px solid var(--border); }
+    .tier ul li::before { content: "\2713 "; color: var(--gold); font-weight: 700; }
+
+    .faq { max-width: 700px; margin: 0 auto; }
+    .faq details { margin-bottom: 1rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); }
+    .faq summary { padding: 1rem 1.5rem; cursor: pointer; color: var(--bone); font-weight: 600; }
+    .faq details[open] summary { color: var(--gold); border-bottom: 1px solid var(--border); }
+    .faq details p { padding: 1rem 1.5rem; color: var(--muted); font-size: 0.9rem; }
+
+    footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); }
+    footer .brand { font-size: 1.2rem; }
+    footer p { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="brand">SGK1904</a>
+  <a href="index.html" class="back">&larr; Back to Home</a>
+</div>
+
+<div class="hero-lp">
+  <h1>AI Automation Empire</h1>
+  <div class="sub">The Course</div>
+  <p>9 modules that teach you to build a fully automated AI business from scratch. Real bot configs. Real Stripe integration. Real revenue. No fluff, no theory — just the system that runs SGK1904.</p>
+  <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-gold">Get the Builder Tier — $49.99</a>
+</div>
+
+<div class="divider">&#9760; &#9760; &#9760;</div>
+
+<section>
+  <div class="inner">
+    <h2>What You Learn</h2>
+    <ol class="modules">
+      <li><strong>The Story</strong><p>Why this system exists and how one person built a 7-bot automated business.</p></li>
+      <li><strong>The Stack</strong><p>OpenClaw, Telegram, Stripe, xAI — every tool and how they connect.</p></li>
+      <li><strong>Gateway Setup</strong><p>Install and configure your AI gateway from zero to running.</p></li>
+      <li><strong>AI Providers</strong><p>Free local models vs paid APIs. How to route the right model to the right job.</p></li>
+      <li><strong>Your First Bot</strong><p>Build, test, and deploy a working bot in under 30 minutes.</p></li>
+      <li><strong>Automation</strong><p>Cron schedules, multi-bot coordination, error handling.</p></li>
+      <li><strong>Getting Paid</strong><p>Stripe products, payment links, revenue tracking, auto-fulfillment.</p></li>
+      <li><strong>Content Machine</strong><p>Auto-generate and post marketing content across platforms daily.</p></li>
+      <li><strong>The Funnel</strong><p>Website, Telegram channel, social proof — turn visitors into buyers.</p></li>
+      <li><strong>Scaling Up</strong><p>Add products, optimize pricing, expand to new channels.</p></li>
+    </ol>
+  </div>
+</section>
+
+<div class="divider">&#9760; &#9760; &#9760;</div>
+
+<section>
+  <div class="inner">
+    <h2>Choose Your Tier</h2>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Starter</h3>
+        <div class="price">$29.99 <span>one-time</span></div>
+        <ul>
+          <li>Modules 1-3 (Foundation)</li>
+          <li>Stack overview & gateway setup</li>
+          <li>AI provider configuration</li>
+          <li>Community access</li>
+        </ul>
+        <a href="https://buy.stripe.com/fZu3cuajv9fMfp5fqagrS0b" class="btn-outline">Get Starter</a>
+      </div>
+      <div class="tier featured">
+        <h3>Builder</h3>
+        <div class="price">$49.99 <span>one-time</span></div>
+        <ul>
+          <li>Modules 1-6 (Full Build)</li>
+          <li>Every bot config & prompt</li>
+          <li>Stripe integration guide</li>
+          <li>Copy-paste deployment</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://buy.stripe.com/3cI4gy1MZgIe1yffqagrS0c" class="btn-gold">Get Builder</a>
+      </div>
+      <div class="tier">
+        <h3>Empire</h3>
+        <div class="price">$99.99 <span>one-time</span></div>
+        <ul>
+          <li>All 9 modules + appendices</li>
+          <li>Webhook setup & real-time alerts</li>
+          <li>Content & funnel automation</li>
+          <li>Scaling playbook</li>
+          <li>Config review by the builder</li>
+        </ul>
+        <a href="https://buy.stripe.com/00w3cuezL3Vs0ubcdYgrS0d" class="btn-outline">Get Empire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&#9760; &#9760; &#9760;</div>
+
+<section>
+  <div class="inner">
+    <h2>Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Do I need coding experience?</summary>
+        <p>No. The course uses JSON configs and copy-paste prompts. If you can edit a text file, you can build bots.</p>
+      </details>
+      <details>
+        <summary>What AI models does this work with?</summary>
+        <p>The course covers xAI Grok (paid) and free local models via LM Studio. You choose based on your budget.</p>
+      </details>
+      <details>
+        <summary>How fast can I start making money?</summary>
+        <p>Module 6 covers Stripe payments. Most people have their first payment link live within a weekend.</p>
+      </details>
+      <details>
+        <summary>Is this just theory or real configs?</summary>
+        <p>Real configs. The Builder and Empire tiers include every prompt, every JSON config, every template — ready to deploy.</p>
+      </details>
+      <details>
+        <summary>Can I get a refund?</summary>
+        <p>Digital products are non-refundable due to instant delivery. But if you're stuck, DM @Deth1_bot for help.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">SGK1904</div>
+  <p>
+    <a href="https://t.me/MoneyMakingMitchell1904">Telegram</a> &bull;
+    <a href="https://x.com/Lyfergang1904">X / Twitter</a> &bull;
+    <a href="index.html">Home</a>
+  </p>
+  <p>&copy; 2026 SGK1904. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
