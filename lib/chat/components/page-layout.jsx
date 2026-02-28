@@ -12,13 +12,13 @@ function defaultNavigateToChat(id) {
   }
 }
 
-export function PageLayout({ session, children }) {
+export function PageLayout({ session, children, contentClassName }) {
   return (
     <ChatNavProvider value={{ activeChatId: null, navigateToChat: defaultNavigateToChat }}>
       <SidebarProvider>
         <AppSidebar user={session.user} />
         <SidebarInset>
-          <div className="flex flex-col h-full max-w-4xl mx-auto w-full px-4 py-6">
+          <div className={contentClassName || "flex flex-col h-full max-w-4xl mx-auto w-full px-4 py-6"}>
             {children}
           </div>
         </SidebarInset>

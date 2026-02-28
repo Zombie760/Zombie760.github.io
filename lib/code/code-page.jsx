@@ -6,19 +6,19 @@ import { FitAddon } from '@xterm/addon-fit';
 import { SearchAddon } from '@xterm/addon-search';
 import { WebLinksAddon } from '@xterm/addon-web-links';
 import { SerializeAddon } from '@xterm/addon-serialize';
+import { PageLayout } from '../chat/components/page-layout.js';
 import '@xterm/xterm/css/xterm.css';
 
 const STATUS = { connected: '#22c55e', connecting: '#eab308', disconnected: '#ef4444' };
 const RECONNECT_INTERVAL = 3000;
 
-export default function CodePage({ claudeWorkspaceId }) {
+export default function CodePage({ session, claudeWorkspaceId }) {
   const containerRef = useRef(null);
   const termRef = useRef(null);
   const fitAddonRef = useRef(null);
   const wsRef = useRef(null);
   const retryTimer = useRef(null);
   const statusRef = useRef(null);
-
   const setStatus = useCallback((color) => {
     if (statusRef.current) statusRef.current.style.backgroundColor = color;
   }, []);
@@ -107,6 +107,12 @@ export default function CodePage({ claudeWorkspaceId }) {
     fitAddonRef.current = fitAddon;
 
     term.open(containerRef.current);
+
+    // Override xterm.js internal backgrounds so leftover pixels match the theme
+    const style = document.createElement('style');
+    style.textContent = '.xterm, .xterm-viewport { background-color: #1a1b26 !important; }';
+    containerRef.current.appendChild(style);
+
     fitAddon.fit();
 
     // Input → WebSocket
@@ -142,55 +148,46 @@ export default function CodePage({ claudeWorkspaceId }) {
     connect();
   };
 
-  const handleClear = () => {
-    if (termRef.current) termRef.current.clear();
-  };
 
   return (
-    <div style={{ width: '100vw', height: '100vh', background: '#1a1b26', position: 'relative' }}>
-      <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
+    <PageLayout session={session} contentClassName="flex flex-col h-svh w-full p-4 overflow-hidden">
+      <div ref={containerRef} style={{ flex: 1, minHeight: 0, borderRadius: 6, overflow: 'hidden' }} />
 
-      {/* Floating toolbar */}
+      {/* Toolbar */}
       <div
         style={{
-          position: 'fixed',
-          top: 12,
-          right: 12,
+          flexShrink: 0,
+          height: 36,
           display: 'flex',
           alignItems: 'center',
-          gap: 8,
-          background: 'rgba(30, 31, 46, 0.9)',
-          backdropFilter: 'blur(8px)',
-          padding: '6px 12px',
-          borderRadius: 8,
-          border: '1px solid rgba(255,255,255,0.1)',
-          zIndex: 1000,
+          justifyContent: 'space-between',
+          padding: '0 12px',
         }}
       >
-        <div
-          ref={statusRef}
-          style={{
-            width: 8,
-            height: 8,
-            borderRadius: '50%',
-            backgroundColor: STATUS.connecting,
-          }}
-        />
-        <button onClick={handleReconnect} style={btnStyle}>
-          Reconnect
-        </button>
-        <button onClick={handleClear} style={btnStyle}>
-          Clear
-        </button>
+        <div />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button onClick={handleReconnect} style={{ ...btnStyle, display: 'flex', alignItems: 'center', gap: 6 }}>
+            <div
+              ref={statusRef}
+              style={{
+                width: 8,
+                height: 8,
+                borderRadius: '50%',
+                backgroundColor: STATUS.connecting,
+              }}
+            />
+            Reconnect
+          </button>
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 
 const btnStyle = {
   background: 'transparent',
-  border: '1px solid rgba(255,255,255,0.2)',
-  color: '#a9b1d6',
+  border: '1px solid #d1d5db',
+  color: 'inherit',
   padding: '4px 10px',
   borderRadius: 4,
   cursor: 'pointer',
