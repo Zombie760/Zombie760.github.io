@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; }
+  .card {
+    width: 1080px; height: 1080px;
+    background: #080808;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative;
+    padding: 60px;
+  }
+  .card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(220,20,60,0.08), transparent 70%);
+  }
+  .card::after {
+    content: '';
+    position: absolute; inset: 8px;
+    border: 2px solid rgba(220,20,60,0.3);
+    border-radius: 4px;
+  }
+  .logo { max-width: 700px; margin-bottom: 30px; filter: drop-shadow(0 0 20px rgba(220,20,60,0.4)); position: relative; z-index: 1; }
+  .tagline {
+    font-family: 'Cinzel', serif;
+    font-size: 38px; font-weight: 900;
+    color: #dc143c;
+    text-align: center;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative; z-index: 1;
+  }
+  .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px; font-weight: 600;
+    color: #e8dcc8;
+    text-align: center;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    position: relative; z-index: 1;
+  }
+  .subtitle strong { color: #d4af37; }
+  .features {
+    display: flex; gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    position: relative; z-index: 1;
+  }
+  .feat {
+    background: rgba(220,20,60,0.1);
+    border: 1px solid rgba(220,20,60,0.3);
+    padding: 12px 24px;
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: #dc143c;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .cta {
+    font-family: 'Cinzel', serif;
+    font-size: 28px; font-weight: 700;
+    color: #d4af37;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    position: relative; z-index: 1;
+  }
+  .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    color: #8a7a6a;
+    letter-spacing: 1px;
+    position: relative; z-index: 1;
+  }
+  .url strong { color: #e8dcc8; }
+</style>
+</head><body>
+<div class="card">
+  <img src="img/generated/sgk-logo-dark.png" alt="SGKx1904" class="logo">
+  <div class="tagline">AI For The Rest of Us</div>
+  <div class="subtitle">
+    <strong>100% Free. 100% Private. 100% Yours.</strong><br>
+    13 AI agents running your business 24/7.<br>
+    No Google. No Amazon. No monthly fees.
+  </div>
+  <div class="features">
+    <div class="feat">Zero Cloud</div>
+    <div class="feat">Zero Tracking</div>
+    <div class="feat">$0.02/Day</div>
+  </div>
+  <div class="cta">Try Our Free AI Bot Today</div>
+  <div class="url"><strong>zombie760.github.io</strong> &nbsp;|&nbsp; @CaptainObvious_bot on Telegram</div>
+</div>
+</body></html>
