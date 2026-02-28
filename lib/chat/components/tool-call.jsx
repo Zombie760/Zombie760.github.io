@@ -9,6 +9,7 @@ const TOOL_DISPLAY_NAMES = {
   get_job_status: 'Check Job Status',
   get_system_technical_specs: 'Read Tech Docs',
   get_skill_building_guide: 'Read Skill Docs',
+  get_skill_details: 'Get Skill',
 };
 
 function getToolDisplayName(toolName) {

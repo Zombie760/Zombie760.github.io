@@ -164,7 +164,7 @@ Markdown files in `config/` support includes and built-in variables, powered by 
 
 - **File includes**: `{{ filepath.md }}` — resolves relative to project root, recursive with circular detection. Missing files are left as-is.
 - **`{{datetime}}`** — Current ISO timestamp.
-- **`{{skills}}`** — Dynamic bullet list of active skill descriptions from `skills/active/*/SKILL.md` frontmatter (resolved via `.pi/skills` symlink). Never hardcode skill names — this is resolved at runtime.
+- **`{{skills}}`** — Dynamic bullet list of active skill descriptions from `skills/active/*/SKILL.md` frontmatter. Never hardcode skill names — this is resolved at runtime.
 
 Currently used by the Event Handler to load EVENT_HANDLER.md as the LLM system prompt.
 
