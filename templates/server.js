@@ -1,18 +1,19 @@
 import { createServer } from 'http';
-import { parse } from 'url';
 import next from 'next';
 import { attachCodeProxy } from 'thepopebot/code/ws-proxy';
 
 const app = next({ dev: false });
 const handle = app.getRequestHandler();
 
-// Prevent Next.js from registering its own WebSocket upgrade handler
-// (it would write HTTP 502 responses on our already-upgraded sockets)
+// HACK: Prevent Next.js from registering its own WebSocket upgrade handler.
+// Without this, Next.js lazily calls setupWebSocketHandler() which uses its
+// bundled http-proxy to write "HTTP/1.1 502 Bad Gateway" on already-upgraded
+// sockets. No official API exists for this — see docs/HACKS.md.
 app.didWebSocketSetup = true;
 
 app.prepare().then(() => {
   const server = createServer((req, res) => {
-    handle(req, res, parse(req.url, true));
+    handle(req, res);
   });
 
   attachCodeProxy(server);

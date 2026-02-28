@@ -86,7 +86,7 @@ export default function CodePage() {
   useEffect(() => {
     const term = new Terminal({
       cursorBlink: true,
-      fontSize: 14,
+      fontSize: 16,
       fontFamily: '"Fira Code", "Cascadia Code", "JetBrains Mono", Menlo, monospace',
       theme: {
         background: '#1a1b26',
