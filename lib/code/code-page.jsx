@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useCallback } from 'react';
-import { useSearchParams } from 'next/navigation';
 import { Terminal } from '@xterm/xterm';
 import { FitAddon } from '@xterm/addon-fit';
 import { SearchAddon } from '@xterm/addon-search';
@@ -12,10 +11,7 @@ import '@xterm/xterm/css/xterm.css';
 const STATUS = { connected: '#22c55e', connecting: '#eab308', disconnected: '#ef4444' };
 const RECONNECT_INTERVAL = 3000;
 
-export default function CodePage() {
-  const searchParams = useSearchParams();
-  const container = searchParams.get('container') || 'claude-workspace';
-
+export default function CodePage({ claudeWorkspaceId }) {
   const containerRef = useRef(null);
   const termRef = useRef(null);
   const fitAddonRef = useRef(null);
@@ -44,7 +40,7 @@ export default function CodePage() {
     setStatus(STATUS.connecting);
 
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const ws = new WebSocket(`${protocol}//${window.location.host}/code/${container}/ws`);
+    const ws = new WebSocket(`${protocol}//${window.location.host}/code/${claudeWorkspaceId}/ws`);
     wsRef.current = ws;
 
     ws.binaryType = 'arraybuffer';
@@ -81,7 +77,7 @@ export default function CodePage() {
     ws.onerror = () => {
       ws.close();
     };
-  }, [container, setStatus]);
+  }, [claudeWorkspaceId, setStatus]);
 
   useEffect(() => {
     const term = new Terminal({
