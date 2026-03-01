@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SGKx1904 — AI Automation Platform for Professionals</title>
+  <meta name="description" content="13+ AI agents running 1,274+ automated actions per week at $0.02/day. Built by practitioners, for professionals. Powerful AI automation without the Big Tech overhead." />
+  <meta name="keywords" content="private AI, off-grid AI, no surveillance AI, self-hosted AI, anti Big Tech, open source AI, personal AI assistant, SGKx1904, DIY AI" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://Zombie760.github.io/" />
+  <meta property="og:title" content="SGKx1904 — AI For The Rest of Us" />
+  <meta property="og:description" content="A plumber built 13 private AI agents in 48 hours. No Google. No Amazon. No surveillance. Try our free AI bot on Telegram." />
+  <meta property="og:image" content="https://Zombie760.github.io/img/generated/sgk-logo-dark.png" />
+  <meta property="og:image:width" content="1408" />
+  <meta property="og:image:height" content="768" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@lyfer1904" />
+  <meta name="twitter:title" content="SGKx1904 — AI For The Rest of Us" />
+  <meta name="twitter:description" content="A plumber built 13 private AI agents in 48 hours. No Google. No Amazon. No surveillance. Try our free AI bot on Telegram." />
+  <meta name="twitter:image" content="https://Zombie760.github.io/img/generated/sgk-logo-dark.png" />
+  <link rel="icon" type="image/png" href="img/icon-matrix.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808; --black2: #0c0c0c; --black3: #111111;
+      --card: #0e0e0e; --card-hover: #141414;
+      --border: #1a1111; --border-bright: rgba(220,20,60,0.2);
+      --crimson: #dc143c; --crimson-dim: #a01030; --crimson-bright: #ff1a4a; --crimson-glow: rgba(220,20,60,0.15);
+      --gold: #d4af37; --gold-dim: #b8962e; --gold-glow: rgba(212,175,55,0.15);
+      --bone: #e8dcc8; --muted: #8a7a6a; --ghost: #3a2a2a; --radius: 3px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--crimson-dim); border-radius: 3px; }
+
+    .embers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+    .ember { position: absolute; width: 2px; height: 2px; background: var(--crimson); border-radius: 50%; opacity: 0; animation: emberFloat linear infinite; box-shadow: 0 0 6px var(--crimson), 0 0 12px rgba(220,20,60,0.3); }
+    @keyframes emberFloat { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.3; } 100% { transform: translateY(-20vh) translateX(30px); opacity: 0; } }
+    .scanlines::after { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px); pointer-events: none; z-index: 9999; }
+    .divider { text-align: center; padding: 1.5rem 0; color: var(--crimson-dim); font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.8rem; opacity: 0.4; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 2rem; background: rgba(8,8,8,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-brand { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 900; color: var(--gold); text-decoration: none; letter-spacing: 4px; text-shadow: 0 0 20px var(--gold-glow); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
+    .nav-links a:hover { color: var(--crimson); }
+    .nav-cta { background: var(--crimson) !important; color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 2px; font-weight: 700 !important; font-family: 'Cinzel', serif !important; font-size: 0.65rem !important; letter-spacing: 2px !important; }
+    .nav-cta:hover { background: var(--crimson-bright) !important; box-shadow: 0 0 20px var(--crimson-glow); }
+    .nav-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+
+    .btn-blood { display: inline-block; padding: 0.9rem 2.2rem; background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-weight: 800; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; transition: all 0.3s; border: none; cursor: pointer; position: relative; overflow: hidden; }
+    .btn-blood::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transition: left 0.5s; }
+    .btn-blood:hover::before { left: 100%; }
+    .btn-blood:hover { background: var(--crimson-bright); box-shadow: 0 0 30px var(--crimson-glow), 0 0 60px rgba(220,20,60,0.1); transform: translateY(-2px); }
+    .btn-bone { display: inline-block; padding: 0.85rem 2rem; background: transparent; color: var(--gold); font-family: 'Cinzel', serif; font-weight: 600; text-decoration: none; border-radius: 2px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; border: 1px solid var(--gold-dim); transition: all 0.3s; }
+    .btn-bone:hover { background: rgba(212,175,55,0.08); border-color: var(--gold); box-shadow: 0 0 20px var(--gold-glow); }
+    .btn-sm { padding: 0.5rem 1.2rem; font-size: 0.65rem; letter-spacing: 2px; font-family: 'Cinzel', serif; font-weight: 700; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; cursor: pointer; border: 1px solid var(--crimson-dim); color: var(--crimson); background: transparent; }
+    .btn-sm:hover { background: var(--crimson); color: #fff; }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 6rem 2rem 3rem; background: url(img/generated/hero-muerte.png) center/cover no-repeat, radial-gradient(ellipse at 50% 30%, rgba(220,20,60,0.04), transparent 70%); } .hero::before { content: ""; position: absolute; inset: 0; background: rgba(8,8,8,0.82); z-index: 0; }
+    .hero-inner { max-width: 900px; text-align: center; position: relative; z-index: 1; }
+    .hero-badge { display: inline-block; background: rgba(220,20,60,0.15); border: 1px solid rgba(220,20,60,0.3); color: var(--crimson); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; padding: 0.4rem 1.2rem; border-radius: 2px; margin-bottom: 2rem; }
+    .hero-story { font-family: 'Inter', sans-serif; font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--muted); max-width: 700px; margin: 0 auto 1.5rem; line-height: 1.7; }
+    .hero-story strong { color: var(--bone); }
+    .hero-story em { color: var(--gold); font-style: normal; }
+    h1 { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 900; color: var(--bone); letter-spacing: 3px; line-height: 1.05; margin-bottom: 1.5rem; }
+    h1 span { color: var(--crimson); }
+    .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 650px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .hero-sub strong { color: var(--gold); }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .price-hint { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--ghost); margin-top: 1rem; }
+    .hero-tagline { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--crimson-dim); letter-spacing: 4px; text-transform: uppercase; margin-top: 1.5rem; opacity: 0.7; }
+
+    .demo-banner { background: linear-gradient(90deg, var(--crimson-dim), #1a0a0a, var(--crimson-dim)); padding: 0.8rem 2rem; text-align: center; font-size: 0.85rem; border-top: 1px solid rgba(220,20,60,0.2); border-bottom: 1px solid rgba(220,20,60,0.2); }
+    .demo-banner a { color: var(--gold); text-decoration: underline; }
+    .pulse { display: inline-block; width: 8px; height: 8px; background: var(--crimson); border-radius: 50%; animation: pulse 2s ease-in-out infinite; vertical-align: middle; margin-right: 6px; }
+    @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(220,20,60,0.6); } 50% { box-shadow: 0 0 0 10px rgba(220,20,60,0); } }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+    .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; text-align: center; margin-bottom: 0.5rem; color: var(--bone); letter-spacing: 3px; }
+    .section-sub { text-align: center; color: var(--muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 2.5rem; }
+
+    /* MANIFESTO */
+    .manifesto { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .manifesto-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; transition: all 0.3s; }
+    .manifesto-card:hover { border-color: var(--crimson-dim); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-4px); }
+    .manifesto-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .manifesto-card h3 { font-family: 'Cinzel', serif; color: var(--crimson); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 0.5rem; text-transform: uppercase; }
+    .manifesto-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+    .manifesto-card strong { color: var(--bone); }
+
+    /* COMPARISON */
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+    .compare-table th { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); padding: 1rem; border-bottom: 2px solid var(--crimson-dim); text-align: left; }
+    .compare-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); }
+    .compare-table tr:hover td { background: rgba(220,20,60,0.03); }
+    .compare-table .check { color: var(--crimson); font-weight: bold; font-size: 1.1rem; }
+    .compare-table .x { color: var(--ghost); }
+    .compare-table .them { color: var(--ghost); }
+    .compare-table .us { color: var(--gold); font-weight: 600; }
+
+    /* CONVERSATION */
+    .convo { background: var(--black2); border: 1px solid var(--border); border-radius: var(--radius); max-width: 500px; margin: 2rem auto; overflow: hidden; }
+    .convo-bar { background: var(--black3); padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.6rem; }
+    .convo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--crimson); }
+    .convo-name { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--gold); }
+    .convo-body { padding: 1.2rem; }
+    .msg { margin-bottom: 0.8rem; padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.85rem; max-width: 85%; line-height: 1.5; }
+    .msg-user { background: rgba(220,20,60,0.15); border: 1px solid rgba(220,20,60,0.2); color: var(--bone); margin-left: auto; text-align: right; border-radius: 8px 8px 2px 8px; }
+    .msg-ai { background: var(--card); border: 1px solid var(--border); color: var(--muted); border-radius: 8px 8px 8px 2px; }
+    .msg-ai strong { color: var(--gold); }
+
+    /* WHO ITS FOR */
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+    .who-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: all 0.3s; }
+    .who-card:hover { border-color: var(--crimson-dim); box-shadow: 0 0 25px var(--crimson-glow); }
+    .who-card h4 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 0.4rem; }
+    .who-card p { color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+
+    /* HOW STEPS */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .step { background: var(--card); border: 1px solid var(--border); padding: 2rem; border-radius: var(--radius); text-align: center; transition: all 0.3s; }
+    .step:hover { border-color: var(--crimson-dim); box-shadow: 0 0 30px var(--crimson-glow); }
+    .step-num { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 900; color: var(--crimson); line-height: 1; margin-bottom: 0.8rem; }
+    .step h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+    .step p { color: var(--muted); font-size: 0.85rem; }
+
+    /* PRICING */
+    .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
+    .price-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; position: relative; }
+    .price-card:hover { border-color: var(--crimson-dim); box-shadow: 0 0 30px var(--crimson-glow); transform: translateY(-4px); }
+    .price-card.featured { border-color: var(--crimson); box-shadow: 0 0 40px var(--crimson-glow); }
+    .price-card.featured::before { content: 'BEST VALUE'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--crimson); color: #fff; font-family: 'Cinzel', serif; font-size: 0.55rem; font-weight: 800; letter-spacing: 2px; padding: 4px 14px; border-radius: 2px; }
+    .price-card h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 0.3rem; }
+    .price-card .price { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 900; color: var(--bone); margin: 0.3rem 0 0.2rem; }
+    .price-card .price-period { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-bottom: 1rem; }
+    .price-features { list-style: none; text-align: left; margin-bottom: 1.5rem; }
+    .price-features li { padding: 0.35rem 0; color: var(--muted); font-size: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .price-features li::before { content: '\2020'; color: var(--crimson); margin-right: 8px; font-weight: bold; }
+    .price-card .compare { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--ghost); margin-top: 0.8rem; }
+
+    /* TERMINAL */
+    .terminal { background: var(--black2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--bone); max-width: 650px; margin: 2rem auto; line-height: 1.8; }
+    .terminal .prompt { color: var(--crimson); }
+    .terminal .output { color: var(--gold); }
+    .terminal .dim { color: var(--muted); }
+
+    /* ONE-TIME */
+    .onetime { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+    .ot-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: all 0.3s; }
+    .ot-card:hover { border-color: var(--gold-dim); box-shadow: 0 0 20px var(--gold-glow); transform: translateY(-3px); }
+    .ot-card h3 { font-family: 'Cinzel', serif; color: var(--bone); font-size: 0.95rem; letter-spacing: 1px; margin-bottom: 0.3rem; }
+    .ot-card .ot-price { font-family: 'Cinzel', serif; color: var(--crimson); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .ot-card p { color: var(--muted); font-size: 0.82rem; margin-bottom: 1rem; line-height: 1.5; }
+    /* FREE TRIAL SECTION */
+    .free-trial { background: linear-gradient(135deg, rgba(220,20,60,0.08), rgba(212,175,55,0.04)); border: 1px solid rgba(220,20,60,0.2); border-radius: var(--radius); padding: 3rem 2rem; text-align: center; margin-bottom: 2rem; }
+    .free-trial h2 { font-family: 'Cinzel', serif; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; color: var(--bone); letter-spacing: 2px; margin-bottom: 1rem; }
+    .free-trial p { font-size: 0.95rem; color: var(--muted); max-width: 650px; margin: 0 auto 0.8rem; line-height: 1.7; }
+    .free-trial strong { color: var(--gold); }
+    .free-trial .btn-blood { margin-top: 1.5rem; }
+
+    /* ORIGIN */
+    .origin-story { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 2rem; }
+    .origin-text { }
+    .origin-text h3 { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 1rem; }
+    .origin-text p { color: var(--muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1rem; }
+    .origin-text strong { color: var(--bone); }
+    .origin-text em { color: var(--crimson); font-style: normal; font-weight: 700; }
+    .origin-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .origin-stat { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; }
+    .origin-stat .num { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 900; color: var(--crimson); }
+    .origin-stat .label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.3rem; }
+
+    footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border); background: var(--black2); }
+    .footer-brand { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 900; color: var(--gold); letter-spacing: 4px; margin-bottom: 1rem; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--crimson); }
+    .footer-copy { color: var(--ghost); font-size: 0.75rem; }
+
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.4s; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 5rem 1.5rem 3rem; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .btn-blood, .btn-bone { width: 100%; text-align: center; }
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(8,8,8,0.98); padding: 1rem 2rem; gap: 1rem; border-bottom: 1px solid var(--border); }
+      .who-grid { grid-template-columns: 1fr; }
+      .pricing { grid-template-columns: 1fr; }
+      .manifesto { grid-template-columns: 1fr; }
+      .origin-story { grid-template-columns: 1fr; }
+      .msg { max-width: 95%; }
+    }
+  </style>
+</head>
+<body class="scanlines">
+
+<div class="embers" id="embers" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">SGKx1904</a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links">
+    <a href="#why-private">Why Private</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#hackbot" style="color:var(--crimson);">HackBot</a>
+    <a href="#open-source">Open Source</a>
+    <a href="about.html">Our Mission</a>
+    <a href="https://t.me/CaptainObvious_bot" target="_blank" class="nav-cta">Try Free</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner fade-in">
+    <div style="margin-bottom:1.5rem;"><img src="img/generated/sgk-logo-dark.png" alt="SGKx1904" style="max-width:500px;width:90%;filter:drop-shadow(0 0 30px rgba(220,20,60,0.3));"></div><div class="hero-badge">AI Automation Platform — Built for Professionals</div>
+    <div class="hero-story">
+      <strong>13+ AI agents. 1,274+ automated actions per week. $0.02/day.</strong> Built by practitioners, for professionals who want complete control over their automation infrastructure without vendor lock-in or Big Tech dependency.
+    </div>
+    <h1>AI Automation <span>for Professionals</span></h1>
+    <p class="hero-sub">13+ AI agents running 24/7 &mdash; content generation, financial tracking, customer service, lead automation, and more. <strong>$0.02/day operating cost.</strong> Complete operational independence. Built to scale.</p>
+    <div class="hero-btns">
+      <a href="https://t.me/CaptainObvious_bot" target="_blank" class="btn-blood">Try Our Free AI Bot</a>
+      <a href="https://github.com/Zombie760" target="_blank" class="btn-bone">View Source Code</a>
+    </div>
+    <div class="price-hint">Learn to automate your entire operation. Join 1,000+ practitioners building independent AI systems.</div>
+    <div class="hero-tagline">Built by practitioners. For professionals.</div>
+  </div>
+</section>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner">
+  <p><span class="pulse"></span> <strong style="color:var(--crimson)">LIVE</strong> &mdash; <a href="https://t.me/CaptainObvious_bot" target="_blank">@CaptainObvious_bot</a> is online right now. Try our free AI. Your conversation stays private. Always.</p>
+</div>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- WHY PRIVATE AI -->
+<section id="why-private">
+  <div class="section-inner">
+    <h2 class="section-title">Why Professional AI Infrastructure Matters</h2>
+    <p class="section-sub">Most AI automation ties you to expensive cloud services. We teach you to build independent systems that scale.</p>
+    <div class="manifesto">
+      <div class="manifesto-card fade-in">
+        <div class="manifesto-icon">&#128274;</div>
+        <h3>Complete Control</h3>
+        <p>Your business operations run on your infrastructure. No API dependencies. No subscription lock-in. No policy changes from third parties. <strong>You own the system.</strong></p>
+      </div>
+      <div class="manifesto-card fade-in d2">
+        <div class="manifesto-icon">&#128736;</div>
+        <h3>Transparent & Open</h3>
+        <p>Built on open-source tools you can inspect, audit, and customize. No proprietary black boxes. No vendor lock-in. <strong>Complete visibility into your automation.</strong></p>
+      </div>
+      <div class="manifesto-card fade-in d3">
+        <div class="manifesto-icon">&#9889;</div>
+        <h3>Predictable Economics</h3>
+        <p>Runs on local hardware with minimal electricity cost. No recurring subscription fees to external services. Scales efficiently on your terms. <strong>$0.02/day to run 13+ agents.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- THEM VS US -->
+<section style="background: var(--black2);">
+  <div class="section-inner">
+    <h2 class="section-title">Cloud Automation vs. Professional Infrastructure</h2>
+    <p class="section-sub">Understanding the difference between renting AI and building your own system.</p>
+    <div style="overflow-x:auto;">
+      <table class="compare-table fade-in">
+        <thead>
+          <tr>
+            <th style="width:40%"></th>
+            <th class="them">Big Tech AI</th>
+            <th class="us">SGKx1904</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Your data stays private</td>
+            <td class="x">They read everything</td>
+            <td><span class="check">&#10003;</span> Zero data leaves your machine</td>
+          </tr>
+          <tr>
+            <td>Who owns your conversations</td>
+            <td class="x">They do (read the ToS)</td>
+            <td><span class="check">&#10003;</span> You do. Period.</td>
+          </tr>
+          <tr>
+            <td>Can they shut you off</td>
+            <td class="x">Anytime, any reason</td>
+            <td><span class="check">&#10003;</span> Your hardware, your rules</td>
+          </tr>
+          <tr>
+            <td>Government data requests</td>
+            <td class="x">Comply every time</td>
+            <td><span class="check">&#10003;</span> Nothing to hand over</td>
+          </tr>
+          <tr>
+            <td>Monthly cost</td>
+            <td class="x">$20-200/mo + your data</td>
+            <td><span class="check">&#10003;</span> From $9/mo — own your data</td>
+          </tr>
+          <tr>
+            <td>Censorship / content filters</td>
+            <td class="x">Heavy-handed, opaque</td>
+            <td><span class="check">&#10003;</span> Your AI, your boundaries</td>
+          </tr>
+          <tr>
+            <td>Works without internet</td>
+            <td class="x">Cloud-dependent</td>
+            <td><span class="check">&#10003;</span> Local models run offline</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- SEE IT WORK -->
+<section id="see-it">
+  <div class="section-inner">
+    <h2 class="section-title">See It Work</h2>
+    <p class="section-sub">Real conversation. Private AI. No data harvested. No corporate middleman listening in.</p>
+    <div class="convo fade-in">
+      <div class="convo-bar">
+        <span class="convo-dot"></span>
+        <span class="convo-name">Your Private AI &mdash; encrypted, local</span>
+      </div>
+      <div class="convo-body">
+        <div class="msg msg-user">I need to write a bid for a commercial plumbing job. 3-story building, 24 units.</div>
+        <div class="msg msg-ai"><strong>Got it.</strong> Based on current material costs in your area, a 24-unit commercial job typically runs $180-240K. I'll draft the bid with line items for rough-in, fixtures, labor, permits, and a 15% margin. Want me to include the backflow preventer specs?</div>
+        <div class="msg msg-user">Yeah and also check if copper prices went up this week</div>
+        <div class="msg msg-ai"><strong>Copper is at $4.23/lb, up 3.1% this week.</strong> I've adjusted the bid to reflect current pricing. Your total comes to $211,400. I'll format it as a PDF-ready proposal. Sending now.</div>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:0.85rem;margin-top:1rem;">This conversation never touched Google's servers. Never trained someone else's AI. <em style="color:var(--gold);">It stayed between you and your machine.</em></p>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- WHO ITS FOR -->
+<section style="background: var(--black2);">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:2rem;"><img src="img/generated/offgrid-ai-promo.png" alt="Off-Grid AI" style="max-width:700px;width:100%;border-radius:var(--radius);border:1px solid var(--border);opacity:0.9;"></div><h2 class="section-title">Who This Is For</h2>
+    <p class="section-sub">Not Silicon Valley. Not tech bros. This is for people who work for a living and refuse to be someone else's data product.</p>
+    <div class="who-grid">
+      <div class="who-card fade-in">
+        <h4>Privacy-First People</h4>
+        <p>Tired of being tracked, profiled, and sold to advertisers. You want AI that works for YOU without reporting to anyone else.</p>
+      </div>
+      <div class="who-card fade-in">
+        <h4>Contractors &amp; Tradesmen</h4>
+        <p>Bid estimates, material lookups, scheduling, invoice drafting. An AI that knows your trade &mdash; and doesn't share your pricing with competitors.</p>
+      </div>
+      <div class="who-card fade-in">
+        <h4>Small Business Owners</h4>
+        <p>Revenue tracking, marketing, customer follow-ups. Private AI means your business data stays your business. Not Amazon's training data.</p>
+      </div>
+      <div class="who-card fade-in">
+        <h4>Veterans &amp; First Responders</h4>
+        <p>You served to protect freedom. Now protect your data. Private AI for personal business, transitions, and building the next chapter.</p>
+      </div>
+      <div class="who-card fade-in">
+        <h4>Independent Thinkers</h4>
+        <p>The Shawn Ryan listeners. The JRE crowd. Anyone who questions the narrative and wants tools that don't come with strings attached.</p>
+      </div>
+      <div class="who-card fade-in">
+        <h4>Off-Grid &amp; Self-Reliant</h4>
+        <p>Homesteaders, preppers, freedom advocates. AI that works without the cloud, without Big Tech, without anyone's permission.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- ORIGIN STORY -->
+<section id="origin">
+  <div class="section-inner">
+    <h2 class="section-title">The Origin Story</h2>
+    <p class="section-sub">This didn't start in a Silicon Valley garage. It started in a plumber's kitchen.</p>
+    <div class="origin-story fade-in">
+      <div class="origin-text">
+        <div style="margin-bottom:1.5rem;"><img src="img/generated/ai-empire-promo.png" alt="AI For Everyone" style="width:100%;border-radius:var(--radius);border:1px solid var(--border);"></div><h3>A Plumber, a Laptop, and a Few Days Off</h3>
+        <p>Kyle Jimenez is a <strong>plumber</strong>. No CS degree. No coding bootcamp. No VC funding. Just a guy with an old laptop, home wifi, and a few days off work who was tired of Big Tech treating regular people like data cattle.</p>
+        <p>In <em>48 hours</em>, he downloaded open-source AI models, installed <strong>Kali Linux</strong>, and built 13 AI agents that run his entire operation &mdash; content creation, customer service, lead generation, market analysis, social media &mdash; all running privately on his own hardware.</p>
+        <p>No Google. No Amazon. No Microsoft. No corporate data center. Just a working-class guy who proved that <strong>you don't need Silicon Valley's permission to use AI</strong>.</p>
+        <p>Total daily cost: <em>$0.02</em>. That's not a typo.</p>
+        <p>Now he's putting that same power in your hands. Because if a plumber can do it, the gatekeeping is officially over.</p>
+      </div>
+      <div class="origin-stats">
+        <div class="origin-stat">
+          <div class="num">9</div>
+          <div class="label">Private AI Bots</div>
+        </div>
+        <div class="origin-stat">
+          <div class="num">48h</div>
+          <div class="label">Build Time</div>
+        </div>
+        <div class="origin-stat">
+          <div class="num">$0.02</div>
+          <div class="label">Daily Cost</div>
+        </div>
+        <div class="origin-stat">
+          <div class="num">0</div>
+          <div class="label">Data Sent to Big Tech</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- PROOF -->
+<section style="background: var(--black2);">
+  <div class="section-inner" style="text-align:center;">
+    <h2 class="section-title">9 Bots. Zero Corporate Overlords.</h2>
+    <p class="section-sub">All running privately. All open-source. All answering to one person &mdash; the owner.</p>
+    <div class="terminal fade-in" style="text-align:left;">
+      <div><span class="prompt">[status]</span> <span class="output">system</span> <span class="dim">// running on local hardware &mdash; 0 bytes sent to cloud</span></div>
+      <div><span class="prompt">[06:00]</span> <span class="output">content-ai</span> <span class="dim">// wrote marketing posts for 4 platforms &mdash; privately</span></div>
+      <div><span class="prompt">[07:00]</span> <span class="output">market-intel</span> <span class="dim">// found 3 opportunities &mdash; no one else sees this data</span></div>
+      <div><span class="prompt">[08:00]</span> <span class="output">crypto-analyst</span> <span class="dim">// BTC $67K (+2.4%) &mdash; your portfolio, your eyes only</span></div>
+      <div><span class="prompt">[09:00]</span> <span class="output">finance-ai</span> <span class="dim">// revenue tracking &mdash; encrypted, never shared</span></div>
+      <div><span class="prompt">[10:00]</span> <span class="output">growth-ai</span> <span class="dim">// social media automation &mdash; no third-party access</span></div>
+      <div><span class="prompt">[12:00]</span> <span class="output">nurture-ai</span> <span class="dim">// customer engagement &mdash; your leads, not Facebook's</span></div>
+      <div><span class="prompt">[17:00]</span> <span class="output">proof-ai</span> <span class="dim">// 1,000+ actions/week &mdash; all on sovereign hardware</span></div>
+      <div><span class="prompt">[24/7]</span> <span class="output">sales-ai</span> <span class="dim">// auto-delivery &mdash; no Shopify taking 30% + your data</span></div>
+      <div><span class="prompt">[24/7]</span> <span class="output">price-watch</span> <span class="dim">// alerts every 30 min &mdash; off-grid, always running</span></div>
+    </div>
+    <p style="color:var(--muted);font-size:0.85rem;margin-top:1.5rem;">Total daily cost: <strong style="color:var(--gold);">$0.02</strong>. Built by a plumber. Running on home wifi. <strong style="color:var(--crimson);">Zero data leaves the machine.</strong></p>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="section-inner">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">No installs. No coding. No handing your data to strangers.</p>
+    <div class="steps">
+      <div class="step fade-in">
+        <div class="step-num">I</div>
+        <h3>Tell Us What You Need</h3>
+        <p>"I need an AI that knows plumbing codes and keeps my data private." That's all. You describe it, we build it on your terms.</p>
+      </div>
+      <div class="step fade-in d2">
+        <div class="step-num">II</div>
+        <h3>We Build Your Private AI</h3>
+        <p>Open-source models. Your specifications. Delivered via Telegram or WhatsApp. No data touches any corporate server. Ever.</p>
+      </div>
+      <div class="step fade-in d3">
+        <div class="step-num">III</div>
+        <h3>You Own It. Forever.</h3>
+        <p>Talk to your AI like a friend. It works 24/7, learns your preferences, and never sends a single byte to Google, Amazon, or anyone else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- TRY IT RIGHT NOW -->
+<section style="background: var(--black2);">
+  <div class="section-inner">
+    <div class="free-trial fade-in">
+      <h2>Try AI Right Now &mdash; Free</h2>
+      <p>Message <strong>@CaptainObvious_bot</strong> on Telegram. No signup. No credit card. No catch. Just a live AI you can talk to right now. <strong>Built by a plumber on an old laptop.</strong></p>
+      <a href="https://t.me/CaptainObvious_bot" target="_blank" class="btn-blood">Start Chatting Now</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- WHY US — COMPETITOR COMPARISON -->
+<section style="background: var(--black2); padding-bottom: 0;">
+  <div class="section-inner">
+    <h2 class="section-title">Why SGKx1904?</h2>
+    <p class="section-sub">See how we compare to what's out there.</p>
+    <div style="overflow-x:auto;margin:2rem 0;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;color:var(--muted);">
+        <thead>
+          <tr style="border-bottom:2px solid var(--crimson);">
+            <th style="text-align:left;padding:0.8rem;color:var(--bone);font-family:'Cinzel',serif;">They Say</th>
+            <th style="text-align:left;padding:0.8rem;color:var(--crimson);font-family:'Cinzel',serif;">We Say</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:0.8rem;">&ldquo;Build chatbots with our platform&rdquo;</td>
+            <td style="padding:0.8rem;color:var(--bone);"><strong>Build your own AI army that runs on YOUR laptop</strong></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:0.8rem;">&ldquo;No-code AI tools&rdquo;</td>
+            <td style="padding:0.8rem;color:var(--bone);"><strong>A plumber built 13 bots with zero coding</strong></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:0.8rem;">&ldquo;Cloud-based AI automation&rdquo;</td>
+            <td style="padding:0.8rem;color:var(--bone);"><strong>Off the grid. Your data never leaves your machine</strong></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:0.8rem;">&ldquo;Starting at $40/month&rdquo;</td>
+            <td style="padding:0.8rem;color:var(--bone);"><strong>Starting at $9/mo. Less than a coffee</strong></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:0.8rem;">&ldquo;Learn AI fundamentals&rdquo;</td>
+            <td style="padding:0.8rem;color:var(--bone);"><strong>Here&rsquo;s 13 working bots. They&rsquo;re already running</strong></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:0.8rem;">&ldquo;Enterprise AI solutions&rdquo;</td>
+            <td style="padding:0.8rem;color:var(--bone);"><strong>AI for the rest of us</strong></td>
+          </tr>
+          <tr>
+            <td style="padding:0.8rem;">&ldquo;ChatGPT&rdquo; Plus &mdash; $20/mo for 1 chatbot</td>
+            <td style="padding:0.8rem;color:var(--crimson);font-weight:700;">13 bots for $29/mo. Cheaper. Private. Yours.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background: var(--black2);">
+  <div class="section-inner">
+    <h2 class="section-title">Scalable AI Automation. No Lock-In.</h2>
+    <p class="section-sub">Everything you need to build and deploy professional AI automation. Pay as you grow.</p>
+    <div style="text-align:center;margin-bottom:2rem;padding:1.2rem;background:rgba(220,20,60,0.06);border:1px solid rgba(220,20,60,0.15);border-radius:var(--radius);">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--crimson);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.3rem;">Flexible Pricing Models</div>
+      <div style="font-size:0.85rem;color:var(--muted);">Choose subscription for ongoing support, or one-time purchase for complete independence.</div>
+      <div style="font-size:0.85rem;color:var(--muted);">All pricing covers lifetime updates and documentation.</div>
+      <div style="font-size:0.95rem;color:var(--gold);margin-top:0.4rem;">Start free, upgrade anytime. <strong>No contracts. Cancel anytime.</strong></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--ghost);margin-top:0.5rem;">Transparent pricing. No hidden fees.</div>
+    </div>
+    <div class="pricing">
+
+      <div class="price-card fade-in">
+        <h3>Free Tier</h3>
+        <div class="price">$0</div>
+        <div class="price-period">forever</div>
+        <ul class="price-features">
+          <li>Demo AI bot + free guide</li>
+          <li>Skeleton repo you can run</li>
+          <li>Community docs + troubleshooting</li>
+          <li>Talk to our bot on Telegram</li>
+        </ul>
+        <a href="https://t.me/CaptainObvious_bot" target="_blank" class="btn-blood" style="width:100%;text-align:center">Try Free AI Bot</a>
+        <div class="compare">everything you need to prove it works</div>
+      </div>
+
+      <div class="price-card fade-in d2">
+        <h3>Starter</h3>
+        <div class="price">$9</div>
+        <div class="price-period">per month</div>
+        <ul class="price-features">
+          <li>Access to @moneymakingmitch1904_bot</li>
+          <li>1 personal AI assistant</li>
+          <li>Choose your specialty</li>
+          <li>Telegram delivery</li>
+          <li>Daily automated tasks</li>
+          <li>Community access</li>
+        </ul>
+        <a href="https://buy.stripe.com/cNi6oG0IV0JgccT1zkgrS0y" class="btn-blood" style="width:100%;text-align:center">Start Building</a>
+        <div class="compare">your first AI employee less than a coffee &mdash; your first AI employeemdash; skip the learning curve</div>
+      </div>
+
+      <div class="price-card featured fade-in d2">
+        <h3>Builder</h3>
+        <div class="price">$29</div>
+        <div class="price-period">per month</div>
+        <ul class="price-features">
+          <li>Everything in Starter</li>
+          <li>3 AI assistants</li>
+          <li>Full customization</li>
+          <li>Multi-platform automation</li>
+          <li>Stripe payment integration</li>
+          <li>Custom prompt libraries</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://buy.stripe.com/9B6aEW2R377E0ubcdYgrS0z" class="btn-blood" style="width:100%;text-align:center">Go Builder</a>
+        <div class="compare">recommended for serious operators &mdash; complete control</div>
+      </div>
+
+      <div class="price-card fade-in d3">
+        <h3>Boss</h3>
+        <div class="price">$49</div>
+        <div class="price-period">per month</div>
+        <ul class="price-features">
+          <li>Everything in Builder</li>
+          <li>Unlimited AI assistants</li>
+          <li>Private server setup</li>
+          <li>API integrations</li>
+          <li>White-label ready</li>
+          <li>Dedicated support channel</li>
+        </ul>
+        <a href="https://buy.stripe.com/bJecN40IVbnU2Cj1zkgrS0A" class="btn-blood" style="width:100%;text-align:center">Own Your Empire</a>
+        <div class="compare">unlimited AI &mdash; your infrastructure, your rules</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- HACKBOT -->
+<section id="hackbot" style="background: var(--black2);">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:2rem;"><img src="img/generated/hackbot-banner.png" alt="HackBot" style="max-width:800px;width:100%;border-radius:var(--radius);border:1px solid var(--border);box-shadow:0 0 40px rgba(220,20,60,0.15);"></div><h2 class="section-title" style="color:var(--crimson);">HackBot <h2 class="section-title" style="color:var(--crimson);">HackBot &mdash; Offensive Security Automation</h2>mdash; Offensive Security Automation</h2>
+    <p class="section-sub">23 one-word attack scripts. Uncensored local AI. Flipper Zero, WiFi Pineapple, Proxmark3 integration. Zero cloud. Zero monthly cost. Zero content filters.</p>
+    <div style="text-align:center;margin-bottom:2rem;padding:1.2rem;background:rgba(220,20,60,0.08);border:1px solid rgba(220,20,60,0.2);border-radius:var(--radius);">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--crimson);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.5rem;">For Security Professionals</div><div style="margin:1rem 0;"><img src="img/generated/hackbot-promo-pentest.png" alt="Professional Pentester" style="max-width:500px;width:100%;border-radius:var(--radius);opacity:0.85;"></div>
+      <div style="font-size:0.85rem;color:var(--muted);">Full red team automation framework. Runs 100% on your hardware. OPSEC by design.</div>
+      <div style="margin-top:0.8rem;"><a href="https://github.com/Zombie760/hackbot" target="_blank" class="btn-bone" style="font-size:0.65rem;padding:0.4rem 1rem;">View on GitHub</a></div>
+    </div>
+    <div class="onetime">
+      <div class="ot-card fade-in">
+        <h3>Operator</h3>
+        <div class="ot-price">$49</div>
+        <p>All 23 attack scripts, AI personality template, setup guide, cheatsheet with engagement workflows, hashcat rule files. One-time purchase.</p>
+        <a href="https://buy.stripe.com/28EfZgajv4Zwel11zkgrS0F" class="btn-sm">Get HackBot</a>
+      </div>
+      <div class="ot-card fade-in d2">
+        <h3>Professional</h3>
+        <div class="ot-price">$99</div>
+        <p>Everything in Operator plus Flipper Zero integration, WiFi Pineapple remote toolkit, Proxmark3 RFID/NFC workflows, Sub-GHz frequency database, video walkthrough.</p><div style="margin:0.8rem 0;"><img src="img/generated/hardware-hacking-promo.png" alt="Hardware Hacking" style="width:100%;border-radius:var(--radius);opacity:0.8;"></div>
+        <a href="https://buy.stripe.com/3cI5kCbnzfEa6Sza5QgrS0G" class="btn-sm">Go Professional</a>
+      </div>
+      <div class="ot-card fade-in d3">
+        <h3>Enterprise</h3>
+        <div class="ot-price">$199</div>
+        <p>Everything in Professional plus 1-on-1 deployment consultation, custom AI personality tuning, private repo access with priority updates, full technical course access.</p>
+        <a href="https://buy.stripe.com/9B64gyezL3Vs4Kr0vggrS0H" class="btn-sm">Go Enterprise</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- BLUEPRINT + DONE FOR YOU -->
+<section id="blueprint">
+  <div class="section-inner">
+    <h2 class="section-title">One-Time Options. Full Ownership.</h2>
+    <p class="section-sub">No subscriptions. Own your system outright. Lifetime access to all materials.</p>
+    <div class="onetime">
+      <div class="ot-card fade-in">
+        <h3>The Full Blueprint</h3>
+        <div class="ot-price">$49</div>
+        <p>Full system architecture. Every config, every prompt template, every automation script. Build from scratch with complete documentation. Lifetime ownership. No subscriptions.</p>
+        <a href="https://buy.stripe.com/14A8wO8bn4Zwgt90vggrS0D" class="btn-sm">Get Blueprint</a>
+      </div>
+      <div class="ot-card fade-in d2">
+        <h3>Done-For-You Build</h3>
+        <div class="ot-price">$149</div>
+        <p>We build and deploy your entire system customized for your business. Cloud or self-hosted &mdash; your choice. Walk away with 13+ agents running on your infrastructure. Includes 2 weeks of implementation support.</p>
+        <a href="https://buy.stripe.com/bJe6oGbnz77E4Kr51MgrS09" class="btn-sm">Book Build</a>
+      </div>
+      <div class="ot-card fade-in d3">
+        <h3>Strategy Call</h3>
+        <div class="ot-price">$29</div>
+        <p>30-minute strategy call. We analyze your business and design a private AI system that works for your industry. Actionable plan you can implement the same day.</p>
+        <a href="https://buy.stripe.com/fZu9AS9frajQ1yf4LwgrS0e" class="btn-sm">Book Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- OPEN SOURCE -->
+<section id="open-source">
+  <div class="section-inner">
+    <h2 class="section-title">Open Source. Verify Everything.</h2>
+    <p class="section-sub">Don't trust us &mdash; inspect the code yourself. Every tool we use is open-source and publicly available on GitHub.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2rem;">
+      <a href="https://github.com/Zombie760/private-ai-quickstart" target="_blank" style="text-decoration:none;">
+        <div class="manifesto-card" style="text-align:left;cursor:pointer;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" style="color:var(--bone);"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span style="font-family:'Cinzel',serif;color:var(--crimson);font-size:0.85rem;font-weight:700;letter-spacing:1px;">QUICK START</span>
+          </div>
+          <h3 style="font-family:'Inter',sans-serif;color:var(--bone);font-size:0.95rem;margin-bottom:0.4rem;">private-ai-quickstart</h3>
+          <p style="color:var(--muted);font-size:0.8rem;line-height:1.5;">Run your first local AI in 15 minutes. Python server wrapper, connection tester, zero dependencies.</p>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--ghost);margin-top:0.8rem;">Python &bull; MIT License</div>
+        </div>
+      </a>
+      <a href="https://github.com/Zombie760/telegram-ai-bot" target="_blank" style="text-decoration:none;">
+        <div class="manifesto-card" style="text-align:left;cursor:pointer;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" style="color:var(--bone);"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span style="font-family:'Cinzel',serif;color:var(--crimson);font-size:0.85rem;font-weight:700;letter-spacing:1px;">TELEGRAM BOT</span>
+          </div>
+          <h3 style="font-family:'Inter',sans-serif;color:var(--bone);font-size:0.95rem;margin-bottom:0.4rem;">telegram-ai-bot</h3>
+          <p style="color:var(--muted);font-size:0.8rem;line-height:1.5;">Connect any local AI to Telegram. Full bot implementations in Python and Node.js with conversation management.</p>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--ghost);margin-top:0.8rem;">Python &bull; Node.js &bull; MIT License</div>
+        </div>
+      </a>
+      <a href="https://github.com/Zombie760/ai-automation-stack" target="_blank" style="text-decoration:none;">
+        <div class="manifesto-card" style="text-align:left;cursor:pointer;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" style="color:var(--bone);"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span style="font-family:'Cinzel',serif;color:var(--crimson);font-size:0.85rem;font-weight:700;letter-spacing:1px;">AUTOMATION</span>
+          </div>
+          <h3 style="font-family:'Inter',sans-serif;color:var(--bone);font-size:0.95rem;margin-bottom:0.4rem;">ai-automation-stack</h3>
+          <p style="color:var(--muted);font-size:0.8rem;line-height:1.5;">The 13-bot automation engine. Cron scheduler, market intel, content generation, Telegram delivery.</p>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--ghost);margin-top:0.8rem;">Python &bull; MIT License</div>
+        </div>
+      </a>
+      <a href="https://github.com/Zombie760/ai-autopilot-skeleton" target="_blank" style="text-decoration:none;">
+        <div class="manifesto-card" style="text-align:left;cursor:pointer;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" style="color:var(--bone);"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span style="font-family:'Cinzel',serif;color:var(--crimson);font-size:0.85rem;font-weight:700;letter-spacing:1px;">AUTOPILOT</span>
+          </div>
+          <h3 style="font-family:'Inter',sans-serif;color:var(--bone);font-size:0.95rem;margin-bottom:0.4rem;">ai-autopilot-skeleton</h3>
+          <p style="color:var(--muted);font-size:0.8rem;line-height:1.5;">Free working skeleton. 3 AI agents, 3 scripts, full setup guide. Run your business on autopilot. Upgrade for all 13 agents.</p>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--ghost);margin-top:0.8rem;">Python &bull; Node.js &bull; Free tier</div>
+        </div>
+      </a>
+      <a href="https://github.com/Zombie760/ai-empire-course" target="_blank" style="text-decoration:none;">
+        <div class="manifesto-card" style="text-align:left;cursor:pointer;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" style="color:var(--bone);"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span style="font-family:'Cinzel',serif;color:var(--crimson);font-size:0.85rem;font-weight:700;letter-spacing:1px;">COURSE</span>
+          </div>
+          <h3 style="font-family:'Inter',sans-serif;color:var(--bone);font-size:0.95rem;margin-bottom:0.4rem;">ai-empire-course</h3>
+          <p style="color:var(--muted);font-size:0.8rem;line-height:1.5;">Free modules 0-3. Build your own private AI from scratch. No coding experience required.</p>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--ghost);margin-top:0.8rem;">Docs &bull; MIT License</div>
+        </div>
+      </a>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:0.85rem;margin-top:2rem;">All code is open-source under the MIT License. <strong style="color:var(--bone);">Inspect it. Fork it. Build on it.</strong> No black boxes.</p>
+    <div style="text-align:center;margin-top:1.5rem;">
+      <a href="https://github.com/Zombie760" target="_blank" class="btn-bone">View All Repos on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&dagger; &dagger; &dagger;</div>
+
+<!-- FINAL CTA -->
+<section style="padding:5rem 2rem;text-align:center;background:radial-gradient(ellipse at 50% 50%, rgba(220,20,60,0.05), transparent 70%);">
+  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:var(--bone);letter-spacing:3px;margin-bottom:0.8rem;">They Built AI to Watch You.</h2>
+  <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:var(--crimson);letter-spacing:3px;margin-bottom:1.5rem;">We Built AI to Free You.</h2>
+  <p style="color:var(--muted);max-width:600px;margin:0 auto 1rem;font-size:1rem;">A plumber with an old laptop proved you don't need Google's permission to have world-class AI. No surveillance. No corporate middlemen. No data harvesting.</p>
+  <p style="color:var(--bone);max-width:550px;margin:0 auto 2rem;font-size:1.1rem;font-weight:600;">Sick of billionaires winning? <strong style="color:var(--crimson);">Build your own.</strong></p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="https://t.me/CaptainObvious_bot" target="_blank" class="btn-blood">Try Free AI Bot</a>
+    <a href="https://t.me/MoneyMakingMitchell1904" target="_blank" class="btn-bone">Join the Movement</a>
+  </div>
+  <div class="price-hint" style="margin-top:1.5rem;">No signup. No data harvesting. No corporate overlords. Just you and your AI.</div>
+  <div class="hero-tagline">For the ones who don't want to conform.</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">SGKx1904</div>
+  <div class="footer-links">
+    <a href="https://t.me/CaptainObvious_bot" target="_blank">Try Free AI</a> &bull;
+    <a href="privacy.html">Privacy</a> &bull;
+    <a href="terms.html">Terms</a>
+    <a href="https://t.me/MoneyMakingMitchell1904" target="_blank">Channel</a>
+    <a href="https://github.com/Zombie760" target="_blank">GitHub</a>
+    <a href="https://x.com/lyfer1904" target="_blank">X / Twitter</a>
+    <a href="enterprise.html">Enterprise</a>
+    <a href="free-guide.html">Free Guide</a>
+  </div>
+  <p class="footer-copy">Built by a plumber on an old laptop. Open-source. Private. No corporate middleman. No surveillance.</p>
+  <p class="footer-copy" style="margin-top:0.3rem;">Your data is yours. Always was. Always will be.</p>
+  <p class="footer-copy" style="margin-top:0.5rem;">&copy; 2026 SGKx1904. All rights reserved.</p>
+</footer>
+
+<script>
+const embers = document.getElementById('embers');
+for (let i = 0; i < 30; i++) {
+  const e = document.createElement('div');
+  e.className = 'ember';
+  e.style.left = Math.random() * 100 + '%';
+  e.style.animationDuration = (8 + Math.random() * 12) + 's';
+  e.style.animationDelay = Math.random() * 10 + 's';
+  e.style.width = (1 + Math.random() * 2) + 'px';
+  e.style.height = e.style.width;
+  embers.appendChild(e);
+}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
