@@ -45,3 +45,7 @@ temp/
 lib/chat/components/*.js
 !lib/chat/components/index.js
 lib/chat/components/ui/*.js
+lib/code/*.js
+!lib/code/actions.js
+!lib/code/index.js
+!lib/code/ws-proxy.js
