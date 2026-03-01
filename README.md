@@ -143,34 +143,25 @@ See [Claude Code vs Pi](docs/CLAUDE_CODE_VS_PI.md) for more details on the two a
 
 ---
 
-## Manual Updating
-
-**1. Update the package**
+## Updating
 
 ```bash
-npm install thepopebot@latest
+npx thepopebot upgrade          # latest stable
+npx thepopebot upgrade @beta    # latest beta
+npx thepopebot upgrade 1.2.72   # specific version
 ```
 
-**2. Scaffold and update templates**
+This commits any uncommitted changes, installs the new version, updates templates, clears cache, rebuilds, commits, and pushes.
 
-```bash
-npx thepopebot init
-```
+**What it runs under the hood:**
 
-For most people, that's it — `init` handles everything. It updates your project files, runs `npm install`, and updates `THEPOPEBOT_VERSION` in your local `.env`. See [Understanding `init`](#understanding-init) below for details on what this updates and how to handle custom changes.
-
-**3. Rebuild for local dev**
-
-```bash
-npm run build
-```
-
-**4. Commit and push**
-
-```bash
-git add -A && git commit -m "upgrade thepopebot to vX.X.X"
-git push
-```
+1. `git add -A && git commit -m "wip: save changes before thepopebot upgrade"`
+2. `npm install thepopebot@<version>`
+3. `npx thepopebot init`
+4. `rm -rf .next && npm run build`
+5. `git add -A && git commit -m "chore: upgrade thepopebot to <version>"`
+6. `git push`
+7. `docker compose down && docker compose up -d` (if running)
 
 Pushing to `main` triggers the `rebuild-event-handler.yml` workflow on your server. It detects the version change, runs `thepopebot init`, updates `THEPOPEBOT_VERSION` in the server's `.env`, pulls the new Docker image, restarts the container, rebuilds `.next`, and reloads PM2 — no manual `docker compose` needed.
 

@@ -47,12 +47,23 @@ function templatePath(userPath, templatesDir) {
   return userPath;
 }
 
+/**
+ * Parse upgrade target from CLI arg into an npm install specifier.
+ * Examples: undefined → "latest", "@beta" → "beta", "@rc" → "rc", "1.2.72" → "1.2.72"
+ */
+function parseUpgradeTarget(arg) {
+  if (!arg) return 'latest';
+  if (arg.startsWith('@')) return arg.slice(1); // @beta → beta, @rc → rc, @latest → latest
+  return arg; // bare version like 1.2.72
+}
+
 function printUsage() {
   console.log(`
 Usage: thepopebot <command>
 
 Commands:
   init                              Scaffold a new thepopebot project
+  upgrade|update [@beta|version]    Upgrade thepopebot (install, init, build, commit, push)
   setup                             Run interactive setup wizard
   setup-telegram                    Reconfigure Telegram webhook
   reset-auth                        Regenerate AUTH_SECRET (invalidates all sessions)
@@ -450,6 +461,142 @@ async function resetAuth() {
   console.log('  Restart your server for the change to take effect.\n');
 }
 
+async function upgrade() {
+  const cwd = process.cwd();
+  const tag = parseUpgradeTarget(args[0]);
+  const { confirm, isCancel } = await import('@clack/prompts');
+
+  // --- Pre-flight: verify this is a thepopebot project ---
+  const pkgPath = path.join(cwd, 'package.json');
+  if (!fs.existsSync(pkgPath)) {
+    console.error('\n  Not a thepopebot project (no package.json found).\n');
+    process.exit(1);
+  }
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+  const deps = { ...pkg.dependencies, ...pkg.devDependencies };
+  if (!deps.thepopebot) {
+    console.error('\n  Not a thepopebot project (thepopebot not in dependencies).\n');
+    process.exit(1);
+  }
+
+  // Get current installed version
+  let currentVersion;
+  try {
+    const installedPkg = path.join(cwd, 'node_modules', 'thepopebot', 'package.json');
+    currentVersion = JSON.parse(fs.readFileSync(installedPkg, 'utf8')).version;
+  } catch {
+    currentVersion = 'unknown';
+  }
+
+  // Resolve target version
+  let targetVersion;
+  try {
+    targetVersion = execSync(`npm view thepopebot@${tag} version`, { encoding: 'utf8' }).trim();
+  } catch {
+    console.error(`\n  Could not resolve thepopebot@${tag}. Check the version/tag and try again.\n`);
+    process.exit(1);
+  }
+
+  console.log(`\n  thepopebot ${currentVersion} → ${targetVersion}`);
+
+  if (currentVersion === targetVersion) {
+    console.log('  Already up to date. Nothing to do.\n');
+    return;
+  }
+
+  // --- Dirty working tree check ---
+  const status = execSync('git status --porcelain', { encoding: 'utf8', cwd }).trim();
+  if (status) {
+    console.log('\n  Uncommitted changes:\n');
+    for (const line of status.split('\n')) {
+      console.log(`    ${line}`);
+    }
+    const shouldCommit = await confirm({
+      message: 'Commit these changes before upgrading?',
+      initialValue: true,
+    });
+    if (isCancel(shouldCommit) || !shouldCommit) {
+      console.log('\n  Please commit or stash your changes first.\n');
+      return;
+    }
+    try {
+      execSync('git add -A && git commit -m "wip: save changes before thepopebot upgrade"', { stdio: 'inherit', cwd });
+    } catch {
+      console.log('  Warning: could not commit changes, continuing anyway.');
+    }
+  }
+
+  // --- Install ---
+  console.log(`\n  Installing thepopebot@${targetVersion}...\n`);
+  try {
+    execSync(`npm install thepopebot@${targetVersion}`, { stdio: 'inherit', cwd });
+  } catch {
+    console.error('\n  npm install failed. Aborting upgrade.\n');
+    process.exit(1);
+  }
+
+  // --- Init (spawn new process to use the NEW version's templates) ---
+  console.log('\n  Running init...\n');
+  try {
+    execSync('npx thepopebot init', { stdio: 'inherit', cwd });
+  } catch {
+    console.error('\n  thepopebot init failed. Aborting upgrade.\n');
+    process.exit(1);
+  }
+
+  // --- Clear .next ---
+  try {
+    fs.rmSync(path.join(cwd, '.next'), { recursive: true, force: true });
+  } catch {}
+
+  // --- Build ---
+  console.log('\n  Building...\n');
+  try {
+    execSync('npm run build', { stdio: 'inherit', cwd });
+  } catch {
+    console.log('  Warning: build failed. You may need to run "npm run build" manually.');
+  }
+
+  // --- Commit ---
+  try {
+    execSync('git add -A', { cwd });
+    execSync(`git commit -m "chore: upgrade thepopebot to ${targetVersion}"`, { stdio: 'inherit', cwd });
+  } catch {
+    console.log('  Warning: could not commit upgrade changes (maybe no changes to commit).');
+  }
+
+  // --- Docker restart (only if compose file exists, docker available, and containers running) ---
+  const composeFile = path.join(cwd, 'docker-compose.yml');
+  if (fs.existsSync(composeFile)) {
+    try {
+      const running = execSync('docker compose ps --status running -q', { encoding: 'utf8', cwd }).trim();
+      if (running) {
+        console.log('\n  Restarting Docker containers...\n');
+        execSync('docker compose down && docker compose up -d', { stdio: 'inherit', cwd });
+      }
+    } catch {
+      // Docker not available or not running — skip silently
+    }
+  }
+
+  // --- Push ---
+  const shouldPush = await confirm({
+    message: 'Push to deploy?',
+    initialValue: true,
+  });
+  if (!isCancel(shouldPush) && shouldPush) {
+    try {
+      execSync('git push', { stdio: 'inherit', cwd });
+    } catch {
+      console.log('  Warning: git push failed. Push manually when ready.');
+    }
+  }
+
+  // --- Summary ---
+  console.log(`\n  Upgraded thepopebot ${currentVersion} → ${targetVersion}`);
+  console.log('  Done!\n');
+}
+
 /**
  * Load GH_OWNER and GH_REPO from .env
  */
@@ -604,6 +751,10 @@ switch (command) {
     break;
   case 'diff':
     diff(args[0]);
+    break;
+  case 'upgrade':
+  case 'update':
+    await upgrade();
     break;
   case 'set-agent-secret':
     await setAgentSecret(args[0], args[1]);

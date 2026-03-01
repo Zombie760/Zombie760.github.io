@@ -178,7 +178,7 @@ export function AppSidebar({ user }) {
             </Tooltip>
           </SidebarMenuItem>
 
-          {/* Pull Requests */}
+          {/* Pending Changes */}
           <SidebarMenuItem>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -191,7 +191,7 @@ export function AppSidebar({ user }) {
                   <GitPullRequestIcon size={16} />
                   {!collapsed && (
                     <span className="flex items-center gap-2">
-                      Pull Requests
+                      Pending Changes
                       {prCount > 0 && (
                         <span className="inline-flex items-center justify-center rounded-full bg-destructive px-1.5 py-0.5 text-[10px] font-medium leading-none text-destructive-foreground">
                           {prCount}
@@ -207,7 +207,7 @@ export function AppSidebar({ user }) {
                 </SidebarMenuButton>
               </TooltipTrigger>
               {collapsed && (
-                <TooltipContent side="right">Pull Requests</TooltipContent>
+                <TooltipContent side="right">Pending Changes</TooltipContent>
               )}
             </Tooltip>
           </SidebarMenuItem>
