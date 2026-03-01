@@ -107,7 +107,7 @@ export function SidebarProvider({
   );
 }
 
-export function Sidebar({ children, className, side = 'right' }) {
+export function Sidebar({ children, className, side = 'left' }) {
   const { isMobile, open, openMobile, setOpenMobile } = useSidebar();
 
   if (isMobile) {
@@ -126,7 +126,7 @@ export function Sidebar({ children, className, side = 'right' }) {
   return (
     <div
       className={cn(
-        'sticky top-0 flex h-svh flex-col border-l border-border bg-muted transition-[width] duration-200',
+        'sticky top-0 flex h-svh flex-col border-r border-border bg-muted transition-[width] duration-200',
         open ? 'w-[var(--sidebar-width)]' : 'w-[var(--sidebar-width-icon)]',
         className
       )}
@@ -227,7 +227,7 @@ export function SidebarTrigger({ className, ...props }) {
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="size-4">
         <rect width="18" height="18" x="3" y="3" rx="2" />
-        <path d="M15 3v18" />
+        <path d="M9 3v18" />
       </svg>
       <span className="sr-only">Toggle Sidebar</span>
     </button>
@@ -238,7 +238,7 @@ export function SidebarRail() {
   const { toggleSidebar } = useSidebar();
   return (
     <button
-      className="absolute inset-y-0 left-0 w-1 cursor-col-resize hover:bg-border"
+      className="absolute inset-y-0 right-0 w-1 cursor-col-resize hover:bg-border"
       onClick={toggleSidebar}
       aria-label="Toggle Sidebar"
     />

@@ -16,12 +16,12 @@ export function PageLayout({ session, children, contentClassName }) {
   return (
     <ChatNavProvider value={{ activeChatId: null, navigateToChat: defaultNavigateToChat }}>
       <SidebarProvider>
+        <AppSidebar user={session.user} />
         <SidebarInset>
           <div className={contentClassName || "flex flex-col h-full max-w-4xl mx-auto w-full px-4 py-6"}>
             {children}
           </div>
         </SidebarInset>
-        <AppSidebar user={session.user} />
       </SidebarProvider>
     </ChatNavProvider>
   );
