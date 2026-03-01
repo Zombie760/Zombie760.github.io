@@ -33,12 +33,19 @@ RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | d
 
 RUN npm install -g @mariozechner/pi-coding-agent
 
+# Create a non-root user and give it ownership of /job.
+RUN useradd -m -s /bin/bash agent \
+    && mkdir -p /job \
+    && chown agent:agent /job
+
 # Create Pi config directory (extension loaded from repo at runtime)
-RUN mkdir -p /root/.pi/agent
+RUN mkdir -p /home/agent/.pi/agent \
+    && chown -R agent:agent /home/agent/.pi
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+USER agent
 WORKDIR /job
 
 ENTRYPOINT ["/entrypoint.sh"]

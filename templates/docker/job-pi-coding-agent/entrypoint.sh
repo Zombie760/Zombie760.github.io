@@ -48,7 +48,7 @@ done
 
 # Start Chrome if available (installed by browser-tools skill via Puppeteer)
 CHROME_PID=""
-CHROME_BIN=$(find /root/.cache/puppeteer -name "chrome" -type f 2>/dev/null | head -1)
+CHROME_BIN=$(find /home/agent/.cache/puppeteer -name "chrome" -type f 2>/dev/null | head -1)
 if [ -n "$CHROME_BIN" ]; then
     $CHROME_BIN --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 2>/dev/null &
     CHROME_PID=$!
@@ -96,7 +96,7 @@ if [ "$LLM_PROVIDER" = "custom" ] && [ -n "$OPENAI_BASE_URL" ]; then
     if [ -z "$CUSTOM_API_KEY" ]; then
         export CUSTOM_API_KEY="not-needed"
     fi
-    cat > /root/.pi/agent/models.json <<MODELS
+    cat > /home/agent/.pi/agent/models.json <<MODELS
 {
   "providers": {
     "custom": {
@@ -112,8 +112,8 @@ fi
 
 # Copy custom models.json to PI's global config if present in repo (overrides generated)
 if [ -f "/job/.pi/agent/models.json" ]; then
-    mkdir -p /root/.pi/agent
-    cp /job/.pi/agent/models.json /root/.pi/agent/models.json
+    mkdir -p /home/agent/.pi/agent
+    cp /job/.pi/agent/models.json /home/agent/.pi/agent/models.json
 fi
 
 # Run Pi — capture exit code instead of letting set -e kill the script
