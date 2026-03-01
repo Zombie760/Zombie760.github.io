@@ -136,12 +136,6 @@ export function Chat({ chatId, initialMessages = [], workspace = null, featureFl
   return (
     <div className="flex h-svh flex-col">
       <ChatHeader chatId={chatId} />
-      {/* Locked code mode header bar — shows when code chat has messages */}
-      {codeMode && messages.length > 0 && (
-        <div className="mx-auto w-full max-w-4xl px-4 pt-2 md:px-6">
-          {codeModeToggle}
-        </div>
-      )}
       {messages.length === 0 ? (
         <div className="flex flex-1 flex-col items-center justify-center px-4 md:px-6">
           <div className="w-full max-w-4xl">
@@ -163,7 +157,7 @@ export function Chat({ chatId, initialMessages = [], workspace = null, featureFl
                 canSendOverride={codeModeCanSend ? undefined : false}
               />
             </div>
-            <div className="mt-3 mx-auto w-full max-w-4xl px-4 md:px-6">
+            <div className="mt-3">
               {codeModeToggle}
             </div>
           </div>
@@ -176,6 +170,11 @@ export function Chat({ chatId, initialMessages = [], workspace = null, featureFl
               <div className="rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-2 text-sm text-destructive">
                 {error.message || 'Something went wrong. Please try again.'}
               </div>
+            </div>
+          )}
+          {codeMode && (
+            <div className="mx-auto w-full max-w-4xl px-4 pb-1 md:px-6">
+              {codeModeToggle}
             </div>
           )}
           <ChatInput

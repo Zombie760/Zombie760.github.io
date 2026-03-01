@@ -77,27 +77,26 @@ export function CodeModeToggle({
     }).catch(() => setLoadingBranches(false));
   }, [repo]);
 
-  // Locked mode: show as static labels
+  // Locked mode: show as centered inline label
   if (locked && enabled) {
     return (
-      <div className="flex flex-wrap items-center gap-2">
-        <div className={cn(
-          'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium',
-          'bg-primary text-primary-foreground'
-        )}>
+      <div className="flex justify-center">
+        <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
           <CodeIcon size={12} />
           <span>Claude Code</span>
+          {repo && (
+            <>
+              <span className="opacity-40">·</span>
+              <span>{repo}</span>
+            </>
+          )}
+          {branch && (
+            <>
+              <span className="opacity-40">·</span>
+              <span>{branch}</span>
+            </>
+          )}
         </div>
-        {repo && (
-          <span className="text-xs text-muted-foreground">
-            {repo}
-          </span>
-        )}
-        {branch && (
-          <span className="text-xs text-muted-foreground">
-            {branch}
-          </span>
-        )}
       </div>
     );
   }
@@ -106,23 +105,43 @@ export function CodeModeToggle({
   const branchOptions = branches.map((b) => ({ value: b.name, label: b.name }));
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col items-center gap-2">
+      {/* Slide toggle + label */}
       <button
         type="button"
         onClick={handleToggle}
-        className={cn(
-          'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-colors self-start',
-          enabled
-            ? 'bg-primary text-primary-foreground'
-            : 'border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30'
-        )}
+        className="inline-flex items-center gap-2 group"
+        role="switch"
+        aria-checked={enabled}
+        aria-label="Toggle Claude Code mode"
       >
-        <CodeIcon size={12} />
-        <span>Claude Code</span>
+        {/* Track */}
+        <span
+          className={cn(
+            'relative inline-flex h-5 w-9 shrink-0 rounded-full transition-colors duration-200',
+            enabled ? 'bg-primary' : 'bg-muted-foreground/30'
+          )}
+        >
+          {/* Knob */}
+          <span
+            className={cn(
+              'absolute top-0.5 left-0.5 h-4 w-4 rounded-full bg-white shadow-sm transition-transform duration-200',
+              enabled && 'translate-x-4'
+            )}
+          />
+        </span>
+        {/* Label */}
+        <span className={cn(
+          'text-xs font-medium transition-colors',
+          enabled ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'
+        )}>
+          Claude Code
+        </span>
       </button>
 
+      {/* Repo/branch pickers */}
       {enabled && (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap justify-center gap-2">
           <div className="w-full sm:w-auto sm:min-w-[220px]">
             <Combobox
               options={repoOptions}
