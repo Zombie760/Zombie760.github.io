@@ -59,7 +59,7 @@ footer{border-top:1px solid var(--bd);padding:2rem;text-align:center;color:var(-
 <body>
 <nav>
   <a href="/" class="nb"><svg width="26" height="26" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#f59e0b"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-weight="bold" fill="#09090b">B</text></svg> Bot-Wave</a>
-  <div class="nl"><a href="/">Home</a><a href="/self-host.html" style="color:var(--am)">Self-Host</a><a href="/#pricing">Pricing</a><a href="https://t.me/CaptainObviousBot" class="btn ba" style="padding:.4rem 1rem;font-size:.78rem">Try Free</a></div>
+  <div class="nl"><a href="/">Home</a><a href="/clawhub.html">ClawHub</a><a href="/node.html">Node</a><a href="/self-host.html" style="color:var(--am)">Self-Host</a><a href="/#pricing">Pricing</a><a href="https://t.me/CaptainObviousBot" class="btn ba" style="padding:.4rem 1rem;font-size:.78rem">Try Free</a></div>
 </nav>
 
 <div class="hero">
@@ -102,6 +102,20 @@ openclaw deploy captain --platform telegram
 openclaw deploy ghost --platform telegram    # Content
 openclaw deploy jobsite --platform telegram  # Invoicing
 openclaw fleet status                        # Check fleet</code></pre></div>
+
+<h2>Botwave Desktop — Full Fleet Commander</h2>
+<p>Manage your entire AI Agent Army from one native window.</p>
+<div class="g2">
+  <div class="cd"><h4>Live Fleet Status</h4><p>Real-time health, last active, session count for all agents</p></div>
+  <div class="cd"><h4>One-Click Deploy</h4><p>Choose from 15+ templates (Captain, Mitch, JobSite, Ghost, etc.)</p></div>
+  <div class="cd"><h4>Script Factory</h4><p>Browse, run, and generate new automation scripts</p></div>
+  <div class="cd"><h4>Model Router</h4><p>Assign agents to local or free models — zero API cost by default</p></div>
+</div>
+<p style="margin-top:1.5rem"><strong>Download Botwave Desktop (Beta)</strong></p>
+<div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem">
+  <a href="https://github.com/Zombie760/Zombie760.github.io/releases" class="btn ba">Download for Linux</a>
+  <a href="https://github.com/Zombie760/Zombie760.github.io/releases" class="btn bo">All Platforms</a>
+</div>
 
 <h2>Architecture</h2>
 <div class="arch">┌─────────────┐    ┌─────────────────────┐    ┌──────────────────┐
@@ -217,11 +231,11 @@ tmux send-keys "openclaw start --all-agents" Enter
 
 <h2 id="roadmap">Roadmap</h2>
 <ul>
-<li><strong>Now:</strong> 15 agents, Telegram-first, bash-pipe, local routing</li>
+<li><strong>Now:</strong> 15 agents, Telegram-first, bash-pipe, local routing, <em>Desktop app (Beta)</em></li>
 <li><strong>Q2 2026:</strong> ClawHub skill marketplace</li>
 <li><strong>Q3 2026:</strong> Raspberry Pi images (BotWave Node)</li>
 <li><strong>Q4 2026:</strong> Docker containerized agents + seccomp</li>
-<li><strong>2027:</strong> Desktop app, mobile companion</li>
+<li><strong>2027:</strong> Mobile companion, voice control</li>
 </ul>
 
 <div class="cta">
@@ -242,4 +256,23 @@ tmux send-keys "openclaw start --all-agents" Enter
 <h3>How is this different from CrewAI/n8n?</h3><p>Those are frameworks. Bot-Wave is a complete agent OS: phone control, zero code, zero API, full audit trail.</p>
 </div>
 <footer><p>Bot-Wave &copy; 2025-2026 | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a> | <a href="https://github.com/Zombie760/Zombie760.github.io">GitHub</a></p><p style="margin-top:.4rem">Built with grit, bash pipes, and zero venture capital.</p></footer>
+
+<!-- Desktop App Section (injected by Phase 11) -->
+<section style="text-align:center;padding:60px 0;border-top:1px solid #1e1e22">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px">
+    <h2 style="font-size:2rem;font-weight:700;margin-bottom:12px">Download Botwave Desktop <span style="color:#10b981">(Beta)</span></h2>
+    <p style="color:#71717a;margin-bottom:8px">Native app for fleet management, script execution, and model routing.</p>
+    <p style="color:#71717a;font-size:.85rem;margin-bottom:24px">Windows · macOS · Linux — Free and open source.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="https://github.com/botwave/botwave-desktop/releases" style="display:inline-block;background:#f59e0b;color:#000;padding:14px 32px;border-radius:8px;font-weight:600;text-decoration:none;font-size:.95rem">Download Desktop (Beta)</a>
+      <a href="clawhub.html" style="display:inline-block;border:1px solid #1e1e22;color:#fff;padding:14px 32px;border-radius:8px;font-weight:500;text-decoration:none;font-size:.95rem">Browse ClawHub Marketplace</a>
+      <a href="node.html" style="display:inline-block;border:1px solid #1e1e22;color:#fff;padding:14px 32px;border-radius:8px;font-weight:500;text-decoration:none;font-size:.95rem">Botwave Node Hardware</a>
+    </div>
+    <div style="margin-top:24px;display:flex;gap:24px;justify-content:center;font-size:.85rem;color:#71717a">
+      <span>✓ Fleet status dashboard</span>
+      <span>✓ Script Factory with live output</span>
+      <span>✓ Visual model router</span>
+    </div>
+  </div>
+</section>
 </body></html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClawHub — Botwave Agent & Script Marketplace</title>
+  <meta name="description" content="Browse, buy, and sell AI agents and automation scripts for the Botwave platform.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--amber:#f59e0b;--emerald:#10b981;--bg:#09090b;--card:#141416;--border:#1e1e22;--muted:#71717a;--dark:#0f0f11}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:#fff;line-height:1.6}
+    a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
+
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    header{border-bottom:1px solid var(--border);padding:16px 0}
+    .header-inner{display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:1.25rem;font-weight:700;display:flex;align-items:center;gap:8px}
+    .logo span{color:var(--amber)}
+    .logo small{font-size:.7rem;color:var(--muted);font-weight:400}
+    nav a{color:var(--muted);font-size:.875rem;margin-left:24px;transition:color .15s}
+    nav a:hover{color:#fff;text-decoration:none}
+
+    .hero{text-align:center;padding:60px 0 40px}
+    .hero h1{font-size:2.5rem;font-weight:700;margin-bottom:12px}
+    .hero h1 span{background:linear-gradient(135deg,var(--amber),var(--emerald));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p{color:var(--muted);font-size:1.1rem;max-width:600px;margin:0 auto 24px}
+
+    .search-bar{display:flex;gap:8px;max-width:500px;margin:0 auto 12px}
+    .search-bar input{flex:1;background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:#fff;font-size:.9rem;outline:none;transition:border-color .15s}
+    .search-bar input:focus{border-color:var(--amber)}
+    .search-bar button{background:var(--amber);color:#000;border:none;border-radius:8px;padding:12px 24px;font-weight:600;cursor:pointer;font-size:.9rem}
+    .search-bar button:hover{background:#d97706}
+
+    .tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+    .tag{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:6px 16px;font-size:.75rem;color:var(--muted);cursor:pointer;transition:all .15s}
+    .tag:hover,.tag.active{border-color:var(--amber);color:var(--amber)}
+
+    .section-title{font-size:1.25rem;font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+    .section-title::before{content:'';width:3px;height:20px;background:var(--amber);border-radius:2px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-bottom:48px}
+
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all .2s;cursor:pointer;position:relative}
+    .card:hover{border-color:rgba(245,158,11,.4);transform:translateY(-2px)}
+    .card-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;flex-shrink:0}
+    .card-icon.agent{background:rgba(16,185,129,.15);color:var(--emerald)}
+    .card-icon.script{background:rgba(245,158,11,.15);color:var(--amber)}
+    .card-title{font-weight:600;font-size:.95rem}
+    .card-author{font-size:.75rem;color:var(--muted)}
+    .card-desc{font-size:.8rem;color:var(--muted);margin-bottom:12px;line-height:1.5}
+    .card-footer{display:flex;align-items:center;justify-content:space-between}
+    .card-stats{font-size:.7rem;color:var(--muted);display:flex;gap:12px}
+    .card-price{font-size:.85rem;font-weight:600;padding:4px 12px;border-radius:6px}
+    .card-price.free{background:rgba(16,185,129,.15);color:var(--emerald)}
+    .card-price.paid{background:rgba(245,158,11,.15);color:var(--amber)}
+    .badge{position:absolute;top:12px;right:12px;font-size:.6rem;padding:3px 8px;border-radius:4px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+    .badge.featured{background:var(--amber);color:#000}
+    .badge.new{background:var(--emerald);color:#000}
+
+    .cta-section{text-align:center;padding:60px 0;border-top:1px solid var(--border)}
+    .cta-section h2{font-size:1.75rem;font-weight:700;margin-bottom:12px}
+    .cta-section p{color:var(--muted);margin-bottom:24px}
+    .btn-primary{display:inline-block;background:var(--amber);color:#000;padding:14px 32px;border-radius:8px;font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:background .15s}
+    .btn-primary:hover{background:#d97706;text-decoration:none}
+    .btn-ghost{display:inline-block;border:1px solid var(--border);color:#fff;padding:14px 32px;border-radius:8px;font-weight:500;font-size:.95rem;margin-left:12px;transition:all .15s}
+    .btn-ghost:hover{border-color:var(--amber);text-decoration:none}
+
+    footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--muted);font-size:.8rem}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <span>Claw</span>Hub <small>by Bot-Wave</small>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#agents">Agents</a>
+      <a href="#scripts">Scripts</a>
+      <a href="#submit">Submit</a>
+      <a href="self-host.html">Self-Host</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>The <span>Agent Marketplace</span></h1>
+    <p>Browse, install, and sell AI agents and automation scripts for the Botwave platform. One-click deploy to your fleet.</p>
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search agents, scripts, templates..." />
+      <button onclick="filterCards()">Search</button>
+    </div>
+    <div class="tags">
+      <span class="tag active" onclick="filterTag('all')">All</span>
+      <span class="tag" onclick="filterTag('agent')">Agents</span>
+      <span class="tag" onclick="filterTag('script')">Scripts</span>
+      <span class="tag" onclick="filterTag('osint')">OSINT</span>
+      <span class="tag" onclick="filterTag('business')">Business</span>
+      <span class="tag" onclick="filterTag('devops')">DevOps</span>
+      <span class="tag" onclick="filterTag('content')">Content</span>
+      <span class="tag" onclick="filterTag('security')">Security</span>
+    </div>
+  </div>
+</section>
+
+<section id="agents">
+  <div class="container">
+    <h3 class="section-title">Featured Agents</h3>
+    <div class="grid" id="agent-grid">
+
+      <div class="card" data-type="agent" data-tags="business">
+        <span class="badge featured">Featured</span>
+        <div class="card-header">
+          <div class="card-icon agent">C</div>
+          <div><div class="card-title">Captain</div><div class="card-author">by Bot-Wave</div></div>
+        </div>
+        <div class="card-desc">Primary fleet coordinator. Routes tasks to specialized agents, manages priorities, and handles escalation workflows.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>1.2K installs</span><span>v2.1.0</span></div>
+          <span class="card-price free">Free</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="agent" data-tags="security osint">
+        <span class="badge featured">Featured</span>
+        <div class="card-header">
+          <div class="card-icon agent">D</div>
+          <div><div class="card-title">Dick Tracy</div><div class="card-author">by Bot-Wave</div></div>
+        </div>
+        <div class="card-desc">Red team and OSINT agent. Network recon, person lookup, WiFi capture, vulnerability scanning. Runs uncensored local models.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>890 installs</span><span>v1.8.0</span></div>
+          <span class="card-price free">Free</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="agent" data-tags="business">
+        <span class="badge new">New</span>
+        <div class="card-header">
+          <div class="card-icon agent">M</div>
+          <div><div class="card-title">Mitch</div><div class="card-author">by Bot-Wave</div></div>
+        </div>
+        <div class="card-desc">Business closer. Generates proposals, invoices, follow-up sequences, and handles deal pipeline management.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>640 installs</span><span>v1.5.0</span></div>
+          <span class="card-price free">Free</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="agent" data-tags="content">
+        <div class="card-header">
+          <div class="card-icon agent">S</div>
+          <div><div class="card-title">Scribe</div><div class="card-author">by Bot-Wave</div></div>
+        </div>
+        <div class="card-desc">Documentation agent. Auto-generates changelogs, technical docs, meeting summaries, and release notes from session data.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>520 installs</span><span>v1.3.0</span></div>
+          <span class="card-price free">Free</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="agent" data-tags="devops">
+        <div class="card-header">
+          <div class="card-icon agent">G</div>
+          <div><div class="card-title">Ghost</div><div class="card-author">by Bot-Wave</div></div>
+        </div>
+        <div class="card-desc">Silent watcher. Monitors system health, detects anomalies, sends alerts. Runs on zero API cost using local pattern matching.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>410 installs</span><span>v1.2.0</span></div>
+          <span class="card-price free">Free</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="agent" data-tags="business">
+        <div class="card-header">
+          <div class="card-icon agent">J</div>
+          <div><div class="card-title">JobSite Pro</div><div class="card-author">by Community</div></div>
+        </div>
+        <div class="card-desc">Advanced job search agent. Auto-applies, generates tailored cover letters, tracks applications, and schedules follow-ups.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>380 installs</span><span>v2.0.0</span></div>
+          <span class="card-price paid">$9.99</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="scripts">
+  <div class="container">
+    <h3 class="section-title">Popular Scripts</h3>
+    <div class="grid" id="script-grid">
+
+      <div class="card" data-type="script" data-tags="security osint">
+        <div class="card-header">
+          <div class="card-icon script">$</div>
+          <div><div class="card-title">Full OSINT Suite</div><div class="card-author">by Bot-Wave</div></div>
+        </div>
+        <div class="card-desc">Complete OSINT toolkit: person, domain, email, username, IP, phone, and company reconnaissance with report generation.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>2.1K runs</span><span>7 tools</span></div>
+          <span class="card-price free">Free</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="script" data-tags="devops">
+        <div class="card-header">
+          <div class="card-icon script">$</div>
+          <div><div class="card-title">Server Hardening</div><div class="card-author">by Community</div></div>
+        </div>
+        <div class="card-desc">Automated server hardening script. UFW rules, SSH hardening, fail2ban, automatic updates, and audit logging.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>1.4K runs</span><span>12 checks</span></div>
+          <span class="card-price free">Free</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="script" data-tags="content">
+        <div class="card-header">
+          <div class="card-icon script">$</div>
+          <div><div class="card-title">Content Pipeline</div><div class="card-author">by Community</div></div>
+        </div>
+        <div class="card-desc">End-to-end content generation: topic research, outline, draft, SEO optimization, social media variants. All via local LLM.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>960 runs</span><span>5 stages</span></div>
+          <span class="card-price paid">$4.99</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="script" data-tags="business">
+        <div class="card-header">
+          <div class="card-icon script">$</div>
+          <div><div class="card-title">Invoice Generator</div><div class="card-author">by Bot-Wave</div></div>
+        </div>
+        <div class="card-desc">Generate professional PDF invoices from CLI. Client database, recurring billing, payment tracking, and reminder emails.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>780 runs</span><span>v1.1.0</span></div>
+          <span class="card-price free">Free</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="script" data-tags="security">
+        <div class="card-header">
+          <div class="card-icon script">$</div>
+          <div><div class="card-title">WiFi Audit Kit</div><div class="card-author">by Bot-Wave</div></div>
+        </div>
+        <div class="card-desc">Automated wireless security audit: scan, capture, convert, crack workflow with hcxdumptool v7 and hashcat integration.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>650 runs</span><span>4 stages</span></div>
+          <span class="card-price free">Free</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="script" data-tags="devops">
+        <div class="card-header">
+          <div class="card-icon script">$</div>
+          <div><div class="card-title">Docker Fleet Deploy</div><div class="card-author">by Community</div></div>
+        </div>
+        <div class="card-desc">Deploy entire Botwave fleet in Docker containers. Compose file, health checks, auto-restart, log aggregation.</div>
+        <div class="card-footer">
+          <div class="card-stats"><span>540 runs</span><span>v1.0.0</span></div>
+          <span class="card-price paid">$7.99</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="submit">
+  <div class="container">
+    <h2>Build & Sell on ClawHub</h2>
+    <p>Create agents or scripts, set your price, earn 75% of every sale. We handle distribution and updates.</p>
+    <a href="https://github.com/botwave/clawhub-submit" class="btn-primary">Submit Your Agent</a>
+    <a href="self-host.html" class="btn-ghost">Creator Docs</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>ClawHub by <a href="index.html">Bot-Wave</a> — The AI Agent Marketplace. Creators keep 75% of revenue.</p>
+  </div>
+</footer>
+
+<script>
+function filterTag(tag) {
+  document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.card').forEach(card => {
+    if (tag === 'all') { card.style.display = ''; return; }
+    const type = card.dataset.type;
+    const tags = card.dataset.tags || '';
+    card.style.display = (type === tag || tags.includes(tag)) ? '' : 'none';
+  });
+}
+function filterCards() {
+  const q = document.getElementById('search').value.toLowerCase();
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+document.getElementById('search').addEventListener('keyup', e => { if (e.key === 'Enter') filterCards(); });
+</script>
+
+</body>
+</html>
