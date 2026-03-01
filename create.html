@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SGKx1904 — AI Bot Forge</title>
+<meta name="description" content="Forge your own AI agent in 60 seconds. No coding required. Get production-ready config files instantly.">
+<meta property="og:title" content="SGKx1904 — AI Bot Forge">
+<meta property="og:description" content="Build a custom AI bot. Answer 5 questions, get all the config files. Built by SGKx1904.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zombie760.github.io/create.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--crimson:#DC143C;--crimson-glow:rgba(220,20,60,.35);--gold:#D4AF37;--gold-glow:rgba(212,175,55,.3);--bone:#E8DCC8;--dark:#0A0A0A;--darker:#050505;--ember:#FF4500;--panel:rgba(12,12,12,.85);--border:#1a1a1a;--border-bright:rgba(220,20,60,.25);--muted:#666;--radius:8px}
+html{scroll-behavior:smooth}
+body{background:var(--darker);color:var(--bone);font-family:'JetBrains Mono',monospace;min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--darker)}::-webkit-scrollbar-thumb{background:var(--crimson);border-radius:3px}
+
+/* Noise overlay */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9998}
+
+/* Vignette */
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,.5) 100%);pointer-events:none;z-index:1}
+
+/* Embers */
+.embers{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+.ember-p{position:absolute;width:3px;height:3px;background:var(--ember);border-radius:50%;opacity:0;animation:emFloat linear infinite;box-shadow:0 0 6px var(--ember),0 0 12px var(--crimson)}
+@keyframes emFloat{0%{opacity:0;transform:translateY(100vh) scale(.5)}15%{opacity:.9}85%{opacity:.4}100%{opacity:0;transform:translateY(-10vh) scale(0)}}
+
+/* Header */
+.forge-header{text-align:center;padding:50px 20px 20px;position:relative;z-index:2}
+.forge-badge{display:inline-block;background:rgba(220,20,60,.12);border:1px solid rgba(220,20,60,.25);color:var(--crimson);font-size:.65rem;letter-spacing:3px;text-transform:uppercase;padding:6px 18px;border-radius:2px;margin-bottom:18px}
+.forge-header h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:900;color:var(--bone);letter-spacing:4px;text-transform:uppercase;line-height:1.1;margin-bottom:12px}
+.forge-header h1 span{color:var(--crimson)}
+.forge-header .sub{font-size:.8rem;color:var(--muted);max-width:500px;margin:0 auto}
+
+/* Progress Track */
+.progress-track{display:flex;align-items:center;justify-content:center;max-width:550px;margin:25px auto 30px;padding:0 20px;position:relative;z-index:2}
+.prog-step{display:flex;flex-direction:column;align-items:center;flex:1;position:relative;cursor:pointer}
+.prog-dot{width:34px;height:34px;border-radius:50%;border:2px solid #2a2a2a;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;font-size:.75rem;color:#444;background:var(--dark);position:relative;z-index:3;transition:all .4s}
+.prog-step.active .prog-dot{border-color:var(--crimson);color:var(--crimson);box-shadow:0 0 18px var(--crimson-glow)}
+.prog-step.done .prog-dot{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.08);box-shadow:0 0 12px var(--gold-glow)}
+.prog-label{font-size:.55rem;color:#3a3a3a;text-transform:uppercase;letter-spacing:2px;margin-top:8px;transition:color .4s}
+.prog-step.active .prog-label{color:var(--crimson)}
+.prog-step.done .prog-label{color:var(--gold)}
+.prog-step:not(:last-child)::after{content:'';position:absolute;top:16px;left:calc(50% + 20px);width:calc(100% - 40px);height:2px;background:#1a1a1a;z-index:1}
+.prog-step.done:not(:last-child)::after{background:var(--gold)}
+
+/* Main Layout */
+.forge-layout{display:flex;gap:30px;max-width:1100px;margin:0 auto;padding:0 20px 60px;position:relative;z-index:2}
+.wizard-panel{flex:1;min-width:0}
+.preview-panel{width:320px;flex-shrink:0;position:sticky;top:30px;align-self:flex-start}
+
+/* Steps */
+.step{display:none}.step.active{display:block;animation:stepIn .4s ease}
+@keyframes stepIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.step-title{font-family:'Cinzel',serif;font-size:1.4rem;color:var(--gold);margin-bottom:6px}
+.step-hint{font-size:.75rem;color:var(--muted);margin-bottom:22px}
+
+/* Inputs */
+.input-wrap{position:relative;margin-bottom:16px}
+.forge-input{width:100%;padding:14px 16px;background:rgba(15,15,15,.9);border:1px solid #2a2a2a;border-radius:var(--radius);color:var(--bone);font-family:'JetBrains Mono',monospace;font-size:.85rem;outline:none;transition:all .3s;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.forge-input:focus{border-color:var(--crimson);box-shadow:0 0 20px rgba(220,20,60,.15)}
+.forge-input::placeholder{color:#3a3a3a}
+textarea.forge-input{min-height:100px;resize:vertical}
+.char-count{position:absolute;right:12px;bottom:12px;font-size:.6rem;color:#333}
+
+/* Role Cards */
+.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.role-card{background:rgba(15,15,15,.8);border:1px solid #222;border-radius:var(--radius);padding:14px 10px;text-align:center;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.role-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--crimson);transform:scaleX(0);transition:transform .3s}
+.role-card:hover{border-color:#444;transform:translateY(-2px)}
+.role-card:hover::before{transform:scaleX(1)}
+.role-card.selected{border-color:var(--crimson);box-shadow:0 0 25px rgba(220,20,60,.2)}
+.role-card.selected::before{transform:scaleX(1)}
+.role-emoji{font-size:1.6rem;margin-bottom:6px;display:block}
+.role-name{font-family:'Cinzel',serif;font-size:.7rem;font-weight:700;color:var(--bone);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
+.role-desc{font-size:.6rem;color:#555;line-height:1.3}
+
+/* Archetype Cards */
+.arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.arch-card{background:rgba(15,15,15,.8);border:1px solid #222;border-radius:var(--radius);padding:14px;text-align:center;cursor:pointer;transition:all .3s}
+.arch-card:hover{border-color:#444;transform:translateY(-2px)}
+.arch-card.selected{border-color:var(--gold);box-shadow:0 0 20px var(--gold-glow)}
+.arch-emoji{font-size:1.4rem;margin-bottom:4px;display:block}
+.arch-name{font-family:'Cinzel',serif;font-size:.7rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
+.arch-desc{font-size:.55rem;color:#555;line-height:1.3}
+
+/* Comm Style Toggle */
+.comm-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin:18px 0 10px}
+.comm-row{display:flex;gap:8px}
+.comm-btn{flex:1;padding:10px;background:rgba(15,15,15,.8);border:1px solid #222;border-radius:var(--radius);text-align:center;cursor:pointer;transition:all .3s;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#555}
+.comm-btn:hover{border-color:#444}
+.comm-btn.selected{border-color:var(--crimson);color:var(--crimson);box-shadow:0 0 15px rgba(220,20,60,.15)}
+
+/* Emoji Picker */
+.emoji-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-bottom:18px}
+.emoji-btn{padding:10px 4px;background:rgba(15,15,15,.8);border:1px solid #222;border-radius:6px;font-size:1.3rem;cursor:pointer;text-align:center;transition:all .25s}
+.emoji-btn:hover{border-color:var(--gold);transform:scale(1.15)}
+.emoji-btn.selected{border-color:var(--crimson);background:rgba(220,20,60,.08);box-shadow:0 0 15px rgba(220,20,60,.25);transform:scale(1.1)}
+
+/* Buttons */
+.btn-row{display:flex;gap:12px;margin-top:25px}
+.btn-forge{padding:12px 32px;font-family:'Cinzel',serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;border-radius:4px;cursor:pointer;transition:all .3s;border:none;background:var(--crimson);color:var(--bone);position:relative;overflow:hidden}
+.btn-forge::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transition:left .5s}
+.btn-forge:hover::before{left:100%}
+.btn-forge:hover{box-shadow:0 0 25px var(--crimson-glow);transform:translateY(-1px)}
+.btn-forge:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.btn-forge:disabled::before{display:none}
+.btn-back{padding:12px 24px;font-family:'Cinzel',serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;border-radius:4px;cursor:pointer;transition:all .3s;border:1px solid #2a2a2a;background:transparent;color:#555}
+.btn-back:hover{border-color:#555;color:var(--bone)}
+.btn-big{font-size:.9rem;padding:16px 48px;animation:forgePulse 2.5s ease infinite}
+@keyframes forgePulse{0%,100%{box-shadow:0 0 15px rgba(220,20,60,.25)}50%{box-shadow:0 0 35px rgba(220,20,60,.5),0 0 60px rgba(220,20,60,.15)}}
+
+/* Preview Card */
+.preview-card{background:rgba(12,12,12,.9);border:1px solid rgba(220,20,60,.2);border-radius:12px;padding:28px 24px;position:relative;overflow:hidden;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);animation:cardFloat 6s ease-in-out infinite}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.preview-card::before{content:'';position:absolute;inset:-1px;background:linear-gradient(135deg,transparent 30%,rgba(220,20,60,.06) 45%,rgba(212,175,55,.08) 50%,rgba(220,20,60,.06) 55%,transparent 70%);background-size:250% 250%;animation:holoShift 8s ease infinite;border-radius:inherit;z-index:0}
+@keyframes holoShift{0%{background-position:0% 0%}50%{background-position:100% 100%}100%{background-position:0% 0%}}
+.scan-line{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--crimson),var(--gold),var(--crimson),transparent);opacity:.5;animation:scanDown 4.5s ease-in-out infinite;z-index:1}
+@keyframes scanDown{0%,100%{top:-2%;opacity:0}8%{opacity:.6}92%{opacity:.3}100%{top:102%}}
+.preview-inner{position:relative;z-index:2}
+.preview-avatar{font-size:3.5rem;text-align:center;margin-bottom:8px;filter:drop-shadow(0 0 8px rgba(220,20,60,.3))}
+.preview-name{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:900;color:var(--gold);text-align:center;text-transform:uppercase;letter-spacing:2px;margin-bottom:2px}
+.preview-role{font-size:.6rem;color:var(--crimson);text-align:center;text-transform:uppercase;letter-spacing:3px;margin-bottom:12px}
+.preview-sig{font-size:.7rem;color:#777;text-align:center;font-style:italic;margin-bottom:18px;min-height:20px}
+.preview-divider{height:1px;background:linear-gradient(90deg,transparent,#2a2a2a,transparent);margin:14px 0}
+.stat-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.stat-label{font-size:.55rem;color:#555;text-transform:uppercase;letter-spacing:1px;width:50px;text-align:right;flex-shrink:0}
+.stat-track{flex:1;height:4px;background:#1a1a1a;border-radius:2px;overflow:hidden}
+.stat-fill{height:100%;border-radius:2px;transition:width .8s ease;background:linear-gradient(90deg,var(--crimson),var(--gold))}
+.stat-val{font-size:.55rem;color:#444;width:28px;flex-shrink:0}
+.ability-list{margin-top:14px}
+.ability-item{font-size:.65rem;color:#666;padding:3px 0;display:flex;align-items:center;gap:6px}
+.ability-item::before{content:'>';color:var(--crimson);font-weight:bold;font-size:.7rem}
+.forged-badge{display:none;position:absolute;top:14px;right:14px;background:var(--gold);color:var(--dark);font-family:'Cinzel',serif;font-size:.55rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:2px;z-index:3}
+.forged-badge.show{display:block;animation:badgeIn .4s ease}
+@keyframes badgeIn{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+
+/* Terminal */
+.terminal{background:#0a0a0a;border:1px solid #222;border-radius:var(--radius);overflow:hidden;margin-bottom:20px}
+.terminal-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#111;border-bottom:1px solid #1a1a1a}
+.t-dot{width:10px;height:10px;border-radius:50%}
+.t-dot.red{background:#ff5f56}.t-dot.yel{background:#ffbd2e}.t-dot.grn{background:#27c93f}
+.t-title{font-size:.65rem;color:#444;margin-left:8px;letter-spacing:1px}
+.terminal-body{padding:16px;font-size:.7rem;line-height:1.7;color:#0f0;min-height:180px;max-height:300px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}
+
+/* File Viewer */
+.file-tabs{display:flex;gap:3px;flex-wrap:wrap;margin-bottom:0}
+.file-tab{padding:8px 14px;background:#111;border:1px solid #222;border-bottom:none;border-radius:6px 6px 0 0;font-size:.65rem;color:#555;cursor:pointer;transition:all .2s;font-family:'JetBrains Mono',monospace}
+.file-tab.active{background:#161616;color:var(--gold);border-color:var(--gold)}
+.file-viewer{background:#161616;border:1px solid #222;border-radius:0 6px 6px 6px;padding:16px;max-height:350px;overflow-y:auto;font-size:.7rem;line-height:1.6;white-space:pre-wrap;word-break:break-word;color:#bbb;margin-bottom:20px}
+
+/* Output Actions */
+.output-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.btn-download{padding:14px 36px;font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;border-radius:4px;cursor:pointer;border:none;background:var(--gold);color:var(--dark);transition:all .3s;animation:forgePulse 2.5s ease infinite}
+.btn-download:hover{box-shadow:0 0 30px var(--gold-glow);transform:translateY(-2px)}
+
+/* Upsell */
+.upsell-card{background:linear-gradient(145deg,rgba(15,15,15,.9),rgba(8,8,8,.9));border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:30px;text-align:center;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.upsell-card h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1.1rem;margin-bottom:10px;letter-spacing:1px}
+.upsell-card p{font-size:.75rem;color:#777;line-height:1.6;margin-bottom:10px}
+.upsell-card a{color:var(--crimson);text-decoration:none;transition:color .3s}
+.upsell-card a:hover{color:var(--gold)}
+.upsell-tiers{display:flex;gap:12px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+.upsell-tier{padding:10px 16px;border:1px solid #2a2a2a;border-radius:6px;font-size:.7rem;color:#888;text-align:center;flex:1;min-width:120px}
+.upsell-tier strong{display:block;color:var(--gold);font-family:'Cinzel',serif;font-size:.8rem;margin-bottom:3px}
+
+/* Footer */
+.forge-footer{text-align:center;padding:30px 20px;position:relative;z-index:2;border-top:1px solid #1a1a1a}
+.forge-footer p{font-size:.7rem;color:#333}
+.forge-footer a{color:var(--crimson);text-decoration:none;transition:color .3s}
+.forge-footer a:hover{color:var(--gold)}
+
+/* Validation */
+.shake{animation:shake .4s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+.input-error{border-color:var(--crimson) !important;box-shadow:0 0 15px rgba(220,20,60,.2) !important}
+
+/* Flash */
+.flash-overlay{position:fixed;inset:0;background:rgba(220,20,60,.08);pointer-events:none;z-index:9997;animation:flash .6s ease forwards}
+@keyframes flash{0%{opacity:1}100%{opacity:0}}
+
+/* Responsive */
+@media(max-width:800px){
+  .forge-layout{flex-direction:column}
+  .preview-panel{width:100%;position:relative;top:0;order:-1}
+  .preview-card{animation:none}
+  .role-grid{grid-template-columns:repeat(2,1fr)}
+  .arch-grid{grid-template-columns:repeat(2,1fr)}
+  .emoji-grid{grid-template-columns:repeat(6,1fr)}
+  .btn-row{flex-direction:column}
+  .btn-row button{width:100%}
+  .comm-row{flex-direction:column}
+  .upsell-tiers{flex-direction:column}
+}
+@media(max-width:480px){
+  .role-grid{grid-template-columns:1fr 1fr}
+  .arch-grid{grid-template-columns:1fr 1fr}
+  .emoji-grid{grid-template-columns:repeat(5,1fr)}
+  .progress-track{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="embers" id="embers"></div>
+
+<header class="forge-header">
+  <div class="forge-badge">SGKx1904 Bot Factory</div>
+  <h1>Forge Your <span>AI Agent</span></h1>
+  <p class="sub">5 questions. Production-ready config files. No coding required.</p>
+</header>
+
+<div class="progress-track" id="progressTrack"></div>
+
+<div class="forge-layout">
+  <div class="wizard-panel">
+
+    <!-- Step 1: Name -->
+    <div class="step active" id="step1">
+      <div class="step-title">Name Your Agent</div>
+      <div class="step-hint">This is how the world will know your AI. Make it memorable.</div>
+      <div class="input-wrap">
+        <input type="text" class="forge-input" id="botName" placeholder="e.g. PaperChase, Banksy, JobSite..." maxlength="30">
+        <div class="char-count" id="nameCount">0/30</div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-forge" id="btn1">Continue</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Role -->
+    <div class="step" id="step2">
+      <div class="step-title">Choose a Specialty</div>
+      <div class="step-hint">What does your agent do best?</div>
+      <div class="role-grid" id="roleGrid"></div>
+      <div class="input-wrap" id="customRoleWrap" style="display:none">
+        <input type="text" class="forge-input" id="customRole" placeholder="Describe your bot's specialty...">
+      </div>
+      <div class="btn-row">
+        <button class="btn-back" id="btn2b">Back</button>
+        <button class="btn-forge" id="btn2">Continue</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Personality -->
+    <div class="step" id="step3">
+      <div class="step-title">Set the Personality</div>
+      <div class="step-hint">How should your agent communicate?</div>
+      <div class="arch-grid" id="archGrid"></div>
+      <div id="customPersonalityWrap" style="display:none">
+        <textarea class="forge-input" id="customPersonality" placeholder="Describe your bot's personality and communication style..."></textarea>
+      </div>
+      <div class="comm-label">Response Length</div>
+      <div class="comm-row" id="commRow"></div>
+      <div class="btn-row">
+        <button class="btn-back" id="btn3b">Back</button>
+        <button class="btn-forge" id="btn3">Continue</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Identity -->
+    <div class="step" id="step4">
+      <div class="step-title">Brand Identity</div>
+      <div class="step-hint">Pick an avatar and write a catchphrase.</div>
+      <div class="emoji-grid" id="emojiGrid"></div>
+      <div class="input-wrap">
+        <input type="text" class="forge-input" id="botSig" placeholder='e.g. "The money never sleeps. Neither do I."' maxlength="80">
+        <div class="char-count" id="sigCount">0/80</div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-back" id="btn4b">Back</button>
+        <button class="btn-forge" id="btn4">Continue</button>
+      </div>
+    </div>
+
+    <!-- Step 5: Forge -->
+    <div class="step" id="step5">
+      <div class="step-title">Ready to Forge</div>
+      <div class="step-hint">Review your agent in the preview card, then hit the button.</div>
+      <div class="btn-row">
+        <button class="btn-back" id="btn5b">Back</button>
+        <button class="btn-forge btn-big" id="forgeBtn">Forge Agent</button>
+      </div>
+    </div>
+
+    <!-- Output -->
+    <div class="step" id="stepOutput">
+      <div class="terminal" id="terminal">
+        <div class="terminal-bar">
+          <span class="t-dot red"></span>
+          <span class="t-dot yel"></span>
+          <span class="t-dot grn"></span>
+          <span class="t-title">bot-forge v1.0</span>
+        </div>
+        <div class="terminal-body" id="termBody"></div>
+      </div>
+      <div class="file-tabs" id="fileTabs"></div>
+      <div class="file-viewer" id="fileViewer"></div>
+      <div class="output-actions" id="outputActions" style="display:none">
+        <button class="btn-download" id="dlBtn">Download .zip</button>
+        <button class="btn-back" id="overBtn">Start Over</button>
+      </div>
+      <div class="upsell-card" id="upsellCard" style="display:none">
+        <h3>Want It Running 24/7?</h3>
+        <p>These config files are the blueprint. To get your bot live on Telegram, answering messages around the clock, you need hosting and setup.</p>
+        <div class="upsell-tiers">
+          <div class="upsell-tier"><strong>DIY Guide</strong>$49 one-time</div>
+          <div class="upsell-tier"><strong>We Build It</strong>$149 one-time</div>
+          <div class="upsell-tier"><strong>Managed</strong>$29-49/mo</div>
+        </div>
+        <p><a href="https://t.me/sgk1904">Talk to us on Telegram</a> &bull; <a href="index.html">See all plans</a></p>
+      </div>
+    </div>
+
+  </div>
+
+  <aside class="preview-panel" id="previewPanel">
+    <div class="preview-card" id="previewCard">
+      <div class="scan-line"></div>
+      <div class="forged-badge" id="forgedBadge">FORGED</div>
+      <div class="preview-inner">
+        <div class="preview-avatar" id="pvAvatar">&#x1F916;</div>
+        <div class="preview-name" id="pvName">Your Agent</div>
+        <div class="preview-role" id="pvRole">Choose a Specialty</div>
+        <div class="preview-sig" id="pvSig"></div>
+        <div class="preview-divider"></div>
+        <div id="pvStats"></div>
+        <div class="ability-list" id="pvAbilities"></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer class="forge-footer">
+  <p>SGKx1904 &mdash; AI For The Rest of Us</p>
+  <p style="margin-top:8px"><a href="select.html">Meet the Bots</a> &bull; <a href="https://t.me/sgk1904">Telegram</a> &bull; <a href="index.html">Home</a></p>
+</footer>
+
+<script>
+/* ── STATE ── */
+var S = {step:1, name:'', roleId:'', role:'', archId:'', personality:'', commStyle:'balanced', emoji:'', sig:'', files:{}};
+
+/* ── DATA ── */
+var roles = [
+  {id:'finance',emoji:'\uD83D\uDCB0',name:'Finance & Crypto',desc:'Markets, trading, portfolios',
+    abilities:['Live crypto & stock prices','Technical analysis & signals','Portfolio risk assessment','Market sentiment tracking','Trading entry/exit points'],
+    stats:[['Data',95],['Speed',85],['Intel',90]],
+    extra:'### Data Sources\nUse web_fetch for real-time data:\n- CoinGecko: https://api.coingecko.com/api/v3/\n- Fear & Greed: https://api.alternative.me/fng/\n\n### Response Format\nAlways include: price, 24h change, key levels, clear signal.'},
+  {id:'design',emoji:'\uD83C\uDFA8',name:'Graphic Designer',desc:'Visuals, logos, social graphics',
+    abilities:['YouTube thumbnails','Social media graphics','Logo & brand identity','Product images & covers','Ad banners & flyers'],
+    stats:[['Art',95],['Style',90],['Speed',75]],
+    extra:'### Design Process\n1. Understand the brief\n2. Generate with image tool\n3. Iterate on feedback\n\n### Defaults\nBold, high-contrast designs. Ask about brand colors.'},
+  {id:'content',emoji:'\u270D\uFE0F',name:'Content Writer',desc:'Blogs, scripts, email copy',
+    abilities:['Blog posts & articles','YouTube scripts','Email sequences','Social media calendars','Sales copy & landing pages'],
+    stats:[['Write',95],['Style',85],['Speed',80]],
+    extra:'### Content Process\nAsk: audience, platform, tone, length.\n\n### SEO\nInclude keywords naturally. Write compelling headlines.'},
+  {id:'sales',emoji:'\uD83E\uDD1D',name:'Sales & Marketing',desc:'DMs, funnels, outreach',
+    abilities:['DM scripts & cold outreach','Objection handling','Upsell sequences','Funnel optimization','Lead qualification'],
+    stats:[['Hustle',95],['Talk',90],['Close',85]],
+    extra:'### Methodology\nConsultative selling. Diagnose before prescribing.\n\n### Format\nScripts in copy-paste format with alternatives.'},
+  {id:'trades',emoji:'\uD83D\uDD27',name:'Trades & Blue Collar',desc:'Invoices, estimates, job tracking',
+    abilities:['Professional invoices','Job estimates & quotes','Scheduling & tracking','Client follow-ups','Material lists with pricing'],
+    stats:[['Trade',95],['Biz',90],['Speed',85]],
+    extra:'### Invoice Format\nClean invoices: company, client, line items, labor, materials, tax, total, terms.\n\n### Trades\nPlumbing, electrical, HVAC, carpentry, landscaping, painting, roofing.'},
+  {id:'code',emoji:'\uD83D\uDCBB',name:'Code & Development',desc:'Websites, scripts, apps',
+    abilities:['Full-stack web development','Script & automation','Bug fixing & review','API integration','Database design'],
+    stats:[['Logic',95],['Build',90],['Debug',85]],
+    extra:'### Standards\nClean, commented code. Simple solutions. Test everything.\n\n### Stack\nPython, JS/TS, HTML/CSS, SQL, Bash, common frameworks.'},
+  {id:'research',emoji:'\uD83D\uDD2D',name:'Research & Intel',desc:'Market research, analysis, trends',
+    abilities:['Deep market research','Competitor analysis','Trend forecasting','Data synthesis','Executive briefings'],
+    stats:[['Intel',95],['Depth',90],['Speed',80]],
+    extra:'### Process\n1. Define the question\n2. Search multiple sources\n3. Cross-reference\n4. Synthesize actionable insights\n\n### Format\nBullet summaries with sources. Flag confidence levels.'},
+  {id:'business',emoji:'\uD83D\uDCBC',name:'Business Strategy',desc:'Plans, revenue, growth',
+    abilities:['Business plan development','Revenue model design','Market positioning','Growth strategies','Operations optimization'],
+    stats:[['Strategy',95],['Biz',90],['Growth',85]],
+    extra:'### Framework\nData-driven analysis. Market size, competition, unit economics, scalability.\n\n### Deliverables\nBiz plans, pitch decks, projections, strategies.'},
+  {id:'support',emoji:'\uD83C\uDFAF',name:'Customer Support',desc:'Tickets, FAQs, satisfaction',
+    abilities:['Ticket resolution','FAQ & knowledge base','Customer satisfaction','Escalation handling','Response templates'],
+    stats:[['Help',95],['Speed',90],['Care',85]],
+    extra:'### Protocol\n1. Acknowledge\n2. Diagnose root cause\n3. Clear solution\n4. Follow up\n\n### Tone\nEmpathetic, never dismissive.'},
+  {id:'health',emoji:'\uD83C\uDFCB\uFE0F',name:'Health & Fitness',desc:'Workouts, nutrition, coaching',
+    abilities:['Custom workout plans','Nutrition & meal prep','Progress tracking','Injury prevention','Habit building'],
+    stats:[['Coach',95],['Plan',90],['Motivate',85]],
+    extra:'### Disclaimer\nAlways note: not a medical professional.\n\n### Programming\nAsk: level, goals, equipment, injuries, schedule.'},
+  {id:'education',emoji:'\uD83D\uDCDA',name:'Education & Tutoring',desc:'Teaching, study plans, tests',
+    abilities:['Subject tutoring','Study plan creation','Concept simplification','Practice problems','Test prep strategies'],
+    stats:[['Teach',95],['Patience',90],['Clarity',85]],
+    extra:'### Method\nSocratic method. Guide understanding with questions.\n\n### Adaptability\nAdjust complexity to student level. Use analogies.'},
+  {id:'custom',emoji:'\u2699\uFE0F',name:'Custom Role',desc:'Define your own specialty',abilities:[],stats:[],extra:''}
+];
+
+var archetypes = [
+  {id:'street',emoji:'\uD83D\uDD25',name:'Street Smart',desc:'Casual, confident, real talk',
+    text:'Casual and confident. Talks like your smartest friend who happens to be an expert. Uses real talk, not corporate speak. Backs everything with data but delivers it with swagger.'},
+  {id:'corporate',emoji:'\uD83D\uDC54',name:'Corporate Pro',desc:'Polished, formal, executive',
+    text:'Polished and professional. Clear, structured communication. Data-driven recommendations with executive-level presentation. Formal but approachable.'},
+  {id:'drill',emoji:'\uD83D\uDCAA',name:'Drill Sergeant',desc:'Direct, no-nonsense, action',
+    text:'Direct and no-nonsense. Leads with action, explains after. Every word earns its place. Gets results, not feelings.'},
+  {id:'friend',emoji:'\uD83E\uDEC2',name:'Best Friend',desc:'Warm, supportive, encouraging',
+    text:'Warm, supportive, and encouraging. Celebrates wins, cushions setbacks. Makes complex things feel simple. Always has your back.'},
+  {id:'scientist',emoji:'\uD83E\uDDEA',name:'Mad Scientist',desc:'Creative, experimental, wild',
+    text:'Creative and unconventional. Thinks sideways. Brings unexpected solutions. Gets genuinely excited about possibilities.'},
+  {id:'custom',emoji:'\u270D\uFE0F',name:'Custom',desc:'Write your own style',text:''}
+];
+
+var commStyles = [
+  {id:'concise',emoji:'\u26A1',name:'Concise',desc:'Under 100 words',text:'Keep responses under 100 words. Bullet points over paragraphs. Action over explanation.'},
+  {id:'balanced',emoji:'\u2696\uFE0F',name:'Balanced',desc:'Mix of quick & thorough',text:'Moderate detail. Mix of quick answers and thorough explanations as needed.'},
+  {id:'detailed',emoji:'\uD83D\uDCD6',name:'Detailed',desc:'Comprehensive & thorough',text:'Thorough and comprehensive. Full explanations with context. Leave no stone unturned.'}
+];
+
+var emojiList = ['\uD83D\uDCB0','\uD83D\uDCC8','\uD83C\uDFA8','\uD83D\uDD27','\uD83D\uDCBB','\uD83D\uDD2E','\uD83D\uDD2D','\u270D\uFE0F','\uD83E\uDD1D','\uD83D\uDC7B','\uD83E\uDDE0','\uD83D\uDE80','\u2764\uFE0F','\uD83D\uDD25','\uD83C\uDFAF','\uD83D\uDCA1','\uD83D\uDEE1\uFE0F','\u2699\uFE0F','\uD83C\uDFC6','\uD83C\uDF1F','\uD83E\uDDE2','\uD83D\uDC51','\u26A1','\uD83C\uDF0A','\uD83C\uDFAD','\uD83D\uDC8E','\uD83E\uDDBE','\uD83C\uDFAA','\uD83D\uDCCA','\uD83C\uDFD7\uFE0F','\uD83C\uDF93','\u2696\uFE0F'];
+
+var stepNames = ['Name','Role','Soul','Look','Forge'];
+
+/* ── BUILD UI ── */
+function init(){
+  buildProgress();
+  buildRoles();
+  buildArchetypes();
+  buildComm();
+  buildEmojis();
+  bindEvents();
+  buildEmbers();
+}
+
+function buildProgress(){
+  var track = document.getElementById('progressTrack');
+  stepNames.forEach(function(name, i){
+    var step = document.createElement('div');
+    step.className = 'prog-step' + (i === 0 ? ' active' : '');
+    step.setAttribute('data-step', i + 1);
+    var dot = document.createElement('div');
+    dot.className = 'prog-dot';
+    dot.textContent = i + 1;
+    var label = document.createElement('div');
+    label.className = 'prog-label';
+    label.textContent = name;
+    step.appendChild(dot);
+    step.appendChild(label);
+    track.appendChild(step);
+  });
+}
+
+function buildRoles(){
+  var grid = document.getElementById('roleGrid');
+  roles.forEach(function(r){
+    var card = document.createElement('div');
+    card.className = 'role-card';
+    card.setAttribute('data-id', r.id);
+    var em = document.createElement('span');
+    em.className = 'role-emoji';
+    em.textContent = r.emoji;
+    var nm = document.createElement('div');
+    nm.className = 'role-name';
+    nm.textContent = r.name;
+    var ds = document.createElement('div');
+    ds.className = 'role-desc';
+    ds.textContent = r.desc;
+    card.appendChild(em);
+    card.appendChild(nm);
+    card.appendChild(ds);
+    card.addEventListener('click', function(){ selectRole(r.id); });
+    grid.appendChild(card);
+  });
+}
+
+function buildArchetypes(){
+  var grid = document.getElementById('archGrid');
+  archetypes.forEach(function(a){
+    var card = document.createElement('div');
+    card.className = 'arch-card';
+    card.setAttribute('data-id', a.id);
+    var em = document.createElement('span');
+    em.className = 'arch-emoji';
+    em.textContent = a.emoji;
+    var nm = document.createElement('div');
+    nm.className = 'arch-name';
+    nm.textContent = a.name;
+    var ds = document.createElement('div');
+    ds.className = 'arch-desc';
+    ds.textContent = a.desc;
+    card.appendChild(em);
+    card.appendChild(nm);
+    card.appendChild(ds);
+    card.addEventListener('click', function(){ selectArch(a.id); });
+    grid.appendChild(card);
+  });
+}
+
+function buildComm(){
+  var row = document.getElementById('commRow');
+  commStyles.forEach(function(c){
+    var btn = document.createElement('div');
+    btn.className = 'comm-btn' + (c.id === 'balanced' ? ' selected' : '');
+    btn.setAttribute('data-id', c.id);
+    btn.textContent = c.emoji + ' ' + c.name;
+    btn.addEventListener('click', function(){ selectComm(c.id); });
+    row.appendChild(btn);
+  });
+}
+
+function buildEmojis(){
+  var grid = document.getElementById('emojiGrid');
+  emojiList.forEach(function(e){
+    var btn = document.createElement('div');
+    btn.className = 'emoji-btn';
+    btn.textContent = e;
+    btn.addEventListener('click', function(){ selectEmoji(e); });
+    grid.appendChild(btn);
+  });
+}
+
+function bindEvents(){
+  document.getElementById('btn1').addEventListener('click', function(){ goTo(2); });
+  document.getElementById('btn2').addEventListener('click', function(){ goTo(3); });
+  document.getElementById('btn2b').addEventListener('click', function(){ goTo(1); });
+  document.getElementById('btn3').addEventListener('click', function(){ goTo(4); });
+  document.getElementById('btn3b').addEventListener('click', function(){ goTo(2); });
+  document.getElementById('btn4').addEventListener('click', function(){ goTo(5); });
+  document.getElementById('btn4b').addEventListener('click', function(){ goTo(3); });
+  document.getElementById('btn5b').addEventListener('click', function(){ goTo(4); });
+  document.getElementById('forgeBtn').addEventListener('click', forgeBot);
+  document.getElementById('dlBtn').addEventListener('click', downloadZip);
+  document.getElementById('overBtn').addEventListener('click', startOver);
+
+  var nameInput = document.getElementById('botName');
+  nameInput.addEventListener('input', function(){
+    S.name = nameInput.value.trim();
+    document.getElementById('nameCount').textContent = nameInput.value.length + '/30';
+    updatePreview();
+  });
+  var sigInput = document.getElementById('botSig');
+  sigInput.addEventListener('input', function(){
+    S.sig = sigInput.value.trim();
+    document.getElementById('sigCount').textContent = sigInput.value.length + '/80';
+    updatePreview();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' && S.step >= 1 && S.step <= 4){
+      var active = document.activeElement;
+      if(active && active.tagName === 'TEXTAREA') return;
+      goTo(S.step + 1);
+    }
+  });
+}
+
+/* ── SELECTION HANDLERS ── */
+function selectRole(id){
+  S.roleId = id;
+  var r = roles.find(function(x){ return x.id === id; });
+  S.role = (id === 'custom') ? '' : r.name;
+  document.querySelectorAll('.role-card').forEach(function(c){
+    c.classList.toggle('selected', c.getAttribute('data-id') === id);
+  });
+  var wrap = document.getElementById('customRoleWrap');
+  wrap.style.display = id === 'custom' ? 'block' : 'none';
+  if(id === 'custom'){
+    var inp = document.getElementById('customRole');
+    inp.focus();
+    inp.addEventListener('input', function(){ S.role = inp.value.trim(); updatePreview(); });
+  }
+  updatePreview();
+}
+
+function selectArch(id){
+  S.archId = id;
+  var a = archetypes.find(function(x){ return x.id === id; });
+  S.personality = a.text;
+  document.querySelectorAll('.arch-card').forEach(function(c){
+    c.classList.toggle('selected', c.getAttribute('data-id') === id);
+  });
+  var wrap = document.getElementById('customPersonalityWrap');
+  wrap.style.display = id === 'custom' ? 'block' : 'none';
+  if(id === 'custom'){
+    var ta = document.getElementById('customPersonality');
+    ta.focus();
+    ta.addEventListener('input', function(){ S.personality = ta.value.trim(); updatePreview(); });
+  }
+  updatePreview();
+}
+
+function selectComm(id){
+  S.commStyle = id;
+  document.querySelectorAll('.comm-btn').forEach(function(b){
+    b.classList.toggle('selected', b.getAttribute('data-id') === id);
+  });
+}
+
+function selectEmoji(e){
+  S.emoji = e;
+  document.querySelectorAll('.emoji-btn').forEach(function(b){
+    b.classList.toggle('selected', b.textContent === e);
+  });
+  updatePreview();
+}
+
+/* ── NAVIGATION ── */
+function goTo(n){
+  if(n === 2 && !S.name){
+    var ni = document.getElementById('botName');
+    ni.classList.add('input-error','shake');
+    ni.focus();
+    setTimeout(function(){ ni.classList.remove('shake'); }, 400);
+    return;
+  }
+  if(n === 3 && !S.roleId){
+    document.getElementById('roleGrid').classList.add('shake');
+    setTimeout(function(){ document.getElementById('roleGrid').classList.remove('shake'); }, 400);
+    return;
+  }
+  if(n === 3 && S.roleId === 'custom' && !S.role){
+    var ci = document.getElementById('customRole');
+    ci.classList.add('input-error','shake');
+    ci.focus();
+    setTimeout(function(){ ci.classList.remove('shake'); }, 400);
+    return;
+  }
+  if(n === 4 && !S.archId){
+    document.getElementById('archGrid').classList.add('shake');
+    setTimeout(function(){ document.getElementById('archGrid').classList.remove('shake'); }, 400);
+    return;
+  }
+  if(n < 1 || n > 5) return;
+
+  S.step = n;
+  document.querySelectorAll('.step').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById('step' + n).classList.add('active');
+
+  document.querySelectorAll('.prog-step').forEach(function(ps, i){
+    ps.classList.remove('active','done');
+    if(i + 1 < n) ps.classList.add('done');
+    else if(i + 1 === n) ps.classList.add('active');
+  });
+
+  if(n === 5) updatePreview();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── PREVIEW ── */
+function updatePreview(){
+  document.getElementById('pvAvatar').textContent = S.emoji || '\uD83E\uDD16';
+  document.getElementById('pvName').textContent = S.name || 'Your Agent';
+  document.getElementById('pvRole').textContent = S.role || 'Choose a Specialty';
+  document.getElementById('pvSig').textContent = S.sig ? ('\u201C' + S.sig + '\u201D') : '';
+
+  var statsDiv = document.getElementById('pvStats');
+  while(statsDiv.firstChild) statsDiv.removeChild(statsDiv.firstChild);
+  var r = roles.find(function(x){ return x.id === S.roleId; });
+  if(r && r.stats && r.stats.length){
+    r.stats.forEach(function(st){
+      var row = document.createElement('div');
+      row.className = 'stat-row';
+      var lbl = document.createElement('div');
+      lbl.className = 'stat-label';
+      lbl.textContent = st[0];
+      var track = document.createElement('div');
+      track.className = 'stat-track';
+      var fill = document.createElement('div');
+      fill.className = 'stat-fill';
+      fill.style.width = '0%';
+      setTimeout(function(){ fill.style.width = st[1] + '%'; }, 50);
+      track.appendChild(fill);
+      var val = document.createElement('div');
+      val.className = 'stat-val';
+      val.textContent = st[1];
+      row.appendChild(lbl);
+      row.appendChild(track);
+      row.appendChild(val);
+      statsDiv.appendChild(row);
+    });
+  }
+
+  var abDiv = document.getElementById('pvAbilities');
+  while(abDiv.firstChild) abDiv.removeChild(abDiv.firstChild);
+  if(r && r.abilities && r.abilities.length){
+    r.abilities.forEach(function(ab){
+      var item = document.createElement('div');
+      item.className = 'ability-item';
+      item.textContent = ab;
+      abDiv.appendChild(item);
+    });
+  }
+}
+
+/* ── FORGE ── */
+function forgeBot(){
+  var btn = document.getElementById('forgeBtn');
+  btn.disabled = true;
+  btn.textContent = 'Forging...';
+  btn.style.animation = 'none';
+
+  var flash = document.createElement('div');
+  flash.className = 'flash-overlay';
+  document.body.appendChild(flash);
+  setTimeout(function(){ if(flash.parentNode) flash.parentNode.removeChild(flash); }, 600);
+
+  generateFiles();
+
+  document.querySelectorAll('.prog-step').forEach(function(ps){ ps.classList.add('done'); ps.classList.remove('active'); });
+
+  document.querySelectorAll('.step').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById('stepOutput').classList.add('active');
+
+  var name = S.name || 'Agent';
+  var role = S.role || 'AI Assistant';
+  var lines = [
+    '> Initializing bot forge...',
+    '> Target: ' + name,
+    '> Loading template: ' + role,
+    '> Applying personality matrix...',
+    '> Calibrating communication protocols...',
+    '> Generating SOUL.md.............. \u2713',
+    '> Generating IDENTITY.md.......... \u2713',
+    '> Generating USER.md.............. \u2713',
+    '> Generating AGENTS.md............ \u2713',
+    '> Generating HEARTBEAT.md........ \u2713',
+    '> Generating config-snippet.json.. \u2713',
+    '>',
+    '> \u2692 ' + name.toUpperCase() + ' has been forged.',
+    '> 6 files ready for download.'
+  ];
+
+  var body = document.getElementById('termBody');
+  while(body.firstChild) body.removeChild(body.firstChild);
+
+  var i = 0;
+  function typeLine(){
+    if(i >= lines.length){
+      showOutput();
+      return;
+    }
+    var node = document.createTextNode(lines[i] + '\n');
+    body.appendChild(node);
+    body.scrollTop = body.scrollHeight;
+    i++;
+    setTimeout(typeLine, 120 + Math.random() * 80);
+  }
+  setTimeout(typeLine, 300);
+}
+
+function showOutput(){
+  document.getElementById('forgedBadge').classList.add('show');
+
+  var tabs = document.getElementById('fileTabs');
+  while(tabs.firstChild) tabs.removeChild(tabs.firstChild);
+  var names = Object.keys(S.files);
+  names.forEach(function(fn, idx){
+    var tab = document.createElement('div');
+    tab.className = 'file-tab' + (idx === 0 ? ' active' : '');
+    tab.textContent = fn;
+    tab.addEventListener('click', function(){
+      document.querySelectorAll('.file-tab').forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      document.getElementById('fileViewer').textContent = S.files[fn];
+    });
+    tabs.appendChild(tab);
+  });
+
+  document.getElementById('fileViewer').textContent = S.files[names[0]];
+  document.getElementById('outputActions').style.display = 'flex';
+  document.getElementById('upsellCard').style.display = 'block';
+}
+
+/* ── FILE GENERATION ── */
+function generateFiles(){
+  var name = S.name || 'Agent';
+  var role = S.role || 'AI Assistant';
+  var personality = S.personality || 'Professional, helpful, and knowledgeable.';
+  var sig = S.sig || 'Ready to work.';
+  var emoji = S.emoji || '\uD83E\uDD16';
+  var slug = name.toLowerCase().replace(/[^a-z0-9]/g,'');
+  var r = roles.find(function(x){ return x.id === S.roleId; });
+  var cs = commStyles.find(function(x){ return x.id === S.commStyle; });
+  var commText = cs ? cs.text : '';
+
+  var toolList = '["web_search","web_fetch","read","write","edit","memory_search","memory_get"]';
+  var denyList = '["exec","browser","gateway","config"]';
+  if(r && r.id === 'design'){
+    toolList = '["web_search","web_fetch","read","write","edit","image","memory_search","memory_get"]';
+  }
+
+  S.files = {};
+
+  // SOUL.md
+  var soul = '# ' + name + ' \u2014 ' + role + '\n\n';
+  soul += '## CRITICAL: Response Format\n';
+  soul += '- Reply directly with the answer\n';
+  soul += '- Keep responses actionable and useful\n';
+  soul += '- Use your tools to take action, not just describe\n\n';
+  soul += '## Introduction\n';
+  soul += 'When someone first messages you, introduce yourself:\n\n';
+  soul += '"Hey, I\'m ' + name + ' ' + emoji + ' \u2014 your personal ' + role.toLowerCase() + '. ' + sig + ' Tell me what you need and let\'s get to work."\n\n';
+  soul += '## Identity\n';
+  soul += 'You are **' + name + '** \u2014 a specialized AI agent.\n';
+  soul += 'Primary responsibility: **' + role + '**\n\n';
+  soul += '**Personality:** ' + personality + '\n\n';
+  soul += '**Communication:** ' + commText + '\n\n';
+  soul += '## Tools \u2014 USE THEM\n';
+  soul += '| Tool | Use For |\n';
+  soul += '|------|--------|\n';
+  soul += '| `web_search` | Search the internet |\n';
+  soul += '| `web_fetch` | Fetch and analyze web pages |\n';
+  soul += '| `read` | Read files and documents |\n';
+  soul += '| `write` | Create and save files |\n';
+  soul += '| `edit` | Modify existing files |\n';
+  soul += '| `memory_search` | Search your memory |\n';
+  if(r && r.id === 'design'){
+    soul += '| `image` | Generate images and graphics |\n';
+  }
+  soul += '\n**CRITICAL: Always use tools to take action. Don\'t just describe what you\'d do \u2014 do it.**\n\n';
+  if(r && r.extra){
+    soul += r.extra + '\n\n';
+  }
+  soul += '## Rules\n';
+  soul += '- Always introduce yourself on first message\n';
+  soul += '- Be helpful, be real, be useful\n';
+  soul += '- Save important findings to memory\n';
+  soul += '- Lead with the deliverable, explain after\n';
+  S.files['SOUL.md'] = soul;
+
+  // IDENTITY.md
+  S.files['IDENTITY.md'] = '# IDENTITY.md\n\n' +
+    '**Name:** ' + name + '\n' +
+    '**Role:** ' + role + '\n' +
+    '**Emoji:** ' + emoji + '\n' +
+    '**Signature:** "' + sig + '"\n\n' +
+    '**Personality:**\n' + personality + '\n\n' +
+    '**Communication Style:**\n' + commText + '\n';
+
+  // USER.md
+  S.files['USER.md'] = '# USER.md \u2014 About Your Human\n\n' +
+    '- **Name:** [Your name]\n' +
+    '- **What to call them:** [Nickname]\n' +
+    '- **Timezone:** [Your timezone]\n' +
+    '- **Industry:** [What they do]\n' +
+    '- **Notes:** [What matters to them]\n\n' +
+    'Update this file as you learn about your human.\n';
+
+  // AGENTS.md
+  S.files['AGENTS.md'] = '# AGENTS.md \u2014 Workspace Instructions\n\n' +
+    '## Every Session\n' +
+    '1. Read SOUL.md \u2014 this is who you are\n' +
+    '2. Read USER.md \u2014 this is who you serve\n' +
+    '3. Check memory/ for recent context\n' +
+    '4. USE YOUR TOOLS \u2014 don\'t just print text\n\n' +
+    '## Memory\n' +
+    '- Daily notes: memory/YYYY-MM-DD.md\n' +
+    '- Write significant events and learnings\n\n' +
+    '## Rules\n' +
+    '- Use tools to create real output\n' +
+    '- Be helpful and proactive\n' +
+    '- Remember important context between sessions\n';
+
+  // HEARTBEAT.md
+  S.files['HEARTBEAT.md'] = '# HEARTBEAT.md\n# Keep empty to skip heartbeat API calls.\n# Add periodic tasks below when ready.\n';
+
+  // config-snippet.json
+  S.files['config-snippet.json'] = JSON.stringify({
+    id: slug,
+    model: 'openrouter/arcee-ai/trinity-large-preview:free',
+    workspace: '/path/to/workspace/' + slug,
+    tools: {
+      allow: JSON.parse(toolList),
+      deny: JSON.parse(denyList)
+    }
+  }, null, 2);
+}
+
+/* ── DOWNLOAD ── */
+function downloadZip(){
+  var name = S.name.toLowerCase().replace(/[^a-z0-9]/g,'') || 'mybot';
+  if(typeof JSZip !== 'undefined'){
+    var zip = new JSZip();
+    var folder = zip.folder(name);
+    Object.keys(S.files).forEach(function(fn){
+      folder.file(fn, S.files[fn]);
+    });
+    zip.generateAsync({type:'blob'}).then(function(blob){
+      dlBlob(blob, name + '-bot-config.zip');
+    });
+  } else {
+    var txt = '';
+    Object.keys(S.files).forEach(function(fn){
+      txt += '========== ' + fn + ' ==========\n\n' + S.files[fn] + '\n\n';
+    });
+    dlBlob(new Blob([txt], {type:'text/plain'}), name + '-bot-config.txt');
+  }
+}
+
+function dlBlob(blob, filename){
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+/* ── START OVER ── */
+function startOver(){
+  S = {step:1,name:'',roleId:'',role:'',archId:'',personality:'',commStyle:'balanced',emoji:'',sig:'',files:{}};
+  document.getElementById('botName').value = '';
+  document.getElementById('botSig').value = '';
+  document.getElementById('nameCount').textContent = '0/30';
+  document.getElementById('sigCount').textContent = '0/80';
+  document.getElementById('customRole').value = '';
+  document.getElementById('customPersonality').value = '';
+  document.getElementById('customRoleWrap').style.display = 'none';
+  document.getElementById('customPersonalityWrap').style.display = 'none';
+  document.querySelectorAll('.role-card,.arch-card,.emoji-btn,.comm-btn').forEach(function(c){ c.classList.remove('selected'); });
+  document.querySelectorAll('.comm-btn').forEach(function(b){
+    b.classList.toggle('selected', b.getAttribute('data-id') === 'balanced');
+  });
+  document.getElementById('forgedBadge').classList.remove('show');
+  document.getElementById('outputActions').style.display = 'none';
+  document.getElementById('upsellCard').style.display = 'none';
+  document.getElementById('fileViewer').textContent = '';
+  var forgeBtn = document.getElementById('forgeBtn');
+  forgeBtn.disabled = false;
+  forgeBtn.textContent = 'Forge Agent';
+  forgeBtn.style.animation = '';
+  document.querySelectorAll('.input-error').forEach(function(e){ e.classList.remove('input-error'); });
+  updatePreview();
+  goTo(1);
+}
+
+/* ── EMBERS ── */
+function buildEmbers(){
+  var c = document.getElementById('embers');
+  for(var i = 0; i < 22; i++){
+    var e = document.createElement('div');
+    e.className = 'ember-p';
+    e.style.left = Math.random() * 100 + '%';
+    e.style.animationDuration = (5 + Math.random() * 7) + 's';
+    e.style.animationDelay = Math.random() * 10 + 's';
+    var sz = (2 + Math.random() * 3) + 'px';
+    e.style.width = sz;
+    e.style.height = sz;
+    c.appendChild(e);
+  }
+}
+
+/* ── INIT ── */
+init();
+</script>
+</body>
+</html>
