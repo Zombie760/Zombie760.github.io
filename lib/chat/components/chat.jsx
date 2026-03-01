@@ -162,7 +162,7 @@ export function Chat({ chatId, initialMessages = [], workspace = null, featureFl
                 canSendOverride={codeModeCanSend ? undefined : false}
               />
             </div>
-            <div className="mt-5">
+            <div className="mt-5 pb-8">
               {codeModeToggle}
             </div>
           </div>

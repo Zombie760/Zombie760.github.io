@@ -166,7 +166,7 @@ Markdown files in `config/` support includes and built-in variables, powered by 
 - **`{{datetime}}`** — Current ISO timestamp.
 - **`{{skills}}`** — Dynamic bullet list of active skill descriptions from `skills/active/*/SKILL.md` frontmatter. Never hardcode skill names — this is resolved at runtime.
 
-Currently used by the Event Handler to load EVENT_HANDLER.md as the LLM system prompt.
+Currently used by the Event Handler to load JOB_PLANNING.md as the LLM system prompt.
 
 ## Authentication
 

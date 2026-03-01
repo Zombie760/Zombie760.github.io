@@ -60,7 +60,7 @@ LOG_DIR="/job/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
 
 # 1. Build system prompt from config MD files
-SYSTEM_FILES=("SOUL.md" "AGENT.md")
+SYSTEM_FILES=("SOUL.md" "JOB_AGENT.md")
 > /job/.pi/SYSTEM.md
 for i in "${!SYSTEM_FILES[@]}"; do
     cat "/job/config/${SYSTEM_FILES[$i]}" >> /job/.pi/SYSTEM.md

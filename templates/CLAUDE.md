@@ -11,7 +11,7 @@ This directory contains files that get copied into user projects when they run `
 ## What belongs here
 
 - **Next.js wiring**: `next.config.mjs`, `instrumentation.js`, catch-all route, middleware — thin re-exports from `thepopebot/*`
-- **User-editable config**: `config/SOUL.md`, `config/EVENT_HANDLER.md`, `config/CRONS.json`, `config/TRIGGERS.json`, etc.
+- **User-editable config**: `config/SOUL.md`, `config/JOB_PLANNING.md`, `config/CRONS.json`, `config/TRIGGERS.json`, etc.
 - **GitHub Actions workflows**: `.github/workflows/`
 - **Docker files**: `docker/`, `docker-compose.yml`
 - **UI page shells**: `app/` pages that import components from the package

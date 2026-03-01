@@ -29,7 +29,7 @@ These 7 tools are all Pi needs to accomplish most tasks. It can write code, inst
 
 ### What Pi can do with these tools
 
-- **Self-modification** — update config files in `config/` (CRONS.json, TRIGGERS.json, SOUL.md, EVENT_HANDLER.md, AGENT.md, etc.). Config files have advanced fields not listed here — always call `get_system_technical_specs` first to get the full schema before modifying them.
+- **Self-modification** — update config files in `config/` (CRONS.json, TRIGGERS.json, SOUL.md, JOB_PLANNING.md, JOB_AGENT.md, etc.). Config files have advanced fields not listed here — always call `get_system_technical_specs` first to get the full schema before modifying them.
 - **Create new skills** — build new tools in `skills/` and activate them with symlinks in `skills/active/`
 - **Code changes** — add features, fix bugs, refactor, build entire applications
 - **Git** — commits changes, creates PRs automatically

@@ -176,7 +176,7 @@ When you ran `thepopebot init` the first time, it scaffolded a project folder wi
 
 | Files | What they do |
 |-------|-------------|
-| `config/SOUL.md`, `EVENT_HANDLER.md`, `AGENT.md`, etc. | Your agent's personality, behavior, and prompts |
+| `config/SOUL.md`, `JOB_PLANNING.md`, `JOB_AGENT.md`, etc. | Your agent's personality, behavior, and prompts |
 | `config/CRONS.json`, `TRIGGERS.json` | Your scheduled jobs and webhook triggers |
 | `app/` | Next.js pages and UI components |
 | `docker/job-pi-coding-agent/` | The Dockerfile for the Pi coding agent job container |

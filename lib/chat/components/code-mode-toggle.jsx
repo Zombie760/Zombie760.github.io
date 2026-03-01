@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { GitPullRequestIcon } from './icons.js';
+import { GitBranchIcon } from './icons.js';
 import { Combobox } from './ui/combobox.js';
 import { cn } from '../utils.js';
 
@@ -84,7 +84,7 @@ export function CodeModeToggle({
         <div className="inline-flex items-center gap-2.5 text-sm text-muted-foreground">
           {repo && (
             <>
-              <GitPullRequestIcon size={14} />
+              <GitBranchIcon size={14} />
               <span>{repo}</span>
             </>
           )}
@@ -103,7 +103,7 @@ export function CodeModeToggle({
   const branchOptions = branches.map((b) => ({ value: b.name, label: b.name }));
 
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex flex-wrap items-center justify-center gap-3">
       {/* Slide toggle + label */}
       <button
         type="button"
@@ -137,9 +137,9 @@ export function CodeModeToggle({
         </span>
       </button>
 
-      {/* Repo/branch pickers */}
+      {/* Repo/branch pickers — inline, both always visible */}
       {enabled && (
-        <div className="flex flex-wrap justify-center gap-2">
+        <>
           <div className="w-full sm:w-auto sm:min-w-[220px]">
             <Combobox
               options={repoOptions}
@@ -149,18 +149,16 @@ export function CodeModeToggle({
               loading={loadingRepos}
             />
           </div>
-          {repo && (
-            <div className="w-full sm:w-auto sm:min-w-[180px]">
-              <Combobox
-                options={branchOptions}
-                value={branch}
-                onChange={onBranchChange}
-                placeholder="Select branch..."
-                loading={loadingBranches}
-              />
-            </div>
-          )}
-        </div>
+          <div className={cn("w-full sm:w-auto sm:min-w-[180px]", !repo && "opacity-50 pointer-events-none")}>
+            <Combobox
+              options={branchOptions}
+              value={branch}
+              onChange={onBranchChange}
+              placeholder="Select branch..."
+              loading={loadingBranches}
+            />
+          </div>
+        </>
       )}
     </div>
   );

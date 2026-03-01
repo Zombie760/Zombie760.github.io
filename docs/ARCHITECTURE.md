@@ -59,7 +59,7 @@ This is the user project structure after running `npx thepopebot init`:
 │   └── skills/                    # Custom skills for the agent
 ├── config/
 │   ├── SOUL.md                    # Agent identity and personality
-│   ├── EVENT_HANDLER.md            # Event handler system prompt
+│   ├── JOB_PLANNING.md             # Event handler system prompt
 │   ├── JOB_SUMMARY.md             # Job summary prompt
 │   ├── HEARTBEAT.md               # Self-monitoring
 │   ├── AGENT.md                   # Agent runtime environment

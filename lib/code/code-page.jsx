@@ -6,7 +6,10 @@ import { FitAddon } from '@xterm/addon-fit';
 import { SearchAddon } from '@xterm/addon-search';
 import { WebLinksAddon } from '@xterm/addon-web-links';
 import { SerializeAddon } from '@xterm/addon-serialize';
-import { PageLayout } from '../chat/components/page-layout.js';
+import { AppSidebar } from '../chat/components/app-sidebar.js';
+import { SidebarProvider, SidebarInset } from '../chat/components/ui/sidebar.js';
+import { ChatNavProvider } from '../chat/components/chat-nav-context.js';
+import { ChatHeader } from '../chat/components/chat-header.js';
 import '@xterm/xterm/css/xterm.css';
 
 const STATUS = { connected: '#22c55e', connecting: '#eab308', disconnected: '#ef4444' };
@@ -150,37 +153,45 @@ export default function CodePage({ session, claudeWorkspaceId }) {
 
 
   return (
-    <PageLayout session={session} contentClassName="flex flex-col h-svh w-full p-4 overflow-hidden">
-      <div ref={containerRef} style={{ flex: 1, minHeight: 0, borderRadius: 6, overflow: 'hidden' }} />
+    <ChatNavProvider value={{ activeChatId: null, navigateToChat: (id) => { window.location.href = id ? `/chat/${id}` : '/'; } }}>
+      <SidebarProvider>
+        <AppSidebar user={session.user} />
+        <SidebarInset>
+          <div className="flex h-svh flex-col overflow-hidden">
+            <ChatHeader workspaceId={claudeWorkspaceId} />
+            <div ref={containerRef} className="mx-4" style={{ flex: 1, minHeight: 0, borderRadius: 6, overflow: 'hidden' }} />
 
-      {/* Toolbar */}
-      <div
-        style={{
-          flexShrink: 0,
-          height: 36,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '0 12px',
-        }}
-      >
-        <div />
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button onClick={handleReconnect} style={{ ...btnStyle, display: 'flex', alignItems: 'center', gap: 6 }}>
+            {/* Toolbar */}
             <div
-              ref={statusRef}
               style={{
-                width: 8,
-                height: 8,
-                borderRadius: '50%',
-                backgroundColor: STATUS.connecting,
+                flexShrink: 0,
+                height: 36,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '0 16px',
               }}
-            />
-            Reconnect
-          </button>
-        </div>
-      </div>
-    </PageLayout>
+            >
+              <div />
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <button onClick={handleReconnect} style={{ ...btnStyle, display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <div
+                    ref={statusRef}
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: '50%',
+                      backgroundColor: STATUS.connecting,
+                    }}
+                  />
+                  Reconnect
+                </button>
+              </div>
+            </div>
+          </div>
+        </SidebarInset>
+      </SidebarProvider>
+    </ChatNavProvider>
   );
 }
 

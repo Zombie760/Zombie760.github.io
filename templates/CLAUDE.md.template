@@ -27,8 +27,8 @@ project-root/
 │
 ├── config/                            # Agent configuration (user-editable)
 │   ├── SOUL.md                        # Personality, identity, and values
-│   ├── EVENT_HANDLER.md               # Event handler LLM system prompt
-│   ├── AGENT.md                       # Agent runtime environment docs
+│   ├── JOB_PLANNING.md                # Event handler LLM system prompt
+│   ├── JOB_AGENT.md                   # Agent runtime environment docs
 │   ├── JOB_SUMMARY.md                 # Prompt for summarizing completed jobs
 │   ├── HEARTBEAT.md                   # Self-monitoring / heartbeat behavior
 │   ├── SKILL_BUILDING_GUIDE.md             # Guide for building agent skills
@@ -292,7 +292,7 @@ SQLite via Drizzle ORM at `data/thepopebot.sqlite`. Auto-initialized and auto-mi
 
 ## Customization
 
-User-editable config files in `config/`: `SOUL.md` (personality), `EVENT_HANDLER.md` (LLM system prompt), `AGENT.md` (runtime docs), `JOB_SUMMARY.md` (job summaries), `HEARTBEAT.md` (self-monitoring), `SKILL_BUILDING_GUIDE.md` (skill guide), `CRONS.json` (scheduled jobs), `TRIGGERS.json` (webhook triggers).
+User-editable config files in `config/`: `SOUL.md` (personality), `JOB_PLANNING.md` (LLM system prompt), `JOB_AGENT.md` (runtime docs), `JOB_SUMMARY.md` (job summaries), `HEARTBEAT.md` (self-monitoring), `SKILL_BUILDING_GUIDE.md` (skill guide), `CRONS.json` (scheduled jobs), `TRIGGERS.json` (webhook triggers).
 
 Skills in `skills/` are activated by symlinking into `skills/active/`. Both `.pi/skills` and `.claude/skills` point to `skills/active/`. Scripts for command-type actions go in `cron/` and `triggers/`.
 

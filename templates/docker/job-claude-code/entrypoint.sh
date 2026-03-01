@@ -64,7 +64,7 @@ mkdir -p "${LOG_DIR}"
 
 # Build system prompt from config MD files
 SYSTEM_PROMPT_FILE="${LOG_DIR}/system-prompt.md"
-SYSTEM_FILES=("SOUL.md" "AGENT.md")
+SYSTEM_FILES=("SOUL.md" "JOB_AGENT.md")
 > "$SYSTEM_PROMPT_FILE"
 for i in "${!SYSTEM_FILES[@]}"; do
     cat "/job/config/${SYSTEM_FILES[$i]}" >> "$SYSTEM_PROMPT_FILE"
