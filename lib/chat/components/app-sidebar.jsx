@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { CirclePlusIcon, PanelLeftIcon, MessageIcon, BellIcon, SwarmIcon, ArrowUpCircleIcon, LifeBuoyIcon, GitPullRequestIcon } from './icons.js';
-import { getUnreadNotificationCount, getPullRequestCount, getAppVersion } from '../actions.js';
+import { getUnreadNotificationCount, getPullRequestCount, getAppVersion, getFeatureFlags } from '../actions.js';
 import { SidebarHistory } from './sidebar-history.js';
 import { SidebarUserNav } from './sidebar-user-nav.js';
 import { UpgradeDialog } from './upgrade-dialog.js';
@@ -31,6 +31,7 @@ export function AppSidebar({ user }) {
   const [updateAvailable, setUpdateAvailable] = useState(null);
   const [changelog, setChangelog] = useState(null);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
+  const [features, setFeatures] = useState({ claudeWorkspace: false });
 
   // Fetch badge counts (notifications + PRs) — run immediately, then every 10 minutes
   useEffect(() => {
@@ -45,6 +46,13 @@ export function AppSidebar({ user }) {
     fetchCounts();
     const interval = setInterval(fetchCounts, 10 * 60 * 1000);
     return () => clearInterval(interval);
+  }, []);
+
+  // Feature flags — one-time on mount
+  useEffect(() => {
+    getFeatureFlags()
+      .then((flags) => setFeatures(flags))
+      .catch(() => {});
   }, []);
 
   // Version check — one-time on mount
@@ -88,8 +96,10 @@ export function AppSidebar({ user }) {
             <Tooltip>
               <TooltipTrigger asChild>
                 <SidebarMenuButton
+                  href="/"
                   className={collapsed ? 'justify-center' : ''}
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     navigateToChat(null);
                     setOpenMobile(false);
                   }}
@@ -109,10 +119,8 @@ export function AppSidebar({ user }) {
             <Tooltip>
               <TooltipTrigger asChild>
                 <SidebarMenuButton
+                  href="/chats"
                   className={collapsed ? 'justify-center' : ''}
-                  onClick={() => {
-                    window.location.href = '/chats';
-                  }}
                 >
                   <MessageIcon size={16} />
                   {!collapsed && <span>Chats</span>}
@@ -129,10 +137,8 @@ export function AppSidebar({ user }) {
             <Tooltip>
               <TooltipTrigger asChild>
                 <SidebarMenuButton
+                  href="/swarm"
                   className={collapsed ? 'justify-center' : ''}
-                  onClick={() => {
-                    window.location.href = '/swarm';
-                  }}
                 >
                   <SwarmIcon size={16} />
                   {!collapsed && <span>Swarm</span>}
@@ -149,10 +155,8 @@ export function AppSidebar({ user }) {
             <Tooltip>
               <TooltipTrigger asChild>
                 <SidebarMenuButton
+                  href="/notifications"
                   className={collapsed ? 'justify-center' : ''}
-                  onClick={() => {
-                    window.location.href = '/notifications';
-                  }}
                 >
                   <BellIcon size={16} />
                   {!collapsed && (
@@ -183,10 +187,8 @@ export function AppSidebar({ user }) {
             <Tooltip>
               <TooltipTrigger asChild>
                 <SidebarMenuButton
+                  href="/pull-requests"
                   className={collapsed ? 'justify-center' : ''}
-                  onClick={() => {
-                    window.location.href = '/pull-requests';
-                  }}
                 >
                   <GitPullRequestIcon size={16} />
                   {!collapsed && (
@@ -249,8 +251,10 @@ export function AppSidebar({ user }) {
             <Tooltip>
               <TooltipTrigger asChild>
                 <SidebarMenuButton
+                  href="https://www.skool.com/ai-architects"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={collapsed ? 'justify-center' : ''}
-                  onClick={() => window.open('https://www.skool.com/ai-architects', '_blank')}
                 >
                   <LifeBuoyIcon size={16} />
                   {!collapsed && <span>Support</span>}

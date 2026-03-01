@@ -43,9 +43,11 @@ export function SidebarUserNav({ user, collapsed }) {
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" side="top" className="w-56">
-            <DropdownMenuItem onClick={() => { window.location.href = '/settings'; }}>
-              <SettingsIcon size={14} />
-              <span className="ml-2">Settings</span>
+            <DropdownMenuItem asChild>
+              <a href="/settings" style={{ textDecoration: 'inherit', color: 'inherit' }}>
+                <SettingsIcon size={14} />
+                <span className="ml-2">Settings</span>
+              </a>
             </DropdownMenuItem>
             {mounted && (
               <DropdownMenuItem onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
@@ -53,9 +55,11 @@ export function SidebarUserNav({ user, collapsed }) {
                 <span className="ml-2">{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
               </DropdownMenuItem>
             )}
-            <DropdownMenuItem onClick={() => window.open('https://github.com/stephengpope/thepopebot/issues', '_blank')}>
-              <BugIcon size={14} />
-              <span className="ml-2">Report Issues</span>
+            <DropdownMenuItem asChild>
+              <a href="https://github.com/stephengpope/thepopebot/issues" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'inherit', color: 'inherit' }}>
+                <BugIcon size={14} />
+                <span className="ml-2">Report Issues</span>
+              </a>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem

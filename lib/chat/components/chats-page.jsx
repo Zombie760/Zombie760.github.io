@@ -122,13 +122,15 @@ export function ChatsPage({ session }) {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-semibold">Chats</h1>
-        <button
-          onClick={() => navigateToChat(null)}
+        <a
+          href="/"
+          onClick={(e) => { e.preventDefault(); navigateToChat(null); }}
           className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium bg-foreground text-background hover:bg-foreground/90"
+          style={{ textDecoration: 'inherit' }}
         >
           <PlusIcon size={14} />
           New chat
-        </button>
+        </a>
       </div>
 
       {/* Search */}
@@ -226,11 +228,17 @@ function ChatRow({ chat, onNavigate, onDelete, onStar, onRename }) {
   };
 
   return (
-    <div
+    <a
+      href={`/chat/${chat.id}`}
       className="relative group flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-muted/50 rounded-md"
+      style={{ textDecoration: 'inherit', color: 'inherit' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onClick={() => !editing && onNavigate(chat.id)}
+      onClick={(e) => {
+        if (editing) { e.preventDefault(); return; }
+        e.preventDefault();
+        onNavigate(chat.id);
+      }}
     >
       <MessageIcon size={16} />
       <div className="flex-1 min-w-0">
@@ -325,6 +333,6 @@ function ChatRow({ chat, onNavigate, onDelete, onStar, onRename }) {
         }}
         onCancel={() => setConfirmDelete(false)}
       />
-    </div>
+    </a>
   );
 }

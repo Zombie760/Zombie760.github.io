@@ -27,9 +27,11 @@ export function SidebarHistoryItem({ chat, isActive, onDelete, onStar, onRename 
         onMouseLeave={() => setHovered(false)}
       >
         <SidebarMenuButton
+          href={`/chat/${chat.id}`}
           className="pr-8"
           isActive={isActive}
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             navigateToChat(chat.id);
             setOpenMobile(false);
           }}
