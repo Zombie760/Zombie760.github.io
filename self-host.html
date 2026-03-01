@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Self-Host Your AI Agent Army | Bot-Wave</title>
+<title>Self-Host Your AI Agent Army | Botwave</title>
 <meta name="description" content="Run 15+ AI agents on your laptop for $0/mo. Full guide: LM Studio + OpenClaw + Telegram. Zero API dependency.">
-<meta property="og:title" content="Self-Host Your AI Agent Army | Bot-Wave">
+<meta property="og:title" content="Self-Host Your AI Agent Army | Botwave">
 <meta property="og:description" content="Deploy 15+ autonomous agents on your own hardware. Zero API cost. Full privacy.">
 <meta property="og:url" content="https://botwave.app/self-host.html">
 <meta name="twitter:card" content="summary_large_image">
@@ -55,11 +55,12 @@ pre code{background:none;padding:0;color:var(--tx)}
 footer{border-top:1px solid var(--bd);padding:2rem;text-align:center;color:var(--t3);font-size:.78rem;margin-top:4rem}footer a{color:var(--t2)}
 @media(max-width:768px){.g2,.g3,.vs{grid-template-columns:1fr}.vm{display:none}.hero{padding:6rem 1rem 2rem}.w{padding:0 1rem}.nl{display:none}}
 </style>
+<script defer data-domain="botwave.app" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
-<nav style="background:#0f0f11;border-bottom:1px solid #1e1e22;padding:12px 0;position:sticky;top:0;z-index:50"><div style="max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between"><a href="index.html" style="font-size:1.1rem;font-weight:700;color:#f59e0b;text-decoration:none">Bot-Wave</a><div style="display:flex;gap:20px;font-size:.85rem"><a href="self-host.html" style="color:#71717a;text-decoration:none">Self-Host</a><a href="clawhub.html" style="color:#71717a;text-decoration:none">ClawHub</a><a href="operator.html" style="color:#71717a;text-decoration:none">Operator</a><a href="node.html" style="color:#71717a;text-decoration:none">Node</a><a href="enterprise.html" style="color:#71717a;text-decoration:none">Enterprise</a></div></div></nav>
+<nav style="background:#0f0f11;border-bottom:1px solid #1e1e22;padding:12px 0;position:sticky;top:0;z-index:50"><div style="max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between"><a href="index.html" style="font-size:1.1rem;font-weight:700;color:#f59e0b;text-decoration:none">Botwave</a><div style="display:flex;gap:20px;font-size:.85rem"><a href="self-host.html" style="color:#71717a;text-decoration:none">Self-Host</a><a href="clawhub.html" style="color:#71717a;text-decoration:none">ClawHub</a><a href="pricing.html" style="color:#71717a;text-decoration:none">Pricing</a><a href="operator.html" style="color:#71717a;text-decoration:none">Operator</a><a href="node.html" style="color:#71717a;text-decoration:none">Node</a><a href="vs.html" style="color:#71717a;text-decoration:none">Compare</a><a href="enterprise.html" style="color:#71717a;text-decoration:none">Enterprise</a></div></div></nav>
 <nav>
-  <a href="/" class="nb"><svg width="26" height="26" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#f59e0b"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-weight="bold" fill="#09090b">B</text></svg> Bot-Wave</a>
+  <a href="/" class="nb"><svg width="26" height="26" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#f59e0b"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-weight="bold" fill="#09090b">B</text></svg> Botwave</a>
   <div class="nl"><a href="/">Home</a><a href="/clawhub.html">ClawHub</a><a href="/node.html">Node</a><a href="/self-host.html" style="color:var(--am)">Self-Host</a><a href="/#pricing">Pricing</a><a href="https://t.me/CaptainObviousBot" class="btn ba" style="padding:.4rem 1rem;font-size:.78rem">Try Free</a></div>
 </nav>
 
@@ -77,7 +78,7 @@ footer{border-top:1px solid var(--bd);padding:2rem;text-align:center;color:var(-
 <div class="vs">
   <div class="cd"><span class="tag tr">Traditional AI</span><h4>Cloud-Dependent</h4><ul><li>$150+/mo for 15 agents</li><li>Your data on someone else's server</li><li>API down = business stops</li><li>OpenAI can change terms overnight</li><li>No audit trail</li></ul></div>
   <div class="vm">vs</div>
-  <div class="cd cdh"><span class="tag tg">Bot-Wave Self-Hosted</span><h4>You Own Everything</h4><ul><li><strong>$0-5/mo</strong> for 15 agents</li><li>Data never leaves your machine</li><li>Works offline for core functions</li><li>You control models, routing, rules</li><li>Full audit log on every action</li></ul></div>
+  <div class="cd cdh"><span class="tag tg">Botwave Self-Hosted</span><h4>You Own Everything</h4><ul><li><strong>$0-5/mo</strong> for 15 agents</li><li>Data never leaves your machine</li><li>Works offline for core functions</li><li>You control models, routing, rules</li><li>Full audit log on every action</li></ul></div>
 </div>
 
 <h2>Requirements</h2>
@@ -153,7 +154,7 @@ curl -s localhost:1234/v1/chat/completions -d "$prompt"
 echo "$response" | tee ~/.openclaw/cache/"$hash".json
 # Same question next time = $0
 
-# GPT-4 cost: $0.15/interaction → Bot-Wave: $0.000</code></pre>
+# GPT-4 cost: $0.15/interaction → Botwave: $0.000</code></pre>
 
 <div class="g2">
   <div class="cd"><h4>Before (Cloud APIs)</h4><p class="price" style="color:var(--rd)">$150/mo</p><ul><li>5 agents, every msg = $$$</li><li>No caching, cloud dependent</li></ul></div>
@@ -254,9 +255,9 @@ tmux send-keys "openclaw start --all-agents" Enter
 <h3>Do I need a GPU?</h3><p>No. CPU is fine for 7B on 8GB+.</p>
 <h3>Can I use my own models?</h3><p>Yes. LM Studio, Ollama, any OpenAI-compatible endpoint.</p>
 <h3>Is data really private?</h3><p>Self-hosted = your machine. No telemetry, no phone-home.</p>
-<h3>How is this different from CrewAI/n8n?</h3><p>Those are frameworks. Bot-Wave is a complete agent OS: phone control, zero code, zero API, full audit trail.</p>
+<h3>How is this different from CrewAI/n8n?</h3><p>Those are frameworks. Botwave is a complete agent OS: phone control, zero code, zero API, full audit trail.</p>
 </div>
-<footer><p>Bot-Wave &copy; 2025-2026 | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a> | <a href="https://github.com/Zombie760/Zombie760.github.io">GitHub</a></p><p style="margin-top:.4rem">Built with grit, bash pipes, and zero venture capital.</p></footer>
+<footer><p>Botwave &copy; 2025-2026 | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a> | <a href="https://github.com/Zombie760/Zombie760.github.io">GitHub</a></p><p style="margin-top:.4rem">Built with grit, bash pipes, and zero venture capital.</p></footer>
 
 <!-- Desktop App Section (injected by Phase 11) -->
 <section style="text-align:center;padding:60px 0;border-top:1px solid #1e1e22">
@@ -276,4 +277,5 @@ tmux send-keys "openclaw start --all-agents" Enter
     </div>
   </div>
 </section>
+<!-- Botwave Waitlist Capture — paste into any page before </body> --> <!-- Uses Formspree (free 50 submissions/mo) or replace action with your endpoint --> <div id="bw-waitlist" style="background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(16,185,129,.06));border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:2rem;text-align:center;max-width:500px;margin:2rem auto">   <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Join the Waitlist</h3>   <p style="color:#a1a1aa;font-size:.85rem;margin-bottom:1rem">Get early access, launch pricing, and the Script Factory guide. No spam.</p>   <form action="https://formspree.io/f/REPLACE_FORM_ID" method="POST" style="display:flex;gap:.5rem;max-width:400px;margin:0 auto">     <input type="email" name="email" placeholder="you@example.com" required style="flex:1;padding:.7rem 1rem;background:#18181b;border:1px solid #2e2e33;border-radius:8px;color:#fafafa;font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none">     <button type="submit" style="padding:.7rem 1.25rem;background:#f59e0b;color:#09090b;border:none;border-radius:8px;font-weight:600;font-size:.85rem;cursor:pointer;white-space:nowrap">Join</button>   </form>   <p style="color:#52525b;font-size:.68rem;margin-top:.5rem">We respect your privacy. Unsubscribe anytime.</p> </div> 
 </body></html>

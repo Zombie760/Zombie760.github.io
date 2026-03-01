@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Botwave vs CrewAI vs n8n vs Ollama — Honest Comparison</title>
+<meta name="description" content="Botwave vs CrewAI vs n8n vs Ollama. Honest comparison of self-hosted AI agent platforms. Cost, privacy, features, and real-world performance.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23f59e0b'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='bold' fill='%2309090b'>B</text></svg>">
+<script defer data-domain="botwave.app" src="https://plausible.io/js/script.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090b;--sf:#18181b;--sf2:#1f1f23;--bd:#2e2e33;--am:#f59e0b;--amd:#d97706;--amg:rgba(245,158,11,.12);--em:#10b981;--rd:#ef4444;--tx:#fafafa;--t2:#a1a1aa;--t3:#71717a;--fh:'Plus Jakarta Sans',sans-serif;--fb:'DM Sans',sans-serif;--fm:'JetBrains Mono',monospace}
+body{font-family:var(--fb);background:var(--bg);color:var(--tx);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--am);text-decoration:none}::selection{background:var(--am);color:var(--bg)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#0f0f11;border-bottom:1px solid #1e1e22;padding:12px 0}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-size:1.1rem;font-weight:700;color:var(--am)}.nav-links{display:flex;gap:20px;font-size:.85rem}.nav-links a{color:var(--t3)}.nav-links a:hover{color:var(--tx)}
+.w{max-width:960px;margin:0 auto;padding:0 1.5rem}
+h1{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;text-align:center;padding:7rem 1rem 1rem;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--am)}
+.sub{text-align:center;color:var(--t2);max-width:600px;margin:0 auto 3rem;font-size:1rem}
+h2{font-family:var(--fh);font-size:1.3rem;font-weight:700;margin:2.5rem 0 1.5rem;padding-top:1rem;border-top:1px solid var(--bd)}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.82rem}
+th{font-family:var(--fh);text-align:left;padding:.75rem;border-bottom:2px solid var(--bd);font-weight:700;white-space:nowrap}
+th:first-child{color:var(--t3)}th.bw{color:var(--am)}
+td{padding:.6rem .75rem;border-bottom:1px solid rgba(46,46,51,.4);color:var(--t2)}
+tr:hover td{background:rgba(245,158,11,.03)}
+.win{color:var(--em);font-weight:700}.lose{color:var(--rd);opacity:.6}.tie{color:var(--t3)}
+.verdict{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:1.5rem;margin:1.5rem 0}
+.verdict h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.verdict p{font-size:.85rem;color:var(--t2)}
+.cta-box{background:var(--sf);border:1px solid var(--am);border-radius:12px;padding:2rem;text-align:center;margin:3rem 0}
+.cta-box h3{font-family:var(--fh);margin-bottom:.75rem}
+.cta-btn{display:inline-flex;padding:.75rem 2rem;background:var(--am);color:var(--bg);border-radius:8px;font-weight:700;font-size:.95rem}
+footer{border-top:1px solid var(--bd);padding:2rem;text-align:center;color:var(--t3);font-size:.78rem}footer a{color:var(--t2)}
+@media(max-width:600px){table{font-size:.72rem}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="nav-brand">Botwave</a>
+  <div class="nav-links"><a href="self-host.html">Self-Host</a><a href="clawhub.html">ClawHub</a><a href="pricing.html">Pricing</a><a href="operator.html">Operator</a><a href="node.html">Node</a></div>
+</div></nav>
+
+<h1>Botwave vs <em>Everything Else</em></h1>
+<p class="sub">An honest comparison. We win on some things, not everything. Here are the facts so you can decide.</p>
+
+<div class="w">
+<h2>The Big Table</h2>
+<table>
+<thead><tr><th>Feature</th><th class="bw">Botwave</th><th>CrewAI</th><th>n8n + Ollama</th><th>Ollama CLI</th><th>Lindy / MultiOn</th></tr></thead>
+<tbody>
+<tr><td>Self-hosted</td><td class="win">Yes</td><td class="win">Yes</td><td class="win">Yes</td><td class="win">Yes</td><td class="lose">No (cloud)</td></tr>
+<tr><td>Monthly AI cost</td><td class="win">$0-5</td><td class="tie">$0-50+</td><td class="tie">$0-20</td><td class="win">$0</td><td class="lose">$20-200</td></tr>
+<tr><td>Pre-processing (bash pipe)</td><td class="win">90% free</td><td class="lose">None</td><td class="lose">None</td><td class="lose">None</td><td class="lose">None</td></tr>
+<tr><td>Agents out of box</td><td class="win">15</td><td class="tie">Custom only</td><td class="tie">Custom only</td><td class="lose">0</td><td class="tie">Templates</td></tr>
+<tr><td>Setup time</td><td class="win">5 min</td><td class="tie">30 min</td><td class="lose">2-4 hrs</td><td class="win">5 min</td><td class="win">2 min</td></tr>
+<tr><td>Telegram native</td><td class="win">Built-in</td><td class="lose">Custom code</td><td class="tie">Via node</td><td class="lose">No</td><td class="lose">No</td></tr>
+<tr><td>Discord / Slack</td><td class="win">Built-in</td><td class="lose">Custom</td><td class="win">Via node</td><td class="lose">No</td><td class="tie">Some</td></tr>
+<tr><td>Desktop app</td><td class="win">Yes</td><td class="lose">No</td><td class="tie">Web UI</td><td class="lose">No</td><td class="tie">Web UI</td></tr>
+<tr><td>Model router (multi-provider)</td><td class="win">6 providers</td><td class="lose">Manual</td><td class="lose">Manual</td><td class="lose">Local only</td><td class="lose">Their models</td></tr>
+<tr><td>Security tools</td><td class="win">4 products</td><td class="lose">No</td><td class="lose">No</td><td class="lose">No</td><td class="lose">No</td></tr>
+<tr><td>Marketplace</td><td class="win">ClawHub</td><td class="lose">No</td><td class="tie">Community</td><td class="lose">No</td><td class="lose">No</td></tr>
+<tr><td>Hardware kit</td><td class="win">Pi 5 Node</td><td class="lose">No</td><td class="lose">No</td><td class="lose">No</td><td class="lose">No</td></tr>
+<tr><td>Data ownership</td><td class="win">100% local</td><td class="win">100% local</td><td class="win">100% local</td><td class="win">100% local</td><td class="lose">Their servers</td></tr>
+<tr><td>Language</td><td class="tie">Bash + TS</td><td class="tie">Python</td><td class="tie">Visual + JS</td><td class="tie">CLI</td><td class="tie">No-code</td></tr>
+<tr><td>Learning curve</td><td class="win">Low</td><td class="lose">High</td><td class="tie">Medium</td><td class="win">Low</td><td class="win">Low</td></tr>
+<tr><td>Pricing</td><td class="win">Free forever</td><td class="win">Open source</td><td class="tie">Free / $24+</td><td class="win">Free</td><td class="lose">$20+/mo</td></tr>
+</tbody>
+</table>
+
+<h2>Where Botwave Wins</h2>
+<div class="verdict"><h3>Cost: 10-50x cheaper than alternatives</h3><p>The Bash-Pipe Method pre-processes 90% of work before any model sees it. CrewAI and n8n route everything through the LLM. Same hardware, fraction of the cost.</p></div>
+<div class="verdict"><h3>Ready in 5 minutes, not 5 hours</h3><p>15 agents pre-configured out of the box. n8n requires building each flow manually. CrewAI requires writing Python classes for each agent. Botwave: install, configure Telegram, go.</p></div>
+<div class="verdict"><h3>Security tools included</h3><p>No other platform ships BountyHunter, PentestPro, IntelOps, or AuditBot. The Operator tier is a complete security operations platform.</p></div>
+
+<h2>Where Others Win (Honest)</h2>
+<div class="verdict"><h3>CrewAI: Better for complex multi-agent reasoning chains</h3><p>If your use case requires agents negotiating with each other across 20+ steps with deep Python integrations, CrewAI's framework is more mature. Botwave is better for task execution, not collaborative reasoning.</p></div>
+<div class="verdict"><h3>n8n: Better visual workflow builder</h3><p>If you want drag-and-drop workflows with 400+ integrations, n8n's visual editor is hard to beat. Botwave's Script Factory is powerful but requires comfort with terminals.</p></div>
+<div class="verdict"><h3>Lindy: Better for non-technical users</h3><p>If you want zero setup and don't care about data ownership, cloud platforms are easier. You trade privacy and cost for convenience.</p></div>
+
+<h2>The Bottom Line</h2>
+<div class="verdict"><h3>Choose Botwave if you want:</h3><p>Self-hosted, zero-API-cost agents that run on your hardware with full data ownership. Especially if you value privacy, cost efficiency, Telegram-first control, and security tooling. Built for builders who aren't afraid of a terminal.</p></div>
+
+<div class="cta-box">
+  <h3>Try Botwave free. Keep your data.</h3>
+  <p style="color:#a1a1aa;margin-bottom:1rem">1 agent. No credit card. Runs on your machine.</p>
+  <a href="pricing.html" class="cta-btn">See Pricing</a>
+</div>
+</div>
+
+<footer><a href="index.html">Home</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="privacy.html">Privacy</a><br>Botwave 2026.</footer>
+</body>
+</html>

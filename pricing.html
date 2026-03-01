@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Pricing — Botwave</title>
+<meta name="description" content="Simple pricing for self-hosted AI agents. Free forever tier, Builder $29/mo, Boss $49/mo, Operator $99/mo. No hidden fees.">
+<meta property="og:title" content="Pricing — Botwave">
+<meta property="og:description" content="Self-hosted AI agents from $0/mo. Pay only when you need more.">
+<meta property="og:url" content="https://botwave.app/pricing.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://botwave.app/pricing.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23f59e0b'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='bold' fill='%2309090b'>B</text></svg>">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Botwave","applicationCategory":"AI Agent Platform","operatingSystem":"Linux, macOS, Windows","url":"https://botwave.app","offers":[{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free — 1 agent, Telegram, community support"},{"@type":"Offer","price":"29","priceCurrency":"USD","description":"Builder — 3 agents, multi-platform, Script Factory"},{"@type":"Offer","price":"49","priceCurrency":"USD","description":"Boss — Unlimited agents, Desktop app, ClawHub, Node discount"},{"@type":"Offer","price":"99","priceCurrency":"USD","description":"Operator — Security suite, pentest tools, compliance, priority support"}],"author":{"@type":"Organization","name":"Botwave","url":"https://botwave.app"}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090b;--sf:#18181b;--sf2:#1f1f23;--bd:#2e2e33;--bdh:#3f3f46;--am:#f59e0b;--amd:#d97706;--amg:rgba(245,158,11,.12);--em:#10b981;--emg:rgba(16,185,129,.15);--rd:#ef4444;--tx:#fafafa;--t2:#a1a1aa;--t3:#71717a;--r:8px;--rl:12px;--fh:'Plus Jakarta Sans',sans-serif;--fb:'DM Sans',sans-serif;--fm:'JetBrains Mono',monospace}
+html{scroll-behavior:smooth}body{font-family:var(--fb);background:var(--bg);color:var(--tx);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--am);text-decoration:none}a:hover{color:var(--amd)}::selection{background:var(--am);color:var(--bg)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#0f0f11;border-bottom:1px solid #1e1e22;padding:12px 0}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-size:1.1rem;font-weight:700;color:var(--am);text-decoration:none}
+.nav-links{display:flex;gap:20px;font-size:.85rem}.nav-links a{color:var(--t3);text-decoration:none;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:var(--tx)}
+.hero{padding:7rem 2rem 3rem;text-align:center;max-width:800px;margin:0 auto}
+.hero h1{font-family:var(--fh);font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--am)}
+.hero p{color:var(--t2);font-size:1.05rem;max-width:600px;margin:0 auto 1rem}
+.hero-toggle{display:inline-flex;background:var(--sf);border:1px solid var(--bd);border-radius:99px;padding:4px;margin:1.5rem 0 3rem}
+.hero-toggle button{padding:.5rem 1.5rem;border-radius:99px;border:none;font-family:var(--fb);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;color:var(--t3);background:transparent}
+.hero-toggle button.active{background:var(--am);color:var(--bg)}
+.save-badge{display:inline-block;background:rgba(16,185,129,.12);color:var(--em);font-size:.7rem;font-weight:600;padding:.15rem .5rem;border-radius:99px;margin-left:.5rem}
+.pricing-wrap{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:4rem}
+.p-card{background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl);padding:2rem 1.5rem;position:relative;transition:all .3s}
+.p-card:hover{border-color:var(--bdh);transform:translateY(-2px)}
+.p-card.featured{border-color:var(--am);box-shadow:0 0 40px var(--amg)}
+.p-card.featured::before{content:'Most Popular';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--am);color:var(--bg);font-size:.6rem;font-weight:700;padding:.2rem .8rem;border-radius:99px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+.p-tier{font-size:.7rem;color:var(--am);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:.25rem}
+.p-card h3{font-family:var(--fh);font-size:1.05rem;font-weight:700;margin-bottom:.75rem}
+.p-price{font-family:var(--fh);font-size:2.5rem;font-weight:800;margin-bottom:.15rem}
+.p-price .unit{font-size:.9rem;font-weight:500;color:var(--t3)}
+.p-period{font-size:.75rem;color:var(--t3);margin-bottom:1.5rem}
+.p-features{list-style:none;padding:0;margin-bottom:1.75rem}
+.p-features li{padding:.4rem 0;font-size:.8rem;color:var(--t2);display:flex;align-items:baseline;gap:.5rem}
+.p-features li::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.p-features li.yes::before{background:var(--em)}.p-features li.no{color:var(--t3);opacity:.5}.p-features li.no::before{background:var(--t3)}
+.p-features li.highlight{color:var(--am);font-weight:600}.p-features li.highlight::before{background:var(--am)}
+.p-cta{display:block;width:100%;padding:.75rem;text-align:center;border-radius:var(--r);font-weight:600;font-size:.85rem;transition:all .2s;border:1px solid var(--bd);color:var(--t2);background:transparent;cursor:pointer;text-decoration:none}
+.p-cta:hover{border-color:var(--am);color:var(--am);background:var(--amg)}
+.p-cta.primary{background:var(--am);color:var(--bg);border-color:var(--am)}.p-cta.primary:hover{background:var(--amd)}
+.p-cta.operator{background:transparent;border-color:var(--rd);color:var(--rd)}.p-cta.operator:hover{background:rgba(239,68,68,.1)}
+
+.compare-section{max-width:1000px;margin:0 auto 4rem;padding:0 1.5rem}
+.compare-section h2{font-family:var(--fh);font-size:1.6rem;font-weight:800;text-align:center;margin-bottom:2rem}
+.compare-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.compare-table th{font-family:var(--fh);font-weight:700;padding:1rem .75rem;border-bottom:2px solid var(--bd);text-align:left;color:var(--tx);white-space:nowrap}
+.compare-table th.feat{width:30%;color:var(--t3);font-weight:600}.compare-table th.pop{color:var(--am)}
+.compare-table td{padding:.65rem .75rem;border-bottom:1px solid rgba(46,46,51,.5);color:var(--t2);text-align:left}
+.compare-table tr:hover td{background:rgba(245,158,11,.03)}
+.compare-table .check{color:var(--em);font-weight:700}.compare-table .dash{color:var(--t3);opacity:.4}
+.compare-table .cat{font-weight:700;color:var(--am);font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;padding-top:1.25rem}
+
+.addons{max-width:1000px;margin:0 auto 4rem;padding:0 1.5rem}
+.addons h2{font-family:var(--fh);font-size:1.6rem;font-weight:800;text-align:center;margin-bottom:.5rem}
+.addons>p{text-align:center;color:var(--t3);font-size:.9rem;margin-bottom:2rem}
+.addon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.addon{background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl);padding:1.5rem;display:flex;gap:1rem;transition:all .3s}
+.addon:hover{border-color:var(--bdh);transform:translateY(-1px)}
+.addon-icon{width:44px;height:44px;background:var(--amg);border:1px solid rgba(245,158,11,.15);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.addon-info h4{font-family:var(--fh);font-size:.95rem;font-weight:700;margin-bottom:.25rem}
+.addon-info p{font-size:.8rem;color:var(--t3);line-height:1.5}
+.addon-price{font-family:var(--fh);font-weight:800;color:var(--am);font-size:1rem;white-space:nowrap;margin-left:auto;align-self:center}
+
+.faq{max-width:700px;margin:0 auto 4rem;padding:0 1.5rem}
+.faq h2{font-family:var(--fh);font-size:1.6rem;font-weight:800;text-align:center;margin-bottom:2rem}
+.faq-item{border-bottom:1px solid var(--bd);padding:1rem 0}
+.faq-q{font-family:var(--fh);font-weight:600;font-size:.9rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color .2s}
+.faq-q:hover{color:var(--am)}.faq-q::after{content:'+';font-size:1.2rem;color:var(--t3);transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--am)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:.82rem;color:var(--t3);line-height:1.7}
+.faq-item.open .faq-a{max-height:300px;padding-top:.6rem}
+
+.final-cta{text-align:center;padding:4rem 2rem;position:relative}
+.final-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent,var(--amg),transparent);pointer-events:none}
+.final-cta h2{font-family:var(--fh);font-size:1.8rem;font-weight:800;margin-bottom:.75rem;position:relative}
+.final-cta p{color:var(--t2);margin-bottom:1.5rem;position:relative}
+.final-cta .btn-p{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:var(--r);font-weight:600;font-size:.95rem;transition:all .2s;border:none;cursor:pointer;text-decoration:none;position:relative;background:var(--am);color:var(--bg)}
+.final-cta .btn-p:hover{background:var(--amd);transform:translateY(-1px);box-shadow:0 4px 20px var(--amg)}
+footer{border-top:1px solid var(--bd);padding:2rem;text-align:center;color:var(--t3);font-size:.78rem}
+footer a{color:var(--t2);text-decoration:none}footer a:hover{color:var(--am)}
+@media(max-width:900px){.pricing-grid{grid-template-columns:repeat(2,1fr)}.compare-table{font-size:.72rem}}
+@media(max-width:600px){.pricing-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}.addon-grid{grid-template-columns:1fr}.nav-links{display:none}}
+</style>
+<script defer data-domain="botwave.app" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="nav-brand">Botwave</a>
+  <div class="nav-links">
+    <a href="self-host.html">Self-Host</a>
+    <a href="clawhub.html">ClawHub</a>
+    <a href="pricing.html" class="active">Pricing</a>
+    <a href="operator.html">Operator</a>
+    <a href="node.html">Node</a>
+    <a href="vs.html" style="color:#71717a;text-decoration:none">Compare</a><a href="enterprise.html">Enterprise</a>
+  </div>
+</div></nav>
+
+<div class="hero">
+  <h1>Simple pricing.<br><em>Serious agents.</em></h1>
+  <p>Start free. Scale when you need to. Every tier runs on your hardware — your data never leaves your machine.</p>
+  <div class="hero-toggle">
+    <button class="active" id="btn-monthly">Monthly</button>
+    <button id="btn-annual">Annual <span class="save-badge">Save 17%</span></button>
+  </div>
+</div>
+
+<div class="pricing-wrap">
+<div class="pricing-grid">
+  <div class="p-card">
+    <div class="p-tier">Free</div>
+    <h3>Explorer</h3>
+    <div class="p-price">$0</div>
+    <div class="p-period">forever</div>
+    <ul class="p-features">
+      <li class="yes">1 AI agent (Captain demo bot)</li>
+      <li class="yes">Telegram integration</li>
+      <li class="yes">Local LM Studio models</li>
+      <li class="yes">Community support (Discord)</li>
+      <li class="yes">Basic Script Factory</li>
+      <li class="no">Multi-platform deploy</li>
+      <li class="no">Desktop app</li>
+      <li class="no">ClawHub marketplace</li>
+    </ul>
+    <a href="https://t.me/CaptainObvious_bot" target="_blank" class="p-cta">Start Free</a>
+  </div>
+
+  <div class="p-card">
+    <div class="p-tier">Builder</div>
+    <h3>Builder</h3>
+    <div class="p-price" data-monthly="29" data-annual="24">$29<span class="unit">/mo</span></div>
+    <div class="p-period" data-monthly="billed monthly" data-annual="$288/yr — save $60">billed monthly</div>
+    <ul class="p-features">
+      <li class="yes">3 AI agents</li>
+      <li class="yes">Multi-platform (Telegram, Discord, Slack)</li>
+      <li class="yes">Full Script Factory</li>
+      <li class="yes">Model router (3 providers)</li>
+      <li class="yes">Email support (48hr)</li>
+      <li class="no">Desktop app</li>
+      <li class="no">ClawHub selling</li>
+      <li class="no">Security tools</li>
+    </ul>
+    <a href="https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z" class="p-cta">Go Builder</a>
+  </div>
+
+  <div class="p-card featured">
+    <div class="p-tier">Boss</div>
+    <h3>Boss</h3>
+    <div class="p-price" data-monthly="49" data-annual="41">$49<span class="unit">/mo</span></div>
+    <div class="p-period" data-monthly="billed monthly" data-annual="$492/yr — save $96">billed monthly</div>
+    <ul class="p-features">
+      <li class="highlight">Unlimited AI agents</li>
+      <li class="yes">All platforms + custom channels</li>
+      <li class="yes">Full Script Factory + export</li>
+      <li class="yes">Model router (6+ providers)</li>
+      <li class="yes">Botwave Desktop app</li>
+      <li class="yes">ClawHub access (buy + sell)</li>
+      <li class="yes">Botwave Node discount ($30 off)</li>
+      <li class="yes">Priority support (24hr)</li>
+    </ul>
+    <a href="https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B" class="p-cta primary">Go Boss</a>
+  </div>
+
+  <div class="p-card">
+    <div class="p-tier" style="color:var(--rd)">Operator</div>
+    <h3>Operator</h3>
+    <div class="p-price" data-monthly="99" data-annual="83">$99<span class="unit">/mo</span></div>
+    <div class="p-period" data-monthly="billed monthly" data-annual="$996/yr — save $192">billed monthly</div>
+    <ul class="p-features">
+      <li class="highlight">Everything in Boss</li>
+      <li class="yes">BountyHunter (bug bounty recon)</li>
+      <li class="yes">PentestPro (authorized pentesting)</li>
+      <li class="yes">IntelOps (OSINT + competitive intel)</li>
+      <li class="yes">AuditBot (compliance auditing)</li>
+      <li class="yes">Approval gates + audit logging</li>
+      <li class="yes">Encrypted workspaces (AES-256)</li>
+      <li class="yes">Direct support chat</li>
+    </ul>
+    <a href="operator.html" class="p-cta operator">Go Operator</a>
+  </div>
+</div>
+</div>
+
+<div class="compare-section">
+<h2>Full feature comparison</h2>
+<table class="compare-table">
+<thead>
+  <tr><th class="feat">Feature</th><th>Free</th><th>Builder</th><th class="pop">Boss</th><th>Operator</th></tr>
+</thead>
+<tbody>
+  <tr><td class="cat" colspan="5">Agents</td></tr>
+  <tr><td>AI agents</td><td>1</td><td>3</td><td class="check">Unlimited</td><td class="check">Unlimited</td></tr>
+  <tr><td>Custom system prompts</td><td class="dash">-</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+  <tr><td>Agent memory / state</td><td class="dash">-</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+  <tr><td>Pre-built templates</td><td>1</td><td>8</td><td class="check">15+</td><td class="check">15+ security</td></tr>
+  <tr><td class="cat" colspan="5">Platforms</td></tr>
+  <tr><td>Telegram</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+  <tr><td>Discord, Slack, WhatsApp</td><td class="dash">-</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+  <tr><td>Custom channels / webhooks</td><td class="dash">-</td><td class="dash">-</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+  <tr><td class="cat" colspan="5">AI Models</td></tr>
+  <tr><td>Local models (LM Studio)</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+  <tr><td>Model router providers</td><td>1</td><td>3</td><td class="check">6+</td><td class="check">6+</td></tr>
+  <tr><td>Automatic fallback chain</td><td class="dash">-</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+  <tr><td>Paid escalation routing</td><td class="dash">-</td><td class="dash">-</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+  <tr><td class="cat" colspan="5">Tools</td></tr>
+  <tr><td>Script Factory</td><td>Basic</td><td class="check">Full</td><td class="check">Full + export</td><td class="check">Full + export</td></tr>
+  <tr><td>Desktop app</td><td class="dash">-</td><td class="dash">-</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+  <tr><td>ClawHub marketplace</td><td>Browse</td><td>Buy</td><td class="check">Buy + sell</td><td class="check">Buy + sell</td></tr>
+  <tr><td>Botwave Node compatibility</td><td class="dash">-</td><td class="dash">-</td><td class="check">$30 off</td><td class="check">$30 off</td></tr>
+  <tr><td class="cat" colspan="5">Security (Operator)</td></tr>
+  <tr><td>BountyHunter</td><td class="dash">-</td><td class="dash">-</td><td class="dash">-</td><td class="check">Yes</td></tr>
+  <tr><td>PentestPro</td><td class="dash">-</td><td class="dash">-</td><td class="dash">-</td><td class="check">Yes</td></tr>
+  <tr><td>IntelOps (OSINT)</td><td class="dash">-</td><td class="dash">-</td><td class="dash">-</td><td class="check">Yes</td></tr>
+  <tr><td>AuditBot (compliance)</td><td class="dash">-</td><td class="dash">-</td><td class="dash">-</td><td class="check">Yes</td></tr>
+  <tr><td>Encrypted workspaces</td><td class="dash">-</td><td class="dash">-</td><td class="dash">-</td><td class="check">AES-256</td></tr>
+  <tr><td>Approval gates</td><td class="dash">-</td><td class="dash">-</td><td class="dash">-</td><td class="check">Yes</td></tr>
+  <tr><td class="cat" colspan="5">Support</td></tr>
+  <tr><td>Community (Discord)</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+  <tr><td>Email support</td><td class="dash">-</td><td>48hr</td><td>24hr</td><td class="check">Priority</td></tr>
+  <tr><td>Direct chat</td><td class="dash">-</td><td class="dash">-</td><td class="dash">-</td><td class="check">Yes</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="addons">
+<h2>Add-ons</h2>
+<p>One-time purchases. Works with any tier.</p>
+<div class="addon-grid">
+  <div class="addon">
+    <div class="addon-icon">N</div>
+    <div class="addon-info"><h4>Botwave Node Hardware Kit</h4><p>Raspberry Pi 5 pre-configured for always-on agents. SD card image, 3D case specs, setup wizard.</p></div>
+    <div class="addon-price">$149</div>
+  </div>
+  <div class="addon">
+    <div class="addon-icon">S</div>
+    <div class="addon-info"><h4>Done-For-You Setup</h4><p>We deploy your full agent fleet. LM Studio, Tailscale, Telegram bots, model routing, cron jobs — configured and tested.</p></div>
+    <div class="addon-price">$499</div>
+  </div>
+  <div class="addon">
+    <div class="addon-icon">A</div>
+    <div class="addon-info"><h4>Custom Agent Development</h4><p>Custom agent for your workflow. System prompt, tool integrations, platform binding, testing, documentation.</p></div>
+    <div class="addon-price">$299+</div>
+  </div>
+  <div class="addon">
+    <div class="addon-icon">C</div>
+    <div class="addon-info"><h4>AI Strategy Session</h4><p>1-hour consultation: audit your stack, identify automation opportunities, build an agent deployment roadmap.</p></div>
+    <div class="addon-price">$149</div>
+  </div>
+</div>
+</div>
+
+<div class="faq">
+<h2>Pricing FAQ</h2>
+<div class="faq-item"><div class="faq-q">Can I stay on Free forever?</div><div class="faq-a">Yes. Free never expires. 1 agent on Telegram with local model support. Most personal users never need to upgrade.</div></div>
+<div class="faq-item"><div class="faq-q">What does "self-hosted" mean for pricing?</div><div class="faq-a">Agents run on YOUR hardware. We don't charge per API call or token. The subscription unlocks features and support. Run local models for $0/month in AI costs.</div></div>
+<div class="faq-item"><div class="faq-q">Is there a free trial for Boss?</div><div class="faq-a">14-day Boss trial, full access. No credit card to start. Cancel anytime — no charge.</div></div>
+<div class="faq-item"><div class="faq-q">Do annual plans include a discount?</div><div class="faq-a">Annual saves ~17% (2 months free). Builder: $288/yr. Boss: $492/yr. Operator: $996/yr.</div></div>
+<div class="faq-item"><div class="faq-q">What happens if I cancel?</div><div class="faq-a">Your agents keep running — they're on your hardware. You lose premium features but scripts, configs, and data stay on your machine. 30-day money-back guarantee.</div></div>
+<div class="faq-item"><div class="faq-q">Boss vs Operator?</div><div class="faq-a">Boss = unlimited agents + full platform. Operator adds 4 security tools (BountyHunter, PentestPro, IntelOps, AuditBot), encrypted workspaces, approval gates, compliance. Security work = Operator.</div></div>
+</div>
+
+<div class="final-cta">
+  <h2>First 100 users lock in launch pricing for life.</h2>
+  <p>Prices will increase. Your rate won't.</p>
+  <a href="https://t.me/CaptainObvious_bot" target="_blank" class="btn-p">Start Free on Telegram</a>
+</div>
+
+<footer>
+  <div style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem">
+    <a href="index.html">Home</a><a href="self-host.html">Self-Host</a><a href="clawhub.html">ClawHub</a>
+    <a href="pricing.html">Pricing</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+  </div>
+  Botwave 2026. Self-hosted AI agents. Your data. Your rules.
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){q.parentElement.classList.toggle('open')})});
+document.getElementById('btn-monthly').addEventListener('click',function(){toggleBilling('monthly')});
+document.getElementById('btn-annual').addEventListener('click',function(){toggleBilling('annual')});
+function toggleBilling(mode){
+  document.getElementById('btn-monthly').classList.toggle('active',mode==='monthly');
+  document.getElementById('btn-annual').classList.toggle('active',mode==='annual');
+  document.querySelectorAll('.p-price[data-monthly]').forEach(function(el){
+    var val=mode==='annual'?el.dataset.annual:el.dataset.monthly;
+    el.textContent='';
+    el.appendChild(document.createTextNode('$'+val));
+    var unit=document.createElement('span');
+    unit.className='unit';
+    unit.textContent='/mo';
+    el.appendChild(unit);
+  });
+  document.querySelectorAll('.p-period[data-monthly]').forEach(function(el){
+    el.textContent=mode==='annual'?el.dataset.annual:el.dataset.monthly;
+  });
+}
+</script>
+</body>
+</html>
