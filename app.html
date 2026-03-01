@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Bot-Wave — Build Your AI Agent</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09090b;--surface:#18181b;--surface2:#1f1f23;--surface3:#27272a;
+  --border:#2e2e33;--border-hover:#3f3f46;
+  --amber:#f59e0b;--amber-dim:#d97706;--amber-glow:rgba(245,158,11,.12);
+  --emerald:#10b981;
+  --text:#fafafa;--text-sec:#a1a1aa;--text-muted:#71717a;
+  --radius:10px;
+  --font-head:'Plus Jakarta Sans',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+html,body{height:100%;overflow-x:hidden}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+
+/* Header */
+.app-header{padding:1.25rem 1rem .75rem;text-align:center;border-bottom:1px solid var(--border)}
+.app-header h1{font-family:var(--font-head);font-size:1.3rem;font-weight:800;margin-bottom:.25rem}
+.app-header h1 span{color:var(--amber)}
+.app-header p{font-size:.8rem;color:var(--text-sec)}
+
+/* Steps */
+.step-bar{display:flex;gap:0;padding:.75rem 1rem;border-bottom:1px solid var(--border)}
+.step-dot{flex:1;height:3px;background:var(--surface3);border-radius:2px;transition:background .3s}
+.step-dot.active{background:var(--amber)}
+.step-dot.done{background:var(--emerald)}
+
+/* Panels */
+.panel{display:none;padding:1rem;animation:fadeIn .3s ease}
+.panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Cards */
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.75rem}
+.card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:1rem;
+  cursor:pointer;transition:all .2s;position:relative}
+.card:hover,.card.selected{border-color:var(--amber);box-shadow:0 0 20px var(--amber-glow)}
+.card.selected::after{content:'';position:absolute;top:8px;right:8px;width:18px;height:18px;
+  background:var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.card .icon{font-size:1.5rem;margin-bottom:.5rem}
+.card h3{font-family:var(--font-head);font-size:.85rem;font-weight:700;margin-bottom:.25rem}
+.card p{font-size:.72rem;color:var(--text-muted);line-height:1.4}
+.card .tag{display:inline-block;margin-top:.5rem;padding:.15rem .5rem;border-radius:99px;font-size:.6rem;
+  font-weight:600;background:rgba(245,158,11,.1);color:var(--amber);border:1px solid rgba(245,158,11,.15)}
+
+/* Full-width cards */
+.card-stack{display:flex;flex-direction:column;gap:.6rem;margin-top:.75rem}
+.card-wide{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:1rem;
+  cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.75rem}
+.card-wide:hover,.card-wide.selected{border-color:var(--amber);box-shadow:0 0 20px var(--amber-glow)}
+.card-wide .icon{font-size:1.5rem;flex-shrink:0;width:40px;text-align:center}
+.card-wide .info{flex:1}
+.card-wide h3{font-family:var(--font-head);font-size:.85rem;font-weight:700}
+.card-wide p{font-size:.72rem;color:var(--text-muted);line-height:1.4;margin-top:.15rem}
+.card-wide .price{font-family:var(--font-head);font-size:1.1rem;font-weight:800;color:var(--amber);flex-shrink:0}
+
+/* Section titles */
+.section-label{font-size:.65rem;color:var(--amber);text-transform:uppercase;letter-spacing:2px;font-weight:600}
+.section-title{font-family:var(--font-head);font-size:1.1rem;font-weight:800;margin-top:.25rem}
+.section-desc{font-size:.8rem;color:var(--text-sec);margin-top:.35rem;line-height:1.5}
+
+/* Input */
+.input-group{margin-top:.75rem}
+.input-group label{display:block;font-size:.75rem;color:var(--text-sec);margin-bottom:.35rem;font-weight:500}
+.input-group input,.input-group textarea,.input-group select{width:100%;padding:.7rem .85rem;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:var(--font-body);
+  font-size:.85rem;outline:none;transition:border-color .2s}
+.input-group input:focus,.input-group textarea:focus,.input-group select:focus{border-color:var(--amber)}
+.input-group textarea{min-height:80px;resize:vertical}
+.input-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right .75rem center}
+
+/* Traits */
+.trait-grid{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.trait{padding:.4rem .7rem;border:1px solid var(--border);border-radius:99px;font-size:.72rem;
+  cursor:pointer;transition:all .2s;color:var(--text-sec)}
+.trait:hover,.trait.selected{border-color:var(--amber);color:var(--amber);background:var(--amber-glow)}
+
+/* Bottom bar */
+.bottom-bar{position:fixed;bottom:0;left:0;right:0;padding:.75rem 1rem;padding-bottom:calc(.75rem + env(safe-area-inset-bottom));
+  background:rgba(9,9,11,.95);backdrop-filter:blur(12px);border-top:1px solid var(--border);
+  display:flex;gap:.5rem}
+.btn{flex:1;padding:.75rem;border-radius:var(--radius);font-family:var(--font-head);font-weight:700;
+  font-size:.85rem;border:none;cursor:pointer;transition:all .2s;text-align:center}
+.btn-primary{background:var(--amber);color:var(--bg)}
+.btn-primary:hover{background:var(--amber-dim)}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed}
+.btn-secondary{background:transparent;color:var(--text-sec);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--border-hover);color:var(--text)}
+
+/* Summary */
+.summary-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-top:.75rem}
+.summary-row{display:flex;justify-content:space-between;padding:.4rem 0;font-size:.82rem}
+.summary-row .label{color:var(--text-sec)}
+.summary-row .value{font-weight:600;color:var(--text)}
+.summary-row.total{border-top:1px solid var(--border);margin-top:.5rem;padding-top:.75rem}
+.summary-row.total .value{color:var(--amber);font-size:1.1rem;font-family:var(--font-head)}
+
+/* Spacer for bottom bar */
+.spacer{height:80px}
+
+/* Confirmation */
+.confirm-check{text-align:center;margin:2rem 0}
+.confirm-check .big-check{width:64px;height:64px;background:var(--emerald);border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;font-size:2rem;color:#fff;margin-bottom:1rem}
+</style>
+</head>
+<body>
+
+<div class="app-header">
+  <h1>Bot<span>-Wave</span> Forge</h1>
+  <p>Build your AI agent in 60 seconds</p>
+</div>
+
+<div class="step-bar">
+  <div class="step-dot active" id="s1"></div>
+  <div class="step-dot" id="s2"></div>
+  <div class="step-dot" id="s3"></div>
+  <div class="step-dot" id="s4"></div>
+  <div class="step-dot" id="s5"></div>
+</div>
+
+<!-- STEP 1: Choose Agent Type -->
+<div class="panel active" id="p1">
+  <div class="section-label">Step 1</div>
+  <div class="section-title">What does your agent do?</div>
+  <div class="section-desc">Pick the role that fits your business.</div>
+  <div class="card-grid" id="typeGrid">
+    <div class="card" data-val="trades">
+      <div class="icon">&#128295;</div>
+      <h3>Trades & Jobs</h3>
+      <p>Invoices, estimates, scheduling, material lists</p>
+      <span class="tag">Best for contractors</span>
+    </div>
+    <div class="card" data-val="sales">
+      <div class="icon">&#128176;</div>
+      <h3>Sales & Outreach</h3>
+      <p>Lead gen, follow-ups, cold DMs, closing scripts</p>
+      <span class="tag">Best for solopreneurs</span>
+    </div>
+    <div class="card" data-val="content">
+      <div class="icon">&#9997;&#65039;</div>
+      <h3>Content Writer</h3>
+      <p>Social posts, blogs, emails, ad copy on demand</p>
+      <span class="tag">Best for creators</span>
+    </div>
+    <div class="card" data-val="support">
+      <div class="icon">&#128172;</div>
+      <h3>Customer Support</h3>
+      <p>FAQ answers, ticket handling, 24/7 auto-replies</p>
+      <span class="tag">Best for e-commerce</span>
+    </div>
+    <div class="card" data-val="finance">
+      <div class="icon">&#128200;</div>
+      <h3>Finance & Crypto</h3>
+      <p>Market tracking, alerts, portfolio analysis</p>
+      <span class="tag">Best for traders</span>
+    </div>
+    <div class="card" data-val="custom">
+      <div class="icon">&#9881;&#65039;</div>
+      <h3>Custom Agent</h3>
+      <p>You tell us what it does. We build it.</p>
+      <span class="tag">$149 done-for-you</span>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 2: Personality -->
+<div class="panel" id="p2">
+  <div class="section-label">Step 2</div>
+  <div class="section-title">Give your agent personality</div>
+  <div class="section-desc">These shape how your agent talks.</div>
+  <div class="input-group">
+    <label>Agent Name</label>
+    <input type="text" id="agentName" placeholder="e.g. Max, Aria, JobBot...">
+  </div>
+  <div class="input-group">
+    <label>Tone (pick up to 3)</label>
+    <div class="trait-grid" id="toneGrid">
+      <span class="trait" data-val="professional">Professional</span>
+      <span class="trait" data-val="casual">Casual</span>
+      <span class="trait" data-val="friendly">Friendly</span>
+      <span class="trait" data-val="bold">Bold</span>
+      <span class="trait" data-val="technical">Technical</span>
+      <span class="trait" data-val="funny">Funny</span>
+      <span class="trait" data-val="empathetic">Empathetic</span>
+      <span class="trait" data-val="direct">Direct</span>
+    </div>
+  </div>
+  <div class="input-group">
+    <label>Industry / Niche</label>
+    <select id="industry">
+      <option value="">Select your industry...</option>
+      <option value="plumbing">Plumbing</option>
+      <option value="hvac">HVAC</option>
+      <option value="electrical">Electrical</option>
+      <option value="construction">Construction</option>
+      <option value="landscaping">Landscaping</option>
+      <option value="automotive">Automotive</option>
+      <option value="real-estate">Real Estate</option>
+      <option value="ecommerce">E-Commerce</option>
+      <option value="fitness">Fitness / Coaching</option>
+      <option value="marketing">Marketing / Agency</option>
+      <option value="freelance">Freelancing</option>
+      <option value="crypto">Crypto / Finance</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <div class="input-group">
+    <label>Special Instructions (optional)</label>
+    <textarea id="instructions" placeholder="e.g. Always respond in Spanish. Never discuss competitor pricing. Include my phone number in every quote..."></textarea>
+  </div>
+</div>
+
+<!-- STEP 3: Platform -->
+<div class="panel" id="p3">
+  <div class="section-label">Step 3</div>
+  <div class="section-title">Where should it deploy?</div>
+  <div class="section-desc">Pick your primary platform.</div>
+  <div class="card-stack" id="platformGrid">
+    <div class="card-wide" data-val="telegram">
+      <div class="icon">&#9992;&#65039;</div>
+      <div class="info">
+        <h3>Telegram</h3>
+        <p>Most popular. Instant setup. Works on all devices.</p>
+      </div>
+    </div>
+    <div class="card-wide" data-val="discord">
+      <div class="icon">&#128302;</div>
+      <div class="info">
+        <h3>Discord</h3>
+        <p>Great for communities and team servers.</p>
+      </div>
+    </div>
+    <div class="card-wide" data-val="web">
+      <div class="icon">&#127760;</div>
+      <div class="info">
+        <h3>Web Chat</h3>
+        <p>Embed on your website. No app needed.</p>
+      </div>
+    </div>
+    <div class="card-wide" data-val="slack">
+      <div class="icon">&#128488;&#65039;</div>
+      <div class="info">
+        <h3>Slack</h3>
+        <p>For teams and business workspaces.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 4: Plan -->
+<div class="panel" id="p4">
+  <div class="section-label">Step 4</div>
+  <div class="section-title">Pick your plan</div>
+  <div class="section-desc">Beta pricing locks in for life.</div>
+  <div class="card-stack" id="planGrid">
+    <div class="card-wide" data-val="starter" data-price="9" data-link="https://buy.stripe.com/cNi6oG0IV0JgccT1zkgrS0y">
+      <div class="icon">&#9889;</div>
+      <div class="info">
+        <h3>Starter</h3>
+        <p>1 AI agent. Telegram. Daily automated tasks.</p>
+      </div>
+      <div class="price">$9<span style="font-size:.6rem;font-weight:400;color:var(--text-muted)">/mo</span></div>
+    </div>
+    <div class="card-wide selected" data-val="builder" data-price="29" data-link="https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z">
+      <div class="icon">&#128296;</div>
+      <div class="info">
+        <h3>Builder <span style="color:var(--amber);font-size:.65rem">MOST POPULAR</span></h3>
+        <p>3 agents. Full customization. Multi-platform. Stripe integration.</p>
+      </div>
+      <div class="price">$29<span style="font-size:.6rem;font-weight:400;color:var(--text-muted)">/mo</span></div>
+    </div>
+    <div class="card-wide" data-val="boss" data-price="49" data-link="https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B">
+      <div class="icon">&#128081;</div>
+      <div class="info">
+        <h3>Boss</h3>
+        <p>Unlimited agents. Self-hosted. Local models. White-label.</p>
+      </div>
+      <div class="price">$49<span style="font-size:.6rem;font-weight:400;color:var(--text-muted)">/mo</span></div>
+    </div>
+    <div class="card-wide" data-val="dfy" data-price="149" data-link="#">
+      <div class="icon">&#127775;</div>
+      <div class="info">
+        <h3>Done-For-You</h3>
+        <p>We build it. We deploy it. You just use it. One-time setup.</p>
+      </div>
+      <div class="price">$149</div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 5: Summary -->
+<div class="panel" id="p5">
+  <div class="section-label">Step 5</div>
+  <div class="section-title">Your Agent Summary</div>
+  <div class="summary-card">
+    <div class="summary-row"><span class="label">Agent Type</span><span class="value" id="sumType">—</span></div>
+    <div class="summary-row"><span class="label">Agent Name</span><span class="value" id="sumName">—</span></div>
+    <div class="summary-row"><span class="label">Personality</span><span class="value" id="sumTone">—</span></div>
+    <div class="summary-row"><span class="label">Industry</span><span class="value" id="sumIndustry">—</span></div>
+    <div class="summary-row"><span class="label">Platform</span><span class="value" id="sumPlatform">—</span></div>
+    <div class="summary-row"><span class="label">Plan</span><span class="value" id="sumPlan">—</span></div>
+    <div class="summary-row total"><span class="label">Total</span><span class="value" id="sumPrice">—</span></div>
+  </div>
+  <div class="section-desc" style="margin-top:1rem;text-align:center;font-size:.75rem">
+    Tap "Build My Agent" to submit your order. We'll set up your agent and message you when it's ready.
+  </div>
+</div>
+
+<!-- CONFIRMATION -->
+<div class="panel" id="pDone">
+  <div class="confirm-check">
+    <div class="big-check">&#10003;</div>
+    <div class="section-title">You're In!</div>
+    <div class="section-desc" style="margin-top:.5rem">Your agent order has been submitted. We'll have it live within 24 hours and message you on Telegram when it's ready.</div>
+  </div>
+  <div class="summary-card" style="margin-top:1.5rem">
+    <div class="summary-row"><span class="label">Order #</span><span class="value" id="orderId">—</span></div>
+    <div class="summary-row"><span class="label">Status</span><span class="value" style="color:var(--emerald)">Building</span></div>
+    <div class="summary-row"><span class="label">ETA</span><span class="value">< 24 hours</span></div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="bottom-bar">
+  <button class="btn btn-secondary" id="backBtn" style="display:none">Back</button>
+  <button class="btn btn-primary" id="nextBtn" disabled>Select to continue</button>
+</div>
+
+<script>
+var tg = window.Telegram && window.Telegram.WebApp;
+if(tg){tg.ready();tg.expand();tg.setHeaderColor('#09090b');tg.setBackgroundColor('#09090b')}
+
+var state = {step:1, type:'', name:'', tones:[], industry:'', instructions:'', platform:'', plan:'', price:'', link:''};
+var steps = 5;
+
+function $(id){return document.getElementById(id)}
+function qa(sel){return document.querySelectorAll(sel)}
+
+// Card selection (single)
+function setupCards(gridId, stateKey){
+  qa('#'+gridId+' .card, #'+gridId+' .card-wide').forEach(function(c){
+    c.addEventListener('click',function(){
+      qa('#'+gridId+' .card, #'+gridId+' .card-wide').forEach(function(x){x.classList.remove('selected')});
+      c.classList.add('selected');
+      state[stateKey] = c.dataset.val;
+      if(c.dataset.price) state.price = c.dataset.price;
+      if(c.dataset.link) state.link = c.dataset.link;
+      updateNext();
+    });
+  });
+}
+setupCards('typeGrid','type');
+setupCards('platformGrid','platform');
+setupCards('planGrid','plan');
+
+// Trait selection (multi, max 3)
+qa('#toneGrid .trait').forEach(function(t){
+  t.addEventListener('click',function(){
+    if(t.classList.contains('selected')){
+      t.classList.remove('selected');
+      state.tones = state.tones.filter(function(v){return v!==t.dataset.val});
+    } else if(state.tones.length < 3){
+      t.classList.add('selected');
+      state.tones.push(t.dataset.val);
+    }
+  });
+});
+
+function updateNext(){
+  var btn = $('nextBtn');
+  switch(state.step){
+    case 1: btn.disabled = !state.type; btn.textContent = state.type ? 'Next' : 'Select to continue'; break;
+    case 2: btn.disabled = false; btn.textContent = 'Next'; break;
+    case 3: btn.disabled = !state.platform; btn.textContent = state.platform ? 'Next' : 'Select platform'; break;
+    case 4: btn.disabled = !state.plan; btn.textContent = state.plan ? 'Review Order' : 'Select plan'; break;
+    case 5: btn.textContent = 'Build My Agent'; btn.disabled = false; break;
+  }
+}
+
+function showStep(n){
+  state.step = n;
+  for(var i=1;i<=steps;i++){
+    var p = $('p'+i);
+    if(p){p.classList.toggle('active', i===n)}
+    var s = $('s'+i);
+    if(s){s.classList.toggle('active', i===n); s.classList.toggle('done', i<n)}
+  }
+  $('backBtn').style.display = n > 1 ? '' : 'none';
+  if(n === 5) fillSummary();
+  updateNext();
+}
+
+function fillSummary(){
+  var types = {trades:'Trades & Jobs',sales:'Sales & Outreach',content:'Content Writer',support:'Customer Support',finance:'Finance & Crypto',custom:'Custom Agent'};
+  var plans = {starter:'Starter ($9/mo)',builder:'Builder ($29/mo)',boss:'Boss ($49/mo)',dfy:'Done-For-You ($149)'};
+  $('sumType').textContent = types[state.type] || state.type;
+  $('sumName').textContent = $('agentName').value || 'Not set';
+  $('sumTone').textContent = state.tones.join(', ') || 'Default';
+  $('sumIndustry').textContent = $('industry').value || 'Not set';
+  $('sumPlatform').textContent = state.platform.charAt(0).toUpperCase() + state.platform.slice(1);
+  $('sumPlan').textContent = plans[state.plan] || state.plan;
+  $('sumPrice').textContent = state.plan === 'dfy' ? '$149 one-time' : '$'+state.price+'/mo';
+  state.name = $('agentName').value;
+  state.industry = $('industry').value;
+  state.instructions = $('instructions').value;
+}
+
+$('nextBtn').addEventListener('click',function(){
+  if(state.step < steps){
+    showStep(state.step + 1);
+  } else {
+    submitOrder();
+  }
+});
+
+$('backBtn').addEventListener('click',function(){
+  if(state.step > 1) showStep(state.step - 1);
+});
+
+function submitOrder(){
+  var btn = $('nextBtn');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  var orderId = 'BW-' + Date.now().toString(36).toUpperCase();
+  var tgUser = tg && tg.initDataUnsafe && tg.initDataUnsafe.user;
+  var userName = tgUser ? (tgUser.first_name + ' (@' + (tgUser.username||'no-username') + ')') : 'Web visitor';
+  var userId = tgUser ? tgUser.id : 'web';
+
+  var msg = 'NEW BOT FORGE ORDER\n' +
+    'Order: ' + orderId + '\n' +
+    'Customer: ' + userName + ' (ID: ' + userId + ')\n' +
+    'Agent Type: ' + state.type + '\n' +
+    'Agent Name: ' + (state.name || 'not set') + '\n' +
+    'Personality: ' + (state.tones.join(', ') || 'default') + '\n' +
+    'Industry: ' + (state.industry || 'not set') + '\n' +
+    'Instructions: ' + (state.instructions || 'none') + '\n' +
+    'Platform: ' + state.platform + '\n' +
+    'Plan: ' + state.plan + ' ($' + state.price + ')' + '\n' +
+    'Time: ' + new Date().toISOString();
+
+  var t = '8611028472:AAEAJKPzWaJNkgYywDXaKIAETa4gcU1xx1s';
+  fetch('https://api.telegram.org/bot' + t + '/sendMessage', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({chat_id:'8711428786', text:msg})
+  }).then(function(){
+    $('orderId').textContent = orderId;
+    $('pDone').classList.add('active');
+    for(var i=1;i<=steps;i++){var p=$('p'+i);if(p)p.classList.remove('active')}
+    qa('.step-dot').forEach(function(d){d.classList.add('done');d.classList.remove('active')});
+    $('backBtn').style.display='none';
+    btn.textContent='Done';
+    btn.disabled=true;
+
+    if(state.link && state.link !== '#'){
+      setTimeout(function(){window.open(state.link,'_blank')},1500);
+    }
+    if(tg) setTimeout(function(){tg.close()},3000);
+  }).catch(function(){
+    btn.textContent='Build My Agent';
+    btn.disabled=false;
+    alert('Something went wrong. DM @moneymakingmitch1904_bot instead.');
+  });
+}
+</script>
+</body>
+</html>
