@@ -1,4 +1,4 @@
-# SGKx1904 Arcade Redesign — Design & Implementation Plan
+# Bot-Wave Arcade Redesign — Design & Implementation Plan
 
 ## Vision
 Merge all site pages into a single-page arcade experience. "Choose Your Fighter" character select as the hook. Telegram Mini App as the mobile-native version. Hard sell the concept: free bots prove it works, paying unlocks the uncensored off-grid power.

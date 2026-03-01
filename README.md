@@ -1,4 +1,4 @@
-# SGK1904 Website
+# Bot-Wave Website
 
 Deploy to GitHub Pages:
 
