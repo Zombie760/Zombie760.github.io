@@ -110,7 +110,6 @@ export function ChatPage({ session, needsSetup, chatId }) {
   return (
     <ChatNavProvider value={{ activeChatId: resolvedChatId, navigateToChat }}>
       <SidebarProvider>
-        <AppSidebar user={session.user} />
         <SidebarInset>
           {resolvedChatId && (
             <Chat
@@ -122,6 +121,7 @@ export function ChatPage({ session, needsSetup, chatId }) {
             />
           )}
         </SidebarInset>
+        <AppSidebar user={session.user} />
       </SidebarProvider>
     </ChatNavProvider>
   );
