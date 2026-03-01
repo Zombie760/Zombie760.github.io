@@ -27,16 +27,20 @@ export function SidebarHistoryItem({ chat, isActive, onDelete, onStar, onRename 
         onMouseLeave={() => setHovered(false)}
       >
         <SidebarMenuButton
-          href={`/chat/${chat.id}`}
+          href={chat.claudeWorkspaceId && chat.containerName ? `/code/${chat.claudeWorkspaceId}` : `/chat/${chat.id}`}
           className="pr-8"
           isActive={isActive}
           onClick={(e) => {
             e.preventDefault();
-            navigateToChat(chat.id);
+            if (chat.claudeWorkspaceId && chat.containerName) {
+              window.location.href = `/code/${chat.claudeWorkspaceId}`;
+            } else {
+              navigateToChat(chat.id);
+            }
             setOpenMobile(false);
           }}
         >
-          {chat.claudeWorkspaceId ? <CodeIcon size={14} /> : <MessageIcon size={14} />}
+          {chat.claudeWorkspaceId && chat.containerName ? <CodeIcon size={14} /> : <MessageIcon size={14} />}
           <span className="truncate flex-1">
             {chat.title}
           </span>

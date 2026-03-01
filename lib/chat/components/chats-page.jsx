@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { PageLayout } from './page-layout.js';
-import { MessageIcon, TrashIcon, SearchIcon, PlusIcon, MoreHorizontalIcon, StarIcon, StarFilledIcon, PencilIcon } from './icons.js';
+import { MessageIcon, CodeIcon, TrashIcon, SearchIcon, PlusIcon, MoreHorizontalIcon, StarIcon, StarFilledIcon, PencilIcon } from './icons.js';
 import { getChats, deleteChat, renameChat, starChat } from '../actions.js';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from './ui/dropdown-menu.js';
 import { ConfirmDialog } from './ui/confirm-dialog.js';
@@ -229,7 +229,7 @@ function ChatRow({ chat, onNavigate, onDelete, onStar, onRename }) {
 
   return (
     <a
-      href={`/chat/${chat.id}`}
+      href={chat.claudeWorkspaceId && chat.containerName ? `/code/${chat.claudeWorkspaceId}` : `/chat/${chat.id}`}
       className="relative group flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-muted/50 rounded-md"
       style={{ textDecoration: 'inherit', color: 'inherit' }}
       onMouseEnter={() => setHovered(true)}
@@ -237,10 +237,14 @@ function ChatRow({ chat, onNavigate, onDelete, onStar, onRename }) {
       onClick={(e) => {
         if (editing) { e.preventDefault(); return; }
         e.preventDefault();
-        onNavigate(chat.id);
+        if (chat.claudeWorkspaceId && chat.containerName) {
+          window.location.href = `/code/${chat.claudeWorkspaceId}`;
+        } else {
+          onNavigate(chat.id);
+        }
       }}
     >
-      <MessageIcon size={16} />
+      {chat.claudeWorkspaceId && chat.containerName ? <CodeIcon size={16} /> : <MessageIcon size={16} />}
       <div className="flex-1 min-w-0">
         {editing ? (
           <input
