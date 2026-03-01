@@ -177,44 +177,45 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
             </div>
           )}
 
-          <div className="flex items-end gap-2">
-            {/* Paperclip button */}
-            <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              className="inline-flex items-center justify-center rounded-lg p-2 text-muted-foreground hover:text-foreground"
-              aria-label="Attach files"
-              disabled={isStreaming}
-            >
-              <PaperclipIcon size={16} />
-            </button>
+          <textarea
+            ref={textareaRef}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder={placeholder}
+            rows={1}
+            className={cn(
+              'w-full resize-none bg-transparent px-2 py-1.5 text-sm text-foreground',
+              'placeholder:text-muted-foreground focus:outline-none',
+              'max-h-[200px]'
+            )}
+            disabled={isStreaming}
+          />
 
-            <input
-              ref={fileInputRef}
-              type="file"
-              multiple
-              accept="image/*,application/pdf,text/*,application/json,.md,.csv,.json,.js,.ts,.jsx,.tsx,.py,.html,.css,.yml,.yaml,.xml,.sh,.rb,.go,.rs,.java,.c,.cpp,.h"
-              className="hidden"
-              onChange={(e) => {
-                if (e.target.files?.length) handleFiles(e.target.files);
-                e.target.value = '';
-              }}
-            />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                className="inline-flex items-center justify-center rounded-lg p-2 text-muted-foreground hover:text-foreground"
+                aria-label="Attach files"
+                disabled={isStreaming}
+              >
+                <PaperclipIcon size={16} />
+              </button>
 
-            <textarea
-              ref={textareaRef}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder={placeholder}
-              rows={1}
-              className={cn(
-                'flex-1 resize-none bg-transparent px-2 py-1.5 text-sm text-foreground',
-                'placeholder:text-muted-foreground focus:outline-none',
-                'max-h-[200px]'
-              )}
-              disabled={isStreaming}
-            />
+              <input
+                ref={fileInputRef}
+                type="file"
+                multiple
+                accept="image/*,application/pdf,text/*,application/json,.md,.csv,.json,.js,.ts,.jsx,.tsx,.py,.html,.css,.yml,.yaml,.xml,.sh,.rb,.go,.rs,.java,.c,.cpp,.h"
+                className="hidden"
+                onChange={(e) => {
+                  if (e.target.files?.length) handleFiles(e.target.files);
+                  e.target.value = '';
+                }}
+              />
+            </div>
 
             {isStreaming ? (
               <button
