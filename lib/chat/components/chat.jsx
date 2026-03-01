@@ -18,16 +18,21 @@ export function Chat({ chatId, initialMessages = [], workspace = null, featureFl
   const [repo, setRepo] = useState(workspace?.repo || '');
   const [branch, setBranch] = useState(workspace?.branch || '');
 
+  const codeModeRef = useRef({ codeMode, repo, branch });
+  codeModeRef.current = { codeMode, repo, branch };
+
   const transport = useMemo(
     () =>
       new DefaultChatTransport({
         api: '/stream/chat',
-        body: {
+        body: () => ({
           chatId,
-          ...(codeMode && repo && branch ? { codeMode: true, repo, branch } : {}),
-        },
+          ...(codeModeRef.current.codeMode && codeModeRef.current.repo && codeModeRef.current.branch
+            ? { codeMode: true, repo: codeModeRef.current.repo, branch: codeModeRef.current.branch }
+            : {}),
+        }),
       }),
-    [chatId, codeMode, repo, branch]
+    [chatId]
   );
 
   const {
@@ -172,11 +177,6 @@ export function Chat({ chatId, initialMessages = [], workspace = null, featureFl
               </div>
             </div>
           )}
-          {codeMode && (
-            <div className="mx-auto w-full max-w-4xl px-4 pb-1 md:px-6">
-              {codeModeToggle}
-            </div>
-          )}
           <ChatInput
             input={input}
             setInput={setInput}
@@ -188,6 +188,11 @@ export function Chat({ chatId, initialMessages = [], workspace = null, featureFl
             disabled={isWorkspaceLaunched}
             placeholder={isWorkspaceLaunched ? 'Workspace launched — click the link above to start coding.' : 'Send a message...'}
           />
+          {codeMode && (
+            <div className="mx-auto w-full max-w-4xl px-4 pb-1 md:px-6">
+              {codeModeToggle}
+            </div>
+          )}
         </>
       )}
     </div>
