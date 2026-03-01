@@ -452,10 +452,9 @@ function submitOrder(){
     'Plan: ' + state.plan + ' ($' + state.price + ')' + '\n' +
     'Time: ' + new Date().toISOString();
 
-  var t = '8611028472:AAEAJKPzWaJNkgYywDXaKIAETa4gcU1xx1s';
-  fetch('https://api.telegram.org/bot' + t + '/sendMessage', {
+  fetch('https://formspree.io/f/mvgaqwzk', {
     method:'POST', headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({chat_id:'8711428786', text:msg})
+    body:JSON.stringify({order:orderId, type:state.type, name:state.name, tones:state.tones.join(','), industry:state.industry, instructions:state.instructions, platform:state.platform, plan:state.plan, price:state.price, customer:userName, customerId:userId, source:'botforge'})
   }).then(function(){
     $('orderId').textContent = orderId;
     $('pDone').classList.add('active');

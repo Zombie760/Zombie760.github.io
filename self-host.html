@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Self-Host Your AI Agent Army | Bot-Wave</title>
+<meta name="description" content="Run 15+ AI agents on your laptop for $0/mo. Full guide: LM Studio + OpenClaw + Telegram. Zero API dependency.">
+<meta property="og:title" content="Self-Host Your AI Agent Army | Bot-Wave">
+<meta property="og:description" content="Deploy 15+ autonomous agents on your own hardware. Zero API cost. Full privacy.">
+<meta property="og:url" content="https://botwave.app/self-host.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://botwave.app/self-host.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23f59e0b'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='bold' fill='%2309090b'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090b;--sf:#18181b;--sf2:#1f1f23;--bd:#2e2e33;--bdh:#3f3f46;--am:#f59e0b;--amd:#d97706;--amg:rgba(245,158,11,.12);--em:#10b981;--emg:rgba(16,185,129,.15);--rd:#ef4444;--tx:#fafafa;--t2:#a1a1aa;--t3:#71717a;--r:8px;--fh:'Plus Jakarta Sans',sans-serif;--fb:'DM Sans',sans-serif;--fm:'JetBrains Mono',monospace}
+html{scroll-behavior:smooth}body{font-family:var(--fb);background:var(--bg);color:var(--tx);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--am);text-decoration:none}a:hover{color:var(--amd)}::selection{background:var(--am);color:var(--bg)}
+.w{max-width:880px;margin:0 auto;padding:0 2rem}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.7rem 2rem;background:rgba(9,9,11,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd)}
+.nb{font-family:var(--fh);font-weight:800;color:var(--tx);display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.nl{display:flex;gap:1.5rem;align-items:center}.nl a{font-size:.85rem;color:var(--t2)}.nl a:hover{color:var(--tx)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.4rem;border-radius:var(--r);font-weight:600;font-size:.875rem;border:none;cursor:pointer;transition:all .2s;text-decoration:none}
+.ba{background:var(--am);color:var(--bg)}.ba:hover{background:var(--amd);transform:translateY(-1px);box-shadow:0 4px 20px var(--amg)}
+.bo{border:1px solid var(--bd);color:var(--t2);background:transparent}.bo:hover{border-color:var(--am);color:var(--tx)}
+.be{background:var(--em);color:#fff}.be:hover{background:#059669;transform:translateY(-1px)}
+.hero{padding:8rem 2rem 3rem;text-align:center}
+.hero h1{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
+.hero h1 em{font-style:normal;color:var(--am)}
+.hero>p{color:var(--t2);max-width:620px;margin:0 auto 1.5rem;font-size:1.05rem}
+.badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.badge{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .7rem;border:1px solid var(--bd);border-radius:99px;font-size:.72rem;color:var(--t2);background:var(--sf)}
+.bg{border-color:rgba(16,185,129,.3);color:var(--em)}.bam{border-color:rgba(245,158,11,.3);color:var(--am)}
+h2{font-family:var(--fh);font-size:1.45rem;font-weight:700;margin:3rem 0 1rem;padding-top:1.5rem;border-top:1px solid var(--bd)}
+h3{font-family:var(--fh);font-size:1.1rem;font-weight:600;margin:2rem 0 .6rem;color:var(--am)}
+p,li{color:var(--t2);margin-bottom:.65rem}ul,ol{padding-left:1.5rem}strong{color:var(--tx)}
+code{font-family:var(--fm);background:var(--sf);padding:.12rem .35rem;border-radius:4px;font-size:.82rem;color:var(--am)}
+pre{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:1.2rem;overflow-x:auto;margin:1rem 0;font-size:.82rem;line-height:1.55}
+pre code{background:none;padding:0;color:var(--tx)}
+.step{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:1.4rem;margin:1.25rem 0}
+.sn{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:var(--am);color:var(--bg);border-radius:50%;font-weight:700;font-size:.82rem;margin-right:.5rem;flex-shrink:0}
+.arch{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:1.4rem;margin:1.25rem 0;font-family:var(--fm);font-size:.72rem;white-space:pre;overflow-x:auto;line-height:1.5;color:var(--t2)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.cd{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:1.2rem}
+.cd h4{font-family:var(--fh);margin-bottom:.4rem;font-size:.95rem}
+.cdh{border-color:rgba(16,185,129,.25)}
+.cta{background:linear-gradient(135deg,rgba(245,158,11,.07),rgba(16,185,129,.07));border:1px solid rgba(245,158,11,.18);border-radius:var(--r);padding:2rem;text-align:center;margin:2.5rem 0}
+.cta h3{color:var(--tx);margin-top:0}
+.vs{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:start;margin:1.25rem 0}
+.vm{color:var(--t3);font-weight:700;padding-top:2rem;font-size:.85rem}
+.tag{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.7rem;font-weight:600;margin-bottom:.5rem}
+.tr{background:rgba(239,68,68,.15);color:var(--rd)}.tg{background:rgba(16,185,129,.15);color:var(--em)}
+.price{font-size:1.4rem;font-weight:800;color:var(--am)}
+footer{border-top:1px solid var(--bd);padding:2rem;text-align:center;color:var(--t3);font-size:.78rem;margin-top:4rem}footer a{color:var(--t2)}
+@media(max-width:768px){.g2,.g3,.vs{grid-template-columns:1fr}.vm{display:none}.hero{padding:6rem 1rem 2rem}.w{padding:0 1rem}.nl{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nb"><svg width="26" height="26" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#f59e0b"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-weight="bold" fill="#09090b">B</text></svg> Bot-Wave</a>
+  <div class="nl"><a href="/">Home</a><a href="/self-host.html" style="color:var(--am)">Self-Host</a><a href="/#pricing">Pricing</a><a href="https://t.me/CaptainObviousBot" class="btn ba" style="padding:.4rem 1rem;font-size:.78rem">Try Free</a></div>
+</nav>
+
+<div class="hero">
+  <div class="badges"><span class="badge bg">Self-Hosted</span><span class="badge bam">$0 API Cost</span><span class="badge">Your Hardware</span><span class="badge">Full Audit Trail</span></div>
+  <h1>Run Your Own <em>AI Agent Army</em></h1>
+  <p>15+ autonomous agents on your laptop. Zero cloud. Zero API fees. Controlled from Telegram. Full audit trail on every action.</p>
+  <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
+    <a href="#quickstart" class="btn ba">Quick Start (5 min)</a><a href="#bash-pipe" class="btn bo">The $0 API Method</a>
+  </div>
+</div>
+
+<div class="w">
+<h2>Why Self-Host?</h2>
+<div class="vs">
+  <div class="cd"><span class="tag tr">Traditional AI</span><h4>Cloud-Dependent</h4><ul><li>$150+/mo for 15 agents</li><li>Your data on someone else's server</li><li>API down = business stops</li><li>OpenAI can change terms overnight</li><li>No audit trail</li></ul></div>
+  <div class="vm">vs</div>
+  <div class="cd cdh"><span class="tag tg">Bot-Wave Self-Hosted</span><h4>You Own Everything</h4><ul><li><strong>$0-5/mo</strong> for 15 agents</li><li>Data never leaves your machine</li><li>Works offline for core functions</li><li>You control models, routing, rules</li><li>Full audit log on every action</li></ul></div>
+</div>
+
+<h2>Requirements</h2>
+<div class="g2">
+  <div class="cd"><h4>Minimum</h4><ul><li><strong>8GB RAM</strong>, any laptop/desktop</li><li>Linux, macOS, or Windows (WSL2)</li><li>Node.js 18+</li><li>~5GB disk</li></ul></div>
+  <div class="cd cdh"><h4>Recommended</h4><ul><li><strong>16GB+ RAM</strong></li><li>Kali Linux or Ubuntu 22.04+</li><li>GPU optional (CPU fine for 7B)</li><li>External drive for Operator tier</li></ul></div>
+</div>
+
+<h2 id="quickstart">Quick Start — 5 Minutes</h2>
+<div class="step"><p><span class="sn">1</span><strong>Install LM Studio</strong></p><p>Download from <a href="https://lmstudio.ai">lmstudio.ai</a>. Load <code>Qwen 2.5 7B Instruct</code>. Start local server on port 1234.</p><pre><code># Recommended: Context 16384, Flash Attention ON, port 1234
+curl -s http://localhost:1234/v1/models | head -5</code></pre></div>
+
+<div class="step"><p><span class="sn">2</span><strong>Install OpenClaw</strong></p><pre><code>npm install -g openclaw
+openclaw init
+# Creates: ~/.openclaw/agents/ workspace/ scripts/ logs/</code></pre></div>
+
+<div class="step"><p><span class="sn">3</span><strong>Connect Telegram</strong></p><pre><code># Get token from @BotFather, then:
+openclaw add-provider telegram
+openclaw deploy captain --platform telegram
+# Done. Message your bot.</code></pre></div>
+
+<div class="step"><p><span class="sn">4</span><strong>Deploy More Agents</strong></p><pre><code>openclaw deploy mitch --platform telegram    # Sales
+openclaw deploy ghost --platform telegram    # Content
+openclaw deploy jobsite --platform telegram  # Invoicing
+openclaw fleet status                        # Check fleet</code></pre></div>
+
+<h2>Architecture</h2>
+<div class="arch">┌─────────────┐    ┌─────────────────────┐    ┌──────────────────┐
+│  Your Phone  │    │   OpenClaw Gateway   │    │   Model Router   │
+│  (Telegram)  │───→│   (your machine)     │───→│                  │
+│  Discord     │    │                      │    │  LM Studio   $0  │
+│  Slack       │    │  Approval Gate       │    │  Groq        $0  │
+│  Signal      │    │  Session Manager     │    │  OpenRouter  $0  │
+│  10+ more    │    │  Cron Scheduler      │    │  ─────────────── │
+└─────────────┘    │  Audit Logger        │    │  xAI      (paid) │
+                   │  Bash Pre-Process    │    │  Mistral  (paid) │
+                   │  Skill System        │    │  (fallback only) │
+                   └──────────┬──────────┘    └────────┬─────────┘
+                              │                         │
+                   ┌──────────▼──────────┐    ┌────────▼─────────┐
+                   │  ~/.openclaw/        │    │  Response Cache   │
+                   │  logs/ → audit trail │    │  Same Q = $0     │
+                   │  scripts/ → factory  │    │  Flat file cache  │
+                   │  workspace/ → loot   │    └──────────────────┘
+                   └─────────────────────┘</div>
+
+<h2 id="bash-pipe">The Bash-Pipe Method — $0 API Cost</h2>
+<p><strong>90% of "AI tasks" are text processing.</strong> Bash handles it free and instant — before a token hits any model.</p>
+<pre><code># 1. Bash pre-processes (free, instant)
+echo "$msg" | grep -i "invoice\|quote" && ROUTE=paid || ROUTE=local
+
+# 2. Compress context (free)
+echo "$convo" | jq '.messages[-5:]'  # 10K tokens → 500
+
+# 3. Local model responds (free)
+curl -s localhost:1234/v1/chat/completions -d "$prompt"
+
+# 4. Cache it (free)
+echo "$response" | tee ~/.openclaw/cache/"$hash".json
+# Same question next time = $0
+
+# GPT-4 cost: $0.15/interaction → Bot-Wave: $0.000</code></pre>
+
+<div class="g2">
+  <div class="cd"><h4>Before (Cloud APIs)</h4><p class="price" style="color:var(--rd)">$150/mo</p><ul><li>5 agents, every msg = $$$</li><li>No caching, cloud dependent</li></ul></div>
+  <div class="cd cdh"><h4>After (Bash-Pipe)</h4><p class="price">$5/mo</p><ul><li>15 agents, bash handles 90%</li><li>Local model + cache = free</li></ul></div>
+</div>
+
+<h2>Multi-Model Routing</h2>
+<pre><code># FREE ONLY (high-volume)
+Captain  → LM Studio      $0   Ghost → Groq (Llama 3.3) $0
+Scribe   → LM Studio      $0   Scout → Groq             $0
+Content  → LM Studio      $0   Oracle → OpenRouter/free  $0
+
+# FREE + PAID FALLBACK (revenue-generating)
+Mitch    → Groq → xAI Grok-2         (paid only for deal closing)
+JobSite  → LM Studio → Mistral Large  (paid only for invoices)
+Closer   → Groq → OpenRouter/paid     (revenue = worth it)
+
+# LOCAL ONLY (security/privacy — NEVER cloud)
+DickTracy → LM Studio (mandatory)  $0
+HOMIIEE   → LM Studio (mandatory)  $0</code></pre>
+
+<h2>Agent Specializations</h2>
+<div class="g3">
+  <div class="cd"><h4>Captain</h4><p>General AI chat, FAQ</p></div>
+  <div class="cd"><h4>Mitch</h4><p>Sales, leads, proposals</p></div>
+  <div class="cd"><h4>JobSite</h4><p>Invoices, estimates</p></div>
+  <div class="cd"><h4>Ghost</h4><p>Social media autopilot</p></div>
+  <div class="cd"><h4>Banksy</h4><p>Design, creative</p></div>
+  <div class="cd"><h4>Scout</h4><p>Research, competitive intel</p></div>
+  <div class="cd"><h4>Scribe</h4><p>Docs, blog, emails</p></div>
+  <div class="cd"><h4>Oracle</h4><p>Analytics, predictions</p></div>
+</div>
+
+<h2>Cron Automation</h2>
+<pre><code># 18+ jobs running right now:
+# Every 6h  → Ghost posts to Twitter
+# Daily     → Mitch checks leads, sends follow-ups
+# Nightly   → Scout scrapes competitor pricing
+# Weekly    → Oracle market analysis report
+
+openclaw cron add ghost "Post content" --every 6h
+openclaw cron add mitch "Check leads" --every 1d
+openclaw cron list</code></pre>
+
+<h2>Full Audit Trail</h2>
+<pre><code>~/.openclaw/logs/
+  commands.log    # Every bot command
+  fleet.log       # Agent orchestration
+  revenue.log     # Payment events
+  engage.log      # User interactions
+
+~/.openclaw/agents/*/sessions/*.jsonl
+  # Full conversation history — every msg, tool call, response</code></pre>
+
+<h2>Script Factory</h2>
+<p>Every automation saved as reusable bash. Build massive codebases with near-zero paid API cost.</p>
+<pre><code>~/.openclaw/scripts/
+  phase7-dicktracy-overhaul.sh   # Agent fixes
+  phase8-api-strategy.sh         # Model routing
+  phase10-business-overhaul.sh   # THIS script
+  ai-router-config.json          # Router config
+  marketing/                     # Launch content
+  pentest/                       # 80+ security scripts</code></pre>
+
+<h2>Security (Boss + Operator)</h2>
+<div class="g2">
+  <div class="cd"><h4>Network</h4><ul><li>Gateway loopback-only (127.0.0.1)</li><li>Password auth on endpoints</li><li>Tailscale encrypted remote</li><li>No public port exposure</li></ul></div>
+  <div class="cd"><h4>Data</h4><ul><li>Credentials chmod 600</li><li>Approval gate for elevated cmds</li><li>SUDO_ASKPASS (no pw in logs)</li><li>Docker sandboxing (roadmap)</li></ul></div>
+</div>
+
+<h2>24/7 Headless</h2>
+<pre><code>tmux new-session -d -s botwave
+tmux send-keys "lms server start --port 1234 --ctx 16384" Enter
+tmux send-keys "openclaw start --all-agents" Enter
+# Detach. Your agents run. Check from Telegram anytime.</code></pre>
+
+<h2 id="roadmap">Roadmap</h2>
+<ul>
+<li><strong>Now:</strong> 15 agents, Telegram-first, bash-pipe, local routing</li>
+<li><strong>Q2 2026:</strong> ClawHub skill marketplace</li>
+<li><strong>Q3 2026:</strong> Raspberry Pi images (BotWave Node)</li>
+<li><strong>Q4 2026:</strong> Docker containerized agents + seccomp</li>
+<li><strong>2027:</strong> Desktop app, mobile companion</li>
+</ul>
+
+<div class="cta">
+  <h3>Ready to Own Your AI?</h3>
+  <p style="color:var(--t2);margin-bottom:1rem">Start free. Upgrade when hooked.</p>
+  <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+    <a href="https://t.me/CaptainObviousBot" class="btn ba">Try Free on Telegram</a>
+    <a href="/#pricing" class="btn be">Get Boss Tier ($49/mo)</a>
+    <a href="/#pricing" class="btn bo">All Plans</a>
+  </div>
+  <p style="color:var(--t3);font-size:.8rem;margin-top:1rem">Beta pricing locked for life. 30-day money-back guarantee.</p>
+</div>
+
+<h2>FAQ</h2>
+<h3>Do I need a GPU?</h3><p>No. CPU is fine for 7B on 8GB+.</p>
+<h3>Can I use my own models?</h3><p>Yes. LM Studio, Ollama, any OpenAI-compatible endpoint.</p>
+<h3>Is data really private?</h3><p>Self-hosted = your machine. No telemetry, no phone-home.</p>
+<h3>How is this different from CrewAI/n8n?</h3><p>Those are frameworks. Bot-Wave is a complete agent OS: phone control, zero code, zero API, full audit trail.</p>
+</div>
+<footer><p>Bot-Wave &copy; 2025-2026 | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a> | <a href="https://github.com/Zombie760/Zombie760.github.io">GitHub</a></p><p style="margin-top:.4rem">Built with grit, bash pipes, and zero venture capital.</p></footer>
+</body></html>

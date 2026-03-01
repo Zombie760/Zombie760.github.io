@@ -1,186 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service | Bot-Wave</title>
-  <meta name="description" content="Terms of Service for Bot-Wave. Subscriptions, usage rules, and service conditions. No lawyer-speak, just the facts." />
-  <meta property="og:title" content="Terms of Service | Bot-Wave" />
-  <meta property="og:description" content="Plain-language terms. No corporate gibberish." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23f59e0b'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='bold' fill='%2309090b'>B</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black: #080808; --black2: #0c0c0c; --black3: #111111;
-      --card: #0e0e0e;
-      --border: #1a1111;
-      --crimson: #dc143c; --crimson-dim: #a01030; --crimson-bright: #ff1a4a; --crimson-glow: rgba(220,20,60,0.15);
-      --gold: #d4af37; --gold-dim: #b8962e; --gold-glow: rgba(212,175,55,0.15);
-      --bone: #e8dcc8; --muted: #8a7a6a; --ghost: #3a2a2a; --radius: 3px;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--bone); line-height: 1.6; overflow-x: hidden; }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--black); }
-    ::-webkit-scrollbar-thumb { background: var(--crimson-dim); border-radius: 3px; }
-    a { color: var(--gold); }
-
-    .embers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
-    .ember { position: absolute; width: 2px; height: 2px; background: var(--crimson); border-radius: 50%; opacity: 0; animation: emberFloat linear infinite; box-shadow: 0 0 6px var(--crimson), 0 0 12px rgba(220,20,60,0.3); }
-    @keyframes emberFloat { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.3; } 100% { transform: translateY(-20vh) translateX(30px); opacity: 0; } }
-    .scanlines::after { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px); pointer-events: none; z-index: 9999; }
-    .divider { text-align: center; padding: 1.5rem 0; color: var(--crimson-dim); font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.8rem; opacity: 0.4; }
-
-    .topbar { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 2rem; background: rgba(8,8,8,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
-    .brand { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 900; color: var(--gold); text-decoration: none; letter-spacing: 4px; text-shadow: 0 0 20px var(--gold-glow); }
-    .back { color: var(--muted); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
-    .back:hover { color: var(--crimson); }
-
-    section { padding: 0; position: relative; z-index: 1; }
-    .inner { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
-
-    .page-hero { min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: radial-gradient(ellipse at 50% 30%, rgba(220,20,60,0.06), transparent 70%); }
-    .page-hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: var(--bone); letter-spacing: 4px; line-height: 1.05; margin-bottom: 0.8rem; }
-    .page-hero .sub { font-family: 'Cinzel', serif; font-size: clamp(0.8rem, 1.2vw, 0.95rem); color: var(--gold); letter-spacing: 3px; text-transform: uppercase; opacity: 0.8; }
-
-    .prose { max-width: 700px; margin: 0 auto; }
-    .prose h2 { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 900; color: var(--bone); letter-spacing: 3px; margin-bottom: 1.5rem; text-align: center; }
-    .prose h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 800; color: var(--gold); letter-spacing: 2px; margin-top: 2.5rem; margin-bottom: 1rem; }
-    .prose p { color: var(--muted); font-size: 1.05rem; line-height: 1.9; margin-bottom: 1.2rem; }
-    .prose p strong { color: var(--bone); }
-    .prose p em { color: var(--crimson); font-style: normal; font-weight: 600; }
-    .prose ul, .prose ol { margin-left: 1.5rem; margin-bottom: 1.2rem; }
-    .prose li { color: var(--muted); font-size: 1.05rem; line-height: 1.9; margin-bottom: 0.6rem; }
-    .prose .highlight { background: rgba(220,20,60,0.06); border-left: 3px solid var(--crimson); padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0 3px 3px 0; }
-    .prose .highlight p { margin-bottom: 0; color: var(--bone); font-size: 1.1rem; }
-
-    footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
-    footer .brand { font-size: 1rem; display: block; margin-bottom: 0.5rem; }
-    footer p { color: var(--muted); font-size: 0.8rem; }
-    footer a { color: var(--gold); text-decoration: none; }
-    footer a:hover { color: var(--crimson); }
-
-    @media (max-width: 640px) {
-      .page-hero { padding: 3rem 1.5rem; min-height: 40vh; }
-      .inner { padding: 3rem 1.5rem; }
-      .prose h2 { font-size: 1.3rem; }
-    }
-  </style>
-</head>
-<body class="scanlines">
-
-<div class="embers" id="embers"></div>
-
-<div class="topbar">
-  <a href="index.html" class="brand">Bot-Wave</a>
-  <a href="index.html" class="back">&larr; Home</a>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Terms of Service | Bot-Wave</title>
+<meta name="description" content="Bot-Wave terms. Plain language.">
+<link rel="canonical" href="https://botwave.app/terms.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23f59e0b'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='bold' fill='%2309090b'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--bg:#09090b;--sf:#18181b;--bd:#2e2e33;--am:#f59e0b;--tx:#fafafa;--t2:#a1a1aa;--t3:#71717a;--fh:'Plus Jakarta Sans',sans-serif;--fb:'DM Sans',sans-serif}body{font-family:var(--fb);background:var(--bg);color:var(--tx);line-height:1.7}a{color:var(--am)}::selection{background:var(--am);color:var(--bg)}.c{max-width:720px;margin:0 auto;padding:6rem 2rem 4rem}h1{font-family:var(--fh);font-size:2rem;font-weight:800;margin-bottom:.3rem}h2{font-family:var(--fh);font-size:1.15rem;font-weight:700;margin:2.5rem 0 .6rem;color:var(--am)}p,li{color:var(--t2);margin-bottom:.65rem}ul{padding-left:1.5rem}.d{color:var(--t3);font-size:.82rem;margin-bottom:2rem}nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.7rem 2rem;background:rgba(9,9,11,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd)}.nb{font-family:var(--fh);font-weight:800;color:var(--tx);display:flex;align-items:center;gap:.5rem;text-decoration:none}footer{border-top:1px solid var(--bd);padding:2rem;text-align:center;color:var(--t3);font-size:.78rem;margin-top:4rem}footer a{color:var(--t2)}</style>
+</head><body>
+<nav><a href="/" class="nb"><svg width="26" height="26" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#f59e0b"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-weight="bold" fill="#09090b">B</text></svg> Bot-Wave</a></nav>
+<div class="c">
+<h1>Terms of Service</h1><p class="d">Last updated: March 1, 2026</p>
+<p>Plain language. No corporate gibberish.</p>
+<h2>The Service</h2><p>Bot-Wave provides AI agent software — hosted or self-hosted.</p>
+<h2>Billing</h2>
+<ul><li>Free: no account, just message the bot</li><li>Paid: email + Stripe. Renews monthly.</li><li><strong>Cancel anytime.</strong> No contracts.</li><li><strong>30-day money-back guarantee.</strong></li><li><strong>Beta pricing locked for life.</strong></li></ul>
+<h2>Acceptable Use</h2><p>Don't: spam, harass, break laws, distribute malware, exploit minors.</p>
+<h2>Self-Hosted</h2><p>MIT-licensed. Run anywhere. You handle security + compliance.</p>
+<h2>Your Content</h2><p><strong>You own everything your agents create.</strong> We claim zero rights.</p>
+<h2>Liability</h2><p>"As is." No guaranteed uptime. Use judgment on AI outputs.</p>
+<h2>Contact</h2><p><a href="mailto:legal@botwave.app">legal@botwave.app</a></p>
 </div>
-
-<section class="page-hero">
-  <div>
-    <h1>Terms of Service</h1>
-    <div class="sub">No Lawyer-Speak. Just the Facts.</div>
-  </div>
-</section>
-
-<div class="divider">&dagger; &dagger; &dagger;</div>
-
-<section>
-  <div class="inner">
-    <div class="prose">
-      <h2>Here's What You Need to Know</h2>
-      <p>We kept this short. No 40-page legal documents. No hiding stuff in subsections. Just straight talk about what we do and what we expect from you.</p>
-
-      <h3>Subscriptions</h3>
-      <p>We offer three monthly subscription tiers:</p>
-      <ul>
-        <li><strong>Starter — $4.99/month</strong> — 1 personal AI assistant, choose your specialty, Telegram delivery</li>
-        <li><strong>Builder — $14.99/month</strong> — 3 AI assistants, full customization, priority support</li>
-        <li><strong>Boss — $29.99/month</strong> — Unlimited AI assistants, private server, white-label ready</li>
-      </ul>
-      <p>You can cancel anytime through Stripe. No contract. No penalty. No questions asked. Your subscription ends at the next billing cycle.</p>
-
-      <h3>One-Time Purchases</h3>
-      <p>We sell digital products: courses, guides, and done-for-you setups. Once you get access, it's yours forever. But here's the deal: <strong>no refunds after you've accessed the content.</strong> We deliver digital goods instantly. You can't "return" knowledge.</p>
-      <p>If the product doesn't deliver what we promised (not just "I changed my mind," but actual false advertising), contact us within 7 days and we'll make it right.</p>
-
-      <h3>Free Tier</h3>
-      <p>Our free bot (@CaptainObvious_bot on Telegram) is available to everyone. No signup, no credit card. Use it as much as you want. We reserve the right to rate-limit if someone abuses it, but that's it.</p>
-
-      <h3>Acceptable Use</h3>
-      <p>Don't be stupid about it. Here's what's off-limits:</p>
-      <ul>
-        <li>No illegal activity. That includes hacking, fraud, harassment, or anything else that breaks the law.</li>
-        <li>No abuse of the bots. Trying to break them, spam them, or use them for attacks is not okay.</li>
-        <li>No commercial redistribution. You can't rebrand our tools and sell them as your own.</li>
-        <li>No scraping or automated access to extract data from our service.</li>
-      </ul>
-      <p>We'll shut down your access if you violate these. No refund for subscription time remaining.</p>
-
-      <h3>Service Availability</h3>
-      <p>We provide this service on a <em>best effort basis.</em> We run it from real hardware, not a Silicon Valley datacenter with 99.99% uptime SLAs. Sometimes it'll go down. Sometimes the bot will be slow. We'll try to keep it running, but <strong>we make no guaranteed uptime promises.</strong></p>
-      <p>If the service is down for extended periods and you want a refund, contact us. We'll evaluate based on what happened.</p>
-
-      <h3>Copyright and Open-Source</h3>
-      <p>Our course content, guides, and original materials are copyrighted. You can use them for yourself. You can't reproduce or redistribute them.</p>
-      <p>We reference open-source tools and libraries throughout. Those have their own licenses (GPL, MIT, Apache, etc.). Those licenses apply to those tools, not to us.</p>
-
-      <h3>Disputes and Support</h3>
-      <p><strong>Reach out on Telegram first:</strong> @MoneyMakingMitchell1904. Tell us what's wrong. We'll work it out. If you're upset about a charge, we can handle it. If you need help with something, ask.</p>
-      <p>We're not going to make you sit on hold for 45 minutes with a bot. You get a human response. Usually within 24 hours.</p>
-
-      <h3>Age Requirement</h3>
-      <p>You must be <strong>18 years old or older</strong> to use this service. If you're under 18, you need a parent's permission.</p>
-
-      <h3>Changes to Terms</h3>
-      <p>If we change these terms, we'll update this page and notify you. We won't bury changes in the fine print.</p>
-
-      <h3>Limitation of Liability</h3>
-      <p>We're a small operation. If something goes wrong, we're liable for what we actually screwed up. But we're not liable for lost profits or indirect damages.</p>
-
-      <div class="highlight">
-        <p><strong>Bottom line:</strong> Use the service how it's meant to be used. Don't break the law. Don't be a jerk. We'll do right by you. If there's a problem, talk to us.</p>
-      </div>
-
-      <h3>Questions?</h3>
-      <p>Reach out on Telegram: <strong>@MoneyMakingMitchell1904</strong></p>
-      <p><em>Last updated: February 28, 2026</em></p>
-    </div>
-  </div>
-</section>
-
-<div class="divider">&dagger; &dagger; &dagger;</div>
-
-<footer>
-  <a href="index.html" class="brand">Bot-Wave</a>
-  <p>
-    <a href="https://t.me/MoneyMakingMitchell1904">Telegram</a> &bull;
-    <a href="https://x.com/BotWave">X / Twitter</a> &bull;
-    <a href="index.html">Home</a> &bull;
-    <a href="privacy.html">Privacy</a> &bull;
-    <a href="terms.html">Terms</a>
-  </p>
-  <p>Built by a founder on an old laptop. Open-source. Private. No corporate middleman.</p>
-  <p>&copy; 2026 Bot-Wave. All rights reserved.</p>
-</footer>
-
-<script>
-(function(){
-  var c = document.getElementById('embers');
-  for (var i = 0; i < 25; i++) {
-    var e = document.createElement('div');
-    e.className = 'ember';
-    e.style.left = Math.random() * 100 + '%';
-    e.style.animationDuration = (6 + Math.random() * 10) + 's';
-    e.style.animationDelay = Math.random() * 8 + 's';
-    e.style.width = e.style.height = (1 + Math.random() * 2) + 'px';
-    c.appendChild(e);
-  }
-})();
-</script>
-
-</body>
-</html>
+<footer><p>Bot-Wave &copy; 2025-2026 | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a> | <a href="/">Home</a></p></footer>
+</body></html>

@@ -697,13 +697,11 @@ document.getElementById('waitlistForm').addEventListener('submit', function(e){
   var msg = document.getElementById('waitlistMsg');
   btn.textContent = 'Joining...';
   btn.disabled = true;
-  var t = '8611028472:AAEAJKPzWaJNkgYywDXaKIAETa4gcU1xx1s';
-  var c = '8711428786';
-  var text = 'NEW WAITLIST SIGNUP\nEmail: ' + email + '\nSource: botwave.app\nTime: ' + new Date().toISOString();
-  fetch('https://api.telegram.org/bot' + t + '/sendMessage', {
+      var text = 'NEW WAITLIST SIGNUP\nEmail: ' + email + '\nSource: botwave.app\nTime: ' + new Date().toISOString();
+  fetch('https://formspree.io/f/mvgaqwzk', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({chat_id: c, text: text})
+    body: JSON.stringify({email: email, source: 'botwave.app', time: new Date().toISOString()})
   }).then(function(){
     btn.textContent = 'You\'re In!';
     btn.style.background = '#10b981';

@@ -1,0 +1,26 @@
+# Security
+.env
+*.key
+*.pem
+*credentials*
+*secret*
+*token*
+
+# Editor/OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Build
+node_modules/
+dist/
+*.log
+
+# Never commit backups
+*-backup*
+*-old*
+*.bak
