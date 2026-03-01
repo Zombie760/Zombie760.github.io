@@ -504,26 +504,31 @@ async function upgrade() {
     return;
   }
 
-  // --- Dirty working tree check ---
+  // --- Save any local changes ---
   const status = execSync('git status --porcelain', { encoding: 'utf8', cwd }).trim();
   if (status) {
-    console.log('\n  Uncommitted changes:\n');
-    for (const line of status.split('\n')) {
-      console.log(`    ${line}`);
-    }
-    const shouldCommit = await confirm({
-      message: 'Commit these changes before upgrading?',
-      initialValue: true,
-    });
-    if (isCancel(shouldCommit) || !shouldCommit) {
-      console.log('\n  Please commit or stash your changes first.\n');
+    console.log('\n  You have local changes. Saving them before upgrading...\n');
+    try {
+      execSync('git add -A && git commit -m "save local changes before thepopebot upgrade"', { stdio: 'inherit', cwd });
+    } catch {
+      console.error('\n  Could not save your local changes. Please try again.\n');
       return;
     }
-    try {
-      execSync('git add -A && git commit -m "wip: save changes before thepopebot upgrade"', { stdio: 'inherit', cwd });
-    } catch {
-      console.log('  Warning: could not commit changes, continuing anyway.');
-    }
+  }
+
+  // --- Pull remote changes ---
+  console.log('\n  Syncing with remote...\n');
+  try {
+    execSync('git pull --rebase', { stdio: 'inherit', cwd });
+  } catch {
+    console.error('\n  Your local changes conflict with changes on GitHub.');
+    console.error('  This means someone (or your bot) changed the same files you did.\n');
+    console.error('  To fix this:');
+    console.error('    1. Open the files listed above and look for <<<<<<< markers');
+    console.error('    2. Edit each file to keep the version you want');
+    console.error('    3. Run: git add -A && git rebase --continue');
+    console.error('    4. Then run the upgrade again\n');
+    return;
   }
 
   // --- Install ---
@@ -531,16 +536,16 @@ async function upgrade() {
   try {
     execSync(`npm install thepopebot@${targetVersion}`, { stdio: 'inherit', cwd });
   } catch {
-    console.error('\n  npm install failed. Aborting upgrade.\n');
+    console.error('\n  Install failed. Check your internet connection and try again.\n');
     process.exit(1);
   }
 
   // --- Init (spawn new process to use the NEW version's templates) ---
-  console.log('\n  Running init...\n');
+  console.log('\n  Updating project files...\n');
   try {
     execSync('npx thepopebot init', { stdio: 'inherit', cwd });
   } catch {
-    console.error('\n  thepopebot init failed. Aborting upgrade.\n');
+    console.error('\n  Failed to update project files. Try running "npx thepopebot init" manually.\n');
     process.exit(1);
   }
 
@@ -554,15 +559,23 @@ async function upgrade() {
   try {
     execSync('npm run build', { stdio: 'inherit', cwd });
   } catch {
-    console.log('  Warning: build failed. You may need to run "npm run build" manually.');
+    console.log('  Build failed. Try running "npm run build" manually after resolving any issues.');
   }
 
-  // --- Commit ---
+  // --- Commit upgrade ---
   try {
     execSync('git add -A', { cwd });
-    execSync(`git commit -m "chore: upgrade thepopebot to ${targetVersion}"`, { stdio: 'inherit', cwd });
+    execSync(`git commit -m "upgrade thepopebot to ${targetVersion}"`, { stdio: 'inherit', cwd });
   } catch {
-    console.log('  Warning: could not commit upgrade changes (maybe no changes to commit).');
+    // Nothing to commit — that's fine
+  }
+
+  // --- Push ---
+  console.log('\n  Pushing to GitHub...\n');
+  try {
+    execSync('git push', { stdio: 'inherit', cwd });
+  } catch {
+    console.error('\n  Could not push to GitHub. Try running "git push" manually.\n');
   }
 
   // --- Docker restart (only if compose file exists, docker available, and containers running) ---
@@ -571,24 +584,11 @@ async function upgrade() {
     try {
       const running = execSync('docker compose ps --status running -q', { encoding: 'utf8', cwd }).trim();
       if (running) {
-        console.log('\n  Restarting Docker containers...\n');
+        console.log('  Restarting Docker containers...\n');
         execSync('docker compose down && docker compose up -d', { stdio: 'inherit', cwd });
       }
     } catch {
-      // Docker not available or not running — skip silently
-    }
-  }
-
-  // --- Push ---
-  const shouldPush = await confirm({
-    message: 'Push to deploy?',
-    initialValue: true,
-  });
-  if (!isCancel(shouldPush) && shouldPush) {
-    try {
-      execSync('git push', { stdio: 'inherit', cwd });
-    } catch {
-      console.log('  Warning: git push failed. Push manually when ready.');
+      // Docker not available or not running — skip
     }
   }
 

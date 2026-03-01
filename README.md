@@ -151,17 +151,16 @@ npx thepopebot upgrade @beta    # latest beta
 npx thepopebot upgrade 1.2.72   # specific version
 ```
 
-This commits any uncommitted changes, installs the new version, updates templates, clears cache, rebuilds, commits, and pushes.
+Saves your local changes, syncs with GitHub, installs the new version, rebuilds, pushes, and restarts Docker.
 
-**What it runs under the hood:**
+**What it does:**
 
-1. `git add -A && git commit -m "wip: save changes before thepopebot upgrade"`
-2. `npm install thepopebot@<version>`
-3. `npx thepopebot init`
-4. `rm -rf .next && npm run build`
-5. `git add -A && git commit -m "chore: upgrade thepopebot to <version>"`
-6. `git push`
-7. `docker compose down && docker compose up -d` (if running)
+1. Saves any local changes you've made
+2. Pulls the latest from GitHub (stops if there are conflicts)
+3. Installs the new version and updates project files
+4. Rebuilds your project
+5. Pushes everything to GitHub
+6. Restarts Docker containers (if running)
 
 Pushing to `main` triggers the `rebuild-event-handler.yml` workflow on your server. It detects the version change, runs `thepopebot init`, updates `THEPOPEBOT_VERSION` in the server's `.env`, pulls the new Docker image, restarts the container, rebuilds `.next`, and reloads PM2 — no manual `docker compose` needed.
 
