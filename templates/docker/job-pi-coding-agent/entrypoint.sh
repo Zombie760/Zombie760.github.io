@@ -38,9 +38,6 @@ fi
 
 cd /job
 
-# Create temp directory for agent use (gitignored via tmp/)
-mkdir -p /job/tmp
-
 # Install npm deps for active skills (native deps need correct Linux arch)
 for skill_dir in /job/skills/active/*/; do
     if [ -f "${skill_dir}package.json" ]; then
