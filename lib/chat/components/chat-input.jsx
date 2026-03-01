@@ -37,7 +37,7 @@ function getEffectiveType(file) {
   return extMap[ext] || file.type || 'text/plain';
 }
 
-export function ChatInput({ input, setInput, onSubmit, status, stop, files, setFiles }) {
+export function ChatInput({ input, setInput, onSubmit, status, stop, files, setFiles, disabled = false, placeholder = 'Send a message...', canSendOverride }) {
   const textareaRef = useRef(null);
   const fileInputRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -83,7 +83,8 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
 
   const handleSubmit = (e) => {
     if (e) e.preventDefault();
-    if ((!input.trim() && files.length === 0) || isStreaming) return;
+    if (disabled || (!input.trim() && files.length === 0) || isStreaming) return;
+    if (canSendOverride !== undefined && !canSendOverride) return;
     onSubmit();
   };
 
@@ -112,7 +113,22 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
     }
   };
 
-  const canSend = input.trim() || files.length > 0;
+  const canSend = canSendOverride !== undefined
+    ? canSendOverride && (input.trim() || files.length > 0)
+    : (input.trim() || files.length > 0);
+
+  // Disabled state — show locked message
+  if (disabled && !isStreaming) {
+    return (
+      <div className="mx-auto w-full max-w-4xl px-4 pb-4 md:px-6">
+        <div className="flex flex-col rounded-xl border border-border bg-muted p-2">
+          <div className="flex items-center px-2 py-1.5">
+            <span className="text-sm text-muted-foreground">{placeholder}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 pb-4 md:px-6">
@@ -190,7 +206,7 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Send a message..."
+              placeholder={placeholder}
               rows={1}
               className={cn(
                 'flex-1 resize-none bg-transparent px-2 py-1.5 text-sm text-foreground',

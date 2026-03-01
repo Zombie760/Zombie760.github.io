@@ -7,19 +7,27 @@ import { Messages } from './messages.js';
 import { ChatInput } from './chat-input.js';
 import { ChatHeader } from './chat-header.js';
 import { Greeting } from './greeting.js';
+import { CodeModeToggle } from './code-mode-toggle.js';
+import { getRepositories, getBranches } from '../actions.js';
 
-export function Chat({ chatId, initialMessages = [] }) {
+export function Chat({ chatId, initialMessages = [], workspace = null, featureFlags = {} }) {
   const [input, setInput] = useState('');
   const [files, setFiles] = useState([]);
   const hasNavigated = useRef(false);
+  const [codeMode, setCodeMode] = useState(!!workspace);
+  const [repo, setRepo] = useState(workspace?.repo || '');
+  const [branch, setBranch] = useState(workspace?.branch || '');
 
   const transport = useMemo(
     () =>
       new DefaultChatTransport({
         api: '/stream/chat',
-        body: { chatId },
+        body: {
+          chatId,
+          ...(codeMode && repo && branch ? { codeMode: true, repo, branch } : {}),
+        },
       }),
-    [chatId]
+    [chatId, codeMode, repo, branch]
   );
 
   const {
@@ -102,13 +110,42 @@ export function Chat({ chatId, initialMessages = [] }) {
     sendMessage({ text: newText });
   }, [messages, setMessages, sendMessage]);
 
+  // Workspace is launched if containerName is set or start_coding tool was called
+  const isWorkspaceLaunched = !!workspace?.containerName || messages.some((m) =>
+    m.parts?.some((p) => p.type === 'tool-invocation' && p.toolName === 'start_coding' && p.state === 'output-available')
+  );
+
+  // In code mode, disable send until repo+branch selected
+  const codeModeCanSend = !codeMode || (!!repo && !!branch);
+
+  const codeModeToggle = (
+    <CodeModeToggle
+      enabled={codeMode}
+      onToggle={setCodeMode}
+      repo={repo}
+      onRepoChange={setRepo}
+      branch={branch}
+      onBranchChange={setBranch}
+      locked={messages.length > 0}
+      featureEnabled={!!featureFlags.claudeWorkspace}
+      getRepositories={getRepositories}
+      getBranches={getBranches}
+    />
+  );
+
   return (
     <div className="flex h-svh flex-col">
       <ChatHeader chatId={chatId} />
+      {/* Locked code mode header bar — shows when code chat has messages */}
+      {codeMode && messages.length > 0 && (
+        <div className="mx-auto w-full max-w-4xl px-4 pt-2 md:px-6">
+          {codeModeToggle}
+        </div>
+      )}
       {messages.length === 0 ? (
         <div className="flex flex-1 flex-col items-center justify-center px-4 md:px-6">
           <div className="w-full max-w-4xl">
-            <Greeting />
+            <Greeting codeMode={codeMode} />
             {error && (
               <div className="mt-4 rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-2 text-sm text-destructive">
                 {error.message || 'Something went wrong. Please try again.'}
@@ -123,7 +160,11 @@ export function Chat({ chatId, initialMessages = [] }) {
                 stop={stop}
                 files={files}
                 setFiles={setFiles}
+                canSendOverride={codeModeCanSend ? undefined : false}
               />
+            </div>
+            <div className="mt-3 mx-auto w-full max-w-4xl px-4 md:px-6">
+              {codeModeToggle}
             </div>
           </div>
         </div>
@@ -145,6 +186,8 @@ export function Chat({ chatId, initialMessages = [] }) {
             stop={stop}
             files={files}
             setFiles={setFiles}
+            disabled={isWorkspaceLaunched}
+            placeholder={isWorkspaceLaunched ? 'Workspace launched — click the link above to start coding.' : 'Send a message...'}
           />
         </>
       )}

@@ -10,6 +10,7 @@ const TOOL_DISPLAY_NAMES = {
   get_system_technical_specs: 'Read Tech Docs',
   get_skill_building_guide: 'Read Skill Docs',
   get_skill_details: 'Get Skill',
+  start_coding: 'Start Coding',
 };
 
 function getToolDisplayName(toolName) {
