@@ -8,5 +8,5 @@ Deploy to GitHub Pages:
 
 ## Before going live — fill in these placeholders:
 - Stripe payment links (search `REPLACE href WITH STRIPE` in index.html)
-- Telegram channel link (search `t.me/lyfers` — change to your actual channel)
-- Contact email (search `contact@lyfers.com`)
+- Telegram channel link (search `t.me/botwaves` — change to your actual channel)
+- Contact email (search `contact@botwaves.com`)
