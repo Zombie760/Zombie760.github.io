@@ -162,7 +162,7 @@ export function Chat({ chatId, initialMessages = [], workspace = null, featureFl
                 canSendOverride={codeModeCanSend ? undefined : false}
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-5">
               {codeModeToggle}
             </div>
           </div>
@@ -189,7 +189,7 @@ export function Chat({ chatId, initialMessages = [], workspace = null, featureFl
             placeholder={isWorkspaceLaunched ? 'Workspace launched — click the link above to start coding.' : 'Send a message...'}
           />
           {codeMode && (
-            <div className="mx-auto w-full max-w-4xl px-4 pb-1 md:px-6">
+            <div className="mx-auto w-full max-w-4xl px-4 pb-8 md:px-6">
               {codeModeToggle}
             </div>
           )}

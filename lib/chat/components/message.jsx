@@ -69,6 +69,8 @@ const TOOL_DISPLAY_NAMES = {
   get_job_status: 'Check Job Status',
   get_system_technical_specs: 'Read Tech Docs',
   get_skill_building_guide: 'Read Skill Docs',
+  start_coding: 'Start Coding',
+  get_repository_details: 'Get Repository Details',
 };
 
 function getToolDisplayName(toolName) {
@@ -98,6 +100,21 @@ function ToolCall({ part }) {
   const isRunning = state === 'input-streaming' || state === 'input-available';
   const isDone = state === 'output-available';
   const isError = state === 'output-error';
+
+  // Auto-redirect when start_coding completes successfully.
+  // mountedDone captures whether the tool was already finished when the component
+  // first rendered (i.e. the user is revisiting a chat). In that case we skip the
+  // redirect so they can still read the conversation.
+  const mountedDone = useRef(isDone);
+  useEffect(() => {
+    if (toolName !== 'start_coding' || !isDone || mountedDone.current) return;
+    try {
+      const output = typeof part.output === 'string' ? JSON.parse(part.output) : part.output;
+      if (output?.success && output?.workspaceUrl) {
+        window.location.href = output.workspaceUrl;
+      }
+    } catch {}
+  }, [toolName, isDone, part.output]);
 
   return (
     <div className="my-1 rounded-lg border border-border bg-background">

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { CodeIcon } from './icons.js';
+import { GitPullRequestIcon } from './icons.js';
 import { Combobox } from './ui/combobox.js';
 import { cn } from '../utils.js';
 
@@ -81,12 +81,10 @@ export function CodeModeToggle({
   if (locked && enabled) {
     return (
       <div className="flex justify-center">
-        <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-          <CodeIcon size={12} />
-          <span>Claude Code</span>
+        <div className="inline-flex items-center gap-2.5 text-sm text-muted-foreground">
           {repo && (
             <>
-              <span className="opacity-40">·</span>
+              <GitPullRequestIcon size={14} />
               <span>{repo}</span>
             </>
           )}
