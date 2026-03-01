@@ -38,8 +38,6 @@ export function CodeModeToggle({
   const [loadingBranches, setLoadingBranches] = useState(false);
   const [reposLoaded, setReposLoaded] = useState(false);
 
-  if (!featureEnabled) return null;
-
   // Load repos on first toggle-on
   const handleToggle = useCallback(() => {
     if (locked) return;
@@ -76,6 +74,8 @@ export function CodeModeToggle({
       setLoadingBranches(false);
     }).catch(() => setLoadingBranches(false));
   }, [repo]);
+
+  if (!featureEnabled) return null;
 
   // Locked mode: show as centered inline label
   if (locked && enabled) {
