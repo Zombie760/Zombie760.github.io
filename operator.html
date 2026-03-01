@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operator Tier — Botwave Security & Pentest Suite</title>
+  <meta name="description" content="Professional AI-powered security operations for MSPs, pentesters, and security teams. $99/month.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--amber:#f59e0b;--emerald:#10b981;--bg:#09090b;--card:#141416;--border:#1e1e22;--muted:#71717a;--dark:#0f0f11;--red:#ef4444}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:#fff;line-height:1.7}
+    a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
+    .container{max-width:900px;margin:0 auto;padding:0 24px}
+
+    .hero{text-align:center;padding:80px 0 48px}
+    .hero-badge{display:inline-block;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);color:var(--red);padding:6px 16px;border-radius:20px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+    .hero h1{font-size:2.75rem;font-weight:700;margin-bottom:12px}
+    .hero h1 span{background:linear-gradient(135deg,var(--red),var(--amber));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p{color:var(--muted);font-size:1.1rem;max-width:600px;margin:0 auto 24px}
+    .hero-price{font-size:3rem;font-weight:700;color:var(--amber)}
+    .hero-price small{font-size:1rem;color:var(--muted);font-weight:400}
+    .btn-primary{display:inline-block;background:var(--amber);color:#000;padding:16px 40px;border-radius:8px;font-weight:700;font-size:1rem;border:none;cursor:pointer;margin-top:20px;transition:background .15s}
+    .btn-primary:hover{background:#d97706;text-decoration:none}
+
+    .section{padding:48px 0;border-top:1px solid var(--border)}
+    .section h2{font-size:1.5rem;font-weight:700;margin-bottom:24px;text-align:center}
+
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
+    .feature{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;transition:border-color .2s}
+    .feature:hover{border-color:rgba(245,158,11,.3)}
+    .feature h3{font-size:1rem;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+    .feature h3 .icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0}
+    .feature h3 .icon.red{background:rgba(239,68,68,.15);color:var(--red)}
+    .feature h3 .icon.amber{background:rgba(245,158,11,.15);color:var(--amber)}
+    .feature h3 .icon.emerald{background:rgba(16,185,129,.15);color:var(--emerald)}
+    .feature p{color:var(--muted);font-size:.85rem}
+    .feature .tools{margin-top:8px;display:flex;flex-wrap:wrap;gap:4px}
+    .feature .tool{background:var(--dark);border:1px solid var(--border);border-radius:4px;padding:2px 8px;font-size:.7rem;color:var(--muted);font-family:monospace}
+
+    .agents-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .agent-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+    .agent-card h4{font-size:.9rem;margin-bottom:4px}
+    .agent-card p{color:var(--muted);font-size:.75rem}
+    .agent-card .tier{display:inline-block;background:rgba(239,68,68,.15);color:var(--red);padding:2px 8px;border-radius:4px;font-size:.65rem;font-weight:600;margin-top:8px}
+
+    .comparison{width:100%;border-collapse:collapse;margin:24px 0}
+    .comparison th,.comparison td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border);font-size:.85rem}
+    .comparison th{color:var(--muted);font-weight:500}
+    .comparison td:nth-child(2),.comparison td:nth-child(3){text-align:center}
+    .comparison .check{color:var(--emerald)}
+    .comparison .x{color:var(--muted)}
+
+    .cta{text-align:center;padding:60px 0;border-top:1px solid var(--border)}
+    .cta h2{margin-bottom:12px}
+    .cta p{color:var(--muted);margin-bottom:24px;font-size:.95rem}
+
+    footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--muted);font-size:.8rem}
+    @media(max-width:768px){.features,.agents-grid{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Professional Security Operations</div>
+    <h1>Operator <span>Tier</span></h1>
+    <p>AI-powered security operations for pentesters, MSPs, and red teams. Pre-audited tools, multi-tenant support, white-label ready.</p>
+    <div class="hero-price">$99<small>/month</small></div>
+    <a href="mailto:hello@botwave.app?subject=Operator Tier" class="btn-primary">Start Operator Trial</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Security Operations Suite</h2>
+    <div class="features">
+      <div class="feature">
+        <h3><span class="icon red">R</span> Network Reconnaissance</h3>
+        <p>Automated network discovery, port scanning, service enumeration, and OS fingerprinting with scheduled scans and diff reporting.</p>
+        <div class="tools"><span class="tool">nmap</span><span class="tool">masscan</span><span class="tool">arp-scan</span><span class="tool">netdiscover</span></div>
+      </div>
+      <div class="feature">
+        <h3><span class="icon red">O</span> OSINT Intelligence</h3>
+        <p>Person, domain, email, phone, company, and username reconnaissance. Automated report generation with source citation.</p>
+        <div class="tools"><span class="tool">whois</span><span class="tool">dig</span><span class="tool">theHarvester</span><span class="tool">sherlock</span><span class="tool">recon-ng</span></div>
+      </div>
+      <div class="feature">
+        <h3><span class="icon red">W</span> Wireless Auditing</h3>
+        <p>WiFi capture, handshake collection, WPA/WPA2 cracking workflows. Supports hcxdumptool v7 and hashcat GPU acceleration.</p>
+        <div class="tools"><span class="tool">hcxdumptool</span><span class="tool">hcxpcapngtool</span><span class="tool">hashcat</span><span class="tool">aircrack-ng</span></div>
+      </div>
+      <div class="feature">
+        <h3><span class="icon red">V</span> Vulnerability Assessment</h3>
+        <p>Automated vulnerability scanning with CVE correlation, severity classification, and remediation recommendations.</p>
+        <div class="tools"><span class="tool">nmap NSE</span><span class="tool">nikto</span><span class="tool">nuclei</span><span class="tool">searchsploit</span></div>
+      </div>
+      <div class="feature">
+        <h3><span class="icon amber">A</span> Audit & Compliance</h3>
+        <p>Complete audit trail of all security operations. Export to PDF/CSV for client deliverables. Timestamped, tamper-evident logging.</p>
+        <div class="tools"><span class="tool">session logs</span><span class="tool">PDF export</span><span class="tool">CSV export</span><span class="tool">compliance reports</span></div>
+      </div>
+      <div class="feature">
+        <h3><span class="icon amber">M</span> Multi-Tenant Management</h3>
+        <p>Manage multiple client environments from one dashboard. Isolated workspaces, per-client agent fleets, separate billing.</p>
+        <div class="tools"><span class="tool">workspace isolation</span><span class="tool">client dashboards</span><span class="tool">RBAC</span></div>
+      </div>
+      <div class="feature">
+        <h3><span class="icon emerald">W</span> White-Label Ready</h3>
+        <p>Rebrand the entire platform with your logo, colors, and domain. Sell as your own managed security service.</p>
+        <div class="tools"><span class="tool">custom branding</span><span class="tool">custom domain</span><span class="tool">client portal</span></div>
+      </div>
+      <div class="feature">
+        <h3><span class="icon emerald">S</span> Real-Time Monitoring</h3>
+        <p>Sentinel agent monitors logs 24/7 for intrusion indicators. Telegram alerts on threats. Daily security summaries.</p>
+        <div class="tools"><span class="tool">Sentinel agent</span><span class="tool">Telegram alerts</span><span class="tool">log analysis</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Operator Agents</h2>
+    <div class="agents-grid">
+      <div class="agent-card">
+        <h4>Dick Tracy</h4>
+        <p>OSINT &amp; red team operations</p>
+        <span class="tier">Operator</span>
+      </div>
+      <div class="agent-card">
+        <h4>Sentinel</h4>
+        <p>24/7 intrusion detection</p>
+        <span class="tier">Operator</span>
+      </div>
+      <div class="agent-card">
+        <h4>Ghost</h4>
+        <p>Silent monitoring &amp; anomaly detection</p>
+        <span class="tier">Included</span>
+      </div>
+      <div class="agent-card">
+        <h4>Patcher</h4>
+        <p>Automated system maintenance</p>
+        <span class="tier">Operator</span>
+      </div>
+      <div class="agent-card">
+        <h4>BigMamma</h4>
+        <p>Fleet oversight &amp; compliance</p>
+        <span class="tier">Included</span>
+      </div>
+      <div class="agent-card">
+        <h4>Captain</h4>
+        <p>Task routing &amp; coordination</p>
+        <span class="tier">Included</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Free vs Pro vs Operator</h2>
+    <table class="comparison">
+      <tr><th>Feature</th><th>Free</th><th>Pro ($29)</th><th>Operator ($99)</th></tr>
+      <tr><td>Unlimited agents</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+      <tr><td>Local model support</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+      <tr><td>Desktop app</td><td class="x">No</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+      <tr><td>Script Factory</td><td>Core (20)</td><td>Full (80+)</td><td>Full + Security</td></tr>
+      <tr><td>Audit log export</td><td class="x">No</td><td>CSV</td><td>CSV + PDF</td></tr>
+      <tr><td>Multi-tenant</td><td class="x">No</td><td class="x">No</td><td class="check">Yes</td></tr>
+      <tr><td>White-label</td><td class="x">No</td><td class="x">No</td><td class="check">Yes</td></tr>
+      <tr><td>Security suite</td><td class="x">No</td><td>Basic</td><td class="check">Full</td></tr>
+      <tr><td>Sentinel agent</td><td class="x">No</td><td class="x">No</td><td class="check">Yes</td></tr>
+      <tr><td>Priority support</td><td>Community</td><td>48hr email</td><td>24hr + Telegram</td></tr>
+      <tr><td>All paid marketplace items</td><td class="x">No</td><td class="x">No</td><td class="check">Included</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Ready to operate?</h2>
+    <p>14-day free trial. No credit card required. Cancel anytime.</p>
+    <a href="mailto:hello@botwave.app?subject=Operator Trial" class="btn-primary">Start Free Trial</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p><a href="index.html">Bot-Wave</a> · <a href="clawhub.html">ClawHub</a> · <a href="node.html">Node</a> · <a href="self-host.html">Self-Host</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
