@@ -60,12 +60,12 @@ jobs:
       fail-fast: true
       matrix:
         include:
-          - image: job-pi-coding-agent
-            context: templates/docker/job-pi-coding-agent
-            dockerfile: templates/docker/job-pi-coding-agent/Dockerfile
-          - image: job-claude-code
-            context: templates/docker/job-claude-code
-            dockerfile: templates/docker/job-claude-code/Dockerfile
+          - image: pi-coding-agent-job
+            context: templates/docker/pi-coding-agent-job
+            dockerfile: templates/docker/pi-coding-agent-job/Dockerfile
+          - image: claude-code-job
+            context: templates/docker/claude-code-job
+            dockerfile: templates/docker/claude-code-job/Dockerfile
           - image: claude-code-workspace
             context: templates/docker/claude-code-workspace
             dockerfile: templates/docker/claude-code-workspace/Dockerfile

@@ -61,9 +61,9 @@ jobs:
           if [ -n "$JOB_IMAGE_URL" ]; then
             IMAGE="${JOB_IMAGE_URL}:latest"
           elif [ "$AGENT_BACKEND" = "claude-code" ]; then
-            IMAGE="stephengpope/thepopebot:job-claude-code-${THEPOPEBOT_VERSION}"
+            IMAGE="stephengpope/thepopebot:claude-code-job-${THEPOPEBOT_VERSION}"
           else
-            IMAGE="stephengpope/thepopebot:job-pi-coding-agent-${THEPOPEBOT_VERSION}"
+            IMAGE="stephengpope/thepopebot:pi-coding-agent-job-${THEPOPEBOT_VERSION}"
           fi
           echo "Using image: $IMAGE"
 

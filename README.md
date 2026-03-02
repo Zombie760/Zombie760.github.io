@@ -179,7 +179,7 @@ When you ran `thepopebot init` the first time, it scaffolded a project folder wi
 | `config/SOUL.md`, `JOB_PLANNING.md`, `JOB_AGENT.md`, etc. | Your agent's personality, behavior, and prompts |
 | `config/CRONS.json`, `TRIGGERS.json` | Your scheduled jobs and webhook triggers |
 | `app/` | Next.js pages and UI components |
-| `docker/job-pi-coding-agent/` | The Dockerfile for the Pi coding agent job container |
+| `docker/pi-coding-agent-job/` | The Dockerfile for the Pi coding agent job container |
 
 **Managed files** — These are infrastructure files that need to stay in sync with the package version. `init` auto-updates them for you:
 
