@@ -41,18 +41,18 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
 RUN npm install -g @anthropic-ai/claude-code
 
 # Non-root user
-RUN useradd -m -s /bin/bash claude \
-    && mkdir -p /home/claude/claude-workspace \
-    && chown claude:claude /home/claude/claude-workspace
+RUN useradd -m -s /bin/bash claude-code \
+    && mkdir -p /home/claude-code/workspace \
+    && chown claude-code:claude-code /home/claude-code/workspace
 
-COPY .tmux.conf /home/claude/.tmux.conf
-RUN chown claude:claude /home/claude/.tmux.conf
+COPY .tmux.conf /home/claude-code/.tmux.conf
+RUN chown claude-code:claude-code /home/claude-code/.tmux.conf
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-USER claude
-WORKDIR /home/claude/claude-workspace
+USER claude-code
+WORKDIR /home/claude-code/workspace
 
 ENV REPO=""
 ENV BRANCH=main

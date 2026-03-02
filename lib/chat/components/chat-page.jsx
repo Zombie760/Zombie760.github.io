@@ -82,8 +82,8 @@ export function ChatPage({ session, needsSetup, chatId }) {
         // Check if this is a code chat
         try {
           const meta = await getChatMeta(activeChatId);
-          if (meta?.claudeWorkspaceId) {
-            const ws = await getWorkspace(meta.claudeWorkspaceId);
+          if (meta?.codeWorkspaceId) {
+            const ws = await getWorkspace(meta.codeWorkspaceId);
             setWorkspace(ws);
           } else {
             setWorkspace(null);

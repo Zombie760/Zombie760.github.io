@@ -11,10 +11,10 @@ git config --global user.email "$GH_USER_EMAIL"
 
 # Clone repo
 if [ -n "$REPO" ]; then
-    git clone --branch "$BRANCH" "https://github.com/$REPO" /home/claude/claude-workspace
+    git clone --branch "$BRANCH" "https://github.com/$REPO" /home/claude-code/workspace
 fi
 
-cd /home/claude/claude-workspace
+cd /home/claude-code/workspace
 WORKSPACE_DIR=$(pwd)
 
 # Claude Code auth — use OAuth token, not API key

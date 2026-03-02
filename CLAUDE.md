@@ -93,8 +93,9 @@ SQLite via Drizzle ORM at `data/thepopebot.sqlite` (override with `DATABASE_PATH
 | Table | Purpose |
 |-------|---------|
 | `users` | Admin accounts (email, bcrypt password hash, role) |
-| `chats` | Chat sessions (user_id, title, timestamps) |
+| `chats` | Chat sessions (user_id, title, code_workspace_id, timestamps) |
 | `messages` | Chat messages (chat_id, role, content) |
+| `code_workspaces` | Code workspace sessions (user_id, container_name, repo, branch, coding_agent, title) |
 | `notifications` | Job completion notifications |
 | `subscriptions` | Channel subscriptions |
 | `settings` | Key-value configuration store (also stores API keys) |

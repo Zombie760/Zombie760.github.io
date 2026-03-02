@@ -73,7 +73,7 @@ export function CodeModeToggle({
     }).catch(() => setLoadingBranches(false));
   }, [repo]);
 
-  if (!process.env.NEXT_PUBLIC_CLAUDE_WORKSPACE) return null;
+  if (!process.env.NEXT_PUBLIC_CODE_WORKSPACE) return null;
 
   // Locked mode: show as centered inline label
   if (locked && enabled) {
@@ -109,7 +109,7 @@ export function CodeModeToggle({
         className="inline-flex items-center gap-2 group"
         role="switch"
         aria-checked={enabled}
-        aria-label="Toggle Claude Code mode"
+        aria-label="Toggle Code mode"
       >
         {/* Track */}
         <span
@@ -131,7 +131,7 @@ export function CodeModeToggle({
           'text-xs font-medium transition-colors',
           enabled ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'
         )}>
-          Claude Code
+          Code
         </span>
       </button>
 

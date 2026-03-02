@@ -15,7 +15,7 @@ import '@xterm/xterm/css/xterm.css';
 const STATUS = { connected: '#22c55e', connecting: '#eab308', disconnected: '#ef4444' };
 const RECONNECT_INTERVAL = 3000;
 
-export default function CodePage({ session, claudeWorkspaceId }) {
+export default function CodePage({ session, codeWorkspaceId }) {
   const containerRef = useRef(null);
   const termRef = useRef(null);
   const fitAddonRef = useRef(null);
@@ -45,7 +45,7 @@ export default function CodePage({ session, claudeWorkspaceId }) {
     setStatus(STATUS.connecting);
 
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const ws = new WebSocket(`${protocol}//${window.location.host}/code/${claudeWorkspaceId}/ws`);
+    const ws = new WebSocket(`${protocol}//${window.location.host}/code/${codeWorkspaceId}/ws`);
     wsRef.current = ws;
 
     ws.binaryType = 'arraybuffer';
@@ -67,7 +67,7 @@ export default function CodePage({ session, claudeWorkspaceId }) {
           term.write(payload);
           break;
         case '1': // title
-          document.title = payload || 'Claude Code';
+          document.title = payload || 'Code Workspace';
           break;
         case '2': // prefs (ignored)
           break;
@@ -82,7 +82,7 @@ export default function CodePage({ session, claudeWorkspaceId }) {
     ws.onerror = () => {
       ws.close();
     };
-  }, [claudeWorkspaceId, setStatus]);
+  }, [codeWorkspaceId, setStatus]);
 
   useEffect(() => {
     const term = new Terminal({
@@ -160,7 +160,7 @@ export default function CodePage({ session, claudeWorkspaceId }) {
         <AppSidebar user={session.user} />
         <SidebarInset>
           <div className="flex h-svh flex-col overflow-hidden">
-            <ChatHeader workspaceId={claudeWorkspaceId} />
+            <ChatHeader workspaceId={codeWorkspaceId} />
             <div style={{ position: 'relative', flex: 1, minHeight: 0 }}>
               <div ref={containerRef} className="mx-4" style={{ height: '100%', borderRadius: 6, overflow: 'hidden' }} />
               {!connected && (

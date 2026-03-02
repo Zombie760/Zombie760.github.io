@@ -229,7 +229,7 @@ function ChatRow({ chat, onNavigate, onDelete, onStar, onRename }) {
 
   return (
     <a
-      href={chat.claudeWorkspaceId && chat.containerName ? `/code/${chat.claudeWorkspaceId}` : `/chat/${chat.id}`}
+      href={chat.codeWorkspaceId && chat.containerName ? `/code/${chat.codeWorkspaceId}` : `/chat/${chat.id}`}
       className="relative group flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-muted/50 rounded-md"
       style={{ textDecoration: 'inherit', color: 'inherit' }}
       onMouseEnter={() => setHovered(true)}
@@ -237,14 +237,14 @@ function ChatRow({ chat, onNavigate, onDelete, onStar, onRename }) {
       onClick={(e) => {
         if (editing) { e.preventDefault(); return; }
         e.preventDefault();
-        if (chat.claudeWorkspaceId && chat.containerName) {
-          window.location.href = `/code/${chat.claudeWorkspaceId}`;
+        if (chat.codeWorkspaceId && chat.containerName) {
+          window.location.href = `/code/${chat.codeWorkspaceId}`;
         } else {
           onNavigate(chat.id);
         }
       }}
     >
-      {chat.claudeWorkspaceId && chat.containerName ? <CodeIcon size={16} /> : <MessageIcon size={16} />}
+      {chat.codeWorkspaceId && chat.containerName ? <CodeIcon size={16} /> : <MessageIcon size={16} />}
       <div className="flex-1 min-w-0">
         {editing ? (
           <input

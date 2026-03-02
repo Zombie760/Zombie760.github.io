@@ -15,7 +15,7 @@ export function withThepopebot(nextConfig = {}) {
     distDir: process.env.NEXT_BUILD_DIR || '.next',
     env: {
       ...nextConfig.env,
-      NEXT_PUBLIC_CLAUDE_WORKSPACE: process.env.CLAUDE_CODE_OAUTH_TOKEN && process.env.BETA ? 'true' : '',
+      NEXT_PUBLIC_CODE_WORKSPACE: process.env.CLAUDE_CODE_OAUTH_TOKEN && process.env.BETA ? 'true' : '',
     },
     serverExternalPackages: [
       ...(nextConfig.serverExternalPackages || []),
