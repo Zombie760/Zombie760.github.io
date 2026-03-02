@@ -13,6 +13,10 @@ export function withThepopebot(nextConfig = {}) {
   return {
     ...nextConfig,
     distDir: process.env.NEXT_BUILD_DIR || '.next',
+    env: {
+      ...nextConfig.env,
+      NEXT_PUBLIC_CLAUDE_WORKSPACE: process.env.CLAUDE_CODE_OAUTH_TOKEN && process.env.BETA ? 'true' : '',
+    },
     serverExternalPackages: [
       ...(nextConfig.serverExternalPackages || []),
       'better-sqlite3',

@@ -16,7 +16,6 @@ import { cn } from '../utils.js';
  * @param {string} props.branch - Selected branch
  * @param {Function} props.onBranchChange - Branch change callback
  * @param {boolean} props.locked - Whether the controls are locked (after first message)
- * @param {boolean} props.featureEnabled - Whether the feature flag is enabled
  * @param {Function} props.getRepositories - Server action to fetch repos
  * @param {Function} props.getBranches - Server action to fetch branches
  */
@@ -28,7 +27,6 @@ export function CodeModeToggle({
   branch,
   onBranchChange,
   locked,
-  featureEnabled,
   getRepositories,
   getBranches,
 }) {
@@ -75,7 +73,7 @@ export function CodeModeToggle({
     }).catch(() => setLoadingBranches(false));
   }, [repo]);
 
-  if (!featureEnabled) return null;
+  if (!process.env.NEXT_PUBLIC_CLAUDE_WORKSPACE) return null;
 
   // Locked mode: show as centered inline label
   if (locked && enabled) {

@@ -5,7 +5,7 @@ import { AppSidebar } from './app-sidebar.js';
 import { Chat } from './chat.js';
 import { SidebarProvider, SidebarInset } from './ui/sidebar.js';
 import { ChatNavProvider } from './chat-nav-context.js';
-import { getChatMessages, getChatMeta, getWorkspace, getFeatureFlags } from '../actions.js';
+import { getChatMessages, getChatMeta, getWorkspace } from '../actions.js';
 import { v4 as uuidv4 } from 'uuid';
 
 /**
@@ -21,7 +21,6 @@ export function ChatPage({ session, needsSetup, chatId }) {
   const [resolvedChatId, setResolvedChatId] = useState(() => chatId ? null : uuidv4());
   const [initialMessages, setInitialMessages] = useState([]);
   const [workspace, setWorkspace] = useState(null);
-  const [featureFlags, setFeatureFlags] = useState({});
 
   const navigateToChat = useCallback((id) => {
     if (id) {
@@ -37,11 +36,6 @@ export function ChatPage({ session, needsSetup, chatId }) {
       setActiveChatId(null);
       setResolvedChatId(uuidv4());
     }
-  }, []);
-
-  // Load feature flags once
-  useEffect(() => {
-    getFeatureFlags().then(setFeatureFlags).catch(() => {});
   }, []);
 
   // Browser back/forward
@@ -118,7 +112,6 @@ export function ChatPage({ session, needsSetup, chatId }) {
               chatId={resolvedChatId}
               initialMessages={initialMessages}
               workspace={workspace}
-              featureFlags={featureFlags}
             />
           )}
         </SidebarInset>

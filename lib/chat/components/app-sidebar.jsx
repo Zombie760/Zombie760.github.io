@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { CirclePlusIcon, PanelLeftIcon, MessageIcon, BellIcon, SwarmIcon, ArrowUpCircleIcon, LifeBuoyIcon, GitPullRequestIcon } from './icons.js';
-import { getUnreadNotificationCount, getPullRequestCount, getAppVersion, getFeatureFlags } from '../actions.js';
+import { getUnreadNotificationCount, getPullRequestCount, getAppVersion } from '../actions.js';
 import { SidebarHistory } from './sidebar-history.js';
 import { SidebarUserNav } from './sidebar-user-nav.js';
 import { UpgradeDialog } from './upgrade-dialog.js';
@@ -31,7 +31,6 @@ export function AppSidebar({ user }) {
   const [updateAvailable, setUpdateAvailable] = useState(null);
   const [changelog, setChangelog] = useState(null);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
-  const [features, setFeatures] = useState({ claudeWorkspace: false });
 
   // Fetch badge counts (notifications + PRs) — run immediately, then every 10 minutes
   useEffect(() => {
@@ -46,13 +45,6 @@ export function AppSidebar({ user }) {
     fetchCounts();
     const interval = setInterval(fetchCounts, 10 * 60 * 1000);
     return () => clearInterval(interval);
-  }, []);
-
-  // Feature flags — one-time on mount
-  useEffect(() => {
-    getFeatureFlags()
-      .then((flags) => setFeatures(flags))
-      .catch(() => {});
   }, []);
 
   // Version check — one-time on mount
