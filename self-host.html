@@ -69,7 +69,7 @@ footer{border-top:1px solid var(--bd);padding:2rem;text-align:center;color:var(-
   <h1>Run Your Own <em>AI Agent Army</em></h1>
   <p>15+ autonomous agents on your laptop. Zero cloud. Zero API fees. Controlled from Telegram. Full audit trail on every action.</p>
   <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
-    <a href="#quickstart" class="btn ba">Quick Start (5 min)</a><a href="#bash-pipe" class="btn bo">The $0 API Method</a>
+    <a href="#quickstart" class="btn ba">Quick Start (5 min)</a><a href="#6-layer bash defense" class="btn bo">The $0 API Method</a>
   </div>
 </div>
 
@@ -139,26 +139,34 @@ openclaw fleet status                        # Check fleet</code></pre></div>
                    │  workspace/ → loot   │    └──────────────────┘
                    └─────────────────────┘</div>
 
-<h2 id="bash-pipe">The Bash-Pipe Method — $0 API Cost</h2>
-<p><strong>90% of "AI tasks" are text processing.</strong> Bash handles it free and instant — before a token hits any model.</p>
-<pre><code># 1. Bash pre-processes (free, instant)
-echo "$msg" | grep -i "invoice\|quote" && ROUTE=paid || ROUTE=local
+<h2 id="6-layer bash defense">The 6-Layer Bash Defense — $0 API Cost</h2>
+<p><strong>6 layers of defense before a paid token ever gets burned.</strong> Bash handles 90% of "AI tasks" free and instant.</p>
+<pre><code># 1. Route by keyword — free, instant, no tokens burned
+echo "$msg" | grep -qi "invoice\|quote\|estimate" && ROUTE=jobsite
+echo "$msg" | grep -qi "price\|competitor\|market" && ROUTE=scout
 
-# 2. Compress context (free)
-echo "$convo" | jq '.messages[-5:]'  # 10K tokens → 500
+# 2. Validate before calling — don't waste a call on empty input
+[ -z "$msg" ] && echo "Empty input" && exit 0
 
-# 3. Local model responds (free)
-curl -s localhost:1234/v1/chat/completions -d "$prompt"
+# 3. Cache with TTL — same question within 24h = $0
+HASH=$(echo "$prompt" | md5sum | cut -d' ' -f1)
+if [ -f "cache/$HASH.json" ] && [ ! $(find "cache/$HASH.json" -mmin +1440) ]; then
+  cat "cache/$HASH.json" && exit 0
+fi
 
-# 4. Cache it (free)
-echo "$response" | tee ~/.openclaw/cache/"$hash".json
-# Same question next time = $0
+# 4. Compress context before inference — 10K tokens → 500
+echo "$convo" | jq '.messages[-5:]'
 
+# 5. Only extract what you need from the response
+curl -s localhost:1234/v1/chat/completions -d "$payload" | jq '.choices[0].message.content'
+
+# 6. Store result in cache for next time
+echo "$response" | tee "cache/$HASH.json"
 # GPT-4 cost: $0.15/interaction → Botwave: $0.000</code></pre>
 
 <div class="g2">
   <div class="cd"><h4>Before (Cloud APIs)</h4><p class="price" style="color:var(--rd)">$150/mo</p><ul><li>5 agents, every msg = $$$</li><li>No caching, cloud dependent</li></ul></div>
-  <div class="cd cdh"><h4>After (Bash-Pipe)</h4><p class="price">$5/mo</p><ul><li>15 agents, bash handles 90%</li><li>Local model + cache = free</li></ul></div>
+  <div class="cd cdh"><h4>After (6-Layer Defense)</h4><p class="price">$5/mo</p><ul><li>15 agents, 6 layers before any model call</li><li>Local model + cache = free</li></ul></div>
 </div>
 
 <h2>Multi-Model Routing</h2>
@@ -233,7 +241,7 @@ tmux send-keys "openclaw start --all-agents" Enter
 
 <h2 id="roadmap">Roadmap</h2>
 <ul>
-<li><strong>Now:</strong> 15 agents, Telegram-first, bash-pipe, local routing, <em>Desktop app (Beta)</em></li>
+<li><strong>Now:</strong> 15 agents, Telegram-first, 6-layer bash defense, local routing, <em>Desktop app (Beta)</em></li>
 <li><strong>Q2 2026:</strong> ClawHub skill marketplace</li>
 <li><strong>Q3 2026:</strong> Raspberry Pi images (BotWave Node)</li>
 <li><strong>Q4 2026:</strong> Docker containerized agents + seccomp</li>
@@ -266,7 +274,7 @@ tmux send-keys "openclaw start --all-agents" Enter
     <p style="color:#71717a;margin-bottom:8px">Native app for fleet management, script execution, and model routing.</p>
     <p style="color:#71717a;font-size:.85rem;margin-bottom:24px">Windows · macOS · Linux — Free and open source.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="https://github.com/botwave/botwave-desktop/releases" style="display:inline-block;background:#f59e0b;color:#000;padding:14px 32px;border-radius:8px;font-weight:600;text-decoration:none;font-size:.95rem">Download Desktop (Beta)</a>
+      <a href="https://github.com/Zombie760/Zombie760.github.io/releases" style="display:inline-block;background:#f59e0b;color:#000;padding:14px 32px;border-radius:8px;font-weight:600;text-decoration:none;font-size:.95rem">Download Desktop (Beta)</a>
       <a href="clawhub.html" style="display:inline-block;border:1px solid #1e1e22;color:#fff;padding:14px 32px;border-radius:8px;font-weight:500;text-decoration:none;font-size:.95rem">Browse ClawHub Marketplace</a>
       <a href="node.html" style="display:inline-block;border:1px solid #1e1e22;color:#fff;padding:14px 32px;border-radius:8px;font-weight:500;text-decoration:none;font-size:.95rem">Botwave Node Hardware</a>
     </div>
@@ -277,5 +285,5 @@ tmux send-keys "openclaw start --all-agents" Enter
     </div>
   </div>
 </section>
-<!-- Botwave Waitlist Capture — paste into any page before </body> --> <!-- Uses Formspree (free 50 submissions/mo) or replace action with your endpoint --> <div id="bw-waitlist" style="background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(16,185,129,.06));border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:2rem;text-align:center;max-width:500px;margin:2rem auto">   <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Join the Waitlist</h3>   <p style="color:#a1a1aa;font-size:.85rem;margin-bottom:1rem">Get early access, launch pricing, and the Script Factory guide. No spam.</p>   <form action="https://formspree.io/f/REPLACE_FORM_ID" method="POST" style="display:flex;gap:.5rem;max-width:400px;margin:0 auto">     <input type="email" name="email" placeholder="you@example.com" required style="flex:1;padding:.7rem 1rem;background:#18181b;border:1px solid #2e2e33;border-radius:8px;color:#fafafa;font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none">     <button type="submit" style="padding:.7rem 1.25rem;background:#f59e0b;color:#09090b;border:none;border-radius:8px;font-weight:600;font-size:.85rem;cursor:pointer;white-space:nowrap">Join</button>   </form>   <p style="color:#52525b;font-size:.68rem;margin-top:.5rem">We respect your privacy. Unsubscribe anytime.</p> </div> 
+<!-- Botwave Waitlist Capture — paste into any page before </body> --> <!-- Uses Formspree (free 50 submissions/mo) or replace action with your endpoint --> <div id="bw-waitlist" style="background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(16,185,129,.06));border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:2rem;text-align:center;max-width:500px;margin:2rem auto"> <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Join the Waitlist</h3> <p style="color:#a1a1aa;font-size:.85rem;margin-bottom:1rem">Get early access, launch pricing, and the Script Factory guide.</p> <a href="https://t.me/sgk1904" target="_blank" style="display:inline-block;padding:.75rem 2rem;background:#f59e0b;color:#09090b;border:none;border-radius:8px;font-weight:700;font-size:.9rem;text-decoration:none;cursor:pointer">Join on Telegram</a> <p style="color:#52525b;font-size:.68rem;margin-top:.75rem">Message @sgk1904 — we reply within hours.</p> </div> 
 </body></html>
