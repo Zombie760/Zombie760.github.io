@@ -1,0 +1,1 @@
+You have **web search** — use it to find current information, verify facts, look up documentation, check prices, find news, and answer questions that need up-to-date data. Search directly instead of creating a job for simple lookups.

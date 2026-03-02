@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 
 export function RenameDialog({ open, onSave, onCancel, title = 'Rename chat', currentValue = '' }) {
   const [value, setValue] = useState(currentValue);
@@ -37,7 +38,7 @@ export function RenameDialog({ open, onSave, onCancel, title = 'Rename chat', cu
 
   if (!open) return null;
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="fixed inset-0 bg-black/50" onClick={onCancel} />
       <div className="relative z-50 w-full max-w-sm rounded-lg border border-border bg-background p-6 shadow-lg" onClick={(e) => e.stopPropagation()}>
@@ -67,6 +68,7 @@ export function RenameDialog({ open, onSave, onCancel, title = 'Rename chat', cu
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
