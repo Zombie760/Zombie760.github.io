@@ -20,6 +20,7 @@ export default function TerminalView({ codeWorkspaceId }) {
   const retryTimer = useRef(null);
   const statusRef = useRef(null);
   const [connected, setConnected] = useState(false);
+  const [containerError, setContainerError] = useState(null);
 
   const setStatus = useCallback((color) => {
     if (statusRef.current) statusRef.current.style.backgroundColor = color;
@@ -134,8 +135,18 @@ export default function TerminalView({ codeWorkspaceId }) {
 
     (async () => {
       try {
-        await ensureCodeWorkspaceContainer(codeWorkspaceId);
-      } catch {}
+        const result = await ensureCodeWorkspaceContainer(codeWorkspaceId);
+        if (result?.status === 'error') {
+          const msg = result.message || 'Unknown container error';
+          console.error('ensureCodeWorkspaceContainer:', msg);
+          if (!cancelled) setContainerError(msg);
+          return;
+        }
+      } catch (err) {
+        console.error('ensureCodeWorkspaceContainer:', err);
+        if (!cancelled) setContainerError(err.message || String(err));
+        return;
+      }
       if (!cancelled) connect();
     })();
 
@@ -152,7 +163,20 @@ export default function TerminalView({ codeWorkspaceId }) {
   const handleReconnect = async () => {
     clearTimeout(retryTimer.current);
     if (wsRef.current) wsRef.current.close();
-    try { await ensureCodeWorkspaceContainer(codeWorkspaceId); } catch {}
+    try {
+      setContainerError(null);
+      const result = await ensureCodeWorkspaceContainer(codeWorkspaceId);
+      if (result?.status === 'error') {
+        const msg = result.message || 'Unknown container error';
+        console.error('ensureCodeWorkspaceContainer:', msg);
+        setContainerError(msg);
+        return;
+      }
+    } catch (err) {
+      console.error('ensureCodeWorkspaceContainer:', err);
+      setContainerError(err.message || String(err));
+      return;
+    }
     connect();
   };
 
@@ -160,13 +184,13 @@ export default function TerminalView({ codeWorkspaceId }) {
     <>
       <div style={{ position: 'relative', flex: 1, minHeight: 0 }}>
         <div ref={containerRef} className="mx-4" style={{ height: '100%', borderRadius: 6, overflow: 'hidden' }} />
-        {!connected && (
+        {(!connected || containerError) && (
           <div style={{
             position: 'absolute',
             top: '50%', left: '50%',
             transform: 'translate(-50%, -50%)',
-            background: 'rgba(255,255,255,0.9)',
-            color: '#000',
+            background: containerError ? 'rgba(255,235,235,0.95)' : 'rgba(255,255,255,0.9)',
+            color: containerError ? '#991b1b' : '#000',
             padding: '12px 24px',
             borderRadius: 8,
             fontSize: 14,
@@ -174,9 +198,10 @@ export default function TerminalView({ codeWorkspaceId }) {
             boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
             zIndex: 10,
             textAlign: 'center',
-            maxWidth: 320,
+            maxWidth: 420,
+            wordBreak: 'break-word',
           }}>
-            Loading...
+            {containerError ? `Container error: ${containerError}` : 'Loading...'}
           </div>
         )}
       </div>
