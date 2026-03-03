@@ -79,9 +79,7 @@ const isCodeChat = (chat) => Boolean(chat.codeWorkspaceId && chat.containerName)
 export function SidebarHistory() {
   const [chats, setChats] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState(() => {
-    try { const v = localStorage.getItem('sidebar-chat-filter'); return v === 'chat' || v === 'code' ? v : 'all'; } catch { return 'all'; }
-  });
+  const [filter, setFilter] = useState('all');
   const updateFilter = (v) => { setFilter(v); try { localStorage.setItem('sidebar-chat-filter', v); } catch {} };
   const { activeChatId, navigateToChat } = useChatNav();
 
@@ -95,6 +93,11 @@ export function SidebarHistory() {
       setLoading(false);
     }
   };
+
+  // Sync filter from localStorage on mount (avoids hydration mismatch)
+  useEffect(() => {
+    try { const v = localStorage.getItem('sidebar-chat-filter'); if (v === 'chat' || v === 'code') setFilter(v); } catch {}
+  }, []);
 
   // Load chats on mount and refresh when navigating between pages
   useEffect(() => {
@@ -181,7 +184,7 @@ export function SidebarHistory() {
         Object.entries(grouped).map(
           ([label, groupChats]) =>
             groupChats.length > 0 && (
-              <SidebarGroup key={label}>
+              <SidebarGroup key={label} className="pt-1">
                 <SidebarGroupLabel>{label}</SidebarGroupLabel>
                 <SidebarGroupContent>
                   <SidebarMenu>
