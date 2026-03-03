@@ -4,31 +4,43 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { SidebarTrigger } from './ui/sidebar.js';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from './ui/dropdown-menu.js';
 import { ConfirmDialog } from './ui/confirm-dialog.js';
+import { RenameDialog } from './ui/rename-dialog.jsx';
 import { ChevronDownIcon, StarIcon, StarFilledIcon, PencilIcon, TrashIcon } from './icons.js';
-import { getChatTitle, getChatTitleByWorkspace, getChatMeta, renameChat, deleteChat, starChat } from '../actions.js';
+import { getChatMeta, getChatMetaByWorkspace, renameChat, deleteChat, starChat } from '../actions.js';
 import { useChatNav } from './chat-nav-context.js';
 
-export function ChatHeader({ chatId, workspaceId }) {
+export function ChatHeader({ chatId: chatIdProp, workspaceId }) {
   const [title, setTitle] = useState(null);
   const [starred, setStarred] = useState(0);
+  const [resolvedChatId, setResolvedChatId] = useState(chatIdProp || null);
   const [isEditing, setIsEditing] = useState(false);
   const [editValue, setEditValue] = useState('');
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [showRenameDialog, setShowRenameDialog] = useState(false);
   const inputRef = useRef(null);
   const nav = useChatNav();
 
+  // The actual chatId to use for actions (either passed directly or resolved from workspace)
+  const chatId = resolvedChatId;
+
   // Whether to show the dropdown and inline-edit features
-  const showControls = chatId && !workspaceId && title && title !== 'New Chat';
+  const showControls = chatId && title && title !== 'New Chat';
 
   const fetchMeta = useCallback(() => {
     if (workspaceId) {
-      getChatTitleByWorkspace(workspaceId)
-        .then((t) => { if (t && t !== 'New Chat') setTitle(t); })
+      getChatMetaByWorkspace(workspaceId)
+        .then((meta) => {
+          if (meta?.title && meta.title !== 'New Chat') {
+            setTitle(meta.title);
+            setStarred(meta.starred || 0);
+            setResolvedChatId(meta.chatId);
+          }
+        })
         .catch(() => {});
       return;
     }
-    if (!chatId) return;
-    getChatMeta(chatId)
+    if (!chatIdProp) return;
+    getChatMeta(chatIdProp)
       .then((meta) => {
         if (meta?.title && meta.title !== 'New Chat') {
           setTitle(meta.title);
@@ -36,7 +48,7 @@ export function ChatHeader({ chatId, workspaceId }) {
         }
       })
       .catch(() => {});
-  }, [chatId, workspaceId]);
+  }, [chatIdProp, workspaceId]);
 
   useEffect(() => {
     fetchMeta();
@@ -45,7 +57,7 @@ export function ChatHeader({ chatId, workspaceId }) {
     return () => window.removeEventListener('chatsupdated', handler);
   }, [fetchMeta]);
 
-  // Auto-focus and select when entering edit mode
+  // Auto-focus and select all when entering inline edit mode
   useEffect(() => {
     if (isEditing && inputRef.current) {
       inputRef.current.focus();
@@ -62,7 +74,7 @@ export function ChatHeader({ chatId, workspaceId }) {
     setIsEditing(false);
     const trimmed = editValue.trim();
     if (!trimmed || trimmed === title) return;
-    setTitle(trimmed); // optimistic
+    setTitle(trimmed);
     await renameChat(chatId, trimmed);
     window.dispatchEvent(new Event('chatsupdated'));
   };
@@ -71,9 +83,15 @@ export function ChatHeader({ chatId, workspaceId }) {
     setIsEditing(false);
   };
 
+  const handleRenameFromDialog = async (newTitle) => {
+    setTitle(newTitle);
+    await renameChat(chatId, newTitle);
+    window.dispatchEvent(new Event('chatsupdated'));
+  };
+
   const handleStar = async () => {
     const newStarred = starred ? 0 : 1;
-    setStarred(newStarred); // optimistic
+    setStarred(newStarred);
     await starChat(chatId);
     window.dispatchEvent(new Event('chatsupdated'));
   };
@@ -104,41 +122,52 @@ export function ChatHeader({ chatId, workspaceId }) {
               if (e.key === 'Escape') cancelEdit();
             }}
             onBlur={saveEdit}
-            className="text-base font-medium text-foreground bg-transparent border-b border-input outline-none truncate min-w-0 flex-1"
+            className="text-base font-medium text-foreground bg-background rounded-md border border-ring px-2 py-0.5 outline-none ring-2 ring-ring/30"
           />
+        ) : showControls ? (
+          <div className="group/title flex items-center gap-0.5 rounded-md px-1.5 py-0.5 hover:bg-muted transition-colors">
+            <h1
+              className="text-base font-medium text-muted-foreground truncate cursor-pointer"
+              onClick={enterEditMode}
+            >
+              {title}
+            </h1>
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <button className="flex items-center justify-center h-6 w-6 rounded text-muted-foreground shrink-0">
+                  <ChevronDownIcon size={14} />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                <DropdownMenuItem onClick={handleStar}>
+                  {starred ? <StarFilledIcon size={14} /> : <StarIcon size={14} />}
+                  <span>{starred ? 'Unstar' : 'Star'}</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setShowRenameDialog(true)}>
+                  <PencilIcon size={14} />
+                  <span>Rename</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setShowDeleteConfirm(true)}>
+                  <TrashIcon size={14} />
+                  <span className="text-destructive">Delete</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         ) : (
-          <h1
-            className={`text-base font-medium text-muted-foreground truncate ${showControls ? 'cursor-pointer hover:text-foreground transition-colors' : ''}`}
-            onClick={showControls ? enterEditMode : undefined}
-          >
+          <h1 className="text-base font-medium text-muted-foreground truncate">
             {title || '\u00A0'}
           </h1>
         )}
-
-        {showControls && !isEditing && (
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <button className="flex items-center justify-center h-6 w-6 rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors shrink-0">
-                <ChevronDownIcon size={14} />
-              </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              <DropdownMenuItem onClick={handleStar}>
-                {starred ? <StarFilledIcon size={14} /> : <StarIcon size={14} />}
-                <span>{starred ? 'Unstar' : 'Star'}</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={enterEditMode}>
-                <PencilIcon size={14} />
-                <span>Rename</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setShowDeleteConfirm(true)}>
-                <TrashIcon size={14} />
-                <span className="text-destructive">Delete</span>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        )}
       </header>
+
+      <RenameDialog
+        open={showRenameDialog}
+        onSave={handleRenameFromDialog}
+        onCancel={() => setShowRenameDialog(false)}
+        title="Rename chat"
+        currentValue={title || ''}
+      />
 
       <ConfirmDialog
         open={showDeleteConfirm}
