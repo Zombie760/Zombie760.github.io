@@ -20,10 +20,9 @@ project-root/
 ├── .env                               # API keys and tokens (gitignored)
 ├── package.json
 │
-├── app/                               # Next.js app directory (page shells + client components)
+├── app/                               # Next.js app directory (MANAGED — do not edit, auto-synced)
 │   ├── api/[...thepopebot]/route.js   # Catch-all API route (re-exports from package)
-│   ├── stream/chat/route.js           # Chat streaming endpoint (session auth)
-│   └── components/                    # Client-side components
+│   └── stream/chat/route.js           # Chat streaming endpoint (session auth)
 │
 ├── config/                            # Agent configuration (user-editable)
 │   ├── SOUL.md                        # Personality, identity, and values
@@ -290,9 +289,17 @@ SQLite via Drizzle ORM at `data/thepopebot.sqlite`. Auto-initialized and auto-mi
 | `CUSTOM_API_KEY` | Custom provider API key | For custom provider |
 | `DATABASE_PATH` | Override SQLite DB location | No |
 
+## Managed Files
+
+The following directories are auto-synced by `thepopebot init` and `thepopebot upgrade`. **Do not edit them** — changes will be overwritten on package updates: `.github/workflows/`, `docker/event-handler/`, `docker-compose.yml`, `.dockerignore`, `CLAUDE.md`, `app/`.
+
+All UI components live in the npm package — `app/` only contains thin page shells that import from `thepopebot/chat`, `thepopebot/auth/components`, etc.
+
 ## Customization
 
 User-editable config files in `config/`: `SOUL.md` (personality), `JOB_PLANNING.md` (LLM system prompt), `JOB_AGENT.md` (runtime docs), `JOB_SUMMARY.md` (job summaries), `HEARTBEAT.md` (self-monitoring), `SKILL_BUILDING_GUIDE.md` (skill guide), `CRONS.json` (scheduled jobs), `TRIGGERS.json` (webhook triggers).
+
+To customize appearance, edit `theme.css` in the project root (loaded after `globals.css`, user-owned, not managed).
 
 Skills in `skills/` are activated by symlinking into `skills/active/`. Both `.pi/skills` and `.claude/skills` point to `skills/active/`. Scripts for command-type actions go in `cron/` and `triggers/`.
 

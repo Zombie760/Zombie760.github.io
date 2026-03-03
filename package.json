@@ -1,6 +1,6 @@
 {
   "name": "thepopebot",
-  "version": "1.2.73-beta.10",
+  "version": "1.2.73-beta.11",
   "type": "module",
   "description": "Create autonomous AI agents with a two-layer architecture: Next.js Event Handler + Docker Agent.",
   "bin": {
@@ -20,6 +20,7 @@
     "./code": "./lib/code/index.js",
     "./code/actions": "./lib/code/actions.js",
     "./code/ws-proxy": "./lib/code/ws-proxy.js",
+    "./auth/components": "./lib/auth/components/index.js",
     "./middleware": "./lib/auth/middleware.js",
     "./package.json": "./package.json"
   },
@@ -33,7 +34,7 @@
     "drizzle/"
   ],
   "scripts": {
-    "build": "esbuild lib/chat/components/*.jsx lib/chat/components/**/*.jsx --outdir=lib/chat/components --format=esm --jsx=automatic --outbase=lib/chat/components && esbuild lib/code/*.jsx --outdir=lib/code --format=esm --jsx=automatic",
+    "build": "esbuild lib/chat/components/*.jsx lib/chat/components/**/*.jsx --outdir=lib/chat/components --format=esm --jsx=automatic --outbase=lib/chat/components && esbuild lib/auth/components/*.jsx lib/auth/components/**/*.jsx --outdir=lib/auth/components --format=esm --jsx=automatic --outbase=lib/auth/components && esbuild lib/code/*.jsx --outdir=lib/code --format=esm --jsx=automatic",
     "prepublishOnly": "npm run build",
     "local": "bash bin/local.sh",
     "postinstall": "node -e \"import('./bin/postinstall.js').catch(()=>{})\"",
@@ -88,6 +89,7 @@
   "peerDependencies": {
     "next": ">=15.5.12",
     "next-auth": "^5.0.0-beta.30",
+    "next-themes": ">=0.4.0",
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
   },

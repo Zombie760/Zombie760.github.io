@@ -12,20 +12,7 @@ const __dirname = path.dirname(__filename);
 const command = process.argv[2];
 const args = process.argv.slice(3);
 
-// Files tightly coupled to the package version that are auto-updated by init.
-// These live in the user's project because GitHub/Docker require them at specific paths,
-// but they shouldn't drift from the package version.
-const MANAGED_PATHS = [
-  '.github/workflows/',
-  'docker/event-handler/',
-  'docker-compose.yml',
-  '.dockerignore',
-  'CLAUDE.md',
-];
-
-function isManaged(relPath) {
-  return MANAGED_PATHS.some(p => relPath === p || relPath.startsWith(p));
-}
+import { MANAGED_PATHS, isManaged } from './managed-paths.js';
 
 // Files that must never be scaffolded directly (use .template suffix instead).
 const EXCLUDED_FILENAMES = ['CLAUDE.md'];
@@ -171,6 +158,54 @@ async function init() {
         changed.push(outPath);
         console.log(`  Skipped ${outPath} (already exists)`);
       }
+    }
+  }
+
+  // Delete stale files in managed directories that no longer exist in templates
+  if (!noManaged) {
+    const deleted = [];
+    const managedDirs = MANAGED_PATHS.filter(p => p.endsWith('/'));
+    for (const managedDir of managedDirs) {
+      const userDir = path.join(cwd, managedDir);
+      if (!fs.existsSync(userDir)) continue;
+
+      // Walk the user's managed directory
+      function walkUser(dir) {
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
+        for (const entry of entries) {
+          const fullPath = path.join(dir, entry.name);
+          if (entry.isDirectory()) {
+            walkUser(fullPath);
+          } else {
+            const relPath = path.relative(cwd, fullPath);
+            // Check if a corresponding template exists
+            const tmplPath = templatePath(relPath, templatesDir);
+            const templateExists = fs.existsSync(path.join(templatesDir, tmplPath));
+            if (!templateExists) {
+              fs.unlinkSync(fullPath);
+              deleted.push(relPath);
+              console.log(`  Deleted ${relPath} (stale managed file)`);
+            }
+          }
+        }
+      }
+      walkUser(userDir);
+
+      // Remove empty directories left behind
+      function removeEmptyDirs(dir) {
+        if (!fs.existsSync(dir)) return;
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
+        for (const entry of entries) {
+          if (entry.isDirectory()) {
+            removeEmptyDirs(path.join(dir, entry.name));
+          }
+        }
+        // Re-read after potential child removals
+        if (fs.readdirSync(dir).length === 0) {
+          fs.rmdirSync(dir);
+        }
+      }
+      removeEmptyDirs(userDir);
     }
   }
 
