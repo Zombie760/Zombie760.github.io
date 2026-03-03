@@ -207,7 +207,7 @@ export async function sync(projectPath) {
 
     // 6. Restart
     console.log('\n  Restarting event handler...');
-    execSync('docker compose up -d event-handler', { stdio: 'inherit', cwd: projectPath });
+    execSync('docker compose up -d -V event-handler', { stdio: 'inherit', cwd: projectPath });
     execSync('docker compose exec event-handler sh -c "npm run build && pm2 reload all"', {
       stdio: 'inherit',
       cwd: projectPath,

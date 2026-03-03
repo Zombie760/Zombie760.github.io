@@ -12,6 +12,34 @@ import { SpinnerIcon } from '../chat/components/icons.js';
 const STATUS = { connected: '#22c55e', connecting: '#eab308', disconnected: '#ef4444' };
 const RECONNECT_INTERVAL = 3000;
 
+const TERM_THEMES = {
+  dark: { background: '#1a1b26', foreground: '#a9b1d6', cursor: '#c0caf5', selectionBackground: '#33467c' },
+  light: { background: '#f5f5f5', foreground: '#171717', cursor: '#171717', selectionBackground: '#d4d4d4' },
+};
+
+// Toolbar button colors that contrast with each terminal theme background
+const TOOLBAR_COLORS = {
+  dark: { color: '#787c99', border: 'rgba(169,177,214,0.15)', hoverColor: '#a9b1d6' },
+  light: { color: '#555555', border: 'rgba(23,23,23,0.15)', hoverColor: '#171717' },
+};
+
+function getSystemTheme() {
+  const cs = getComputedStyle(document.documentElement);
+  return {
+    background: cs.getPropertyValue('--muted').trim() || '#1a1b26',
+    foreground: cs.getPropertyValue('--muted-foreground').trim() || '#a9b1d6',
+    cursor: cs.getPropertyValue('--foreground').trim() || '#c0caf5',
+    selectionBackground: cs.getPropertyValue('--border').trim() || '#33467c',
+  };
+}
+
+function resolveTheme(mode) {
+  if (mode === 'system') return getSystemTheme();
+  return TERM_THEMES[mode] || TERM_THEMES.dark;
+}
+
+const THEME_CYCLE = ['dark', 'light', 'system'];
+
 export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
   const containerRef = useRef(null);
   const termRef = useRef(null);
@@ -19,8 +47,11 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
   const wsRef = useRef(null);
   const retryTimer = useRef(null);
   const statusRef = useRef(null);
+  const styleRef = useRef(null);
+  const toolbarRef = useRef(null);
   const [connected, setConnected] = useState(false);
   const [containerError, setContainerError] = useState(null);
+  const [termTheme, setTermTheme] = useState('dark');
 
   const setStatus = useCallback((color) => {
     if (statusRef.current) statusRef.current.style.backgroundColor = color;
@@ -35,6 +66,23 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
     fit.fit();
     const payload = JSON.stringify({ columns: term.cols, rows: term.rows });
     ws.send('1' + payload);
+  }, []);
+
+  const applyTheme = useCallback((mode) => {
+    const theme = resolveTheme(mode);
+    const tb = TOOLBAR_COLORS[mode] || TOOLBAR_COLORS.dark;
+    const term = termRef.current;
+    if (term) term.options.theme = theme;
+    if (styleRef.current) {
+      styleRef.current.textContent = `.xterm { padding: 5px; background-color: ${theme.background} !important; } .xterm-viewport { background-color: ${theme.background} !important; }`;
+    }
+    if (containerRef.current) containerRef.current.style.backgroundColor = theme.background;
+    if (toolbarRef.current) {
+      toolbarRef.current.style.background = theme.background;
+      toolbarRef.current.style.setProperty('--tb-color', tb.color);
+      toolbarRef.current.style.setProperty('--tb-border', tb.border);
+      toolbarRef.current.style.setProperty('--tb-hover', tb.hoverColor);
+    }
   }, []);
 
   const connect = useCallback(() => {
@@ -83,16 +131,15 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
   }, [codeWorkspaceId, setStatus]);
 
   useEffect(() => {
+    const saved = localStorage.getItem('terminal-theme') || 'dark';
+    setTermTheme(saved);
+
+    const theme = resolveTheme(saved);
     const term = new Terminal({
       cursorBlink: true,
       fontSize: 16,
       fontFamily: '"Fira Code", "Cascadia Code", "JetBrains Mono", Menlo, monospace',
-      theme: {
-        background: '#1a1b26',
-        foreground: '#a9b1d6',
-        cursor: '#c0caf5',
-        selectionBackground: '#33467c',
-      },
+      theme,
       allowProposedApi: true,
     });
 
@@ -112,8 +159,18 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
     term.open(containerRef.current);
 
     const style = document.createElement('style');
-    style.textContent = '.xterm { padding: 5px; background-color: #1a1b26 !important; } .xterm-viewport { background-color: #1a1b26 !important; }';
+    style.textContent = `.xterm { padding: 5px; background-color: ${theme.background} !important; } .xterm-viewport { background-color: ${theme.background} !important; }`;
     containerRef.current.appendChild(style);
+    styleRef.current = style;
+
+    containerRef.current.style.backgroundColor = theme.background;
+    const tb = TOOLBAR_COLORS[saved] || TOOLBAR_COLORS.dark;
+    if (toolbarRef.current) {
+      toolbarRef.current.style.background = theme.background;
+      toolbarRef.current.style.setProperty('--tb-color', tb.color);
+      toolbarRef.current.style.setProperty('--tb-border', tb.border);
+      toolbarRef.current.style.setProperty('--tb-hover', tb.hoverColor);
+    }
 
     fitAddon.fit();
 
@@ -162,9 +219,26 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
 
   const sendCommand = useCallback((text) => {
     const ws = wsRef.current;
-    if (ws && ws.readyState === WebSocket.OPEN) {
-      ws.send('0' + text + '\r');
-    }
+    if (!ws || ws.readyState !== WebSocket.OPEN) return;
+    const encoder = new TextEncoder();
+
+    // Ctrl+C as binary frame (cancel current input)
+    ws.send(new Uint8Array([0x30, 0x03]));
+
+    setTimeout(() => {
+      if (ws.readyState !== WebSocket.OPEN) return;
+      // Command text as binary frame (no \r)
+      const buf = new Uint8Array(text.length * 3 + 1);
+      buf[0] = 0x30; // INPUT command
+      const { written } = encoder.encodeInto(text, buf.subarray(1));
+      ws.send(buf.subarray(0, written + 1));
+
+      // Enter as its own binary frame — separate pty_write() = standalone keystroke
+      setTimeout(() => {
+        if (ws.readyState !== WebSocket.OPEN) return;
+        ws.send(new Uint8Array([0x30, 0x0d])); // 0x0d = \r
+      }, 50);
+    }, 150);
   }, []);
 
   const handleReconnect = async () => {
@@ -187,6 +261,42 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
     connect();
   };
 
+  const cycleTheme = useCallback(() => {
+    setTermTheme((prev) => {
+      const idx = THEME_CYCLE.indexOf(prev);
+      const next = THEME_CYCLE[(idx + 1) % THEME_CYCLE.length];
+      localStorage.setItem('terminal-theme', next);
+      applyTheme(next);
+      return next;
+    });
+  }, [applyTheme]);
+
+  const themeIcon = termTheme === 'light' ? (
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+      <circle cx="8" cy="8" r="3" />
+      <line x1="8" y1="1" x2="8" y2="3" />
+      <line x1="8" y1="13" x2="8" y2="15" />
+      <line x1="1" y1="8" x2="3" y2="8" />
+      <line x1="13" y1="8" x2="15" y2="8" />
+      <line x1="3.05" y1="3.05" x2="4.46" y2="4.46" />
+      <line x1="11.54" y1="11.54" x2="12.95" y2="12.95" />
+      <line x1="3.05" y1="12.95" x2="4.46" y2="11.54" />
+      <line x1="11.54" y1="4.46" x2="12.95" y2="3.05" />
+    </svg>
+  ) : termTheme === 'dark' ? (
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M13.5 8.5a5.5 5.5 0 1 1-6-6 4.5 4.5 0 0 0 6 6z" />
+    </svg>
+  ) : (
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="12" height="9" rx="1" />
+      <line x1="5" y1="14" x2="11" y2="14" />
+      <line x1="8" y1="12" x2="8" y2="14" />
+    </svg>
+  );
+
+  const themeLabel = termTheme === 'light' ? 'Light' : termTheme === 'dark' ? 'Dark' : 'System';
+
   return (
     <>
       <style>{`
@@ -194,9 +304,9 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
-          color: #7982a9;
+          background: transparent;
+          border: 1px solid var(--tb-border, rgba(169,177,214,0.15));
+          color: var(--tb-color, #787c99);
           padding: 5px 12px;
           border-radius: 6px;
           cursor: pointer;
@@ -209,9 +319,8 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
           line-height: 1;
         }
         .code-toolbar-btn:hover {
-          background: rgba(255,255,255,0.08);
-          border-color: rgba(255,255,255,0.15);
-          color: #a9b1d6;
+          background: transparent;
+          color: var(--tb-hover, #a9b1d6);
         }
         .code-toolbar-btn:active {
           transform: scale(0.97);
@@ -230,95 +339,111 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
           background: rgba(122,162,247,0.08);
         }
         .code-toolbar-btn--reconnect:hover {
-          border-color: rgba(169,177,214,0.2);
+          color: var(--tb-hover, #a9b1d6);
+        }
+        .code-toolbar-btn--theme:hover {
+          border-color: rgba(168,153,215,0.3);
+          color: #a899d7;
+          background: rgba(168,153,215,0.08);
         }
       `}</style>
 
-      <div style={{ position: 'relative', flex: 1, minHeight: 0 }}>
-        <div ref={containerRef} className="mx-4" style={{ height: '100%', borderRadius: 6, overflow: 'hidden' }} />
-        {(!connected || containerError) && (
-          <div style={{
-            position: 'absolute',
-            top: '50%', left: '50%',
-            transform: 'translate(-50%, -50%)',
-            background: containerError ? 'rgba(255,235,235,0.95)' : '#1a1b26',
-            color: containerError ? '#991b1b' : '#a9b1d6',
-            padding: '14px 28px',
-            borderRadius: 8,
-            fontSize: 13,
-            fontFamily: "ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace",
-            fontWeight: 500,
-            border: '1px solid rgba(255,255,255,0.08)',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
-            zIndex: 10,
-            textAlign: 'center',
-            maxWidth: 320,
-            letterSpacing: '0.02em',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 8,
-          }}>
-            {containerError
-              ? `Container error: ${containerError}`
-              : <><SpinnerIcon size={16} /> Loading...</>}
-          </div>
-        )}
-      </div>
+      <div className="mx-4 mb-4" style={{ position: 'relative', flex: 1, minHeight: 0 }}>
+        <div style={{ height: '100%', borderRadius: 6, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+          <div ref={containerRef} style={{ flex: 1, minHeight: 0 }} />
+          {(!connected || containerError) && (
+            <div style={{
+              position: 'absolute',
+              top: '50%', left: '50%',
+              transform: 'translate(-50%, -50%)',
+              background: containerError ? 'rgba(255,235,235,0.95)' : 'var(--muted)',
+              color: containerError ? '#991b1b' : 'var(--muted-foreground)',
+              padding: '14px 28px',
+              borderRadius: 8,
+              fontSize: 13,
+              fontFamily: "ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace",
+              fontWeight: 500,
+              border: '1px solid var(--border)',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
+              zIndex: 10,
+              textAlign: 'center',
+              maxWidth: 320,
+              letterSpacing: '0.02em',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+            }}>
+              {containerError
+                ? `Container error: ${containerError}`
+                : <><SpinnerIcon size={16} /> Loading...</>}
+            </div>
+          )}
 
-      {/* Toolbar */}
-      <div
-        style={{
-          flexShrink: 0,
-          height: 42,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '0 16px',
-          background: '#13141c',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-          <button
-            className="code-toolbar-btn code-toolbar-btn--commit"
-            onClick={() => sendCommand('/commit -changes')}
-          >
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-              <circle cx="8" cy="8" r="3" />
-              <line x1="8" y1="1" x2="8" y2="5" />
-              <line x1="8" y1="11" x2="8" y2="15" />
-            </svg>
-            Commit
-          </button>
-          <button
-            className="code-toolbar-btn code-toolbar-btn--merge"
-            onClick={() => sendCommand('/ai -merge')}
-          >
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="4" cy="4" r="2" />
-              <circle cx="12" cy="12" r="2" />
-              <path d="M4 6v2c0 2.2 1.8 4 4 4h2" />
-            </svg>
-            Merge
-          </button>
-        </div>
-        <button
-          className="code-toolbar-btn code-toolbar-btn--reconnect"
-          onClick={handleReconnect}
-        >
+          {/* Toolbar */}
           <div
-            ref={statusRef}
+            ref={toolbarRef}
             style={{
-              width: 7,
-              height: 7,
-              borderRadius: '50%',
-              backgroundColor: STATUS.connecting,
-              boxShadow: `0 0 6px ${STATUS.connecting}`,
-              transition: 'all 0.3s ease',
+              flexShrink: 0,
+              height: 42,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '0 16px',
+              background: 'var(--muted)',
             }}
-          />
-          Reconnect
-        </button>
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <button
+                className="code-toolbar-btn code-toolbar-btn--theme"
+                onClick={cycleTheme}
+              >
+                {themeIcon}
+                {themeLabel}
+              </button>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <button
+                className="code-toolbar-btn code-toolbar-btn--commit"
+                onClick={() => sendCommand('/commit-changes')}
+              >
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                  <circle cx="8" cy="8" r="3" />
+                  <line x1="8" y1="1" x2="8" y2="5" />
+                  <line x1="8" y1="11" x2="8" y2="15" />
+                </svg>
+                Commit
+              </button>
+              <button
+                className="code-toolbar-btn code-toolbar-btn--merge"
+                onClick={() => sendCommand('/ai-merge-back')}
+              >
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="4" cy="4" r="2" />
+                  <circle cx="12" cy="12" r="2" />
+                  <path d="M4 6v2c0 2.2 1.8 4 4 4h2" />
+                </svg>
+                Merge
+              </button>
+              <button
+                className="code-toolbar-btn code-toolbar-btn--reconnect"
+                onClick={handleReconnect}
+              >
+                <div
+                  ref={statusRef}
+                  style={{
+                    width: 7,
+                    height: 7,
+                    borderRadius: '50%',
+                    backgroundColor: STATUS.connecting,
+                    boxShadow: `0 0 6px ${STATUS.connecting}`,
+                    transition: 'all 0.3s ease',
+                  }}
+                />
+                Reconnect
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

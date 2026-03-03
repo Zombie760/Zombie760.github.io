@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { SidebarHistoryItem } from './sidebar-history-item.js';
 import { SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu } from './ui/sidebar.js';
 import { useChatNav } from './chat-nav-context.js';
@@ -79,7 +79,7 @@ const isCodeChat = (chat) => Boolean(chat.codeWorkspaceId);
 export function SidebarHistory() {
   const [chats, setChats] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState(null);
+  const [filter, setFilter] = useState('all');
   const updateFilter = (v) => { setFilter(v); try { localStorage.setItem('sidebar-chat-filter', v); } catch {} };
   const { activeChatId, navigateToChat } = useChatNav();
 
@@ -94,14 +94,12 @@ export function SidebarHistory() {
     }
   };
 
-  // Sync filter from localStorage on mount
-  useEffect(() => {
+  // Sync filter from localStorage on mount (useLayoutEffect prevents flash)
+  useLayoutEffect(() => {
     try {
       const v = localStorage.getItem('sidebar-chat-filter');
-      setFilter(v === 'chat' || v === 'code' ? v : 'all');
-    } catch {
-      setFilter('all');
-    }
+      if (v === 'chat' || v === 'code') setFilter(v);
+    } catch {}
   }, []);
 
   // Load chats on mount (chatsupdated event handles subsequent updates)
@@ -144,7 +142,7 @@ export function SidebarHistory() {
     if (!success) loadChats();
   };
 
-  if ((loading && chats.length === 0) || filter === null) {
+  if (loading && chats.length === 0) {
     return (
       <SidebarGroup>
         <SidebarGroupContent>

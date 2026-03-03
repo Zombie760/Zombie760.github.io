@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { AppSidebar } from './app-sidebar.js';
 import { Chat } from './chat.js';
 import { SidebarProvider, SidebarInset } from './ui/sidebar.js';
@@ -25,9 +25,6 @@ export function ChatPage({ session, needsSetup, chatId }) {
   const navigateToChat = useCallback((id) => {
     if (id) {
       window.history.pushState({}, '', `/chat/${id}`);
-      setResolvedChatId(null);
-      setInitialMessages([]);
-      setWorkspace(null);
       setActiveChatId(id);
     } else {
       window.history.pushState({}, '', '/');
@@ -43,9 +40,6 @@ export function ChatPage({ session, needsSetup, chatId }) {
     const onPopState = () => {
       const match = window.location.pathname.match(/^\/chat\/(.+)/);
       if (match) {
-        setResolvedChatId(null);
-        setInitialMessages([]);
-        setWorkspace(null);
         setActiveChatId(match[1]);
       } else {
         setInitialMessages([]);
@@ -97,12 +91,17 @@ export function ChatPage({ session, needsSetup, chatId }) {
     }
   }, [activeChatId]);
 
+  const contextValue = useMemo(
+    () => ({ activeChatId: activeChatId || resolvedChatId, navigateToChat }),
+    [activeChatId, resolvedChatId, navigateToChat]
+  );
+
   if (needsSetup || !session) {
     return null;
   }
 
   return (
-    <ChatNavProvider value={{ activeChatId: resolvedChatId, navigateToChat }}>
+    <ChatNavProvider value={contextValue}>
       <SidebarProvider>
         <AppSidebar user={session.user} />
         <SidebarInset>

@@ -16,10 +16,16 @@ fi
 
 cd /home/claude-code/workspace
 
-# Create and checkout feature branch (with upstream tracking)
+# Create or checkout feature branch
 if [ -n "$FEATURE_BRANCH" ]; then
-    git checkout -b "$FEATURE_BRANCH"
-    git push -u origin "$FEATURE_BRANCH"
+    if git ls-remote --heads origin "$FEATURE_BRANCH" | grep -q .; then
+        # Branch exists on remote (recreation case) — check it out with tracking
+        git checkout -b "$FEATURE_BRANCH" "origin/$FEATURE_BRANCH"
+    else
+        # Branch doesn't exist (first creation) — create and push
+        git checkout -b "$FEATURE_BRANCH"
+        git push -u origin "$FEATURE_BRANCH"
+    fi
 fi
 
 WORKSPACE_DIR=$(pwd)
