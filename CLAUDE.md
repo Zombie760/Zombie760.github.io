@@ -17,6 +17,20 @@ The `templates/` directory contains **only files that get scaffolded into user p
 - Docker files
 - CLAUDE.md files for AI assistant context in user projects
 
+### Managed Paths
+
+Files in managed directories are auto-synced (created, updated, **and deleted**) by `init` to match the package templates exactly. Users should not edit these files — changes will be overwritten on upgrade. Managed paths are defined in `bin/managed-paths.js`:
+
+- `.github/workflows/` — CI/CD workflows
+- `docker/event-handler/` — Docker build files
+- `docker-compose.yml`, `.dockerignore` — Docker config
+- `CLAUDE.md` — AI assistant context
+- `app/` — All Next.js pages, layouts, and routes
+
+### CSS Customization
+
+`app/globals.css` is managed and auto-updated. Users customize appearance via `theme.css` (project root), which is loaded after globals.css and not managed — user owns it.
+
 ## Directory Structure
 
 ```
@@ -29,7 +43,7 @@ The `templates/` directory contains **only files that get scaffolded into user p
 │   ├── triggers.js             # Webhook trigger middleware (loads TRIGGERS.json)
 │   ├── paths.js                # Central path resolver (resolves from user's project root)
 │   ├── ai/                     # LLM integration (chat, streaming, agent, model, tools)
-│   ├── auth/                   # NextAuth config, helpers, middleware, server actions
+│   ├── auth/                   # NextAuth config, helpers, middleware, server actions, login/setup components
 │   ├── channels/               # Channel adapters (base class, Telegram, factory)
 │   ├── chat/                   # Chat route handler, server actions, React UI components
 │   ├── db/                     # SQLite via Drizzle (schema, migrations, api-keys)
@@ -75,7 +89,8 @@ The `templates/` directory contains **only files that get scaffolded into user p
 | `thepopebot/instrumentation` | `config/instrumentation.js` | `register()` — Next.js instrumentation hook that loads `.env` and starts cron jobs on server start |
 | `thepopebot/auth` | `lib/auth/index.js` | Auth helpers (`auth()`, `getPageAuthState()`) |
 | `thepopebot/auth/actions` | `lib/auth/actions.js` | Server action for admin setup (`setupAdmin()`) |
-| `thepopebot/chat` | `lib/chat/components/index.js` | Chat UI components |
+| `thepopebot/auth/components` | `lib/auth/components/index.js` | Login, setup, and ASCII logo components |
+| `thepopebot/chat` | `lib/chat/components/index.js` | Chat UI components + ThemeProvider |
 | `thepopebot/chat/actions` | `lib/chat/actions.js` | Server actions for chats, notifications, and swarm |
 | `thepopebot/chat/api` | `lib/chat/api.js` | Dedicated chat streaming route handler (session auth) |
 | `thepopebot/db` | `lib/db/index.js` | Database access |

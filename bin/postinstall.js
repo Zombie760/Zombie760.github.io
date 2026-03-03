@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { isManaged } from './managed-paths.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,6 +41,8 @@ function walk(dir) {
 
 const changed = [];
 for (const relPath of walk(templatesDir)) {
+  // Skip managed files — they'll be auto-updated by init
+  if (isManaged(relPath)) continue;
   const src = path.join(templatesDir, relPath);
   const dest = path.join(projectRoot, relPath);
   if (fs.existsSync(dest)) {

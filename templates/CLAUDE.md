@@ -14,8 +14,8 @@ This directory contains files that get copied into user projects when they run `
 - **User-editable config**: `config/SOUL.md`, `config/JOB_PLANNING.md`, `config/CRONS.json`, `config/TRIGGERS.json`, etc.
 - **GitHub Actions workflows**: `.github/workflows/`
 - **Docker files**: `docker/`, `docker-compose.yml`
-- **UI page shells**: `app/` pages that import components from the package
-- **Client components**: `app/components/` for components that must live in the user's project (e.g., `login-form.jsx`, `setup-form.jsx`) because they depend on user-side packages like `next-auth/react`
+- **UI page shells**: `app/` pages that import components from the package (managed — auto-synced on upgrade)
+- **User CSS overrides**: `theme.css` (user-owned, not managed)
 
 ## What does NOT belong here
 
@@ -25,5 +25,10 @@ This directory contains files that get copied into user projects when they run `
 - LLM/AI integrations
 - Tool implementations
 - Anything that should be shared across all users via `npm update thepopebot`
+- UI components — all components live in the package (`lib/auth/components/`, `lib/chat/components/`)
 
 If you're adding a feature to the event handler, put it in the package. Templates just wire into it.
+
+## Managed vs. User-Owned
+
+Files inside managed paths (`app/`, `.github/workflows/`, `docker/event-handler/`, etc.) are auto-synced by `init` — stale files are deleted, changed files are overwritten. Never add user-editable content to managed paths. User customization goes in `config/` or `theme.css`.

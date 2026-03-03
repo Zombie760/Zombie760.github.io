@@ -1,5 +1,6 @@
 import './globals.css';
-import { ThemeProvider } from './components/theme-provider';
+import '../theme.css';
+import { ThemeProvider } from 'thepopebot/chat';
 
 export const metadata = {
   title: 'thepopebot',
