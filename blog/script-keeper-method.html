@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Script Keeper Method — How I Cut AI Costs by 70% | Botwave</title>
+<meta name="description" content="The Script Keeper Method: a framework for getting 3.5x more work out of every AI session. Built by a plumber, not a prompt engineer.">
+<meta property="og:title" content="The Script Keeper Method — How I Cut AI Costs by 70%">
+<meta property="og:description" content="Every multi-step op gets scripted, saved, and reused. We don't waste tokens, we pipe and execute.">
+<meta property="og:url" content="https://botwave.app/blog/script-keeper-method.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://botwave.app/blog/script-keeper-method.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23f59e0b'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='bold' fill='%2309090b'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090b;--sf:#18181b;--sf2:#1f1f23;--bd:#2e2e33;--am:#f59e0b;--amd:#d97706;--amg:rgba(245,158,11,.12);--em:#10b981;--tx:#fafafa;--t2:#a1a1aa;--t3:#71717a;--fh:'Plus Jakarta Sans',sans-serif;--fb:'DM Sans',sans-serif;--fm:'JetBrains Mono',monospace}
+html{scroll-behavior:smooth}body{font-family:var(--fb);background:var(--bg);color:var(--tx);line-height:1.8;-webkit-font-smoothing:antialiased}
+a{color:var(--am);text-decoration:none}a:hover{color:var(--amd)}::selection{background:var(--am);color:var(--bg)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#0f0f11;border-bottom:1px solid #1e1e22;padding:12px 0}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-size:1.1rem;font-weight:700;color:var(--am)}
+.nav-links{display:flex;gap:20px;font-size:.85rem}.nav-links a{color:var(--t3)}.nav-links a:hover{color:var(--tx)}
+article{max-width:720px;margin:0 auto;padding:6.5rem 1.5rem 4rem}
+.post-meta{font-size:.8rem;color:var(--t3);margin-bottom:2rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+h1{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.2;margin-bottom:.5rem;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--am)}
+.subtitle{font-size:1.15rem;color:var(--t2);margin-bottom:2rem;line-height:1.6}
+h2{font-family:var(--fh);font-size:1.3rem;font-weight:700;margin:2.5rem 0 1rem;color:var(--tx)}
+h3{font-family:var(--fh);font-size:1.05rem;font-weight:600;margin:2rem 0 .75rem;color:var(--am)}
+p{color:var(--t2);margin-bottom:1.25rem}
+strong{color:var(--tx)}
+blockquote{border-left:3px solid var(--am);padding:.75rem 1.25rem;margin:1.5rem 0;background:var(--sf);border-radius:0 8px 8px 0;font-style:italic;color:var(--t2)}
+code{font-family:var(--fm);font-size:.85em;background:var(--sf2);padding:.15rem .4rem;border-radius:4px;color:var(--am)}
+pre{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:1.25rem;margin:1.5rem 0;overflow-x:auto;font-family:var(--fm);font-size:.82rem;line-height:1.7;color:var(--t2)}
+.rule-card{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:1.25rem;margin:1rem 0}
+.rule-card h4{font-family:var(--fh);font-size:.9rem;font-weight:700;color:var(--am);margin-bottom:.5rem}
+.rule-card p{font-size:.9rem;margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.85rem}
+th{text-align:left;padding:.6rem .8rem;color:var(--t3);border-bottom:2px solid var(--am);font-size:.75rem;text-transform:uppercase;letter-spacing:1px}
+td{padding:.6rem .8rem;border-bottom:1px solid var(--bd);color:var(--t2)}
+.cta-box{background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(16,185,129,.06));border:1px solid rgba(245,158,11,.2);border-radius:12px;padding:2rem;text-align:center;margin:2rem 0}
+.cta-box h3{color:var(--tx);margin-bottom:.5rem}
+.cta-box p{font-size:.9rem}
+.cta-box a{display:inline-block;padding:.75rem 2rem;background:var(--am);color:var(--bg);border-radius:8px;font-weight:700;margin-top:.75rem}
+.cta-box a:hover{background:var(--amd)}
+footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--t3);border-top:1px solid var(--bd);margin-top:3rem}
+@media(max-width:600px){article{padding:5rem 1rem 2rem}.nav-links{gap:12px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-brand">Botwave</a>
+  <div class="nav-links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/#pricing">Pricing</a></div>
+</div></nav>
+
+<article>
+<div class="post-meta">
+  <span>March 3, 2026</span>
+  <span>SGKx1904</span>
+  <span>8 min read</span>
+</div>
+
+<h1>The <em>Script Keeper</em> Method</h1>
+<p class="subtitle">How a plumber gets 3.5x more work out of every AI session — and why you're probably burning 70% of your tokens on nothing.</p>
+
+<p>I run 15 AI agents on $0/month in API costs. I built a SaaS platform, a 3D-printed hardware line, and a full marketing pipeline — all on a basic Claude Code subscription.</p>
+
+<p>The secret isn't a better model. It's not a better prompt. It's <strong>discipline</strong>.</p>
+
+<p>I call it the Script Keeper Method. Here's how it works.</p>
+
+<h2>The Problem: You're Wasting 70% of Your AI Budget</h2>
+
+<p>Watch how most people use AI tools:</p>
+
+<ul style="color:var(--t2);margin-bottom:1.5rem;padding-left:1.5rem">
+<li>They read the same file 3-5 times because they forgot what was in it</li>
+<li>They search the web for "best practices" instead of just building</li>
+<li>They get stuck in debug loops — retrying the same failed command 10 times</li>
+<li>They narrate what they're about to do instead of doing it</li>
+<li>They explore the codebase aimlessly instead of targeting exactly what they need</li>
+<li>They run one task at a time when five could run in parallel</li>
+</ul>
+
+<p>Every one of those habits burns tokens. Tokens cost money. Or if you're on a subscription, they eat your context window — which means less work per session.</p>
+
+<blockquote>Every multi-step operation gets scripted, saved, and reused. We don't waste tokens. We pipe and execute.</blockquote>
+
+<h2>The 8 Rules</h2>
+
+<div class="rule-card">
+<h4>1. Read Once, Edit Once</h4>
+<p>Never re-read a file you already have in context. If you just read it, edit it now. Don't come back to it later.</p>
+</div>
+
+<div class="rule-card">
+<h4>2. No Exploratory Searches</h4>
+<p>If you know the file path, read it directly. Don't <code>grep</code> for something you already know the location of. Every search costs tokens.</p>
+</div>
+
+<div class="rule-card">
+<h4>3. Parallel Everything</h4>
+<p>If you need to read 4 files, read them all at once — not one at a time. If you need to run 3 independent tasks, run them in parallel. Time is money. Tokens are money.</p>
+</div>
+
+<div class="rule-card">
+<h4>4. No Debug Loops</h4>
+<p>If something doesn't work after 2 attempts — scrap it. Build an alternative. Don't burn 10 rounds retrying the same failed approach. That's not persistence, it's waste.</p>
+</div>
+
+<div class="rule-card">
+<h4>5. Script Everything</h4>
+<p>If you do something more than once, script it. Save it. Every multi-step operation becomes a <code>.sh</code> or <code>.py</code> file in your scripts directory. Next time, you run the script instead of explaining the task again.</p>
+</div>
+
+<div class="rule-card">
+<h4>6. Local Tools Are Free</h4>
+<p>Your terminal, your shell, your <code>grep</code>, your <code>jq</code> — those cost nothing. Pre-filter data locally before sending it to the AI. Send the smallest possible input.</p>
+</div>
+
+<div class="rule-card">
+<h4>7. No Fluff</h4>
+<p>Don't narrate what you're about to do. Don't explain your reasoning unless asked. Don't add comments to code that doesn't need them. Say what you did, not what you're thinking about doing.</p>
+</div>
+
+<div class="rule-card">
+<h4>8. Pipe and Execute</h4>
+<p>Chain operations together. Send precise instructions. Get the job done in the fewest possible calls.</p>
+</div>
+
+<h2>Real Numbers: What This Looks Like</h2>
+
+<p>Here's a real session from today. One conversation, no breaks:</p>
+
+<table>
+<thead>
+<tr><th>Deliverable</th><th>Normal Approach</th><th>Script Keeper</th></tr>
+</thead>
+<tbody>
+<tr><td>Marketing script (280 lines)</td><td>3-4 sessions</td><td>1 tool call</td></tr>
+<tr><td>Ops script (270 lines, 17 job redistribution)</td><td>2-3 sessions</td><td>1 tool call</td></tr>
+<tr><td>Dashboard upgrade (7 files)</td><td>Full session</td><td>7 edits, done</td></tr>
+<tr><td>Website audit + 12 fixes</td><td>Full day</td><td>12 surgical edits</td></tr>
+<tr><td>2 production deploys</td><td>Manual process</td><td>2 commits, auto-push</td></tr>
+</tbody>
+</table>
+
+<p><strong>Total tool calls:</strong> ~50</p>
+<p><strong>Estimated token savings vs normal:</strong> 3.5x</p>
+
+<table>
+<thead>
+<tr><th>Metric</th><th>Normal AI Workflow</th><th>Script Keeper</th></tr>
+</thead>
+<tbody>
+<tr><td>File re-reads</td><td>3-5x per file</td><td>1x per file</td></tr>
+<tr><td>Exploratory searches</td><td>20-30</td><td>4 targeted</td></tr>
+<tr><td>Debug loops</td><td>5-10 retry cycles</td><td>0</td></tr>
+<tr><td>Web searches</td><td>5-10</td><td>0</td></tr>
+<tr><td>Verification re-reads</td><td>10-15</td><td>0</td></tr>
+<tr><td>Est. API cost (Opus rates)</td><td>~$45+</td><td>~$13</td></tr>
+</tbody>
+</table>
+
+<h2>The Pipe Patterns</h2>
+
+<p>Here's how Script Keepers use AI in practice:</p>
+
+<pre># One-shot code review — single API call, zero conversation overhead
+git diff | claude -p "Review: security, bugs, performance. Suggest fixes."
+
+# Log analysis — pre-filter locally, send only what matters
+grep -i 'error\|exception' app.log | sort | uniq -c | sort -nr | head -30 \
+  | claude -p "Group by root cause, suggest fixes."
+
+# Quick refactor
+cat src/utils/helpers.ts | claude -p "3 improvements for readability."
+
+# Config comparison
+diff -u old.yaml new.yaml | claude -p "Explain changes. Flag breaking diffs."
+
+# JSON analysis
+jq '.[] | select(.level == "error")' events.json \
+  | claude -p "Common patterns, root causes, mitigations."</pre>
+
+<p>Notice the pattern: <strong>local tools do the heavy lifting</strong>. The AI gets the smallest possible input and a precise instruction. One call. One result. Done.</p>
+
+<h2>The Script Library</h2>
+
+<p>Every Script Keeper builds a library. Here's what mine looks like:</p>
+
+<pre>~/botwave/scripts/
+  marketing-launch.sh     # 6 ready-to-copy marketing sections
+  ops-launch.sh           # Full fleet activation + API redistribution
+  launch-empire.sh        # 3D print inventory + launch posts
+
+~/.openclaw/scripts/
+  auto-post.py            # Multi-platform content engine
+  vault.py                # AES-256 encrypted secrets manager
+  fleet-status.sh         # CLI dashboard for all bots
+  admin/deploy-*.sh       # One-click agent deployment</pre>
+
+<p>Every script is <code>chmod 700</code>. Every script is reusable. I never explain the same operation twice — I just run the script.</p>
+
+<h2>The Tool Call Budget</h2>
+
+<p>Before starting any task, I know how many calls it should take:</p>
+
+<table>
+<thead>
+<tr><th>Task Size</th><th>Budget</th><th>Example</th></tr>
+</thead>
+<tbody>
+<tr><td>Simple</td><td>2-4 calls</td><td>Add an alias, edit one file</td></tr>
+<tr><td>Medium</td><td>5-8 calls</td><td>Multi-file edit, config change</td></tr>
+<tr><td>Large</td><td>Stay lean</td><td>New feature — use judgment but don't sprawl</td></tr>
+</tbody>
+</table>
+
+<p>If a simple task takes more than 4 calls, something went wrong. Stop. Reassess. Don't keep burning tokens on a broken approach.</p>
+
+<h2>Why This Matters for Your Business</h2>
+
+<p>If you're a solopreneur, a tradesperson, or a small business owner using AI tools:</p>
+
+<ul style="color:var(--t2);margin-bottom:1.5rem;padding-left:1.5rem">
+<li><strong>On per-token pricing:</strong> You're paying 3.5x more than you need to. The Script Keeper Method cuts that by 70%.</li>
+<li><strong>On subscriptions:</strong> You're hitting context limits and session caps way earlier than necessary. Script Keeper gets you 3.5x more work per session.</li>
+<li><strong>On time:</strong> What takes most people a full day takes a Script Keeper one session. That's hours back in your day.</li>
+</ul>
+
+<p>The tools are all free and open source. The AI models have free tiers. <strong>The only thing that costs money is using them wrong.</strong></p>
+
+<div class="cta-box">
+<h3>Want to learn the Script Keeper Method?</h3>
+<p>Botwave teaches you how to build, automate, and scale — without wasting tokens or money.</p>
+<a href="https://t.me/CaptainObvious_bot" target="_blank">Try the Free Demo Bot</a>
+<p style="margin-top:.75rem;font-size:.75rem;color:var(--t3)">Or join the community: <a href="https://t.me/MoneyMakingMitchell1904">@MoneyMakingMitchell1904</a></p>
+</div>
+
+<p style="font-size:.85rem;color:var(--t3);text-align:center;margin-top:2rem">Built by SGKx1904. Plumber. Script Keeper. Zero venture capital.</p>
+
+</article>
+
+<footer>
+  <a href="/" style="color:var(--am)">Botwave</a> &copy; 2026. The new wave of AI.
+</footer>
+</body>
+</html>
