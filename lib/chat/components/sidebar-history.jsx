@@ -74,12 +74,12 @@ function ChatTypeFilter({ filter, setFilter }) {
   );
 }
 
-const isCodeChat = (chat) => Boolean(chat.codeWorkspaceId && chat.containerName);
+const isCodeChat = (chat) => Boolean(chat.codeWorkspaceId);
 
 export function SidebarHistory() {
   const [chats, setChats] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState(null);
   const updateFilter = (v) => { setFilter(v); try { localStorage.setItem('sidebar-chat-filter', v); } catch {} };
   const { activeChatId, navigateToChat } = useChatNav();
 
@@ -94,17 +94,7 @@ export function SidebarHistory() {
     }
   };
 
-  // Sync filter from localStorage on mount (avoids hydration mismatch)
-  useEffect(() => {
-    try { const v = localStorage.getItem('sidebar-chat-filter'); if (v === 'chat' || v === 'code') setFilter(v); } catch {}
-  }, []);
-
-  // Load chats on mount and refresh when navigating between pages
-  useEffect(() => {
-    loadChats();
-  }, [activeChatId]);
-
-  // Read filter from localStorage on mount (avoids SSR hydration mismatch)
+  // Sync filter from localStorage on mount
   useEffect(() => {
     try {
       const v = localStorage.getItem('sidebar-chat-filter');
@@ -113,6 +103,11 @@ export function SidebarHistory() {
       setFilter('all');
     }
   }, []);
+
+  // Load chats on mount and refresh when navigating between pages
+  useEffect(() => {
+    loadChats();
+  }, [activeChatId]);
 
   // Reload when chats change (new chat created or title updated)
   useEffect(() => {
@@ -149,7 +144,7 @@ export function SidebarHistory() {
     if (!success) loadChats();
   };
 
-  if (loading && chats.length === 0) {
+  if ((loading && chats.length === 0) || filter === null) {
     return (
       <SidebarGroup>
         <SidebarGroupContent>
@@ -176,7 +171,7 @@ export function SidebarHistory() {
     );
   }
 
-  const filteredChats = filter === 'all' ? chats
+  const filteredChats = !filter || filter === 'all' ? chats
     : filter === 'code' ? chats.filter(isCodeChat)
     : chats.filter((c) => !isCodeChat(c));
   const grouped = groupChatsByDate(filteredChats);

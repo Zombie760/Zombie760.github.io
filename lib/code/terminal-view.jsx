@@ -187,11 +187,6 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
     connect();
   };
 
-  const sendTerminalCommand = (cmd) => {
-    const ws = wsRef.current;
-    if (ws && ws.readyState === WebSocket.OPEN) ws.send('0' + cmd + '\r');
-  };
-
   return (
     <>
       <style>{`
@@ -286,7 +281,7 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
           <button
             className="code-toolbar-btn code-toolbar-btn--commit"
-            onClick={() => sendTerminalCommand('/commit -changes')}
+            onClick={() => sendCommand('/commit -changes')}
           >
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
               <circle cx="8" cy="8" r="3" />
@@ -297,7 +292,7 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer }) {
           </button>
           <button
             className="code-toolbar-btn code-toolbar-btn--merge"
-            onClick={() => sendTerminalCommand('/ai -merge')}
+            onClick={() => sendCommand('/ai -merge')}
           >
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="4" cy="4" r="2" />

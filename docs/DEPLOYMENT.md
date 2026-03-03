@@ -17,7 +17,7 @@ docker-compose up      # Start Traefik + event handler + runner
 
 ## Event Handler Docker Image
 
-The event handler Dockerfile (`templates/docker/event-handler/Dockerfile`) is **not a self-contained application image**. It only provides the Node.js runtime, system dependencies (git, gh, python3, build tools), PM2, and pre-installed `node_modules`. It does **not** contain the Next.js app code and does **not** run `next build`.
+The event handler Dockerfile (`templates/docker/event-handler/Dockerfile`) is **not a self-contained application image**. It uses a multi-stage build: the first stage installs build tools (python3, make, g++) to compile native addons during `npm install`, then the final image keeps only runtime dependencies (git, gh, PM2) and the pre-compiled `node_modules`. It does **not** contain the Next.js app code and does **not** run `next build`.
 
 ### How the two volume mounts work together
 

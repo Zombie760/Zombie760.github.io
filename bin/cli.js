@@ -56,6 +56,7 @@ Commands:
   reset-auth                        Regenerate AUTH_SECRET (invalidates all sessions)
   reset [file]                      Restore a template file (or list available templates)
   diff [file]                       Show differences between project files and package templates
+  sync <path>                       Sync local package to a test install (build, pack, Docker)
   set-agent-secret <KEY> [VALUE]    Set a GitHub secret with AGENT_ prefix (also updates .env)
   set-agent-llm-secret <KEY> [VALUE]  Set a GitHub secret with AGENT_LLM_ prefix
   set-var <KEY> [VALUE]             Set a GitHub repository variable
@@ -802,6 +803,11 @@ switch (command) {
   case 'update':
     await upgrade();
     break;
+  case 'sync': {
+    const { sync } = await import('./sync.js');
+    await sync(args[0]);
+    break;
+  }
   case 'set-agent-secret':
     await setAgentSecret(args[0], args[1]);
     break;
