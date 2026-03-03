@@ -79,9 +79,7 @@ const isCodeChat = (chat) => Boolean(chat.codeWorkspaceId && chat.containerName)
 export function SidebarHistory() {
   const [chats, setChats] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState(() => {
-    try { const v = localStorage.getItem('sidebar-chat-filter'); return v === 'chat' || v === 'code' ? v : 'all'; } catch { return 'all'; }
-  });
+  const [filter, setFilter] = useState(null);
   const updateFilter = (v) => { setFilter(v); try { localStorage.setItem('sidebar-chat-filter', v); } catch {} };
   const { activeChatId, navigateToChat } = useChatNav();
 
@@ -100,6 +98,16 @@ export function SidebarHistory() {
   useEffect(() => {
     loadChats();
   }, [activeChatId]);
+
+  // Read filter from localStorage on mount (avoids SSR hydration mismatch)
+  useEffect(() => {
+    try {
+      const v = localStorage.getItem('sidebar-chat-filter');
+      setFilter(v === 'chat' || v === 'code' ? v : 'all');
+    } catch {
+      setFilter('all');
+    }
+  }, []);
 
   // Reload when chats change (new chat created or title updated)
   useEffect(() => {

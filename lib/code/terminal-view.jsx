@@ -156,8 +156,58 @@ export default function TerminalView({ codeWorkspaceId }) {
     connect();
   };
 
+  const sendTerminalCommand = (cmd) => {
+    const ws = wsRef.current;
+    if (ws && ws.readyState === WebSocket.OPEN) ws.send('0' + cmd + '\r');
+  };
+
   return (
     <>
+      <style>{`
+        .code-toolbar-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(255,255,255,0.08);
+          color: #7982a9;
+          padding: 5px 12px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 12px;
+          font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+          font-weight: 500;
+          letter-spacing: 0.01em;
+          transition: all 0.15s ease;
+          white-space: nowrap;
+          line-height: 1;
+        }
+        .code-toolbar-btn:hover {
+          background: rgba(255,255,255,0.08);
+          border-color: rgba(255,255,255,0.15);
+          color: #a9b1d6;
+        }
+        .code-toolbar-btn:active {
+          transform: scale(0.97);
+        }
+        .code-toolbar-btn svg {
+          flex-shrink: 0;
+        }
+        .code-toolbar-btn--commit:hover {
+          border-color: rgba(115,218,149,0.3);
+          color: #73da95;
+          background: rgba(115,218,149,0.08);
+        }
+        .code-toolbar-btn--merge:hover {
+          border-color: rgba(122,162,247,0.3);
+          color: #7aa2f7;
+          background: rgba(122,162,247,0.08);
+        }
+        .code-toolbar-btn--reconnect:hover {
+          border-color: rgba(169,177,214,0.2);
+        }
+      `}</style>
+
       <div style={{ position: 'relative', flex: 1, minHeight: 0 }}>
         <div ref={containerRef} className="mx-4" style={{ height: '100%', borderRadius: 6, overflow: 'hidden' }} />
         {!connected && (
@@ -165,16 +215,19 @@ export default function TerminalView({ codeWorkspaceId }) {
             position: 'absolute',
             top: '50%', left: '50%',
             transform: 'translate(-50%, -50%)',
-            background: 'rgba(255,255,255,0.9)',
-            color: '#000',
-            padding: '12px 24px',
+            background: '#1a1b26',
+            color: '#a9b1d6',
+            padding: '14px 28px',
             borderRadius: 8,
-            fontSize: 14,
+            fontSize: 13,
+            fontFamily: "ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace",
             fontWeight: 500,
-            boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
             zIndex: 10,
             textAlign: 'center',
             maxWidth: 320,
+            letterSpacing: '0.02em',
           }}>
             Loading...
           </div>
@@ -185,40 +238,57 @@ export default function TerminalView({ codeWorkspaceId }) {
       <div
         style={{
           flexShrink: 0,
-          height: 36,
+          height: 42,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '0 16px',
+          background: '#13141c',
+          borderTop: '1px solid rgba(255,255,255,0.06)',
         }}
       >
-        <div />
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button onClick={handleReconnect} style={{ ...btnStyle, display: 'flex', alignItems: 'center', gap: 6 }}>
-            <div
-              ref={statusRef}
-              style={{
-                width: 8,
-                height: 8,
-                borderRadius: '50%',
-                backgroundColor: STATUS.connecting,
-              }}
-            />
-            Reconnect
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <button
+            className="code-toolbar-btn code-toolbar-btn--commit"
+            onClick={() => sendTerminalCommand('/commit -changes')}
+          >
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+              <circle cx="8" cy="8" r="3" />
+              <line x1="8" y1="1" x2="8" y2="5" />
+              <line x1="8" y1="11" x2="8" y2="15" />
+            </svg>
+            Commit
+          </button>
+          <button
+            className="code-toolbar-btn code-toolbar-btn--merge"
+            onClick={() => sendTerminalCommand('/ai -merge')}
+          >
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="4" cy="4" r="2" />
+              <circle cx="12" cy="12" r="2" />
+              <path d="M4 6v2c0 2.2 1.8 4 4 4h2" />
+            </svg>
+            Merge
           </button>
         </div>
+        <button
+          className="code-toolbar-btn code-toolbar-btn--reconnect"
+          onClick={handleReconnect}
+        >
+          <div
+            ref={statusRef}
+            style={{
+              width: 7,
+              height: 7,
+              borderRadius: '50%',
+              backgroundColor: STATUS.connecting,
+              boxShadow: `0 0 6px ${STATUS.connecting}`,
+              transition: 'all 0.3s ease',
+            }}
+          />
+          Reconnect
+        </button>
       </div>
     </>
   );
 }
-
-const btnStyle = {
-  background: 'transparent',
-  border: '1px solid #d1d5db',
-  color: 'inherit',
-  padding: '4px 10px',
-  borderRadius: 4,
-  cursor: 'pointer',
-  fontSize: 12,
-  fontFamily: 'inherit',
-};

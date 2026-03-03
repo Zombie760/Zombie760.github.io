@@ -15,6 +15,13 @@ if [ -n "$REPO" ] && [ ! -d "/home/claude-code/workspace/.git" ]; then
 fi
 
 cd /home/claude-code/workspace
+
+# Create and checkout feature branch (with upstream tracking)
+if [ -n "$FEATURE_BRANCH" ]; then
+    git checkout -b "$FEATURE_BRANCH"
+    git push -u origin "$FEATURE_BRANCH"
+fi
+
 WORKSPACE_DIR=$(pwd)
 
 # Claude Code auth — use OAuth token, not API key

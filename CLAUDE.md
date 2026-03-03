@@ -2,7 +2,16 @@
 
 Technical reference for AI assistants modifying the thepopebot NPM package source code.
 
-**Architecture**: Event Handler (Next.js) creates `job/*` branches → GitHub Actions runs Docker agent (Pi) → task executed → PR created → auto-merge → notification. Agent jobs log to `logs/{JOB_ID}/`.
+**Architecture**: Event Handler (Next.js) creates `job/*` branches → GitHub Actions runs Docker agent (Pi or Claude Code) → task executed → PR created → auto-merge → notification. Agent jobs log to `logs/{JOB_ID}/`.
+
+## Deployment Model
+
+The npm package (`api/`, `lib/`, `config/`, `bin/`) is published to npm. In production:
+
+- **Event handler**: Docker container installs the published package from npm. The user's project (`config/`, `skills/`, `.env`, `data/`) is volume-mounted at `/app`. Runs `server.js` via PM2 behind Traefik reverse proxy.
+- **`lib/paths.js`**: Central path resolver — ALL paths resolve from `process.cwd()`. This is how the installed npm package finds the volume-mounted user project files.
+- **Job containers**: Ephemeral Docker containers clone `job/*` branches separately — NOT volume-mounted. See `templates/docker/CLAUDE.md`.
+- **Local install**: Gives users CLI tools (`init`, `setup`, `upgrade`) and thin Next.js wiring for dev.
 
 ## Package vs. Templates — Where Code Goes
 
@@ -22,7 +31,7 @@ The `templates/` directory contains **only files that get scaffolded into user p
 Files in managed directories are auto-synced (created, updated, **and deleted**) by `init` to match the package templates exactly. Users should not edit these files — changes will be overwritten on upgrade. Managed paths are defined in `bin/managed-paths.js`:
 
 - `.github/workflows/` — CI/CD workflows
-- `docker/event-handler/` — Docker build files
+- `docker/` — All Docker files (Dockerfiles, entrypoints, CLAUDE.md)
 - `docker-compose.yml`, `.dockerignore` — Docker config
 - `CLAUDE.md` — AI assistant context
 - `app/` — All Next.js pages, layouts, and routes
@@ -35,85 +44,42 @@ Files in managed directories are auto-synced (created, updated, **and deleted**)
 
 ```
 /
-├── api/
-│   └── index.js                # GET/POST handlers for all /api/* routes
+├── api/                        # GET/POST handlers for all /api/* routes
 ├── lib/
 │   ├── actions.js              # Shared action executor (agent, command, webhook)
 │   ├── cron.js                 # Cron scheduler (loads CRONS.json)
 │   ├── triggers.js             # Webhook trigger middleware (loads TRIGGERS.json)
-│   ├── paths.js                # Central path resolver (resolves from user's project root)
-│   ├── ai/                     # LLM integration (chat, streaming, agent, model, tools)
-│   ├── auth/                   # NextAuth config, helpers, middleware, server actions, login/setup components
+│   ├── paths.js                # Central path resolver (resolves from process.cwd())
+│   ├── ai/                     # LLM integration (agent, model, tools, streaming)
+│   ├── auth/                   # NextAuth config, helpers, middleware, server actions, components
 │   ├── channels/               # Channel adapters (base class, Telegram, factory)
 │   ├── chat/                   # Chat route handler, server actions, React UI components
+│   ├── code/                   # Code workspaces (server actions, terminal view, WebSocket proxy)
 │   ├── db/                     # SQLite via Drizzle (schema, migrations, api-keys)
-│   ├── tools/                  # Job creation, GitHub API, Telegram, OpenAI Whisper
+│   ├── tools/                  # Job creation, GitHub API, Telegram, Docker, Whisper
 │   └── utils/
 │       └── render-md.js        # Markdown {{include}} processor
 ├── config/
 │   ├── index.js                # withThepopebot() Next.js config wrapper
 │   └── instrumentation.js      # Server startup hook (loads .env, starts crons)
-├── bin/
-│   └── cli.js                  # CLI entry point
+├── bin/                        # CLI entry point (init, setup, reset, diff, upgrade)
 ├── setup/                      # Interactive setup wizard
 ├── templates/                  # Scaffolded to user projects (see rule above)
 ├── docs/                       # Extended documentation
 └── package.json
 ```
 
-## Key Files
-
-| File | Purpose |
-|------|---------|
-| `api/index.js` | Next.js GET/POST route handlers for all `/api/*` endpoints |
-| `lib/paths.js` | Central path resolver — all paths resolve from user's `process.cwd()` |
-| `lib/actions.js` | Shared action dispatcher for agent/command/webhook actions |
-| `lib/cron.js` | Cron scheduler — loads `config/CRONS.json` at server start |
-| `lib/triggers.js` | Trigger middleware — loads `config/TRIGGERS.json` |
-| `lib/utils/render-md.js` | Markdown include and variable processor (`{{filepath}}`, `{{datetime}}`, `{{skills}}`) |
-| `config/index.js` | `withThepopebot()` Next.js config wrapper |
-| `config/instrumentation.js` | `register()` startup hook (loads .env, validates AUTH_SECRET, init DB, starts crons) |
-| `bin/cli.js` | CLI entry point (`thepopebot init`, `setup`, `reset`, `diff`, etc.) |
-| `lib/ai/index.js` | Chat, streaming, and job summary functions |
-| `lib/ai/agent.js` | LangGraph agent with SQLite checkpointing and tool use |
-| `lib/channels/base.js` | Channel adapter base class (normalize messages across platforms) |
-| `lib/db/index.js` | Database initialization — SQLite via Drizzle ORM |
-| `lib/db/api-keys.js` | API key management (SHA-256 hashed, timing-safe verify) |
-
 ## NPM Package Exports
 
-| Import | Module | Purpose |
-|--------|--------|---------|
-| `thepopebot/api` | `api/index.js` | `GET` and `POST` route handlers — re-exported by the user's catch-all route |
-| `thepopebot/config` | `config/index.js` | `withThepopebot()` — wraps the user's Next.js config to mark server-only packages as external |
-| `thepopebot/instrumentation` | `config/instrumentation.js` | `register()` — Next.js instrumentation hook that loads `.env` and starts cron jobs on server start |
-| `thepopebot/auth` | `lib/auth/index.js` | Auth helpers (`auth()`, `getPageAuthState()`) |
-| `thepopebot/auth/actions` | `lib/auth/actions.js` | Server action for admin setup (`setupAdmin()`) |
-| `thepopebot/auth/components` | `lib/auth/components/index.js` | Login, setup, and ASCII logo components |
-| `thepopebot/chat` | `lib/chat/components/index.js` | Chat UI components + ThemeProvider |
-| `thepopebot/chat/actions` | `lib/chat/actions.js` | Server actions for chats, notifications, and swarm |
-| `thepopebot/chat/api` | `lib/chat/api.js` | Dedicated chat streaming route handler (session auth) |
-| `thepopebot/db` | `lib/db/index.js` | Database access |
-| `thepopebot/middleware` | `lib/auth/middleware.js` | Auth middleware |
+Exports defined in `package.json` `exports` field. Pattern: `thepopebot/{module}` maps to source files in `api/`, `lib/`, `config/`. Add new exports there when creating new importable modules.
 
-### Column Naming Convention
+## Build System
 
-Drizzle schema uses camelCase JS property names mapped to snake_case SQL columns.
-Example: `createdAt: integer('created_at')` — use `createdAt` in JS, SQL column is `created_at`.
+Run `npm run build` before publish. esbuild compiles `lib/chat/components/**/*.jsx`, `lib/auth/components/**/*.jsx`, `lib/code/*.jsx` to ES modules.
 
 ## Database
 
-SQLite via Drizzle ORM at `data/thepopebot.sqlite` (override with `DATABASE_PATH`). Auto-initialized on server start.
-
-| Table | Purpose |
-|-------|---------|
-| `users` | Admin accounts (email, bcrypt password hash, role) |
-| `chats` | Chat sessions (user_id, title, code_workspace_id, timestamps) |
-| `messages` | Chat messages (chat_id, role, content) |
-| `code_workspaces` | Code workspace sessions (user_id, container_name, repo, branch, coding_agent, title) |
-| `notifications` | Job completion notifications |
-| `subscriptions` | Channel subscriptions |
-| `settings` | Key-value configuration store (also stores API keys) |
+SQLite via Drizzle ORM at `data/thepopebot.sqlite` (override with `DATABASE_PATH`). Auto-initialized on server start. See `lib/db/CLAUDE.md` for schema details, CRUD patterns, and column naming.
 
 ### Migration Rules
 
@@ -122,10 +88,6 @@ SQLite via Drizzle ORM at `data/thepopebot.sqlite` (override with `DATABASE_PATH
 - **NEVER** write raw `CREATE TABLE`, `ALTER TABLE`, or any DDL SQL manually
 - **NEVER** modify `initDatabase()` to add schema changes
 - **ALWAYS** make schema changes by editing `lib/db/schema.js` then running `npm run db:generate`
-
-**Workflow**: Edit `lib/db/schema.js` → `npm run db:generate` → review generated SQL in `drizzle/` → commit both schema change and migration file. Migrations auto-apply on startup via `migrate()` in `initDatabase()`.
-
-**Key files**: `lib/db/schema.js` (source of truth), `drizzle/` (generated migrations), `drizzle.config.js` (Drizzle Kit config), `lib/db/index.js` (`initDatabase()` calls `migrate()`).
 
 ## Security: /api vs Server Actions
 
@@ -147,24 +109,17 @@ Both cron jobs and webhook triggers use the same shared dispatch system (`lib/ac
 
 | | `agent` | `command` | `webhook` |
 |---|---------|-----------|-----------|
-| **Uses LLM** | Yes — spins up Pi in a Docker container | No — runs a shell command | No — makes an HTTP request |
+| **Uses LLM** | Yes — spins up a Docker agent container (Pi or Claude Code) | No — runs a shell command | No — makes an HTTP request |
 | **Runtime** | Minutes to hours | Milliseconds to seconds | Milliseconds to seconds |
 | **Cost** | LLM API calls + GitHub Actions minutes | Free (runs on event handler) | Free (runs on event handler) |
 
 If the task needs to *think*, use `agent`. If it just needs to *do*, use `command`. If it needs to *call an external service*, use `webhook`.
 
-**Agent**: Creates a Docker Agent job via `createJob()`. Pushes a `job/*` branch; `run-job.yml` spins up the container. The `job` string is the LLM task prompt.
+**Agent**: Creates a Docker Agent job via `createJob()`. Pushes a `job/*` branch; `run-job.yml` spins up the container. The `job` string is the LLM task prompt. Agent backend selected via `agent_backend` in `job.config.json`.
 
 **Command**: Runs a shell command on the event handler. Working directory: `cron/` for crons, `triggers/` for triggers.
 
 **Webhook**: Makes an HTTP request. `GET` skips the body; `POST` (default) sends `{ ...vars }` or `{ ...vars, data: <payload> }`.
-
-| Webhook field | Required | Default | Description |
-|---------------|----------|---------|-------------|
-| `url` | yes | — | Target URL |
-| `method` | no | `"POST"` | `"GET"` or `"POST"` |
-| `headers` | no | `{}` | Outgoing request headers |
-| `vars` | no | `{}` | Key-value pairs merged into outgoing body |
 
 ### Cron Jobs
 
@@ -174,6 +129,33 @@ Defined in `config/CRONS.json`, loaded by `lib/cron.js` at startup via `node-cro
 
 Defined in `config/TRIGGERS.json`, loaded by `lib/triggers.js`. Each trigger watches an endpoint path (`watch_path`) and fires an array of actions (fire-and-forget, after auth, before route handler). Actions use the same `type`/`job`/`command`/`url` fields as cron jobs, including optional `llm_provider`/`llm_model` overrides. Template tokens in `job` and `command` strings: `{{body}}`, `{{body.field}}`, `{{query}}`, `{{query.field}}`, `{{headers}}`, `{{headers.field}}`.
 
+## LLM Providers
+
+| Provider | `LLM_PROVIDER` | Default Model | Required Env |
+|----------|----------------|---------------|-------------|
+| Anthropic | `anthropic` (default) | `claude-sonnet-4-20250514` | `ANTHROPIC_API_KEY` |
+| OpenAI | `openai` | `gpt-4o` | `OPENAI_API_KEY` |
+| Google | `google` | `gemini-2.5-pro` | `GOOGLE_API_KEY` |
+| Custom | `custom` | — | `OPENAI_BASE_URL`, `CUSTOM_API_KEY` (optional) |
+
+`LLM_MAX_TOKENS` defaults to 4096. Web search available for `anthropic` and `openai` providers only (disable with `WEB_SEARCH=false`).
+
+## Code Workspaces
+
+Interactive Docker containers with in-browser terminal (xterm.js → WebSocket → ttyd). Key files: `lib/code/actions.js` (server actions), `lib/code/ws-proxy.js` (WebSocket auth proxy), `lib/tools/docker.js` (container lifecycle). See `lib/code/CLAUDE.md` for data flow and auth details.
+
+## Skills System
+
+Plugin directories under `skills/`. Activate by symlinking into `skills/active/`. Each skill has `SKILL.md` with YAML frontmatter (`name`, `description`). The `{{skills}}` template variable in markdown files resolves active skill descriptions at runtime. Default active skills: `browser-tools`, `llm-secrets`, `modify-self`.
+
+## Template Config Files
+
+Users customize behavior through these files in `config/`:
+- `SOUL.md` — Agent personality/identity
+- `JOB_PLANNING.md` — Event handler system prompt (supports `{{skills}}`, `{{web_search}}`, `{{datetime}}`)
+- `CODE_PLANNING.md` — Code workspace system prompt
+- `CRONS.json`, `TRIGGERS.json` — Scheduled jobs and webhook triggers
+
 ## Markdown File Includes
 
 Markdown files in `config/` support includes and built-in variables, powered by `lib/utils/render-md.js`.
@@ -181,8 +163,7 @@ Markdown files in `config/` support includes and built-in variables, powered by 
 - **File includes**: `{{ filepath.md }}` — resolves relative to project root, recursive with circular detection. Missing files are left as-is.
 - **`{{datetime}}`** — Current ISO timestamp.
 - **`{{skills}}`** — Dynamic bullet list of active skill descriptions from `skills/active/*/SKILL.md` frontmatter. Never hardcode skill names — this is resolved at runtime.
-
-Currently used by the Event Handler to load JOB_PLANNING.md as the LLM system prompt.
+- **`{{web_search}}`** — Conditionally includes `config/WEB_SEARCH_AVAILABLE.md` or `config/WEB_SEARCH_UNAVAILABLE.md` based on provider support.
 
 ## Authentication
 
