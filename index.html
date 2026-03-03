@@ -10,7 +10,9 @@
 <meta property="og:title" content="Botwave — The New Wave of AI">
 <meta property="og:description" content="Deploy custom AI agents to Telegram and 10+ platforms. Ready in minutes, not months.">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23f59e0b'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='bold' fill='%2309090b'>B</text></svg>">
+<meta property="og:image" content="https://botwave.app/img/brand/og-share.jpg">
+<meta name="twitter:image" content="https://botwave.app/img/brand/og-share.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232dd4bf'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='bold' fill='%2309090b'>B</text></svg>">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Botwave","applicationCategory":"AI Agent Platform","operatingSystem":"Linux, macOS, Windows","url":"https://botwave.app","offers":[{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free — Captain Obvious demo bot, Telegram"},{"@type":"Offer","price":"9","priceCurrency":"USD","description":"Starter — 1 branded bot, basic templates, email support"},{"@type":"Offer","price":"29","priceCurrency":"USD","description":"Builder — 3 agents, multi-platform, Script Factory"},{"@type":"Offer","price":"49","priceCurrency":"USD","description":"Boss — Unlimited agents, Desktop app, full platform"}],"author":{"@type":"Organization","name":"Botwave","url":"https://botwave.app"}}
 </script>
@@ -23,7 +25,7 @@
 :root{
   --bg:#09090b;--surface:#18181b;--surface2:#1f1f23;--surface3:#27272a;
   --border:#2e2e33;--border-hover:#3f3f46;
-  --amber:#f59e0b;--amber-dim:#d97706;--amber-glow:rgba(245,158,11,.12);--amber-faint:rgba(245,158,11,.06);
+  --teal:#2dd4bf;--teal-dim:#0d9488;--teal-glow:rgba(45,212,191,.12);--teal-faint:rgba(45,212,191,.06);
   --emerald:#10b981;--emerald-dim:#059669;--emerald-glow:rgba(16,185,129,.15);
   --text:#fafafa;--text-secondary:#a1a1aa;--text-muted:#71717a;--text-faint:#52525b;
   --radius:8px;--radius-lg:12px;
@@ -33,7 +35,7 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
-::selection{background:var(--amber);color:var(--bg)}
+::selection{background:var(--teal);color:var(--bg)}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 button{font-family:inherit;cursor:pointer}
@@ -49,26 +51,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links{display:flex;gap:2rem;align-items:center}
 .nav-links a{font-size:.875rem;color:var(--text-secondary);transition:color .2s}
 .nav-links a:hover{color:var(--text)}
-.nav-cta{background:var(--amber)!important;color:var(--bg)!important;padding:.5rem 1.25rem;border-radius:var(--radius);
+.nav-cta{background:var(--teal)!important;color:var(--bg)!important;padding:.5rem 1.25rem;border-radius:var(--radius);
   font-weight:600!important;font-size:.875rem!important;transition:all .2s!important}
-.nav-cta:hover{background:var(--amber-dim)!important;transform:translateY(-1px)}
+.nav-cta:hover{background:var(--teal-dim)!important;transform:translateY(-1px)}
 .nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem}
 
 /* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:var(--radius);
   font-weight:600;font-size:.9rem;transition:all .2s;border:none;text-decoration:none}
-.btn-primary{background:var(--amber);color:var(--bg)}
-.btn-primary:hover{background:var(--amber-dim);transform:translateY(-1px);box-shadow:0 4px 20px var(--amber-glow)}
+.btn-primary{background:var(--teal);color:var(--bg)}
+.btn-primary:hover{background:var(--teal-dim);transform:translateY(-1px);box-shadow:0 4px 20px var(--teal-glow)}
 .btn-secondary{background:transparent;color:var(--text-secondary);border:1px solid var(--border)}
 .btn-secondary:hover{border-color:var(--border-hover);color:var(--text);background:var(--surface)}
 .btn-emerald{background:var(--emerald);color:#fff}
 .btn-emerald:hover{background:var(--emerald-dim);transform:translateY(-1px);box-shadow:0 4px 20px var(--emerald-glow)}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:7rem 2rem 4rem;position:relative;overflow:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;padding:7rem 2rem 4rem;position:relative;overflow:hidden;
+  background:url('img/brand/hero-wave.jpg') center/cover no-repeat;background-attachment:fixed}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(9,9,11,.92),rgba(9,9,11,.75));pointer-events:none}
 .hero::before{content:'';position:absolute;top:-20%;right:-10%;width:600px;height:600px;
-  background:radial-gradient(circle,var(--amber-faint),transparent 70%);pointer-events:none}
-.hero-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  background:radial-gradient(circle,rgba(45,212,191,.1),transparent 70%);pointer-events:none}
+.hero-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2}
 .hero-content{position:relative;z-index:1}
 .hero-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .9rem;border:1px solid var(--border);
   border-radius:99px;font-size:.75rem;color:var(--text-secondary);margin-bottom:1.5rem;background:var(--surface)}
@@ -76,7 +80,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .hero h1{font-family:var(--font-head);font-size:clamp(2rem,4.5vw,3.5rem);font-weight:800;line-height:1.15;
   letter-spacing:-.02em;margin-bottom:1.25rem}
-.hero h1 em{font-style:normal;color:var(--amber)}
+.hero h1 em{font-style:normal;color:var(--teal)}
 .hero-sub{font-size:1.1rem;color:var(--text-secondary);max-width:500px;line-height:1.7;margin-bottom:2rem}
 .hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem}
 .hero-proof{display:flex;align-items:center;gap:1rem;font-size:.8rem;color:var(--text-muted)}
@@ -89,7 +93,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .chat-mockup{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;
   box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.03);max-width:420px;margin-left:auto}
 .chat-header{display:flex;align-items:center;gap:.6rem;padding:.75rem 1rem;background:var(--surface2);border-bottom:1px solid var(--border)}
-.chat-avatar{width:34px;height:34px;background:linear-gradient(135deg,var(--amber),var(--amber-dim));border-radius:50%;
+.chat-avatar{width:34px;height:34px;background:linear-gradient(135deg,var(--teal),var(--teal-dim));border-radius:50%;
   display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:var(--bg)}
 .chat-info{flex:1}
 .chat-info .name{font-size:.85rem;font-weight:600}
@@ -97,8 +101,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .chat-body{padding:1rem;display:flex;flex-direction:column;gap:.6rem;min-height:320px}
 .chat-msg{max-width:85%;padding:.6rem .85rem;border-radius:12px;font-size:.82rem;line-height:1.5;animation:msgIn .4s ease}
 .chat-msg.user{background:var(--surface3);margin-left:auto;border-bottom-right-radius:4px;color:var(--text)}
-.chat-msg.bot{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.12);border-bottom-left-radius:4px;color:var(--text-secondary)}
-.chat-msg .bot-name{font-size:.65rem;color:var(--amber);font-weight:600;margin-bottom:.2rem;text-transform:uppercase;letter-spacing:.5px}
+.chat-msg.bot{background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.12);border-bottom-left-radius:4px;color:var(--text-secondary)}
+.chat-msg .bot-name{font-size:.65rem;color:var(--teal);font-weight:600;margin-bottom:.2rem;text-transform:uppercase;letter-spacing:.5px}
 .chat-msg code{font-family:var(--font-mono);font-size:.75rem;background:rgba(0,0,0,.3);padding:.1rem .3rem;border-radius:3px}
 @keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .chat-typing{display:flex;gap:4px;padding:.5rem .85rem;align-self:flex-start}
@@ -117,7 +121,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 /* ── SECTIONS ── */
 .section{padding:5rem 2rem}
 .section-inner{max-width:1100px;margin:0 auto}
-.section-label{font-size:.7rem;color:var(--amber);text-transform:uppercase;letter-spacing:3px;font-weight:600;margin-bottom:.5rem}
+.section-label{font-size:.7rem;color:var(--teal);text-transform:uppercase;letter-spacing:3px;font-weight:600;margin-bottom:.5rem}
 .section-title{font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.75rem}
 .section-desc{color:var(--text-secondary);font-size:1rem;max-width:550px;line-height:1.7;margin-bottom:3rem}
 .section-desc.center{text-align:center;margin:0 auto 3rem}
@@ -127,9 +131,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .feature-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem 1.5rem;
   transition:all .3s}
 .feature-card:hover{border-color:var(--border-hover);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
-.feature-icon{width:40px;height:40px;background:var(--amber-faint);border:1px solid rgba(245,158,11,.15);
+.feature-icon{width:40px;height:40px;background:var(--teal-faint);border:1px solid rgba(45,212,191,.15);
   border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;
-  font-size:1.1rem;color:var(--amber)}
+  font-size:1.1rem;color:var(--teal)}
 .feature-card h3{font-family:var(--font-head);font-size:1rem;font-weight:700;margin-bottom:.5rem}
 .feature-card p{color:var(--text-secondary);font-size:.85rem;line-height:1.6}
 
@@ -137,20 +141,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .agents-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .agent-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;
   transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
-.agent-card:hover{border-color:var(--amber);box-shadow:0 0 30px var(--amber-glow);transform:translateY(-3px)}
+.agent-card:hover{border-color:var(--teal);box-shadow:0 0 30px var(--teal-glow);transform:translateY(-3px)}
 .agent-card.locked{opacity:.5}
 .agent-card.locked:hover{border-color:var(--border);box-shadow:none;transform:none;cursor:default}
 .agent-top{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
 .agent-glyph{width:42px;height:42px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);
   display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:1.2rem;font-weight:700;
-  color:var(--amber);flex-shrink:0}
-.agent-card:hover .agent-glyph{background:var(--amber-faint);border-color:rgba(245,158,11,.2)}
+  color:var(--teal);flex-shrink:0}
+.agent-card:hover .agent-glyph{background:var(--teal-faint);border-color:rgba(45,212,191,.2)}
 .agent-meta h3{font-family:var(--font-head);font-size:.9rem;font-weight:700}
-.agent-meta .role{font-size:.7rem;color:var(--amber);text-transform:uppercase;letter-spacing:1px}
+.agent-meta .role{font-size:.7rem;color:var(--teal);text-transform:uppercase;letter-spacing:1px}
 .agent-desc{font-size:.8rem;color:var(--text-muted);line-height:1.5;margin-bottom:1rem}
 .agent-tag{display:inline-block;padding:.2rem .6rem;border-radius:99px;font-size:.65rem;font-weight:500}
 .agent-tag.free{background:rgba(16,185,129,.1);color:var(--emerald);border:1px solid rgba(16,185,129,.2)}
-.agent-tag.paid{background:var(--amber-faint);color:var(--amber);border:1px solid rgba(245,158,11,.15)}
+.agent-tag.paid{background:var(--teal-faint);color:var(--teal);border:1px solid rgba(45,212,191,.15)}
 .agent-tag.soon{background:var(--surface2);color:var(--text-faint);border:1px solid var(--border)}
 
 /* ── PRICING ── */
@@ -158,32 +162,32 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .price-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem 1.5rem;
   transition:all .3s;position:relative}
 .price-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
-.price-card.featured{border-color:var(--amber);box-shadow:0 0 40px var(--amber-glow)}
+.price-card.featured{border-color:var(--teal);box-shadow:0 0 40px var(--teal-glow)}
 .price-card.featured::before{content:'Most Popular';position:absolute;top:-10px;left:50%;transform:translateX(-50%);
-  background:var(--amber);color:var(--bg);font-size:.6rem;font-weight:700;padding:.2rem .8rem;border-radius:99px;
+  background:var(--teal);color:var(--bg);font-size:.6rem;font-weight:700;padding:.2rem .8rem;border-radius:99px;
   text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
-.price-tier{font-size:.7rem;color:var(--amber);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:.25rem}
+.price-tier{font-size:.7rem;color:var(--teal);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:.25rem}
 .price-card h3{font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:.75rem}
 .price-amount{font-family:var(--font-head);font-size:2.5rem;font-weight:800;margin-bottom:.25rem}
 .price-amount span{font-size:.9rem;font-weight:500;color:var(--text-muted)}
 .price-period{font-size:.75rem;color:var(--text-muted);margin-bottom:1.5rem}
 .price-features{list-style:none;margin-bottom:1.5rem}
 .price-features li{padding:.4rem 0;font-size:.8rem;color:var(--text-secondary);display:flex;align-items:baseline;gap:.5rem}
-.price-features li::before{content:'';width:5px;height:5px;background:var(--amber);border-radius:50%;flex-shrink:0;margin-top:6px}
+.price-features li::before{content:'';width:5px;height:5px;background:var(--teal);border-radius:50%;flex-shrink:0;margin-top:6px}
 .price-cta{display:block;width:100%;padding:.7rem;text-align:center;border-radius:var(--radius);font-weight:600;
   font-size:.85rem;transition:all .2s;border:1px solid var(--border);color:var(--text-secondary);background:transparent}
-.price-cta:hover{border-color:var(--amber);color:var(--amber);background:var(--amber-faint)}
-.price-cta.primary{background:var(--amber);color:var(--bg);border-color:var(--amber)}
-.price-cta.primary:hover{background:var(--amber-dim)}
+.price-cta:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-faint)}
+.price-cta.primary{background:var(--teal);color:var(--bg);border-color:var(--teal)}
+.price-cta.primary:hover{background:var(--teal-dim)}
 
 /* ── FAQ ── */
 .faq-list{max-width:700px;margin:0 auto}
 .faq-item{border-bottom:1px solid var(--border);padding:1.25rem 0}
 .faq-q{font-family:var(--font-head);font-weight:600;font-size:.95rem;cursor:pointer;display:flex;justify-content:space-between;
   align-items:center;transition:color .2s}
-.faq-q:hover{color:var(--amber)}
+.faq-q:hover{color:var(--teal)}
 .faq-q::after{content:'+';font-size:1.2rem;color:var(--text-muted);transition:transform .2s}
-.faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--amber)}
+.faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--teal)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:.85rem;
   color:var(--text-muted);line-height:1.7}
 .faq-item.open .faq-a{max-height:200px;padding-top:.75rem}
@@ -191,7 +195,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 /* ── CTA SECTION ── */
 .cta-section{text-align:center;padding:5rem 2rem;position:relative}
 .cta-section::before{content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent,var(--amber-faint),transparent);pointer-events:none}
+  background:linear-gradient(180deg,transparent,var(--teal-faint),transparent);pointer-events:none}
 .cta-section h2{font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:.75rem;position:relative}
 .cta-section p{color:var(--text-secondary);margin-bottom:2rem;font-size:1rem;position:relative}
 
@@ -240,7 +244,7 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-brand">
-    <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#f59e0b"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-weight="bold" fill="#09090b" font-family="Plus Jakarta Sans,sans-serif">B</text></svg>
+    <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#2dd4bf"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-weight="bold" fill="#09090b" font-family="Plus Jakarta Sans,sans-serif">B</text></svg>
     Botwave
   </a>
   <button class="nav-toggle" id="navToggle">&#9776;</button>
@@ -269,22 +273,15 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
       </div>
       <div class="hero-proof">
         <div class="avatars">
-          <span style="background:#f59e0b;color:#09090b">15</span>
+          <span style="background:#2dd4bf;color:#09090b">15</span>
           <span style="background:#10b981;color:#fff">$0</span>
           <span style="background:#6366f1;color:#fff">97%</span>
         </div>
         15 agents. $0 API cost. 97% hardware margin.
       </div>
     </div>
-    <div class="chat-mockup" id="chatDemo">
-      <div class="chat-header">
-        <div class="chat-avatar">JB</div>
-        <div class="chat-info">
-          <div class="name">JobSite Bot</div>
-          <div class="status">online</div>
-        </div>
-      </div>
-      <div class="chat-body" id="chatBody"></div>
+    <div class="hero-visual">
+      <img src="img/brand/logo-wave.jpg" alt="Botwave — The New Wave of AI" style="border-radius:var(--radius-lg);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 80px rgba(45,212,191,.08);max-width:420px;margin-left:auto;width:100%">
     </div>
   </div>
 </section>
@@ -312,11 +309,11 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
 
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:3rem" class="stats-grid">
       <div class="feature-card reveal" style="text-align:center;padding:1.5rem">
-        <div style="font-family:var(--font-head);font-size:2.5rem;font-weight:800;color:var(--amber)">15+</div>
+        <div style="font-family:var(--font-head);font-size:2.5rem;font-weight:800;color:var(--teal)">15+</div>
         <div style="font-size:.85rem;color:var(--text-secondary);margin-top:.25rem">Active Agents</div>
       </div>
       <div class="feature-card reveal reveal-delay-1" style="text-align:center;padding:1.5rem">
-        <div style="font-family:var(--font-head);font-size:2.5rem;font-weight:800;color:var(--amber)">18</div>
+        <div style="font-family:var(--font-head);font-size:2.5rem;font-weight:800;color:var(--teal)">18</div>
         <div style="font-size:.85rem;color:var(--text-secondary);margin-top:.25rem">Automated Workflows</div>
       </div>
       <div class="feature-card reveal reveal-delay-2" style="text-align:center;padding:1.5rem">
@@ -324,7 +321,7 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
         <div style="font-size:.85rem;color:var(--text-secondary);margin-top:.25rem">Monthly API Overhead</div>
       </div>
       <div class="feature-card reveal reveal-delay-3" style="text-align:center;padding:1.5rem">
-        <div style="font-family:var(--font-head);font-size:2.5rem;font-weight:800;color:var(--amber)">90+</div>
+        <div style="font-family:var(--font-head);font-size:2.5rem;font-weight:800;color:var(--teal)">90+</div>
         <div style="font-size:.85rem;color:var(--text-secondary);margin-top:.25rem">Daily Actions</div>
       </div>
     </div>
@@ -335,10 +332,10 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
     <div style="max-width:700px;margin:2rem auto 0;overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:.85rem">
         <thead>
-          <tr style="border-bottom:2px solid var(--amber)">
+          <tr style="border-bottom:2px solid var(--teal)">
             <th style="text-align:left;padding:.75rem;color:var(--text-muted);font-size:.75rem;text-transform:uppercase;letter-spacing:1px">Feature</th>
             <th style="text-align:center;padding:.75rem;color:var(--text-muted);font-size:.75rem;text-transform:uppercase;letter-spacing:1px">AI Wrappers</th>
-            <th style="text-align:center;padding:.75rem;color:var(--amber);font-size:.75rem;text-transform:uppercase;letter-spacing:1px;font-weight:700">Botwave</th>
+            <th style="text-align:center;padding:.75rem;color:var(--teal);font-size:.75rem;text-transform:uppercase;letter-spacing:1px;font-weight:700">Botwave</th>
           </tr>
         </thead>
         <tbody>
@@ -373,7 +370,7 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
   <div class="section-inner" style="max-width:700px;text-align:center">
     <div class="section-label" style="text-align:center">From the Founder</div>
     <blockquote style="font-family:var(--font-head);font-size:1.15rem;font-weight:500;line-height:1.8;color:var(--text-secondary);
-      border-left:3px solid var(--amber);padding-left:1.5rem;text-align:left;margin:2rem 0;font-style:italic">
+      border-left:3px solid var(--teal);padding-left:1.5rem;text-align:left;margin:2rem 0;font-style:italic">
       "Six months ago I was under a sink fixing someone's garbage disposal. I had zero coding experience, zero CS degree, zero connections in tech. I just had open source tools and the internet. Today I run 15 AI agents that handle marketing, research, crypto alerts, and customer support — all on free API tiers. The tools are out there. The value is knowing how to put them together. That's what Botwave does for you."
     </blockquote>
     <p style="font-size:.9rem;color:var(--text-muted)">— SGKx1904, Founder &amp; Builder</p>
@@ -406,7 +403,7 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <h3>The Script Keeper Method</h3>
-        <p>Every multi-step op gets scripted, saved, and reused. 3.5x more work per session. 70% fewer wasted tokens. <a href="blog/script-keeper-method.html" style="color:var(--amber)">Read how it works.</a></p>
+        <p>Every multi-step op gets scripted, saved, and reused. 3.5x more work per session. 70% fewer wasted tokens. <a href="blog/script-keeper-method.html" style="color:var(--teal)">Read how it works.</a></p>
       </div>
     </div>
   </div>
@@ -495,30 +492,30 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
     <p class="section-desc center">Physical homes for your AI agents. Printed in-house on a Bambu Lab A1 Mini. Each piece is unique.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:960px;margin:2rem auto 0">
 
-      <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;text-align:center;transition:all .3s" onmouseover="this.style.borderColor='var(--amber)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-        <div style="font-size:2.5rem;margin-bottom:1rem">&#x1f4e6;</div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;text-align:center;transition:all .3s;overflow:hidden" onmouseover="this.style.borderColor='var(--teal)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+        <img src="img/brand/product-pod.jpg" alt="AI Agent Pod" style="width:100%;border-radius:var(--radius);margin-bottom:1rem;aspect-ratio:1;object-fit:cover">
         <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:.5rem">AI Agent Pod</h3>
         <p style="font-size:.85rem;color:var(--text-secondary);margin-bottom:1rem;line-height:1.6">Custom-printed enclosure for Raspberry Pi Zero. Black body + gradient lid. Every lid is one-of-a-kind from color-shift filament.</p>
-        <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--amber);margin-bottom:.25rem">$45</div>
+        <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--teal);margin-bottom:.25rem">$45</div>
         <div style="font-size:.75rem;color:var(--text-muted);margin-bottom:1.25rem">+ $5.99 shipping</div>
         <a href="https://buy.stripe.com/dRm7sKezLcrYel191MgrS0I" class="btn btn-primary" style="width:100%;justify-content:center">Buy Pod</a>
       </div>
 
-      <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;text-align:center;transition:all .3s" onmouseover="this.style.borderColor='var(--amber)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-        <div style="font-size:2.5rem;margin-bottom:1rem">&#x1f511;</div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;text-align:center;transition:all .3s;overflow:hidden" onmouseover="this.style.borderColor='var(--teal)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+        <img src="img/brand/product-token.jpg" alt="Key Token" style="width:100%;border-radius:var(--radius);margin-bottom:1rem;aspect-ratio:1;object-fit:cover">
         <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Key Token</h3>
         <p style="font-size:.85rem;color:var(--text-secondary);margin-bottom:1rem;line-height:1.6">NFC-ready key fob. Tap to launch your bot. Printed in stealth gray. Fits any keychain or lanyard.</p>
-        <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--amber);margin-bottom:.25rem">$19</div>
+        <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--teal);margin-bottom:.25rem">$19</div>
         <div style="font-size:.75rem;color:var(--text-muted);margin-bottom:1.25rem">+ $5.99 shipping</div>
         <a href="https://buy.stripe.com/fZu3cu1MZbnUfp56TEgrS0J" class="btn btn-secondary" style="width:100%;justify-content:center">Buy Token</a>
       </div>
 
-      <div style="background:var(--bg);border:1px solid rgba(245,158,11,.3);border-radius:var(--radius-lg);padding:2rem;text-align:center;position:relative;transition:all .3s;box-shadow:0 0 30px rgba(245,158,11,.08)" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
-        <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--bg);font-size:.6rem;font-weight:700;padding:.2rem .8rem;border-radius:99px;text-transform:uppercase;letter-spacing:1px">Save $9</div>
-        <div style="font-size:2.5rem;margin-bottom:1rem">&#x1f4e6;&#x1f511;</div>
+      <div style="background:var(--bg);border:1px solid rgba(45,212,191,.3);border-radius:var(--radius-lg);padding:2rem;text-align:center;position:relative;transition:all .3s;box-shadow:0 0 30px rgba(45,212,191,.08)" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+        <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--bg);font-size:.6rem;font-weight:700;padding:.2rem .8rem;border-radius:99px;text-transform:uppercase;letter-spacing:1px">Save $9</div>
+        <img src="img/brand/product-bundle.jpg" alt="Agent Starter Bundle" style="width:100%;border-radius:var(--radius);margin-bottom:1rem;aspect-ratio:16/9;object-fit:cover">
         <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Agent Starter Bundle</h3>
         <p style="font-size:.85rem;color:var(--text-secondary);margin-bottom:1rem;line-height:1.6">1 AI Agent Pod + 1 Key Token. Everything you need to give your bot a physical presence. The complete kit.</p>
-        <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--amber);margin-bottom:.25rem">$55</div>
+        <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--teal);margin-bottom:.25rem">$55</div>
         <div style="font-size:.75rem;color:var(--text-muted);margin-bottom:1.25rem"><s style="color:var(--text-muted)">$64</s> — free shipping</div>
         <a href="https://buy.stripe.com/8x214mgHTajQ1yffqagrS0K" class="btn btn-primary" style="width:100%;justify-content:center">Buy Bundle</a>
       </div>
@@ -536,17 +533,17 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
     <div style="max-width:900px;margin:2rem auto 0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)">
       <div style="background:var(--surface2);padding:.5rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid var(--border)">
         <span style="width:12px;height:12px;border-radius:50%;background:#ef4444"></span>
-        <span style="width:12px;height:12px;border-radius:50%;background:#f59e0b"></span>
+        <span style="width:12px;height:12px;border-radius:50%;background:#eab308"></span>
         <span style="width:12px;height:12px;border-radius:50%;background:#22c55e"></span>
         <span style="flex:1;text-align:center;font-size:.7rem;color:var(--text-muted);font-family:var(--font-mono)">Botwave Desktop — Fleet Commander</span>
       </div>
       <div style="display:flex;min-height:360px">
         <div style="width:180px;background:var(--bg);border-right:1px solid var(--border);padding:1rem .75rem;flex-shrink:0">
           <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-            <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,var(--amber),var(--emerald));display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:#000">BW</div>
+            <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,var(--teal),var(--emerald));display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:#000">BW</div>
             <div><div style="font-size:.7rem;font-weight:600;color:var(--text)">Botwave</div><div style="font-size:.55rem;color:var(--text-muted)">Fleet Commander</div></div>
           </div>
-          <div style="padding:.4rem .6rem;border-radius:6px;background:rgba(245,158,11,.1);color:var(--amber);font-size:.7rem;font-weight:500;margin-bottom:.2rem">Fleet Status</div>
+          <div style="padding:.4rem .6rem;border-radius:6px;background:rgba(45,212,191,.1);color:var(--teal);font-size:.7rem;font-weight:500;margin-bottom:.2rem">Fleet Status</div>
           <div style="padding:.4rem .6rem;font-size:.7rem;color:var(--text-muted);margin-bottom:.2rem">Cron Jobs</div>
           <div style="padding:.4rem .6rem;font-size:.7rem;color:var(--text-muted);margin-bottom:.2rem">Deploy</div>
           <div style="padding:.4rem .6rem;font-size:.7rem;color:var(--text-muted);margin-bottom:.2rem">Audit Log</div>
@@ -562,22 +559,22 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
             <div style="display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;background:var(--surface);border:1px solid var(--border);border-radius:8px">
               <div style="width:28px;height:28px;border-radius:6px;background:rgba(16,185,129,.15);color:var(--emerald);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700">C</div>
               <div style="flex:1"><div style="font-size:.75rem;font-weight:500;color:var(--text)">Captain Obvious <span style="font-size:.55rem;padding:.1rem .4rem;background:rgba(16,185,129,.15);color:var(--emerald);border-radius:99px">active</span></div><div style="font-size:.6rem;color:var(--text-muted)">General Assistant</div></div>
-              <div style="text-align:right"><div style="font-size:.65rem;color:var(--amber);font-family:var(--font-mono)">llama-3.3-70b</div><div style="font-size:.55rem;color:var(--text-muted)">2m ago</div></div>
+              <div style="text-align:right"><div style="font-size:.65rem;color:var(--teal);font-family:var(--font-mono)">llama-3.3-70b</div><div style="font-size:.55rem;color:var(--text-muted)">2m ago</div></div>
             </div>
             <div style="display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;background:var(--surface);border:1px solid var(--border);border-radius:8px">
               <div style="width:28px;height:28px;border-radius:6px;background:rgba(16,185,129,.15);color:var(--emerald);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700">M</div>
               <div style="flex:1"><div style="font-size:.75rem;font-weight:500;color:var(--text)">Mitch <span style="font-size:.55rem;padding:.1rem .4rem;background:rgba(16,185,129,.15);color:var(--emerald);border-radius:99px">active</span></div><div style="font-size:.6rem;color:var(--text-muted)">Business Strategy</div></div>
-              <div style="text-align:right"><div style="font-size:.65rem;color:var(--amber);font-family:var(--font-mono)">llama-3.3-70b</div><div style="font-size:.55rem;color:var(--text-muted)">5m ago</div></div>
+              <div style="text-align:right"><div style="font-size:.65rem;color:var(--teal);font-family:var(--font-mono)">llama-3.3-70b</div><div style="font-size:.55rem;color:var(--text-muted)">5m ago</div></div>
             </div>
             <div style="display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;background:var(--surface);border:1px solid var(--border);border-radius:8px">
               <div style="width:28px;height:28px;border-radius:6px;background:rgba(16,185,129,.15);color:var(--emerald);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700">J</div>
               <div style="flex:1"><div style="font-size:.75rem;font-weight:500;color:var(--text)">JobSite <span style="font-size:.55rem;padding:.1rem .4rem;background:rgba(16,185,129,.15);color:var(--emerald);border-radius:99px">active</span></div><div style="font-size:.6rem;color:var(--text-muted)">Trades &amp; Invoicing</div></div>
-              <div style="text-align:right"><div style="font-size:.65rem;color:var(--amber);font-family:var(--font-mono)">llama-3.1-8b</div><div style="font-size:.55rem;color:var(--text-muted)">12m ago</div></div>
+              <div style="text-align:right"><div style="font-size:.65rem;color:var(--teal);font-family:var(--font-mono)">llama-3.1-8b</div><div style="font-size:.55rem;color:var(--text-muted)">12m ago</div></div>
             </div>
             <div style="display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;background:var(--surface);border:1px solid var(--border);border-radius:8px">
-              <div style="width:28px;height:28px;border-radius:6px;background:rgba(245,158,11,.15);color:var(--amber);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700">P</div>
+              <div style="width:28px;height:28px;border-radius:6px;background:rgba(45,212,191,.15);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700">P</div>
               <div style="flex:1"><div style="font-size:.75rem;font-weight:500;color:var(--text)">PaperChaser <span style="font-size:.55rem;padding:.1rem .4rem;background:rgba(16,185,129,.15);color:var(--emerald);border-radius:99px">active</span></div><div style="font-size:.6rem;color:var(--text-muted)">Finance &amp; Crypto</div></div>
-              <div style="text-align:right"><div style="font-size:.65rem;color:var(--amber);font-family:var(--font-mono)">llama-3.3-70b</div><div style="font-size:.55rem;color:var(--text-muted)">1h ago</div></div>
+              <div style="text-align:right"><div style="font-size:.65rem;color:var(--teal);font-family:var(--font-mono)">llama-3.3-70b</div><div style="font-size:.55rem;color:var(--text-muted)">1h ago</div></div>
             </div>
           </div>
           <div style="margin-top:.6rem;display:flex;gap:.8rem;font-size:.65rem;color:var(--text-muted)">
@@ -654,7 +651,7 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
 
 <!-- EARLY ACCESS / WAITLIST -->
 <section class="section" id="early-access" style="position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(245,158,11,.06),transparent 50%,rgba(16,185,129,.04));pointer-events:none"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(45,212,191,.06),transparent 50%,rgba(16,185,129,.04));pointer-events:none"></div>
   <div class="section-inner" style="text-align:center;position:relative;z-index:1">
     <div class="section-label">Beta Access</div>
     <div class="section-title" style="text-align:center">First 100 users lock in beta pricing for life</div>
@@ -666,7 +663,7 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
           style="flex:1;min-width:220px;padding:.8rem 1rem;background:var(--surface);border:1px solid var(--border);
           border-radius:var(--radius);color:var(--text);font-family:var(--font-body);font-size:.9rem;outline:none;
           transition:border-color .2s"
-          onfocus="this.style.borderColor='var(--amber)'" onblur="this.style.borderColor='var(--border)'">
+          onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
         <button type="submit" class="btn btn-primary" id="waitlistBtn" style="white-space:nowrap;padding:.8rem 1.5rem">Join Waitlist</button>
       </form>
       <p id="waitlistMsg" style="font-size:.7rem;color:var(--text-faint);margin-top:.75rem">No spam. Just early access and updates.</p>
@@ -674,15 +671,15 @@ footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border)}
 
     <div style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:2rem">
       <div style="text-align:center">
-        <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--amber)">15</div>
+        <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--teal)">15</div>
         <div style="font-size:.75rem;color:var(--text-muted)">AI Agents</div>
       </div>
       <div style="text-align:center">
-        <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--amber)">18</div>
+        <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--teal)">18</div>
         <div style="font-size:.75rem;color:var(--text-muted)">Automated Jobs</div>
       </div>
       <div style="text-align:center">
-        <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--amber)">$0</div>
+        <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--teal)">$0</div>
         <div style="font-size:.75rem;color:var(--text-muted)">API Cost</div>
       </div>
       <div style="text-align:center">
@@ -777,39 +774,7 @@ agents.forEach(function(a){
   grid.appendChild(card);
 });
 
-/* ── TELEGRAM CHAT DEMO ── */
-(function(){
-  var body = document.getElementById('chatBody');
-  var conversation = [
-    {type:'user', text:'Hey can you write an invoice for the Johnson kitchen job?'},
-    {type:'bot', name:'JobSite', text:'On it. Here\'s your invoice:\n\nJohnson Residence - Kitchen Remodel\nLabor: 6hrs @ $85/hr = $510.00\nMaterials: $234.50\n\nTotal: $744.50\n\nSent to client with payment link.'},
-    {type:'user', text:'Perfect. What jobs do I have tomorrow?'},
-    {type:'bot', name:'JobSite', text:'Tomorrow (March 2):\n\n8:00 AM - Garcia bathroom rough-in\n1:00 PM - Kim water heater install\n\nBoth clients confirmed. Materials list ready.'}
-  ];
-  var i = 0;
-  function showMsg(){
-    if(i >= conversation.length) return;
-    var m = conversation[i];
-    var div = document.createElement('div');
-    div.className = 'chat-msg ' + m.type;
-    if(m.name){
-      var bn = document.createElement('div');
-      bn.className = 'bot-name';
-      bn.textContent = m.name;
-      div.appendChild(bn);
-    }
-    var lines = m.text.split('\n');
-    lines.forEach(function(line, idx){
-      if(idx > 0) div.appendChild(document.createElement('br'));
-      div.appendChild(document.createTextNode(line));
-    });
-    body.appendChild(div);
-    body.scrollTop = body.scrollHeight;
-    i++;
-    if(i < conversation.length) setTimeout(showMsg, 1500);
-  }
-  setTimeout(showMsg, 800);
-})();
+/* ── CHAT DEMO REMOVED — replaced with brand hero image ── */
 
 /* ── FAQ TOGGLE ── */
 document.querySelectorAll('.faq-q').forEach(function(q){
