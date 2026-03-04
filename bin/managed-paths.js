@@ -6,6 +6,7 @@ export const MANAGED_PATHS = [
   '.github/workflows/',
   'docker/',
   'docker-compose.yml',
+  'docker-compose.cluster.yml',
   '.dockerignore',
   'CLAUDE.md',
   'app/',

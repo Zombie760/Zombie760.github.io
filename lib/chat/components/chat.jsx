@@ -8,7 +8,7 @@ import { ChatInput } from './chat-input.js';
 import { ChatHeader } from './chat-header.js';
 import { Greeting } from './greeting.js';
 import { CodeModeToggle } from './code-mode-toggle.js';
-import { getRepositories, getBranches, generateChatTitle } from '../actions.js';
+import { getRepositories, getBranches, generateChatTitle, getWorkspace, createChatWorkspace } from '../actions.js';
 
 export function Chat({ chatId, initialMessages = [], workspace = null }) {
   const [input, setInput] = useState('');
@@ -17,9 +17,28 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
   const [codeMode, setCodeMode] = useState(!!workspace);
   const [repo, setRepo] = useState(workspace?.repo || '');
   const [branch, setBranch] = useState(workspace?.branch || '');
+  const [workspaceState, setWorkspaceState] = useState(workspace);
 
-  const codeModeRef = useRef({ codeMode, repo, branch });
-  codeModeRef.current = { codeMode, repo, branch };
+  // Auto-forward to interactive workspace — only on toggle, not on mount
+  const hasMounted = useRef(false);
+  useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+    if (workspaceState?.containerName && workspaceState?.id) {
+      window.location.href = `/code/${workspaceState.id}`;
+    }
+  }, [workspaceState?.containerName]);
+
+  const refreshWorkspace = useCallback(async () => {
+    if (!workspaceState?.id) return;
+    const ws = await getWorkspace(workspaceState.id);
+    if (ws) setWorkspaceState(ws);
+  }, [workspaceState?.id]);
+
+  const codeModeRef = useRef({ codeMode, repo, branch, workspaceId: workspaceState?.id });
+  codeModeRef.current = { codeMode, repo, branch, workspaceId: workspaceState?.id };
 
   const transport = useMemo(
     () =>
@@ -28,7 +47,7 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
         body: () => ({
           chatId,
           ...(codeModeRef.current.codeMode && codeModeRef.current.repo && codeModeRef.current.branch
-            ? { codeMode: true, repo: codeModeRef.current.repo, branch: codeModeRef.current.branch }
+            ? { codeMode: true, repo: codeModeRef.current.repo, branch: codeModeRef.current.branch, workspaceId: codeModeRef.current.workspaceId }
             : {}),
         }),
       }),
@@ -62,17 +81,30 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
       if (firstMsg) {
         generateChatTitle(chatId, firstMsg).then(() => {
           window.dispatchEvent(new Event('chatsupdated'));
+          refreshWorkspace();
         });
       }
     }
   }, [messages.length, status, chatId]);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim() && files.length === 0) return;
     const text = input;
     const currentFiles = files;
     setInput('');
     setFiles([]);
+
+    // Create workspace before first message if code mode is on
+    if (codeMode && repo && branch && !workspaceState?.id) {
+      try {
+        const ws = await createChatWorkspace(repo, branch);
+        setWorkspaceState(ws);
+        // Update ref immediately so transport body includes workspaceId
+        codeModeRef.current = { ...codeModeRef.current, workspaceId: ws.id };
+      } catch (err) {
+        console.error('Failed to create workspace:', err);
+      }
+    }
 
     if (currentFiles.length === 0) {
       sendMessage({ text });
@@ -121,11 +153,8 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
     sendMessage({ text: newText });
   }, [messages, setMessages, sendMessage]);
 
-  // Interactive mode is active if containerName is set or start_coding tool was called
-  // Headless mode does NOT freeze chat — only interactive does
-  const isInteractiveActive = !!workspace?.containerName || messages.some((m) =>
-    m.parts?.some((p) => p.type === 'tool-invocation' && p.toolName === 'start_coding' && p.state === 'output-available')
-  );
+  // Interactive mode is active if containerName is set
+  const isInteractiveActive = !!workspaceState?.containerName;
 
   // In code mode, disable send until repo+branch selected
   const codeModeCanSend = !codeMode || (!!repo && !!branch);
@@ -141,8 +170,9 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
       locked={messages.length > 0}
       getRepositories={getRepositories}
       getBranches={getBranches}
-      workspace={workspace}
+      workspace={workspaceState}
       isInteractiveActive={isInteractiveActive}
+      onWorkspaceUpdate={refreshWorkspace}
     />
   );
 
@@ -187,6 +217,15 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
           )}
           {codeMode ? (
             <div className="mx-auto w-full max-w-4xl px-4 pb-4 md:px-6">
+              {isInteractiveActive && (
+                <a
+                  href={`/code/${workspaceState?.id}`}
+                  className="flex items-center justify-center gap-2 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 mb-2 text-sm font-medium text-primary hover:bg-primary/10 transition-colors"
+                >
+                  <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                  Click here to access Interactive Mode
+                </a>
+              )}
               <div className="rounded-t-xl border border-b-0 border-border px-3 py-2.5">
                 {codeModeToggle}
               </div>
@@ -200,7 +239,7 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
                 files={files}
                 setFiles={setFiles}
                 disabled={isInteractiveActive}
-                placeholder={isInteractiveActive ? 'Workspace launched — click the link above to start coding.' : 'Send a message...'}
+                placeholder={isInteractiveActive ? 'Interactive mode is active.' : 'Send a message...'}
                 className="rounded-t-none"
               />
             </div>

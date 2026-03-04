@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { ChevronDownIcon, CheckIcon, SearchIcon } from '../icons.js';
 import { cn } from '../../utils.js';
 
-export function Combobox({ options = [], value, onChange, placeholder = 'Select...', loading = false, disabled = false }) {
+export function Combobox({ options = [], value, onChange, placeholder = 'Select...', loading = false, disabled = false, highlight = false }) {
   const [open, setOpen] = useState(false);
   const [filter, setFilter] = useState('');
   const ref = useRef(null);
@@ -62,7 +62,9 @@ export function Combobox({ options = [], value, onChange, placeholder = 'Select.
           'flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm transition-colors w-full',
           disabled
             ? 'border-border bg-muted text-muted-foreground cursor-not-allowed opacity-60'
-            : 'border-border bg-background text-foreground hover:bg-muted cursor-pointer'
+            : highlight
+              ? 'border-primary ring-2 ring-primary/30 bg-background text-foreground hover:bg-muted cursor-pointer animate-pulse'
+              : 'border-border bg-background text-foreground hover:bg-muted cursor-pointer'
         )}
       >
         <span className={cn('flex-1 text-left truncate', !value && 'text-muted-foreground')}>

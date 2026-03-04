@@ -6,7 +6,7 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 import { ConfirmDialog } from './ui/confirm-dialog.js';
 import { RenameDialog } from './ui/rename-dialog.jsx';
 import { ChevronDownIcon, StarIcon, StarFilledIcon, PencilIcon, TrashIcon } from './icons.js';
-import { getChatMeta, getChatMetaByWorkspace, renameChat, deleteChat, starChat } from '../actions.js';
+import { getChatData, getChatDataByWorkspace, renameChat, deleteChat, starChat } from '../actions.js';
 import { useChatNav } from './chat-nav-context.js';
 
 export function ChatHeader({ chatId: chatIdProp, workspaceId }) {
@@ -28,23 +28,23 @@ export function ChatHeader({ chatId: chatIdProp, workspaceId }) {
 
   const fetchMeta = useCallback(() => {
     if (workspaceId) {
-      getChatMetaByWorkspace(workspaceId)
-        .then((meta) => {
-          if (meta?.title && meta.title !== 'New Chat') {
-            setTitle(meta.title);
-            setStarred(meta.starred || 0);
-            setResolvedChatId(meta.chatId);
+      getChatDataByWorkspace(workspaceId)
+        .then((data) => {
+          if (data?.title && data.title !== 'New Chat') {
+            setTitle(data.title);
+            setStarred(data.starred || 0);
+            setResolvedChatId(data.chatId);
           }
         })
         .catch(() => {});
       return;
     }
     if (!chatIdProp) return;
-    getChatMeta(chatIdProp)
-      .then((meta) => {
-        if (meta?.title && meta.title !== 'New Chat') {
-          setTitle(meta.title);
-          setStarred(meta.starred || 0);
+    getChatData(chatIdProp)
+      .then((data) => {
+        if (data?.title && data.title !== 'New Chat') {
+          setTitle(data.title);
+          setStarred(data.starred || 0);
         }
       })
       .catch(() => {});

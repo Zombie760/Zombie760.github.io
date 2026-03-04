@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { PageLayout } from '../../chat/components/page-layout.js';
-import { PlusIcon, TrashIcon, PencilIcon } from '../../chat/components/icons.js';
-import { getCluster, renameCluster, getClusterRoles, addClusterWorker, assignWorkerRole, renameClusterWorker, updateWorkerTriggers, removeClusterWorker } from '../actions.js';
+import { PlusIcon, TrashIcon, PencilIcon, CopyIcon, CheckIcon } from '../../chat/components/icons.js';
+import { getCluster, renameCluster, updateClusterSystemPrompt, getClusterRoles, addClusterWorker, assignWorkerRole, renameClusterWorker, updateWorkerTriggers, removeClusterWorker } from '../actions.js';
 import { ConfirmDialog } from '../../chat/components/ui/confirm-dialog.js';
 
 export function ClusterPage({ session, clusterId }) {
@@ -12,6 +12,7 @@ export function ClusterPage({ session, clusterId }) {
   const [loading, setLoading] = useState(true);
   const [editingName, setEditingName] = useState(false);
   const [nameValue, setNameValue] = useState('');
+  const [systemPromptValue, setSystemPromptValue] = useState('');
   const nameRef = useRef(null);
 
   const load = async () => {
@@ -23,6 +24,7 @@ export function ClusterPage({ session, clusterId }) {
       setCluster(result);
       setRoles(allRoles);
       setNameValue(result?.name || '');
+      setSystemPromptValue(result?.systemPrompt || '');
     } catch (err) {
       console.error('Failed to load cluster:', err);
     } finally {
@@ -48,6 +50,13 @@ export function ClusterPage({ session, clusterId }) {
       setCluster((prev) => ({ ...prev, name: trimmed }));
     }
     setEditingName(false);
+  };
+
+  const saveSystemPrompt = async () => {
+    if (systemPromptValue !== (cluster.systemPrompt || '')) {
+      await updateClusterSystemPrompt(clusterId, systemPromptValue);
+      setCluster((prev) => ({ ...prev, systemPrompt: systemPromptValue }));
+    }
   };
 
   const handleAddWorker = async () => {
@@ -159,6 +168,20 @@ export function ClusterPage({ session, clusterId }) {
             <PencilIcon size={16} />
           </button>
         )}
+      </div>
+
+      {/* System Prompt */}
+      <div className="mb-6">
+        <label className="text-sm font-medium block mb-1">System Prompt</label>
+        <p className="text-xs text-muted-foreground mb-2">Shared instructions applied to all workers in this cluster.</p>
+        <textarea
+          value={systemPromptValue}
+          onChange={(e) => setSystemPromptValue(e.target.value)}
+          onBlur={saveSystemPrompt}
+          placeholder="Enter shared instructions for all workers..."
+          rows={4}
+          className="w-full text-sm bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring resize-y font-mono"
+        />
       </div>
 
       {/* Workers */}
@@ -418,12 +441,7 @@ function WorkerRow({ worker, roles, onAssignRole, onRename, onUpdateTriggers, on
             </div>
           )}
           {hasWebhook && (
-            <div className="rounded-md border border-input p-2.5">
-              <label className="text-xs font-medium text-muted-foreground block mb-1">Webhook</label>
-              <span className="text-xs text-muted-foreground">
-                Endpoint: <code className="bg-muted px-1 py-0.5 rounded text-foreground">/worker/{worker.id}/webhook</code>
-              </span>
-            </div>
+            <WebhookInfo workerId={worker.id} />
           )}
         </div>
       )}
@@ -439,6 +457,63 @@ function WorkerRow({ worker, roles, onAssignRole, onRename, onUpdateTriggers, on
         }}
         onCancel={() => setConfirmDelete(false)}
       />
+    </div>
+  );
+}
+
+function CopyButton({ text, label }) {
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  return (
+    <button
+      onClick={copy}
+      className="inline-flex items-center justify-center rounded p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors shrink-0"
+      title={copied ? 'Copied!' : `Copy ${label}`}
+    >
+      {copied ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
+    </button>
+  );
+}
+
+function WebhookInfo({ workerId }) {
+  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://your-domain.com';
+  const endpoint = `${origin}/api/cluster/${workerId}/webhook`;
+  const curlCmd = `curl -X POST ${endpoint} \\
+  -H "x-api-key: YOUR_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{"message": "Hello from webhook"}'`;
+
+  return (
+    <div className="rounded-md border border-input p-2.5">
+      <label className="text-xs font-medium text-muted-foreground block mb-2">Webhook</label>
+
+      {/* Endpoint URL */}
+      <div className="flex items-center gap-2 mb-2">
+        <code className="flex-1 min-w-0 text-xs bg-muted px-2 py-1.5 rounded font-mono text-foreground truncate select-all">
+          {endpoint}
+        </code>
+        <CopyButton text={endpoint} label="endpoint" />
+      </div>
+
+      {/* Curl command */}
+      <label className="text-xs font-medium text-muted-foreground block mb-1 mt-2">Example cURL</label>
+      <div className="flex items-start gap-2">
+        <pre className="flex-1 min-w-0 text-xs bg-muted/70 border border-input rounded-md px-2.5 py-2 font-mono text-foreground overflow-x-auto whitespace-pre-wrap break-all leading-relaxed">{curlCmd}</pre>
+        <CopyButton text={curlCmd} label="curl command" />
+      </div>
     </div>
   );
 }

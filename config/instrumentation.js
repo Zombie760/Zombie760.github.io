@@ -58,5 +58,9 @@ export async function register() {
     if (stored) setUpdateAvailable(stored);
   } catch {}
 
+  // Start cluster worker runtime (crons + webhook registration)
+  const { startClusterRuntime } = await import('../lib/cluster/runtime.js');
+  startClusterRuntime();
+
   console.log('thepopebot initialized');
 }

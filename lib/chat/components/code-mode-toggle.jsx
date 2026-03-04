@@ -21,6 +21,7 @@ import { cn } from '../utils.js';
  * @param {Function} props.getBranches - Server action to fetch branches
  * @param {object} [props.workspace] - Workspace object (id, repo, branch, containerName, featureBranch)
  * @param {boolean} [props.isInteractiveActive] - Whether interactive container is running
+ * @param {Function} [props.onWorkspaceUpdate] - Callback to refresh workspace state after mode toggle
  */
 export function CodeModeToggle({
   enabled,
@@ -34,13 +35,14 @@ export function CodeModeToggle({
   getBranches,
   workspace,
   isInteractiveActive,
+  onWorkspaceUpdate,
 }) {
   const [repos, setRepos] = useState([]);
   const [branches, setBranches] = useState([]);
   const [loadingRepos, setLoadingRepos] = useState(false);
   const [loadingBranches, setLoadingBranches] = useState(false);
   const [reposLoaded, setReposLoaded] = useState(false);
-  const [closingInteractive, setClosingInteractive] = useState(false);
+  const [togglingMode, setTogglingMode] = useState(false);
 
   // Load repos on first toggle-on
   const handleToggle = useCallback(() => {
@@ -79,68 +81,99 @@ export function CodeModeToggle({
     }).catch(() => setLoadingBranches(false));
   }, [repo]);
 
-  const handleCloseInteractive = useCallback(async () => {
-    if (!workspace?.id || closingInteractive) return;
-    setClosingInteractive(true);
+  const handleModeToggle = useCallback(async () => {
+    if (!workspace?.id || togglingMode) return;
+    setTogglingMode(true);
     try {
-      const { closeInteractiveMode } = await import('../../code/actions.js');
-      await closeInteractiveMode(workspace.id);
-      window.location.reload();
+      if (isInteractiveActive) {
+        // Switch to headless: close the container
+        const { closeInteractiveMode } = await import('../../code/actions.js');
+        await closeInteractiveMode(workspace.id);
+      } else {
+        // Switch to interactive: start a container
+        const { startInteractiveMode } = await import('../../code/actions.js');
+        await startInteractiveMode(workspace.id);
+      }
+      if (onWorkspaceUpdate) await onWorkspaceUpdate();
     } catch (err) {
-      console.error('Failed to close interactive mode:', err);
-      setClosingInteractive(false);
+      console.error('Failed to toggle mode:', err);
+    } finally {
+      setTogglingMode(false);
     }
-  }, [workspace?.id, closingInteractive]);
+  }, [workspace?.id, togglingMode, isInteractiveActive, onWorkspaceUpdate]);
 
   if (!process.env.NEXT_PUBLIC_CODE_WORKSPACE) return null;
 
   // Locked mode: show branch bar with feature branch + mode toggle
   if (locked && enabled) {
     const featureBranch = workspace?.featureBranch;
-    // Truncate long branch names
-    const truncate = (str, max = 30) => str && str.length > max ? str.slice(0, max) + '...' : str;
+    // Extract just the repo name (last segment of owner/repo)
+    const repoName = repo ? repo.split('/').pop() : '';
 
     return (
       <div className="flex items-center justify-between gap-2 text-sm min-w-0">
-        {/* Left: branch flow */}
+        {/* Left: branch flow — feature branch truncates dynamically to fill available space */}
         <div className="flex items-center gap-1.5 text-muted-foreground min-w-0 overflow-hidden">
           <GitBranchIcon size={14} className="shrink-0" />
-          {repo && <span className="shrink-0 truncate max-w-[160px]" title={repo}>{repo}</span>}
+          {repoName && <span className="shrink-0" title={repo}>{repoName}</span>}
           {branch && (
             <>
-              <span className="shrink-0 text-muted-foreground/50">&rarr;</span>
-              <span className="shrink-0 font-medium text-foreground" title={branch}>{truncate(branch, 20)}</span>
+              <span className="shrink-0 text-muted-foreground/30">/</span>
+              <span className="shrink-0 font-medium text-foreground" title={branch}>{branch}</span>
             </>
           )}
           {featureBranch && (
             <>
-              <span className="shrink-0 text-muted-foreground/50">&rarr;</span>
-              <span className="shrink-0 text-primary truncate max-w-[200px]" title={featureBranch}>{truncate(featureBranch)}</span>
+              <span className="shrink-0 text-muted-foreground/50">&larr;</span>
+              <span className="text-primary truncate min-w-[60px]" title={featureBranch}>{featureBranch}</span>
             </>
           )}
         </div>
 
-        {/* Right: mode indicator */}
-        <div className="flex items-center gap-2 shrink-0">
-          {isInteractiveActive ? (
-            <button
-              type="button"
-              onClick={handleCloseInteractive}
-              disabled={closingInteractive}
+        {/* Right: mode toggle */}
+        <div className="flex items-center shrink-0">
+          <button
+            type="button"
+            onClick={handleModeToggle}
+            disabled={togglingMode}
+            className="inline-flex items-center gap-1.5 group"
+            role="switch"
+            aria-checked={isInteractiveActive}
+            aria-label="Toggle interactive mode"
+          >
+            {togglingMode && (
+              <svg className="animate-spin h-3 w-3 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+              </svg>
+            )}
+            {/* Track */}
+            <span
               className={cn(
-                'inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium transition-colors',
-                'bg-primary/10 text-primary hover:bg-primary/20',
-                closingInteractive && 'opacity-50 cursor-not-allowed'
+                'relative inline-flex h-4 w-7 shrink-0 rounded-full transition-colors duration-200',
+                togglingMode && 'opacity-50',
+                isInteractiveActive ? 'bg-primary' : 'bg-muted-foreground/30'
               )}
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
-              {closingInteractive ? 'Closing...' : 'Interactive'}
-            </button>
-          ) : (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
-              Headless
+              {/* Knob */}
+              <span
+                className={cn(
+                  'absolute top-0.5 left-0.5 h-3 w-3 rounded-full bg-white shadow-sm transition-transform duration-200',
+                  isInteractiveActive && 'translate-x-3'
+                )}
+              />
             </span>
-          )}
+            {/* Label */}
+            <span className={cn(
+              'text-xs font-medium transition-colors whitespace-nowrap',
+              isInteractiveActive ? 'text-primary' : 'text-muted-foreground'
+            )}>
+              {togglingMode
+                ? (isInteractiveActive ? 'Closing...' : 'Launching...')
+                : (isInteractiveActive ? 'Interactive' : 'Headless')
+              }
+            </span>
+          </button>
         </div>
       </div>
     );
@@ -194,6 +227,7 @@ export function CodeModeToggle({
               onChange={onRepoChange}
               placeholder="Select repository..."
               loading={loadingRepos}
+              highlight={!repo && !loadingRepos}
             />
           </div>
           <div className={cn("w-full sm:w-auto sm:min-w-[180px]", !repo && "opacity-50 pointer-events-none")}>
@@ -203,6 +237,7 @@ export function CodeModeToggle({
               onChange={onBranchChange}
               placeholder="Select branch..."
               loading={loadingBranches}
+              highlight={!!repo && !branch && !loadingBranches}
             />
           </div>
         </>

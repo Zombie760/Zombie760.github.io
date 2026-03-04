@@ -83,10 +83,18 @@ export function SidebarHistory() {
   const updateFilter = (v) => { setFilter(v); try { localStorage.setItem('sidebar-chat-filter', v); } catch {} };
   const { activeChatId, navigateToChat } = useChatNav();
 
+  const [hasMore, setHasMore] = useState(false);
+
   const loadChats = async () => {
     try {
-      const result = await getChats();
-      setChats(result);
+      const result = await getChats(26);
+      if (result.length > 25) {
+        setChats(result.slice(0, 25));
+        setHasMore(true);
+      } else {
+        setChats(result);
+        setHasMore(false);
+      }
     } catch (err) {
       console.error('Failed to load chats:', err);
     } finally {
@@ -218,6 +226,18 @@ export function SidebarHistory() {
             <p className="px-4 py-2 text-sm text-muted-foreground">
               No {filter === 'code' ? 'code' : 'chat'} chats yet.
             </p>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      )}
+      {hasMore && (
+        <SidebarGroup className="pt-0">
+          <SidebarGroupContent>
+            <a
+              href="/chats"
+              className="block px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              More Chats
+            </a>
           </SidebarGroupContent>
         </SidebarGroup>
       )}

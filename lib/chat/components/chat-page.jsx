@@ -5,7 +5,7 @@ import { AppSidebar } from './app-sidebar.js';
 import { Chat } from './chat.js';
 import { SidebarProvider, SidebarInset } from './ui/sidebar.js';
 import { ChatNavProvider } from './chat-nav-context.js';
-import { getChatMessages, getChatMeta, getWorkspace } from '../actions.js';
+import { getChatMessages, getChatData } from '../actions.js';
 import { v4 as uuidv4 } from 'uuid';
 
 /**
@@ -75,13 +75,8 @@ export function ChatPage({ session, needsSetup, chatId }) {
 
         // Check if this is a code chat
         try {
-          const meta = await getChatMeta(activeChatId);
-          if (meta?.codeWorkspaceId) {
-            const ws = await getWorkspace(meta.codeWorkspaceId);
-            setWorkspace(ws);
-          } else {
-            setWorkspace(null);
-          }
+          const chat = await getChatData(activeChatId);
+          setWorkspace(chat?.workspace || null);
         } catch {
           setWorkspace(null);
         }

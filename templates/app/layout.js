@@ -3,7 +3,7 @@ import '../theme.css';
 import { ThemeProvider } from 'thepopebot/chat';
 
 export const metadata = {
-  title: 'thepopebot',
+  title: 'ThePopeBot',
   description: 'AI Agent',
 };
 
