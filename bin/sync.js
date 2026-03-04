@@ -144,8 +144,8 @@ function buildDockerImage(projectPath) {
   const version = pkg.version;
   const imageTag = `stephengpope/thepopebot:event-handler-${version}`;
 
-  // Build using stdin Dockerfile with project dir as context
-  execSync(`docker build -f - -t ${imageTag} .`, {
+  // Build using stdin Dockerfile with project dir as context (no cache to ensure fresh package)
+  execSync(`docker build --no-cache -f - -t ${imageTag} .`, {
     input: dockerfile,
     stdio: ['pipe', 'inherit', 'inherit'],
     cwd: projectPath,
@@ -202,20 +202,17 @@ export async function sync(projectPath) {
     console.log('\n  Installing package on host...');
     execSync(`npm install --no-save ${tarballDest}`, { stdio: 'inherit', cwd: projectPath });
 
-    // 5. Build Docker image with patched Dockerfile
-    buildDockerImage(projectPath);
-
-    // 6. Build Next.js on host (avoids OOM inside container)
+    // 5. Build Next.js on host (avoids OOM inside container)
     console.log('\n  Building Next.js...');
+    fs.rmSync(path.join(projectPath, '.next'), { recursive: true, force: true });
     execSync('npm run build', { stdio: 'inherit', cwd: projectPath });
 
-    // 7. Restart container and reload PM2 (picks up .next via volume mount)
+    // 6. Build Docker image with patched Dockerfile
+    buildDockerImage(projectPath);
+
+    // 7. Restart container (fresh start picks up .next via volume mount)
     console.log('\n  Restarting event handler...');
     execSync('docker compose up -d -V event-handler', { stdio: 'inherit', cwd: projectPath });
-    execSync('docker compose exec event-handler pm2 reload all', {
-      stdio: 'inherit',
-      cwd: projectPath,
-    });
 
   } finally {
     // 7. Cleanup
