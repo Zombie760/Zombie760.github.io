@@ -7,6 +7,7 @@ import { cn } from '../utils.js';
 
 /**
  * Code mode toggle with repo/branch pickers.
+ * When locked (after first message), shows branch bar + headless/interactive toggle.
  *
  * @param {object} props
  * @param {boolean} props.enabled - Whether code mode is on
@@ -18,6 +19,8 @@ import { cn } from '../utils.js';
  * @param {boolean} props.locked - Whether the controls are locked (after first message)
  * @param {Function} props.getRepositories - Server action to fetch repos
  * @param {Function} props.getBranches - Server action to fetch branches
+ * @param {object} [props.workspace] - Workspace object (id, repo, branch, containerName, featureBranch)
+ * @param {boolean} [props.isInteractiveActive] - Whether interactive container is running
  */
 export function CodeModeToggle({
   enabled,
@@ -29,12 +32,15 @@ export function CodeModeToggle({
   locked,
   getRepositories,
   getBranches,
+  workspace,
+  isInteractiveActive,
 }) {
   const [repos, setRepos] = useState([]);
   const [branches, setBranches] = useState([]);
   const [loadingRepos, setLoadingRepos] = useState(false);
   const [loadingBranches, setLoadingBranches] = useState(false);
   const [reposLoaded, setReposLoaded] = useState(false);
+  const [closingInteractive, setClosingInteractive] = useState(false);
 
   // Load repos on first toggle-on
   const handleToggle = useCallback(() => {
@@ -73,15 +79,69 @@ export function CodeModeToggle({
     }).catch(() => setLoadingBranches(false));
   }, [repo]);
 
+  const handleCloseInteractive = useCallback(async () => {
+    if (!workspace?.id || closingInteractive) return;
+    setClosingInteractive(true);
+    try {
+      const { closeInteractiveMode } = await import('../../code/actions.js');
+      await closeInteractiveMode(workspace.id);
+      window.location.reload();
+    } catch (err) {
+      console.error('Failed to close interactive mode:', err);
+      setClosingInteractive(false);
+    }
+  }, [workspace?.id, closingInteractive]);
+
   if (!process.env.NEXT_PUBLIC_CODE_WORKSPACE) return null;
 
-  // Locked mode: show as branch bar
+  // Locked mode: show branch bar with feature branch + mode toggle
   if (locked && enabled) {
+    const featureBranch = workspace?.featureBranch;
+    // Truncate long branch names
+    const truncate = (str, max = 30) => str && str.length > max ? str.slice(0, max) + '...' : str;
+
     return (
-      <div className="flex items-center gap-2 text-sm text-muted-foreground min-w-0">
-        <GitBranchIcon size={14} className="shrink-0" />
-        {repo && <span className="shrink-0">{repo}</span>}
-        {branch && <span className="shrink-0 font-medium text-foreground">{branch}</span>}
+      <div className="flex items-center justify-between gap-2 text-sm min-w-0">
+        {/* Left: branch flow */}
+        <div className="flex items-center gap-1.5 text-muted-foreground min-w-0 overflow-hidden">
+          <GitBranchIcon size={14} className="shrink-0" />
+          {repo && <span className="shrink-0 truncate max-w-[160px]" title={repo}>{repo}</span>}
+          {branch && (
+            <>
+              <span className="shrink-0 text-muted-foreground/50">&rarr;</span>
+              <span className="shrink-0 font-medium text-foreground" title={branch}>{truncate(branch, 20)}</span>
+            </>
+          )}
+          {featureBranch && (
+            <>
+              <span className="shrink-0 text-muted-foreground/50">&rarr;</span>
+              <span className="shrink-0 text-primary truncate max-w-[200px]" title={featureBranch}>{truncate(featureBranch)}</span>
+            </>
+          )}
+        </div>
+
+        {/* Right: mode indicator */}
+        <div className="flex items-center gap-2 shrink-0">
+          {isInteractiveActive ? (
+            <button
+              type="button"
+              onClick={handleCloseInteractive}
+              disabled={closingInteractive}
+              className={cn(
+                'inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium transition-colors',
+                'bg-primary/10 text-primary hover:bg-primary/20',
+                closingInteractive && 'opacity-50 cursor-not-allowed'
+              )}
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+              {closingInteractive ? 'Closing...' : 'Interactive'}
+            </button>
+          ) : (
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
+              Headless
+            </span>
+          )}
+        </div>
       </div>
     );
   }

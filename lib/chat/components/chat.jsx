@@ -121,8 +121,9 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
     sendMessage({ text: newText });
   }, [messages, setMessages, sendMessage]);
 
-  // Workspace is launched if containerName is set or start_coding tool was called
-  const isWorkspaceLaunched = !!workspace?.containerName || messages.some((m) =>
+  // Interactive mode is active if containerName is set or start_coding tool was called
+  // Headless mode does NOT freeze chat — only interactive does
+  const isInteractiveActive = !!workspace?.containerName || messages.some((m) =>
     m.parts?.some((p) => p.type === 'tool-invocation' && p.toolName === 'start_coding' && p.state === 'output-available')
   );
 
@@ -140,6 +141,8 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
       locked={messages.length > 0}
       getRepositories={getRepositories}
       getBranches={getBranches}
+      workspace={workspace}
+      isInteractiveActive={isInteractiveActive}
     />
   );
 
@@ -196,8 +199,8 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
                 stop={stop}
                 files={files}
                 setFiles={setFiles}
-                disabled={isWorkspaceLaunched}
-                placeholder={isWorkspaceLaunched ? 'Workspace launched — click the link above to start coding.' : 'Send a message...'}
+                disabled={isInteractiveActive}
+                placeholder={isInteractiveActive ? 'Workspace launched — click the link above to start coding.' : 'Send a message...'}
                 className="rounded-t-none"
               />
             </div>

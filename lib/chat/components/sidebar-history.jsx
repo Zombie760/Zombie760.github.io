@@ -54,7 +54,7 @@ const FILTERS = [
 
 function ChatTypeFilter({ filter, setFilter }) {
   return (
-    <div className="flex items-center gap-0.5 px-2 mb-1">
+    <div className="flex items-center gap-0.5 px-2 pt-2 mb-1">
       {FILTERS.map(({ value, label, icon: Icon }) => (
         <button
           key={value}
