@@ -87,9 +87,9 @@ export function SidebarHistory() {
 
   const loadChats = async () => {
     try {
-      const result = await getChats(26);
-      if (result.length > 25) {
-        setChats(result.slice(0, 25));
+      const result = await getChats(51);
+      if (result.length > 50) {
+        setChats(result.slice(0, 50));
         setHasMore(true);
       } else {
         setChats(result);

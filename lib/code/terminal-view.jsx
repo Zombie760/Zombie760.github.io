@@ -40,7 +40,7 @@ function resolveTheme(mode) {
 
 const THEME_CYCLE = ['dark', 'light', 'system'];
 
-export default function TerminalView({ codeWorkspaceId, ensureContainer, onCloseSession }) {
+export default function TerminalView({ codeWorkspaceId, wsPath, isActive = true, showToolbar = true, ensureContainer, onCloseSession }) {
   const containerRef = useRef(null);
   const termRef = useRef(null);
   const fitAddonRef = useRef(null);
@@ -94,7 +94,8 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer, onClose
     setStatus(STATUS.connecting);
 
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const ws = new WebSocket(`${protocol}//${window.location.host}/code/${codeWorkspaceId}/ws`);
+    const path = wsPath || `/code/${codeWorkspaceId}/ws`;
+    const ws = new WebSocket(`${protocol}//${window.location.host}${path}`);
     wsRef.current = ws;
 
     ws.binaryType = 'arraybuffer';
@@ -140,7 +141,7 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer, onClose
       }
 
       // Call ensureContainer once per disconnect cycle to restart the container
-      if (!ensuredRef.current) {
+      if (!ensuredRef.current && ensureContainer) {
         ensuredRef.current = true;
         ensureContainer(codeWorkspaceId).catch(() => {});
       }
@@ -151,7 +152,7 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer, onClose
     ws.onerror = () => {
       ws.close();
     };
-  }, [codeWorkspaceId, setStatus, ensureContainer]);
+  }, [codeWorkspaceId, wsPath, setStatus, ensureContainer]);
 
   useEffect(() => {
     const saved = localStorage.getItem('terminal-theme') || 'dark';
@@ -213,22 +214,26 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer, onClose
 
     let cancelled = false;
 
-    (async () => {
-      try {
-        const result = await ensureContainer(codeWorkspaceId);
-        if (result?.status === 'error') {
-          const msg = result.message || 'Unknown container error';
-          console.error('ensureContainer:', msg);
-          if (!cancelled) setContainerError(msg);
+    if (ensureContainer) {
+      (async () => {
+        try {
+          const result = await ensureContainer(codeWorkspaceId);
+          if (result?.status === 'error') {
+            const msg = result.message || 'Unknown container error';
+            console.error('ensureContainer:', msg);
+            if (!cancelled) setContainerError(msg);
+            return;
+          }
+        } catch (err) {
+          console.error('ensureContainer:', err);
+          if (!cancelled) setContainerError(err.message || String(err));
           return;
         }
-      } catch (err) {
-        console.error('ensureContainer:', err);
-        if (!cancelled) setContainerError(err.message || String(err));
-        return;
-      }
-      if (!cancelled) connect();
-    })();
+        if (!cancelled) connect();
+      })();
+    } else {
+      connect();
+    }
 
     return () => {
       cancelled = true;
@@ -239,6 +244,15 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer, onClose
       term.dispose();
     };
   }, [connect, sendResize, codeWorkspaceId]);
+
+  useEffect(() => {
+    if (isActive && termRef.current && fitAddonRef.current) {
+      requestAnimationFrame(() => {
+        fitAddonRef.current?.fit();
+        termRef.current?.focus();
+      });
+    }
+  }, [isActive]);
 
   const sendCommand = useCallback((text) => {
     const ws = wsRef.current;
@@ -270,19 +284,21 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer, onClose
     // Reset reconnect state so the 60s timer starts fresh
     disconnectedAtRef.current = null;
     ensuredRef.current = false;
-    try {
-      setContainerError(null);
-      const result = await ensureContainer(codeWorkspaceId);
-      if (result?.status === 'error') {
-        const msg = result.message || 'Unknown container error';
-        console.error('ensureContainer:', msg);
-        setContainerError(msg);
+    if (ensureContainer) {
+      try {
+        setContainerError(null);
+        const result = await ensureContainer(codeWorkspaceId);
+        if (result?.status === 'error') {
+          const msg = result.message || 'Unknown container error';
+          console.error('ensureContainer:', msg);
+          setContainerError(msg);
+          return;
+        }
+      } catch (err) {
+        console.error('ensureContainer:', err);
+        setContainerError(err.message || String(err));
         return;
       }
-    } catch (err) {
-      console.error('ensureContainer:', err);
-      setContainerError(err.message || String(err));
-      return;
     }
     connect();
   };
@@ -411,6 +427,7 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer, onClose
           )}
 
           {/* Toolbar */}
+          {showToolbar && (
           <div
             ref={toolbarRef}
             style={{
@@ -484,6 +501,7 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer, onClose
               </button>
             </div>
           </div>
+          )}
         </div>
       </div>
     </>

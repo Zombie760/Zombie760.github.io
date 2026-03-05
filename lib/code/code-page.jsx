@@ -1,13 +1,21 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { AppSidebar } from '../chat/components/app-sidebar.js';
 import { SidebarProvider, SidebarInset } from '../chat/components/ui/sidebar.js';
 import { ChatNavProvider } from '../chat/components/chat-nav-context.js';
 import { ChatHeader } from '../chat/components/chat-header.js';
 import { ConfirmDialog } from '../chat/components/ui/confirm-dialog.js';
-import { ensureCodeWorkspaceContainer, closeInteractiveMode, getContainerGitStatus } from './actions.js';
+import { cn } from '../chat/utils.js';
+import {
+  ensureCodeWorkspaceContainer,
+  closeInteractiveMode,
+  getContainerGitStatus,
+  createTerminalSession,
+  closeTerminalSession,
+  listTerminalSessions,
+} from './actions.js';
 
 const TerminalView = dynamic(() => import('./terminal-view.js'), { ssr: false });
 
@@ -16,6 +24,51 @@ export default function CodePage({ session, codeWorkspaceId }) {
   const [gitStatus, setGitStatus] = useState(null);
   const [closing, setClosing] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+
+  const [tabs, setTabs] = useState([
+    { id: 'claude-code', label: 'Claude Code', type: 'claude' },
+  ]);
+  const [activeTabId, setActiveTabId] = useState('claude-code');
+  const [creatingShell, setCreatingShell] = useState(false);
+  const [closingTabId, setClosingTabId] = useState(null);
+
+  // Restore existing shell sessions on mount
+  useEffect(() => {
+    listTerminalSessions(codeWorkspaceId).then((result) => {
+      if (result?.success && result.sessions?.length > 0) {
+        setTabs((prev) => [
+          prev[0],
+          ...result.sessions.map((s) => ({ id: s.id, label: s.label, type: 'shell' })),
+        ]);
+      }
+    });
+  }, [codeWorkspaceId]);
+
+  const handleNewShell = useCallback(async () => {
+    setCreatingShell(true);
+    try {
+      const result = await createTerminalSession(codeWorkspaceId);
+      if (result?.success) {
+        const newTab = { id: result.sessionId, label: result.label, type: 'shell' };
+        setTabs((prev) => [...prev, newTab]);
+        setActiveTabId(result.sessionId);
+      }
+    } catch (err) {
+      console.error('[CodePage] Failed to create shell:', err);
+    } finally {
+      setCreatingShell(false);
+    }
+  }, [codeWorkspaceId]);
+
+  const handleCloseTab = useCallback(async (tabId) => {
+    try {
+      await closeTerminalSession(codeWorkspaceId, tabId);
+    } catch {
+      // Best effort
+    }
+    setTabs((prev) => prev.filter((t) => t.id !== tabId));
+    setActiveTabId((prev) => (prev === tabId ? 'claude-code' : prev));
+  }, [codeWorkspaceId]);
 
   const handleOpenCloseDialog = useCallback(async () => {
     setDialogState('loading');
@@ -101,7 +154,87 @@ export default function CodePage({ session, codeWorkspaceId }) {
                 </svg>
               </button>
             </div>
-            <TerminalView codeWorkspaceId={codeWorkspaceId} ensureContainer={ensureCodeWorkspaceContainer} onCloseSession={handleOpenCloseDialog} />
+
+            {/* Tab bar */}
+            <div className="flex items-end gap-0 px-4 bg-muted/30 border-b border-border shrink-0 overflow-hidden">
+              {tabs.map((tab) => {
+                const isActive = activeTabId === tab.id;
+                return (
+                  <div
+                    key={tab.id}
+                    className={cn(
+                      'group flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium font-mono rounded-t-md border border-b-0 transition-colors cursor-pointer',
+                      isActive
+                        ? 'bg-background text-foreground border-border -mb-px'
+                        : 'bg-transparent text-muted-foreground border-transparent hover:text-foreground hover:bg-muted/50'
+                    )}
+                    onClick={() => setActiveTabId(tab.id)}
+                  >
+                    {tab.type === 'claude' ? (
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                        <polyline points="4,12 4,4 12,4" />
+                        <line x1="7" y1="4" x2="7" y2="12" />
+                      </svg>
+                    ) : (
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="4,6 2,8 4,10" />
+                        <line x1="2" y1="8" x2="10" y2="8" />
+                      </svg>
+                    )}
+                    <span>{tab.label}</span>
+                    <button
+                      className="ml-1 rounded-sm p-0.5 opacity-0 group-hover:opacity-100 hover:bg-destructive/20 hover:text-destructive transition-all"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (tab.type === 'claude') {
+                          handleOpenCloseDialog();
+                        } else {
+                          setClosingTabId(tab.id);
+                        }
+                      }}
+                      title={tab.type === 'claude' ? 'Close session' : 'Close shell'}
+                    >
+                      <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                        <line x1="4" y1="4" x2="12" y2="12" />
+                        <line x1="12" y1="4" x2="4" y2="12" />
+                      </svg>
+                    </button>
+                  </div>
+                );
+              })}
+              <button
+                className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium font-mono text-muted-foreground hover:text-foreground transition-colors disabled:opacity-50 disabled:cursor-default"
+                onClick={handleNewShell}
+                disabled={creatingShell}
+                title="New shell terminal"
+              >
+                + Shell
+              </button>
+            </div>
+
+            {/* Terminal panels — all mounted, hidden via display */}
+            {tabs.map((tab) => (
+              <div
+                key={tab.id}
+                style={{
+                  display: activeTabId === tab.id ? 'flex' : 'none',
+                  flex: 1,
+                  flexDirection: 'column',
+                  minHeight: 0,
+                }}
+              >
+                <TerminalView
+                  codeWorkspaceId={codeWorkspaceId}
+                  wsPath={tab.type === 'claude'
+                    ? `/code/${codeWorkspaceId}/ws`
+                    : `/code/${codeWorkspaceId}/term/${tab.id}/ws`}
+                  isActive={activeTabId === tab.id}
+                  showToolbar={tab.type === 'claude'}
+                  ensureContainer={tab.type === 'claude' ? ensureCodeWorkspaceContainer : undefined}
+                  onCloseSession={tab.type === 'claude' ? handleOpenCloseDialog : undefined}
+                />
+              </div>
+            ))}
           </div>
           {dialogState === 'loading' && isOpen && (
             <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -144,6 +277,20 @@ export default function CodePage({ session, codeWorkspaceId }) {
               variant="destructive"
               onConfirm={handleConfirmClose}
               onCancel={handleCancel}
+            />
+          )}
+          {closingTabId && (
+            <ConfirmDialog
+              open
+              title="Close terminal?"
+              description="This will end the shell session."
+              confirmLabel="Close"
+              variant="default"
+              onConfirm={() => {
+                handleCloseTab(closingTabId);
+                setClosingTabId(null);
+              }}
+              onCancel={() => setClosingTabId(null)}
             />
           )}
         </SidebarInset>
