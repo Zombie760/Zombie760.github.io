@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bot Forge — Choose Your Fighter | Bot-Wave</title>
+<meta name="description" content="Pick your AI agent. 13 bots. 3 tiers. Built by a self-made founder on open source. The new wave of AI.">
+<meta property="og:title" content="Bot Forge — Choose Your Fighter">
+<meta property="og:description" content="Retro character select meets AI automation. Pick your bot, deploy in minutes.">
+<meta property="og:url" content="https://botwave.app/forge.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script defer data-domain="botwave.app" src="https://plausible.io/js/script.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --teal:#2dd4bf;--teal-dim:#1a8a7a;--teal-glow:rgba(45,212,191,.35);
+  --bg:#09090b;--bg2:#0f1117;--surface:#13151c;--border:#1f2937;
+  --text:#e2e8f0;--muted:#6b7280;--gold:#f59e0b;--red:#ef4444;
+  --pixel:'Press Start 2P',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;image-rendering:pixelated}
+
+/* ── CRT SCANLINES ── */
+body::before{
+  content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08) 2px,rgba(0,0,0,.08) 4px);
+  pointer-events:none;z-index:9999
+}
+/* CRT flicker vignette */
+body::after{
+  content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+  background:radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.6) 100%);
+  pointer-events:none;z-index:9998
+}
+
+/* ── HEADER ── */
+.header{text-align:center;padding:2rem 1rem 1rem;position:relative;z-index:10}
+.header-pre{font-family:var(--pixel);font-size:.45rem;color:var(--teal);letter-spacing:.2em;margin-bottom:1rem;opacity:.7}
+.logo{font-family:var(--pixel);font-size:clamp(.8rem,3vw,1.6rem);color:var(--teal);text-shadow:0 0 20px var(--teal-glow),0 0 40px var(--teal-glow);line-height:1.6;margin-bottom:.5rem;animation:flicker 4s infinite}
+.logo span{color:#fff}
+@keyframes flicker{0%,95%,100%{opacity:1}96%{opacity:.7}97%{opacity:1}98%{opacity:.5}99%{opacity:1}}
+.subtitle{font-family:var(--pixel);font-size:.5rem;color:var(--muted);letter-spacing:.15em;margin-bottom:.5rem}
+.press-start{font-family:var(--pixel);font-size:.6rem;color:var(--teal);animation:blink 1.2s step-end infinite;margin-top:.5rem}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.coin{font-family:var(--pixel);font-size:.45rem;color:var(--gold);margin-top:.5rem}
+
+/* ── WORLD LABELS ── */
+.world-header{text-align:center;margin:2.5rem 0 1rem;position:relative;z-index:10}
+.world-title{font-family:var(--pixel);font-size:.7rem;display:inline-block;padding:.5rem 1.5rem;border:2px solid var(--teal);color:var(--teal);position:relative;background:var(--bg)}
+.world-title::before,.world-title::after{content:'';position:absolute;top:50%;width:30px;height:2px;background:var(--teal-dim)}
+.world-title::before{right:100%;margin-right:8px}.world-title::after{left:100%;margin-left:8px}
+.world-sub{font-family:var(--pixel);font-size:.4rem;color:var(--muted);margin-top:.5rem;letter-spacing:.1em}
+
+/* ── GRID ── */
+.arena{max-width:1100px;margin:0 auto;padding:0 1rem 4rem;position:relative;z-index:10}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:8px}
+
+/* ── CHARACTER CARD ── */
+.card{
+  background:var(--surface);border:2px solid var(--border);padding:1rem .75rem;
+  text-align:center;cursor:pointer;position:relative;overflow:hidden;
+  transition:border-color .15s,transform .15s,box-shadow .15s;
+  image-rendering:pixelated;
+}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--teal);opacity:0;transition:opacity .15s}
+.card:hover{border-color:var(--teal);transform:translateY(-3px) scale(1.02);box-shadow:0 0 20px var(--teal-glow),inset 0 0 20px rgba(45,212,191,.05)}
+.card:hover::before{opacity:1}
+.card.selected{border-color:var(--teal);box-shadow:0 0 30px var(--teal-glow)}
+.card.locked{opacity:.55;cursor:pointer}
+.card.locked:hover{border-color:var(--red);box-shadow:0 0 15px rgba(239,68,68,.2)}
+
+.card-avatar{font-size:2.5rem;margin-bottom:.5rem;display:block;line-height:1;filter:drop-shadow(0 0 8px var(--teal-glow))}
+.card-name{font-family:var(--pixel);font-size:.5rem;color:var(--teal);margin-bottom:.25rem;line-height:1.5;letter-spacing:.05em}
+.card-role{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.card-desc{font-size:.65rem;color:#9ca3af;line-height:1.4;margin-bottom:.75rem;min-height:36px}
+
+/* stat bars */
+.stats{display:flex;gap:4px;margin-bottom:.75rem}
+.stat{flex:1;text-align:center}
+.stat-label{font-family:var(--pixel);font-size:.3rem;color:var(--muted);letter-spacing:.05em;margin-bottom:3px}
+.stat-bar{height:4px;background:#1f2937;position:relative;overflow:hidden}
+.stat-bar-fill{height:100%;position:absolute;top:0;left:0;transition:width .4s ease}
+.stat-bar-fill.high{background:var(--teal);width:90%}
+.stat-bar-fill.med{background:var(--gold);width:60%}
+.stat-bar-fill.low{background:#374151;width:30%}
+
+.card-btn{
+  display:inline-block;width:100%;padding:.4rem 0;
+  font-family:var(--pixel);font-size:.4rem;letter-spacing:.1em;
+  text-decoration:none;border:2px solid;cursor:pointer;transition:all .15s;
+}
+.btn-free{background:var(--teal);color:var(--bg);border-color:var(--teal)}
+.btn-free:hover{background:transparent;color:var(--teal)}
+.btn-locked{background:transparent;color:var(--muted);border-color:#374151}
+.card.locked .card-btn:hover,.card.locked .card-btn{color:var(--red);border-color:var(--red);background:transparent}
+.lock-icon{position:absolute;top:6px;right:6px;font-size:.65rem;opacity:.5}
+
+/* ── DETAIL PANEL ── */
+.panel-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100;align-items:center;justify-content:center;padding:1rem}
+.panel-overlay.active{display:flex}
+.panel{
+  background:var(--bg2);border:2px solid var(--teal);max-width:500px;width:100%;
+  padding:2rem;position:relative;box-shadow:0 0 60px var(--teal-glow);
+  animation:panelIn .2s ease;max-height:90vh;overflow-y:auto;
+}
+@keyframes panelIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.panel-close{
+  position:absolute;top:.75rem;right:.75rem;font-family:var(--pixel);font-size:.55rem;
+  color:var(--muted);cursor:pointer;border:1px solid var(--border);padding:.25rem .5rem;
+  background:transparent;
+}
+.panel-close:hover{color:var(--red);border-color:var(--red)}
+.panel-avatar{font-size:4rem;display:block;text-align:center;margin-bottom:1rem;filter:drop-shadow(0 0 12px var(--teal-glow))}
+.panel-name{font-family:var(--pixel);font-size:.9rem;color:var(--teal);text-align:center;margin-bottom:.25rem;line-height:1.6}
+.panel-role{font-size:.7rem;color:var(--muted);text-align:center;text-transform:uppercase;letter-spacing:.2em;margin-bottom:.5rem}
+.panel-sig{font-size:.75rem;color:var(--gold);text-align:center;font-style:italic;margin-bottom:1.25rem;padding:.5rem;border-left:2px solid var(--teal)}
+.panel-abilities{list-style:none;margin-bottom:1.25rem}
+.panel-abilities li{font-size:.75rem;color:#9ca3af;padding:.3rem 0;border-bottom:1px solid var(--border);padding-left:.75rem;position:relative}
+.panel-abilities li::before{content:'>';color:var(--teal);position:absolute;left:0;font-family:var(--pixel);font-size:.5rem}
+.panel-price{font-family:var(--pixel);font-size:.5rem;color:var(--muted);text-align:center;margin-bottom:.75rem}
+.panel-price span{color:var(--teal);font-size:.8rem}
+.panel-action{
+  display:block;width:100%;padding:.75rem;text-align:center;text-decoration:none;
+  font-family:var(--pixel);font-size:.55rem;letter-spacing:.1em;border:2px solid var(--teal);
+  background:var(--teal);color:var(--bg);transition:all .2s;cursor:pointer;
+}
+.panel-action:hover{background:transparent;color:var(--teal);box-shadow:0 0 20px var(--teal-glow)}
+.panel-action.locked-action{background:transparent;border-color:var(--red);color:var(--red)}
+.panel-action.locked-action:hover{background:var(--red);color:#fff}
+
+/* ── FOOTER ── */
+.forge-footer{text-align:center;padding:2rem 1rem;border-top:1px solid var(--border);position:relative;z-index:10}
+.forge-footer p{font-size:.7rem;color:var(--muted);margin-bottom:.5rem}
+.forge-footer a{color:var(--teal);text-decoration:none}
+.back-btn{
+  display:inline-block;margin-top:1rem;font-family:var(--pixel);font-size:.45rem;
+  color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:.4rem .8rem;
+}
+.back-btn:hover{color:var(--teal);border-color:var(--teal)}
+
+/* ── INSERT COIN BAR ── */
+.coin-bar{
+  font-family:var(--pixel);font-size:.45rem;background:var(--bg2);
+  border-top:2px solid var(--teal);border-bottom:2px solid var(--teal);
+  color:var(--teal);text-align:center;padding:.5rem;letter-spacing:.15em;margin-bottom:0;
+  overflow:hidden;position:relative;z-index:10;
+}
+.marquee-inner{display:inline-block;animation:marquee 22s linear infinite;white-space:nowrap}
+@keyframes marquee{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+
+@media(max-width:600px){
+  .logo{font-size:.75rem}
+  .grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .card{padding:.75rem .5rem}
+  .card-avatar{font-size:2rem}
+  .stats{display:none}
+  .card-desc{min-height:28px;font-size:.6rem}
+}
+</style>
+</head>
+<body>
+
+<div class="coin-bar">
+  <span class="marquee-inner">INSERT COIN &nbsp;&nbsp;&nbsp; BOTWAVE.APP &nbsp;&nbsp;&nbsp; SELECT YOUR BOT &nbsp;&nbsp;&nbsp; THE NEW WAVE OF AI &nbsp;&nbsp;&nbsp; SELF-MADE. OPEN SOURCE. ZERO BIG TECH. &nbsp;&nbsp;&nbsp; INSERT COIN &nbsp;&nbsp;&nbsp; BOTWAVE.APP &nbsp;&nbsp;&nbsp; SELECT YOUR BOT</span>
+</div>
+
+<div class="header">
+  <div class="header-pre">BOTWAVE PRESENTS</div>
+  <div class="logo">BOT <span>FORGE</span></div>
+  <div class="subtitle">CHOOSE YOUR FIGHTER</div>
+  <div class="press-start">▼ SELECT YOUR AGENT ▼</div>
+  <div class="coin" id="coinCount">CREDITS: ∞ &nbsp;|&nbsp; FREE TIER AVAILABLE</div>
+</div>
+
+<div class="arena">
+
+  <!-- WORLD 1 -->
+  <div class="world-header">
+    <div class="world-title">WORLD 1 — THE ARCADE</div>
+    <div class="world-sub">FREE TIER · NO CARD · START NOW</div>
+  </div>
+  <div class="grid" id="grid-free"></div>
+
+  <!-- WORLD 2 -->
+  <div class="world-header">
+    <div class="world-title">WORLD 2 — THE ARENA</div>
+    <div class="world-sub">STARTER $9/MO · BUILDER $29/MO · UNLOCK MORE FIGHTERS</div>
+  </div>
+  <div class="grid" id="grid-arena"></div>
+
+  <!-- WORLD 3 -->
+  <div class="world-header">
+    <div class="world-title">WORLD 3 — BOSS MODE</div>
+    <div class="world-sub">BOSS $49/MO · ALL 13 FIGHTERS · FULL ARSENAL UNLOCKED</div>
+  </div>
+  <div class="grid" id="grid-boss"></div>
+
+</div>
+
+<!-- DETAIL PANEL -->
+<div class="panel-overlay" id="panel" onclick="closePanel(event)">
+  <div class="panel">
+    <button class="panel-close" onclick="closePanel()">✕ CLOSE</button>
+    <span class="panel-avatar" id="pAvatar"></span>
+    <div class="panel-name" id="pName"></div>
+    <div class="panel-role" id="pRole"></div>
+    <div class="panel-sig" id="pSig"></div>
+    <ul class="panel-abilities" id="pAbilities"></ul>
+    <div class="panel-price" id="pPrice"></div>
+    <a class="panel-action" id="pAction" href="#" target="_blank" rel="noopener">SELECT FIGHTER</a>
+  </div>
+</div>
+
+<div class="forge-footer">
+  <p>13 AI agents. One platform. Built with grit, not venture capital.</p>
+  <p><a href="index.html">← Back to Bot-Wave</a> &nbsp;|&nbsp; <a href="https://t.me/CaptainObvious_bot">Try Free Demo</a> &nbsp;|&nbsp; <a href="pricing.html">View Pricing</a></p>
+  <a class="back-btn" href="index.html">[ MAIN MENU ]</a>
+</div>
+
+<script>
+const FIGHTERS = [
+  // WORLD 1 — FREE
+  {
+    world:"free", emoji:"🤖", name:"CAPPY", role:"The Rookie",
+    desc:"Your free AI assistant. No signup, no card. Just start chatting.",
+    sig:"The obvious choice. No excuses.",
+    abilities:["General AI assistant","Answer any question","No signup required","Perfect for first-timers","Gateway to the full roster"],
+    stats:[["PWR","high"],["SPD","high"],["IQ","med"]],
+    price:"FREE", priceLabel:"Free forever",
+    link:"https://t.me/CaptainObvious_bot", btnText:"PLAY FREE NOW"
+  },
+  // WORLD 2 — ARENA
+  {
+    world:"arena", emoji:"💰", name:"MITCH", role:"The Hustler",
+    desc:"Your AI business partner. Strategy, content, and side hustle fuel.",
+    sig:"Money talks. I translate.",
+    abilities:["Business strategy & planning","Content generation","Market research","Automation consulting","Side hustle ideas"],
+    stats:[["PWR","high"],["SPD","high"],["IQ","high"]],
+    price:"$9/mo", priceLabel:"Starter Tier",
+    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
+  },
+  {
+    world:"arena", emoji:"🔍", name:"HAWK", role:"The Scout",
+    desc:"Market research, competitor analysis, trend hunting on autopilot.",
+    sig:"Intel is power. I bring the intel.",
+    abilities:["Market research reports","Competitor deep-dives","Trend identification","Keyword hunting","Opportunity mapping"],
+    stats:[["PWR","med"],["SPD","high"],["IQ","high"]],
+    price:"$9/mo", priceLabel:"Starter Tier",
+    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
+  },
+  {
+    world:"arena", emoji:"✍️", name:"INKY", role:"The Scribe",
+    desc:"Sales pages, blogs, emails, YouTube scripts — all voice-matched to you.",
+    sig:"Words that convert. Every time.",
+    abilities:["Blog posts & articles","Sales page copy","Email sequences","YouTube scripts","Voice-matched content"],
+    stats:[["PWR","high"],["SPD","med"],["IQ","high"]],
+    price:"$29/mo", priceLabel:"Builder Tier",
+    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
+  },
+  {
+    world:"arena", emoji:"👻", name:"PHANTOM", role:"The Ghost",
+    desc:"Outreach, campaigns, social media blasts. Invisible effort, visible results.",
+    sig:"You never see me coming.",
+    abilities:["DM outreach sequences","Social media campaigns","Email blasts","Engagement automation","Audience growth"],
+    stats:[["PWR","high"],["SPD","high"],["IQ","med"]],
+    price:"$29/mo", priceLabel:"Builder Tier",
+    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
+  },
+  {
+    world:"arena", emoji:"🎨", name:"BANKSY", role:"The Artist",
+    desc:"Thumbnails, social graphics, logos, product images on demand.",
+    sig:"If it doesn't look fire, it doesn't sell.",
+    abilities:["YouTube thumbnails","Social media graphics","Product images","Ad banners & flyers","Brand visuals"],
+    stats:[["PWR","high"],["SPD","med"],["IQ","high"]],
+    price:"$29/mo", priceLabel:"Builder Tier",
+    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
+  },
+  {
+    world:"arena", emoji:"🔧", name:"HANK", role:"The Foreman",
+    desc:"Invoices, estimates, job tracking, materials — built for tradespeople.",
+    sig:"Handle the business so you can handle the work.",
+    abilities:["Professional invoices","Job estimates","Scheduling & tracking","Client follow-ups","Material lists with pricing"],
+    stats:[["PWR","high"],["SPD","high"],["IQ","high"]],
+    price:"$29/mo", priceLabel:"Builder Tier",
+    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
+  },
+  {
+    world:"arena", emoji:"📈", name:"CHASE", role:"The Banker",
+    desc:"Real-time market data, crypto signals, portfolio analysis.",
+    sig:"The money never sleeps. Neither do I.",
+    abilities:["Live crypto & stock prices","Market analysis","Trading signals","Whale alerts","Portfolio tracking"],
+    stats:[["PWR","high"],["SPD","high"],["IQ","med"]],
+    price:"$29/mo", priceLabel:"Builder Tier",
+    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
+  },
+  // WORLD 3 — BOSS MODE
+  {
+    world:"boss", emoji:"♟️", name:"ACE", role:"The Strategist",
+    desc:"Full business intelligence. Plans, pivots, and plays that scale.",
+    sig:"Think three moves ahead. Always.",
+    abilities:["Full business strategy","Revenue modeling","Scaling frameworks","Investment analysis","Competitive positioning"],
+    stats:[["PWR","high"],["SPD","med"],["IQ","high"]],
+    price:"$49/mo", priceLabel:"Boss Tier — All 13 Unlocked",
+    link:"https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B", btnText:"GO BOSS → ALL ACCESS"
+  },
+  {
+    world:"boss", emoji:"🤝", name:"VINCE", role:"The Closer",
+    desc:"DM scripts, objection handlers, upsell sequences that close deals.",
+    sig:"Every conversation ends in a yes.",
+    abilities:["DM close scripts","Objection handlers","Upsell sequences","Proposal generation","Follow-up cadences"],
+    stats:[["PWR","high"],["SPD","high"],["IQ","high"]],
+    price:"$49/mo", priceLabel:"Boss Tier",
+    link:"https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B", btnText:"GO BOSS → ALL ACCESS"
+  },
+  {
+    world:"boss", emoji:"💻", name:"CHIP", role:"The Builder",
+    desc:"Websites, scripts, apps, automation tools. Code on demand.",
+    sig:"I don't just talk tech. I ship it.",
+    abilities:["Website builds","Custom scripts","Automation tools","API integrations","App prototypes"],
+    stats:[["PWR","high"],["SPD","med"],["IQ","high"]],
+    price:"$49/mo", priceLabel:"Boss Tier",
+    link:"https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B", btnText:"GO BOSS → ALL ACCESS"
+  },
+  {
+    world:"boss", emoji:"🔮", name:"SAGE", role:"The Oracle",
+    desc:"Real-time news, SEO intelligence, daily briefings delivered to you.",
+    sig:"Know before they know.",
+    abilities:["Daily news briefings","SEO keyword intel","Trend forecasting","Niche monitoring","Competitive alerts"],
+    stats:[["PWR","med"],["SPD","high"],["IQ","high"]],
+    price:"$49/mo", priceLabel:"Boss Tier",
+    link:"https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B", btnText:"GO BOSS → ALL ACCESS"
+  },
+  {
+    world:"boss", emoji:"🛡️", name:"KNOX", role:"The Guardian",
+    desc:"System audits, security monitoring, ops lockdown. Your digital bodyguard.",
+    sig:"Nothing gets through on my watch.",
+    abilities:["System health audits","Security monitoring","Ops automation","Incident alerts","Digital asset protection"],
+    stats:[["PWR","high"],["SPD","high"],["IQ","high"]],
+    price:"$49/mo", priceLabel:"Boss Tier",
+    link:"https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B", btnText:"GO BOSS → ALL ACCESS"
+  }
+];
+
+function buildGrid(worldId, gridId) {
+  const grid = document.getElementById(gridId);
+  FIGHTERS.filter(f => f.world === worldId).forEach(f => {
+    const isFree = f.world === "free";
+    const card = document.createElement("div");
+    card.className = `card${isFree ? "" : " locked"}`;
+    card.innerHTML = `
+      ${!isFree ? '<span class="lock-icon">🔒</span>' : ''}
+      <span class="card-avatar">${f.emoji}</span>
+      <div class="card-name">${f.name}</div>
+      <div class="card-role">${f.role}</div>
+      <div class="card-desc">${f.desc}</div>
+      <div class="stats">${f.stats.map(([label,level])=>`
+        <div class="stat">
+          <div class="stat-label">${label}</div>
+          <div class="stat-bar"><div class="stat-bar-fill ${level}"></div></div>
+        </div>`).join("")}
+      </div>
+      <span class="card-btn ${isFree ? 'btn-free' : 'btn-locked'}">${isFree ? 'SELECT' : 'LOCKED'}</span>
+    `;
+    card.addEventListener("click", () => openPanel(f));
+    grid.appendChild(card);
+  });
+}
+
+function openPanel(f) {
+  const isFree = f.world === "free";
+  document.getElementById("pAvatar").textContent = f.emoji;
+  document.getElementById("pName").textContent = f.name;
+  document.getElementById("pRole").textContent = f.role;
+  document.getElementById("pSig").textContent = `"${f.sig}"`;
+  document.getElementById("pPrice").innerHTML = `TIER: <span>${f.priceLabel}</span>`;
+  const ul = document.getElementById("pAbilities");
+  ul.innerHTML = f.abilities.map(a => `<li>${a}</li>`).join("");
+  const btn = document.getElementById("pAction");
+  btn.href = f.link;
+  btn.textContent = f.btnText;
+  btn.className = `panel-action${isFree ? "" : " locked-action"}`;
+  document.getElementById("panel").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closePanel(e) {
+  if(e && e.target !== document.getElementById("panel") && !e.target.classList.contains("panel-close")) return;
+  document.getElementById("panel").classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", e => { if(e.key === "Escape") closePanel({target: document.getElementById("panel")}); });
+
+buildGrid("free",  "grid-free");
+buildGrid("arena", "grid-arena");
+buildGrid("boss",  "grid-boss");
+</script>
+</body>
+</html>
