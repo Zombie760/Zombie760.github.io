@@ -39,7 +39,7 @@ export default function CodePage({ session, codeWorkspaceId }) {
     setClosing(true);
     setErrorMessage('');
     try {
-      const result = await closeInteractiveMode(codeWorkspaceId);
+      const result = await closeInteractiveMode(codeWorkspaceId, dialogState === 'safe');
       if (result?.success) {
         window.location.href = result.chatId ? `/chat/${result.chatId}` : '/';
       } else {
@@ -55,7 +55,7 @@ export default function CodePage({ session, codeWorkspaceId }) {
       setDialogState('error');
       setClosing(false);
     }
-  }, [codeWorkspaceId]);
+  }, [codeWorkspaceId, dialogState]);
 
   const handleCancel = useCallback(() => {
     setDialogState('closed');
