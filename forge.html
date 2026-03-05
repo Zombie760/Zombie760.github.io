@@ -1,401 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bot Forge — Choose Your Fighter | Bot-Wave</title>
-<meta name="description" content="Pick your AI agent. 13 bots. 3 tiers. Built by a self-made founder on open source. The new wave of AI.">
-<meta property="og:title" content="Bot Forge — Choose Your Fighter">
-<meta property="og:description" content="Retro character select meets AI automation. Pick your bot, deploy in minutes.">
-<meta property="og:url" content="https://botwave.app/forge.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
-<script defer data-domain="botwave.app" src="https://plausible.io/js/script.js"></script>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --teal:#2dd4bf;--teal-dim:#1a8a7a;--teal-glow:rgba(45,212,191,.35);
-  --bg:#09090b;--bg2:#0f1117;--surface:#13151c;--border:#1f2937;
-  --text:#e2e8f0;--muted:#6b7280;--gold:#f59e0b;--red:#ef4444;
-  --pixel:'Press Start 2P',monospace;
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;image-rendering:pixelated}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bot Forge &mdash; Build Your Wave | Bot-Wave</title>
+  <meta name="description" content="Pick your AI crew. Private, self-hosted, open source. No Big Tech. Build your wave.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blk:#000;--wht:#fff;--red:#EF0000;--gold:#C9A84C;
+      --panel:#0c0c0c;--border:#1c1c1c;--dim:#555;--mid:#888;
+      --dp:'Bebas Neue',sans-serif;--sb:'Barlow Condensed',sans-serif;--bd:'Crimson Pro',Georgia,serif;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--blk);color:var(--wht);font-family:var(--bd);overflow-x:hidden;cursor:crosshair}
+    a{color:inherit;text-decoration:none;cursor:crosshair}
+    img{display:block}
+    body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9000}
 
-/* ── CRT SCANLINES ── */
-body::before{
-  content:'';position:fixed;top:0;left:0;width:100%;height:100%;
-  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08) 2px,rgba(0,0,0,.08) 4px);
-  pointer-events:none;z-index:9999
-}
-/* CRT flicker vignette */
-body::after{
-  content:'';position:fixed;top:0;left:0;width:100%;height:100%;
-  background:radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.6) 100%);
-  pointer-events:none;z-index:9998
-}
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:0 36px;height:54px;background:rgba(0,0,0,.94);backdrop-filter:blur(12px);border-bottom:1px solid #151515}
+    .nav-logo{font-family:var(--dp);font-size:22px;letter-spacing:.08em}
+    .nav-logo em{color:var(--red);font-style:normal}
+    .nav-links{display:flex;align-items:center;gap:28px;font-family:var(--sb);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+    .nav-links a:hover{color:var(--red)}
+    .nav-cta{background:var(--red);padding:8px 18px;transition:background .2s}
+    .nav-cta:hover{background:#cc0000;color:var(--wht)!important}
 
-/* ── HEADER ── */
-.header{text-align:center;padding:2rem 1rem 1rem;position:relative;z-index:10}
-.header-pre{font-family:var(--pixel);font-size:.45rem;color:var(--teal);letter-spacing:.2em;margin-bottom:1rem;opacity:.7}
-.logo{font-family:var(--pixel);font-size:clamp(.8rem,3vw,1.6rem);color:var(--teal);text-shadow:0 0 20px var(--teal-glow),0 0 40px var(--teal-glow);line-height:1.6;margin-bottom:.5rem;animation:flicker 4s infinite}
-.logo span{color:#fff}
-@keyframes flicker{0%,95%,100%{opacity:1}96%{opacity:.7}97%{opacity:1}98%{opacity:.5}99%{opacity:1}}
-.subtitle{font-family:var(--pixel);font-size:.5rem;color:var(--muted);letter-spacing:.15em;margin-bottom:.5rem}
-.press-start{font-family:var(--pixel);font-size:.6rem;color:var(--teal);animation:blink 1.2s step-end infinite;margin-top:.5rem}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.coin{font-family:var(--pixel);font-size:.45rem;color:var(--gold);margin-top:.5rem}
+    /* HERO */
+    .hero{min-height:100vh;padding-top:54px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+    .hero-l{padding:80px 48px 80px 40px;display:flex;flex-direction:column;justify-content:flex-end;z-index:1}
+    .eyebrow{font-family:var(--sb);font-size:11px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--red);margin-bottom:20px}
+    .h1{font-family:var(--dp);font-size:clamp(88px,13vw,180px);line-height:.85;letter-spacing:.01em;text-transform:uppercase}
+    .h1 .ol{-webkit-text-stroke:2px rgba(255,255,255,.25);color:transparent}
+    .h1 .r{color:var(--red)}
+    .hero-sub{margin-top:28px;font-family:var(--sb);font-size:16px;line-height:1.6;color:var(--mid);max-width:440px}
+    .hero-sub strong{color:var(--wht);font-weight:700}
+    .acts{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;font-family:var(--sb);font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:15px 36px;cursor:crosshair;transition:all .2s}
+    .btn-r{background:var(--red);color:var(--wht)}.btn-r:hover{background:#cc0000}
+    .btn-g{border:1px solid #2a2a2a;color:var(--mid)}.btn-g:hover{border-color:var(--wht);color:var(--wht)}
+    .btn-go{background:var(--gold);color:var(--blk)}.btn-go:hover{background:#dbbe5e;color:var(--blk)}
+    .hero-r{position:relative;overflow:hidden}
+    .hero-r img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(25%) contrast(1.1)}
+    .hero-r::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--blk) 0%,rgba(0,0,0,.2) 40%,transparent 70%)}
+    .stripe{position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--red);z-index:2}
 
-/* ── WORLD LABELS ── */
-.world-header{text-align:center;margin:2.5rem 0 1rem;position:relative;z-index:10}
-.world-title{font-family:var(--pixel);font-size:.7rem;display:inline-block;padding:.5rem 1.5rem;border:2px solid var(--teal);color:var(--teal);position:relative;background:var(--bg)}
-.world-title::before,.world-title::after{content:'';position:absolute;top:50%;width:30px;height:2px;background:var(--teal-dim)}
-.world-title::before{right:100%;margin-right:8px}.world-title::after{left:100%;margin-left:8px}
-.world-sub{font-family:var(--pixel);font-size:.4rem;color:var(--muted);margin-top:.5rem;letter-spacing:.1em}
+    /* DIVIDERS */
+    .div{height:1px;background:linear-gradient(to right,transparent,var(--red) 50%,transparent)}
+    .div-g{height:1px;background:linear-gradient(to right,transparent,var(--gold) 50%,transparent)}
 
-/* ── GRID ── */
-.arena{max-width:1100px;margin:0 auto;padding:0 1rem 4rem;position:relative;z-index:10}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:8px}
+    /* SECTION HEAD */
+    .sh{padding:72px 40px 40px;position:relative}
+    .slbl{font-family:var(--sb);font-size:10px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--dim)}
+    .sbar{width:48px;height:3px;background:var(--red);margin:10px 0 18px}
+    .sbar.gld{background:var(--gold)}
+    .stitle{font-family:var(--dp);font-size:clamp(52px,9vw,110px);line-height:.88;text-transform:uppercase}
+    .stitle .ol{-webkit-text-stroke:1px rgba(255,255,255,.2);color:transparent}
+    .stitle.gc{color:var(--gold)}
+    .sdesc{margin-top:14px;font-family:var(--sb);font-size:14px;color:var(--mid);letter-spacing:.04em;max-width:560px;line-height:1.6}
+    .snum{position:absolute;top:20px;right:40px;font-family:var(--dp);font-size:120px;color:rgba(255,255,255,.025);pointer-events:none;user-select:none}
 
-/* ── CHARACTER CARD ── */
-.card{
-  background:var(--surface);border:2px solid var(--border);padding:1rem .75rem;
-  text-align:center;cursor:pointer;position:relative;overflow:hidden;
-  transition:border-color .15s,transform .15s,box-shadow .15s;
-  image-rendering:pixelated;
-}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--teal);opacity:0;transition:opacity .15s}
-.card:hover{border-color:var(--teal);transform:translateY(-3px) scale(1.02);box-shadow:0 0 20px var(--teal-glow),inset 0 0 20px rgba(45,212,191,.05)}
-.card:hover::before{opacity:1}
-.card.selected{border-color:var(--teal);box-shadow:0 0 30px var(--teal-glow)}
-.card.locked{opacity:.55;cursor:pointer}
-.card.locked:hover{border-color:var(--red);box-shadow:0 0 15px rgba(239,68,68,.2)}
+    /* FREE CARD */
+    .free-w{padding:0 40px 72px}
+    .free-c{position:relative;height:480px;overflow:hidden;cursor:crosshair;background:var(--panel)}
+    .free-c img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(20%) contrast(1.1);transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+    .free-c:hover img{transform:scale(1.04)}
+    .free-c::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.96) 0%,rgba(0,0,0,.3) 45%,transparent 70%)}
+    .free-ct{position:absolute;bottom:0;left:0;right:0;padding:36px 40px;display:flex;align-items:flex-end;justify-content:space-between;z-index:1}
+    .free-nm{font-family:var(--dp);font-size:80px;line-height:.88;text-transform:uppercase}
+    .free-cl{font-family:var(--sb);font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--mid);margin-top:8px}
+    .free-btn{background:var(--red);font-family:var(--dp);font-size:28px;letter-spacing:.06em;padding:14px 28px;white-space:nowrap;transition:background .2s}
+    .free-c:hover .free-btn{background:#cc0000}
 
-.card-avatar{font-size:2.5rem;margin-bottom:.5rem;display:block;line-height:1;filter:drop-shadow(0 0 8px var(--teal-glow))}
-.card-name{font-family:var(--pixel);font-size:.5rem;color:var(--teal);margin-bottom:.25rem;line-height:1.5;letter-spacing:.05em}
-.card-role{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
-.card-desc{font-size:.65rem;color:#9ca3af;line-height:1.4;margin-bottom:.75rem;min-height:36px}
+    /* FIGHTER GRID */
+    .fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px;padding:0 40px 72px}
+    .fc{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:crosshair;background:var(--panel)}
+    .fc img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(30%) contrast(1.1);transition:transform .6s cubic-bezier(.25,.46,.45,.94),filter .4s}
+    .fc:hover img{transform:scale(1.07);filter:grayscale(0%) contrast(1.15)}
+    .fc::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.94) 0%,rgba(0,0,0,.25) 50%,transparent 70%)}
+    .fi{position:absolute;bottom:0;left:0;right:0;padding:20px 18px;z-index:1}
+    .fn{font-family:var(--dp);font-size:44px;line-height:.88;text-transform:uppercase}
+    .fcl{font-family:var(--sb);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-top:3px}
+    .fsel{font-family:var(--sb);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-top:10px;transform:translateY(8px);opacity:0;transition:all .3s}
+    .fc:hover .fsel{transform:translateY(0);opacity:1}
+    .fc.boss .fn{color:var(--gold)}.fc.boss .fsel{color:var(--gold)}
+    .ftag{position:absolute;top:14px;right:14px;z-index:2;font-family:var(--sb);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:4px 10px;background:rgba(0,0,0,.75);border:1px solid}
+    .tf{border-color:var(--dim);color:var(--dim)}
+    .tc{border-color:var(--red);color:var(--red)}
+    .tb{border-color:var(--gold);color:var(--gold)}
 
-/* stat bars */
-.stats{display:flex;gap:4px;margin-bottom:.75rem}
-.stat{flex:1;text-align:center}
-.stat-label{font-family:var(--pixel);font-size:.3rem;color:var(--muted);letter-spacing:.05em;margin-bottom:3px}
-.stat-bar{height:4px;background:#1f2937;position:relative;overflow:hidden}
-.stat-bar-fill{height:100%;position:absolute;top:0;left:0;transition:width .4s ease}
-.stat-bar-fill.high{background:var(--teal);width:90%}
-.stat-bar-fill.med{background:var(--gold);width:60%}
-.stat-bar-fill.low{background:#374151;width:30%}
+    /* BOSS SECTION */
+    .boss-w{padding:0 40px 72px}
+    .boss-m{border:1px solid var(--gold);border-bottom:none;padding:52px 48px;background:#080700;position:relative}
+    .boss-m::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold)}
+    .bmt{font-family:var(--dp);font-size:clamp(44px,6vw,72px);line-height:.88;text-transform:uppercase;color:var(--gold)}
+    .bmb{margin-top:20px;font-family:var(--sb);font-size:15px;line-height:1.7;color:var(--mid);max-width:680px}
+    .bmb strong{color:var(--wht)}
+    .bfeats{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 24px}
+    .bfeat{font-family:var(--sb);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--wht);display:flex;align-items:center;gap:10px}
+    .bfeat::before{content:'';width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+    .bprice{margin-top:36px;display:flex;align-items:baseline;gap:8px}
+    .bpn{font-family:var(--dp);font-size:88px;line-height:.9;color:var(--gold)}
+    .bpmo{font-family:var(--sb);font-size:14px;letter-spacing:.1em;color:var(--dim)}
+    .bacts{margin-top:28px;display:flex;gap:12px}
+    .boss-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border:1px solid var(--gold);border-top:none}
+    .boss-grid .fc{aspect-ratio:2/3}
 
-.card-btn{
-  display:inline-block;width:100%;padding:.4rem 0;
-  font-family:var(--pixel);font-size:.4rem;letter-spacing:.1em;
-  text-decoration:none;border:2px solid;cursor:pointer;transition:all .15s;
-}
-.btn-free{background:var(--teal);color:var(--bg);border-color:var(--teal)}
-.btn-free:hover{background:transparent;color:var(--teal)}
-.btn-locked{background:transparent;color:var(--muted);border-color:#374151}
-.card.locked .card-btn:hover,.card.locked .card-btn{color:var(--red);border-color:var(--red);background:transparent}
-.lock-icon{position:absolute;top:6px;right:6px;font-size:.65rem;opacity:.5}
+    /* DAY */
+    .daily{padding:80px 40px;background:#050505;border-top:1px solid #0f0f0f;border-bottom:1px solid #0f0f0f}
+    .dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#111;margin-top:48px}
+    .dc{background:#050505;padding:36px 28px;position:relative;overflow:hidden}
+    .dc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
+    .dc:hover::before{transform:scaleX(1)}
+    .dt{font-family:var(--dp);font-size:64px;line-height:1;color:rgba(255,255,255,.04);margin-bottom:-8px}
+    .dw{font-family:var(--sb);font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+    .dh{font-family:var(--sb);font-size:18px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--wht);line-height:1.2}
+    .dd{margin-top:10px;font-family:var(--bd);font-size:15px;font-style:italic;color:var(--mid);line-height:1.5}
 
-/* ── DETAIL PANEL ── */
-.panel-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100;align-items:center;justify-content:center;padding:1rem}
-.panel-overlay.active{display:flex}
-.panel{
-  background:var(--bg2);border:2px solid var(--teal);max-width:500px;width:100%;
-  padding:2rem;position:relative;box-shadow:0 0 60px var(--teal-glow);
-  animation:panelIn .2s ease;max-height:90vh;overflow-y:auto;
-}
-@keyframes panelIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
-.panel-close{
-  position:absolute;top:.75rem;right:.75rem;font-family:var(--pixel);font-size:.55rem;
-  color:var(--muted);cursor:pointer;border:1px solid var(--border);padding:.25rem .5rem;
-  background:transparent;
-}
-.panel-close:hover{color:var(--red);border-color:var(--red)}
-.panel-avatar{font-size:4rem;display:block;text-align:center;margin-bottom:1rem;filter:drop-shadow(0 0 12px var(--teal-glow))}
-.panel-name{font-family:var(--pixel);font-size:.9rem;color:var(--teal);text-align:center;margin-bottom:.25rem;line-height:1.6}
-.panel-role{font-size:.7rem;color:var(--muted);text-align:center;text-transform:uppercase;letter-spacing:.2em;margin-bottom:.5rem}
-.panel-sig{font-size:.75rem;color:var(--gold);text-align:center;font-style:italic;margin-bottom:1.25rem;padding:.5rem;border-left:2px solid var(--teal)}
-.panel-abilities{list-style:none;margin-bottom:1.25rem}
-.panel-abilities li{font-size:.75rem;color:#9ca3af;padding:.3rem 0;border-bottom:1px solid var(--border);padding-left:.75rem;position:relative}
-.panel-abilities li::before{content:'>';color:var(--teal);position:absolute;left:0;font-family:var(--pixel);font-size:.5rem}
-.panel-price{font-family:var(--pixel);font-size:.5rem;color:var(--muted);text-align:center;margin-bottom:.75rem}
-.panel-price span{color:var(--teal);font-size:.8rem}
-.panel-action{
-  display:block;width:100%;padding:.75rem;text-align:center;text-decoration:none;
-  font-family:var(--pixel);font-size:.55rem;letter-spacing:.1em;border:2px solid var(--teal);
-  background:var(--teal);color:var(--bg);transition:all .2s;cursor:pointer;
-}
-.panel-action:hover{background:transparent;color:var(--teal);box-shadow:0 0 20px var(--teal-glow)}
-.panel-action.locked-action{background:transparent;border-color:var(--red);color:var(--red)}
-.panel-action.locked-action:hover{background:var(--red);color:#fff}
+    /* TIERS */
+    .tiers{padding:80px 40px}
+    .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
+    .tc2{background:var(--panel);border:1px solid var(--border);padding:36px 28px}
+    .tc2.feat{background:#0d0000;border-color:var(--red)}
+    .tc2.bos{background:#080700;border-color:var(--gold)}
+    .tbadge{display:inline-block;font-family:var(--sb);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding:4px 12px;margin-bottom:20px}
+    .tc2 .tbadge{background:#1a1a1a;color:var(--dim)}
+    .tc2.feat .tbadge{background:var(--red);color:var(--wht)}
+    .tc2.bos .tbadge{background:var(--gold);color:var(--blk)}
+    .tprice{font-family:var(--dp);font-size:72px;line-height:.9}
+    .tc2 .tprice{color:var(--wht)}.tc2.feat .tprice{color:var(--red)}.tc2.bos .tprice{color:var(--gold)}
+    .tmo{font-family:var(--sb);font-size:12px;letter-spacing:.1em;color:var(--dim);margin-top:4px}
+    .tname{font-family:var(--dp);font-size:30px;text-transform:uppercase;margin-top:14px}
+    .tlist{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:9px}
+    .tlist li{font-family:var(--sb);font-size:13px;letter-spacing:.04em;color:var(--mid);padding-left:18px;position:relative}
+    .tlist li::before{content:'--';position:absolute;left:0}
+    .tc2.feat .tlist li::before{color:var(--red)}.tc2.bos .tlist li::before{color:var(--gold)}
+    .tcta{display:block;text-align:center;margin-top:28px;font-family:var(--sb);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:14px;border:1px solid;transition:all .2s}
+    .tc2 .tcta{border-color:#2a2a2a;color:var(--mid)}.tc2 .tcta:hover{border-color:var(--wht);color:var(--wht)}
+    .tc2.feat .tcta{border-color:var(--red);color:var(--red)}.tc2.feat .tcta:hover{background:var(--red);color:var(--wht)}
+    .tc2.bos .tcta{border-color:var(--gold);color:var(--gold)}.tc2.bos .tcta:hover{background:var(--gold);color:var(--blk)}
 
-/* ── FOOTER ── */
-.forge-footer{text-align:center;padding:2rem 1rem;border-top:1px solid var(--border);position:relative;z-index:10}
-.forge-footer p{font-size:.7rem;color:var(--muted);margin-bottom:.5rem}
-.forge-footer a{color:var(--teal);text-decoration:none}
-.back-btn{
-  display:inline-block;margin-top:1rem;font-family:var(--pixel);font-size:.45rem;
-  color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:.4rem .8rem;
-}
-.back-btn:hover{color:var(--teal);border-color:var(--teal)}
+    /* FOOTER */
+    footer{padding:56px 40px 36px;border-top:1px solid #111}
+    .ftop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px}
+    .fbrand{font-family:var(--dp);font-size:52px;line-height:.9;text-transform:uppercase}
+    .fbrand em{color:var(--red);font-style:normal}
+    .ftag{font-family:var(--bd);font-style:italic;font-size:15px;color:var(--dim);margin-top:8px}
+    .fcols{display:flex;gap:48px}
+    .fcol{display:flex;flex-direction:column;gap:10px}
+    .fcolh{font-family:var(--sb);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+    .fcol a{font-family:var(--sb);font-size:13px;color:var(--mid);letter-spacing:.04em;transition:color .2s}
+    .fcol a:hover{color:var(--wht)}
+    .fbot{display:flex;justify-content:space-between;padding-top:28px;border-top:1px solid #111;font-family:var(--sb);font-size:10px;letter-spacing:.1em;color:var(--dim)}
 
-/* ── INSERT COIN BAR ── */
-.coin-bar{
-  font-family:var(--pixel);font-size:.45rem;background:var(--bg2);
-  border-top:2px solid var(--teal);border-bottom:2px solid var(--teal);
-  color:var(--teal);text-align:center;padding:.5rem;letter-spacing:.15em;margin-bottom:0;
-  overflow:hidden;position:relative;z-index:10;
-}
-.marquee-inner{display:inline-block;animation:marquee 22s linear infinite;white-space:nowrap}
-@keyframes marquee{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+    /* PANEL */
+    .bd{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:600;opacity:0;pointer-events:none;transition:opacity .4s}
+    .bd.on{opacity:1;pointer-events:all}
+    .pnl{position:fixed;bottom:0;left:0;right:0;z-index:700;background:#080808;border-top:1px solid #1f1f1f;transform:translateY(100%);transition:transform .5s cubic-bezier(.16,1,.3,1);max-height:88vh;overflow-y:auto}
+    .pnl.on{transform:translateY(0)}
+    .px{position:absolute;top:18px;right:20px;width:38px;height:38px;background:none;border:1px solid #2a2a2a;color:var(--mid);font-size:18px;cursor:crosshair;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:10}
+    .px:hover{border-color:var(--wht);color:var(--wht)}
+    .pbody{display:grid;grid-template-columns:260px 1fr}
+    .pimg{position:relative;overflow:hidden;min-height:340px}
+    .pimg img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(15%) contrast(1.1)}
+    .pimg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent,#080808)}
+    .pinfo{padding:44px 52px 44px 36px}
+    .ptier{font-family:var(--sb);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;margin-bottom:10px}
+    .pname{font-family:var(--dp);font-size:clamp(60px,9vw,96px);line-height:.85;text-transform:uppercase}
+    .pcls{font-family:var(--sb);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:10px}
+    .ptag{margin-top:16px;font-family:var(--bd);font-size:19px;font-style:italic;color:var(--mid);border-left:3px solid var(--red);padding-left:14px;line-height:1.4}
+    .pdesc{margin-top:14px;font-family:var(--sb);font-size:14px;color:var(--mid);line-height:1.6;max-width:480px}
+    .pstats{margin-top:24px;display:flex;flex-direction:column;gap:10px;max-width:400px}
+    .stat{display:flex;align-items:center;gap:14px}
+    .stl{font-family:var(--sb);font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--dim);width:36px;flex-shrink:0}
+    .stbar{flex:1;height:3px;background:#1c1c1c;position:relative}
+    .stfill{position:absolute;top:0;left:0;bottom:0;width:0;transition:width .8s cubic-bezier(.16,1,.3,1) .15s}
+    .pnl.on .stfill{width:var(--w)}
+    .stv{font-family:var(--sb);font-size:11px;font-weight:700;color:var(--wht);width:30px;text-align:right;flex-shrink:0}
+    .pcta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
 
-@media(max-width:600px){
-  .logo{font-size:.75rem}
-  .grid{grid-template-columns:repeat(2,1fr);gap:8px}
-  .card{padding:.75rem .5rem}
-  .card-avatar{font-size:2rem}
-  .stats{display:none}
-  .card-desc{min-height:28px;font-size:.6rem}
-}
-</style>
+    /* REVEAL */
+    .rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+    .rv.vis{opacity:1;transform:translateY(0)}
+    .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+
+    /* MOBILE */
+    @media(max-width:800px){
+      nav{padding:0 20px}.nav-links{display:none}
+      .hero{grid-template-columns:1fr}.hero-r{display:none}
+      .hero-l{padding:80px 24px 60px}.h1{font-size:72px}
+      .sh,.free-w,.fg,.boss-w,.daily,.tiers{padding-left:20px;padding-right:20px}
+      .fg{grid-template-columns:repeat(2,1fr)}
+      .bfeats{grid-template-columns:1fr 1fr}
+      .boss-grid{grid-template-columns:repeat(3,1fr)}
+      .dgrid{grid-template-columns:1fr}.tgrid{grid-template-columns:1fr}
+      .pbody{grid-template-columns:1fr}.pimg{height:220px}
+      .pinfo{padding:28px 20px}.pname{font-size:52px}
+      .ftop{flex-direction:column;gap:28px}.fcols{flex-wrap:wrap;gap:24px}
+      .fbot{flex-direction:column;gap:8px}
+    }
+  </style>
 </head>
 <body>
 
-<div class="coin-bar">
-  <span class="marquee-inner">INSERT COIN &nbsp;&nbsp;&nbsp; BOTWAVE.APP &nbsp;&nbsp;&nbsp; SELECT YOUR BOT &nbsp;&nbsp;&nbsp; THE NEW WAVE OF AI &nbsp;&nbsp;&nbsp; SELF-MADE. OPEN SOURCE. ZERO BIG TECH. &nbsp;&nbsp;&nbsp; INSERT COIN &nbsp;&nbsp;&nbsp; BOTWAVE.APP &nbsp;&nbsp;&nbsp; SELECT YOUR BOT</span>
+<nav>
+  <a href="/" class="nav-logo">BOT<em>-</em>WAVE</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="#crew">The Crew</a>
+    <a href="#boss">Boss Mode</a>
+    <a href="#pricing">Pricing</a>
+    <a href="https://t.me/CaptainObvious_bot" target="_blank" class="nav-cta">TRY FREE</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-l">
+    <div class="eyebrow">Bot-Wave &bull; Bot Forge &bull; 2026</div>
+    <h1 class="h1">BUILD<br>YOUR<br><span class="r">WAVE</span></h1>
+    <p class="hero-sub"><strong>Private AI. Self-made. Open source.</strong> Pick your crew, forge your setup, own your data. No Big Tech. No clouds you don't control.</p>
+    <div class="acts">
+      <a href="#free-drop" class="btn btn-r">START FREE</a>
+      <a href="#crew" class="btn btn-g">MEET THE CREW</a>
+    </div>
+  </div>
+  <div class="hero-r">
+    <img src="img/fighters/fighter-mitch.jpeg" alt="The Wave">
+    <div class="stripe"></div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<div id="free-drop">
+  <div class="sh rv">
+    <div class="slbl">Drop 01 &mdash; Free Forever</div>
+    <div class="sbar"></div>
+    <h2 class="stitle">THE <span class="ol">ROOKIE</span></h2>
+    <p class="sdesc">Start here. No credit card. No catch. Get your first AI running on Telegram today &mdash; zero cost, zero commitment.</p>
+    <div class="snum">01</div>
+  </div>
+  <div class="free-w">
+    <div class="free-c rv" onclick="openPanel('cappy')">
+      <img src="img/fighters/fighter-cappy.jpeg" alt="Cappy">
+      <div class="free-ct">
+        <div>
+          <div class="free-nm">CAPPY</div>
+          <div class="free-cl">The Rookie &mdash; Free Demo Bot</div>
+        </div>
+        <a href="https://t.me/CaptainObvious_bot" target="_blank" class="free-btn">START FREE &rarr;</a>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="header">
-  <div class="header-pre">BOTWAVE PRESENTS</div>
-  <div class="logo">BOT <span>FORGE</span></div>
-  <div class="subtitle">CHOOSE YOUR FIGHTER</div>
-  <div class="press-start">▼ SELECT YOUR AGENT ▼</div>
-  <div class="coin" id="coinCount">CREDITS: ∞ &nbsp;|&nbsp; FREE TIER AVAILABLE</div>
-</div>
+<div class="div"></div>
 
-<div class="arena">
-
-  <!-- WORLD 1 -->
-  <div class="world-header">
-    <div class="world-title">WORLD 1 — THE ARCADE</div>
-    <div class="world-sub">FREE TIER · NO CARD · START NOW</div>
+<div id="crew">
+  <div class="sh rv">
+    <div class="slbl">Drop 02 &mdash; $9&ndash;$29 / Month</div>
+    <div class="sbar"></div>
+    <h2 class="stitle">THE <span class="ol">CREW</span></h2>
+    <p class="sdesc">Seven specialists. One subscription. Running across Telegram, Discord, Signal, and more &mdash; 24/7, no days off.</p>
+    <div class="snum">02</div>
   </div>
-  <div class="grid" id="grid-free"></div>
-
-  <!-- WORLD 2 -->
-  <div class="world-header">
-    <div class="world-title">WORLD 2 — THE ARENA</div>
-    <div class="world-sub">STARTER $9/MO · BUILDER $29/MO · UNLOCK MORE FIGHTERS</div>
-  </div>
-  <div class="grid" id="grid-arena"></div>
-
-  <!-- WORLD 3 -->
-  <div class="world-header">
-    <div class="world-title">WORLD 3 — BOSS MODE</div>
-    <div class="world-sub">BOSS $49/MO · ALL 13 FIGHTERS · FULL ARSENAL UNLOCKED</div>
-  </div>
-  <div class="grid" id="grid-boss"></div>
-
-</div>
-
-<!-- DETAIL PANEL -->
-<div class="panel-overlay" id="panel" onclick="closePanel(event)">
-  <div class="panel">
-    <button class="panel-close" onclick="closePanel()">✕ CLOSE</button>
-    <span class="panel-avatar" id="pAvatar"></span>
-    <div class="panel-name" id="pName"></div>
-    <div class="panel-role" id="pRole"></div>
-    <div class="panel-sig" id="pSig"></div>
-    <ul class="panel-abilities" id="pAbilities"></ul>
-    <div class="panel-price" id="pPrice"></div>
-    <a class="panel-action" id="pAction" href="#" target="_blank" rel="noopener">SELECT FIGHTER</a>
+  <div class="fg">
+    <div class="fc rv d1" onclick="openPanel('mitch')"><img src="img/fighters/fighter-mitch.jpeg" alt="Mitch"><div class="ftag tc">CREW</div><div class="fi"><div class="fn">MITCH</div><div class="fcl">The Hustler</div><div class="fsel">+ VIEW INTEL</div></div></div>
+    <div class="fc rv d2" onclick="openPanel('hawk')"><img src="img/fighters/fighter-hawk.jpeg" alt="Hawk"><div class="ftag tc">CREW</div><div class="fi"><div class="fn">HAWK</div><div class="fcl">The Scout</div><div class="fsel">+ VIEW INTEL</div></div></div>
+    <div class="fc rv d3" onclick="openPanel('inky')"><img src="img/fighters/fighter-inky.jpeg" alt="Inky"><div class="ftag tc">CREW</div><div class="fi"><div class="fn">INKY</div><div class="fcl">The Scribe</div><div class="fsel">+ VIEW INTEL</div></div></div>
+    <div class="fc rv d1" onclick="openPanel('phantom')"><img src="img/fighters/fighter-phantom.jpeg" alt="Phantom"><div class="ftag tc">CREW</div><div class="fi"><div class="fn">PHANTOM</div><div class="fcl">The Ghost</div><div class="fsel">+ VIEW INTEL</div></div></div>
+    <div class="fc rv d2" onclick="openPanel('banksy')"><img src="img/fighters/fighter-banksy.jpeg" alt="Banksy"><div class="ftag tc">CREW</div><div class="fi"><div class="fn">BANKSY</div><div class="fcl">The Artist</div><div class="fsel">+ VIEW INTEL</div></div></div>
+    <div class="fc rv d3" onclick="openPanel('hank')"><img src="img/fighters/fighter-hank.jpg" alt="Hank"><div class="ftag tc">CREW</div><div class="fi"><div class="fn">HANK</div><div class="fcl">The Foreman</div><div class="fsel">+ VIEW INTEL</div></div></div>
+    <div class="fc rv d4" onclick="openPanel('chase')"><img src="img/fighters/fighter-chase.jpeg" alt="Chase"><div class="ftag tc">CREW</div><div class="fi"><div class="fn">CHASE</div><div class="fcl">The Banker</div><div class="fsel">+ VIEW INTEL</div></div></div>
   </div>
 </div>
 
-<div class="forge-footer">
-  <p>13 AI agents. One platform. Built with grit, not venture capital.</p>
-  <p><a href="index.html">← Back to Bot-Wave</a> &nbsp;|&nbsp; <a href="https://t.me/CaptainObvious_bot">Try Free Demo</a> &nbsp;|&nbsp; <a href="pricing.html">View Pricing</a></p>
-  <a class="back-btn" href="index.html">[ MAIN MENU ]</a>
+<div class="div-g"></div>
+
+<div id="boss">
+  <div class="sh rv">
+    <div class="slbl">Drop 03 &mdash; $49 / Month &mdash; Private &amp; Self-Hosted</div>
+    <div class="sbar gld"></div>
+    <h2 class="stitle gc">BOSS <span class="ol" style="-webkit-text-stroke-color:rgba(201,168,76,.2)">MODE</span></h2>
+    <p class="sdesc">All 13 bots. Your hardware. Your rules. Zero cloud dependency. This is what private AI actually means.</p>
+    <div class="snum" style="color:rgba(201,168,76,.03)">03</div>
+  </div>
+  <div class="boss-w">
+    <div class="boss-m rv">
+      <div class="bmt">PRIVATE AI.<br>ZERO OVERSIGHT.<br>YOURS ALONE.</div>
+      <div class="bmb">
+        <strong>Your data never leaves your machine.</strong> No subscriptions to clouds you don't own. No terms of service that change overnight. No company reading your prompts.<br><br>
+        Boss Mode teaches you to run your own fleet on local hardware &mdash; <strong>open source models, your choice of machine, full config handed to you.</strong> This is what Big Tech doesn't want you to know exists.
+      </div>
+      <div class="bfeats">
+        <div class="bfeat">All 13 bots unlocked</div>
+        <div class="bfeat">Local AI setup guide</div>
+        <div class="bfeat">Pick your own model</div>
+        <div class="bfeat">Multi-platform deploy</div>
+        <div class="bfeat">Full config handoff</div>
+        <div class="bfeat">Community access</div>
+      </div>
+      <div class="bprice"><div class="bpn">$49</div><div class="bpmo">/month</div></div>
+      <div class="bacts">
+        <a href="https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B" class="btn btn-go">CLAIM BOSS MODE</a>
+        <a href="#pricing" class="btn btn-g">COMPARE TIERS</a>
+      </div>
+    </div>
+    <div class="boss-grid rv">
+      <div class="fc boss" onclick="openPanel('ace')"><img src="img/fighters/fighter-ace.jpg" alt="Ace"><div class="ftag tb">BOSS</div><div class="fi"><div class="fn">ACE</div><div class="fcl">The Strategist</div><div class="fsel">+ VIEW INTEL</div></div></div>
+      <div class="fc boss" onclick="openPanel('vince')"><img src="img/fighters/fighter-vince.jpeg" alt="Vince"><div class="ftag tb">BOSS</div><div class="fi"><div class="fn">VINCE</div><div class="fcl">The Closer</div><div class="fsel">+ VIEW INTEL</div></div></div>
+      <div class="fc boss" onclick="openPanel('chip')"><img src="img/fighters/fighter-chip.jpeg" alt="Chip"><div class="ftag tb">BOSS</div><div class="fi"><div class="fn">CHIP</div><div class="fcl">The Builder</div><div class="fsel">+ VIEW INTEL</div></div></div>
+      <div class="fc boss" onclick="openPanel('sage')"><img src="img/fighters/fighter-sage.webp" alt="Sage"><div class="ftag tb">BOSS</div><div class="fi"><div class="fn">SAGE</div><div class="fcl">The Oracle</div><div class="fsel">+ VIEW INTEL</div></div></div>
+      <div class="fc boss" onclick="openPanel('knox')"><img src="img/fighters/fighter-knox.jpeg" alt="Knox"><div class="ftag tb">BOSS</div><div class="fi"><div class="fn">KNOX</div><div class="fcl">The Guardian</div><div class="fsel">+ VIEW INTEL</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<section class="daily">
+  <div class="sh rv" style="padding:0">
+    <div class="slbl">Real life &mdash; Real people</div>
+    <div class="sbar"></div>
+    <h2 class="stitle">A DAY WITH <span class="ol">THE WAVE</span></h2>
+  </div>
+  <div class="dgrid">
+    <div class="dc rv"><div class="dt">6AM</div><div class="dw">Chase &mdash; The Banker</div><div class="dh">Market brief hits your phone before coffee</div><div class="dd">Chase ran overnight. Crypto moves, stock alerts, news that matters. You wake up already ahead.</div></div>
+    <div class="dc rv d1"><div class="dt">9AM</div><div class="dw">Hawk &mdash; The Scout</div><div class="dh">Leads scouted while you were on the job</div><div class="dd">Hawk's out there digging. By lunch three new prospects are waiting in your DMs.</div></div>
+    <div class="dc rv d2"><div class="dt">2PM</div><div class="dw">Inky &mdash; The Scribe</div><div class="dh">Content written. Posted. Done.</div><div class="dd">Inky drafts your posts and captions. Your brand stays alive even when you're neck-deep in work.</div></div>
+    <div class="dc rv d3"><div class="dt">All Day</div><div class="dw">Your Private AI Fleet</div><div class="dh">No one knows it's running</div><div class="dd">No cloud. No surveillance. No Big Tech middleman. It's yours. Runs while you sleep. That's the wave.</div></div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section class="tiers" id="pricing">
+  <div class="sh rv" style="padding:0">
+    <div class="slbl">Simple pricing &mdash; No games</div>
+    <div class="sbar"></div>
+    <h2 class="stitle">PICK YOUR <span class="ol">TIER</span></h2>
+  </div>
+  <div class="tgrid">
+    <div class="tc2 rv">
+      <span class="tbadge">FREE</span>
+      <div class="tprice">$0</div><div class="tmo">Forever</div>
+      <div class="tname">The Demo</div>
+      <ul class="tlist">
+        <li>Captain Obvious on Telegram</li><li>General-purpose AI assistant</li>
+        <li>No credit card needed</li><li>See what's possible</li>
+      </ul>
+      <a href="https://t.me/CaptainObvious_bot" target="_blank" class="tcta">START FREE</a>
+    </div>
+    <div class="tc2 feat rv d1">
+      <span class="tbadge">MOST POPULAR</span>
+      <div class="tprice">$9</div><div class="tmo">/month &mdash; Starter</div>
+      <div class="tname">The Crew</div>
+      <ul class="tlist">
+        <li>7 specialist bots deployed</li><li>Telegram, Discord, Signal &amp; more</li>
+        <li>Content, finance, leads, ops</li><li>Config handled for you</li><li>Community access</li>
+      </ul>
+      <a href="https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z" class="tcta">JOIN THE CREW</a>
+    </div>
+    <div class="tc2 bos rv d2">
+      <span class="tbadge">Self-Hosted</span>
+      <div class="tprice">$49</div><div class="tmo">/month &mdash; Full Fleet</div>
+      <div class="tname" style="color:var(--gold)">Boss Mode</div>
+      <ul class="tlist">
+        <li>All 13 bots unlocked</li><li>Run on your hardware</li>
+        <li>Pick your own AI model</li><li>No cloud. No limits.</li>
+        <li>Full config handoff</li><li>Everything in Crew included</li>
+      </ul>
+      <a href="https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B" class="tcta">CLAIM BOSS MODE</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ftop">
+    <div>
+      <div class="fbrand">BOT<em>-</em>WAVE</div>
+      <div class="ftag">Self-made AI. Open source. Zero Big Tech.</div>
+    </div>
+    <div class="fcols">
+      <div class="fcol"><div class="fcolh">Product</div><a href="forge.html">Bot Forge</a><a href="/#pricing">Pricing</a><a href="https://t.me/CaptainObvious_bot" target="_blank">Try Free</a></div>
+      <div class="fcol"><div class="fcolh">Community</div><a href="https://t.me/MoneyMakingMitchell1904" target="_blank">Telegram Channel</a><a href="/">Discord</a></div>
+      <div class="fcol"><div class="fcolh">Legal</div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>&copy; 2026 Bot-Wave &mdash; botwave.app</span>
+    <span>BUILT WITH GRIT, NOT VENTURE CAPITAL</span>
+  </div>
+</footer>
+
+<div class="bd" id="bd" onclick="closePanel()"></div>
+<div class="pnl" id="pnl">
+  <button class="px" onclick="closePanel()">&times;</button>
+  <div class="pbody" id="pb"></div>
 </div>
 
 <script>
-const FIGHTERS = [
-  // WORLD 1 — FREE
-  {
-    world:"free", emoji:"🤖", name:"CAPPY", role:"The Rookie",
-    desc:"Your free AI assistant. No signup, no card. Just start chatting.",
-    sig:"The obvious choice. No excuses.",
-    abilities:["General AI assistant","Answer any question","No signup required","Perfect for first-timers","Gateway to the full roster"],
-    stats:[["PWR","high"],["SPD","high"],["IQ","med"]],
-    price:"FREE", priceLabel:"Free forever",
-    link:"https://t.me/CaptainObvious_bot", btnText:"PLAY FREE NOW"
-  },
-  // WORLD 2 — ARENA
-  {
-    world:"arena", emoji:"💰", name:"MITCH", role:"The Hustler",
-    desc:"Your AI business partner. Strategy, content, and side hustle fuel.",
-    sig:"Money talks. I translate.",
-    abilities:["Business strategy & planning","Content generation","Market research","Automation consulting","Side hustle ideas"],
-    stats:[["PWR","high"],["SPD","high"],["IQ","high"]],
-    price:"$9/mo", priceLabel:"Starter Tier",
-    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
-  },
-  {
-    world:"arena", emoji:"🔍", name:"HAWK", role:"The Scout",
-    desc:"Market research, competitor analysis, trend hunting on autopilot.",
-    sig:"Intel is power. I bring the intel.",
-    abilities:["Market research reports","Competitor deep-dives","Trend identification","Keyword hunting","Opportunity mapping"],
-    stats:[["PWR","med"],["SPD","high"],["IQ","high"]],
-    price:"$9/mo", priceLabel:"Starter Tier",
-    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
-  },
-  {
-    world:"arena", emoji:"✍️", name:"INKY", role:"The Scribe",
-    desc:"Sales pages, blogs, emails, YouTube scripts — all voice-matched to you.",
-    sig:"Words that convert. Every time.",
-    abilities:["Blog posts & articles","Sales page copy","Email sequences","YouTube scripts","Voice-matched content"],
-    stats:[["PWR","high"],["SPD","med"],["IQ","high"]],
-    price:"$29/mo", priceLabel:"Builder Tier",
-    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
-  },
-  {
-    world:"arena", emoji:"👻", name:"PHANTOM", role:"The Ghost",
-    desc:"Outreach, campaigns, social media blasts. Invisible effort, visible results.",
-    sig:"You never see me coming.",
-    abilities:["DM outreach sequences","Social media campaigns","Email blasts","Engagement automation","Audience growth"],
-    stats:[["PWR","high"],["SPD","high"],["IQ","med"]],
-    price:"$29/mo", priceLabel:"Builder Tier",
-    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
-  },
-  {
-    world:"arena", emoji:"🎨", name:"BANKSY", role:"The Artist",
-    desc:"Thumbnails, social graphics, logos, product images on demand.",
-    sig:"If it doesn't look fire, it doesn't sell.",
-    abilities:["YouTube thumbnails","Social media graphics","Product images","Ad banners & flyers","Brand visuals"],
-    stats:[["PWR","high"],["SPD","med"],["IQ","high"]],
-    price:"$29/mo", priceLabel:"Builder Tier",
-    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
-  },
-  {
-    world:"arena", emoji:"🔧", name:"HANK", role:"The Foreman",
-    desc:"Invoices, estimates, job tracking, materials — built for tradespeople.",
-    sig:"Handle the business so you can handle the work.",
-    abilities:["Professional invoices","Job estimates","Scheduling & tracking","Client follow-ups","Material lists with pricing"],
-    stats:[["PWR","high"],["SPD","high"],["IQ","high"]],
-    price:"$29/mo", priceLabel:"Builder Tier",
-    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
-  },
-  {
-    world:"arena", emoji:"📈", name:"CHASE", role:"The Banker",
-    desc:"Real-time market data, crypto signals, portfolio analysis.",
-    sig:"The money never sleeps. Neither do I.",
-    abilities:["Live crypto & stock prices","Market analysis","Trading signals","Whale alerts","Portfolio tracking"],
-    stats:[["PWR","high"],["SPD","high"],["IQ","med"]],
-    price:"$29/mo", priceLabel:"Builder Tier",
-    link:"https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z", btnText:"SUBSCRIBE → UNLOCK"
-  },
-  // WORLD 3 — BOSS MODE
-  {
-    world:"boss", emoji:"♟️", name:"ACE", role:"The Strategist",
-    desc:"Full business intelligence. Plans, pivots, and plays that scale.",
-    sig:"Think three moves ahead. Always.",
-    abilities:["Full business strategy","Revenue modeling","Scaling frameworks","Investment analysis","Competitive positioning"],
-    stats:[["PWR","high"],["SPD","med"],["IQ","high"]],
-    price:"$49/mo", priceLabel:"Boss Tier — All 13 Unlocked",
-    link:"https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B", btnText:"GO BOSS → ALL ACCESS"
-  },
-  {
-    world:"boss", emoji:"🤝", name:"VINCE", role:"The Closer",
-    desc:"DM scripts, objection handlers, upsell sequences that close deals.",
-    sig:"Every conversation ends in a yes.",
-    abilities:["DM close scripts","Objection handlers","Upsell sequences","Proposal generation","Follow-up cadences"],
-    stats:[["PWR","high"],["SPD","high"],["IQ","high"]],
-    price:"$49/mo", priceLabel:"Boss Tier",
-    link:"https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B", btnText:"GO BOSS → ALL ACCESS"
-  },
-  {
-    world:"boss", emoji:"💻", name:"CHIP", role:"The Builder",
-    desc:"Websites, scripts, apps, automation tools. Code on demand.",
-    sig:"I don't just talk tech. I ship it.",
-    abilities:["Website builds","Custom scripts","Automation tools","API integrations","App prototypes"],
-    stats:[["PWR","high"],["SPD","med"],["IQ","high"]],
-    price:"$49/mo", priceLabel:"Boss Tier",
-    link:"https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B", btnText:"GO BOSS → ALL ACCESS"
-  },
-  {
-    world:"boss", emoji:"🔮", name:"SAGE", role:"The Oracle",
-    desc:"Real-time news, SEO intelligence, daily briefings delivered to you.",
-    sig:"Know before they know.",
-    abilities:["Daily news briefings","SEO keyword intel","Trend forecasting","Niche monitoring","Competitive alerts"],
-    stats:[["PWR","med"],["SPD","high"],["IQ","high"]],
-    price:"$49/mo", priceLabel:"Boss Tier",
-    link:"https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B", btnText:"GO BOSS → ALL ACCESS"
-  },
-  {
-    world:"boss", emoji:"🛡️", name:"KNOX", role:"The Guardian",
-    desc:"System audits, security monitoring, ops lockdown. Your digital bodyguard.",
-    sig:"Nothing gets through on my watch.",
-    abilities:["System health audits","Security monitoring","Ops automation","Incident alerts","Digital asset protection"],
-    stats:[["PWR","high"],["SPD","high"],["IQ","high"]],
-    price:"$49/mo", priceLabel:"Boss Tier",
-    link:"https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B", btnText:"GO BOSS → ALL ACCESS"
-  }
-];
+// All data is static/hardcoded — no user input flows into DOM
+const F = {
+  cappy:{name:'CAPPY',cls:'The Rookie',tier:'FREE',tc:'var(--dim)',tq:'Every legend starts somewhere. This is your on-ramp.',desc:'Captain Obvious keeps it real. Straight answers, no corporate filter. Your first step into the wave.',stats:{ATK:55,SPD:80,INT:60},img:'img/fighters/fighter-cappy.jpeg',link:'https://t.me/CaptainObvious_bot',lt:'START FREE ON TELEGRAM',boss:false},
+  mitch:{name:'MITCH',cls:'The Hustler',tier:'CREW \u2014 $9/mo',tc:'var(--red)',tq:'Money never sleeps. Neither does Mitch.',desc:'Sales, marketing, hustle content. Mitch generates leads, writes pitches, keeps your brand loud while you grind. Built for the operator mindset.',stats:{ATK:88,SPD:72,INT:75},img:'img/fighters/fighter-mitch.jpeg',link:'https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z',lt:'JOIN THE CREW \u2014 $9/MO',boss:false},
+  hawk:{name:'HAWK',cls:'The Scout',tier:'CREW \u2014 $9/mo',tc:'var(--red)',tq:'Sees everything. Reports back. No drama.',desc:'Lead generation, market research, competitor intel. Hawk watches the field so you don\'t have to. Daily briefings in your pocket.',stats:{ATK:70,SPD:92,INT:85},img:'img/fighters/fighter-hawk.jpeg',link:'https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z',lt:'JOIN THE CREW \u2014 $9/MO',boss:false},
+  inky:{name:'INKY',cls:'The Scribe',tier:'CREW \u2014 $9/mo',tc:'var(--red)',tq:'Your brand voice. Running 24/7.',desc:'Blog posts, social captions, newsletters, DMs. Inky keeps your content calendar full so your audience never goes dark.',stats:{ATK:65,SPD:78,INT:94},img:'img/fighters/fighter-inky.jpeg',link:'https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z',lt:'JOIN THE CREW \u2014 $9/MO',boss:false},
+  phantom:{name:'PHANTOM',cls:'The Ghost',tier:'CREW \u2014 $29/mo',tc:'var(--red)',tq:'In the shadows. Always watching. Never seen.',desc:'Automation, background tasks, silent monitoring. Phantom runs operations your team doesn\'t need to know about. Set the mission and disappear.',stats:{ATK:80,SPD:95,INT:78},img:'img/fighters/fighter-phantom.jpeg',link:'https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z',lt:'JOIN THE CREW \u2014 $29/MO',boss:false},
+  banksy:{name:'BANKSY',cls:'The Artist',tier:'CREW \u2014 $29/mo',tc:'var(--red)',tq:'Creative output. Relentless. Unapologetic.',desc:'Brand visuals, creative briefs, image prompts, design direction. Banksy turns your ideas into assets before your agency drafts an invoice.',stats:{ATK:72,SPD:68,INT:90},img:'img/fighters/fighter-banksy.jpeg',link:'https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z',lt:'JOIN THE CREW \u2014 $29/MO',boss:false},
+  hank:{name:'HANK',cls:'The Foreman',tier:'CREW \u2014 $29/mo',tc:'var(--red)',tq:'Gets the job done. No excuses. No meetings.',desc:'Project management, job tracking, crew coordination. Built for tradespeople, contractors, anyone running a physical operation. Hank speaks your language.',stats:{ATK:85,SPD:65,INT:80},img:'img/fighters/fighter-hank.jpg',link:'https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z',lt:'JOIN THE CREW \u2014 $29/MO',boss:false},
+  chase:{name:'CHASE',cls:'The Banker',tier:'CREW \u2014 $29/mo',tc:'var(--red)',tq:'Paper chaser. Never off-clock.',desc:'Crypto analysis, finance tracking, investment briefings. Chase monitors the markets so you wake up informed. The money-mind of your crew.',stats:{ATK:75,SPD:82,INT:92},img:'img/fighters/fighter-chase.jpeg',link:'https://buy.stripe.com/7sI5kC1MZdw28WH9AEgrS0z',lt:'JOIN THE CREW \u2014 $29/MO',boss:false},
+  ace:{name:'ACE',cls:'The Strategist',tier:'BOSS \u2014 $49/mo',tc:'var(--gold)',tq:'Thinks three moves ahead. Always.',desc:'High-level strategy, business growth, market positioning. Ace takes the big picture and gives you a game plan. Boss Mode only \u2014 because strategy is earned.',stats:{ATK:85,SPD:78,INT:98},img:'img/fighters/fighter-ace.jpg',link:'https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B',lt:'CLAIM BOSS MODE \u2014 $49/MO',boss:true},
+  vince:{name:'VINCE',cls:'The Closer',tier:'BOSS \u2014 $49/mo',tc:'var(--gold)',tq:'Every deal has a close. Vince finds it.',desc:'Sales funnels, objection handling, close scripts, follow-up sequences. Vince is your automated sales team \u2014 and he never has a bad day.',stats:{ATK:96,SPD:80,INT:87},img:'img/fighters/fighter-vince.jpeg',link:'https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B',lt:'CLAIM BOSS MODE \u2014 $49/MO',boss:true},
+  chip:{name:'CHIP',cls:'The Builder',tier:'BOSS \u2014 $49/mo',tc:'var(--gold)',tq:'Code it. Ship it. Own it.',desc:'Code generation, technical docs, system architecture. Chip pairs with your local setup to build real products \u2014 without paying a dev agency.',stats:{ATK:90,SPD:85,INT:96},img:'img/fighters/fighter-chip.jpeg',link:'https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B',lt:'CLAIM BOSS MODE \u2014 $49/MO',boss:true},
+  sage:{name:'SAGE',cls:'The Oracle',tier:'BOSS \u2014 $49/mo',tc:'var(--gold)',tq:'Deep knowledge. Old wisdom. New power.',desc:'Research synthesis, knowledge management, complex analysis. Sage processes what you can\'t \u2014 and delivers answers in plain language. The brain of the fleet.',stats:{ATK:78,SPD:72,INT:99},img:'img/fighters/fighter-sage.webp',link:'https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B',lt:'CLAIM BOSS MODE \u2014 $49/MO',boss:true},
+  knox:{name:'KNOX',cls:'The Guardian',tier:'BOSS \u2014 $49/mo',tc:'var(--gold)',tq:'Locks it down. Keeps it locked.',desc:'Security guidance, privacy setup, operational awareness. Knox protects your digital operation \u2014 and in Boss Mode, runs on your machine where no one can touch him.',stats:{ATK:88,SPD:74,INT:90},img:'img/fighters/fighter-knox.jpeg',link:'https://buy.stripe.com/eVa7sK6b93VsgteaELgrS0B',lt:'CLAIM BOSS MODE \u2014 $49/MO',boss:true}
+};
 
-function buildGrid(worldId, gridId) {
-  const grid = document.getElementById(gridId);
-  FIGHTERS.filter(f => f.world === worldId).forEach(f => {
-    const isFree = f.world === "free";
-    const card = document.createElement("div");
-    card.className = `card${isFree ? "" : " locked"}`;
-    card.innerHTML = `
-      ${!isFree ? '<span class="lock-icon">🔒</span>' : ''}
-      <span class="card-avatar">${f.emoji}</span>
-      <div class="card-name">${f.name}</div>
-      <div class="card-role">${f.role}</div>
-      <div class="card-desc">${f.desc}</div>
-      <div class="stats">${f.stats.map(([label,level])=>`
-        <div class="stat">
-          <div class="stat-label">${label}</div>
-          <div class="stat-bar"><div class="stat-bar-fill ${level}"></div></div>
-        </div>`).join("")}
-      </div>
-      <span class="card-btn ${isFree ? 'btn-free' : 'btn-locked'}">${isFree ? 'SELECT' : 'LOCKED'}</span>
-    `;
-    card.addEventListener("click", () => openPanel(f));
-    grid.appendChild(card);
+function mk(tag,cls){const el=document.createElement(tag);if(cls)el.className=cls;return el;}
+
+function openPanel(id){
+  const f=F[id]; if(!f)return;
+  const panel=document.getElementById('pnl');
+  const body=document.getElementById('pb');
+  const accent=f.boss?'var(--gold)':'var(--red)';
+  const btnCls=f.boss?'btn btn-go':'btn btn-r';
+
+  // Clear previous content safely
+  while(body.firstChild)body.removeChild(body.firstChild);
+
+  // Image column
+  const imgWrap=mk('div','pimg');
+  const img=mk('img'); img.src=f.img; img.alt=f.name;
+  imgWrap.appendChild(img);
+
+  // Info column
+  const info=mk('div','pinfo');
+
+  const tier=mk('div','ptier'); tier.style.color=f.tc; tier.textContent=f.tier; info.appendChild(tier);
+  const name=mk('div','pname'); name.style.color=f.boss?'var(--gold)':'var(--wht)'; name.textContent=f.name; info.appendChild(name);
+  const cls=mk('div','pcls'); cls.textContent=f.cls; info.appendChild(cls);
+  const tagline=mk('div','ptag'); tagline.style.borderLeftColor=accent; tagline.textContent=f.tq; info.appendChild(tagline);
+  const desc=mk('div','pdesc'); desc.textContent=f.desc; info.appendChild(desc);
+
+  const stats=mk('div','pstats');
+  Object.entries(f.stats).forEach(([k,v])=>{
+    const row=mk('div','stat');
+    const lbl=mk('div','stl'); lbl.textContent=k;
+    const bar=mk('div','stbar');
+    const fill=mk('div','stfill');
+    fill.style.setProperty('--w',v+'%');
+    fill.style.background=accent;
+    bar.appendChild(fill);
+    const val=mk('div','stv'); val.textContent=v;
+    row.appendChild(lbl); row.appendChild(bar); row.appendChild(val);
+    stats.appendChild(row);
   });
+  info.appendChild(stats);
+
+  const cta=mk('div','pcta');
+  const link=mk('a'); link.href=f.link; link.target='_blank';
+  link.className=btnCls; link.textContent=f.lt;
+  cta.appendChild(link); info.appendChild(cta);
+
+  body.appendChild(imgWrap); body.appendChild(info);
+
+  document.getElementById('bd').classList.add('on');
+  panel.classList.add('on');
+  document.body.style.overflow='hidden';
 }
 
-function openPanel(f) {
-  const isFree = f.world === "free";
-  document.getElementById("pAvatar").textContent = f.emoji;
-  document.getElementById("pName").textContent = f.name;
-  document.getElementById("pRole").textContent = f.role;
-  document.getElementById("pSig").textContent = `"${f.sig}"`;
-  document.getElementById("pPrice").innerHTML = `TIER: <span>${f.priceLabel}</span>`;
-  const ul = document.getElementById("pAbilities");
-  ul.innerHTML = f.abilities.map(a => `<li>${a}</li>`).join("");
-  const btn = document.getElementById("pAction");
-  btn.href = f.link;
-  btn.textContent = f.btnText;
-  btn.className = `panel-action${isFree ? "" : " locked-action"}`;
-  document.getElementById("panel").classList.add("active");
-  document.body.style.overflow = "hidden";
+function closePanel(){
+  document.getElementById('pnl').classList.remove('on');
+  document.getElementById('bd').classList.remove('on');
+  document.body.style.overflow='';
 }
 
-function closePanel(e) {
-  if(e && e.target !== document.getElementById("panel") && !e.target.classList.contains("panel-close")) return;
-  document.getElementById("panel").classList.remove("active");
-  document.body.style.overflow = "";
-}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanel();});
 
-document.addEventListener("keydown", e => { if(e.key === "Escape") closePanel({target: document.getElementById("panel")}); });
-
-buildGrid("free",  "grid-free");
-buildGrid("arena", "grid-arena");
-buildGrid("boss",  "grid-boss");
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
