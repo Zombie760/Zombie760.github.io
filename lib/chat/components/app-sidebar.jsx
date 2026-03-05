@@ -122,24 +122,6 @@ export function AppSidebar({ user }) {
             </Tooltip>
           </SidebarMenuItem>
 
-          {/* Runners */}
-          <SidebarMenuItem>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <SidebarMenuButton
-                  href="/runners"
-                  className={collapsed ? 'justify-center' : ''}
-                >
-                  <RunnersIcon size={16} />
-                  {!collapsed && <span>Runners</span>}
-                </SidebarMenuButton>
-              </TooltipTrigger>
-              {collapsed && (
-                <TooltipContent side="right">Runners</TooltipContent>
-              )}
-            </Tooltip>
-          </SidebarMenuItem>
-
           {/* Clusters */}
           <SidebarMenuItem>
             <Tooltip>
@@ -154,6 +136,24 @@ export function AppSidebar({ user }) {
               </TooltipTrigger>
               {collapsed && (
                 <TooltipContent side="right">Clusters</TooltipContent>
+              )}
+            </Tooltip>
+          </SidebarMenuItem>
+
+          {/* Runners */}
+          <SidebarMenuItem>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SidebarMenuButton
+                  href="/runners"
+                  className={collapsed ? 'justify-center' : ''}
+                >
+                  <RunnersIcon size={16} />
+                  {!collapsed && <span>Runners</span>}
+                </SidebarMenuButton>
+              </TooltipTrigger>
+              {collapsed && (
+                <TooltipContent side="right">Runners</TooltipContent>
               )}
             </Tooltip>
           </SidebarMenuItem>
