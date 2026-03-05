@@ -70,6 +70,7 @@ const TOOL_DISPLAY_NAMES = {
   get_system_technical_specs: 'Read Tech Docs',
   get_skill_building_guide: 'Read Skill Docs',
   start_coding: 'Start Coding',
+  start_headless_coding: 'Headless Coding',
   get_repository_details: 'Get Repository Details',
 };
 
@@ -182,6 +183,7 @@ function ToolCall({ part }) {
 
 export function PreviewMessage({ message, isLoading, onRetry, onEdit }) {
   const isUser = message.role === 'user';
+  const isSystem = message.role === 'system';
   const [copied, setCopied] = useState(false);
   const [editing, setEditing] = useState(false);
   const [editText, setEditText] = useState('');
@@ -201,6 +203,15 @@ export function PreviewMessage({ message, isLoading, onRetry, onEdit }) {
   const imageParts = fileParts.filter((p) => p.mediaType?.startsWith('image/'));
   const otherFileParts = fileParts.filter((p) => !p.mediaType?.startsWith('image/'));
   const hasToolParts = message.parts?.some((p) => p.type?.startsWith('tool-')) || false;
+
+  // System messages render as a subtle info banner
+  if (isSystem) {
+    return (
+      <div className="w-full px-4 py-2 rounded-md bg-muted/50 border border-border/50">
+        <p className="text-xs text-muted-foreground whitespace-pre-wrap">{text}</p>
+      </div>
+    );
+  }
 
   const handleCopy = async () => {
     try {

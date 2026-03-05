@@ -8,7 +8,6 @@ import { WebLinksAddon } from '@xterm/addon-web-links';
 import { SerializeAddon } from '@xterm/addon-serialize';
 import '@xterm/xterm/css/xterm.css';
 import { SpinnerIcon } from '../chat/components/icons.js';
-import { ConfirmDialog } from '../chat/components/ui/confirm-dialog.js';
 
 const STATUS = { connected: '#22c55e', connecting: '#eab308', disconnected: '#ef4444' };
 const RECONNECT_INTERVAL = 3000;
@@ -55,7 +54,6 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer, onClose
   const [connected, setConnected] = useState(false);
   const [containerError, setContainerError] = useState(null);
   const [termTheme, setTermTheme] = useState('dark');
-  const [showCloseConfirm, setShowCloseConfirm] = useState(false);
 
   const setStatus = useCallback((color) => {
     if (statusRef.current) statusRef.current.style.backgroundColor = color;
@@ -476,7 +474,7 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer, onClose
               </button>
               <button
                 className="code-toolbar-btn code-toolbar-btn--close"
-                onClick={() => setShowCloseConfirm(true)}
+                onClick={onCloseSession}
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round">
                   <line x1="4" y1="4" x2="12" y2="12" />
@@ -488,15 +486,6 @@ export default function TerminalView({ codeWorkspaceId, ensureContainer, onClose
           </div>
         </div>
       </div>
-      <ConfirmDialog
-        open={showCloseConfirm}
-        title="Close session?"
-        description="This will destroy the container and any uncommitted work. Commit and merge your changes first."
-        confirmLabel="Close Session"
-        variant="destructive"
-        onConfirm={() => { setShowCloseConfirm(false); onCloseSession(); }}
-        onCancel={() => setShowCloseConfirm(false)}
-      />
     </>
   );
 }

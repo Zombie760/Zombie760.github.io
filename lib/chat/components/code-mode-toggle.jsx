@@ -82,18 +82,12 @@ export function CodeModeToggle({
   }, [repo]);
 
   const handleModeToggle = useCallback(async () => {
-    if (!workspace?.id || togglingMode) return;
+    if (!workspace?.id || togglingMode || isInteractiveActive) return;
     setTogglingMode(true);
     try {
-      if (isInteractiveActive) {
-        // Switch to headless: close the container
-        const { closeInteractiveMode } = await import('../../code/actions.js');
-        await closeInteractiveMode(workspace.id);
-      } else {
-        // Switch to interactive: start a container
-        const { startInteractiveMode } = await import('../../code/actions.js');
-        await startInteractiveMode(workspace.id);
-      }
+      // Only launch interactive mode — closing is handled from the code page
+      const { startInteractiveMode } = await import('../../code/actions.js');
+      await startInteractiveMode(workspace.id);
       if (onWorkspaceUpdate) await onWorkspaceUpdate();
     } catch (err) {
       console.error('Failed to toggle mode:', err);
@@ -135,8 +129,11 @@ export function CodeModeToggle({
           <button
             type="button"
             onClick={handleModeToggle}
-            disabled={togglingMode}
-            className="inline-flex items-center gap-1.5 group"
+            disabled={togglingMode || isInteractiveActive}
+            className={cn(
+              'inline-flex items-center gap-1.5 group',
+              isInteractiveActive && 'opacity-50 pointer-events-none'
+            )}
             role="switch"
             aria-checked={isInteractiveActive}
             aria-label="Toggle interactive mode"
