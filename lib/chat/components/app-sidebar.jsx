@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CirclePlusIcon, PanelLeftIcon, MessageIcon, ClusterIcon, BellIcon, SwarmIcon, ArrowUpCircleIcon, LifeBuoyIcon, GitPullRequestIcon } from './icons.js';
+import { CirclePlusIcon, PanelLeftIcon, MessageIcon, ClusterIcon, BellIcon, RunnersIcon, ArrowUpCircleIcon, LifeBuoyIcon, GitPullRequestIcon } from './icons.js';
 import { getUnreadNotificationCount, getPullRequestCount, getAppVersion } from '../actions.js';
 import { SidebarHistory } from './sidebar-history.js';
 import { SidebarUserNav } from './sidebar-user-nav.js';
@@ -122,6 +122,24 @@ export function AppSidebar({ user }) {
             </Tooltip>
           </SidebarMenuItem>
 
+          {/* Runners */}
+          <SidebarMenuItem>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SidebarMenuButton
+                  href="/runners"
+                  className={collapsed ? 'justify-center' : ''}
+                >
+                  <RunnersIcon size={16} />
+                  {!collapsed && <span>Runners</span>}
+                </SidebarMenuButton>
+              </TooltipTrigger>
+              {collapsed && (
+                <TooltipContent side="right">Runners</TooltipContent>
+              )}
+            </Tooltip>
+          </SidebarMenuItem>
+
           {/* Clusters */}
           <SidebarMenuItem>
             <Tooltip>
@@ -136,56 +154,6 @@ export function AppSidebar({ user }) {
               </TooltipTrigger>
               {collapsed && (
                 <TooltipContent side="right">Clusters</TooltipContent>
-              )}
-            </Tooltip>
-          </SidebarMenuItem>
-
-          {/* Swarm */}
-          <SidebarMenuItem>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <SidebarMenuButton
-                  href="/swarm"
-                  className={collapsed ? 'justify-center' : ''}
-                >
-                  <SwarmIcon size={16} />
-                  {!collapsed && <span>Swarm</span>}
-                </SidebarMenuButton>
-              </TooltipTrigger>
-              {collapsed && (
-                <TooltipContent side="right">Swarm</TooltipContent>
-              )}
-            </Tooltip>
-          </SidebarMenuItem>
-
-          {/* Notifications */}
-          <SidebarMenuItem>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <SidebarMenuButton
-                  href="/notifications"
-                  className={collapsed ? 'justify-center' : ''}
-                >
-                  <BellIcon size={16} />
-                  {!collapsed && (
-                    <span className="flex items-center gap-2">
-                      Notifications
-                      {unreadCount > 0 && (
-                        <span className="inline-flex items-center justify-center rounded-full bg-destructive px-1.5 py-0.5 text-[10px] font-medium leading-none text-destructive-foreground">
-                          {unreadCount}
-                        </span>
-                      )}
-                    </span>
-                  )}
-                  {collapsed && unreadCount > 0 && (
-                    <span className="absolute -top-1 -right-1 inline-flex h-4 w-4 items-center justify-center rounded-full bg-destructive text-[10px] font-medium text-destructive-foreground">
-                      {unreadCount}
-                    </span>
-                  )}
-                </SidebarMenuButton>
-              </TooltipTrigger>
-              {collapsed && (
-                <TooltipContent side="right">Notifications</TooltipContent>
               )}
             </Tooltip>
           </SidebarMenuItem>
@@ -218,6 +186,38 @@ export function AppSidebar({ user }) {
               </TooltipTrigger>
               {collapsed && (
                 <TooltipContent side="right">Approvals</TooltipContent>
+              )}
+            </Tooltip>
+          </SidebarMenuItem>
+
+          {/* Notifications */}
+          <SidebarMenuItem>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SidebarMenuButton
+                  href="/notifications"
+                  className={collapsed ? 'justify-center' : ''}
+                >
+                  <BellIcon size={16} />
+                  {!collapsed && (
+                    <span className="flex items-center gap-2">
+                      Notifications
+                      {unreadCount > 0 && (
+                        <span className="inline-flex items-center justify-center rounded-full bg-destructive px-1.5 py-0.5 text-[10px] font-medium leading-none text-destructive-foreground">
+                          {unreadCount}
+                        </span>
+                      )}
+                    </span>
+                  )}
+                  {collapsed && unreadCount > 0 && (
+                    <span className="absolute -top-1 -right-1 inline-flex h-4 w-4 items-center justify-center rounded-full bg-destructive text-[10px] font-medium text-destructive-foreground">
+                      {unreadCount}
+                    </span>
+                  )}
+                </SidebarMenuButton>
+              </TooltipTrigger>
+              {collapsed && (
+                <TooltipContent side="right">Notifications</TooltipContent>
               )}
             </Tooltip>
           </SidebarMenuItem>

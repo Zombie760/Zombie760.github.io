@@ -70,7 +70,7 @@ export function UpgradeDialog({ open, onClose, version, updateAvailable, changel
               </p>
               <p>
                 You can monitor progress from the{' '}
-                <a href="/swarm" className="text-emerald-500 hover:underline font-medium">Swarm</a> page.
+                <a href="/runners" className="text-emerald-500 hover:underline font-medium">Runners</a> page.
               </p>
               <p>
                 The site may be briefly unresponsive for a few seconds when the server restarts.

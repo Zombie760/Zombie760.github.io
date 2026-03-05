@@ -29,7 +29,7 @@ Visit your APP_URL to access the built-in web chat interface. Features include:
 - **Streaming responses** — AI responses stream in real-time
 - **File uploads** — Send images, PDFs, and text files
 - **Chat history** — Browse and resume past conversations
-- **Job management** — Create and monitor agent jobs from the Swarm page
+- **Job management** — Create and monitor agent jobs from the Runners page
 
 The web chat is available out of the box after setup — no additional configuration needed.
 

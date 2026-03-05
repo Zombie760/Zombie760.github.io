@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ZapIcon, ChevronDownIcon } from './icons.js';
-import { getSwarmConfig } from '../actions.js';
+import { getRunnersConfig } from '../actions.js';
 
 const typeBadgeStyles = {
   agent: 'bg-purple-500/10 text-purple-500',
@@ -161,7 +161,7 @@ export function TriggersPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getSwarmConfig()
+    getRunnersConfig()
       .then((data) => {
         if (data?.triggers) setTriggers(data.triggers);
       })

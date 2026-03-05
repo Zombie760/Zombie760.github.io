@@ -34,7 +34,7 @@ Switch between Anthropic, OpenAI, and Google models by changing two environment 
 
 ### See what your agent is doing
 
-The Swarm page shows every active and completed job in real time. See which tasks are running, cancel jobs that went sideways, and rerun completed ones. No more checking GitHub Actions logs to figure out what your agent is up to.
+The Runners page shows every active and completed job in real time. See which tasks are running, cancel jobs that went sideways, and rerun completed ones. No more checking GitHub Actions logs to figure out what your agent is up to.
 
 ### Never miss a completed job
 

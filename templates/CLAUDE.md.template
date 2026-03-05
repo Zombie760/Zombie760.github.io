@@ -219,7 +219,7 @@ All API routes are under `/api/`, handled by the catch-all route.
 
 ## Web Interface
 
-Accessible after login at `APP_URL`. Routes: `/` (chat), `/chats` (history), `/chat/[chatId]` (resume chat), `/settings/crons`, `/settings/triggers`, `/settings/secrets` (API keys), `/swarm` (job monitor), `/notifications`, `/login` (auth / first-time admin setup).
+Accessible after login at `APP_URL`. Routes: `/` (chat), `/chats` (history), `/chat/[chatId]` (resume chat), `/settings/crons`, `/settings/triggers`, `/settings/secrets` (API keys), `/runners` (job monitor), `/notifications`, `/login` (auth / first-time admin setup).
 
 ## Authentication
 

@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { PageLayout } from './page-layout.js';
 import { SpinnerIcon, RefreshIcon } from './icons.js';
-import { getSwarmStatus } from '../actions.js';
+import { getRunnersStatus } from '../actions.js';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Utilities
@@ -53,7 +53,7 @@ const conclusionBadgeStyles = {
   skipped: 'bg-muted text-muted-foreground',
 };
 
-function SwarmWorkflowList({ runs }) {
+function RunnersWorkflowList({ runs }) {
   if (!runs || runs.length === 0) {
     return (
       <div className="text-sm text-muted-foreground py-4 text-center">
@@ -124,7 +124,7 @@ function SwarmWorkflowList({ runs }) {
 // Main Page
 // ─────────────────────────────────────────────────────────────────────────────
 
-export function SwarmPage({ session }) {
+export function RunnersPage({ session }) {
   const [runs, setRuns] = useState([]);
   const [hasMore, setHasMore] = useState(false);
   const [page, setPage] = useState(1);
@@ -133,12 +133,12 @@ export function SwarmPage({ session }) {
 
   const fetchPage = useCallback(async (p) => {
     try {
-      const data = await getSwarmStatus(p);
+      const data = await getRunnersStatus(p);
       setRuns(data.runs || []);
       setHasMore(data.hasMore || false);
       setPage(p);
     } catch (err) {
-      console.error('Failed to fetch swarm status:', err);
+      console.error('Failed to fetch runners status:', err);
     } finally {
       setLoading(false);
       setRefreshing(false);
@@ -158,7 +158,7 @@ export function SwarmPage({ session }) {
     <PageLayout session={session}>
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-semibold">Swarm</h1>
+        <h1 className="text-2xl font-semibold">Runners</h1>
         {!loading && (
           <button
             onClick={() => { setRefreshing(true); fetchPage(1); }}
@@ -184,7 +184,7 @@ export function SwarmPage({ session }) {
         <LoadingSkeleton />
       ) : (
         <div>
-          <SwarmWorkflowList runs={runs} />
+          <RunnersWorkflowList runs={runs} />
           {/* Pagination */}
           <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
             <button

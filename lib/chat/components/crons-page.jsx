@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ClockIcon, SpinnerIcon, ChevronDownIcon } from './icons.js';
-import { getSwarmConfig } from '../actions.js';
+import { getRunnersConfig } from '../actions.js';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Utilities
@@ -184,7 +184,7 @@ export function CronsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getSwarmConfig()
+    getRunnersConfig()
       .then((data) => {
         if (data?.crons) setCrons(data.crons);
       })

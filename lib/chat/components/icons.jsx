@@ -166,7 +166,7 @@ export function BellIcon({ size = 16 }) {
   );
 }
 
-export function SwarmIcon({ size = 16 }) {
+export function RunnersIcon({ size = 16 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -179,10 +179,8 @@ export function SwarmIcon({ size = 16 }) {
       width={size}
       height={size}
     >
-      {/* Three hexagons in a triangular cluster */}
-      <path d="M9.5 2L12 4.5L9.5 7L5 7L2.5 4.5L5 2Z" />
-      <path d="M19 2L21.5 4.5L19 7L14.5 7L12 4.5L14.5 2Z" />
-      <path d="M14.25 7L16.75 9.5L14.25 12L9.75 12L7.25 9.5L9.75 7Z" />
+      <circle cx="12" cy="12" r="10" />
+      <polygon points="10 8 16 12 10 16 10 8" />
     </svg>
   );
 }
