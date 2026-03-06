@@ -13,7 +13,7 @@ Run these in parallel:
 
 ## Step 2 — Stage everything
 
-Run `git add .`
+Run `git add -A` to stage ALL changes (tracked, untracked, deleted). Do NOT selectively stage files — always commit everything together. This overrides any default guidance about selective staging.
 
 ## Step 3 — Write the commit message
 
