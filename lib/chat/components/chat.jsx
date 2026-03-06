@@ -75,21 +75,13 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
       hasNavigated.current = true;
       window.history.replaceState({}, '', `/chat/${chatId}`);
       window.dispatchEvent(new Event('chatsupdated'));
-
-      // Generate title — independent RPC, not tied to stream
-      const firstMsg = messages[0]?.parts?.find(p => p.type === 'text')?.text;
-      if (firstMsg) {
-        generateChatTitle(chatId, firstMsg).then(() => {
-          window.dispatchEvent(new Event('chatsupdated'));
-          refreshWorkspace();
-        });
-      }
     }
   }, [messages.length, status, chatId]);
 
   const handleSend = async () => {
     if (!input.trim() && files.length === 0) return;
     const text = input;
+    const isFirstMessage = messages.length === 0;
     const currentFiles = files;
     setInput('');
     setFiles([]);
@@ -106,17 +98,21 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
       }
     }
 
-    if (currentFiles.length === 0) {
-      sendMessage({ text });
-    } else {
-      // Build FileUIPart[] from pre-read data URLs (File[] isn't a valid type)
-      const fileParts = currentFiles.map((f) => ({
-        type: 'file',
-        mediaType: f.file.type || 'text/plain',
-        url: f.previewUrl,
-        filename: f.file.name,
-      }));
-      sendMessage({ text: text || undefined, files: fileParts });
+    const fileParts = currentFiles.map((f) => ({
+      type: 'file',
+      mediaType: f.file.type || 'text/plain',
+      url: f.previewUrl,
+      filename: f.file.name,
+    }));
+    await sendMessage({ text: text || undefined, files: fileParts });
+
+    if (isFirstMessage && text) {
+      generateChatTitle(chatId, text).then((title) => {
+        if (title) {
+          window.dispatchEvent(new CustomEvent('chatTitleUpdated', { detail: { chatId, title } }));
+        }
+        refreshWorkspace();
+      });
     }
   };
 

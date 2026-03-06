@@ -119,7 +119,15 @@ export function SidebarHistory() {
   useEffect(() => {
     const handler = () => loadChats();
     window.addEventListener('chatsupdated', handler);
-    return () => window.removeEventListener('chatsupdated', handler);
+    const titleHandler = (e) => {
+      const { chatId, title } = e.detail;
+      setChats(prev => prev.map(c => c.id === chatId ? { ...c, title } : c));
+    };
+    window.addEventListener('chatTitleUpdated', titleHandler);
+    return () => {
+      window.removeEventListener('chatsupdated', handler);
+      window.removeEventListener('chatTitleUpdated', titleHandler);
+    };
   }, []);
 
   const handleDelete = async (chatId) => {

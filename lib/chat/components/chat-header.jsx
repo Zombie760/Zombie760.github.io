@@ -54,7 +54,16 @@ export function ChatHeader({ chatId: chatIdProp, workspaceId }) {
     fetchMeta();
     const handler = () => fetchMeta();
     window.addEventListener('chatsupdated', handler);
-    return () => window.removeEventListener('chatsupdated', handler);
+    const titleHandler = (e) => {
+      if (e.detail.chatId === chatId) {
+        setTitle(e.detail.title);
+      }
+    };
+    window.addEventListener('chatTitleUpdated', titleHandler);
+    return () => {
+      window.removeEventListener('chatsupdated', handler);
+      window.removeEventListener('chatTitleUpdated', titleHandler);
+    };
   }, [fetchMeta]);
 
   // Auto-focus and select all when entering inline edit mode
