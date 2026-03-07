@@ -8,7 +8,7 @@ import { ChatInput } from './chat-input.js';
 import { ChatHeader } from './chat-header.js';
 import { Greeting } from './greeting.js';
 import { CodeModeToggle } from './code-mode-toggle.js';
-import { getRepositories, getBranches, generateChatTitle, getWorkspace, createChatWorkspace } from '../actions.js';
+import { getRepositories, getBranches, getWorkspace, createChatWorkspace } from '../actions.js';
 
 export function Chat({ chatId, initialMessages = [], workspace = null }) {
   const [input, setInput] = useState('');
@@ -74,7 +74,6 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
     if (!hasNavigated.current && messages.length >= 1 && status !== 'ready' && window.location.pathname !== `/chat/${chatId}`) {
       hasNavigated.current = true;
       window.history.replaceState({}, '', `/chat/${chatId}`);
-      window.dispatchEvent(new Event('chatsupdated'));
     }
   }, [messages.length, status, chatId]);
 
@@ -107,12 +106,19 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
     await sendMessage({ text: text || undefined, files: fileParts });
 
     if (isFirstMessage && text) {
-      generateChatTitle(chatId, text).then((title) => {
-        if (title) {
-          window.dispatchEvent(new CustomEvent('chatTitleUpdated', { detail: { chatId, title } }));
-        }
-        refreshWorkspace();
-      });
+      fetch('/chat/generate-chat-title', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chatId, message: text }),
+      })
+        .then(res => res.json())
+        .then(({ title }) => {
+          if (title) {
+            window.dispatchEvent(new CustomEvent('chatTitleUpdated', { detail: { chatId, title } }));
+          }
+          refreshWorkspace();
+        })
+        .catch(err => console.error('Failed to generate title:', err));
     }
   };
 

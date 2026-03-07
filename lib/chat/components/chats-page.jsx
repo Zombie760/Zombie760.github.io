@@ -84,23 +84,53 @@ export function ChatsPage({ session }) {
   }, []);
 
   useEffect(() => {
-    const handler = () => loadChats();
-    window.addEventListener('chatsupdated', handler);
-    return () => window.removeEventListener('chatsupdated', handler);
+    const titleHandler = (e) => {
+      const { chatId, title } = e.detail;
+      setChats(prev => {
+        const exists = prev.some(c => c.id === chatId);
+        if (exists) return prev.map(c => c.id === chatId ? { ...c, title } : c);
+        return [{ id: chatId, title, starred: 0, updatedAt: new Date().toISOString() }, ...prev];
+      });
+    };
+    const starHandler = (e) => {
+      const { chatId, starred } = e.detail;
+      setChats(prev => prev.map(c => c.id === chatId ? { ...c, starred } : c));
+    };
+    const deleteHandler = (e) => {
+      const { chatId } = e.detail;
+      setChats(prev => prev.filter(c => c.id !== chatId));
+    };
+    window.addEventListener('chatTitleUpdated', titleHandler);
+    window.addEventListener('chatStarUpdated', starHandler);
+    window.addEventListener('chatDeleted', deleteHandler);
+    return () => {
+      window.removeEventListener('chatTitleUpdated', titleHandler);
+      window.removeEventListener('chatStarUpdated', starHandler);
+      window.removeEventListener('chatDeleted', deleteHandler);
+    };
   }, []);
 
   const handleDelete = async (chatId) => {
     setChats((prev) => prev.filter((c) => c.id !== chatId));
     const { success } = await deleteChat(chatId);
-    if (!success) loadChats();
+    if (success) {
+      window.dispatchEvent(new CustomEvent('chatDeleted', { detail: { chatId } }));
+    } else {
+      loadChats();
+    }
   };
 
   const handleStar = async (chatId) => {
+    const newStarred = chats.find(c => c.id === chatId)?.starred ? 0 : 1;
     setChats((prev) =>
-      prev.map((c) => (c.id === chatId ? { ...c, starred: c.starred ? 0 : 1 } : c))
+      prev.map((c) => (c.id === chatId ? { ...c, starred: newStarred } : c))
     );
     const { success } = await starChat(chatId);
-    if (!success) loadChats();
+    if (success) {
+      window.dispatchEvent(new CustomEvent('chatStarUpdated', { detail: { chatId, starred: newStarred } }));
+    } else {
+      loadChats();
+    }
   };
 
   const handleRename = async (chatId, title) => {
@@ -108,7 +138,11 @@ export function ChatsPage({ session }) {
       prev.map((c) => (c.id === chatId ? { ...c, title } : c))
     );
     const { success } = await renameChat(chatId, title);
-    if (!success) loadChats();
+    if (success) {
+      window.dispatchEvent(new CustomEvent('chatTitleUpdated', { detail: { chatId, title } }));
+    } else {
+      loadChats();
+    }
   };
 
   const filtered = query

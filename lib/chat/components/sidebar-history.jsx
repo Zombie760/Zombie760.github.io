@@ -110,23 +110,35 @@ export function SidebarHistory() {
     } catch {}
   }, []);
 
-  // Load chats on mount (chatsupdated event handles subsequent updates)
+  // Load chats on mount
   useEffect(() => {
     loadChats();
   }, []);
 
-  // Reload when chats change (new chat created or title updated)
   useEffect(() => {
-    const handler = () => loadChats();
-    window.addEventListener('chatsupdated', handler);
     const titleHandler = (e) => {
       const { chatId, title } = e.detail;
-      setChats(prev => prev.map(c => c.id === chatId ? { ...c, title } : c));
+      setChats(prev => {
+        const exists = prev.some(c => c.id === chatId);
+        if (exists) return prev.map(c => c.id === chatId ? { ...c, title } : c);
+        return [{ id: chatId, title, starred: 0, updatedAt: new Date().toISOString() }, ...prev];
+      });
+    };
+    const starHandler = (e) => {
+      const { chatId, starred } = e.detail;
+      setChats(prev => prev.map(c => c.id === chatId ? { ...c, starred } : c));
+    };
+    const deleteHandler = (e) => {
+      const { chatId } = e.detail;
+      setChats(prev => prev.filter(c => c.id !== chatId));
     };
     window.addEventListener('chatTitleUpdated', titleHandler);
+    window.addEventListener('chatStarUpdated', starHandler);
+    window.addEventListener('chatDeleted', deleteHandler);
     return () => {
-      window.removeEventListener('chatsupdated', handler);
       window.removeEventListener('chatTitleUpdated', titleHandler);
+      window.removeEventListener('chatStarUpdated', starHandler);
+      window.removeEventListener('chatDeleted', deleteHandler);
     };
   }, []);
 
@@ -134,6 +146,7 @@ export function SidebarHistory() {
     setChats((prev) => prev.filter((c) => c.id !== chatId));
     const { success } = await deleteChat(chatId);
     if (success) {
+      window.dispatchEvent(new CustomEvent('chatDeleted', { detail: { chatId } }));
       if (chatId === activeChatId) {
         navigateToChat(null);
       }
@@ -143,11 +156,16 @@ export function SidebarHistory() {
   };
 
   const handleStar = async (chatId) => {
+    const newStarred = chats.find(c => c.id === chatId)?.starred ? 0 : 1;
     setChats((prev) =>
-      prev.map((c) => (c.id === chatId ? { ...c, starred: c.starred ? 0 : 1 } : c))
+      prev.map((c) => (c.id === chatId ? { ...c, starred: newStarred } : c))
     );
     const { success } = await starChat(chatId);
-    if (!success) loadChats();
+    if (success) {
+      window.dispatchEvent(new CustomEvent('chatStarUpdated', { detail: { chatId, starred: newStarred } }));
+    } else {
+      loadChats();
+    }
   };
 
   const handleRename = async (chatId, title) => {
@@ -155,7 +173,11 @@ export function SidebarHistory() {
       prev.map((c) => (c.id === chatId ? { ...c, title } : c))
     );
     const { success } = await renameChat(chatId, title);
-    if (!success) loadChats();
+    if (success) {
+      window.dispatchEvent(new CustomEvent('chatTitleUpdated', { detail: { chatId, title } }));
+    } else {
+      loadChats();
+    }
   };
 
   if (loading && chats.length === 0) {

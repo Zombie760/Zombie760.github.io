@@ -124,6 +124,16 @@ export function ClusterPage({ session, clusterId }) {
     await renameClusterWorker(workerId, name);
   };
 
+  const handleUpdateWorkerFolders = async (workerId, folders) => {
+    await updateWorkerFoldersAction(workerId, folders);
+    setCluster((prev) => ({
+      ...prev,
+      workers: prev.workers.map((w) =>
+        w.id === workerId ? { ...w, folders } : w
+      ),
+    }));
+  };
+
   const handleUpdateTriggers = async (workerId, triggerConfig) => {
     setCluster((prev) => ({
       ...prev,
@@ -362,6 +372,7 @@ export function ClusterPage({ session, clusterId }) {
                 running={!!workerStatus[worker.id]}
                 onAssignRole={handleAssignRole}
                 onRename={handleRenameWorker}
+                onUpdateFolders={handleUpdateWorkerFolders}
                 onUpdateTriggers={handleUpdateTriggers}
                 onRemove={handleRemoveWorker}
               />
@@ -381,7 +392,7 @@ export function ClusterPage({ session, clusterId }) {
   );
 }
 
-function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateTriggers, onRemove }) {
+function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateFolders, onUpdateTriggers, onRemove }) {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [editingName, setEditingName] = useState(false);
   const shortId = worker.id.replace(/-/g, '').slice(0, 8);
@@ -463,7 +474,7 @@ function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateTri
     const folders = foldersValue.split(',').map((s) => s.trim()).filter(Boolean);
     const current = worker.folders || [];
     if (JSON.stringify(folders) !== JSON.stringify(current)) {
-      await updateWorkerFoldersAction(worker.id, folders.length ? folders : null);
+      await onUpdateFolders(worker.id, folders.length ? folders : null);
     }
   };
 
@@ -578,6 +589,26 @@ function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateTri
         </button>
       </div>
 
+      {/* Worker Folders */}
+      <div className="mt-3">
+        <div className="rounded-md border border-input p-2.5">
+          <label className="text-xs font-medium text-muted-foreground block mb-1">Folders</label>
+          <input
+            type="text"
+            value={foldersValue}
+            onChange={(e) => setFoldersValue(e.target.value)}
+            onBlur={saveFolders}
+            onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
+            placeholder="inbox, output"
+            className="text-sm bg-background border border-input rounded px-2 py-1 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
+          />
+          <p className="text-xs text-muted-foreground mt-1">Comma-separated folder names created under {shortId}/.</p>
+        </div>
+      </div>
+
+      {/* Separator */}
+      <div className="mt-4 mb-1 border-t border-border" />
+
       {/* Trigger badges */}
       <div className="mt-3 flex items-center gap-2 flex-wrap">
         <span className="text-xs text-muted-foreground">Triggers:</span>
@@ -653,23 +684,6 @@ function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateTri
           )}
         </div>
       )}
-
-      {/* Worker Folders */}
-      <div className="mt-3">
-        <div className="rounded-md border border-input p-2.5">
-          <label className="text-xs font-medium text-muted-foreground block mb-1">Folders</label>
-          <input
-            type="text"
-            value={foldersValue}
-            onChange={(e) => setFoldersValue(e.target.value)}
-            onBlur={saveFolders}
-            onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
-            placeholder="inbox, output"
-            className="text-sm bg-background border border-input rounded px-2 py-1 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
-          />
-          <p className="text-xs text-muted-foreground mt-1">Comma-separated folder names created under {shortId}/.</p>
-        </div>
-      </div>
 
       <ConfirmDialog
         open={confirmDelete}

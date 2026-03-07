@@ -52,19 +52,23 @@ export function ChatHeader({ chatId: chatIdProp, workspaceId }) {
 
   useEffect(() => {
     fetchMeta();
-    const handler = () => fetchMeta();
-    window.addEventListener('chatsupdated', handler);
     const titleHandler = (e) => {
       if (e.detail.chatId === chatId) {
         setTitle(e.detail.title);
       }
     };
-    window.addEventListener('chatTitleUpdated', titleHandler);
-    return () => {
-      window.removeEventListener('chatsupdated', handler);
-      window.removeEventListener('chatTitleUpdated', titleHandler);
+    const starHandler = (e) => {
+      if (e.detail.chatId === chatId) {
+        setStarred(e.detail.starred);
+      }
     };
-  }, [fetchMeta]);
+    window.addEventListener('chatTitleUpdated', titleHandler);
+    window.addEventListener('chatStarUpdated', starHandler);
+    return () => {
+      window.removeEventListener('chatTitleUpdated', titleHandler);
+      window.removeEventListener('chatStarUpdated', starHandler);
+    };
+  }, [fetchMeta, chatId]);
 
   // Auto-focus and select all when entering inline edit mode
   useEffect(() => {
@@ -85,7 +89,7 @@ export function ChatHeader({ chatId: chatIdProp, workspaceId }) {
     if (!trimmed || trimmed === title) return;
     setTitle(trimmed);
     await renameChat(chatId, trimmed);
-    window.dispatchEvent(new Event('chatsupdated'));
+    window.dispatchEvent(new CustomEvent('chatTitleUpdated', { detail: { chatId, title: trimmed } }));
   };
 
   const cancelEdit = () => {
@@ -95,26 +99,26 @@ export function ChatHeader({ chatId: chatIdProp, workspaceId }) {
   const handleRenameFromDialog = async (newTitle) => {
     setTitle(newTitle);
     await renameChat(chatId, newTitle);
-    window.dispatchEvent(new Event('chatsupdated'));
+    window.dispatchEvent(new CustomEvent('chatTitleUpdated', { detail: { chatId, title: newTitle } }));
   };
 
   const handleStar = async () => {
     const newStarred = starred ? 0 : 1;
     setStarred(newStarred);
     await starChat(chatId);
-    window.dispatchEvent(new Event('chatsupdated'));
+    window.dispatchEvent(new CustomEvent('chatStarUpdated', { detail: { chatId, starred: newStarred } }));
   };
 
   const handleDelete = async () => {
     setShowDeleteConfirm(false);
     await deleteChat(chatId);
-    window.dispatchEvent(new Event('chatsupdated'));
+    window.dispatchEvent(new CustomEvent('chatDeleted', { detail: { chatId } }));
     nav?.navigateToChat?.(null);
   };
 
   return (
     <>
-      <header className="sticky top-0 flex items-center gap-2 bg-background px-2 py-1.5 md:px-2 z-10 min-w-0 overflow-hidden">
+      <header className="sticky top-0 flex items-center gap-2 bg-background px-2 py-1.5 md:px-2 z-10 min-w-0">
         {/* Mobile-only: open sidebar sheet */}
         <div className="md:hidden">
           <SidebarTrigger />
