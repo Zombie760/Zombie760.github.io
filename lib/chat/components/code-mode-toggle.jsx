@@ -52,9 +52,13 @@ export function CodeModeToggle({
     if (next && !reposLoaded) {
       setLoadingRepos(true);
       getRepositories().then((data) => {
-        setRepos(data || []);
+        const list = data || [];
+        setRepos(list);
         setReposLoaded(true);
         setLoadingRepos(false);
+        if (list.length === 1) {
+          onRepoChange(list[0].full_name);
+        }
       }).catch(() => setLoadingRepos(false));
     }
     if (!next) {

@@ -60,6 +60,7 @@ Commands:
   set-agent-secret <KEY> [VALUE]    Set a GitHub secret with AGENT_ prefix (also updates .env)
   set-agent-llm-secret <KEY> [VALUE]  Set a GitHub secret with AGENT_LLM_ prefix
   set-var <KEY> [VALUE]             Set a GitHub repository variable
+  user:password <email>             Change a user's password
 `);
 }
 
@@ -780,6 +781,38 @@ async function setVar(key, value) {
   }
 }
 
+async function userPassword(email) {
+  if (!email) {
+    console.error('\n  Usage: thepopebot user:password <email>\n');
+    process.exit(1);
+  }
+
+  const { password, isCancel } = await import('@clack/prompts');
+  const newPassword = await password({
+    message: 'New password:',
+    validate: (input) => {
+      if (!input) return 'Password is required';
+      if (input.length < 8) return 'Password must be at least 8 characters';
+    },
+  });
+  if (isCancel(newPassword)) {
+    console.log('\nCancelled.\n');
+    process.exit(0);
+  }
+
+  const { initDatabase } = await import('../lib/db/index.js');
+  initDatabase();
+  const { updateUserPassword } = await import('../lib/db/users.js');
+
+  const updated = updateUserPassword(email, newPassword);
+  if (updated) {
+    console.log(`\n  Password updated for ${email}.\n`);
+  } else {
+    console.error(`\n  No user found with email: ${email}\n`);
+    process.exit(1);
+  }
+}
+
 switch (command) {
   case 'init':
     await init();
@@ -816,6 +849,9 @@ switch (command) {
     break;
   case 'set-var':
     await setVar(args[0], args[1]);
+    break;
+  case 'user:password':
+    await userPassword(args[0]);
     break;
   default:
     printUsage();

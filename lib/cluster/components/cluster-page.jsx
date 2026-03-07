@@ -606,12 +606,10 @@ function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateFol
         </div>
       </div>
 
-      {/* Separator */}
-      <div className="mt-4 mb-1 border-t border-border" />
-
       {/* Trigger badges */}
-      <div className="mt-3 flex items-center gap-2 flex-wrap">
-        <span className="text-xs text-muted-foreground">Triggers:</span>
+      <div className="mt-4">
+        <label className="text-xs font-medium text-muted-foreground block mb-2">Triggers</label>
+        <div className="flex items-center gap-2 flex-wrap">
         <span className="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium bg-foreground/10 text-foreground">
           Manual
         </span>
@@ -645,6 +643,7 @@ function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateFol
         >
           Webhook
         </button>
+        </div>
       </div>
 
       {/* Trigger config fields */}

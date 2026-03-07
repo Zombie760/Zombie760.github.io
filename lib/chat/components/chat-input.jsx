@@ -46,9 +46,8 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
   const [isDragging, setIsDragging] = useState(false);
   const isStreaming = status === 'streaming' || status === 'submitted';
   const volumeRef = useRef(0);
-  const voiceEnabled = process.env.NEXT_PUBLIC_VOICE_ENABLED === 'true';
 
-  const { isConnecting, isRecording, startRecording, stopRecording } = useVoiceInput({
+  const { voiceAvailable, isConnecting, isRecording, startRecording, stopRecording } = useVoiceInput({
     getToken: getVoiceToken,
     onVolumeChange: (rms) => { volumeRef.current = rms; },
     onTranscript: (text) => {
@@ -145,7 +144,7 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
     );
     if (bare) return disabledContent;
     return (
-      <div className="mx-auto w-full max-w-4xl px-4 pb-[max(1rem,var(--safe-area-bottom))] md:px-6">
+      <div className="mx-auto w-full max-w-4xl px-2 pb-[max(1rem,var(--safe-area-bottom))] md:px-6">
         {disabledContent}
       </div>
     );
@@ -225,7 +224,7 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
                 <PaperclipIcon size={16} />
               </button>
 
-              {voiceEnabled && <VoiceBars volumeRef={volumeRef} isRecording={isRecording} />}
+              {voiceAvailable && <VoiceBars volumeRef={volumeRef} isRecording={isRecording} />}
 
               <input
                 ref={fileInputRef}
@@ -265,7 +264,7 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
                   <SendIcon size={16} />
                 </button>
               )}
-              {voiceEnabled && !isStreaming && (
+              {voiceAvailable && !isStreaming && (
                 <button
                   type="button"
                   onClick={isRecording ? stopRecording : startRecording}
@@ -291,7 +290,7 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
 
   if (bare) return formContent;
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 pb-[max(1rem,var(--safe-area-bottom))] md:px-6">
+    <div className="mx-auto w-full max-w-4xl px-2 pb-[max(1rem,var(--safe-area-bottom))] md:px-6">
       {formContent}
     </div>
   );

@@ -203,65 +203,67 @@ function ClusterRow({ cluster, onDelete, onStar, onRename }) {
   };
 
   return (
-    <a
-      href={`/cluster/${cluster.id}`}
-      className="relative group flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-muted/50 rounded-md"
-      style={{ textDecoration: 'inherit', color: 'inherit' }}
-      onClick={(e) => {
-        if (editing) { e.preventDefault(); return; }
-      }}
-    >
-      <ClusterIcon size={16} />
-      <div className="flex-1 min-w-0">
-        {editing ? (
-          <input
-            ref={inputRef}
-            type="text"
-            value={editName}
-            onChange={(e) => setEditName(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') saveRename();
-              if (e.key === 'Escape') cancelRename();
-            }}
-            onBlur={saveRename}
-            onClick={(e) => e.stopPropagation()}
-            className="w-full text-sm bg-background border border-input rounded px-1.5 py-0.5 focus:outline-none focus:ring-2 focus:ring-ring"
-          />
-        ) : (
-          <span className="text-sm truncate block">
-            {cluster.name || 'New Cluster'}
+    <>
+      <a
+        href={`/cluster/${cluster.id}`}
+        className="relative group flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-muted/50 rounded-md"
+        style={{ textDecoration: 'inherit', color: 'inherit' }}
+        onClick={(e) => {
+          if (editing) { e.preventDefault(); return; }
+        }}
+      >
+        <ClusterIcon size={16} />
+        <div className="flex-1 min-w-0">
+          {editing ? (
+            <input
+              ref={inputRef}
+              type="text"
+              value={editName}
+              onChange={(e) => setEditName(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') saveRename();
+                if (e.key === 'Escape') cancelRename();
+              }}
+              onBlur={saveRename}
+              onClick={(e) => e.stopPropagation()}
+              className="w-full text-sm bg-background border border-input rounded px-1.5 py-0.5 focus:outline-none focus:ring-2 focus:ring-ring"
+            />
+          ) : (
+            <span className="text-sm truncate block">
+              {cluster.name || 'New Cluster'}
+            </span>
+          )}
+          <span className="text-xs text-muted-foreground">
+            Updated {timeAgo(cluster.updatedAt)}
           </span>
-        )}
-        <span className="text-xs text-muted-foreground">
-          Updated {timeAgo(cluster.updatedAt)}
-        </span>
-      </div>
-      {!editing && (
-        <div className="shrink-0 flex items-center gap-1">
-          <button
-            className="rounded-md p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted"
-            aria-label="Rename"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              startRename();
-            }}
-          >
-            <PencilIcon size={16} />
-          </button>
-          <button
-            className="rounded-md p-1.5 text-muted-foreground hover:text-destructive hover:bg-muted"
-            aria-label="Delete"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              setConfirmDelete(true);
-            }}
-          >
-            <TrashIcon size={16} />
-          </button>
         </div>
-      )}
+        {!editing && (
+          <div className="shrink-0 flex items-center gap-1">
+            <button
+              className="rounded-md p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted"
+              aria-label="Rename"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                startRename();
+              }}
+            >
+              <PencilIcon size={16} />
+            </button>
+            <button
+              className="rounded-md p-1.5 text-muted-foreground hover:text-destructive hover:bg-muted"
+              aria-label="Delete"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setConfirmDelete(true);
+              }}
+            >
+              <TrashIcon size={16} />
+            </button>
+          </div>
+        )}
+      </a>
       <ConfirmDialog
         open={confirmDelete}
         title="Delete cluster?"
@@ -273,6 +275,6 @@ function ClusterRow({ cluster, onDelete, onStar, onRename }) {
         }}
         onCancel={() => setConfirmDelete(false)}
       />
-    </a>
+    </>
   );
 }

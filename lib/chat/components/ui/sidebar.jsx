@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { cn } from '../../utils.js';
 import { Sheet, SheetContent } from './sheet.js';
 
@@ -77,6 +77,28 @@ export function SidebarProvider({
 
   const state = open ? 'expanded' : 'collapsed';
 
+  // Swipe from left edge to open sidebar on mobile
+  const edgeTouchStart = useRef(null);
+
+  const handleEdgeTouchStart = useCallback((e) => {
+    if (!isMobile || openMobile) return;
+    const x = e.touches[0].clientX;
+    // Only trigger from the left 24px edge
+    if (x <= 24) {
+      edgeTouchStart.current = { x, y: e.touches[0].clientY };
+    }
+  }, [isMobile, openMobile]);
+
+  const handleEdgeTouchEnd = useCallback((e) => {
+    if (!edgeTouchStart.current) return;
+    const endX = e.changedTouches[0].clientX;
+    const deltaX = endX - edgeTouchStart.current.x;
+    if (deltaX > 60) {
+      setOpenMobile(true);
+    }
+    edgeTouchStart.current = null;
+  }, [setOpenMobile]);
+
   const contextValue = useMemo(
     () => ({
       state,
@@ -100,6 +122,8 @@ export function SidebarProvider({
           '--sidebar-width-mobile': SIDEBAR_WIDTH_MOBILE,
         }}
         data-sidebar-state={state}
+        onTouchStart={handleEdgeTouchStart}
+        onTouchEnd={handleEdgeTouchEnd}
       >
         {children}
       </div>

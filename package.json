@@ -45,7 +45,8 @@
     "db:studio": "drizzle-kit studio",
     "docker:build": "node bin/docker-build.js",
     "test": "echo \"No tests yet\" && exit 0",
-    "sync": "node bin/cli.js sync"
+    "sync": "node bin/cli.js sync",
+    "user:password": "node bin/cli.js user:password"
   },
   "keywords": [
     "ai",
