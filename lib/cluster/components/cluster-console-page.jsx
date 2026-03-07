@@ -284,16 +284,16 @@ function WorkerTile({ worker, stats, logs, logVersion, roles }) {
         )}
         <div className="ml-auto flex items-center rounded-md border border-input overflow-hidden">
           <button
-            onClick={() => setMode('console')}
-            className={`px-2 py-1 text-xs transition-colors ${mode === 'console' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
-          >
-            Console
-          </button>
-          <button
             onClick={() => setMode('code')}
             className={`px-2 py-1 text-xs transition-colors ${mode === 'code' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
           >
             Code
+          </button>
+          <button
+            onClick={() => setMode('console')}
+            className={`px-2 py-1 text-xs transition-colors ${mode === 'console' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
+          >
+            Console
           </button>
         </div>
       </div>
