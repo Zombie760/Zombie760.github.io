@@ -60,12 +60,12 @@ export function ClusterConsolePage({ session, clusterId }) {
       es.addEventListener('log', (e) => {
         try {
           const data = JSON.parse(e.data);
-          const { workerId, raw, parsed } = data;
+          const { workerId, stream, raw, parsed } = data;
           if (!logBuffers.current.has(workerId)) {
             logBuffers.current.set(workerId, []);
           }
           const buf = logBuffers.current.get(workerId);
-          buf.push({ raw, parsed });
+          buf.push({ stream, raw, parsed });
           if (buf.length > MAX_LOG_ENTRIES) {
             buf.splice(0, buf.length - MAX_LOG_ENTRIES);
           }
@@ -300,21 +300,30 @@ function WorkerTile({ worker, stats, logs, logVersion, roles }) {
 
       {/* Log area */}
       <div className="flex-1 overflow-y-auto p-2 font-mono text-xs min-h-0 bg-background/50">
-        {logs.length === 0 ? (
-          <div className="flex items-center justify-center h-full text-muted-foreground text-xs">
-            {isRunning ? 'Waiting for output...' : 'No active session'}
-          </div>
-        ) : mode === 'console' ? (
-          <div className="space-y-0">
-            {logs.map((entry, i) => (
-              <div key={i} className="text-muted-foreground whitespace-pre-wrap break-all leading-relaxed">
-                {entry.raw}
+        {(() => {
+          const filtered = mode === 'console'
+            ? logs.filter((e) => e.stream === 'stderr')
+            : logs.filter((e) => e.stream === 'stdout');
+          if (filtered.length === 0) {
+            return (
+              <div className="flex items-center justify-center h-full text-muted-foreground text-xs">
+                {isRunning ? 'Waiting for output...' : 'No active session'}
               </div>
-            ))}
-          </div>
-        ) : (
-          <ClaudeLogView logs={logs} expandedTools={expandedTools} toggleTool={toggleTool} />
-        )}
+            );
+          }
+          if (mode === 'console') {
+            return (
+              <div className="space-y-0">
+                {filtered.map((entry, i) => (
+                  <div key={i} className="text-muted-foreground whitespace-pre-wrap break-all leading-relaxed">
+                    {entry.raw}
+                  </div>
+                ))}
+              </div>
+            );
+          }
+          return <ClaudeLogView logs={filtered} expandedTools={expandedTools} toggleTool={toggleTool} />;
+        })()}
         <div ref={logEndRef} />
       </div>
     </div>
