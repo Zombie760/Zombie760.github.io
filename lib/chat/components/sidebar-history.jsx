@@ -117,11 +117,11 @@ export function SidebarHistory() {
 
   useEffect(() => {
     const titleHandler = (e) => {
-      const { chatId, title } = e.detail;
+      const { chatId, title, codeWorkspaceId } = e.detail;
       setChats(prev => {
         const exists = prev.some(c => c.id === chatId);
         if (exists) return prev.map(c => c.id === chatId ? { ...c, title } : c);
-        return [{ id: chatId, title, starred: 0, updatedAt: new Date().toISOString() }, ...prev];
+        return [{ id: chatId, title, starred: 0, updatedAt: new Date().toISOString(), codeWorkspaceId: codeWorkspaceId || null }, ...prev];
       });
     };
     const starHandler = (e) => {

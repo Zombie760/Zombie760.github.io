@@ -96,7 +96,7 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
         .then(res => res.json())
         .then(({ title, codeWorkspaceId, featureBranch }) => {
           if (title) {
-            window.dispatchEvent(new CustomEvent('chatTitleUpdated', { detail: { chatId, title } }));
+            window.dispatchEvent(new CustomEvent('chatTitleUpdated', { detail: { chatId, title, codeWorkspaceId } }));
           }
           if (codeWorkspaceId) {
             setWorkspaceState({ id: codeWorkspaceId, featureBranch, repo, branch, containerName: null });
