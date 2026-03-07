@@ -205,7 +205,7 @@ function ClusterRow({ cluster, onDelete, onStar, onRename }) {
   return (
     <>
       <a
-        href={`/cluster/${cluster.id}`}
+        href={`/cluster/${cluster.id}/console`}
         className="relative group flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-muted/50 rounded-md"
         style={{ textDecoration: 'inherit', color: 'inherit' }}
         onClick={(e) => {

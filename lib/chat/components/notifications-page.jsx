@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react';
 import { Streamdown } from 'streamdown';
 import { PageLayout } from './page-layout.js';
-import { BellIcon } from './icons.js';
+import { BellIcon, SpinnerIcon } from './icons.js';
 import { linkSafety } from './message.js';
 import { getNotifications, markNotificationsRead } from '../actions.js';
+
+const PAGE_SIZE = 25;
 
 function timeAgo(ts) {
   const seconds = Math.floor((Date.now() - ts) / 1000);
@@ -23,12 +25,17 @@ function timeAgo(ts) {
 export function NotificationsPage({ session }) {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [hasMore, setHasMore] = useState(false);
+  const [offset, setOffset] = useState(0);
+  const [loadingMore, setLoadingMore] = useState(false);
 
   useEffect(() => {
     async function load() {
       try {
-        const result = await getNotifications();
-        setNotifications(result);
+        const result = await getNotifications(PAGE_SIZE, 0);
+        setNotifications(result.notifications);
+        setHasMore(result.hasMore);
+        setOffset(PAGE_SIZE);
         // Mark all as read on view
         await markNotificationsRead();
       } catch (err) {
@@ -39,6 +46,20 @@ export function NotificationsPage({ session }) {
     }
     load();
   }, []);
+
+  const loadMore = async () => {
+    setLoadingMore(true);
+    try {
+      const result = await getNotifications(PAGE_SIZE, offset);
+      setNotifications(prev => [...prev, ...result.notifications]);
+      setHasMore(result.hasMore);
+      setOffset(prev => prev + PAGE_SIZE);
+    } catch (err) {
+      console.error('Failed to load more notifications:', err);
+    } finally {
+      setLoadingMore(false);
+    }
+  };
 
   return (
     <PageLayout session={session}>
@@ -80,6 +101,24 @@ export function NotificationsPage({ session }) {
               </div>
             </div>
           ))}
+          {hasMore && (
+            <div className="flex justify-center mt-2">
+              <button
+                onClick={loadMore}
+                disabled={loadingMore}
+                className="inline-flex items-center gap-1.5 rounded-md px-4 py-2 min-h-[44px] text-sm font-medium border border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
+              >
+                {loadingMore ? (
+                  <>
+                    <SpinnerIcon size={14} />
+                    Loading...
+                  </>
+                ) : (
+                  'Show more'
+                )}
+              </button>
+            </div>
+          )}
         </div>
       )}
     </PageLayout>

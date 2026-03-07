@@ -590,68 +590,66 @@ function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateFol
       </div>
 
       {/* Worker Folders */}
-      <div className="mt-3">
-        <div className="rounded-md border border-input p-2.5">
-          <label className="text-xs font-medium text-muted-foreground block mb-1">Folders</label>
-          <input
-            type="text"
-            value={foldersValue}
-            onChange={(e) => setFoldersValue(e.target.value)}
-            onBlur={saveFolders}
-            onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
-            placeholder="inbox, output"
-            className="text-sm bg-background border border-input rounded px-2 py-1 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
-          />
-          <p className="text-xs text-muted-foreground mt-1">Comma-separated folder names created under {shortId}/.</p>
-        </div>
+      <div className="mt-4">
+        <label className="text-sm font-medium block mb-2">Folders</label>
+        <input
+          type="text"
+          value={foldersValue}
+          onChange={(e) => setFoldersValue(e.target.value)}
+          onBlur={saveFolders}
+          onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
+          placeholder="inbox, output"
+          className="text-sm bg-background border border-input rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
+        />
+        <p className="text-xs text-muted-foreground mt-1.5">Comma-separated folder names created under {shortId}/.</p>
       </div>
 
-      {/* Trigger badges */}
+      {/* Triggers */}
       <div className="mt-4">
-        <label className="text-xs font-medium text-muted-foreground block mb-2">Triggers</label>
+        <label className="text-sm font-medium block mb-2">Triggers</label>
         <div className="flex items-center gap-2 flex-wrap">
-        <span className="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium bg-foreground/10 text-foreground">
-          Manual
-        </span>
-        <button
-          onClick={() => toggleTrigger('cron')}
-          className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium border transition-colors ${
-            hasCron
-              ? 'bg-foreground text-background border-foreground'
-              : 'bg-background text-muted-foreground border-input hover:border-foreground/50'
-          }`}
-        >
-          Cron
-        </button>
-        <button
-          onClick={() => toggleTrigger('file_watch')}
-          className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium border transition-colors ${
-            hasFileWatch
-              ? 'bg-foreground text-background border-foreground'
-              : 'bg-background text-muted-foreground border-input hover:border-foreground/50'
-          }`}
-        >
-          File Watch
-        </button>
-        <button
-          onClick={() => toggleTrigger('webhook')}
-          className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium border transition-colors ${
-            hasWebhook
-              ? 'bg-foreground text-background border-foreground'
-              : 'bg-background text-muted-foreground border-input hover:border-foreground/50'
-          }`}
-        >
-          Webhook
-        </button>
+          <span className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium bg-foreground/10 text-foreground">
+            Manual
+          </span>
+          <button
+            onClick={() => toggleTrigger('cron')}
+            className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium border transition-colors ${
+              hasCron
+                ? 'bg-foreground text-background border-foreground'
+                : 'bg-background text-muted-foreground border-input hover:border-foreground/50'
+            }`}
+          >
+            Cron
+          </button>
+          <button
+            onClick={() => toggleTrigger('file_watch')}
+            className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium border transition-colors ${
+              hasFileWatch
+                ? 'bg-foreground text-background border-foreground'
+                : 'bg-background text-muted-foreground border-input hover:border-foreground/50'
+            }`}
+          >
+            File Watch
+          </button>
+          <button
+            onClick={() => toggleTrigger('webhook')}
+            className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium border transition-colors ${
+              hasWebhook
+                ? 'bg-foreground text-background border-foreground'
+                : 'bg-background text-muted-foreground border-input hover:border-foreground/50'
+            }`}
+          >
+            Webhook
+          </button>
         </div>
       </div>
 
       {/* Trigger config fields */}
       {(hasCron || hasFileWatch || hasWebhook) && (
-        <div className="mt-3 flex flex-col gap-2">
+        <div className="mt-3 flex flex-col gap-3">
           {hasCron && (
-            <div className="rounded-md border border-input p-2.5">
-              <label className="text-xs font-medium text-muted-foreground block mb-1">Cron Schedule</label>
+            <div>
+              <label className="text-xs font-medium text-muted-foreground block mb-1.5">Cron Schedule</label>
               <input
                 type="text"
                 value={cronValue}
@@ -659,13 +657,13 @@ function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateFol
                 onBlur={saveCron}
                 onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
                 placeholder="*/5 * * * *"
-                className="text-sm bg-background border border-input rounded px-2 py-1 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
+                className="text-sm bg-background border border-input rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
               />
             </div>
           )}
           {hasFileWatch && (
-            <div className="rounded-md border border-input p-2.5">
-              <label className="text-xs font-medium text-muted-foreground block mb-1">Watch Paths</label>
+            <div>
+              <label className="text-xs font-medium text-muted-foreground block mb-1.5">Watch Paths</label>
               <input
                 type="text"
                 value={fileWatchValue}
@@ -673,9 +671,9 @@ function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateFol
                 onBlur={saveFileWatch}
                 onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
                 placeholder="shared/inbox, shared/reports"
-                className="text-sm bg-background border border-input rounded px-2 py-1 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
+                className="text-sm bg-background border border-input rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
               />
-              <p className="text-xs text-muted-foreground mt-1">Comma-separated paths relative to cluster data dir.</p>
+              <p className="text-xs text-muted-foreground mt-1.5">Comma-separated paths relative to cluster data dir.</p>
             </div>
           )}
           {hasWebhook && (

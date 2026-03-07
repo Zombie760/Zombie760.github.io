@@ -217,7 +217,7 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="inline-flex items-center justify-center rounded-lg p-2 text-muted-foreground hover:text-foreground"
+                className="inline-flex items-center justify-center rounded-lg p-2.5 text-muted-foreground hover:text-foreground"
                 aria-label="Attach files"
                 disabled={isStreaming}
               >
@@ -244,7 +244,7 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
                 <button
                   type="button"
                   onClick={stop}
-                  className="inline-flex items-center justify-center rounded-lg bg-foreground p-2 text-background hover:opacity-80"
+                  className="inline-flex items-center justify-center rounded-lg bg-foreground p-2.5 text-background hover:opacity-80"
                   aria-label="Stop generating"
                 >
                   <StopIcon size={16} />
@@ -254,7 +254,7 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
                   type="submit"
                   disabled={!canSend}
                   className={cn(
-                    'inline-flex items-center justify-center rounded-lg p-2',
+                    'inline-flex items-center justify-center rounded-lg p-2.5',
                     canSend
                       ? 'bg-foreground text-background hover:opacity-80'
                       : 'bg-muted-foreground/20 text-muted-foreground cursor-not-allowed'
@@ -270,7 +270,7 @@ export function ChatInput({ input, setInput, onSubmit, status, stop, files, setF
                   onClick={isRecording ? stopRecording : startRecording}
                   disabled={isConnecting}
                   className={cn(
-                    'inline-flex items-center justify-center rounded-lg p-2',
+                    'inline-flex items-center justify-center rounded-lg p-2.5',
                     isConnecting
                       ? 'bg-muted-foreground/20 text-muted-foreground cursor-wait animate-pulse'
                       : isRecording

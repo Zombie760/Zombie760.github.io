@@ -24,6 +24,7 @@
     "./voice/actions": "./lib/voice/actions.js",
     "./cluster": "./lib/cluster/components/index.js",
     "./cluster/actions": "./lib/cluster/actions.js",
+    "./cluster/stream": "./lib/cluster/stream.js",
     "./auth/components": "./lib/auth/components/index.js",
     "./middleware": "./lib/auth/middleware.js",
     "./package.json": "./package.json"
@@ -45,8 +46,7 @@
     "db:studio": "drizzle-kit studio",
     "docker:build": "node bin/docker-build.js",
     "test": "echo \"No tests yet\" && exit 0",
-    "sync": "node bin/cli.js sync",
-    "user:password": "node bin/cli.js user:password"
+    "sync": "node bin/cli.js sync"
   },
   "keywords": [
     "ai",

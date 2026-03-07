@@ -127,16 +127,19 @@ function RunnersWorkflowList({ runs }) {
 export function RunnersPage({ session }) {
   const [runs, setRuns] = useState([]);
   const [hasMore, setHasMore] = useState(false);
-  const [page, setPage] = useState(1);
+  const [maxPage, setMaxPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
-  const fetchPage = useCallback(async (p) => {
+  const PAGE_SIZE = 25;
+
+  const loadInitial = useCallback(async () => {
     try {
-      const data = await getRunnersStatus(p);
+      const data = await getRunnersStatus(1);
       setRuns(data.runs || []);
       setHasMore(data.hasMore || false);
-      setPage(p);
+      setMaxPage(1);
     } catch (err) {
       console.error('Failed to fetch runners status:', err);
     } finally {
@@ -145,14 +148,48 @@ export function RunnersPage({ session }) {
     }
   }, []);
 
-  // Initial load
-  useEffect(() => { fetchPage(1); }, [fetchPage]);
+  const loadMore = useCallback(async () => {
+    setLoadingMore(true);
+    try {
+      const nextPage = maxPage + 1;
+      const data = await getRunnersStatus(nextPage);
+      const newRuns = data.runs || [];
+      setRuns(prev => {
+        const existingIds = new Set(prev.map(r => r.run_id));
+        return [...prev, ...newRuns.filter(r => !existingIds.has(r.run_id))];
+      });
+      setHasMore(data.hasMore || false);
+      setMaxPage(nextPage);
+    } catch (err) {
+      console.error('Failed to load more runners:', err);
+    } finally {
+      setLoadingMore(false);
+    }
+  }, [maxPage]);
 
-  // Auto-refresh current page every 10s
+  const autoRefresh = useCallback(async () => {
+    try {
+      const data = await getRunnersStatus(1);
+      const freshRuns = data.runs || [];
+      setRuns(prev => {
+        const freshIds = new Set(freshRuns.map(r => r.run_id));
+        const olderRuns = prev.slice(PAGE_SIZE).filter(r => !freshIds.has(r.run_id));
+        return [...freshRuns, ...olderRuns];
+      });
+      if (maxPage === 1) setHasMore(data.hasMore || false);
+    } catch (err) {
+      console.error('Failed to auto-refresh runners:', err);
+    }
+  }, [maxPage]);
+
+  // Initial load
+  useEffect(() => { loadInitial(); }, [loadInitial]);
+
+  // Auto-refresh page 1 every 10s
   useEffect(() => {
-    const interval = setInterval(() => fetchPage(page), 10000);
+    const interval = setInterval(autoRefresh, 10000);
     return () => clearInterval(interval);
-  }, [fetchPage, page]);
+  }, [autoRefresh]);
 
   return (
     <PageLayout session={session}>
@@ -161,7 +198,7 @@ export function RunnersPage({ session }) {
         <h1 className="text-2xl font-semibold">Runners</h1>
         {!loading && (
           <button
-            onClick={() => { setRefreshing(true); fetchPage(1); }}
+            onClick={() => { setRefreshing(true); loadInitial(); }}
             disabled={refreshing}
             className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 min-h-[44px] text-xs font-medium border border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
           >
@@ -185,24 +222,25 @@ export function RunnersPage({ session }) {
       ) : (
         <div>
           <RunnersWorkflowList runs={runs} />
-          {/* Pagination */}
-          <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
-            <button
-              onClick={() => { setRefreshing(true); fetchPage(page - 1); }}
-              disabled={page <= 1 || refreshing}
-              className="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 min-h-[44px] text-sm font-medium border border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
-            >
-              Previous
-            </button>
-            <span className="text-sm text-muted-foreground">Page {page}</span>
-            <button
-              onClick={() => { setRefreshing(true); fetchPage(page + 1); }}
-              disabled={!hasMore || refreshing}
-              className="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 min-h-[44px] text-sm font-medium border border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
-            >
-              Next
-            </button>
-          </div>
+          {/* Show more */}
+          {hasMore && (
+            <div className="flex justify-center mt-4 pt-4 border-t border-border">
+              <button
+                onClick={loadMore}
+                disabled={loadingMore}
+                className="inline-flex items-center gap-1.5 rounded-md px-4 py-2 min-h-[44px] text-sm font-medium border border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50 disabled:pointer-events-none"
+              >
+                {loadingMore ? (
+                  <>
+                    <SpinnerIcon size={14} />
+                    Loading...
+                  </>
+                ) : (
+                  'Show more'
+                )}
+              </button>
+            </div>
+          )}
         </div>
       )}
     </PageLayout>

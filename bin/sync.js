@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 const PACKAGE_DIR = path.join(__dirname, '..');
 
 const EXCLUDED_FILENAMES = ['CLAUDE.md'];
-const SKIP_PATHS = ['skills/active'];
+const SKIP_PATHS = ['skills/active', 'cron', 'triggers'];
 
 function destPath(templateRelPath) {
   if (templateRelPath.endsWith('.template')) {

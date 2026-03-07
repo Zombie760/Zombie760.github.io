@@ -60,13 +60,13 @@ function ChatTypeFilter({ filter, setFilter }) {
           key={value}
           onClick={() => setFilter(value)}
           className={cn(
-            'flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium transition-colors',
+            'flex items-center gap-1 rounded-md px-2.5 py-1 text-sm font-medium transition-colors',
             filter === value
               ? 'bg-background text-foreground shadow-sm'
               : 'text-muted-foreground hover:text-foreground'
           )}
         >
-          {Icon && <Icon size={12} />}
+          {Icon && <Icon size={14} />}
           {label}
         </button>
       ))}
@@ -264,9 +264,10 @@ export function SidebarHistory() {
           <SidebarGroupContent>
             <a
               href="/chats"
-              className="block px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              More Chats
+              <MessageIcon size={14} />
+              All Chats
             </a>
           </SidebarGroupContent>
         </SidebarGroup>
