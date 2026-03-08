@@ -28,7 +28,6 @@ Key files: `schema.js` (source of truth), `drizzle/` (generated migrations), `dr
 | `code_workspaces` | Code workspace containers (user_id, container_name, repo, branch, coding_agent, starred) |
 | `notifications` | Job completion notifications (notification text, payload, read status) |
 | `subscriptions` | Channel subscriptions (platform, channel_id) |
-| `clusters` | Worker clusters (user_id, name, starred, timestamps) |
-| `cluster_roles` | Reusable role definitions (user_id, role_name, role description) |
-| `cluster_workers` | Individual workers in a cluster (cluster_id, cluster_role_id, code_workspace_id) |
+| `clusters` | Worker clusters (user_id, name, system_prompt, folders, enabled, starred) |
+| `cluster_roles` | Role definitions scoped to a cluster (cluster_id, role_name, role, trigger_config, max_concurrency, cleanup_worker_dir, folders) |
 | `settings` | Key-value configuration store (also stores API keys via type/key/value) |

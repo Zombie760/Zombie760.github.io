@@ -237,11 +237,11 @@ async function POST(request) {
     // Trigger errors are non-fatal
   }
 
-  // Cluster worker webhooks
-  const clusterMatch = routePath.match(/^\/cluster\/([a-f0-9-]+)\/webhook$/);
+  // Cluster role webhooks
+  const clusterMatch = routePath.match(/^\/cluster\/([a-f0-9-]+)\/role\/([a-f0-9-]+)\/webhook$/);
   if (clusterMatch) {
     const { handleClusterWebhook } = await import('../lib/cluster/runtime.js');
-    return handleClusterWebhook(clusterMatch[1], request);
+    return handleClusterWebhook(clusterMatch[1], clusterMatch[2], request);
   }
 
   // Route to handler

@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { ClusterIcon, TrashIcon, SearchIcon, PlusIcon, PencilIcon } from '../../chat/components/icons.js';
-import { getClusters, deleteCluster, renameCluster, starCluster, createCluster } from '../actions.js';
+import { getClusters, deleteCluster, createCluster } from '../actions.js';
 import { ConfirmDialog } from '../../chat/components/ui/confirm-dialog.js';
 import { cn } from '../../chat/utils.js';
 
@@ -82,22 +82,6 @@ export function ClustersPage() {
     if (!success) loadClusters();
   };
 
-  const handleStar = async (clusterId) => {
-    setClusters((prev) =>
-      prev.map((c) => (c.id === clusterId ? { ...c, starred: c.starred ? 0 : 1 } : c))
-    );
-    const { success } = await starCluster(clusterId);
-    if (!success) loadClusters();
-  };
-
-  const handleRename = async (clusterId, name) => {
-    setClusters((prev) =>
-      prev.map((c) => (c.id === clusterId ? { ...c, name } : c))
-    );
-    const { success } = await renameCluster(clusterId, name);
-    if (!success) loadClusters();
-  };
-
   const filtered = query
     ? clusters.filter((c) => c.name?.toLowerCase().includes(query.toLowerCase()))
     : clusters;
@@ -157,8 +141,6 @@ export function ClustersPage() {
                       key={cluster.id}
                       cluster={cluster}
                       onDelete={handleDelete}
-                      onStar={handleStar}
-                      onRename={handleRename}
                     />
                   ))}
                 </div>
@@ -171,36 +153,8 @@ export function ClustersPage() {
   );
 }
 
-function ClusterRow({ cluster, onDelete, onStar, onRename }) {
+function ClusterRow({ cluster, onDelete }) {
   const [confirmDelete, setConfirmDelete] = useState(false);
-  const [editing, setEditing] = useState(false);
-  const [editName, setEditName] = useState(cluster.name || '');
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    if (editing && inputRef.current) {
-      inputRef.current.focus();
-      inputRef.current.select();
-    }
-  }, [editing]);
-
-  const startRename = () => {
-    setEditName(cluster.name || '');
-    setEditing(true);
-  };
-
-  const saveRename = () => {
-    const trimmed = editName.trim();
-    if (trimmed && trimmed !== cluster.name) {
-      onRename(cluster.id, trimmed);
-    }
-    setEditing(false);
-  };
-
-  const cancelRename = () => {
-    setEditing(false);
-    setEditName(cluster.name || '');
-  };
 
   return (
     <>
@@ -208,66 +162,42 @@ function ClusterRow({ cluster, onDelete, onStar, onRename }) {
         href={`/cluster/${cluster.id}/console`}
         className="relative group flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-muted/50 rounded-md"
         style={{ textDecoration: 'inherit', color: 'inherit' }}
-        onClick={(e) => {
-          if (editing) { e.preventDefault(); return; }
-        }}
       >
         <ClusterIcon size={16} />
         <div className="flex-1 min-w-0">
-          {editing ? (
-            <input
-              ref={inputRef}
-              type="text"
-              value={editName}
-              onChange={(e) => setEditName(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') saveRename();
-                if (e.key === 'Escape') cancelRename();
-              }}
-              onBlur={saveRename}
-              onClick={(e) => e.stopPropagation()}
-              className="w-full text-sm bg-background border border-input rounded px-1.5 py-0.5 focus:outline-none focus:ring-2 focus:ring-ring"
-            />
-          ) : (
-            <span className="text-sm truncate block">
-              {cluster.name || 'New Cluster'}
-            </span>
-          )}
+          <span className="text-sm truncate block">
+            {cluster.name || 'New Cluster'}
+          </span>
           <span className="text-xs text-muted-foreground">
             Updated {timeAgo(cluster.updatedAt)}
           </span>
         </div>
-        {!editing && (
-          <div className="shrink-0 flex items-center gap-1">
-            <button
-              className="rounded-md p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted"
-              aria-label="Rename"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                startRename();
-              }}
-            >
-              <PencilIcon size={16} />
-            </button>
-            <button
-              className="rounded-md p-1.5 text-muted-foreground hover:text-destructive hover:bg-muted"
-              aria-label="Delete"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                setConfirmDelete(true);
-              }}
-            >
-              <TrashIcon size={16} />
-            </button>
-          </div>
-        )}
+        <div className="shrink-0 flex items-center gap-1">
+          <a
+            href={`/cluster/${cluster.id}`}
+            className="rounded-md p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted"
+            aria-label="Edit cluster"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <PencilIcon size={16} />
+          </a>
+          <button
+            className="rounded-md p-1.5 text-muted-foreground hover:text-destructive hover:bg-muted"
+            aria-label="Delete"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setConfirmDelete(true);
+            }}
+          >
+            <TrashIcon size={16} />
+          </button>
+        </div>
       </a>
       <ConfirmDialog
         open={confirmDelete}
         title="Delete cluster?"
-        description="This will permanently delete this cluster and all its workers."
+        description="This will permanently delete this cluster and all its roles."
         confirmLabel="Delete"
         onConfirm={() => {
           setConfirmDelete(false);

@@ -1,37 +1,53 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { DndContext, closestCenter, PointerSensor, KeyboardSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { SortableContext, horizontalListSortingStrategy, useSortable, arrayMove } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import { PageLayout } from '../../chat/components/page-layout.js';
 import { PlusIcon, TrashIcon, PencilIcon, CopyIcon, CheckIcon } from '../../chat/components/icons.js';
 import {
   getCluster, renameCluster, deleteCluster, updateClusterSystemPrompt, updateClusterFolders,
-  getClusterRoles, addClusterWorker, assignWorkerRole, renameClusterWorker,
-  updateWorkerTriggers, updateWorkerFoldersAction, removeClusterWorker,
-  triggerWorkerManually, toggleCluster, stopWorker, getClusterStatus,
+  createClusterRoleAction, updateClusterRoleAction, deleteClusterRoleAction,
+  triggerRoleManually, toggleCluster, stopRoleAction, getClusterStatus, reorderClusterRolesAction,
 } from '../actions.js';
 import { ConfirmDialog } from '../../chat/components/ui/confirm-dialog.js';
 
-export function ClusterPage({ session, clusterId }) {
+export function ClusterPage({ session, clusterId, roleId }) {
   const [cluster, setCluster] = useState(null);
-  const [roles, setRoles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [editingName, setEditingName] = useState(false);
   const [nameValue, setNameValue] = useState('');
   const [systemPromptValue, setSystemPromptValue] = useState('');
-  const [workerStatus, setWorkerStatus] = useState({});
+  const [roleStatus, setRoleStatus] = useState({});
   const [clusterBusy, setClusterBusy] = useState(false);
   const [foldersValue, setFoldersValue] = useState('');
   const [confirmDeleteCluster, setConfirmDeleteCluster] = useState(false);
+  const [showPlaceholders, setShowPlaceholders] = useState(false);
+  const [activeTab, setActiveTab] = useState(roleId || 'general');
   const nameRef = useRef(null);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+    useSensor(KeyboardSensor)
+  );
+
+  const updateUrl = (tab) => {
+    const url = tab === 'general'
+      ? `/cluster/${clusterId}`
+      : `/cluster/${clusterId}/role/${tab}`;
+    window.history.replaceState(null, '', url);
+  };
+
+  const switchTab = (tab) => {
+    setActiveTab(tab);
+    updateUrl(tab);
+  };
 
   const load = async () => {
     try {
-      const [result, allRoles] = await Promise.all([
-        getCluster(clusterId),
-        getClusterRoles(),
-      ]);
+      const result = await getCluster(clusterId);
       setCluster(result);
-      setRoles(allRoles);
       setNameValue(result?.name || '');
       setSystemPromptValue(result?.systemPrompt || '');
       setFoldersValue(result?.folders ? result.folders.join(', ') : '');
@@ -48,18 +64,18 @@ export function ClusterPage({ session, clusterId }) {
 
   // Status polling
   useEffect(() => {
-    if (!cluster?.workers?.length) return;
+    if (!cluster?.roles?.length) return;
     let active = true;
     const poll = async () => {
       try {
         const status = await getClusterStatus(clusterId);
-        if (active) setWorkerStatus(status);
+        if (active) setRoleStatus(status);
       } catch {}
     };
     poll();
     const interval = setInterval(poll, 10000);
     return () => { active = false; clearInterval(interval); };
-  }, [cluster?.workers?.length, clusterId]);
+  }, [cluster?.roles?.length, clusterId]);
 
   useEffect(() => {
     if (editingName && nameRef.current) {
@@ -93,63 +109,34 @@ export function ClusterPage({ session, clusterId }) {
     }
   };
 
-  const handleAddWorker = async () => {
-    const { success, worker } = await addClusterWorker(clusterId);
+  const handleAddRole = async () => {
+    const { success, role } = await createClusterRoleAction(clusterId, 'New Role');
     if (success) {
       setCluster((prev) => ({
         ...prev,
-        workers: [...(prev.workers || []), worker],
+        roles: [...(prev.roles || []), { ...role, triggerConfig: null, folders: null }],
       }));
+      switchTab(role.id);
     }
   };
 
-  const handleAssignRole = async (workerId, clusterRoleId) => {
-    const roleId = clusterRoleId || null;
-    await assignWorkerRole(workerId, roleId);
+  const handleUpdateRole = async (roleId, updates) => {
     setCluster((prev) => ({
       ...prev,
-      workers: prev.workers.map((w) =>
-        w.id === workerId ? { ...w, clusterRoleId: roleId } : w
+      roles: prev.roles.map((r) =>
+        r.id === roleId ? { ...r, ...updates } : r
       ),
     }));
+    await updateClusterRoleAction(roleId, updates);
   };
 
-  const handleRenameWorker = async (workerId, name) => {
+  const handleDeleteRole = async (deletedRoleId) => {
+    await deleteClusterRoleAction(deletedRoleId);
     setCluster((prev) => ({
       ...prev,
-      workers: prev.workers.map((w) =>
-        w.id === workerId ? { ...w, name } : w
-      ),
+      roles: prev.roles.filter((r) => r.id !== deletedRoleId),
     }));
-    await renameClusterWorker(workerId, name);
-  };
-
-  const handleUpdateWorkerFolders = async (workerId, folders) => {
-    await updateWorkerFoldersAction(workerId, folders);
-    setCluster((prev) => ({
-      ...prev,
-      workers: prev.workers.map((w) =>
-        w.id === workerId ? { ...w, folders } : w
-      ),
-    }));
-  };
-
-  const handleUpdateTriggers = async (workerId, triggerConfig) => {
-    setCluster((prev) => ({
-      ...prev,
-      workers: prev.workers.map((w) =>
-        w.id === workerId ? { ...w, triggerConfig } : w
-      ),
-    }));
-    await updateWorkerTriggers(workerId, triggerConfig);
-  };
-
-  const handleRemoveWorker = async (workerId) => {
-    await removeClusterWorker(workerId);
-    setCluster((prev) => ({
-      ...prev,
-      workers: prev.workers.filter((w) => w.id !== workerId),
-    }));
+    switchTab('general');
   };
 
   const handleToggleCluster = async () => {
@@ -165,7 +152,7 @@ export function ClusterPage({ session, clusterId }) {
       setClusterBusy(false);
       try {
         const status = await getClusterStatus(clusterId);
-        setWorkerStatus(status);
+        setRoleStatus(status);
       } catch {}
     }
   };
@@ -177,8 +164,21 @@ export function ClusterPage({ session, clusterId }) {
     }
   };
 
-  const runningCount = Object.values(workerStatus).filter(Boolean).length;
-  const totalCount = cluster?.workers?.length || 0;
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+    if (!over || active.id === over.id) return;
+    const roles = cluster.roles || [];
+    const oldIndex = roles.findIndex((r) => r.id === active.id);
+    const newIndex = roles.findIndex((r) => r.id === over.id);
+    if (oldIndex === -1 || newIndex === -1) return;
+    const reordered = arrayMove(roles, oldIndex, newIndex);
+    setCluster((prev) => ({ ...prev, roles: reordered }));
+    reorderClusterRolesAction(clusterId, reordered.map((r) => r.id));
+  };
+
+  const totalRunning = Object.values(roleStatus).reduce((sum, s) => sum + (s.running || 0), 0);
+  const totalCapacity = (cluster?.roles || []).reduce((sum, r) => sum + (r.maxConcurrency || 1), 0);
+  const totalRoles = cluster?.roles?.length || 0;
 
   if (loading) {
     return (
@@ -199,10 +199,19 @@ export function ClusterPage({ session, clusterId }) {
     );
   }
 
+  const activeRole = activeTab !== 'general'
+    ? cluster.roles?.find((r) => r.id === activeTab)
+    : null;
+
+  // If active tab points to a deleted role, fall back to general
+  if (activeTab !== 'general' && !activeRole) {
+    switchTab('general');
+  }
+
   return (
     <PageLayout session={session}>
       {/* Breadcrumb + Name */}
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex items-center gap-3 mb-4">
         <a
           href="/clusters/list"
           className="text-sm text-muted-foreground hover:text-foreground"
@@ -240,13 +249,18 @@ export function ClusterPage({ session, clusterId }) {
             >
               <PencilIcon size={16} />
             </button>
-            <button
-              onClick={() => setConfirmDeleteCluster(true)}
-              className="text-muted-foreground hover:text-destructive p-1 rounded-md hover:bg-muted"
-              aria-label="Delete cluster"
+            <a
+              href={`/cluster/${clusterId}/console`}
+              className="ml-4 px-3 py-1 rounded-md text-xs bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground transition-colors"
             >
-              <TrashIcon size={16} />
-            </button>
+              Console
+            </a>
+            <a
+              href={`/cluster/${clusterId}/logs`}
+              className="px-3 py-1 rounded-md text-xs bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground transition-colors"
+            >
+              Logs
+            </a>
           </>
         )}
       </div>
@@ -254,7 +268,7 @@ export function ClusterPage({ session, clusterId }) {
       <ConfirmDialog
         open={confirmDeleteCluster}
         title="Delete cluster?"
-        description="This will permanently delete this cluster and all its workers."
+        description="This will permanently delete this cluster and all its roles."
         confirmLabel="Delete"
         onConfirm={() => {
           setConfirmDeleteCluster(false);
@@ -263,9 +277,11 @@ export function ClusterPage({ session, clusterId }) {
         onCancel={() => setConfirmDeleteCluster(false)}
       />
 
+      <PlaceholderDialog open={showPlaceholders} onClose={() => setShowPlaceholders(false)} />
+
       {/* Cluster Toggle */}
-      {totalCount > 0 && (
-        <div className="flex items-center gap-3 mb-6">
+      {totalRoles > 0 && (
+        <div className="flex items-center gap-3 mb-4">
           <button
             type="button"
             onClick={handleToggleCluster}
@@ -298,118 +314,175 @@ export function ClusterPage({ session, clusterId }) {
               {cluster.enabled ? 'On' : 'Off'}
             </span>
           </button>
-          <span className="text-sm text-muted-foreground">
-            {runningCount}/{totalCount} running
-          </span>
         </div>
       )}
 
-      {/* System Prompt */}
-      <div className="mb-6">
-        <label className="text-sm font-medium block mb-1">System Prompt</label>
-        <p className="text-xs text-muted-foreground mb-2">Define the cluster's mission, goals, and shared instructions. This is prepended to every worker's prompt along with the workspace structure and their assigned role.</p>
-        <textarea
-          value={systemPromptValue}
-          onChange={(e) => setSystemPromptValue(e.target.value)}
-          onBlur={saveSystemPrompt}
-          placeholder="Enter shared instructions for all workers..."
-          rows={4}
-          className="w-full text-sm bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring resize-y font-mono"
-        />
-      </div>
-
-      {/* Cluster Folders */}
-      <div className="mb-6">
-        <label className="text-sm font-medium block mb-1">Folders</label>
-        <p className="text-xs text-muted-foreground mb-2">Comma-separated folder names created under shared/ for all workers.</p>
-        <input
-          type="text"
-          value={foldersValue}
-          onChange={(e) => setFoldersValue(e.target.value)}
-          onBlur={saveFolders}
-          onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
-          placeholder="inbox, output, reports"
-          className="w-full text-sm bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring font-mono"
-        />
-      </div>
-
-      {/* Workers */}
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-medium">
-            Workers
-            <span className="text-sm font-normal text-muted-foreground ml-2">
-              {cluster.workers?.length || 0} {(cluster.workers?.length || 0) === 1 ? 'worker' : 'workers'}
-            </span>
-          </h2>
-          <button
-            onClick={handleAddWorker}
-            className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium bg-foreground text-background hover:bg-foreground/90"
-          >
-            <PlusIcon size={16} />
-            Add worker
-          </button>
-        </div>
-
-        {(!cluster.workers || cluster.workers.length === 0) ? (
-          <div className="rounded-md border border-dashed border-border p-8 text-center">
-            <p className="text-sm text-muted-foreground mb-3">No workers yet. Add a worker to this cluster.</p>
-            <button
-              onClick={handleAddWorker}
-              className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium border border-input hover:bg-muted"
-            >
-              <PlusIcon size={16} />
-              Add first worker
-            </button>
-          </div>
-        ) : (
-          <div className="flex flex-col gap-3">
-            {cluster.workers.map((worker) => (
-              <WorkerRow
-                key={worker.id}
-                worker={worker}
-                roles={roles}
-                running={!!workerStatus[worker.id]}
-                onAssignRole={handleAssignRole}
-                onRename={handleRenameWorker}
-                onUpdateFolders={handleUpdateWorkerFolders}
-                onUpdateTriggers={handleUpdateTriggers}
-                onRemove={handleRemoveWorker}
+      {/* Tab bar */}
+      <div className="flex gap-1 border-b border-border mb-6 overflow-x-auto">
+        <button
+          onClick={() => switchTab('general')}
+          className={`inline-flex items-center gap-2 px-3 py-2 min-h-[44px] shrink-0 text-sm font-medium border-b-2 transition-colors ${
+            activeTab === 'general'
+              ? 'border-foreground text-foreground'
+              : 'border-transparent text-muted-foreground hover:text-foreground hover:border-border'
+          }`}
+        >
+          General
+        </button>
+        <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+          <SortableContext items={(cluster.roles || []).map((r) => r.id)} strategy={horizontalListSortingStrategy}>
+            {(cluster.roles || []).map((role) => (
+              <SortableTab
+                key={role.id}
+                role={role}
+                isActive={activeTab === role.id}
+                onClick={() => switchTab(role.id)}
               />
             ))}
-          </div>
-        )}
-
-        {roles.length === 0 && cluster.workers?.length > 0 && (
-          <p className="text-xs text-muted-foreground mt-2">
-            No roles defined yet.{' '}
-            <a href="/clusters/roles" className="underline hover:text-foreground">Create roles</a>
-            {' '}to assign them to workers.
-          </p>
-        )}
+          </SortableContext>
+        </DndContext>
+        <button
+          onClick={handleAddRole}
+          className="inline-flex items-center gap-2 px-3 py-2 min-h-[44px] shrink-0 text-sm font-medium border-b-2 border-transparent text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+        >
+          <PlusIcon size={14} />
+          New Role
+        </button>
       </div>
+
+      {/* Tab content */}
+      {activeTab === 'general' ? (
+        <div>
+          {/* System Prompt */}
+          <div className="mb-6">
+            <label className="text-sm font-medium block mb-1">System Prompt</label>
+            <p className="text-xs text-muted-foreground mb-2">Define the cluster's mission, goals, and shared instructions. This is prepended to every role's prompt along with the workspace structure.</p>
+            <textarea
+              value={systemPromptValue}
+              onChange={(e) => setSystemPromptValue(e.target.value)}
+              onBlur={saveSystemPrompt}
+              placeholder="Enter shared instructions for all roles..."
+              rows={4}
+              className="w-full text-sm bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring resize-y font-mono"
+            />
+            <div className="flex items-center gap-2 mt-1.5">
+              <span className="text-xs text-muted-foreground">
+                Use <code className="font-mono bg-muted px-1 rounded">{'{{PLACEHOLDERS}}'}</code> for dynamic values.
+              </span>
+              <button
+                type="button"
+                onClick={() => setShowPlaceholders(true)}
+                className="text-xs text-primary underline underline-offset-2 hover:text-primary/80"
+              >
+                View all →
+              </button>
+            </div>
+          </div>
+
+          {/* Cluster Folders */}
+          <div className="mb-6">
+            <label className="text-sm font-medium block mb-1">Folders</label>
+            <p className="text-xs text-muted-foreground mb-2">Comma-separated folder names created under shared/ for all roles.</p>
+            <input
+              type="text"
+              value={foldersValue}
+              onChange={(e) => setFoldersValue(e.target.value)}
+              onBlur={saveFolders}
+              onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
+              placeholder="inbox, output, reports"
+              className="w-full text-sm bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring font-mono"
+            />
+          </div>
+
+          {/* Empty state if no roles */}
+          {(!cluster.roles || cluster.roles.length === 0) && (
+            <div className="rounded-md border border-dashed border-border p-8 text-center">
+              <p className="text-sm text-muted-foreground mb-3">No roles yet. Add a role to this cluster.</p>
+              <button
+                onClick={handleAddRole}
+                className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium border border-input hover:bg-muted"
+              >
+                <PlusIcon size={16} />
+                Add first role
+              </button>
+            </div>
+          )}
+        </div>
+      ) : activeRole ? (
+        <RoleTabContent
+          role={activeRole}
+          clusterId={clusterId}
+          status={roleStatus[activeRole.id]}
+          onUpdate={handleUpdateRole}
+          onDelete={handleDeleteRole}
+        />
+      ) : null}
     </PageLayout>
   );
 }
 
-function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateFolders, onUpdateTriggers, onRemove }) {
-  const [confirmDelete, setConfirmDelete] = useState(false);
-  const [editingName, setEditingName] = useState(false);
-  const shortId = worker.id.replace(/-/g, '').slice(0, 8);
-  const [nameValue, setNameValue] = useState(worker.name || `Worker`);
-  const [runningWorker, setRunningWorker] = useState(false);
-  const [stoppingWorker, setStoppingWorker] = useState(false);
-  const [foldersValue, setFoldersValue] = useState(worker.folders ? worker.folders.join(', ') : '');
-  const nameRef = useRef(null);
-  const assignedRole = roles.find((r) => r.id === worker.clusterRoleId);
+function SortableTab({ role, isActive, onClick }) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: role.id });
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+  return (
+    <button
+      ref={setNodeRef}
+      style={style}
+      {...attributes}
+      {...listeners}
+      onClick={onClick}
+      className={`inline-flex items-center gap-2 px-3 py-2 min-h-[44px] shrink-0 text-sm font-medium border-b-2 transition-colors cursor-grab active:cursor-grabbing ${
+        isActive
+          ? 'border-foreground text-foreground'
+          : 'border-transparent text-muted-foreground hover:text-foreground hover:border-border'
+      }`}
+    >
+      {role.roleName || 'New Role'}
+    </button>
+  );
+}
 
-  const tc = worker.triggerConfig || {};
+function RoleTabContent({ role, clusterId, status, onUpdate, onDelete }) {
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [showPlaceholders, setShowPlaceholders] = useState(false);
+  const [editingName, setEditingName] = useState(false);
+  const shortId = role.id.replace(/-/g, '').slice(0, 8);
+  const [nameValue, setNameValue] = useState(role.roleName || 'New Role');
+  const [rolePromptValue, setRolePromptValue] = useState(role.role || '');
+  const [running, setRunning] = useState(false);
+  const [stopping, setStopping] = useState(false);
+  const [foldersValue, setFoldersValue] = useState(role.folders ? role.folders.join(', ') : '');
+  const [maxConcurrency, setMaxConcurrency] = useState(role.maxConcurrency || 1);
+  const [cleanupWorkerDir, setCleanupWorkerDir] = useState(!!role.cleanupWorkerDir);
+  const nameRef = useRef(null);
+
+  const tc = role.triggerConfig || {};
   const hasCron = !!(tc.cron && tc.cron.enabled);
   const hasFileWatch = !!(tc.file_watch && tc.file_watch.enabled);
-  const hasWebhook = !!(tc.webhook && tc.webhook.enabled);
 
   const [cronValue, setCronValue] = useState(tc.cron?.schedule || '');
   const [fileWatchValue, setFileWatchValue] = useState(tc.file_watch?.paths || '');
+
+  const runningCount = status?.running || 0;
+  const isRunning = runningCount > 0;
+
+  // Sync state when role prop changes (switching tabs)
+  useEffect(() => {
+    setNameValue(role.roleName || 'New Role');
+    setRolePromptValue(role.role || '');
+    setFoldersValue(role.folders ? role.folders.join(', ') : '');
+    setMaxConcurrency(role.maxConcurrency || 1);
+    setCleanupWorkerDir(!!role.cleanupWorkerDir);
+    const tc = role.triggerConfig || {};
+    setCronValue(tc.cron?.schedule || '');
+    setFileWatchValue(tc.file_watch?.paths || '');
+    setEditingName(false);
+    setConfirmDelete(false);
+  }, [role.id]);
 
   useEffect(() => {
     if (editingName && nameRef.current) {
@@ -420,177 +493,228 @@ function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateFol
 
   const saveName = () => {
     const trimmed = nameValue.trim();
-    if (trimmed && trimmed !== worker.name) {
-      onRename(worker.id, trimmed);
+    if (trimmed && trimmed !== role.roleName) {
+      onUpdate(role.id, { roleName: trimmed });
     }
     setEditingName(false);
   };
 
+  const saveRolePrompt = () => {
+    if (rolePromptValue !== (role.role || '')) {
+      onUpdate(role.id, { role: rolePromptValue });
+    }
+  };
+
   const buildConfig = (overrides) => {
     const next = { ...tc, ...overrides };
-    // Remove disabled trigger keys entirely
     if (next.cron && !next.cron.enabled) delete next.cron;
     if (next.file_watch && !next.file_watch.enabled) delete next.file_watch;
-    if (next.webhook && !next.webhook.enabled) delete next.webhook;
     return Object.keys(next).length ? next : null;
   };
 
   const toggleTrigger = (type) => {
     if (type === 'cron') {
       if (hasCron) {
-        onUpdateTriggers(worker.id, buildConfig({ cron: { enabled: false } }));
+        onUpdate(role.id, { triggerConfig: buildConfig({ cron: { enabled: false } }) });
       } else {
         const schedule = cronValue || '*/5 * * * *';
         if (!cronValue) setCronValue(schedule);
-        onUpdateTriggers(worker.id, buildConfig({ cron: { enabled: true, schedule } }));
+        onUpdate(role.id, { triggerConfig: buildConfig({ cron: { enabled: true, schedule } }) });
       }
     } else if (type === 'file_watch') {
       if (hasFileWatch) {
-        onUpdateTriggers(worker.id, buildConfig({ file_watch: { enabled: false } }));
+        onUpdate(role.id, { triggerConfig: buildConfig({ file_watch: { enabled: false } }) });
       } else {
         const paths = fileWatchValue || '';
-        onUpdateTriggers(worker.id, buildConfig({ file_watch: { enabled: true, paths } }));
+        onUpdate(role.id, { triggerConfig: buildConfig({ file_watch: { enabled: true, paths } }) });
       }
-    } else if (type === 'webhook') {
-      onUpdateTriggers(worker.id, buildConfig({ webhook: { enabled: !hasWebhook } }));
     }
   };
 
   const saveCron = () => {
     const trimmed = cronValue.trim();
     if (hasCron && trimmed !== (tc.cron?.schedule || '')) {
-      onUpdateTriggers(worker.id, buildConfig({ cron: { enabled: true, schedule: trimmed } }));
+      onUpdate(role.id, { triggerConfig: buildConfig({ cron: { enabled: true, schedule: trimmed } }) });
     }
   };
 
   const saveFileWatch = () => {
     const trimmed = fileWatchValue.trim();
     if (hasFileWatch && trimmed !== (tc.file_watch?.paths || '')) {
-      onUpdateTriggers(worker.id, buildConfig({ file_watch: { enabled: true, paths: trimmed } }));
+      onUpdate(role.id, { triggerConfig: buildConfig({ file_watch: { enabled: true, paths: trimmed } }) });
     }
   };
 
   const saveFolders = async () => {
     const folders = foldersValue.split(',').map((s) => s.trim()).filter(Boolean);
-    const current = worker.folders || [];
+    const current = role.folders || [];
     if (JSON.stringify(folders) !== JSON.stringify(current)) {
-      await onUpdateFolders(worker.id, folders.length ? folders : null);
+      await onUpdate(role.id, { folders: folders.length ? folders : null });
     }
   };
 
+  const saveMaxConcurrency = () => {
+    const val = Math.max(1, parseInt(maxConcurrency, 10) || 1);
+    setMaxConcurrency(val);
+    if (val !== (role.maxConcurrency || 1)) {
+      onUpdate(role.id, { maxConcurrency: val });
+    }
+  };
+
+  const toggleCleanup = () => {
+    const next = !cleanupWorkerDir;
+    setCleanupWorkerDir(next);
+    onUpdate(role.id, { cleanupWorkerDir: next ? 1 : 0 });
+  };
+
   const handleRun = async () => {
-    setRunningWorker(true);
+    setRunning(true);
     try {
-      await triggerWorkerManually(worker.id);
+      await triggerRoleManually(role.id);
     } catch (err) {
-      console.error('Failed to trigger worker:', err);
+      console.error('Failed to trigger role:', err);
     } finally {
-      setRunningWorker(false);
+      setRunning(false);
     }
   };
 
   const handleStop = async () => {
-    setStoppingWorker(true);
+    setStopping(true);
     try {
-      await stopWorker(worker.id);
+      await stopRoleAction(role.id);
     } catch (err) {
-      console.error('Failed to stop worker:', err);
+      console.error('Failed to stop role:', err);
     } finally {
-      setStoppingWorker(false);
+      setStopping(false);
     }
   };
 
   return (
-    <div className="rounded-lg border bg-card p-4">
-      <div className="flex flex-wrap items-center gap-3">
+    <div>
+      {/* Role header: name, ID, run/stop */}
+      <div className="flex flex-wrap items-center gap-3 mb-6">
+        <div className="flex items-center gap-2">
+          {editingName ? (
+            <input
+              ref={nameRef}
+              type="text"
+              value={nameValue}
+              onChange={(e) => setNameValue(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') saveName();
+                if (e.key === 'Escape') { setEditingName(false); setNameValue(role.roleName || 'New Role'); }
+              }}
+              onBlur={saveName}
+              className="text-lg font-semibold bg-background border border-input rounded px-1.5 py-0.5 focus:outline-none focus:ring-2 focus:ring-ring w-full max-w-xs"
+            />
+          ) : (
+            <span className="text-lg font-semibold truncate">
+              {role.roleName || 'New Role'}
+            </span>
+          )}
+          {!editingName && (
+            <button
+              onClick={() => setEditingName(true)}
+              className="text-muted-foreground hover:text-foreground p-1 rounded-md hover:bg-muted"
+            >
+              <PencilIcon size={14} />
+            </button>
+          )}
+        </div>
+
         <div className="flex items-center justify-center px-2 h-6 rounded bg-muted text-xs font-mono font-medium shrink-0">
           {shortId}
         </div>
 
-        <div className="flex-1 min-w-0 basis-full md:basis-32">
-          <div className="flex items-center gap-2">
-            {editingName ? (
-              <input
-                ref={nameRef}
-                type="text"
-                value={nameValue}
-                onChange={(e) => setNameValue(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') saveName();
-                  if (e.key === 'Escape') { setEditingName(false); setNameValue(worker.name || 'Worker'); }
-                }}
-                onBlur={saveName}
-                className="text-sm font-medium bg-background border border-input rounded px-1.5 py-0.5 focus:outline-none focus:ring-2 focus:ring-ring w-full max-w-xs"
-              />
-            ) : (
-              <span className="text-sm font-medium truncate">
-                {worker.name || 'Worker'}
-              </span>
-            )}
-            {!editingName && (
-              <button
-                onClick={() => setEditingName(true)}
-                className="text-muted-foreground hover:text-foreground p-1 rounded-md hover:bg-muted"
-              >
-                <PencilIcon size={12} />
-              </button>
-            )}
-            {/* Status badge */}
-            <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
-              running
-                ? 'bg-green-500/15 text-green-600 dark:text-green-400'
-                : 'bg-muted text-muted-foreground'
-            }`}>
-              {running ? 'Running' : 'Stopped'}
-            </span>
-          </div>
-          {assignedRole?.role && (
-            <span className="text-xs text-muted-foreground mt-0.5 block truncate">
-              {assignedRole.role}
-            </span>
-          )}
-        </div>
-
-        {/* Worker action buttons */}
-        <button
-          onClick={handleRun}
-          disabled={runningWorker || running}
-          className="rounded-md px-2.5 py-1.5 text-xs font-medium border border-input hover:bg-muted disabled:opacity-50 shrink-0"
-        >
-          {runningWorker ? 'Starting...' : 'Run'}
-        </button>
-        {running && (
+        <div className="flex items-center gap-2 ml-auto">
           <button
-            onClick={handleStop}
-            disabled={stoppingWorker}
+            onClick={handleRun}
+            disabled={running}
             className="rounded-md px-2.5 py-1.5 text-xs font-medium border border-input hover:bg-muted disabled:opacity-50 shrink-0"
           >
-            {stoppingWorker ? 'Stopping...' : 'Stop'}
+            {running ? 'Starting...' : 'Run'}
           </button>
-        )}
+          {isRunning && (
+            <button
+              onClick={handleStop}
+              disabled={stopping}
+              className="rounded-md px-2.5 py-1.5 text-xs font-medium border border-input hover:bg-muted disabled:opacity-50 shrink-0"
+            >
+              {stopping ? 'Stopping...' : 'Stop All'}
+            </button>
+          )}
+        </div>
+      </div>
 
-        <select
-          value={worker.clusterRoleId || ''}
-          onChange={(e) => onAssignRole(worker.id, e.target.value)}
-          className="text-sm bg-background border border-input rounded-md px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-ring shrink-0"
-        >
-          <option value="">Unassigned</option>
-          {roles.map((r) => (
-            <option key={r.id} value={r.id}>{r.roleName}</option>
-          ))}
-        </select>
+      {/* Role Prompt */}
+      <div className="mb-6">
+        <label className="text-sm font-medium block mb-1">Role Prompt</label>
+        <textarea
+          value={rolePromptValue}
+          onChange={(e) => setRolePromptValue(e.target.value)}
+          onBlur={saveRolePrompt}
+          placeholder="Describe what this role does..."
+          rows={3}
+          className="w-full text-sm bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring resize-y font-mono"
+        />
+        <div className="flex items-center gap-2 mt-1.5">
+          <span className="text-xs text-muted-foreground">
+            Use <code className="font-mono bg-muted px-1 rounded">{'{{PLACEHOLDERS}}'}</code> for dynamic values.
+          </span>
+          <button
+            type="button"
+            onClick={() => setShowPlaceholders(true)}
+            className="text-xs text-primary underline underline-offset-2 hover:text-primary/80"
+          >
+            View all →
+          </button>
+        </div>
+      </div>
 
+      {/* Max Concurrency */}
+      <div className="mb-6">
+        <label className="text-sm font-medium block mb-1">Max Concurrency</label>
+        <input
+          type="number"
+          min="1"
+          value={maxConcurrency}
+          onChange={(e) => setMaxConcurrency(e.target.value)}
+          onBlur={saveMaxConcurrency}
+          onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
+          className="w-20 text-sm bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring"
+        />
+      </div>
+
+      {/* Cleanup Worker Dirs */}
+      <div className="mb-6">
+        <label className="text-sm font-medium block mb-1">Cleanup Worker Dirs</label>
         <button
-          onClick={() => setConfirmDelete(true)}
-          className="rounded-md p-1.5 text-muted-foreground hover:text-destructive hover:bg-muted shrink-0"
-          aria-label="Remove worker"
+          type="button"
+          onClick={toggleCleanup}
+          className="inline-flex items-center gap-2 group"
+          role="switch"
+          aria-checked={cleanupWorkerDir}
+          aria-label="Cleanup worker directories after run"
         >
-          <TrashIcon size={16} />
+          <span
+            className={`relative inline-flex h-5 w-9 shrink-0 rounded-full transition-colors duration-200 ${
+              cleanupWorkerDir ? 'bg-primary' : 'bg-muted-foreground/30'
+            }`}
+          >
+            <span
+              className={`absolute top-0.5 left-0.5 h-4 w-4 rounded-full bg-white shadow-sm transition-transform duration-200 ${
+                cleanupWorkerDir ? 'translate-x-4' : ''
+              }`}
+            />
+          </span>
+          <span className="text-xs text-muted-foreground">
+            {cleanupWorkerDir ? 'On' : 'Off'}
+          </span>
         </button>
       </div>
 
-      {/* Worker Folders */}
-      <div className="mt-4">
+      {/* Folders */}
+      <div className="mb-6">
         <label className="text-sm font-medium block mb-2">Folders</label>
         <input
           type="text"
@@ -601,15 +725,18 @@ function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateFol
           placeholder="inbox, output"
           className="text-sm bg-background border border-input rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
         />
-        <p className="text-xs text-muted-foreground mt-1.5">Comma-separated folder names created under {shortId}/.</p>
+        <p className="text-xs text-muted-foreground mt-1.5">Comma-separated folder names created under role-{shortId}/.</p>
       </div>
 
       {/* Triggers */}
-      <div className="mt-4">
+      <div className="mb-6">
         <label className="text-sm font-medium block mb-2">Triggers</label>
         <div className="flex items-center gap-2 flex-wrap">
           <span className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium bg-foreground/10 text-foreground">
             Manual
+          </span>
+          <span className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium bg-foreground/10 text-foreground">
+            Webhook
           </span>
           <button
             onClick={() => toggleTrigger('cron')}
@@ -631,68 +758,68 @@ function WorkerRow({ worker, roles, running, onAssignRole, onRename, onUpdateFol
           >
             File Watch
           </button>
-          <button
-            onClick={() => toggleTrigger('webhook')}
-            className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium border transition-colors ${
-              hasWebhook
-                ? 'bg-foreground text-background border-foreground'
-                : 'bg-background text-muted-foreground border-input hover:border-foreground/50'
-            }`}
-          >
-            Webhook
-          </button>
         </div>
       </div>
 
       {/* Trigger config fields */}
-      {(hasCron || hasFileWatch || hasWebhook) && (
-        <div className="mt-3 flex flex-col gap-3">
-          {hasCron && (
-            <div>
-              <label className="text-xs font-medium text-muted-foreground block mb-1.5">Cron Schedule</label>
-              <input
-                type="text"
-                value={cronValue}
-                onChange={(e) => setCronValue(e.target.value)}
-                onBlur={saveCron}
-                onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
-                placeholder="*/5 * * * *"
-                className="text-sm bg-background border border-input rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
-              />
-            </div>
-          )}
-          {hasFileWatch && (
-            <div>
-              <label className="text-xs font-medium text-muted-foreground block mb-1.5">Watch Paths</label>
-              <input
-                type="text"
-                value={fileWatchValue}
-                onChange={(e) => setFileWatchValue(e.target.value)}
-                onBlur={saveFileWatch}
-                onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
-                placeholder="shared/inbox, shared/reports"
-                className="text-sm bg-background border border-input rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
-              />
-              <p className="text-xs text-muted-foreground mt-1.5">Comma-separated paths relative to cluster data dir.</p>
-            </div>
-          )}
-          {hasWebhook && (
-            <WebhookInfo workerId={worker.id} />
-          )}
-        </div>
-      )}
+      <div className="flex flex-col gap-3 mb-6">
+        <WebhookInfo clusterId={clusterId} roleId={role.id} />
+
+        {hasCron && (
+          <div>
+            <label className="text-xs font-medium text-muted-foreground block mb-1.5">Cron Schedule</label>
+            <input
+              type="text"
+              value={cronValue}
+              onChange={(e) => setCronValue(e.target.value)}
+              onBlur={saveCron}
+              onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
+              placeholder="*/5 * * * *"
+              className="text-sm bg-background border border-input rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
+            />
+          </div>
+        )}
+        {hasFileWatch && (
+          <div>
+            <label className="text-xs font-medium text-muted-foreground block mb-1.5">Watch Paths</label>
+            <input
+              type="text"
+              value={fileWatchValue}
+              onChange={(e) => setFileWatchValue(e.target.value)}
+              onBlur={saveFileWatch}
+              onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
+              placeholder="shared/inbox, shared/reports"
+              className="text-sm bg-background border border-input rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-ring font-mono"
+            />
+            <p className="text-xs text-muted-foreground mt-1.5">Comma-separated paths relative to cluster data dir.</p>
+          </div>
+        )}
+      </div>
+
+      {/* Delete role */}
+      <div className="pt-6 border-t border-border">
+        <button
+          onClick={() => setConfirmDelete(true)}
+          className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-destructive border border-destructive/30 hover:bg-destructive/10"
+        >
+          <TrashIcon size={16} />
+          Delete role
+        </button>
+      </div>
 
       <ConfirmDialog
         open={confirmDelete}
-        title="Remove worker?"
-        description={`This will remove "${worker.name || 'Worker'}" from the cluster.`}
+        title="Remove role?"
+        description={`This will remove "${role.roleName || 'Role'}" from the cluster and stop any running containers.`}
         confirmLabel="Remove"
         onConfirm={() => {
           setConfirmDelete(false);
-          onRemove(worker.id);
+          onDelete(role.id);
         }}
         onCancel={() => setConfirmDelete(false)}
       />
+
+      <PlaceholderDialog open={showPlaceholders} onClose={() => setShowPlaceholders(false)} />
     </div>
   );
 }
@@ -724,9 +851,94 @@ function CopyButton({ text, label }) {
   );
 }
 
-function WebhookInfo({ workerId }) {
+const PLACEHOLDER_ROWS = [
+  { name: '{{CLUSTER_HOME}}', example: '/home/claude-code/workspace', desc: 'Root of the cluster workspace' },
+  { name: '{{CLUSTER_SHARED_DIR}}', example: '/home/claude-code/workspace/shared/', desc: 'Cluster shared directory' },
+  { name: '{{CLUSTER_SHARED_FOLDERS}}', example: '[".../shared/inbox/",".../shared/outbox/"]', desc: 'Cluster shared folders as absolute paths (JSON)' },
+  { name: '{{SELF_ROLE_NAME}}', example: 'Tech Lead', desc: "Current role's name" },
+  { name: '{{SELF_WORKER_ID}}', example: 'a1b2c3d4', desc: "This worker's unique ID" },
+  { name: '{{SELF_WORK_DIR}}', example: '/home/claude-code/workspace/role-db4d21c0/worker-a1b2c3d4/', desc: "Worker's private dir (where claude starts)" },
+  { name: '{{SELF_TMP_DIR}}', example: '/home/claude-code/workspace/role-db4d21c0/worker-a1b2c3d4/tmp/', desc: 'Scratch space' },
+  { name: '{{DATETIME}}', example: '2026-03-07T20:00:01Z', desc: 'Current UTC timestamp' },
+  { name: '{{WORKSPACE}}', example: '(full JSON manifest)', desc: 'Entire workspace manifest as JSON' },
+];
+
+const WORKSPACE_EXAMPLE = `{
+  "CLUSTER": {
+    "CLUSTER_HOME": "/home/claude-code/workspace",
+    "CLUSTER_SHARED_DIR": "/home/claude-code/workspace/shared/",
+    "CLUSTER_SHARED_FOLDERS": ["/home/claude-code/workspace/shared/inbox/", "/home/claude-code/workspace/shared/outbox/", "/home/claude-code/workspace/shared/testing/"]
+  },
+  "SELF": {
+    "SELF_ROLE_NAME": "Tech Lead",
+    "SELF_WORKER_ID": "a1b2c3d4",
+    "SELF_WORK_DIR": "/home/claude-code/workspace/role-db4d21c0/worker-a1b2c3d4/",
+    "SELF_TMP_DIR": "/home/claude-code/workspace/role-db4d21c0/worker-a1b2c3d4/tmp/"
+  }
+}`;
+
+function PlaceholderDialog({ open, onClose }) {
+  useEffect(() => {
+    if (!open) return;
+    const handleEsc = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handleEsc);
+    return () => document.removeEventListener('keydown', handleEsc);
+  }, [open, onClose]);
+
+  if (!open) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div className="fixed inset-0 bg-black/50" onClick={onClose} />
+      <div
+        className="relative z-50 w-full max-w-2xl mx-4 rounded-lg border border-border bg-background shadow-lg flex flex-col"
+        style={{ maxHeight: '75vh' }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between px-6 py-4 border-b border-border shrink-0">
+          <h3 className="text-lg font-semibold">Template Placeholders</h3>
+          <button
+            onClick={onClose}
+            className="text-muted-foreground hover:text-foreground p-1 rounded-md hover:bg-muted"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M4 4l8 8M12 4l-8 8" />
+            </svg>
+          </button>
+        </div>
+        <div className="overflow-y-auto px-6 py-4">
+          <p className="text-xs text-muted-foreground mb-3">
+            Use these in system prompt and role prompt fields. Case-insensitive. Resolved at container launch.
+          </p>
+          <table className="w-full text-sm mb-6">
+            <thead>
+              <tr className="border-b border-border text-left">
+                <th className="py-2 pr-3 font-medium">Variable</th>
+                <th className="py-2 pr-3 font-medium">Example</th>
+                <th className="py-2 font-medium">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {PLACEHOLDER_ROWS.map((row) => (
+                <tr key={row.name} className="border-b border-border/50">
+                  <td className="py-2 pr-3 font-mono text-xs whitespace-nowrap">{row.name}</td>
+                  <td className="py-2 pr-3 text-xs text-muted-foreground break-all">{row.example}</td>
+                  <td className="py-2 text-xs text-muted-foreground">{row.desc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <h4 className="text-sm font-medium mb-2">{'{{WORKSPACE}}'} Example</h4>
+          <pre className="text-xs bg-muted rounded-md px-3 py-2 font-mono overflow-x-auto whitespace-pre">{WORKSPACE_EXAMPLE}</pre>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function WebhookInfo({ clusterId, roleId }) {
   const origin = typeof window !== 'undefined' ? window.location.origin : 'https://your-domain.com';
-  const endpoint = `${origin}/api/cluster/${workerId}/webhook`;
+  const endpoint = `${origin}/api/cluster/${clusterId}/role/${roleId}/webhook`;
   const curlCmd = `curl -X POST ${endpoint} \\
   -H "x-api-key: YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
@@ -734,9 +946,8 @@ function WebhookInfo({ workerId }) {
 
   return (
     <div className="rounded-md border border-input p-2.5">
-      <label className="text-xs font-medium text-muted-foreground block mb-2">Webhook</label>
+      <label className="text-xs font-medium text-muted-foreground block mb-2">Webhook Endpoint</label>
 
-      {/* Endpoint URL */}
       <div className="flex items-center gap-2 mb-2">
         <code className="flex-1 min-w-0 text-xs bg-muted px-2 py-1.5 rounded font-mono text-foreground truncate select-all">
           {endpoint}
@@ -744,7 +955,6 @@ function WebhookInfo({ workerId }) {
         <CopyButton text={endpoint} label="endpoint" />
       </div>
 
-      {/* Curl command */}
       <label className="text-xs font-medium text-muted-foreground block mb-1 mt-2">Example cURL</label>
       <div className="flex items-start gap-2">
         <pre className="flex-1 min-w-0 text-xs bg-muted/70 border border-input rounded-md px-2.5 py-2 font-mono text-foreground overflow-x-auto whitespace-pre-wrap break-all leading-relaxed">{curlCmd}</pre>

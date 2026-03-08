@@ -60,7 +60,7 @@ function ChatTypeFilter({ filter, setFilter }) {
           key={value}
           onClick={() => setFilter(value)}
           className={cn(
-            'flex items-center gap-1 rounded-md px-2.5 py-1 text-sm font-medium transition-colors',
+            'flex items-center gap-1 rounded-md px-2.5 py-1 text-[0.8rem] md:text-xs font-medium transition-colors',
             filter === value
               ? 'bg-background text-foreground shadow-sm'
               : 'text-muted-foreground hover:text-foreground'

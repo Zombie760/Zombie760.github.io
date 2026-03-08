@@ -168,7 +168,7 @@ export default function CodePage({ session, codeWorkspaceId }) {
                     )}
                     <span>{tab.label}</span>
                     <button
-                      className="ml-1 rounded-sm p-0.5 opacity-0 group-hover:opacity-100 hover:bg-destructive/20 hover:text-destructive transition-all"
+                      className="ml-1 rounded-sm p-0.5 hover:bg-destructive/20 hover:text-destructive transition-all"
                       onClick={(e) => {
                         e.stopPropagation();
                         if (tab.type === 'claude') {

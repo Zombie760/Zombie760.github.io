@@ -41,10 +41,43 @@ cat > ~/.claude.json << ENDJSON
 }
 ENDJSON
 
-# Run Claude Code headlessly
-claude -p "$HEADLESS_TASK" \
-    --dangerously-skip-permissions \
-    --verbose \
-    --output-format stream-json
+# Switch to best-effort mode for logging + claude execution
+set +e
 
-exit $?
+# Create log session dir (best-effort)
+SESSION_TS=$(date -u +%Y-%m-%d_%H-%M-%S)
+LOG_DIR="logs/role-${ROLE_SHORT_ID}/${SESSION_TS}_${WORKER_UUID}"
+LOG_READY=false
+if mkdir -p "$LOG_DIR" 2>/dev/null; then
+    printf '%s' "$HEADLESS_TASK" > "$LOG_DIR/prompt.md" 2>/dev/null
+    cat > "$LOG_DIR/meta.json" << ENDJSON
+{"roleName":"${ROLE_NAME}","startedAt":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
+ENDJSON
+    LOG_READY=true
+fi
+
+# Run Claude Code — tee to log files if ready, otherwise run normally
+if [ "$LOG_READY" = true ]; then
+    claude -p "$HEADLESS_TASK" \
+        --dangerously-skip-permissions \
+        --verbose \
+        --output-format stream-json \
+        > >(tee "$LOG_DIR/stdout.jsonl") \
+        2> >(tee "$LOG_DIR/stderr.txt" >&2)
+    EXIT_CODE=$?
+else
+    claude -p "$HEADLESS_TASK" \
+        --dangerously-skip-permissions \
+        --verbose \
+        --output-format stream-json
+    EXIT_CODE=$?
+fi
+
+# Finalize meta with end time (best-effort)
+if [ "$LOG_READY" = true ]; then
+    jq --arg end "$(date -u +%Y-%m-%dT%H:%M:%SZ)" '. + {endedAt: $end}' \
+        "$LOG_DIR/meta.json" > "$LOG_DIR/meta.tmp" 2>/dev/null \
+        && mv "$LOG_DIR/meta.tmp" "$LOG_DIR/meta.json"
+fi
+
+exit $EXIT_CODE

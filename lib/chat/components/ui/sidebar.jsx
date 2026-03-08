@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useEffect, useCallback, useMemo, u
 import { cn } from '../../utils.js';
 import { Sheet, SheetContent } from './sheet.js';
 
-const SIDEBAR_WIDTH = '16rem';
+const SIDEBAR_WIDTH = '15rem';
 const SIDEBAR_WIDTH_ICON = '3rem';
 const SIDEBAR_WIDTH_MOBILE = '18rem';
 const SIDEBAR_COOKIE_NAME = 'sidebar:state';
@@ -168,19 +168,19 @@ export function Sidebar({ children, className, side = 'left' }) {
 }
 
 export function SidebarHeader({ children, className }) {
-  return <div className={cn('flex flex-col gap-2 p-2', className)}>{children}</div>;
+  return <div className={cn('flex flex-col gap-2 p-2 md:px-1', className)}>{children}</div>;
 }
 
 export function SidebarContent({ children, className }) {
   return (
-    <div className={cn('flex min-h-0 flex-1 flex-col overflow-y-auto', className)}>
+    <div className={cn('flex min-h-0 flex-1 flex-col overflow-y-auto scrollbar-thin', className)}>
       {children}
     </div>
   );
 }
 
 export function SidebarFooter({ children, className }) {
-  return <div className={cn('flex flex-col gap-2 p-2', className)}>{children}</div>;
+  return <div className={cn('flex flex-col gap-2 p-2 md:px-1', className)}>{children}</div>;
 }
 
 export function SidebarMenu({ children, className }) {
@@ -210,7 +210,7 @@ export function SidebarMenuButton({ children, className, isActive, asChild, tool
 }
 
 export function SidebarGroup({ children, className }) {
-  return <div className={cn('relative flex w-full min-w-0 flex-col p-2', className)}>{children}</div>;
+  return <div className={cn('relative flex w-full min-w-0 flex-col p-2 md:px-1', className)}>{children}</div>;
 }
 
 export function SidebarGroupLabel({ children, className }) {

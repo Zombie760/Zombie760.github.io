@@ -1,19 +1,20 @@
 # lib/cluster/ — Cluster System
 
-Clusters are groups of Docker worker containers that share a data directory and system prompt. Each cluster has workers that can be triggered manually, on a cron schedule, via webhook, or by file watch.
+Clusters are groups of Docker containers spawned on demand from role definitions. Each cluster has roles that define what containers do, with concurrency limits and multiple trigger types.
 
 ## Architecture
 
 - **`actions.js`** — Server Actions (`'use server'`) for all cluster UI operations. Handles auth via `requireAuth()`, delegates to DB functions in `lib/db/clusters.js`, and creates directories on disk at lifecycle events.
-- **`execute.js`** — Docker container lifecycle: launch, stop, inspect workers. Uses `claude-code-cluster-worker` Docker image. Exports path helpers for cluster/worker directories.
-- **`runtime.js`** — In-memory trigger runtime. Manages cron schedules (node-cron), webhook registrations, and file watchers (chokidar). Started at boot, reloaded when triggers change.
-- **`components/`** — React UI (cluster-page, clusters-page, cluster-roles-page, clusters-layout).
+- **`execute.js`** — Docker container lifecycle: launch, stop, concurrency checks. Uses `claude-code-cluster-worker` Docker image. Exports path helpers for cluster/role directories.
+- **`runtime.js`** — In-memory trigger runtime. Manages cron schedules (node-cron) and file watchers (chokidar). Webhooks are always-on. Started at boot, reloaded when triggers change.
+- **`stream.js`** — SSE endpoint for console page. Dynamically discovers running containers via `listContainers()`.
+- **`components/`** — React UI (cluster-page, clusters-page, cluster-console-page, clusters-layout).
 
 ## Naming & IDs
 
 - **Cluster short ID**: `cluster.id` dashes stripped, first 8 chars → used in `cluster-{shortId}` project name
-- **Worker short ID**: `worker.id` dashes stripped, first 8 chars → `workerShortId(worker)` from `lib/db/clusters.js`
-- **Container name**: `cluster-{clusterShortId}-worker-{workerShortId}`
+- **Role short ID**: `role.id` dashes stripped, first 8 chars → `roleShortId(role)` from `lib/db/clusters.js`
+- **Container name**: `cluster-{clusterShortId}-role-{roleShortId}-{8-char-uuid}` (dynamic per run)
 
 ## Directory Structure on Disk
 
@@ -22,51 +23,44 @@ data/clusters/
   cluster-{shortId}/              ← created by createCluster()
     shared/                       ← created by createCluster()
       {folder}/                   ← created by updateClusterFolders()
-    {workerShortId}/              ← created by addClusterWorker()
-      {folder}/                   ← created by updateWorkerFoldersAction()
+    role-{roleShortId}/           ← created by createClusterRoleAction()
+      shared/                     ← created by createClusterRoleAction()
+      worker-{uuid}/             ← created per container launch (ephemeral)
 ```
-
-Directories are created at lifecycle events in `actions.js`, not at container launch time. The entire cluster data dir is bind-mounted into worker containers at `/home/claude-code/workspace`.
-
-## Directory Creation Rules
-
-| Event | Directory Created |
-|-------|-------------------|
-| Create cluster | `cluster-{id}/shared/` |
-| Add worker | `cluster-{id}/{workerShortId}/` |
-| Set cluster folders | `cluster-{id}/shared/{folder}` for each folder |
-| Set worker folders | `cluster-{id}/{workerShortId}/{folder}` for each folder |
 
 ## Trigger Types
 
-Workers support multiple concurrent triggers configured via `triggerConfig` JSON:
+Roles support multiple concurrent triggers. Webhook is always-on. All triggers route through the webhook endpoint internally.
 
 | Trigger | Config Key | How It Works |
 |---------|-----------|--------------|
-| Manual | (always available) | `triggerWorkerManually()` → `runClusterWorker()` |
-| Cron | `cron.schedule` | node-cron schedules in `runtime.js` |
-| Webhook | `webhook.enabled` | POST to `/api/cluster/{workerId}/webhook` |
-| File Watch | `file_watch.paths` | chokidar watches paths relative to cluster data dir |
+| Manual | (always available) | `triggerRoleManually()` → `runClusterRole()` |
+| Webhook | (always-on) | POST to `/api/cluster/{clusterId}/role/{roleId}/webhook` |
+| Cron | `cron.schedule` | node-cron → internal webhook fetch |
+| File Watch | `file_watch.paths` | chokidar → internal webhook fetch |
+
+## Concurrency
+
+Each role has `maxConcurrency` (default 1). Before launching a container, `listContainers()` counts running instances matching the role's container name prefix. If at max, the webhook returns 429.
 
 ## Key Functions
 
 **`execute.js`**:
 - `clusterNaming(cluster)` → `{ project, dataDir }` for Docker resource naming
 - `clusterDir(cluster)` → absolute path to cluster data directory
-- `workerDir(cluster, worker)` → absolute path to worker subdirectory
-- `runClusterWorker(workerId, context?)` → launches container, returns `{ busy, containerName, error }`
-- `stopWorkerContainer(workerId)` → stops and removes container
-- `isWorkerRunning(workerId)` → checks container state
+- `roleDir(cluster, role)` → absolute path to role subdirectory
+- `runClusterRole(roleId, context?)` → launches container with concurrency check
+- `stopRoleContainers(cluster, role)` → stops all containers for a role
+- `countRunningForRole(cluster, role)` → counts running containers
 
 **`runtime.js`**:
 - `startClusterRuntime()` → called once at boot
-- `reloadClusterRuntime()` → called after trigger/worker changes
-- `handleClusterWebhook(workerId, request)` → webhook endpoint handler
+- `reloadClusterRuntime()` → called after trigger/role changes
+- `handleClusterWebhook(clusterId, roleId, request)` → webhook endpoint handler
 
 ## DB Tables
 
 - `clusters` — cluster metadata (name, system_prompt, folders, enabled)
-- `cluster_roles` — reusable role definitions assigned to workers
-- `cluster_workers` — individual workers (cluster_id, cluster_role_id, name, trigger_config, folders)
+- `cluster_roles` — role definitions scoped to a cluster (role_name, role, trigger_config, max_concurrency, cleanup_worker_dir, folders)
 
-Workers are ordered by `createdAt`. No replica index — workers are identified by UUID short ID.
+Workers are ephemeral containers, not database entities.
