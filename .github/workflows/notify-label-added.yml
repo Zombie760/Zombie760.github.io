@@ -11,18 +11,17 @@ jobs:
     steps:
       - name: Look up webhook URL and fire
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          ALL_VARS: ${{ toJson(vars) }}
         run: |
           LABEL="${{ github.event.label.name }}"
 
-          # Normalize label to variable name: "in-progress" → "IN_PROGRESS"
+          # Normalize label to variable name: "plan" → "PLAN_WEBHOOK_URL"
           VAR_NAME=$(echo "$LABEL" | tr '[:lower:]' '[:upper:]' | sed 's/[^A-Z0-9]/_/g')
           VAR_NAME="${VAR_NAME}_WEBHOOK_URL"
 
           echo "Label added: '$LABEL' → looking for variable: $VAR_NAME"
 
-          # Fetch the variable via GitHub API
-          WEBHOOK_URL=$(gh api "repos/${{ github.repository }}/actions/variables/${VAR_NAME}" --jq '.value' 2>/dev/null || true)
+          WEBHOOK_URL=$(echo "$ALL_VARS" | jq -r --arg key "$VAR_NAME" '.[$key] // empty')
 
           if [ -z "$WEBHOOK_URL" ]; then
             echo "No variable '$VAR_NAME' found — skipping"
