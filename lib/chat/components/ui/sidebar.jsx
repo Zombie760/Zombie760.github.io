@@ -26,7 +26,9 @@ export function SidebarProvider({
   open: openProp,
   onOpenChange: setOpenProp,
 }) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== 'undefined' ? window.innerWidth < 768 : false
+  );
   const [openMobile, setOpenMobile] = useState(false);
   const [_open, _setOpen] = useState(defaultOpen);
   const open = openProp !== undefined ? openProp : _open;
