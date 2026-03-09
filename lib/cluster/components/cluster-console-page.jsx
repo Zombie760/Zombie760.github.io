@@ -448,7 +448,7 @@ function StatsPanel({ containers }) {
 
   return (
     <div className="shrink-0 border-t border-border bg-muted font-mono text-xs overflow-x-auto">
-      <table className="w-full">
+      <table className="w-full whitespace-nowrap">
         <thead>
           <tr className="border-b border-border text-muted-foreground">
             <th className="text-left px-3 py-1.5 font-medium">CONTAINER</th>
