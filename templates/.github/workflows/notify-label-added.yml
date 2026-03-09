@@ -48,3 +48,22 @@ jobs:
               --arg github_workflow 'Label Webhook' \
               --arg prompt "Clone https://github.com/${OWNER}/${REPO} on the ${DEFAULT_BRANCH} branch. Develop a technical plan for issue #${ISSUE_NUMBER} and comment the plan back to the issue. If the plan involves UI or frontend changes, add the GitHub label 'ui/ux review' (exact lowercase spelling) to the issue. If it involves security-sensitive changes, add the GitHub label 'security review' (exact lowercase spelling) to the issue." \
               '{issue_number: $issue_number, label: $label, owner: $owner, repo: $repo, branch: $branch, github_workflow: $github_workflow, prompt: $prompt}')"
+
+      - name: Add issue to project
+        if: github.event.label.name == 'plan' && vars.PROJECT_NUMBER != ''
+        env:
+          GH_TOKEN: ${{ secrets.PROJECT_PAT }}
+        run: |
+          PROJECT_ID=$(gh api graphql -f query='
+            query($owner: String!, $number: Int!) {
+              user(login: $owner) {
+                projectV2(number: $number) { id }
+              }
+            }' -f owner="${{ github.repository_owner }}" -F number=${{ vars.PROJECT_NUMBER }} --jq '.data.user.projectV2.id')
+
+          gh api graphql -f query='
+            mutation($project: ID!, $issue: ID!) {
+              addProjectV2ItemById(input: {projectId: $project, contentId: $issue}) {
+                item { id }
+              }
+            }' -f project="$PROJECT_ID" -f issue="${{ github.event.issue.node_id }}" --silent

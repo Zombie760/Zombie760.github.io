@@ -155,31 +155,33 @@ export function ClusterLogsPage({ session, clusterId }) {
             </div>
 
             {/* Body */}
-            <div className="flex flex-1 min-h-0">
+            <div className="flex flex-col md:flex-row flex-1 min-h-0">
               {/* Left: role list */}
-              <div className="w-56 shrink-0 border-r border-border overflow-y-auto bg-muted/30">
-                <div className="px-3 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+              <div className="shrink-0 border-b md:border-b-0 md:border-r border-border overflow-x-auto md:overflow-y-auto md:w-56 bg-muted/30">
+                <div className="hidden md:block px-3 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                   Roles
                 </div>
                 {logData.length === 0 ? (
                   <div className="px-3 py-4 text-xs text-muted-foreground">No logs yet</div>
                 ) : (
-                  logData.map((role) => (
-                    <button
-                      key={role.roleShortId}
-                      onClick={() => setSelectedRole(role.roleShortId)}
-                      className={`w-full text-left px-3 py-2.5 text-sm transition-colors border-l-2 ${
-                        selectedRole === role.roleShortId
-                          ? 'border-l-foreground bg-muted/60 text-foreground'
-                          : 'border-l-transparent text-muted-foreground hover:text-foreground hover:bg-muted/40'
-                      }`}
-                    >
-                      <div className="font-medium truncate">{role.roleName}</div>
-                      <div className="text-xs text-muted-foreground mt-0.5">
-                        {role.sessions.length} session{role.sessions.length !== 1 ? 's' : ''}
-                      </div>
-                    </button>
-                  ))
+                  <div className="flex md:block overflow-x-auto md:overflow-x-visible gap-2 px-3 py-2 md:p-0">
+                    {logData.map((role) => (
+                      <button
+                        key={role.roleShortId}
+                        onClick={() => setSelectedRole(role.roleShortId)}
+                        className={`shrink-0 md:w-full text-left px-3 py-2 md:py-2.5 text-sm transition-colors rounded-full md:rounded-none border md:border-0 md:border-l-2 ${
+                          selectedRole === role.roleShortId
+                            ? 'bg-foreground text-background md:bg-muted/60 md:text-foreground border-foreground md:border-l-foreground'
+                            : 'border-input md:border-l-transparent text-muted-foreground hover:text-foreground hover:bg-muted/40'
+                        }`}
+                      >
+                        <div className="font-medium truncate">{role.roleName}</div>
+                        <div className="hidden md:block text-xs text-muted-foreground mt-0.5">
+                          {role.sessions.length} session{role.sessions.length !== 1 ? 's' : ''}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
                 )}
               </div>
 

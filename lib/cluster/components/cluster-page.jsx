@@ -211,10 +211,10 @@ export function ClusterPage({ session, clusterId, roleId }) {
   return (
     <PageLayout session={session}>
       {/* Breadcrumb + Name */}
-      <div className="flex items-center gap-3 mb-4">
+      <div className="flex items-center flex-wrap gap-2 md:gap-3 mb-4">
         <a
           href="/clusters/list"
-          className="text-sm text-muted-foreground hover:text-foreground"
+          className="text-xs md:text-sm text-muted-foreground hover:text-foreground"
         >
           Clusters
         </a>
@@ -230,11 +230,11 @@ export function ClusterPage({ session, clusterId, roleId }) {
               if (e.key === 'Escape') { setEditingName(false); setNameValue(cluster.name); }
             }}
             onBlur={saveName}
-            className="text-2xl font-semibold bg-background border border-input rounded px-2 py-0.5 focus:outline-none focus:ring-2 focus:ring-ring"
+            className="text-lg md:text-2xl font-semibold bg-background border border-input rounded px-2 py-0.5 focus:outline-none focus:ring-2 focus:ring-ring"
           />
         ) : (
           <h1
-            className="text-2xl font-semibold cursor-pointer hover:text-muted-foreground"
+            className="text-lg md:text-2xl font-semibold cursor-pointer hover:text-muted-foreground truncate"
             onClick={() => setEditingName(true)}
             title="Click to rename"
           >
@@ -251,7 +251,7 @@ export function ClusterPage({ session, clusterId, roleId }) {
             </button>
             <a
               href={`/cluster/${clusterId}/console`}
-              className="ml-4 px-3 py-1 rounded-md text-xs bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground transition-colors"
+              className="ml-2 md:ml-4 px-3 py-1 rounded-md text-xs bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground transition-colors"
             >
               Console
             </a>
@@ -354,7 +354,7 @@ export function ClusterPage({ session, clusterId, roleId }) {
       {activeTab === 'general' ? (
         <div>
           {/* System Prompt */}
-          <div className="mb-6">
+          <div className="mb-6 border-b border-border pb-6">
             <label className="text-sm font-medium block mb-1">System Prompt</label>
             <p className="text-xs text-muted-foreground mb-2">Define the cluster's mission, goals, and shared instructions. This is prepended to every role's prompt along with the workspace structure.</p>
             <textarea
@@ -362,8 +362,8 @@ export function ClusterPage({ session, clusterId, roleId }) {
               onChange={(e) => setSystemPromptValue(e.target.value)}
               onBlur={saveSystemPrompt}
               placeholder="Enter shared instructions for all roles..."
-              rows={4}
-              className="w-full text-sm bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring resize-y font-mono"
+              rows={8}
+              className="w-full text-xs bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring resize-y font-mono"
             />
             <div className="flex items-center gap-2 mt-1.5">
               <span className="text-xs text-muted-foreground">
@@ -663,8 +663,8 @@ function RoleTabContent({ role, clusterId, status, onUpdate, onDelete }) {
           onChange={(e) => setRolePromptValue(e.target.value)}
           onBlur={saveRolePrompt}
           placeholder="Describe what this role does..."
-          rows={3}
-          className="w-full text-sm bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring resize-y font-mono"
+          rows={6}
+          className="w-full text-xs bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring resize-y font-mono"
         />
         <div className="flex items-center gap-2 mt-1.5">
           <span className="text-xs text-muted-foreground">
@@ -689,8 +689,8 @@ function RoleTabContent({ role, clusterId, status, onUpdate, onDelete }) {
           onChange={(e) => setPromptValue(e.target.value)}
           onBlur={savePrompt}
           placeholder="Execute your role."
-          rows={3}
-          className="w-full text-sm bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring resize-y font-mono"
+          rows={5}
+          className="w-full text-xs bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring resize-y font-mono"
         />
         <div className="flex items-center gap-2 mt-1.5">
           <span className="text-xs text-muted-foreground">
@@ -705,6 +705,8 @@ function RoleTabContent({ role, clusterId, status, onUpdate, onDelete }) {
           </button>
         </div>
       </div>
+
+      <div className="border-b border-border mb-6" />
 
       {/* Max Concurrency */}
       <div className="mb-6">
@@ -748,6 +750,8 @@ function RoleTabContent({ role, clusterId, status, onUpdate, onDelete }) {
         </button>
       </div>
 
+      <div className="border-b border-border mb-6" />
+
       {/* Folders */}
       <div className="mb-6">
         <label className="text-sm font-medium block mb-2">Folders</label>
@@ -762,6 +766,8 @@ function RoleTabContent({ role, clusterId, status, onUpdate, onDelete }) {
         />
         <p className="text-xs text-muted-foreground mt-1.5">Comma-separated folder names created under role-{shortId}/.</p>
       </div>
+
+      <div className="border-b border-border mb-6" />
 
       {/* Triggers */}
       <div className="mb-6">
@@ -927,7 +933,7 @@ function PlaceholderDialog({ open, onClose }) {
       <div className="fixed inset-0 bg-black/50" onClick={onClose} />
       <div
         className="relative z-50 w-full max-w-2xl mx-4 rounded-lg border border-border bg-background shadow-lg flex flex-col"
-        style={{ maxHeight: '75vh' }}
+        style={{ maxHeight: '85vh' }}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between px-6 py-4 border-b border-border shrink-0">

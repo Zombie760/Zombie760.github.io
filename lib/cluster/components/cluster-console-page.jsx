@@ -161,7 +161,7 @@ export function ClusterConsolePage({ session, clusterId }) {
               </a>
 
               {/* Role summary + Run buttons */}
-              <div className="flex items-center gap-2 flex-wrap ml-4">
+              <div className="flex items-center gap-2 flex-wrap ml-0 md:ml-4">
                 {roleSummary.map((rs) => (
                   <RoleHeaderButton key={rs.roleId} {...rs} clusterId={clusterId} />
                 ))}
@@ -173,7 +173,7 @@ export function ClusterConsolePage({ session, clusterId }) {
                 </a>
               </div>
 
-              <div className="ml-auto flex items-center gap-1.5">
+              <div className="ml-auto hidden md:flex items-center gap-1.5">
                 <span className="text-xs text-muted-foreground">Columns:</span>
                 {['auto', '1', '2', '3', '4'].map((val) => (
                   <button
@@ -222,7 +222,20 @@ export function ClusterConsolePage({ session, clusterId }) {
 
             {/* Bottom stats panel */}
             {allContainers.length > 0 && (
-              <StatsPanel containers={allContainers} />
+              <>
+                <div className="hidden md:block">
+                  <StatsPanel containers={allContainers} />
+                </div>
+                <div className="md:hidden shrink-0 border-t border-border bg-muted px-3 py-1.5 font-mono text-xs text-muted-foreground">
+                  {(() => {
+                    let cpu = 0, mem = 0, run = 0;
+                    for (const c of allContainers) {
+                      if (c.running) { run++; cpu += c.cpu || 0; mem += c.memUsage || 0; }
+                    }
+                    return `${run} running · ${cpu.toFixed(1)}% · ${formatBytes(mem)}`;
+                  })()}
+                </div>
+              </>
             )}
           </div>
         </SidebarInset>
