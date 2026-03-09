@@ -168,7 +168,7 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
     <div className="flex h-svh flex-col">
       <ChatHeader chatId={chatId} />
       {messages.length === 0 ? (
-        <div className="flex flex-1 flex-col items-center justify-center px-4 md:px-6">
+        <div className="flex flex-1 flex-col items-center justify-center px-2.5 md:px-6">
           <div className="w-full max-w-4xl">
             <Greeting codeMode={codeMode} />
             {error && (
@@ -232,15 +232,17 @@ export function Chat({ chatId, initialMessages = [], workspace = null }) {
               />
             </div>
           ) : (
-            <ChatInput
-              input={input}
-              setInput={setInput}
-              onSubmit={handleSend}
-              status={status}
-              stop={stop}
-              files={files}
-              setFiles={setFiles}
-            />
+            <div className="px-2.5 md:px-0">
+              <ChatInput
+                input={input}
+                setInput={setInput}
+                onSubmit={handleSend}
+                status={status}
+                stop={stop}
+                files={files}
+                setFiles={setFiles}
+              />
+            </div>
           )}
         </>
       )}
