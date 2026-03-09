@@ -1,3 +1,39 @@
+/**
+ * sync.js — Mirrors package templates into a user project and rebuilds.
+ *
+ * mirrorTemplates() has three phases:
+ *
+ *   1. COPY: Walk templates/ recursively, copy every file to projectPath.
+ *      - .template suffix is stripped from destination filenames
+ *      - Symlinks are recreated as symlinks
+ *      - Files named CLAUDE.md are excluded (EXCLUDED_FILENAMES)
+ *      - SKIP_PATHS (skills/active, cron, triggers) are skipped entirely —
+ *        the directory is never entered, nothing is copied
+ *      - All copied paths are tracked in copiedPaths
+ *
+ *   2. DELETE STALE: For each top-level directory in templates/ that also
+ *      exists in the project, walk the PROJECT directory and delete any file
+ *      that was NOT copied (not in copiedPaths) AND does not exist in
+ *      templates (even as a .template variant).
+ *      - SKIP_PATHS are skipped — files inside these dirs are never deleted
+ *      - Only directories that templates touches are walked, so user-only
+ *        dirs (.env, data/, etc.) are never entered
+ *
+ *   3. REMOVE EMPTY DIRS: For each top-level directory in templates/ that
+ *      also exists in the project, recursively remove any empty directories.
+ *      - BUG: Does NOT check SKIP_PATHS — will delete cron/, triggers/,
+ *        or skills/active/ if they are empty directories
+ *
+ * sync() orchestrates the full pipeline:
+ *   1. Build package JSX (npm run build)
+ *   2. npm pack → copy tarball to project
+ *   3. mirrorTemplates() — overwrite + delete stale
+ *   4. npm install tarball on host (--no-save)
+ *   5. Next.js build on host
+ *   6. Docker image build (patches Dockerfile for local tarball)
+ *   7. docker compose up -d -V event-handler
+ *   8. Cleanup tarball
+ */
 import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';

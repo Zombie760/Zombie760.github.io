@@ -341,13 +341,6 @@ export function ClusterPage({ session, clusterId, roleId }) {
             ))}
           </SortableContext>
         </DndContext>
-        <button
-          onClick={handleAddRole}
-          className="inline-flex items-center gap-2 px-3 py-2 min-h-[44px] shrink-0 text-sm font-medium border-b-2 border-transparent text-muted-foreground hover:text-foreground hover:border-border transition-colors"
-        >
-          <PlusIcon size={14} />
-          New Role
-        </button>
       </div>
 
       {/* Tab content */}
@@ -407,6 +400,17 @@ export function ClusterPage({ session, clusterId, roleId }) {
               </button>
             </div>
           )}
+
+          {/* Delete cluster */}
+          <div className="pt-6 border-t border-border mt-6">
+            <button
+              onClick={() => setConfirmDeleteCluster(true)}
+              className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-destructive border border-destructive/30 hover:bg-destructive/10"
+            >
+              <TrashIcon size={16} />
+              Delete cluster
+            </button>
+          </div>
         </div>
       ) : activeRole ? (
         <RoleTabContent
