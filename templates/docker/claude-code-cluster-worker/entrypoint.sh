@@ -49,16 +49,8 @@ SESSION_TS=$(date -u +%Y-%m-%d_%H-%M-%S)
 LOG_DIR="logs/role-${ROLE_SHORT_ID}/${SESSION_TS}_${WORKER_UUID}"
 LOG_READY=false
 if mkdir -p "$LOG_DIR" 2>/dev/null; then
-    {
-        echo "# System Prompt"
-        echo ""
-        printf '%s' "$SYSTEM_PROMPT"
-        echo ""
-        echo ""
-        echo "# Prompt"
-        echo ""
-        printf '%s' "$PROMPT"
-    } > "$LOG_DIR/prompt.md" 2>/dev/null
+    printf '%s' "$SYSTEM_PROMPT" > "$LOG_DIR/system-prompt.md" 2>/dev/null
+    printf '%s' "$PROMPT" > "$LOG_DIR/user-prompt.md" 2>/dev/null
     cat > "$LOG_DIR/meta.json" << ENDJSON
 {"roleName":"${ROLE_NAME}","startedAt":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
 ENDJSON

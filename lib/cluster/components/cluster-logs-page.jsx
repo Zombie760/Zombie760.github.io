@@ -99,13 +99,18 @@ export function ClusterLogsPage({ session, clusterId }) {
     });
 
     if (!sessionContents[key]) {
-      const [stdout, stderr, prompt, trigger] = await Promise.all([
+      const [stdout, stderr, systemPrompt, userPrompt, legacyPrompt, trigger] = await Promise.all([
         getSessionLog(clusterId, roleShortId, sessionName, 'stdout'),
         getSessionLog(clusterId, roleShortId, sessionName, 'stderr'),
+        getSessionLog(clusterId, roleShortId, sessionName, 'system-prompt'),
+        getSessionLog(clusterId, roleShortId, sessionName, 'user-prompt'),
         getSessionLog(clusterId, roleShortId, sessionName, 'prompt'),
         getSessionLog(clusterId, roleShortId, sessionName, 'trigger'),
       ]);
-      setSessionContents((prev) => ({ ...prev, [key]: { stdout, stderr, prompt, trigger } }));
+      // Support old sessions that only have prompt.md
+      const sysPrompt = systemPrompt || (legacyPrompt && !userPrompt ? legacyPrompt : null);
+      const usrPrompt = userPrompt || null;
+      setSessionContents((prev) => ({ ...prev, [key]: { stdout, stderr, systemPrompt: sysPrompt, userPrompt: usrPrompt, trigger } }));
     }
   };
 
@@ -240,8 +245,9 @@ export function ClusterLogsPage({ session, clusterId }) {
                                 {[
                                   { id: 'code', label: 'Code' },
                                   { id: 'console', label: 'Console' },
-                                  { id: 'prompt', label: 'Prompt' },
                                   { id: 'trigger', label: 'Trigger' },
+                                  { id: 'system-prompt', label: 'System Prompt' },
+                                  { id: 'user-prompt', label: 'User Prompt' },
                                 ].map((t) => (
                                   <button
                                     key={t.id}
@@ -307,13 +313,24 @@ function SessionTabContent({ content, tab }) {
     );
   }
 
-  if (tab === 'prompt') {
-    if (!content.prompt) {
-      return <div className="text-muted-foreground text-center py-4">No prompt saved</div>;
+  if (tab === 'system-prompt') {
+    if (!content.systemPrompt) {
+      return <div className="text-muted-foreground text-center py-4">No system prompt saved</div>;
     }
     return (
       <pre className="text-foreground whitespace-pre-wrap break-words leading-relaxed">
-        {content.prompt}
+        {content.systemPrompt}
+      </pre>
+    );
+  }
+
+  if (tab === 'user-prompt') {
+    if (!content.userPrompt) {
+      return <div className="text-muted-foreground text-center py-4">No user prompt saved</div>;
+    }
+    return (
+      <pre className="text-foreground whitespace-pre-wrap break-words leading-relaxed">
+        {content.userPrompt}
       </pre>
     );
   }
