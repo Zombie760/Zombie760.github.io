@@ -5,7 +5,7 @@ import { AppSidebar } from '../../chat/components/app-sidebar.js';
 import { SidebarProvider, SidebarInset } from '../../chat/components/ui/sidebar.js';
 import { ChatNavProvider } from '../../chat/components/chat-nav-context.js';
 import { PencilIcon, ClusterIcon } from '../../chat/components/icons.js';
-import { triggerRoleManually, stopRoleAction, getCluster } from '../actions.js';
+import { triggerRoleManually, stopRoleAction, getCluster, getWorkerPrompts } from '../actions.js';
 import { CodeLogView } from './code-log-view.jsx';
 
 const MAX_LOG_ENTRIES = 500;
@@ -212,6 +212,7 @@ export function ClusterConsolePage({ session, clusterId }) {
                     <ContainerTile
                       key={container.name}
                       container={container}
+                      clusterId={clusterId}
                       logs={logBuffers.current.get(container.name) || []}
                       logVersion={logVersion}
                     />
@@ -304,10 +305,14 @@ function RoleHeaderButton({ roleId, roleName, running, max, clusterId }) {
   );
 }
 
-function ContainerTile({ container, logs, logVersion }) {
+const TILE_TABS = ['code', 'console', 'trigger', 'system', 'user'];
+const TILE_TAB_LABELS = { code: 'Code', console: 'Console', trigger: 'Trigger', system: 'System', user: 'User' };
+
+function ContainerTile({ container, clusterId, logs, logVersion }) {
   const [mode, setMode] = useState('code');
   const [stopping, setStopping] = useState(false);
   const [expandedTools, setExpandedTools] = useState(new Set());
+  const [prompts, setPrompts] = useState(null);
   const logEndRef = useRef(null);
   const containerShortId = container.workerUuid || container.name.split('-').pop();
 
@@ -316,6 +321,13 @@ function ContainerTile({ container, logs, logVersion }) {
       logEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [logVersion, mode]);
+
+  // Fetch prompt data once per container
+  useEffect(() => {
+    if (clusterId && container.workerUuid) {
+      getWorkerPrompts(clusterId, container.workerUuid).then(setPrompts).catch(() => {});
+    }
+  }, [clusterId, container.workerUuid]);
 
   const handleStop = async () => {
     setStopping(true);
@@ -353,24 +365,23 @@ function ContainerTile({ container, logs, logVersion }) {
           </button>
         )}
         <div className="ml-auto flex items-center rounded-md border border-input overflow-hidden">
-          <button
-            onClick={() => setMode('code')}
-            className={`px-2 py-1 text-xs transition-colors ${mode === 'code' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
-          >
-            Code
-          </button>
-          <button
-            onClick={() => setMode('console')}
-            className={`px-2 py-1 text-xs transition-colors ${mode === 'console' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
-          >
-            Console
-          </button>
+          {TILE_TABS.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setMode(tab)}
+              className={`px-2 py-1 text-xs transition-colors ${mode === tab ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
+            >
+              {TILE_TAB_LABELS[tab]}
+            </button>
+          ))}
         </div>
       </div>
 
       {/* Log area */}
       <div className="flex-1 overflow-y-auto p-2 font-mono text-xs min-h-0 bg-background/50">
-        {(() => {
+        {mode === 'trigger' || mode === 'system' || mode === 'user' ? (
+          <PromptTabContent mode={mode} prompts={prompts} />
+        ) : (() => {
           const filtered = mode === 'console'
             ? logs.filter((e) => e.stream === 'stderr')
             : logs.filter((e) => e.stream === 'stdout');
@@ -398,6 +409,28 @@ function ContainerTile({ container, logs, logVersion }) {
       </div>
     </div>
   );
+}
+
+function PromptTabContent({ mode, prompts }) {
+  if (!prompts) {
+    return (
+      <div className="flex items-center justify-center h-full text-muted-foreground text-xs">
+        Loading...
+      </div>
+    );
+  }
+  const content = mode === 'trigger' ? prompts.trigger
+    : mode === 'system' ? prompts.systemPrompt
+    : prompts.userPrompt;
+  if (!content) {
+    const label = mode === 'trigger' ? 'trigger data' : mode === 'system' ? 'system prompt' : 'user prompt';
+    return (
+      <div className="flex items-center justify-center h-full text-muted-foreground text-xs">
+        No {label}
+      </div>
+    );
+  }
+  return <pre className="whitespace-pre-wrap break-words text-foreground/80 leading-relaxed">{content}</pre>;
 }
 
 function StatsPanel({ containers }) {

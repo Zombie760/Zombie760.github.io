@@ -45,12 +45,12 @@ jobs:
           # Substitute payload variables into prompt template (case-insensitive)
           if [ -n "$PROMPT" ]; then
             PROMPT=$(echo "$PROMPT" | sed \
-              -e "s|\\\${issue_number}|${ISSUE_NUMBER}|gI" \
-              -e "s|\\\${label}|${LABEL}|gI" \
-              -e "s|\\\${owner}|${OWNER}|gI" \
-              -e "s|\\\${repo}|${REPO}|gI" \
-              -e "s|\\\${branch}|${BRANCH}|gI" \
-              -e "s|\\\${github_workflow}|${GITHUB_WF}|gI")
+              -e "s|{{issue_number}}|${ISSUE_NUMBER}|gI" \
+              -e "s|{{label}}|${LABEL}|gI" \
+              -e "s|{{owner}}|${OWNER}|gI" \
+              -e "s|{{repo}}|${REPO}|gI" \
+              -e "s|{{branch}}|${BRANCH}|gI" \
+              -e "s|{{github_workflow}}|${GITHUB_WF}|gI")
           fi
 
           # Build base payload
