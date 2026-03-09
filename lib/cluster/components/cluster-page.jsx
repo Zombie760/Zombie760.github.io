@@ -341,6 +341,13 @@ export function ClusterPage({ session, clusterId, roleId }) {
             ))}
           </SortableContext>
         </DndContext>
+        <button
+          onClick={handleAddRole}
+          className="inline-flex items-center gap-2 px-3 py-2 min-h-[44px] shrink-0 text-sm font-medium border-b-2 border-transparent text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+        >
+          <PlusIcon size={14} />
+          New Role
+        </button>
       </div>
 
       {/* Tab content */}
@@ -386,20 +393,6 @@ export function ClusterPage({ session, clusterId, roleId }) {
               className="w-full text-sm bg-background border border-input rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-ring font-mono"
             />
           </div>
-
-          {/* Empty state if no roles */}
-          {(!cluster.roles || cluster.roles.length === 0) && (
-            <div className="rounded-md border border-dashed border-border p-8 text-center">
-              <p className="text-sm text-muted-foreground mb-3">No roles yet. Add a role to this cluster.</p>
-              <button
-                onClick={handleAddRole}
-                className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium border border-input hover:bg-muted"
-              >
-                <PlusIcon size={16} />
-                Add first role
-              </button>
-            </div>
-          )}
 
           {/* Delete cluster */}
           <div className="pt-6 border-t border-border mt-6">
