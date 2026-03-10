@@ -1,4 +1,8 @@
-# Why thepopebot?
+[![ThePopeBot](https://private-user-images.githubusercontent.com/1420454/369591171-75173cf4-2502-4710-998b-6b81740ae1bd.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzMxMDQzMDksIm5iZiI6MTc3MzEwNDAwOSwicGF0aCI6Ii8xNDIwNDU0LzM2OTU5MTE3MS03NTE3M2NmNC0yNTAyLTQ3MTAtOTk4Yi02YjgxNzQwYWUxYmQucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDMxMCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjAzMTBUMDA1MzI5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NGUwMTg3N2VjYjdiYWFmNDZkZDM4YzVkZDhjYmYxNWViZjZiMWUzMzZhYjExNGRlMDRhNDJhOTRmODUzMjFhZiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.AbkcWlFqg4MGVuC5GSbSQAmONCliAsgJQ5tWLj5rkpQ)](https://www.skool.com/ai-architects)
+
+[Get priority support HERE](https://www.skool.com/ai-architects)
+
+# ThePopeBot
 
 **The repository IS the agent** — Every action your agent takes is a git commit. You can see exactly what it did, when, and why. If it screws up, revert it. Want to clone your agent? Fork the repo — code, personality, scheduled jobs, full history, all of it goes with your fork.
 
