@@ -18,8 +18,10 @@ import {
 } from './ui/sidebar.js';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip.js';
 import { useChatNav } from './chat-nav-context.js';
+import { useFeatures } from './features-context.js';
 
-export function AppSidebar({ user, features }) {
+export function AppSidebar({ user }) {
+  const features = useFeatures();
   const { navigateToChat } = useChatNav();
   const { state, open, setOpenMobile, toggleSidebar } = useSidebar();
   const collapsed = state === 'collapsed';
@@ -277,7 +279,7 @@ export function AppSidebar({ user, features }) {
           </SidebarMenu>
 
           <div className="mx-4 border-t border-border" />
-          <SidebarHistory features={features} />
+          <SidebarHistory />
         </SidebarContent>
       )}
 

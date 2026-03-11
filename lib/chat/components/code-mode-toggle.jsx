@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { GitBranchIcon } from './icons.js';
 import { Combobox } from './ui/combobox.js';
 import { cn } from '../utils.js';
+import { useFeatures } from './features-context.js';
 
 /**
  * Code mode toggle with repo/branch pickers.
@@ -24,7 +25,6 @@ import { cn } from '../utils.js';
  * @param {Function} [props.onWorkspaceUpdate] - Callback to refresh workspace state after mode toggle
  */
 export function CodeModeToggle({
-  features,
   enabled,
   onToggle,
   repo,
@@ -38,6 +38,7 @@ export function CodeModeToggle({
   isInteractiveActive,
   onWorkspaceUpdate,
 }) {
+  const features = useFeatures();
   const [repos, setRepos] = useState([]);
   const [branches, setBranches] = useState([]);
   const [loadingRepos, setLoadingRepos] = useState(false);

@@ -16,7 +16,7 @@ import { v4 as uuidv4 } from 'uuid';
  * @param {boolean} props.needsSetup - Whether setup is needed
  * @param {string} [props.chatId] - Chat ID from URL (only used for initial mount)
  */
-export function ChatPage({ session, needsSetup, chatId, features }) {
+export function ChatPage({ session, needsSetup, chatId }) {
   const [activeChatId, setActiveChatId] = useState(chatId || null);
   const [resolvedChatId, setResolvedChatId] = useState(() => chatId ? null : uuidv4());
   const [initialMessages, setInitialMessages] = useState([]);
@@ -120,7 +120,7 @@ export function ChatPage({ session, needsSetup, chatId, features }) {
   return (
     <ChatNavProvider value={contextValue}>
       <SidebarProvider>
-        <AppSidebar user={session.user} features={features} />
+        <AppSidebar user={session.user} />
         <SidebarInset>
           {resolvedChatId && (
             <Chat
@@ -128,7 +128,6 @@ export function ChatPage({ session, needsSetup, chatId, features }) {
               chatId={resolvedChatId}
               initialMessages={initialMessages}
               workspace={workspace}
-              features={features}
             />
           )}
         </SidebarInset>

@@ -7,6 +7,7 @@ import { useChatNav } from './chat-nav-context.js';
 import { getChats, deleteChat, renameChat, starChat } from '../actions.js';
 import { cn } from '../utils.js';
 import { MessageIcon, CodeIcon } from './icons.js';
+import { useFeatures } from './features-context.js';
 
 function groupChatsByDate(chats) {
   const now = new Date();
@@ -52,7 +53,8 @@ const BASE_FILTERS = [
 ];
 const CODE_FILTER = { value: 'code', label: 'Code', icon: CodeIcon };
 
-function ChatTypeFilter({ filter, setFilter, features }) {
+function ChatTypeFilter({ filter, setFilter }) {
+  const features = useFeatures();
   const filters = features?.codeWorkspace ? [...BASE_FILTERS, CODE_FILTER] : BASE_FILTERS;
   return (
     <div className="flex items-center gap-0.5 px-2 pt-2 mb-1">
@@ -77,7 +79,7 @@ function ChatTypeFilter({ filter, setFilter, features }) {
 
 const isCodeChat = (chat) => Boolean(chat.codeWorkspaceId);
 
-export function SidebarHistory({ features }) {
+export function SidebarHistory() {
   const [chats, setChats] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
@@ -186,7 +188,7 @@ export function SidebarHistory({ features }) {
       <>
         <SidebarGroup className="sticky top-0 z-10 bg-muted">
           <SidebarGroupContent>
-            <ChatTypeFilter filter={filter} setFilter={updateFilter} features={features} />
+            <ChatTypeFilter filter={filter} setFilter={updateFilter} />
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>
@@ -225,7 +227,7 @@ export function SidebarHistory({ features }) {
     <>
       <SidebarGroup className="sticky top-0 z-10 bg-muted">
         <SidebarGroupContent>
-          <ChatTypeFilter filter={filter} setFilter={updateFilter} features={features} />
+          <ChatTypeFilter filter={filter} setFilter={updateFilter} />
         </SidebarGroupContent>
       </SidebarGroup>
       {hasResults ? (
