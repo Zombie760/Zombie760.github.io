@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
 import chalk from 'chalk';
-import open from 'open';
 import * as clack from '@clack/prompts';
 
 import { checkPrerequisites } from './lib/prerequisites.mjs';
 import { setVariables, setSecrets } from './lib/github.mjs';
 import { setTelegramWebhook, validateBotToken, generateVerificationCode, getBotFatherURL } from './lib/telegram.mjs';
-import { confirm, keepOrReconfigure, generateTelegramWebhookSecret, promptForOptionalKey, maskSecret } from './lib/prompts.mjs';
+import { confirm, keepOrReconfigure, generateTelegramWebhookSecret, promptForOptionalKey, maskSecret, openOrShowURL } from './lib/prompts.mjs';
 import { updateEnvVariable } from './lib/auth.mjs';
 import { runVerificationFlow } from './lib/telegram-verify.mjs';
 import { loadEnvFile } from './lib/env.mjs';
@@ -137,10 +136,7 @@ async function main() {
       '  3. Copy the bot token'
     );
 
-    const openBotFather = await confirm('Open BotFather in browser?');
-    if (openBotFather) {
-      await open(getBotFatherURL());
-    }
+    await openOrShowURL(getBotFatherURL(), 'Telegram BotFather');
 
     let tokenValid = false;
     while (!tokenValid) {

@@ -90,6 +90,7 @@ export async function checkPrerequisites() {
     node: { installed: false, version: null, ok: false },
     packageManager: { installed: false, name: null },
     gh: { installed: false, authenticated: false },
+    docker: { installed: false, running: false },
     ngrok: { installed: false },
     git: { installed: false, remoteInfo: null },
   };
@@ -114,6 +115,17 @@ export async function checkPrerequisites() {
   results.gh.installed = commandExists('gh');
   if (results.gh.installed) {
     results.gh.authenticated = await isGhAuthenticated();
+  }
+
+  // Check Docker
+  results.docker.installed = commandExists('docker');
+  if (results.docker.installed) {
+    try {
+      execSync('docker info', { stdio: 'ignore' });
+      results.docker.running = true;
+    } catch {
+      // installed but daemon not responding
+    }
   }
 
   // Check ngrok
@@ -150,6 +162,13 @@ export async function installGlobalPackage(packageName) {
 export async function runGhAuth() {
   // This needs to be interactive, so we use execSync
   execSync('gh auth login', { stdio: 'inherit', env: ghEnv() });
+}
+
+/**
+ * Check if we can open a browser (false in SSH sessions)
+ */
+export function canOpenBrowser() {
+  return !process.env.SSH_CLIENT && !process.env.SSH_TTY && !process.env.SSH_CONNECTION;
 }
 
 export { commandExists, getGitRemoteInfo, getPackageManager };

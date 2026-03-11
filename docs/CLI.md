@@ -1,0 +1,112 @@
+# CLI Reference
+
+## Understanding `init`
+
+### How your project is structured
+
+When you ran `thepopebot init` the first time, it scaffolded a project folder with two kinds of files:
+
+**Your files** — These are yours to customize. `init` will never overwrite them:
+
+| Files | What they do |
+|-------|-------------|
+| `config/SOUL.md`, `JOB_PLANNING.md`, `JOB_AGENT.md`, etc. | Your agent's personality, behavior, and prompts |
+| `config/CRONS.json`, `TRIGGERS.json` | Your scheduled jobs and webhook triggers |
+| `docker/pi-coding-agent-job/` | The Dockerfile for the Pi coding agent job container |
+| `docker/claude-code-job/` | The Dockerfile for the Claude Code agent job container |
+
+**Managed files** — These are infrastructure files that need to stay in sync with the package version. `init` auto-updates them for you:
+
+| Files | What they do |
+|-------|-------------|
+| `.github/workflows/` | GitHub Actions that run jobs, auto-merge PRs, rebuild on deploy |
+| `docker-compose.yml` | Defines how your containers run together (Traefik, event handler, runner) |
+| `docker/event-handler/` | The Dockerfile for the event handler container |
+| `.dockerignore` | Keeps unnecessary files out of Docker builds |
+| `app/` | Next.js pages, layouts, and routes |
+| `CLAUDE.md` | AI assistant context for your project |
+
+### What happens when you run `init`
+
+1. **Managed files** are updated automatically to match the new package version
+2. **Your files** are left alone — but if the package ships new defaults (e.g., a new field in `CRONS.json`), `init` lets you know:
+
+```
+Updated templates available:
+These files differ from the current package templates.
+
+  config/CRONS.json
+
+To view differences:  npx thepopebot diff <file>
+To reset to default:  npx thepopebot reset <file>
+```
+
+You can review at your own pace:
+
+```bash
+npx thepopebot diff config/CRONS.json    # see what changed
+npx thepopebot reset config/CRONS.json   # accept the new template
+```
+
+### If you've modified managed files
+
+If you've made custom changes to managed files (e.g., added extra steps to a GitHub Actions workflow), use `--no-managed` so `init` doesn't overwrite your changes:
+
+```bash
+npx thepopebot init --no-managed
+```
+
+### Template file conventions
+
+The `templates/` directory contains files scaffolded into user projects by `thepopebot init`. Two naming conventions handle files that npm or AI tools would otherwise misinterpret:
+
+**`.template` suffix** — Files ending in `.template` are scaffolded with the suffix stripped. This is used for files that npm mangles (`.gitignore`) or that AI tools would pick up as real project docs (`CLAUDE.md`).
+
+| In `templates/` | Scaffolded as |
+|-----------------|---------------|
+| `.gitignore.template` | `.gitignore` |
+| `CLAUDE.md.template` | `CLAUDE.md` |
+| `api/CLAUDE.md.template` | `api/CLAUDE.md` |
+
+**`CLAUDE.md` exclusion** — The scaffolding walker skips any file named `CLAUDE.md` (without the `.template` suffix). This is a safety net so a bare `CLAUDE.md` accidentally added to `templates/` never gets copied into user projects where AI tools would confuse it with real project instructions.
+
+---
+
+## CLI Commands
+
+All commands are run via `npx thepopebot <command>` (or the `npm run` shortcuts where noted).
+
+**Project setup:**
+
+| Command | Description |
+|---------|-------------|
+| `init` | Scaffold a new project, or update templates in an existing one |
+| `setup` | Run the full interactive setup wizard (`npm run setup`) |
+| `setup-telegram` | Reconfigure the Telegram webhook (`npm run setup-telegram`) |
+| `reset-auth` | Regenerate AUTH_SECRET, invalidating all sessions |
+
+**Templates:**
+
+| Command | Description |
+|---------|-------------|
+| `diff [file]` | List files that differ from package templates, or diff a specific file |
+| `reset [file]` | List all template files, or restore a specific one to package default |
+| `upgrade` / `update` | Upgrade thepopebot (install, init, build, commit, push, restart Docker) |
+| `sync <path>` | Sync local package to a test install (build, pack, Docker) |
+| `user:password <email>` | Change a user's password |
+
+**Secrets & variables:**
+
+These commands set individual GitHub repository secrets/variables using the `gh` CLI. They read `GH_OWNER` and `GH_REPO` from your `.env`. If VALUE is omitted, you'll be prompted with masked input (keeps secrets out of shell history).
+
+| Command | Description |
+|---------|-------------|
+| `set-agent-secret KEY [VALUE]` | Set `AGENT_<KEY>` GitHub secret and update `.env` |
+| `set-agent-llm-secret KEY [VALUE]` | Set `AGENT_LLM_<KEY>` GitHub secret |
+| `set-var KEY [VALUE]` | Set a GitHub repository variable |
+
+GitHub secrets use a prefix convention so the workflow can route them correctly:
+
+- **`AGENT_`** — Protected secrets passed to the Docker container (filtered from LLM). Example: `AGENT_GH_TOKEN`, `AGENT_ANTHROPIC_API_KEY`
+- **`AGENT_LLM_`** — LLM-accessible secrets (not filtered). Example: `AGENT_LLM_BRAVE_API_KEY`
+- **No prefix** — Workflow-only secrets, never passed to container. Example: `GH_WEBHOOK_SECRET`

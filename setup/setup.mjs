@@ -4,7 +4,6 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import chalk from 'chalk';
-import open from 'open';
 import * as clack from '@clack/prompts';
 
 import { createDirLink } from './lib/fs-utils.mjs';
@@ -12,6 +11,7 @@ import { createDirLink } from './lib/fs-utils.mjs';
 import {
   checkPrerequisites,
   runGhAuth,
+  ghEnv,
 } from './lib/prerequisites.mjs';
 import {
   promptForPAT,
@@ -24,6 +24,7 @@ import {
   pressEnter,
   maskSecret,
   keepOrReconfigure,
+  openOrShowURL,
 } from './lib/prompts.mjs';
 import { PROVIDERS } from './lib/providers.mjs';
 import {
@@ -143,6 +144,16 @@ async function main() {
     initSpinner.stop('Git repo initialized');
   }
 
+  // Set git identity from GitHub if not configured
+  try { execSync('git config user.name', { stdio: 'ignore' }); } catch {
+    try {
+      const ghUser = JSON.parse(execSync('gh api user', { encoding: 'utf-8', env: ghEnv() }));
+      execSync(`git config --global user.name "${ghUser.name || ghUser.login}"`, { stdio: 'ignore' });
+      execSync(`git config --global user.email "${ghUser.login}@users.noreply.github.com"`, { stdio: 'ignore' });
+      clack.log.success('Git identity set from GitHub');
+    } catch {}
+  }
+
   if (prereqs.git.remoteInfo) {
     owner = prereqs.git.remoteInfo.owner;
     repo = prereqs.git.remoteInfo.repo;
@@ -181,11 +192,10 @@ async function main() {
     clack.log.info('  2. Do NOT initialize with a README');
     clack.log.info('  3. Copy the HTTPS URL');
 
-    const openGitHub = await confirm('Open GitHub repo creation page in browser?');
-    if (openGitHub) {
-      await open(`https://github.com/new?name=${encodeURIComponent(projectName)}&visibility=private`);
-      clack.log.info('Opened in browser (name and private pre-filled).');
-    }
+    await openOrShowURL(
+      `https://github.com/new?name=${encodeURIComponent(projectName)}&visibility=private`,
+      'GitHub repo creation page'
+    );
 
     // Ask for the remote URL and add it
     let remoteAdded = false;
@@ -258,6 +268,19 @@ async function main() {
     );
   }
 
+  // Docker check (informational — needed for Step 7)
+  if (prereqs.docker.installed) {
+    if (prereqs.docker.running) {
+      clack.log.success('Docker installed and running');
+    } else {
+      clack.log.warn('Docker installed but daemon is not running. You\'ll need it for Step 7 (Start Server).');
+      clack.log.info('Make sure the Docker daemon is started before then.');
+    }
+  } else {
+    clack.log.warn('Docker not installed (needed to run the server)');
+    clack.log.info('Install Docker: https://docs.docker.com/get-docker/');
+  }
+
   // ─── Step 2: GitHub PAT ──────────────────────────────────────────────
   clack.log.step(`[${++currentStep}/${TOTAL_STEPS}] GitHub Personal Access Token`);
   clack.log.info('Your agent needs permission to create branches and pull requests in your GitHub repo. A Personal Access Token (PAT) grants this access.');
@@ -279,11 +302,7 @@ async function main() {
       '  Workflows: Read and write'
     );
 
-    const openPATPage = await confirm('Open GitHub PAT creation page in browser?');
-    if (openPATPage) {
-      await open(getPATCreationURL());
-      clack.log.info(`Opened in browser. Scope it to ${owner}/${repo} only.`);
-    }
+    await openOrShowURL(getPATCreationURL(), 'GitHub PAT creation page');
 
     let patValid = false;
     while (!patValid) {
@@ -783,8 +802,11 @@ async function main() {
       try {
         execSync('docker compose down && docker compose up -d', { stdio: 'inherit' });
         clack.log.success('Server restarted');
-      } catch {
-        clack.log.warn('Failed to restart. Run manually: docker compose down && docker compose up -d');
+      } catch (err) {
+        const output = (err.stderr || err.stdout || err.message || '').toString().trim();
+        clack.log.warn('Failed to restart.');
+        if (output) clack.log.error(output);
+        clack.log.info('Fix the issue above, then run: docker compose down && docker compose up -d');
       }
     }
   } else {
@@ -792,8 +814,11 @@ async function main() {
     try {
       execSync('docker compose up -d', { stdio: 'inherit' });
       clack.log.success('Server started');
-    } catch {
-      clack.log.warn('Failed to start. Run manually: docker compose up -d');
+    } catch (err) {
+      const output = (err.stderr || err.stdout || err.message || '').toString().trim();
+      clack.log.warn('Failed to start.');
+      if (output) clack.log.error(output);
+      clack.log.info('Fix the issue above, then run: docker compose up -d');
     }
   }
 

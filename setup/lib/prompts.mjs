@@ -1,6 +1,23 @@
 import * as clack from '@clack/prompts';
 import open from 'open';
 import { PROVIDERS } from './providers.mjs';
+import { canOpenBrowser } from './prerequisites.mjs';
+
+/**
+ * Open a URL in the browser, or print it if in a headless/SSH session
+ */
+export async function openOrShowURL(url, label) {
+  if (canOpenBrowser()) {
+    const shouldOpen = handleCancel(await clack.confirm({
+      message: `Open ${label} in browser?`,
+      initialValue: true,
+    }));
+    if (shouldOpen) await open(url);
+  } else {
+    clack.log.info(`${label}:\n\n  ${url}\n`);
+    await pressEnter();
+  }
+}
 
 /**
  * Mask a secret, showing only last 4 characters
@@ -108,13 +125,7 @@ export async function promptForModel(providerKey, { defaultModelId } = {}) {
 export async function promptForApiKey(providerKey) {
   const provider = PROVIDERS[providerKey];
 
-  const openPage = handleCancel(await clack.confirm({
-    message: `Open ${provider.name} API key page in browser?`,
-    initialValue: true,
-  }));
-  if (openPage) {
-    await open(provider.keyPage);
-  }
+  await openOrShowURL(provider.keyPage, `${provider.name} API key page`);
 
   const key = handleCancel(await clack.password({
     message: `Enter your ${provider.name} API key:`,
@@ -141,13 +152,7 @@ export async function promptForOptionalKey(providerKey, purpose) {
 
   if (!addKey) return null;
 
-  const openPage = handleCancel(await clack.confirm({
-    message: `Open ${provider.name} API key page in browser?`,
-    initialValue: true,
-  }));
-  if (openPage) {
-    await open(provider.keyPage);
-  }
+  await openOrShowURL(provider.keyPage, `${provider.name} API key page`);
 
   const key = handleCancel(await clack.password({
     message: `Enter your ${provider.name} API key:`,
@@ -209,13 +214,7 @@ export async function promptForBraveKey() {
     '  5. Copy your API key'
   );
 
-  const openPage = handleCancel(await clack.confirm({
-    message: 'Open Brave Search API page in browser?',
-    initialValue: true,
-  }));
-  if (openPage) {
-    await open('https://api-dashboard.search.brave.com/app/keys');
-  }
+  await openOrShowURL('https://api-dashboard.search.brave.com/app/keys', 'Brave Search API page');
 
   const key = handleCancel(await clack.password({
     message: 'Enter your Brave Search API key:',
