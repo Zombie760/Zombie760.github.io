@@ -1,8 +1,8 @@
-[![ThePopeBot](docs/hero.png)](https://www.skool.com/ai-architects)
+# ThePopeBot
+
+<a href="https://www.skool.com/ai-architects"><img src="docs/hero.png" width="50%" alt="ThePopeBot" /></a>
 
 [Get priority support HERE](https://www.skool.com/ai-architects)
-
-# ThePopeBot
 
 Build autonomous AI agents that work for you 24/7, individually or in teams.
 
@@ -12,14 +12,6 @@ Build autonomous AI agents that work for you 24/7, individually or in teams.
 - **Does real work** — writes code, opens pull requests, completes multi-step tasks end to end
 - **Agent clusters** — build teams of agents that coordinate and work together on bigger jobs
 - **Full visibility** — every action is a commit you can review, approve, or undo
-
-### Why It Works
-
-**The repository IS the agent** — Every action your agent takes is a git commit. You can see exactly what it did, when, and why. If it screws up, revert it. Want to clone your agent? Fork the repo — code, personality, scheduled jobs, full history, all of it goes with your fork.
-
-**Free compute, built in** — Every GitHub account comes with free cloud computing time. thepopebot uses that to run your agent. One task or a hundred in parallel — the compute is already included.
-
-**Self-evolving** — The agent modifies its own code through pull requests. Every change is auditable, every change is reversible. You stay in control.
 
 ---
 
