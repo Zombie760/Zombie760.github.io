@@ -40,7 +40,7 @@ export function PullRequestsPage({ session }) {
 
   // Auto-refresh every 60 seconds
   useEffect(() => {
-    const interval = setInterval(() => fetchPRs(), 60000);
+    const interval = setInterval(() => fetchPRs(), 300000);
     return () => clearInterval(interval);
   }, [fetchPRs]);
 

@@ -1,0 +1,51 @@
+name: Run Agent Job
+
+on:
+  workflow_dispatch:
+    inputs:
+      task_prompt:
+        description: 'The task for the agent to perform'
+        required: true
+      repo_name:
+        description: 'The full repository name (e.g., user/repo)'
+        required: true
+      base_branch:
+        description: 'The branch to work from'
+        required: true
+        default: 'main'
+      feature_branch:
+        description: 'The new branch to create for the changes'
+        required: true
+      github_token:
+        description: 'GitHub token for authentication'
+        required: true
+
+jobs:
+  agent_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.inputs.repo_name }}
+          ref: ${{ github.event.inputs.base_branch }}
+          token: ${{ github.event.inputs.github_token }}
+
+      - name: Create new branch
+        run: |
+          git checkout -b ${{ github.event.inputs.feature_branch }}
+          git push -u origin ${{ github.event.inputs.feature_branch }}
+
+      - name: Run Agent (Placeholder)
+        run: |
+          echo "Starting agent job..."
+          echo "Task: ${{ github.event.inputs.task_prompt }}"
+          echo "This is where the Docker command to run the headless agent will go."
+          # TODO: Add docker run command for claude-code-headless
+          # It will need to mount the workspace, pass in env vars, and the task prompt.
+
+      - name: Commit and Create Pull Request (Placeholder)
+        run: |
+          echo "Committing changes and creating PR..."
+          # TODO: Add logic to check for changes, commit them, and open a PR
+          # using the gh CLI.
