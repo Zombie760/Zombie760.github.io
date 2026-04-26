@@ -1,1 +1,0 @@
-ALTER TABLE `cluster_workers` ADD `name` text DEFAULT '' NOT NULL;

@@ -1,1 +1,0 @@
-ALTER TABLE `cluster_workers` ADD `trigger_config` text;
