@@ -1,0 +1,8 @@
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+  - jekyll-remote-theme
+title: Al Gringo
+description: Primary-source investigative work, bug bounty automation, and a TELOS+PAI substrate.
+show_downloads: false
+exclude:
+  - README.md
