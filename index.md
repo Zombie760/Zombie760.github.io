@@ -9,7 +9,7 @@ Primary-source investigative work, bug bounty automation, and a TELOS+PAI substr
 
 ### [Unwarranted Influence](https://github.com/Zombie760/unwarranted-influence)
 
-A primary-source investigation of elite capital, 1095–2026. Nine hundred pages, eleven hundred citations, every claim anchored to a filed document. Twenty chapters from the Knights Templar to the present. [Interactive corkboard →](corkboard/)
+A primary-source investigation of elite capital, 1095–2026. Nine hundred pages, eleven hundred citations, every claim anchored to a filed document. Twenty chapters from the Knights Templar to the present. [Interactive corkboard →](corkboard/) · [Media bundle →](https://github.com/Zombie760/unwarranted-influence/releases/tag/v1.0)
 
 ### [Did Not Step Forward](https://github.com/Zombie760/captain-and-champ) — The Captain and the Champ
 
