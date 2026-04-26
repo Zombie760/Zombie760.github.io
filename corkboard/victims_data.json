@@ -1,0 +1,234 @@
+{
+  "victims": [
+    {
+      "id": "v001",
+      "name": "Jane Doe #1",
+      "type": "survivor",
+      "years": "Minor at time of abuse",
+      "role": "Epstein network survivor",
+      "document_anchors": ["doc_us_v_maxwell", "doc_epstein_indictment"],
+      "chapter": "Ch10"
+    },
+    {
+      "id": "v002",
+      "name": "Jane Doe #2",
+      "type": "survivor",
+      "years": "Minor at time of abuse",
+      "role": "Epstein network survivor",
+      "document_anchors": ["doc_us_v_maxwell"],
+      "chapter": "Ch10"
+    },
+    {
+      "id": "v003",
+      "name": "Jane Doe #3",
+      "type": "survivor",
+      "years": "Minor at time of abuse",
+      "role": "Epstein network survivor",
+      "document_anchors": ["doc_us_v_maxwell"],
+      "chapter": "Ch10"
+    },
+    {
+      "id": "v004",
+      "name": "Virginia Giuffre",
+      "type": "survivor",
+      "years": "1983-",
+      "role": "Epstein network survivor, advocate",
+      "document_anchors": ["doc_us_v_maxwell", "doc_giuffre_v_maxwell"],
+      "chapter": "Ch10"
+    },
+    {
+      "id": "v005",
+      "name": "85,000+ Missing Migrant Children",
+      "type": "missing_children",
+      "years": "2018-2026",
+      "role": "Children placed with sponsors by ORR, untracked",
+      "document_anchors": ["doc_hhs_orr_2023", "doc_gao_migrant_children"],
+      "chapter": "Ch8"
+    },
+    {
+      "id": "v006",
+      "name": "Ohio Trafficking Corridor Victims",
+      "type": "trafficking_victims",
+      "years": "2015-2026",
+      "role": "Children trafficked through I-70/I-75 corridor",
+      "document_anchors": ["doc_doj_ohio_taskforce", "doc_fbi_htf_2024"],
+      "chapter": "Ch10"
+    },
+    {
+      "id": "v007",
+      "name": "Eastern European Model Visa Victims",
+      "type": "trafficking_victims",
+      "years": "1999-2026",
+      "role": "Women trafficked via O-1/P-1 visa pipelines",
+      "document_anchors": ["doc_dhs_visa_audit", "doc_lbrands_casting_records"],
+      "chapter": "Ch10"
+    },
+    {
+      "id": "v008",
+      "name": "L Brands Casting Victims",
+      "type": "survivor",
+      "years": "1990s-2010s",
+      "role": "Models recruited through Victoria's Secret pipeline",
+      "document_anchors": ["doc_nyt_mogul_monster", "doc_wexner_poa_1991"],
+      "chapter": "Ch10"
+    },
+    {
+      "id": "v009",
+      "name": "Gaza Children",
+      "type": "war_victims",
+      "years": "2023-2026",
+      "role": "Children killed/injured in Gaza conflict",
+      "document_anchors": ["doc_unicef_gaza_2026", "doc_who_gaza_casualties"],
+      "chapter": "Ch8"
+    },
+    {
+      "id": "v010",
+      "name": "Iran War Children",
+      "type": "war_victims",
+      "years": "2025-2026",
+      "role": "Children killed in U.S./Israel strikes on Iran",
+      "document_anchors": ["doc_unicef_iran_2026"],
+      "chapter": "Ch8"
+    },
+    {
+      "id": "v011",
+      "name": "Roundup Cancer Victims",
+      "type": "chemical_victims",
+      "years": "2015-2026",
+      "role": "Farmworkers, groundskeepers diagnosed with non-Hodgkin lymphoma",
+      "document_anchors": ["doc_johnson_v_monsanto", "doc_hardeman_v_monsanto", "doc_pilliod_v_monsanto"],
+      "chapter": "Ch6"
+    },
+    {
+      "id": "v012",
+      "name": "Madoff Pension Victims",
+      "type": "financial_victims",
+      "years": "1990s-2008",
+      "role": "Retirees, charities, employees defrauded",
+      "document_anchors": ["doc_us_v_madoff", "doc_picard_v_jpm"],
+      "chapter": "Ch10"
+    },
+    {
+      "id": "v013",
+      "name": "Epstein Flight Log Minors",
+      "type": "survivor",
+      "years": "Minors at time of transport",
+      "role": "Minors transported on Epstein aircraft",
+      "document_anchors": ["doc_epstein_flight_logs", "doc_efta_release"],
+      "chapter": "Ch8"
+    },
+    {
+      "id": "v014",
+      "name": "Carlyle Ritz Children",
+      "type": "potential_victims",
+      "years": "2001",
+      "role": "Children present at Carlyle Ritz-Carlton conference 9/11",
+      "document_anchors": ["doc_wsj_carlyle_2001"],
+      "chapter": "Ch4"
+    },
+    {
+      "id": "v015",
+      "name": "Apollo Hospital Patients",
+      "type": "financial_victims",
+      "years": "2021-2026",
+      "role": "Patients at 235 hospitals owned by Apollo portfolio",
+      "document_anchors": ["doc_blackrock_10q"],
+      "chapter": "Ch4"
+    }
+  ],
+  "pipelines": [
+    {
+      "id": "pipe001",
+      "name": "Ohio Trafficking Corridor",
+      "type": "domestic_pipeline",
+      "route": "I-70/I-75 interchange (Dayton/Columbus)",
+      "years": "2015-2026",
+      "role": "Primary domestic child trafficking route",
+      "document_anchors": ["doc_doj_ohio_taskforce", "doc_fbi_htf_2024"],
+      "chapter": "Ch10"
+    },
+    {
+      "id": "pipe002",
+      "name": "Eastern Europe → U.S. Model Pipeline",
+      "type": "international_pipeline",
+      "route": "Prague/Warsaw/Budapest → NYC/LA via O-1/P-1 visa",
+      "years": "1999-2026",
+      "role": "Victoria's Secret / L Brands casting pipeline",
+      "document_anchors": ["doc_dhs_visa_audit", "doc_lbrands_casting_records"],
+      "chapter": "Ch10"
+    },
+    {
+      "id": "pipe003",
+      "name": "ORR Shelter → Sponsor Pipeline",
+      "type": "institutional_pipeline",
+      "route": "HHS ORR shelters → unknown sponsors",
+      "years": "2018-2026",
+      "role": "85,000+ children placed, untracked",
+      "document_anchors": ["doc_hhs_orr_2023", "doc_gao_migrant_children"],
+      "chapter": "Ch8"
+    },
+    {
+      "id": "pipe004",
+      "name": "Epstein Island → NYC → Palm Beach",
+      "type": "trafficking_pipeline",
+      "route": "St. Thomas (Little St. James) → NYC (Townhouse) → Palm Beach",
+      "years": "1998-2019",
+      "role": "Primary Epstein network trafficking route",
+      "document_anchors": ["doc_epstein_indictment", "doc_us_v_maxwell", "doc_efta_release"],
+      "chapter": "Ch8"
+    },
+    {
+      "id": "pipe005",
+      "name": "Saudi Arabia → U.S. Elite Properties",
+      "type": "international_pipeline",
+      "route": "Riyadh → Epstein Island / NYC / Palm Beach",
+      "years": "2015-2026",
+      "role": "MBS-Epstein network connection",
+      "document_anchors": ["doc_efta_release", "doc_mbs_epstein_2016"],
+      "chapter": "Ch8"
+    },
+    {
+      "id": "pipe006",
+      "name": "Gaza Reconstruction Fund Pipeline",
+      "type": "financial_pipeline",
+      "route": "U.S. appropriations → Board of Peace → contractors",
+      "years": "2026-",
+      "role": "$70B reconstruction, Board seats $1B each",
+      "document_anchors": ["doc_whitehouse_gaza_plan", "doc_carnegie_gaza_board"],
+      "chapter": "Ch8"
+    }
+  ],
+  "victim_connections": [
+    {"source": "p015", "target": "v001", "kind": "abused", "document": "doc_us_v_maxwell"},
+    {"source": "p015", "target": "v002", "kind": "abused", "document": "doc_us_v_maxwell"},
+    {"source": "p015", "target": "v003", "kind": "abused", "document": "doc_us_v_maxwell"},
+    {"source": "p015", "target": "v004", "kind": "abused", "document": "doc_giuffre_v_maxwell"},
+    {"source": "p054", "target": "v001", "kind": "recruited-for", "document": "doc_us_v_maxwell"},
+    {"source": "p054", "target": "v002", "kind": "recruited-for", "document": "doc_us_v_maxwell"},
+    {"source": "p054", "target": "v004", "kind": "recruited-for", "document": "doc_giuffre_v_maxwell"},
+    {"source": "p016", "target": "v008", "kind": "recruited-via", "document": "doc_nyt_mogul_monster"},
+    {"source": "p016", "target": "pipe002", "kind": "operated", "document": "doc_lbrands_casting_records"},
+    {"source": "p015", "target": "pipe004", "kind": "operated", "document": "doc_epstein_indictment"},
+    {"source": "p054", "target": "pipe004", "kind": "operated", "document": "doc_us_v_maxwell"},
+    {"source": "p015", "target": "v013", "kind": "transported", "document": "doc_epstein_flight_logs"},
+    {"source": "inst_jpm_private", "target": "pipe004", "kind": "facilitated", "document": "doc_jpm_compliance_2011"},
+    {"source": "inst_jpm_private", "target": "v001", "kind": "failed-to-report", "document": "doc_jpm_dpa_2014"},
+    {"source": "inst_doj", "target": "v005", "kind": "failed-to-track", "document": "doc_hhs_orr_2023"},
+    {"source": "inst_doj", "target": "pipe003", "kind": "oversight-failure", "document": "doc_gao_migrant_children"},
+    {"source": "p040", "target": "pipe003", "kind": "policy-created", "document": "doc_eo_14158"},
+    {"source": "p041", "target": "v009", "kind": "ordered-strikes", "document": "doc_cia_khashoggi"},
+    {"source": "p040", "target": "v009", "kind": "funded-strikes", "document": "doc_saudi_600b"},
+    {"source": "p040", "target": "v010", "kind": "ordered-strikes", "document": "doc_midnight_hammer"},
+    {"source": "inst_monsanto", "target": "v011", "kind": "harmed", "document": "doc_johnson_v_monsanto"},
+    {"source": "p033", "target": "v011", "kind": "failed-to-protect", "document": "doc_monsanto_papers"},
+    {"source": "p050", "target": "v012", "kind": "defrauded", "document": "doc_us_v_madoff"},
+    {"source": "inst_jpm_private", "target": "v012", "kind": "facilitated", "document": "doc_jpm_dpa_2014"},
+    {"source": "p018", "target": "v014", "kind": "present-at", "document": "doc_wsj_carlyle_2001"},
+    {"source": "p021", "target": "v014", "kind": "present-at", "document": "doc_wsj_carlyle_2001"},
+    {"source": "p013", "target": "v015", "kind": "owns", "document": "doc_blackrock_10q"},
+    {"source": "p014", "target": "v015", "kind": "owns", "document": "doc_blackrock_10q"},
+    {"source": "p040", "target": "pipe006", "kind": "established", "document": "doc_whitehouse_gaza_plan"},
+    {"source": "p029", "target": "pipe006", "kind": "seated-on", "document": "doc_nyt_kushner_pif"},
+    {"source": "p014", "target": "pipe006", "kind": "seated-on", "document": "doc_carnegie_gaza_board"}
+  ]
+}
