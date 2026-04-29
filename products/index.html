@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOTWAVE — BE UNDENIABLE</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Courier New', monospace;
+    background: #0a0a0a;
+    color: #c0c0c0;
+    line-height: 1.7;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+  h1 { font-size: 2.2rem; color: #00ff41; margin-bottom: 5px; }
+  h2 { font-size: 1.4rem; color: #00ff41; margin: 40px 0 15px; border-bottom: 1px solid #1a1a1a; padding-bottom: 8px; }
+  h3 { color: #00cc33; margin: 15px 0 8px; }
+  .motto {
+    font-size: 1.1rem; color: #666; margin-bottom: 30px; letter-spacing: 2px;
+  }
+  .tagline-box {
+    background: #111; border-left: 3px solid #00ff41; padding: 18px 22px;
+    margin: 25px 0; font-size: 1.05rem;
+  }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+  .product-card {
+    background: #111; border: 1px solid #222; padding: 25px; border-radius: 4px;
+  }
+  .product-card h3 { margin-top: 0; font-size: 1.2rem; }
+  .product-card .price { font-size: 1.8rem; color: #00ff41; margin: 10px 0; }
+  .product-card .price small { font-size: 0.8rem; color: #666; }
+  .product-card p { margin: 10px 0; font-size: 0.9rem; color: #999; }
+  .btn {
+    display: inline-block; background: #00ff41; color: #0a0a0a; padding: 10px 24px;
+    text-decoration: none; font-weight: bold; font-family: 'Courier New', monospace;
+    border: none; cursor: pointer; font-size: 0.95rem; margin-top: 10px;
+  }
+  .btn:hover { background: #00cc33; }
+  .btn-outline {
+    background: transparent; border: 1px solid #00ff41; color: #00ff41;
+  }
+  .btn-outline:hover { background: #0a2a0a; }
+  .free-section {
+    background: #0a1a0a; border: 1px solid #1a3a1a; padding: 25px; margin: 25px 0; border-radius: 4px;
+  }
+  .free-section h3 { color: #00ff41; }
+  .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+  .comparison-table th { text-align: left; color: #00ff41; padding: 10px 8px; border-bottom: 1px solid #222; }
+  .comparison-table td { padding: 10px 8px; border-bottom: 1px solid #111; }
+  .comparison-table tr:hover td { background: #0d0d0d; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #1a1a1a; color: #555; font-size: 0.8rem; }
+  a { color: #00ff41; }
+  .stack { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+  .stack span { background: #1a1a1a; padding: 3px 10px; font-size: 0.75rem; color: #00ff41; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>BOTWAVE</h1>
+<p class="motto">BE UNDENIABLE. EVERY CLAIM FILED. EVERY SOURCE NAMED.</p>
+
+<div class="tagline-box">
+  Palantir sells surveillance tools to governments for millions.<br>
+  We give you the same power for <strong>$19/month</strong> — bundled with a <strong>900-page investigation</strong> that shows you <em>why it matters.</em><br>
+  Stop paying Palantir. Use BotWave.
+</div>
+
+<!-- ===== FREE ===== -->
+<div class="free-section">
+  <h3>Start Here — Free</h3>
+  <p><strong>Chapter 1 of <em>Unwarranted Influence</em> is always free.</strong> 1,100+ citations. Every one verifiable. Read the document that explains the pattern, then decide if you want the full 900 pages.</p>
+  <a href="#free-chapter" class="btn">Read Chapter 1 (Free)</a>
+  &nbsp;
+  <a href="#products" class="btn btn-outline">See All Products</a>
+</div>
+
+<!-- ===== PRODUCTS ===== -->
+<h2 id="products">Products</h2>
+
+<div class="product-grid">
+
+  <div class="product-card">
+    <h3>Unwarranted Influence</h3>
+    <div class="stack"><span>PDF</span><span>Audiobook</span><span>900+ pp</span></div>
+    <div class="price">$24.99 <small>one-time</small></div>
+    <p>Primary-source investigation, 1095–2026. 1,100+ citations to court filings, SEC records, Federal Register entries, Vatican archives. Every claim independently verifiable.</p>
+    <p><strong>Premium ($34.99):</strong> + 19 voiced audiobook chapters</p>
+    <a href="https://gumroad.com/l/botwave-book" class="btn">Buy — $24.99</a>
+  </div>
+
+  <div class="product-card">
+    <h3>RECORD</h3>
+    <div class="stack"><span>Tool</span><span>Python</span><span>6 Archives</span></div>
+    <div class="price">$47 <small>Personal</small></div>
+    <p>Citation verification agent. Query 6 primary-source archives. 100+ verified citations included. AI hedges — RECORD commits.</p>
+    <p><strong>Commercial ($197):</strong> Client work, publications, support</p>
+    <a href="https://gumroad.com/l/botwave-record" class="btn">Buy — from $47</a>
+  </div>
+
+  <div class="product-card">
+    <h3>Stealth Browser</h3>
+    <div class="stack"><span>API</span><span>Docker</span><span>CloakBrowser</span></div>
+    <div class="price">$19 <small>/month</small></div>
+    <p>Anti-detect browser API. 30/30 bot detection tests passed. CloakBrowser (49 C++ patches) + Camoufox + Playwright. BrightData charges $199 — we charge $19.</p>
+    <p><strong>Unlimited ($59/mo):</strong> 6 profiles, 500 sessions/day</p>
+    <a href="https://gumroad.com/l/botwave-stealth" class="btn">Subscribe — $19/mo</a>
+  </div>
+
+</div>
+
+<!-- ===== BUNDLES ===== -->
+<h2 id="bundles">Bundles</h2>
+
+<div class="product-grid">
+
+  <div class="product-card">
+    <h3>Investigator Bundle</h3>
+    <div class="price">$79 <small>one-time (save $60)</small></div>
+    <p>
+      Unwarranted Influence Premium ($34.99)<br>
+      + RECORD Personal ($47)<br>
+      + Stealth Browser Pro — 3 months ($57)<br>
+      <strong>= $138.99 individually</strong>
+    </p>
+    <a href="https://gumroad.com/l/botwave-investigator" class="btn">Buy Bundle — $79</a>
+  </div>
+
+  <div class="product-card">
+    <h3>Operator Bundle</h3>
+    <div class="price">$197 <small>one-time (save $389)</small></div>
+    <p>
+      Everything in Investigator<br>
+      + RECORD Commercial ($197)<br>
+      + Stealth Unlimited — 6 months ($354)<br>
+      + Priority email support<br>
+      <strong>= $585.99 individually</strong>
+    </p>
+    <a href="https://gumroad.com/l/botwave-operator" class="btn">Buy Bundle — $197</a>
+  </div>
+
+</div>
+
+<!-- ===== COMPARISON ===== -->
+<h2>How We Compare</h2>
+<table class="comparison-table">
+  <tr><th></th><th>BOTWAVE</th><th>OpenClaw</th><th>BrightData</th><th>Ground News</th></tr>
+  <tr><td>Anti-detect browser</td><td style="color:#00ff41">30/30 tests</td><td style="color:#ff4444">Detected</td><td style="color:#ffaa00">24/30 tests</td><td>—</td></tr>
+  <tr><td>Citation verification</td><td style="color:#00ff41">6 archives</td><td>—</td><td>—</td><td>—</td></tr>
+  <tr><td>Primary-source book</td><td style="color:#00ff41">900pp, 1,100+ cites</td><td>—</td><td>—</td><td>—</td></tr>
+  <tr><td>News blindspot detection</td><td style="color:#00ff41">221 sources</td><td>—</td><td>—</td><td>Paid only</td></tr>
+  <tr><td>Bug bounty tooling</td><td style="color:#00ff41">Full pipeline</td><td>—</td><td>—</td><td>—</td></tr>
+  <tr><td>Starting price</td><td style="color:#00ff41"><strong>$0 (free tier)</strong></td><td>$0</td><td>$199/mo</td><td>$0</td></tr>
+  <tr><td>Paid tier</td><td style="color:#00ff41"><strong>$19/mo</strong></td><td>$0</td><td>$199/mo</td><td>$4.99/mo</td></tr>
+</table>
+
+<!-- ===== FREE CHAPTER ===== -->
+<h2 id="free-chapter">Free — Chapter 1: Introduction</h2>
+
+<div class="tagline-box">
+  <strong>Read this first.</strong> If the documents in this chapter don't convince you, the other 880 pages won't either. This chapter names 47 primary-source documents. Check every one. They're public.
+</div>
+
+<p>
+  <a href="/products/chapter-1-free.pdf" class="btn">Download Chapter 1 (PDF)</a>
+  &nbsp;
+  <a href="https://gumroad.com/l/botwave-book" class="btn btn-outline">Get Full Book — $24.99</a>
+</p>
+
+<p style="margin-top:15px; color:#888; font-size:0.85rem">
+  Chapter covers: The pattern. How to read the documents. Why capital has no religion.
+  The nine families, the three institutions, and the four instruments.
+  Prescott Bush's 1942 Union Banking Corporation seizure — Vesting Order 248 — the <em>Federal Register</em> document the whole book is organized around.
+</p>
+
+<!-- ===== THE METHOD ===== -->
+<h2>The Method</h2>
+
+<div class="tagline-box">
+  <strong>This is not a conspiracy ecosystem.</strong><br><br>
+  Every claim in the book is filed against a named, publicly-verifiable primary source.<br>
+  RECORD automates that verification.<br>
+  Stealth Browser lets you investigate without leaving fingerprints.<br><br>
+  <strong>The reader never has to trust the author. The reader checks the receipts.</strong>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <p>BOTWAVE — BE UNDENIABLE. Every claim filed. Every source named.</p>
+  <p>Products built by <a href="https://github.com/Zombie760">Al Gringo</a>.
+  Storefront at <a href="https://zombie760.github.io">zombie760.github.io</a>.
+  Contact: pending — Gumroad handles delivery.</p>
+  <p style="margin-top:10px">
+    <strong>No refunds on digital products.</strong> Chapter 1 is free — read it first.
+    If the citations don't convince you, the full book won't either.
+  </p>
+</div>
+
+</div>
+</body>
+</html>

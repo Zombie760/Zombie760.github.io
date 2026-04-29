@@ -5,6 +5,8 @@ title: Al Gringo
 
 Primary-source investigative work, bug bounty automation, and a TELOS+PAI substrate.
 
+**[→ Products & Store: Books, Tools, Bundles](/products/)** — Chapter 1 is free. RECORD verifies citations against 6 archives. Stealth Browser passes 30/30 bot detection tests.
+
 ## Books
 
 ### [Unwarranted Influence](https://github.com/Zombie760/unwarranted-influence)
