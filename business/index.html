@@ -7,7 +7,7 @@
   <meta name="description" content="Three production systems. One methodology. BOTWAVE TRADES, CSM, and WAVESOX — built with TELOS+PAI on a local GPU by a former plumber.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -22,9 +22,9 @@
       --text-3:    rgba(255,255,255,0.30);
       --accent:    #BF3B2D;
       --green:     #059669;
-      --mono: 'DM Mono', monospace;
+      --mono: 'JetBrains Mono', 'Courier New', monospace;
       --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
+      --sans: 'JetBrains Mono', 'Courier New', monospace;
     }
 
     html { scroll-behavior: smooth; }
@@ -161,11 +161,20 @@
 
     .section-label {
       font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--text-3);
       margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1ch;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
     }
 
     .section-title {
@@ -226,7 +235,6 @@
     .code-wrap {
       background: var(--bg-surface);
       border: 1px solid var(--border-hi);
-      border-radius: 4px;
       margin-bottom: 2rem;
       overflow: hidden;
     }
@@ -593,15 +601,6 @@
       pre { font-size: 0.75rem; }
     }
 
-    /* ── FADE IN ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .hero-eyebrow { animation: fadeUp 0.5s ease both 0.05s; }
-    .hero-title   { animation: fadeUp 0.6s ease both 0.15s; }
-    .hero-body    { animation: fadeUp 0.6s ease both 0.25s; }
-    .live-badge   { animation: fadeUp 0.6s ease both 0.35s; }
   </style>
 </head>
 <body>
@@ -638,7 +637,7 @@
 
   <!-- METHOD -->
   <section class="section" id="method">
-    <p class="section-label">The Methodology</p>
+    <p class="section-label">── The Methodology</p>
     <h2 class="section-title">TELOS + PAI</h2>
     <p class="section-body">
       Every tool in this stack was built under the same four-question discipline.
@@ -718,7 +717,7 @@
 
   <!-- TRADES -->
   <section class="section" id="trades">
-    <p class="section-label">Product One</p>
+    <p class="section-label">── Product One</p>
     <h2 class="section-title">BOTWAVE TRADES</h2>
     <p class="section-body">
       A trade-agnostic Telegram bot for sub-contractors. One codebase, zero re-configuration —
@@ -798,7 +797,7 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
 
   <!-- CSM -->
   <section class="section" id="csm">
-    <p class="section-label">Product Two</p>
+    <p class="section-label">── Product Two</p>
     <h2 class="section-title">BOTWAVE CSM</h2>
     <p class="section-body">
       Customer success automation for small construction SaaS — the segment where one churn means a 5% revenue drop and one expansion means a 10% lift.
@@ -887,7 +886,7 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
 
   <!-- WAVESOX -->
   <section class="section" id="wavesox">
-    <p class="section-label">Infrastructure</p>
+    <p class="section-label">── Infrastructure</p>
     <h2 class="section-title">WAVESOX</h2>
     <p class="section-body">
       Enterprise proxy infrastructure — 1,000+ validated SOCKS5 proxies, receipt-first testing, IAM-style zones.
@@ -961,7 +960,7 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
 
   <!-- STACK -->
   <section class="section" id="stack">
-    <p class="section-label">What's Running Right Now</p>
+    <p class="section-label">── What's Running Right Now</p>
     <h2 class="section-title">The Stack</h2>
     <p class="section-body">
       No cloud spend beyond the base machine. Local GPU handles inference.
