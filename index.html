@@ -322,6 +322,33 @@
     }
     .footer-links a:hover { color: var(--text2); }
 
+    /* ── LIVE HEADLINES ── */
+    .headline-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 0.85rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .headline-row:last-child { border-bottom: 1px solid var(--rule); }
+
+    .headline-title {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      line-height: 1.5;
+    }
+    .headline-title:hover { opacity: 0.75; }
+
+    .headline-meta {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--text3);
+    }
+
     /* ── MOBILE ── */
     @media (max-width: 600px) {
       body { font-size: 13px; }
@@ -432,6 +459,41 @@
     </div>
 
     <a class="cta-btn" href="/botwavebomba/" target="_blank">Try BOTWAVEBOMBA ↗</a>
+  </section>
+
+  <hr class="divider">
+
+  <!-- LIVE SIGNALS -->
+  <section class="pipeline wrap" id="signals">
+    <p class="label">── Latest signals</p>
+    <div id="live-headlines"></div>
+    <script>
+      fetch('/botwavebomba/api/latest.json')
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+          var stories = (data.stories || data).slice(0, 3);
+          var container = document.getElementById('live-headlines');
+          stories.forEach(function(s){
+            var row = document.createElement('div');
+            row.className = 'headline-row';
+            var link = document.createElement('a');
+            link.className = 'headline-title';
+            link.href = s.url || s.link || '#';
+            link.target = '_blank';
+            link.rel = 'noopener';
+            link.textContent = s.title;
+            var meta = document.createElement('span');
+            meta.className = 'headline-meta';
+            meta.textContent = s.source || '';
+            row.appendChild(link);
+            row.appendChild(meta);
+            container.appendChild(row);
+          });
+        })
+        .catch(function(){
+          document.getElementById('live-headlines').style.display = 'none';
+        });
+    </script>
   </section>
 
   <hr class="divider">

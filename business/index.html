@@ -584,6 +584,47 @@
     }
     .footer-links a:hover { color: var(--text); }
 
+    /* ── DEMO LINK ── */
+    .demo-link {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--green);
+      border: 1px solid var(--green);
+      padding: 0.5rem 1rem;
+      margin-top: 1.5rem;
+      text-decoration: none;
+    }
+    .demo-link:hover { opacity: 0.8; }
+
+    /* ── REPO LIST ── */
+    .repo-list { margin-top: 2rem; }
+    .repo-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2ch;
+      align-items: baseline;
+      padding: 0.75rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .repo-row:last-child { border-bottom: 1px solid var(--border); }
+    .repo-link {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .repo-link:hover { opacity: 0.8; }
+    .repo-desc {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-3);
+      line-height: 1.5;
+    }
+
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       nav { padding: 0 1.25rem; }
@@ -632,6 +673,9 @@
       The evidence is verifiable — the GitHub, the systemd units, the substrate receipt count.
     </p>
     <span class="live-badge"><span class="live-dot"></span>4 bots live in production</span>
+    <a class="demo-link" href="https://t.me/botwave1904_bot" target="_blank" rel="noopener">
+      Try it on Telegram — @botwave1904_bot →
+    </a>
   </section>
 
   <hr class="section-rule">
@@ -1041,6 +1085,26 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
 
 <span class="cm"># Substrate receipt count — proof the system is writing</span>
 <span class="fn">wc</span> -l Telos/audit/engagement_arm.jsonl Business/csm/substrate/claims.jsonl</pre>
+    </div>
+
+    <div class="repo-list">
+      <p class="section-label" style="margin-bottom: 1rem;">── Public repos</p>
+      <div class="repo-row">
+        <a class="repo-link" href="https://github.com/Zombie760/botwave-bounty" target="_blank" rel="noopener">Zombie760/botwave-bounty</a>
+        <span class="repo-desc">Bug bounty arm — Quarterback state machine, 4-gate validator, Razor report drafter</span>
+      </div>
+      <div class="repo-row">
+        <a class="repo-link" href="https://github.com/Zombie760/unwarranted-influence" target="_blank" rel="noopener">Zombie760/unwarranted-influence</a>
+        <span class="repo-desc">Book manuscript — 1,100+ citations, RECORD pipeline audit trail</span>
+      </div>
+      <div class="repo-row">
+        <a class="repo-link" href="https://github.com/Zombie760/captain-and-champ" target="_blank" rel="noopener">Zombie760/captain-and-champ</a>
+        <span class="repo-desc">Did Not Step Forward — Muhammad Ali and Kareem Abdul-Jabbar, 1960–2016</span>
+      </div>
+      <div class="repo-row">
+        <a class="repo-link" href="https://github.com/Zombie760" target="_blank" rel="noopener">Zombie760 on GitHub →</a>
+        <span class="repo-desc">Full profile</span>
+      </div>
     </div>
   </section>
 
