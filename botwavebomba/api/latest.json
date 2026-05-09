@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-09T10:59:49.149677+00:00",
-  "article_count": 2706,
+  "generated_at": "2026-05-09T15:55:15.768333+00:00",
+  "article_count": 2796,
   "story_count": 100,
   "stories": [
     {
@@ -391,16 +391,28 @@
       "fp_source_count": 5
     },
     {
-      "id": "ff97a9fdede0",
-      "headline": "Intel shares jump 20% as it predicts revenue surge from AI data centres",
-      "summary": "CEO says US chipmaker has made ‘fundamental’ changes after year-long turnaround",
-      "published": "Thu, 23 Apr 2026 22:41:33 GMT",
-      "image_url": null,
+      "id": "dcd2dc0c799a",
+      "headline": "Putin says Russian army fighting 'aggressive' Nato-backed force in Victory Parade address",
+      "summary": "<p>Russian President Vladimir Putin said on Saturday that his soldiers in Ukraine were fighting an “aggressive force” backed by all of Nato and described his war goals as “just”, in a combative address to the annual Victory Day parade on Red Square.</p>\n<p>Putin has made the memory of the Soviet vic",
+      "published": "Sat, 09 May 2026 14:39:03 +0500",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a03b/live/8a1de840-4b87-11f1-963a-870d5c61b753.jpg",
       "is_blindspot": true,
       "blindspot_score": 5.0,
-      "bias_variance": 2.04,
-      "entity_count": 8,
+      "bias_variance": 0.94,
+      "entity_count": 12,
       "sources": [
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
         {
           "id": "nytimes",
           "name": "The New York Times",
@@ -408,38 +420,20 @@
           "bloc": "western"
         },
         {
-          "id": "ft",
-          "name": "Financial Times",
-          "country": "GB",
-          "bloc": "western"
-        },
-        {
-          "id": "cnbc",
-          "name": "CNBC",
-          "country": "US",
-          "bloc": "western"
-        },
-        {
-          "id": "theregister",
-          "name": "The Register",
-          "country": "GB",
-          "bloc": "western"
-        },
-        {
-          "id": "gizmodo",
-          "name": "Gizmodo",
-          "country": "US",
+          "id": "dawn",
+          "name": "Dawn",
+          "country": "PK",
           "bloc": "neutral"
         }
       ],
       "axis_avg": {
-        "interventionist": 0.22,
-        "zionist": 0.32,
-        "atlanticist": 0.54,
-        "statist": 0.04,
-        "financialized": 0.6
+        "interventionist": 0.4,
+        "zionist": 0.433,
+        "atlanticist": 0.667,
+        "statist": 0.233,
+        "financialized": 0.367
       },
-      "fp_source_count": 5
+      "fp_source_count": 3
     },
     {
       "id": "13b7b6ef5c0f",
@@ -485,6 +479,96 @@
         "financialized": 0.175
       },
       "fp_source_count": 4
+    },
+    {
+      "id": "4442e4af0916",
+      "headline": "Australia news live: US approves first major Aukus submarine contract; Harvey Norman facing class action for alleged ‘misleading’ ads",
+      "summary": "<p>Follow today’s news live</p><ul><li><p>Get our <a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\">breaking news email</a>, <a href=\"https://app.adjust.com/w4u7jx3\">free app</a> or <a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\">daily news podc",
+      "published": "Thu, 07 May 2026 19:03:39 GMT",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b1cc/live/5be24640-4a9e-11f1-bd52-e755d604ece4.jpg",
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 3.0,
+      "entity_count": 13,
+      "sources": [
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "bbc",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "vnexpress",
+          "name": "VnExpress",
+          "country": "VN",
+          "bloc": "neutral"
+        }
+      ],
+      "axis_avg": {
+        "interventionist": -0.05,
+        "zionist": 0.0,
+        "atlanticist": 0.45,
+        "statist": 0.1,
+        "financialized": -0.05
+      },
+      "fp_source_count": 2
+    },
+    {
+      "id": "217fa54cc935",
+      "headline": "Myanmar military regime widens sanitary towel ban, claiming rebels use them for first aid",
+      "summary": "<p>Activists say clamp down on period products to target insurgents is gender-based violence and violates rights</p><p>Myanmar’s military regime is expanding its ban on the distribution of period products, claiming they are being used to treat wounded resistance fighters, according to local activist",
+      "published": "Wed, 22 Apr 2026 05:00:30 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 5.0,
+      "entity_count": 9,
+      "sources": [
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "vnexpress",
+          "name": "VnExpress",
+          "country": "VN",
+          "bloc": "neutral"
+        },
+        {
+          "id": "myanmar_now",
+          "name": "Myanmar Now",
+          "country": "MM",
+          "bloc": "neutral"
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.15,
+        "zionist": 0.15,
+        "atlanticist": 0.55,
+        "statist": 0.25,
+        "financialized": -0.05
+      },
+      "fp_source_count": 2
     },
     {
       "id": "53b04187314d",
@@ -805,15 +889,15 @@
       "fp_source_count": 3
     },
     {
-      "id": "dcd2dc0c799a",
-      "headline": "A Less Muscular Victory Day Parade Shows Putin’s Growing Vulnerability",
-      "summary": "The event, shrunken because of security fears, adds to a sense that Moscow and other Russian cities can no longer be insulated from the war.",
-      "published": "Sat, 09 May 2026 09:57:10 +0000",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a03b/live/8a1de840-4b87-11f1-963a-870d5c61b753.jpg",
+      "id": "29cfe5e45bbe",
+      "headline": "A look at the new capabilities Pakistan employed against India during Marka-i-Haq",
+      "summary": "<p>A year ago, Pakistan and India fought a short but intense war — the worst <a href=\"https://www.dawn.com/news/1910509\">military confrontation</a> between the two nuclear-armed neighbours in decades.</p>\n<p>During the period of Marka-i-Haq (the battle for truth), Indian fighter jets were shot down,",
+      "published": "Sat, 09 May 2026 20:10:14 +0500",
+      "image_url": "https://i.dawn.com/large/2026/05/042002089e164be.webp",
       "is_blindspot": true,
       "blindspot_score": 5.0,
-      "bias_variance": 0.94,
-      "entity_count": 11,
+      "bias_variance": 0.0,
+      "entity_count": 12,
       "sources": [
         {
           "id": "war_on_rocks",
@@ -822,26 +906,26 @@
           "bloc": "western"
         },
         {
-          "id": "bbc_news",
-          "name": "BBC News",
-          "country": "GB",
-          "bloc": "western"
+          "id": "yt_timdillonshow",
+          "name": "The Tim Dillon Show",
+          "country": "US",
+          "bloc": "neutral"
         },
         {
-          "id": "nytimes",
-          "name": "The New York Times",
-          "country": "US",
-          "bloc": "western"
+          "id": "dawn",
+          "name": "Dawn",
+          "country": "PK",
+          "bloc": "neutral"
         }
       ],
       "axis_avg": {
-        "interventionist": 0.4,
-        "zionist": 0.433,
-        "atlanticist": 0.667,
-        "statist": 0.233,
-        "financialized": 0.367
+        "interventionist": 0.5,
+        "zionist": 0.5,
+        "atlanticist": 0.7,
+        "statist": 0.3,
+        "financialized": 0.2
       },
-      "fp_source_count": 3
+      "fp_source_count": 1
     },
     {
       "id": "2df75084f4bf",
@@ -881,45 +965,6 @@
         "financialized": 0.433
       },
       "fp_source_count": 3
-    },
-    {
-      "id": "4442e4af0916",
-      "headline": "Australia news live: US approves first major Aukus submarine contract; Harvey Norman facing class action for alleged ‘misleading’ ads",
-      "summary": "<p>Follow today’s news live</p><ul><li><p>Get our <a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\">breaking news email</a>, <a href=\"https://app.adjust.com/w4u7jx3\">free app</a> or <a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\">daily news podc",
-      "published": "Thu, 07 May 2026 19:03:39 GMT",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b1cc/live/5be24640-4a9e-11f1-bd52-e755d604ece4.jpg",
-      "is_blindspot": true,
-      "blindspot_score": 5.0,
-      "bias_variance": 3.0,
-      "entity_count": 13,
-      "sources": [
-        {
-          "id": "guardian",
-          "name": "The Guardian",
-          "country": "GB",
-          "bloc": "neutral"
-        },
-        {
-          "id": "bbc",
-          "name": "BBC News",
-          "country": "GB",
-          "bloc": "neutral"
-        },
-        {
-          "id": "bbc_news",
-          "name": "BBC News",
-          "country": "GB",
-          "bloc": "western"
-        }
-      ],
-      "axis_avg": {
-        "interventionist": -0.05,
-        "zionist": 0.0,
-        "atlanticist": 0.45,
-        "statist": 0.1,
-        "financialized": -0.05
-      },
-      "fp_source_count": 2
     },
     {
       "id": "551fe18ef47d",
@@ -1039,6 +1084,39 @@
       "fp_source_count": 3
     },
     {
+      "id": "15b25aacc504",
+      "headline": "Chinese embassy in US confirms death of semiconductor researcher Wang Danhao | South China Morning Post",
+      "summary": "Chinese semiconductor researcher Wang Danhao died at the University of Michigan last month, shortly after being questioned by US federal law enforcement. Liu Pengyu, a spokesman for China’s embassy in Washington, confirmed to the South China Morning Post in an email on Monday that Wang had taken his",
+      "published": "Sun, 26 Apr 2026 02:00:09 +0000",
+      "image_url": "https://www.youtube.com/embed/ZcNdG6hnQc0",
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 0.0,
+      "entity_count": 36,
+      "sources": [
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "rappler",
+          "name": "Rappler",
+          "country": "PH",
+          "bloc": "neutral"
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": -0.2,
+        "statist": 0.4,
+        "financialized": 0.6
+      },
+      "fp_source_count": 1
+    },
+    {
       "id": "4cb224cbaa47",
       "headline": "MISSING 11 \"Scientists,\" Epstein's Iran Negotiator & UFO Lies | Julian Dorey • 411",
       "summary": "WATCH PREVIOUS EPSTEIN FILES EPISODES: https://youtu.be/MGkQG78NTNI\n\nJOIN PATREON FOR EARLY UNCENSORED EPISODE RELEASES:\nhttps://www.patreon.com/JulianDorey \n\nCLIPPERS DISCORD: https://discord.gg/8QmWEKJ3BT\n\nFOLLOW JULIAN DOREY\nIG: https://www.instagram.com/julianddorey/  \nX: https://x.com/juliandor",
@@ -1105,39 +1183,6 @@
       "fp_source_count": 2
     },
     {
-      "id": "c565d2e91dbe",
-      "headline": "Chinese embassy in US confirms death of semiconductor researcher Wang Danhao | South China Morning Post",
-      "summary": "Chinese semiconductor researcher Wang Danhao died at the University of Michigan last month, shortly after being questioned by US federal law enforcement. Liu Pengyu, a spokesman for China’s embassy in Washington, confirmed to the South China Morning Post in an email on Monday that Wang had taken his",
-      "published": "Fri, 24 Apr 2026 12:57:59 +0000",
-      "image_url": null,
-      "is_blindspot": true,
-      "blindspot_score": 5.0,
-      "bias_variance": 0.0,
-      "entity_count": 10,
-      "sources": [
-        {
-          "id": "scmp_business",
-          "name": "SCMP Business",
-          "country": "HK",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "scmp",
-          "name": "South China Morning Post",
-          "country": "HK",
-          "bloc": "adversarial"
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.0,
-        "zionist": 0.1,
-        "atlanticist": -0.2,
-        "statist": 0.4,
-        "financialized": 0.65
-      },
-      "fp_source_count": 2
-    },
-    {
       "id": "5abb5c6529ab",
       "headline": "Italy Supports Saudi Arabia Joining Fighter-Jet Program, PM Meloni Says",
       "summary": "The U.K., Italy and Japan have already partnered on the Global Combat Air Programme, which aims to put a new stealth fighter with supersonic capability in the skies by 2035.",
@@ -1167,39 +1212,6 @@
         "atlanticist": 0.6,
         "statist": 0.0,
         "financialized": 0.75
-      },
-      "fp_source_count": 2
-    },
-    {
-      "id": "61ad093b5772",
-      "headline": "Student allegedly jailed in China for six years after taking part in pro-democracy protests in Australia",
-      "summary": "<p><strong>Exclusive:</strong> The Australian government has been urged to take stronger action to protect overseas students from political repression</p><p>The Australian government has been urged to take stronger action to protect Chinese international students from political repression by authori",
-      "published": "Tue, 21 Apr 2026 15:00:54 GMT",
-      "image_url": null,
-      "is_blindspot": true,
-      "blindspot_score": 5.0,
-      "bias_variance": 5.0,
-      "entity_count": 7,
-      "sources": [
-        {
-          "id": "guardian",
-          "name": "The Guardian",
-          "country": "GB",
-          "bloc": "neutral"
-        },
-        {
-          "id": "scmp",
-          "name": "South China Morning Post",
-          "country": "HK",
-          "bloc": "adversarial"
-        }
-      ],
-      "axis_avg": {
-        "interventionist": -0.15,
-        "zionist": -0.05,
-        "atlanticist": 0.05,
-        "statist": 0.25,
-        "financialized": 0.1
       },
       "fp_source_count": 2
     },
@@ -1707,7 +1719,7 @@
       "is_blindspot": false,
       "blindspot_score": 0.0,
       "bias_variance": 9.18,
-      "entity_count": 139,
+      "entity_count": 141,
       "sources": [
         {
           "id": "bbc_news",
@@ -1918,6 +1930,12 @@
           "name": "South China Morning Post",
           "country": "HK",
           "bloc": "adversarial"
+        },
+        {
+          "id": "vnexpress",
+          "name": "VnExpress",
+          "country": "VN",
+          "bloc": "neutral"
         }
       ],
       "axis_avg": {
@@ -1931,14 +1949,14 @@
     },
     {
       "id": "ae54a5c026f3",
-      "headline": "Israel defence minister retires in pre-vote shock | South China Morning Post",
-      "summary": "Israel’s Defence Minister Ehud Barak, a close ally of Prime Minister Benjamin Netanyahu, stunned observers on Monday by announcing his retirement from politics ahead of snap elections in January, The decision appeared to end a decades-long career that has seen him serve in top governmental posts and",
+      "headline": "Student allegedly jailed in China for six years after taking part in pro-democracy protests in Australia",
+      "summary": "<p><strong>Exclusive:</strong> The Australian government has been urged to take stronger action to protect overseas students from political repression</p><p>The Australian government has been urged to take stronger action to protect Chinese international students from political repression by authori",
       "published": "Wed, 22 Apr 2026 19:23:46 +0000",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/770e/live/d56143c0-4a4b-11f1-ac78-2112837ce2aa.jpg",
       "is_blindspot": false,
       "blindspot_score": 0.0,
-      "bias_variance": 9.91,
-      "entity_count": 202,
+      "bias_variance": 9.61,
+      "entity_count": 183,
       "sources": [
         {
           "id": "cnn",
@@ -1957,6 +1975,12 @@
           "name": "The Wall Street Journal",
           "country": "US",
           "bloc": "western"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
         },
         {
           "id": "rt",
@@ -2047,16 +2071,145 @@
           "name": "BBC News",
           "country": "GB",
           "bloc": "western"
+        },
+        {
+          "id": "bangkok_post",
+          "name": "Bangkok Post",
+          "country": "TH",
+          "bloc": "neutral"
         }
       ],
       "axis_avg": {
-        "interventionist": 0.231,
-        "zionist": 0.287,
-        "atlanticist": 0.319,
-        "statist": 0.238,
-        "financialized": 0.388
+        "interventionist": 0.2,
+        "zionist": 0.259,
+        "atlanticist": 0.318,
+        "statist": 0.229,
+        "financialized": 0.341
       },
-      "fp_source_count": 16
+      "fp_source_count": 17
+    },
+    {
+      "id": "5a548c2f5875",
+      "headline": "Hezbollah fires rocket salvo at northern Israel shortly before ceasefire extended",
+      "summary": "<p>Rocket attack by Iran-backed terror group, the first since start of truce, comes as Israeli and Lebanese envoys meet at White House; IDF reservist in south Lebanon lightly hurt by explosive-laden drone</p>\n<p>The post <a href=\"https://www.timesofisrael.com/hezbollah-fires-rocket-salvo-at-northern",
+      "published": "Wed, 25 Mar 2026 21:14:08 +0000",
+      "image_url": "https://i.dawn.com/large/2026/05/09171402f1cac2f.webp",
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 12.93,
+      "entity_count": 87,
+      "sources": [
+        {
+          "id": "wsj",
+          "name": "The Wall Street Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western"
+        },
+        {
+          "id": "tehran_times",
+          "name": "Tehran Times",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "al_monitor",
+          "name": "Al-Monitor",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "spiegel",
+          "name": "Der Spiegel",
+          "country": "DE",
+          "bloc": "western"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western"
+        },
+        {
+          "id": "dn_nyheter",
+          "name": "Dagens Nyheter",
+          "country": "SE",
+          "bloc": "western"
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "neutral"
+        },
+        {
+          "id": "premium_times",
+          "name": "Premium Times",
+          "country": "NG",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "intercept",
+          "name": "The Intercept",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "greyzone",
+          "name": "The Grayzone",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "mint_press",
+          "name": "MintPress News",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "yt_timdillonshow",
+          "name": "The Tim Dillon Show",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "bbc",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "dawn",
+          "name": "Dawn",
+          "country": "PK",
+          "bloc": "neutral"
+        }
+      ],
+      "axis_avg": {
+        "interventionist": -0.079,
+        "zionist": 0.05,
+        "atlanticist": 0.05,
+        "statist": 0.164,
+        "financialized": 0.121
+      },
+      "fp_source_count": 14
     },
     {
       "id": "487e8b37a90f",
@@ -2174,123 +2327,6 @@
         "financialized": 0.325
       },
       "fp_source_count": 16
-    },
-    {
-      "id": "5a548c2f5875",
-      "headline": "Hezbollah fires rocket salvo at northern Israel shortly before ceasefire extended",
-      "summary": "<p>Rocket attack by Iran-backed terror group, the first since start of truce, comes as Israeli and Lebanese envoys meet at White House; IDF reservist in south Lebanon lightly hurt by explosive-laden drone</p>\n<p>The post <a href=\"https://www.timesofisrael.com/hezbollah-fires-rocket-salvo-at-northern",
-      "published": "Wed, 25 Mar 2026 21:14:08 +0000",
-      "image_url": null,
-      "is_blindspot": false,
-      "blindspot_score": 0.0,
-      "bias_variance": 12.93,
-      "entity_count": 86,
-      "sources": [
-        {
-          "id": "wsj",
-          "name": "The Wall Street Journal",
-          "country": "US",
-          "bloc": "western"
-        },
-        {
-          "id": "times_of_israel",
-          "name": "The Times of Israel",
-          "country": "IL",
-          "bloc": "western"
-        },
-        {
-          "id": "tehran_times",
-          "name": "Tehran Times",
-          "country": "IR",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "al_monitor",
-          "name": "Al-Monitor",
-          "country": "US",
-          "bloc": "western"
-        },
-        {
-          "id": "spiegel",
-          "name": "Der Spiegel",
-          "country": "DE",
-          "bloc": "western"
-        },
-        {
-          "id": "france24",
-          "name": "France 24",
-          "country": "FR",
-          "bloc": "western"
-        },
-        {
-          "id": "dn_nyheter",
-          "name": "Dagens Nyheter",
-          "country": "SE",
-          "bloc": "western"
-        },
-        {
-          "id": "tercera",
-          "name": "La Tercera",
-          "country": "CL",
-          "bloc": "neutral"
-        },
-        {
-          "id": "premium_times",
-          "name": "Premium Times",
-          "country": "NG",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "war_on_rocks",
-          "name": "War on the Rocks",
-          "country": "US",
-          "bloc": "western"
-        },
-        {
-          "id": "intercept",
-          "name": "The Intercept",
-          "country": "US",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "greyzone",
-          "name": "The Grayzone",
-          "country": "US",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "mint_press",
-          "name": "MintPress News",
-          "country": "US",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "yt_timdillonshow",
-          "name": "The Tim Dillon Show",
-          "country": "US",
-          "bloc": "neutral"
-        },
-        {
-          "id": "bbc",
-          "name": "BBC News",
-          "country": "GB",
-          "bloc": "neutral"
-        }
-      ],
-      "axis_avg": {
-        "interventionist": -0.079,
-        "zionist": 0.05,
-        "atlanticist": 0.05,
-        "statist": 0.164,
-        "financialized": 0.121
-      },
-      "fp_source_count": 14
     },
     {
       "id": "3f6ed2e33eb2",
@@ -2461,6 +2497,12 @@
           "name": "SCMP Business",
           "country": "HK",
           "bloc": "adversarial"
+        },
+        {
+          "id": "bangkok_post",
+          "name": "Bangkok Post",
+          "country": "TH",
+          "bloc": "neutral"
         }
       ],
       "axis_avg": {
@@ -2710,81 +2752,6 @@
       "fp_source_count": 9
     },
     {
-      "id": "7d31e0da1ab9",
-      "headline": "Millions in India stripped of vote before critical state election, as government seeks to ‘purify’ electoral roll",
-      "summary": "<p>Experts say Muslims and other minorities have been disproportionately deleted from the electoral roll ahead of the West Bengal elections this week</p><p>Millions of people in the Indian state of West Bengal have been stripped of their vote ahead of a critical state election this week, after a con",
-      "published": "Wed, 22 Apr 2026 04:13:05 GMT",
-      "image_url": null,
-      "is_blindspot": false,
-      "blindspot_score": 0.0,
-      "bias_variance": 10.49,
-      "entity_count": 36,
-      "sources": [
-        {
-          "id": "bbc_news",
-          "name": "BBC News",
-          "country": "GB",
-          "bloc": "western"
-        },
-        {
-          "id": "guardian",
-          "name": "The Guardian",
-          "country": "GB",
-          "bloc": "neutral"
-        },
-        {
-          "id": "ft",
-          "name": "Financial Times",
-          "country": "GB",
-          "bloc": "western"
-        },
-        {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "hindu",
-          "name": "The Hindu",
-          "country": "IN",
-          "bloc": "neutral"
-        },
-        {
-          "id": "war_on_rocks",
-          "name": "War on the Rocks",
-          "country": "US",
-          "bloc": "western"
-        },
-        {
-          "id": "bellingcat",
-          "name": "Bellingcat",
-          "country": "NL",
-          "bloc": "western"
-        },
-        {
-          "id": "rest_of_world",
-          "name": "Rest of World",
-          "country": "US",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "yt_timdillonshow",
-          "name": "The Tim Dillon Show",
-          "country": "US",
-          "bloc": "neutral"
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.062,
-        "zionist": 0.15,
-        "atlanticist": 0.3,
-        "statist": 0.163,
-        "financialized": 0.2
-      },
-      "fp_source_count": 8
-    },
-    {
       "id": "8f6e6c9a3afc",
       "headline": "Authorities arrest special forces soldier who allegedly made $400K on Polymarket bet involving Maduro operation",
       "summary": "The soldier is accused of using classified government information to inform a wager on the prediction market Polymarket.",
@@ -2852,6 +2819,75 @@
         "financialized": 0.537
       },
       "fp_source_count": 8
+    },
+    {
+      "id": "7d31e0da1ab9",
+      "headline": "Millions in India stripped of vote before critical state election, as government seeks to ‘purify’ electoral roll",
+      "summary": "<p>Experts say Muslims and other minorities have been disproportionately deleted from the electoral roll ahead of the West Bengal elections this week</p><p>Millions of people in the Indian state of West Bengal have been stripped of their vote ahead of a critical state election this week, after a con",
+      "published": "Wed, 22 Apr 2026 04:13:05 GMT",
+      "image_url": "https://i.dawn.com/large/2026/05/0822553607c3bcd.webp",
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 10.74,
+      "entity_count": 26,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "neutral"
+        },
+        {
+          "id": "bellingcat",
+          "name": "Bellingcat",
+          "country": "NL",
+          "bloc": "western"
+        },
+        {
+          "id": "rest_of_world",
+          "name": "Rest of World",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "dawn",
+          "name": "Dawn",
+          "country": "PK",
+          "bloc": "neutral"
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": 0.243,
+        "statist": 0.143,
+        "financialized": 0.2
+      },
+      "fp_source_count": 7
     },
     {
       "id": "140864078aec",
@@ -2923,32 +2959,32 @@
       "fp_source_count": 8
     },
     {
-      "id": "4723e6538fa0",
-      "headline": "Trump Reposts Anti-Immigrant Tirade Calling China and India ‘Hellhole’ Places",
-      "summary": "The president touched off a furor with his post sharing a podcast episode in which the host referred to China and India as “hellhole” places.",
-      "published": "Wed, 22 Apr 2026 21:23:25 GMT",
-      "image_url": null,
+      "id": "912d59cdf1d3",
+      "headline": "FirstFT: Poland’s Tusk casts doubt on US defence pledge to Europe",
+      "summary": "Also in today’s newsletter: MPS weighs Generali stake sale and accountancy firms end job-for-life model",
+      "published": "Wed, 22 Apr 2026 17:30:31 +0000",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f286/live/ba7a9570-4ac3-11f1-9325-ade34e8d64d0.jpg",
       "is_blindspot": false,
       "blindspot_score": 0.0,
-      "bias_variance": 11.8,
-      "entity_count": 20,
+      "bias_variance": 14.18,
+      "entity_count": 12,
       "sources": [
         {
-          "id": "bbc_news",
-          "name": "BBC News",
+          "id": "ft",
+          "name": "Financial Times",
           "country": "GB",
           "bloc": "western"
         },
         {
-          "id": "nytimes",
-          "name": "The New York Times",
-          "country": "US",
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
           "bloc": "western"
         },
         {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
+          "id": "irna",
+          "name": "IRNA",
+          "country": "IR",
           "bloc": "adversarial"
         },
         {
@@ -2958,32 +2994,32 @@
           "bloc": "western"
         },
         {
-          "id": "gizmodo",
-          "name": "Gizmodo",
+          "id": "greyzone",
+          "name": "The Grayzone",
           "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "daily_sabah",
+          "name": "Daily Sabah",
+          "country": "TR",
           "bloc": "neutral"
-        },
-        {
-          "id": "scmp_business",
-          "name": "SCMP Business",
-          "country": "HK",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "scmp",
-          "name": "South China Morning Post",
-          "country": "HK",
-          "bloc": "adversarial"
         }
       ],
       "axis_avg": {
-        "interventionist": 0.143,
-        "zionist": 0.214,
-        "atlanticist": 0.143,
-        "statist": 0.3,
-        "financialized": 0.4
+        "interventionist": -0.017,
+        "zionist": -0.017,
+        "atlanticist": 0.15,
+        "statist": 0.267,
+        "financialized": 0.183
       },
-      "fp_source_count": 7
+      "fp_source_count": 6
     },
     {
       "id": "46a2a41cc6e5",
@@ -3104,6 +3140,63 @@
         "financialized": 0.24
       },
       "fp_source_count": 5
+    },
+    {
+      "id": "4723e6538fa0",
+      "headline": "Trump Reposts Anti-Immigrant Tirade Calling China and India ‘Hellhole’ Places",
+      "summary": "The president touched off a furor with his post sharing a podcast episode in which the host referred to China and India as “hellhole” places.",
+      "published": "Wed, 22 Apr 2026 21:23:25 GMT",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 12.38,
+      "entity_count": 17,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "gizmodo",
+          "name": "Gizmodo",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "scmp_business",
+          "name": "SCMP Business",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.167,
+        "zionist": 0.233,
+        "atlanticist": 0.2,
+        "statist": 0.283,
+        "financialized": 0.367
+      },
+      "fp_source_count": 6
     },
     {
       "id": "88353299b6e4",
@@ -3277,27 +3370,27 @@
       "fp_source_count": 6
     },
     {
-      "id": "912d59cdf1d3",
-      "headline": "FirstFT: Poland’s Tusk casts doubt on US defence pledge to Europe",
-      "summary": "Also in today’s newsletter: MPS weighs Generali stake sale and accountancy firms end job-for-life model",
-      "published": "Wed, 22 Apr 2026 17:30:31 +0000",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f286/live/ba7a9570-4ac3-11f1-9325-ade34e8d64d0.jpg",
+      "id": "1173373e65b9",
+      "headline": "Masked Iranian forces appear to seize ships in staged video",
+      "summary": "Analysis indicates that parts of the video appear to have been filmed hours after the ships were reportedly seized.",
+      "published": "Wed, 22 Apr 2026 08:30:22 +0000",
+      "image_url": "https://idsb.tmgrup.com.tr/ly/uploads/images/2026/05/08/440332.jpeg",
       "is_blindspot": false,
       "blindspot_score": 0.0,
-      "bias_variance": 14.18,
-      "entity_count": 9,
+      "bias_variance": 15.25,
+      "entity_count": 14,
       "sources": [
         {
-          "id": "ft",
-          "name": "Financial Times",
+          "id": "bbc_news",
+          "name": "BBC News",
           "country": "GB",
           "bloc": "western"
         },
         {
-          "id": "times_of_israel",
-          "name": "The Times of Israel",
-          "country": "IL",
-          "bloc": "western"
+          "id": "tehran_times",
+          "name": "Tehran Times",
+          "country": "IR",
+          "bloc": "adversarial"
         },
         {
           "id": "irna",
@@ -3306,32 +3399,32 @@
           "bloc": "adversarial"
         },
         {
-          "id": "war_on_rocks",
-          "name": "War on the Rocks",
-          "country": "US",
-          "bloc": "western"
-        },
-        {
-          "id": "greyzone",
-          "name": "The Grayzone",
-          "country": "US",
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
           "bloc": "adversarial"
         },
         {
-          "id": "bbc_news",
-          "name": "BBC News",
-          "country": "GB",
+          "id": "bellingcat",
+          "name": "Bellingcat",
+          "country": "NL",
           "bloc": "western"
+        },
+        {
+          "id": "daily_sabah",
+          "name": "Daily Sabah",
+          "country": "TR",
+          "bloc": "neutral"
         }
       ],
       "axis_avg": {
-        "interventionist": -0.017,
-        "zionist": -0.017,
-        "atlanticist": 0.15,
-        "statist": 0.267,
-        "financialized": 0.183
+        "interventionist": -0.14,
+        "zionist": -0.28,
+        "atlanticist": -0.28,
+        "statist": 0.46,
+        "financialized": -0.02
       },
-      "fp_source_count": 6
+      "fp_source_count": 5
     },
     {
       "id": "fa79c3005dae",
@@ -3835,6 +3928,57 @@
       "fp_source_count": 5
     },
     {
+      "id": "b1ca34f82e83",
+      "headline": "Pakistan seeks to raise its global standing in push for Middle East peace",
+      "summary": "<p>Islamabad has seized chance to act as mediator in Iran war and hopes to reap diplomatic and economic benefits</p><p>As Pakistan works frantically to narrow differences between Iran and the US in its newfound role as global peacemaker, it is also seeking to recast its diplomatic standing and attra",
+      "published": "Wed, 18 Mar 2026 07:00:42 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 13.29,
+      "entity_count": 17,
+      "sources": [
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "insider_inc",
+          "name": "Insider Inc. (Formerly Business Insider)",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "vnexpress",
+          "name": "VnExpress",
+          "country": "VN",
+          "bloc": "neutral"
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.025,
+        "zionist": 0.1,
+        "atlanticist": 0.125,
+        "statist": 0.35,
+        "financialized": 0.125
+      },
+      "fp_source_count": 4
+    },
+    {
       "id": "f01fc92b23fa",
       "headline": "EU approves €90bn loan for Ukraine as pipeline is turned on ending deadlock",
       "summary": "Ukraine says it has reopened the Druzhba pipeline, after months of stalemate over stalled oil supplies to neighbouring Hungary.",
@@ -3988,22 +4132,16 @@
       "fp_source_count": 4
     },
     {
-      "id": "1173373e65b9",
-      "headline": "Masked Iranian forces appear to seize ships in staged video",
-      "summary": "Analysis indicates that parts of the video appear to have been filmed hours after the ships were reportedly seized.",
-      "published": "Wed, 22 Apr 2026 08:30:22 +0000",
-      "image_url": null,
+      "id": "b9698b854622",
+      "headline": "Pakistan, Bangladesh sign agreement to combat drug trafficking",
+      "summary": "<p>Pakistan and Bangladesh have signed a memorandum of understanding (MoU) to strengthen bilateral cooperation against drug trafficking and narcotics abuse, the Ministry of Interior said on Saturday.</p>\n<p>The development came during Interior Minister Mohsin Naqvi’s visit to Dhaka, where he met his",
+      "published": "Wed, 22 Apr 2026 20:29:56 +0000",
+      "image_url": "https://i.dawn.com/large/2026/05/09190056d1788ed.webp",
       "is_blindspot": false,
       "blindspot_score": 0.0,
-      "bias_variance": 15.25,
-      "entity_count": 12,
+      "bias_variance": 14.17,
+      "entity_count": 11,
       "sources": [
-        {
-          "id": "bbc_news",
-          "name": "BBC News",
-          "country": "GB",
-          "bloc": "western"
-        },
         {
           "id": "tehran_times",
           "name": "Tehran Times",
@@ -4017,26 +4155,32 @@
           "bloc": "adversarial"
         },
         {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
+          "id": "national_interest",
+          "name": "The National Interest",
+          "country": "US",
           "bloc": "adversarial"
         },
         {
-          "id": "bellingcat",
-          "name": "Bellingcat",
-          "country": "NL",
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
           "bloc": "western"
+        },
+        {
+          "id": "dawn",
+          "name": "Dawn",
+          "country": "PK",
+          "bloc": "neutral"
         }
       ],
       "axis_avg": {
-        "interventionist": -0.14,
-        "zionist": -0.28,
-        "atlanticist": -0.28,
-        "statist": 0.46,
-        "financialized": -0.02
+        "interventionist": -0.15,
+        "zionist": -0.225,
+        "atlanticist": -0.175,
+        "statist": 0.575,
+        "financialized": 0.0
       },
-      "fp_source_count": 5
+      "fp_source_count": 4
     },
     {
       "id": "890067cbf5b7",
@@ -4086,57 +4230,6 @@
         "atlanticist": 0.15,
         "statist": 0.125,
         "financialized": 0.225
-      },
-      "fp_source_count": 4
-    },
-    {
-      "id": "7d2957dfd3b8",
-      "headline": "Military Captured A Live Alien (NEW Proof Revealed) | James Fox",
-      "summary": "Watch every episode ad-free & uncensored on Patreon: https://patreon.com/dannyjones\nJames Fox is a UFO investigator & director of “Moment Of Contact New Revelations Of Alien Encounters” - a documentary exploring the 1996 Varginha UFO Incident in Brazil . A number of locals, including a group of youn",
-      "published": "Wed, 18 Mar 2026 08:00:11 +0000",
-      "image_url": null,
-      "is_blindspot": false,
-      "blindspot_score": 0.0,
-      "bias_variance": 11.05,
-      "entity_count": 38,
-      "sources": [
-        {
-          "id": "war_on_rocks",
-          "name": "War on the Rocks",
-          "country": "US",
-          "bloc": "western"
-        },
-        {
-          "id": "small_wars_journal",
-          "name": "Small Wars Journal",
-          "country": "US",
-          "bloc": "western"
-        },
-        {
-          "id": "national_interest",
-          "name": "The National Interest",
-          "country": "US",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "consortium_news",
-          "name": "Consortium News",
-          "country": "US",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "yt_dannyjones",
-          "name": "Danny Jones",
-          "country": "US",
-          "bloc": "neutral"
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.0,
-        "zionist": 0.175,
-        "atlanticist": 0.2,
-        "statist": 0.2,
-        "financialized": 0.1
       },
       "fp_source_count": 4
     },
@@ -4525,28 +4618,16 @@
       "fp_source_count": 3
     },
     {
-      "id": "b1ca34f82e83",
-      "headline": "Pakistan seeks to raise its global standing in push for Middle East peace",
-      "summary": "<p>Islamabad has seized chance to act as mediator in Iran war and hopes to reap diplomatic and economic benefits</p><p>As Pakistan works frantically to narrow differences between Iran and the US in its newfound role as global peacemaker, it is also seeking to recast its diplomatic standing and attra",
-      "published": "Wed, 18 Mar 2026 07:00:42 +0000",
+      "id": "7d2957dfd3b8",
+      "headline": "Military Captured A Live Alien (NEW Proof Revealed) | James Fox",
+      "summary": "Watch every episode ad-free & uncensored on Patreon: https://patreon.com/dannyjones\nJames Fox is a UFO investigator & director of “Moment Of Contact New Revelations Of Alien Encounters” - a documentary exploring the 1996 Varginha UFO Incident in Brazil . A number of locals, including a group of youn",
+      "published": "Wed, 18 Mar 2026 08:00:11 +0000",
       "image_url": null,
       "is_blindspot": false,
       "blindspot_score": 0.0,
-      "bias_variance": 13.29,
-      "entity_count": 16,
+      "bias_variance": 12.75,
+      "entity_count": 33,
       "sources": [
-        {
-          "id": "guardian",
-          "name": "The Guardian",
-          "country": "GB",
-          "bloc": "neutral"
-        },
-        {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial"
-        },
         {
           "id": "war_on_rocks",
           "name": "War on the Rocks",
@@ -4554,20 +4635,32 @@
           "bloc": "western"
         },
         {
-          "id": "insider_inc",
-          "name": "Insider Inc. (Formerly Business Insider)",
+          "id": "small_wars_journal",
+          "name": "Small Wars Journal",
           "country": "US",
           "bloc": "western"
+        },
+        {
+          "id": "consortium_news",
+          "name": "Consortium News",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
         }
       ],
       "axis_avg": {
-        "interventionist": 0.025,
-        "zionist": 0.1,
-        "atlanticist": 0.125,
-        "statist": 0.35,
-        "financialized": 0.125
+        "interventionist": 0.1,
+        "zionist": 0.133,
+        "atlanticist": 0.2,
+        "statist": 0.167,
+        "financialized": 0.033
       },
-      "fp_source_count": 4
+      "fp_source_count": 3
     },
     {
       "id": "5d839147c83e",
@@ -4851,45 +4944,6 @@
         "atlanticist": 0.067,
         "statist": 0.4,
         "financialized": 0.5
-      },
-      "fp_source_count": 3
-    },
-    {
-      "id": "b9698b854622",
-      "headline": "Pakistan Gambled on Mediation",
-      "summary": "As U.S.-Iran talks falter, the political and economic risks are rising for Islamabad.",
-      "published": "Wed, 22 Apr 2026 20:29:56 +0000",
-      "image_url": null,
-      "is_blindspot": false,
-      "blindspot_score": 0.0,
-      "bias_variance": 15.58,
-      "entity_count": 3,
-      "sources": [
-        {
-          "id": "tehran_times",
-          "name": "Tehran Times",
-          "country": "IR",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "irna",
-          "name": "IRNA",
-          "country": "IR",
-          "bloc": "adversarial"
-        },
-        {
-          "id": "foreign_policy",
-          "name": "Foreign Policy",
-          "country": "US",
-          "bloc": "western"
-        }
-      ],
-      "axis_avg": {
-        "interventionist": -0.1,
-        "zionist": -0.4,
-        "atlanticist": -0.3,
-        "statist": 0.667,
-        "financialized": -0.1
       },
       "fp_source_count": 3
     },
