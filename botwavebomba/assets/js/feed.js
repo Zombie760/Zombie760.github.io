@@ -69,37 +69,56 @@ function buildCard(story) {
     window.location = '/botwavebomba/story.html?id=' + encodeURIComponent(story.id);
   });
 
-  // Badges
-  const badges = document.createElement('div');
-  badges.className = 'bwb-card-badges';
+  // Thumbnail zone (16:9, image-first like Ground News)
+  const thumb = document.createElement('div');
+  thumb.className = 'bwb-card-thumb';
+
+  const img = document.createElement('img');
+  img.src = story.image_url || ('https://picsum.photos/seed/' + encodeURIComponent(story.id) + '/800/450');
+  img.alt = story.headline || '';
+  img.loading = 'lazy';
+  img.onerror = function() {
+    this.src = 'https://picsum.photos/seed/' + encodeURIComponent(story.id) + '/800/450';
+    this.onerror = null;
+  };
+  thumb.appendChild(img);
+
+  // Badges overlaid on image
+  const thumbBadges = document.createElement('div');
+  thumbBadges.className = 'bwb-card-thumb-badges';
   if (story.is_blindspot) {
     const b = document.createElement('span');
     b.className = 'bwb-badge blindspot';
     b.textContent = 'BLINDSPOT';
-    badges.appendChild(b);
+    thumbBadges.appendChild(b);
   }
   if ((story.bias_variance || 0) > 7) {
     const b = document.createElement('span');
     b.className = 'bwb-badge high-variance';
     b.textContent = 'HIGH VARIANCE';
-    badges.appendChild(b);
+    thumbBadges.appendChild(b);
   }
-  card.appendChild(badges);
+  if (thumbBadges.children.length) thumb.appendChild(thumbBadges);
+  card.appendChild(thumb);
+
+  // Card body
+  const body = document.createElement('div');
+  body.className = 'bwb-card-body';
 
   // Headline
   const h = document.createElement('h2');
   h.className = 'bwb-card-headline';
   h.textContent = story.headline || '';
-  card.appendChild(h);
+  body.appendChild(h);
 
   // Summary
   const summary = story.summary || '';
   const p = document.createElement('p');
   p.className = 'bwb-card-summary';
-  p.textContent = summary.length > 200 ? summary.slice(0, 200) + '...' : summary;
-  card.appendChild(p);
+  p.textContent = summary.length > 180 ? summary.slice(0, 180) + '…' : summary;
+  body.appendChild(p);
 
-  // Mini heatmap
+  // Coverage bar (W / N / A)
   const hmWrap = document.createElement('div');
   hmWrap.className = 'bwb-mini-heatmap';
 
@@ -118,9 +137,9 @@ function buildCard(story) {
   const labels = document.createElement('div');
   labels.className = 'bwb-heatmap-labels';
   [
-    { cls: 'western', txt: western + ' Western' },
-    { cls: 'neutral', txt: neutral + ' Non-Aligned' },
-    { cls: 'adversarial', txt: adversarial + ' Adversarial' }
+    { cls: 'western', txt: 'W ' + wPct + '%' },
+    { cls: 'neutral', txt: 'N ' + nPct + '%' },
+    { cls: 'adversarial', txt: 'A ' + aPct + '%' }
   ].forEach(function(item) {
     const span = document.createElement('span');
     span.className = item.cls;
@@ -128,48 +147,47 @@ function buildCard(story) {
     labels.appendChild(span);
   });
   hmWrap.appendChild(labels);
-  card.appendChild(hmWrap);
+  body.appendChild(hmWrap);
 
   // Source pills
   const pills = document.createElement('div');
   pills.className = 'bwb-source-pills';
-  sources.slice(0, 5).forEach(function(src) {
+  sources.slice(0, 4).forEach(function(src) {
     const pill = document.createElement('span');
     pill.className = 'bwb-source-pill ' + (src.bloc || '');
     pill.title = src.country || '';
     pill.textContent = src.name || src.id || '';
     pills.appendChild(pill);
   });
-  if (total > 5) {
+  if (total > 4) {
     const more = document.createElement('span');
     more.className = 'bwb-source-pill more';
-    more.textContent = '+' + (total - 5);
+    more.textContent = '+' + (total - 4) + ' more';
     pills.appendChild(more);
   }
-  card.appendChild(pills);
+  body.appendChild(pills);
 
   // Footer
   const footer = document.createElement('div');
   footer.className = 'bwb-card-footer';
 
   const published = story.published
-    ? new Date(story.published).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+    ? new Date(story.published).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
     : '';
 
   [
     published,
     total + ' sources',
-    (story.entity_count || 0) + ' entities',
-    story.bias_variance ? 'Variance ' + story.bias_variance.toFixed(1) : '',
-    story.blindspot_score ? 'BS ' + story.blindspot_score.toFixed(1) : ''
+    story.bias_variance ? 'Var ' + story.bias_variance.toFixed(1) : ''
   ].filter(Boolean).forEach(function(txt) {
     const span = document.createElement('span');
     span.className = 'bwb-card-stat';
     span.textContent = txt;
     footer.appendChild(span);
   });
-  card.appendChild(footer);
+  body.appendChild(footer);
 
+  card.appendChild(body);
   return card;
 }
 

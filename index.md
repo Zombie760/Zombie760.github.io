@@ -7,7 +7,7 @@ Primary-source investigative work, bug bounty automation, and a TELOS+PAI substr
 
 **[→ Products & Store: Books, Tools, Bundles](/products/)** — Chapter 1 is free. RECORD verifies citations against 6 archives. Stealth Browser passes 30/30 bot detection tests.
 
-## Books
+## Books {:#books}
 
 ### [Unwarranted Influence](https://github.com/Zombie760/unwarranted-influence)
 
@@ -17,7 +17,7 @@ A primary-source investigation of elite capital, 1095–2026. Nine hundred pages
 
 A ledger of two American athletes who refused the classification their institutional sponsor had filed against them, 1960–2016. Companion volume to *Unwarranted Influence*; same primary-source discipline.
 
-## Platforms
+## Platforms {:#platforms}
 
 ### [botwave-bounty](https://github.com/Zombie760/botwave-bounty)
 
@@ -37,7 +37,17 @@ All three arms sit on the same substrate.
 
 The Prime Directive, common to all arms: every claim must be backed by a named, filed, publicly verifiable primary source. No "widely reported." No inference presented as fact.
 
-## Method
+## Option C {:#option-c}
+
+Two ways in.
+
+**Earn it.** Find the planted vulnerability in the puzzle target. Pass the Undeniable Gate — exact request, exact response, CVSS 3.1 vector, deterministic reproduction steps. No "potentially vulnerable" language. Confirmed findings only. Solvers get access and a permanent entry on the [Wall of Solvers →](#).
+
+**Pay to skip.** Same product, no puzzle. $99 one-time or $19/month. No Wall placement.
+
+[Puzzle repo →](#) · [Wall of Solvers →](#)
+
+## Method {:#method}
 
 Every published artifact opens at a filed document. The reader is handed the instrument first; the camera pulls back from there.
 
@@ -45,4 +55,4 @@ Every report cites the specific request and response. Every chapter cites the ca
 
 ---
 
-*Al Gringo, 2026.*
+*Al Gringo, 2026.* &nbsp; <span class="disclaimer">PARODY &middot; OPEN-SOURCE &middot; NOT A SCAM</span>

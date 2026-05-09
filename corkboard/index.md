@@ -26,3 +26,5 @@ A typographic / visual presentation of the same entities. Same primary sources, 
 The book itself: [github.com/Zombie760/unwarranted-influence](https://github.com/Zombie760/unwarranted-influence). Every claim in the corkboard is backed by a citation in the book.
 
 [← Back to landing](../)
+
+<span class="disclaimer">PARODY &middot; OPEN-SOURCE &middot; NOT A SCAM</span>

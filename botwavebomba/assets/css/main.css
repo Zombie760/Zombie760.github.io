@@ -3,24 +3,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
 
-/* ── BASE (Cold Signal default) ── */
+/* ── BASE (Light default) ── */
 :root {
-  --theme-primary:    #3b82f6;
-  --theme-accent:     #ef4444;
-  --theme-gold:       #f59e0b;
-  --theme-bg-deep:    #0a0a0c;
-  --theme-bg-card:    #16161a;
-  --theme-bg-nav:     #061010;
-  --theme-border:     rgba(255,255,255,0.08);
-  --theme-text:       #f0f0f5;
-  --theme-text-muted: rgba(255,255,255,0.35);
+  --theme-primary:    #1d4ed8;
+  --theme-accent:     #dc2626;
+  --theme-gold:       #d97706;
+  --theme-bg-deep:    #ffffff;
+  --theme-bg-card:    #f8fafc;
+  --theme-bg-nav:     #ffffff;
+  --theme-border:     #e2e8f0;
+  --theme-text:       #0f172a;
+  --theme-text-muted: #94a3b8;
 
   /* Semantic signal colors — NEVER overridden by theme */
-  --signal-western:     var(--theme-primary);
-  --signal-adversarial: var(--theme-accent);
+  --signal-western:     #1d4ed8;
+  --signal-adversarial: #dc2626;
   --signal-neutral:     #6b7280;
-  --signal-blindspot:   var(--theme-gold);
-  --signal-verified:    #10b981;
+  --signal-blindspot:   #d97706;
+  --signal-verified:    #059669;
 
   /* Typography */
   --font-display: 'DM Serif Display', serif;
@@ -28,41 +28,61 @@
   --font-body:    'IBM Plex Sans', sans-serif;
 
   /* Surfaces */
-  --bg:           var(--theme-bg-deep);
-  --bg-card:      var(--theme-bg-card);
-  --bg-hover:     rgba(255,255,255,0.04);
-  --bg-surface:   rgba(255,255,255,0.03);
-  --border-subtle: var(--theme-border);
-  --border-default: rgba(255,255,255,0.12);
-  --text-primary:  var(--theme-text);
-  --text-secondary: rgba(255,255,255,0.6);
-  --text-muted:    var(--theme-text-muted);
+  --bg:           #ffffff;
+  --bg-card:      #f8fafc;
+  --bg-hover:     #f1f5f9;
+  --bg-surface:   #f8fafc;
+  --border-subtle: #e2e8f0;
+  --border-default: #e2e8f0;
+  --text-primary:  #0f172a;
+  --text-secondary: #475569;
+  --text-muted:    #94a3b8;
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-hover:  0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* ── THEME 1: CHARGERS POWDER BLUE (Old School 1960–1973) ── */
 [data-theme="powder-blue"] {
   --theme-primary:    #0080C6;
-  --theme-accent:     #FFC20E;
-  --theme-gold:       #FFC20E;
-  --theme-bg-deep:    #03111f;
-  --theme-bg-card:    #061828;
-  --theme-bg-nav:     #020d18;
-  --theme-border:     rgba(0,128,198,0.18);
-  --theme-text:       #e8f4fc;
-  --theme-text-muted: rgba(0,128,198,0.5);
+  --theme-accent:     #CC8800;
+  --theme-gold:       #CC8800;
+  --theme-bg-deep:    #f0f8ff;
+  --theme-bg-card:    #ffffff;
+  --theme-bg-nav:     #f0f8ff;
+  --theme-border:     #c8dff0;
+  --theme-text:       #001830;
+  --theme-text-muted: #6699bb;
+  --bg: #f0f8ff;
+  --bg-card: #ffffff;
+  --bg-hover: #e0f0fa;
+  --bg-surface: #f0f8ff;
+  --text-primary: #001830;
+  --text-secondary: #336688;
+  --text-muted: #6699bb;
+  --border-subtle: #c8dff0;
+  --border-default: #c8dff0;
 }
 
 /* ── THEME 2: CHARGERS NAVY (Seau/Means 1988–2006) ── */
 [data-theme="chargers-navy"] {
-  --theme-primary:    #FFB612;
+  --theme-primary:    #003087;
   --theme-accent:     #FFB612;
   --theme-gold:       #FFB612;
-  --theme-bg-deep:    #000d1a;
-  --theme-bg-card:    #002244;
-  --theme-bg-nav:     #001020;
-  --theme-border:     rgba(255,182,18,0.15);
-  --theme-text:       #ffffff;
-  --theme-text-muted: rgba(255,255,255,0.35);
+  --theme-bg-deep:    #f0f4ff;
+  --theme-bg-card:    #ffffff;
+  --theme-bg-nav:     #f0f4ff;
+  --theme-border:     #c8d4f0;
+  --theme-text:       #001020;
+  --theme-text-muted: #5566aa;
+  --bg: #f0f4ff;
+  --bg-card: #ffffff;
+  --bg-hover: #e0e8ff;
+  --bg-surface: #f0f4ff;
+  --text-primary: #001020;
+  --text-secondary: #334477;
+  --text-muted: #5566aa;
+  --border-subtle: #c8d4f0;
+  --border-default: #c8d4f0;
 }
 
 /* ── THEME 3: LOS ANGELES DODGERS ── */
@@ -70,12 +90,21 @@
   --theme-primary:    #005A9C;
   --theme-accent:     #EF3E42;
   --theme-gold:       #EF3E42;
-  --theme-bg-deep:    #00101e;
-  --theme-bg-card:    #001830;
-  --theme-bg-nav:     #000c18;
-  --theme-border:     rgba(0,90,156,0.2);
-  --theme-text:       #e8f0f8;
-  --theme-text-muted: rgba(0,90,156,0.55);
+  --theme-bg-deep:    #f0f6ff;
+  --theme-bg-card:    #ffffff;
+  --theme-bg-nav:     #f0f6ff;
+  --theme-border:     #c0d4ee;
+  --theme-text:       #00101e;
+  --theme-text-muted: #4477aa;
+  --bg: #f0f6ff;
+  --bg-card: #ffffff;
+  --bg-hover: #e0eeff;
+  --bg-surface: #f0f6ff;
+  --text-primary: #00101e;
+  --text-secondary: #224466;
+  --text-muted: #4477aa;
+  --border-subtle: #c0d4ee;
+  --border-default: #c0d4ee;
 }
 
 /* ── THEME 4: LOS ANGELES LAKERS ── */
@@ -83,12 +112,21 @@
   --theme-primary:    #552583;
   --theme-accent:     #FDB927;
   --theme-gold:       #FDB927;
-  --theme-bg-deep:    #0d0014;
-  --theme-bg-card:    #1a0030;
-  --theme-bg-nav:     #080010;
-  --theme-border:     rgba(85,37,131,0.25);
-  --theme-text:       #f0eaff;
-  --theme-text-muted: rgba(253,185,39,0.4);
+  --theme-bg-deep:    #faf5ff;
+  --theme-bg-card:    #ffffff;
+  --theme-bg-nav:     #faf5ff;
+  --theme-border:     #ddc8ee;
+  --theme-text:       #0d0014;
+  --theme-text-muted: #886699;
+  --bg: #faf5ff;
+  --bg-card: #ffffff;
+  --bg-hover: #f0e8ff;
+  --bg-surface: #faf5ff;
+  --text-primary: #0d0014;
+  --text-secondary: #553366;
+  --text-muted: #886699;
+  --border-subtle: #ddc8ee;
+  --border-default: #ddc8ee;
 }
 
 /* ── GLOBAL RESET + BODY ── */
@@ -113,12 +151,13 @@ img { max-width: 100%; }
 
 /* ── HEADER ── */
 .bwb-header {
-  border-bottom: 1px solid var(--theme-border);
-  background: var(--theme-bg-nav);
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-card);
   position: sticky;
   top: 0;
   z-index: 100;
   transition: background 0.3s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
 .bwb-header-inner {
@@ -354,16 +393,53 @@ img { max-width: 100%; }
 /* ── STORY CARD ── */
 .bwb-card {
   background: var(--bg-card);
-  border: 1px solid var(--theme-border);
-  padding: 24px;
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, transform 0.1s;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
 }
 
 .bwb-card:hover {
-  background: var(--bg-hover);
   border-color: var(--theme-primary);
-  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* ── CARD THUMBNAIL ── */
+.bwb-card-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-hover);
+}
+
+.bwb-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.bwb-card:hover .bwb-card-thumb img {
+  transform: scale(1.04);
+}
+
+.bwb-card-thumb-badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ── CARD BODY ── */
+.bwb-card-body {
+  padding: 16px 20px 20px;
 }
 
 .bwb-card-badges {

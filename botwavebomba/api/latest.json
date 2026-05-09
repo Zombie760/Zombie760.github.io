@@ -1,552 +1,3367 @@
 {
-  "generated_at": "2026-05-09T10:34:14.190305+00:00",
-  "story_count": 12,
+  "generated_at": "2026-05-09T10:52:07.550104+00:00",
+  "article_count": 2651,
+  "story_count": 60,
   "stories": [
     {
-      "id": "story-0000",
-      "headline": "Crypto scam lures ships into Strait of Hormuz, falsely promising safe passage",
-      "summary": "Ship attacked by Iran after possibly falling for safe passage crypto scam.",
-      "published": "Wed, 22 Apr 2026 22:07:54 +0000",
-      "is_blindspot": false,
-      "blindspot_score": 5.7,
-      "bias_variance": 1.4,
-      "entity_count": 7,
+      "id": "c1bb19b27818",
+      "headline": "DNA Expert: New Breakaway Human Species is Evolving in Indonesia | Dr. Melissa Ilardo",
+      "summary": "Watch every episode ad-free & uncensored on Patreon: https://patreon.com/dannyjones\nDr. Melissa Ilardo, Ph.D is a professor of evolutionary genomics and biomedical informatics at the University of Utah. Her research explores human evolution and adaptation in populations that have previously been ove",
+      "published": "Wed, 22 Apr 2026 13:11:08 GMT",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 1.8,
+      "entity_count": 53,
       "sources": [
         {
-          "id": "arstechnica",
-          "name": "Ars Technica",
+          "id": "wired",
+          "name": "Wired",
           "country": "US",
-          "bloc": "western",
-          "headline": "Crypto scam lures ships into Strait of Hormuz, falsely promising safe passage",
-          "url": "https://arstechnica.com/security/2026/04/crypto-scam-lures-ships-into-strait-of-hormuz-falsely-promising-safe-passage/",
-          "axis": {
-            "interventionist": 0.2,
-            "zionist": 0.3,
-            "atlanticist": 0.5,
-            "statist": 0.0,
-            "financialized": 0.4
-          }
+          "bloc": "western"
         },
-        {
-          "id": "washington_post",
-          "name": "The Washington Post",
-          "country": "US",
-          "bloc": "western",
-          "headline": "Iran says it seized 2 ships in Strait of Hormuz, hours after Trump\u2019s ceasefire extension",
-          "url": "https://www.washingtonpost.com/world/2026/04/22/hormuz-strait-us-iran-talks-war/",
-          "axis": {
-            "interventionist": 0.6,
-            "zionist": 0.5,
-            "atlanticist": 0.8,
-            "statist": 0.4,
-            "financialized": 0.7
-          }
-        },
-        {
-          "id": "irna",
-          "name": "IRNA",
-          "country": "IR",
-          "bloc": "adversarial",
-          "headline": "IRGC Navy seizes two ships for violating protocols in Strait of Hormuz",
-          "url": "https://en.irna.ir/news/86134702/IRGC-Navy-seizes-two-ships-for-violating-protocols-in-Strait",
-          "axis": {
-            "interventionist": -0.4,
-            "zionist": -0.8,
-            "atlanticist": -0.8,
-            "statist": 0.8,
-            "financialized": -0.3
-          }
-        },
-        {
-          "id": "tehran_times",
-          "name": "Tehran Times",
-          "country": "IR",
-          "bloc": "adversarial",
-          "headline": "Strait of Hormuz crisis: A looming food security time bomb",
-          "url": "https://www.tehrantimes.com/news/525653/Strait-of-Hormuz-crisis-A-looming-food-security-time-bomb",
-          "axis": {
-            "interventionist": -0.5,
-            "zionist": -0.9,
-            "atlanticist": -0.9,
-            "statist": 0.8,
-            "financialized": -0.3
-          }
-        },
-        {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial",
-          "headline": "Trump extends Iran ceasefire, warns of force if blockade fails to yield deal: As it happened",
-          "url": "https://www.rt.com/news/638802-us-iran-talks-second-round/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "axis": {
-            "interventionist": -0.3,
-            "zionist": -0.2,
-            "atlanticist": -1.0,
-            "statist": 0.8,
-            "financialized": 0.1
-          }
-        },
-        {
-          "id": "ft",
-          "name": "Financial Times",
-          "country": "GB",
-          "bloc": "western",
-          "headline": "Middle East crisis day 55 as it happened: Donald Trump says Israel and Lebanon will extend ceasefire by 3 weeks",
-          "url": "https://www.ft.com/content/730f572b-edf7-4633-bdfd-1707f16d445b",
-          "axis": {
-            "interventionist": 0.2,
-            "zionist": 0.2,
-            "atlanticist": 0.6,
-            "statist": 0.1,
-            "financialized": 0.9
-          }
-        },
-        {
-          "id": "nytimes",
-          "name": "The New York Times",
-          "country": "US",
-          "bloc": "western",
-          "headline": "How the Iran War Is Morphing Into a Volatile Standoff in the Strait of Hormuz",
-          "url": "https://www.nytimes.com/2026/04/23/us/politics/strait-iran-willpower.html",
-          "axis": {
-            "interventionist": 0.5,
-            "zionist": 0.6,
-            "atlanticist": 0.7,
-            "statist": 0.3,
-            "financialized": 0.6
-          }
-        }
-      ]
-    },
-    {
-      "id": "story-0001",
-      "headline": "Digital Hopes, Real Power: Reflecting on the Legacy of the Arab Spring",
-      "summary": "<div class=\"field field--name-body field--type-text-with-summary field--label-hidden\"><div class=\"field__items\"><div class=\"field__item even\"><p><i><span>This is the first installment of a blog series reflecting on the global digital legacy of the 2011 Arab uprisings.</span></i></p>\n<p><span>A new generation of protesters, raised on social media and often fluent in the tools of digital dissent, has taken to the streets in recent months and years. In Bangladesh, Iran, Togo, France, Uganda, Nepal, and more than a dozen other countries, young people have harnessed digital tools to mobilize at sca",
-      "published": "Wed, 25 Mar 2026 11:07:48 +0000",
-      "is_blindspot": false,
-      "blindspot_score": 10.0,
-      "bias_variance": 10.0,
-      "entity_count": 8,
-      "sources": [
         {
           "id": "eff_deeplinks",
           "name": "EFF DeepLinks",
           "country": "US",
-          "bloc": "adversarial",
-          "headline": "Digital Hopes, Real Power: Reflecting on the Legacy of the Arab Spring",
-          "url": "https://www.eff.org/deeplinks/2026/03/digital-hopes-real-power-reflecting-legacy-arab-spring-0",
-          "axis": {
-            "interventionist": -0.3,
-            "zionist": 0.1,
-            "atlanticist": 0.3,
-            "statist": -0.6,
-            "financialized": -0.3
-          }
-        }
-      ]
-    },
-    {
-      "id": "story-0002",
-      "headline": "Hong Kong, Malaysia stock exchanges to team up on ETFs, listings, Islamic finance",
-      "summary": "The bourse operators of Hong Kong and Malaysia are exploring a range of collaborations, from dual listings and exchange-traded funds (ETFs) to Islamic finance, to forge closer ties between the city and the Southeast Asian country.\nHong Kong Exchanges and Clearing (HKEX) CEO Bonnie Chan Yiting and Bursa Malaysia CEO Dato Fad\u2019l Mohamed unveiled their joint development plans in a media briefing in Hong Kong on Wednesday as HKEX hosted the 40th Asian and Oceanian Stock Exchanges Federation (AOSEF)...",
-      "published": "Wed, 22 Apr 2026 11:30:09 +0000",
-      "is_blindspot": false,
-      "blindspot_score": 10.0,
-      "bias_variance": 10.0,
-      "entity_count": 1,
-      "sources": [
-        {
-          "id": "scmp_business",
-          "name": "SCMP Business",
-          "country": "HK",
-          "bloc": "adversarial",
-          "headline": "Hong Kong, Malaysia stock exchanges to team up on ETFs, listings, Islamic finance",
-          "url": "https://www.scmp.com/business/markets/article/3351005/hong-kong-malaysia-stock-exchanges-team-etfs-listings-islamic-finance?utm_source=rss_feed",
-          "axis": {
-            "interventionist": 0.0,
-            "zionist": 0.1,
-            "atlanticist": -0.2,
-            "statist": 0.4,
-            "financialized": 0.7
-          }
-        }
-      ]
-    },
-    {
-      "id": "story-0003",
-      "headline": "Hungary Drops Veto on Massive EU Loan to Ukraine",
-      "summary": "Reopening the Druzhba pipeline was the final hurdle stopping Budapest from ending its opposition.",
-      "published": "Wed, 22 Apr 2026 20:56:49 +0000",
-      "is_blindspot": false,
-      "blindspot_score": 6.7,
-      "bias_variance": 3.3,
-      "entity_count": 2,
-      "sources": [
-        {
-          "id": "foreign_policy",
-          "name": "Foreign Policy",
-          "country": "US",
-          "bloc": "western",
-          "headline": "Hungary Drops Veto on Massive EU Loan to Ukraine",
-          "url": "https://foreignpolicy.com/2026/04/22/ukraine-druzhba-pipeline-reopens-hungary-drops-veto-european-union-loan/",
-          "axis": {
-            "interventionist": 0.6,
-            "zionist": 0.5,
-            "atlanticist": 0.8,
-            "statist": 0.4,
-            "financialized": 0.3
-          }
+          "bloc": "neutral"
         },
         {
-          "id": "washington_post",
-          "name": "The Washington Post",
+          "id": "schneier_blog",
+          "name": "Schneier on Security",
           "country": "US",
-          "bloc": "western",
-          "headline": "Ukraine will get $105 billion loan after Hungary drops opposition, E.U. says",
-          "url": "https://www.washingtonpost.com/world/2026/04/22/eu-ukraine-loan-hungary-russia/",
-          "axis": {
-            "interventionist": 0.6,
-            "zionist": 0.5,
-            "atlanticist": 0.8,
-            "statist": 0.4,
-            "financialized": 0.7
-          }
+          "bloc": "neutral"
         },
         {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial",
-          "headline": "EU envoys approve \u20ac90 billion for Ukraine after Hungary lifts veto",
-          "url": "https://www.rt.com/news/638921-eu-envoys-approve-90-billion-ukraine/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "axis": {
-            "interventionist": -0.3,
-            "zionist": -0.2,
-            "atlanticist": -1.0,
-            "statist": 0.8,
-            "financialized": 0.1
-          }
-        }
-      ]
-    },
-    {
-      "id": "story-0004",
-      "headline": "WeWork finds new lease of life in Hong Kong as global uncertainty drives demand",
-      "summary": "Global flexible workspace operator WeWork is expanding in Hong Kong as companies scale back long-term office commitments, opening its fifth site in Causeway Bay to tap rising demand for short-term, flexible space amid economic and geopolitical uncertainty.\nThe new location at Soundwill Plaza II Midtown, owned by Soundwill Holdings, was previously occupied by another co-working operator. WeWork secured the site after competing with several rivals.\n\u201cIn the current uncertain market outlook,...",
-      "published": "Wed, 22 Apr 2026 13:00:15 +0000",
-      "is_blindspot": false,
-      "blindspot_score": 10.0,
-      "bias_variance": 10.0,
-      "entity_count": 1,
-      "sources": [
-        {
-          "id": "scmp_business",
-          "name": "SCMP Business",
-          "country": "HK",
-          "bloc": "adversarial",
-          "headline": "WeWork finds new lease of life in Hong Kong as global uncertainty drives demand",
-          "url": "https://www.scmp.com/business/companies/article/3351036/wework-finds-new-lease-life-hong-kong-global-uncertainty-drives-demand?utm_source=rss_feed",
-          "axis": {
-            "interventionist": 0.0,
-            "zionist": 0.1,
-            "atlanticist": -0.2,
-            "statist": 0.4,
-            "financialized": 0.7
-          }
-        }
-      ]
-    },
-    {
-      "id": "story-0005",
-      "headline": "Shooting at iconic Mexico pyramid leaves tourist dead and others injured (GRAPHIC VIDEOS)",
-      "summary": "<img alt=\"Preview\" align=\"left\" style=\"margin-right: 10px;\" src=\"https://mf.b37mrtl.ru/files/2026.04/thumbnail/69e79c532030273bb01e3016.jpg\" /> A Canadian tourist has been killed and 13 others, including a Russian national, sustained injuries in a shooting spree in Mexico <br/><a href=\"https://www.rt.com/news/638846-tourist-killed-mexico-pyramid-shooting-spree/?utm_source=rss&utm_medium=rss&utm_campaign=RSS\">Read Full Article at RT.com</a>",
-      "published": "Tue, 21 Apr 2026 17:31:59 +0000",
-      "is_blindspot": false,
-      "blindspot_score": 6.7,
-      "bias_variance": 3.3,
-      "entity_count": 1,
-      "sources": [
-        {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial",
-          "headline": "Shooting at iconic Mexico pyramid leaves tourist dead and others injured (GRAPHIC VIDEOS)",
-          "url": "https://www.rt.com/news/638846-tourist-killed-mexico-pyramid-shooting-spree/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "axis": {
-            "interventionist": -0.3,
-            "zionist": -0.2,
-            "atlanticist": -1.0,
-            "statist": 0.8,
-            "financialized": 0.1
-          }
+          "id": "404media",
+          "name": "404 Media",
+          "country": "US",
+          "bloc": "neutral"
         },
         {
           "id": "google_news",
           "name": "Google News",
           "country": "US",
-          "bloc": "western",
-          "headline": "1 dead, 5 injured and several in custody in Mall of Louisiana shooting - NBC News",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQXJwNDJxaTNWSk8tdVhqTl85aktleXJScTNqbVJBUGlhSElKSlhFRUhRUmN6Vk1SRmtuUV8zVXNhOEFHelU5Zk80Y3ROYXY1dEp6alVvUXhHR2RrT1hyVmF2WXYzczZCM2JQS1NhMjdnU3BzM2lsYUN5MXhyQW5xWFAtM04tVDFIdDQzRnNuVHpMb0ZvMjBGMEo2THBaTFBoSzdQdVpsTS1oMDNjVUJXaER0a01pN1U?oc=5",
-          "axis": {
-            "interventionist": 0.2,
-            "zionist": 0.3,
-            "atlanticist": 0.5,
-            "statist": 0.3,
-            "financialized": 0.8
-          }
+          "bloc": "western"
         },
         {
-          "id": "guardian",
-          "name": "The Guardian",
-          "country": "GB",
-          "bloc": "adversarial",
-          "headline": "At least one dead and five people injured in Louisiana mall shooting, police say",
-          "url": "https://www.theguardian.com/us-news/2026/apr/23/louisiana-mall-shooting-baton-rouge",
-          "axis": {
-            "interventionist": -0.3,
-            "zionist": -0.2,
-            "atlanticist": 0.3,
-            "statist": 0.1,
-            "financialized": -0.4
-          }
+          "id": "reddit_news",
+          "name": "Reddit News",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_juliandorey",
+          "name": "Julian Dorey",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
         }
       ]
     },
     {
-      "id": "story-0006",
-      "headline": "Authorities arrest special forces soldier who allegedly made $400K on Polymarket bet involving Maduro operation",
-      "summary": "The soldier is accused of using classified government information to inform a wager on the prediction market Polymarket.",
-      "published": "Thu, 23 Apr 2026 23:32:33 +0000",
+      "id": "140864078aec",
+      "headline": "Microsoft’s new Xbox chief is ‘reevaluating’ exclusive games - The Verge",
+      "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxOZGI5UTYyY0dlVHRYNWo0WHo4UHRLY1ZGSmxFalVncndkY2VOR1RfV3piTGhTR240cjBydFQ3UnF3a2JjTDNKaDhiZ0ZHSEdLN1E4X3lBSmRfMURFY3B6WHduZ05YU2trNno4NGJLQnE4R0pJczJBZWpleXNPdGFNelhvM01aOGpheDhQVnoxaUotVFl6RTNvV3p0SWFGcmc?oc=5\" target=\"_blank\">Micr",
+      "published": "Wed, 22 Apr 2026 19:32:56 +0000",
+      "image_url": null,
       "is_blindspot": true,
-      "blindspot_score": 10.0,
-      "bias_variance": 10.0,
+      "blindspot_score": 5.0,
+      "bias_variance": 0.7,
       "entity_count": 9,
       "sources": [
-        {
-          "id": "techcrunch",
-          "name": "TechCrunch",
-          "country": "US",
-          "bloc": "western",
-          "headline": "Authorities arrest special forces soldier who allegedly made $400K on Polymarket bet involving Maduro operation",
-          "url": "https://techcrunch.com/2026/04/23/authorities-arrest-special-forces-soldier-who-allegedly-made-400k-on-polymarket-bet-involving-maduro-operation/",
-          "axis": {
-            "interventionist": 0.2,
-            "zionist": 0.4,
-            "atlanticist": 0.5,
-            "statist": -0.2,
-            "financialized": 0.7
-          }
-        },
-        {
-          "id": "gizmodo",
-          "name": "Gizmodo",
-          "country": "US",
-          "bloc": "western",
-          "headline": "Feds Arrest Soldier Who Allegedly Made $400,000 on Maduro Kidnapping Polymarket Bet",
-          "url": "https://gizmodo.com/feds-arrest-soldier-who-allegedly-made-400000-on-maduro-kidnapping-polymarket-bet-2000750232",
-          "axis": {
-            "interventionist": 0.1,
-            "zionist": 0.2,
-            "atlanticist": 0.4,
-            "statist": -0.2,
-            "financialized": 0.3
-          }
-        },
-        {
-          "id": "wired",
-          "name": "Wired",
-          "country": "US",
-          "bloc": "western",
-          "headline": "US Special Forces Soldier Arrested for Polymarket Bets on Maduro Raid",
-          "url": "https://www.wired.com/story/us-special-forces-soldier-allegedly-profited-off-of-maduro-capture-on-polymarket/",
-          "axis": {
-            "interventionist": 0.3,
-            "zionist": 0.4,
-            "atlanticist": 0.5,
-            "statist": 0.1,
-            "financialized": 0.5
-          }
-        }
-      ]
-    },
-    {
-      "id": "story-0007",
-      "headline": "Clearing Strait of Hormuz of mines could take 6 months, Pentagon tells Congress",
-      "summary": "The Pentagon assessment, shared in a classified briefing for lawmakers, suggests gasoline and oil prices could remain elevated through the midterm elections.",
-      "published": "Wed, 22 Apr 2026 18:43:49 +0000",
-      "is_blindspot": true,
-      "blindspot_score": 10.0,
-      "bias_variance": 10.0,
-      "entity_count": 2,
-      "sources": [
-        {
-          "id": "washington_post",
-          "name": "The Washington Post",
-          "country": "US",
-          "bloc": "western",
-          "headline": "Clearing Strait of Hormuz of mines could take 6 months, Pentagon tells Congress",
-          "url": "https://www.washingtonpost.com/national-security/2026/04/22/iran-hormuz-mines/",
-          "axis": {
-            "interventionist": 0.6,
-            "zionist": 0.5,
-            "atlanticist": 0.8,
-            "statist": 0.4,
-            "financialized": 0.7
-          }
-        },
         {
           "id": "cnbc",
           "name": "CNBC",
           "country": "US",
-          "bloc": "western",
-          "headline": "Dow CEO says clearing the Strait of Hormuz logjam will take almost a year",
-          "url": "https://www.cnbc.com/2026/04/23/dow-ceo-says-clearing-the-strait-of-hormuz-logjam-will-take-almost-a-year.html",
-          "axis": {
-            "interventionist": 0.2,
-            "zionist": 0.3,
-            "atlanticist": 0.5,
-            "statist": 0.2,
-            "financialized": 0.9
-          }
-        }
-      ]
-    },
-    {
-      "id": "story-0008",
-      "headline": "Trump\u2019s war on Iran a strategic \u2018disaster\u2019 \u2013 expert (VIDEO)",
-      "summary": "<img alt=\"Preview\" align=\"left\" style=\"margin-right: 10px;\" src=\"https://mf.b37mrtl.ru/files/2026.04/thumbnail/69e8a84985f54077d7673ea2.jpg\" /> The Iran war has been a strategic disaster for the US, leaving Trump in a weaker position and damaging US credibility, an expert tells RT <br/><a href=\"https://www.rt.com/news/638903-us-iran-war-disaster-parsi/?utm_source=rss&utm_medium=rss&utm_campaign=RSS\">Read Full Article at RT.com</a>",
-      "published": "Wed, 22 Apr 2026 10:35:04 +0000",
-      "is_blindspot": false,
-      "blindspot_score": 10.0,
-      "bias_variance": 10.0,
-      "entity_count": 0,
-      "sources": [
+          "bloc": "western"
+        },
         {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial",
-          "headline": "Trump\u2019s war on Iran a strategic \u2018disaster\u2019 \u2013 expert (VIDEO)",
-          "url": "https://www.rt.com/news/638903-us-iran-war-disaster-parsi/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "axis": {
-            "interventionist": -0.3,
-            "zionist": -0.2,
-            "atlanticist": -1.0,
-            "statist": 0.8,
-            "financialized": 0.1
-          }
+          "id": "insider_inc",
+          "name": "Insider Inc. (Formerly Business Insider)",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "techcrunch",
+          "name": "TechCrunch",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "arstechnica",
+          "name": "Ars Technica",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "krebsonsecurity",
+          "name": "Krebs on Security",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "theregister",
+          "name": "The Register",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
         }
       ]
     },
     {
-      "id": "story-0009",
-      "headline": "Resilience Without Capacity: The Fatal Flaw in America\u2019s New Cyber Strategy",
-      "summary": "<p>What happens when a country develops a cyber strategy that depends on the capabilities it is actively cutting?The White House&#8217;s new cyber strategy offers exactly that kind of contradiction by pairing a strong vision for resilience and competition with policy choices that pull in the opposite direction. On the merits, it gets several important things right. It treats cyberspace as a domain of sustained strategic competition rather than a compliance problem. It puts unusual and welcome emphasis on national resilience. And it understands that offensive cyber action, paired with other too",
-      "published": "Wed, 22 Apr 2026 07:30:15 +0000",
-      "is_blindspot": false,
-      "blindspot_score": 10.0,
-      "bias_variance": 10.0,
-      "entity_count": 7,
+      "id": "10ac3d04253e",
+      "headline": "The Next Transformation of U.S. Shipbuilding",
+      "summary": "<p>This exclusive Cogs of War interview is with Eric Chewning, the executive vice president of maritime systems and corporate strategy at HII. As HII is America&#8217;s largest and one of its oldest military shipbuilders, we asked him to share his thoughts on maritime startups, reindustrialization p",
+      "published": "Wed, 22 Apr 2026 21:34:03 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 4.08,
+      "entity_count": 25,
       "sources": [
         {
           "id": "war_on_rocks",
           "name": "War on the Rocks",
           "country": "US",
-          "bloc": "western",
-          "headline": "Resilience Without Capacity: The Fatal Flaw in America\u2019s New Cyber Strategy",
-          "url": "https://warontherocks.com/resilience-without-capacity-the-fatal-flaw-in-americas-new-cyber-strategy/",
-          "axis": {
-            "interventionist": 0.5,
-            "zionist": 0.5,
-            "atlanticist": 0.7,
-            "statist": 0.3,
-            "financialized": 0.2
-          }
+          "bloc": "western"
+        },
+        {
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "wired",
+          "name": "Wired",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "eff_deeplinks",
+          "name": "EFF DeepLinks",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "404media",
+          "name": "404 Media",
+          "country": "US",
+          "bloc": "neutral"
         }
       ]
     },
     {
-      "id": "story-0010",
-      "headline": "Microsoft Patch Tuesday, March 2026 Edition",
-      "summary": "Microsoft Corp. today pushed security updates to fix at least 77 vulnerabilities in its Windows operating systems and other software. There are no pressing \"zero-day\" flaws this month (compared to February's five zero-day treat), but as usual some patches may deserve more rapid attention from organizations using Windows. Here are a few highlights from this month's Patch Tuesday.",
-      "published": "Wed, 11 Mar 2026 00:32:51 +0000",
-      "is_blindspot": false,
-      "blindspot_score": 10.0,
-      "bias_variance": 10.0,
-      "entity_count": 2,
+      "id": "1f99771bc3e2",
+      "headline": "The four astronauts NASA picked for the first crewed moon mission in 50 years",
+      "summary": "Astronauts who will helm the first crewed moon mission in five decades were revealed on Monday, queuing up the quartet to begin training for the historic Artemis II lunar flyby that is set to take off in November 2024.",
+      "published": "Wed, 22 Apr 2026 19:42:13 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 2.83,
+      "entity_count": 45,
       "sources": [
         {
-          "id": "krebsonsecurity",
-          "name": "Krebs on Security",
+          "id": "cnn",
+          "name": "CNN",
           "country": "US",
-          "bloc": "western",
-          "headline": "Microsoft Patch Tuesday, March 2026 Edition",
-          "url": "https://krebsonsecurity.com/2026/03/microsoft-patch-tuesday-march-2026-edition/",
-          "axis": {
-            "interventionist": 0.1,
-            "zionist": 0.2,
-            "atlanticist": 0.4,
-            "statist": 0.2,
-            "financialized": 0.2
-          }
+          "bloc": "western"
+        },
+        {
+          "id": "arstechnica",
+          "name": "Ars Technica",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "theregister",
+          "name": "The Register",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "yt_juliandorey",
+          "name": "Julian Dorey",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
         }
       ]
     },
     {
-      "id": "story-0011",
-      "headline": "US soldier charged with making prediction-market bets on Maduro\u2019s seizure",
-      "summary": "Army member was involved in planning Venezuela operation and allegedly made $400,000 on trades about mission",
-      "published": "Thu, 23 Apr 2026 23:55:32 GMT",
-      "is_blindspot": false,
+      "id": "1e6947ac7fb3",
+      "headline": "Популярная супермодель снялась в откровенных купальниках для Victoria's Secret",
+      "summary": "",
+      "published": "Thu, 23 Apr 2026 15:43:14 +0000",
+      "image_url": null,
+      "is_blindspot": true,
       "blindspot_score": 5.0,
-      "bias_variance": 0.0,
-      "entity_count": 1,
+      "bias_variance": 3.0,
+      "entity_count": 41,
       "sources": [
+        {
+          "id": "sixth_tone",
+          "name": "Sixth Tone",
+          "country": "CN",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "consortium_news",
+          "name": "Consortium News",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "lenta_ru",
+          "name": "Lenta.ru (Russian)",
+          "country": "RU",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_juliandorey",
+          "name": "Julian Dorey",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "912d59cdf1d3",
+      "headline": "Polish PM questions whether US is ‘loyal’ to Europe’s defence",
+      "summary": "Donald Tusk says EU should bolster its own Article 42.7 mutual defence clause",
+      "published": "Wed, 22 Apr 2026 17:30:31 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 1.66,
+      "entity_count": 21,
+      "sources": [
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
         {
           "id": "ft",
           "name": "Financial Times",
           "country": "GB",
-          "bloc": "western",
-          "headline": "US soldier charged with making prediction-market bets on Maduro\u2019s seizure",
-          "url": "https://www.ft.com/content/43bc927b-683d-417e-aa13-a9b4a933418b",
-          "axis": {
-            "interventionist": 0.2,
-            "zionist": 0.2,
-            "atlanticist": 0.6,
-            "statist": 0.1,
-            "financialized": 0.9
-          }
+          "bloc": "western"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "f5cd26290188",
+      "headline": "Touring Africa, Pope Leo Raised His Voice, but Didn’t Like the Echo",
+      "summary": "On his recent trip abroad, Leo XIV made some of his most forthright comments since becoming pope last year, but grew uncomfortable at how that criticism was interpreted.",
+      "published": "Thu, 23 Apr 2026 18:49:09 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 1.66,
+      "entity_count": 14,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "washington_post",
+          "name": "The Washington Post",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "3fcf026bbfff",
+      "headline": "Ulta Promo Codes: Up to 50% Off in April",
+      "summary": "Shop the latest beauty trends and save big using an Ulta promo code for beauty tech, makeup, and more.",
+      "published": "Wed, 22 Apr 2026 06:00:00 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 2.24,
+      "entity_count": 24,
+      "sources": [
+        {
+          "id": "hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "neutral"
+        },
+        {
+          "id": "denik_n",
+          "name": "Deník N",
+          "country": "CZ",
+          "bloc": "western"
+        },
+        {
+          "id": "wired",
+          "name": "Wired",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "krebsonsecurity",
+          "name": "Krebs on Security",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "09fcf42bcab8",
+      "headline": "US Navy chief leaving post 'effective immediately', Pentagon says",
+      "summary": "Reports say Phelan, whose role was largely administrative, left amid tension over US shipbuilding.",
+      "published": "Thu, 23 Apr 2026 08:37:14 GMT",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 0.94,
+      "entity_count": 29,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "yt_juliandorey",
+          "name": "Julian Dorey",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "c49e6d739a7a",
+      "headline": "I’m Sorry, Dave. I’m Afraid I Can’t De-escalate: On (AI) Wargaming and Nuclear War",
+      "summary": "<p>Recent experiments placing large language models in simulated nuclear crises have produced alarming headlines. &#8220;Bloodthirsty&#8221; AI systems escalate conflicts, threaten nuclear strikes, and behave erratically under simulated pressure. A recent set of experiments presented in a pre-print ",
+      "published": "Tue, 21 Apr 2026 07:30:50 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 4.0,
+      "entity_count": 30,
+      "sources": [
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "404media",
+          "name": "404 Media",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_juliandorey",
+          "name": "Julian Dorey",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "53a577bb3bc5",
+      "headline": "Japan moves to block foreign buyout over security concerns",
+      "summary": "Japan moves to block a foreign buyout of machine maker Makino Milling by MBK Partners, citing national security risks to its defense industry.\n\nRead More: https://punchng.com/japan-moves-to-block-foreign-buyout-over-security-concerns/",
+      "published": "Tue, 21 Apr 2026 16:06:05 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 10.23,
+      "entity_count": 6,
+      "sources": [
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "punch",
+          "name": "The Punch",
+          "country": "NG",
+          "bloc": "neutral"
+        },
+        {
+          "id": "national_interest",
+          "name": "The National Interest",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "e20d37a5d7fc",
+      "headline": "Headscarf with a beret: Muslim designers showcase floral dresses and boxy streetwear in Paris",
+      "summary": "Some young attendees say the event demonstrated a more inclusive French culture taking shape.",
+      "published": "Thu, 23 Apr 2026 14:43:06 GMT",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 3.61,
+      "entity_count": 12,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western"
+        },
+        {
+          "id": "cointelegraph",
+          "name": "Cointelegraph",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "53b04187314d",
+      "headline": "Economic War Comes of Age | Foreign Affairs",
+      "summary": "<p>In a timely piece for Foreign Affairs called “How to Fight an Economic War: A Field Manual for a Ruptured World,” Edward Fishman of the Council on Foreign Relations lays out a call to action. Economic warfare now defines great power competition. Success will hinge on disciplined use of chokepoint",
+      "published": "Thu, 23 Apr 2026 21:23:15 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 2.24,
+      "entity_count": 12,
+      "sources": [
+        {
+          "id": "wsj",
+          "name": "The Wall Street Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "small_wars_journal",
+          "name": "Small Wars Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "498f79c4c5bb",
+      "headline": "Matt Gaetz & The Non-Binary Capitalist | The Tim Dillon Show #418",
+      "summary": "Tim examines the Matt Gaetz scandal, ICBM’s for Christmas, F1, how many Italians are on social media, Trans-Republicans, getting blitzed with your parents, female incels and why he didn’t grow up with game night.\n\nAmerican Royalty Tour\n🎟 https://punchup.live/TimDillon\n\nSPONSORS:\n\nMorgan & Morgan\nFor",
+      "published": "Tue, 31 Mar 2026 03:17:47 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 10.0,
+      "bias_variance": 0.0,
+      "entity_count": 278,
+      "sources": [
+        {
+          "id": "eff_deeplinks",
+          "name": "EFF DeepLinks",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_timdillonshow",
+          "name": "The Tim Dillon Show",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "667af97a2cc4",
+      "headline": "Insändare. Evakuera alla svårt skadade patienter från Gaza",
+      "summary": "INSÄNDARE. Omvärlden måste vakna och lindra lidandet för palestinier som skadats av den israeliska krigföringen. Det enda rätta är att alla länder hjälps åt att evakuera alla svårt skadade patienter från Gaza omgående, skriver Anna Nelson, barnmorska och sjuksköterska i frivilligorganisationen Healt",
+      "published": "Thu, 23 Apr 2026 12:55:40 +0200",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 1.89,
+      "entity_count": 15,
+      "sources": [
+        {
+          "id": "wsj",
+          "name": "The Wall Street Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "egypt_independent",
+          "name": "Egypt Independent",
+          "country": "EG",
+          "bloc": "neutral"
+        },
+        {
+          "id": "dn_nyheter",
+          "name": "Dagens Nyheter",
+          "country": "SE",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "ced34058f4e0",
+      "headline": "Why Did the United States Lift Sanctions on Assad’s Chemical Weapons Scientists?",
+      "summary": "<p>On June 30, 2025, as part of the process of normalizing relations with Damascus following the overthrow of Syrian President Bashar al-Assad, the Trump administration overhauled the sanctions imposed on Syria to facilitate the rebuilding of that war-ravaged country. In the course of revising these",
+      "published": "Tue, 18 Apr 2023 15:32:03 GMT",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 4.32,
+      "entity_count": 15,
+      "sources": [
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "404media",
+          "name": "404 Media",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "68ef004de616",
+      "headline": "7 Best Shower Filters of 2026 Are WIRED-Tested and -Approved",
+      "summary": "I tested leading filtered showerheads to see how well they remove total chlorine from your water.",
+      "published": "Wed, 22 Apr 2026 11:30:00 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 1.89,
+      "entity_count": 47,
+      "sources": [
+        {
+          "id": "wired",
+          "name": "Wired",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "eff_deeplinks",
+          "name": "EFF DeepLinks",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "e09e91c8c329",
+      "headline": "From Theory to Reality: Evaluating the U.S.-Ukrainian Minerals Deal",
+      "summary": "<p>In 2025, J.C. Ellis wrote, &#8220;Trump Needs a Plan on Ukraine&#8217;s Buried Treasure,&#8221; where he argued that Washington should enact a strategy for Ukraine that ensures Ukrainian control and allied access to its storehouse of critical minerals. A year later, after a critical minerals inve",
+      "published": "Wed, 01 Apr 2026 17:30:34 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 2.83,
+      "entity_count": 21,
+      "sources": [
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "bellingcat",
+          "name": "Bellingcat",
+          "country": "NL",
+          "bloc": "western"
+        },
+        {
+          "id": "gizmodo",
+          "name": "Gizmodo",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "13ad5ac690e7",
+      "headline": "Navy Pilot: New MH370 Evidence, Nuclear War & \"Zombie Flights\"",
+      "summary": "Watch every episode ad-free & uncensored on Patreon: https://patreon.com/dannyjones\nCaptain Steeeve (@CaptainSteeeve) is a former U.S. Navy pilot and long-time commercial airline captain, now a popular YouTube personality known for his aviation insights, tips for nervous flyers, and plane crash anal",
+      "published": "Thu, 23 Apr 2026 16:00:00 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 0.0,
+      "entity_count": 15,
+      "sources": [
+        {
+          "id": "national_interest",
+          "name": "The National Interest",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "4b088aaa6844",
+      "headline": "Closing the Air and Missile Defense Gap in the Indo-Pacific",
+      "summary": "<p>During last summer&#8217;s 12-day war between Iran, Israel, and the United States, the U.S. military supported Israeli air and missile defense operations by utilizing its regionally deployed air and missile defense assets to intercept Iranian missiles and drones. By the time the shooting had stop",
+      "published": "Wed, 25 Mar 2026 08:00:52 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 4.0,
+      "entity_count": 35,
+      "sources": [
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "schneier_blog",
+          "name": "Schneier on Security",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "890067cbf5b7",
+      "headline": "MLC election: Congress, NCP SP coax Uddhav; BJP sends 30 names for five seats to central leadership",
+      "summary": "Both Congress and the NCP have stated that they will support Uddhav Thackeray if he decides to contest. However, Uddhav Thackeray has not yet confirmed his decision",
+      "published": "Fri, 24 Apr 2026 12:06:07 +0530",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 2.0,
+      "entity_count": 8,
+      "sources": [
+        {
+          "id": "hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "neutral"
+        },
+        {
+          "id": "theregister",
+          "name": "The Register",
+          "country": "GB",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "7f80fcc452c2",
+      "headline": "Banning New Foreign Routers Mistargets Products to Fix Real Problem",
+      "summary": "<div class=\"field field--name-body field--type-text-with-summary field--label-hidden\"><div class=\"field__items\"><div class=\"field__item even\"><p><span>On March 23, the FCC </span><a href=\"https://www.fcc.gov/document/fcc-adds-routers-produced-foreign-countries-covered-list\"><span>issued</span></a><s",
+      "published": "Wed, 25 Mar 2026 11:07:48 +0000",
+      "image_url": null,
+      "is_blindspot": true,
+      "blindspot_score": 5.0,
+      "bias_variance": 6.0,
+      "entity_count": 25,
+      "sources": [
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "eff_deeplinks",
+          "name": "EFF DeepLinks",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "a9638fa318fa",
+      "headline": "Billionaire backer sues Trump family's crypto firm over alleged extortion",
+      "summary": "Billionaire investor Justin Sun is suing the family's World Liberty crypto venture after spending $45m on its tokens.",
+      "published": "Wed, 22 Apr 2026 23:46:23 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 9.35,
+      "entity_count": 280,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "washington_post",
+          "name": "The Washington Post",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "wsj",
+          "name": "The Wall Street Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western"
+        },
+        {
+          "id": "irna",
+          "name": "IRNA",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
         },
         {
           "id": "aljazeera",
           "name": "Al Jazeera English",
           "country": "QA",
-          "bloc": "adversarial",
-          "headline": "US soldier charged with using Polymarket to bet on Nicolas Maduro abduction",
-          "url": "https://www.aljazeera.com/economy/2026/4/23/us-soldier-charged-with-using-polymarket-to-bet-on-nicolas-maduro-abduction?traffic_source=rss",
-          "axis": {
-            "interventionist": -0.2,
-            "zionist": -0.6,
-            "atlanticist": -0.3,
-            "statist": 0.3,
-            "financialized": 0.2
-          }
+          "bloc": "adversarial"
+        },
+        {
+          "id": "al_monitor",
+          "name": "Al-Monitor",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "egypt_independent",
+          "name": "Egypt Independent",
+          "country": "EG",
+          "bloc": "neutral"
+        },
+        {
+          "id": "spiegel",
+          "name": "Der Spiegel",
+          "country": "DE",
+          "bloc": "western"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western"
+        },
+        {
+          "id": "dn_nyheter",
+          "name": "Dagens Nyheter",
+          "country": "SE",
+          "bloc": "western"
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "neutral"
+        },
+        {
+          "id": "punch",
+          "name": "The Punch",
+          "country": "NG",
+          "bloc": "neutral"
+        },
+        {
+          "id": "denik_n",
+          "name": "Deník N",
+          "country": "CZ",
+          "bloc": "western"
+        },
+        {
+          "id": "telex_hu",
+          "name": "Telex",
+          "country": "HU",
+          "bloc": "neutral"
+        },
+        {
+          "id": "g4media",
+          "name": "G4Media",
+          "country": "RO",
+          "bloc": "western"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "cnbc",
+          "name": "CNBC",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "cointelegraph",
+          "name": "Cointelegraph",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "propublica",
+          "name": "ProPublica",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "icij",
+          "name": "ICIJ",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "intercept",
+          "name": "The Intercept",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "greyzone",
+          "name": "The Grayzone",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "consortium_news",
+          "name": "Consortium News",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "techcrunch",
+          "name": "TechCrunch",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "theregister",
+          "name": "The Register",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "platformer",
+          "name": "Platformer",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "404media",
+          "name": "404 Media",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "gizmodo",
+          "name": "Gizmodo",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "vox",
+          "name": "Vox",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "reddit_news",
+          "name": "Reddit News",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_juliandorey",
+          "name": "Julian Dorey",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_timdillonshow",
+          "name": "The Tim Dillon Show",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "scmp_business",
+          "name": "SCMP Business",
+          "country": "HK",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "bbc",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "21fc68909a9e",
+      "headline": "How the War in Iran Is Affecting Its Northern and Eastern Neighbors",
+      "summary": "<p>When the U.S.&#8211;Israeli war with Iran began on Feb. 28, there were immediate impacts on the countries to Iran&#8217;s west &#8212; as Iran struck multiple Gulf Arab states and Jordan, Iraq absorbed direct attacks while facing renewed risks of internal stability, Israel launched intensive airs",
+      "published": "Wed, 25 Mar 2026 17:30:56 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 11.84,
+      "entity_count": 338,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "washington_post",
+          "name": "The Washington Post",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western"
+        },
+        {
+          "id": "tehran_times",
+          "name": "Tehran Times",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "irna",
+          "name": "IRNA",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "al_monitor",
+          "name": "Al-Monitor",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "spiegel",
+          "name": "Der Spiegel",
+          "country": "DE",
+          "bloc": "western"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western"
+        },
+        {
+          "id": "dn_nyheter",
+          "name": "Dagens Nyheter",
+          "country": "SE",
+          "bloc": "western"
+        },
+        {
+          "id": "premium_times",
+          "name": "Premium Times",
+          "country": "NG",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "cnbc",
+          "name": "CNBC",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "bellingcat",
+          "name": "Bellingcat",
+          "country": "NL",
+          "bloc": "western"
+        },
+        {
+          "id": "intercept",
+          "name": "The Intercept",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "greyzone",
+          "name": "The Grayzone",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "mint_press",
+          "name": "MintPress News",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "consortium_news",
+          "name": "Consortium News",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "wired",
+          "name": "Wired",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "krebsonsecurity",
+          "name": "Krebs on Security",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "rest_of_world",
+          "name": "Rest of World",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "reddit_news",
+          "name": "Reddit News",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_juliandorey",
+          "name": "Julian Dorey",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_timdillonshow",
+          "name": "The Tim Dillon Show",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "scmp_business",
+          "name": "SCMP Business",
+          "country": "HK",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "bbc",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "ae54a5c026f3",
+      "headline": "Chinese EV makers target global expansion at Auto China amid energy shock",
+      "summary": "Chinese electric vehicle (EV) makers at the Beijing auto show are shifting their focus to overseas markets, banking on opportunities from the Middle East crisis to boost profitability amid weak sales at home.\n“Going global has become a top choice for Chinese EV builders as they struggle to break eve",
+      "published": "Wed, 22 Apr 2026 23:00:09 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 9.17,
+      "entity_count": 293,
+      "sources": [
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "wsj",
+          "name": "The Wall Street Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "sixth_tone",
+          "name": "Sixth Tone",
+          "country": "CN",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western"
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "neutral"
+        },
+        {
+          "id": "punch",
+          "name": "The Punch",
+          "country": "NG",
+          "bloc": "neutral"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "small_wars_journal",
+          "name": "Small Wars Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "cnbc",
+          "name": "CNBC",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "bellingcat",
+          "name": "Bellingcat",
+          "country": "NL",
+          "bloc": "western"
+        },
+        {
+          "id": "wired",
+          "name": "Wired",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "arstechnica",
+          "name": "Ars Technica",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "rest_of_world",
+          "name": "Rest of World",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "yt_juliandorey",
+          "name": "Julian Dorey",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_timdillonshow",
+          "name": "The Tim Dillon Show",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "scmp_business",
+          "name": "SCMP Business",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "5a548c2f5875",
+      "headline": "Democrats Are Split Over What It Means to Block Israel Weapons Deals",
+      "summary": "<p>There’s a divide between those seeking to end all U.S. weapons deals with Israel and those who want to allow some exceptions. </p>\n<p>The post <a href=\"https://theintercept.com/2026/04/19/israel-weapons-military-aid-arms-embargo-democrats/\">Democrats Are Split Over What It Means to Block Israel W",
+      "published": "Wed, 25 Mar 2026 21:14:08 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 12.64,
+      "entity_count": 109,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "wsj",
+          "name": "The Wall Street Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western"
+        },
+        {
+          "id": "tehran_times",
+          "name": "Tehran Times",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "al_monitor",
+          "name": "Al-Monitor",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western"
+        },
+        {
+          "id": "dn_nyheter",
+          "name": "Dagens Nyheter",
+          "country": "SE",
+          "bloc": "western"
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "neutral"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "national_interest",
+          "name": "The National Interest",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "intercept",
+          "name": "The Intercept",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "greyzone",
+          "name": "The Grayzone",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "mint_press",
+          "name": "MintPress News",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "bbc",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "b6755d218d5f",
+      "headline": "Meta to lay off 8,000 as part of AI efficiency push - Axios",
+      "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMickFVX3lxTFAya0FHSjYzcFQ0em5Bd05sS3RpY01LUHFJOU53T0wwYkctaEJOYTJSMkYtanpQV1BVUzFhTVpnVHZQQXZSOVI1M3ViMzU1MVlyUWdtV2xIbEdXd3dfX3pLRElwYzRYZlh4a3dCclo2RENUdw?oc=5\" target=\"_blank\">Meta to lay off 8,000 as part of AI efficiency push</a>&nbsp;&nbs",
+      "published": "Thu, 23 Apr 2026 22:56:00 GMT",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 4.44,
+      "entity_count": 29,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "spiegel",
+          "name": "Der Spiegel",
+          "country": "DE",
+          "bloc": "western"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western"
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "neutral"
+        },
+        {
+          "id": "cnbc",
+          "name": "CNBC",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "insider_inc",
+          "name": "Insider Inc. (Formerly Business Insider)",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "techcrunch",
+          "name": "TechCrunch",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "eff_deeplinks",
+          "name": "EFF DeepLinks",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "theregister",
+          "name": "The Register",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "platformer",
+          "name": "Platformer",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "gizmodo",
+          "name": "Gizmodo",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "be4a0159668a",
+      "headline": "US soldier charged with making prediction-market bets on Maduro’s seizure",
+      "summary": "Army member was involved in planning Venezuela operation and allegedly made $400,000 on trades about mission",
+      "published": "Thu, 23 Apr 2026 23:55:32 GMT",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 4.76,
+      "entity_count": 24,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "spiegel",
+          "name": "Der Spiegel",
+          "country": "DE",
+          "bloc": "western"
+        },
+        {
+          "id": "cnbc",
+          "name": "CNBC",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "cointelegraph",
+          "name": "Cointelegraph",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "techcrunch",
+          "name": "TechCrunch",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "wired",
+          "name": "Wired",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "gizmodo",
+          "name": "Gizmodo",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "reddit_news",
+          "name": "Reddit News",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "a8bd1982df6f",
+      "headline": "\"Smoking GUN!\" - Julian UNLOADS on Creepiest New Epstein Files & Epstein RICHES | 384",
+      "summary": "SPONSORS:\n1) HOLLOW SOCKS: For a limited time, Hollow Socks is having a Buy 2, Get 2 Free Sale—head to Hollowsocks.com today for up to 50% off your order.\n\nWATCH PREVIOUS EPSTEIN FILES EPISODE: https://youtu.be/MGkQG78NTNI\n\nJOIN PATREON FOR EARLY UNCENSORED EPISODE RELEASES:\nhttps://www.patreon.com/",
+      "published": "Wed, 04 Mar 2026 04:41:48 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 9.66,
+      "entity_count": 146,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "spiegel",
+          "name": "Der Spiegel",
+          "country": "DE",
+          "bloc": "western"
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "neutral"
+        },
+        {
+          "id": "cnbc",
+          "name": "CNBC",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "intercept",
+          "name": "The Intercept",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "greyzone",
+          "name": "The Grayzone",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "reddit_news",
+          "name": "Reddit News",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_juliandorey",
+          "name": "Julian Dorey",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "bbc",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "3b261136e3c3",
+      "headline": "Chinese bid for UK chemical plant condemned as threat to competition",
+      "summary": "World’s largest producer of titanium dioxide to acquire facility in North East of England",
+      "published": "Tue, 07 Apr 2026 08:00:02 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 7.39,
+      "entity_count": 103,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "sixth_tone",
+          "name": "Sixth Tone",
+          "country": "CN",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "neutral"
+        },
+        {
+          "id": "premium_times",
+          "name": "Premium Times",
+          "country": "NG",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "cointelegraph",
+          "name": "Cointelegraph",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "theregister",
+          "name": "The Register",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "rest_of_world",
+          "name": "Rest of World",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "scmp_business",
+          "name": "SCMP Business",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "263d7b2cf538",
+      "headline": "South African court orders Zambia to return former president's body",
+      "summary": "Zambia authorities and Edgar Lungu's family are in a dispute over where the former leader's remains should be buried.",
+      "published": "Thu, 26 Mar 2026 07:00:30 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 9.55,
+      "entity_count": 22,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "mail_guardian",
+          "name": "Mail & Guardian",
+          "country": "ZA",
+          "bloc": "neutral"
+        },
+        {
+          "id": "premium_times",
+          "name": "Premium Times",
+          "country": "NG",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "punch",
+          "name": "The Punch",
+          "country": "NG",
+          "bloc": "neutral"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "reddit_news",
+          "name": "Reddit News",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "4aeed089f65c",
+      "headline": "President thanks brave nurse who saved newborns during US-Israeli aggression",
+      "summary": "Tehran, IRNA – President Masoud Pezeshkian has expressed gratitude to Neda Salimi, a dedicated nurse who rescued three newborn babies during the US-Israel attack on a hospital in Tehran.",
+      "published": "Tue, 21 Apr 2026 23:55:40 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 13.59,
+      "entity_count": 37,
+      "sources": [
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "wsj",
+          "name": "The Wall Street Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western"
+        },
+        {
+          "id": "tehran_times",
+          "name": "Tehran Times",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "irna",
+          "name": "IRNA",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "mint_press",
+          "name": "MintPress News",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "5feb168ca8fb",
+      "headline": "Ukrainians gather to remember Chernobyl disaster despite Russia’s war",
+      "summary": "People streamed into the central square of Slavutych in the early hours of Sunday, placing candles on a large radiation hazard symbol laid out on the ground as a midnight commemoration began for those killed in the Chernobyl disaster 40 years ago and the thousands who risked deadly radiation exposur",
+      "published": "Wed, 22 Apr 2026 20:56:43 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 10.71,
+      "entity_count": 41,
+      "sources": [
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "national_interest",
+          "name": "The National Interest",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "arstechnica",
+          "name": "Ars Technica",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "krebsonsecurity",
+          "name": "Krebs on Security",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "7d31e0da1ab9",
+      "headline": "UN General Assembly President Annalena Baerbock to visit India next week",
+      "summary": "During her visit to India, Ms. Baerbock will hold “multiple bilateral meetings with various government officials” and also meet the UN country team in India led by UN Resident Coordinator Stefan Priesner",
+      "published": "Wed, 22 Apr 2026 13:11:56 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 10.49,
+      "entity_count": 45,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "neutral"
+        },
+        {
+          "id": "bellingcat",
+          "name": "Bellingcat",
+          "country": "NL",
+          "bloc": "western"
+        },
+        {
+          "id": "rest_of_world",
+          "name": "Rest of World",
+          "country": "US",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "f01fc92b23fa",
+      "headline": "The Campaign Ends at the Breach: Lessons from Ukraine on Why Armies Fail",
+      "summary": "<p>Somewhere behind the Novodarivka breach point in June 2023, Ukrainian armored formations sat staged and ready. The ammunition was there. The fuel was there. The original concept of operations called for 12 brigades to push through roughly 30 kilometers of frontage, isolate Tokmak within days, and",
+      "published": "Wed, 22 Apr 2026 20:56:49 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 11.08,
+      "entity_count": 23,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "washington_post",
+          "name": "The Washington Post",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "al_monitor",
+          "name": "Al-Monitor",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "insider_inc",
+          "name": "Insider Inc. (Formerly Business Insider)",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "reddit_news",
+          "name": "Reddit News",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "d6f148df6bf6",
+      "headline": "ICE Is Looking for Parking in New York City — For a 150-Vehicle Deportation Fleet",
+      "summary": "<p>With its last contract expiring, activists say garage owners should spurn ICE to avoid becoming complicit in Trump’s deportation blitz. </p>\n<p>The post <a href=\"https://theintercept.com/2026/04/21/ice-new-york-cars-parking/\">ICE Is Looking for Parking in New York City — For a 150-Vehicle Deporta",
+      "published": "Wed, 22 Apr 2026 16:00:00 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 6.08,
+      "entity_count": 40,
+      "sources": [
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "spiegel",
+          "name": "Der Spiegel",
+          "country": "DE",
+          "bloc": "western"
+        },
+        {
+          "id": "cointelegraph",
+          "name": "Cointelegraph",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "intercept",
+          "name": "The Intercept",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "wired",
+          "name": "Wired",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "eff_deeplinks",
+          "name": "EFF DeepLinks",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "f431db65cea0",
+      "headline": "Why Anthropic’s new model has cybersecurity experts rattled",
+      "summary": "The company says it has built its most dangerous model yet. Can its coalition of internet companies fix the internet before others catch up?",
+      "published": "Wed, 22 Apr 2026 18:34:16 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 10.19,
+      "entity_count": 11,
+      "sources": [
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "insider_inc",
+          "name": "Insider Inc. (Formerly Business Insider)",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "arstechnica",
+          "name": "Ars Technica",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "theregister",
+          "name": "The Register",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "platformer",
+          "name": "Platformer",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "stratechery",
+          "name": "Stratechery",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "b45ff92cc522",
+      "headline": "Russia has sent urgent humanitarian aid to Lebanon",
+      "summary": "",
+      "published": "Tue, 21 Apr 2026 18:00:43 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 13.8,
+      "entity_count": 14,
+      "sources": [
+        {
+          "id": "tehran_times",
+          "name": "Tehran Times",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western"
+        },
+        {
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "consortium_news",
+          "name": "Consortium News",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "bbc",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "13b7b6ef5c0f",
+      "headline": "Dow CEO says clearing the Strait of Hormuz logjam will take almost a year",
+      "summary": "Dow CEO Jim Fitterling said that clearing the disruption in the Strait of Hormuz will take significantly longer than investors expect.",
+      "published": "Wed, 22 Apr 2026 22:07:54 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 13.28,
+      "entity_count": 19,
+      "sources": [
+        {
+          "id": "washington_post",
+          "name": "The Washington Post",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "tehran_times",
+          "name": "Tehran Times",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "irna",
+          "name": "IRNA",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "cnbc",
+          "name": "CNBC",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "arstechnica",
+          "name": "Ars Technica",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "deba6920e706",
+      "headline": "Singapore turns to Russian fuel oil as war restricts Middle Eastern supplies",
+      "summary": "Imports from Russia to world’s biggest ship refuelling port surge in March and April",
+      "published": "Wed, 22 Apr 2026 16:27:11 GMT",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 13.46,
+      "entity_count": 30,
+      "sources": [
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "irna",
+          "name": "IRNA",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "national_interest",
+          "name": "The National Interest",
+          "country": "US",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "575e0dc3e4b2",
+      "headline": "Babies Born from Dead Parents Will Increase with New Tech. Are We Ready?",
+      "summary": "Reproductive technologies have enabled children to be posthumously conceived from the frozen eggs and sperm of deceased parents, raising legal, ethical, and practical questions.",
+      "published": "Thu, 23 Apr 2026 21:36:12 GMT",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 6.97,
+      "entity_count": 55,
+      "sources": [
+        {
+          "id": "sixth_tone",
+          "name": "Sixth Tone",
+          "country": "CN",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "insider_inc",
+          "name": "Insider Inc. (Formerly Business Insider)",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "eff_deeplinks",
+          "name": "EFF DeepLinks",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "404media",
+          "name": "404 Media",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "46a2a41cc6e5",
+      "headline": "EFF to State AGs: Investigate Google's Broken Promise to Users Targeted by the Government",
+      "summary": "<div class=\"field field--name-field-pr-subhead field--type-text field--label-hidden\"><div class=\"field__items\"><div class=\"field__item even\">Google&#039;s Failure to Warn Users About Law Enforcement Demands for Data Is Deceptive</div></div></div><div class=\"field field--name-body field--type-text-wi",
+      "published": "Tue, 21 Apr 2026 11:00:18 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 6.23,
+      "entity_count": 26,
+      "sources": [
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "neutral"
+        },
+        {
+          "id": "mail_guardian",
+          "name": "Mail & Guardian",
+          "country": "ZA",
+          "bloc": "neutral"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "small_wars_journal",
+          "name": "Small Wars Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "eff_deeplinks",
+          "name": "EFF DeepLinks",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "scmp_business",
+          "name": "SCMP Business",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "a99dc62d017d",
+      "headline": "Pakistan seeks to raise its global standing in push for Middle East peace",
+      "summary": "<p>Islamabad has seized chance to act as mediator in Iran war and hopes to reap diplomatic and economic benefits</p><p>As Pakistan works frantically to narrow differences between Iran and the US in its newfound role as global peacemaker, it is also seeking to recast its diplomatic standing and attra",
+      "published": "Wed, 18 Mar 2026 07:00:42 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 11.65,
+      "entity_count": 18,
+      "sources": [
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "punch",
+          "name": "The Punch",
+          "country": "NG",
+          "bloc": "neutral"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "insider_inc",
+          "name": "Insider Inc. (Formerly Business Insider)",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "e4a00407f4e1",
+      "headline": "Spotify Reveals Its Most Streamed Music of the Last 20 Years",
+      "summary": "The K-Pop stans and Beyhive might be a bit bummed by the results.",
+      "published": "Thu, 23 Apr 2026 21:35:00 GMT",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 6.26,
+      "entity_count": 45,
+      "sources": [
+        {
+          "id": "wsj",
+          "name": "The Wall Street Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "sixth_tone",
+          "name": "Sixth Tone",
+          "country": "CN",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "propublica",
+          "name": "ProPublica",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "eff_deeplinks",
+          "name": "EFF DeepLinks",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "gizmodo",
+          "name": "Gizmodo",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "dd1ba1872df9",
+      "headline": "Welsh NHS likely to miss waiting lists target ahead of election - BBC News",
+      "summary": "The challenge of reducing waiting lists in Wales comes against a backdrop of an NHS that is also failing to meet key performance targets for urgent care and cancer care. The latest figures from February showed just 63.7% of patients spent less than four hours in emergency departments from arrival un",
+      "published": "Wed, 22 Apr 2026 20:46:00 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 7.26,
+      "entity_count": 66,
+      "sources": [
+        {
+          "id": "spiegel",
+          "name": "Der Spiegel",
+          "country": "DE",
+          "bloc": "western"
+        },
+        {
+          "id": "small_wars_journal",
+          "name": "Small Wars Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "intercept",
+          "name": "The Intercept",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "bbc",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "088f003833d5",
+      "headline": "Did America’s leading anti-racist NGO fund the KKK? (VIDEO)",
+      "summary": "<img alt=\"Preview\" align=\"left\" style=\"margin-right: 10px;\" src=\"https://mf.b37mrtl.ru/files/2026.04/thumbnail/69e8fad1203027585e488a82.jpg\" /> he US Justice Department has charged the Southern Poverty Law Center (SPLC) with fraud over payments to extremist groups including the KKK <br/><a href=\"htt",
+      "published": "Wed, 22 Apr 2026 17:14:04 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 13.74,
+      "entity_count": 27,
+      "sources": [
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "national_interest",
+          "name": "The National Interest",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "foreign_policy",
+          "name": "Foreign Policy",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "1173373e65b9",
+      "headline": "Evidence Points to US Scattering Mines over Iranian Village",
+      "summary": "<p>The US appears to have deployed the Gator Scatterable Mine system over Kafari, a village near Shiraz, in southern Iran overnight. Several people were killed according to Iranian media.&#160; Three experts told Bellingcat the munitions appeared to be air-delivered US-made Gator anti-tank mines.&#1",
+      "published": "Wed, 22 Apr 2026 08:30:22 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 15.42,
+      "entity_count": 19,
+      "sources": [
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western"
+        },
+        {
+          "id": "irna",
+          "name": "IRNA",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "bellingcat",
+          "name": "Bellingcat",
+          "country": "NL",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "f8327e81d75d",
+      "headline": "Palantir Has a Human Rights Policy. Its ICE Work Tells a Different Story",
+      "summary": "<div class=\"field field--name-body field--type-text-with-summary field--label-hidden\"><div class=\"field__items\"><div class=\"field__item even\"><p>For years, EFF has <a href=\"https://www.eff.org/document/human-rights-and-technology-sales\">pushed technology companies</a> to make real human rights commi",
+      "published": "Tue, 21 Apr 2026 22:54:12 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 11.7,
+      "entity_count": 25,
+      "sources": [
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western"
+        },
+        {
+          "id": "wired",
+          "name": "Wired",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "eff_deeplinks",
+          "name": "EFF DeepLinks",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "theregister",
+          "name": "The Register",
+          "country": "GB",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "1310ed05860c",
+      "headline": "The Pope’s Warnings About AI Were AI-Generated, a Detection Tool Claims",
+      "summary": "Pangram Labs’ updated Chrome extension puts warning labels on AI slop as you scroll your social feeds.",
+      "published": "Wed, 22 Apr 2026 14:01:53 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 10.84,
+      "entity_count": 9,
+      "sources": [
+        {
+          "id": "tehran_times",
+          "name": "Tehran Times",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "wired",
+          "name": "Wired",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "a0bf8135ced5",
+      "headline": "Join Our Livestream: Musk v. Altman and the Future of OpenAI",
+      "summary": "On May 8, we’re going live to answer your questions about the Musk v. Altman trial that could determine the fate of OpenAI.",
+      "published": "Wed, 22 Apr 2026 10:00:00 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 13.21,
+      "entity_count": 18,
+      "sources": [
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "wired",
+          "name": "Wired",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "theregister",
+          "name": "The Register",
+          "country": "GB",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "adff855173c9",
+      "headline": "John Ternus and Apple’s Hardware-Defined Future, SpaceXAI and Cursor",
+      "summary": "The elevation of John Ternus suggests that Apple's future is about hardware differentiation; then, the SpaceX-Cursor deal makes a lot of sense.",
+      "published": "Wed, 25 Mar 2026 07:00:07 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 6.01,
+      "entity_count": 34,
+      "sources": [
+        {
+          "id": "spiegel",
+          "name": "Der Spiegel",
+          "country": "DE",
+          "bloc": "western"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "stratechery",
+          "name": "Stratechery",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "gizmodo",
+          "name": "Gizmodo",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "scmp_business",
+          "name": "SCMP Business",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "7d2957dfd3b8",
+      "headline": "Military Operational Thinking in an Age of Artificial Intelligence",
+      "summary": "<p>In recent years, as AI has begun to enter military planning and operational design, a persistent unease has surfaced among practitioners. Even with improved tools, increased tempo, and unprecedented access to data, plans continue to falter on integration, coherence, and a shared sense of directio",
+      "published": "Wed, 18 Mar 2026 08:00:11 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 11.05,
+      "entity_count": 40,
+      "sources": [
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "small_wars_journal",
+          "name": "Small Wars Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "national_interest",
+          "name": "The National Interest",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "consortium_news",
+          "name": "Consortium News",
+          "country": "US",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "yt_dannyjones",
+          "name": "Danny Jones",
+          "country": "US",
+          "bloc": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "9f6290f4436e",
+      "headline": "Tim Cook Did Wonders for Apple. He Also Did a Lot for Xi Jinping.",
+      "summary": "He made his company a juggernaut, but he did so by risking America’s economic and political security.",
+      "published": "Wed, 15 Apr 2026 10:00:00 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 12.35,
+      "entity_count": 13,
+      "sources": [
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "arstechnica",
+          "name": "Ars Technica",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "stratechery",
+          "name": "Stratechery",
+          "country": "US",
+          "bloc": "neutral"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "bffcc931f95b",
+      "headline": "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "summary": "The alliance mounted its first coordinated response to a suspected sabotage campaign against critical infrastructure after another cable was severed in the Baltic Sea.",
+      "published": "Wed, 08 Apr 2026 17:30:01 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 13.67,
+      "entity_count": 26,
+      "sources": [
+        {
+          "id": "wsj",
+          "name": "The Wall Street Journal",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "g4media",
+          "name": "G4Media",
+          "country": "RO",
+          "bloc": "western"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "fa79c3005dae",
+      "headline": "Hungary to get first LGBTQ TV channel – media",
+      "summary": "<img alt=\"Preview\" align=\"left\" style=\"margin-right: 10px;\" src=\"https://mf.b37mrtl.ru/files/2026.04/thumbnail/69ea8031203027490779fd13.jpg\" /> Hungary is expected to receive its first-ever gay-themed TV channel after the top EU court ruled its LGBTQ propaganda law illegal <br/><a href=\"https://www.",
+      "published": "Tue, 21 Apr 2026 10:00:46 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 13.74,
+      "entity_count": 8,
+      "sources": [
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "eaca3e9d2219",
+      "headline": "Amid spate of arson attacks on Jewish sites, Starmer warns of ‘malign state actors’",
+      "summary": "<p>After visiting targeted synagogue, British prime minister says he's 'increasingly concerned' about countries using proxies to stage local attacks</p>\n<p>The post <a href=\"https://www.timesofisrael.com/amid-spate-of-arson-attacks-on-jewish-sites-starmer-warns-of-malign-state-actors/\">Amid spate of",
+      "published": "Tue, 21 Apr 2026 16:27:16 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 11.08,
+      "entity_count": 9,
+      "sources": [
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "neutral"
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western"
+        },
+        {
+          "id": "al_monitor",
+          "name": "Al-Monitor",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "consortium_news",
+          "name": "Consortium News",
+          "country": "US",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "8470d17bf592",
+      "headline": "HKMA and HKAB launch task force for Hong Kong’s Northern Metropolis financing",
+      "summary": "The Hong Kong Monetary Authority (HKMA) and the Hong Kong Association of Banks (HKAB) announced on Wednesday the joint establishment of the Northern Metropolis Financial Advisory Taskforce, which will explore financing solutions for the development of the city’s flagship project.\nThe Northern Metrop",
+      "published": "Wed, 22 Apr 2026 22:30:08 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 7.54,
+      "entity_count": 21,
+      "sources": [
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western"
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "scmp_business",
+          "name": "SCMP Business",
+          "country": "HK",
+          "bloc": "adversarial"
+        }
+      ]
+    },
+    {
+      "id": "aebfe4679557",
+      "headline": "Dan Goldman Will Personally Match Each Donation as He Fights to Keep House Seat",
+      "summary": "Daniel Goldman is pledging at least $1 million of his own money, and possibly millions more, in hopes of fighting off a primary challenge from Brad Lander in New York City.",
+      "published": "Thu, 23 Apr 2026 21:00:21 GMT",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 14.24,
+      "entity_count": 14,
+      "sources": [
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "tehran_times",
+          "name": "Tehran Times",
+          "country": "IR",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "e60ae31f67ab",
+      "headline": "Ukrainians stealing in hopes of living in Dubai – US military official to undercover journalist (VIDEO)",
+      "summary": "<img alt=\"Preview\" align=\"left\" style=\"margin-right: 10px;\" src=\"https://mf.b37mrtl.ru/files/2026.04/thumbnail/69e816e685f54073d611b220.png\" /> A US Army nuclear official has reportedly discussed Ukrainian corruption and US military secrets in an undercover interview <br/><a href=\"https://www.rt.com",
+      "published": "Wed, 22 Apr 2026 21:36:26 +0000",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 15.0,
+      "entity_count": 16,
+      "sources": [
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial"
+        },
+        {
+          "id": "g4media",
+          "name": "G4Media",
+          "country": "RO",
+          "bloc": "western"
+        }
+      ]
+    },
+    {
+      "id": "78fb473f134e",
+      "headline": "Beijing promised to 'fight back' over Taiwan leader's US visit. But this time it has more to lose",
+      "summary": "An anticipated meeting between Taiwan's President Tsai Ing-wen and US House Speaker Kevin McCarthy in California this week has sparked concerns of a repeat of the pressure campaign China launched last year when then-Speaker Nancy Pelosi visited Taipei.",
+      "published": "Tue, 04 Apr 2023 07:49:53 GMT",
+      "image_url": null,
+      "is_blindspot": false,
+      "blindspot_score": 0.0,
+      "bias_variance": 12.0,
+      "entity_count": 7,
+      "sources": [
+        {
+          "id": "cnn",
+          "name": "CNN",
+          "country": "US",
+          "bloc": "western"
+        },
+        {
+          "id": "sixth_tone",
+          "name": "Sixth Tone",
+          "country": "CN",
+          "bloc": "adversarial"
         }
       ]
     }
-  ],
-  "meta": {
-    "pipeline": "TELOS+PAI",
-    "source_count": 244,
-    "date": "2026-05-09",
-    "available_themes": [
-      "default",
-      "powder-blue",
-      "chargers-navy",
-      "dodgers",
-      "lakers"
-    ]
-  }
+  ]
 }
