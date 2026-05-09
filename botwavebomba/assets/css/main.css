@@ -1619,3 +1619,48 @@ code {
   .bwb-stat { padding: 0 10px; }
   .bwb-stat-number { font-size: 14px; }
 }
+
+/* ── STORY PAGE: 5-AXIS NARRATIVE FINGERPRINT ── */
+.bwb-5axis-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.bwb-5axis-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 50px;
+  gap: 16px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--theme-border);
+}
+
+.bwb-5axis-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.bwb-5axis-track {
+  height: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--theme-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.bwb-5axis-fill {
+  height: 100%;
+  opacity: 0.85;
+  transition: width 0.5s ease;
+}
+
+.bwb-5axis-val {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: right;
+}

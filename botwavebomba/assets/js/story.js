@@ -59,6 +59,9 @@ document.addEventListener('DOMContentLoaded', async function() {
   // 5-axis breakdown
   if (window.renderAxisBreakdown) renderAxisBreakdown(sources, 'axis-breakdown');
 
+  // 5-axis narrative fingerprint (story-level aggregate)
+  build5AxisFingerprint(story);
+
   // Framing comparison
   buildFramingTable(story);
 
@@ -68,6 +71,97 @@ document.addEventListener('DOMContentLoaded', async function() {
   // Source links
   buildSourceLinks(sources);
 });
+
+function build5AxisFingerprint(story) {
+  var axisAvg = story.axis_avg;
+  if (!axisAvg) return;
+  // Skip if no sources were fingerprinted (all values null)
+  if (!story.fp_source_count) return;
+
+  // Find the existing 5-AXIS BIAS BREAKDOWN section and append after it
+  var sections = document.querySelectorAll('.bwb-section');
+  var insertAfter = null;
+  for (var i = 0; i < sections.length; i++) {
+    var title = sections[i].querySelector('.bwb-section-title');
+    if (title && title.textContent.indexOf('5-AXIS') !== -1) {
+      insertAfter = sections[i];
+      break;
+    }
+  }
+
+  var axes = [
+    { key: 'interventionist', label: 'INTERVENTIONIST', color: '#dc2626' },
+    { key: 'zionist',         label: 'ZIONIST',         color: '#2563eb' },
+    { key: 'atlanticist',     label: 'ATLANTICIST',     color: '#0891b2' },
+    { key: 'statist',         label: 'STATIST',         color: '#7c3aed' },
+    { key: 'financialized',   label: 'FINANCIALIZED',   color: '#d97706' },
+  ];
+
+  var fpCount = story.fp_source_count || 0;
+
+  var section = document.createElement('section');
+  section.className = 'bwb-section';
+
+  var header = document.createElement('div');
+  header.className = 'bwb-section-header';
+
+  var title = document.createElement('h2');
+  title.className = 'bwb-section-title';
+  title.textContent = '5-AXIS NARRATIVE FINGERPRINT';
+  header.appendChild(title);
+
+  var sub = document.createElement('span');
+  sub.className = 'bwb-section-sub';
+  sub.textContent = 'Avg score across ' + fpCount + ' fingerprinted source' + (fpCount !== 1 ? 's' : '') + ' (0 = min, 1 = max)';
+  header.appendChild(sub);
+
+  section.appendChild(header);
+
+  var grid = document.createElement('div');
+  grid.className = 'bwb-5axis-grid';
+
+  axes.forEach(function(ax) {
+    var score = axisAvg[ax.key];
+
+    var row = document.createElement('div');
+    row.className = 'bwb-5axis-row';
+
+    var labelEl = document.createElement('div');
+    labelEl.className = 'bwb-5axis-label';
+    labelEl.textContent = ax.label;
+    row.appendChild(labelEl);
+
+    var track = document.createElement('div');
+    track.className = 'bwb-5axis-track';
+
+    if (score !== null && score !== undefined) {
+      var fill = document.createElement('div');
+      fill.className = 'bwb-5axis-fill';
+      fill.style.width = Math.round(score * 100) + '%';
+      fill.style.background = ax.color;
+      track.appendChild(fill);
+    }
+
+    row.appendChild(track);
+
+    var val = document.createElement('div');
+    val.className = 'bwb-5axis-val';
+    val.textContent = (score !== null && score !== undefined) ? score.toFixed(2) : '—';
+    row.appendChild(val);
+
+    grid.appendChild(row);
+  });
+
+  section.appendChild(grid);
+
+  if (insertAfter && insertAfter.parentNode) {
+    insertAfter.parentNode.insertBefore(section, insertAfter.nextSibling);
+  } else {
+    // Fallback: append to story container
+    var container = document.getElementById('story-container');
+    if (container) container.appendChild(section);
+  }
+}
 
 function buildFramingTable(story) {
   const container = document.getElementById('framing-table');
