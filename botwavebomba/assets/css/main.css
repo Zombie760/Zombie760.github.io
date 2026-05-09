@@ -1727,6 +1727,49 @@ code {
   border-color: transparent;
 }
 
+/* Geo-frame badges */
+.bwb-badge.mono-frame {
+  background: #7c3aed;
+  color: #fff;
+  border-color: transparent;
+}
+.bwb-badge.blackout {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-color: transparent;
+}
+
+/* ── GEO FRAME BREAKDOWN ── */
+.bwb-geo-frame-wrap {
+  padding: 8px 10px;
+  margin: 10px 0;
+  border-left: 3px solid transparent;
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.bwb-geo-mono-frame  { border-color: #7c3aed; }
+.bwb-geo-blackout    { border-color: #0f172a; }
+
+.bwb-geo-frame-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.bwb-geo-mono-frame .bwb-geo-frame-label  { color: #7c3aed; }
+.bwb-geo-blackout   .bwb-geo-frame-label  { color: #0f172a; }
+
+[data-theme] .bwb-geo-blackout .bwb-geo-frame-label { color: var(--text-primary); }
+
+.bwb-geo-counts {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+}
+
 /* Source pill bias_bucket colors */
 .bwb-source-pill.left  { border-color: var(--signal-left);   color: var(--signal-left); }
 .bwb-source-pill.right { border-color: var(--signal-right);  color: var(--signal-right); }

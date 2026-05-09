@@ -25,15 +25,14 @@ async function renderFeed(filter) {
   }
 
   let filtered = _allStories;
-  if (filter === 'blindspot')    filtered = _allStories.filter(function(s) { return s.is_blindspot; });
-  if (filter === 'has-video')    filtered = _allStories.filter(function(s) { return s.has_video; });
-  if (filter === 'left-heavy')   filtered = _allStories.filter(function(s) { return ((s.coverage || {}).left_pct  || 0) >= 60; });
-  if (filter === 'right-heavy')  filtered = _allStories.filter(function(s) { return ((s.coverage || {}).right_pct || 0) >= 60; });
-  if (filter === 'adversarial')  filtered = _allStories.filter(function(s) {
+  if (filter === 'blindspot')   filtered = _allStories.filter(function(s) { return s.is_blindspot; });
+  if (filter === 'mono-frame')  filtered = _allStories.filter(function(s) { return s.geo_frame === 'mono-frame'; });
+  if (filter === 'blackout')    filtered = _allStories.filter(function(s) { return s.geo_frame === 'blackout'; });
+  if (filter === 'has-video')   filtered = _allStories.filter(function(s) { return s.has_video; });
+  if (filter === 'left-heavy')  filtered = _allStories.filter(function(s) { return ((s.coverage || {}).left_pct  || 0) >= 60; });
+  if (filter === 'right-heavy') filtered = _allStories.filter(function(s) { return ((s.coverage || {}).right_pct || 0) >= 60; });
+  if (filter === 'adversarial') filtered = _allStories.filter(function(s) {
     return (s.sources || []).some(function(src) { return src.bloc === 'adversarial'; });
-  });
-  if (filter === 'western')      filtered = _allStories.filter(function(s) {
-    return (s.sources || []).every(function(src) { return src.bloc === 'western'; });
   });
 
   while (feed.firstChild) feed.removeChild(feed.firstChild);
@@ -100,6 +99,18 @@ function buildCard(story) {
     v.className  = 'bwb-badge video';
     v.textContent = '▶ VIDEO';
     thumbBadges.appendChild(v);
+  }
+  if (story.geo_frame === 'mono-frame') {
+    const gf = document.createElement('span');
+    gf.className  = 'bwb-badge mono-frame';
+    gf.textContent = 'MONO-FRAME';
+    thumbBadges.appendChild(gf);
+  }
+  if (story.geo_frame === 'blackout') {
+    const gf = document.createElement('span');
+    gf.className  = 'bwb-badge blackout';
+    gf.textContent = 'W. BLACKOUT';
+    thumbBadges.appendChild(gf);
   }
   if (thumbBadges.children.length) thumb.appendChild(thumbBadges);
   card.appendChild(thumb);
@@ -170,6 +181,33 @@ function buildCard(story) {
   }
   biasWrap.appendChild(biasMeta);
   body.appendChild(biasWrap);
+
+  // ── GEO FRAME BREAKDOWN ───────────────────────────────────────────────────
+  if (story.geo_frame && story.geo_frame_label) {
+    const gfWrap = document.createElement('div');
+    gfWrap.className = 'bwb-geo-frame-wrap bwb-geo-' + story.geo_frame;
+
+    const gfLabel = document.createElement('span');
+    gfLabel.className  = 'bwb-geo-frame-label';
+    gfLabel.textContent = story.geo_frame === 'mono-frame' ? '◉ ' + story.geo_frame_label
+                                                            : '◎ ' + story.geo_frame_label;
+    gfWrap.appendChild(gfLabel);
+
+    // Geo breakdown counts
+    const bd = story.geo_breakdown || {};
+    const geoOrder = [['west','West'], ['middle-east','Mid-East'], ['latin-america','Lat-Am'],
+                      ['africa','Africa'], ['pacific-asia','Asia'], ['adversarial','Adversarial'],
+                      ['eastern-europe','E.Eur'], ['global-south','Global-S'], ['central-asia','C.Asia']];
+    const nonZero = geoOrder.filter(function(g) { return bd[g[0]]; });
+    if (nonZero.length) {
+      const gfCounts = document.createElement('span');
+      gfCounts.className  = 'bwb-geo-counts';
+      gfCounts.textContent = nonZero.map(function(g) { return g[1] + ' ' + bd[g[0]]; }).join('  ·  ');
+      gfWrap.appendChild(gfCounts);
+    }
+
+    body.insertBefore(gfWrap, body.querySelector('.bwb-article-strip') || body.querySelector('.bwb-source-pills'));
+  }
 
   // ── ARTICLE STRIP ─────────────────────────────────────────────────────────
   const realArticles = articles.filter(function(a) { return a.url; });
