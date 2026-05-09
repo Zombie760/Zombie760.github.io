@@ -595,6 +595,7 @@
       .trades-grid { grid-template-columns: 1fr 1fr; }
       .stat-row { grid-template-columns: 1fr; }
       .cta-section { grid-template-columns: 1fr; padding: 3rem 1.25rem; }
+      #contact .products { grid-template-columns: 1fr !important; }
       .quote-band { padding: 3rem 1.25rem; }
       footer { padding: 1.5rem 1.25rem; }
       .footer-links { display: none; }
@@ -622,13 +623,13 @@
   <section class="hero">
     <p class="hero-eyebrow">BOTWAVE — Business Arm</p>
     <h1 class="hero-title">
-      Enterprise code.<br>
-      <em>Blue-collar budget.</em>
+      One person. Two months.<br>
+      <em>Three production systems.</em>
     </h1>
     <p class="hero-body">
-      Three production systems built in under three months by a former plumber.
-      No VC. No team. One GPU and a methodology that forces every tool to prove it works
-      before the next one gets built.
+      No VC. No team. No cloud spend beyond the machine.
+      One local GPU and a methodology that requires every tool to prove it works before the next one gets built.
+      The evidence is verifiable — the GitHub, the systemd units, the substrate receipt count.
     </p>
     <span class="live-badge"><span class="live-dot"></span>4 bots live in production</span>
   </section>
@@ -720,9 +721,10 @@
     <p class="section-label">── Product One</p>
     <h2 class="section-title">BOTWAVE TRADES</h2>
     <p class="section-body">
-      A trade-agnostic Telegram bot for sub-contractors. One codebase, zero re-configuration —
-      set an env var and it becomes a plumbing bot, an electrical bot, an HVAC bot, a GC bot.
-      Quotes, jobs, invoices, payments — all tracked in JSONL substrate, queryable by text message.
+      Your customers live in Telegram, not dashboards. One codebase, one env var — set it to
+      <code>plumbing</code> and it's a plumbing bot. Electrical, HVAC, GC — same binary, different config.
+      Quotes, invoices, "who owes me," "how much this month" — answered by text.
+      No app to install. No login to forget. No training required.
     </p>
 
     <div class="trades-grid">
@@ -889,9 +891,10 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
     <p class="section-label">── Infrastructure</p>
     <h2 class="section-title">WAVESOX</h2>
     <p class="section-body">
-      Enterprise proxy infrastructure — 1,000+ validated SOCKS5 proxies, receipt-first testing, IAM-style zones.
-      Every proxy earns its place with immutable test records before it enters the pool.
-      Feeds the bounty arm, the journalism arm, and any client that needs clean egress.
+      Validated SOCKS5 proxy infrastructure built for bug bounty reconnaissance.
+      Every proxy earns its place with an immutable test receipt — latency, external IP, anonymity classification —
+      before entering rotation. The same pool that powers BOTWAVE hunts.
+      Receipt-first means no surprises mid-engagement.
     </p>
 
     <div class="stat-row">
@@ -1008,18 +1011,6 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
           <td><span class="tag-live">live</span></td>
         </tr>
         <tr>
-          <td>BotFox Profiles</td>
-          <td>Anti-detect browser profile manager — stealth identity pool</td>
-          <td>:8789</td>
-          <td><span class="tag-live">live</span></td>
-        </tr>
-        <tr>
-          <td>HAR Pipeline</td>
-          <td>File watcher for HAR captures + WebSocket bridge for real-time traffic analysis</td>
-          <td>:8766</td>
-          <td><span class="tag-live">live</span></td>
-        </tr>
-        <tr>
           <td>Ollama (Heretic Stack)</td>
           <td>Local LLM inference — gemma4-wave / qwen3.5-9b-heretic on RTX 5060 8GB VRAM</td>
           <td>:11434</td>
@@ -1029,7 +1020,7 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
           <td>BOTWAVEBOMBA Pipeline</td>
           <td>317-source ingestor → bias scorer → feed generator → GitHub Pages push</td>
           <td>cron · 6h</td>
-          <td><span style="color:var(--text-3);font-family:var(--mono);font-size:0.62rem;letter-spacing:.1em;">rebuilding</span></td>
+          <td><span class="tag-live">live</span></td>
         </tr>
       </tbody>
     </table>
@@ -1067,16 +1058,32 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
   </div>
 
   <!-- CTA -->
-  <div class="cta-section">
-    <div>
-      <h2 class="cta-title">Let's talk about what you're building.</h2>
-      <p class="cta-sub">Licensing, integration, custom builds on the TELOS+PAI stack. One operator. Fast answers.</p>
+  <section class="section" style="border-top: 1px solid var(--border);" id="contact">
+    <p class="section-label">── Three ways in</p>
+    <div class="products" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 2rem;">
+      <div class="product-card">
+        <p class="product-tag">Bug bounty hunters</p>
+        <p class="product-name">WAVESOX proxy access</p>
+        <p class="product-body">1k+ validated SOCKS5 proxies, receipt-first tested, IAM zones. If you're running recon and burning your residential IP, this solves it.</p>
+        <a class="btn-primary" href="mailto:lyfer1904@gmail.com?subject=WAVESOX proxy access" style="margin-top: 1.25rem; display: block; text-align: center;">Request access →</a>
+      </div>
+      <div class="product-card">
+        <p class="product-tag">Sub-contractors</p>
+        <p class="product-name">BOTWAVE TRADES</p>
+        <p class="product-body">Plumbing, electrical, HVAC, or GC. Free for 30 days. If your guys text you questions all day, this answers them automatically.</p>
+        <a class="btn-primary" href="mailto:lyfer1904@gmail.com?subject=BOTWAVE TRADES" style="margin-top: 1.25rem; display: block; text-align: center;">Start free trial →</a>
+      </div>
+      <div class="product-card">
+        <p class="product-tag">Small SaaS founders</p>
+        <p class="product-name">CSM buildout</p>
+        <p class="product-body">Under 100 customers and no CSM process? Daily health scores, QBR decks, churn alerts — built on BOTWAVE tooling, configured for your stack.</p>
+        <a class="btn-primary" href="mailto:lyfer1904@gmail.com?subject=CSM buildout" style="margin-top: 1.25rem; display: block; text-align: center;">Get in touch →</a>
+      </div>
     </div>
-    <div class="cta-links">
-      <a class="btn-primary" href="mailto:lyfer1904@gmail.com">Get in touch →</a>
+    <div style="text-align: center; padding-top: 0.5rem;">
       <a class="btn-ghost" href="https://github.com/Zombie760" target="_blank">GitHub ↗</a>
     </div>
-  </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
