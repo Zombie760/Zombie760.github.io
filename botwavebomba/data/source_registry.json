@@ -1,0 +1,5179 @@
+{
+  "generated_at": "2026-05-09T00:00:00Z",
+  "methodology": "TELOS+PAI substrate. Bias axis: AllSides + MBFC + hand-curated. Bloc: atlanticist/interventionist axis score. Primary source: source_fingerprints.json via book_arm pipeline.",
+  "total": 244,
+  "by_bloc": {
+    "western": 142,
+    "neutral": 49,
+    "adversarial": 53
+  },
+  "axis_description": {
+    "interventionist": "-1 non-interventionist / +1 pro-military-intervention",
+    "zionist": "-1 anti-zionist / +1 pro-zionist",
+    "atlanticist": "-1 multipolar / +1 US-led-world-order",
+    "statist": "-1 anti-state / +1 pro-state-authority",
+    "financialized": "-1 anti-finance / +1 pro-market-finance"
+  },
+  "sources": [
+    {
+      "id": "reuters",
+      "name": "Reuters",
+      "country": "GB",
+      "language": "en",
+      "url": "https://www.reuters.com",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.1,
+        "atlanticist": 0.4,
+        "statist": 0.0,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Thomson Reuters-owned; wire service neutrality is commercial necessity not ideological position; financial data backbone for global markets"
+    },
+    {
+      "id": "ap_news",
+      "name": "Associated Press",
+      "country": "US",
+      "language": "en",
+      "url": "https://apnews.com",
+      "bloc": "neutral",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": 0.3,
+        "statist": 0.0,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "US cooperative wire service; non-profit structure; Pentagon embeds common but not state-controlled; access journalism tendencies"
+    },
+    {
+      "id": "bbc_news",
+      "name": "BBC News",
+      "country": "GB",
+      "language": "en",
+      "url": "https://www.bbc.com/news",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.2,
+        "atlanticist": 0.6,
+        "statist": 0.1,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "GB"
+      ],
+      "notes": "UK public broadcaster; BBC Trust governance but government-funded; Iraq WMD coverage failure documented; soft power arm of UK foreign policy"
+    },
+    {
+      "id": "cnn",
+      "name": "CNN",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.cnn.com",
+      "bloc": "western",
+      "political_lean": "left",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0.7,
+        "zionist": 0.4,
+        "atlanticist": 0.8,
+        "statist": 0.2,
+        "financialized": 0.5
+      },
+      "intel_aligned": [
+        "Pentagon"
+      ],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Warner Bros. Discovery-owned; CNN Effect documented in 1990s Gulf War; heavy reliance on ex-intel analysts (Gen. Barry McCaffrey etc.); liberal interventionist editorial line"
+    },
+    {
+      "id": "nytimes",
+      "name": "The New York Times",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.nytimes.com",
+      "bloc": "western",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.5,
+        "zionist": 0.6,
+        "atlanticist": 0.7,
+        "statist": 0.3,
+        "financialized": 0.6
+      },
+      "intel_aligned": [
+        "CIA",
+        "State Dept"
+      ],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Sulzberger family trust controls; Iraq WMD 'cherry-picking' scandal 2004 documented; access to power creates laundering dynamic; quality investigative units but establishment framing"
+    },
+    {
+      "id": "washington_post",
+      "name": "The Washington Post",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.washingtonpost.com",
+      "bloc": "western",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.6,
+        "zionist": 0.5,
+        "atlanticist": 0.8,
+        "statist": 0.4,
+        "financialized": 0.7
+      },
+      "intel_aligned": [
+        "CIA",
+        "Pentagon"
+      ],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Jeff Bezos-owned (Nash Holdings); 'Democracy Dies in Darkness' brand; deep DC intelligence community access; WMD reporting failures; contractor advertising revenue"
+    },
+    {
+      "id": "wsj",
+      "name": "The Wall Street Journal",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.wsj.com",
+      "bloc": "western",
+      "political_lean": "lean_right",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.6,
+        "atlanticist": 0.5,
+        "statist": -0.3,
+        "financialized": 0.9
+      },
+      "intel_aligned": [
+        "Pentagon"
+      ],
+      "state_aligned": [],
+      "notes": "News Corp (Murdoch family); Dow Jones & Company; editorial page neocon but newsroom more balanced; financial markets focus overrides ideology"
+    },
+    {
+      "id": "guardian",
+      "name": "The Guardian",
+      "country": "GB",
+      "language": "en",
+      "url": "https://www.theguardian.com",
+      "bloc": "adversarial",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": -0.2,
+        "atlanticist": 0.3,
+        "statist": 0.1,
+        "financialized": -0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Scott Trust Limited ownership protects editorial independence; Snowden revelations 2013 (anti-surveillance); critical of Israel but within establishment bounds; liberal not radical"
+    },
+    {
+      "id": "ft",
+      "name": "Financial Times",
+      "country": "GB",
+      "language": "en",
+      "url": "https://www.ft.com",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.2,
+        "atlanticist": 0.6,
+        "statist": 0.1,
+        "financialized": 0.9
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "GB"
+      ],
+      "notes": "Nikkei Inc. (Japanese) owned; London-based financial daily; markets-first framing; pro-globalization; quality business journalism"
+    },
+    {
+      "id": "bloomberg",
+      "name": "Bloomberg",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.bloomberg.com",
+      "bloc": "western",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.5,
+        "statist": 0.3,
+        "financialized": 1.0
+      },
+      "intel_aligned": [
+        "Treasury",
+        "Fed"
+      ],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Bloomberg LP; Michael Bloomberg majority owner; terminal subscribers are markets; data-driven not ideological; access to financial intelligence unparalleled"
+    },
+    {
+      "id": "haaretz_en",
+      "name": "Haaretz (English)",
+      "country": "IL",
+      "language": "en",
+      "url": "https://www.haaretz.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": -0.2,
+        "financialized": 0.1
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IL"
+      ],
+      "notes": "Schocken family-owned; Israel's oldest daily; critical of Netanyahu/occupation but firmly Zionist; quality investigative; Hebrew edition more left than English"
+    },
+    {
+      "id": "times_of_israel",
+      "name": "The Times of Israel",
+      "country": "IL",
+      "language": "en",
+      "url": "https://www.timesofisrael.com",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.5,
+        "atlanticist": 0.7,
+        "statist": 0.1,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IL"
+      ],
+      "notes": "David Horovitz-founded; Seth Klarman (US hedge fund) investor; centre-left editorial; digital-native; US-facing"
+    },
+    {
+      "id": "jpost",
+      "name": "The Jerusalem Post",
+      "country": "IL",
+      "language": "en",
+      "url": "https://www.jpost.com",
+      "bloc": "western",
+      "political_lean": "lean_right",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.8,
+        "atlanticist": 0.7,
+        "statist": 0.3,
+        "financialized": 0.2
+      },
+      "intel_aligned": [
+        "IDF Spokesperson"
+      ],
+      "state_aligned": [
+        "IL"
+      ],
+      "notes": "Mirkaei Tikshoret-owned; centre-right editorial; pro-IDF framing common; US Christian Zionist audience significant"
+    },
+    {
+      "id": "ynet",
+      "name": "Ynet",
+      "country": "IL",
+      "language": "he",
+      "url": "https://www.ynetnews.com",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "mostly_factual",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.5,
+        "atlanticist": 0.5,
+        "statist": 0.2,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IL"
+      ],
+      "notes": "Yedioth Ahronoth Group; largest Israeli news site; mainstream Israeli Jewish perspective; security coverage deferential to IDF"
+    },
+    {
+      "id": "israel_hayom",
+      "name": "Israel Hayom",
+      "country": "IL",
+      "language": "en",
+      "url": "https://www.israelhayom.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.6,
+        "zionist": 0.9,
+        "atlanticist": 0.4,
+        "statist": 0.7,
+        "financialized": 0.2
+      },
+      "intel_aligned": [
+        "IDF"
+      ],
+      "state_aligned": [
+        "IL"
+      ],
+      "notes": "Sheldon Adelson-funded; pro-Netanyahu editorial line; free daily distribution; Likud mouthpiece function; settler movement support"
+    },
+    {
+      "id": "globes",
+      "name": "Globes",
+      "country": "IL",
+      "language": "en",
+      "url": "https://www.globes.co.il",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.1,
+        "financialized": 0.8
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IL"
+      ],
+      "notes": "Dov Smith-owned; Israeli business daily; markets-first; defense tech coverage strong"
+    },
+    {
+      "id": "calcalist",
+      "name": "Calcalist",
+      "country": "IL",
+      "language": "he",
+      "url": "https://www.calcalist.co.il",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "mostly_factual",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.0,
+        "financialized": 0.7
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Yedioth Ahronoth Group; business-focused; critical of monopolies; quality financial journalism"
+    },
+    {
+      "id": "kan_news",
+      "name": "Kan News",
+      "country": "IL",
+      "language": "he",
+      "url": "https://www.kan.org.il",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.6,
+        "atlanticist": 0.6,
+        "statist": 0.5,
+        "financialized": 0.2
+      },
+      "intel_aligned": [
+        "IDF Spokesperson"
+      ],
+      "state_aligned": [
+        "IL"
+      ],
+      "notes": "Israeli Public Broadcasting Corporation; public broadcaster; official framing on security matters"
+    },
+    {
+      "id": "walla_news",
+      "name": "Walla! News",
+      "country": "IL",
+      "language": "he",
+      "url": "https://news.walla.co.il",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.4,
+        "atlanticist": 0.5,
+        "statist": 0.2,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IL"
+      ],
+      "notes": "Yedioth competitor; general news portal; Amazon Israel owner (2020); commercial pressures"
+    },
+    {
+      "id": "mako",
+      "name": "Mako",
+      "country": "IL",
+      "language": "he",
+      "url": "https://www.mako.co.il",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.4,
+        "atlanticist": 0.5,
+        "statist": 0.2,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IL"
+      ],
+      "notes": "Keshet Media Group; entertainment and news; soft news focus; mainstream Israeli perspective"
+    },
+    {
+      "id": "rotter_net",
+      "name": "Rotter.net",
+      "country": "IL",
+      "language": "he",
+      "url": "https://www.rotter.net",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.7,
+        "zionist": 0.9,
+        "atlanticist": 0.3,
+        "statist": 0.6,
+        "financialized": -0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IL"
+      ],
+      "notes": "Independent; right-leaning citizen journalism; settler movement sympathetic; controversial in mainstream Israel"
+    },
+    {
+      "id": "nrg_maariv",
+      "name": "Maariv",
+      "country": "IL",
+      "language": "he",
+      "url": "https://www.maariv.co.il",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.7,
+        "atlanticist": 0.5,
+        "statist": 0.3,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IL"
+      ],
+      "notes": "Nochi Dankner-owned; historically left-leaning, shifted right; bankruptcy and restructuring changed editorial"
+    },
+    {
+      "id": "tehran_times",
+      "name": "Tehran Times",
+      "country": "IR",
+      "language": "en",
+      "url": "https://www.tehrantimes.com",
+      "bloc": "adversarial",
+      "political_lean": "state_aligned",
+      "factuality": "low",
+      "axis": {
+        "interventionist": -0.5,
+        "zionist": -0.9,
+        "atlanticist": -0.9,
+        "statist": 0.8,
+        "financialized": -0.3
+      },
+      "intel_aligned": [
+        "IRGC",
+        "MOIS"
+      ],
+      "state_aligned": [
+        "IR"
+      ],
+      "notes": "Islamic Republic Broadcasting-linked; English-language state organ; direct mouthpiece for regime positions"
+    },
+    {
+      "id": "press_tv",
+      "name": "Press TV",
+      "country": "IR",
+      "language": "en",
+      "url": "https://www.presstv.ir",
+      "bloc": "adversarial",
+      "political_lean": "state_aligned",
+      "factuality": "low",
+      "axis": {
+        "interventionist": -0.6,
+        "zionist": -1.0,
+        "atlanticist": -1.0,
+        "statist": 0.9,
+        "financialized": -0.4
+      },
+      "intel_aligned": [
+        "IRGC",
+        "MOIS"
+      ],
+      "state_aligned": [
+        "IR"
+      ],
+      "notes": "IRIB-owned; sanctioned by EU/US; English-language propaganda outlet; anti-Western framing consistent"
+    },
+    {
+      "id": "fars_news",
+      "name": "Fars News Agency",
+      "country": "IR",
+      "language": "en",
+      "url": "https://www.farsnews.ir",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.4,
+        "zionist": -0.9,
+        "atlanticist": -0.9,
+        "statist": 0.8,
+        "financialized": -0.2
+      },
+      "intel_aligned": [
+        "IRGC"
+      ],
+      "state_aligned": [
+        "IR"
+      ],
+      "notes": "IRGC-affiliated; semi-official; hardline editorial; English output for international audience"
+    },
+    {
+      "id": "tasnim",
+      "name": "Tasnim News",
+      "country": "IR",
+      "language": "en",
+      "url": "https://www.tasnimnews.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": -0.9,
+        "atlanticist": -0.9,
+        "statist": 0.8,
+        "financialized": -0.2
+      },
+      "intel_aligned": [
+        "IRGC"
+      ],
+      "state_aligned": [
+        "IR"
+      ],
+      "notes": "IRGC-linked; founded 2012; English and Persian; Quds Force coverage sympathetic"
+    },
+    {
+      "id": "irna",
+      "name": "IRNA",
+      "country": "IR",
+      "language": "en",
+      "url": "https://en.irna.ir",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.4,
+        "zionist": -0.8,
+        "atlanticist": -0.8,
+        "statist": 0.8,
+        "financialized": -0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IR"
+      ],
+      "notes": "Islamic Republic News Agency; official state wire service; government positions"
+    },
+    {
+      "id": "mehr_news",
+      "name": "Mehr News",
+      "country": "IR",
+      "language": "en",
+      "url": "https://www.mehrnews.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": -0.8,
+        "atlanticist": -0.8,
+        "statist": 0.7,
+        "financialized": -0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IR"
+      ],
+      "notes": "Islamic Development Organization-linked; conservative; clerical establishment"
+    },
+    {
+      "id": "isna",
+      "name": "ISNA",
+      "country": "IR",
+      "language": "fa",
+      "url": "https://www.isna.ir",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": -0.6,
+        "atlanticist": -0.5,
+        "statist": 0.4,
+        "financialized": 0.0
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IR"
+      ],
+      "notes": "Islamic Student News Agency; semi-independent; reformist-leaning at times; internal Iranian factional coverage"
+    },
+    {
+      "id": "alef_ir",
+      "name": "Alef",
+      "country": "IR",
+      "language": "fa",
+      "url": "https://alef.ir",
+      "bloc": "adversarial",
+      "political_lean": "state_aligned",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": -0.7,
+        "atlanticist": -0.7,
+        "statist": 0.6,
+        "financialized": 0.0
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IR"
+      ],
+      "notes": "Mohammad Ali Afshani-owned; conservative political news; Tehran-centric"
+    },
+    {
+      "id": "rt",
+      "name": "RT (Russia Today)",
+      "country": "RU",
+      "language": "en",
+      "url": "https://www.rt.com",
+      "bloc": "adversarial",
+      "political_lean": "state_aligned",
+      "factuality": "low",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": -0.2,
+        "atlanticist": -1.0,
+        "statist": 0.8,
+        "financialized": 0.1
+      },
+      "intel_aligned": [
+        "SVR",
+        "GRU"
+      ],
+      "state_aligned": [
+        "RU"
+      ],
+      "notes": "ANO TV-Novosti-owned; Russian state-funded; Margarita Simonyan editor-in-chief; EU/US banned; anti-Atlanticist framing"
+    },
+    {
+      "id": "sputnik",
+      "name": "Sputnik News",
+      "country": "RU",
+      "language": "en",
+      "url": "https://sputniknews.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": -0.1,
+        "atlanticist": -1.0,
+        "statist": 0.8,
+        "financialized": 0.0
+      },
+      "intel_aligned": [
+        "SVR"
+      ],
+      "state_aligned": [
+        "RU"
+      ],
+      "notes": "RIA Novosti subsidiary; Russian state propaganda; banned in EU; disinformation vehicle per EU reports"
+    },
+    {
+      "id": "tass",
+      "name": "TASS",
+      "country": "RU",
+      "language": "en",
+      "url": "https://tass.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.0,
+        "atlanticist": -0.8,
+        "statist": 0.8,
+        "financialized": 0.0
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "RU"
+      ],
+      "notes": "Russian Telegraph Agency; official state wire; Soviet-era successor; government statements verbatim"
+    },
+    {
+      "id": "ria_novosti",
+      "name": "RIA Novosti",
+      "country": "RU",
+      "language": "ru",
+      "url": "https://ria.ru",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.0,
+        "atlanticist": -0.8,
+        "statist": 0.8,
+        "financialized": 0.1
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "RU"
+      ],
+      "notes": "Rossiya Segodnya-owned; state-controlled since 2013 Putin decree; Dmitry Kiselyov (propagandist) runs parent"
+    },
+    {
+      "id": "kommersant",
+      "name": "Kommersant",
+      "country": "RU",
+      "language": "ru",
+      "url": "https://www.kommersant.ru",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": -0.3,
+        "statist": 0.3,
+        "financialized": 0.7
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "RU"
+      ],
+      "notes": "Alisher Usmanov-owned (oligarch); business daily; independent editorial under pressure; quality business reporting"
+    },
+    {
+      "id": "meduza",
+      "name": "Meduza",
+      "country": "LV",
+      "language": "en",
+      "url": "https://meduza.io",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.1,
+        "atlanticist": 0.4,
+        "statist": -0.6,
+        "financialized": 0.1
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Latvia-based Russian exile outlet; independent; designated 'undesirable' by Russia; quality investigative; critical of Putin"
+    },
+    {
+      "id": "novaya_gazeta",
+      "name": "Novaya Gazeta",
+      "country": "RU",
+      "language": "ru",
+      "url": "https://novayagazeta.ru",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.4,
+        "zionist": 0.2,
+        "atlanticist": 0.3,
+        "statist": -0.7,
+        "financialized": -0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Muratov-owned (Nobel laureate 2021); opposition; suspended operations 2022 after invasion; journalists killed (Politkovskaya)"
+    },
+    {
+      "id": "interfax",
+      "name": "Interfax",
+      "country": "RU",
+      "language": "en",
+      "url": "https://www.interfax.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": -0.2,
+        "statist": 0.3,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Independent wire service; oldest private news agency in Russia; walks line carefully; still operates"
+    },
+    {
+      "id": "xinhua",
+      "name": "Xinhua News Agency",
+      "country": "CN",
+      "language": "en",
+      "url": "https://www.xinhuanet.com",
+      "bloc": "adversarial",
+      "political_lean": "state_aligned",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.1,
+        "atlanticist": -0.9,
+        "statist": 0.9,
+        "financialized": 0.3
+      },
+      "intel_aligned": [
+        "MSS"
+      ],
+      "state_aligned": [
+        "CN"
+      ],
+      "notes": "Official PRC state wire; State Council direct control; largest news org in China; CCP propaganda arm"
+    },
+    {
+      "id": "cgtn",
+      "name": "CGTN",
+      "country": "CN",
+      "language": "en",
+      "url": "https://www.cgtn.com",
+      "bloc": "adversarial",
+      "political_lean": "state_aligned",
+      "factuality": "low",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": 0.2,
+        "atlanticist": -0.9,
+        "statist": 0.9,
+        "financialized": 0.2
+      },
+      "intel_aligned": [
+        "MSS",
+        "Propaganda Dept"
+      ],
+      "state_aligned": [
+        "CN"
+      ],
+      "notes": "China Global Television Network; CCTV international; CCP propaganda arm; UK license revoked 2021"
+    },
+    {
+      "id": "global_times",
+      "name": "Global Times",
+      "country": "CN",
+      "language": "en",
+      "url": "https://www.globaltimes.cn",
+      "bloc": "adversarial",
+      "political_lean": "state_aligned",
+      "factuality": "low",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.3,
+        "atlanticist": -0.9,
+        "statist": 0.8,
+        "financialized": 0.1
+      },
+      "intel_aligned": [
+        "MSS"
+      ],
+      "state_aligned": [
+        "CN"
+      ],
+      "notes": "People's Daily subsidiary; nationalist editorial line; CCP Foreign Ministry-linked; wolf warrior diplomacy voice"
+    },
+    {
+      "id": "scmp",
+      "name": "South China Morning Post",
+      "country": "HK",
+      "language": "en",
+      "url": "https://www.scmp.com",
+      "bloc": "adversarial",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": -0.2,
+        "statist": 0.4,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CN"
+      ],
+      "notes": "Alibaba Group-owned (Jack Ma 2016); Hong Kong-based; editorial independence concerns post-acquisition; self-censorship documented"
+    },
+    {
+      "id": "caixin",
+      "name": "Caixin",
+      "country": "CN",
+      "language": "en",
+      "url": "https://www.caixinglobal.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": -0.1,
+        "statist": 0.2,
+        "financialized": 0.7
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Hu Shuli-founded; independent financial journalism; rare critical reporting in PRC; censored but persists"
+    },
+    {
+      "id": "china_daily",
+      "name": "China Daily",
+      "country": "CN",
+      "language": "en",
+      "url": "https://www.chinadaily.com.cn",
+      "bloc": "adversarial",
+      "political_lean": "state_aligned",
+      "factuality": "low",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.2,
+        "atlanticist": -0.9,
+        "statist": 0.9,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CN"
+      ],
+      "notes": "State Council Information Office; official English-language daily; direct propaganda organ"
+    },
+    {
+      "id": "beijing_news",
+      "name": "The Beijing News",
+      "country": "CN",
+      "language": "zh",
+      "url": "https://www.bjnews.com.cn",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": -0.5,
+        "statist": 0.7,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CN"
+      ],
+      "notes": "Beijing municipal government; investigative unit shuttered 2020; local government mouthpiece"
+    },
+    {
+      "id": "sixth_tone",
+      "name": "Sixth Tone",
+      "country": "CN",
+      "language": "en",
+      "url": "https://www.sixthtone.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": -0.4,
+        "statist": 0.6,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CN"
+      ],
+      "notes": "Shanghai United Media Group; state-backed; softer propaganda format; human interest framing"
+    },
+    {
+      "id": "yicai",
+      "name": "Yicai Global",
+      "country": "CN",
+      "language": "en",
+      "url": "https://www.yicaiglobal.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": -0.2,
+        "statist": 0.4,
+        "financialized": 0.7
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CN"
+      ],
+      "notes": "Shanghai Media Group; financial news; relatively independent; markets focus"
+    },
+    {
+      "id": "wenweipo",
+      "name": "Wen Wei Po",
+      "country": "HK",
+      "language": "zh",
+      "url": "https://www.wenweipo.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.2,
+        "atlanticist": -0.7,
+        "statist": 0.8,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CN"
+      ],
+      "notes": "Beijing-controlled Hong Kong daily; Liaison Office mouthpiece; pro-establishment HK"
+    },
+    {
+      "id": "ndtv",
+      "name": "NDTV",
+      "country": "IN",
+      "language": "en",
+      "url": "https://www.ndtv.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.4,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IN"
+      ],
+      "notes": "Adani Group-owned (2023 takeover); previously Prannoy Roy; editorial independence concerns post-Adani; pro-Modi tilt expected"
+    },
+    {
+      "id": "times_of_india",
+      "name": "The Times of India",
+      "country": "IN",
+      "language": "en",
+      "url": "https://timesofindia.indiatimes.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.5,
+        "atlanticist": 0.4,
+        "statist": 0.4,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IN"
+      ],
+      "notes": "Times Group (Bennett Coleman); largest English daily; pro-government tilt; corporate-friendly"
+    },
+    {
+      "id": "hindu",
+      "name": "The Hindu",
+      "country": "IN",
+      "language": "en",
+      "url": "https://www.thehindu.com",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.3,
+        "statist": 0.2,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Kasturi & Sons-owned; oldest Indian English daily; center-left editorial; quality journalism"
+    },
+    {
+      "id": "indian_express",
+      "name": "The Indian Express",
+      "country": "IN",
+      "language": "en",
+      "url": "https://indianexpress.com",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.3,
+        "statist": -0.2,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Ramnath Goenka-founded; investigative tradition; critical of Modi government; quality reporting"
+    },
+    {
+      "id": "firstpost",
+      "name": "Firstpost",
+      "country": "IN",
+      "language": "en",
+      "url": "https://www.firstpost.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.4,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IN"
+      ],
+      "notes": "Network18 (Reliance Industries-owned); digital-native; pro-corporate editorial; Ambani ecosystem"
+    },
+    {
+      "id": "wire_in",
+      "name": "The Wire",
+      "country": "IN",
+      "language": "en",
+      "url": "https://thewire.in",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.1,
+        "atlanticist": 0.2,
+        "statist": -0.5,
+        "financialized": -0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Non-profit; Siddharth Varadarajan-founded; independent; legal harassment by Modi government; critical journalism"
+    },
+    {
+      "id": "scroll_in",
+      "name": "Scroll.in",
+      "country": "IN",
+      "language": "en",
+      "url": "https://scroll.in",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.1,
+        "zionist": 0.1,
+        "atlanticist": 0.2,
+        "statist": -0.3,
+        "financialized": -0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Independent digital; Sanjay Sequeira-founded; longform focus; liberal editorial"
+    },
+    {
+      "id": "republic_tv",
+      "name": "Republic TV",
+      "country": "IN",
+      "language": "en",
+      "url": "https://www.republicworld.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.6,
+        "zionist": 0.7,
+        "atlanticist": 0.3,
+        "statist": 0.7,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IN"
+      ],
+      "notes": "Arnab Goswami-founded; hyper-nationalist; pro-Modi; TRP manipulation scandal 2020; BJP mouthpiece function"
+    },
+    {
+      "id": "aljazeera",
+      "name": "Al Jazeera English",
+      "country": "QA",
+      "language": "en",
+      "url": "https://www.aljazeera.com",
+      "bloc": "adversarial",
+      "political_lean": "lean_left",
+      "factuality": "mostly_factual",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": -0.6,
+        "atlanticist": -0.3,
+        "statist": 0.3,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "QA"
+      ],
+      "notes": "Qatar Media Corporation; Emir of Qatar-funded; critical of Gulf states except Qatar; Muslim Brotherhood sympathy; quality investigative units"
+    },
+    {
+      "id": "alarabiya",
+      "name": "Al Arabiya",
+      "country": "SA",
+      "language": "en",
+      "url": "https://english.alarabiya.net",
+      "bloc": "western",
+      "political_lean": "state_aligned",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": -0.3,
+        "atlanticist": 0.5,
+        "statist": 0.7,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "SA"
+      ],
+      "notes": "MBC Group (Saudi-owned); anti-Iran; counter-programming to Al Jazeera; MBS vision aligned"
+    },
+    {
+      "id": "asharq_awsat",
+      "name": "Asharq Al-Awsat",
+      "country": "SA",
+      "language": "en",
+      "url": "https://aawsat.com",
+      "bloc": "western",
+      "political_lean": "state_aligned",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": -0.2,
+        "atlanticist": 0.5,
+        "statist": 0.6,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "SA"
+      ],
+      "notes": "Saudi Research & Marketing Group; London-based; pan-Arab business daily; quality journalism within red lines"
+    },
+    {
+      "id": "saudi_gazette",
+      "name": "Saudi Gazette",
+      "country": "SA",
+      "language": "en",
+      "url": "https://saudigazette.com.sa",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": -0.2,
+        "atlanticist": 0.4,
+        "statist": 0.8,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "SA"
+      ],
+      "notes": "Ministry of Media-controlled; official Saudi mouthpiece; government statements"
+    },
+    {
+      "id": "al_monitor",
+      "name": "Al-Monitor",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.al-monitor.com",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.2,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Jamal Daniel-founded; Middle East focus; acquired by Arabia Media 2021; quality regional analysis"
+    },
+    {
+      "id": "middle_east_eye",
+      "name": "Middle East Eye",
+      "country": "GB",
+      "language": "en",
+      "url": "https://www.middleeasteye.net",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": -0.5,
+        "atlanticist": -0.2,
+        "statist": 0.1,
+        "financialized": 0.1
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "London-based; Qatar-linked allegations denied; investigative Middle East focus; critical of Gulf monarchies except Qatar"
+    },
+    {
+      "id": "al_bab",
+      "name": "Al-Bab",
+      "country": "GB",
+      "language": "en",
+      "url": "https://al-bab.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": -0.3,
+        "atlanticist": 0.2,
+        "statist": -0.2,
+        "financialized": 0.0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Brian Whitaker-founded (ex-Guardian); independent Arab world analysis; quality longform"
+    },
+    {
+      "id": "arab_news",
+      "name": "Arab News",
+      "country": "SA",
+      "language": "en",
+      "url": "https://www.arabnews.com",
+      "bloc": "western",
+      "political_lean": "state_aligned",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": -0.1,
+        "atlanticist": 0.5,
+        "statist": 0.6,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "SA"
+      ],
+      "notes": "Saudi Research & Marketing; English-language; pro-Vision 2030; MBS reform narrative"
+    },
+    {
+      "id": "gulf_news",
+      "name": "Gulf News",
+      "country": "AE",
+      "language": "en",
+      "url": "https://gulfnews.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.7,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "AE"
+      ],
+      "notes": "Al Nisr Publishing (UAE); Dubai-based; pro-Emirati government; Abraham Accords supportive"
+    },
+    {
+      "id": "thenational_ae",
+      "name": "The National",
+      "country": "AE",
+      "language": "en",
+      "url": "https://www.thenationalnews.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.4,
+        "atlanticist": 0.5,
+        "statist": 0.6,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "AE"
+      ],
+      "notes": "Abu Dhabi Media Investment Corporation; state-backed; quality journalism; pro-Western alignment"
+    },
+    {
+      "id": "khalij_times",
+      "name": "Khaleej Times",
+      "country": "AE",
+      "language": "en",
+      "url": "https://www.khaleejtimes.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.5,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "AE"
+      ],
+      "notes": "Galadari Group-owned; Dubai-based; oldest English daily in UAE; establishment framing"
+    },
+    {
+      "id": "daily_star_lb",
+      "name": "The Daily Star (Lebanon)",
+      "country": "LB",
+      "language": "en",
+      "url": "https://www.dailystar.com.lb",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.5,
+        "statist": -0.2,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Hariri family-owned; suspended print 2022; financial crisis impact; anti-Hezbollah editorial"
+    },
+    {
+      "id": "l_orient_le_jour",
+      "name": "L'Orient-Le Jour",
+      "country": "LB",
+      "language": "fr",
+      "url": "https://www.lorientlejour.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": 0.4,
+        "statist": 0.0,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Lebanese-French; independent editorial; Beirut-based; quality French-language"
+    },
+    {
+      "id": "ahram",
+      "name": "Al-Ahram",
+      "country": "EG",
+      "language": "en",
+      "url": "https://english.ahram.org.eg",
+      "bloc": "western",
+      "political_lean": "state_aligned",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.4,
+        "statist": 0.8,
+        "financialized": 0.2
+      },
+      "intel_aligned": [
+        "Egyptian GI"
+      ],
+      "state_aligned": [
+        "EG"
+      ],
+      "notes": "Egyptian state-owned; oldest Arabic newspaper; pro-Sisi editorial; military-aligned"
+    },
+    {
+      "id": "egypt_independent",
+      "name": "Egypt Independent",
+      "country": "EG",
+      "language": "en",
+      "url": "https://www.egyptindependent.com",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": 0.3,
+        "statist": -0.3,
+        "financialized": 0.1
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Al-Masry Al-Youm Foundation; independent; military pressure on editors; censored frequently"
+    },
+    {
+      "id": "spiegel",
+      "name": "Der Spiegel",
+      "country": "DE",
+      "language": "de",
+      "url": "https://www.spiegel.de",
+      "bloc": "western",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.1,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Spiegel Foundation-owned; investigative tradition; center-left; Iraq WMD skepticism 2003; NSA surveillance reporting strong"
+    },
+    {
+      "id": "zeit",
+      "name": "Die Zeit",
+      "country": "DE",
+      "language": "de",
+      "url": "https://www.zeit.de",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": 0.3,
+        "atlanticist": 0.4,
+        "statist": 0.1,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Dieter von Holtzbrinck-owned; weekly; intellectual center-left; quality longform"
+    },
+    {
+      "id": "faz",
+      "name": "Frankfurter Allgemeine Zeitung",
+      "country": "DE",
+      "language": "de",
+      "url": "https://www.faz.net",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.3,
+        "financialized": 0.7
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "DE"
+      ],
+      "notes": "FAZIT Foundation; conservative-liberal; business-focused; establishment voice"
+    },
+    {
+      "id": "sueddeutsche",
+      "name": "S\u00fcddeutsche Zeitung",
+      "country": "DE",
+      "language": "de",
+      "url": "https://www.sueddeutsche.de",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.4,
+        "statist": -0.1,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "S\u00fcddeutscher Verlag; Panama Papers 2016; center-left investigative; quality journalism"
+    },
+    {
+      "id": "bild",
+      "name": "Bild",
+      "country": "DE",
+      "language": "de",
+      "url": "https://www.bild.de",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.7,
+        "atlanticist": 0.7,
+        "statist": 0.4,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "DE"
+      ],
+      "notes": "Axel Springer SE; largest European tabloid; conservative; pro-Israel; sensationalist; political influence"
+    },
+    {
+      "id": "dw",
+      "name": "Deutsche Welle",
+      "country": "DE",
+      "language": "en",
+      "url": "https://www.dw.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.6,
+        "statist": 0.4,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "DE"
+      ],
+      "notes": "German public broadcaster; international service; ARD network; soft power function"
+    },
+    {
+      "id": "le_monde",
+      "name": "Le Monde",
+      "country": "FR",
+      "language": "fr",
+      "url": "https://www.lemonde.fr",
+      "bloc": "western",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "FR"
+      ],
+      "notes": "Pigasse-Niel-Berg\u00e9 ownership; independent; center-left establishment; Africa coverage critical but Francafrique blind spots"
+    },
+    {
+      "id": "le_figaro",
+      "name": "Le Figaro",
+      "country": "FR",
+      "language": "fr",
+      "url": "https://www.lefigaro.fr",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.5,
+        "zionist": 0.5,
+        "atlanticist": 0.5,
+        "statist": 0.5,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "FR"
+      ],
+      "notes": "Dassault Group-owned (arms manufacturer); oldest French daily; conservative; defense industry ties explicit"
+    },
+    {
+      "id": "liberation",
+      "name": "Lib\u00e9ration",
+      "country": "FR",
+      "language": "fr",
+      "url": "https://www.liberation.fr",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": 0.1,
+        "atlanticist": 0.3,
+        "statist": -0.2,
+        "financialized": -0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Sartre-founded; Bruno Ledoux-owned; left-wing; independent; critical of French interventionism"
+    },
+    {
+      "id": "france24",
+      "name": "France 24",
+      "country": "FR",
+      "language": "en",
+      "url": "https://www.france24.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.5,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "FR"
+      ],
+      "notes": "France M\u00e9dias Monde; French state international broadcaster; soft power arm; Africa coverage pro-French"
+    },
+    {
+      "id": "afp",
+      "name": "Agence France-Presse",
+      "country": "FR",
+      "language": "en",
+      "url": "https://www.afp.com",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.1,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Independent cooperative; global wire service; oldest news agency; commercial neutrality"
+    },
+    {
+      "id": "corriere",
+      "name": "Corriere della Sera",
+      "country": "IT",
+      "language": "it",
+      "url": "https://www.corriere.it",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.2,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IT"
+      ],
+      "notes": "RCS MediaGroup (Caltagirone family); Italy's paper of record; center; Berlusconi-era compromises"
+    },
+    {
+      "id": "repubblica",
+      "name": "La Repubblica",
+      "country": "IT",
+      "language": "it",
+      "url": "https://www.repubblica.it",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.1,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "GEDI Gruppo (Agnelli family/Exor); center-left; investigative; Fiat dynasty ownership"
+    },
+    {
+      "id": "sole24ore",
+      "name": "Il Sole 24 Ore",
+      "country": "IT",
+      "language": "it",
+      "url": "https://www.ilsole24ore.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.3,
+        "financialized": 0.8
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IT"
+      ],
+      "notes": "Confindustria-owned (employers federation); Italian financial times; business daily"
+    },
+    {
+      "id": "ansa",
+      "name": "ANSA",
+      "country": "IT",
+      "language": "it",
+      "url": "https://www.ansa.it",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IT"
+      ],
+      "notes": "Italian wire service; cooperative of Italian publishers; official wire function"
+    },
+    {
+      "id": "el_pais",
+      "name": "El Pa\u00eds",
+      "country": "ES",
+      "language": "es",
+      "url": "https://elpais.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.2,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "ES"
+      ],
+      "notes": "PRISA Group; Spanish paper of record; center-left; Latin American edition influential"
+    },
+    {
+      "id": "el_mundo",
+      "name": "El Mundo",
+      "country": "ES",
+      "language": "es",
+      "url": "https://www.elmundo.es",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.4,
+        "atlanticist": 0.5,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Unidad Editorial (RCS); center-right; investigative unit strong; 11-M coverage"
+    },
+    {
+      "id": "la_vanguardia",
+      "name": "La Vanguardia",
+      "country": "ES",
+      "language": "es",
+      "url": "https://www.lavanguardia.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.0,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Grupo God\u00f3; Barcelona-based; Catalan business family-owned; independence referendum coverage complex"
+    },
+    {
+      "id": "volkskrant",
+      "name": "De Volkskrant",
+      "country": "NL",
+      "language": "nl",
+      "url": "https://www.volkskrant.nl",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.1,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "DPG Media; center-left; quality daily; progressive on EU"
+    },
+    {
+      "id": "nos",
+      "name": "NOS",
+      "country": "NL",
+      "language": "nl",
+      "url": "https://nos.nl",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.6,
+        "statist": 0.4,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "NL"
+      ],
+      "notes": "Dutch public broadcaster; NPO network; establishment framing"
+    },
+    {
+      "id": "dn_nyheter",
+      "name": "Dagens Nyheter",
+      "country": "SE",
+      "language": "sv",
+      "url": "https://www.dn.se",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.2,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Bonnier family-owned; morning paper; center-left; quality Scandinavian journalism"
+    },
+    {
+      "id": "svt_nyheter",
+      "name": "SVT Nyheter",
+      "country": "SE",
+      "language": "sv",
+      "url": "https://www.svt.se",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.4,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "SE"
+      ],
+      "notes": "Sveriges Television; public broadcaster; establishment perspective"
+    },
+    {
+      "id": "nrk",
+      "name": "NRK",
+      "country": "NO",
+      "language": "no",
+      "url": "https://www.nrk.no",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.6,
+        "statist": 0.4,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "NO"
+      ],
+      "notes": "Norsk Rikskringkasting; Norwegian public broadcaster; NATO member perspective"
+    },
+    {
+      "id": "dr_nyheter",
+      "name": "DR Nyheder",
+      "country": "DK",
+      "language": "da",
+      "url": "https://www.dr.dk",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.4,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "DK"
+      ],
+      "notes": "Danmarks Radio; Danish public broadcaster; Muhammad cartoon controversy 2005; Atlanticist"
+    },
+    {
+      "id": "folha_sp",
+      "name": "Folha de S.Paulo",
+      "country": "BR",
+      "language": "pt",
+      "url": "https://www.folha.uol.com.br",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.2,
+        "atlanticist": 0.3,
+        "statist": 0.1,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Frias family-owned; largest Brazilian daily; center; critical of Bolsonaro; Lava Jato coverage strong"
+    },
+    {
+      "id": "globo",
+      "name": "O Globo",
+      "country": "BR",
+      "language": "pt",
+      "url": "https://oglobo.globo.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "BR"
+      ],
+      "notes": "Grupo Globo (Marinho family); largest media conglomerate in LatAm; telenovela empire; political influence"
+    },
+    {
+      "id": "estado_sp",
+      "name": "O Estado de S. Paulo",
+      "country": "BR",
+      "language": "pt",
+      "url": "https://www.estadao.com.br",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "BR"
+      ],
+      "notes": "Grupo Estado (Mesquita family); conservative; oldest Brazilian daily; military dictatorship compromises"
+    },
+    {
+      "id": "uol",
+      "name": "UOL",
+      "country": "BR",
+      "language": "pt",
+      "url": "https://www.uol.com.br",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.3,
+        "statist": 0.2,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "BR"
+      ],
+      "notes": "Grupo Globo; largest Brazilian web portal; aggregator; commercial content mix"
+    },
+    {
+      "id": "reforma",
+      "name": "Reforma",
+      "country": "MX",
+      "language": "es",
+      "url": "https://www.reforma.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.1,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Grupo Reforma (Junco family); paywall; independent investigative; quality Mexican journalism"
+    },
+    {
+      "id": "jornada",
+      "name": "La Jornada",
+      "country": "MX",
+      "language": "es",
+      "url": "https://www.jornada.com.mx",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.4,
+        "zionist": -0.3,
+        "atlanticist": -0.5,
+        "statist": 0.3,
+        "financialized": -0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Carlos Pay\u00e1n-founded; left-wing; AMLO-supportive; independent; critical of US intervention"
+    },
+    {
+      "id": "milenio",
+      "name": "Milenio",
+      "country": "MX",
+      "language": "es",
+      "url": "https://www.milenio.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "MX"
+      ],
+      "notes": "Grupo Multimedios; Monterrey-based; center; business-friendly"
+    },
+    {
+      "id": "animal_politico",
+      "name": "Animal Pol\u00edtico",
+      "country": "MX",
+      "language": "es",
+      "url": "https://www.animalpolitico.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.1,
+        "atlanticist": 0.2,
+        "statist": -0.3,
+        "financialized": 0.1
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Independent digital; investigative; critical of all administrations; anti-cartel coverage"
+    },
+    {
+      "id": "clarin",
+      "name": "Clar\u00edn",
+      "country": "AR",
+      "language": "es",
+      "url": "https://www.clarin.com",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "mostly_factual",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.2,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "AR"
+      ],
+      "notes": "Grupo Clar\u00edn (Noblia/Herrera); largest Argentine daily; anti-Kirchner; media law battles"
+    },
+    {
+      "id": "lanacion",
+      "name": "La Naci\u00f3n",
+      "country": "AR",
+      "language": "es",
+      "url": "https://www.lanacion.com.ar",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.4,
+        "atlanticist": 0.5,
+        "statist": 0.2,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "AR"
+      ],
+      "notes": "Saguier family-owned; conservative; oldest Argentine daily; markets-friendly"
+    },
+    {
+      "id": "pagina12",
+      "name": "P\u00e1gina/12",
+      "country": "AR",
+      "language": "es",
+      "url": "https://www.pagina12.com.ar",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": 0.0,
+        "atlanticist": -0.3,
+        "statist": 0.4,
+        "financialized": -0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "State-subsidized; left-wing; Kirchner-sympathetic; investigative; human rights focus"
+    },
+    {
+      "id": "eltiempo",
+      "name": "El Tiempo",
+      "country": "CO",
+      "language": "es",
+      "url": "https://www.eltiempo.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.4,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CO"
+      ],
+      "notes": "Grupo Planeta (Colombian branch); Santos family-founded; center; peace process coverage"
+    },
+    {
+      "id": "espectador",
+      "name": "El Espectador",
+      "country": "CO",
+      "language": "es",
+      "url": "https://www.elespectador.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.1,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Kanou family-owned; oldest Colombian daily; independent; investigative"
+    },
+    {
+      "id": "mercurio",
+      "name": "El Mercurio",
+      "country": "CL",
+      "language": "es",
+      "url": "https://www.elmercurio.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.3,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CL"
+      ],
+      "notes": "El Mercurio SAP (Edwards family); conservative; oldest Chilean daily; Pinochet-era compromises"
+    },
+    {
+      "id": "tercera",
+      "name": "La Tercera",
+      "country": "CL",
+      "language": "es",
+      "url": "https://www.latercera.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Copesa (Pic\u00f3 family); center-right; Santiago-based; business-friendly"
+    },
+    {
+      "id": "business_day_za",
+      "name": "Business Day",
+      "country": "ZA",
+      "language": "en",
+      "url": "https://www.businessday.co.za",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.2,
+        "financialized": 0.8
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Arena Holdings; financial daily; pro-market; white business perspective"
+    },
+    {
+      "id": "mail_guardian",
+      "name": "Mail & Guardian",
+      "country": "ZA",
+      "language": "en",
+      "url": "https://mg.co.za",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.1,
+        "atlanticist": 0.3,
+        "statist": -0.3,
+        "financialized": -0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Independent; investigative; left-leaning; oldest weekly; Zuma corruption coverage"
+    },
+    {
+      "id": "news24",
+      "name": "News24",
+      "country": "ZA",
+      "language": "en",
+      "url": "https://www.news24.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "ZA"
+      ],
+      "notes": "Media24 (Naspers); digital-native; largest SA news site; Naspers complex history"
+    },
+    {
+      "id": "premium_times",
+      "name": "Premium Times",
+      "country": "NG",
+      "language": "en",
+      "url": "https://www.premiumtimesng.com",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.1,
+        "zionist": 0.1,
+        "atlanticist": 0.2,
+        "statist": -0.4,
+        "financialized": 0.0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Independent; investigative; harassment by authorities; anti-corruption focus"
+    },
+    {
+      "id": "punch",
+      "name": "The Punch",
+      "country": "NG",
+      "language": "en",
+      "url": "https://punchng.com",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.3,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "NG"
+      ],
+      "notes": "Modupe Adefola-owned; largest Nigerian daily; establishment perspective"
+    },
+    {
+      "id": "daily_nation",
+      "name": "Daily Nation",
+      "country": "KE",
+      "language": "en",
+      "url": "https://nation.africa",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "KE"
+      ],
+      "notes": "Nation Media Group; largest East African media house; Aga Khan-owned; establishment"
+    },
+    {
+      "id": "standard_kenya",
+      "name": "The Standard",
+      "country": "KE",
+      "language": "en",
+      "url": "https://www.standardmedia.co.ke",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "KE"
+      ],
+      "notes": "Standard Group (Muguku family); oldest Kenyan daily; political family ownership"
+    },
+    {
+      "id": "hespress",
+      "name": "Hespress",
+      "country": "MA",
+      "language": "ar",
+      "url": "https://www.hespress.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.4,
+        "atlanticist": 0.4,
+        "statist": 0.5,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "MA"
+      ],
+      "notes": "Independent Moroccan web portal; most visited MA news site; monarchy red lines observed"
+    },
+    {
+      "id": "wyborcza",
+      "name": "Gazeta Wyborcza",
+      "country": "PL",
+      "language": "pl",
+      "url": "https://wyborcza.pl",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.7,
+        "statist": -0.3,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Agora SA; Michnik-founded (dissident); anti-PiS; liberal; Solidarity legacy"
+    },
+    {
+      "id": "rmf24",
+      "name": "RMF24",
+      "country": "PL",
+      "language": "pl",
+      "url": "https://www.rmf24.pl",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.6,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "PL"
+      ],
+      "notes": "RMF Group (Bauer); radio station web portal; center; commercial"
+    },
+    {
+      "id": "pravda_ua",
+      "name": "Ukrainska Pravda",
+      "country": "UA",
+      "language": "en",
+      "url": "https://www.pravda.com.ua",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.7,
+        "zionist": 0.3,
+        "atlanticist": 0.9,
+        "statist": 0.5,
+        "financialized": 0.1
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "UA"
+      ],
+      "notes": "Olena Prytula-founded; independent; anti-Yanukovych; war reporting; Ukrainian nationalist perspective"
+    },
+    {
+      "id": "kyiv_independent",
+      "name": "The Kyiv Independent",
+      "country": "UA",
+      "language": "en",
+      "url": "https://kyivindependent.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.6,
+        "zionist": 0.3,
+        "atlanticist": 0.9,
+        "statist": 0.4,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "UA"
+      ],
+      "notes": "Ex-Kyiv Post staff; crowdfunded; English-language; war reporting; Western audience focus"
+    },
+    {
+      "id": "denik_n",
+      "name": "Den\u00edk N",
+      "country": "CZ",
+      "language": "cs",
+      "url": "https://denikn.cz",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.6,
+        "statist": -0.2,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "N Media (former HN editors); subscription; anti-Babi\u0161; quality Czech journalism"
+    },
+    {
+      "id": "telex_hu",
+      "name": "Telex",
+      "country": "HU",
+      "language": "hu",
+      "url": "https://telex.hu",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": -0.5,
+        "financialized": 0.1
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Ex-Index editors; crowdfunded; independent; anti-Orb\u00e1n; quality investigative"
+    },
+    {
+      "id": "g4media",
+      "name": "G4Media",
+      "country": "RO",
+      "language": "ro",
+      "url": "https://www.g4media.ro",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.5,
+        "statist": -0.3,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Independent; anti-corruption; investigative; rule of law focus"
+    },
+    {
+      "id": "kathimerini",
+      "name": "Kathimerini",
+      "country": "GR",
+      "language": "en",
+      "url": "https://www.ekathimerini.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.4,
+        "atlanticist": 0.7,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "GR"
+      ],
+      "notes": "Alafouzos family-owned; English edition; center-right; NATO-aligned"
+    },
+    {
+      "id": "asahi",
+      "name": "Asahi Shimbun",
+      "country": "JP",
+      "language": "ja",
+      "url": "https://www.asahi.com",
+      "bloc": "western",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.1,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Asahi Shimbun Company; second-largest Japanese daily; center-left; pacifist editorial"
+    },
+    {
+      "id": "yomiuri",
+      "name": "Yomiuri Shimbun",
+      "country": "JP",
+      "language": "ja",
+      "url": "https://www.yomiuri.co.jp",
+      "bloc": "western",
+      "political_lean": "lean_right",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.3,
+        "atlanticist": 0.6,
+        "statist": 0.5,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "JP"
+      ],
+      "notes": "Yomiuri Group; largest Japanese daily; conservative; pro-LDP; revisionist history"
+    },
+    {
+      "id": "nhk",
+      "name": "NHK World",
+      "country": "JP",
+      "language": "en",
+      "url": "https://www3.nhk.or.jp",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.2,
+        "atlanticist": 0.6,
+        "statist": 0.6,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "JP"
+      ],
+      "notes": "Japan Broadcasting Corporation; public broadcaster; government pressure; historical revisionism"
+    },
+    {
+      "id": "yonhap",
+      "name": "Yonhap News",
+      "country": "KR",
+      "language": "en",
+      "url": "https://en.yna.co.kr",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.3,
+        "atlanticist": 0.7,
+        "statist": 0.4,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "KR"
+      ],
+      "notes": "South Korean wire service; semi-official; comprehensive; US alliance perspective"
+    },
+    {
+      "id": "korea_herald",
+      "name": "The Korea Herald",
+      "country": "KR",
+      "language": "en",
+      "url": "https://www.koreaherald.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.6,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "KR"
+      ],
+      "notes": "Herald Corporation; English-language; business focus; pro-US alliance"
+    },
+    {
+      "id": "smh",
+      "name": "Sydney Morning Herald",
+      "country": "AU",
+      "language": "en",
+      "url": "https://www.smh.com.au",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.4,
+        "atlanticist": 0.7,
+        "statist": 0.2,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Nine Entertainment; oldest Australian daily; center-left; Five Eyes perspective"
+    },
+    {
+      "id": "australian",
+      "name": "The Australian",
+      "country": "AU",
+      "language": "en",
+      "url": "https://www.theaustralian.com.au",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.5,
+        "zionist": 0.6,
+        "atlanticist": 0.8,
+        "statist": 0.4,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "AU"
+      ],
+      "notes": "News Corp Australia (Murdoch); national broadsheet; conservative; pro-intervention"
+    },
+    {
+      "id": "abc_au",
+      "name": "ABC News (Australia)",
+      "country": "AU",
+      "language": "en",
+      "url": "https://www.abc.net.au",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.6,
+        "statist": 0.4,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "AU"
+      ],
+      "notes": "Australian Broadcasting Corporation; public broadcaster; independent but Five Eyes frame"
+    },
+    {
+      "id": "nz_herald",
+      "name": "New Zealand Herald",
+      "country": "NZ",
+      "language": "en",
+      "url": "https://www.nzherald.co.nz",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.6,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "NZ"
+      ],
+      "notes": "NZME; largest NZ daily; center; Five Eyes perspective"
+    },
+    {
+      "id": "cbc",
+      "name": "CBC News",
+      "country": "CA",
+      "language": "en",
+      "url": "https://www.cbc.ca",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.7,
+        "statist": 0.4,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CA"
+      ],
+      "notes": "Canadian Broadcasting Corporation; public broadcaster; center-left; NATO member perspective"
+    },
+    {
+      "id": "globe_mail",
+      "name": "The Globe and Mail",
+      "country": "CA",
+      "language": "en",
+      "url": "https://www.theglobeandmail.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.6,
+        "statist": 0.3,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CA"
+      ],
+      "notes": "Woodbridge Company (Thomson family); paper of record; center; business-friendly"
+    },
+    {
+      "id": "national_post",
+      "name": "National Post",
+      "country": "CA",
+      "language": "en",
+      "url": "https://nationalpost.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.5,
+        "atlanticist": 0.7,
+        "statist": 0.4,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CA"
+      ],
+      "notes": "Postmedia Network (Chatham Asset Mgmt); conservative; Murdoch-style; US-style culture war imports"
+    },
+    {
+      "id": "ctv",
+      "name": "CTV News",
+      "country": "CA",
+      "language": "en",
+      "url": "https://www.ctvnews.ca",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.6,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CA"
+      ],
+      "notes": "Bell Media; private broadcaster; center; commercial imperatives"
+    },
+    {
+      "id": "defense_news",
+      "name": "Defense News",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.defensenews.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.6,
+        "zionist": 0.4,
+        "atlanticist": 0.7,
+        "statist": 0.5,
+        "financialized": 0.6
+      },
+      "intel_aligned": [
+        "Pentagon"
+      ],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Sightline Media Group; Pentagon contractor coverage; industry-facing; procurement advocacy"
+    },
+    {
+      "id": "janes",
+      "name": "Jane's Defence Weekly",
+      "country": "GB",
+      "language": "en",
+      "url": "https://www.janes.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.3,
+        "atlanticist": 0.7,
+        "statist": 0.4,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "GB"
+      ],
+      "notes": "Janes Information Services (IHS Markit \u2192 S&P Global); gold standard OSINT; military tech focus; intelligence community source"
+    },
+    {
+      "id": "breaking_defense",
+      "name": "Breaking Defense",
+      "country": "US",
+      "language": "en",
+      "url": "https://breakingdefense.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.5,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.4,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Sightline Media; Capitol Hill focus; procurement policy; insider access"
+    },
+    {
+      "id": "army_times",
+      "name": "Army Times",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.armytimes.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.4,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Sightline Media; military personnel focus; contractor oversight; veteran advocacy"
+    },
+    {
+      "id": "air_force_times",
+      "name": "Air Force Times",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.airforcetimes.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.4,
+        "financialized": 0.4
+      },
+      "intel_aligned": [
+        "USAF"
+      ],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Sightline Media; sister pub to Army Times; aerospace industry ties"
+    },
+    {
+      "id": "navy_times",
+      "name": "Navy Times",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.navytimes.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.4,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Sightline Media; naval affairs focus; fleet coverage"
+    },
+    {
+      "id": "marine_corps_times",
+      "name": "Marine Corps Times",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.marinecorpstimes.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.5,
+        "zionist": 0.5,
+        "atlanticist": 0.6,
+        "statist": 0.5,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Sightline Media; USMC focus; expeditionary coverage"
+    },
+    {
+      "id": "military_times",
+      "name": "Military Times",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.militarytimes.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.4,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Sightline Media; umbrella publication; veteran benefits focus"
+    },
+    {
+      "id": "war_on_rocks",
+      "name": "War on the Rocks",
+      "country": "US",
+      "language": "en",
+      "url": "https://warontherocks.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.5,
+        "zionist": 0.5,
+        "atlanticist": 0.7,
+        "statist": 0.3,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Texas National Security Review; scholar-practitioner; Pentagon-adjacent; ex-intel authors"
+    },
+    {
+      "id": "lawfare",
+      "name": "Lawfare",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.lawfareblog.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.5,
+        "atlanticist": 0.7,
+        "statist": 0.5,
+        "financialized": 0.4
+      },
+      "intel_aligned": [
+        "CIA"
+      ],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Brookings; national security law; ex-intel authors common; surveillance law normalization"
+    },
+    {
+      "id": "small_wars_journal",
+      "name": "Small Wars Journal",
+      "country": "US",
+      "language": "en",
+      "url": "https://smallwarsjournal.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.5,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.4,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "COIN focus; military academic; open-source intel; practitioner audience"
+    },
+    {
+      "id": "national_interest",
+      "name": "The National Interest",
+      "country": "US",
+      "language": "en",
+      "url": "https://nationalinterest.org",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": 0.3,
+        "atlanticist": 0.2,
+        "statist": 0.3,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Center for National Interest (Nixon Center); realist foreign policy; anti-interventionist wing"
+    },
+    {
+      "id": "foreign_policy",
+      "name": "Foreign Policy",
+      "country": "US",
+      "language": "en",
+      "url": "https://foreignpolicy.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.6,
+        "zionist": 0.5,
+        "atlanticist": 0.8,
+        "statist": 0.4,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Graham Holdings (formerly Atlantic Media); interventionist-leaning; DC blob voice"
+    },
+    {
+      "id": "foreign_affairs",
+      "name": "Foreign Affairs",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.foreignaffairs.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.5,
+        "atlanticist": 0.8,
+        "statist": 0.5,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Council on Foreign Relations; establishment voice; policy-maker audience; CFR mouthpiece function"
+    },
+    {
+      "id": "csis_analysis",
+      "name": "CSIS Analysis",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.csis.org",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.5,
+        "zionist": 0.5,
+        "atlanticist": 0.8,
+        "statist": 0.5,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Center for Strategic and International Studies; defense contractor board members; Atlantic Council sibling"
+    },
+    {
+      "id": "reuters_business",
+      "name": "Reuters Business",
+      "country": "GB",
+      "language": "en",
+      "url": "https://www.reuters.com/business",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.5,
+        "statist": 0.1,
+        "financialized": 0.8
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Thomson Reuters; markets backbone; terminal data"
+    },
+    {
+      "id": "cnbc",
+      "name": "CNBC",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.cnbc.com",
+      "bloc": "western",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.2,
+        "financialized": 0.9
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "NBCUniversal (Comcast); market-moving; Wall Street audience; corporate cheerleading"
+    },
+    {
+      "id": "bloomberg_markets",
+      "name": "Bloomberg Markets",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.bloomberg.com/markets",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.5,
+        "statist": 0.3,
+        "financialized": 1.0
+      },
+      "intel_aligned": [
+        "Treasury",
+        "Fed"
+      ],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Bloomberg LP; terminal subscribers; institutional; markets-first"
+    },
+    {
+      "id": "economist",
+      "name": "The Economist",
+      "country": "GB",
+      "language": "en",
+      "url": "https://www.economist.com",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.5,
+        "zionist": 0.5,
+        "atlanticist": 0.8,
+        "statist": -0.2,
+        "financialized": 0.8
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "GB"
+      ],
+      "notes": "Rothschild/Exor/Agust\u00edn Carstens ownership; globalist; pro-market; interventionist on humanitarian grounds"
+    },
+    {
+      "id": "barrons",
+      "name": "Barron's",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.barrons.com",
+      "bloc": "western",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.1,
+        "financialized": 0.9
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Dow Jones (News Corp); investment focus; Murdoch-owned; retail investor audience"
+    },
+    {
+      "id": "marketwatch",
+      "name": "MarketWatch",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.marketwatch.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.1,
+        "financialized": 0.8
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Dow Jones (News Corp); retail investor focus; market data"
+    },
+    {
+      "id": "seeking_alpha",
+      "name": "Seeking Alpha",
+      "country": "US",
+      "language": "en",
+      "url": "https://seekingalpha.com",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.3,
+        "statist": -0.1,
+        "financialized": 0.8
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Crowd-sourced analysis; long-short ideas; market-moving; contrarian voice"
+    },
+    {
+      "id": "zerohedge",
+      "name": "ZeroHedge",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.zerohedge.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.6,
+        "zionist": -0.4,
+        "atlanticist": -0.7,
+        "statist": -0.5,
+        "financialized": -0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Anonymous authors ('Tyler Durden'); bearish; conspiracy-adjacent; anti-establishment; correct on 2008 crash"
+    },
+    {
+      "id": "coin_desk",
+      "name": "CoinDesk",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.coindesk.com",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.2,
+        "atlanticist": 0.3,
+        "statist": -0.3,
+        "financialized": 0.7
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Bullish (Block.one-owned); crypto industry; FTX collapse coverage; industry capture risk"
+    },
+    {
+      "id": "cointelegraph",
+      "name": "Cointelegraph",
+      "country": "US",
+      "language": "en",
+      "url": "https://cointelegraph.com",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.2,
+        "atlanticist": 0.3,
+        "statist": -0.2,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Independent crypto media; Jay Cassano-founded; global; industry boosterism"
+    },
+    {
+      "id": "nikkei_asia",
+      "name": "Nikkei Asia",
+      "country": "JP",
+      "language": "en",
+      "url": "https://asia.nikkei.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.7
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Nikkei Inc.; Asian business focus; FT sibling; quality regional coverage"
+    },
+    {
+      "id": "scmp_business",
+      "name": "SCMP Business",
+      "country": "HK",
+      "language": "en",
+      "url": "https://www.scmp.com/business",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": -0.2,
+        "statist": 0.4,
+        "financialized": 0.7
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "CN"
+      ],
+      "notes": "Alibaba-owned; China business focus; self-censorship on sensitive topics"
+    },
+    {
+      "id": "mint_lounge",
+      "name": "Mint",
+      "country": "IN",
+      "language": "en",
+      "url": "https://www.livemint.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.4,
+        "statist": 0.3,
+        "financialized": 0.7
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "HT Media; Indian business daily; quality financial journalism"
+    },
+    {
+      "id": "economic_times",
+      "name": "The Economic Times",
+      "country": "IN",
+      "language": "en",
+      "url": "https://economictimes.indiatimes.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.4,
+        "atlanticist": 0.4,
+        "statist": 0.4,
+        "financialized": 0.8
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "IN"
+      ],
+      "notes": "Times Group; largest Indian business daily; pro-corporate; Modi-friendly"
+    },
+    {
+      "id": "handelsblatt",
+      "name": "Handelsblatt",
+      "country": "DE",
+      "language": "de",
+      "url": "https://www.handelsblatt.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.3,
+        "financialized": 0.8
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "DE"
+      ],
+      "notes": "Dieter von Holtzbrinck; German financial times; business daily; EU integration supportive"
+    },
+    {
+      "id": "bellingcat",
+      "name": "Bellingcat",
+      "country": "NL",
+      "language": "en",
+      "url": "https://www.bellingcat.com",
+      "bloc": "western",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.3,
+        "atlanticist": 0.7,
+        "statist": -0.2,
+        "financialized": 0.1
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Eliot Higgins-founded; open-source investigation; NATO/State Dept grants; MH17 work; Syria documentation"
+    },
+    {
+      "id": "occ rp",
+      "name": "OCCRP",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.occrp.org",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.1,
+        "atlanticist": 0.3,
+        "statist": -0.4,
+        "financialized": -0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Organized Crime and Corruption Reporting Project; global investigative network; oligarch exposure"
+    },
+    {
+      "id": "propublica",
+      "name": "ProPublica",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.propublica.org",
+      "bloc": "western",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": -0.2,
+        "financialized": -0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Herbert Sandler-founded; non-profit investigative; Scaife/MacArthur funding; quality US accountability journalism"
+    },
+    {
+      "id": "icij",
+      "name": "ICIJ",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.icij.org",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.1,
+        "atlanticist": 0.4,
+        "statist": -0.3,
+        "financialized": -0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "International Consortium of Investigative Journalists; Panama/Pandora Papers; Pulitzer; offshore finance exposure"
+    },
+    {
+      "id": "correctiv",
+      "name": "CORRECTIV",
+      "country": "DE",
+      "language": "de",
+      "url": "https://correctiv.org",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": -0.3,
+        "financialized": -0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Non-profit investigative; German; Cum-Ex exposure; quality European accountability"
+    },
+    {
+      "id": "disclose",
+      "name": "Disclose",
+      "country": "FR",
+      "language": "fr",
+      "url": "https://disclose.ngo",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": 0.1,
+        "atlanticist": 0.3,
+        "statist": -0.3,
+        "financialized": -0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "French investigative non-profit; military-industrial focus; arms trade exposure"
+    },
+    {
+      "id": "bureau_investigative",
+      "name": "The Bureau of Investigative Journalism",
+      "country": "GB",
+      "language": "en",
+      "url": "https://www.thebureauinvestigates.com",
+      "bloc": "western",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": -0.4,
+        "zionist": 0.1,
+        "atlanticist": 0.4,
+        "statist": -0.3,
+        "financialized": -0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Charity-funded; drone warfare tracking; UK focus; accountability journalism"
+    },
+    {
+      "id": "insider_inc",
+      "name": "Insider Inc. (Formerly Business Insider)",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.businessinsider.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.2,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Axel Springer; investigative unit strong; corporate accountability; business-first"
+    },
+    {
+      "id": "intercept",
+      "name": "The Intercept",
+      "country": "US",
+      "language": "en",
+      "url": "https://theintercept.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.6,
+        "zionist": -0.2,
+        "atlanticist": -0.3,
+        "statist": -0.6,
+        "financialized": -0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "First Look Media (Pierre Omidyar); Snowden docs; national security focus; Reality Winner case"
+    },
+    {
+      "id": "greyzone",
+      "name": "The Grayzone",
+      "country": "US",
+      "language": "en",
+      "url": "https://thegrayzone.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.8,
+        "zionist": -0.7,
+        "atlanticist": -0.9,
+        "statist": 0.2,
+        "financialized": -0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Max Blumenthal-founded; anti-interventionist; controversial sourcing; Assad regime skepticism low"
+    },
+    {
+      "id": "mint_press",
+      "name": "MintPress News",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.mintpressnews.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.7,
+        "zionist": -0.6,
+        "atlanticist": -0.8,
+        "statist": 0.1,
+        "financialized": -0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Mnar Muhawesh-founded; independent; critical of US foreign policy; Syria coverage controversial"
+    },
+    {
+      "id": "consortium_news",
+      "name": "Consortium News",
+      "country": "US",
+      "language": "en",
+      "url": "https://consortiumnews.com",
+      "bloc": "adversarial",
+      "political_lean": "left",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": -0.7,
+        "zionist": -0.5,
+        "atlanticist": -0.7,
+        "statist": -0.2,
+        "financialized": -0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Robert Parry-founded (AP/CIA beat); investigative; late journalist legacy; Iran-Contra exposure"
+    },
+    {
+      "id": "wikileaks",
+      "name": "WikiLeaks",
+      "country": "AU",
+      "language": "en",
+      "url": "https://wikileaks.org",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.8,
+        "zionist": -0.4,
+        "atlanticist": -0.8,
+        "statist": -0.9,
+        "financialized": -0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Julian Assange-founded; document dump site; Vault7/Cablegate; Assange persecution central"
+    },
+    {
+      "id": "ddosecrets",
+      "name": "DDoSecrets",
+      "country": "DE",
+      "language": "en",
+      "url": "https://ddosecrets.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.5,
+        "zionist": 0.0,
+        "atlanticist": -0.5,
+        "statist": -0.7,
+        "financialized": -0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Distributed Denial of Secrets; hacktivist archive; whistleblower hosting; Belarus/Russia dumps"
+    },
+    {
+      "id": "cryptome",
+      "name": "Cryptome",
+      "country": "US",
+      "language": "en",
+      "url": "https://cryptome.org",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.6,
+        "zionist": -0.2,
+        "atlanticist": -0.6,
+        "statist": -0.8,
+        "financialized": -0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "John Young-founded; pre-WikiLeaks; FOIA dumps; controversial; surveillance architecture exposure"
+    },
+    {
+      "id": "techcrunch",
+      "name": "TechCrunch",
+      "country": "US",
+      "language": "en",
+      "url": "https://techcrunch.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.4,
+        "atlanticist": 0.5,
+        "statist": -0.2,
+        "financialized": 0.7
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Yahoo (Apollo Global Mgmt); startup focus; SV bubble coverage; industry booster"
+    },
+    {
+      "id": "wired",
+      "name": "Wired",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.wired.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.4,
+        "atlanticist": 0.5,
+        "statist": 0.1,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Cond\u00e9 Nast (Advance Publications); tech culture; surveillance capitalism beat; critical but complicit"
+    },
+    {
+      "id": "arstechnica",
+      "name": "Ars Technica",
+      "country": "US",
+      "language": "en",
+      "url": "https://arstechnica.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.0,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Cond\u00e9 Nast; tech policy; security focus; quality technical journalism"
+    },
+    {
+      "id": "eff_deeplinks",
+      "name": "EFF DeepLinks",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.eff.org",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.3,
+        "zionist": 0.1,
+        "atlanticist": 0.3,
+        "statist": -0.6,
+        "financialized": -0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Electronic Frontier Foundation; digital rights; surveillance watchdog; civil liberties"
+    },
+    {
+      "id": "schneier_blog",
+      "name": "Schneier on Security",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.schneier.com",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.2,
+        "atlanticist": 0.3,
+        "statist": -0.4,
+        "financialized": 0.1
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Bruce Schneier; cryptographer; surveillance/privacy expert; independent voice"
+    },
+    {
+      "id": "krebsonsecurity",
+      "name": "Krebs on Security",
+      "country": "US",
+      "language": "en",
+      "url": "https://krebsonsecurity.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.2,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Brian Krebs (ex-WaPo); cybercrime; law enforcement sources; DDoS retaliation victim"
+    },
+    {
+      "id": "theregister",
+      "name": "The Register",
+      "country": "GB",
+      "language": "en",
+      "url": "https://www.theregister.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": -0.2,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Situation Publishing; British tech tabloid; snarky; accurate; industry insider"
+    },
+    {
+      "id": "platformer",
+      "name": "Platformer",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.platformer.news",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.4,
+        "statist": -0.1,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Casey Newton (ex-Verge); Big Tech accountability; Substack; content moderation focus"
+    },
+    {
+      "id": "stratechery",
+      "name": "Stratechery",
+      "country": "US",
+      "language": "en",
+      "url": "https://stratechery.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.3,
+        "atlanticist": 0.4,
+        "statist": -0.1,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Ben Thompson; tech strategy analysis; subscription; aggregator theory; pro-platform"
+    },
+    {
+      "id": "logic_mag",
+      "name": "Logic Magazine",
+      "country": "US",
+      "language": "en",
+      "url": "https://logicmag.io",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.4,
+        "zionist": 0.0,
+        "atlanticist": -0.2,
+        "statist": -0.3,
+        "financialized": -0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Independent tech criticism; labor focus; anti-monopoly; socialist perspective"
+    },
+    {
+      "id": "404media",
+      "name": "404 Media",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.404media.co",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.2,
+        "atlanticist": 0.3,
+        "statist": -0.3,
+        "financialized": -0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Ex-Verge staff (Joseph Cox); independent; surveillance/privacy beat; anti-NSA"
+    },
+    {
+      "id": "rest_of_world",
+      "name": "Rest of World",
+      "country": "US",
+      "language": "en",
+      "url": "https://restofworld.org",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.1,
+        "atlanticist": 0.2,
+        "statist": -0.1,
+        "financialized": 0.1
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Non-profit; tech outside SV; global South focus; quality longform"
+    },
+    {
+      "id": "gizmodo",
+      "name": "Gizmodo",
+      "country": "US",
+      "language": "en",
+      "url": "https://gizmodo.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": -0.2,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "G/O Media (Private Equity); tech culture; privacy coverage; unionized newsroom"
+    },
+    {
+      "id": "vice_news",
+      "name": "VICE News",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.vice.com/en/news",
+      "bloc": "adversarial",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": -0.2,
+        "zionist": 0.1,
+        "atlanticist": 0.3,
+        "statist": -0.3,
+        "financialized": 0.2
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Vice Media (Lanvin Group); gonzo journalism; bankruptcy 2023; youth culture"
+    },
+    {
+      "id": "huffpost",
+      "name": "HuffPost",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.huffpost.com",
+      "bloc": "western",
+      "political_lean": "left",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.2,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "BuzzFeed Inc.; left-leaning; Huffington-founded; click-driven; establishment liberal"
+    },
+    {
+      "id": "daily_beast",
+      "name": "The Daily Beast",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.thedailybeast.com",
+      "bloc": "western",
+      "political_lean": "left",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.5,
+        "atlanticist": 0.7,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "IAC (Barry Diller); scoops-focused; center-left; interventionist"
+    },
+    {
+      "id": "slate",
+      "name": "Slate",
+      "country": "US",
+      "language": "en",
+      "url": "https://slate.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.2,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Graham Holdings; wonky; center-left; Bezos-owned company; establishment liberal"
+    },
+    {
+      "id": "vox",
+      "name": "Vox",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.vox.com",
+      "bloc": "western",
+      "political_lean": "left",
+      "factuality": "mostly_factual",
+      "axis": {
+        "interventionist": 0.4,
+        "zionist": 0.4,
+        "atlanticist": 0.7,
+        "statist": 0.3,
+        "financialized": 0.4
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Vox Media (Comcast); explanatory journalism; center-left establishment; Ezra Klein-founded"
+    },
+    {
+      "id": "axios",
+      "name": "Axios",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.axios.com",
+      "bloc": "western",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0.3,
+        "zionist": 0.4,
+        "atlanticist": 0.6,
+        "statist": 0.3,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Jim VandeHei/Mike Allen-founded (ex-Politico); Smart Brevity format; Cox Enterprises-backed; DC insider"
+    },
+    {
+      "id": "google_news",
+      "name": "Google News",
+      "country": "US",
+      "language": "en",
+      "url": "https://news.google.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.5,
+        "statist": 0.3,
+        "financialized": 0.8
+      },
+      "intel_aligned": [],
+      "state_aligned": [
+        "US"
+      ],
+      "notes": "Alphabet; algorithmic aggregation; news publisher negotiations; market power"
+    },
+    {
+      "id": "reddit_news",
+      "name": "Reddit News",
+      "country": "US",
+      "language": "en",
+      "url": "https://www.reddit.com/r/news",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": -0.2,
+        "financialized": 0.5
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Advance Publications (Cond\u00e9 Nast); crowd-sourced; variable quality; alt-right pockets"
+    },
+    {
+      "id": "flipboard",
+      "name": "Flipboard",
+      "country": "US",
+      "language": "en",
+      "url": "https://flipboard.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.0,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Private; magazine-style aggregation; publisher partnerships; neutral platform"
+    },
+    {
+      "id": "smartnews",
+      "name": "SmartNews",
+      "country": "JP",
+      "language": "en",
+      "url": "https://www.smartnews.com",
+      "bloc": "western",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.1,
+        "zionist": 0.2,
+        "atlanticist": 0.4,
+        "statist": 0.2,
+        "financialized": 0.6
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "SmartNews Inc.; algorithmic; Japanese origins; global expansion; neutral"
+    },
+    {
+      "id": "ground_news",
+      "name": "Ground News",
+      "country": "CA",
+      "language": "en",
+      "url": "https://ground.news",
+      "bloc": "neutral",
+      "political_lean": "unknown",
+      "factuality": "unknown",
+      "axis": {
+        "interventionist": 0.0,
+        "zionist": 0.1,
+        "atlanticist": 0.3,
+        "statist": -0.1,
+        "financialized": 0.3
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": "Bias tracking feature; ownership transparency; subscription model; media literacy tool"
+    },
+    {
+      "id": "the_hill",
+      "name": "The Hill",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "politico",
+      "name": "Politico",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "msnbc",
+      "name": "Msnbc",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "left",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "npr",
+      "name": "Npr",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "pbs",
+      "name": "Pbs",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "abc_news",
+      "name": "Abc News",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "cbs_news",
+      "name": "Cbs News",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "nbc_news",
+      "name": "Nbc News",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "the_guardian",
+      "name": "The Guardian",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "fox_news",
+      "name": "Fox News",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "right",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "ny_post",
+      "name": "Ny Post",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_right",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "nypost",
+      "name": "Nypost",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_right",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "wall_street_journal",
+      "name": "Wall Street Journal",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_right",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "washington_examiner",
+      "name": "Washington Examiner",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_right",
+      "factuality": "mostly_factual",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "washington_times",
+      "name": "Washington Times",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "right",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "daily_wire",
+      "name": "Daily Wire",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "right",
+      "factuality": "mostly_factual",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "breitbart",
+      "name": "Breitbart",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "right",
+      "factuality": "low",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "newsmax",
+      "name": "Newsmax",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "right",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "national_review",
+      "name": "National Review",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_right",
+      "factuality": "mostly_factual",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "bbc_arabic",
+      "name": "Bbc Arabic",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "the_times_uk",
+      "name": "The Times Uk",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_right",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "telegraph",
+      "name": "Telegraph",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_right",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "daily_mail",
+      "name": "Daily Mail",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "right",
+      "factuality": "low",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "independent_uk",
+      "name": "Independent Uk",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "der_spiegel",
+      "name": "Der Spiegel",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "dn_se",
+      "name": "Dn Se",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "telex",
+      "name": "Telex",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "center",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "rt_arabic",
+      "name": "RT Arabic (Arabic)",
+      "country": "RU",
+      "language": "ar",
+      "url": "https://arabic.rt.com",
+      "bloc": "neutral",
+      "political_lean": "state_aligned",
+      "factuality": "low",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "rt_russia",
+      "name": "Rt Russia",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "state_aligned",
+      "factuality": "low",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "lenta_ru",
+      "name": "Lenta.ru (Russian)",
+      "country": "RU",
+      "language": "ru",
+      "url": "https://lenta.ru",
+      "bloc": "neutral",
+      "political_lean": "state_aligned",
+      "factuality": "mixed",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "al_jazeera",
+      "name": "Al Jazeera",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_left",
+      "factuality": "mostly_factual",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "haaretz",
+      "name": "Haaretz",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "lean_left",
+      "factuality": "high",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "the_intercept",
+      "name": "The Intercept",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "left",
+      "factuality": "mostly_factual",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "yt_juliandorey",
+      "name": "Yt Juliandorey",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "independent",
+      "factuality": "unrated",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "yt_dannyjones",
+      "name": "Yt Dannyjones",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "independent",
+      "factuality": "unrated",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    },
+    {
+      "id": "yt_thetimdillonshow",
+      "name": "Yt Thetimdillonshow",
+      "country": "",
+      "language": "en",
+      "url": "",
+      "bloc": "neutral",
+      "political_lean": "independent",
+      "factuality": "unrated",
+      "axis": {
+        "interventionist": 0,
+        "zionist": 0,
+        "atlanticist": 0,
+        "statist": 0,
+        "financialized": 0
+      },
+      "intel_aligned": [],
+      "state_aligned": [],
+      "notes": ""
+    }
+  ]
+}

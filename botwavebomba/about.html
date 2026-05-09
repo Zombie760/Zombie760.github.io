@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology — BOTWAVEBOMBA</title>
+  <meta name="description" content="How BOTWAVEBOMBA works. TELOS+PAI pipeline, 5-axis bias scoring, blindspot detection, framing analysis. Primary sources or nothing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/botwavebomba/assets/css/main.css">
+  <script src="/botwavebomba/assets/js/theme-switcher.js" defer></script>
+</head>
+<body>
+
+  <header class="bwb-header bwb-header--compact">
+    <div class="bwb-header-inner">
+      <a href="/botwavebomba/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <nav class="bwb-topnav">
+        <a href="/botwavebomba/">Feed</a>
+        <a href="/botwavebomba/blindspots.html">Blindspots</a>
+        <a href="/botwavebomba/sources.html">Sources</a>
+        <a href="/botwavebomba/about.html" class="active">Method</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="bwb-page-container bwb-about">
+
+    <div class="bwb-page-header">
+      <h1 class="bwb-page-title">THE METHOD</h1>
+      <p class="bwb-page-sub">
+        Every system that tells you what to read has a hidden architecture.
+        Here is ours. Fully documented. Every component named. Every assumption declared.
+      </p>
+    </div>
+
+    <article class="bwb-about-body">
+
+      <section class="bwb-about-section">
+        <h2>What BOTWAVEBOMBA Is</h2>
+        <p>
+          BOTWAVEBOMBA is the public face of a private journalism research infrastructure
+          called TELOS+PAI — a Purpose-Automated Intelligence substrate built to support
+          serious investigative work. Every article you see here was ingested, scored,
+          clustered, and framing-analyzed by an automated pipeline running against
+          244 global news sources, updated every six hours.
+        </p>
+        <p>
+          It is not a news aggregator in the Google News sense. It is not a fact-checker.
+          It is a <strong>framing delta engine</strong>: the goal is to show you
+          <em>what language different information blocs use to describe the same event</em>,
+          and where the gaps — the blindspots — live.
+        </p>
+      </section>
+
+      <section class="bwb-about-section">
+        <h2>Why Not Left / Center / Right?</h2>
+        <p>
+          Ground News, AllSides, and similar services organize sources on a left–center–right
+          axis calibrated to American domestic politics. That axis is useful in a country
+          where the main conflict is between two parties managing the same system.
+          It is useless when you are trying to understand what the Iranian press says
+          about the Strait of Hormuz, what the Swedish press says about NATO, or what
+          the Chinese press says about Taiwan.
+        </p>
+        <p>
+          BOTWAVEBOMBA uses five independent axes, each scored from -1.0 to +1.0:
+        </p>
+        <ul class="bwb-about-list">
+          <li><strong>Atlanticist</strong> — does this outlet assume US-led world order is legitimate?</li>
+          <li><strong>Interventionist</strong> — does this outlet support military intervention?</li>
+          <li><strong>Zionist</strong> — how does this outlet frame Israeli state action?</li>
+          <li><strong>Statist</strong> — does this outlet reinforce or challenge state authority?</li>
+          <li><strong>Financialized</strong> — does this outlet treat financial capitalism as natural?</li>
+        </ul>
+        <p>
+          These axes produce a five-dimensional fingerprint per source — not a simple left/right
+          label. A source can be anti-interventionist and pro-state simultaneously
+          (much of the RT editorial line). A source can be pro-market and anti-zionist
+          simultaneously (some European financial press on Israel/Palestine coverage).
+          The fingerprint captures that complexity. A label cannot.
+        </p>
+      </section>
+
+      <section class="bwb-about-section">
+        <h2>The TELOS+PAI Pipeline</h2>
+        <p>The pipeline runs in seven stages:</p>
+        <ol class="bwb-about-list bwb-pipeline-steps">
+          <li>
+            <strong>global_ingestor.py</strong> — pulls RSS feeds and article full-text
+            from all 244 sources, deduplicates by content hash, stores to
+            <code>news_cache.jsonl</code>.
+          </li>
+          <li>
+            <strong>event_clusterer.py</strong> — groups articles about the same event
+            using entity overlap and semantic proximity. A cluster = one story, many framings.
+          </li>
+          <li>
+            <strong>bias_scorer.py</strong> — scores each article on the five-axis system
+            using propaganda lexicon matching, agency-verb analysis, and source fingerprint
+            weighting. Score range: -6 to +6 per article.
+          </li>
+          <li>
+            <strong>framing_differ.py</strong> — within each cluster, compares headlines,
+            ledes, verb choices, and named entities across sources. Produces the framing
+            comparison table you see on each story page.
+          </li>
+          <li>
+            <strong>blindspot_analyzer.py</strong> — cross-references Western vs adversarial
+            vs non-aligned coverage volume per cluster. If one bloc covers a story and
+            another doesn't, that gap is surfaced as a blindspot with a score.
+          </li>
+          <li>
+            <strong>coverage_mapper.py</strong> — generates the heatmap distribution
+            (Western / Neutral / Adversarial) per story and the bias variance score.
+            High variance = the blocs disagree sharply on this story.
+          </li>
+          <li>
+            <strong>broadcast.py</strong> — serializes the pipeline output to
+            <code>/api/latest.json</code> and <code>/api/blindspots.json</code>,
+            which this site reads. Updated every six hours by systemd timer.
+          </li>
+        </ol>
+      </section>
+
+      <section class="bwb-about-section">
+        <h2>What We Do Not Do</h2>
+        <ul class="bwb-about-list">
+          <li>We do not editorialize. The framing comparison shows the delta; you read it.</li>
+          <li>We do not write summaries. Every "summary" field is extracted from the original article.</li>
+          <li>We do not rate factuality of individual claims. We rate source-level factuality patterns using MBFC data.</li>
+          <li>We do not suppress adversarial sources. RT and Sputnik are in the index, labeled clearly, sourced directly. Suppression is the problem we are solving for.</li>
+          <li>We do not invent. Every claim traceable to a document, a URL, a byline.</li>
+        </ul>
+      </section>
+
+      <section class="bwb-about-section">
+        <h2>The Journalism Connection</h2>
+        <p>
+          BOTWAVEBOMBA is the public surface of a private investigative research
+          substrate that supports long-form journalism. The same 244-source pipeline
+          that powers this site powers primary-source discovery for book-length
+          investigation — the kind that requires knowing not just what AP reported,
+          but what IRNA, Lenta.ru, and SCMP said on the same day about the same event,
+          in their original framing, before any translation layer added editorial distance.
+        </p>
+        <p>
+          The methodology is the same as the journalism: primary sources or nothing.
+          Every source URL is live. Every score is computed, not assigned. Every blindspot
+          is measured against the cache, not asserted.
+        </p>
+        <p>
+          <strong>BE UNDENIABLE.</strong> Every claim filed. Every source named.
+          A single unanchored assertion is the lever a critic uses to dismiss the whole work.
+          We do not write one.
+        </p>
+      </section>
+
+      <section class="bwb-about-section">
+        <h2>Bias Scoring Baseline</h2>
+        <p>
+          The five-axis scores are derived from three sources, hand-reconciled:
+        </p>
+        <ul class="bwb-about-list">
+          <li><strong>AllSides Media Bias Ratings</strong> — public ratings where available</li>
+          <li><strong>MBFC (Media Bias/Fact Check)</strong> — factuality and bias ratings</li>
+          <li><strong>TELOS+PAI hand-curation</strong> — for sources not rated by AllSides/MBFC,
+              or where the existing rating does not capture the five-axis complexity.
+              Methodology: editorial stance analysis of 50+ articles per source, entity
+              framing patterns, named-state-alignment patterns, institutional-alignment signals.</li>
+        </ul>
+        <p>
+          Scores were generated on 2026-04-23 for the initial 208-source set and extended
+          to 244 sources. The registry is versioned. Updates are logged.
+        </p>
+      </section>
+
+    </article>
+
+  </div>
+
+  <footer class="bwb-footer">
+    <div class="bwb-footer-inner">
+      <span class="bwb-footer-logo">BOTWAVEBOMBA</span>
+      <span class="bwb-footer-sub">A BOTWAVE journalism arm project · TELOS+PAI substrate · BE UNDENIABLE</span>
+    </div>
+  </footer>
+
+</body>
+</html>
