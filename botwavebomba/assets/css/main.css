@@ -1,137 +1,145 @@
 /* ── BOTWAVEBOMBA — main.css ── */
-/* Cold Signal dark theme + 4 LA sports colorways */
+/* Dark editorial theme — DM Sans / Playfair Display / DM Mono */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* ── BASE (Light default) ── */
+/* ── BASE (Dark editorial default) ── */
 :root {
-  --theme-primary:    #1d4ed8;
-  --theme-accent:     #dc2626;
-  --theme-gold:       #d97706;
-  --theme-bg-deep:    #ffffff;
-  --theme-bg-card:    #f8fafc;
-  --theme-bg-nav:     #ffffff;
-  --theme-border:     #e2e8f0;
-  --theme-text:       #0f172a;
-  --theme-text-muted: #94a3b8;
+  --theme-primary:    #BF3B2D;
+  --theme-accent:     #BF3B2D;
+  --theme-gold:       #C8902A;
+  --theme-bg-deep:    #0D0D0D;
+  --theme-bg-card:    #161616;
+  --theme-bg-nav:     #111111;
+  --theme-border:     rgba(255,255,255,0.12);
+  --theme-text:       #F0EDE8;
+  --theme-text-muted: rgba(255,255,255,0.30);
 
   /* Semantic signal colors — NEVER overridden by theme */
-  --signal-western:     #1d4ed8;
-  --signal-adversarial: #dc2626;
-  --signal-neutral:     #6b7280;
-  --signal-blindspot:   #d97706;
+  --signal-western:     #2255CC;
+  --signal-adversarial: #CC2222;
+  --signal-neutral:     #5E7070;
+  --signal-blindspot:   #C8902A;
   --signal-verified:    #059669;
 
-  /* Bias spectrum — L/C/R (Ground News model) */
+  /* Bias spectrum — L/C/R */
   --signal-left:        #2563eb;
-  --signal-center:      #6b7280;
-  --signal-right:       #dc2626;
+  --signal-center:      #5E7070;
+  --signal-right:       #CC2222;
 
   /* Typography */
-  --font-display: 'DM Serif Display', serif;
-  --font-mono:    'Space Mono', monospace;
-  --font-body:    'IBM Plex Sans', sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-mono:    'DM Mono', monospace;
+  --font-body:    'DM Sans', system-ui, sans-serif;
 
   /* Surfaces */
-  --bg:           #ffffff;
-  --bg-card:      #f8fafc;
-  --bg-hover:     #f1f5f9;
-  --bg-surface:   #f8fafc;
-  --border-subtle: #e2e8f0;
-  --border-default: #e2e8f0;
-  --text-primary:  #0f172a;
-  --text-secondary: #475569;
-  --text-muted:    #94a3b8;
-  --shadow-card:   0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-hover:  0 4px 12px rgba(0,0,0,0.1);
+  --bg:            #111111;
+  --bg-card:       #161616;
+  --bg-hover:      #1A1A1A;
+  --bg-surface:    #1A1A1A;
+  --border-subtle:  rgba(255,255,255,0.10);
+  --border-default: rgba(255,255,255,0.12);
+  --text-primary:  #F0EDE8;
+  --text-secondary: rgba(240,237,232,0.75);
+  --text-muted:    rgba(255,255,255,0.30);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.40);
+  --shadow-hover:  0 4px 12px rgba(0,0,0,0.55);
 }
 
-/* ── THEME 1: CHARGERS POWDER BLUE (Old School 1960–1973) ── */
+/* ── THEME 1: CHARGERS POWDER BLUE ── */
 [data-theme="powder-blue"] {
   --theme-primary:    #0080C6;
   --theme-accent:     #CC8800;
   --theme-gold:       #CC8800;
-  --theme-bg-deep:    #f0f8ff;
-  --theme-bg-card:    #ffffff;
-  --theme-bg-nav:     #f0f8ff;
-  --theme-border:     #c8dff0;
-  --theme-text:       #001830;
-  --theme-text-muted: #6699bb;
-  --bg: #f0f8ff;
-  --bg-card: #ffffff;
-  --bg-hover: #e0f0fa;
-  --bg-surface: #f0f8ff;
-  --text-primary: #001830;
-  --text-secondary: #336688;
-  --text-muted: #6699bb;
-  --border-subtle: #c8dff0;
-  --border-default: #c8dff0;
+  --theme-bg-deep:    #0a1218;
+  --theme-bg-card:    #0d1a22;
+  --theme-bg-nav:     #0a1218;
+  --theme-border:     rgba(0,128,198,0.25);
+  --theme-text:       #D0E8F4;
+  --theme-text-muted: rgba(208,232,244,0.35);
+  --bg:            #0a1218;
+  --bg-card:       #0d1a22;
+  --bg-hover:      #112030;
+  --bg-surface:    #0d1a22;
+  --text-primary:  #D0E8F4;
+  --text-secondary: rgba(208,232,244,0.75);
+  --text-muted:    rgba(208,232,244,0.35);
+  --border-subtle:  rgba(0,128,198,0.18);
+  --border-default: rgba(0,128,198,0.25);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.55);
+  --shadow-hover:  0 4px 12px rgba(0,128,198,0.18);
 }
 
-/* ── THEME 2: CHARGERS NAVY (Seau/Means 1988–2006) ── */
+/* ── THEME 2: CHARGERS NAVY ── */
 [data-theme="chargers-navy"] {
-  --theme-primary:    #003087;
+  --theme-primary:    #4477DD;
   --theme-accent:     #FFB612;
   --theme-gold:       #FFB612;
-  --theme-bg-deep:    #f0f4ff;
-  --theme-bg-card:    #ffffff;
-  --theme-bg-nav:     #f0f4ff;
-  --theme-border:     #c8d4f0;
-  --theme-text:       #001020;
-  --theme-text-muted: #5566aa;
-  --bg: #f0f4ff;
-  --bg-card: #ffffff;
-  --bg-hover: #e0e8ff;
-  --bg-surface: #f0f4ff;
-  --text-primary: #001020;
-  --text-secondary: #334477;
-  --text-muted: #5566aa;
-  --border-subtle: #c8d4f0;
-  --border-default: #c8d4f0;
+  --theme-bg-deep:    #080c18;
+  --theme-bg-card:    #0d1228;
+  --theme-bg-nav:     #080c18;
+  --theme-border:     rgba(68,119,221,0.25);
+  --theme-text:       #C8D4F0;
+  --theme-text-muted: rgba(200,212,240,0.35);
+  --bg:            #080c18;
+  --bg-card:       #0d1228;
+  --bg-hover:      #121838;
+  --bg-surface:    #0d1228;
+  --text-primary:  #C8D4F0;
+  --text-secondary: rgba(200,212,240,0.75);
+  --text-muted:    rgba(200,212,240,0.35);
+  --border-subtle:  rgba(68,119,221,0.18);
+  --border-default: rgba(68,119,221,0.25);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.55);
+  --shadow-hover:  0 4px 12px rgba(0,48,135,0.18);
 }
 
 /* ── THEME 3: LOS ANGELES DODGERS ── */
 [data-theme="dodgers"] {
-  --theme-primary:    #005A9C;
+  --theme-primary:    #3380CC;
   --theme-accent:     #EF3E42;
   --theme-gold:       #EF3E42;
-  --theme-bg-deep:    #f0f6ff;
-  --theme-bg-card:    #ffffff;
-  --theme-bg-nav:     #f0f6ff;
-  --theme-border:     #c0d4ee;
-  --theme-text:       #00101e;
-  --theme-text-muted: #4477aa;
-  --bg: #f0f6ff;
-  --bg-card: #ffffff;
-  --bg-hover: #e0eeff;
-  --bg-surface: #f0f6ff;
-  --text-primary: #00101e;
-  --text-secondary: #224466;
-  --text-muted: #4477aa;
-  --border-subtle: #c0d4ee;
-  --border-default: #c0d4ee;
+  --theme-bg-deep:    #080f1a;
+  --theme-bg-card:    #0d1828;
+  --theme-bg-nav:     #080f1a;
+  --theme-border:     rgba(51,128,204,0.25);
+  --theme-text:       #C0D4EE;
+  --theme-text-muted: rgba(192,212,238,0.35);
+  --bg:            #080f1a;
+  --bg-card:       #0d1828;
+  --bg-hover:      #102035;
+  --bg-surface:    #0d1828;
+  --text-primary:  #C0D4EE;
+  --text-secondary: rgba(192,212,238,0.75);
+  --text-muted:    rgba(192,212,238,0.35);
+  --border-subtle:  rgba(0,90,156,0.18);
+  --border-default: rgba(51,128,204,0.25);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.55);
+  --shadow-hover:  0 4px 12px rgba(0,90,156,0.18);
 }
 
 /* ── THEME 4: LOS ANGELES LAKERS ── */
 [data-theme="lakers"] {
-  --theme-primary:    #552583;
+  --theme-primary:    #7744BB;
   --theme-accent:     #FDB927;
   --theme-gold:       #FDB927;
-  --theme-bg-deep:    #faf5ff;
-  --theme-bg-card:    #ffffff;
-  --theme-bg-nav:     #faf5ff;
-  --theme-border:     #ddc8ee;
-  --theme-text:       #0d0014;
-  --theme-text-muted: #886699;
-  --bg: #faf5ff;
-  --bg-card: #ffffff;
-  --bg-hover: #f0e8ff;
-  --bg-surface: #faf5ff;
-  --text-primary: #0d0014;
-  --text-secondary: #553366;
-  --text-muted: #886699;
-  --border-subtle: #ddc8ee;
-  --border-default: #ddc8ee;
+  --theme-bg-deep:    #0d0814;
+  --theme-bg-card:    #160d20;
+  --theme-bg-nav:     #0d0814;
+  --theme-border:     rgba(119,68,187,0.25);
+  --theme-text:       #DDD0F0;
+  --theme-text-muted: rgba(221,208,240,0.35);
+  --bg:            #0d0814;
+  --bg-card:       #160d20;
+  --bg-hover:      #1e1230;
+  --bg-surface:    #160d20;
+  --text-primary:  #DDD0F0;
+  --text-secondary: rgba(221,208,240,0.75);
+  --text-muted:    rgba(221,208,240,0.35);
+  --border-subtle:  rgba(85,37,131,0.22);
+  --border-default: rgba(119,68,187,0.25);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.55);
+  --shadow-hover:  0 4px 12px rgba(85,37,131,0.18);
 }
 
 /* ── GLOBAL RESET + BODY ── */
@@ -162,7 +170,6 @@ img { max-width: 100%; }
   top: 0;
   z-index: 100;
   transition: background 0.3s ease;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
 .bwb-header-inner {
@@ -184,23 +191,22 @@ img { max-width: 100%; }
 
 .bwb-logo {
   font-family: var(--font-mono);
-  font-size: clamp(16px, 3vw, 22px);
-  font-weight: 700;
-  letter-spacing: -1px;
-  background: linear-gradient(135deg, var(--theme-primary), var(--theme-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--theme-primary);
   white-space: nowrap;
 }
 
-.bwb-logo--small { font-size: 16px; }
+.bwb-logo--small { font-size: 13px; }
 
 .bwb-tagline {
   font-family: var(--font-body);
+  font-weight: 300;
   font-size: 11px;
   color: var(--text-muted);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.02em;
 }
 
 .bwb-header-right {
@@ -242,8 +248,11 @@ img { max-width: 100%; }
 .bwb-topnav a {
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.15em;
   padding: 6px 12px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
   color: var(--text-secondary);
   border: 1px solid transparent;
   transition: all 0.15s;
@@ -279,7 +288,7 @@ img { max-width: 100%; }
 .bwb-stat-number {
   font-family: var(--font-mono);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--theme-primary);
   line-height: 1;
 }
@@ -343,8 +352,9 @@ img { max-width: 100%; }
 .bwb-filters button {
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 1.5px;
-  padding: 7px 16px;
+  letter-spacing: 0.15em;
+  padding: 10px 16px;
+  min-height: 44px;
   background: transparent;
   border: 1px solid var(--theme-border);
   color: var(--text-secondary);
@@ -362,8 +372,8 @@ img { max-width: 100%; }
 .bwb-filters button.active {
   background: var(--theme-primary);
   border-color: var(--theme-primary);
-  color: var(--theme-bg-deep);
-  font-weight: 700;
+  color: #fff;
+  font-weight: 500;
 }
 
 /* ── MAIN LAYOUT ── */
@@ -399,7 +409,7 @@ img { max-width: 100%; }
 .bwb-card {
   background: var(--bg-card);
   border: 1px solid var(--border-default);
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
   overflow: hidden;
   box-shadow: var(--shadow-card);
@@ -444,7 +454,7 @@ img { max-width: 100%; }
 
 /* ── CARD BODY ── */
 .bwb-card-body {
-  padding: 16px 20px 20px;
+  padding: 1.25rem 1.25rem 1.25rem;
 }
 
 .bwb-card-badges {
@@ -458,16 +468,16 @@ img { max-width: 100%; }
 .bwb-badge {
   font-family: var(--font-mono);
   font-size: 9px;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.15em;
   padding: 3px 8px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   border: 1px solid transparent;
 }
 
 .bwb-badge.blindspot {
   background: var(--signal-blindspot);
-  color: var(--theme-bg-deep);
+  color: #fff;
   border-color: var(--signal-blindspot);
 }
 
@@ -476,23 +486,25 @@ img { max-width: 100%; }
   color: var(--theme-accent);
 }
 
-.bwb-badge.western     { background: var(--signal-western); color: var(--theme-bg-deep); }
+.bwb-badge.western     { background: var(--signal-western); color: #fff; }
 .bwb-badge.neutral     { background: var(--signal-neutral); color: #fff; }
 .bwb-badge.adversarial { background: var(--signal-adversarial); color: #fff; }
 
 /* ── CARD CONTENT ── */
 .bwb-card-headline {
   font-family: var(--font-display);
-  font-size: clamp(18px, 2.5vw, 24px);
-  line-height: 1.25;
+  font-size: clamp(17px, 2.2vw, 22px);
+  line-height: 1.28;
   margin-bottom: 10px;
   color: var(--text-primary);
 }
 
 .bwb-card-summary {
+  font-family: var(--font-body);
+  font-weight: 300;
   font-size: 13px;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 16px;
 }
 
@@ -500,7 +512,7 @@ img { max-width: 100%; }
 .bwb-mini-heatmap { margin: 14px 0; }
 
 .bwb-heatmap-bar {
-  height: 5px;
+  height: 4px;
   background: var(--bg-surface);
   display: flex;
   overflow: hidden;
@@ -601,13 +613,14 @@ img { max-width: 100%; }
   padding: 16px;
   background: var(--bg-card);
   border: 1px solid var(--theme-border);
+  border-radius: 4px;
 }
 
 .hm-col-header {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 2px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 4px;
   text-transform: uppercase;
 }
@@ -634,7 +647,7 @@ img { max-width: 100%; }
   display: block;
   font-family: var(--font-mono);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-primary);
 }
 
@@ -680,13 +693,13 @@ img { max-width: 100%; }
   justify-content: center;
   font-family: var(--font-mono);
   font-size: 8px;
-  font-weight: 700;
+  font-weight: 500;
   overflow: hidden;
   transition: width 0.6s ease;
   cursor: default;
 }
 
-.hm-seg.western     { background: var(--signal-western);     color: var(--theme-bg-deep); }
+.hm-seg.western     { background: var(--signal-western);     color: #fff; }
 .hm-seg.neutral     { background: var(--signal-neutral);     color: #fff; }
 .hm-seg.adversarial { background: var(--signal-adversarial); color: #fff; }
 
@@ -767,9 +780,9 @@ img { max-width: 100%; }
   height: 100%;
   transition: width 0.5s ease;
 }
-.bwb-axis-fill.western     { background: var(--signal-western); opacity: 0.7; }
-.bwb-axis-fill.neutral     { background: var(--signal-neutral); opacity: 0.7; }
-.bwb-axis-fill.adversarial { background: var(--signal-adversarial); opacity: 0.7; }
+.bwb-axis-fill.western     { background: var(--signal-western); opacity: 0.8; }
+.bwb-axis-fill.neutral     { background: var(--signal-neutral); opacity: 0.8; }
+.bwb-axis-fill.adversarial { background: var(--signal-adversarial); opacity: 0.8; }
 
 .bwb-axis-midmark {
   position: absolute;
@@ -797,23 +810,26 @@ img { max-width: 100%; }
 
 .bwb-sidebar-block {
   background: var(--bg-card);
-  border: 1px solid var(--theme-border);
-  padding: 16px;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1.25rem;
 }
 
 .bwb-sidebar-title {
   font-family: var(--font-mono);
   font-size: 9px;
-  letter-spacing: 2px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--theme-primary);
   margin-bottom: 12px;
 }
 
 .bwb-sidebar-body {
+  font-family: var(--font-body);
+  font-weight: 300;
   font-size: 12px;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.8;
   margin-bottom: 10px;
 }
 
@@ -904,8 +920,8 @@ img { max-width: 100%; }
 }
 
 .bwb-section {
-  margin-bottom: 40px;
-  padding-bottom: 32px;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid var(--theme-border);
 }
 
@@ -948,7 +964,7 @@ img { max-width: 100%; }
   margin-bottom: 1px;
 }
 
-.bwb-framing-bloc-header.western     { background: var(--signal-western);     color: var(--theme-bg-deep); }
+.bwb-framing-bloc-header.western     { background: var(--signal-western);     color: #fff; }
 .bwb-framing-bloc-header.neutral     { background: var(--signal-neutral);     color: #fff; }
 .bwb-framing-bloc-header.adversarial { background: var(--signal-adversarial); color: #fff; }
 
@@ -968,7 +984,7 @@ img { max-width: 100%; }
 .bwb-framing-source-name {
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-primary);
 }
 
@@ -1036,7 +1052,7 @@ img { max-width: 100%; }
 .bwb-source-link-bloc.neutral     { color: var(--signal-neutral);     border: 1px solid var(--signal-neutral); }
 .bwb-source-link-bloc.adversarial { color: var(--signal-adversarial); border: 1px solid var(--signal-adversarial); }
 
-.bwb-source-link-name { font-weight: 600; color: var(--text-primary); }
+.bwb-source-link-name { font-weight: 500; color: var(--text-primary); }
 .bwb-source-link-country { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
 .bwb-source-link-url { font-family: var(--font-mono); font-size: 10px; color: var(--theme-primary); }
 
@@ -1063,17 +1079,19 @@ img { max-width: 100%; }
 
 .bwb-page-title {
   font-family: var(--font-mono);
-  font-size: clamp(24px, 4vw, 40px);
-  letter-spacing: -1px;
+  font-size: clamp(22px, 3.5vw, 36px);
+  letter-spacing: -0.5px;
   color: var(--theme-primary);
   margin-bottom: 12px;
 }
 
 .bwb-page-sub {
+  font-family: var(--font-body);
+  font-weight: 300;
   font-size: 14px;
   color: var(--text-secondary);
   max-width: 680px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .bwb-page-meta {
@@ -1087,8 +1105,8 @@ img { max-width: 100%; }
 .bwb-about-body { max-width: 720px; }
 
 .bwb-about-section {
-  margin-bottom: 40px;
-  padding-bottom: 32px;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid var(--theme-border);
 }
 
@@ -1102,9 +1120,11 @@ img { max-width: 100%; }
 }
 
 .bwb-about-section p {
+  font-family: var(--font-body);
+  font-weight: 300;
   font-size: 14px;
   color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: 1.9;
   margin-bottom: 12px;
 }
 
@@ -1173,7 +1193,7 @@ code {
 .bwb-sum-num {
   font-family: var(--font-mono);
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -1200,10 +1220,12 @@ code {
 
 .bwb-search {
   font-family: var(--font-mono);
-  font-size: 12px;
-  padding: 8px 16px;
+  font-size: 13px;
+  padding: 0 16px;
+  height: 48px;
   background: var(--bg-card);
   border: 1px solid var(--theme-border);
+  border-radius: 4px;
   color: var(--text-primary);
   width: 280px;
   outline: none;
@@ -1222,7 +1244,8 @@ code {
   font-family: var(--font-mono);
   font-size: 9px;
   letter-spacing: 1px;
-  padding: 6px 14px;
+  padding: 0 14px;
+  min-height: 44px;
   background: transparent;
   border: 1px solid var(--theme-border);
   color: var(--text-muted);
@@ -1297,8 +1320,8 @@ code {
   height: 100%;
   transition: width 0.3s;
 }
-.src-axis-fill.western     { background: var(--signal-western); opacity: 0.7; }
-.src-axis-fill.adversarial { background: var(--signal-adversarial); opacity: 0.7; }
+.src-axis-fill.western     { background: var(--signal-western); opacity: 0.8; }
+.src-axis-fill.adversarial { background: var(--signal-adversarial); opacity: 0.8; }
 
 .src-axis-mid {
   position: absolute;
@@ -1331,6 +1354,7 @@ code {
   padding: 20px;
   background: var(--bg-card);
   border: 1px solid var(--theme-border);
+  border-radius: 4px;
 }
 
 .bwb-axis-card-name {
@@ -1350,9 +1374,11 @@ code {
 }
 
 .bwb-axis-card p {
+  font-family: var(--font-body);
+  font-weight: 300;
   font-size: 12px;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 @media (max-width: 768px) {
@@ -1377,12 +1403,15 @@ code {
   padding: 20px;
   border: 1px solid var(--theme-border);
   background: var(--bg-card);
+  border-radius: 4px;
 }
 
 .bwb-explainer-card p {
+  font-family: var(--font-body);
+  font-weight: 300;
   font-size: 13px;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .bwb-explainer-label {
@@ -1406,7 +1435,7 @@ code {
   display: inline-block;
 }
 
-.bwb-bs-type-header.western-only     { background: var(--signal-western);     color: var(--theme-bg-deep); }
+.bwb-bs-type-header.western-only     { background: var(--signal-western);     color: #fff; }
 .bwb-bs-type-header.adversarial-only { background: var(--signal-adversarial); color: #fff; }
 .bwb-bs-type-header.mixed            { background: var(--theme-border);        color: var(--text-secondary); }
 
@@ -1425,12 +1454,12 @@ code {
   flex: 1;
 }
 
-.bwb-bs-bloc.zero { opacity: 0.5; }
+.bwb-bs-bloc.zero { opacity: 0.4; }
 
 .bwb-bs-num {
   font-family: var(--font-mono);
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
 }
 .bwb-bs-num.western     { color: var(--signal-western); }
@@ -1482,10 +1511,11 @@ code {
 
 .bwb-footer-logo {
   font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   color: var(--theme-primary);
-  letter-spacing: -0.5px;
+  text-transform: uppercase;
 }
 
 .bwb-footer-sub {
@@ -1511,8 +1541,9 @@ code {
 .bwb-footer-disclaimer {
   max-width: 1280px;
   margin: 0 auto;
-  font-size: 10px;
-  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.30);
   line-height: 1.6;
   border-top: 1px solid var(--theme-border);
   padding-top: 16px;
@@ -1526,10 +1557,10 @@ code {
 
 .bwb-loading-pulse {
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 4px;
-  color: var(--text-muted);
-  animation: loadpulse 1.5s infinite;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--theme-primary);
+  text-transform: uppercase;
 }
 
 .bwb-loading-sub {
@@ -1539,11 +1570,6 @@ code {
   color: var(--text-muted);
   margin-top: 8px;
   opacity: 0.6;
-}
-
-@keyframes loadpulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
 }
 
 .bwb-empty {
@@ -1614,15 +1640,21 @@ code {
 
 .bwb-theme-btn.active .bwb-theme-btn-label { color: var(--theme-primary); }
 
+/* ── MOBILE ── */
 @media (max-width: 768px) {
   .bwb-theme-btn-label { display: none; }
   .bwb-theme-dot { width: 14px; height: 14px; }
   .bwb-theme-switcher { gap: 4px; }
-  .bwb-header-inner { padding: 0 16px; }
+  .bwb-header-inner { padding: 0 1.25rem; }
   .bwb-legend-bar { display: none; }
-  .bwb-stats-bar { gap: 0; }
+  .bwb-stats-bar { gap: 0; padding: 8px 1.25rem; }
   .bwb-stat { padding: 0 10px; }
   .bwb-stat-number { font-size: 14px; }
+  .bwb-main { padding: 1.25rem; }
+  .bwb-filters { padding: 12px 1.25rem; }
+  .bwb-card-body { padding: 1.25rem; }
+  .bwb-page-container { padding: 2rem 1.25rem; }
+  .bwb-story-container { padding: 2rem 1.25rem; }
 }
 
 /* ── STORY PAGE: 5-AXIS NARRATIVE FINGERPRINT ── */
@@ -1674,12 +1706,12 @@ code {
 .bwb-bias-bar-wrap { margin: 14px 0 8px; }
 
 .bwb-bias-bar {
-  height: 6px;
+  height: 5px;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   display: flex;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .bwb-bias-seg {
@@ -1714,7 +1746,7 @@ code {
 .bwb-blindspot-flag {
   font-family: var(--font-mono);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.5px;
   color: var(--signal-blindspot);
   margin-right: 4px;
@@ -1734,8 +1766,8 @@ code {
   border-color: transparent;
 }
 .bwb-badge.blackout {
-  background: #0f172a;
-  color: #e2e8f0;
+  background: rgba(240,237,232,0.12);
+  color: #F0EDE8;
   border-color: transparent;
 }
 
@@ -1750,18 +1782,16 @@ code {
   gap: 4px;
 }
 .bwb-geo-mono-frame  { border-color: #7c3aed; }
-.bwb-geo-blackout    { border-color: #0f172a; }
+.bwb-geo-blackout    { border-color: rgba(240,237,232,0.30); }
 
 .bwb-geo-frame-label {
   font-family: var(--font-mono);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.5px;
 }
 .bwb-geo-mono-frame .bwb-geo-frame-label  { color: #7c3aed; }
-.bwb-geo-blackout   .bwb-geo-frame-label  { color: #0f172a; }
-
-[data-theme] .bwb-geo-blackout .bwb-geo-frame-label { color: var(--text-primary); }
+.bwb-geo-blackout   .bwb-geo-frame-label  { color: rgba(240,237,232,0.60); }
 
 .bwb-geo-counts {
   font-family: var(--font-mono);
@@ -1773,7 +1803,6 @@ code {
 /* Source pill bias_bucket colors */
 .bwb-source-pill.left  { border-color: var(--signal-left);   color: var(--signal-left); }
 .bwb-source-pill.right { border-color: var(--signal-right);  color: var(--signal-right); }
-/* center overlaps with existing .neutral fallback — keep muted */
 
 /* ── ARTICLE STRIP ── */
 .bwb-article-strip {
@@ -1850,11 +1879,11 @@ code {
 
 .bwb-section-divider-label {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 20px;
   font-style: italic;
   color: var(--text-primary);
   white-space: nowrap;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
 }
 
 .bwb-section-divider-line {
@@ -1863,7 +1892,7 @@ code {
   background: var(--border-default);
 }
 
-/* ── SECTION NAV (tabs for newspaper sections) ── */
+/* ── SECTION NAV ── */
 .bwb-section-tabs {
   border-bottom: 2px solid var(--border-default);
   margin-bottom: 0;
@@ -1882,7 +1911,7 @@ code {
   color: var(--theme-primary);
 }
 
-/* ── SIGNAL FILTERS (second filter row) ── */
+/* ── SIGNAL FILTERS ── */
 .bwb-signal-filters {
   padding-top: 6px;
 }

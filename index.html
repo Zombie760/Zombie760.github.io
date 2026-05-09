@@ -3,203 +3,538 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOTWAVEBOMBA — 244 Sources. Zero Spin.</title>
-  <meta name="description" content="Real-time multi-perspective news from 244 global sources. Western, adversarial, non-aligned — every framing visible. Powered by TELOS+PAI substrate.">
+  <title>BOTWAVE — Kyle Jimenez</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/botwavebomba/assets/css/main.css">
-  <script src="/botwavebomba/assets/js/theme-switcher.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --off-white: #F7F4EF;
+      --ink: #1A1814;
+      --ink-muted: #4A4640;
+      --ink-faint: #9A9490;
+      --rule: #D8D2C8;
+      --accent: #BF3B2D;
+      --accent-soft: #F2EAE8;
+      --mono: 'DM Mono', monospace;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--off-white);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      border-bottom: 0.5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--off-white);
+      z-index: 10;
+    }
+
+    .nav-wordmark {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--ink-muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 7rem 3rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.08;
+      color: var(--ink);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-body {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--ink-muted);
+      line-height: 1.8;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.65; }
+
+    /* ── SIDEBAR CARD ── */
+    .hero-sidebar {
+      border: 0.5px solid var(--rule);
+      padding: 1.75rem;
+      background: white;
+    }
+
+    .sidebar-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-book {
+      padding: 1rem 0;
+      border-bottom: 0.5px solid var(--rule);
+    }
+    .sidebar-book:last-of-type { border-bottom: none; }
+
+    .sidebar-book-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .sidebar-book-sub {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar-book a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .sidebar-book a:hover { text-decoration: underline; }
+
+    /* ── DIVIDER ── */
+    .section-rule {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      border: none;
+      border-top: 0.5px solid var(--rule);
+    }
+
+    /* ── PIPELINE SECTION ── */
+    .pipeline {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+    }
+
+    .section-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--ink-muted);
+      max-width: 560px;
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+    }
+
+    /* findings grid */
+    .findings {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 0.5px solid var(--rule);
+      margin-bottom: 2.5rem;
+    }
+
+    .finding {
+      background: var(--off-white);
+      padding: 1.5rem;
+    }
+
+    .finding-number {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .finding-label {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+
+    .pipeline-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: white;
+      background: var(--ink);
+      text-decoration: none;
+      padding: 0.85rem 1.75rem;
+      transition: background 0.2s;
+    }
+    .pipeline-cta:hover { background: var(--accent); }
+
+    /* ── QUOTE BAND ── */
+    .quote-band {
+      background: var(--ink);
+      padding: 4rem 3rem;
+      margin: 0;
+    }
+
+    .quote-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .quote-text {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+      font-weight: 400;
+      color: var(--off-white);
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+
+    .quote-attr {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* ── BIO SECTION ── */
+    .bio {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .bio-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding-top: 0.2rem;
+    }
+
+    .bio-text {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--ink-muted);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .bio-contact a {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 0.5px solid var(--rule);
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 100%;
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.08em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ink-faint);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+    }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1.25rem 1.25rem; }
+      .nav-links { display: none; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.25rem 3rem;
+        gap: 2.5rem;
+      }
+
+      .pipeline { padding: 3.5rem 1.25rem; }
+
+      .findings { grid-template-columns: 1fr 1fr; }
+
+      .quote-band { padding: 3rem 1.25rem; }
+
+      .bio {
+        grid-template-columns: 1fr;
+        padding: 3.5rem 1.25rem;
+        gap: 1.5rem;
+      }
+
+      footer { padding: 1.5rem 1.25rem; }
+      .footer-links { display: none; }
+    }
+
+    /* ── FADE-IN ON LOAD ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow  { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+    .hero-title    { animation: fadeUp 0.7s ease both; animation-delay: 0.22s; }
+    .hero-body     { animation: fadeUp 0.7s ease both; animation-delay: 0.34s; }
+    .hero-cta      { animation: fadeUp 0.7s ease both; animation-delay: 0.44s; }
+    .hero-sidebar  { animation: fadeUp 0.7s ease both; animation-delay: 0.52s; }
+  </style>
 </head>
 <body>
 
-  <!-- ── HEADER ── -->
-  <header class="bwb-header">
-    <div class="bwb-header-inner">
-      <div class="bwb-logo-lockup">
-        <div class="bwb-logo">BOTWAVEBOMBA</div>
-        <div class="bwb-tagline">Same story. Different framings. You decide.</div>
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-wordmark">BOTWAVE</a>
+    <ul class="nav-links">
+      <li><a href="#books">Books</a></li>
+      <li><a href="#pipeline">RECORD Pipeline</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="https://zombie760.github.io/botwavebomba/" target="_blank">BOTWAVEBOMBA ↗</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <p class="hero-eyebrow">Kyle Jimenez — Independent Author &amp; Researcher</p>
+      <h1 class="hero-title">Primary sources.<br>No spin.<br>BE UNDENIABLE.</h1>
+      <p class="hero-body">
+        Three books. One citation-verification pipeline. Every claim filed. Every source named.
+        No invented dialogue. The full method, in the open.
+      </p>
+      <a class="hero-cta" href="#books">View all books →</a>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="hero-sidebar" id="books">
+      <p class="sidebar-label">Current titles</p>
+
+      <div class="sidebar-book">
+        <p class="sidebar-book-title">They're Too Busy Marrying Themselves</p>
+        <p class="sidebar-book-sub">Primary-source nonfiction. Written for his daughters — the document record schools don't teach.</p>
+        <a href="https://zombie760.github.io/books/" target="_blank">Read →</a>
       </div>
-      <div class="bwb-header-right">
-        <div class="bwb-pipeline-badge">
-          <span class="bwb-pipe-dot"></span>
-          TELOS+PAI LIVE
-        </div>
-        <nav class="bwb-topnav">
-          <a href="/botwavebomba/" class="active">Feed</a>
-          <a href="/botwavebomba/blindspots.html">Blindspots</a>
-          <a href="/botwavebomba/sources.html">Sources</a>
-          <a href="/botwavebomba/about.html">Method</a>
-          <a href="/botwavebomba/funnies.html">Funnies</a>
-        </nav>
+
+      <div class="sidebar-book">
+        <p class="sidebar-book-title">Unwarranted Influence</p>
+        <p class="sidebar-book-sub">1,100+ citations. Capital classifies before the state. The foundational manuscript.</p>
+        <a href="https://zombie760.github.io/books/unwarranted_influence/" target="_blank">Read →</a>
+      </div>
+
+      <div class="sidebar-book">
+        <p class="sidebar-book-title">The Shield</p>
+        <p class="sidebar-book-sub">The oil-to-data shift. Same mechanism, modern era.</p>
+        <a href="https://zombie760.github.io/books/the_shield/" target="_blank">Read →</a>
+      </div>
+
+      <div class="sidebar-book">
+        <p class="sidebar-book-title">Did Not Step Forward</p>
+        <p class="sidebar-book-sub">Muhammad Ali and Kareem Abdul-Jabbar. The Cleveland Summit as hinge. 1960–2016.</p>
+        <a href="https://zombie760.github.io/books/did_not_step_forward/" target="_blank">Read →</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- PIPELINE -->
+  <section class="pipeline" id="pipeline">
+    <p class="section-eyebrow">RECORD — Citation Verification Pipeline</p>
+    <h2 class="section-title">AI catches AI errors.<br>Before the book ships.</h2>
+    <p class="section-body">
+      RECORD runs verbatim-claim verification against primary sources — flagging fabricated blockquotes,
+      phantom dockets, invented dates, and false attributions before publication.
+      Built in two months. Tested on a live manuscript. Every finding documented in a public audit trail.
+    </p>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="finding-number">3</div>
+        <div class="finding-label">Fabricated blockquotes caught prior to publication</div>
+      </div>
+      <div class="finding">
+        <div class="finding-number">1</div>
+        <div class="finding-label">Phantom docket identified and removed</div>
+      </div>
+      <div class="finding">
+        <div class="finding-number">22mo</div>
+        <div class="finding-label">Date error corrected — every other published book got it wrong</div>
       </div>
     </div>
 
-    <!-- Stats bar -->
-    <div class="bwb-stats-bar">
-      <div class="bwb-stat">
-        <span class="bwb-stat-number" id="source-count">244</span>
-        <span class="bwb-stat-label">sources</span>
-      </div>
-      <div class="bwb-stat-divider"></div>
-      <div class="bwb-stat">
-        <span class="bwb-stat-number" id="story-count">—</span>
-        <span class="bwb-stat-label">stories</span>
-      </div>
-      <div class="bwb-stat-divider"></div>
-      <div class="bwb-stat">
-        <span class="bwb-stat-number" id="blindspot-count">—</span>
-        <span class="bwb-stat-label">blindspots</span>
-      </div>
-      <div class="bwb-stat-divider"></div>
-      <div class="bwb-stat">
-        <span class="bwb-stat-number">5</span>
-        <span class="bwb-stat-label">bias axes</span>
-      </div>
-      <div class="bwb-stat-divider"></div>
-      <div class="bwb-stat">
-        <span class="bwb-stat-number" id="western-count">142</span>
-        <span class="bwb-stat-label">western</span>
-      </div>
-      <div class="bwb-stat-divider"></div>
-      <div class="bwb-stat">
-        <span class="bwb-stat-number" id="adversarial-count">53</span>
-        <span class="bwb-stat-label">adversarial</span>
-      </div>
-      <div class="bwb-stat-divider"></div>
-      <div class="bwb-stat">
-        <span class="bwb-stat-number" id="neutral-count">49</span>
-        <span class="bwb-stat-label">non-aligned</span>
-      </div>
-    </div>
-  </header>
+    <a class="pipeline-cta" href="https://zombie760.github.io/botwavebomba/" target="_blank">
+      Try BOTWAVEBOMBA ↗
+    </a>
+  </section>
 
-  <!-- ── BLOC LEGEND ── -->
-  <div class="bwb-legend-bar">
-    <div class="bwb-legend-item">
-      <div class="bwb-legend-dot western"></div>
-      <span>Western — high atlanticist/interventionist score (US/NATO/Israel-aligned press)</span>
-    </div>
-    <div class="bwb-legend-item">
-      <div class="bwb-legend-dot neutral"></div>
-      <span>Non-Aligned — regional press, Global South, independent outlets</span>
-    </div>
-    <div class="bwb-legend-item">
-      <div class="bwb-legend-dot adversarial"></div>
-      <span>Adversarial — multipolar/anti-intervention framing (RT, IRNA, CGTN, Sputnik)</span>
+  <!-- QUOTE BAND -->
+  <div class="quote-band">
+    <div class="quote-inner">
+      <p class="quote-text">
+        "Two months. One human. One CLI. Three caught fabrications. One shipped manuscript."
+      </p>
+      <p class="quote-attr">— RECORD Pipeline, Botwave Publishing</p>
     </div>
   </div>
 
-  <!-- ── SECTION TABS (populated dynamically from feed manifest) ── -->
-  <nav class="bwb-filters bwb-section-tabs" id="section-nav">
-    <button class="active" data-filter="all">All</button>
-    <!-- additional section buttons injected by feed.js -->
-  </nav>
-
-  <!-- ── SIGNAL FILTERS ── -->
-  <nav class="bwb-filters bwb-signal-filters" id="filter-nav">
-    <button data-filter="blindspot">BLINDSPOT</button>
-    <button data-filter="mono-frame">MONO-FRAME</button>
-    <button data-filter="blackout">W.BLACKOUT</button>
-    <button data-filter="has-video">Has Video</button>
-    <button data-filter="left-heavy">Left-Heavy</button>
-    <button data-filter="right-heavy">Right-Heavy</button>
-  </nav>
-
-  <!-- ── MAIN FEED ── -->
-  <main class="bwb-main">
-    <div id="story-feed" class="bwb-feed">
-      <div class="bwb-loading">
-        <div class="bwb-loading-pulse">FETCHING SIGNALS</div>
-        <div class="bwb-loading-sub">244 sources · TELOS+PAI substrate</div>
+  <!-- BIO -->
+  <section class="bio" id="about">
+    <p class="bio-label">About the author</p>
+    <div>
+      <p class="bio-text">
+        Kyle Jimenez is an independent author and researcher. He holds a BS in Kinesiology from CSU Northridge.
+        He is the developer of RECORD, a citation verification pipeline that caught three fabricated blockquotes
+        prior to publication. His work draws exclusively on primary sources.
+        <em>They're Too Busy Marrying Themselves</em> is his first book.
+      </p>
+      <div class="bio-contact">
+        <a href="mailto:lyfer1904@gmail.com">Press &amp; Publisher inquiries →</a>
       </div>
     </div>
+  </section>
 
-    <!-- Sidebar -->
-    <aside class="bwb-sidebar">
-      <div class="bwb-sidebar-block">
-        <div class="bwb-sidebar-title">PIPELINE</div>
-        <div class="bwb-pipeline-info">
-          <div class="bwb-pipe-row">
-            <span>Ingestor</span>
-            <span class="bwb-pipe-status live">LIVE</span>
-          </div>
-          <div class="bwb-pipe-row">
-            <span>Bias Scorer</span>
-            <span class="bwb-pipe-status live">LIVE</span>
-          </div>
-          <div class="bwb-pipe-row">
-            <span>Blindspot Detector</span>
-            <span class="bwb-pipe-status live">LIVE</span>
-          </div>
-          <div class="bwb-pipe-row">
-            <span>Framing Differ</span>
-            <span class="bwb-pipe-status live">LIVE</span>
-          </div>
-          <div class="bwb-pipe-row">
-            <span>Coverage Mapper</span>
-            <span class="bwb-pipe-status live">LIVE</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="bwb-sidebar-block">
-        <div class="bwb-sidebar-title">BIAS AXES</div>
-        <div class="bwb-axis-legend">
-          <div class="bwb-axis-row">
-            <span class="axis-name">interventionist</span>
-            <span class="axis-desc">pro-military vs peace</span>
-          </div>
-          <div class="bwb-axis-row">
-            <span class="axis-name">zionist</span>
-            <span class="axis-desc">pro-Israel vs critical</span>
-          </div>
-          <div class="bwb-axis-row">
-            <span class="axis-name">atlanticist</span>
-            <span class="axis-desc">US-led order vs multipolar</span>
-          </div>
-          <div class="bwb-axis-row">
-            <span class="axis-name">statist</span>
-            <span class="axis-desc">pro-state vs anti-state</span>
-          </div>
-          <div class="bwb-axis-row">
-            <span class="axis-name">financialized</span>
-            <span class="axis-desc">pro-market vs critical</span>
-          </div>
-        </div>
-        <a href="/botwavebomba/about.html" class="bwb-sidebar-link">Read methodology →</a>
-      </div>
-
-      <div class="bwb-sidebar-block">
-        <div class="bwb-sidebar-title">WHAT IS A BLINDSPOT?</div>
-        <p class="bwb-sidebar-body">A story covered heavily by one bloc — and ignored by another. The gap is the story.</p>
-        <a href="/botwavebomba/blindspots.html" class="bwb-sidebar-link">View all blindspots →</a>
-      </div>
-    </aside>
-  </main>
-
-  <!-- ── FOOTER ── -->
-  <footer class="bwb-footer">
-    <div class="bwb-footer-inner">
-      <div class="bwb-footer-left">
-        <span class="bwb-footer-logo">BOTWAVEBOMBA</span>
-        <span class="bwb-footer-sub">A BOTWAVE journalism arm project. Powered by TELOS+PAI substrate.</span>
-      </div>
-      <div class="bwb-footer-right">
-        <a href="https://t.me/botwave_news" target="_blank">Telegram</a>
-        <a href="/botwavebomba/about.html">About</a>
-        <a href="https://github.com/Zombie760" target="_blank">GitHub</a>
-      </div>
-    </div>
-    <div class="bwb-footer-disclaimer">
-      BOTWAVEBOMBA does not editorialize. It surfaces the framing delta between global sources.
-      Bias classification: AllSides + MBFC + hand-curated TELOS+PAI fingerprints.
-      Every source link is an original primary URL. Nothing invented.
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 BOTWAVE — Kyle Jimenez. All rights reserved.</span>
+      <ul class="footer-links">
+        <li><a href="https://zombie760.github.io/books/">Books</a></li>
+        <li><a href="https://zombie760.github.io/botwavebomba/">BOTWAVEBOMBA</a></li>
+        <li><a href="https://zombie760.github.io/corkboard/">Corkboards</a></li>
+      </ul>
     </div>
   </footer>
 
-  <script src="/botwavebomba/assets/js/api.js"></script>
-  <script src="/botwavebomba/assets/js/heatmap.js"></script>
-  <script src="/botwavebomba/assets/js/feed.js"></script>
 </body>
 </html>
