@@ -1838,3 +1838,51 @@ code {
   max-width: 80px;
   display: block;
 }
+
+/* ── NEWSPAPER SECTION DIVIDERS ── */
+.bwb-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 0 8px;
+  grid-column: 1 / -1;
+}
+
+.bwb-section-divider-label {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-style: italic;
+  color: var(--text-primary);
+  white-space: nowrap;
+  letter-spacing: -0.5px;
+}
+
+.bwb-section-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-default);
+}
+
+/* ── SECTION NAV (tabs for newspaper sections) ── */
+.bwb-section-tabs {
+  border-bottom: 2px solid var(--border-default);
+  margin-bottom: 0;
+}
+
+.bwb-section-tabs button {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.bwb-section-tabs button.active {
+  border-bottom-color: var(--theme-primary);
+  color: var(--theme-primary);
+}
+
+/* ── SIGNAL FILTERS (second filter row) ── */
+.bwb-signal-filters {
+  padding-top: 6px;
+}
