@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOTWAVE PAPERWORK — Non-fiction. Fiction. Primary sources.</title>
+  <meta name="description" content="BOTWAVE PAPERWORK — independent publishing for non-fiction investigators, documentary writers, and fiction built on real documents. Every claim filed. Every source named.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #b22222;
+      --ink: #0f0f0f;
+      --paper: #faf8f4;
+      --muted: #666;
+      --border: #e0dbd0;
+      --mono: "Space Mono", "Courier New", monospace;
+      --serif: "DM Serif Display", Georgia, serif;
+      --sans: "IBM Plex Sans", system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 3px solid var(--red);
+      padding: 2rem 2rem 1.5rem;
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-family: var(--mono);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--red);
+    }
+
+    .tagline {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--paper);
+      margin: 0.25rem 0 0;
+      line-height: 1.2;
+    }
+
+    nav {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      display: flex;
+      gap: 1.5rem;
+      letter-spacing: 0.08em;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    nav a:hover { color: var(--red); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      margin: 0 0 1.5rem;
+      font-weight: normal;
+    }
+
+    .hero-body {
+      max-width: 680px;
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.75;
+    }
+
+    .method-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .pill {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--red);
+      color: var(--red);
+      padding: 0.3em 0.8em;
+      text-transform: uppercase;
+    }
+
+    /* ── BOOKS GRID ── */
+    .books-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--red);
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .book-card {
+      border: 1px solid var(--border);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s;
+    }
+
+    .book-card:hover { border-color: var(--red); }
+
+    .book-card-spine {
+      background: var(--ink);
+      color: var(--red);
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+    }
+
+    .book-card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .book-genre {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .book-title {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      line-height: 1.2;
+      margin: 0 0 0.3rem;
+      font-weight: normal;
+    }
+
+    .book-subtitle {
+      font-family: Georgia, serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--muted);
+      margin: 0 0 1rem;
+      line-height: 1.4;
+    }
+
+    .book-byline {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--ink);
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .book-desc {
+      font-family: Georgia, serif;
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .book-stats {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .stat {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .stat span {
+      display: block;
+      font-size: 1rem;
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: 0;
+      font-family: var(--serif);
+    }
+
+    .book-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.6em 1.2em;
+      text-decoration: none;
+      border: 1.5px solid;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red);
+    }
+
+    .btn-primary:hover {
+      background: #8b0000;
+      border-color: #8b0000;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--ink);
+    }
+
+    .badge-status {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      padding: 0.25em 0.6em;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    .badge-live { background: #d4edda; color: #155724; }
+    .badge-wip  { background: #fff3cd; color: #856404; }
+
+    /* ── IMPRINT SECTION ── */
+    .imprint-section {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 4rem 2rem;
+      border-top: 3px solid var(--red);
+    }
+
+    .imprint-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .imprint-inner h2 {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin: 0 0 1.5rem;
+    }
+
+    .imprint-manifesto {
+      font-family: Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #ccc;
+    }
+
+    .imprint-manifesto strong {
+      color: var(--paper);
+    }
+
+    .imprint-manifesto em {
+      color: var(--red);
+      font-style: normal;
+    }
+
+    /* ── CONTACT / FOR WRITERS ── */
+    .writers-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .writers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      .writers-grid { grid-template-columns: 1fr; }
+      .header-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    .writers-block h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      margin: 0 0 0.75rem;
+      font-weight: normal;
+    }
+
+    .writers-block p {
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .writers-block ul {
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      color: #555;
+      padding-left: 1.5rem;
+      line-height: 1.9;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: #555;
+      text-align: center;
+      padding: 2rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    footer a { color: var(--red); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="logo">BOTWAVE PAPERWORK</div>
+      <div class="tagline">Every claim filed.<br>Every source named.</div>
+    </div>
+    <nav>
+      <a href="#books">Books</a>
+      <a href="#method">Method</a>
+      <a href="#writers">For Writers</a>
+      <a href="/">Home</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-eyebrow">BOTWAVE PAPERWORK — Independent Journalism Imprint</div>
+  <h1>Non-fiction built on documents.<br>Fiction built on facts.</h1>
+  <div class="hero-body">
+    <p>
+      BOTWAVE PAPERWORK publishes investigation-grade non-fiction, document-anchored sports memoir,
+      and fiction that earns its claims. Every book in this catalog carries a primary-source chain
+      the reader can verify. No anonymous sourcing. No inference presented as fact.
+      The documents speak. We arrange them.
+    </p>
+    <p>
+      Content for independent journalists, documentary writers, and researchers who need
+      the source layer, not just the story.
+    </p>
+  </div>
+  <div class="method-pills">
+    <div class="pill">Primary Sources Only</div>
+    <div class="pill">TELOS + PAI Method</div>
+    <div class="pill">Open Pipeline</div>
+    <div class="pill">BE UNDENIABLE</div>
+  </div>
+</section>
+
+<!-- ── BOOKS ── -->
+<section class="books-section" id="books">
+  <div class="section-label">The Catalog — 7 Books</div>
+  <div class="books-grid">
+
+    <!-- 1. Unwarranted Influence -->
+    <div class="book-card">
+      <div class="book-card-spine">BOTWAVE PAPERWORK · NON-FICTION</div>
+      <div class="book-card-body">
+        <div class="book-genre">Investigative Non-Fiction <span class="badge-status badge-live">Live</span></div>
+        <div class="book-title">Unwarranted Influence</div>
+        <div class="book-subtitle">A Primary-Source Investigation, 1095–2026</div>
+        <div class="book-byline">KYLE JIMENEZ</div>
+        <div class="book-desc">
+          Prescott Bush. The Union Banking Corporation. Vesting Order 248. The chain from
+          the Third Reich's industrial backers to Silicon Valley's extraction state — traced
+          through court filings, Federal Register entries, and signed memoranda. 643 pages.
+          1,100+ citations.
+        </div>
+        <div class="book-stats">
+          <div class="stat"><span>643</span> pages</div>
+          <div class="stat"><span>1,100+</span> citations</div>
+          <div class="stat"><span>1095</span> to 2026</div>
+        </div>
+        <div class="book-actions">
+          <a class="btn btn-primary" href="teasers/unwarranted_influence_teaser.pdf">Download Teaser (25 pages)</a>
+          <a class="btn btn-secondary" href="https://github.com/Zombie760/unwarranted-influence" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. The Shield -->
+    <div class="book-card">
+      <div class="book-card-spine">BOTWAVE PAPERWORK · NON-FICTION · VOL. 2</div>
+      <div class="book-card-body">
+        <div class="book-genre">Investigative Non-Fiction <span class="badge-status badge-live">Live</span></div>
+        <div class="book-title">The Shield</div>
+        <div class="book-subtitle">Military Industrial Complex 2.0: Data, Contracts, and the New Extraction State</div>
+        <div class="book-byline">KYLE JIMENEZ</div>
+        <div class="book-desc">
+          The second ledger. USASpending.gov contract numbers. SEC EDGAR filings.
+          The Epstein network's 28,076-document House Oversight release.
+          Anduril, Palantir, the flight log. Unwarranted Influence Vol. 2.
+        </div>
+        <div class="book-stats">
+          <div class="stat"><span>Primary</span> sources</div>
+          <div class="stat"><span>2013</span> to 2026</div>
+        </div>
+        <div class="book-actions">
+          <a class="btn btn-primary" href="teasers/the_shield_teaser.pdf">Download Teaser (25 pages)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Captain and Champ -->
+    <div class="book-card">
+      <div class="book-card-spine">BOTWAVE PAPERWORK · NON-FICTION</div>
+      <div class="book-card-body">
+        <div class="book-genre">Documentary Non-Fiction <span class="badge-status badge-live">Live</span></div>
+        <div class="book-title">Did Not Step Forward</div>
+        <div class="book-subtitle">The Captain and the Champ: A Ledger of Resistance, 1960–2016</div>
+        <div class="book-byline">AL GRINGO</div>
+        <div class="book-desc">
+          Two men. One refusal. Muhammad Ali's Form 150. The Alcindor Rule.
+          Clay v. United States. The Olympic medal thrown in the Ohio River.
+          Every document filed. Every courtroom entered.
+        </div>
+        <div class="book-stats">
+          <div class="stat"><span>15</span> chapters</div>
+          <div class="stat"><span>48K</span> words</div>
+          <div class="stat"><span>1960</span> to 2016</div>
+        </div>
+        <div class="book-actions">
+          <a class="btn btn-primary" href="teasers/captain_and_champ_teaser.pdf">Download Teaser (25 pages)</a>
+          <a class="btn btn-secondary" href="https://github.com/Zombie760/captain-and-champ" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. SUDO KINGDOM -->
+    <div class="book-card">
+      <div class="book-card-spine">BOTWAVE PAPERWORK · FICTION</div>
+      <div class="book-card-body">
+        <div class="book-genre">Fiction <span class="badge-status badge-live">Live</span></div>
+        <div class="book-title">SUDO KINGDOM</div>
+        <div class="book-subtitle">Root access to the system.</div>
+        <div class="book-byline">AL GRINGO</div>
+        <div class="book-desc">
+          The infrastructure was always fiction. The access was always real.
+          A novel built on the same substrate as the non-fiction — because
+          the only difference between them is who signed the vesting order.
+        </div>
+        <div class="book-actions">
+          <a class="btn btn-primary" href="teasers/sudo_kingdom_teaser.pdf">Download Teaser (25 pages)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. DOGE -->
+    <div class="book-card">
+      <div class="book-card-spine">BOTWAVE PAPERWORK · FICTION</div>
+      <div class="book-card-body">
+        <div class="book-genre">Fiction <span class="badge-status badge-live">Live</span></div>
+        <div class="book-title">DOGE</div>
+        <div class="book-subtitle">The audit that was never meant to happen.</div>
+        <div class="book-byline">AL GRINGO</div>
+        <div class="book-desc">
+          They gave him the keys to the ledger. He read it.
+          What he found was not fraud. It was architecture.
+        </div>
+        <div class="book-actions">
+          <a class="btn btn-primary" href="teasers/doge_teaser.pdf">Download Teaser (25 pages)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Blue Heaven -->
+    <div class="book-card">
+      <div class="book-card-spine">BOTWAVE PAPERWORK · MEMOIR</div>
+      <div class="book-card-body">
+        <div class="book-genre">Sports Memoir <span class="badge-status badge-wip">In Progress</span></div>
+        <div class="book-title">Voice in the Transistor</div>
+        <div class="book-subtitle">Blue Heaven: A Dodger Memoir, 1947–2016</div>
+        <div class="book-byline">AL GRINGO</div>
+        <div class="book-desc">
+          The transistor radio. The voice of Vin Scully. Brooklyn to Los Angeles.
+          Koufax's perfect game. Gibson's limp. The long twilight of the blue.
+        </div>
+        <div class="book-stats">
+          <div class="stat"><span>13</span> chapters</div>
+          <div class="stat"><span>1947</span> to 2016</div>
+        </div>
+        <div class="book-actions">
+          <a class="btn btn-primary" href="teasers/blue_heaven_teaser.pdf">Download Teaser (25 pages)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Magic Hour -->
+    <div class="book-card">
+      <div class="book-card-spine">BOTWAVE PAPERWORK · MEMOIR</div>
+      <div class="book-card-body">
+        <div class="book-genre">Sports Memoir <span class="badge-status badge-wip">In Progress</span></div>
+        <div class="book-title">Magic Hour</div>
+        <div class="book-subtitle">A Memoir of Showtime, 1979–1991</div>
+        <div class="book-byline">AL GRINGO</div>
+        <div class="book-desc">
+          The Forum. The fast break. The no-look pass. The cocaine years.
+          November 7, 1991. Magic Johnson steps to the microphone.
+          The lights go out on an era.
+        </div>
+        <div class="book-stats">
+          <div class="stat"><span>13</span> chapters</div>
+          <div class="stat"><span>1979</span> to 1991</div>
+        </div>
+        <div class="book-actions">
+          <a class="btn btn-primary" href="teasers/magic_hour_teaser.pdf">Download Teaser (25 pages)</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── METHOD / IMPRINT ── -->
+<section class="imprint-section" id="method">
+  <div class="imprint-inner">
+    <h2>The Method — BOTWAVE PAPERWORK</h2>
+    <div class="imprint-manifesto">
+      <p>
+        <strong>Every claim filed. Every source named.</strong> A single unanchored claim is the
+        lever a critic uses to dismiss the whole work. We do not write one.
+      </p>
+      <p>
+        Acceptable primary sources: a filed document with an archive reference. A court record
+        with case number and court. A signed treaty, cable, or memorandum with date, signatory,
+        and archive location. A contemporary newspaper of record with date and page. A peer-reviewed
+        monograph citing the above. Trial testimony with volume and page.
+      </p>
+      <p>
+        If a claim cannot be anchored to one of those, <em>it is cut</em>. No "widely reported."
+        No "it is believed." No anonymous sourcing. No inference presented as fact. The document is
+        named or the sentence does not appear.
+      </p>
+      <p>
+        This is not a standard. It is a pipeline. Every manuscript in this catalog has been processed
+        through <strong>TELOS + PAI</strong> — the Purpose + Automated Instruction substrate built
+        on Daniel Miessler's open-source framework. Scout → Recorder → Writer → Editor → Verifier.
+        The gate is hard-coded. It cannot be bypassed.
+      </p>
+      <p>
+        <em>BE UNDENIABLE.</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOR WRITERS ── -->
+<section class="writers-section" id="writers">
+  <div class="section-label">BOTWAVE PAPERWORK — For Independent Writers</div>
+  <div class="writers-grid">
+    <div class="writers-block">
+      <h3>What this imprint is for</h3>
+      <p>
+        BOTWAVE PAPERWORK exists for independent journalists, documentary filmmakers,
+        and writers who are building document-grade work outside the traditional publishing
+        apparatus. The substrate — the claim chain, the source taxonomy, the verification
+        pipeline — is open architecture. We publish our own work first. We document the method
+        as we go. The pipeline is reproducible.
+      </p>
+      <p>
+        If you are a writer working at this standard and want to know how the pipeline works,
+        the source is public on GitHub.
+      </p>
+    </div>
+    <div class="writers-block">
+      <h3>What we publish</h3>
+      <ul>
+        <li>Investigation-grade non-fiction anchored to primary sources</li>
+        <li>Sports memoir grounded in documented record</li>
+        <li>Fiction built on the same source substrate as the non-fiction</li>
+        <li>Method documentation for journalists and researchers</li>
+      </ul>
+      <p>
+        We do not publish speculation, anonymous sourcing, or inference presented as fact.
+        We do not accept work that cannot pass the Prime Directive gate.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>
+    © 2026 BOTWAVE PAPERWORK — Kyle Jimenez / Al Gringo — All rights reserved.<br>
+    Teasers are for preview only. Not for redistribution or commercial use.<br>
+    <a href="https://github.com/Zombie760" target="_blank">GitHub: Zombie760</a>
+    &nbsp;·&nbsp;
+    <a href="/botwavebomba/">BOTWAVEBOMBA News</a>
+    &nbsp;·&nbsp;
+    <a href="/">Home</a>
+  </p>
+</footer>
+
+</body>
+</html>
