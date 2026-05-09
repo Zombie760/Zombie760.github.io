@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOTWAVE — Enterprise Infrastructure at Blue-Collar Budget</title>
+  <meta name="description" content="Three production systems. One methodology. BOTWAVE TRADES, CSM, and WAVESOX — built with TELOS+PAI on a local GPU by a former plumber.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #111111;
+      --bg-card:   #161616;
+      --bg-surface:#1A1A1A;
+      --border:    rgba(255,255,255,0.10);
+      --border-hi: rgba(255,255,255,0.18);
+      --text:      #F0EDE8;
+      --text-2:    rgba(240,237,232,0.72);
+      --text-3:    rgba(255,255,255,0.30);
+      --accent:    #BF3B2D;
+      --green:     #059669;
+      --mono: 'DM Mono', monospace;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { opacity: 0.8; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 3rem;
+      height: 56px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-card);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wordmark {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 6rem 3rem 5rem;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--text-2);
+    }
+
+    .hero-body {
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: var(--text-2);
+      max-width: 580px;
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      border: 1px solid var(--green);
+      padding: 0.4rem 0.9rem;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ── SECTION SHELL ── */
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4.5rem 3rem;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-body {
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--text-2);
+      max-width: 560px;
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── METHOD GRID (TELOS+PAI) ── */
+    .method-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .method-cell {
+      background: var(--bg-card);
+      padding: 1.5rem;
+    }
+
+    .method-num {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .method-q {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .method-a {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+
+    /* ── CODE BLOCK ── */
+    .code-wrap {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-hi);
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .code-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .code-label span { color: var(--accent); }
+
+    pre {
+      padding: 1.25rem 1.25rem;
+      overflow-x: auto;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      line-height: 1.75;
+      color: var(--text-2);
+      scrollbar-width: none;
+    }
+    pre::-webkit-scrollbar { display: none; }
+
+    .kw  { color: #7c9fd4; }
+    .fn  { color: #d4a96a; }
+    .st  { color: #8fc08a; }
+    .cm  { color: var(--text-3); font-style: italic; }
+    .ac  { color: var(--accent); }
+
+    /* ── PRODUCT CARDS ── */
+    .products {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      margin-bottom: 2rem;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      padding: 2rem;
+    }
+
+    .product-tag {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .product-name {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .product-body {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-2);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .product-specs {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .product-specs li {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: var(--text-3);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .product-specs li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* ── TRADES GRID ── */
+    .trades-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-bottom: 2rem;
+    }
+
+    .trade-cell {
+      background: var(--bg-card);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+
+    .trade-icon {
+      font-family: var(--mono);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .trade-name {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .trade-status {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .trade-status::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--green);
+      display: inline-block;
+    }
+
+    /* ── STAT ROW ── */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-cell {
+      background: var(--bg-card);
+      padding: 1.5rem;
+    }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+
+    /* ── STACK TABLE ── */
+    .stack-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+
+    .stack-table th {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      text-align: left;
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stack-table td {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text-2);
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .stack-table tr:hover td { background: var(--bg-surface); }
+
+    .stack-table td:first-child { color: var(--text); font-weight: 500; }
+
+    .tag-live {
+      color: var(--green);
+      border: 1px solid var(--green);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      padding: 1px 5px;
+      text-transform: uppercase;
+    }
+
+    /* ── QUOTE BAND ── */
+    .quote-band {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 3rem;
+    }
+
+    .quote-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .quote-text {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .quote-attr {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .cta-title {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-2);
+    }
+
+    .cta-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-width: 160px;
+    }
+
+    .btn-primary {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      text-decoration: none;
+      padding: 0.85rem 1.5rem;
+      text-align: center;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-ghost {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      padding: 0.85rem 1.5rem;
+      text-align: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--text-2); color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 3rem;
+      background: var(--bg-card);
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--text-3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-3);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+      .hero { padding: 4rem 1.25rem 3rem; }
+      .section { padding: 3rem 1.25rem; }
+      .method-grid { grid-template-columns: 1fr; }
+      .products { grid-template-columns: 1fr; }
+      .trades-grid { grid-template-columns: 1fr 1fr; }
+      .stat-row { grid-template-columns: 1fr; }
+      .cta-section { grid-template-columns: 1fr; padding: 3rem 1.25rem; }
+      .quote-band { padding: 3rem 1.25rem; }
+      footer { padding: 1.5rem 1.25rem; }
+      .footer-links { display: none; }
+      pre { font-size: 0.75rem; }
+    }
+
+    /* ── FADE IN ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow { animation: fadeUp 0.5s ease both 0.05s; }
+    .hero-title   { animation: fadeUp 0.6s ease both 0.15s; }
+    .hero-body    { animation: fadeUp 0.6s ease both 0.25s; }
+    .live-badge   { animation: fadeUp 0.6s ease both 0.35s; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-wordmark">BOTWAVE</a>
+    <ul class="nav-links">
+      <li><a href="#method">Method</a></li>
+      <li><a href="#trades">Trades</a></li>
+      <li><a href="#csm">CSM</a></li>
+      <li><a href="#wavesox">WAVESOX</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="https://zombie760.github.io/botwavebomba/" target="_blank">BOTWAVEBOMBA ↗</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">BOTWAVE — Business Arm</p>
+    <h1 class="hero-title">
+      Enterprise code.<br>
+      <em>Blue-collar budget.</em>
+    </h1>
+    <p class="hero-body">
+      Three production systems built in under three months by a former plumber.
+      No VC. No team. One GPU and a methodology that forces every tool to prove it works
+      before the next one gets built.
+    </p>
+    <span class="live-badge"><span class="live-dot"></span>4 bots live in production</span>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- METHOD -->
+  <section class="section" id="method">
+    <p class="section-label">The Methodology</p>
+    <h2 class="section-title">TELOS + PAI</h2>
+    <p class="section-body">
+      Every tool in this stack was built under the same four-question discipline.
+      Answer all four or the tool doesn't ship.
+      Stolen from Daniel Miessler's PAI framework and stress-tested on real production problems.
+    </p>
+
+    <div class="method-grid">
+      <div class="method-cell">
+        <p class="method-num">Question 01</p>
+        <p class="method-q">How does this write to substrate?</p>
+        <p class="method-a">Every run appends an immutable JSONL receipt. No silent exits. Success and failure both get logged. The substrate is the moat — code is replaceable.</p>
+      </div>
+      <div class="method-cell">
+        <p class="method-num">Question 02</p>
+        <p class="method-q">How does this learn from success and failure?</p>
+        <p class="method-a">Patterns that work get promoted to registries. Patterns that fail get written to failure stores. The system gets sharper with every run, not just every deploy.</p>
+      </div>
+      <div class="method-cell">
+        <p class="method-num">Question 03</p>
+        <p class="method-q">How does this extend via registry, not hard-code?</p>
+        <p class="method-a">New capability = config edit. New trade = drop a config.json in a directory. New proxy use case = add a zone to registry.json. Nothing is wired into the code.</p>
+      </div>
+      <div class="method-cell">
+        <p class="method-num">Question 04</p>
+        <p class="method-q">How does this feed the other arms?</p>
+        <p class="method-a">The proxy pool that validates bounty targets is the same pool that routes journalism research. The stealth browser that evades WAFs also protects OSINT passes. Nothing is isolated.</p>
+      </div>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        substrate_writer.py — the pattern every tool inherits
+        <span>Python</span>
+      </div>
+      <pre><span class="cm"># Every PAI Pack ends here — success or failure, both get a receipt</span>
+<span class="kw">def</span> <span class="fn">write_claim</span>(arm: <span class="fn">str</span>, tool: <span class="fn">str</span>, payload: <span class="fn">dict</span>) -> <span class="fn">None</span>:
+    receipt = {
+        <span class="st">"id"</span>:        <span class="fn">str</span>(uuid.uuid4()),
+        <span class="st">"ts"</span>:        datetime.utcnow().isoformat() + <span class="st">"Z"</span>,
+        <span class="st">"arm"</span>:       arm,
+        <span class="st">"tool"</span>:      tool,
+        <span class="st">"verdict"</span>:   payload.get(<span class="st">"verdict"</span>, <span class="st">"pass"</span>),
+        <span class="st">"payload"</span>:   payload,
+    }
+    <span class="kw">with</span> <span class="fn">open</span>(CLAIMS_PATH, <span class="st">"a"</span>) <span class="kw">as</span> fh:
+        fh.write(json.dumps(receipt) + <span class="st">"\n"</span>)   <span class="cm"># append-only, never delete</span></pre>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        health_score.py — registry-driven, zero hardcoded weights
+        <span>Python</span>
+      </div>
+      <pre><span class="cm"># Weights live in config/registry.json — change behavior without touching code</span>
+<span class="kw">def</span> <span class="fn">compute_health</span>(customer: Customer, registry: <span class="fn">dict</span>) -> HealthScore:
+    weights = registry[<span class="st">"health_score"</span>][<span class="st">"weights"</span>]
+    thresholds = registry[<span class="st">"health_score"</span>][<span class="st">"thresholds"</span>]
+
+    usage_score      = <span class="fn">score_usage</span>(customer, thresholds)      <span class="cm"># 40%</span>
+    financial_score  = <span class="fn">score_financial</span>(customer, thresholds)   <span class="cm"># 20%</span>
+    engagement_score = <span class="fn">score_engagement</span>(customer, thresholds)  <span class="cm"># 20%</span>
+    outcomes_score   = <span class="fn">score_outcomes</span>(customer, thresholds)    <span class="cm"># 20%</span>
+
+    composite = (
+        usage_score      * weights[<span class="st">"usage"</span>]      +
+        financial_score  * weights[<span class="st">"financial"</span>]  +
+        engagement_score * weights[<span class="st">"engagement"</span>] +
+        outcomes_score   * weights[<span class="st">"outcomes"</span>]
+    )
+    segment = <span class="st">"green"</span> <span class="kw">if</span> composite >= <span class="ac">70</span> <span class="kw">else</span> <span class="st">"yellow"</span> <span class="kw">if</span> composite >= <span class="ac">40</span> <span class="kw">else</span> <span class="st">"red"</span>
+    <span class="kw">return</span> HealthScore(composite=composite, segment=segment, detail={...})</pre>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- TRADES -->
+  <section class="section" id="trades">
+    <p class="section-label">Product One</p>
+    <h2 class="section-title">BOTWAVE TRADES</h2>
+    <p class="section-body">
+      A trade-agnostic Telegram bot for sub-contractors. One codebase, zero re-configuration —
+      set an env var and it becomes a plumbing bot, an electrical bot, an HVAC bot, a GC bot.
+      Quotes, jobs, invoices, payments — all tracked in JSONL substrate, queryable by text message.
+    </p>
+
+    <div class="trades-grid">
+      <div class="trade-cell">
+        <div class="trade-icon">🔧</div>
+        <div class="trade-name">Plumbing</div>
+        <div class="trade-status">live · systemd</div>
+      </div>
+      <div class="trade-cell">
+        <div class="trade-icon">⚡</div>
+        <div class="trade-name">Electrical</div>
+        <div class="trade-status">live · systemd</div>
+      </div>
+      <div class="trade-cell">
+        <div class="trade-icon">❄️</div>
+        <div class="trade-name">HVAC</div>
+        <div class="trade-status">live · systemd</div>
+      </div>
+      <div class="trade-cell">
+        <div class="trade-icon">🏗️</div>
+        <div class="trade-name">General Contractor</div>
+        <div class="trade-status">live · systemd</div>
+      </div>
+    </div>
+
+    <div class="products" style="grid-template-columns: 1fr 1fr; margin-bottom: 2rem;">
+      <div class="product-card" style="border-right: 0;">
+        <p class="product-tag">What it handles</p>
+        <ul class="product-specs" style="gap: 0.6rem;">
+          <li>Quote requests — inbound text → structured quote in under 60 seconds</li>
+          <li>"Who owes me" — unpaid invoice summary on demand</li>
+          <li>"How much this month" — revenue query, no dashboard needed</li>
+          <li>Job scheduling, customer records, payment logging</li>
+          <li>Daily audit to JSONL substrate — every transaction immutable</li>
+        </ul>
+      </div>
+      <div class="product-card">
+        <p class="product-tag">How it's built</p>
+        <ul class="product-specs" style="gap: 0.6rem;">
+          <li>python-telegram-bot + SQLite + JSONL substrate</li>
+          <li>Local Ollama brain — gemma4-wave on RTX 5060, no cloud required</li>
+          <li>Trade config loaded from directory — new trade = new config.json, no code change</li>
+          <li>Systemd template unit — one service file runs all four trades</li>
+          <li>Anthropic fallback when local inference is saturated</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        sc_master.py — trade-agnostic core (env var sets the trade)
+        <span>Python</span>
+      </div>
+      <pre><span class="cm"># BOTWAVE_TRADE=electrical runs the electrical bot.</span>
+<span class="cm"># BOTWAVE_TRADE=hvac runs the HVAC bot. Same binary.</span>
+TRADE_KEY  = os.environ[<span class="st">"BOTWAVE_TRADE"</span>].strip().lower()
+_TRADE_DIR = (_TRADES / TRADE_KEY).resolve()   <span class="cm"># trades/electrical/, trades/hvac/, etc.</span>
+_TRADE_CFG = json.loads((_TRADE_DIR / <span class="st">"config.json"</span>).read_text())
+
+<span class="cm"># Config drives labor rates, knowledge base, token, company name.</span>
+<span class="cm"># Zero hardcoded trade logic in sc_master.py itself.</span>
+LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTWAVE_LABOR_RATE"</span>,
+                   _TRADE_CFG.get(<span class="st">"default_labor_rate"</span>, <span class="ac">125</span>)))
+
+<span class="cm"># Systemd template — one unit file, four instances:</span>
+<span class="cm"># botwave-sc@plumbing.service   botwave-sc@electrical.service</span>
+<span class="cm"># botwave-sc@hvac.service       botwave-sc@gc.service</span></pre>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- CSM -->
+  <section class="section" id="csm">
+    <p class="section-label">Product Two</p>
+    <h2 class="section-title">BOTWAVE CSM</h2>
+    <p class="section-body">
+      Customer success automation for small construction SaaS — the segment where one churn means a 5% revenue drop and one expansion means a 10% lift.
+      Automates 70–80% of CSM workload. The rest stays human because it has to.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="stat-num">&lt;24h</div>
+        <div class="stat-label">closed-won → first onboarding email</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">&lt;5m</div>
+        <div class="stat-label">QBR deck from raw usage data</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">30d</div>
+        <div class="stat-label">no-touch alert — before the customer ghosts</div>
+      </div>
+    </div>
+
+    <div class="products">
+      <div class="product-card">
+        <p class="product-tag">health_score.py</p>
+        <p class="product-name">Daily Health Scoring</p>
+        <p class="product-body">Four-factor composite. Usage adoption (40%), financial health (20%), engagement (20%), outcomes (20%). Green / Yellow / Red segmentation. Alerts surface before a human would notice.</p>
+        <ul class="product-specs">
+          <li>Registry-driven weights — change scoring without touching code</li>
+          <li>Red alert triggers to Slack / Telegram before 30-day no-touch</li>
+          <li>Every score written to substrate with full audit trail</li>
+        </ul>
+      </div>
+      <div class="product-card">
+        <p class="product-tag">qbr_generator.py</p>
+        <p class="product-name">QBR on Demand</p>
+        <p class="product-body">Quarterly Business Review deck generated in under five minutes from usage signals. No manual data pulling. No spreadsheet gymnastics. The CSM walks into the call with numbers, not impressions.</p>
+        <ul class="product-specs">
+          <li>Pulls from substrate — retention, NRR, adoption, time-saved</li>
+          <li>Output: structured markdown → PDF via pandoc</li>
+          <li>Per-customer, timestamped, stored in substrate for trend tracking</li>
+        </ul>
+      </div>
+      <div class="product-card">
+        <p class="product-tag">expansion_scanner.py</p>
+        <p class="product-name">Expansion Signal Detection</p>
+        <p class="product-body">Detects upsell opportunities from usage signals, not gut feel. NPS above 8 combined with high-adoption rate = expansion candidate. No human review needed for the flag.</p>
+        <ul class="product-specs">
+          <li>Reads substrate daily — no API polling in the main loop</li>
+          <li>Expansion candidates written to a separate claims partition</li>
+          <li>Human handles the conversation; the machine finds the moment</li>
+        </ul>
+      </div>
+      <div class="product-card">
+        <p class="product-tag">churn_playbook.py</p>
+        <p class="product-name">Churn Prevention Playbook</p>
+        <p class="product-body">When health score drops to Red, the playbook fires: escalation email, executive sponsor alert, recovery task assigned to a human. The machine doesn't try to save the account — it gets the right human in front of it fast.</p>
+        <ul class="product-specs">
+          <li>Trigger: health composite below threshold from registry</li>
+          <li>Escalation path configurable per customer segment</li>
+          <li>Every intervention logged — measure what works, cut what doesn't</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        TELOS for CSM — the goals that justify every script
+        <span>Markdown</span>
+      </div>
+      <pre><span class="cm">## GOALS (from csm_telos.md)</span>
+
+<span class="kw">| ID  | Goal                                      | Target            |</span>
+<span class="kw">| G1  | Daily health score for every customer     | 100% coverage     |</span>
+<span class="kw">| G2  | Onboarding automation from closed-won     | &lt;24h to first     |</span>
+<span class="kw">| G3  | QBR deck auto-generated                   | &lt;5 min to produce |</span>
+<span class="kw">| G4  | Churn alert to human before 30-day touch  | Before it's late  |</span>
+<span class="kw">| G5  | Monthly value touch per customer          | 100% hit rate     |</span>
+<span class="kw">| G6  | Expansion signal detected                 | NPS&gt;8 + usage     |</span>
+<span class="kw">| G7  | NRR &gt;100% annually                        | Expansion &gt; churn |</span>
+
+<span class="cm"># Every script maps to one or more Gn. Nothing ships without a goal.</span></pre>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- WAVESOX -->
+  <section class="section" id="wavesox">
+    <p class="section-label">Infrastructure</p>
+    <h2 class="section-title">WAVESOX</h2>
+    <p class="section-body">
+      Enterprise proxy infrastructure — 1,000+ validated SOCKS5 proxies, receipt-first testing, IAM-style zones.
+      Every proxy earns its place with immutable test records before it enters the pool.
+      Feeds the bounty arm, the journalism arm, and any client that needs clean egress.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="stat-num">1k+</div>
+        <div class="stat-label">validated SOCKS5 proxies in pool</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">5</div>
+        <div class="stat-label">use-case tiers — from scraping to bounty_hunt</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">:8081</div>
+        <div class="stat-label">FastAPI — live, health-checked, WebSocket logs</div>
+      </div>
+    </div>
+
+    <div class="products">
+      <div class="product-card">
+        <p class="product-tag">Receipt-First Testing</p>
+        <p class="product-name">No Proxy Ships Untested</p>
+        <p class="product-body">Every proxy runs connectivity + anonymity + use-case scoring before it enters the export pool. Receipts are immutable JSONL — timestamped, versioned, auditable.</p>
+        <ul class="product-specs">
+          <li>Connectivity: latency, external IP, TLS fingerprint</li>
+          <li>Anonymity: elite / anonymous / transparent classification</li>
+          <li>Use-case score per tier: scraping, streaming, tunneling, bounty_hunt</li>
+        </ul>
+      </div>
+      <div class="product-card">
+        <p class="product-tag">IAM-Style Zones</p>
+        <p class="product-name">Per-Client Access Control</p>
+        <p class="product-body">Each zone gets an API key and a filtered proxy set. A client hunting bug bounties gets a different pool than a client doing e-commerce research. Zones are created via POST — no code change required.</p>
+        <ul class="product-specs">
+          <li>Zone config: protocol, min health score, geo filter, use-case</li>
+          <li>Export formats: JSON / CSV / plain text / PAC file</li>
+          <li>Code snippet generation: Python, NodeJS, Go, curl, PHP</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        WAVESOX API — curl examples that actually work
+        <span>Shell</span>
+      </div>
+      <pre><span class="cm"># Pool health — what's live right now</span>
+<span class="fn">curl</span> http://localhost:8081/stats | jq
+
+<span class="cm"># Get proxies filtered by use case and minimum health score</span>
+<span class="fn">curl</span> <span class="st">"http://localhost:8081/proxies?protocol=socks5&amp;use_case=bounty_hunt&amp;min_health_score=0.85"</span>
+
+<span class="cm"># Export production-ready pool for a specific use case</span>
+<span class="fn">curl</span> <span class="st">"http://localhost:8081/export?format=json&amp;use_case=bounty_hunt"</span> > proxies.json
+
+<span class="cm"># Create a client zone with API key + filtered pool</span>
+<span class="fn">curl</span> -X POST http://localhost:8081/zones \
+  -H <span class="st">"Content-Type: application/json"</span> \
+  -d <span class="st">'{"name":"client_a","use_case":"scraping","min_health_score":0.7}'</span>
+
+<span class="cm"># WebSocket stream — real-time test logs as proxies are validated</span>
+<span class="fn">wscat</span> -c ws://localhost:8081/ws/logs</pre>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- STACK -->
+  <section class="section" id="stack">
+    <p class="section-label">What's Running Right Now</p>
+    <h2 class="section-title">The Stack</h2>
+    <p class="section-body">
+      No cloud spend beyond the base machine. Local GPU handles inference.
+      Everything below is running as a systemd user service on a single box with an RTX 5060.
+    </p>
+
+    <table class="stack-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>What it does</th>
+          <th>Port / Unit</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>NISA</td>
+          <td>Voice layer — en-GB TTS, PAI-compatible, Stop hook wired into every terminal session</td>
+          <td>:8888</td>
+          <td><span class="tag-live">live</span></td>
+        </tr>
+        <tr>
+          <td>BOTWAVE TRADES</td>
+          <td>4× Telegram bots (plumbing / electrical / HVAC / GC) via systemd template unit</td>
+          <td>botwave-sc@*.service</td>
+          <td><span class="tag-live">live</span></td>
+        </tr>
+        <tr>
+          <td>CSM Provisioner</td>
+          <td>Agent command server — routes provisioning requests to the CSM engine</td>
+          <td>botwave-provisioner</td>
+          <td><span class="tag-live">live</span></td>
+        </tr>
+        <tr>
+          <td>WAVESOX API</td>
+          <td>FastAPI proxy pool server — health, stats, export, WebSocket stream</td>
+          <td>:8081</td>
+          <td><span class="tag-live">live</span></td>
+        </tr>
+        <tr>
+          <td>Botwave Postgres</td>
+          <td>Primary database — bounty findings, substrate claims, CSM records</td>
+          <td>botwave-postgres</td>
+          <td><span class="tag-live">live</span></td>
+        </tr>
+        <tr>
+          <td>BotFox Profiles</td>
+          <td>Anti-detect browser profile manager — stealth identity pool</td>
+          <td>:8789</td>
+          <td><span class="tag-live">live</span></td>
+        </tr>
+        <tr>
+          <td>HAR Pipeline</td>
+          <td>File watcher for HAR captures + WebSocket bridge for real-time traffic analysis</td>
+          <td>:8766</td>
+          <td><span class="tag-live">live</span></td>
+        </tr>
+        <tr>
+          <td>Ollama (Heretic Stack)</td>
+          <td>Local LLM inference — gemma4-wave / qwen3.5-9b-heretic on RTX 5060 8GB VRAM</td>
+          <td>:11434</td>
+          <td><span class="tag-live">live</span></td>
+        </tr>
+        <tr>
+          <td>BOTWAVEBOMBA Pipeline</td>
+          <td>317-source ingestor → bias scorer → feed generator → GitHub Pages push</td>
+          <td>cron · 6h</td>
+          <td><span style="color:var(--text-3);font-family:var(--mono);font-size:0.62rem;letter-spacing:.1em;">rebuilding</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        Verify the stack — paste this in any terminal
+        <span>Shell</span>
+      </div>
+      <pre><span class="cm"># All BOTWAVE services — one command</span>
+<span class="fn">systemctl</span> --user list-units <span class="st">'botwave-*'</span> --all --no-legend --no-pager
+
+<span class="cm"># Trades specifically</span>
+<span class="fn">systemctl</span> --user status <span class="st">'botwave-sc@*'</span>
+
+<span class="cm"># WAVESOX health check</span>
+<span class="fn">curl</span> -s http://localhost:8081/health | jq .
+
+<span class="cm"># Substrate receipt count — proof the system is writing</span>
+<span class="fn">wc</span> -l Telos/audit/engagement_arm.jsonl Business/csm/substrate/claims.jsonl</pre>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <div class="quote-band">
+    <div class="quote-inner">
+      <p class="quote-text">
+        "The moat is the substrate. Code is replaceable.
+        Every run writes a receipt. Every receipt is a data point.
+        After three months of runs, you own something no one can replicate
+        by reading a README."
+      </p>
+      <p class="quote-attr">— BOTWAVE TELOS, Business Arm</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div>
+      <h2 class="cta-title">Let's talk about what you're building.</h2>
+      <p class="cta-sub">Licensing, integration, custom builds on the TELOS+PAI stack. One operator. Fast answers.</p>
+    </div>
+    <div class="cta-links">
+      <a class="btn-primary" href="mailto:lyfer1904@gmail.com">Get in touch →</a>
+      <a class="btn-ghost" href="https://github.com/Zombie760" target="_blank">GitHub ↗</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">BOTWAVE · BE UNDENIABLE · © 2026</span>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="https://zombie760.github.io/botwavebomba/">BOTWAVEBOMBA</a></li>
+        <li><a href="https://zombie760.github.io/books/">Books</a></li>
+        <li><a href="https://github.com/Zombie760" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
