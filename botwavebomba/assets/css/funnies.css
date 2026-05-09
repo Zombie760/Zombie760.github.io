@@ -1,0 +1,338 @@
+/* ── BOTWAVEBOMBA FUNNIES — MAD Magazine Archive ── */
+
+/* ── MASTHEAD ── */
+.fny-masthead {
+  background: #e8002a;
+  border-bottom: 4px solid #000;
+  padding: 28px 0 20px;
+}
+
+.fny-masthead-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.fny-pretitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.fny-title {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin: 0 0 6px;
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+}
+
+.fny-subtitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.5px;
+}
+
+.fny-masthead-meta {
+  display: flex;
+  gap: 24px;
+}
+
+.fny-meta-stat {
+  text-align: center;
+}
+
+.fny-meta-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-style: italic;
+  color: #fff;
+  line-height: 1;
+}
+
+.fny-meta-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+}
+
+/* ── CONTROLS ── */
+.fny-controls {
+  background: #000;
+  border-bottom: 2px solid #e8002a;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.fny-lang-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  border-bottom: 1px solid #222;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.fny-lang-bar::-webkit-scrollbar { display: none; }
+
+.fny-lang-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #666;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.fny-lang-pills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.fny-lang-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 10px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.fny-lang-pill.active {
+  border-color: #e8002a;
+  color: #e8002a;
+  background: rgba(232,0,42,0.1);
+}
+
+.fny-lang-pill[data-coming="true"] {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.fny-lang-pill[data-coming="true"]::after {
+  content: ' (soon)';
+  font-size: 8px;
+  color: #555;
+}
+
+.fny-decade-nav {
+  display: flex;
+  gap: 0;
+  padding: 0 20px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.fny-decade-nav::-webkit-scrollbar { display: none; }
+
+.fny-decade-nav button {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.fny-decade-nav button:hover { color: #ccc; }
+
+.fny-decade-nav button.active {
+  color: #e8002a;
+  border-bottom-color: #e8002a;
+}
+
+/* ── MAIN ── */
+.fny-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+/* ── GRID ── */
+.fny-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+/* ── ISSUE CARD ── */
+.fny-issue-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+
+.fny-issue-card:hover { transform: translateY(-3px); }
+
+.fny-issue-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 7/9;
+  overflow: hidden;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #e8002a;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fny-issue-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fallback tile when no cover image */
+.fny-cover-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #e8002a;
+  padding: 8px;
+}
+
+.fny-cover-tile-logo {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 28px;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+}
+
+.fny-cover-tile-issue {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.fny-cover-tile-year {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 6px;
+  letter-spacing: -1px;
+}
+
+/* Badge on cover */
+.fny-cover-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.8px;
+  padding: 2px 5px;
+  background: #000;
+  color: #e8002a;
+  border: 1px solid #e8002a;
+  text-transform: uppercase;
+}
+
+.fny-cover-badge.halloween {
+  background: #f97316;
+  color: #000;
+  border-color: #000;
+}
+
+.fny-cover-badge.spyvspy {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Issue meta below cover */
+.fny-issue-meta {
+  padding: 6px 2px 0;
+}
+
+.fny-issue-title {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-secondary);
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fny-issue-year {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+/* ── COMING SOON PANEL (non-English editions) ── */
+.fny-coming-soon {
+  display: none;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.fny-coming-soon.visible { display: block; }
+
+.fny-cs-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 36px;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.fny-cs-body {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  max-width: 460px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .fny-title { font-size: 34px; }
+  .fny-masthead-inner { flex-direction: column; align-items: flex-start; }
+  .fny-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; }
+}
