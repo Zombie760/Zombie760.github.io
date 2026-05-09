@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}Al Gringo</title>
+  <meta name="description" content="{{ site.description }}">
+  <style>
+    :root {
+      --bg:      #0a0a0a;
+      --surface: #111111;
+      --border:  #1e1e1e;
+      --text:    #c9c9c9;
+      --dim:     #4a4a4a;
+      --accent:  #c8ff00;
+      --mono:    'JetBrains Mono', 'Cascadia Code', 'Courier New', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 14px;
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    .nav-id {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: normal;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      color: var(--dim);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.1s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 760px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3.5rem 2.5rem 5rem;
+      flex: 1;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1 {
+      font-size: 1.05rem;
+      font-weight: normal;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+    }
+
+    h2 {
+      font-size: 0.78rem;
+      font-weight: normal;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 0.9rem;
+      font-weight: normal;
+      color: var(--text);
+      margin-top: 1.8rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.03em;
+    }
+
+    h3 a {
+      color: var(--text);
+    }
+
+    h3 a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    p {
+      margin-bottom: 0.9rem;
+      color: var(--text);
+      max-width: 68ch;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 0.9rem;
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: normal;
+      letter-spacing: 0.04em;
+    }
+
+    em {
+      font-style: italic;
+      color: var(--dim);
+    }
+
+    em a {
+      color: var(--dim);
+    }
+
+    code {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.1rem 0.45rem;
+      font-family: var(--mono);
+      font-size: 0.88em;
+      color: var(--accent);
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.2rem 1.4rem;
+      overflow-x: auto;
+      margin-bottom: 1.2rem;
+    }
+
+    pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--text);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    blockquote {
+      border-left: 2px solid var(--accent);
+      padding: 0.2rem 0 0.2rem 1.2rem;
+      color: var(--dim);
+      margin: 1.2rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    th {
+      text-align: left;
+      color: var(--accent);
+      font-weight: normal;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 0.5rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    /* ── UTILITIES ── */
+    .disclaimer {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--dim);
+    }
+
+    .stat-row {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    .stat {
+      font-size: 0.78rem;
+      color: var(--dim);
+    }
+
+    .stat span {
+      color: var(--accent);
+      font-size: 1rem;
+      display: block;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.4rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      color: var(--dim);
+    }
+
+    footer a {
+      color: var(--dim);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--text); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav {
+        padding: 0.9rem 1.2rem;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+
+      .nav-links { gap: 1.2rem; }
+
+      main { padding: 2.5rem 1.2rem 4rem; }
+
+      footer { padding: 1.2rem; }
+
+      h2 { margin-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-id" href="/">AL_GR1NG01904</a>
+    <ul class="nav-links">
+      <li><a href="/#books">Books</a></li>
+      <li><a href="/#platforms">Platforms</a></li>
+      <li><a href="/#option-c">Option C</a></li>
+      <li><a href="/corkboard/">Corkboard</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <span class="disclaimer">PARODY &middot; OPEN-SOURCE &middot; NOT A SCAM</span>
+    <a href="https://github.com/Zombie760" target="_blank" rel="noopener noreferrer">github.com/Zombie760</a>
+  </footer>
+
+</body>
+</html>
