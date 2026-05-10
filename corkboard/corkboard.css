@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;700;900&family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&family=Lora:ital,wght@0,400;0,600&family=Kalam:wght@300;400;700&family=Permanent+Marker&display=swap');
+
+:root {
+  /* Common missing variables and sensible fallbacks */
+  --paper-gitmo: #e8e4dc;
+  --chain-gang: #ffdca8;
+  --skull-bone: #e8dcc4;
+  --paper-fbi: #cfc3ab;
+  --paper-military: #e8e0d0;
+  --paper-aged: #d4cfc4;
+  --pin-yellow-h: #ff6b00;
+  --pin-yellow-s: #cc5500;
+  --pin-red-h: #ff2a2a;
+  --pin-red-s: #aa0000;
+  --pin-white-h: #c0c0c0;
+  --pin-white-s: #888;
+
+  /* World dimensions (used as defaults) */
+  --world-width: 7000px;
+  --world-height: 5000px;
+}
+
+/* Small reset and accessibility helpers */
+* { box-sizing: border-box; }
+html,body { margin: 0; padding: 0; line-height: 1.35; }
+button:focus, a:focus { outline: 3px solid rgba(255,0,0,0.15); outline-offset: 2px; }
+
+/* Make the world respond on small screens so pan/zoom has usable space */
+#world {
+  width: var(--world-width);
+  height: var(--world-height);
+  max-width: calc(200vw); /* allow scaling via transform without clipping */
+  max-height: calc(200vh);
+}
+
+/* When viewport is narrow, allow scrolling and scale assets down so boards remain usable without JS */
+@media (max-width: 900px) {
+  html,body { overflow: auto; }
+  #world { width: 2400px; height: 1600px; }
+  .card .body { width: clamp(120px, 36vw, 280px) !important; }
+  #ui { padding: 10px 12px !important; }
+  #minimap { width: 140px; height: 100px; }
+}
+
+@media (max-width: 480px) {
+  .card .body { width: clamp(100px, 45vw, 220px) !important; }
+  #ui h1 { font-size: 16px; }
+  #ui .controls button { padding: 8px 10px; font-size: 11px; }
+}
+
+/* Provide a safe default for edges svg so scripts that expect width/height/viewBox won't fail */
+#edges[width=''][height=''] { width: 100%; height: 100%; }
+
+/* Namespace-friendly utility animations (won't conflict if original keyframes remain) */
+@keyframes pulseString-safe {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes glitch-safe {
+  0% { transform: none; }
+  50% { transform: translate(2px, -2px); }
+  100% { transform: none; }
+}
+
+/* Helpful comment placeholders where truncated data-URIs were used in the original files. Replace with full assets if desired. */
+/* NOTE: Some inline styles in the three HTML files reference truncated data-URLs and font hrefs. This file provides fallbacks and variables so the pages render even when the original data is incomplete. */
