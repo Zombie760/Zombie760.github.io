@@ -82,6 +82,35 @@ function buildBlindspostCard(story) {
     window.location = '/botwavebomba/story.html?id=' + encodeURIComponent(story.id);
   });
 
+  // Thumbnail — article photo with card PNG fallback
+  var thumb = document.createElement('div');
+  thumb.className = 'bwb-card-thumb';
+  var thumbImg = document.createElement('img');
+  thumbImg.alt     = story.headline || '';
+  thumbImg.loading = 'lazy';
+  var cardSrc = '/botwavebomba/api/cards/' + story.id + '.png';
+  if (story.image_url) {
+    thumbImg.src = story.image_url;
+    thumbImg.onerror = function() { this.src = cardSrc; this.onerror = null; };
+  } else {
+    thumbImg.src = cardSrc;
+  }
+  thumb.appendChild(thumbImg);
+  var thumbBadges = document.createElement('div');
+  thumbBadges.className = 'bwb-card-thumb-badges';
+  var bsBadge = document.createElement('span');
+  bsBadge.className   = 'bwb-badge blindspot';
+  bsBadge.textContent = 'BLINDSPOT';
+  thumbBadges.appendChild(bsBadge);
+  if (story.blindspot_score) {
+    var scoreBadge = document.createElement('span');
+    scoreBadge.className   = 'bwb-badge bwb-badge--score';
+    scoreBadge.textContent = story.blindspot_score.toFixed(1);
+    thumbBadges.appendChild(scoreBadge);
+  }
+  thumb.appendChild(thumbBadges);
+  card.appendChild(thumb);
+
   // Blindspot type badge
   const typeHeader = document.createElement('div');
   typeHeader.className = 'bwb-bs-type-header ' + bsType;

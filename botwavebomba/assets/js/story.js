@@ -36,6 +36,26 @@ document.addEventListener('DOMContentLoaded', async function() {
   // Headline
   document.getElementById('story-headline').textContent = story.headline || '';
 
+  // Hero image — article photo with card PNG fallback
+  var heroEl = document.getElementById('story-hero');
+  if (heroEl) {
+    var heroImg = document.createElement('img');
+    heroImg.alt     = story.headline || '';
+    heroImg.loading = 'lazy';
+    var cardSrc = '/botwavebomba/api/cards/' + story.id + '.png';
+    if (story.image_url) {
+      heroImg.src = story.image_url;
+      heroImg.onerror = function() {
+        this.src = cardSrc;
+        this.onerror = function() { heroEl.style.display = 'none'; };
+      };
+    } else {
+      heroImg.src = cardSrc;
+      heroImg.onerror = function() { heroEl.style.display = 'none'; };
+    }
+    heroEl.appendChild(heroImg);
+  }
+
   // Build article lookup keyed by source id, then enrich each source object with
   // its primary article's headline and url so heatmap, framing table, and source
   // links all render correctly. Source metadata objects carry no headline/url of
