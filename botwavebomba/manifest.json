@@ -1,0 +1,39 @@
+{
+  "name": "BOTWAVEBOMBA",
+  "short_name": "BOMBA",
+  "description": "244 global sources. Five bias axes. Same story, every framing.",
+  "start_url": "/botwavebomba/",
+  "scope": "/botwavebomba/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0a0a0a",
+  "background_color": "#0a0a0a",
+  "lang": "en",
+  "categories": ["news"],
+  "icons": [
+    {
+      "src": "/botwavebomba/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/botwavebomba/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Blindspots",
+      "url": "/botwavebomba/blindspots.html",
+      "description": "Stories covered by one bloc, ignored by another"
+    },
+    {
+      "name": "Sources",
+      "url": "/botwavebomba/sources.html",
+      "description": "The full 244-source registry with bias scores"
+    }
+  ]
+}
