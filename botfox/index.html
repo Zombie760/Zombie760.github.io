@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BotFox — Hardened Browser for Bounty Hunters — BOTWAVE</title>
+  <meta name="description" content="Firefox hardened with 49 C++ anti-detection patches (Camoufox). Native HAR capture, per-tab proxy rotation, fingerprint-locked device profiles, TLS key logging. For bounty hunters and OSINT operators.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #111111;
+      --bg-card:   #161616;
+      --bg-surface:#1A1A1A;
+      --border:    rgba(255,255,255,0.10);
+      --border-hi: rgba(255,255,255,0.18);
+      --text:      #F0EDE8;
+      --text-2:    rgba(240,237,232,0.72);
+      --text-3:    rgba(255,255,255,0.30);
+      --accent:    #BF3B2D;
+      --green:     #059669;
+      --mono: 'JetBrains Mono', 'Courier New', monospace;
+      --serif: 'Playfair Display', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { opacity: 0.8; }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 3rem;
+      height: 56px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-card);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wordmark {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 6rem 3rem 5rem;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--text-2);
+    }
+
+    .hero-body {
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: var(--text-2);
+      max-width: 580px;
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4.5rem 3rem;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1ch;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-body {
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--text-2);
+      max-width: 560px;
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+    }
+
+    .patch-stat {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .patch-cell {
+      background: var(--bg-card);
+      padding: 1.5rem;
+    }
+
+    .patch-num {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .patch-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      line-height: 1.4;
+    }
+
+    .feature-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+
+    .feature-table th {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      text-align: left;
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feature-table td {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text-2);
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .feature-table tr:hover td { background: var(--bg-surface); }
+    .feature-table td:first-child { color: var(--text); font-weight: 500; }
+
+    .code-wrap {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-hi);
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .code-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .code-label span { color: var(--accent); }
+
+    pre {
+      padding: 1.25rem;
+      overflow-x: auto;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      line-height: 1.75;
+      color: var(--text-2);
+      scrollbar-width: none;
+    }
+    pre::-webkit-scrollbar { display: none; }
+
+    .cm  { color: var(--text-3); font-style: italic; }
+    .fn  { color: #d4a96a; }
+    .st  { color: #8fc08a; }
+    .kw  { color: #7c9fd4; }
+    .ac  { color: var(--accent); }
+
+    .cta-band {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cta-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .cta-title {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-2);
+    }
+
+    .cta-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-width: 180px;
+    }
+
+    .btn-primary {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      text-decoration: none;
+      padding: 0.85rem 1.5rem;
+      text-align: center;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-ghost {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      padding: 0.85rem 1.5rem;
+      text-align: center;
+    }
+    .btn-ghost:hover { border-color: var(--text-2); color: var(--text); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 3rem;
+      background: var(--bg-card);
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--text-3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-3);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+      .hero { padding: 4rem 1.25rem 3rem; }
+      .section { padding: 3rem 1.25rem; }
+      .patch-stat { grid-template-columns: 1fr 1fr; }
+      .cta-inner { grid-template-columns: 1fr; padding: 3rem 1.25rem; }
+      footer { padding: 1.5rem 1.25rem; }
+      .footer-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-wordmark">BOTWAVE</a>
+    <ul class="nav-links">
+      <li><a href="#what-it-is">What it is</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#install">Install</a></li>
+      <li><a href="/wavesox/">WAVESOX</a></li>
+      <li><a href="/botwavebomba/" target="_blank">BOTWAVEBOMBA ↗</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="what-it-is">
+    <p class="hero-eyebrow">BOTWAVE — Browser</p>
+    <h1 class="hero-title">
+      Firefox. 49 C++ patches.<br>
+      <em>Detection is the problem.</em>
+    </h1>
+    <p class="hero-body">
+      BotFox is Firefox hardened with Camoufox — 49 C++ anti-detection patches applied at the browser core.
+      It is the interactive browser BOTWAVE uses for manual bounty hunting and OSINT work where a vanilla
+      browser fingerprint would trigger WAF challenges or behavioral detection before the first request lands.
+      Native HAR capture is always on. Per-tab proxy rotation is built in.
+      Open source. Free to install.
+    </p>
+  </section>
+
+  <hr class="section-rule">
+
+  <section class="section">
+    <p class="section-label">── By the numbers</p>
+    <div class="patch-stat">
+      <div class="patch-cell">
+        <div class="patch-num">49</div>
+        <div class="patch-label">C++ anti-detection patches in Camoufox base</div>
+      </div>
+      <div class="patch-cell">
+        <div class="patch-num">HAR</div>
+        <div class="patch-label">always-on capture — every request logged from tab open</div>
+      </div>
+      <div class="patch-cell">
+        <div class="patch-num">per-tab</div>
+        <div class="patch-label">proxy rotation — different egress per browser context</div>
+      </div>
+      <div class="patch-cell">
+        <div class="patch-num">SSLKEYLOGFILE</div>
+        <div class="patch-label">TLS key logging — decrypt traffic in Wireshark</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <section class="section" id="features">
+    <p class="section-label">── Feature set</p>
+    <h2 class="section-title">Built for the work, not the demo.</h2>
+    <p class="section-body">
+      Every feature addresses a specific failure mode in vanilla Firefox that costs a
+      bounty hunter either a finding or an IP. Nothing is added for its own sake.
+    </p>
+
+    <table class="feature-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>What it solves</th>
+          <th>How it works</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Camoufox core (49 patches)</td>
+          <td>Browser fingerprint triggers WAF challenge before request lands</td>
+          <td>C++ patches to canvas, WebGL, AudioContext, font enumeration, Navigator, screen resolution, and 40+ additional detection surfaces</td>
+        </tr>
+        <tr>
+          <td>Native HAR capture</td>
+          <td>DevTools HAR export is manual — you miss the first requests on page load</td>
+          <td>HAR recording begins at tab creation, not DevTools open. Every request logged to a timestamped file on disk automatically</td>
+        </tr>
+        <tr>
+          <td>Per-tab proxy rotation</td>
+          <td>Single proxy per session means one burn kills the whole session</td>
+          <td>Each browser context (tab group) routes through an independently assigned proxy. Context isolation means one flagged tab does not contaminate the others</td>
+        </tr>
+        <tr>
+          <td>Fingerprint-locked device profiles</td>
+          <td>Fingerprint changes between sessions expose automation</td>
+          <td>Device profiles lock canvas hash, User-Agent, screen resolution, and hardware concurrency to a consistent set. The same profile produces the same fingerprint on every session</td>
+        </tr>
+        <tr>
+          <td>TLS key logging</td>
+          <td>Encrypted traffic not visible in Wireshark</td>
+          <td>SSLKEYLOGFILE wired into the browser profile. Import the key log into Wireshark and decrypt TLS sessions from capture files after the fact</td>
+        </tr>
+        <tr>
+          <td>WAVESOX integration</td>
+          <td>Manual proxy config required per session</td>
+          <td>Points at the local WAVESOX pool API. Pulls a fresh validated proxy on each new context without manual configuration</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr class="section-rule">
+
+  <section class="section" id="install">
+    <p class="section-label">── Installation</p>
+    <h2 class="section-title">Three commands.</h2>
+    <p class="section-body">
+      BotFox is open source. The install script handles the Camoufox build, profile setup,
+      and optional WAVESOX proxy integration. Linux only — tested on Fedora and Ubuntu.
+      Requires a GPU if you want the full headless anti-detection stack for automation work.
+    </p>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        Install BotFox
+        <span>Shell</span>
+      </div>
+      <pre><span class="cm"># Clone and install</span>
+<span class="fn">git</span> clone https://github.com/Zombie760/botfox
+<span class="fn">cd</span> botfox
+<span class="fn">./install.sh</span>
+
+<span class="cm"># Launch with a named device profile</span>
+<span class="fn">botfox</span> --profile mac_m3pro
+
+<span class="cm"># Launch with WAVESOX proxy pool integration</span>
+<span class="fn">botfox</span> --profile mac_m3pro --proxy-pool http://localhost:8081
+
+<span class="cm"># Enable TLS key logging for a session</span>
+<span class="fn">SSLKEYLOGFILE</span>=~/keys/session_$(date +%s).log <span class="fn">botfox</span> --profile mac_m3pro</pre>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        Profile config — what a device profile locks
+        <span>JSON</span>
+      </div>
+      <pre>{
+  <span class="st">"name"</span>:              <span class="st">"mac_m3pro"</span>,
+  <span class="st">"user_agent"</span>:        <span class="st">"Mozilla/5.0 (Macintosh; ARM Mac OS X 14_4) ..."</span>,
+  <span class="st">"screen_resolution"</span>: [<span class="ac">2560</span>, <span class="ac">1664</span>],
+  <span class="st">"hardware_concurrency"</span>: <span class="ac">12</span>,
+  <span class="st">"canvas_noise_seed"</span>: <span class="st">"0x4F2A"</span>,
+  <span class="st">"webgl_vendor"</span>:      <span class="st">"Apple Inc."</span>,
+  <span class="st">"webgl_renderer"</span>:    <span class="st">"Apple M3 Pro"</span>,
+  <span class="st">"timezone"</span>:          <span class="st">"America/Los_Angeles"</span>,
+  <span class="st">"languages"</span>:         [<span class="st">"en-US"</span>, <span class="st">"en"</span>],
+  <span class="st">"har_output_dir"</span>:    <span class="st">"~/botfox/captures"</span>
+}</pre>
+    </div>
+
+    <p style="font-size: 0.82rem; color: var(--text-3); margin-top: 0.5rem;">
+      Source: <a href="https://github.com/Zombie760/botfox" target="_blank" rel="noopener" style="color: var(--accent);">github.com/Zombie760/botfox</a> — MIT license.
+      Camoufox upstream: <a href="https://github.com/daijro/camoufox" target="_blank" rel="noopener" style="color: var(--accent);">github.com/daijro/camoufox</a>.
+    </p>
+  </section>
+
+  <div class="cta-band">
+    <div class="cta-inner">
+      <div>
+        <p class="cta-title">Open source. Questions welcome.</p>
+        <p class="cta-sub">BotFox is free to install and use. If you need help integrating it with WAVESOX or want a custom device profile for a specific engagement, send the email below.</p>
+      </div>
+      <div class="cta-links">
+        <a class="btn-primary" href="https://github.com/Zombie760/botfox" target="_blank" rel="noopener">View on GitHub ↗</a>
+        <a class="btn-ghost" href="mailto:lyfer1904@gmail.com?subject=BotFox%20inquiry">Get in touch →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">BotFox · BOTWAVE · BE UNDENIABLE · © 2026</span>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/wavesox/">WAVESOX</a></li>
+        <li><a href="/trades/">BOTWAVE Trades</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
