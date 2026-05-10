@@ -243,6 +243,15 @@ function buildFramingTable(sources) {
         row.appendChild(hl);
       }
 
+      // Lede snippet — the actual first paragraph, not just the headline
+      var primaryArt = src._articles && src._articles[0];
+      if (primaryArt && primaryArt.snippet) {
+        const snip = document.createElement('div');
+        snip.className = 'bwb-framing-snippet';
+        snip.textContent = primaryArt.snippet;
+        row.appendChild(snip);
+      }
+
       // Show extra-article count with tooltip listing their headlines
       var extras = (src._articles || []).slice(1);
       if (extras.length) {
@@ -274,7 +283,7 @@ function buildEntityCloud(story) {
   const container = document.getElementById('entity-cloud');
   if (!container) return;
 
-  const entities = story.entities || story.entity_list || [];
+  const entities = story.entity_list || story.entities || [];
   if (!entities.length) {
     container.textContent = 'Entity extraction not yet available for this story.';
     return;

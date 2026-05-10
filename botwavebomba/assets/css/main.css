@@ -1001,6 +1001,14 @@ img { max-width: 100%; }
   margin-bottom: 6px;
 }
 
+.bwb-framing-snippet {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 6px;
+  font-style: italic;
+}
+
 .bwb-framing-link {
   font-family: var(--font-mono);
   font-size: 10px;
