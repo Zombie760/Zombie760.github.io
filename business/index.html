@@ -771,6 +771,24 @@
       No app to install. No login to forget. No training required.
     </p>
 
+    <pre class="demo-conversation" style="background: #0F0F0F; border: 1px solid rgba(240,237,232,0.1); border-left: 3px solid #BF3B2D; padding: 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7; color: rgba(240,237,232,0.85); overflow-x: auto; margin-top: 1.5rem;">User: who still owes me money
+
+TRADES: Three open invoices.
+
+  Garcia Plumbing Supply    $2,400   NET-30 expires May 12
+  M. Torres                 $285     dispatched Apr 28, no reply
+  Riverside Apartments LLC  $950     partial — $500 received
+
+Total outstanding: $3,635
+
+Run "/remind Torres" to queue a follow-up message.
+
+User: what did I make in April
+
+TRADES: April revenue — $8,240 collected across 6 jobs.
+Three invoices still pending from that month ($1,235 total).
+Net April: $7,005 after materials ($1,205 logged).</pre>
+
     <div class="trades-grid">
       <div class="trade-cell">
         <div class="trade-icon">🔧</div>
@@ -940,6 +958,23 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
       before entering rotation. The same pool that powers BOTWAVE hunts.
       Receipt-first means no surprises mid-engagement.
     </p>
+
+    <pre class="demo-stats" style="background: #0F0F0F; border: 1px solid rgba(240,237,232,0.1); border-left: 3px solid #059669; padding: 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7; color: rgba(240,237,232,0.85); overflow-x: auto; margin-top: 1.5rem;">$ curl -s http://localhost:8081/pool/stats | jq .
+
+{
+  "total":     1247,
+  "live":      1103,
+  "dead":       144,
+  "socks5":     891,
+  "http":       212,
+  "zones": {
+    "us_residential": 387,
+    "eu_datacenter":  241,
+    "apac_mobile":    475
+  },
+  "last_sweep": "2026-05-09T17:42:11Z",
+  "avg_latency_ms": 312
+}</pre>
 
     <div class="stat-row">
       <div class="stat-cell">
