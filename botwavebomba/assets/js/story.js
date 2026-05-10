@@ -36,8 +36,30 @@ document.addEventListener('DOMContentLoaded', async function() {
   // Headline
   document.getElementById('story-headline').textContent = story.headline || '';
 
-  // Meta
-  const sources = story.sources || [];
+  // Build article lookup keyed by source id, then enrich each source object with
+  // its primary article's headline and url so heatmap, framing table, and source
+  // links all render correctly. Source metadata objects carry no headline/url of
+  // their own — that data lives in story.articles[].
+  var articlesBySource = {};
+  (story.articles || []).forEach(function(article) {
+    var sid = article.source;
+    if (!sid) return;
+    if (!articlesBySource[sid]) articlesBySource[sid] = [];
+    articlesBySource[sid].push(article);
+  });
+
+  // Enrich source objects in-place (shallow, non-destructive — only adds fields
+  // that weren't there before).
+  var sources = (story.sources || []).map(function(src) {
+    var arts = articlesBySource[src.id] || [];
+    var primary = arts[0] || {};
+    return Object.assign({}, src, {
+      headline: src.headline || primary.headline || null,
+      url: src.url || primary.url || null,
+      _articles: arts
+    });
+  });
+
   const total = sources.length;
   const western = sources.filter(function(s) { return s.bloc === 'western'; }).length;
   const adversarial = sources.filter(function(s) { return s.bloc === 'adversarial'; }).length;
@@ -53,7 +75,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (el && item.text) el.textContent = item.text;
   });
 
-  // Heatmap
+  // Heatmap — receives enriched sources so src.headline and src.url are populated
   if (window.renderHeatmap) renderHeatmap(sources, 'bias-heatmap');
 
   // 5-axis breakdown
@@ -62,8 +84,8 @@ document.addEventListener('DOMContentLoaded', async function() {
   // 5-axis narrative fingerprint (story-level aggregate)
   build5AxisFingerprint(story);
 
-  // Framing comparison
-  buildFramingTable(story);
+  // Framing comparison — pass enriched sources (with headline/url/._articles)
+  buildFramingTable(sources);
 
   // Entity cloud
   buildEntityCloud(story);
@@ -163,12 +185,15 @@ function build5AxisFingerprint(story) {
   }
 }
 
-function buildFramingTable(story) {
+// sources: the enriched sources array produced in DOMContentLoaded.
+// Each src has: .headline (from primary article), .url (from primary article),
+// ._articles (all articles for this source). Source metadata objects never carry
+// headline/url on their own — the enrichment step in DOMContentLoaded provides them.
+function buildFramingTable(sources) {
   const container = document.getElementById('framing-table');
   if (!container) return;
 
-  const sources = story.sources || [];
-  if (!sources.length) {
+  if (!sources || !sources.length) {
     container.textContent = 'No framing data available.';
     return;
   }
@@ -210,11 +235,22 @@ function buildFramingTable(story) {
 
       row.appendChild(meta);
 
+      // src.headline and src.url were injected by the enrichment step above
       if (src.headline) {
         const hl = document.createElement('div');
         hl.className = 'bwb-framing-headline';
         hl.textContent = src.headline;
         row.appendChild(hl);
+      }
+
+      // Show extra-article count with tooltip listing their headlines
+      var extras = (src._articles || []).slice(1);
+      if (extras.length) {
+        const more = document.createElement('div');
+        more.className = 'bwb-framing-more';
+        more.title = extras.map(function(a) { return a.headline || a.url || ''; }).join('\n');
+        more.textContent = '(+' + extras.length + ' more)';
+        row.appendChild(more);
       }
 
       if (src.url) {
