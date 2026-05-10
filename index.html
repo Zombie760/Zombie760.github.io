@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOTWAVE — Kyle Jimenez</title>
-  <meta name="description" content="Three books. One citation-verification pipeline. Every claim filed. Every source named.">
+  <title>BOTWAVE — Al Gringo</title>
+  <meta name="description" content="Three books. One bounty swarm. 221 news sources. Every claim filed.">
+  <!-- OG / Twitter card -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BOTWAVE">
+  <meta property="og:title" content="BOTWAVE — Al Gringo">
+  <meta property="og:description" content="Three books. One bounty swarm. 221 news sources. Every claim filed.">
+  <meta property="og:image" content="https://zombie760.github.io/botwavebomba/assets/icons/icon-512.png">
+  <meta property="og:url" content="https://zombie760.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@AL_GR1NG01904">
+  <meta name="twitter:title" content="BOTWAVE — Al Gringo">
+  <meta name="twitter:description" content="Three books. One bounty swarm. 221 news sources. Every claim filed.">
+  <meta name="twitter:image" content="https://zombie760.github.io/botwavebomba/assets/icons/icon-512.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -386,7 +398,7 @@
 
   <!-- HERO -->
   <section class="hero wrap" id="home">
-    <p class="hero-tag">Kyle Jimenez — Independent Author &amp; Researcher</p>
+    <p class="hero-tag">Al Gringo — Independent Author &amp; Researcher</p>
     <h1 class="hero-title">Primary sources.<br>No spin.<br>BE UNDENIABLE.</h1>
     <p class="hero-body">
       Three books. One citation-verification pipeline. Every claim filed. Every source named.
@@ -394,6 +406,20 @@
     </p>
     <a class="hero-cta" href="#books">View all books →</a>
   </section>
+
+  <div id="bwb-stats" style="font-family:monospace;font-size:0.8rem;color:rgba(240,237,232,0.5);text-align:center;padding:0.5rem;border-top:1px solid rgba(240,237,232,0.1);border-bottom:1px solid rgba(240,237,232,0.1);margin:1rem 0;">
+    Loading...
+  </div>
+  <script>
+  fetch('https://zombie760.github.io/botwavebomba/api/latest.json')
+    .then(r=>r.json())
+    .then(d=>{
+      const age=Math.round((Date.now()-new Date(d.generated_at).getTime())/60000);
+      document.getElementById('bwb-stats').textContent=
+        d.story_count+' stories · '+d.article_count+' articles · updated '+age+'m ago · 221 sources';
+    })
+    .catch(()=>{document.getElementById('bwb-stats').textContent='221 sources · no algorithm';});
+  </script>
 
   <hr class="divider">
 
@@ -527,7 +553,7 @@
   <section class="bio wrap" id="about">
     <p class="label">── About the author</p>
     <p class="bio-text">
-      Kyle Jimenez is an independent author and researcher. He holds a BS in Kinesiology from CSU Northridge.
+      Al Gringo is an independent author and researcher. He holds a BS in Kinesiology from CSU Northridge.
       He is the developer of RECORD, a citation verification pipeline that caught three fabricated blockquotes
       prior to publication. His work draws exclusively on primary sources.
       <em>They're Too Busy Marrying Themselves</em> is his first book.
@@ -538,7 +564,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="footer-copy">© 2026 BOTWAVE — Kyle Jimenez. All rights reserved.</span>
+      <span class="footer-copy">© 2026 BOTWAVE — Al Gringo. All rights reserved.</span>
       <ul class="footer-links">
         <li><a href="/books/">Books</a></li>
         <li><a href="/botwavebomba/">BOTWAVEBOMBA</a></li>
