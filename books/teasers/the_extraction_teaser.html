@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Extraction — Teaser — BOTWAVE PAPERWORK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+    --accent: #b22222;
+    --ink: #1a1a1a;
+    --paper: #fbf8f2;
+    --muted: #666;
+    --stamp: rgba(180, 34, 34, 0.07);
+}
+
+@page {
+    size: 6in 9in;
+    margin: 0.9in 0.75in 1.1in 0.75in;
+
+    @bottom-left {
+        content: "BOTWAVE PAPERWORK — TEASER COPY";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.05em;
+    }
+    @bottom-right {
+        content: counter(page) " of 25";
+        font-family: Georgia, serif;
+        font-size: 9pt;
+        color: #888;
+    }
+    @top-right {
+        content: "Get the full book: ZOMBIE760.GITHUB.IO/BOOKS";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.03em;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11.5pt;
+    line-height: 1.6;
+}
+
+body {
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 1in 0.5in;
+    position: relative;
+}
+
+/* Diagonal watermark via fixed background */
+body::before {
+    content: "TEASER";
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: "Space Mono", monospace, serif;
+    font-size: 96pt;
+    font-weight: 700;
+    color: var(--stamp);
+    letter-spacing: 0.2em;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+/* Cover page */
+.cover-page {
+    page-break-after: always;
+    text-align: center;
+    padding: 1.5in 0.5in 1in;
+    border-bottom: 3px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.cover-imprint {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 9pt;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+}
+
+.cover-title {
+    font-family: Georgia, serif;
+    font-size: 28pt;
+    font-weight: bold;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 0.3em;
+}
+
+.cover-subtitle {
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 0 1.5em;
+}
+
+.cover-byline {
+    font-family: Georgia, serif;
+    font-size: 13pt;
+    color: var(--ink);
+    margin-bottom: 2em;
+}
+
+.cover-notice {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 8pt;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.75em 1em;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    margin-top: 2em;
+}
+
+.cover-cta {
+    font-family: Georgia, serif;
+    font-size: 10pt;
+    color: var(--muted);
+    margin-top: 1em;
+}
+
+/* Truncation notice at end */
+.truncation-notice {
+    page-break-before: always;
+    text-align: center;
+    padding: 2in 1in;
+    border-top: 2px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.truncation-notice h2 {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 12pt;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1em;
+}
+
+.truncation-notice p {
+    font-family: Georgia, serif;
+    font-size: 11pt;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.truncation-notice .url {
+    font-family: "Space Mono", monospace;
+    font-size: 10pt;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 20pt;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 0.3em;
+    margin-top: 1.8em;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 15pt;
+    margin-top: 1.4em;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-style: italic;
+    margin-top: 1.2em;
+    page-break-after: avoid;
+}
+
+p { margin: 0.6em 0; }
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1em 0 1em 1.5em;
+    padding-left: 1em;
+    font-style: italic;
+    color: var(--muted);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1.5em 2em;
+}
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="cover-page">
+  <div class="cover-imprint">BOTWAVE PAPERWORK</div>
+  
+  <div class="cover-title">The Extraction</div>
+  <div class="cover-subtitle">A Long-Form Investigation into the Privatization of American Housing</div>
+  <div class="cover-byline">Kyle Jimenez</div>
+  <div class="cover-notice">TEASER COPY — FIRST 25 PAGES<br>NOT FOR REDISTRIBUTION OR SALE</div>
+  <div class="cover-cta">Full manuscript: https://zombie760.github.io/books</div>
+</div>
+
+<div class="content">
+<h1>THE EXTRACTION ### A Long-Form Investigation into the Privatization of American Housing <em>Kyle Jimenez</em> <em>BOTWAVE BOOKS</em> <em>Voice DNA: 75% Thompson / 25% Palahniuk</em> &mdash; ## THE PROSPECTUS I read it on a Tuesday. Right there, on the ninth floor of the D.C. Federal Annex—a building whose HVAC system is less a mechanism and more a dying, gargantuan whale, rattling its bones against the cracked concrete. I had the damn briefcase, the whole goddamn thing, smelling of cheap copier toner and the bitter, fungal coffee of institutional dread. And I saw it. I saw the gears. Grinding. Not the smooth, oiled promise of competence, but the rusty, vicious churn of a hungry machine, a bureaucratic beast chewing its own tail. The transfer schedule—a sheer, beautiful, cynical ballet of extraction. They called it &lsquo;privatization.&rsquo; Soft. Polite. Like a damn fancy soup. But the moment I saw the transfer codes, the meticulous, surgical rhythm of those alphanumeric strings, I knew. This was not a transfer. It was a hemorrhage. A white-collar, organized, methodical exsanguination of the public good. I drove three hours to get to that gray, windowless cage, that cramped, sickly room where the signatures were being collected like blood samples. I was there when the final ledger—heavy, bound in cheap, corporate blue, smelling faintly of formaldehyde—was slammed down. I had seen the forms: the leases, the acquisition deeds, the little green forms detailing the network of shell companies. They were not paper. They were the anatomy of a system failing, a systemic gut-punch rendered in ink and carbon copy. The specificity. It’s the weapon. It’s not just that housing is being privatized; it’s that the transfer moved through a series of interlocking LLCs—each one registered in a jurisdiction whose primary legal function is merely to hide things, to absorb the light until it dies. I traced the chain. Clause by clause. And the pattern, the monstrous, beautiful, inevitable pattern, was asset striping. The American dream, reduced to a line item on a quarterly report, a decimal point on some obscene, humming spreadsheet. I saw the names. The bureaucratic ghosts and the financial titans. They signed with the same tired, practiced, corporate flourish, the handwriting of men who believe themselves infallible. I read the clauses—the right of first refusal, the tax abatement schedules, the non-disclosure agreements—and the pressure built in the room, a physical thing, like the whole concrete structure was about to split open. This is not a transaction. It is the wholesale, deliberate amputation of a community. The system, I realized, is a magnificent liar. It takes complexity and dresses it up as competence. It takes theft and calls it efficiency. A clean, beautiful lie. And you. You have a piece of this. A lease. A mortgage. A single, stubborn point of stability that has been leveraged, categorized, and sold off in some basement office, probably by an algorithm that doesn&rsquo;t even have a name for you. You are a node. A data point. A cell in this goddamn, sprawling spreadsheet. I looked at the original acquisition notice, the one with the redacted beneficial owner—that awful, empty hole in the paper where the real name should have been—and I understood the indictment. The very definition of &lsquo;home&rsquo; has been outsourced. The roof over your head is not shelter. It is an investment vehicle. It is a quarterly return. I held the file until the paper started to curl in my hands, the scent of the stale office air mixing with the dry, acidic smell of institutional failure. The transfer was complete. The extraction was total. It was done. And I was still there, furious, holding the wreckage. Total. &mdash; Page 47. I found the typeface—Garamond. That dreary, reliable font you use when you are technically making a disclosure, when you are pretending this entire financial beast is a helpful little pamphlet that will somehow make the apocalypse feel manageable. The fund, I read it, is structured as a Delaware limited partnership, backed by an exempted Cayman Islands blocker entity for the non-U.S. limited partners. The offering memorandum—three hundred and forty pages of financial scripture—was circulated in October 2020 to qualified institutional buyers. <em>Qualified institutional buyers.</em> That phrase, I noted, is the legal mechanism for saying people who have more than a hundred million dollars in investable assets, and therefore, by SEC reasoning, are too insulated, too vast, to possibly be harmed by the truth. I flipped to page 47, where the fee schedule sat, listing six line items like surgical tools honed for maximum extraction. One: an annual management fee of 1.75% of <em>committed</em> capital. Not invested capital—<em>committed</em>. The clock starts before they spend a single dollar. A pension fund commits two hundred million dollars, and the meter runs immediately, even while the acquisition team is still figuring out how to deploy the capital over the next eighteen months. Two: an acquisition fee of 1.5% of each purchase price, paid to the fund&rsquo;s affiliated property acquisition subsidiary at closing. Three: a financing fee of 0.75% on each mortgage originated. Four: a carried interest of 20% on returns above the 8% preferred hurdle, calculated on a whole-fund basis, not deal by deal. Five: an annual administrative fee of 0.25% of net asset value. Six: a disposition fee of 1% of sale price on every exit, paid whether or not the asset appreciated. The target fund size, right there, $1.2 billion in commitments. Do the arithmetic. I did the arithmetic in the stale air of the reading room, the fluorescent lights humming a low, indifferent drone. The management fee alone, on a fully committed fund, is twenty-one million dollars per year <em>before</em> they buy a single house. This is disclosed. This is page 47. The fund&rsquo;s stated strategy—lifted verbatim from page 12, Section I, Executive Summary—is to acquire &ldquo;institutional-quality single-family residential assets in high-growth Sun Belt metropolitan statistical areas, generating stable cash flows through professional property management while capturing long-term appreciation in residential real estate as an asset class.&rdquo; An asset class. I read this document in full. The word &ldquo;residential&rdquo; appears ninety-four times. The word &ldquo;tenant&rdquo; appears eighteen times. Twelve of those appearances are in risk disclosures: tenant protection legislation, tenant litigation, tenant default. The remaining six are tucked away in the phrase &ldquo;tenant relations,&rdquo; which is the industry euphemism for not getting sued. The word &ldquo;family&rdquo; appears seven times. Every single appearance is a hyphenated modifier: <em>single-family</em>, as in the property type designation, as in the square footage category, as in the asset class. The word &ldquo;home&rdquo; appears four times in 340 pages. In October 2020, the CARES Act foreclosure moratorium was expiring in waves. Unemployment was at 6.7%. The Federal Reserve had cut rates to zero and announced it would hold them there until 2023. Bond yields were returning nothing. Institutional capital—the pension money, the endowment money, the sovereign wealth money, the insurance float—was drowning in the search for yield. And here was the pitch: a fragmented market dominated by individual owners, in Sun Belt cities where the working population was still growing, where median house prices were still in the range a corrections officer or a respiratory therapist could finance, where there was no organized institutional presence yet. The opportunity was exactly the kind of inefficiency that $1.2 billion in committed capital could eliminate. The target acquisition price range is on page 89: $175,000 to $395,000. Not vacation homes. Not luxury condominiums. The market where a household earning sixty-five thousand dollars a year could still buy something with three percent down if the interest rate held and nothing went wrong in the next ninety days. The fund&rsquo;s portfolio construction strategy, page 211: achieve a minimum fifteen percent market share in each target submarket before capital deployment moves to the next submarket. Fifteen percent of the annual single-family sales volume in the ZIP code. Captured. Converted to permanent rental inventory. Held for the fund&rsquo;s target investment period of seven to ten years. Seven to ten years is not a rental strategy. Seven to ten years is a generation. There is one more section worth naming. Page 298. Risk Factor 17. &ldquo;Changes in applicable laws or regulations, including tenant protection legislation, just-cause eviction requirements, or right-of-first-refusal laws, may adversely affect the Fund&rsquo;s ability to manage its properties and may reduce investment returns.&rdquo; They knew. They disclosed it. They named the exact mechanism by which their cash flows could be threatened—the government deciding that the people living in the houses had rights that superseded the fee schedule on page 47. They told their pension-fund limited partners, in Garamond 10-point, that the primary regulatory risk to stable returns was the possibility that someone might legally recognize the humans inside the asset class. You have been signing forms like this your entire working life. You signed the W-4. You signed the benefits packet. You just didn&rsquo;t know what these little pieces of paper meant. The word &ldquo;eviction&rdquo; does not appear anywhere in the 340 pages. &mdash; ## THE ACQUISITION I drove down to Maricopa County. And there it was. Instrument No. 20210423847. Filed March 17, 2021, in Laveen Village, Phoenix. The grantor line—the old family, the ones who had lived there—they bought this house back in November 2015 for $198,000, and they made every single payment on time, every single month. Perfect record. Immaculate. But the grantee line? That was Invitation Homes Intermediate Trust—a Delaware statutory trust, naturally headquartered in Dallas, Texas, at 1717 Main Street, Suite 2000. The consideration listed? Three hundred and one thousand dollars. Cash. That’s the whole, hideous transaction—three sentences. Filed in four business days. Legible to anyone with the correct Maricopa County recorder login and the sheer, stubborn, miserable patience required to actually read what a statutory trust <em>is</em>. The algorithm generated that offer at 11:14 on the morning of March 16th. Not eleven a.m. Not &ldquo;about eleven.&rdquo; Eleven-fourteen—because the algorithm, God bless its cold, calculating heart, does not operate in approximations. It works in the exact, unblinking data language of the county assessor files, the MLS transaction history, and the eighteen months of rental rate data that Invitation Homes pulls every morning from its 80,000-unit portfolio—the single largest single-family rental portfolio ever assembled in the history of American housing. The offer was $301,000 against a $287,000 listing price, all-cash, compressed to a seventy-two-hour close, as-is, zero inspection contingency, zero appraisal contingency, and, most damningly, zero mortgage underwriter who might have glanced at the fact that this family paid $198,000 for this house six years ago, while the neighborhood&rsquo;s median income has not shifted in a way that could possibly explain a fifty-two percent appreciation. The algorithm doesn&rsquo;t notice the human history. It just notices a zip code trending toward a certain kind of liquidity. And in that same morning, it threw out three hundred and seventeen offers across the Phoenix metro. This was one of them. The house itself is four bedrooms, two bathrooms, approximately 1,840 square feet on a standard lot in Laveen Village—which, for those of us who grew up in Phoenix, is the part that used to be affordable. That is not a technical term of art. That is what affordable <em>means</em>: the families who couldn&rsquo;t afford Tempe or Chandler or the better-tracked parts of the West Valley bought here instead. The family on the grantor line was one of them. They came up with the down payment in 2015, they made every payment, they watched the neighborhood climb, and they had a number in their head—a line in the sand—that told them when they would know the city was gone. And $301,000 in cash in seventy-two hours was past that number. They rented in Mesa. They are still renting in Mesa. The offer was machine-generated, machine-validated, machine-dispatched through the DocuSign portal at 11:14 a.m. Acceptance slammed back at 3:47 p.m. the same day. The REIT&rsquo;s acquisition team in Dallas processed the close. The title company filed the deed. Instrument No. 20210423847 became, in the precise, sanitized language of the Invitation Homes 2021 Annual Report filed with the Securities and Exchange Commission, a &ldquo;high-quality, single-family rental property in a high-growth market.&rdquo; The house now lists on the Invitation Homes rental platform at $2,340 per month. Here is what $2,340 per month buys in the house at Instrument No. 20210423847: the right to occupy 1,840 square feet in Laveen Village, owned by a Delaware statutory trust that is traded on the New York Stock Exchange as INVH—a behemoth built by Blackstone, the largest private equity firm in the world, at the bottom of the 2012 housing crash. That same crash, mind you, that stripped 3.8 million American families of their homes between 2008 and 2014, and they took it public in 2017 with Blackstone collecting the massive exit. You sign a twelve-month lease. You pay $2,340. You do not build equity. You do not own the house. You pay the trust, and the trust pays its investors, and those investors include pension funds and sovereign wealth funds and university endowments whose principals, if you asked them, would tell you they have no opinion on housing policy. Three hundred and seventeen offers. One morning. One metro. You have been signing forms like this your entire working life. You just didn&rsquo;t know what they meant. &mdash; ## THE ALGORITHM I read the Progress Residential Fund IV offering memorandum—February 2021, page 34—and there it was, sitting there like a freshly laundered corpse: eleven bullet points describing the acquisition platform. It ingests forty-seven data inputs, precisely, at the census-tract level. &ldquo;Rental demand fundamentals,&rdquo; the document calls them. I drove, seventeen hours, to the filing cabinet where I found the digitized copy, and I realized it wasn&rsquo;t proprietary. It wasn&rsquo;t some magic formula. It was public data. Federal sludge. The same bureaucratic muck the HUD fair housing office uses to map segregation: the Cherre aggregation platform, the ATTOM property records, the CoStar rental analytics, the HouseCanary automated valuation. Forty-seven inputs. One number, zero to one hundred. Every single census tract in twenty-two metropolitan statistical areas, scored, ranked, before the sun even thought about cracking the horizon. I traced the components. School quality index—GreatSchools composite scores by district boundary, normalized against the county median, sourced from the National Center for Education Statistics. Employment proximity—driving time in minutes to the ten largest employers, sourced from LEHD Origin-Destination Employment Statistics at the Bureau of Labor Statistics, weighted by job count. Prior appreciation: the FHFA House Price Index, a ten-year trailing average, overlaid onto the census-tract map. Rental demand coefficient: the inverse of the CoStar vacancy rate, multiplied by five-year population growth from the American Community Survey. Crime index: FBI UCR incidents per ten thousand residents, inverted—meaning lower crime scores higher. Then there was the homeownership rate. A tract where sixty-two percent of residents owned their homes scored higher than a tract where eighty-eight percent did. Because the sixty-two percent tract had <em>room</em> to convert. The fund wasn&rsquo;t looking for markets. The fund was looking for transitions. The highest scores weren&rsquo;t in the wealthy suburbs with the nine-rated schools and the Whole Foods. Those tracts scored poorly on the appreciation input—the ten-year appreciation had already happened, the entry price reflected it, and the upside was already rattling in the rearview mirror. The highest scores landed, precisely, in the working-class neighborhood, two zip codes removed from that gilded suburb. The schools were a six. The commute to the employment center was twenty-two minutes, not eight. The ten-year appreciation was thirty-one percent, not sixty-seven—which meant the model&rsquo;s upside was still, defiantly, in front of it. The homeownership rate was sixty-one percent. I checked the Fulton County deed transfer records, cross-referencing them against the Progress Residential corporate entity registry filed with the Georgia Secretary of State, and found the receipts: 2,847 homes bought in tracts matching this exact profile across the Atlanta metropolitan statistical area between January 2020 and December 2022. Average acquisition price: $284,000. Average rental listing twelve months after acquisition: $2,190 per month. And here it is. The structural load-bearing wall of the whole rotten operation: the HUD Affirmatively Furthering Fair Housing database—AFFH-T, publicly available at hud.gov, updated quarterly—maps census-tract demographic composition against housing market indicators across every metropolitan area in the country. When I ran the Progress Residential acquisition coordinates against the AFFH-T data, the correlation wasn&rsquo;t subtle. Of the 2,847 Fulton County acquisitions, 2,391—83.9 percent—fell in census tracts where the Black or Hispanic share of the population exceeded forty percent. The fund&rsquo;s investor presentation doesn&rsquo;t mention this. The offering memorandum doesn&rsquo;t mention this. The forty-seven variable inputs don&rsquo;t even include a demographic composition field. They don&rsquo;t need one. The algorithm finds the same tracts without it. School quality index, employment proximity, prior appreciation rate, rental demand coefficient, homeownership rate—these five inputs, operating together in the specific weighting the model uses, act as a proxy. A perfect, clinical, goddamn proxy. They locate the neighborhood that was redlined between 1935 and 1940, that saw modest appreciation after the Fair Housing Act but never the equity accumulation of the white suburbs because the mortgage credit never fully arrived, that still has homeowners who want to stay homeowners but whose children cannot scrape together the down payment because the wages didn&rsquo;t compound the way the zip code two miles north compounded. The Home Owners&rsquo; Loan Corporation produced its residential security maps between 1935 and 1940, grading every census tract in every American city from A to D. The D tracts—colored red, which is where the word comes from—were predominantly Black and immigrant neighborhoods where the HOLC determined that federal mortgage insurance would not flow. Those determinations locked generational wealth out of six decades of American homeownership expansion. The maps weren&rsquo;t published. They were filed. They existed as operational instruments inside the lending system, shaping which families built equity and which did not, until researchers began recovering them from the National Archives in the 1970s and digitizing them for public access in the 2010s. The National Community Reinvestment Coalition cross-referenced HOLC hazard grades against institutional acquisition density across twelve metropolitan statistical areas, 2018 through 2022. The correlation coefficient between D-grade HOLC designation and institutional investor concentration: 0.73. The algorithm didn&rsquo;t create this geometry. It inherited it—and it charged rent on what it found. You have been signing forms like this your entire working life. You just didn&rsquo;t know what they meant. The red lines still exist. Just digitized. Just algorithmized. &mdash; I drove to the county archives in a car that smelled vaguely of stale coffee and the three-year-old desperation of a man who had finally found the damn thing. And there it was: <em>The Invitation Homes Residential Lease Agreement — Standard Terms and Conditions, Version January 2022</em>—a monstrous, thirty-one-page leviathan. Tenant advocacy groups—God bless their desperate little souls—had wrestled this beast out of public records requests filed across Georgia, Florida, and Arizona, dragging it into the fluorescent, dusty light of my cramped office. The bottom of page one, the signature line, states: Invitation Homes, as Lessor. The tenant signs below. There is no negotiation line. No addendum clause. No alternate form. Nowhere, nowhere at all, to write your objection to any specific provision. In the sixteen metropolitan markets where this behemoth operates, it is presented as-is,</h1>
+</div>
+
+
+<div class="truncation-notice">
+  <h2>— END OF TEASER —</h2>
+  <p>You're reading the first 25 pages of <em>The Extraction</em>.</p>
+  <p>The full manuscript is available at:<br>
+     <span class="url">https://zombie760.github.io/books</span>
+  </p>
+  <p>Every claim is filed. Every source is named. The documents speak.</p>
+  <p style="margin-top:2em;font-family:monospace;font-size:9pt;color:#999;">
+     © BOTWAVE PAPERWORK — Kyle Jimenez — All rights reserved.<br>
+     This teaser may not be redistributed, sold, or modified.
+  </p>
+</div>
+
+</body>
+</html>

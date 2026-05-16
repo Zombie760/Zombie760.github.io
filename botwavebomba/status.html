@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status — BOTWAVEBOMBA</title>
+  <meta name="description" content="Live BOTWAVEBOMBA pipeline state. Last successful run, article + story counts, source-count reconciliation, decomposition progress. Auto-refreshes every 60 seconds.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/botwavebomba/assets/css/main.css">
+  <link rel="stylesheet" href="/botwavebomba/assets/css/mobile.css">
+  <link rel="manifest" href="/botwavebomba/manifest.json">
+  <link rel="apple-touch-icon" href="/botwavebomba/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
+  <script src="/botwavebomba/assets/js/theme-switcher.js" defer></script>
+  <script src="/botwavebomba/assets/js/pwa.js" defer></script>
+  <style>
+    .bwb-status-hero {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1.5rem;
+      margin:1.5rem 0 2.5rem;
+    }
+    .bwb-status-card {
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.025);
+      padding:1.25rem 1.5rem;
+      border-radius:6px;
+    }
+    .bwb-status-card--banner {
+      grid-column:1 / -1;
+      padding:1.5rem;
+      font-family:'DM Mono',ui-monospace,Menlo,monospace;
+      font-size:0.9rem;
+      line-height:1.5;
+    }
+    .bwb-status-card--green { background:#0a3a14; color:#bff5cf; border-color:#2b8a3e; }
+    .bwb-status-card--yellow { background:#3a2a08; color:#fff3c4; border-color:#b8860b; }
+    .bwb-status-card--red { background:#3a0a0a; color:#ffc4c4; border-color:#a83232; }
+    .bwb-status-card--blue { background:#0a1a3a; color:#bfd0ff; border-color:#3055a0; }
+    .bwb-status-headline {
+      font-family:'DM Mono',ui-monospace,Menlo,monospace;
+      font-size:0.72rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      opacity:0.7;
+      margin-bottom:0.5rem;
+    }
+    .bwb-status-bignum {
+      font-family:'Playfair Display',Georgia,serif;
+      font-size:2.6rem;
+      line-height:1;
+      font-weight:700;
+    }
+    .bwb-status-subtext {
+      font-family:'DM Mono',ui-monospace,Menlo,monospace;
+      font-size:0.78rem;
+      opacity:0.8;
+      margin-top:0.5rem;
+    }
+    .bwb-source-table {
+      width:100%;
+      border-collapse:collapse;
+      margin:1rem 0;
+      font-family:'DM Mono',ui-monospace,Menlo,monospace;
+      font-size:0.85rem;
+    }
+    .bwb-source-table th, .bwb-source-table td {
+      padding:0.6rem 0.8rem;
+      text-align:left;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    .bwb-source-table th { opacity:0.65; font-weight:400; letter-spacing:0.05em; text-transform:uppercase; font-size:0.72rem; }
+    .bwb-source-table td.num { font-size:1.4rem; font-family:'Playfair Display',Georgia,serif; }
+    .bwb-decomp-bar {
+      width:100%;
+      height:0.5rem;
+      background:rgba(255,255,255,0.08);
+      border-radius:3px;
+      overflow:hidden;
+      margin:0.75rem 0 1.5rem;
+    }
+    .bwb-decomp-bar__fill {
+      height:100%;
+      background:linear-gradient(90deg, #2b8a3e, #7af0a0);
+      transition:width 0.5s ease;
+    }
+    .bwb-decomp-list { list-style:none; padding-left:0; }
+    .bwb-decomp-list li {
+      padding:0.5rem 0;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+      font-family:'DM Mono',ui-monospace,Menlo,monospace;
+      font-size:0.85rem;
+    }
+    .bwb-decomp-list li:last-child { border-bottom:none; }
+    .bwb-decomp-status {
+      display:inline-block;
+      min-width:7em;
+      padding:0.1em 0.5em;
+      border-radius:3px;
+      font-size:0.72em;
+      letter-spacing:0.05em;
+      margin-right:0.6em;
+      text-align:center;
+    }
+    .bwb-decomp-status--monolith { background:#3a2a08; color:#ffd95a; border:1px solid #b8860b; }
+    .bwb-decomp-status--extracted { background:#0a3a14; color:#7af0a0; border:1px solid #2b8a3e; }
+    .bwb-decomp-status--in-progress { background:#0a1a3a; color:#80c8ff; border:1px solid #4080c0; }
+    .bwb-decomp-status--discrete { background:#0a3a14; color:#7af0a0; border:1px solid #2b8a3e; }
+    .bwb-status-loading { opacity:0.5; font-style:italic; }
+    .bwb-status-error {
+      background:#3a0a0a;
+      color:#ffc4c4;
+      border:1px solid #a83232;
+      padding:1rem;
+      border-radius:6px;
+      font-family:'DM Mono',ui-monospace,Menlo,monospace;
+      font-size:0.85rem;
+      margin:1rem 0;
+    }
+    .bwb-status-foot {
+      margin-top:2rem;
+      padding-top:1rem;
+      border-top:1px solid rgba(255,255,255,0.1);
+      font-family:'DM Mono',ui-monospace,Menlo,monospace;
+      font-size:0.78rem;
+      opacity:0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="bwb-header bwb-header--compact">
+    <div class="bwb-header-inner">
+      <a href="/botwavebomba/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <nav class="bwb-topnav">
+        <a href="/botwavebomba/">Feed</a>
+        <a href="/botwavebomba/blindspots.html">Blindspots</a>
+        <a href="/botwavebomba/sources.html">Sources</a>
+        <a href="/botwavebomba/about.html">Method</a>
+        <a href="/botwavebomba/status.html" class="active">Status</a>
+        <a href="/botwavebomba/funnies.html">Funnies</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="bwb-page-container">
+
+    <div class="bwb-page-header">
+      <h1 class="bwb-page-title">PIPELINE STATUS</h1>
+      <p class="bwb-page-sub">
+        Live state of the BOTWAVEBOMBA pipeline. Page auto-refreshes every 60 seconds.
+        Reads from <code>api/latest.json</code>, <code>pipeline_state.json</code>, and
+        <code>data/source_registry.json</code> at runtime. No cached numbers.
+        Cannot-verify is a first-class output — failures fail loud.
+      </p>
+    </div>
+
+    <div id="bwb-status-error-container"></div>
+
+    <div class="bwb-status-hero">
+      <div id="bwb-status-banner" class="bwb-status-card bwb-status-card--banner bwb-status-card--blue">
+        <div class="bwb-status-headline">Pipeline state</div>
+        <div id="bwb-status-banner-text" class="bwb-status-loading">Loading…</div>
+      </div>
+
+      <div class="bwb-status-card">
+        <div class="bwb-status-headline">Last successful run</div>
+        <div id="bwb-status-lastrun" class="bwb-status-bignum bwb-status-loading">—</div>
+        <div id="bwb-status-lastrun-iso" class="bwb-status-subtext"></div>
+      </div>
+
+      <div class="bwb-status-card">
+        <div class="bwb-status-headline">Articles / stories in current feed</div>
+        <div class="bwb-status-bignum"><span id="bwb-status-articles">—</span><span style="opacity:0.4;"> / </span><span id="bwb-status-stories">—</span></div>
+        <div class="bwb-status-subtext">live <code>api/latest.json</code></div>
+      </div>
+    </div>
+
+    <section class="bwb-about-section">
+      <h2>Source counts (reconciled)</h2>
+      <p>
+        Three populations, one canonical phrasing. Read at runtime; no hardcoded numbers.
+      </p>
+      <table class="bwb-source-table">
+        <thead>
+          <tr>
+            <th>Population</th>
+            <th>Count</th>
+            <th>Source file</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ingested every six hours</td>
+            <td class="num"><span id="bwb-src-ingested">—</span></td>
+            <td><code>book_arm/memory/sources_global.json</code></td>
+          </tr>
+          <tr>
+            <td>Carries full five-axis bias fingerprint</td>
+            <td class="num"><span id="bwb-src-fingerprinted">—</span></td>
+            <td><code>data/source_registry.json#total</code></td>
+          </tr>
+          <tr>
+            <td>Awaiting fingerprinting (volume-only)</td>
+            <td class="num"><span id="bwb-src-pending">—</span></td>
+            <td>derived: ingested − fingerprinted</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="bwb-status-subtext">
+        Bloc distribution of the fingerprinted set —
+        Western: <span id="bwb-src-western">—</span>
+        · Neutral: <span id="bwb-src-neutral">—</span>
+        · Adversarial: <span id="bwb-src-adversarial">—</span>
+      </p>
+    </section>
+
+    <section class="bwb-about-section">
+      <h2>Decomposition progress</h2>
+      <p>
+        Path B build: extract one analytical stage from <code>generate_feed.py</code>
+        per calendar week. Six modules, then a seventh week for the orchestrator.
+        Plan: <a href="/botwavebomba/PLAN_HYBRID.md"><code>PLAN_HYBRID.md</code></a>.
+      </p>
+      <div class="bwb-decomp-bar"><div id="bwb-decomp-fill" class="bwb-decomp-bar__fill" style="width:0%"></div></div>
+      <p class="bwb-status-subtext">
+        <strong><span id="bwb-decomp-count">—</span> / <span id="bwb-decomp-total">—</span></strong> modules extracted.
+        Next extraction target: <strong><code id="bwb-decomp-next">—</code></strong>
+        (scheduled <span id="bwb-decomp-next-date">—</span>).
+      </p>
+      <ul id="bwb-decomp-list" class="bwb-decomp-list">
+        <li class="bwb-status-loading">Loading decomposition state…</li>
+      </ul>
+    </section>
+
+    <section class="bwb-about-section">
+      <h2>Pipeline plumbing</h2>
+      <p>
+        Systemd timer: <code>botwave-bomba-pipeline.timer</code> ·
+        Shell: <code>zombie760.github.io/scripts/bomba_pipeline.sh</code> ·
+        Schedule: every 6 hours at 00, 06, 12, 18 UTC (with up to 5 min jitter).
+      </p>
+      <p class="bwb-status-subtext">
+        After Week 7 of the decomposition, this page will read per-stage health
+        from <code>api/pipeline_run.json</code> (schema already drafted at
+        <a href="/botwavebomba/schemas/pipeline_run.schema.json"><code>schemas/pipeline_run.schema.json</code></a>).
+        Until then, status is inferred from the freshness of <code>api/latest.json</code>
+        and from the manually-maintained <code>pipeline_state.json</code>.
+      </p>
+    </section>
+
+    <div class="bwb-status-foot">
+      <span id="bwb-status-foot-audit">Last methodology audit: 2026-05-10</span>
+      · <a href="/botwavebomba/audit/about_audit_2026-05-10.md" style="color:inherit;">audit/about_audit_2026-05-10.md</a>
+      · Page rendered <span id="bwb-status-foot-rendered">—</span>
+      · Auto-refresh every 60s
+    </div>
+
+  </div>
+
+  <footer class="bwb-footer">
+    <div class="bwb-footer-inner">
+      <span class="bwb-footer-logo">BOTWAVEBOMBA</span>
+      <span class="bwb-footer-sub">
+        Status v1 · reads <code>pipeline_state.json</code> + <code>api/latest.json</code> at runtime
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const PIPELINE_STATE_URL = '/botwavebomba/pipeline_state.json';
+      const LATEST_URL = '/botwavebomba/api/latest.json';
+      const REGISTRY_URL = '/botwavebomba/data/source_registry.json';
+      const REFRESH_MS = 60000;
+
+      function showError(msg) {
+        const container = document.getElementById('bwb-status-error-container');
+        if (!container) return;
+        const existing = document.getElementById('bwb-status-error');
+        if (existing) existing.remove();
+        const div = document.createElement('div');
+        div.id = 'bwb-status-error';
+        div.className = 'bwb-status-error';
+        div.textContent = 'STATUS PAGE: ' + msg;
+        container.appendChild(div);
+      }
+
+      function clearError() {
+        const existing = document.getElementById('bwb-status-error');
+        if (existing) existing.remove();
+      }
+
+      function relativeTime(date) {
+        const diffMs = Date.now() - date.getTime();
+        if (diffMs < 0) return 'in the future';
+        const minutes = Math.floor(diffMs / 60000);
+        if (minutes < 1) return 'just now';
+        if (minutes < 60) return minutes + 'm ago';
+        const hours = Math.floor(minutes / 60);
+        const minRem = minutes % 60;
+        if (hours < 24) return hours + 'h ' + minRem + 'm ago';
+        const days = Math.floor(hours / 24);
+        const hrRem = hours % 24;
+        return days + 'd ' + hrRem + 'h ago';
+      }
+
+      function statusBucketForAge(ageMs) {
+        const hours = ageMs / 3600000;
+        if (hours < 8) return { color: 'green', label: 'HEALTHY' };
+        if (hours < 24) return { color: 'yellow', label: 'DEGRADED' };
+        return { color: 'red', label: 'STALE' };
+      }
+
+      function setBannerClass(color) {
+        const banner = document.getElementById('bwb-status-banner');
+        if (!banner) return;
+        banner.classList.remove('bwb-status-card--green', 'bwb-status-card--yellow', 'bwb-status-card--red', 'bwb-status-card--blue');
+        banner.classList.add('bwb-status-card--' + color);
+      }
+
+      async function fetchJson(url) {
+        const r = await fetch(url, { cache: 'no-store' });
+        if (!r.ok) throw new Error(url + ' returned HTTP ' + r.status);
+        return await r.json();
+      }
+
+      function buildStageLi(stage) {
+        const li = document.createElement('li');
+
+        const status = document.createElement('span');
+        status.className = 'bwb-decomp-status bwb-decomp-status--' + (stage.status || 'monolith');
+        status.textContent = (stage.status || 'monolith').replace('_', ' ');
+        li.appendChild(status);
+
+        const nameStrong = document.createElement('strong');
+        const code = document.createElement('code');
+        code.textContent = stage.name;
+        nameStrong.appendChild(code);
+        li.appendChild(nameStrong);
+
+        if (stage.file) {
+          const fileSpan = document.createElement('span');
+          fileSpan.style.opacity = '0.65';
+          fileSpan.style.marginLeft = '0.5rem';
+          fileSpan.textContent = ' (' + stage.file + ')';
+          li.appendChild(fileSpan);
+        }
+
+        if (stage.notes) {
+          const notesDiv = document.createElement('div');
+          notesDiv.style.opacity = '0.65';
+          notesDiv.style.marginLeft = '7.6em';
+          notesDiv.style.marginTop = '0.25rem';
+          notesDiv.style.fontSize = '0.78em';
+          notesDiv.textContent = stage.notes;
+          li.appendChild(notesDiv);
+        }
+
+        return li;
+      }
+
+      async function refresh() {
+        let latest = null;
+        let pipelineState = null;
+        let registry = null;
+        const errors = [];
+
+        try { latest = await fetchJson(LATEST_URL); }
+        catch (e) { errors.push('latest.json fetch failed: ' + e.message); }
+
+        try { pipelineState = await fetchJson(PIPELINE_STATE_URL); }
+        catch (e) { errors.push('pipeline_state.json fetch failed: ' + e.message); }
+
+        try { registry = await fetchJson(REGISTRY_URL); }
+        catch (e) { errors.push('source_registry.json fetch failed: ' + e.message); }
+
+        if (errors.length > 0) {
+          showError(errors.join(' · '));
+        } else {
+          clearError();
+        }
+
+        // ---- last-run + status banner ----
+        const bannerText = document.getElementById('bwb-status-banner-text');
+        if (latest && latest.generated_at) {
+          const lastRun = new Date(latest.generated_at);
+          const ageMs = Date.now() - lastRun.getTime();
+          const bucket = statusBucketForAge(ageMs);
+          setBannerClass(bucket.color);
+          bannerText.classList.remove('bwb-status-loading');
+          bannerText.textContent =
+            bucket.label + ' — last successful pipeline run ' + relativeTime(lastRun) + '. Next firing on 6h schedule.';
+
+          const lastRunEl = document.getElementById('bwb-status-lastrun');
+          lastRunEl.classList.remove('bwb-status-loading');
+          lastRunEl.textContent = relativeTime(lastRun);
+          document.getElementById('bwb-status-lastrun-iso').textContent = lastRun.toISOString();
+        } else {
+          setBannerClass('red');
+          bannerText.textContent =
+            'FAILED — cannot read api/latest.json. Pipeline state unknown until the next fetch.';
+        }
+
+        // ---- article + story counts ----
+        if (latest) {
+          document.getElementById('bwb-status-articles').textContent =
+            (latest.article_count != null) ? latest.article_count.toLocaleString() : '—';
+          document.getElementById('bwb-status-stories').textContent =
+            (latest.story_count != null) ? latest.story_count.toLocaleString() :
+            (latest.stories ? latest.stories.length.toLocaleString() : '—');
+        }
+
+        // ---- source counts ----
+        if (pipelineState && pipelineState.source_counts) {
+          const sc = pipelineState.source_counts;
+          document.getElementById('bwb-src-ingested').textContent = sc.total_ingested != null ? sc.total_ingested.toLocaleString() : '—';
+          document.getElementById('bwb-src-fingerprinted').textContent = sc.fingerprinted != null ? sc.fingerprinted.toLocaleString() : '—';
+          document.getElementById('bwb-src-pending').textContent = sc.awaiting_fingerprinting != null ? sc.awaiting_fingerprinting.toLocaleString() : '—';
+        }
+        if (registry && registry.by_bloc) {
+          document.getElementById('bwb-src-western').textContent = registry.by_bloc.western != null ? registry.by_bloc.western : '—';
+          document.getElementById('bwb-src-neutral').textContent = registry.by_bloc.neutral != null ? registry.by_bloc.neutral : '—';
+          document.getElementById('bwb-src-adversarial').textContent = registry.by_bloc.adversarial != null ? registry.by_bloc.adversarial : '—';
+        }
+
+        // ---- decomposition ----
+        if (pipelineState && pipelineState.decomposition) {
+          const d = pipelineState.decomposition;
+          document.getElementById('bwb-decomp-count').textContent = d.modules_extracted != null ? d.modules_extracted : '—';
+          document.getElementById('bwb-decomp-total').textContent = d.total_modules != null ? d.total_modules : '—';
+          if (d.next_extraction_target) {
+            document.getElementById('bwb-decomp-next').textContent = d.next_extraction_target;
+          }
+          if (d.next_extraction_scheduled) {
+            document.getElementById('bwb-decomp-next-date').textContent = d.next_extraction_scheduled;
+          }
+          const pct = (d.total_modules > 0) ? Math.round(100 * (d.modules_extracted || 0) / d.total_modules) : 0;
+          document.getElementById('bwb-decomp-fill').style.width = pct + '%';
+
+          const ul = document.getElementById('bwb-decomp-list');
+          const newChildren = (d.stages || []).map(buildStageLi);
+          ul.replaceChildren.apply(ul, newChildren);
+        }
+
+        // ---- audit date + render time ----
+        if (pipelineState && pipelineState.last_audit) {
+          document.getElementById('bwb-status-foot-audit').textContent = 'Last methodology audit: ' + pipelineState.last_audit;
+        }
+        document.getElementById('bwb-status-foot-rendered').textContent = new Date().toISOString();
+      }
+
+      refresh();
+      setInterval(refresh, REFRESH_MS);
+    })();
+  </script>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bwb-bottom-nav safe-bottom">
+    <a href="/botwavebomba/">
+      <span class="bwb-bottom-nav-icon">📰</span>
+      <span>Feed</span>
+    </a>
+    <a href="/botwavebomba/blindspots.html">
+      <span class="bwb-bottom-nav-icon">👁️</span>
+      <span>Blindspots</span>
+    </a>
+    <a href="/botwavebomba/sources.html">
+      <span class="bwb-bottom-nav-icon">🌐</span>
+      <span>Sources</span>
+    </a>
+    <a href="/botwavebomba/about.html">
+      <span class="bwb-bottom-nav-icon">📋</span>
+      <span>Method</span>
+    </a>
+    <a href="/botwavebomba/status.html" class="active">
+      <span class="bwb-bottom-nav-icon">📊</span>
+      <span>Status</span>
+    </a>
+    <a href="/botwavebomba/funnies.html">
+      <span class="bwb-bottom-nav-icon">🎭</span>
+      <span>Funnies</span>
+    </a>
+  </nav>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/botwavebomba/service-worker.js');
+    }
+  </script>
+</body>
+</html>

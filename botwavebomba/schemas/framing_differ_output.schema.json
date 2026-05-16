@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zombie760.github.io/botwavebomba/schemas/framing_differ_output.schema.json",
+  "title": "Framing Differ — Output Framed Cluster Record",
+  "description": "One framed cluster per line in framings.jsonl. Inherits cluster identity + bias data from bias_scorer's output and adds: consensus_headline_art selection (article whose headline has maximum word overlap with other cluster members), per-article framing cards (headline + lede + source + image + video), and per-cluster image/video pick. Behaviour extracted from generate_feed.py:583-657 (consensus_headline_art + article_cards build).",
+  "type": "object",
+  "required": [
+    "cluster_id", "label", "label_type", "member_hashes", "member_count",
+    "source_ids", "source_count",
+    "sources_enriched", "bias_variance", "axis_avg", "fp_source_count",
+    "consensus_hash", "consensus_headline", "consensus_summary", "consensus_source",
+    "image_url", "video_url",
+    "article_cards"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "cluster_id": { "type": "string", "pattern": "^c_[0-9a-f]{12}$" },
+    "label": { "type": "string" },
+    "label_type": { "type": "string", "enum": ["pair", "single"] },
+    "member_hashes": { "type": "array", "items": { "type": "string", "minLength": 4 }, "minItems": 3 },
+    "member_count": { "type": "integer", "minimum": 3 },
+    "source_ids": { "type": "array", "items": { "type": "string" }, "minItems": 2, "uniqueItems": true },
+    "source_count": { "type": "integer", "minimum": 2 },
+    "sources_enriched": { "type": "array" },
+    "bias_variance": { "type": "number", "minimum": 0 },
+    "axis_avg": { "type": "object" },
+    "fp_source_count": { "type": "integer", "minimum": 0 },
+    "consensus_hash": {
+      "type": "string",
+      "description": "Hash of the cluster article chosen as the consensus framing (highest shared-word score per consensus_headline_art logic)."
+    },
+    "consensus_headline": {
+      "type": "string",
+      "description": "Headline of the consensus article — used as the story's display headline."
+    },
+    "consensus_summary": {
+      "type": "string",
+      "description": "Article description of the consensus article (truncated to 300 chars downstream)."
+    },
+    "consensus_source": {
+      "type": "string",
+      "description": "Source id of the consensus article."
+    },
+    "image_url": {
+      "type": ["string", "null"],
+      "description": "First non-null image_url across cluster articles in iteration order. Drives the story hero image."
+    },
+    "video_url": {
+      "type": ["string", "null"],
+      "description": "First non-null video_url across cluster articles in iteration order."
+    },
+    "article_cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["url", "headline", "snippet", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "url": { "type": "string" },
+          "headline": { "type": "string" },
+          "snippet": {
+            "type": "string",
+            "description": "get_snippet() output — full_text if >150 chars and boilerplate-free, else description; truncated at word boundary to 300 chars."
+          },
+          "source": { "type": "string" },
+          "source_name": { "type": ["string", "null"] },
+          "country": { "type": ["string", "null"] },
+          "published": { "type": ["string", "null"] },
+          "image_url": { "type": ["string", "null"] },
+          "video_url": { "type": ["string", "null"] }
+        }
+      },
+      "minItems": 3,
+      "description": "Per-cluster-article framing data. Same order as scored.member_hashes (which is the cluster's greedy-assignment order)."
+    }
+  }
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Are The Worker — Teaser — BOTWAVE PAPERWORK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+    --accent: #b22222;
+    --ink: #1a1a1a;
+    --paper: #fbf8f2;
+    --muted: #666;
+    --stamp: rgba(180, 34, 34, 0.07);
+}
+
+@page {
+    size: 6in 9in;
+    margin: 0.9in 0.75in 1.1in 0.75in;
+
+    @bottom-left {
+        content: "BOTWAVE PAPERWORK — TEASER COPY";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.05em;
+    }
+    @bottom-right {
+        content: counter(page) " of 25";
+        font-family: Georgia, serif;
+        font-size: 9pt;
+        color: #888;
+    }
+    @top-right {
+        content: "Get the full book: ZOMBIE760.GITHUB.IO/BOOKS";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.03em;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11.5pt;
+    line-height: 1.6;
+}
+
+body {
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 1in 0.5in;
+    position: relative;
+}
+
+/* Diagonal watermark via fixed background */
+body::before {
+    content: "TEASER";
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: "Space Mono", monospace, serif;
+    font-size: 96pt;
+    font-weight: 700;
+    color: var(--stamp);
+    letter-spacing: 0.2em;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+/* Cover page */
+.cover-page {
+    page-break-after: always;
+    text-align: center;
+    padding: 1.5in 0.5in 1in;
+    border-bottom: 3px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.cover-imprint {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 9pt;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+}
+
+.cover-title {
+    font-family: Georgia, serif;
+    font-size: 28pt;
+    font-weight: bold;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 0.3em;
+}
+
+.cover-subtitle {
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 0 1.5em;
+}
+
+.cover-byline {
+    font-family: Georgia, serif;
+    font-size: 13pt;
+    color: var(--ink);
+    margin-bottom: 2em;
+}
+
+.cover-notice {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 8pt;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.75em 1em;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    margin-top: 2em;
+}
+
+.cover-cta {
+    font-family: Georgia, serif;
+    font-size: 10pt;
+    color: var(--muted);
+    margin-top: 1em;
+}
+
+/* Truncation notice at end */
+.truncation-notice {
+    page-break-before: always;
+    text-align: center;
+    padding: 2in 1in;
+    border-top: 2px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.truncation-notice h2 {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 12pt;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1em;
+}
+
+.truncation-notice p {
+    font-family: Georgia, serif;
+    font-size: 11pt;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.truncation-notice .url {
+    font-family: "Space Mono", monospace;
+    font-size: 10pt;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 20pt;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 0.3em;
+    margin-top: 1.8em;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 15pt;
+    margin-top: 1.4em;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-style: italic;
+    margin-top: 1.2em;
+    page-break-after: avoid;
+}
+
+p { margin: 0.6em 0; }
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1em 0 1em 1.5em;
+    padding-left: 1em;
+    font-style: italic;
+    color: var(--muted);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1.5em 2em;
+}
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="cover-page">
+  <div class="cover-imprint">BOTWAVE PAPERWORK</div>
+  
+  <div class="cover-title">You Are The Worker</div>
+  <div class="cover-subtitle">An Instructional Manual for the Federal Employee Separation Process</div>
+  <div class="cover-byline">Kyle Jimenez</div>
+  <div class="cover-notice">TEASER COPY — FIRST 25 PAGES<br>NOT FOR REDISTRIBUTION OR SALE</div>
+  <div class="cover-cta">Full manuscript: https://zombie760.github.io/books</div>
+</div>
+
+<div class="content">
+<h1>YOU ARE THE WORKER ### An Instructional Manual for the Federal Employee Separation Process <em>Kyle Jimenez</em> <em>BOTWAVE BOOKS</em> <em>2026-05-09</em> <em>Voice DNA: 75% Palahniuk / 25% Thompson</em> &mdash; ## THE NOTICE The email landed at 11:47 PM on a Tuesday. Not a chime. A systemic <em>thunk</em>. The sound of a server farm acknowledging its own perfectly calibrated efficiency. Subject line: <em>Personnel Action — Official Notice.</em> You clicked it. There it was: the SF-50, Notification of Personnel Action, Form GSA 7002 (Rev. 12/2022). You are a GS-12. You have logged eighteen years of service. Eighteen years of quarterly reviews, mandatory training modules, the predictable suffocating grind that defines the Federal Service. You did not anticipate the machine deciding you were surplus. Look at Box 5-A. The action code. It reads 352. Involuntary Separation — Reduction in Force. The algorithm does not observe business hours. It does not observe eighteen years. It observes data points. It observes optimization. At 11:47 PM, somewhere in the sterile humming heart of the agency&rsquo;s HR database, the logic gate flipped. Your entire career — the late nights, the successful audits, the committee service — reduced to a single decisive byte. Box 4: Effective Date. Thirty days from today. Thirty days. The agency, in its sublime bureaucratic grace, delivered precisely the minimum legally permissible runway. Not a meeting. A deadline. Not a reason. A code. You know what 352 means. It means the DOGE reduction-in-force machine has designated your function as redundant. It means the cost-benefit analysis — conducted by a mid-level analyst in a basement office — determined that the collective value of your role was less than the cost of maintaining it. The value of <em>you</em> was less than the cost of maintaining you. The fury, when it arrives, is not in the injustice. It is in the precision. This is not merely a cut. It is a legally defined event under 5 U.S.C. § 7513 — the statute that dictates the precise process by which an agency sheds its personnel. The agency is not acting capriciously. It is acting <em>efficiently</em>. The claim of &ldquo;efficiency of the service&rdquo; is a perfect legal shield. It sounds noble. It means the ledger balanced. It means your pension vesting schedule — full eligibility on June 2035 — is now mathematically and irrevocably truncated. You have thirty days to fight the algorithm. Step One: Review the SF-50. Do not skim it. Understand the specific language of the separation. &ldquo;Position Elimination&rdquo; versus &ldquo;Personnel Elimination.&rdquo; The distinction is microscopic. It is also the difference between a manageable adverse action and a pure algorithmic cull. Step Two: Locate the formal justification. This justification, mandated under the relevant CFR sections, must tie back to the agency&rsquo;s stated need for efficiency. Find the specific policy memo. The specific line item in the budget reduction plan. This is where the machine meets the paper. This is where the data point becomes a traceable human error. The absurdity is the speed. One moment you are signing off on a minor grant proposal. The next you are a variable in a massive indifferent equation and the equation has resolved itself to <em>zero</em>. You are now a litigant in your own life. A defender against the perfectly legal, perfectly efficient machine. You have thirty days. &mdash; ## THE STATUTE You have 30 days. The SF-50 is sitting on your desk. Stark white. Official. The machine&rsquo;s first breath. You have been a GS-12 for eighteen years. You watched the agency evolve from a sprawling brick structure into a slick algorithmic entity — a vast humming data center that decided your life was an inefficiency. The notice says &ldquo;Reduction in Force — workforce restructuring.&rdquo; Polite. Bureaucratic. A lie. This is where the law lives. This is also where the law fails you. The statute is 5 U.S.C. § 7513. Adverse actions. Removals, suspensions, furloughs, reductions in pay or grade. The government must give you 30 days advance written notice. This is the clock. Thirty days until the guillotine drops. Or until you learn how to oil the gears. The agency&rsquo;s legal counsel — the ones who drafted the SF-50 — know &ldquo;workforce restructuring&rdquo; is a technicality. A euphemism. Bureaucratic gauze wrapped around the cold steel of necessity. The law demands specificity. It demands they tell you <em>why</em> you are being eliminated, not just <em>that</em> you are being eliminated. They chose the vague shield because the specific reason — the algorithm&rsquo;s calculated reduction of your utility score — is too ugly. Too true. You have 30 days to respond. The response does not go to the person who signed the order. It goes to a reviewing official. Designated last week. Maybe yesterday. A functionary. A placeholder in the chain of custody. They have never met you. Never seen the morning you received the SF-50. To them, you are not a man of eighteen years of service. You are a data point. A line item marked for deletion. The machine moves with the precise frictionless grace of a well-oiled industrial press. One moment you are in the steady predictable rhythm of the federal clock. The next you are a discarded piece of scrap metal, cataloged and awaiting removal. You must read 5 U.S.C. § 7513. Not just the summary. The whole unforgiving text. You must read the CFR. You must know that your due process is not a courtesy. It is a legal requirement. A small fragile shield against the overwhelming force of administrative convenience. They want you to accept &ldquo;restructuring&rdquo; as the final word. But the language of the statute is a weapon. Learn its weight. Find the specific reason. The procedural flaw. The moment where the machine stumbled. If you do nothing, the clock runs out. The SF-50 moves from Notice to Action. The action is final. The reduction is absolute. The clock stops. If you act, you engage the system. You send the response to the reviewing official. You force them to confront the inadequacy of the notice. You demand specificity. You force the abstract concept of &ldquo;restructuring&rdquo; to resolve itself into a concrete defensible reason. That is the leverage. The maddening precision of the CFR. The ability to force the perfect machine to stutter. The machine is still just a document. &mdash; ## THE RIF The RIF. The machine&rsquo;s most polite function. Reduction in Force. They use the phrase like a gentle bureaucratic lullaby — a slow metronomic click assuring you that the world, though it has decided to jettison you, is still perfectly organized. You have the SF-50 in your hand. Thick paper. Smells faintly of toner and terminal disinfectant. Not a dismissal. An <em>elimination</em>. That distinction is everything. You are not being fired for slacking off. Not for a poor performance review. You are being eliminated by a spreadsheet. A statistical necessity that has somehow become a matter of human consequence. The process is not arbitrary. That is the first most terrifying lesson. It is governed by a logically precise hierarchy of sacrifice. You are being sorted like grain in a centrifuge. 5 C.F.R. Part 351 dictates the order of the cutting. It begins with the competitive area. Then the competitive level. Then the tenure group. Then veterans&rsquo; preference. Then length of service. This is the logic. The terrifying efficiency. You are being measured against a cosmic yardstick of merit and falling short by a margin measured in the arbitrary tick of a reduction schedule. You are a GS-12. Eighteen years. You thought your seniority, your accumulated knowledge, your ability to navigate the tangled roots of this agency — you thought that was armor. It was not armor. Now listen to the fine print of the RIF itself. Because you have a right. A real, legally mandated, bureaucratic safety net. It is called &ldquo;bump and retreat.&rdquo; The one place where the machine allows a sliver of human negotiation. The regulation — the specific unyielding mandate — requires that if your competitive level is being eliminated, you have the right to displace a lower-standing employee in a related position you can perform. The right is real. Etched into the code. Here is the practical horror. Your agency gave you the notification. The SF-50. The clock. They did not give you the list. They have not provided the inventory of positions you can bump into. They have not defined the boundary of your retreat. They gave you the hammer and hid the nail. The law requires them to identify these positions — match your eighteen years of institutional memory, your mastery of the arcane regulatory language, to a vacant slot lower on the seniority scale. But they are slow. Deliberately slow. Using the administrative lag as a weapon. They are forcing you to navigate thirty days blind. The system is not just cutting you. It is <em>testing</em> you. Demanding you perform a complex high-stakes bureaucratic scavenger hunt while simultaneously feeling the cold weight of the termination notice. You must argue for your place against a list of ghost jobs that only exists on paper — a list they are too busy optimizing to print. Find the vacant slot. Force the agency to acknowledge your specific utility. Then successfully argue that your value outweighs the lowest-ranked employee in that adjacent role. The agency signed the order. Director Harding signed it, under the authority of the Office of Management and Budget&rsquo;s Directive 2024-B. The reason is &ldquo;efficiency of the service.&rdquo; An algorithm determined that the marginal utility of your position had dropped below the threshold of institutional overhead. You are fighting an algorithm. You are fighting it with the exact dense language of 5 U.S.C. § 7513. You are fighting the optimized output of a massive data set with the nuanced messy reality of your own life. Find the list. &mdash; ## THE UNION You belong to something. AFGE Local 3599. Or NTEU Chapter 201. Or NFFE Local 4. It does not matter which badge you wear. It matters that the collective bargaining agreement you signed — years ago, during a brief period of optimistic solidarity — has provisions for RIF procedures. It promises a defense. A pause. The union will file a grievance. A massive bureaucratic weapon. A torrent of procedural citations and cross-referenced clauses. It will demand the full legally mandated review of the SF-50 action. They will argue that DOGE violated the spirit — and the letter — of the collective agreement. This is where the machine laughs. The grievance process, according to the established procedures in your specific CBA&rsquo;s Article 12, takes sixty to one hundred and twenty days. A marathon. A legal siege. Designed to grind the administrative apparatus to a halt. But the clock on your desk does not pause. The Department does not stop. Your effective separation date is thirty days from this morning. The notice is clear. The administrative ledger demands compliance. The DOGE system is not a deliberative body. It is a throughput mechanism. An assembly line for human capital. The union will be filing their paperwork — meticulously documenting the violation of 5 U.S.C. § 7513, or the specific CBA language that supersedes it — while you are simultaneously preparing for the exit. They are fighting for a reversal. You are preparing for the logistics of severance. You can be reinstated. If the grievance succeeds, if the MSPB or the Department of Labor finds merit in the claim, you can be reinstated. But reinstatement does not happen on Day 31. It happens after the initial 30-day clock runs out. After the grievance resolves. Then another sixty to one hundred and twenty days of administrative wrangling. Your health insurance — the gold-plated promise of the federal system — lapses on Day 31. The severance package, however generous, is a lump sum designed to cover a fraction of the actual ongoing cost of existence. The union is fighting for your job. The government is calculating the cost of your absence. You will be separated before the grievance resolves. This is the cruel elegant mechanism. The union&rsquo;s fight is against the <em>reason</em> for the action. The government&rsquo;s action is against your <em>presence</em>. The government wins the temporal battle every time. You will be caught in the administrative crossfire. A human casualty between the legal promise and the operational speed. You are the variable in a perfectly optimized equation. The union is a shield. A slow shield. The DOGE RIF is a bullet fired at high velocity. The machine never waits. &mdash; ## THE BENEFITS Look at the paper. Look at the SF-50 again. There is a box — small, tucked into a sidebar — detailing the cessation of your Federal Employees Health Benefits. A sudden stop. A circuit breaker thrown in the middle of your life. Your coverage does not extend to the last day of the calendar month. It terminates on the last day of the pay period that contains your separation date. A pay period. Not a month. Not a quarter. A pay period. You thought your life was a continuous stream of steady reliable benefits — like the hum of the HVAC unit in your office, a constant low-frequency promise. Now that hum is replaced by a high-pitched urgent whine. <em>Find insurance.</em> You have sixty days. Sixty days to elect continuation under the federal COBRA equivalent. The agency handles the paperwork. The burden is yours. A ledger entry. A transfer of liability. You are the primary debtor. The calculation is a slap. As a federal employee, your premium was a clean subsidized $240 a month for self-plus-one. A small manageable subtraction from your paycheck. A predictable loss. In continuation, the government&rsquo;s contribution — the substantial 72% of the premium — is withdrawn. Sucked into the administrative maw of the reduction-in-force. You hold the entire weight of the premium. For self-plus-one, the continuation premium leaps to approximately $800 a month. That difference is $560. A chasm. A gaping hole where a routine deduction used to live. And you need that coverage. You have a condition — a specific persistent ailment that requires consistent care. The condition is not a variable in the RIF algorithm. Your performance was rated <em>Exceeds Fully Successful</em> for fourteen consecutive years. The machine does not care about your performance. It cares about the cost-per-head and the mandated timeline. The system, as codified in 5 U.S.C. § 7513, is designed for streamlined efficient attrition. It calculates your replacement cost, your operational need, and your pension vesting date — a date you would have reached in three years, now rendered abstract — and then it applies the administrative severing mechanism. The benefits are simply a line item. A cost to be liquidated. You have sixty days to move from the comfortable predictable subsidy of the federal payroll to the frantic exposed cost of the market. Trading the institutional guarantee for the actuarial risk. Negotiating with the same bureaucracy that signed the SF-50, but now the negotiation is purely financial. You are negotiating the price of your breathing. The government</h1>
+</div>
+
+
+<div class="truncation-notice">
+  <h2>— END OF TEASER —</h2>
+  <p>You're reading the first 25 pages of <em>You Are The Worker</em>.</p>
+  <p>The full manuscript is available at:<br>
+     <span class="url">https://zombie760.github.io/books</span>
+  </p>
+  <p>Every claim is filed. Every source is named. The documents speak.</p>
+  <p style="margin-top:2em;font-family:monospace;font-size:9pt;color:#999;">
+     © BOTWAVE PAPERWORK — Kyle Jimenez — All rights reserved.<br>
+     This teaser may not be redistributed, sold, or modified.
+  </p>
+</div>
+
+</body>
+</html>

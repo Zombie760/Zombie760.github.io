@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crestline — Teaser — BOTWAVE PAPERWORK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+    --accent: #b22222;
+    --ink: #1a1a1a;
+    --paper: #fbf8f2;
+    --muted: #666;
+    --stamp: rgba(180, 34, 34, 0.07);
+}
+
+@page {
+    size: 6in 9in;
+    margin: 0.9in 0.75in 1.1in 0.75in;
+
+    @bottom-left {
+        content: "BOTWAVE PAPERWORK — TEASER COPY";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.05em;
+    }
+    @bottom-right {
+        content: counter(page) " of 25";
+        font-family: Georgia, serif;
+        font-size: 9pt;
+        color: #888;
+    }
+    @top-right {
+        content: "Get the full book: ZOMBIE760.GITHUB.IO/BOOKS";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.03em;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11.5pt;
+    line-height: 1.6;
+}
+
+body {
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 1in 0.5in;
+    position: relative;
+}
+
+/* Diagonal watermark via fixed background */
+body::before {
+    content: "TEASER";
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: "Space Mono", monospace, serif;
+    font-size: 96pt;
+    font-weight: 700;
+    color: var(--stamp);
+    letter-spacing: 0.2em;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+/* Cover page */
+.cover-page {
+    page-break-after: always;
+    text-align: center;
+    padding: 1.5in 0.5in 1in;
+    border-bottom: 3px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.cover-imprint {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 9pt;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+}
+
+.cover-title {
+    font-family: Georgia, serif;
+    font-size: 28pt;
+    font-weight: bold;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 0.3em;
+}
+
+.cover-subtitle {
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 0 1.5em;
+}
+
+.cover-byline {
+    font-family: Georgia, serif;
+    font-size: 13pt;
+    color: var(--ink);
+    margin-bottom: 2em;
+}
+
+.cover-notice {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 8pt;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.75em 1em;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    margin-top: 2em;
+}
+
+.cover-cta {
+    font-family: Georgia, serif;
+    font-size: 10pt;
+    color: var(--muted);
+    margin-top: 1em;
+}
+
+/* Truncation notice at end */
+.truncation-notice {
+    page-break-before: always;
+    text-align: center;
+    padding: 2in 1in;
+    border-top: 2px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.truncation-notice h2 {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 12pt;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1em;
+}
+
+.truncation-notice p {
+    font-family: Georgia, serif;
+    font-size: 11pt;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.truncation-notice .url {
+    font-family: "Space Mono", monospace;
+    font-size: 10pt;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 20pt;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 0.3em;
+    margin-top: 1.8em;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 15pt;
+    margin-top: 1.4em;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-style: italic;
+    margin-top: 1.2em;
+    page-break-after: avoid;
+}
+
+p { margin: 0.6em 0; }
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1em 0 1em 1.5em;
+    padding-left: 1em;
+    font-style: italic;
+    color: var(--muted);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1.5em 2em;
+}
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="cover-page">
+  <div class="cover-imprint">BOTWAVE BOOKS · WORK IN PROGRESS</div>
+  
+  <div class="cover-title">Crestline</div>
+  <div class="cover-subtitle">An Albert Gringeau Thriller — Book Three</div>
+  <div class="cover-byline">Kyle Jimenez</div>
+  <div class="cover-notice">TEASER COPY — FIRST 25 PAGES<br>NOT FOR REDISTRIBUTION OR SALE</div>
+  <div class="cover-cta">Full manuscript: https://zombie760.github.io/books</div>
+</div>
+
+<div class="content">
+<h1>THE NOTICE Chapter 1 is written and filed at <code>Book/thriller/book_three/chapters/01_the_notice.md</code>. Quick breakdown of what&rsquo;s in it: <strong>Structure:</strong> Opens at the document — Notice of Default, dated April 22, 2026, recorded April 23. Reader sees the numbers before they see Elena. The camera pulls back from there. <strong>Voice ratios:</strong> - <em>Child (40%):</em> Al works the problem systematically. Short declaratives. He checks the math on the insurance line before he asks a question. The reader follows the procedure, not the feeling. - <em>Winslow (35%):</em> Lemon Grove, Massachusetts Avenue, Chula Vista High, Palomar Health van. The specific texture of working San Diego. The institution — Crestline — operating inside existing regulatory frameworks that have already failed once. Elena, who did everything right. - <em>Ellroy (25%):</em> &ldquo;He believed her.&rdquo; &ldquo;Eleven months.&rdquo; &ldquo;Not relief. Arithmetic.&rdquo; Stripped to bone. Corruption has a paper trail and a trustee name. <strong>Numbers verified:</strong> $487 × 11 = $5,357. California Civil Code 2924 is the real non-judicial foreclosure statute. The 90-day cure window is accurate. Force-placed insurance consent orders (Assurant, QBE, American Bankers) are documented CFPB enforcement history. <strong>Forward pull:</strong> Crestline shows up in the Pacific Palliative work. The thread is there. He&rsquo;s going to find it. # THE STATEMENT The journalism cold-open convention doesn&rsquo;t apply here — this is a fiction thriller with its own specified rules. Writing the chapter now. &mdash; <strong>February 14, 2024. Statement date. Balance due: $1,847.22.</strong> Al spread two years of statements across the folding table. Most still in their window envelopes, the return address a PO box in Tempe. Elena had rubber-banded them by year. The 2022 stack was thin. The 2023 stack was not. He started at the beginning. The loan had transferred from Pacific Western Bank in August 2022. Standard FDIC receivership language on the first Crestline statement — <em>your account has been transferred, your payment terms remain unchanged, please direct all correspondence to the address below.</em> When Pacific Western went under, the FDIC moved fast. Sale complete inside ninety days. Crestline paid fifty-two cents on the dollar for the distressed pool. Public record. The FDIC published loss-sharing agreements on their website, full detail, if you knew where to look. He found the FDIC Schedule A in the north cabinet — loan-level detail, fifty-eight pages, printed six weeks ago. He&rsquo;d highlighted Elena&rsquo;s loan number in orange before he even knew whose it was. He looked at the statement again. August 2022, the loan was current. September, current. October, current. The monthly payment was $1,263.44. Principal, interest, taxes, insurance. Everything folded in. He ran his finger down twelve consecutive months. Current, current, current. Then January 2023. A new line item appeared in the Escrow Analysis section. He almost missed it. The font was small — smaller than the principal and interest rows, smaller than the property tax line. <em>Force-Placed Insurance: Pacific Indemnity Partners LLC — $487.00/mo.</em> He wrote it down. He checked the November and December 2022 statements. The line wasn&rsquo;t there. He went back to January. Still there. He looked for any accompanying notice. He found it on the third pass through the envelope pile. A separate insert, single-sided, dated January 9, 2023. <em>Notice of Lapse in Coverage.</em> The letter said Crestline had been unable to verify continuous homeowner&rsquo;s insurance on the property. Effective immediately, they had placed insurance on Elena&rsquo;s behalf to protect their security interest. The cost would be added to her monthly payment. Contact them if she could provide proof of insurance. Al found Elena&rsquo;s State Farm policy documents in the folder she&rsquo;d given him. He checked the dates. The coverage had lapsed November 19, 2022. Reinstated November 21, 2022. Forty-eight hours. The force-placed insurance had started in January — two months later, after the lapse had already been cured. He sat with that for a moment. He picked up the PACER printout from the corner of the table. Elena&rsquo;s foreclosure petition, filed March 2025, San Diego Superior Court. The cited reason: chronic payment deficiency. Seventeen months of partial payments. He did the arithmetic. $487 per month. Seventeen months. $8,279. That was the manufactured gap. The lapse had been cured before Christmas 2022. The insurance charge had continued seventeen months regardless. He turned to a clean page in the notebook. At the top he wrote: <em>Pacific Indemnity Partners LLC.</em> He opened the laptop. The Delaware Division of Corporations entity search was public, no login required. He typed the name. Pacific Indemnity Partners LLC. Registered July 2021. Registered agent: CT Corporation System, 1209 Orange Street, Wilmington. Standard. CT Corporation was the registered agent for half the subsidiaries in the country. That address appeared on a hundred LLCs. It meant nothing by itself. He went to EDGAR. Full-text search. <em>Pacific Indemnity Partners LLC.</em> Fourteen results. Most were 10-K filings from Crestline Mortgage Services LLC. He opened the most recent one. Notes to financial statements, page 44. Ctrl-F. Found it. <em>The Company maintains a captive insurance arrangement through Pacific Indemnity Partners LLC, a wholly-owned subsidiary of Crestline Financial Holdings LLC, which serves as the provider of force-placed hazard insurance on loans in the Company&rsquo;s servicing portfolio.</em> He wrote on the notebook page. A box for Crestline Financial Holdings LLC at the top. A line down. A box for Crestline Mortgage Services LLC. Another line. A box for Pacific Indemnity Partners LLC. He sat back and looked at the chart. The servicer and the insurance company were the same entity. One pocket to the other. Crestline assessed the fee, Crestline collected the fee, Crestline&rsquo;s subsidiary received the fee. Elena paid $487 a month to a company owned by the company charging her the $487 a month. He had seen this structure before. Not mortgage — somewhere else. He went to the south cabinet. Two drawers from Book 2. He opened the bottom drawer and found the Suncrest Medical Holdings file. He pulled it and set it on the table next to Elena&rsquo;s statements. He opened it to the ownership chart he&rsquo;d drawn during those sessions. Suncrest Medical Holdings LLC. Managing principal: Dale Kreider. Scottsdale, AZ. He went back to EDGAR. New search. <em>Suncrest Capital Partners.</em> He found it in the Crestline 10-K. Page 51. <em>Subsequent to the fiscal year end, the Company entered into a Preferred Purchase Agreement with Suncrest Capital Partners LLC, a Scottsdale, Arizona-based real estate investment partnership, for the disposition of REO properties in the California and Nevada markets.</em> REO. Real Estate Owned. Industry term for property acquired through foreclosure. He found the Suncrest Capital Partners LLC entry in the Arizona Corporation Commission database. Filed 2021. Statutory agent: Registered Agents Inc. Managing member: Dale Kreider. Al put his pen down. Same man. Same structure. Book 2 had been hospice billing — Medicare money flowing up. This was foreclosure — distressed loan money flowing down into the property market. Kreider sat at the center of both. The money moved in different directions but it moved through the same hands. He looked at the clock. 2:47 a.m. He wasn&rsquo;t tired. He turned to a fresh page in the notebook and wrote one name at the top. <em>Dale Kreider.</em> Then he started a new chart. # THE SERVICER The screen glowed blue. The scent of old coffee and ozone clung to the kitchen air. The Sony recorder sat on the counter, a black block waiting for the day he needed to capture a conversation. He stared at a HUD Servicer Approval List. A sprawling spreadsheet of entities vetted by the Federal Housing Administration. Public record. Simple list of approved names and numbers. The number was HUD-S-78834. Crestline Mortgage Services LLC. He scrolled through the principals associated with that approval. Clean, bureaucratic data. Delaware, 2020. The registered agent was standard. But one officer, a VP of Acquisitions, caught his eye. He stopped scrolling. The name was Elias Thorne. He clicked the hyperlink. The system pulled the corporate registration data. Crestline was a Delaware LLC. Its parent, Crestline Financial Holdings, was non-public—standard. No SEC disclosure required. Thorne was a thread. Thin. Easily snapped. He opened the index. A digital repository: PACER, county recorder, EDGAR snippets, FEC disclosures. A library of bad faith. He navigated to the Suncrest Capital Partners entry. Book Two. The Medicare hospice fraud. Files detailing how Pacific Palliative Partners was sold, how distressed assets were repackaged, how the properties landed in Suncrest’s hands. He found Suncrest’s corporate filings. Scottsdale, AZ. He scrolled to the list of principals and affiliated entities. There. Under the corporate structure, listed as a silent partner in the initial acquisition of the distressed portfolio, was a holding company. A subsidiary of Suncrest. And the name attached to that holding company was Elias Thorne. The connection snapped. Not coincidence. A pattern. Crestline and Suncrest. Same hand. He pulled up the Crestline EDGAR filings again. He focused on the acquisition documents. Crestline had acquired $340 million in distressed loans from an FDIC receivership. Purchase price listed: $0.52 on the dollar. A brutal discount. He minimized the HUD list. Minimized the Suncrest filing. The two windows sat side by side on the monitor, a mirror image of institutional rot. Crestline was the entry point. The mechanism. The mortgage servicer. He thought of Elena Flores. Marisol’s sister. Lemon Grove. Four years of payments. Then the shift. Crestline acquired the loan in 2022. He pulled up the loan file details for Elena Flores. The original lender was buried deep. The transition was clean, documented, and entirely functional. Servicing transferred to Crestline. He looked at the current assessment: $487 a month. Force-placed insurance. A fee designed not for protection, but for extraction. He checked the dates. Elena’s own insurance lapsed forty-eight hours ago. The foreclosure notice, the final hammer, was due next week. The loss mitigation algorithm. He knew it was there, a digital machine humming in a server farm. The algorithm set to never approve modifications. Designed to generate fees. Designed to generate foreclosures. He zoomed in on the Crestline acquisition filing. The documents detailed the terms of the purchase, the disposition of the loans. The underlying asset class: high-risk, distressed, often held by vulnerable people. He checked the legal structure of Crestline Financial Holdings again. Non-public. No public accountability. Just a Delaware shell, easily moved, easily masked. The system was built to crush. He ran a query on the county recorder filings in San Diego County. He needed the specific filings for Crestline’s local branch, the one handling the loan portfolio in his own backyard. He needed the office manager, the regional director, the name of the person who signed off on the servicing transfer for Elena Flores. The data was there, buried in the microfiche of public records, waiting to be pulled from the PACER docket database via Miguel’s account. He reached for the keyboard. The case was no longer abstract. It was a name on a spreadsheet, a date on a notice, a woman in Lemon Grove facing the eviction of her life. The next step was finding the human face behind the algorithm. And he knew, with the cold certainty of a man who spent his life sifting through the bones of corruption, that the name of that human face was already waiting in the index. # THE PATTERN The sun was a bleached coin over Lemon Grove. Al pulled the Honda Fit into the asphalt lot of the San Diego County Recorder’s office. The air smelled of hot dust and old toner. He killed the engine. Silence settled, thick, broken only by the AC unit’s rhythmic hum against the August heat. He walked through the automatic doors. The lobby was a cavern of beige and fluorescent buzz. People shuffled past, clutching folders or tablets, the weight of bureaucracy pressing down on them. Al approached the service counter. He didn’t need to speak much. He slid a typed request across the laminate surface. “Crestline Mortgage Services LLC,” he said. “Foreclosure filings. Past eighteen months.” The clerk, a woman in a navy blazer, looked perpetually exhausted. She tapped a key without looking up. “That’s a big pull. They file a lot.” “I need the active default notices,” Al specified. “And the accompanying loan acquisition dates. The original filing date, too.” She grunted—a sound that encapsulated municipal Sisyphean work. “Give me an hour. Maybe two.” Al took a hard plastic chair near a bank of dusty computers. He pulled out his Sony WM-D6C. The analog recorder was a tactile piece of equipment in the digital sprawl. He didn&rsquo;t record the conversation, but the choice of analog was a quiet act of resistance. The clerk returned, a stack of binders and a printout weighty with institutional data. Al worked methodically. The data was raw, digitized, ugly. He wasn&rsquo;t looking for a single piece of evidence; he was looking for a rhythm. A systematic beat. The first number hit him: 214. Active default notices. He began building the spreadsheet, transferring the raw data from the printouts into a secure file on his laptop. Address, borrower name, loan origination date, servicer acquisition date. He focused on the timeline, not the addresses. The Crestline acquisition date. That was the pivot point. He cross-referenced the original loan data with the acquisition logs. He filtered the list, isolating loans that had been performing—on time, current, stable—when Crestline took ownership. The pattern emerged, clean and sharp. Every single loan on the list had been performing before Crestline acquired it. The defaults weren&rsquo;t random failures; they were scheduled events. He scrolled down, his finger tracing the names of the borrowers—middle-class folks in Lemon Grove, scattered pockets of Santee, the forgotten suburbs of Chula Vista. People with mortgages, not portfolios. He moved to the force-placed insurance records, a separate filing he had requested. The numbers were shocking. Out of 214 cases, 189 had force-placed insurance. He calculated the average monthly charge from the county records. $440. Four hundred forty dollars a month. A non-negotiable fee, a sudden, crippling anchor dropped onto a household budget. The system wasn&rsquo;t failing. It was working exactly as designed. Al leaned back, the stiff plastic chair groaning. He saw the machine not as legal filings, but as clockwork. The acquisition, the algorithm, the sudden insurance spike, the manufactured default. A perfect, brutal sequence. He thought of Elena Flores. His ex-wife&rsquo;s sister. She was one of those 214 names. Her loan had been solid before the transfer. She paid on time for four years. Crestline took the reins. The $440 hit. The foreclosure notice. The data was not merely indicative; it was prescriptive. The algorithm, whatever proprietary code Crestline ran, was designed for extraction, not mitigation. He saved the spreadsheet, labeling it &ldquo;Crestline_Pattern_V1.&rdquo; The sun had shifted, casting long, severe shadows across the parking lot. The Recorder’s office began to thin. Al got into the Honda Fit. The engine caught with a familiar, wheezy sigh. As he pulled onto the street, he felt the weight of the mechanism—the sheer, indifferent scale of it. The list of 214 names was a ledger of displacement. And he only had the beginning. # THE PORTFOLIO The file opened</h1>
+</div>
+
+
+<div class="truncation-notice">
+  <h2>— END OF TEASER —</h2>
+  <p>You're reading the first 25 pages of <em>Crestline</em>.</p>
+  <p>The full manuscript is available at:<br>
+     <span class="url">https://zombie760.github.io/books</span>
+  </p>
+  <p>Every claim is filed. Every source is named. The documents speak.</p>
+  <p style="margin-top:2em;font-family:monospace;font-size:9pt;color:#999;">
+     © BOTWAVE PAPERWORK — Kyle Jimenez — All rights reserved.<br>
+     This teaser may not be redistributed, sold, or modified.
+  </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zombie760.github.io/botwavebomba/schemas/pipeline_run.schema.json",
+  "title": "BOTWAVEBOMBA Pipeline Run Record",
+  "description": "Cross-cutting artifact written by the Lane-7 orchestrator on every pipeline firing and read by the Lane-8 status page. One file per run, also tee'd to an append-only history at api/pipeline_history.jsonl. Path B decomposition contract; anchors orchestrator + status page coupling.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "pipeline_started_at",
+    "pipeline_status",
+    "host",
+    "git_commit",
+    "stages",
+    "sources_meta",
+    "ingest_meta"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1",
+      "description": "Bumped on breaking schema changes. Consumers MUST verify."
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^run_[0-9]{8}T[0-9]{6}Z_[0-9a-f]{8}$",
+      "description": "Format: run_<YYYYMMDDTHHMMSSZ>_<8hex>. Hex segment is sha1(start_ts + host)[:8] to disambiguate concurrent runs on different hosts."
+    },
+    "pipeline_started_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC, e.g. 2026-05-10T19:23:31Z"
+    },
+    "pipeline_finished_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Null while the run is still in flight. Status page treats null + status=running as the live-run indicator."
+    },
+    "pipeline_status": {
+      "type": "string",
+      "enum": ["success", "partial", "failed", "running"],
+      "description": "success = all stages succeeded; partial = at least one stage failed but the orchestrator continued and produced api outputs; failed = orchestrator aborted; running = in flight."
+    },
+    "duration_ms": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "description": "Total wall-clock from start to finish. Null when status=running."
+    },
+    "host": {
+      "type": "string",
+      "description": "Hostname (e.g. 'lyfer'). Lets multi-host orchestration distinguish runs."
+    },
+    "git_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{7,40}$",
+      "description": "SHA of the pipeline code that produced this run. Snapshot at orchestrator start. Lets the status page link to the exact commit."
+    },
+    "git_branch": {
+      "type": "string",
+      "description": "Branch name. Optional but useful for shadow-run distinction (main vs path-b/decompose)."
+    },
+    "stages": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/stage_record" },
+      "description": "One record per analytical stage in execution order. Path B target order: event_clusterer, bias_scorer, framing_differ, [blindspot_analyzer, coverage_mapper], broadcast. Ingest is recorded separately under ingest_meta because it predates the decomposition."
+    },
+    "sources_meta": {
+      "type": "object",
+      "required": ["ingested_total", "bias_rated_total"],
+      "additionalProperties": false,
+      "properties": {
+        "ingested_total": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Sources actually attempted in the ingest pass (currently 492 from sources_global.json)."
+        },
+        "bias_rated_total": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Sources with a five-axis entry in source_registry.json (currently 244)."
+        },
+        "axis_rated_western": { "type": "integer", "minimum": 0 },
+        "axis_rated_neutral": { "type": "integer", "minimum": 0 },
+        "axis_rated_adversarial": { "type": "integer", "minimum": 0 },
+        "registry_generated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "From source_registry.json#generated_at — propagated so the status page can show the registry's own age, not just the run's age."
+        }
+      }
+    },
+    "ingest_meta": {
+      "type": "object",
+      "required": ["feeds_attempted", "feeds_succeeded", "feeds_failed"],
+      "additionalProperties": false,
+      "properties": {
+        "feeds_attempted": { "type": "integer", "minimum": 0 },
+        "feeds_succeeded": { "type": "integer", "minimum": 0 },
+        "feeds_failed": { "type": "integer", "minimum": 0 },
+        "articles_new": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Articles added to news_cache.jsonl during this run (post-dedup)."
+        },
+        "articles_total": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total lines in news_cache.jsonl after this run."
+        },
+        "duration_ms": { "type": "integer", "minimum": 0 }
+      }
+    }
+  },
+  "$defs": {
+    "stage_record": {
+      "type": "object",
+      "required": [
+        "name",
+        "status",
+        "started_at",
+        "input_path",
+        "output_path"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "event_clusterer",
+            "bias_scorer",
+            "framing_differ",
+            "blindspot_analyzer",
+            "coverage_mapper",
+            "broadcast"
+          ],
+          "description": "Stage identifier. Six analytical stages of Path B. Must match the module file at pai_modules/<name>.py."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["success", "failed", "skipped", "running"]
+        },
+        "started_at": { "type": "string", "format": "date-time" },
+        "finished_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "duration_ms": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "input_path": {
+          "type": "string",
+          "description": "Path relative to repo root, e.g. book_arm/memory/news_cache.jsonl"
+        },
+        "input_count": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Number of input records (lines for JSONL, top-level array length for JSON). Null = not yet read."
+        },
+        "input_schema_valid": {
+          "type": ["boolean", "null"],
+          "description": "Did the input validate against its declared schema? Null = not checked."
+        },
+        "input_schema": {
+          "type": "string",
+          "description": "Schema file path, e.g. botwavebomba/schemas/news_cache.schema.json"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "Path relative to repo root."
+        },
+        "output_count": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "output_schema_valid": {
+          "type": ["boolean", "null"]
+        },
+        "output_schema": { "type": "string" },
+        "error": {
+          "type": ["string", "null"],
+          "description": "If status=failed, the human-readable error message (also goes to journalctl). Null on success."
+        },
+        "error_traceback": {
+          "type": ["string", "null"],
+          "description": "Optional Python traceback for debug. Truncated to 2000 chars."
+        },
+        "notes": {
+          "type": ["string", "null"],
+          "description": "Free-form. Used for fixture-equivalence diff results during shadow run."
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "schema_version": "1",
+      "run_id": "run_20260510T192331Z_a1b2c3d4",
+      "pipeline_started_at": "2026-05-10T19:23:31Z",
+      "pipeline_finished_at": "2026-05-10T19:43:14Z",
+      "pipeline_status": "success",
+      "duration_ms": 1183000,
+      "host": "lyfer",
+      "git_commit": "087dcbd",
+      "git_branch": "main",
+      "ingest_meta": {
+        "feeds_attempted": 492,
+        "feeds_succeeded": 460,
+        "feeds_failed": 32,
+        "articles_new": 187,
+        "articles_total": 11825,
+        "duration_ms": 928000
+      },
+      "sources_meta": {
+        "ingested_total": 492,
+        "bias_rated_total": 244,
+        "axis_rated_western": 142,
+        "axis_rated_neutral": 49,
+        "axis_rated_adversarial": 53,
+        "registry_generated_at": "2026-05-09T00:00:00Z"
+      },
+      "stages": [
+        {
+          "name": "event_clusterer",
+          "status": "success",
+          "started_at": "2026-05-10T19:38:59Z",
+          "finished_at": "2026-05-10T19:40:12Z",
+          "duration_ms": 73000,
+          "input_path": "book_arm/memory/news_cache.jsonl",
+          "input_count": 11825,
+          "input_schema_valid": true,
+          "input_schema": "botwavebomba/schemas/news_cache.schema.json",
+          "output_path": "book_arm/memory/clusters.jsonl",
+          "output_count": 482,
+          "output_schema_valid": true,
+          "output_schema": "botwavebomba/schemas/clusters.schema.json",
+          "error": null,
+          "error_traceback": null,
+          "notes": null
+        },
+        {
+          "name": "bias_scorer",
+          "status": "success",
+          "started_at": "2026-05-10T19:40:12Z",
+          "finished_at": "2026-05-10T19:41:03Z",
+          "duration_ms": 51000,
+          "input_path": "book_arm/memory/clusters.jsonl",
+          "input_count": 482,
+          "input_schema_valid": true,
+          "input_schema": "botwavebomba/schemas/clusters.schema.json",
+          "output_path": "book_arm/memory/scored.jsonl",
+          "output_count": 482,
+          "output_schema_valid": true,
+          "output_schema": "botwavebomba/schemas/scored.schema.json",
+          "error": null,
+          "error_traceback": null,
+          "notes": null
+        },
+        {
+          "name": "framing_differ",
+          "status": "success",
+          "started_at": "2026-05-10T19:41:03Z",
+          "finished_at": "2026-05-10T19:41:55Z",
+          "duration_ms": 52000,
+          "input_path": "book_arm/memory/scored.jsonl",
+          "input_count": 482,
+          "input_schema_valid": true,
+          "input_schema": "botwavebomba/schemas/scored.schema.json",
+          "output_path": "book_arm/memory/framings.jsonl",
+          "output_count": 482,
+          "output_schema_valid": true,
+          "output_schema": "botwavebomba/schemas/framings.schema.json",
+          "error": null,
+          "error_traceback": null,
+          "notes": null
+        },
+        {
+          "name": "blindspot_analyzer",
+          "status": "success",
+          "started_at": "2026-05-10T19:41:55Z",
+          "finished_at": "2026-05-10T19:42:27Z",
+          "duration_ms": 32000,
+          "input_path": "book_arm/memory/framings.jsonl",
+          "input_count": 482,
+          "input_schema_valid": true,
+          "input_schema": "botwavebomba/schemas/framings.schema.json",
+          "output_path": "book_arm/memory/blindspots.jsonl",
+          "output_count": 73,
+          "output_schema_valid": true,
+          "output_schema": "botwavebomba/schemas/blindspots.schema.json",
+          "error": null,
+          "error_traceback": null,
+          "notes": "Ran in parallel with coverage_mapper."
+        },
+        {
+          "name": "coverage_mapper",
+          "status": "success",
+          "started_at": "2026-05-10T19:41:55Z",
+          "finished_at": "2026-05-10T19:42:38Z",
+          "duration_ms": 43000,
+          "input_path": "book_arm/memory/framings.jsonl",
+          "input_count": 482,
+          "input_schema_valid": true,
+          "input_schema": "botwavebomba/schemas/framings.schema.json",
+          "output_path": "book_arm/memory/coverage.jsonl",
+          "output_count": 482,
+          "output_schema_valid": true,
+          "output_schema": "botwavebomba/schemas/coverage.schema.json",
+          "error": null,
+          "error_traceback": null,
+          "notes": "Ran in parallel with blindspot_analyzer."
+        },
+        {
+          "name": "broadcast",
+          "status": "success",
+          "started_at": "2026-05-10T19:42:38Z",
+          "finished_at": "2026-05-10T19:43:14Z",
+          "duration_ms": 36000,
+          "input_path": "book_arm/memory/blindspots.jsonl,book_arm/memory/coverage.jsonl,book_arm/memory/framings.jsonl",
+          "input_count": 1037,
+          "input_schema_valid": true,
+          "input_schema": "botwavebomba/schemas/blindspots.schema.json,botwavebomba/schemas/coverage.schema.json,botwavebomba/schemas/framings.schema.json",
+          "output_path": "botwavebomba/api/latest.json,botwavebomba/api/blindspots.json",
+          "output_count": 160,
+          "output_schema_valid": true,
+          "output_schema": "botwavebomba/schemas/api_latest.schema.json,botwavebomba/schemas/api_blindspots.schema.json",
+          "error": null,
+          "error_traceback": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

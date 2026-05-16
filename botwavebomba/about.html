@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology — BOTWAVEBOMBA</title>
+  <meta name="description" content="How BOTWAVEBOMBA works. Live pipeline architecture, source counts, bias-rating provenance. Every claim references the code that backs it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/botwavebomba/assets/css/main.css">
+  <link rel="stylesheet" href="/botwavebomba/assets/css/mobile.css">
+  <link rel="manifest" href="/botwavebomba/manifest.json">
+  <link rel="apple-touch-icon" href="/botwavebomba/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
+  <script src="/botwavebomba/assets/js/theme-switcher.js" defer></script>
+  <script src="/botwavebomba/assets/js/pwa.js" defer></script>
+  <style>
+    .bwb-codeline { opacity:0.75; font-size:0.78em; }
+    .bwb-roadmap-list { list-style:none; padding-left:0; }
+    .bwb-roadmap-list li { padding:0.4rem 0; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .bwb-roadmap-list li:last-child { border-bottom:none; }
+    .bwb-roadmap-status { display:inline-block; min-width:7em; padding:0.1em 0.5em; border-radius:3px; font-family:'DM Mono',monospace; font-size:0.72em; letter-spacing:0.05em; margin-right:0.6em; text-align:center; }
+    .bwb-roadmap-status--monolith { background:#3a2a08; color:#ffd95a; border:1px solid #b8860b; }
+    .bwb-roadmap-status--extracted { background:#0a3a14; color:#7af0a0; border:1px solid #2b8a3e; }
+    .bwb-roadmap-status--in-progress { background:#1a2a3a; color:#80c8ff; border:1px solid #4080c0; }
+    .bwb-roadmap-status--discrete { background:#0a3a14; color:#7af0a0; border:1px solid #2b8a3e; }
+    .bwb-callout-soft { opacity:0.75; font-size:0.85em; }
+  </style>
+</head>
+<body>
+
+  <header class="bwb-header bwb-header--compact">
+    <div class="bwb-header-inner">
+      <a href="/botwavebomba/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <nav class="bwb-topnav">
+        <a href="/botwavebomba/">Feed</a>
+        <a href="/botwavebomba/blindspots.html">Blindspots</a>
+        <a href="/botwavebomba/sources.html">Sources</a>
+        <a href="/botwavebomba/about.html" class="active">Method</a>
+        <a href="/botwavebomba/status.html">Status</a>
+        <a href="/botwavebomba/funnies.html">Funnies</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="bwb-page-container bwb-about">
+
+    <div class="bwb-about-honesty" role="status" style="border:1px solid #b8860b;background:#3a2a08;color:#fff3c4;padding:1rem 1.25rem;margin:1rem 0 2rem;font-family:'DM Mono',ui-monospace,Menlo,monospace;font-size:0.82rem;line-height:1.55;">
+      <strong style="color:#ffd95a;letter-spacing:0.05em;">LAST METHODOLOGY AUDIT — 2026-05-10</strong><br>
+      Pipeline decomposition: <strong>6 of 6 modules extracted</strong> (<code>event_clusterer</code> + <code>bias_scorer</code> + <code>framing_differ</code> + <code>blindspot_analyzer</code> + <code>coverage_mapper</code> + <code>broadcast</code> — all extracted, all fixture-equivalence verified). The monolith is now six discrete modules plus the pre-existing <code>global_ingestor</code>. Live pipeline state: <a href="/botwavebomba/status.html" style="color:#ffd95a;">/status.html</a>. Audit trail: <a href="/botwavebomba/audit/about_audit_2026-05-10.md" style="color:#ffd95a;">audit/about_audit_2026-05-10.md</a> · plan: <a href="/botwavebomba/PLAN_HYBRID.md" style="color:#ffd95a;">PLAN_HYBRID.md</a>. Cannot-verify is a first-class output — every factual claim below references the file and line that backs it.
+    </div>
+
+    <div class="bwb-page-header">
+      <h1 class="bwb-page-title">THE METHOD</h1>
+      <p class="bwb-page-sub">
+        Every system that tells you what to read has a hidden architecture.
+        Here is ours. Every component named. Every assumption declared. Every claim sourced.
+      </p>
+    </div>
+
+    <article class="bwb-about-body">
+
+      <section class="bwb-about-section">
+        <h2>What BOTWAVEBOMBA Is</h2>
+        <p>
+          BOTWAVEBOMBA is the public face of a private journalism research
+          infrastructure called TELOS+PAI. Every article shown here was
+          ingested by <code>global_ingestor.py</code>, clustered across information
+          blocs, and tagged with a per-source five-axis bias fingerprint. The
+          pipeline runs every six hours on a systemd timer.
+          <span class="bwb-codeline">(<code>bomba_pipeline.sh</code>, <code>botwave-bomba-pipeline.timer</code>: <code>OnCalendar=*-*-* 00,06,12,18:00:00</code>)</span>
+        </p>
+        <p>
+          <strong>492</strong> sources are ingested every six hours
+          <span class="bwb-codeline">(<code>book_arm/memory/sources_global.json</code>)</span>.
+          <strong>244</strong> of those carry full five-axis bias fingerprints
+          <span class="bwb-codeline">(<code>data/source_registry.json#total</code>)</span>.
+          <strong>248</strong> are awaiting fingerprinting and contribute to
+          volume metrics but not per-source bias classification.
+        </p>
+        <p>
+          It is not a news aggregator in the Google News sense. It is not a
+          fact-checker. It is a <strong>bloc-level coverage-and-bias comparison
+          engine</strong>: which information bloc covered each story, where the
+          volume gaps are, and how each source's five-axis bias profile maps
+          across blocs. Sentence-level framing analysis (verb-choice, propaganda
+          lexicon) is on the decomposition roadmap below — it is not in the
+          live pipeline yet.
+        </p>
+      </section>
+
+      <section class="bwb-about-section">
+        <h2>Why Not Left / Center / Right?</h2>
+        <p>
+          Ground News, AllSides, and similar services organize sources on a left–center–right
+          axis calibrated to American domestic politics. That axis is useful in a country
+          where the main conflict is between two parties managing the same system.
+          It is useless when you are trying to understand what the Iranian press says
+          about the Strait of Hormuz, what the Swedish press says about NATO, or what
+          the Chinese press says about Taiwan.
+        </p>
+        <p>
+          BOTWAVEBOMBA uses five independent axes, each scored from -1.0 to +1.0
+          <span class="bwb-codeline">(per-source, in <code>data/source_registry.json</code> under each entry's <code>axis</code> block)</span>:
+        </p>
+        <ul class="bwb-about-list">
+          <li><strong>Atlanticist</strong> — does this outlet assume US-led world order is legitimate?</li>
+          <li><strong>Interventionist</strong> — does this outlet support military intervention?</li>
+          <li><strong>Zionist</strong> — how does this outlet frame Israeli state action?</li>
+          <li><strong>Statist</strong> — does this outlet reinforce or challenge state authority?</li>
+          <li><strong>Financialized</strong> — does this outlet treat financial capitalism as natural?</li>
+        </ul>
+        <p>
+          These axes produce a five-dimensional fingerprint per source — not a simple left/right
+          label. A source can be anti-interventionist and pro-state simultaneously
+          (much of the RT editorial line). A source can be pro-market and anti-zionist
+          simultaneously (some European financial press on Israel/Palestine coverage).
+          The fingerprint captures that complexity. A label cannot.
+        </p>
+      </section>
+
+      <section class="bwb-about-section">
+        <h2>What The Pipeline Does Today</h2>
+        <p>
+          The pipeline currently runs in two analytical stages, plus deployment
+          plumbing. The full seven-stage decomposition described historically on
+          this page is in progress — see the roadmap below.
+        </p>
+        <ol class="bwb-about-list bwb-pipeline-steps">
+          <li>
+            <strong>Stage 1 — Ingest.</strong>
+            <code>global_ingestor.py</code> pulls RSS feeds and full article text
+            (via <code>httpx</code> + <code>readability-lxml</code>) from the 492-source
+            ingest set, deduplicates by content hash, writes to
+            <code>news_cache.jsonl</code>.
+            <span class="bwb-codeline">(<code>book_arm/pai_modules/global_ingestor.py:46-55</code>)</span>
+          </li>
+          <li>
+            <strong>Stage 2 — Generate feed (monolith).</strong>
+            <code>generate_feed.py</code> reads <code>news_cache.jsonl</code> +
+            <code>data/source_registry.json</code>, clusters articles by multi-entity
+            overlap, attaches per-source five-axis bias data via lookup, computes
+            per-cluster bloc-coverage percentages (Western / Neutral / Adversarial),
+            flags blindspots (Blackout / Spotlight thresholds), and serializes the
+            result to <code>api/latest.json</code> — the JSON this site reads.
+            Story-card PNGs are rendered by <code>generate_cards.py</code> for the
+            top stories. After that the staging Pages repo is committed and pushed.
+            Discord and Telegram digests follow.
+            <span class="bwb-codeline">(<code>zombie760.github.io/scripts/generate_feed.py</code> + <code>scripts/bomba_pipeline.sh</code>)</span>
+          </li>
+        </ol>
+        <p>
+          The monolith does inline what the seven-stage decomposition will do as
+          discrete modules. Behaviors present (entity clustering, per-source bias
+          lookup, bloc-coverage computation, blindspot flagging) are all in
+          <code>generate_feed.py</code>. Behaviors named on the historical version
+          of this page but not present anywhere in the live pipeline (per-article
+          propaganda-lexicon scoring, agency-verb analysis, sentence-level verb
+          choice diff) are roadmap, not current.
+        </p>
+      </section>
+
+      <section class="bwb-about-section">
+        <h2>Decomposition Roadmap</h2>
+        <p>
+          The plan: extract one analytical stage from <code>generate_feed.py</code>
+          per calendar week, with fixture-equivalence to the monolith as the
+          acceptance test. After six weeks the monolith is six discrete modules;
+          a seventh week replaces the glue with a proper orchestrator.
+          <span class="bwb-codeline">Full plan: <a href="/botwavebomba/PLAN_HYBRID.md"><code>PLAN_HYBRID.md</code></a>. Live state: <a href="/botwavebomba/pipeline_state.json"><code>pipeline_state.json</code></a>.</span>
+        </p>
+        <p class="bwb-callout-soft">
+          The roadmap entries below reflect <code>pipeline_state.json</code> at
+          page-render time. The status badges flip as each weekly extraction
+          lands. Status page shows the same data live and auto-refreshing.
+        </p>
+        <ul class="bwb-roadmap-list">
+          <li>
+            <span class="bwb-roadmap-status bwb-roadmap-status--discrete">discrete</span>
+            <strong><code>global_ingestor.py</code></strong>
+            — pulls RSS + article full-text from 492 sources, dedup by hash, writes <code>news_cache.jsonl</code>.
+            Pre-existing; not part of the decomposition.
+            <span class="bwb-codeline">(<code>book_arm/pai_modules/global_ingestor.py</code>)</span>
+          </li>
+          <li>
+            <span class="bwb-roadmap-status bwb-roadmap-status--extracted">extracted</span>
+            <strong><code>event_clusterer.py</code></strong>
+            — groups articles about the same event using entity-pair overlap
+            (primary path, ≥3 articles ≥2 sources) and single-entity fallback.
+            Extracted 2026-05-10 from <code>generate_feed.py:538-623</code>;
+            fixture-equivalence verified (160/160 stories identical between
+            pre- and post-extraction outputs). Module lives at
+            <code>book_arm/pai_modules/event_clusterer.py</code>; schemas at
+            <code>schemas/event_clusterer_{input,output}.schema.json</code>;
+            fixture-equivalence test at <code>tests/test_event_clusterer.py</code>.
+          </li>
+          <li>
+            <span class="bwb-roadmap-status bwb-roadmap-status--extracted">extracted</span>
+            <strong><code>bias_scorer.py</code></strong>
+            — attaches per-source bias enrichment to each cluster (bias_tier,
+            bias_bucket, bloc, geo_cluster, atlanticist_norm) and computes
+            per-cluster bias_variance (stdev of atlanticist scores) +
+            five-axis averages (interventionist, zionist, atlanticist, statist,
+            financialized). Per-source LOOKUP from <code>data/source_registry.json</code>,
+            not per-article propaganda-lexicon scoring. Extracted 2026-05-10
+            from <code>generate_feed.py:589-622</code> + <code>:667-677</code>;
+            fixture-equivalence verified (0/160 stories diverged in bias data).
+            Original single-axis -6..+6 propaganda-lexicon standalone reference
+            preserved at <code>book_arm/pai_modules/_reference/bias_scorer.py.original</code>
+            — sentence-level lexicon scoring remains a methodology-roadmap item,
+            separate from this extraction.
+          </li>
+          <li>
+            <span class="bwb-roadmap-status bwb-roadmap-status--extracted">extracted</span>
+            <strong><code>framing_differ.py</code></strong>
+            — for each cluster, picks the consensus framing (article whose headline
+            shares the most meaningful words with the rest of the cluster), builds
+            per-article framing cards (headline + lede via <code>get_snippet</code>
+            + source metadata), and selects the cluster's hero image and video.
+            Extracted 2026-05-10 from <code>generate_feed.py:474-513</code> +
+            <code>:29-44</code> + <code>:644-657</code>. Module lives at
+            <code>book_arm/pai_modules/framing_differ.py</code>; tests at
+            <code>tests/test_framing_differ.py</code>. Sentence-level verb-choice
+            and named-entity diff (richer analysis described historically) remain
+            a methodology-roadmap item — not in this extraction. Fixture-equivalence
+            verified (0/160 stories diverged).
+          </li>
+          <li>
+            <span class="bwb-roadmap-status bwb-roadmap-status--extracted">extracted</span>
+            <strong><code>blindspot_analyzer.py</code></strong>
+            — applies the Ground News-style left/center/right coverage breakdown
+            and the Ground News blindspot formula (one side &lt;17% AND other side
+            ≥33%) per cluster. Also runs the Western Mono-Frame / Blackout
+            geo-frame detection over geopolitical watchlists (Middle East,
+            cartel/intel, US foreign policy, Africa-suppressed). Extracted
+            2026-05-10 from <code>generate_feed.py:291-401</code> +
+            <code>:51-101</code> + <code>:606-614</code> + <code>:681-689</code>.
+            Writes <code>blindspots.jsonl</code>. Fixture-equivalence verified
+            (0/160 diff on is_blindspot/blindspot_score/coverage/geo_frame).
+          </li>
+          <li>
+            <span class="bwb-roadmap-status bwb-roadmap-status--extracted">extracted</span>
+            <strong><code>coverage_mapper.py</code></strong>
+            — pure projection of the heatmap-distribution fields
+            (left_pct, center_pct, right_pct, state_count, dominant_bucket,
+            dominant_pct) from <code>blindspot_analyzer</code>'s combined output
+            into a standalone <code>coverage.jsonl</code> artifact. Sharing
+            compute_coverage across the two modules avoids duplicate code paths;
+            coverage_mapper depends on blindspot_analyzer's output, not its own
+            independent computation. Extracted 2026-05-10 from <code>generate_feed.py:702-709</code>.
+          </li>
+          <li>
+            <span class="bwb-roadmap-status bwb-roadmap-status--extracted">extracted</span>
+            <strong><code>broadcast.py</code></strong>
+            — serializes pipeline output to <code>api/latest.json</code> and
+            <code>api/blindspots.json</code>. Extracted 2026-05-11 from
+            <code>generate_feed.py:770-778</code> (output dict build + JSON write).
+            Thin wrapper — all analytical computation happens upstream; this module
+            only writes. Fixture-equivalence verified: JSON serialization output
+            identical between baseline and extracted module.
+            <span class="bwb-codeline">(<code>book_arm/pai_modules/broadcast.py</code>)</span>
+          </li>
+        </ul>
+        <p class="bwb-callout-soft">
+          All six modules have flipped to <span class="bwb-roadmap-status bwb-roadmap-status--extracted">extracted</span>. Next: wire the modules behind a proper orchestrator (<code>run_pipeline.py</code>) that emits a per-cycle <code>pipeline_run.json</code> the status page reads for live per-stage health. The orchestrator schema is already drafted: <a href="/botwavebomba/schemas/pipeline_run.schema.json"><code>schemas/pipeline_run.schema.json</code></a>.
+        </p>
+      </section>
+
+      <section class="bwb-about-section">
+        <h2>What We Do Not Do</h2>
+        <ul class="bwb-about-list">
+          <li>We do not editorialize. The bloc-coverage comparison shows the delta; you read it.</li>
+          <li>We do not write summaries. Every <code>summary</code> field is the article's own description, truncated. <span class="bwb-codeline">(<code>generate_feed.py:631</code>: <code>summary = headline_art.get('description', '')</code>)</span></li>
+          <li>We do not rate factuality of individual claims. Source-level factuality labels appear in <code>source_registry.json</code> under each source's <code>factuality</code> field (values: <code>high</code> / <code>mixed</code> / <code>low</code>). The labels draw on MBFC where available, supplemented by hand-curation. Per-source provenance trace is on the methodology-audit roadmap.</li>
+          <li>We do not suppress adversarial sources. <code>rt</code>, <code>rt_arabic</code>, <code>sputnik</code>, <code>tass</code>, and other adversarial-bloc outlets are in <code>source_registry.json</code> with <code>bloc: "adversarial"</code> labels visible.</li>
+          <li>We do not invent. Every claim traces to an article URL surfaced under <code>sources[].url</code> in <code>api/latest.json</code>.</li>
+        </ul>
+      </section>
+
+      <section class="bwb-about-section">
+        <h2>The Journalism Connection</h2>
+        <p>
+          BOTWAVEBOMBA is the public surface of a private investigative research
+          substrate that supports long-form journalism. The same ingest layer
+          (<code>global_ingestor.py</code> → <code>book_arm/memory/news_cache.jsonl</code>)
+          feeds both the public site and the book-arm's primary-source discovery
+          for book-length investigation — the kind that requires knowing not just
+          what AP reported, but what IRNA, Lenta.ru, and SCMP said on the same day
+          about the same event, in their original framing, before any translation
+          layer added editorial distance. Both sides consume from the 492-source
+          ingest set.
+        </p>
+        <p>
+          The methodology is the same as the journalism: primary sources or
+          nothing. Every source URL is live. Every score is computed or looked up
+          from a versioned registry, not assigned post-hoc. Every blindspot is
+          measured against the cache, not asserted.
+        </p>
+        <p>
+          <strong>BE UNDENIABLE.</strong> Every claim filed. Every source named.
+          A single unanchored assertion is the lever a critic uses to dismiss the
+          whole work. We do not write one.
+        </p>
+      </section>
+
+      <section class="bwb-about-section">
+        <h2>Bias Scoring Baseline</h2>
+        <p>
+          The five-axis fingerprints in <code>source_registry.json</code> were
+          hand-curated, drawing on AllSides and MBFC bias ratings where available.
+          Per-source provenance (which axis value for which source came from which
+          input) is not yet machine-traceable as a single artifact — documenting
+          it is on the methodology-audit roadmap.
+        </p>
+        <p>
+          The current registry shipped <strong>2026-05-09</strong> with
+          <strong>244</strong> fingerprinted sources
+          <span class="bwb-codeline">(<code>source_registry.json#generated_at</code>)</span>.
+          The file was introduced in a single git commit (<code>c6a088bf</code>);
+          earlier 208-source / 2026-04-23 versions are not preserved in repo
+          history. Subsequent updates will be logged in
+          <code>pipeline_state.json</code> as the registry expands during the
+          decomposition phase.
+        </p>
+        <p>
+          Hand-curation methodology — editorial stance analysis, entity framing
+          patterns, named-state-alignment patterns, institutional-alignment
+          signals — is summarized in the methodology audit
+          (<code>audit/about_audit_2026-05-10.md</code>). Not duplicated here to
+          avoid drift between the page and the audit.
+        </p>
+      </section>
+
+    </article>
+
+  </div>
+
+  <footer class="bwb-footer">
+    <div class="bwb-footer-inner">
+      <span class="bwb-footer-logo">BOTWAVEBOMBA</span>
+      <span class="bwb-footer-sub">
+        Last methodology audit: <strong>2026-05-10</strong>
+        · Pipeline decomposition: <strong>6/6 modules extracted</strong>
+        · <a href="/botwavebomba/status.html" style="color:inherit;">Track progress at /status.html</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bwb-bottom-nav safe-bottom">
+    <a href="/botwavebomba/">
+      <span class="bwb-bottom-nav-icon">📰</span>
+      <span>Feed</span>
+    </a>
+    <a href="/botwavebomba/blindspots.html">
+      <span class="bwb-bottom-nav-icon">👁️</span>
+      <span>Blindspots</span>
+    </a>
+    <a href="/botwavebomba/sources.html">
+      <span class="bwb-bottom-nav-icon">🌐</span>
+      <span>Sources</span>
+    </a>
+    <a href="/botwavebomba/about.html" class="active">
+      <span class="bwb-bottom-nav-icon">📋</span>
+      <span>Method</span>
+    </a>
+    <a href="/botwavebomba/funnies.html">
+      <span class="bwb-bottom-nav-icon">🎭</span>
+      <span>Funnies</span>
+    </a>
+  </nav>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/botwavebomba/service-worker.js');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sierraverde — Teaser — BOTWAVE PAPERWORK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+    --accent: #b22222;
+    --ink: #1a1a1a;
+    --paper: #fbf8f2;
+    --muted: #666;
+    --stamp: rgba(180, 34, 34, 0.07);
+}
+
+@page {
+    size: 6in 9in;
+    margin: 0.9in 0.75in 1.1in 0.75in;
+
+    @bottom-left {
+        content: "BOTWAVE PAPERWORK — TEASER COPY";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.05em;
+    }
+    @bottom-right {
+        content: counter(page) " of 25";
+        font-family: Georgia, serif;
+        font-size: 9pt;
+        color: #888;
+    }
+    @top-right {
+        content: "Get the full book: ZOMBIE760.GITHUB.IO/BOOKS";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.03em;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11.5pt;
+    line-height: 1.6;
+}
+
+body {
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 1in 0.5in;
+    position: relative;
+}
+
+/* Diagonal watermark via fixed background */
+body::before {
+    content: "TEASER";
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: "Space Mono", monospace, serif;
+    font-size: 96pt;
+    font-weight: 700;
+    color: var(--stamp);
+    letter-spacing: 0.2em;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+/* Cover page */
+.cover-page {
+    page-break-after: always;
+    text-align: center;
+    padding: 1.5in 0.5in 1in;
+    border-bottom: 3px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.cover-imprint {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 9pt;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+}
+
+.cover-title {
+    font-family: Georgia, serif;
+    font-size: 28pt;
+    font-weight: bold;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 0.3em;
+}
+
+.cover-subtitle {
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 0 1.5em;
+}
+
+.cover-byline {
+    font-family: Georgia, serif;
+    font-size: 13pt;
+    color: var(--ink);
+    margin-bottom: 2em;
+}
+
+.cover-notice {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 8pt;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.75em 1em;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    margin-top: 2em;
+}
+
+.cover-cta {
+    font-family: Georgia, serif;
+    font-size: 10pt;
+    color: var(--muted);
+    margin-top: 1em;
+}
+
+/* Truncation notice at end */
+.truncation-notice {
+    page-break-before: always;
+    text-align: center;
+    padding: 2in 1in;
+    border-top: 2px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.truncation-notice h2 {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 12pt;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1em;
+}
+
+.truncation-notice p {
+    font-family: Georgia, serif;
+    font-size: 11pt;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.truncation-notice .url {
+    font-family: "Space Mono", monospace;
+    font-size: 10pt;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 20pt;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 0.3em;
+    margin-top: 1.8em;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 15pt;
+    margin-top: 1.4em;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-style: italic;
+    margin-top: 1.2em;
+    page-break-after: avoid;
+}
+
+p { margin: 0.6em 0; }
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1em 0 1em 1.5em;
+    padding-left: 1em;
+    font-style: italic;
+    color: var(--muted);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1.5em 2em;
+}
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="cover-page">
+  <div class="cover-imprint">BOTWAVE BOOKS · WORK IN PROGRESS</div>
+  
+  <div class="cover-title">Sierraverde</div>
+  <div class="cover-subtitle">An Albert Gringeau Thriller — Book Five</div>
+  <div class="cover-byline">Kyle Jimenez</div>
+  <div class="cover-notice">TEASER COPY — FIRST 25 PAGES<br>NOT FOR REDISTRIBUTION OR SALE</div>
+  <div class="cover-cta">Full manuscript: https://zombie760.github.io/books</div>
+</div>
+
+<div class="content">
+<p>The screen glowed sterile white. OIG-23-47. Al leaned back. The cheap mesh of the office chair groaned a protest. The document sat open: <em>Sierraverde Detention Services LLC — Compliance Review, FY2022</em>. Tuesday. Mid-morning. The storage unit office air was thick with stale coffee and dry paper dust. He clicked the PDF. Thirty-four pages of government typeface, dense and unforgiving. Public record. He had pulled it from the DHS Office of Inspector General website—a routine dive into federal detritus. Al Gringeau, forty-three, ex-pipefitter, scanned the page number. He was built for the brute geometry of steel pipe, the sweat of a job done under the California sun. Paperwork, audits, compliance reviews—they were alien languages. But he spoke the grammar. He bypassed the executive summary. He skipped the footnotes on HVAC and kitchen sanitation. He went straight to the findings. Finding 3. <em>“Inconsistencies between detainee population counts and billing invoices in 4 of 12 months reviewed.”</em> The sentence was a small, perfect indictment. A technicality. A crack in the foundation. Al felt the low thrum of recognition. It wasn&rsquo;t the size of the finding that mattered, but the nature of it. Phantom beds. Ghost people. He skimmed the recommendation: <em>ICE review contract invoices for overpayments.</em> And the ICE response, buried two paragraphs down: <em>Concur. Corrective action planned.</em> Corrective action. The bureaucratic euphemism for ‘we’ll look at it eventually.’ He looked at the date stamp on the OIG report. December 2023. Eighteen months ago. The fraud was old. Settled, filed, acknowledged, yet still breathing the air of the contract. Al closed the PDF. The image remained: a row of empty cots, listed as occupied. A ledger entry for a life that wasn&rsquo;t there. The system was predictable. It had rules. Those rules had loopholes. And those loopholes had a price tag. He reached for the mug of cold coffee. The heat was gone, leaving only the bitter residue. The pull had started subtly. A phone call from a friend of Lucia Reyes. Lucia’s brother, detained at Sierraverde. Fourteen months. Waiting for a hearing that kept getting pushed. The brother had sounded stripped down to the bone. He spoke of the cold, the substandard meals, the endless, grinding wait. A life suspended, a legal limbo powered by the clock. Al had listened. He had taken notes. He hadn&rsquo;t immediately reached for the public record. He had absorbed the weight of the man’s misery. Then, he had searched. It wasn&rsquo;t just a bad facility. It was a bad business. A profit center built on human inertia. He stood up, stretching the stiffness out of his shoulders. The chair squeaked. He picked up his phone, the cracked screen showing the utilitarian interface. The report was the map. It showed the location of the rot. The rot itself was the payroll, the billing cycle, the specific mechanisms of the scam. He needed the names. The people who signed the checks. The ones who managed the capacity. He needed the specific, granular data the OIG, in its sweeping review, had missed. The receipts. The shift logs. The actual, physical counts versus the digital, invoiced counts. Al opened his browser, bypassing the main DHS portal. He went to PACER, logging in via Miguel’s cousin. He bypassed the high-level contracts and went straight for the operational paperwork. He started with the facility address. Sierraverde. Chula Vista. He began the long, meticulous work of triangulation. The ghosts needed names. The phantom beds needed a ledger entry. And the ledger entry needed a signature. # THE FACILITY HSCEDM-21-D-00014. The number was stark, a bureaucratic fingerprint on the screen. Gringo leaned back in the worn plastic chair of the storage unit office. The air conditioning struggled against the Chula Vista heat. The unit—a corrugated metal box smelling of dust and old concrete—was his headquarters. He ran a thumb over the printout from USASpending.gov. Sierraverde Detention Services LLC. Otay Mesa. The contract was massive: $87.4 million over five years. He pulled up the capacity data: 480 beds. Gringo didn&rsquo;t need an accounting degree to see the vulnerability. He needed the muscle memory of a man who spent nine years in a cinderblock room, counting the flicker of fluorescent lights. He knew how systems broke. He did the math in his head, a rapid-fire calculation honed tracking phantom invoices in the union hall. 480 beds. 365 days. $159 per diem. $27.8 million per year. That was the ceiling. The promised rate for a full, occupied facility. The assumption was simple: they billed for 480 beds daily, maximizing the contract. But Gringo wasn&rsquo;t interested in the maximum. He was interested in the actual. The system was designed to be opaque. The paperwork was thick, drowning the casual observer in acronyms and subsections. But Gringo knew the truth, like a good weld, always finding the weakest point. He opened a new tab. FOIA. He typed the request: <em>Monthly detainee population reports, Sierraverde Detention Services LLC, HSCEDM-21-D-00014, 2021–present.</em> He hit submit. The digital confirmation flashed back, a sterile green success message. Now he waited. The wait was the pause before the hammer fell. While government bureaucracy digested the request, Gringo turned to the ledger&rsquo;s other side: oversight. He opened a folder labeled ‘OIG.’ The DHS Office of Inspector General database was a sprawling, dusty landscape of audits and findings. He filtered by contractor, by facility, by year. 2023. A report surfaced: <em>Audit of Detention Contractor Performance: Sierraverde Detention Services.</em> He clicked. The document was dense, a cascade of passive voice and regulatory jargon. But buried in the technical prose were the cracks. Substandard meal provision. Inadequate medical charting. Processing delays. He skimmed the footnotes, searching for the specific, damning language. <em>“Billing discrepancies related to non-rendered medical services.”</em> <em>“Phantom bed occupancy reported during quarterly reviews.”</em> <em>“Inconsistent documentation of detainee intake and release.”</em> These weren&rsquo;t administrative errors. They were structural rot. They were the systemic way a large corporation bled the government dry. He thought of Lucia Reyes&rsquo;s friend. Fourteen months detained. Fourteen months of $159/day billing for a man rotting in a cell, while the facility billed for empty beds or medical visits that never happened. Gringo leaned forward, the plastic chair groaning under the shift of his weight. He remembered the man’s face—the exhaustion, the way his eyes tracked the guards, the slow erosion of hope. That was the cold calculus of profit versus human life. He looked at the OIG report again. Clinical language. Visceral implication. Phantom detainees. Empty beds billed as occupied. The money wasn&rsquo;t wasted; it was stolen. The detainees paid the price. He pulled out his Sony WM-D6C, the chunky analog recorder. He pressed play, letting the low, satisfying hum of the tape fill the silence. He had the contract. He had the rate. He had the damning public audit. He just needed the monthly population reports to nail the exact scale of the theft. The FOIA response would take weeks, maybe months. Gringo closed the laptop, the screen reflecting in the deep red of his wingtip shoes. He picked up his phone, pulling up the contact for Miguel, his cousin. “Miguel,” Gringo said, his voice low and level, “I need you to run a background on the city council members who voted on the initial Sierraverde contract renewal. Don&rsquo;t look for corruption. Look for connections. Look for the weak links.” He set the phone down. The wait had begun. In the quiet, hot confines of the storage unit, Gringo felt the familiar, cold tightening in his gut. The system was a machine, and he was ready to find the gearbox grinding itself to dust. The envelope was stamped July 14, 2023. Al held the thin paper. It smelled of institutional soap and old ink. He sat in the dusty annex of the Santa Ana library. The air conditioning hummed a tired drone against the Southern California heat. Lucia Reyes sat across the chipped laminate table. She was a knot of nervous energy and righteous anger. She pushed the stack of letters toward him. “Marco writes about everything,” she said, low, as if the walls might overhear the injustice. “The cold. The counts. The doctors.” Al didn&rsquo;t touch the stack. He looked at the envelope, then at the scrawled name: Marco Heredia. Thirty-one years old. Fourteen months in Sierraverde. He picked up the top letter. The paper was cheap, slightly yellowed. The handwriting was disciplined, weary. <em>July 2, 2023.</em> <em>It is always three AM. The call comes. The count. Every night. The guards are tired, but they are precise. They do not miss a name. Not even if the cold has settled in the bones.</em> Al read the paragraph twice. The cold. The system&rsquo;s precise application to human misery. He flipped the page. <em>October 19, 2022.</em> <em>The meals. They promise the full plate. The contract says X amount of protein, Y vegetables. But we get small portions. Cold. Sometimes the rice is hard, like stone. The food is not fuel. It is just sustenance, grudgingly given.</em> The details were clinical, sterile, yet the weight of them pressed down on the table. This was not a complaint about a bad meal. It was a failure of a massive, complex system to meet its own terms. Al pulled out his red wing notebook. He needed to absorb the cadence of the failure. Lucia leaned forward. “He says the medical system is a joke. He has a persistent cough. He asked the nurse. She told him he needs a copay.” Al’s eyes narrowed. He knew the language of detention. He knew the hierarchy. “A copay?” Al repeated, clipped and sharp. “Yes. The fee. Three dollars. He has no money. The facility doesn’t have a system for free care. It’s a barrier. A ridiculous barrier.” The cruelty wasn&rsquo;t grand; it was bureaucratic. A machine grinding people down. Sierraverde Detention Services. He looked at the stack again. The patterns: the cold food, the precise counts, the arbitrary fees. These were not shouts. They were meticulous reports of a man observing his own captivity. “The facility capacity?” Al asked. “Four hundred eighty beds. Always full. Or they claim it is.” Al nodded slowly. Capacity. The perfect, neat, numerical lie. He ran a thumb over the rough edges of the letters. This was the entry point. A small thread pulled from the vast, opaque tapestry of ICE detention. He needed the numbers. He needed the architecture. He pulled out his phone. He bypassed the noise, diving straight into the procedural channels. PACER, via Miguel. The DHS Office of Inspector General audit database. He pulled up the Sierraverde LLC profile. The facility was listed. The contract parameters were listed. The per diem rate: $159/detainee/day. Al scrolled through the public records, focus absolute. He wasn&rsquo;t looking for a smoking gun. He was looking for a systemic failure, a predictable point of leverage. The 2023 audit popped up. Lengthy, dense. Public record. He opened the PDF. The summary was a wall of jargon: <em>resource allocation, operational efficiency, compliance metrics.</em> Al skipped the pleasantries. He went straight to the footnotes, the appendices, the line items. He was looking for the phantom. He found the section on billing discrepancies. <em>“Billing for medical services rendered vs. services requested.”</em> He skimmed the numbers. Total billings for medical services were massive. Corresponding reports of services <em>rendered</em> were vague, often incomplete. Then he found it. A small, almost invisible footnote in a sub-section detailing nutritional billing. <em>“Discrepancy noted in portion control vs. contract specification for high-density protein.”</em> High-density protein. The food. The cold, grudging portions Marco had described. Al leaned back in the chair, the smell of old paper suddenly sharp. The letters, the audit, the $159 per diem. It was all connected. The system was designed to bill for the <em>ideal</em> meal, but deliver the <em>minimum</em> meal, pocketing the difference. He looked at Lucia, who was watching him, hope mixed with apprehension. “They are billing for beds that are empty,” Al stated, not asking, but informing. “They are billing for services that are either substandard or nonexistent.” Lucia gasped, a small, sharp sound. Al closed the laptop. The small, contained world of the library suddenly felt too small. He had the hook. He had the procedural anchor. Now he needed the line. He stood up, the chair scraping loudly on the linoleum floor. He had a file to open, a new sequence of records to pull. The cold truth of Sierraverde was not just in Marco Heredia&rsquo;s letters. It was in the spreadsheets, waiting to be exposed. And Al knew exactly where to find the next one. # THE CONTRACT The binder was dated 2016. He pulled the thick volume from the stack. It smelled of stale toner and cheap glue. The title, block capitals: <em>PBNDS 2011, Revised 2016</em>. Population-Based Needs Dataset Standards. He ran his finger down the spine, stopping at <em>Facility Operations</em>. This was the baseline. The government’s standard for humane containment. He sat at the chipped Formica table in the storage unit office. Late afternoon sun bled orange through the dusty window. The AC unit rattled, a stuttering cough against the heat. Outside, Chula Vista hummed—traffic, industry, a low grind. He adjusted the Sony WM-D6C. Analog hiss filled the silence. He flipped the binder open to the sections relevant to Sierraverde Detention Services LLC. The contract incorporated these standards by reference. Deviation was a breach. He focused on food service protocols. Section 4.1. <em>“Food provided to detainees must meet a minimum daily requirement of 2,000 calories per person.”</em> He read the line twice. Two thousand. A concrete minimum. He thought of the brother, awaiting his immigration hearing. The gruel was watery, pale. Always thin, always insufficient. The standard was clear. The requirement was fixed. He scanned past sanitation and laundry. He needed medical care. Section 4.7. <em>“All medical services provided to detainees shall be delivered at no cost to the detainee, unless specifically noted in an approved waiver.”</em> No cost. He leaned back. The chair groaned. He let the words settle. No cost. He thought of the OIG audit paperwork. The invoices. The receipts. The lines detailing &ldquo;copay.&rdquo; Three dollars. A fraction of the contract, but a solid, tangible violation in a man’s pocket. A copay. It was a contract violation. It was federal law. PREA applied, too. He closed the binder with a soft <em>thump</em>. The procedures were simple. The standards were ironclad. The system was built on bureaucratic grime. He reached for the PACER login. He needed to cross-reference Sierraverde’s contract terms against the PBNDS requirements. Public records. The unyielding weight of the law. The detention facility, a concrete beast in the Inland Empire, was supposed to be temporary. A holding pattern. Fourteen months, the brother had been stuck in the churn, treated like a number. He pulled up the DHS Office of Inspector General database. The 2023 audit. Public. A document of failure. He started pulling detailed billing records, filtering for medical service codes and comparing them to the standard fee schedule. He looked for ghost entries—phantom detainees, beds listed occupied when the facility was thin. He sought the small, systemic leaks of fraud. The contract allowed 480 beds. Sierraverde billed for more. They billed for days that didn&rsquo;t exist. They invoiced full contract rates for meals that were watered down. The pieces clicked into place, not with a flash, but with the slow, grinding certainty of a hydraulic press. Food, medicine, beds—all interconnected, all leverage points of failure. He scrolled through medical services rendered. A prescription refill. A basic wound check. And there it was, under the Sierraverde ledger: <em>Detainee Copay: $3.00</em>. The smallness of it was damning. It wasn&rsquo;t malice; it was the arithmetic of a large, indifferent corporation. He looked out the window. The sun dipped, painting the sky in bruised purples and burnt reds—the weary palette of Southern California. The system had ground down men like them, turning them into line items. He opened a new spreadsheet, labeling the columns: <em>PBNDS Standard</em>, <em>Sierraverde Billing</em>, <em>Violation</em>. The contract was the weapon. The standards were the blade. He knew where this led. Not a quick arrest, but a slow, deliberate dismantling. A series of <em>qui tam</em> filings. A legal siege. He typed the first entry: <em>4.1 Food Service. 2,000 kcal/day. Actual billed: Substandard/Under-calorie.</em> The fight was set. The clock was ticking. The contracts, the rules, the dusty binders—they were the only things standing between the system and the men caught inside it. # THE INVOICES The envelope was thick, smelling of dried toner and bureaucratic dust. Gringo sat at the chipped Formica table in the storage unit corner. The air was dry, concrete, and old plastic. He peeled the seal. The stamped header read: <em>DHS Office of Management and Budget.</em> The FOIA response. He laid the stack down, sorting the papers into three piles: the request log, the redacted responses, and the population reports. Twelve months of billing requested. The government provided eight. Four months were listed as &ldquo;records not located.&rdquo; He pulled the OIG audit database printout—the 2023 finding, the core of the inquiry. It was a dense PDF, but Gringo parsed the data easily. He wasn&rsquo;t a hacker; he was a pipefitter who understood flow, pressure, and where the leaks occurred. The OIG report flagged discrepancies in Sierraverde Detention Services LLC’s billing cycle. It was a finger pointing at the ledger, but Gringo needed the numbers to walk the wire. He pulled the eight monthly population reports. Each was a spreadsheet, a cold accounting of human bodies. He began the cross-reference. First, he matched the ICE document population against the facility capacity of 480 beds. Simple. Second, he matched the population against the corresponding monthly invoice from Sierraverde. The first four months were clean. The numbers aligned. Government documentation matched company billing. Then the pattern broke. In the fifth month, the ICE report showed 350 detainees. The Sierraverde invoice listed 382. Difference: 32 beds. In the eighth month, the ICE report dropped to 320. The invoice listed 367. Difference: 47 beds. The ninth month was similar. 345 on the ICE report. 378 on the invoice. 33 beds. The discrepancies were small individually, easily dismissed as clerical error or a late intake not yet logged. But the pattern was too precise, too consistent. These weren&rsquo;t missed intake forms. They were phantom beds. Gringo tapped the paper with a fingernail. Phantom. He grabbed his calculator, the cheap plastic model solid in his palm. The contract rate was $159 per detainee per day. Thirty days a month. He started with the eighth month. Forty-seven phantom beds. $159. Times 47. The daily phantom charge. $159 x 47 = $7,473. $7,473. Times 30 days. $7,473 x 30 = $224,190. A single month. Over two hundred twenty thousand dollars billed for air. For beds listed as occupied in the ledger, but absent from the official government tally. He moved to the fifth month. Thirty-two phantom beds. $159 x 32 = $5,088. $5,088 x 30 = $152,640. The numbers stacked up, a silent, brutal column of stolen money. The OIG audit had pointed to the <em>existence</em> of fraud. Gringo’s math proved the <em>scale</em>. The system wasn&rsquo;t just flawed; it was optimized for theft. He leaned back, the plastic chair groaning. He thought of the endless paperwork that kept the immigration machine turning—slow, grinding, broken. The weight of California pressed down—the sprawling landscape where massive systems swallowed individuals until they were just data points, line items on a ledger. He pulled out the Sony WM-D6C, the analog recorder, and pressed play. He needed to hear the low hum of the facility, the quiet dread of the system. The invoices were the first piece. The financial trail. But the paper trail was only half the story. The other half was the human cost: the 14-month wait, the substandard meals, the medical services billed but never rendered. Gringo closed the calculator. He had the proof of the phantom beds. He had the mechanism of the theft. Now he needed the leverage. He picked up the phone, the heavy, black handset feeling familiar. He dialed the number for Lucia Reyes’ friend. It was time to stop listening to the conditions and start talking about the cash flow. # THE COMPANY The name was Meridian Corrections Holdings Inc. It appeared first in the public record for Sierraverde Detention Services LLC, incorporated in Nevada in 2019. Al pulled the file. The beige paper smelled of toner and cheap coffee. He knew Sierraverde&rsquo;s specifics: the ICE contract, the 480-bed capacity, the $159 per diem rate. He knew the fraud: phantom detainees, substandard meals billed at contract rate, medical services never rendered. The 2023 OIG audit report was a bureaucratic monster, proving the rot. But Meridian was the anchor. Al sat at the scarred Formica table in the storage unit. Fluorescent lights hummed a low, irritating drone. The air was stale, smelling of cardboard and dust. He wasn&rsquo;t hacking. He was indexing. He was building a map from public records, node by node. He pulled the Sierraverde file, then moved his hand down the list, past the subsidiary LLCs, to the managing member. Meridian Corrections Holdings Inc. He stopped writing. The Honda Fit, parked outside, seemed to sigh in the morning sun. Al leaned back. The cheap plastic chair groaned. He looked at the name again. Meridian. He had started with the detention center—the immediate problem. The conditions, the phantom beds, how the system chewed up people. But the name suggested something broader. Something structural. He opened his laptop and navigated to the county records database, a slow, clunky interface. He typed &ldquo;Meridian.&rdquo; The initial results were a scattershot of legal filings and defunct small businesses. He filtered by corporate registration and entity type. The list grew. Meridian Defense Contractors. He clicked. The first file appeared: early 2010s filings related to a DoD contract. Fraud. Misappropriation. The same DNA, even if the shell companies were different. Meridian Care Holdings. Another click. Hospice fraud. Billing for unrendered services, over-billing—the slow drain of money from the sick. Al traced the lineage, the common root name, through three disparate federal contracts. Detention. Defense. Care. He put his finger on the table, the wood worn smooth by years of pipefitting. It wasn&rsquo;t a coincidence. It was a strategy. The silence of the storage unit stretched, punctuated only by the hum of the lights and a distant lawnmower. Three LLCs. Three federal contracts. One root name. It wasn&rsquo;t just a corporation. It was an infrastructure. He pulled out a fresh sheet of paper, ignoring the existing stack. He didn&rsquo;t write the name. He wrote the connections. <em>Meridian Defense $\rightarrow$ DoD.</em> <em>Meridian Care $\rightarrow$ Hospice.</em> <em>Meridian Corrections $\rightarrow$ ICE.</em> The connections were simple, clean lines of corporate ownership. The implication was massive. It wasn&rsquo;t just fraud; it was a unified, multi-sector harvesting of federal money. Al reached for his Sony</p>
+</div>
+
+
+<div class="truncation-notice">
+  <h2>— END OF TEASER —</h2>
+  <p>You're reading the first 25 pages of <em>Sierraverde</em>.</p>
+  <p>The full manuscript is available at:<br>
+     <span class="url">https://zombie760.github.io/books</span>
+  </p>
+  <p>Every claim is filed. Every source is named. The documents speak.</p>
+  <p style="margin-top:2em;font-family:monospace;font-size:9pt;color:#999;">
+     © BOTWAVE PAPERWORK — Kyle Jimenez — All rights reserved.<br>
+     This teaser may not be redistributed, sold, or modified.
+  </p>
+</div>
+
+</body>
+</html>

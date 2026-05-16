@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinnacle — Teaser — BOTWAVE PAPERWORK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+    --accent: #b22222;
+    --ink: #1a1a1a;
+    --paper: #fbf8f2;
+    --muted: #666;
+    --stamp: rgba(180, 34, 34, 0.07);
+}
+
+@page {
+    size: 6in 9in;
+    margin: 0.9in 0.75in 1.1in 0.75in;
+
+    @bottom-left {
+        content: "BOTWAVE PAPERWORK — TEASER COPY";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.05em;
+    }
+    @bottom-right {
+        content: counter(page) " of 25";
+        font-family: Georgia, serif;
+        font-size: 9pt;
+        color: #888;
+    }
+    @top-right {
+        content: "Get the full book: ZOMBIE760.GITHUB.IO/BOOKS";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.03em;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11.5pt;
+    line-height: 1.6;
+}
+
+body {
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 1in 0.5in;
+    position: relative;
+}
+
+/* Diagonal watermark via fixed background */
+body::before {
+    content: "TEASER";
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: "Space Mono", monospace, serif;
+    font-size: 96pt;
+    font-weight: 700;
+    color: var(--stamp);
+    letter-spacing: 0.2em;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+/* Cover page */
+.cover-page {
+    page-break-after: always;
+    text-align: center;
+    padding: 1.5in 0.5in 1in;
+    border-bottom: 3px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.cover-imprint {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 9pt;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+}
+
+.cover-title {
+    font-family: Georgia, serif;
+    font-size: 28pt;
+    font-weight: bold;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 0.3em;
+}
+
+.cover-subtitle {
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 0 1.5em;
+}
+
+.cover-byline {
+    font-family: Georgia, serif;
+    font-size: 13pt;
+    color: var(--ink);
+    margin-bottom: 2em;
+}
+
+.cover-notice {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 8pt;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.75em 1em;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    margin-top: 2em;
+}
+
+.cover-cta {
+    font-family: Georgia, serif;
+    font-size: 10pt;
+    color: var(--muted);
+    margin-top: 1em;
+}
+
+/* Truncation notice at end */
+.truncation-notice {
+    page-break-before: always;
+    text-align: center;
+    padding: 2in 1in;
+    border-top: 2px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.truncation-notice h2 {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 12pt;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1em;
+}
+
+.truncation-notice p {
+    font-family: Georgia, serif;
+    font-size: 11pt;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.truncation-notice .url {
+    font-family: "Space Mono", monospace;
+    font-size: 10pt;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 20pt;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 0.3em;
+    margin-top: 1.8em;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 15pt;
+    margin-top: 1.4em;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-style: italic;
+    margin-top: 1.2em;
+    page-break-after: avoid;
+}
+
+p { margin: 0.6em 0; }
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1em 0 1em 1.5em;
+    padding-left: 1em;
+    font-style: italic;
+    color: var(--muted);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1.5em 2em;
+}
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="cover-page">
+  <div class="cover-imprint">BOTWAVE BOOKS · WORK IN PROGRESS</div>
+  
+  <div class="cover-title">Pinnacle</div>
+  <div class="cover-subtitle">An Albert Gringeau Thriller — Book Four</div>
+  <div class="cover-byline">Kyle Jimenez</div>
+  <div class="cover-notice">TEASER COPY — FIRST 25 PAGES<br>NOT FOR REDISTRIBUTION OR SALE</div>
+  <div class="cover-cta">Full manuscript: https://zombie760.github.io/books</div>
+</div>
+
+<div class="content">
+<p>The Unit 12 warehouse smelled of concrete dust and stale air. Al leaned against the cinderblock wall. Late afternoon sun, bleached white by smog, slanted through the loading bay doors. He wore faded gray t-shirt and jeans. His 2009 Honda Fit sat idling nearby, a quiet, unremarkable shape in the Chula Vista sprawl. He pulled the laminated key. Unit 12. The storage unit was a stop. A holding place for the paper trail. Al didn&rsquo;t hack. He didn&rsquo;t plant evidence. He indexed: deeds, tax liens, employment records. He was a finder of the buried truth. He opened the steel door. The air inside was cool and static. He moved past stacked boxes labeled “Old Tax Returns.” He was looking for the Meridian <em>qui tam</em> case file. The one that required three years of cross-referencing DoD invoices. He pulled out a thick manila folder. The edges were softened by time. The vibration of his phone cut through the silence. A text message. It was Carmen Ibáñez. The attorney who had routed him to the Medicare hospice case, then the mortgage servicer. She was the institutional connection, the gatekeeper who saw the pattern. <em>Meet. Former client. Urgent. SD.</em> Al paused, hand resting on the folder. San Diego. A shift in the geography of the work. The urgency was the first datum. He closed the unit door. The heavy clang echoed. He walked back to the Honda, the smell of hot asphalt rising up. He opened the message again. Carmen had appended a single PDF. Al plugged his phone into the Sony WM-D6C. The analog recorder was a habit, a tangible counterpoint to the ephemeral data. He didn&rsquo;t need sound, but the physical transfer of the file felt right—deliberate. He opened the PDF. It was a termination letter. The header was generic, but the name was immediate: Renata Cruz. Thirty-eight years old. Compliance Officer, Pinnacle Advisors Group LLC. San Diego. Al scanned the letter. Clipped. Formal. The boilerplate language was dense, designed to deflect. He skipped the pleasantries and went straight to the operative phrase: <em>Position eliminated due to restructuring.</em> He noted the date: October 14th. He scrolled up. The letter was dated two weeks after a filing. The filing was listed in the memo: Form TCR. The acronym was familiar, if more modern than the DoD invoice fraud. TCR. The SEC whistleblower program. Al leaned back against the passenger seat. The pieces locked, not with a flash, but with the dull thud of a gear engaging. Pinnacle Advisors Group LLC. An RIA. $2.1 billion in client assets. San Diego. He knew the landscape of California finance. Firms that looked polished and trustworthy, but whose foundation was built on layers of compromised ethics. The kind of place where the rules were suggestions, and the system was designed to permit the crime. Renata Cruz had filed a TCR. She had reported suspected front-running. Partner accounts opening positions thirty to ninety minutes before client block trades. Institutional theft, disguised by sophisticated finance. The termination letter was the response. The swift, brutal efficiency of institutional retaliation. Al picked up the phone. He typed a brief reply to Carmen. <em>Termination letter received. TCR receipt?</em> The reply came back instantly. <em>Yes. Attached. TCR-2024-SD-00341.</em> Al opened the second PDF. The receipt. The filing number. The proof of the initial action. He looked at the name again: Renata Cruz. She was not just a former employee; she was a point of pressure, a vulnerability in the system. She had raised the alarm. Now, she needed someone to follow the trail. Al slid the papers into a clean file. He didn&rsquo;t need to meet her yet. He needed to understand Pinnacle&rsquo;s structure, the mechanics of the front-running. He needed to index the truth. The work began. The paperwork was a labyrinth, but Al was built for the architecture of buried detail. He would start with public records, tracing Pinnacle’s ownership, its associated shell companies, the flow of its capital. He pressed play on the analog recorder. The low hum settled into the quiet of the cab. The clock ticked forward, moving him from the dusty storage unit in Chula Vista toward the gilded, dangerous heights of San Diego finance. # THE FIRM The document opened to a list of filings. Pinnacle Advisors Group LLC. San Diego. Gringo scrolled the EDGAR page. The firm’s profile was precise: $2.1 billion in assets under management. An RIA, registered with the SEC. A solid institutional machine on paper. He clicked the ADV Form link. It was a sprawling ledger of compliance and risk. Gringo leaned back in the worn chair. The aging AC unit hummed a low, steady drone in the small apartment. He wasn&rsquo;t looking for a crime yet. He was looking for the seams. The place where the paper structure frayed. The ADV was exhaustive. It detailed the firm’s structure, investment strategies, and regulatory obligations. Three managing partners: Deveraux, Nguyen, and Hartmann. Each listed with a clean public slate. He moved past asset allocation and fee structure. He found Conflicts of Interest. The language was standard boilerplate. A defense against litigation. Designed to reassure the investor, not reveal the truth. <em>Personal trading by principals: allowed, subject to firm compliance policies.</em> Gringo stopped. He read the sentence three times. Allowed. Subject to policy. It was a clean line of text, but it carried the weight of a loophole. Wide. Generous. He knew what that meant. The partners could use the firm’s infrastructure, its clients, its market data to make their own money. The system permitted this dance. A California dance, played out in glass towers, where moral weight was lifted by a stack of disclosures. He moved down the form, focusing on the principals. Deveraux, Nguyen, Hartmann. Their disclosed interests were minimal—real estate, mutual funds. Nothing immediately screaming fraud. But the phrase echoed: <em>subject to firm compliance policies.</em> What did those policies entail? Did they restrict timing? Security? Volume? Or were they just a rubber stamp, a piece of paper signed by a compliance officer who could be managed? Gringo pulled up the firm’s website. Sleek, minimalist. Wealth and stability. The kind of place where the client felt buffered by fiduciary responsibility. But Gringo had seen enough institutions—DoD invoices, Medicare claims, mortgage backlogs—to know safety was often just a marketing term. He opened a new browser tab. He needed specifics. He needed the policies in action. Renata Cruz. The former compliance officer. He pulled up the legal aid office’s contact information. He found the filing referencing her termination. Two weeks. A swift, brutal dismissal. He needed to know what she had seen. Not the general disclosure, but the granular reality of the firm’s operations. He typed the request into the email thread, keeping the language tight, procedural. <em>Request for access to trading records related to client accounts and partner accounts, specifically for the period Q3 2023 to present.</em> He added a short, simple line: <em>Focus on unusual pattern execution.</em> He didn&rsquo;t mention front-running. He didn&rsquo;t use the word <em>fraud</em>. He just asked for the data. The response was immediate. A curt reply from the firm’s legal department. They acknowledged the request and promised a limited data set within five business days. Limited. Gringo tapped the screen. The weight of the small request settled heavy. Limited was the first barrier. He knew the data wouldn&rsquo;t be random. It would be filtered, pruned, sanitized. But it was a thread pulled from the vast, tangled fabric of the firm. He reached for the analog recorder, the Sony WM-D6C. The little machine felt solid and dependable in his hand. He pressed the record button. He would start with the trading logs. He would trace the movements. He would map the overlap between partner activity and client executions. He needed to find the thirty-to-ninety-minute window. The pattern. The gap between the personal trade and the block trade. The firm had given him a window. Now, he had to see what was inside. # THE PATTERN The spreadsheet was a grid of cold numbers. Renata Cruz had compiled it. Dozens of screenshots pulled from the Pinnacle Advisors Group LLC trading platform. The file was dense: a chronology of fourteen discrete events over eight months. Al spread the printout across the scarred Formica table in the legal aid office conference room. The AC unit rattled, a tired metronome against the San Diego heat. He didn&rsquo;t need the full context. He needed the pattern. The column headers were brutal: <em>Security</em>, <em>Time (Partner Account)</em>, <em>Time (Client Block Trade)</em>, <em>Direction</em>, <em>Volume</em>. Al picked up a Red Wing 2268, the leather worn smooth. He leaned in. The air smelled of old paper and stale coffee. He traced the timeline for the first entry. Partner Account Beta opened a position in XYZ Corp at 10:02 AM. Client Account Alpha executed a block trade in XYZ Corp at 10:35 AM. Direction matched. The gap: 33 minutes. He moved to the next. Security ABC. Partner Account Gamma. 9:15 AM. Client Account Delta. 9:58 AM. 43 minutes. It was a mechanical betrayal. Al’s fingers, thick and scarred from the shipyard floor, tapped the yellow legal pad. He wasn&rsquo;t looking for sloppiness. He was looking for precision. The trades weren&rsquo;t random. They were predictive. Front-running. The old-school, institutionalized kind. He ran the numbers. The volume shifts were significant. The timing was too clean for coincidence. He looked up at Renata. She was young, sharp, carrying the weight of institutional fury in the slump of her shoulders. She looked like a woman who had spent too long in a fluorescent cage, watching finance turn, knowing it was oiled by corruption. &ldquo;How many instances?&rdquo; Al asked, his voice low, stripped down. &ldquo;Fourteen,&rdquo; she said. &ldquo;Across different securities, different partners. All from the same group.&rdquo; &ldquo;Did you file the TCR with the SEC?&rdquo; Renata shook her head. The movement was small, dismissive. &ldquo;I didn&rsquo;t file it yet.&rdquo; &ldquo;Why?&rdquo; She hesitated, then met his gaze. Her eyes were tired, intelligent, defensive. &ldquo;I was the CCO.&rdquo; The silence settled, heavy. The legal aid office, usually a hive of desperate activity, hushed. &ldquo;Chief Compliance Officer,&rdquo; Al repeated, letting the title hang. &ldquo;At Pinnacle,&rdquo; she confirmed. &ldquo;I signed off on the compliance reports. I looked at the trading logs and said, &lsquo;Yep. Everything is fine.&rsquo;&rdquo; Al felt the familiar, hard click of recognition. This wasn&rsquo;t just a whistleblower case. It was systemic failure. It was the architecture of the institution, rotten at the foundation. &ldquo;When did you realize the pattern was bigger than a few trades?&rdquo; &ldquo;Before I was terminated,&rdquo; she said. &ldquo;Two weeks after I filed the initial internal memo. They didn&rsquo;t want it fixed. They wanted it buried.&rdquo; Al tapped the yellow pad. The math was done. The system had failed. Now came the fight. &ldquo;Did you keep the raw data? The system logs, not just the screenshots?&rdquo; &ldquo;Yes. Everything. Backup drives. I made sure I had them before they came for me.&rdquo; &ldquo;Reason for termination?&rdquo; &ldquo;Restructuring. Poor fit. Standard corporate garbage. But the timing was too perfect. Two weeks. No questions asked.&rdquo; Al nodded, absorbing the data. He saw the blueprint of the crime: the partners, the client accounts, the timing, the cover-up. He saw the weight of California, the relentless ambition of San Diego finance, and how it ground down the people who tried to hold it together. &ldquo;Renata,&rdquo; he said, leaning back. The worn vinyl seat of the Honda Fit pressed against his thighs. &ldquo;The SEC program is a hammer. But it needs a precise target.&rdquo; He pointed to the spreadsheet, specifically to the date of the first flagged trade. &ldquo;We start there. We build the case from the first instance. We make the pattern undeniable.&rdquo; Renata leaned closer to the table, fear replaced by a grudging flicker of hope. &ldquo;What do we do first?&rdquo; Al didn&rsquo;t look at her. He looked at the grid, at the lines of data that represented a stolen fortune. &ldquo;We pull the public records. We find the structure of Pinnacle. We find the partners. We find the weak point in the wall.&rdquo; He reached for the phone, already dialing Miguel, his cousin, the man who kept the digital leash on the public record. The work had begun. The pattern was clear, and the next step was to make it loud. The document was a PDF: TCR-2024-SD-00341. Al spread the printout on the chipped Formica of the kitchen table. Morning sun, too hot for Chula Vista, struck the dust motes above the paper. He wore a faded gray T-shirt and sweatpants—the uniform of a man who preferred function to polish. He leaned in, tracing the case number with a calloused thumb. Pinnacle Advisors Group LLC. $2.1 billion. San Diego. The name was noise. The code was the signal. Al had spent a decade mapping institutional rot: DoD invoice fraud, Medicare hospice claims, mortgage servicing glitches. The system swallowed good people and spat out broken ones. The initial referral was Renata Cruz, a compliance officer. She reported front-running. Partner accounts trading ahead of client block trades. A classic sin. Al shifted the paper, his eyes locking on the header: <em>Whistleblower</em>. He flipped the pages. The SEC rules were dry, precise paragraphs. He wasn&rsquo;t a lawyer, but he was a structural analyst of corruption. He found the seam. Dodd-Frank. Section 922. Retaliation. The text was dense. Al read it like a schematic. He parsed the language until the meaning clicked: protection kicked in only if the employee provided information in a specific manner, a manner defined by the rules. Renata filed digitally. She used the official SEC portal. She had the submission receipt. The system had registered her. The process had begun. Al ran a hand over the stubble on his chin. Two weeks. She was terminated two weeks after the filing. The system processed the complaint. It had not protected her. He looked at the small, almost invisible font detailing the award structure: 10 to 30 percent of sanctions exceeding one million dollars. The promise of a bounty. A financial lifeline for the risk-taker. But the bounty was only half the equation. The other half was the shield. He pushed the TCR document aside and grabbed the thick, dog-eared volume of California statutes from the shelf. He didn&rsquo;t need to read the law; he needed to feel its weight—the grinding pressure of California commerce. The system was designed to correct itself, but the corrections were slow, buried under corporate defense and legal maneuvering. Pinnacle was already mobilizing. They would deny, delay, and dismantle. Al knew this dance. He had seen it a dozen times. He picked up the Sony WM-D6C recorder. Its plastic casing was warm from the morning heat. He pressed play, listening to the faint hiss of static. He needed the texture of the situation, the human element the statutes only touched upon. The next step wasn&rsquo;t re-reading the law. It was finding the nexus. The point where the law met the ledger. Where &ldquo;front-running&rdquo; became a concrete, quantifiable crime. He reached for his laptop, the heavy, reliable machine holding the PACER access granted by Miguel. He needed Pinnacle Advisors&rsquo; public records. Not the brochures, but the filings. The structural bones of the firm. He typed the firm&rsquo;s name. The screen glowed, casting a pale, clinical light over the scattered papers. He focused on the partner accounts. The positions opened thirty to ninety minutes before the client block trades. Time. Money. Intent. The clock was ticking. Renata Cruz was exposed. And Al, the former pipefitter, was about to start digging. # THE TERMINATION March 14, 2024. The date sat on the printout. Al leaned over the kitchen table. The fluorescent light in the small Chula Vista apartment hummed—a thin, irritating whine. He spread the documents like geological strata. Photocopied paper, edges slightly faded. The stack was thick. HR files. Emails. SEC forms. Renata Cruz’s case. Pinnacle Advisors Group LLC. He tapped the printout with a worn fingernail. The sequence was stark. March 14. TCR submission. Form TCR-2024-SD-00341. The whistleblower hit the SEC. March 21. First SEC contact to Pinnacle. A formal inquiry into the $2.1 billion RIA. March 28. Renata received the restructuring notice. A bureaucratic softening. The dance began. April 11. Termination effective. The end of the line. Al shifted in the chair. The worn leather protested. He didn&rsquo;t need a laptop. The physical papers, the weight of the trail, were his tools. He worked with the precision of a pipefitter tracing a flange joint—finding the exact stress point, the weak link. He picked up the termination packet. Crisp, corporate white. The severance agreement. The non-disparagement clause. The release of all claims. He scanned it. Dense, boilerplate language designed to neutralize. They had done their homework. They expected her signature. Renata hadn&rsquo;t. Al traced the signature line. Blank. He moved past the severance, past the vague language about &ldquo;future opportunities.&rdquo; He focused on the release clause. It was absolute, a total surrender of rights for a payout. He read the non-disparagement clause. <em>&rdquo;&hellip;neither party shall disparage the other, either orally or in writing, to any third party.&rdquo;</em> Standard. But in a whistleblower case, it was a shield. A shield meant to silence the narrative. To simplify the story: <em>She left. They restructured. She was dismissed.</em> Al flipped the page, finding the internal HR memo dated April 10. It justified the termination: &ldquo;Operational restructuring. Streamlining compliance oversight.&rdquo; He ran a thumb over the phrase. Operational restructuring. A polite lie. A corporate euphemism for excision. He thought of the trading records. The block trades. The partner accounts. The pattern Renata flagged—positions opened 30 to 90 minutes before client trades executed. Front-running. A clear, ugly breach of trust. Pinnacle Advisors Group. San Diego. A firm managing fortunes, built on fiduciary duty. Here was the evidence, wrapped in a timeline that looked less like a layoff and more like a surgical strike. He pulled out the initial complaint summary from the SEC. The specific securities were listed: Technology, energy, healthcare. Diverse, volatile. The kind of market where pre-emptive trades generated millions. Al leaned back, rubbing the bridge of his nose. He was used to mechanics—the flow of water through rusted pipe, the stress point where a weld failed. This was different. This was the flow of money, channeled through lawyers and bureaucracy. The failure point was human—a violation of trust, a betrayal of the financial machine. He looked at the unsigned agreement again. It wasn&rsquo;t just a document. It was a refusal. Renata&rsquo;s refusal to be erased. Al pulled out the Sony WM-D6C analog recorder. He pressed play, listening to the faint whir. He needed to hear the rhythm of the case. The cadence of the lies. He reached for the file labeled &ldquo;Pinnacle.&rdquo; He needed the client list. Not the firm’s general roster, but the specific accounts involved in the front-running allegations. The accounts that benefited from the illicit trades. Public records were thin on the partners’ personal holdings, but the client accounts—those were the vessels of the money. He pulled out the list of registered entities associated with Pinnacle, cross-referencing them with the public filings secured via Miguel. The initial list was broad, over a hundred names. Too many. Al focused on the dates. The block trade timestamps. He needed to map the beneficiaries to the timing. He needed the nexus point. The system was vast. A complicated, oiled machine. But every machine has a point of entry, a single gear that catches. He started sorting the names, grouping them by geography. California, mostly. But a few slipped out—Arizona, Texas. Spreading the risk, spreading the profits. The paper felt heavy in his hands. Not just the bond paper, but the weight of the money, the weight of the betrayal. A crime that didn&rsquo;t happen in a smoky backroom, but in a climate-controlled office, under the pretense of professionalism. Al looked at the stack of names. He needed a filter. A lens to narrow the hundred-plus down to the handful that mattered. The ultimate beneficiaries of the early trades. The ones with the deepest pockets, the most to lose, and the most to hide. He reached for the ledger. The real work was about to begin. # THE TRADING RECORDS The timestamp read 10:14 AM PST. Al sat hunched in the small Chula Vista storage unit office. The air conditioner droned, a steady, industrial hum fighting the heat. He had spread fourteen grayscale prints across the cheap laminate desk. They were slightly pixelated. Renata Cruz had taken them. Her personal phone, not the firm’s secure server. That detail mattered. She had seen the pattern in real-time, captured the moment before the market shifted. He picked up a fine-point black pen and began numbering them. Instance One. Instance Two. The images were trading screens from Pinnacle Advisors Group LLC. The interface was clean, professional, managing billions. The first image showed a small, anonymous account—a partner account—executing a modest buy order in a mid-cap tech stock. Time: 10:10 AM. The second image, twenty minutes later, showed a massive block trade for a client account. The volume was exponentially larger, a sweep of shares that would move the market. Time: 10:30 AM. Al leaned back, rubbing the bridge of his nose. The sequence was brutal in its simplicity: partner trades, then client block trades, then market impact. He was not a securities lawyer or a quantitative analyst. He was a former pipefitter tracing Wall Street’s sins through public records and raw data. But he knew coincidence. He knew the mechanism. He spent the next hour moving from Instance to Instance, building a chronology. The pattern held firm. It was not a statistical outlier; it was choreography. He paused at Instance Nine. The partner trade, a modest acquisition of shares in a pharmaceutical company, came at 9:45 AM. The client block trade, nearly three hours later, was immense. Al shifted focus. The screenshots were a symptom. He needed the body. He pulled out his laptop. PACER was a lifeline, but for this, he needed the SEC EDGAR database. He searched for Pinnacle Advisors Group LLC and pulled the 13F filings—the quarterly reports detailing the firm’s institutional holdings. These were the public records, the official inventory. The filings were dense, a bureaucratic jungle of tickers and quantities. He cross-referenced the securities in the screenshots with the public holdings. The stocks were present. Pinnacle managed them. But the filings showed the <em>current</em> holdings, not the <em>flow</em>. They showed the net result, not the tactical movement. He needed the movement against the timeline. He started a spreadsheet, assigning columns: Instance Number, Security Ticker, Partner Trade Time, Client Trade Time, 13F Holding Date. The rhythm of the work was methodical, a quiet, insistent thrum. He was building a machine out of fragments—a machine designed to prove the timing was not random. The grinding institutional weight of California was in this spreadsheet. These were not just numbers; they were the millions of dollars moving through San Diego, the wealth tied to those stocks. And here, in a dusty storage unit, was the mechanism of their extraction. He finished the fourteen instances. The consistency was a hammer blow. The window of opportunity—the thirty-to-ninety-minute gap—was the constant. The securities were diverse, but the principle was identical. He looked at the compiled spreadsheet. The timeline was a perfect, undeniable arc. The partner trades were the signal. The client block trades were the response. &ldquo;Front-running,&rdquo; he muttered. The specific vocabulary of the crime. He closed the spreadsheet, letting the weight of the pattern settle. He had the mechanism. He had the timeline. He had the evidence of the sequence. But the sequence was only a theory. He needed the motive. He needed the people. He pulled out the file for Renata Cruz. The legal aid office. The contact point. He scrolled through the case file he’d compiled on her—the former compliance officer. She had reported the suspected front-running via Form TCR, Case TCR-2024-SD-00341. She had been terminated two weeks later. Al clicked on the name of her immediate superior at Pinnacle.</p>
+</div>
+
+
+<div class="truncation-notice">
+  <h2>— END OF TEASER —</h2>
+  <p>You're reading the first 25 pages of <em>Pinnacle</em>.</p>
+  <p>The full manuscript is available at:<br>
+     <span class="url">https://zombie760.github.io/books</span>
+  </p>
+  <p>Every claim is filed. Every source is named. The documents speak.</p>
+  <p style="margin-top:2em;font-family:monospace;font-size:9pt;color:#999;">
+     © BOTWAVE PAPERWORK — Kyle Jimenez — All rights reserved.<br>
+     This teaser may not be redistributed, sold, or modified.
+  </p>
+</div>
+
+</body>
+</html>

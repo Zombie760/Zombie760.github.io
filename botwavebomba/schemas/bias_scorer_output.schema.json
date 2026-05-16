@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zombie760.github.io/botwavebomba/schemas/bias_scorer_output.schema.json",
+  "title": "Bias Scorer — Output Scored Cluster Record",
+  "description": "One scored cluster per line in scored.jsonl. Inherits cluster identity from the input (cluster_id, label, label_type, member_hashes, member_count, source_ids, source_count) and adds: per-source bias enrichment, per-cluster bias_variance (stdev of atlanticist scores across cluster sources), and per-cluster axis_avg (5-axis fingerprint averaged across fingerprinted sources). Behaviour extracted verbatim from generate_feed.py:589-622 + :667-677.",
+  "type": "object",
+  "required": [
+    "cluster_id", "label", "label_type", "member_hashes", "member_count",
+    "source_ids", "source_count",
+    "sources_enriched", "bias_variance", "axis_avg", "fp_source_count"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "cluster_id": { "type": "string", "pattern": "^c_[0-9a-f]{12}$" },
+    "label": { "type": "string" },
+    "label_type": { "type": "string", "enum": ["pair", "single"] },
+    "member_hashes": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 4 },
+      "minItems": 3
+    },
+    "member_count": { "type": "integer", "minimum": 3 },
+    "source_ids": { "type": "array", "items": { "type": "string" }, "minItems": 2, "uniqueItems": true },
+    "source_count": { "type": "integer", "minimum": 2 },
+    "sources_enriched": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "bias_tier", "bias_bucket", "bloc"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "bias_tier": {
+            "type": "string",
+            "description": "From sources_global.json#sources[].bias_tier. 'unknown' when missing."
+          },
+          "bias_bucket": {
+            "type": "string",
+            "enum": ["left", "center-left", "center", "center-right", "right", "state", "unknown"],
+            "description": "Left/center/right bucket for the Ground News coverage formula. From sources_global.json; defaults to 'center'."
+          },
+          "geo_cluster": {
+            "type": ["string", "null"],
+            "description": "Regional cluster (e.g. 'middle-east', 'latin-america'). From sources_global.json."
+          },
+          "bloc": {
+            "type": "string",
+            "enum": ["western", "neutral", "adversarial"],
+            "description": "Derived from atlanticist axis: >=0.5 → western, <0.3 → adversarial, else neutral (matches generate_feed.py:get_bloc)."
+          },
+          "atlanticist_norm": {
+            "type": ["number", "null"],
+            "description": "Atlanticist axis value normalised to [-10, +10] range via (val - 0.5) * 20 (matches generate_feed.py:get_atlanticist_score). null when source has no fingerprint."
+          }
+        }
+      }
+    },
+    "bias_variance": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Population stdev of atlanticist_norm values across cluster sources. 0.0 when <2 sources have fingerprints. Two-decimal rounded to match monolith output."
+    },
+    "axis_avg": {
+      "type": "object",
+      "required": ["interventionist", "zionist", "atlanticist", "statist", "financialized"],
+      "additionalProperties": false,
+      "properties": {
+        "interventionist": { "type": ["number", "null"] },
+        "zionist": { "type": ["number", "null"] },
+        "atlanticist": { "type": ["number", "null"] },
+        "statist": { "type": ["number", "null"] },
+        "financialized": { "type": ["number", "null"] }
+      },
+      "description": "Five-axis cluster-level fingerprint averages. Each axis is the mean across cluster sources that carry a fingerprint for that axis; null when zero sources do. Three-decimal rounded to match monolith output."
+    },
+    "fp_source_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Maximum count across the five axes of sources contributing a value. Indicates how many cluster sources are fingerprinted; downstream code uses this to gate fingerprint-derived UI."
+    }
+  }
+}

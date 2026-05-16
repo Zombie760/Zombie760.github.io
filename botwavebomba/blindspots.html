@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blindspots — BOTWAVEBOMBA</title>
+  <meta name="description" content="Stories the Western press ignores. Stories the adversarial press amplifies. The gap is the story. Detected by TELOS+PAI blindspot analyzer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/botwavebomba/assets/css/main.css">
+  <link rel="stylesheet" href="/botwavebomba/assets/css/mobile.css">
+  <link rel="manifest" href="/botwavebomba/manifest.json">
+  <link rel="apple-touch-icon" href="/botwavebomba/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
+  <script src="/botwavebomba/assets/js/theme-switcher.js" defer></script>
+  <script src="/botwavebomba/assets/js/pwa.js" defer></script>
+</head>
+<body>
+
+  <header class="bwb-header bwb-header--compact">
+    <div class="bwb-header-inner">
+      <a href="/botwavebomba/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <nav class="bwb-topnav">
+        <a href="/botwavebomba/">Feed</a>
+        <a href="/botwavebomba/blindspots.html" class="active">Blindspots</a>
+        <a href="/botwavebomba/sources.html">Sources</a>
+        <a href="/botwavebomba/about.html">Method</a>
+        <a href="/botwavebomba/funnies.html">Funnies</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="bwb-page-container">
+
+    <div class="bwb-page-header">
+      <h1 class="bwb-page-title">BLINDSPOTS</h1>
+      <p class="bwb-page-sub">
+        A blindspot is a story covered by one information bloc — and absent from another.
+        Not balance. Not bias. <em>Omission.</em> The TELOS+PAI blindspot analyzer
+        cross-references Western, adversarial, and non-aligned coverage of the same events
+        to surface what one side isn't telling you.
+      </p>
+      <div class="bwb-page-meta">
+        <span id="bs-total-count">—</span> active blindspots detected ·
+        Updated every 6 hours by global_ingestor.py
+      </div>
+    </div>
+
+    <!-- Blindspot type filters -->
+    <nav class="bwb-filters">
+      <button class="active" data-bs-filter="all">All Blindspots</button>
+      <button data-bs-filter="western-only">Western-Only Coverage</button>
+      <button data-bs-filter="adversarial-only">Adversarial-Only Coverage</button>
+      <button data-bs-filter="non-aligned-only">Non-Aligned Only</button>
+    </nav>
+
+    <!-- Explanation boxes -->
+    <div class="bwb-blindspot-explainer-grid">
+      <div class="bwb-explainer-card western-only">
+        <div class="bwb-explainer-label">WESTERN-ONLY BLINDSPOT</div>
+        <p>Story covered by BBC, NYT, CNN, Reuters — but absent or framed inversely by RT, IRNA, CGTN, Sputnik. The adversarial world is not covering this. Ask why.</p>
+      </div>
+      <div class="bwb-explainer-card adversarial-only">
+        <div class="bwb-explainer-label">ADVERSARIAL-ONLY BLINDSPOT</div>
+        <p>Story that RT, IRNA, and Sputnik are amplifying — while AP, BBC, and the Guardian are silent or burying it. These are the stories that will surprise you.</p>
+      </div>
+    </div>
+
+    <!-- Blindspot feed -->
+    <div id="blindspot-feed" class="bwb-feed bwb-feed--full">
+      <!-- Skeleton loaders -->
+      <div class="skeleton skeleton-card">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-text" style="width: 60%"></div>
+      </div>
+      <div class="skeleton skeleton-card">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-text" style="width: 75%"></div>
+      </div>
+      <div class="skeleton skeleton-card">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-text" style="width: 50%"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bwb-bottom-nav safe-bottom">
+    <a href="/botwavebomba/">
+      <span class="bwb-bottom-nav-icon">📰</span>
+      <span>Feed</span>
+    </a>
+    <a href="/botwavebomba/blindspots.html" class="active">
+      <span class="bwb-bottom-nav-icon">👁️</span>
+      <span>Blindspots</span>
+    </a>
+    <a href="/botwavebomba/sources.html">
+      <span class="bwb-bottom-nav-icon">🌐</span>
+      <span>Sources</span>
+    </a>
+    <a href="/botwavebomba/about.html">
+      <span class="bwb-bottom-nav-icon">📋</span>
+      <span>Method</span>
+    </a>
+    <a href="/botwavebomba/funnies.html">
+      <span class="bwb-bottom-nav-icon">🎭</span>
+      <span>Funnies</span>
+    </a>
+  </nav>
+
+  <footer class="bwb-footer">
+    <div class="bwb-footer-inner">
+      <span class="bwb-footer-logo">BOTWAVEBOMBA</span>
+      <span class="bwb-footer-sub">Blindspot detection powered by TELOS+PAI · blindspot_analyzer.py</span>
+    </div>
+    <div class="bwb-footer-disclaimer">
+      Blindspot detection compares article volumes by source bloc for matching topic clusters.
+      A blindspot is a statistical signal — not an editorial judgment.
+      The data is the argument.
+    </div>
+  </footer>
+
+  <script src="/botwavebomba/assets/js/api.js"></script>
+  <script src="/botwavebomba/assets/js/blindspot.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/botwavebomba/service-worker.js');
+    }
+  </script>
+</body>
+</html>

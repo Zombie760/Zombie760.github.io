@@ -1,0 +1,525 @@
+/* ── BOTWAVEBOMBA — Mobile-First Responsive Styles ── */
+/* Mobile-first CSS — Ground News competitor UX */
+/* Touch targets 44px+, skeleton loaders, responsive grid */
+
+/* ── MOBILE BASE (0-640px) ── */
+@media (max-width: 640px) {
+  /* Body scroll lock for pull-to-refresh */
+  body.mobile-ready {
+    overscroll-behavior-y: contain;
+  }
+
+  /* ── HEADER: Compact mobile layout ── */
+  .bwb-header-inner {
+    padding: 0 12px;
+    height: 48px;
+    flex-wrap: wrap;
+  }
+
+  .bwb-logo-lockup {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .bwb-logo {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+  }
+
+  .bwb-tagline {
+    font-size: 9px;
+    color: var(--text-muted);
+    display: none; /* Hide on mobile - save space */
+  }
+
+  .bwb-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bwb-pipeline-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  .bwb-topnav {
+    display: none; /* Hide top nav on mobile - use bottom bar */
+  }
+
+  /* ── STATS BAR: Horizontal scroll ── */
+  .bwb-stats-bar {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 8px 12px;
+    gap: 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .bwb-stats-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bwb-stat {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bwb-stat-divider {
+    display: none; /* Remove vertical dividers on mobile scroll */
+  }
+
+  .bwb-stat-number {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .bwb-stat-label {
+    font-size: 9px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── LEGEND BAR: Compact mobile ── */
+  .bwb-legend-bar {
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .bwb-legend-item {
+    font-size: 11px;
+    flex-basis: calc(50% - 4px);
+  }
+
+  /* ── SECTION TABS: Horizontal scroll ── */
+  .bwb-section-tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    padding: 0 12px;
+  }
+
+  .bwb-section-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bwb-section-tabs button {
+    display: inline-flex;
+    padding: 12px 16px;
+    font-size: 13px;
+    border: none;
+    border-radius: 20px;
+    background: var(--bg-card);
+    margin-right: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .bwb-section-tabs button.active {
+    background: var(--theme-primary);
+    color: #fff;
+  }
+
+  /* ── SIGNAL FILTERS: Wrap on mobile ── */
+  .bwb-signal-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .bwb-signal-filters button {
+    font-size: 12px;
+    padding: 8px 14px;
+    border-radius: 16px;
+    min-height: 36px; /* Touch-friendly */
+  }
+
+  /* ── STORY GRID: Single column ── */
+  .bwb-story-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  /* ── STORY CARD: Mobile optimized ── */
+  .bwb-story-card {
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 44px; /* Touch target baseline */
+  }
+
+  .bwb-story-card__header {
+    padding: 12px;
+  }
+
+  .bwb-story-card__title {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .bwb-story-card__meta {
+    font-size: 11px;
+    gap: 8px;
+  }
+
+  /* Coverage bar - mobile visible */
+  .bwb-coverage-bar {
+    height: 6px;
+    border-radius: 3px;
+    margin: 8px 0;
+  }
+
+  .bwb-coverage-segment {
+    min-width: 4px; /* Visible even on small bars */
+  }
+
+  /* Source pills - horizontal scroll */
+  .bwb-source-pills {
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 4px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .bwb-source-pills::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bwb-source-pill {
+    font-size: 10px;
+    padding: 4px 8px;
+    min-height: 28px;
+  }
+
+  /* ── BLINDSPOT BADGE: High contrast ── */
+  .bwb-blindspot-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 10px;
+    padding: 4px 8px;
+    min-height: 28px;
+  }
+
+  /* ── ARTICLE STRIP: Swipeable ── */
+  .bwb-article-strip {
+    gap: 6px;
+    padding: 8px 12px;
+  }
+
+  .bwb-article-link {
+    width: 70px;
+  }
+
+  .bwb-article-thumb {
+    width: 70px;
+    height: 45px;
+  }
+
+  .bwb-article-src {
+    font-size: 9px;
+    max-width: 70px;
+  }
+
+  /* ── BOTTOM NAV: Mobile thumb bar ── */
+  .bwb-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-default);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .bwb-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-size: 10px;
+    color: var(--text-muted);
+    padding: 4px 12px;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .bwb-bottom-nav a.active {
+    color: var(--theme-primary);
+  }
+
+  .bwb-bottom-nav-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  /* ── SKELETON LOADER ── */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--bg-card) 0%,
+      var(--bg-hover) 50%,
+      var(--bg-card) 100%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+    border-radius: 4px;
+  }
+
+  .skeleton-text {
+    height: 16px;
+    margin-bottom: 8px;
+  }
+
+  .skeleton-title {
+    height: 24px;
+    margin-bottom: 12px;
+  }
+
+  .skeleton-card {
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+
+  @keyframes skeleton-pulse {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* ── PULL TO REFRESH INDICATOR ── */
+  .ptr-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-default);
+    overflow: hidden;
+    transition: height 0.2s ease;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ptr-indicator.active {
+    height: 48px;
+  }
+
+  .ptr-spinner {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-default);
+    border-top-color: var(--theme-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* ── LAZY LOAD PLACEHOLDER ── */
+  .lazy-image {
+    background: var(--bg-hover);
+    min-height: 120px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lazy-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-default);
+    border-top-color: var(--theme-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  .lazy-image.loaded::before {
+    display: none;
+  }
+
+  /* ── TOUCH OPTIMIZATIONS ── */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Remove 300ms tap delay */
+  .touch-target {
+    touch-action: manipulation;
+  }
+
+  /* ── SAFE AREA INSETS (iPhone X+) ── */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ── TABLET (641-1024px) ── */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .bwb-story-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .bwb-header-inner {
+    padding: 0 20px;
+  }
+
+  .bwb-stats-bar {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .bwb-bottom-nav {
+    display: none; /* Show top nav on tablet */
+  }
+
+  .bwb-topnav {
+    display: flex;
+  }
+}
+
+/* ── DESKTOP (1025px+) ── */
+@media (min-width: 1025px) {
+  .bwb-story-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .bwb-bottom-nav {
+    display: none;
+  }
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── HIGH CONTRAST MODE ── */
+@media (prefers-contrast: high) {
+  :root {
+    --border-default: rgba(255,255,255,0.40);
+    --text-muted: rgba(255,255,255,0.60);
+  }
+
+  .bwb-story-card {
+    border: 1px solid var(--border-default);
+  }
+}
+
+/* ── OFFLINE INDICATOR ── */
+body.offline::after {
+  content: 'OFFLINE';
+  position: fixed;
+  bottom: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #8b0000;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  z-index: 999;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ── PWA INSTALL PROMPT STYLING ── */
+.pwa-install-prompt {
+  position: fixed;
+  bottom: 64px;
+  left: 12px;
+  right: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  padding: 16px;
+  z-index: 998;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.pwa-install-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pwa-install-content p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pwa-install-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.pwa-install-actions button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  min-height: 40px;
+  cursor: pointer;
+}
+
+#pwa-install-btn {
+  background: var(--theme-primary);
+  color: #fff;
+  border: none;
+}
+
+#pwa-dismiss-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-default);
+}

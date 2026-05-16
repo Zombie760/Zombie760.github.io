@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zombie760.github.io/botwavebomba/schemas/bias_scorer_input.schema.json",
+  "title": "Bias Scorer — Input Cluster Record",
+  "description": "Same shape as event_clusterer's output. The bias scorer reads clusters.jsonl and writes scored.jsonl, adding per-cluster bias variance + per-axis averages + per-source enrichment derived from data/source_registry.json and book_arm/memory/source_fingerprints.json.",
+  "$ref": "event_clusterer_output.schema.json"
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zombie760.github.io/botwavebomba/schemas/event_clusterer_input.schema.json",
+  "title": "Event Clusterer — Input Article Record",
+  "description": "One JSON object per line in news_cache.jsonl. Produced by book_arm/pai_modules/global_ingestor.py from the 492-source ingest set. Schema reflects the live file shape as of 2026-05-10 (sampled from book_arm/memory/news_cache.jsonl, 11,812 entries). The clusterer reads headline + hash + source; other fields are passed through downstream.",
+  "type": "object",
+  "required": ["hash", "headline", "source"],
+  "properties": {
+    "hash": {
+      "type": "string",
+      "description": "Content hash, used as article primary key during clustering and downstream re-joining.",
+      "minLength": 4
+    },
+    "headline": {
+      "type": "string",
+      "description": "Article headline. Entity extraction runs against this field.",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "description": "Source identifier (e.g. 'scmp', 'rt', 'reuters'). Matches keys in data/source_registry.json."
+    },
+    "source_name": {
+      "type": ["string", "null"],
+      "description": "Human-readable source name. Optional; falls back to 'source' field at render time."
+    },
+    "country": { "type": ["string", "null"] },
+    "language": { "type": ["string", "null"] },
+    "url": { "type": ["string", "null"] },
+    "description": { "type": ["string", "null"] },
+    "published": { "type": ["string", "null"] },
+    "fetched_at": { "type": ["string", "null"] },
+    "categories": {
+      "type": ["array", "null"],
+      "items": { "type": "string" }
+    },
+    "api": { "type": ["string", "null"] },
+    "image_url": { "type": ["string", "null"] },
+    "full_text": { "type": ["string", "null"] },
+    "word_count": { "type": ["integer", "null"] },
+    "fetch_error": { "type": ["string", "null"] }
+  },
+  "additionalProperties": true
+}

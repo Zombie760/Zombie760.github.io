@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zombie760.github.io/botwavebomba/schemas/event_clusterer_output.schema.json",
+  "title": "Event Clusterer — Output Cluster Record",
+  "description": "One cluster per line in clusters.jsonl. Each cluster groups articles about the same event by entity-pair overlap (primary) or single-entity overlap (fallback). Acceptance criteria from the live monolith: cluster must contain ≥3 articles from ≥2 distinct sources. The cluster carries member_hashes (for downstream re-joining with the full article cache) and source_ids (for bloc-coverage computation downstream).",
+  "type": "object",
+  "required": ["cluster_id", "label", "label_type", "member_hashes", "member_count", "source_ids", "source_count"],
+  "additionalProperties": false,
+  "properties": {
+    "cluster_id": {
+      "type": "string",
+      "description": "Stable identifier derived from sorted member-hashes; same articles → same cluster_id across runs.",
+      "pattern": "^c_[0-9a-f]{12}$"
+    },
+    "label": {
+      "type": "string",
+      "description": "Human-readable cluster label. For entity-pair clusters: 'EntityA+EntityB'. For single-entity clusters: 'Entity'. Used by downstream framing comparison."
+    },
+    "label_type": {
+      "type": "string",
+      "enum": ["pair", "single"],
+      "description": "How the cluster was formed: 'pair' = entity-pair overlap (primary path); 'single' = single-entity fallback for unpaired articles."
+    },
+    "member_hashes": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 4 },
+      "minItems": 3,
+      "description": "Article hashes that belong to this cluster. Must match keys in the input news_cache.jsonl. Length is also reported in member_count for fast filtering."
+    },
+    "member_count": {
+      "type": "integer",
+      "minimum": 3,
+      "description": "len(member_hashes). Convenience field; downstream filters use this without materializing member_hashes."
+    },
+    "source_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 2,
+      "uniqueItems": true,
+      "description": "Distinct source identifiers represented in this cluster. Used by coverage/blindspot downstream."
+    },
+    "source_count": {
+      "type": "integer",
+      "minimum": 2,
+      "description": "len(source_ids). Convenience field."
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "last_audit": "2026-05-10",
+  "audit_doc": "/botwavebomba/audit/about_audit_2026-05-10.md",
+  "decomposition": {
+    "modules_extracted": 6,
+    "total_modules": 6,
+    "next_extraction_target": null,
+    "next_extraction_scheduled": "COMPLETE",
+    "extraction_log": [
+      {
+        "stage": "event_clusterer",
+        "extracted_date": "2026-05-10",
+        "fixture_equivalence": "pass — 160/160 stories identical between baseline and loose-wired output",
+        "test_doc": "botwavebomba/tests/test_event_clusterer.py",
+        "fixture_input": "botwavebomba/fixtures/event_clusterer_input.jsonl",
+        "fixture_output": "botwavebomba/fixtures/event_clusterer_expected_output.jsonl"
+      },
+      {
+        "stage": "bias_scorer",
+        "extracted_date": "2026-05-10",
+        "fixture_equivalence": "pass — 0/160 stories diverged in bias_variance, axis_avg, fp_source_count, or per-source bias_tier/bias_bucket/bloc/geo_cluster between baseline and loose-wired output",
+        "test_doc": "botwavebomba/tests/test_bias_scorer.py",
+        "fixture_input": "botwavebomba/fixtures/event_clusterer_expected_output.jsonl",
+        "fixture_output": "botwavebomba/fixtures/bias_scorer_expected_output.jsonl"
+      },
+      {
+        "stage": "framing_differ",
+        "extracted_date": "2026-05-10",
+        "fixture_equivalence": "pass — 0/160 stories diverged in headline/summary/image_url/video_url/article_cards between baseline and loose-wired output",
+        "test_doc": "botwavebomba/tests/test_framing_differ.py",
+        "fixture_input": "botwavebomba/fixtures/bias_scorer_expected_output.jsonl",
+        "fixture_output": "botwavebomba/fixtures/framing_differ_expected_output.jsonl"
+      },
+      {
+        "stage": "blindspot_analyzer",
+        "extracted_date": "2026-05-10",
+        "fixture_equivalence": "pass — 0/160 stories diverged in is_blindspot/blindspot_side/blindspot_score/blindspot_label/coverage/geo_frame/geo_frame_label/geo_breakdown between baseline and loose-wired output",
+        "test_doc": "botwavebomba/tests/test_blindspot_analyzer.py",
+        "fixture_input": "botwavebomba/fixtures/framing_differ_expected_output.jsonl",
+        "fixture_output": "botwavebomba/fixtures/blindspot_analyzer_expected_output.jsonl"
+      },
+      {
+        "stage": "coverage_mapper",
+        "extracted_date": "2026-05-10",
+        "fixture_equivalence": "pass — projection of left_pct/center_pct/right_pct/state_count/dominant_bucket/dominant_pct from blindspot_analyzer output; per-cluster equivalence verified",
+        "test_doc": "botwavebomba/tests/test_coverage_mapper.py",
+        "fixture_input": "botwavebomba/fixtures/blindspot_analyzer_expected_output.jsonl",
+        "fixture_output": "botwavebomba/fixtures/coverage_mapper_expected_output.jsonl"
+      },
+      {
+        "stage": "broadcast",
+        "extracted_date": "2026-05-11",
+        "fixture_equivalence": "pass — JSON serialization output identical between baseline and extracted module",
+        "test_doc": "book_arm/pai_modules/broadcast.py (thin wrapper; no standalone fixture test needed)",
+        "fixture_input": "n/a — accepts in-memory pipeline result dict",
+        "fixture_output": "n/a — writes api/latest.json and api/blindspots.json"
+      }
+    ],
+    "stages": [
+      {
+        "name": "global_ingestor",
+        "status": "discrete",
+        "file": "book_arm/pai_modules/global_ingestor.py",
+        "extracted_date": null,
+        "notes": "Pre-existing, not part of decomposition. Pulls 492 RSS sources into news_cache.jsonl every six hours via botwave-bomba-pipeline.timer."
+      },
+      {
+        "name": "event_clusterer",
+        "status": "extracted",
+        "file": "book_arm/pai_modules/event_clusterer.py",
+        "extracted_date": "2026-05-10",
+        "notes": "Extracted from generate_feed.py:538-623 (Passes 1-5 of clustering). Fixture-equivalence verified: 160/160 stories identical between baseline (pre-extraction) and loose-wired (post-extraction) api/latest.json on live news_cache. Original tfidf-based standalone reference preserved at book_arm/pai_modules/_reference/event_clusterer.py.original."
+      },
+      {
+        "name": "bias_scorer",
+        "status": "extracted",
+        "file": "book_arm/pai_modules/bias_scorer.py",
+        "extracted_date": "2026-05-10",
+        "notes": "Extracted what the monolith actually does: per-source 5-axis lookup from data/source_registry.json + per-cluster bias_variance (atlanticist stdev) + per-cluster axis_avg + per-source enrichment (bias_tier/bias_bucket/bloc/geo_cluster). Original standalone reference (single-axis -6..+6 propaganda-lexicon scorer) preserved at book_arm/pai_modules/_reference/bias_scorer.py.original — its lexicon/agency-verb approach remains a roadmap item, not live behavior. Fixture-equivalence verified: 0/160 stories diverged."
+      },
+      {
+        "name": "framing_differ",
+        "status": "extracted",
+        "file": "book_arm/pai_modules/framing_differ.py",
+        "extracted_date": "2026-05-10",
+        "notes": "Extracted from generate_feed.py:474-513 (consensus_headline_art) + :29-44 (get_snippet) + :644-657 (article_cards build). Produces framings.jsonl with consensus pick + per-article framing cards + cluster image/video. Sentence-level verb-choice and named-entity diff remain a methodology-roadmap item. Original standalone at book_arm/pai_modules/_reference/framing_differ.py.original. Fixture-equivalence verified: 0/160 stories diverged."
+      },
+      {
+        "name": "blindspot_analyzer",
+        "status": "extracted",
+        "file": "book_arm/pai_modules/blindspot_analyzer.py",
+        "extracted_date": "2026-05-10",
+        "notes": "Extracted from generate_feed.py:291-401 (compute_coverage + compute_geo_frame) + :51-101 (thresholds + watchlists) + :610-614 + :681-689 (blindspot_score + blindspot_label). Produces blindspots.jsonl with full coverage breakdown, blindspot detection (Ground News formula), and Western Mono-Frame / Blackout geo-frame analysis. Original at book_arm/pai_modules/_reference/blindspot_analyzer.py.original. Fixture-equivalence verified: 0/160 stories diverged."
+      },
+      {
+        "name": "coverage_mapper",
+        "status": "extracted",
+        "file": "book_arm/pai_modules/coverage_mapper.py",
+        "extracted_date": "2026-05-10",
+        "notes": "Extracted as a pure projection from blindspot_analyzer's combined output — heatmap fields (left_pct/center_pct/right_pct/state_count/dominant_bucket/dominant_pct) per cluster, written to coverage.jsonl. Shares compute_coverage with blindspot_analyzer through the latter's output, not a duplicate code path. Original at book_arm/pai_modules/_reference/coverage_mapper.py.original. Fixture-equivalence verified."
+      },
+      {
+        "name": "broadcast",
+        "status": "extracted",
+        "file": "book_arm/pai_modules/broadcast.py",
+        "extracted_date": "2026-05-11",
+        "notes": "Extracted from generate_feed.py:770-778 (output dict build + JSON write). Thin wrapper that serializes the pipeline result to api/latest.json and api/blindspots.json. All analytical computation happens upstream; this module only writes."
+      }
+    ]
+  },
+  "source_counts": {
+    "total_ingested": 492,
+    "fingerprinted": 244,
+    "awaiting_fingerprinting": 248,
+    "as_of": "2026-05-16",
+    "sources": {
+      "ingest_set": "book_arm/memory/sources_global.json",
+      "bias_rated_registry": "botwavebomba/data/source_registry.json"
+    }
+  },
+  "pipeline": {
+    "timer_unit": "botwave-bomba-pipeline.timer",
+    "schedule": "OnCalendar=*-*-* 00,06,12,18:00:00 (plus 5min jitter)",
+    "shell_script": "zombie760.github.io/scripts/bomba_pipeline.sh",
+    "latest_api": "/botwavebomba/api/latest.json"
+  }
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Are The Patient — Teaser — BOTWAVE PAPERWORK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+    --accent: #b22222;
+    --ink: #1a1a1a;
+    --paper: #fbf8f2;
+    --muted: #666;
+    --stamp: rgba(180, 34, 34, 0.07);
+}
+
+@page {
+    size: 6in 9in;
+    margin: 0.9in 0.75in 1.1in 0.75in;
+
+    @bottom-left {
+        content: "BOTWAVE PAPERWORK — TEASER COPY";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.05em;
+    }
+    @bottom-right {
+        content: counter(page) " of 25";
+        font-family: Georgia, serif;
+        font-size: 9pt;
+        color: #888;
+    }
+    @top-right {
+        content: "Get the full book: ZOMBIE760.GITHUB.IO/BOOKS";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.03em;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11.5pt;
+    line-height: 1.6;
+}
+
+body {
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 1in 0.5in;
+    position: relative;
+}
+
+/* Diagonal watermark via fixed background */
+body::before {
+    content: "TEASER";
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: "Space Mono", monospace, serif;
+    font-size: 96pt;
+    font-weight: 700;
+    color: var(--stamp);
+    letter-spacing: 0.2em;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+/* Cover page */
+.cover-page {
+    page-break-after: always;
+    text-align: center;
+    padding: 1.5in 0.5in 1in;
+    border-bottom: 3px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.cover-imprint {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 9pt;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+}
+
+.cover-title {
+    font-family: Georgia, serif;
+    font-size: 28pt;
+    font-weight: bold;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 0.3em;
+}
+
+.cover-subtitle {
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 0 1.5em;
+}
+
+.cover-byline {
+    font-family: Georgia, serif;
+    font-size: 13pt;
+    color: var(--ink);
+    margin-bottom: 2em;
+}
+
+.cover-notice {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 8pt;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.75em 1em;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    margin-top: 2em;
+}
+
+.cover-cta {
+    font-family: Georgia, serif;
+    font-size: 10pt;
+    color: var(--muted);
+    margin-top: 1em;
+}
+
+/* Truncation notice at end */
+.truncation-notice {
+    page-break-before: always;
+    text-align: center;
+    padding: 2in 1in;
+    border-top: 2px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.truncation-notice h2 {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 12pt;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1em;
+}
+
+.truncation-notice p {
+    font-family: Georgia, serif;
+    font-size: 11pt;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.truncation-notice .url {
+    font-family: "Space Mono", monospace;
+    font-size: 10pt;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 20pt;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 0.3em;
+    margin-top: 1.8em;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 15pt;
+    margin-top: 1.4em;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-style: italic;
+    margin-top: 1.2em;
+    page-break-after: avoid;
+}
+
+p { margin: 0.6em 0; }
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1em 0 1em 1.5em;
+    padding-left: 1em;
+    font-style: italic;
+    color: var(--muted);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1.5em 2em;
+}
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="cover-page">
+  <div class="cover-imprint">BOTWAVE PAPERWORK</div>
+  
+  <div class="cover-title">You Are The Patient</div>
+  <div class="cover-subtitle">An Instructional Manual for the American Health Insurance System</div>
+  <div class="cover-byline">Kyle Jimenez</div>
+  <div class="cover-notice">TEASER COPY — FIRST 25 PAGES<br>NOT FOR REDISTRIBUTION OR SALE</div>
+  <div class="cover-cta">Full manuscript: https://zombie760.github.io/books</div>
+</div>
+
+<div class="content">
+<h1>YOU ARE THE PATIENT ### An Instructional Manual for the American Health Insurance System <em>Kyle Jimenez</em> <em>BOTWAVE BOOKS</em> <em>Generated 2026-05-09</em> You are the subject. You are the case file. You are the number they pull up on the mainframe at 3 AM. Step one. You receive the 833-A, Subsection Gamma. You sign it. You think it&rsquo;s just a formality. A piece of paper. It is not. It is the contract of surrender. It is the receipt for your life. The system processes you. It does not see you. It processes you. You file the initial claim. You attach the ICD-10 code—that specific, eight-digit designation for your ache, your fever, your panic. You think that code defines you. It doesn&rsquo;t. It is merely a ledger entry. A tax bracket for pain. This is the great joke. You think, <em>Oh, this is just paperwork.</em> You think, <em>It&rsquo;s just insurance.</em> But the paperwork is the cage. The insurance is the gatekeeper. The gatekeeper holds the receipt for your own spine. You submit the documents. You wait. The wait is a tax. The wait is a diagnosis. The denial letter arrives. It is stamped in red ink, referencing CFR Title 45, Section 187. It says, &ldquo;Not Covered.&rdquo; That is not a medical verdict. It is a financial execution. You are now a case number. A decimal point in a sprawling, indifferent spreadsheet. You did this. You filed the form. You signed the contract. You gave them the power. You <em>chose</em> the ledger. &mdash; ## THE CARD The card is 3.375 by 2.125 inches. Standard CR-80. It sits in your wallet, right behind the Visa you keep for the emergency. You carry it like a talisman. You think that insurance card is your safety net. You don&rsquo;t know that yet. On the front: your name. Below your name, your member ID. This is an eleven-to-fourteen digit string—sometimes alphanumeric—and it doesn&rsquo;t identify you as a person. It identifies you as a policy. That distinction? It is everything. Also on the front: your group number. This links you to a contract. A contract your employer negotiated, or that you negotiated, or that no one negotiated because you took the minimum viable option in October and didn&rsquo;t realize the March demand. Also on the front: your plan name. &ldquo;BluePremier Select.&rdquo; &ldquo;Aetna Choice Plus.&rdquo; &ldquo;UnitedHealthcare Navigate.&rdquo; These are not descriptions. They are commands. <em>Navigate</em>. <em>Choose</em>. <em>Premier</em>. You are not navigating. You are waiting on hold. The hold music is a flute. Flip the card over. On the back: two numbers you have never examined. The BIN. Six digits. Bank Identification Number. This is borrowed from credit-card processing. Your prescription drug benefit runs on payment rails originally built for banking transactions. The PCN is a secondary alphanumeric identifier. Together, these two numbers tell a pharmacy’s point-of-sale system exactly which Pharmacy Benefit Manager to contact, which database to query, and under which contract to price the drug you are about to buy. Here is the instruction. The processor—not your insurer, but a PBM your insurer contracted with, a company whose name you will never hear—returns a number. That number is the cost. The pharmacist sees it. The pharmacy logs it. You are standing at the counter. You do not see it yet. There is a delay of two to eight seconds while the transaction completes. During those two to eight seconds, the price is determined. By an algorithm. In a data center in a state that is not your state. Under a contract between your insurer and the PBM that neither party is required to make public, and which your state insurance commissioner has no authority to compel disclosure of. Then the pharmacist tells you the number. This is the system working. This is not an error state. The price you hear at the counter is the output of a functioning mechanism operating exactly as designed. Now, the Evidence of Coverage document. You agreed to it. You agreed when you clicked &ldquo;Enroll&rdquo; on your employer&rsquo;s benefits portal, or when you submitted the marketplace application, or when HR sent the DocuSign on October 30th and you signed it November 2nd because you needed the dental to start. You agreed to a document you had not read. You were not required to have read it. You were required to agree. These are different requirements. And the company understands the difference with considerable, clinical precision. The Evidence of Coverage is 147 pages. Some plans run longer. The Cigna National PPO document for 2025 is 176 pages. The document is not written to be read. It is written to be agreed to. There is a difference. The people who wrote it work in a building near a major city, and they know that difference. The document defines &ldquo;medically necessary.&rdquo; The definition runs four sentences and includes the phrase: &ldquo;as determined by us.&rdquo; Your doctor files a request. The company makes the determination. That determination is governed by clinical criteria developed by the company&rsquo;s utilization review department. Your doctor is not required to be shown these criteria in advance. Your doctor is not entitled to receive them in full upon request. This is also in the document. Your card does not say any of this. Your card has your name. Your card has a logo in a color associated with stability—blue, green, the blue-green of shallow water. You have carried it for months. You have looked at it in a waiting room under fluorescent light and felt, briefly, that you were covered. The card does not tell you what you are covered for. That is in the 147 pages. You signed. &mdash; ## THE NETWORK The document arrived. It looked like a bill. It is called an Explanation of Benefits. It is not a bill. It tells you so, in the pale, dead space where a logo should sit if this were anything you chose. Read the column. Read &ldquo;Your Responsibility.&rdquo; The number there is $4,200. A provider is in-network when they signed a contract. They signed it with your insurance company. They agreed to a negotiated rate. That rate is not the sticker price. It is not the price you saw. It is a third number. A phantom number. It was arrived at through a process you could not observe. It was agreed upon by two parties in a room you were never invited to. It governs a transaction that would happen to your body at a future date. A date nobody knew. The negotiated rate is not published. You can request it. The request will be processed in three to five business days. The hospital. It is in-network. You verified this. You or someone you knew—a designated emergency contact—verified this before they moved you from intake. The hospital accepted the negotiated rate. Your claim for facility services processed correctly. You see it in &ldquo;Amount Billed.&rdquo; You see it in &ldquo;Plan Paid.&rdquo; You see it in &ldquo;Your Responsibility.&rdquo; The math is correct. The hospital is done. The anesthesiologist. He is not in-network. He was the one available that night. Available is not the word in the Explanation of Benefits. The word is Non-Participating. He is a Non-Participating Provider. He did not sign the contract. He is not bound by the negotiated rate. He billed his full rate. $5,900. Your insurance paid what it would have paid a participating provider for that same procedure. $1,700. And the difference? The difference is $4,200. And the difference is yours. You did not choose the anesthesiologist. You were unconscious during the procedure. The anesthesiologist was assigned to your case. By the hospital. Which is in-network. Which processed correctly. Which is done. This is balance billing. It is legal in thirty-two states. You live in one of them. The No Surprises Act, effective January 1, 2022, limits this in certain emergency situations. You were in an emergency. Read the Act. Specifically read the exception in Section 9816(c)(4) governing the Independent Dispute Resolution process. This process is between your insurance and the provider. And the provider initiated it. And it resolved in the provider&rsquo;s favor. And that is why the number in the column marked &ldquo;Your Responsibility&rdquo; is $4,200, and not a smaller number. The IDR process took 47 days. The 30-day payment window on your bill was paused during that time. You were not notified it was paused. The clock resumed when the IDR resolved. You have 30 days from a date that is not today. Go back to the Explanation of Benefits. There is a section called Member Rights and Responsibilities. The responsibilities are listed first. Read them. You have the right to appeal. An appeal must be submitted in writing, with documentation, within 180 days of the date of the Explanation of Benefits. The date of this document is not the date you received it. It is the date it was generated. You have used 23 of your 180 days. You can appeal the coverage determination for the facility services, which processed correctly and will be upheld. You can appeal the determination for the Non-Participating Provider, which is governed by the IDR process, which has already resolved, and which is not subject to member appeals. You can request the itemized bill from the anesthesiologist&rsquo;s practice. The bill will show procedure codes. You can look up the codes in the CMS fee schedule. You can note the difference between the CMS allowable rate and the billed amount. You can document this. You can send the letter. There is also a payment plan. The plan requires a minimum monthly payment of $175. It carries no interest for 24 months. After that, the remaining balance accrues interest at 18.9 percent annually. This rate is disclosed in section 7 of the payment agreement, which you will sign. Which is not a bill. The hospital is in-network. The hospital processed correctly. The hospital is done. You were unconscious. You already signed this form. &mdash; ## THE PRIOR AUTHORIZATION The form. Eleven pages. Your office received it. A PDF attachment, dropped into the insurance company&rsquo;s provider portal. That portal demands a separate login. Your doctor’s patient records system demands a second login. The billing system demands a third. All three systems are housed in your doctor’s office because each one speaks to a different insurance carrier, and none of them speak to each other. Page one. Your member ID. Your date of birth. Your group number. Page two. The diagnosis code. The procedure code. The rendering provider&rsquo;s NPI number. Pages three through seven. Clinical justification. Your doctor explains, in the precise, suffocating language the form dictates, why the treatment she has ordered is medically necessary. Medically necessary. It has two meanings. The first meaning is the doctor&rsquo;s: this patient will suffer preventable harm without this specific intervention. The second meaning is the insurance company’s: this treatment satisfies the criteria outlined in the Coverage Determination Guidelines, Version 4.7, revised March 2024. A document 214 pages long. A document your doctor has not read. A document that is not publicly accessible. You do not choose. The company chooses. Page eight. The attestation. Your doctor signs here. Her signature certifies that the information on pages one through seven is accurate and complete. <em>Complete</em>. That is the operative word. Complete is defined in the Provider Manual, Section 7, Subsection 4(c). It specifies that a complete request must include lab results dated within ninety days of submission, the two most recent office visit notes in full, and the operative report from any prior related procedure, when applicable. <em>When applicable</em>. That definition is four sentences long. This is the central mechanism of the prior authorization. The 72-hour clock does not begin until the request is received as complete. This is not a policy. This is codified in your Evidence of Coverage document, page 43, paragraph two. You received that envelope with fourteen other documents when you enrolled. You did not read it. And your signing of the enrollment form means you accepted the whole, monstrous thing. Your doctor’s office submitted the request on a Tuesday. The intake system flagged it incomplete at 4:53 PM: lab results dated 94 days prior. Outside the window by four days. Notification arrived by fax at 11:12 AM Wednesday. Your doctor’s office resubmitted at 2:34 PM Wednesday with a new draw. The clock started Wednesday at 2:34 PM. Business hours are 8 AM to 5 PM, Monday through Friday. Seventy-two business hours from 2:34 PM on a Wednesday is 2:34 PM the following Wednesday. If you need this treatment before 2:34 PM next Wednesday, there is the expedited review option. Expedited review takes 24 hours. Your doctor must certify in writing that waiting 72 hours would seriously jeopardize your health or your ability to regain maximum function. If the insurance company determines that your condition did not meet the threshold for expedited review, the request is reclassified as standard. The clock resets to the reclassification date. This is a downgrade. You did not know the word <em>downgrade</em> had a medical application. Your doctor has submitted 847 prior authorization requests this year. She has two staff members. Their entire job is submitting these forms. Not staff members who also handle billing. Not staff members who also schedule appointments. Two people. Forty hours a week each. Doing nothing but preparing, submitting, tracking, and appealing prior authorization requests across every single carrier the practice accepts. Their combined salary is $94,000 a year. Benefits add another $23,000. Office overhead is calculated to include this. What the practice charges is calculated to include this. What the insurance company reimburses under the fee schedule is calculated to include this. What your insurer charges you in monthly premiums is calculated to include this. There is no line item on your Explanation of Benefits that reads: <em>Staff whose job is requesting permission to treat you.</em> The line item does not exist. The cost does. The determination will arrive within 72 business hours of 2:34 PM last Wednesday. The determination will be approval, denial, or a request for additional information. A request for additional information is not a denial. It is a pause. You cannot appeal a pause. You must supply the information. The clock resumes when the information is received as complete. Step two begins when step one concludes. Step one has not concluded. &mdash; ## THE DENIAL The letter is dated the 6th. Today is the 10th. Four days. First-class mail. A clock that started running the second you stopped looking at it. Denial code MED-NEG-047. Second line. Second paragraph. Under the company logo. Above the case number—a number that is not your member ID, which is not your claim number, which is the number you will need when you call. Write them all down. You will call. There is a number at the bottom of the letter. You will dial it. You will read that code to a person who already knows what it means and doesn&rsquo;t need you to say it, but requires you to say it just to open the file. <em>The requested service has been reviewed and determined to be not medically necessary based on your plan&rsquo;s clinical criteria.</em> That sentence. Third paragraph. Step one. Understand what &ldquo;medically necessary&rdquo; means. Not what you think it means. Not what your doctor says it means. In your Evidence of Coverage, page 31, clinical necessity is defined as services a prudent physician would consider appropriate. That is the legal shell. The company has the second definition. The utilization review department runs an algorithm—licensed from Evicore, or Carelon, or Interqual, depending on your plan year—and this algorithm applies clinical criteria that are not printed in your Evidence of Coverage, are not required to be printed in your denial letter, and are updated periodically, without notice. The criteria exist. You can request them. The denial letter tells you this in the fourth paragraph. The request takes five business days. The letter arrived on the 10th. You have until the 13th. Your refill window opened on the 8th. It closes on the 13th. Do the math. You already did it. You did it in the pharmacy parking lot. When the technician slid the clipboard through the pickup slot and told you there was a prior authorization issue. You sat in the car for eleven minutes before starting the engine, getting the same answer each time you ran it. The answer is that you must begin the appeal immediately. Not after you receive the clinical criteria. The appeal and the criteria request run in parallel. The appeal form is on the member portal. Log in. Your password was reset in March, and you created a new one. You do not remember the new one. Select Forgot Password. Enter your member ID. A verification code will be sent to the email address on file. The email address on file is from 2019. You have not used that address since 2021. Call member services. The number is the same number as the denial letter. Hold time is currently 27 minutes. The automated system will ask for your member ID, your date of birth, and the last four digits of your requesting provider&rsquo;s NPI number. You will not have the last four digits of your requesting provider&rsquo;s NPI number. Say zero zero zero zero. The system will transfer you to a specialist. The specialist will update your email address. The account update requires a 48-hour security hold. Meanwhile: file the appeal without the clinical criteria. You can appeal on the grounds of medical necessity using your physician&rsquo;s documentation alone. Your physician must submit a Letter of Medical Necessity explaining why the standard treatment protocol failed or is contraindicated in your specific case. This is separate from a peer-to-peer review, which is a different process, which your physician&rsquo;s office must request within 72 hours of the denial date. The denial date is the 6th. It is the 10th. Your physician&rsquo;s office opens at 8 a.m. It is 7:51 p.m. The denial letter tells you that you have 180 days to file a formal appeal. That is accurate. The 180 days begins on the date of the denial, the 6th. Not the date you received it. Not the date you read it in a parking lot under fluorescent pharmacy light with the engine off. The 6th. You have 176 days remaining to mount a formal appeal and three days remaining to fill the prescription and twelve hours until the physician&rsquo;s office opens and a portal password you do not have for an account last accessed in November, when you logged in to verify that the $347 you paid out-of-pocket after an outpatient procedure had been applied correctly to your deductible, and it had, and you closed the tab. You kept it open six minutes that time, reading the explanation of benefits, learning the structure. That was the last time you were inside this correctly. You&rsquo;re inside it again now, with different numbers, and no one handed you a map, because the map is the thing you are being asked to build while the window closes. &mdash; ## THE APPEAL The form. It is the Appeal Request. Page one. Your name. Your member ID. Your date of birth. The claim</h1>
+</div>
+
+
+<div class="truncation-notice">
+  <h2>— END OF TEASER —</h2>
+  <p>You're reading the first 25 pages of <em>You Are The Patient</em>.</p>
+  <p>The full manuscript is available at:<br>
+     <span class="url">https://zombie760.github.io/books</span>
+  </p>
+  <p>Every claim is filed. Every source is named. The documents speak.</p>
+  <p style="margin-top:2em;font-family:monospace;font-size:9pt;color:#999;">
+     © BOTWAVE PAPERWORK — Kyle Jimenez — All rights reserved.<br>
+     This teaser may not be redistributed, sold, or modified.
+  </p>
+</div>
+
+</body>
+</html>

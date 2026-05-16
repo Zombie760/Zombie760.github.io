@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Story — BOTWAVEBOMBA</title>
+  <meta name="description" content="Multi-source framing analysis. See how Western, non-aligned, and adversarial press cover the same event.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/botwavebomba/assets/css/main.css">
+  <link rel="stylesheet" href="/botwavebomba/assets/css/mobile.css">
+  <link rel="manifest" href="/botwavebomba/manifest.json">
+  <link rel="apple-touch-icon" href="/botwavebomba/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
+  <script src="/botwavebomba/assets/js/theme-switcher.js" defer></script>
+  <script src="/botwavebomba/assets/js/pwa.js" defer></script>
+</head>
+<body>
+
+  <header class="bwb-header bwb-header--compact">
+    <div class="bwb-header-inner">
+      <a href="/botwavebomba/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <nav class="bwb-topnav">
+        <a href="/botwavebomba/">Feed</a>
+        <a href="/botwavebomba/blindspots.html">Blindspots</a>
+        <a href="/botwavebomba/sources.html">Sources</a>
+        <a href="/botwavebomba/about.html">Method</a>
+        <a href="/botwavebomba/funnies.html">Funnies</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="story-container" class="bwb-story-container">
+
+    <!-- Story header -->
+    <div class="bwb-story-header">
+      <div class="bwb-story-badges" id="story-badges"></div>
+      <h1 id="story-headline" class="bwb-story-headline">Loading...</h1>
+      <div class="bwb-story-meta">
+        <span id="story-date" class="bwb-meta-item"></span>
+        <span id="story-source-count" class="bwb-meta-item"></span>
+        <span id="story-entity-count" class="bwb-meta-item"></span>
+        <span id="story-bias-variance" class="bwb-meta-item"></span>
+      </div>
+    </div>
+
+    <!-- Hero image — article photo or generated card -->
+    <div id="story-hero" class="bwb-story-hero"></div>
+
+    <!-- THE CENTERPIECE: Coverage Heatmap -->
+    <section class="bwb-section">
+      <div class="bwb-section-header">
+        <h2 class="bwb-section-title">COVERAGE HEATMAP</h2>
+        <span class="bwb-section-sub">Who covered this — and from which angle</span>
+      </div>
+      <div id="bias-heatmap" class="bwb-heatmap"></div>
+    </section>
+
+    <!-- 5-Axis Bias Breakdown -->
+    <section class="bwb-section">
+      <div class="bwb-section-header">
+        <h2 class="bwb-section-title">5-AXIS BIAS BREAKDOWN</h2>
+        <span class="bwb-section-sub">TELOS+PAI scoring — not a label, a fingerprint</span>
+      </div>
+      <div id="axis-breakdown" class="bwb-axis-grid"></div>
+    </section>
+
+    <!-- Framing Comparison -->
+    <section class="bwb-section">
+      <div class="bwb-section-header">
+        <h2 class="bwb-section-title">FRAMING COMPARISON</h2>
+        <span class="bwb-section-sub">Same event. Different language. The delta is the story.</span>
+      </div>
+      <div id="framing-table" class="bwb-framing-grid"></div>
+    </section>
+
+    <!-- Entities -->
+    <section class="bwb-section">
+      <div class="bwb-section-header">
+        <h2 class="bwb-section-title">NAMED ENTITIES</h2>
+        <span class="bwb-section-sub">People, organizations, and states named across all sources</span>
+      </div>
+      <div id="entity-cloud" class="bwb-entity-cloud"></div>
+    </section>
+
+    <!-- Original Sources -->
+    <section class="bwb-section">
+      <div class="bwb-section-header">
+        <h2 class="bwb-section-title">READ ORIGINAL COVERAGE</h2>
+        <span class="bwb-section-sub">Primary source URLs. No paywalled aggregation. No editorial layer.</span>
+      </div>
+      <div id="source-links" class="bwb-source-list"></div>
+    </section>
+
+    <!-- Back link -->
+    <div class="bwb-back-row">
+      <a href="/botwavebomba/" class="bwb-back-link">← Back to feed</a>
+    </div>
+
+  </div>
+
+  <footer class="bwb-footer">
+    <div class="bwb-footer-inner">
+      <span class="bwb-footer-logo">BOTWAVEBOMBA</span>
+      <span class="bwb-footer-sub">Powered by TELOS+PAI substrate · 492 sources · Zero spin</span>
+    </div>
+  </footer>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bwb-bottom-nav safe-bottom">
+    <a href="/botwavebomba/">
+      <span class="bwb-bottom-nav-icon">📰</span>
+      <span>Feed</span>
+    </a>
+    <a href="/botwavebomba/blindspots.html">
+      <span class="bwb-bottom-nav-icon">👁️</span>
+      <span>Blindspots</span>
+    </a>
+    <a href="/botwavebomba/sources.html">
+      <span class="bwb-bottom-nav-icon">🌐</span>
+      <span>Sources</span>
+    </a>
+    <a href="/botwavebomba/about.html">
+      <span class="bwb-bottom-nav-icon">📋</span>
+      <span>Method</span>
+    </a>
+    <a href="/botwavebomba/funnies.html">
+      <span class="bwb-bottom-nav-icon">🎭</span>
+      <span>Funnies</span>
+    </a>
+  </nav>
+
+  <script src="/botwavebomba/assets/js/api.js"></script>
+  <script src="/botwavebomba/assets/js/heatmap.js"></script>
+  <script src="/botwavebomba/assets/js/story.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/botwavebomba/service-worker.js');
+    }
+  </script>
+</body>
+</html>

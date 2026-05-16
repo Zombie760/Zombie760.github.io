@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOTWAVE PAPERWORK — Books</title>
+  <meta name="description" content="Primary-source investigations. Every claim filed. Every source named.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bone: #e8e4dc;
+      --gold: #c9a227;
+      --crimson: #8b2635;
+      --text2: rgba(232,228,220,0.65);
+      --text3: rgba(232,228,220,0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--bone);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    .bg-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('../assets/santa_muerte_bg.jpg') center/cover no-repeat;
+      opacity: 0.15;
+      z-index: -2;
+    }
+    .bg-darken {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.85) 50%, rgba(10,10,10,0.98) 100%);
+      z-index: -1;
+    }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    header {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid rgba(201,162,39,0.2);
+    }
+    .wordmark {
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+    }
+    .subtitle {
+      color: var(--text2);
+      font-size: 0.85rem;
+      max-width: 50ch;
+    }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 3rem 0;
+    }
+    .book {
+      position: relative;
+      background: rgba(20,20,20,0.6);
+      border: 1px solid rgba(201,162,39,0.15);
+      transition: border-color 0.2s;
+    }
+    .book:hover {
+      border-color: rgba(201,162,39,0.4);
+    }
+    .book-cover {
+      width: 100%;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid rgba(201,162,39,0.1);
+    }
+    .book-info {
+      padding: 1.25rem;
+    }
+    .book-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      color: var(--bone);
+    }
+    .book-meta {
+      color: var(--text3);
+      font-size: 0.7rem;
+      margin-bottom: 0.75rem;
+    }
+    .book-desc {
+      color: var(--text2);
+      font-size: 0.8rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .teaser-link {
+      display: inline-block;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(201,162,39,0.3);
+      padding-bottom: 2px;
+    }
+    .teaser-link:hover {
+      border-bottom-color: var(--gold);
+    }
+    .book-section {
+      padding-top: 3rem;
+    }
+    .book-section:first-of-type {
+      padding-top: 0;
+    }
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      color: var(--gold);
+      padding-top: 3rem;
+      padding-bottom: 0;
+      border-top: 1px solid rgba(201,162,39,0.15);
+    }
+    .book-section:first-of-type .section-label {
+      border-top: none;
+      padding-top: 0;
+    }
+    .telegram-cta {
+      background: rgba(139,38,53,0.15);
+      border: 1px solid rgba(139,38,53,0.3);
+      padding: 2rem;
+      margin: 2rem 0 4rem;
+      text-align: center;
+    }
+    .telegram-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .telegram-cta p {
+      color: var(--text2);
+      font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+    .telegram-btn {
+      display: inline-block;
+      background: var(--crimson);
+      color: var(--bone);
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+    }
+    .telegram-btn:hover {
+      background: #a02d3d;
+    }
+    footer {
+      padding: 2rem 0 3rem;
+      text-align: center;
+      color: var(--text3);
+      font-size: 0.7rem;
+      border-top: 1px solid rgba(201,162,39,0.1);
+    }
+    footer a {
+      color: var(--text2);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    footer a:hover {
+      border-bottom-color: var(--gold);
+      color: var(--gold);
+    }
+    @media (max-width: 600px) {
+      body { font-size: 12px; }
+      h1 { font-size: 1.6rem; }
+      .books-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-overlay"></div>
+  <div class="bg-darken"></div>
+
+  <header>
+    <div class="wrap">
+      <div class="wordmark">BOTWAVE PAPERWORK</div>
+      <h1>Every claim filed.<br>Every source named.</h1>
+      <p class="subtitle">Primary-source investigations. Documentary memoir. The receipts are in the appendices.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+
+      <div class="book-section">
+        <h2 class="section-label">Investigative Non-Fiction</h2>
+        <div class="books-grid">
+
+          <div class="book">
+            <img src="covers/cover_unwarranted_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">Unwarranted Influence</div>
+              <div class="book-meta">643 pages · 1095–2026 · 1,100+ citations</div>
+              <div class="book-desc">Vesting Order 248. The chain from the Third Reich's industrial backers to Silicon Valley's extraction state.</div>
+              <a href="teasers/unwarranted_influence_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_captain_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">Did Not Step Forward</div>
+              <div class="book-meta">295 pages · Sports Memoir · 1960–2016</div>
+              <div class="book-desc">Two men. One refusal. Muhammad Ali's Form 150. The Alcindor Rule.</div>
+              <a href="teasers/captain_and_champ_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_doge_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">DOGE</div>
+              <div class="book-meta">535 pages · Bureaucratic Autopsy</div>
+              <div class="book-desc">He read the ledger. What he found was not fraud. It was architecture.</div>
+              <a href="teasers/doge_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_sudo_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">SUDO KINGDOM</div>
+              <div class="book-meta">899 pages · Root Access · Procedural History</div>
+              <div class="book-desc">The infrastructure was always fiction. The access was always real.</div>
+              <a href="teasers/sudo_kingdom_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_kareem_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">Kareem Ali: A Ledger of Resistance</div>
+              <div class="book-meta">264 pages · Sports Memoir · 1967–2026</div>
+              <div class="book-desc">The skyhook. The goggles. The quiet dominance that outlasted the noise.</div>
+              <a href="teasers/KAREEM_ALI_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="book-section">
+        <h2 class="section-label">The Albert Gringeau Thriller Series</h2>
+        <div class="books-grid">
+
+          <div class="book">
+            <img src="covers/cover_thriller1_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">The Incomplete Accounting</div>
+              <div class="book-meta">Book 1 · DoD Invoice Fraud · 30 chapters</div>
+              <div class="book-desc">A sealed qui tam complaint. A forensic accountant who knows which line items don't add up. The Pentagon doesn't want a trial.</div>
+              <a href="teasers/thriller_book_1_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_thriller2_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">Pacific Palliative</div>
+              <div class="book-meta">Book 2 · Medicare Hospice Fraud · 35 chapters</div>
+              <div class="book-desc">$847 per day. Patients not dying fast enough. Someone is counting the bed-days.</div>
+              <a href="teasers/thriller_book_2_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_thriller3_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">Crestline</div>
+              <div class="book-meta">Book 3 · Force-Placed Insurance · 12 chapters</div>
+              <div class="book-desc">The servicer bought the loan, then bought the policy. The homeowner pays both.</div>
+              <a href="teasers/thriller_book_3_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_thriller4_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">Pinnacle</div>
+              <div class="book-meta">Book 4 · Insider Trading · 20 chapters</div>
+              <div class="book-desc">The trade ticket arrives before the press release. Form ADV says nothing about that.</div>
+              <a href="teasers/thriller_book_4_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_thriller5_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">Sierraverde</div>
+              <div class="book-meta">Book 5 · ICE Detention Billing · 19 chapters</div>
+              <div class="book-desc">The manifest says 847 beds occupied. The bill says 1,200. Someone has to reconcile the count.</div>
+              <a href="teasers/thriller_book_5_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="book-section">
+        <h2 class="section-label">Docufiction</h2>
+        <div class="books-grid">
+
+          <div class="book">
+            <img src="covers/cover_shield_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">The Shield</div>
+              <div class="book-meta">75,000 words · The Flight Log</div>
+              <div class="book-desc">The record exists. The record has always existed. The question is who filed it first.</div>
+              <a href="teasers/the_shield_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_extraction_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">The Extraction</div>
+              <div class="book-meta">10,800 words · The Prospectus</div>
+              <div class="book-desc">The fund raised the capital. The capital left. The paperwork is still pending.</div>
+              <a href="teasers/the_extraction_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_catalog_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">The Catalog</div>
+              <div class="book-meta">10,000 words · The Profile</div>
+              <div class="book-desc">Every item has a number. Every number has a location. You are in the catalog.</div>
+              <a href="teasers/the_catalog_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_patient_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">You Are The Patient</div>
+              <div class="book-meta">10,900 words · The 833-A</div>
+              <div class="book-desc">The form is twelve pages. Page three is the one that matters. Sign where indicated.</div>
+              <a href="teasers/you_are_the_patient_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_terminal_final.jpg" alt="" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">TERMINAL</div>
+              <div class="book-meta">46,872 words · MIC 2.0 / The Unplugged Server</div>
+              <div class="book-desc">The server was never wired. Two hundred million users. The system was the user the whole time.</div>
+              <a href="teasers/terminal_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="telegram-cta">
+        <h3>Full Manuscript Access</h3>
+        <p>Teasers are public. The complete works — with all citations, exhibits, and appendices — are available through the BOTWAVE archive.</p>
+        <a href="https://t.me/botwave_paperwork_bot" class="telegram-btn">Message @botwave_paperwork_bot</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2026 BOTWAVE PAPERWORK — Al Gringo</p>
+      <p style="margin-top: 0.5rem; opacity: 0.7;">Teasers for preview only. Not for redistribution.</p>
+      <p style="margin-top: 1rem;"><a href="/">Home</a> · <a href="https://github.com/Zombie760" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>

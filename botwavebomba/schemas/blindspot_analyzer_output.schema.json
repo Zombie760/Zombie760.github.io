@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zombie760.github.io/botwavebomba/schemas/blindspot_analyzer_output.schema.json",
+  "title": "Blindspot Analyzer — Output Record",
+  "description": "One record per cluster in blindspots.jsonl. Combines Ground News-style left/center/right coverage breakdown, blindspot detection (Ground News formula: one side <17% AND other side ≥33%), and Western Mono-Frame / Blackout geo-frame detection. Behaviour extracted from generate_feed.py:291-401.",
+  "type": "object",
+  "required": [
+    "cluster_id", "label", "source_ids", "source_count",
+    "left_pct", "center_pct", "right_pct", "state_count",
+    "dominant_bucket", "dominant_pct",
+    "is_blindspot", "blindspot_side", "blindspot_score", "blindspot_label",
+    "geo_frame", "geo_frame_label", "geo_frame_topic", "geo_breakdown"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "cluster_id": { "type": "string", "pattern": "^c_[0-9a-f]{12}$" },
+    "label": { "type": "string" },
+    "source_ids": { "type": "array", "items": { "type": "string" } },
+    "source_count": { "type": "integer", "minimum": 0 },
+    "left_pct":  { "type": "integer", "minimum": 0, "maximum": 100 },
+    "center_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "right_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "state_count": { "type": "integer", "minimum": 0 },
+    "dominant_bucket": { "type": "string", "enum": ["left", "center", "right"] },
+    "dominant_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "is_blindspot": { "type": "boolean" },
+    "blindspot_side": { "type": ["string", "null"], "enum": ["left", "right", "all", null] },
+    "blindspot_score": { "type": "number" },
+    "blindspot_label": { "type": ["string", "null"] },
+    "geo_frame": { "type": ["string", "null"], "enum": ["mono-frame", "blackout", null] },
+    "geo_frame_label": { "type": ["string", "null"] },
+    "geo_frame_topic": { "type": ["string", "null"] },
+    "geo_breakdown": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    }
+  }
+}

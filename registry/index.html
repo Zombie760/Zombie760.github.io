@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE REGISTRY — A Novel by Al Gringo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&family=Anton&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f5f2eb;
+  --ink: #1a1a1a;
+  --blood: #8b2635;
+  --gold: #c9a86c;
+  --shadow: rgba(0,0,0,0.1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Crimson Text', Georgia, serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(139,38,53,0.03) 100px, rgba(139,38,53,0.03) 102px),
+    repeating-linear-gradient(-45deg, transparent, transparent 150px, rgba(201,168,108,0.02) 150px, rgba(201,168,108,0.02) 152px);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3rem, 10vw, 6rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.subtitle {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.1rem;
+  color: var(--blood);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.tagline {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--ink);
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.author {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.9rem;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  margin-top: 2rem;
+}
+
+/* Content Sections */
+.section {
+  padding: 4rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  color: var(--blood);
+  border-left: 4px solid var(--blood);
+  padding-left: 1rem;
+}
+
+.section p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* Book Card */
+.book-card {
+  background: white;
+  border: 1px solid var(--shadow);
+  padding: 2.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.book-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+.book-meta {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.85rem;
+  color: var(--blood);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.book-blurb {
+  font-style: italic;
+  font-size: 1.1rem;
+  border-left: 3px solid var(--gold);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* Quote Block */
+.quote-block {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3rem 2rem;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.quote-block::before {
+  content: '"';
+  font-family: Georgia, serif;
+  font-size: 6rem;
+  color: var(--blood);
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  opacity: 0.5;
+}
+
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-author {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.9rem;
+  color: var(--gold);
+  margin-top: 1rem;
+  letter-spacing: 0.1em;
+}
+
+/* Character Grid */
+.characters {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.character {
+  border-left: 3px solid var(--gold);
+  padding-left: 1.5rem;
+}
+
+.character-name {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.character-role {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.8rem;
+  color: var(--blood);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+/* Status Section */
+.status {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.status-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.status-text {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--shadow);
+}
+
+.footer-text {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.8rem;
+  color: var(--ink);
+  opacity: 0.6;
+  letter-spacing: 0.1em;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .title { font-size: 2.5rem; }
+  .section { padding: 2rem 1.5rem; }
+  .book-card { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="title">The Registry</h1>
+    <p class="subtitle">A Novel</p>
+    <p class="tagline">The Toyota started on the third try. I made a mental note to change the battery. The battery would outlast the man waiting in the Camry across the street.</p>
+    <p class="author">By Al Gringo</p>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section">
+  <h2 class="section-title">The Story</h2>
+
+  <div class="book-card">
+    <h3 class="book-title">The Registry</h3>
+    <p class="book-meta">Mystery / Thriller / Family</p>
+
+    <p class="book-blurb">
+      Regina "Nonna" Russo is fifty-two, a grandmother, and a former criminal defense investigator who spent thirty years helping people the system had failed. Now she runs a bookstore and minds her own business.
+    </p>
+
+    <p>
+      When her bridge club friend Doris Kowalski disappears from Vista del Mar Estates — a gated golf community where the grass is always greener and the secrets are buried beneath perfectly trimmed sod — Regina is pulled back into the work she thought she'd left behind.
+    </p>
+
+    <p>
+      Doris wasn't just a retired bookkeeper. She was building a case. Forty years of records. A wrongful conviction from 1987. A daughter seeking justice for a father who died in prison for crimes he didn't commit.
+    </p>
+
+    <p>
+      Helping Regina is Danny, her thirty-nine-year-old son covered in tattoos from years inside, the "conspiracy-minded" son who sees patterns where others see noise. Hindering her is David, her forty-five-year-old corporate lawyer son who wants her to let the police handle it.
+    </p>
+
+    <p class="book-blurb">
+      The antagonist is Victor Harcourt, seventy, CEO of Pacific Meridian Holdings — refined, charitable, and utterly ruthless. He has spent decades hiding behind shell companies and legal teams. He has never faced a grandmother who knows where to hide a gun in her kitchen.
+    </p>
+
+    <p>
+      This is a novel about family, justice, and the hard-won wisdom that the difficult path is sometimes the only path. It's propulsive, impossible to put down, and ends exactly the way it should: with the antagonist getting what he deserves, and a family finally seeing each other clearly.
+    </p>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="quote-block">
+  <p class="quote-text">
+    This is the advantage of being a grandmother — nobody expects the Camry to contain violence until the Camry contains violence.
+  </p>
+  <p class="quote-author">— THE REGISTRY</p>
+</section>
+
+<!-- Characters -->
+<section class="section">
+  <h2 class="section-title">The Characters</h2>
+
+  <div class="characters">
+    <div class="character">
+      <h3 class="character-name">Regina "Nonna" Russo</h3>
+      <p class="character-role">Protagonist / Investigator / Grandmother</p>
+      <p>Fifty-two. Warm but world-weary. Dry humor. Loves her difficult sons more than they know. Can't stop giving a shit even when it's easier not to. Talks to her dead husband. Makes bad coffee and drinks it anyway.</p>
+    </div>
+
+    <div class="character">
+      <h3 class="character-name">Danny Russo</h3>
+      <p class="character-role">The Son Who Sees Patterns</p>
+      <p>Thirty-nine. Covered in tattoos from years inside. The "conspiracy-minded" son who was right more often than anyone wanted to admit. Desperately loves his mother but doesn't know how to say it without sounding crazy. Finally gets to prove his value.</p>
+    </div>
+
+    <div class="character">
+      <h3 class="character-name">David Russo</h3>
+      <p class="character-role">The Corporate Lawyer</p>
+      <p>Forty-five. Straight arrow. The "good" son who never understood why his mother cared about "those people." Calls every Sunday. Learns, eventually, to be proud of the mother who never stopped fighting.</p>
+    </div>
+
+    <div class="character">
+      <h3 class="character-name">Maeve</h3>
+      <p class="character-role">The Mother / The Network</p>
+      <p>Seventy-eight. Bridge club queen. Knows everything, says little. Lemon trees in violation of HOA rules. The tone that says "I know you're lying, I love you anyway."</p>
+    </div>
+
+    <div class="character">
+      <h3 class="character-name">Victor Harcourt</h3>
+      <p class="character-role">The Antagonist</p>
+      <p>Seventy. CEO of Pacific Meridian Holdings. Refined. Charitable. Has spent decades stealing from widows and framing the powerless. Gets his in the end. Publicly. Humiliatingly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Setting -->
+<section class="quote-block">
+  <p class="quote-text">
+    Vista del Mar Estates. The kind of place where the grass is always greener, and the secrets are always buried just beneath the perfectly trimmed sod.
+  </p>
+  <p class="quote-author">— THE SETTING</p>
+</section>
+
+<!-- The Voice -->
+<section class="section">
+  <h2 class="section-title">The Voice</h2>
+  <p>
+    <strong>The Registry</strong> is written in what we call "swept-rug prose" — prose that guides you along like a steady walk, then suddenly the ground isn't there, but the momentum carries you through the fall and you land running.
+  </p>
+  <p>
+    The voice blends Lee Child's deceptive simplicity (short sentences that walk you toward trapdoors), Charlie Huston's kinetic velocity (street-level chaos that sweeps you along), Michael Connelly's procedural precision, Sue Grafton's first-person warmth, and Stephen King's character depth.
+  </p>
+  <p>
+    The result is propulsive, impossible to put down, and deeply satisfying — a mystery that moves like a thriller but lands like a family story.
+  </p>
+</section>
+
+<!-- Status -->
+<section class="status">
+  <h2 class="status-title">Status</h2>
+  <p class="status-text">
+    MANUSCRIPT IN PROGRESS<br>
+    40 Chapters Planned • 300-350 Pages Target<br>
+    <br>
+    For Mom. Every word earns her attention.
+  </p>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p class="footer-text">
+    THE REGISTRY &copy; 2026 Al Gringo<br>
+    BE UNDENIABLE
+  </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Catalog — Teaser — BOTWAVE PAPERWORK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+    --accent: #b22222;
+    --ink: #1a1a1a;
+    --paper: #fbf8f2;
+    --muted: #666;
+    --stamp: rgba(180, 34, 34, 0.07);
+}
+
+@page {
+    size: 6in 9in;
+    margin: 0.9in 0.75in 1.1in 0.75in;
+
+    @bottom-left {
+        content: "BOTWAVE PAPERWORK — TEASER COPY";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.05em;
+    }
+    @bottom-right {
+        content: counter(page) " of 25";
+        font-family: Georgia, serif;
+        font-size: 9pt;
+        color: #888;
+    }
+    @top-right {
+        content: "Get the full book: ZOMBIE760.GITHUB.IO/BOOKS";
+        font-family: "Space Mono", monospace, serif;
+        font-size: 7pt;
+        color: #b22222;
+        letter-spacing: 0.03em;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11.5pt;
+    line-height: 1.6;
+}
+
+body {
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 1in 0.5in;
+    position: relative;
+}
+
+/* Diagonal watermark via fixed background */
+body::before {
+    content: "TEASER";
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: "Space Mono", monospace, serif;
+    font-size: 96pt;
+    font-weight: 700;
+    color: var(--stamp);
+    letter-spacing: 0.2em;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+/* Cover page */
+.cover-page {
+    page-break-after: always;
+    text-align: center;
+    padding: 1.5in 0.5in 1in;
+    border-bottom: 3px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.cover-imprint {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 9pt;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+}
+
+.cover-title {
+    font-family: Georgia, serif;
+    font-size: 28pt;
+    font-weight: bold;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 0.3em;
+}
+
+.cover-subtitle {
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 0 1.5em;
+}
+
+.cover-byline {
+    font-family: Georgia, serif;
+    font-size: 13pt;
+    color: var(--ink);
+    margin-bottom: 2em;
+}
+
+.cover-notice {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 8pt;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.75em 1em;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    margin-top: 2em;
+}
+
+.cover-cta {
+    font-family: Georgia, serif;
+    font-size: 10pt;
+    color: var(--muted);
+    margin-top: 1em;
+}
+
+/* Truncation notice at end */
+.truncation-notice {
+    page-break-before: always;
+    text-align: center;
+    padding: 2in 1in;
+    border-top: 2px solid var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.truncation-notice h2 {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 12pt;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1em;
+}
+
+.truncation-notice p {
+    font-family: Georgia, serif;
+    font-size: 11pt;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.truncation-notice .url {
+    font-family: "Space Mono", monospace;
+    font-size: 10pt;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 20pt;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 0.3em;
+    margin-top: 1.8em;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 15pt;
+    margin-top: 1.4em;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-style: italic;
+    margin-top: 1.2em;
+    page-break-after: avoid;
+}
+
+p { margin: 0.6em 0; }
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1em 0 1em 1.5em;
+    padding-left: 1em;
+    font-style: italic;
+    color: var(--muted);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1.5em 2em;
+}
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="cover-page">
+  <div class="cover-imprint">BOTWAVE PAPERWORK</div>
+  
+  <div class="cover-title">The Catalog</div>
+  <div class="cover-subtitle">A Surveillance Economy Document</div>
+  <div class="cover-byline">Kyle Jimenez</div>
+  <div class="cover-notice">TEASER COPY — FIRST 25 PAGES<br>NOT FOR REDISTRIBUTION OR SALE</div>
+  <div class="cover-cta">Full manuscript: https://zombie760.github.io/books</div>
+</div>
+
+<div class="content">
+<h1>THE CATALOG ### A Surveillance Economy Document <em>Kyle Jimenez</em> <em>BOTWAVE BOOKS</em> <em>2026-05-09</em> <em>Voice DNA: 75% Palahniuk / 25% Ellis</em> &mdash; ## THE PROFILE You have a profile. A machine-generated ghost of you. Assembled without your involvement. More accurate than your own self-assessment. The inventory tag for your life, printed before you knew the print job had started. Here is the procedure for its creation. Step one: The transaction. You swipe the Visa Platinum card. The loyalty app pings the purchase, registering the item category. The bank transmits the metadata — the time, the location, the SKU — to the aggregator. This data is not owned by the bank. It is leased. It is harvested. Step two: The search. You tap the Google search bar. You type a question. The search engine records the query, the time spent on the results page, the GPS coordinates of the device. The query is not just a word. It is a vector. A directional arrow pointing at a need you have not named yet. Step three: The location. You allow the Weather Underground app to use your GPS. The app does not just tell you if it will rain. It provides a continuous, high-resolution stream of your movement. Not just movement. A kinetic signature. Step four: The synthesis. The data brokers collect these streams. They cross-reference them. They map the transaction to the query, the query to the movement. The architecture is the profile. The company that builds this structure is Acxiom. The product line is InfoBase, running on a proprietary database schema. Your record within InfoBase contains 1,500 data points. These points include: the specific brand of Kona coffee you bought at 7:14 AM on a Tuesday. The fact that you researched &ldquo;early retirement plans&rdquo; at 11:00 PM. The precise corner of 4th and Elm where you paused for three minutes waiting for the MTA bus. The fact that your political affiliation shifted three years ago, tracked by the purchase patterns of your local Kroger. The profile is a ledger. A definitive statement of who you are, stripped of your own narrative bias. The profile is a commodity. The annual revenue Acxiom generates from records like yours is $1.4 billion. You are not just a consumer. You are a probability. A likelihood score. Here is how that score is segmented: Tier One: Basic demographic. Age, zip code, primary language. Price point: $0.05 per record. Tier Two: Behavioral. Purchase frequency, search query type, media consumption habits. Price point: $0.45 per record. Tier Three: Predictive. Likelihood of buying a new Ford F-150 in the next 18 months. Probability of moving to a suburban area. Risk score for default. Price point: $4.75 per record. You are not just a Tier One asset. You are a complex, overlapping, predictive nexus. The catalog lists you under the code: <em>Active Consumer, High Propensity, Suburban, 35-44.</em> The profile is the indictment. It is the price tag. It is the inventory. You are now an entry in the Oracle Data Cloud. &mdash; ## THE SCORE You have scores. Not one. Dozens. You know the FICO score. The 300-850 range. The one that tells the bank if you are trustworthy with a revolving line of credit. You check it. You optimize it. You keep it in the green. That is the primary score. The public score. The score you are allowed to see. The others exist in the dark data silos, layered beneath your credit history like sedimentary rock. Predictive. Operational. Invisible metrics that dictate where you live, what insurance you receive, whether your boss will offer you a raise. Step one: The data is harvested. Your GPS history. The frequency of your grocery store visits. The average time you spend looking at orthopedic shoes versus running shoes. The specific brand of over-the-counter antacid you buy when your stomach flares up. This raw data compiles into a composite profile. Step two: The algorithm assigns a metric. Not a simple number. A weighted probability. A risk assessment. Your insurer does not just look at your past claims — they look at the likelihood of future claims. Your employer does not just look at your past performance — they look at the probability of tenure. Your pharmacy benefits manager does not just look at your prescriptions — they look at your adherence score. The probability that you will actually take the prescribed drug. Or forget it in the back of the medicine cabinet. The scores are generated by LexisNexis Risk Solutions. Experian Marketing Services. Oracle Data Cloud. These entities do not sell data. They sell certainty. They sell the promise of a minimized variable. You do not have the right to see most of them. The Fair Credit Reporting Act covers the credit score. The others — the health utilization score, the employment stability score, the residential risk score — float in a legal gray zone. Proprietary. Trade secrets. Here is the procedure for the Health Risk Score. The input is your EMR data, anonymized but still traceable by cohort. The algorithm calculates the likelihood of needing an emergency room visit within the next 18 months. The output is a single three-digit number. The insurance company uses this number to set your premium. A high-risk number means a higher premium. The difference is often hundreds of dollars a year. The transaction is silent. The cost of this specific risk assessment, per individual profile, is cited by industry analysts as ranging from $45 to $110. Consider the Employment Score. Not your GPA. Your behavioral data. Your search history for career change. The number of times you log in late on a Monday morning. The brand of coffee you buy before work. The frequency of your use of productivity software. These inputs feed into a predictive model. The model outputs a Stability Score. This predicts how long you will stay at the current company. A high stability score is desirable. A low stability score flags you as a flight risk. The cost of licensing this Stability Score to a major enterprise HR platform, such as Workday, starts at $12.50 per employee per month. You are constantly being scored. You are a dynamic spreadsheet. Your landlord uses a Neighborhood Risk Score — a composite of crime data, traffic patterns, and your payment history to a specific, localized data broker. Your insurer uses your Medication Adherence Score, tracking whether you picked up the refill at the specific pharmacy you were told to use. Your employer uses the Longevity Predictor, mapping your digital habits against historical employee retention rates. The data flows like a river. You are the sediment. You cannot see the flow. You cannot see the composition of the sediment. You only feel the pressure of the water. The weight of the score. You do not own the profile. You merely inhabit it. The highest tier of this composite scoring — the full predictive behavioral profile — is sold via Acxiom, bundled with their proprietary Customer Lifetime Value metric, starting at a minimum enterprise rate of $800,000 per year. &mdash; ## THE DATA BROKER The data broker is the middleman. You are the commodity they pass through. You do not know the name of the process until you are already inside it. You simply exist. You have a file. Not a résumé. A stack of metadata. A digital geological survey of your life. The history of your consumption, your proximity, your health scares, your political leanings, and the brand of the shoes you looked at once but never bought. Here is the procedure. Step One: The Capture. This happens before you realize it. The passive sweep. Your phone, your smart speaker, the digital storefronts, the utility company — they are all dropping fragments of you into the global feed. You think these crumbs are free. They are not. They are interest payments. The fragments are collected by Oracle Data Cloud. Salesforce Marketing Cloud. They gather the time stamp of your commute, the average temperature of your living room, the frequency with which you check the weather app. They categorize this as Behavioral Data. The fragments move. They are digitized, sanitized, bundled into a massive searchable CSV file. Step Two: The Consolidation. The broker enters the room. They take the raw crumbs and build the edifice. They are the architects of your profile. They take fragmented data from ten thousand sources — the pharmacy chain, the DMV, the local library system, the insurance provider — and force it into a single coherent narrative. This narrative is the profile. It is the score. It is the SKU number. You have a profile in LexisNexis Risk Solutions. In Equifax. In TransUnion. These are not separate entities. They are facets of the same colossal living database. The same information, viewed through different lenses: one for creditworthiness, one for insurance risk, one for targeted advertising. The process of consolidation is constant. It does not stop at your last birthday. It retrofits. It looks back. It assumes. It fills gaps with probability. If you have never bought a winter coat, but you live in a northern climate and have searched for &ldquo;snow boots&rdquo; three times, the system assigns you the attribute: <em>High Probability Winter Consumer</em>. This is a guess. A high-value guess. Step Three: The Monetization. The profile is now a product. Placed on the exchange. The broker, Acxiom — now LiveRamp — does not sell you anything. It sells <em>you</em>. The ability to reach you. A pharmaceutical company does not want to advertise to everyone. They want the 35-year-old, suburban, single-parent, high-risk consumer who lives within a 15-mile radius of a major pharmacy and who has recently shown interest in joint pain relief. The pharmaceutical company pays the broker. The broker delivers the targeted digital beacon. The profile is the invoice. The pricing structure is not linear. Based on density and specificity. A generic demographic is cheap. A hyper-specific profile is expensive. A profile detailing a consumer who has recently filed a claim for dental work and lives in a zip code with high property values: $4.50 per segment. A profile detailing a consumer who has recently moved, has a high credit score, and has searched for &ldquo;remote work opportunities&rdquo;: $12.00 per segment. You are segmented. You are priced. You are delivered. The data broker does not need to know your name. It needs your probability. Your score. The specific marketable attributes that make you a reliable target. You consented to the terms of service of a free app. You agreed to a cookie policy. You clicked Accept All. You gave them permission to map the edges of your life. You gave them the license to build the catalog. The catalog is infinite. It is never finished. You are not just a person. You are a composite of data points. A cluster of attributes. A searchable SKU. You are, specifically, a <em>CoreLogic</em> high-value residential property profile. &mdash; ## THE PURCHASE You are a record. A data point. A cluster of points, weighted and assigned a value. The first step is recognition. Your existence is not a single unit. It is a compilation. A spreadsheet. A SKU number. The second step is the market. The market requires specificity. It requires density. It requires the perfect overlap of demographics and behavior. Your profile is not a gentle sketch. It is a highly engineered wireframe. A blueprint for a consumer. Consider the profile: Age 35 to 55. Household income bracket: $75,000 to $120,000. Homeowner status. Two or more children. And the behavioral indicator: a history of pharmacy purchases suggesting Type 2 diabetes management. Not a guess. A certainty, derived from the aggregate of your prescription fill dates, your co-pay history, and the geographical location of your nearest CVS. The process of acquisition begins with a request. The buyer does not need to know your name. They need the list. The coordinates. The certainty that the person at 1400 Elm Street, zip code 78704, is both a homeowner and requires Metformin. The buyer is anyone with a business account and a credit card. Verification of purpose is optional. The transaction is instantaneous. The data brokers — Acxiom, Experian Marketing Services, LexisNexis Risk Solutions — do not sell random samples. They sell optimized packets. The distilled essence of a target audience. Here is the procedure for purchasing the list: <strong>Step One: Defining the Target.</strong> You select the parameters. Age 35-55. Income $75k-$120k. Homeowner. Children 2+. Diabetes-inferred. <strong>Step Two: Calculating the Volume.</strong> The buyer requests a batch of 50,000 records. <strong>Step Three: The Costing.</strong> The system calculates the cost per record. Not fixed. A function of scarcity and precision. Because your profile is so tightly defined — because the combination of high income, homeownership, and chronic health condition is rare — the unit price is elevated. The unit cost for a single, fully vetted, behaviorally tagged record: between $0.10 and $0.15. The total cost for 50,000 people like you: between $5,000 and $7,500. The price of certainty. The price of knowing exactly who needs a new insurance plan, who will respond to a targeted ad for a smart thermostat, who is most likely to default on a mortgage. The buyer receives a file. A clean indexed list. 50,000 lines of text. Each line is a miniature, fully realized you. The transaction is complete. Your diabetes is on that list. Your ZIP code. The fact that you own a house. The fact that you have two children. The fact that you are a target for a new line of high-end vascular health supplements. The catalog does not wait for you to browse. It waits for the buyer to click Purchase. The list is delivered via cloud-based API through Oracle Data Cloud. The data is instantly accessible. The product is immediate. The buyer — a marketing executive — sees the list and sees not 50,000 people but 50,000 opportunities. The ROI. The targeted reach. Not the life. The SKU. You are now a marketing opportunity. A demographic vector. A solution to a business problem. The trap closes with the subscription. The list is only the start. The continuous flow of your life — your credit score fluctuations, your new search queries, your shift in grocery habits — is automatically added to the active feed. You are not just a list. You are a live database entry. Perpetually available. Always in stock. You are the product. You are the data stream. You are the constant, measurable input into the engine of LexisNexis Risk Solutions. &mdash; ## THE APP Step one: You downloaded the flashlight app. It was free. The little icon, the simple white beam. You needed light in the dark. You tapped the icon. It worked. The beam was bright, steady, functional. You opened the settings. A small grey box appeared demanding permission. <em>Allow location access?</em> You tapped Allow. That was the transaction. Not the light. The light was the bait. The transaction was the GPS coordinate. The flashlight app&rsquo;s primary business model is not illumination. It is geography. The continuous, granular mapping of your body. You did not grant the app a function. You granted the catalog a tether. Step two: The location data begins its migration. The app does not simply track you. It samples you. Not a constant stream — a precise, rhythmic drip. Every fourteen minutes, the app wakes. It captures your latitude and longitude. Records the altitude, the signal strength, the specific street corner you are standing on. This data packet — a small, invisible payload — is pushed from your device through the app&rsquo;s servers into a central aggregation point. You are now a point on a constantly updating grid. A blinking, traceable pixel. The privacy policy, which you agreed to by tapping Allow, is eleven thousand words long. You skimmed the first two paragraphs. You saw the word &ldquo;location.&rdquo; You did not see the specific SKU number of your movement. The data aggregator — Apex GeoFlow — takes this raw input. Cleans it. Anonymizes it, which is a corporate fiction. Then assigns it a value. Step three: The data is priced and distributed. The raw GPS coordinate, once cleaned, is a commodity. Sliced into smaller, more marketable pieces: <em>Foot Traffic Density at 8:00 AM, Tuesday, on Elm Street.</em> <em>Average dwell time near a coffee shop.</em> <em>The precise perimeter of your residential zone.</em> These pieces are sold. A hedge fund needs to know where the retail surge is happening before the morning rush. They pay for the density map. A political campaign needs to know where the undecided voters congregate. They pay for the geofence. An insurance company needs to verify that your parked car is within the insured radius. They pay for the precise coordinates. Your location, captured by the simplest most utilitarian piece of software, is now an investment metric. The cost of one average, clean, anonymized location point — a single 14-minute ping from your phone — is currently valued between $0.04 and $0.12, depending on granularity and the client&rsquo;s urgency. You have generated thousands of these points. You have generated a history of movement. You have cataloged the path of your daily life. The catalog is not satisfied with just where you are. It is interested in what you are doing. The flashlight app records the proximity to Wi-Fi networks. It logs the MAC address of the router. It knows the name of your router. The name of your building. The name of the ISP that feeds your life. This network data is another layer of the SKU. It tells the buyer not just <em>where</em> you are, but <em>what kind</em> of infrastructure supports you. You are not just a point on a map. You are a node in a network, priced by the strength of your connection. The catalog has moved past the simple coordinate. It uses the pattern of your movement — the commute, the grocery stop, the gym session — to assign a score. Not creditworthiness. <em>Predictability.</em> The statistical likelihood of your next purchase, your next political</h1>
+</div>
+
+
+<div class="truncation-notice">
+  <h2>— END OF TEASER —</h2>
+  <p>You're reading the first 25 pages of <em>The Catalog</em>.</p>
+  <p>The full manuscript is available at:<br>
+     <span class="url">https://zombie760.github.io/books</span>
+  </p>
+  <p>Every claim is filed. Every source is named. The documents speak.</p>
+  <p style="margin-top:2em;font-family:monospace;font-size:9pt;color:#999;">
+     © BOTWAVE PAPERWORK — Kyle Jimenez — All rights reserved.<br>
+     This teaser may not be redistributed, sold, or modified.
+  </p>
+</div>
+
+</body>
+</html>

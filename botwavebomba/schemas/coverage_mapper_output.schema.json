@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zombie760.github.io/botwavebomba/schemas/coverage_mapper_output.schema.json",
+  "title": "Coverage Mapper — Output Record",
+  "description": "One record per cluster in coverage.jsonl. Pure heatmap-distribution projection from the blindspot analyzer's combined output. Behaviour extracted from generate_feed.py:702-709 (the cov dict that flows into each story).",
+  "type": "object",
+  "required": [
+    "cluster_id", "left_pct", "center_pct", "right_pct", "state_count",
+    "dominant_bucket", "dominant_pct"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "cluster_id": { "type": "string", "pattern": "^c_[0-9a-f]{12}$" },
+    "left_pct":  { "type": "integer", "minimum": 0, "maximum": 100 },
+    "center_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "right_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "state_count": { "type": "integer", "minimum": 0 },
+    "dominant_bucket": { "type": "string", "enum": ["left", "center", "right"] },
+    "dominant_pct": { "type": "integer", "minimum": 0, "maximum": 100 }
+  }
+}
