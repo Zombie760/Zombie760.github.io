@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HIRE ME — AL GRINGO | Ghostwriting & Technical Writing</title>
-  <meta name="description" content="Professional ghostwriter and technical writer with 900+ pages published. Books, whitepapers, documentation, web content. Available immediately.">
+  <title>AL GRINGO — AI Automation Engineer | BOTWAVE</title>
+  <meta name="description" content="I build enterprise AI pipelines at blue-collar budget. 23 live services. 221 sources. 6-agent security swarm. Local-first, substrate-native, production-grade.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AL GRINGO — AI Automation Engineer">
+  <meta property="og:description" content="23 live services. 221 monitored sources. $20/month cloud cost. I build enterprise AI infrastructure at blue-collar budget.">
+  <meta property="og:url" content="https://zombie760.github.io/hire-me.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@AL_GR1NG01904">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
@@ -17,6 +23,7 @@
       --blood: #bf3b2d;
       --ghost: rgba(245, 245, 240, 0.08);
       --fade: rgba(245, 245, 240, 0.4);
+      --green: #22c55e;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,171 +36,376 @@
       line-height: 1.8;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
+    a { color: var(--blood); text-decoration: none; }
+    a:hover { opacity: 0.8; }
 
-    header {
-      text-align: center;
-      margin-bottom: 4rem;
+    /* ── HEADER ── */
+    .header {
       border-bottom: 1px solid var(--ghost);
-      padding-bottom: 2rem;
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      background: var(--smoke);
     }
 
-    h1 {
+    .header-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--fade);
+      margin-bottom: 1.5rem;
+    }
+
+    .header h1 {
       font-family: 'Cinzel', Georgia, serif;
-      font-size: clamp(2rem, 6vw, 4rem);
+      font-size: clamp(2.2rem, 7vw, 4.5rem);
       font-weight: 900;
       letter-spacing: -0.02em;
       text-transform: uppercase;
       color: var(--bone);
+      line-height: 0.95;
+      margin-bottom: 1.5rem;
+    }
+
+    .header-role {
+      color: var(--blood);
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
       margin-bottom: 1rem;
     }
 
-    .tagline {
-      color: var(--blood);
-      font-size: 1.2rem;
-      letter-spacing: 0.3em;
+    .availability-badge {
+      display: inline-block;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      color: var(--green);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
+      padding: 0.4rem 1rem;
     }
 
-    .availability {
-      color: var(--fade);
-      font-size: 0.9rem;
-      margin-top: 1rem;
+    /* ── CONTAINER ── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
     .section {
-      margin-bottom: 4rem;
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--ghost);
     }
 
-    .section h2 {
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--blood);
+      margin-bottom: 2rem;
+    }
+
+    /* ── PROOF STRIP ── */
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--ghost);
+      margin: 3rem 0;
+    }
+
+    .proof-item {
+      background: var(--smoke);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .proof-number {
       font-family: 'Cinzel', serif;
-      font-size: 1.5rem;
+      font-size: clamp(1.8rem, 4vw, 3rem);
       font-weight: 700;
       color: var(--bone);
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.75rem;
     }
 
+    .proof-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--fade);
+    }
+
+    /* ── THE BUILD ── */
+    .build-statement {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--bone);
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 3rem 0;
+    }
+
+    .build-statement em {
+      color: var(--blood);
+      font-style: normal;
+    }
+
+    /* ── SERVICES ── */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      gap: 1px;
+      background: var(--ghost);
     }
 
     .service-card {
-      border: 1px solid var(--ghost);
-      padding: 2rem;
-      background: rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
+      background: var(--smoke);
+      padding: 2.5rem;
+      position: relative;
+      transition: background 0.2s;
     }
 
     .service-card:hover {
-      border-color: var(--blood);
-      transform: translateY(-2px);
+      background: var(--ash);
     }
 
-    .service-card h3 {
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--blood);
+      transition: width 0.3s;
+    }
+
+    .service-card:hover::before {
+      width: 100%;
+    }
+
+    .service-number {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
       color: var(--blood);
-      font-size: 1.1rem;
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .service-card p {
-      color: var(--fade);
       margin-bottom: 1rem;
     }
 
-    .rate {
-      color: var(--bone);
-      font-weight: 700;
+    .service-title {
+      font-family: 'Cinzel', serif;
       font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--bone);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .portfolio-section {
-      background: rgba(0,0,0,0.2);
-      padding: 3rem 2rem;
+    .service-desc {
+      color: var(--fade);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       border: 1px solid var(--ghost);
+      color: var(--fade);
+      padding: 0.25rem 0.6rem;
     }
 
+    /* ── PORTFOLIO ── */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 1px;
+      background: var(--ghost);
     }
 
     .portfolio-item {
-      aspect-ratio: 2/3;
+      background: var(--smoke);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-item:hover {
       background: var(--ash);
-      border: 1px solid var(--ghost);
-      overflow: hidden;
     }
 
-    .portfolio-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .portfolio-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--bone);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
     }
 
-    .cta-section {
-      text-align: center;
-      padding: 4rem 2rem;
-      border-top: 1px solid var(--ghost);
-      margin-top: 4rem;
-    }
-
-    .email-link {
+    .portfolio-type {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
       color: var(--blood);
-      text-decoration: none;
-      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .portfolio-desc {
+      color: var(--fade);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .portfolio-specs {
+      list-style: none;
+      margin-top: 1.5rem;
+      padding: 0;
+    }
+
+    .portfolio-specs li {
+      font-size: 0.75rem;
+      color: var(--fade);
+      padding: 0.25rem 0;
+      border-top: 1px solid var(--ghost);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .portfolio-specs li span {
+      color: var(--bone);
+    }
+
+    /* ── DIFFERENTIATOR ── */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 1.5rem;
+    }
+
+    .diff-col h3 {
+      font-size: 0.7rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      border: 2px solid var(--blood);
-      padding: 1rem 2rem;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-
-    .email-link:hover {
-      background: var(--blood);
-      color: var(--void);
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin: 2rem 0;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 2.5rem;
-      color: var(--blood);
-      font-weight: 900;
-    }
-
-    .stat-label {
       color: var(--fade);
+      margin-bottom: 1.25rem;
+    }
+
+    .diff-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .diff-list li {
       font-size: 0.85rem;
+      color: var(--fade);
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--ghost);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .diff-list li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--blood);
+    }
+
+    .diff-list li strong {
+      color: var(--bone);
+      display: block;
+    }
+
+    /* ── CTA ── */
+    .cta-block {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: var(--smoke);
+      border-top: 1px solid var(--ghost);
+    }
+
+    .cta-headline {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
+      margin-bottom: 1rem;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
+    .cta-sub {
       color: var(--fade);
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      max-width: 520px;
+      margin: 0 auto 3rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--blood);
+      color: var(--bone);
+      border: 1px solid var(--blood);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--blood);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--bone);
+      border: 1px solid var(--ghost);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--bone);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      color: var(--fade);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
       border-top: 1px solid var(--ghost);
-      margin-top: 4rem;
     }
 
     footer a {
@@ -201,153 +413,336 @@
       text-decoration: none;
     }
 
+    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .stats {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+      .proof-strip {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .services-grid {
+
+      .portfolio-grid {
         grid-template-columns: 1fr;
+      }
+
+      .diff-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .proof-strip {
+        grid-template-columns: 1fr 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>HIRE ME</h1>
-      <div class="tagline">GHOSTWRITER | TECHNICAL WRITER | CONTENT STRATEGIST</div>
-      <div class="availability">⚡ AVAILABLE IMMEDIATELY — DM FOR RATES</div>
-    </header>
 
-    <section class="stats">
-      <div>
-        <div class="stat-number">900+</div>
-        <div class="stat-label">PAGES PUBLISHED</div>
-      </div>
-      <div>
-        <div class="stat-number">15+</div>
-        <div class="stat-label">COMPLETED BOOKS</div>
-      </div>
-      <div>
-        <div class="stat-number">1100+</div>
-        <div class="stat-label">CITATIONS</div>
-      </div>
-    </section>
+<!-- ── HEADER ── -->
+<header class="header">
+  <div class="header-eyebrow">BOTWAVE /// AL GRINGO /// 2026</div>
+  <h1>Build With Me</h1>
+  <div class="header-role">AI Pipeline Architect · Security Automation · Bot Fleet Engineer</div>
+  <div class="availability-badge">AVAILABLE FOR PROJECTS</div>
+</header>
 
-    <section class="section">
-      <h2>SERVICES</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>GHOSTWRITING</h3>
-          <p>Full-length books, memoirs, business books. Your voice, my pen. Complete confidentiality guaranteed.</p>
-          <div class="rate">FROM $0.08/WORD</div>
-        </div>
-        <div class="service-card">
-          <h3>TECHNICAL WRITING</h3>
-          <p>Whitepapers, documentation, API guides, manuals. I make complex topics understandable.</p>
-          <div class="rate">FROM $0.10/WORD</div>
-        </div>
-        <div class="service-card">
-          <h3>WEB CONTENT</h3>
-          <p>Blog posts, articles, landing pages, SEO content. High-quality, engaging copy.</p>
-          <div class="rate">FROM $0.05/WORD</div>
-        </div>
-        <div class="service-card">
-          <h3>EDITING</h3>
-          <p>Developmental editing, copy editing, proofreading. Make your writing sharp and professional.</p>
-          <div class="rate">FROM $0.03/WORD</div>
-        </div>
-        <div class="service-card">
-          <h3>EBOOKS</h3>
-          <p>Complete ebook creation from outline to final PDF. Includes formatting and cover design coordination.</p>
-          <div class="rate">FROM $500/PROJECT</div>
-        </div>
-        <div class="service-card">
-          <h3>CONTENT STRATEGY</h3>
-          <p>Editorial calendars, content audits, publishing roadmaps. Build your audience systematically.</p>
-          <div class="rate">FROM $1500/MONTH</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section portfolio-section">
-      <h2>PORTFOLIO</h2>
-      <p style="color: var(--fade); margin-bottom: 1rem;">Selected works. More available upon request.</p>
-      <p style="color: var(--fade); margin-bottom: 2rem;">Visit my <a href="books/index.html" style="color: var(--blood);">Books page</a> for full catalog.</p>
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="books/covers/cover_sudoers_final.jpg" alt="Sudoers Cantos Book Cover">
-        </div>
-        <div class="portfolio-item">
-          <img src="books/covers/cover_substrate_final.jpg" alt="The Substrate Cover">
-        </div>
-        <div class="portfolio-item">
-          <img src="books/covers/cover_shield_final.jpg" alt="The Shield Cover">
-        </div>
-        <div class="portfolio-item">
-          <img src="books/covers/cover_patient_final.jpg" alt="You Are The Patient Cover">
-        </div>
-        <div class="portfolio-item">
-          <img src="books/covers/cover_magic_hour_final.jpg" alt="Magic Hour Cover">
-        </div>
-        <div class="portfolio-item">
-          <img src="books/covers/cover_extraction_final.jpg" alt="The Extraction Cover">
-        </div>
-        <div class="portfolio-item">
-          <img src="books/covers/cover_captain_final.jpg" alt="Captain and Champ Cover">
-        </div>
-        <div class="portfolio-item">
-          <img src="books/covers/cover_blue_heaven_final.jpg" alt="Blue Heaven Cover">
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>WHY HIRE ME</h2>
-      <ul style="color: var(--fade); line-height: 2;">
-        <li><strong style="color: var(--bone);">Proven Track Record:</strong> 900+ pages published across multiple genres</li>
-        <li><strong style="color: var(--bone);">Technical Expertise:</strong> Can write about AI, cybersecurity, blockchain, and complex systems</li>
-        <li><strong style="color: var(--bone);">Fast Turnaround:</strong> Typically deliver 5,000 words/week for ongoing projects</li>
-        <li><strong style="color: var(--bone);">Professional Quality:</strong> Clean, polished prose that requires minimal editing</li>
-        <li><strong style="color: var(--bone);">Confidential:</strong> Ghostwriting means your name on the byline, not mine</li>
-        <li><strong style="color: var(--bone);">Easy to Work With:</strong> Clear communication, meet deadlines, follow direction</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>PROCESS</h2>
-      <ol style="color: var(--fade); line-height: 2;">
-        <li><strong style="color: var(--bone);">Discovery Call:</strong> We discuss your project goals, audience, and vision (30 min, free)</li>
-        <li><strong style="color: var(--bone);">Proposal:</strong> I provide scope, timeline, and pricing</li>
-        <li><strong style="color: var(--bone);">Deposit:</strong> 50% upfront to reserve your spot</li>
-        <li><strong style="color: var(--bone);">Writing:</strong> Regular check-ins and drafts for feedback</li>
-        <li><strong style="color: var(--bone);">Delivery:</strong> Final manuscript in your preferred format</li>
-        <li><strong style="color: var(--bone);">Revisions:</strong> Two rounds of revisions included</li>
-      </ol>
-    </section>
-
-    <section class="section">
-      <h2>CLIENTS SAY</h2>
-      <p style="color: var(--fade);">Testimonials available upon request. New clients get 10% off first project.</p>
-    </section>
-
-    <section class="cta-section">
-      <h2>READY TO START?</h2>
-      <p style="color: var(--fade); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-        I'm taking on new clients immediately. Let's discuss your project and get started.
-      </p>
-      <a href="mailto:algringo@protonmail.com?subject=Writing%20Project%20Inquiry" class="email-link">EMAIL ME</a>
-      <p style="color: var(--fade); margin-top: 2rem; font-size: 0.9rem;">
-        Or connect on: <a href="https://github.com/Zombie760" style="color: var(--blood);">GitHub</a> |
-        <a href="https://linkedin.com/in/" style="color: var(--blood);">LinkedIn</a> |
-        <a href="https://twitter.com/" style="color: var(--blood);">Twitter</a>
-      </p>
-    </section>
-
-    <footer>
-      <p>&copy; 2026 AL GRINGO — All rights reserved | <a href="index.html">Home</a> | <a href="about/index.html">About</a> | <a href="books/index.html">Books</a></p>
-    </footer>
+<!-- ── PROOF ── -->
+<div class="container">
+  <div class="proof-strip">
+    <div class="proof-item">
+      <span class="proof-number">23</span>
+      <div class="proof-label">Live Services</div>
+    </div>
+    <div class="proof-item">
+      <span class="proof-number">221</span>
+      <div class="proof-label">Monitored Sources</div>
+    </div>
+    <div class="proof-item">
+      <span class="proof-number">$20</span>
+      <div class="proof-label">Monthly Cloud Cost</div>
+    </div>
+    <div class="proof-item">
+      <span class="proof-number">16</span>
+      <div class="proof-label">Books Automated</div>
+    </div>
   </div>
+</div>
+
+<!-- ── BUILD STATEMENT ── -->
+<div class="container">
+  <div class="build-statement">
+    I built a 23-service AI infrastructure — news aggregation across 221 sources,
+    a 6-agent security research swarm, a Telegram bot fleet, a voice AI assistant,
+    and a full journalism pipeline that produced 16 books — <em>for $20 a month in cloud costs.</em>
+    The rest runs local.
+    I can build yours.
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<div class="container">
+  <section class="section">
+    <div class="section-label">01 — What I Build</div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-number">SERVICE 01</div>
+        <div class="service-title">AI Pipeline Architecture</div>
+        <div class="service-desc">
+          Custom TELOS+PAI systems for your specific workflow. Scout → Process → Verify → Output.
+          Star-topology dispatch. Immutable audit log. Every output anchored to its input.
+          Built to compound — the substrate gets smarter every run.
+        </div>
+        <div class="service-tags">
+          <span class="tag">TELOS + PAI</span>
+          <span class="tag">Local Ollama</span>
+          <span class="tag">Multi-agent</span>
+          <span class="tag">systemd</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">SERVICE 02</div>
+        <div class="service-title">Bot Fleet Deployment</div>
+        <div class="service-desc">
+          Telegram bots, Discord bots, custom agents. Wired to local LLMs via Ollama.
+          Systemd-managed, auto-restart, journald logging. Multiple personas, single fleet.
+          No SaaS dependency. You own the stack.
+        </div>
+        <div class="service-tags">
+          <span class="tag">Telegram</span>
+          <span class="tag">Local LLM</span>
+          <span class="tag">systemd</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">SERVICE 03</div>
+        <div class="service-title">Security Automation</div>
+        <div class="service-desc">
+          Bug bounty pipeline architecture. Six-stage recon-to-report swarm.
+          Subdomain enumeration, endpoint discovery, SSRF probes, automated triage.
+          Gate-validated findings only — no false positives burning your reputation.
+        </div>
+        <div class="service-tags">
+          <span class="tag">Recon</span>
+          <span class="tag">SSRF</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Gate-validated</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">SERVICE 04</div>
+        <div class="service-title">Intelligence Platforms</div>
+        <div class="service-desc">
+          Multi-source news aggregation with bias detection. RSS + scraper ingestion.
+          Automated categorization, deduplication, sentiment scoring.
+          221 sources running 24/7 with zero manual curation. Custom to your domain.
+        </div>
+        <div class="service-tags">
+          <span class="tag">RSS</span>
+          <span class="tag">Scraping</span>
+          <span class="tag">MBFC</span>
+          <span class="tag">PWA</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">SERVICE 05</div>
+        <div class="service-title">Content Production Pipelines</div>
+        <div class="service-desc">
+          AI-assisted content at scale. Scout sources → draft → humanize → verify → publish.
+          The same pipeline that produced 16 books. Adapted for newsletters, research reports,
+          technical documentation, or long-form journalism.
+        </div>
+        <div class="service-tags">
+          <span class="tag">AI-assisted</span>
+          <span class="tag">Primary sources</span>
+          <span class="tag">Quality-gated</span>
+          <span class="tag">Scalable</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">SERVICE 06</div>
+        <div class="service-title">Infrastructure Consulting</div>
+        <div class="service-desc">
+          Local LLM stack selection, VRAM budgeting, model cascade design.
+          Cut your cloud AI bill 80% by running the right models locally.
+          Ollama + Docker + systemd hardening. Tailscale mesh for multi-node deployments.
+        </div>
+        <div class="service-tags">
+          <span class="tag">Ollama</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Tailscale</span>
+          <span class="tag">Cost reduction</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ── PORTFOLIO ── -->
+<div class="container">
+  <section class="section">
+    <div class="section-label">02 — The Portfolio (BOTWAVE Is the Demo)</div>
+    <div class="portfolio-grid">
+
+      <div class="portfolio-item">
+        <div class="portfolio-name">BOTWAVEBOMBA</div>
+        <div class="portfolio-type">Intelligence Platform · News Aggregation</div>
+        <div class="portfolio-desc">
+          Cross-civilizational news ingest. 221 sources monitored continuously.
+          Bias detection via MBFC enrichment. Zero manual curation.
+          Progressive Web App — works offline, installable, mobile-first.
+        </div>
+        <ul class="portfolio-specs">
+          <li>Sources monitored <span>221</span></li>
+          <li>Bias data enriched <span>84 sources</span></li>
+          <li>Infrastructure cost <span>$0/month</span></li>
+          <li>Manual curation required <span>None</span></li>
+        </ul>
+      </div>
+
+      <div class="portfolio-item">
+        <div class="portfolio-name">Quarterback v1.1</div>
+        <div class="portfolio-type">Security Automation · Bug Bounty Swarm</div>
+        <div class="portfolio-desc">
+          Six-stage Observe → Think → Plan → Execute → Verify → Learn loop.
+          Six specialist agents: Recon, Hunter, Validator, Chain Builder, Reporter, Learner.
+          Redis-backed state. 4-Gate Validator + Undeniable Gate before any submission.
+          False-positive rate: zero.
+        </div>
+        <ul class="portfolio-specs">
+          <li>Pipeline stages <span>6</span></li>
+          <li>Specialist agents <span>6</span></li>
+          <li>Validation gates <span>2 (4-gate + Undeniable)</span></li>
+          <li>Stack <span>Python · Redis · Ollama</span></li>
+        </ul>
+      </div>
+
+      <div class="portfolio-item">
+        <div class="portfolio-name">NISA</div>
+        <div class="portfolio-type">Voice AI · Terminal + Telegram Interface</div>
+        <div class="portfolio-desc">
+          Named for Nisaba, Sumerian goddess of the written word. en-GB-SoniaNeural voice
+          via edge-tts. PAI-compatible endpoint at localhost:8888. Wired to every
+          Claude terminal session via Stop hook. Accessible via Telegram from anywhere.
+        </div>
+        <ul class="portfolio-specs">
+          <li>Voice engine <span>edge-tts SoniaNeural</span></li>
+          <li>Interface <span>Terminal + Telegram</span></li>
+          <li>Infrastructure cost <span>$0</span></li>
+          <li>Latency <span>Sub-second local</span></li>
+        </ul>
+      </div>
+
+      <div class="portfolio-item">
+        <div class="portfolio-name">Book Pipeline</div>
+        <div class="portfolio-type">Content Factory · Journalism Automation</div>
+        <div class="portfolio-desc">
+          Scout → Recorder → Writer → Editor → Verifier. Hard-coded Prime Directive gate:
+          every claim requires a named, filed, publicly verifiable primary source.
+          Gate cannot be bypassed. 16 books in catalog. 1,100+ citations in flagship title.
+        </div>
+        <ul class="portfolio-specs">
+          <li>Pipeline stages <span>5</span></li>
+          <li>Books produced <span>16</span></li>
+          <li>Citations (flagship) <span>1,100+</span></li>
+          <li>Hallucination rate <span>0 (gate-enforced)</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ── DIFFERENTIATORS ── -->
+<div class="container">
+  <section class="section">
+    <div class="section-label">03 — Why This Approach</div>
+    <div class="diff-grid">
+      <div class="diff-col">
+        <h3>What I do differently</h3>
+        <ul class="diff-list">
+          <li>
+            <strong>Local-first by default.</strong>
+            Cloud AI when warranted. Local Ollama for everything else. $20/month
+            instead of $2,000/month — same output quality.
+          </li>
+          <li>
+            <strong>Gate everything.</strong>
+            No output without a validation pass. The pipeline only emits what it can prove.
+            Hallucinations die at the gate, not in production.
+          </li>
+          <li>
+            <strong>Substrate compounds.</strong>
+            Every run writes to the audit log and claims store. The system gets smarter
+            with each session. Code is replaceable. Learned context is the moat.
+          </li>
+          <li>
+            <strong>Star topology, no spaghetti.</strong>
+            Orchestrator holds references; specialists hold domain. Clear dispatch.
+            Easy to debug, extend, or hand off.
+          </li>
+        </ul>
+      </div>
+      <div class="diff-col">
+        <h3>Stack inventory</h3>
+        <ul class="diff-list">
+          <li>
+            <strong>LLM layer</strong>
+            Ollama · gemma4-wave · qwen3.5-9b · DeepSeek v4 (cloud fallback)
+          </li>
+          <li>
+            <strong>Infrastructure</strong>
+            systemd · Docker · Tailscale mesh · Redis · PostgreSQL + pgvector
+          </li>
+          <li>
+            <strong>Recon / security</strong>
+            subfinder · httpx · nuclei · Caido · custom gate validators
+          </li>
+          <li>
+            <strong>Web</strong>
+            Python (FastAPI / Flask) · static site (Jekyll / vanilla HTML) · PWA
+          </li>
+          <li>
+            <strong>Languages</strong>
+            Python primary · bash · JavaScript (frontend only)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── CTA ── -->
+<div class="cta-block">
+  <div class="cta-headline">Let's Build</div>
+  <p class="cta-sub">
+    Tell me what you're trying to automate. I'll tell you what it costs and how long it takes.
+    No discovery call theater — just send the actual problem.
+  </p>
+  <div class="cta-buttons">
+    <a href="mailto:lyfer1904@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20BOTWAVE" class="btn btn-primary">Email Me</a>
+    <a href="https://github.com/Zombie760" target="_blank" class="btn btn-secondary">GitHub</a>
+    <a href="https://x.com/AL_GR1NG01904" target="_blank" class="btn btn-secondary">X / Twitter</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>
+    © 2026 AL GRINGO — BOTWAVE &nbsp;·&nbsp;
+    <a href="/">Home</a> &nbsp;·&nbsp;
+    <a href="/about/">About</a> &nbsp;·&nbsp;
+    <a href="/books/">Books</a> &nbsp;·&nbsp;
+    <a href="/botwavebomba/">BOTWAVEBOMBA</a>
+  </p>
+</footer>
+
 </body>
 </html>
