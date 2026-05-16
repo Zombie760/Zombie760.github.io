@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIRE ME — AL GRINGO | Ghostwriting & Technical Writing</title>
+  <meta name="description" content="Professional ghostwriter and technical writer with 900+ pages published. Books, whitepapers, documentation, web content. Available immediately.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --void: #000000;
+      --bone: #f5f5f0;
+      --ash: #1a1a1a;
+      --smoke: #0d0d0d;
+      --blood: #bf3b2d;
+      --ghost: rgba(245, 245, 240, 0.08);
+      --fade: rgba(245, 245, 240, 0.4);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--void);
+      color: var(--bone);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--ghost);
+      padding-bottom: 2rem;
+    }
+
+    h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--bone);
+      margin-bottom: 1rem;
+    }
+
+    .tagline {
+      color: var(--blood);
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .availability {
+      color: var(--fade);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+    }
+
+    .section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--bone);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      border: 1px solid var(--ghost);
+      padding: 2rem;
+      background: rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      border-color: var(--blood);
+      transform: translateY(-2px);
+    }
+
+    .service-card h3 {
+      color: var(--blood);
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .service-card p {
+      color: var(--fade);
+      margin-bottom: 1rem;
+    }
+
+    .rate {
+      color: var(--bone);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .portfolio-section {
+      background: rgba(0,0,0,0.2);
+      padding: 3rem 2rem;
+      border: 1px solid var(--ghost);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .portfolio-item {
+      aspect-ratio: 2/3;
+      background: var(--ash);
+      border: 1px solid var(--ghost);
+      overflow: hidden;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--ghost);
+      margin-top: 4rem;
+    }
+
+    .email-link {
+      color: var(--blood);
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 2px solid var(--blood);
+      padding: 1rem 2rem;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .email-link:hover {
+      background: var(--blood);
+      color: var(--void);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      color: var(--blood);
+      font-weight: 900;
+    }
+
+    .stat-label {
+      color: var(--fade);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--fade);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--ghost);
+      margin-top: 4rem;
+    }
+
+    footer a {
+      color: var(--blood);
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>HIRE ME</h1>
+      <div class="tagline">GHOSTWRITER | TECHNICAL WRITER | CONTENT STRATEGIST</div>
+      <div class="availability">⚡ AVAILABLE IMMEDIATELY — DM FOR RATES</div>
+    </header>
+
+    <section class="stats">
+      <div>
+        <div class="stat-number">900+</div>
+        <div class="stat-label">PAGES PUBLISHED</div>
+      </div>
+      <div>
+        <div class="stat-number">15+</div>
+        <div class="stat-label">COMPLETED BOOKS</div>
+      </div>
+      <div>
+        <div class="stat-number">1100+</div>
+        <div class="stat-label">CITATIONS</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>SERVICES</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>GHOSTWRITING</h3>
+          <p>Full-length books, memoirs, business books. Your voice, my pen. Complete confidentiality guaranteed.</p>
+          <div class="rate">FROM $0.08/WORD</div>
+        </div>
+        <div class="service-card">
+          <h3>TECHNICAL WRITING</h3>
+          <p>Whitepapers, documentation, API guides, manuals. I make complex topics understandable.</p>
+          <div class="rate">FROM $0.10/WORD</div>
+        </div>
+        <div class="service-card">
+          <h3>WEB CONTENT</h3>
+          <p>Blog posts, articles, landing pages, SEO content. High-quality, engaging copy.</p>
+          <div class="rate">FROM $0.05/WORD</div>
+        </div>
+        <div class="service-card">
+          <h3>EDITING</h3>
+          <p>Developmental editing, copy editing, proofreading. Make your writing sharp and professional.</p>
+          <div class="rate">FROM $0.03/WORD</div>
+        </div>
+        <div class="service-card">
+          <h3>EBOOKS</h3>
+          <p>Complete ebook creation from outline to final PDF. Includes formatting and cover design coordination.</p>
+          <div class="rate">FROM $500/PROJECT</div>
+        </div>
+        <div class="service-card">
+          <h3>CONTENT STRATEGY</h3>
+          <p>Editorial calendars, content audits, publishing roadmaps. Build your audience systematically.</p>
+          <div class="rate">FROM $1500/MONTH</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio-section">
+      <h2>PORTFOLIO</h2>
+      <p style="color: var(--fade); margin-bottom: 1rem;">Selected works. More available upon request.</p>
+      <p style="color: var(--fade); margin-bottom: 2rem;">Visit my <a href="books/index.html" style="color: var(--blood);">Books page</a> for full catalog.</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="books/covers/cover_sudoers_final.jpg" alt="Sudoers Cantos Book Cover">
+        </div>
+        <div class="portfolio-item">
+          <img src="books/covers/cover_substrate_final.jpg" alt="The Substrate Cover">
+        </div>
+        <div class="portfolio-item">
+          <img src="books/covers/cover_shield_final.jpg" alt="The Shield Cover">
+        </div>
+        <div class="portfolio-item">
+          <img src="books/covers/cover_patient_final.jpg" alt="You Are The Patient Cover">
+        </div>
+        <div class="portfolio-item">
+          <img src="books/covers/cover_magic_hour_final.jpg" alt="Magic Hour Cover">
+        </div>
+        <div class="portfolio-item">
+          <img src="books/covers/cover_extraction_final.jpg" alt="The Extraction Cover">
+        </div>
+        <div class="portfolio-item">
+          <img src="books/covers/cover_captain_final.jpg" alt="Captain and Champ Cover">
+        </div>
+        <div class="portfolio-item">
+          <img src="books/covers/cover_blue_heaven_final.jpg" alt="Blue Heaven Cover">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>WHY HIRE ME</h2>
+      <ul style="color: var(--fade); line-height: 2;">
+        <li><strong style="color: var(--bone);">Proven Track Record:</strong> 900+ pages published across multiple genres</li>
+        <li><strong style="color: var(--bone);">Technical Expertise:</strong> Can write about AI, cybersecurity, blockchain, and complex systems</li>
+        <li><strong style="color: var(--bone);">Fast Turnaround:</strong> Typically deliver 5,000 words/week for ongoing projects</li>
+        <li><strong style="color: var(--bone);">Professional Quality:</strong> Clean, polished prose that requires minimal editing</li>
+        <li><strong style="color: var(--bone);">Confidential:</strong> Ghostwriting means your name on the byline, not mine</li>
+        <li><strong style="color: var(--bone);">Easy to Work With:</strong> Clear communication, meet deadlines, follow direction</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>PROCESS</h2>
+      <ol style="color: var(--fade); line-height: 2;">
+        <li><strong style="color: var(--bone);">Discovery Call:</strong> We discuss your project goals, audience, and vision (30 min, free)</li>
+        <li><strong style="color: var(--bone);">Proposal:</strong> I provide scope, timeline, and pricing</li>
+        <li><strong style="color: var(--bone);">Deposit:</strong> 50% upfront to reserve your spot</li>
+        <li><strong style="color: var(--bone);">Writing:</strong> Regular check-ins and drafts for feedback</li>
+        <li><strong style="color: var(--bone);">Delivery:</strong> Final manuscript in your preferred format</li>
+        <li><strong style="color: var(--bone);">Revisions:</strong> Two rounds of revisions included</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>CLIENTS SAY</h2>
+      <p style="color: var(--fade);">Testimonials available upon request. New clients get 10% off first project.</p>
+    </section>
+
+    <section class="cta-section">
+      <h2>READY TO START?</h2>
+      <p style="color: var(--fade); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        I'm taking on new clients immediately. Let's discuss your project and get started.
+      </p>
+      <a href="mailto:algringo@protonmail.com?subject=Writing%20Project%20Inquiry" class="email-link">EMAIL ME</a>
+      <p style="color: var(--fade); margin-top: 2rem; font-size: 0.9rem;">
+        Or connect on: <a href="https://github.com/Zombie760" style="color: var(--blood);">GitHub</a> |
+        <a href="https://linkedin.com/in/" style="color: var(--blood);">LinkedIn</a> |
+        <a href="https://twitter.com/" style="color: var(--blood);">Twitter</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 AL GRINGO — All rights reserved | <a href="index.html">Home</a> | <a href="about/index.html">About</a> | <a href="books/index.html">Books</a></p>
+    </footer>
+  </div>
+</body>
+</html>
