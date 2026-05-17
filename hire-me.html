@@ -449,21 +449,21 @@
 <!-- ── PROOF ── -->
 <div class="container">
   <div class="proof-strip">
-    <div class="proof-item" data-verify-cmd="systemctl --user list-units 'botwave-*' --all --no-legend">
-      <span class="proof-number" data-fact="services_active">14</span>
-      <div class="proof-label">Live Services</div>
-    </div>
-    <div class="proof-item" data-verify-cmd="systemctl --user cat botwave-bomba-pipeline.service | grep Description">
-      <span class="proof-number" data-fact="bomba_sources">492</span>
-      <div class="proof-label">Monitored Sources</div>
+    <div class="proof-item">
+      <span class="proof-number">Local-first</span>
+      <div class="proof-label">All inference on a single RTX 5060</div>
     </div>
     <div class="proof-item">
-      <span class="proof-number">$<span data-fact="monthly_cloud_cost_usd">20</span></span>
-      <div class="proof-label">Monthly Cloud Cost</div>
+      <span class="proof-number">Substrate</span>
+      <div class="proof-label">Immutable JSONL receipts, append-only</div>
     </div>
-    <div class="proof-item" data-verify-cmd="ls BOTWAVE_BOOKS_FINAL/">
-      <span class="proof-number" data-fact="books_complete">11</span>
-      <div class="proof-label">Books Complete</div>
+    <div class="proof-item">
+      <span class="proof-number">Gate-validated</span>
+      <div class="proof-label">Nothing ships without passing the gate</div>
+    </div>
+    <div class="proof-item">
+      <span class="proof-number">Owned</span>
+      <div class="proof-label">No SaaS lock-in, your infrastructure</div>
     </div>
   </div>
 </div>
@@ -471,10 +471,9 @@
 <!-- ── BUILD STATEMENT ── -->
 <div class="container">
   <div class="build-statement">
-    I built a <span data-fact="services_active">14</span>-service AI infrastructure — news aggregation across <span data-fact="bomba_sources">492</span> sources,
-    a Telegram bot fleet, a voice AI assistant,
-    and a journalism pipeline that has produced <span data-fact="books_complete">11</span> books with <span data-fact="books_in_progress">7</span> more in progress — <em>for $<span data-fact="monthly_cloud_cost_usd">20</span> a month in cloud costs.</em>
-    The rest runs local.
+    I built BOTWAVE — a working AI infrastructure stack covering news aggregation,
+    a Telegram bot fleet, a voice AI assistant, and a journalism pipeline — running
+    almost entirely on a single local GPU. <em>The rest is open source.</em>
     I can build yours.
   </div>
 </div>
@@ -539,7 +538,7 @@
         <div class="service-desc">
           Multi-source news aggregation with bias detection. RSS + scraper ingestion.
           Automated categorization, deduplication, sentiment scoring.
-          <span data-fact="bomba_sources">492</span> sources running 24/7 with zero manual curation. Custom to your domain.
+          Multi-source aggregation running 24/7 with zero manual curation. Custom to your domain.
         </div>
         <div class="service-tags">
           <span class="tag">RSS</span>
@@ -554,7 +553,7 @@
         <div class="service-title">Content Production Pipelines</div>
         <div class="service-desc">
           AI-assisted content at scale. Scout sources → draft → humanize → verify → publish.
-          The same pipeline that has produced <span data-fact="books_complete">11</span> books (<span data-fact="books_in_progress">7</span> more in production). Adapted for newsletters, research reports,
+          The same pipeline that produced the BOTWAVE book catalog. Adapted for newsletters, research reports,
           technical documentation, or long-form journalism.
         </div>
         <div class="service-tags">
@@ -723,15 +722,9 @@
     © 2026 AL GRINGO — BOTWAVE &nbsp;·&nbsp;
     <a href="/">Home</a> &nbsp;·&nbsp;
     <a href="/books/">Books</a> &nbsp;·&nbsp;
-    <a href="/botwavebomba/">BOTWAVEBOMBA</a> &nbsp;·&nbsp;
-    <a href="facts.json">facts.json</a>
-  </p>
-  <p style="font-size: 0.6rem; color: var(--ghost); margin-top: 0.5rem;">
-    Numbers pulled live from <a href="facts.json">facts.json</a> · click any number to copy the shell command that verifies it
+    <a href="/botwavebomba/">BOTWAVEBOMBA</a>
   </p>
 </footer>
-
-<script src="assets/facts-loader.js" defer></script>
 
 </body>
 </html>
