@@ -14,7 +14,7 @@
   "substrate_receipts": 12012,
   "github_commits_30d": 176,
   "monthly_cloud_cost_usd": 20,
-  "as_of": "2026-05-17T01:52:58.951688+00:00",
+  "as_of": "2026-05-17T01:53:23.287761+00:00",
   "verify": {
     "services": "systemctl --user list-units 'botwave-*' --all --no-legend",
     "bomba_sources": "systemctl --user cat botwave-bomba-pipeline.service | grep Description",
