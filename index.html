@@ -268,11 +268,62 @@
       letter-spacing: 0.1em;
     }
 
+    /* ── COVERS ── */
+    .covers {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+    .cover {
+      position: relative;
+      display: block;
+      background: var(--smoke);
+      border: 1px solid var(--ghost);
+      aspect-ratio: 2 / 3;
+      overflow: hidden;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .cover:hover {
+      border-color: var(--blood);
+      transform: translateY(-2px);
+    }
+    .cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%) contrast(1.05);
+      transition: filter 0.3s;
+    }
+    .cover:hover img {
+      filter: grayscale(0%) contrast(1);
+    }
+    .cover-cap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.5rem 0.6rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bone);
+      background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0));
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .cover:hover .cover-cap { opacity: 1; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .cards { grid-template-columns: 1fr; }
       .links-grid { grid-template-columns: 1fr; }
       .social { flex-direction: column; gap: 1rem; }
+      .covers { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .covers { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -339,6 +390,55 @@
       </div>
 
     </div>
+  </div>
+
+  <div class="wrap" style="padding-top: 0;">
+    <div class="section-label">The Catalog</div>
+    <div class="covers">
+      <a href="books/" class="cover" style="--n: 0;">
+        <img src="books/covers/cover_unwarranted_final.jpg" alt="Unwarranted Influence" loading="lazy">
+        <div class="cover-cap">Unwarranted Influence</div>
+      </a>
+      <a href="books/" class="cover" style="--n: 1;">
+        <img src="books/covers/cover_captain_final.jpg" alt="The Captain and the Champ" loading="lazy">
+        <div class="cover-cap">Captain &amp; Champ</div>
+      </a>
+      <a href="books/" class="cover" style="--n: 2;">
+        <img src="books/covers/cover_doge_final.jpg" alt="DOGE" loading="lazy">
+        <div class="cover-cap">DOGE</div>
+      </a>
+      <a href="books/" class="cover" style="--n: 3;">
+        <img src="books/covers/cover_sudo_final.jpg" alt="SUDO_KINGDOM" loading="lazy">
+        <div class="cover-cap">SUDO_KINGDOM</div>
+      </a>
+      <a href="books/" class="cover" style="--n: 4;">
+        <img src="books/covers/cover_shield_final.jpg" alt="The Shield" loading="lazy">
+        <div class="cover-cap">The Shield</div>
+      </a>
+      <a href="books/" class="cover" style="--n: 5;">
+        <img src="books/covers/cover_catalog_final.jpg" alt="The Catalog" loading="lazy">
+        <div class="cover-cap">The Catalog</div>
+      </a>
+      <a href="books/" class="cover" style="--n: 6;">
+        <img src="books/covers/cover_magic_hour_final.jpg" alt="Magic Hour" loading="lazy">
+        <div class="cover-cap">Magic Hour</div>
+      </a>
+      <a href="books/" class="cover" style="--n: 7;">
+        <img src="books/covers/cover_blue_heaven_final.jpg" alt="Blue Heaven" loading="lazy">
+        <div class="cover-cap">Blue Heaven</div>
+      </a>
+      <a href="books/" class="cover" style="--n: 8;">
+        <img src="books/covers/cover_thriller1_final.jpg" alt="The Incomplete Accounting" loading="lazy">
+        <div class="cover-cap">Incomplete Accounting</div>
+      </a>
+      <a href="books/" class="cover" style="--n: 9;">
+        <img src="books/covers/cover_kareem_final.jpg" alt="Kareem Ali" loading="lazy">
+        <div class="cover-cap">Kareem Ali</div>
+      </a>
+    </div>
+    <p style="text-align: center; margin-top: 2rem; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fade);">
+      <a href="books/" style="color: var(--blood); border-bottom: 1px solid var(--ghost); padding-bottom: 0.25rem;">See the full catalog →</a>
+    </p>
   </div>
 
   <div class="links">
