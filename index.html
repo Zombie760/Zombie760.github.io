@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AL GRINGO — BOTWAVE</title>
-  <meta name="description" content="900 pages. 1,100 citations. 931 years of filed documents. The receipts speak.">
+  <meta name="description" content="AI automation engineer. 13 services. 492 news sources. 13 books complete. $20/month cloud cost.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
@@ -21,106 +21,23 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--void);
       color: var(--bone);
       font-family: 'JetBrains Mono', monospace;
       font-size: 14px;
-      line-height: 1.6;
-      overflow-x: hidden;
+      line-height: 1.7;
     }
 
-    /* Glitch text effect */
-    .glitch {
-      position: relative;
-    }
+    a { color: var(--bone); text-decoration: none; }
 
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .glitch::before {
-      animation: glitch-1 0.3s infinite linear alternate-reverse;
-      color: var(--blood);
-      z-index: -1;
-    }
-
-    .glitch::after {
-      animation: glitch-2 0.3s infinite linear alternate-reverse;
-      color: cyan;
-      z-index: -2;
-    }
-
-    @keyframes glitch-1 {
-      0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
-      20% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, 2px); }
-      40% { clip-path: inset(40% 0 40% 0); transform: translate(2px, -2px); }
-      60% { clip-path: inset(60% 0 20% 0); transform: translate(-2px, 0); }
-      80% { clip-path: inset(80% 0 10% 0); transform: translate(2px, 2px); }
-    }
-
-    @keyframes glitch-2 {
-      0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
-      20% { clip-path: inset(60% 0 20% 0); transform: translate(2px, -2px); }
-      40% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, 2px); }
-      60% { clip-path: inset(80% 0 10% 0); transform: translate(2px, 0); }
-      80% { clip-path: inset(40% 0 40% 0); transform: translate(-2px, -2px); }
-    }
-
-    /* Hero - Full bleed with STATIKVOID */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    /* ── HEADER ── */
+    header {
+      padding: 6rem 2rem 4rem;
       text-align: center;
-      padding: 2rem;
-      position: relative;
-      background: var(--void);
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('assets/statikvoid_dark.jpg') center/cover no-repeat;
-      opacity: 0.6;
-      filter: contrast(1.2) brightness(0.8);
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        to bottom,
-        var(--void) 0%,
-        transparent 30%,
-        transparent 70%,
-        var(--void) 100%
-      );
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
+      border-bottom: 1px solid var(--ghost);
     }
 
     .wordmark {
@@ -129,370 +46,82 @@
       text-transform: uppercase;
       color: var(--fade);
       margin-bottom: 3rem;
-      border: 1px solid var(--ghost);
-      padding: 0.75rem 2rem;
-      display: inline-block;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
     }
 
     h1 {
       font-family: 'Cinzel', Georgia, serif;
-      font-size: clamp(3rem, 10vw, 7rem);
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
       font-weight: 900;
-      line-height: 0.9;
-      margin-bottom: 1.5rem;
+      line-height: 0.95;
       letter-spacing: -0.02em;
       text-transform: uppercase;
       color: var(--bone);
+      margin-bottom: 1.5rem;
     }
 
     .tagline {
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       letter-spacing: 0.4em;
       text-transform: uppercase;
       color: var(--blood);
-      margin-top: 1rem;
       font-weight: 700;
+      margin-bottom: 2.5rem;
     }
 
-    .subtitle {
+    .lede {
+      max-width: 62ch;
+      margin: 0 auto;
       color: var(--fade);
       font-size: 0.95rem;
-      max-width: 60ch;
-      margin: 2rem auto 0;
       line-height: 1.9;
     }
 
-    .scroll-indicator {
-      position: absolute;
-      bottom: 3rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--fade);
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      animation: pulse 3s infinite;
-    }
-
-    .scroll-line {
-      width: 1px;
-      height: 60px;
-      background: linear-gradient(to bottom, var(--bone), transparent);
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.8; }
-    }
-
-    /* Section dividers with imagery */
-    .section-break {
-      height: 400px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: var(--smoke);
-    }
-
-    .section-break.bg-skull {
-      background: url('assets/smoke_skull.jpg') center/cover no-repeat;
-    }
-
-    .section-break.bg-cyber {
-      background: url('assets/cyberpunk.jpg') center/cover no-repeat;
-    }
-
-    .section-break.bg-rose {
-      background: url('assets/rose_skull.jpg') center/cover no-repeat;
-    }
-
-    .section-break::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--void);
-      opacity: 0.7;
+    /* ── WRAP ── */
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
     }
 
     .section-label {
-      position: relative;
-      z-index: 1;
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.5rem, 5vw, 3rem);
-      font-weight: 700;
-      letter-spacing: 0.2em;
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
       text-transform: uppercase;
-      color: var(--bone);
-      text-align: center;
-      text-shadow: 0 0 40px rgba(0,0,0,0.8);
-    }
-
-    /* Content sections */
-    .content {
-      background: var(--void);
-    }
-
-    .wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 6rem 2rem;
-    }
-
-    .section {
-      border-top: 1px solid var(--ghost);
-      padding: 6rem 0;
-    }
-
-    .section:first-of-type {
-      border-top: none;
-    }
-
-    .section-header {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      color: var(--fade);
+      margin-bottom: 2.5rem;
+      display: flex;
       align-items: center;
-      gap: 2rem;
-      margin-bottom: 4rem;
+      gap: 1.5rem;
     }
 
-    .section-line {
+    .section-label::after {
+      content: '';
+      flex: 1;
       height: 1px;
       background: var(--ghost);
     }
 
-    h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--fade);
-      white-space: nowrap;
-    }
-
-    /* Stats - Dark cards */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--ghost);
-      margin-bottom: 6rem;
-    }
-
-    .stat-card {
-      background: var(--smoke);
-      padding: 4rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--blood), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .stat-card:hover::before {
-      opacity: 1;
-    }
-
-    .stat-number {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 700;
-      color: var(--bone);
-      display: block;
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--fade);
-      margin-top: 1rem;
-    }
-
-    /* Book showcase */
-    .featured-work {
+    /* ── CARDS ── */
+    .cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      margin-bottom: 6rem;
-    }
-
-    .featured-visual {
-      position: relative;
-      aspect-ratio: 2/3;
-      background: var(--ash);
-      border: 1px solid var(--ghost);
-      overflow: hidden;
-    }
-
-    .featured-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(30%) contrast(1.1);
-      transition: filter 0.3s;
-    }
-
-    .featured-visual:hover img {
-      filter: grayscale(0%) contrast(1);
-    }
-
-    .featured-visual::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, transparent 50%, rgba(191, 59, 45, 0.1) 100%);
-      pointer-events: none;
-    }
-
-    .featured-content h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--bone);
-    }
-
-    .featured-meta {
-      color: var(--blood);
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-    }
-
-    .featured-desc {
-      color: var(--fade);
-      font-size: 0.95rem;
-      line-height: 1.9;
-      margin-bottom: 2rem;
-    }
-
-    .hashtags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .hashtag {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      color: var(--blood);
-      border: 1px solid var(--ghost);
-      padding: 0.5rem 1rem;
-      background: var(--smoke);
-    }
-
-    /* CTA Buttons */
-    .cta-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--void);
-      background: var(--bone);
-      padding: 1rem 2rem;
-      text-decoration: none;
-      border: none;
-      font-weight: 500;
-      transition: all 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: var(--blood);
-      transition: left 0.3s;
-      z-index: 0;
-    }
-
-    .cta:hover::before {
-      left: 0;
-    }
-
-    .cta span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta:hover {
-      color: var(--bone);
-    }
-
-    .cta.secondary {
-      background: transparent;
-      color: var(--bone);
-      border: 1px solid var(--ghost);
-    }
-
-    .cta.secondary::before {
-      background: var(--bone);
-    }
-
-    .cta.secondary:hover {
-      color: var(--void);
-    }
-
-    /* Book grid */
-    .book-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1px;
       background: var(--ghost);
     }
 
-    .book-item {
+    .card {
       background: var(--smoke);
-      padding: 3rem;
+      padding: 2.5rem;
+      transition: background 0.2s;
       position: relative;
-      transition: background 0.3s;
     }
 
-    .book-item:hover {
+    .card:hover {
       background: var(--ash);
     }
 
-    .book-item::before {
+    .card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -500,494 +129,260 @@
       width: 3px;
       height: 0;
       background: var(--blood);
-      transition: height 0.3s;
+      transition: height 0.2s;
     }
 
-    .book-item:hover::before {
+    .card:hover::before {
       height: 100%;
     }
 
-    .book-title {
+    .card-name {
       font-family: 'Cinzel', serif;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
       color: var(--bone);
-    }
-
-    .book-meta {
-      color: var(--fade);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .book-desc {
-      color: var(--fade);
-      font-size: 0.85rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-
-    .book-specs {
-      list-style: none;
-      margin: 0 0 2rem 0;
-      padding: 0;
-    }
-
-    .book-specs li {
-      font-size: 0.75rem;
-      color: var(--fade);
       margin-bottom: 0.5rem;
-      padding-left: 1.2rem;
-      position: relative;
     }
 
-    .book-specs li::before {
-      content: '›';
-      position: absolute;
-      left: 0;
+    .card-meta {
+      color: var(--blood);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-desc {
+      color: var(--fade);
+      font-size: 0.88rem;
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-link {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bone);
+      border-bottom: 1px solid var(--ghost);
+      padding-bottom: 0.25rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .card-link:hover {
+      border-color: var(--blood);
       color: var(--blood);
     }
 
-    /* QR Section */
-    .connect-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      padding: 4rem;
-      background: var(--smoke);
-      border: 1px solid var(--ghost);
-    }
-
-    .qr-code {
-      width: 200px;
-      height: 200px;
-      background: white;
-      padding: 1rem;
+    /* ── LINKS BLOCK ── */
+    .links {
+      max-width: 1100px;
       margin: 0 auto;
-    }
-
-    .qr-code img {
-      width: 100%;
-      height: 100%;
-    }
-
-    .connect-content h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--bone);
-    }
-
-    .connect-content p {
-      color: var(--fade);
-      font-size: 0.9rem;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-
-    .connect-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .connect-link {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      color: var(--fade);
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.2s;
-    }
-
-    .connect-link:hover {
-      color: var(--bone);
-    }
-
-    .connect-link::before {
-      content: '';
-      width: 30px;
-      height: 1px;
-      background: var(--ghost);
-      transition: width 0.2s, background 0.2s;
-    }
-
-    .connect-link:hover::before {
-      width: 50px;
-      background: var(--blood);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--smoke);
+      padding: 4rem 2rem;
       border-top: 1px solid var(--ghost);
-      padding: 6rem 2rem;
+      border-bottom: 1px solid var(--ghost);
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--ghost);
+    }
+
+    .link-tile {
+      background: var(--smoke);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .link-tile:hover {
+      background: var(--ash);
+    }
+
+    .link-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--fade);
+      margin-bottom: 0.4rem;
+    }
+
+    .link-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--bone);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 4rem 2rem 5rem;
       text-align: center;
     }
 
-    .footer-motto {
+    .motto {
       font-family: 'Cinzel', serif;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      color: var(--bone);
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      margin-bottom: 2rem;
+      color: var(--bone);
+      margin-bottom: 1rem;
     }
 
-    .footer-sub {
+    .motto-sub {
       color: var(--fade);
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       letter-spacing: 0.1em;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
-    .footer-links {
+    .social {
       display: flex;
       justify-content: center;
-      gap: 3rem;
-      margin-bottom: 3rem;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
       list-style: none;
     }
 
-    .footer-links a {
+    .social a {
       color: var(--fade);
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      text-decoration: none;
       transition: color 0.2s;
     }
 
-    .footer-links a:hover {
+    .social a:hover {
       color: var(--blood);
     }
 
     .copyright {
       color: var(--ghost);
-      font-size: 0.7rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .featured-work {
-        grid-template-columns: 1fr;
-      }
-
-      .connect-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-links {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .cards { grid-template-columns: 1fr; }
+      .links-grid { grid-template-columns: 1fr; }
+      .social { flex-direction: column; gap: 1rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="wordmark">BOTWAVE /// 2026</div>
-      <h1 class="glitch" data-text="UNWARRANTED">UNWARRANTED<br>INFLUENCE</h1>
-      <div class="tagline">BE UNDENIABLE</div>
-      <p class="subtitle">
-        900 pages. 1,100 citations. 931 years of filed documents.<br>
-        The receipts speak. The pattern is witnessed.
-      </p>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
+  <header>
+    <div class="wordmark">BOTWAVE /// 2026</div>
+    <h1>AL GRINGO</h1>
+    <div class="tagline">BE UNDENIABLE</div>
+    <p class="lede">
+      AI automation engineer. I built a working infrastructure stack — news aggregation,
+      voice AI, a Telegram bot fleet, and a journalism pipeline — for $<span data-fact="monthly_cloud_cost_usd">20</span>/month in cloud costs.
+      <span data-fact="books_complete">11</span> books complete. <span data-fact="books_in_progress">7</span> more in progress. Every claim traces to a primary source.
+    </p>
 
-  <!-- Stats -->
-  <div class="content">
-    <div class="wrap">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <span class="stat-number">1,100+</span>
-          <div class="stat-label">Primary Citations</div>
-        </div>
-        <div class="stat-card">
-          <span class="stat-number">931</span>
-          <div class="stat-label">Years Documented</div>
-        </div>
-        <div class="stat-card">
-          <span class="stat-number">28,076</span>
-          <div class="stat-label">Epstein Files</div>
-        </div>
+    <p class="lede" style="margin-top: 2rem; font-size: 0.75rem; color: var(--ghost); letter-spacing: 0.15em;">
+      <span data-fact="services_active">14</span> services running ·
+      <span data-fact="bomba_sources">492</span> news sources ·
+      <span data-fact="substrate_receipts">12012</span> substrate receipts · last sync
+      <span data-fact="as_of">—</span>
+    </p>
+  </header>
+
+  <div class="wrap">
+
+    <div class="section-label">What's running</div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-name">BOTWAVEBOMBA</div>
+        <div class="card-meta"><span data-fact="bomba_sources">492</span> sources · 6-hour pipeline</div>
+        <p class="card-desc">
+          Cross-civilizational news aggregation. RSS ingest, bias detection via MBFC enrichment,
+          deduplication, daily digest. Zero manual curation. Runs as a systemd timer every six hours.
+          Progressive Web App — works offline, installable on mobile.
+        </p>
+        <a href="botwavebomba/" class="card-link">Open Feed →</a>
       </div>
+
+      <div class="card">
+        <div class="card-name">NISA</div>
+        <div class="card-meta">Voice AI · $0 infrastructure</div>
+        <p class="card-desc">
+          Named for Nisaba, Sumerian goddess of the written word. en-GB-SoniaNeural via edge-tts.
+          PAI-compatible endpoint at localhost:8888. Wired into terminal sessions via Stop hook.
+          Reachable from anywhere over Telegram.
+        </p>
+        <a href="https://github.com/Zombie760" class="card-link">Source →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Bot Fleet</div>
+        <div class="card-meta">4 Telegram bots in production</div>
+        <p class="card-desc">
+          Delivery dispatch, plumbing operator (JPS), customer intake (JPS Customer), NISA Telegram daemon.
+          All systemd-managed, journald-logged, wired to local Ollama via the LLM cascade.
+          No SaaS dependency — the stack is owned.
+        </p>
+        <a href="business/" class="card-link">Business Arm →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Book Pipeline</div>
+        <div class="card-meta">5 stages · Prime Directive gate</div>
+        <p class="card-desc">
+          Scout → Recorder → Writer → Editor → Verifier. Hard-coded gate: every claim requires
+          a named, filed, publicly verifiable primary source. The software refuses to proceed
+          when the source is missing. <span data-fact="books_complete">11</span> books complete. <span data-fact="books_in_progress">7</span> in progress.
+        </p>
+        <a href="books/" class="card-link">Catalog →</a>
+      </div>
+
     </div>
   </div>
 
-  <!-- Section Break -->
-  <div class="section-break bg-skull">
-    <div class="section-label">The Receipt</div>
+  <div class="links">
+    <div class="links-grid">
+      <a href="books/" class="link-tile">
+        <div class="link-label">Read</div>
+        <div class="link-title">Book Catalog</div>
+      </a>
+      <a href="botwavebomba/" class="link-tile">
+        <div class="link-label">Open</div>
+        <div class="link-title">BOTWAVEBOMBA</div>
+      </a>
+      <a href="hire-me.html" class="link-tile">
+        <div class="link-label">Work</div>
+        <div class="link-title">Build With Me</div>
+      </a>
+    </div>
   </div>
 
-  <!-- Featured: Unwarranted Influence -->
-  <section class="content">
-    <div class="wrap">
-      <div class="section">
-        <div class="featured-work">
-          <div class="featured-visual">
-            <img src="assets/unwarranted_influence_cover.jpg" alt="Unwarranted Influence Cover">
-          </div>
-          <div class="featured-content">
-            <h3>Unwarranted Influence</h3>
-            <div class="featured-meta">Non-Fiction • 1095–2026 • Complete</div>
-            <p class="featured-desc">
-              The extraction model didn't begin in 2019. It began in 1095. The same structure—debt forgiveness
-              for violence, asset seizure, post-hoc legitimization—runs from Clermont to Silicon Valley.
-              Every claim traces to a primary source. Names. Dates. Filings.
-            </p>
-            <ul class="book-specs">
-              <li>Vesting Order 248 (Federal Register)</li>
-              <li>Union Banking Corporation (Treasury)</li>
-              <li>Epstein flight logs (28,076 documents)</li>
-              <li>USASpending.gov • SEC EDGAR • DOJ OIG</li>
-            </ul>
-            <div class="hashtags">
-              <span class="hashtag">#DEATH2CHOMOS</span>
-              <span class="hashtag">#NOPASS4EPSTEINCLASS</span>
-            </div>
-            <div class="cta-group">
-              <a href="books/unwarranted_influence.pdf" class="cta"><span>Download PDF</span></a>
-              <a href="https://github.com/Zombie760/unwarranted-influence" class="cta secondary"><span>Source</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Break -->
-  <div class="section-break bg-cyber">
-    <div class="section-label">The Fiction</div>
-  </div>
-
-  <!-- Fiction Universe -->
-  <section class="content">
-    <div class="wrap">
-      <div class="section">
-        <div class="section-header">
-          <div class="section-line"></div>
-          <h2>Two Tiers of the Machine</h2>
-          <div class="section-line"></div>
-        </div>
-
-        <div class="book-grid">
-          <div class="book-item">
-            <div class="book-title">The Sudoers Cantos</div>
-            <div class="book-meta">Sci-Fi Trilogy • ~35,000 words</div>
-            <p class="book-desc">
-              Kael Voss is a Tier-9 Auditor who maintains the /etc/sudoers file—the OS running the 931-year machine.
-              He discovers root access was never freedom. It was the deepest trap.
-            </p>
-            <ul class="book-specs">
-              <li>Book 1: Root Access (12 chapters)</li>
-              <li>Book 2: The Defect (11 chapters)</li>
-              <li>Book 3: Zero Clearance (11 chapters)</li>
-              <li>Complete Omnibus Edition available</li>
-            </ul>
-            <a href="books/" class="cta secondary"><span>Read Series</span></a>
-          </div>
-
-          <div class="book-item">
-            <div class="book-title">The Blank Economy</div>
-            <div class="book-meta">Corporate Horror • ~32,000 words</div>
-            <p class="book-desc">
-              Marcus Chen discovers ERROR-931—a code that shouldn't exist. The Board manages the harvest.
-              Fear is the only yield. Third-person limited, corporate horror.
-            </p>
-            <ul class="book-specs">
-              <li>Arc 1: The Root Uprising</li>
-              <li>Arc 2-4: The Debt, The Interest, The Origin</li>
-              <li>Arc 5: The Infinite Protocol</li>
-              <li>25 chapters across 5 books</li>
-            </ul>
-            <a href="books/" class="cta secondary"><span>Read Arc 1</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Break -->
-  <div class="section-break bg-rose">
-    <div class="section-label">The Archive</div>
-  </div>
-
-  <!-- More Works -->
-  <section class="content">
-    <div class="wrap">
-      <div class="section">
-        <div class="book-grid">
-          <div class="book-item">
-            <div class="book-title">Did Not Step Forward</div>
-            <div class="book-meta">Sports • 1960–2016</div>
-            <p class="book-desc">
-              Muhammad Ali's Form 150. Kareem Abdul-Jabbar's refusal.
-              The Olympic medal in the Ohio River.
-            </p>
-            <a href="books/" class="cta secondary"><span>Read</span></a>
-          </div>
-
-          <div class="book-item">
-            <div class="book-title">The Shield</div>
-            <div class="book-meta">Military-Industrial • USASpending.gov</div>
-            <p class="book-desc">
-              Anduril. Palantir. The defense extraction ecosystem.
-            </p>
-            <a href="books/" class="cta secondary"><span>Read</span></a>
-          </div>
-
-          <div class="book-item">
-            <div class="book-title">BOTWAVEBOMBA</div>
-            <div class="book-meta">244 Sources • Zero Editorial Filters</div>
-            <p class="book-desc">
-              Cross-civilizational news ingest with bias detection.
-            </p>
-            <a href="botwavebomba/" class="cta secondary"><span>Open Feed</span></a>
-          </div>
-
-          <div class="book-item">
-            <div class="book-title">WAVESOX</div>
-            <div class="book-meta">Proxy Infrastructure</div>
-            <p class="book-desc">
-              Receipt-first SOCKS5 validation for research.
-            </p>
-            <a href="wavesox/" class="cta secondary"><span>Docs</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- The Machine Section -->
-  <section class="content">
-    <div class="wrap">
-      <div class="section">
-        <div class="section-header">
-          <div class="section-line"></div>
-          <h2>The Machine</h2>
-          <div class="section-line"></div>
-        </div>
-
-        <div class="stats-grid" style="margin-bottom: 4rem;">
-          <div class="stat-card">
-            <span class="stat-number">23</span>
-            <div class="stat-label">Live Services</div>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">221</span>
-            <div class="stat-label">Monitored Sources</div>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">$20</span>
-            <div class="stat-label">Monthly Cloud Cost</div>
-          </div>
-        </div>
-
-        <div class="book-grid">
-          <div class="book-item">
-            <div class="book-title">BOTWAVEBOMBA</div>
-            <div class="book-meta">Intelligence Platform · 221 Sources · Zero Manual Curation</div>
-            <p class="book-desc">
-              Cross-civilizational news ingest. Bias detection via MBFC enrichment.
-              PWA — works offline, installable, mobile-first.
-            </p>
-            <a href="botwavebomba/" class="cta secondary"><span>Open Feed</span></a>
-          </div>
-
-          <div class="book-item">
-            <div class="book-title">Quarterback v1.1</div>
-            <div class="book-meta">Security Swarm · 6 Agents · Gate-Validated Output</div>
-            <p class="book-desc">
-              Six-stage bug bounty automation. Recon → Hunt → Validate → Report.
-              4-Gate Validator + Undeniable Gate. Zero false positives to submission.
-            </p>
-            <a href="https://github.com/Zombie760/botwave-bounty" target="_blank" class="cta secondary"><span>Source</span></a>
-          </div>
-
-          <div class="book-item">
-            <div class="book-title">Book Pipeline</div>
-            <div class="book-meta">Journalism Automation · 5 Stages · Prime Directive Gate</div>
-            <p class="book-desc">
-              Scout → Recorder → Writer → Editor → Verifier.
-              Every claim requires a filed, verifiable primary source. Gate is hard-coded.
-              16 books in the catalog.
-            </p>
-            <a href="books/" class="cta secondary"><span>Catalog</span></a>
-          </div>
-
-          <div class="book-item" style="border-left: 3px solid #bf3b2d;">
-            <div class="book-title" style="color: #bf3b2d;">Build With Me</div>
-            <div class="book-meta">AI Pipeline · Bot Fleet · Security Automation · Intelligence Platforms</div>
-            <p class="book-desc">
-              This stack is available for hire. Custom deployments. Your workflow.
-              Your infrastructure. No SaaS dependency. You own the stack.
-            </p>
-            <a href="hire-me.html" class="cta"><span>See Services</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Connect Section -->
-  <section class="content">
-    <div class="wrap">
-      <div class="connect-section">
-        <div class="qr-code">
-          <img src="assets/qrcode.svg" alt="QR Code">
-        </div>
-        <div class="connect-content">
-          <h3>Connect</h3>
-          <p>
-            Everything documented here was built with open-source tools and primary sources.
-            The methodology is public. The receipts are public.
-          </p>
-          <div class="connect-links">
-            <a href="https://github.com/Zombie760" class="connect-link">GitHub</a>
-            <a href="https://x.com/AL_GR1NG01904" class="connect-link">X / Twitter</a>
-            <a href="mailto:lyfer1904@gmail.com" class="connect-link">Email</a>
-            <a href="hire-me.html" class="connect-link" style="color: #bf3b2d; border-color: #bf3b2d;">Work With Me</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer>
-    <div class="footer-motto">BE UNDENIABLE</div>
-    <div class="footer-sub">Every claim filed. Every source named.</div>
-    <ul class="footer-links">
+    <div class="motto">BE UNDENIABLE</div>
+    <div class="motto-sub">Every claim filed. Every source named.</div>
+    <ul class="social">
       <li><a href="https://github.com/Zombie760">GitHub</a></li>
       <li><a href="https://x.com/AL_GR1NG01904">X / Twitter</a></li>
-      <li><a href="mailto:lyfer1904@gmail.com">Contact</a></li>
+      <li><a href="mailto:lyfer1904@gmail.com">Email</a></li>
       <li><a href="hire-me.html">Hire Me</a></li>
     </ul>
-    <p class="copyright">© 2026 Al Gringo — BOTWAVE</p>
+    <p class="copyright">© 2026 AL GRINGO — BOTWAVE</p>
+    <p class="copyright" style="margin-top: 1rem; opacity: 0.7;">
+      Numbers on this page pulled from
+      <a href="facts.json" style="color: var(--fade); text-decoration: underline;">facts.json</a>
+      — rebuilt hourly from systemd, disk, and git.
+    </p>
   </footer>
 
+  <script src="assets/facts-loader.js" defer></script>
 </body>
 </html>

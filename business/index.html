@@ -672,9 +672,9 @@
       One local GPU and a methodology that requires every tool to prove it works before the next one gets built.
       The evidence is verifiable — the GitHub, the systemd units, the substrate receipt count.
     </p>
-    <span class="live-badge"><span class="live-dot"></span>4 bots live in production</span>
-    <a class="demo-link" href="https://t.me/botwave1904_bot" target="_blank" rel="noopener">
-      Try it on Telegram — @botwave1904_bot →
+    <span class="live-badge"><span class="live-dot"></span>4 bots live · <span data-fact="services_active">14</span> services running</span>
+    <a class="demo-link" href="https://github.com/Zombie760" target="_blank" rel="noopener">
+      Source on GitHub — @Zombie760 →
     </a>
   </section>
 
@@ -959,27 +959,21 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
       Receipt-first means no surprises mid-engagement.
     </p>
 
-    <pre class="demo-stats" style="background: #0F0F0F; border: 1px solid rgba(240,237,232,0.1); border-left: 3px solid #059669; padding: 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7; color: rgba(240,237,232,0.85); overflow-x: auto; margin-top: 1.5rem;">$ curl -s http://localhost:8081/pool/stats | jq .
+    <pre class="demo-stats" style="background: #0F0F0F; border: 1px solid rgba(240,237,232,0.1); border-left: 3px solid #059669; padding: 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7; color: rgba(240,237,232,0.85); overflow-x: auto; margin-top: 1.5rem;">$ curl -s http://localhost:8081/health | jq .
 
 {
-  "total":     1247,
-  "live":      1103,
-  "dead":       144,
-  "socks5":     891,
-  "http":       212,
-  "zones": {
-    "us_residential": 387,
-    "eu_datacenter":  241,
-    "apac_mobile":    475
-  },
-  "last_sweep": "2026-05-09T17:42:11Z",
-  "avg_latency_ms": 312
+  "service":     "wavesox",
+  "endpoint":    "FastAPI on :8081",
+  "validators":  "connectivity + anonymity + use_case",
+  "export":      "json / csv / pac / code-snippet",
+  "receipts":    "immutable JSONL per proxy",
+  "note":        "Receipt-first — every proxy earns its place."
 }</pre>
 
     <div class="stat-row">
       <div class="stat-cell">
-        <div class="stat-num">1k+</div>
-        <div class="stat-label">validated SOCKS5 proxies in pool</div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">validators per proxy — connectivity, anonymity, use-case</div>
       </div>
       <div class="stat-cell">
         <div class="stat-num">5</div>
@@ -987,7 +981,7 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
       </div>
       <div class="stat-cell">
         <div class="stat-num">:8081</div>
-        <div class="stat-label">FastAPI — live, health-checked, WebSocket logs</div>
+        <div class="stat-label">FastAPI — health-checked, WebSocket logs</div>
       </div>
     </div>
 
@@ -1097,7 +1091,7 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
         </tr>
         <tr>
           <td>BOTWAVEBOMBA Pipeline</td>
-          <td>317-source ingestor → bias scorer → feed generator → GitHub Pages push</td>
+          <td><span data-fact="bomba_sources">492</span>-source ingestor → bias scorer → feed generator → GitHub Pages push</td>
           <td>cron · 6h</td>
           <td><span class="tag-live">live</span></td>
         </tr>
@@ -1118,8 +1112,11 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
 <span class="cm"># WAVESOX health check</span>
 <span class="fn">curl</span> -s http://localhost:8081/health | jq .
 
-<span class="cm"># Substrate receipt count — proof the system is writing</span>
-<span class="fn">wc</span> -l Telos/audit/engagement_arm.jsonl Business/csm/substrate/claims.jsonl</pre>
+<span class="cm"># Substrate receipt count — proof the system is writing (currently <span data-fact="substrate_receipts">12012</span>)</span>
+<span class="fn">wc</span> -l Telos/substrate/*/claims.jsonl Telos/audit/*.jsonl
+
+<span class="cm"># Live numbers on the public site</span>
+<span class="fn">curl</span> -s https://zombie760.github.io/facts.json | jq .</pre>
     </div>
 
     <div class="repo-list">
@@ -1163,7 +1160,7 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
       <div class="product-card">
         <p class="product-tag">Bug bounty hunters</p>
         <p class="product-name">WAVESOX proxy access</p>
-        <p class="product-body">1k+ validated SOCKS5 proxies, receipt-first tested, IAM zones. If you're running recon and burning your residential IP, this solves it.</p>
+        <p class="product-body">Validated SOCKS5 proxy infrastructure, receipt-first tested, IAM zones. If you're running recon and burning your residential IP, this solves it. Design-partner pricing — first deployment free in exchange for a case study.</p>
         <a class="btn-primary" href="mailto:lyfer1904@gmail.com?subject=WAVESOX proxy access" style="margin-top: 1.25rem; display: block; text-align: center;">Request access →</a>
       </div>
       <div class="product-card">
@@ -1187,7 +1184,7 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <span class="footer-copy">BOTWAVE · BE UNDENIABLE · © 2026</span>
+      <span class="footer-copy">BOTWAVE · BE UNDENIABLE · © 2026 · numbers from <a href="/facts.json" style="color: inherit; text-decoration: underline;">facts.json</a></span>
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
         <li><a href="https://zombie760.github.io/botwavebomba/">BOTWAVEBOMBA</a></li>
@@ -1197,5 +1194,6 @@ LABOR_RATE = <span class="fn">float</span>(os.environ.get(<span class="st">"BOTW
     </div>
   </footer>
 
+  <script src="/assets/facts-loader.js" defer></script>
 </body>
 </html>
