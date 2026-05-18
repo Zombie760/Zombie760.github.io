@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T13:00:17.489054+00:00",
+  "generated_at": "2026-05-18T19:01:16.744574+00:00",
   "count": 81,
   "stories": [
     {
@@ -12224,18 +12224,18 @@
       "video_url": null,
       "has_video": false,
       "is_blindspot": true,
-      "blindspot_label": "Only 10% Left",
-      "blindspot_score": 7,
+      "blindspot_label": "Only 9% Left",
+      "blindspot_score": 8,
       "coverage": {
-        "left_pct": 10,
-        "center_pct": 30,
-        "right_pct": 60,
+        "left_pct": 9,
+        "center_pct": 36,
+        "right_pct": 55,
         "state_count": 0,
         "dominant": "right",
-        "dominant_pct": 60
+        "dominant_pct": 55
       },
       "bias_variance": 4.5,
-      "entity_count": 51,
+      "entity_count": 54,
       "entity_list": [
         "Aftermath",
         "Angeles",
@@ -12245,14 +12245,17 @@
         "Campaign",
         "Candidate",
         "Charli",
+        "China",
         "Clash",
         "Debate",
+        "Dillon",
         "Diseases",
         "Emotional",
         "Families",
         "Footage",
         "Group",
         "Heidi",
+        "Heist",
         "Hills",
         "Hollywood",
         "Intense",
@@ -12379,6 +12382,15 @@
           "bias_tier": "center",
           "bias_bucket": "center",
           "geo_cluster": "west"
+        },
+        {
+          "id": "yt_timdillonshow",
+          "name": "The Tim Dillon Show",
+          "country": "US",
+          "bloc": "neutral",
+          "bias_tier": "unknown",
+          "bias_bucket": "center",
+          "geo_cluster": ""
         }
       ],
       "articles": [
@@ -12700,6 +12712,17 @@
           "published": "Mon, 11 May 2026 06:30:53 GMT",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=4t85SK5bnUQ",
+          "headline": "USA vs. China, Spencer Pratt, & A Heist | The Tim Dillon Show #496",
+          "snippet": "Ladies and gentlemen, welcome to the Tim Dylan show. We are in London. A lastm minute trip to the UK. Um, and we're we're it's very kind of the people here to let us use their studio. Podcasting is is apparently becoming a thing here. So, we'll see what happens with that. It's had it's had quite…",
+          "source": "yt_timdillonshow",
+          "source_name": "The Tim Dillon Show",
+          "country": "US",
+          "published": "2026-05-16T00:00:00+00:00",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -12715,7 +12738,8 @@
       "geo_frame_topic": null,
       "geo_breakdown": {
         "west": 9,
-        "latin-america": 1
+        "latin-america": 1,
+        "null": 1
       },
       "section": "chisme"
     },

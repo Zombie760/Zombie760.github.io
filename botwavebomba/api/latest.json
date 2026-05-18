@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-18T13:00:17.489054+00:00",
-  "article_count": 17717,
+  "generated_at": "2026-05-18T19:01:16.744574+00:00",
+  "article_count": 17719,
   "story_count": 160,
   "sections": [
     {
@@ -12272,18 +12272,18 @@
       "video_url": null,
       "has_video": false,
       "is_blindspot": true,
-      "blindspot_label": "Only 10% Left",
-      "blindspot_score": 7,
+      "blindspot_label": "Only 9% Left",
+      "blindspot_score": 8,
       "coverage": {
-        "left_pct": 10,
-        "center_pct": 30,
-        "right_pct": 60,
+        "left_pct": 9,
+        "center_pct": 36,
+        "right_pct": 55,
         "state_count": 0,
         "dominant": "right",
-        "dominant_pct": 60
+        "dominant_pct": 55
       },
       "bias_variance": 4.5,
-      "entity_count": 51,
+      "entity_count": 54,
       "entity_list": [
         "Aftermath",
         "Angeles",
@@ -12293,14 +12293,17 @@
         "Campaign",
         "Candidate",
         "Charli",
+        "China",
         "Clash",
         "Debate",
+        "Dillon",
         "Diseases",
         "Emotional",
         "Families",
         "Footage",
         "Group",
         "Heidi",
+        "Heist",
         "Hills",
         "Hollywood",
         "Intense",
@@ -12427,6 +12430,15 @@
           "bias_tier": "center",
           "bias_bucket": "center",
           "geo_cluster": "west"
+        },
+        {
+          "id": "yt_timdillonshow",
+          "name": "The Tim Dillon Show",
+          "country": "US",
+          "bloc": "neutral",
+          "bias_tier": "unknown",
+          "bias_bucket": "center",
+          "geo_cluster": ""
         }
       ],
       "articles": [
@@ -12748,6 +12760,17 @@
           "published": "Mon, 11 May 2026 06:30:53 GMT",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=4t85SK5bnUQ",
+          "headline": "USA vs. China, Spencer Pratt, & A Heist | The Tim Dillon Show #496",
+          "snippet": "Ladies and gentlemen, welcome to the Tim Dylan show. We are in London. A lastm minute trip to the UK. Um, and we're we're it's very kind of the people here to let us use their studio. Podcasting is is apparently becoming a thing here. So, we'll see what happens with that. It's had it's had quite…",
+          "source": "yt_timdillonshow",
+          "source_name": "The Tim Dillon Show",
+          "country": "US",
+          "published": "2026-05-16T00:00:00+00:00",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -12763,7 +12786,8 @@
       "geo_frame_topic": null,
       "geo_breakdown": {
         "west": 9,
-        "latin-america": 1
+        "latin-america": 1,
+        "null": 1
       },
       "section": "chisme"
     },
@@ -15998,15 +16022,15 @@
       "blindspot_label": null,
       "blindspot_score": 0.0,
       "coverage": {
-        "left_pct": 29,
-        "center_pct": 35,
-        "right_pct": 35,
+        "left_pct": 28,
+        "center_pct": 38,
+        "right_pct": 34,
         "state_count": 2,
         "dominant": "center",
-        "dominant_pct": 35
+        "dominant_pct": 38
       },
-      "bias_variance": 7.46,
-      "entity_count": 44,
+      "bias_variance": 7.42,
+      "entity_count": 50,
       "entity_list": [
         "Araghchi",
         "Armed",
@@ -16020,7 +16044,9 @@
         "Decade",
         "Democrat",
         "Donald",
+        "Dorey",
         "Duffy",
+        "Elites",
         "Emboldened",
         "Epstein",
         "Estados",
@@ -16032,12 +16058,16 @@
         "Japan",
         "Jeffrey",
         "Jinping",
+        "Julian",
         "Korea",
         "Loaded",
         "Locked",
+        "MKUltra",
+        "Massie",
         "Melania",
         "Morning",
         "Nearly",
+        "Overlords",
         "Presidential",
         "Reality",
         "Seoul",
@@ -16350,6 +16380,15 @@
           "bias_tier": "lean-left",
           "bias_bucket": "left",
           "geo_cluster": "latin-america"
+        },
+        {
+          "id": "yt_juliandorey",
+          "name": "Julian Dorey",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "unknown",
+          "bias_bucket": "center",
+          "geo_cluster": ""
         }
       ],
       "articles": [
@@ -16990,16 +17029,27 @@
           "published": null,
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=vwmC4qHP6Zs",
+          "headline": "Trump Global Elites in China, MKUltra Raid, Massie DARK Overlords | Julian Dorey • 423",
+          "snippet": "What's up everybody and welcome back to another episode of the Julian Dory podcast. I am Julian Dory &gt;&gt; and I'm Joey Dave. How you doing? &gt;&gt; How you doing Dave? The Rockefellers are officially controlling ourselves. Or is that what you're telling me? &gt;&gt; That something of that…",
+          "source": "yt_juliandorey",
+          "source_name": "Julian Dorey",
+          "country": "US",
+          "published": "2026-05-16T00:00:00+00:00",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.154,
-        "zionist": 0.239,
-        "atlanticist": 0.305,
-        "statist": 0.19,
-        "financialized": 0.424
+        "interventionist": 0.149,
+        "zionist": 0.232,
+        "atlanticist": 0.296,
+        "statist": 0.184,
+        "financialized": 0.411
       },
-      "fp_source_count": 33,
+      "fp_source_count": 34,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
@@ -17010,7 +17060,8 @@
         "global-south": 3,
         "africa": 1,
         "adversarial": 2,
-        "pacific-asia": 2
+        "pacific-asia": 2,
+        "null": 1
       },
       "section": "world"
     },
