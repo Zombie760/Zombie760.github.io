@@ -78,6 +78,24 @@
     .book:hover {
       border-color: rgba(201,162,39,0.4);
     }
+    .undeniable-badge {
+      position: absolute;
+      top: 8px; right: 8px;
+      background: linear-gradient(135deg, #c9a227 0%, #8b6914 100%);
+      color: #0a0a0a;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      padding: 4px 8px;
+      text-transform: uppercase;
+      z-index: 5;
+      border: 1px solid rgba(0,0,0,0.3);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+    .undeniable-badge::before {
+      content: "⚔️ ";
+    }
     .book-cover {
       width: 100%;
       aspect-ratio: 2/3;
@@ -212,6 +230,77 @@
     <div class="wrap">
 
       <div class="book-section">
+        <h2 class="section-label">The Method</h2>
+        <div style="max-width: 75ch; margin: 0 0 2rem; color: var(--text2); font-size: 0.88rem; line-height: 1.85;">
+          <p style="margin-bottom: 1rem;">
+            Robert Caro had Ina. Stoller has a researcher. Every book that names primary
+            sources is a team product. My team is software. The labor split is the same as
+            it has been for 200 years.
+          </p>
+          <p style="margin-bottom: 1rem;">
+            Built on <a href="https://github.com/danielmiessler" style="color: var(--gold);">Daniel Miessler's</a>
+            open-source PAI + TELOS + fabric. Models from Ollama, Anthropic, Mistral.
+            Voice DNA references Ellis, Palahniuk, Thompson, Caro, Stoller. A verifier
+            called RECORD checks every citation against six archives — Federal Register,
+            court records, Vatican Apostolic Archive, SEC EDGAR, GovInfo, BnF Gallica —
+            and halts the pipeline on any unanchored claim.
+          </p>
+          <p style="margin-bottom: 1rem;">
+            The architecture is upstream-credited. The editorial decisions — which document
+            is the spine, what the through-line is, what to cut when the evidence does not
+            support a chapter — are mine. The Prime Directive gate refuses to ship sentences
+            that cannot anchor. So do I.
+          </p>
+          <p style="margin-bottom: 0; color: var(--gold); font-style: italic;">
+            We all compound knowledge. Only those who unplug long enough to read the primary
+            document tap the frequency that does not lie.
+          </p>
+        </div>
+      </div>
+
+      <div class="book-section">
+        <h2 class="section-label">Capital Has No Religion — Series</h2>
+        <div style="max-width: 75ch; margin: 0 0 2rem; color: var(--text2); font-size: 0.85rem; line-height: 1.85;">
+          <p>Two volumes. One framework. <a href="PROOF.md" style="color: var(--gold);">BOTWAVE BOOKS PROOF</a> documents the BUQP cert chain across both — <strong>UNDENIABLE 100/100</strong> across all five gates: Prime Directive, Voice DNA, Structure, Compression, Rule 8. The audit log at <code>Telos/substrate/book_arm/claims.jsonl</code> is 850+ lines and growing.</p>
+        </div>
+        <div class="books-grid">
+
+          <div class="book">
+            <span class="undeniable-badge">UNDENIABLE 100/100</span>
+            <img src="covers/cover_capital_has_no_religion.jpg" alt="" class="book-cover" onerror="this.style.display='none'">
+            <div class="book-info">
+              <div class="book-title">Capital Has No Religion</div>
+              <div class="book-meta">Vol. I · 498 pages · The Bush Dynasty and the Mechanism of Power · 1095–2026</div>
+              <div class="book-desc">Vesting Order 248. Federal Register vol. 7, p. 8531. The 931-year chronology from <em>Omne Datum Optimum</em> to the DOGE rollback. Every claim filed. ⚔️ BUQP-certified.</div>
+              <a href="teasers/capital_has_no_religion_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <span class="undeniable-badge">UNDENIABLE 100/100</span>
+            <img src="covers/cover_digital_ocean.jpg" alt="" class="book-cover" onerror="this.style.display='none'">
+            <div class="book-info">
+              <div class="book-title">The Digital Ocean</div>
+              <div class="book-meta">Vol. II of the Musk Doctrine arc · 361 pages · 74,024 words · 19 chapters</div>
+              <div class="book-desc">How DOGE did not drain the swamp. The water is engineered. The waterline is filed. PJM 2025/26 BRA Report. $269.92 per MW-day. ⚔️ BUQP-certified.</div>
+              <a href="teasers/digital_ocean_teaser.pdf" class="teaser-link">Teaser PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_the_compound.jpg" alt="" class="book-cover" onerror="this.style.display='none'">
+            <div class="book-info">
+              <div class="book-title">The Compound</div>
+              <div class="book-meta">Capital Has No Religion · Vol. II · 220 pages · Zorro Ranch + Little Saint James</div>
+              <div class="book-desc">Three filed documents. The 1,758-day gap between the July 6, 2019 federal raid and the April 23, 2024 NM SB 280 reopening. 73 named participants in Appendix F.</div>
+              <a href="https://t.me/botwave_paperwork_bot" class="teaser-link">Request via @botwave_paperwork_bot</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="book-section">
         <h2 class="section-label">Investigative Non-Fiction</h2>
         <div class="books-grid">
 
@@ -219,7 +308,7 @@
             <img src="covers/cover_unwarranted_final.jpg" alt="" class="book-cover">
             <div class="book-info">
               <div class="book-title">Unwarranted Influence</div>
-              <div class="book-meta">643 pages · 1095–2026 · 1,100+ citations</div>
+              <div class="book-meta">462 pages · 1095–2026 · 441 source citations · 63 primary documents indexed in Appendix C</div>
               <div class="book-desc">Vesting Order 248. The chain from the Third Reich's industrial backers to Silicon Valley's extraction state.</div>
               <a href="teasers/unwarranted_influence_teaser.pdf" class="teaser-link">Teaser PDF</a>
             </div>
@@ -382,6 +471,33 @@
         </div>
       </div>
 
+      <div class="book-section">
+        <h2 class="section-label">Sovereign Cipher — Street-Philosophy Manual for the 85%</h2>
+        <div class="books-grid">
+
+          <div class="book">
+            <img src="covers/cover_sovereign_cipher_one.jpg" alt="" class="book-cover" onerror="this.style.display='none'">
+            <div class="book-info">
+              <div class="book-title">Sovereign Cipher · Book One</div>
+              <div class="book-meta">The First Chamber — The Ghost in the Machine · 13 chapters</div>
+              <div class="book-desc">Voice DNA: 40% Palahniuk / 30% Ellis / 30% Wu-Tang. The Tao of Wu meets the 36 Chambers, kitchen-table-scale.</div>
+              <a href="sovereign_cipher_book_one.pdf" class="teaser-link">Full PDF</a>
+            </div>
+          </div>
+
+          <div class="book">
+            <img src="covers/cover_sovereign_cipher_two.jpg" alt="" class="book-cover" onerror="this.style.display='none'">
+            <div class="book-info">
+              <div class="book-title">Sovereign Cipher · Book Two</div>
+              <div class="book-meta">The Second Chamber — The Build Protocol · 12 chapters</div>
+              <div class="book-desc">Recognition gives way to reconstruction. The architect's mindset, the sovereign's toolkit, the parallel economy, the legacy protocol.</div>
+              <a href="sovereign_cipher_book_two.pdf" class="teaser-link">Full PDF</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       <div class="telegram-cta">
         <h3>Full Manuscript Access</h3>
         <p>Teasers are public. The complete works — with all citations, exhibits, and appendices — are available through the BOTWAVE archive.</p>
@@ -393,7 +509,7 @@
 
   <footer>
     <div class="wrap">
-      <p>&copy; 2026 BOTWAVE PAPERWORK — Al Gringo</p>
+      <p>&copy; 2026 BOTWAVE PAPERWORK — Kyle Jimenez</p>
       <p style="margin-top: 0.5rem; opacity: 0.7;">Teasers for preview only. Not for redistribution.</p>
       <p style="margin-top: 1rem;"><a href="/">Home</a> · <a href="https://github.com/Zombie760" target="_blank">GitHub</a></p>
     </div>
