@@ -5,123 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BOTWAVE — The Tomb</title>
   <meta name="description" content="Sealed transmissions. Solve the cipher. Five audiobooks behind five puzzles. No password — just attention.">
-  <meta property="og:title" content="BOTWAVE — The Tomb">
-  <meta property="og:description" content="Sealed transmissions. Solve the cipher.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0a0a0a;
-      --bone: #e8e4dc;
-      --gold: #c9a227;
-      --crimson: #8b2635;
-      --green: #6db26d;
-      --text2: rgba(232,228,220,0.65);
-      --text3: rgba(232,228,220,0.35);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { background: var(--bg); color: var(--bone); font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.7; min-height: 100vh; }
-    .bg-overlay { position: fixed; inset:0; background: url('../assets/santa_muerte_bg.jpg') center/cover no-repeat; opacity: 0.08; z-index: -2; }
-    .bg-darken { position: fixed; inset:0; background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.88) 50%, rgba(10,10,10,0.98) 100%); z-index: -1; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
-    header { padding: 4rem 0 2rem; border-bottom: 1px solid rgba(201,162,39,0.2); text-align: center; }
-    .wordmark { font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--crimson); margin-bottom: 1rem; }
-    h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--gold); margin-bottom: 0.6rem; letter-spacing: 0.02em; }
-    .subtitle { color: var(--text2); font-size: 0.85rem; max-width: 60ch; margin: 0 auto 0.4rem; }
-    .motto { color: var(--gold); font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; margin-top: 1rem; }
-    main { padding: 2.5rem 0 4rem; }
-    .lead {
-      max-width: 60ch;
-      margin: 0 auto 3rem;
-      color: var(--text2);
-      text-align: center;
-      font-size: 0.85rem;
-    }
-    .lead strong { color: var(--bone); }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: rgba(20,20,20,0.7);
-      border: 1px solid rgba(201,162,39,0.18);
-      padding: 1.4rem 1.4rem 1.6rem;
-      position: relative;
-      transition: border-color 0.2s;
-    }
-    .card:hover { border-color: rgba(201,162,39,0.4); }
-    .card.solved { border-color: var(--green); background: rgba(20,30,20,0.7); }
-    .card .seal { position: absolute; top: -10px; right: 12px; background: var(--bg); color: var(--crimson); font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; padding: 2px 10px; border: 1px solid var(--crimson); }
-    .card.solved .seal { color: var(--green); border-color: var(--green); }
-    .card h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 0.2rem; }
-    .card .sub { color: var(--text2); font-size: 0.75rem; margin-bottom: 0.8rem; font-style: italic; }
-    .card .meta { color: var(--text3); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.1rem; }
-    .card .puzzle { color: var(--bone); margin-bottom: 0.4rem; font-size: 0.85rem; }
-    .card .hint { color: var(--text3); font-size: 0.7rem; margin-bottom: 0.9rem; }
-    .input-row { display: flex; gap: 6px; margin-bottom: 0.5rem; }
-    .input-row input {
-      flex: 1;
-      background: var(--bg);
-      border: 1px solid rgba(201,162,39,0.3);
-      color: var(--bone);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
-      padding: 8px 10px;
-      outline: none;
-    }
-    .input-row input:focus { border-color: var(--gold); }
-    .input-row button {
-      background: var(--gold);
-      color: var(--bg);
-      border: none;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 8px 14px;
-      cursor: pointer;
-      font-weight: 700;
-    }
-    .input-row button:hover { background: #d6b333; }
-    .input-row button:disabled { background: var(--text3); cursor: not-allowed; }
-    .status { font-size: 0.7rem; min-height: 1.2em; color: var(--text3); }
-    .status.err { color: var(--crimson); }
-    .status.ok { color: var(--green); }
-    .unlocked { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed rgba(109,178,109,0.3); }
-    .card.solved .unlocked { display: block; }
-    audio { width: 100%; margin-bottom: 0.6rem; }
-    .download {
-      display: inline-block;
-      color: var(--gold);
-      text-decoration: none;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: 1px solid var(--gold);
-      padding: 6px 12px;
-      transition: all 0.15s;
-    }
-    .download:hover { background: var(--gold); color: var(--bg); }
-    .master-card {
-      grid-column: 1 / -1;
-      background: linear-gradient(135deg, rgba(40,30,15,0.6) 0%, rgba(15,15,15,0.7) 100%);
-      border: 1px solid var(--gold);
-      padding: 2rem;
-      margin-top: 2rem;
-      text-align: center;
-    }
-    .master-card h2 { color: var(--gold); font-size: 1.8rem; margin-bottom: 0.4rem; }
-    .master-card .sub { color: var(--text2); margin-bottom: 1.4rem; font-style: normal; }
-    .master-card .input-row { max-width: 480px; margin: 0 auto 0.5rem; }
-    .master-card.solved { background: rgba(20,40,20,0.6); border-color: var(--green); }
-    footer { text-align: center; padding: 3rem 0 2rem; color: var(--text3); font-size: 0.7rem; letter-spacing: 0.2em; }
-    footer a { color: var(--gold); text-decoration: none; }
-    @media (max-width: 700px) {
-      h1 { font-size: 2.1rem; }
-      .grid { grid-template-columns: 1fr; }
-    }
+    :root { --bg:#0a0a0a; --bone:#e8e4dc; --gold:#c9a227; --crimson:#8b2635; --green:#6db26d; --text2:rgba(232,228,220,0.65); --text3:rgba(232,228,220,0.35); }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html,body { background:var(--bg); color:var(--bone); font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.7; min-height:100vh; }
+    .bg-overlay { position:fixed; inset:0; background:url('../assets/santa_muerte_bg.jpg') center/cover no-repeat; opacity:.08; z-index:-2; }
+    .bg-darken { position:fixed; inset:0; background:linear-gradient(180deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.88) 50%,rgba(10,10,10,.98) 100%); z-index:-1; }
+    .wrap { max-width:980px; margin:0 auto; padding:0 24px; }
+    header { padding:4rem 0 2rem; border-bottom:1px solid rgba(201,162,39,.2); text-align:center; }
+    .wordmark { font-size:.65rem; letter-spacing:.4em; text-transform:uppercase; color:var(--crimson); margin-bottom:1rem; }
+    h1 { font-family:'Playfair Display',serif; font-size:3rem; font-weight:900; color:var(--gold); margin-bottom:.6rem; letter-spacing:.02em; }
+    .subtitle { color:var(--text2); font-size:.85rem; max-width:60ch; margin:0 auto .4rem; }
+    .motto { color:var(--gold); font-size:.65rem; letter-spacing:.3em; text-transform:uppercase; margin-top:1rem; }
+    main { padding:2.5rem 0 4rem; }
+    .lead { max-width:60ch; margin:0 auto 3rem; color:var(--text2); text-align:center; font-size:.85rem; }
+    .lead strong { color:var(--bone); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(380px,1fr)); gap:1.5rem; }
+    .card { background:rgba(20,20,20,.7); border:1px solid rgba(201,162,39,.18); padding:1.4rem 1.4rem 1.6rem; position:relative; transition:border-color .2s; }
+    .card:hover { border-color:rgba(201,162,39,.4); }
+    .card.solved { border-color:var(--green); background:rgba(20,30,20,.7); }
+    .card .seal { position:absolute; top:-10px; right:12px; background:var(--bg); color:var(--crimson); font-size:.55rem; letter-spacing:.3em; text-transform:uppercase; padding:2px 10px; border:1px solid var(--crimson); }
+    .card.solved .seal { color:var(--green); border-color:var(--green); }
+    .card h2 { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold); margin-bottom:.2rem; }
+    .card .sub { color:var(--text2); font-size:.75rem; margin-bottom:.8rem; font-style:italic; }
+    .card .meta { color:var(--text3); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom:1.1rem; }
+    .card .puzzle { color:var(--bone); margin-bottom:.4rem; font-size:.85rem; }
+    .card .hint { color:var(--text3); font-size:.7rem; margin-bottom:.9rem; }
+    .input-row { display:flex; gap:6px; margin-bottom:.5rem; }
+    .input-row input { flex:1; background:var(--bg); border:1px solid rgba(201,162,39,.3); color:var(--bone); font-family:'JetBrains Mono',monospace; font-size:13px; padding:8px 10px; outline:none; }
+    .input-row input:focus { border-color:var(--gold); }
+    .input-row button { background:var(--gold); color:var(--bg); border:none; font-family:'JetBrains Mono',monospace; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; padding:8px 14px; cursor:pointer; font-weight:700; }
+    .input-row button:hover { background:#d6b333; }
+    .status { font-size:.7rem; min-height:1.2em; color:var(--text3); }
+    .status.err { color:var(--crimson); }
+    .status.ok { color:var(--green); }
+    .unlocked { display:none; margin-top:1rem; padding-top:1rem; border-top:1px dashed rgba(109,178,109,.3); }
+    .card.solved .unlocked { display:block; }
+    audio { width:100%; margin-bottom:.6rem; }
+    .download { display:inline-block; color:var(--gold); text-decoration:none; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; border:1px solid var(--gold); padding:6px 12px; transition:all .15s; margin-right:.5rem; margin-bottom:.3rem; }
+    .download:hover { background:var(--gold); color:var(--bg); }
+    .download.pdf { border-color:var(--crimson); color:var(--crimson); }
+    .download.pdf:hover { background:var(--crimson); color:var(--bone); }
+    .master-card { grid-column:1/-1; background:linear-gradient(135deg,rgba(40,30,15,.6) 0%,rgba(15,15,15,.7) 100%); border:1px solid var(--gold); padding:2rem; margin-top:2rem; text-align:center; }
+    .master-card h2 { color:var(--gold); font-size:1.8rem; margin-bottom:.4rem; }
+    .master-card .sub { color:var(--text2); margin-bottom:1.4rem; font-style:normal; }
+    .master-card .input-row { max-width:480px; margin:0 auto .5rem; }
+    .master-card.solved { background:rgba(20,40,20,.6); border-color:var(--green); }
+    .bonus-section { margin:1.4rem 0; padding:1.1rem; border:1px dashed var(--crimson); background:rgba(40,15,15,.4); }
+    .bonus-section .bonus-title { color:var(--crimson); font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:.4rem; }
+    .bonus-section .bonus-sub { color:var(--text2); font-size:.78rem; margin-bottom:.9rem; }
+    footer { text-align:center; padding:3rem 0 2rem; color:var(--text3); font-size:.7rem; letter-spacing:.2em; }
+    footer a { color:var(--gold); text-decoration:none; }
+    .book-detail { margin:.9rem 0; padding-bottom:.9rem; border-bottom:1px dashed rgba(232,228,220,.1); }
+    .book-detail h3 { color:var(--gold); font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:.3rem; font-weight:700; }
+    @media (max-width:700px) { h1 { font-size:2.1rem; } .grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -138,7 +78,7 @@
       <p class="lead">
         Each book is sealed behind a question. The answers are public — every one is in a court docket, a Federal Register cite, a Unix man page, or the book's own pages. Solve to listen in your browser or download for offline.
         <br><br>
-        <strong>Master key unlocks all five at once.</strong> Two words. You already know them.
+        <strong>Master key unlocks all five at once — plus three bonus companion-art PDFs.</strong> Two words. You already know them.
       </p>
       <div id="grid" class="grid"></div>
     </main>
@@ -148,31 +88,20 @@
   </div>
 
 <script>
-const MANIFEST = {"iter":100000,"books":[{"slug":"incomplete_accounting","title":"The Incomplete Accounting","subtitle":"Al Gringo Thriller, Book 1","voice":"Rex","runtime":"5h 18m","puzzle":"What U.S. Code section is the False Claims Act? (just the number)","hint":"31 U.S.C. \u00a7 ____","salt":"7woGEvYqrPqIeyluoM2Rlg==","iv":"eZwMwmdHe7o4BwuN","ct":"rxALb9za0ODMeWbzbtL/M1/Rt9QLlp6nmCfA7AF5dAivJnIUqYcgQWY17MovMciCnHze+u+d/yUN2E9EPjoNG27CUNu6m7tX9oLc/Sq/JH1RpSASn3dfkXGR5WUZbxniHOwiaThLqO9nKp/AfbHVTvKiuPxWScmo+okNfWQp2NZWeyyR0XzY"},{"slug":"compound","title":"The Compound","subtitle":"Zorro Ranch, Little Saint James, and the Cover-Up That Made Them Possible","voice":"Leo","runtime":"5h 22m","puzzle":"Docket number of United States v. Epstein, SDNY 2019 (case caption format)","hint":"From the FBI raid on 9 East 71st Street, July 6 2019","salt":"c/v6fbbkCmkrhgp6d/8COw==","iv":"NiYZbxVCXzPSgwAA","ct":"okfqitnL3uvJ0oq34hmfQ+G0Fw7MIxMwxJtDhiOHAJ0BB2zN5o7U296QIMgKUtB6Gxz4qudkgPyXCgNbpZEDvxt/VIIZaVtclhW393TdqkUpWKGJGZH4XI7Ha7JDNTIwKVAFRbMdHB4jTW29Ao3S+7urtqQWjJX4348="},{"slug":"digital_ocean","title":"The Digital Ocean","subtitle":"How DOGE Did Not Drain the Swamp","voice":"Leo","runtime":"7h 42m","puzzle":"DOGE's stated single-word mission","hint":"The 'E' in the four-letter acronym","salt":"31s6v+j0lHiODo6k/qHLvQ==","iv":"RONGaKSpTzlCBiax","ct":"Oxs6dkwv9TSmUEJ2eBwCoWgg/666JEiMoliCJ9SaF2bMIRyyY74tdPCc4eESkramMpbgw7TZScZFyhwrmRWf0yAf2kaQWAyG8eONukHtFtnOE9jiwmwxkfQdKlDa4fXNS8nCxy20GDuheTuVln2nKM8Ug4uJWn9AY5/0toAAuA=="},{"slug":"terminal","title":"TERMINAL","subtitle":"A Novel","voice":"Ara","runtime":"6h 16m","puzzle":"The shebang line that opens every chapter banner in the book","hint":"Starts with #! \u2014 exact case sensitive","salt":"Z8cX2r61LZvHmetcKCvtAg==","iv":"b5csRdxAgetFv5l4","ct":"+xaZSDTYLNkl909WTnFDTc5OSmGBEiD74PLHQ58b8a8fHTinsxhfoH9E+NGtq9GlLaVvsVv1g2SErN36eYLOOuiyXqxZr87tBriDN6jenN33JPiIau8dyTujbYWvWkC7z9gLiyu46PK7lD/Ccf4C/+rytFIKiCu2z/Y="},{"slug":"sudoers_cantos","title":"The Sudoers Cantos","subtitle":"The Complete Trilogy","voice":"Rex","runtime":"3h 56m","puzzle":"Unix command that grants root access","hint":"Four letters. Common as breath.","salt":"rCA9jUt5podpMXxe20Tbtg==","iv":"d8IMukrhtCDZdLeH","ct":"6DMTCCNyOXBhNamMa/pej8yVL7hDdb1n2DA27N17GcbWTn1twgSme5Dl9ofE3Z47RRhA/AvAsMHyWbfBh93LDUcGdxyhO9c+4GnALYkPC+EDDmHwPgACbPIb4khDKquMijXHsRt7qMeg5O2S3fbXoTW4dLZkPqTQQ6HoN/yBI80="}],"master":{"salt":"8p53tba+NShOKOjUJZiDjQ==","iv":"RxXPHezY2gQybVYy","ct":"c0c6SgCzc7DcThfM0vLqyhUGU9ffKHslmPzeBlqkfVA/sPdU5ZLI9ayeokKl5v5GjNbBJ/7XWt+rW0xeDzK/9RA4/zJd0ARI+XQkdLFccmNPw4vuQX3b1s9pUZXVmh2KIaUYvuFxsQSsfb0s+pgv/GnABTmukeOypFG8tT7bVYcddsY98i3u+b1GoKBC1R/n3hDapJycd5l5uqlPKcY9pguakjzwaeGHRqpjgxHJLdLYPmzVdJkfr+Q6wp0oKpsDIrmy8Y/PbIqAgW9XpuSy3IAxPLDsyjg1KYoWhfsQ+npcgabd0nXUv76XRxBqN3UNf27uEpSD1IklD6wAJO7xYpJBoOWr9V1LbtpWKu0lY0pbhHfgTpPmKwP+sm+cEK6DdeAzPG3GtQnJdhiQt7oiXI/0vrqJvzT4B0WfsFWJnr9F5/N0Zc55sx3rLZq7YCTbcwrJoA24gVxHeTG8QsR2djQwj8/GWOCA+Q2rsSAhPg2wFCJ12FMXfGhIUTQxwLde7UchPzEf3It7H3FW8+2Fs7ivgQqcUXoFm6/bA/UxAVDDUVdLyfJo6XvsO2YOPG4iNIBmT7E6JYAmXWlCcPODHBQJlohr5zTQxfp06wQT5yf1LJK6R2taqDK+MN+9D59cJF26wzCfBZJmqM5wBdZH9YmMLQmtI/VqApylU62EmpS1iujxSbFdqQqn584ZZCM6hfmJMw7/bBgFycrDWyBoWBSKXbpcR/sYVvQTXVcVAHgfN/wM8LPNPfl6faw4fcyYC8S8WtmbBiFdlgPAl+EZuCW43CN6abe6PRT147jQSBSbBjJAfZH8zFMlRFjI18DaIFucgwhWqIo05W9Zev5qcr9HOFKUmiVAwe2C23IDRIbyju9iSiyVKGLOFyQtHtIcSJE="}};
-
+const MANIFEST = {"iter":100000,"books":[{"slug":"incomplete_accounting","title":"The Incomplete Accounting","subtitle":"Al Gringo Thriller, Book 1","voice":"Rex","runtime":"5h 18m","puzzle":"What U.S. Code section is the False Claims Act? (just the number)","hint":"31 U.S.C. \u00a7 ____","salt":"HqECfOcu7NoR4zsR+CN62w==","iv":"Bdwts5l2gDcIS6cA","ct":"fDMGgBYViN+ETjlIuC8xXxDWneTwPCOzvnoUmVoC1Bc41evSI1VqDj6jywgNdCLREqt6uvRQa6jxTXPK/YK6/lwISVv3S22ZwOfib6jZC+/ckqEN1zySEjswkfi7Ir1JzvayapY3TQwEOqcrT/Y9yWw5paBif29V5Ojrgm3ovI8cB3w20p0lBy7l6e/bZ2Wpn+DgpA=="},{"slug":"compound","title":"The Compound","subtitle":"Zorro Ranch, Little Saint James, and the Cover-Up That Made Them Possible","voice":"Leo","runtime":"5h 22m","puzzle":"Docket number of United States v. Epstein, SDNY 2019 (case caption format)","hint":"From the FBI raid on 9 East 71st Street, July 6 2019","salt":"G+V+B2LC6sPPUJktIQqvKA==","iv":"CVJBGTi5wf/anSPW","ct":"P9JoO3yNZaBkzTOOvApjXY2GUT81fYn5DucbNYehCM2MOeDn+yCx5danbBJkRBZlpcSDavJiKPInAFD5dWZfI8RQfxfGMtg6eFnZuvGDrZ3L6YwhvFxEGfcSALSaflpnU332+zVk1YtQ9lfBn2R1/fSOCIwoiaBLETnuylu3O8XjNI1dNzPT5jELRmdbL6Gx5viRD6I4RcNmJWp036G0JAN57ZVxWIxfrSPOROFx9TJj1Suh/c/ILdT9iNBvU+kNyC8NtfX4YwdRubD/Mu5z8iePGxZgp8hdB56pRf55n6VkaInH1zLezOcpNkMEyt1VVRJo7yWQImuBcF5jyiM+nCuja5fIjYF6xPzD2g=="},{"slug":"digital_ocean","title":"The Digital Ocean","subtitle":"How DOGE Did Not Drain the Swamp","voice":"Leo","runtime":"7h 42m","puzzle":"DOGE's stated single-word mission","hint":"The 'E' in the four-letter acronym","salt":"5fkYAwzRXHpiEWwMzHUb1g==","iv":"2u8fIzWjfq2on6Eg","ct":"cvT5GpHjPLCkn42pOERcApIvWWwWbqdkCf2UHaQ30Pb+ilEM9dJo2tbMG1f4GF/oQTtNxKdxifQURs5HQbNXv7Zmj+iZeUq37K59hEPVq6EpXpmc7/l/YX6ZH0yRU+fmuzVrasr8lczXTRN5rLvp5KaqKZM1ukflRb0TxWzjfPhGc2cWzpmw/y0yadMzCCScDDv39ejGN99R10pUowxJxMiDDimT3qk1xuk+KIYqABGEKekWdCl0A1y1Ka5+aFoljNTouO3R6abM9utcMVNZ9pw7+jkFKjy3pWqyMDSovePDGFwjahzL9CS6S3JAQYMv+XhQYtRBEeD3vEY+fif6O3xEiJTrccs="},{"slug":"terminal","title":"TERMINAL","subtitle":"A Novel","voice":"Ara","runtime":"6h 16m","puzzle":"The shebang line that opens every chapter banner in the book","hint":"Starts with #! \u2014 exact case sensitive","salt":"ed55/daPYCcDurrSpvcnoQ==","iv":"2gYylD1oZFGVLJv3","ct":"tpjx2TWGYDDHQmSgpYyv5LXqxyLozjc+ZSRDdfropZACH+IEvColQs3SMxDjMljD3XIJloS4Q4AuZIo+8MOQYHAylvIYzZOwpFGURhsd8oBHEFkllSPWS6Qfh8H6F5NV3iC6UAGWkDhyEMS/JZUivp79fvrhhEq935v3Jgz1CQIXPTkdQJ23"},{"slug":"sudoers_cantos","title":"The Sudoers Cantos","subtitle":"The Complete Trilogy","voice":"Rex","runtime":"3h 56m","puzzle":"Unix command that grants root access","hint":"Four letters. Common as breath.","salt":"uMX+zKZq6EyUQciV+E6R2A==","iv":"TCBgf44DVYPENFTv","ct":"iNJCrVu3/kkio+yxD5AXuTHjkBd34OZvn/43YimhBP53L0JUw/9StW49zVsSOBysiIcw9Yzy1nHA2hDwa6qbITverx4StI7EBPK0/oO7JfGq3fcFqsiPTDwQToMfUM5Olf9m5LOBMaIvCoTCcCiv8eBB/0Ah2yklcKVQbcal+wtaXknHdMAfy2TwpSD8"}],"master":{"salt":"EIyjEd8fDn6Z7Ogfhmebng==","iv":"Lde79EwfU6RdNlGb","ct":"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"}};
 const normalize = s => s.toLowerCase().trim().split(/\s+/).join(' ');
 
 async function deriveKey(passphrase, salt) {
   const enc = new TextEncoder();
-  const baseKey = await crypto.subtle.importKey(
-    "raw", enc.encode(normalize(passphrase)),
-    { name: "PBKDF2" }, false, ["deriveKey"]
-  );
-  return crypto.subtle.deriveKey(
-    { name: "PBKDF2", salt: salt, iterations: MANIFEST.iter, hash: "SHA-256" },
-    baseKey,
-    { name: "AES-GCM", length: 256 },
-    false, ["decrypt"]
-  );
+  const baseKey = await crypto.subtle.importKey("raw", enc.encode(normalize(passphrase)), { name: "PBKDF2" }, false, ["deriveKey"]);
+  return crypto.subtle.deriveKey({ name: "PBKDF2", salt: salt, iterations: MANIFEST.iter, hash: "SHA-256" }, baseKey, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
 }
-
 function b64decode(s) {
   const bin = atob(s);
   const arr = new Uint8Array(bin.length);
   for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
   return arr;
 }
-
 async function tryDecrypt(blob, passphrase) {
   try {
     const salt = b64decode(blob.salt);
@@ -181,122 +110,152 @@ async function tryDecrypt(blob, passphrase) {
     const key  = await deriveKey(passphrase, salt);
     const pt   = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, key, ct);
     return new TextDecoder().decode(pt);
-  } catch (e) {
-    return null;
-  }
+  } catch (e) { return null; }
 }
 
-const grid = document.getElementById('grid');
-
-function bookCard(book, idx) {
-  const slug = book.slug;
-  const safe = (s) => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  return `
-    <div class="card" id="card-${slug}">
-      <div class="seal">Sealed · 0${idx+1}</div>
-      <h2>${safe(book.title)}</h2>
-      <div class="sub">${safe(book.subtitle)}</div>
-      <div class="meta">Voice: ${book.voice} · Runtime: ${book.runtime}</div>
-      <div class="puzzle">${safe(book.puzzle)}</div>
-      <div class="hint">${safe(book.hint)}</div>
-      <div class="input-row">
-        <input type="text" id="input-${slug}" placeholder="answer..." autocomplete="off" spellcheck="false">
-        <button onclick="solveBook('${slug}')">DECRYPT</button>
-      </div>
-      <div class="status" id="status-${slug}"></div>
-      <div class="unlocked" id="unlocked-${slug}"></div>
-    </div>`;
-}
-
-function masterCard() {
-  return `
-    <div class="master-card card" id="card-master">
-      <div class="seal">Master Key</div>
-      <h2>The Whole Tomb</h2>
-      <div class="sub">Two words. The motto.</div>
-      <div class="input-row">
-        <input type="text" id="input-master" placeholder="..." autocomplete="off" spellcheck="false">
-        <button onclick="solveMaster()">OPEN ALL</button>
-      </div>
-      <div class="status" id="status-master"></div>
-      <div class="unlocked" id="unlocked-master"></div>
-    </div>`;
-}
-
-// Render
-MANIFEST.books.forEach((b, i) => grid.insertAdjacentHTML('beforeend', bookCard(b, i)));
-grid.insertAdjacentHTML('beforeend', masterCard());
-
-// Allow Enter to submit
-document.querySelectorAll('input[type=text]').forEach(inp => {
-  inp.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-      const slug = inp.id.replace('input-','');
-      if (slug === 'master') solveMaster(); else solveBook(slug);
+// DOM helpers — build via createElement instead of innerHTML so the
+// XSS attack surface is zero even though decrypted payloads are trusted.
+function el(tag, attrs, children) {
+  const node = document.createElement(tag);
+  if (attrs) {
+    for (const k in attrs) {
+      if (k === "class") node.className = attrs[k];
+      else if (k === "text") node.textContent = attrs[k];
+      else node.setAttribute(k, attrs[k]);
     }
-  });
-});
+  }
+  if (children) {
+    for (const c of children) {
+      if (c) node.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+    }
+  }
+  return node;
+}
 
-function unlockedHTML(url, title) {
-  return `
-    <audio controls preload="none" src="${url}"></audio>
-    <a class="download" href="${url}" download>⤓ Download MP3</a>
-  `;
+function makeBookCard(book, idx) {
+  const card = el("div", { class: "card", id: "card-" + book.slug }, [
+    el("div", { class: "seal", text: "Sealed · 0" + (idx + 1) }),
+    el("h2", { text: book.title }),
+    el("div", { class: "sub", text: book.subtitle }),
+    el("div", { class: "meta", text: "Voice: " + book.voice + " · Runtime: " + book.runtime }),
+    el("div", { class: "puzzle", text: book.puzzle }),
+    el("div", { class: "hint", text: book.hint }),
+  ]);
+  const row = el("div", { class: "input-row" });
+  const input = el("input", { type: "text", id: "input-" + book.slug, placeholder: "answer...", autocomplete: "off", spellcheck: "false" });
+  const button = el("button", { text: "DECRYPT" });
+  button.onclick = () => solveBook(book.slug);
+  input.addEventListener("keydown", e => { if (e.key === "Enter") solveBook(book.slug); });
+  row.appendChild(input); row.appendChild(button);
+  card.appendChild(row);
+  card.appendChild(el("div", { class: "status", id: "status-" + book.slug }));
+  card.appendChild(el("div", { class: "unlocked", id: "unlocked-" + book.slug }));
+  return card;
+}
+
+function makeMasterCard() {
+  const card = el("div", { class: "master-card card", id: "card-master" }, [
+    el("div", { class: "seal", text: "Master Key" }),
+    el("h2", { text: "The Whole Tomb" }),
+    el("div", { class: "sub", text: "Two words. The motto. Unlocks all 5 audiobooks + 3 companion-art PDFs." }),
+  ]);
+  const row = el("div", { class: "input-row" });
+  const input = el("input", { type: "text", id: "input-master", placeholder: "...", autocomplete: "off", spellcheck: "false" });
+  const button = el("button", { text: "OPEN ALL" });
+  button.onclick = solveMaster;
+  input.addEventListener("keydown", e => { if (e.key === "Enter") solveMaster(); });
+  row.appendChild(input); row.appendChild(button);
+  card.appendChild(row);
+  card.appendChild(el("div", { class: "status", id: "status-master" }));
+  card.appendChild(el("div", { class: "unlocked", id: "unlocked-master" }));
+  return card;
+}
+
+const grid = document.getElementById("grid");
+MANIFEST.books.forEach((b, i) => grid.appendChild(makeBookCard(b, i)));
+grid.appendChild(makeMasterCard());
+
+function renderUnlocked(target, data) {
+  // Wipe + rebuild via DOM nodes only
+  while (target.firstChild) target.removeChild(target.firstChild);
+  if (data.audio) {
+    target.appendChild(el("audio", { controls: "", preload: "none", src: data.audio }));
+    const a = el("a", { class: "download", href: data.audio, download: "", text: "⤓ MP3" });
+    target.appendChild(a);
+  }
+  if (data.pdf) {
+    target.appendChild(el("a", { class: "download pdf", href: data.pdf, download: "", text: "⤓ Companion Art PDF" }));
+  }
 }
 
 async function solveBook(slug) {
   const book = MANIFEST.books.find(b => b.slug === slug);
-  const inp  = document.getElementById('input-'+slug);
-  const stat = document.getElementById('status-'+slug);
-  const card = document.getElementById('card-'+slug);
-  const guess = inp.value;
-  if (!guess.trim()) { stat.textContent = 'enter your answer'; stat.className='status err'; return; }
-  stat.textContent = 'decrypting...'; stat.className='status';
-  const url = await tryDecrypt(book, guess);
-  if (url) {
-    stat.textContent = '✓ unsealed'; stat.className='status ok';
-    card.classList.add('solved');
-    document.getElementById('unlocked-'+slug).innerHTML = unlockedHTML(url, book.title);
-    try { localStorage.setItem('tomb_'+slug, '1'); } catch(e){}
+  const inp  = document.getElementById("input-" + slug);
+  const stat = document.getElementById("status-" + slug);
+  const card = document.getElementById("card-" + slug);
+  if (!inp.value.trim()) { stat.textContent = "enter your answer"; stat.className = "status err"; return; }
+  stat.textContent = "decrypting..."; stat.className = "status";
+  const json = await tryDecrypt(book, inp.value);
+  if (json) {
+    stat.textContent = "✓ unsealed"; stat.className = "status ok";
+    card.classList.add("solved");
+    renderUnlocked(document.getElementById("unlocked-" + slug), JSON.parse(json));
+    try { localStorage.setItem("tomb_" + slug, "1"); } catch (e) {}
   } else {
-    stat.textContent = '✗ not the answer'; stat.className='status err';
+    stat.textContent = "✗ not the answer"; stat.className = "status err";
   }
 }
 
 async function solveMaster() {
-  const inp  = document.getElementById('input-master');
-  const stat = document.getElementById('status-master');
-  const card = document.getElementById('card-master');
-  const out  = document.getElementById('unlocked-master');
-  const guess = inp.value;
-  if (!guess.trim()) { stat.textContent = 'enter the motto'; stat.className='status err'; return; }
-  stat.textContent = 'decrypting...'; stat.className='status';
-  const json = await tryDecrypt(MANIFEST.master, guess);
+  const inp = document.getElementById("input-master");
+  const stat = document.getElementById("status-master");
+  const card = document.getElementById("card-master");
+  const out  = document.getElementById("unlocked-master");
+  if (!inp.value.trim()) { stat.textContent = "enter the motto"; stat.className = "status err"; return; }
+  stat.textContent = "decrypting..."; stat.className = "status";
+  const json = await tryDecrypt(MANIFEST.master, inp.value);
   if (json) {
-    stat.textContent = '✓ the tomb is open'; stat.className='status ok';
-    card.classList.add('solved');
-    const urls = JSON.parse(json);
-    let html = '<div style="text-align:left; max-width:680px; margin:1rem auto 0;">';
+    stat.textContent = "✓ the tomb is open"; stat.className = "status ok";
+    card.classList.add("solved");
+    const data = JSON.parse(json);
+    while (out.firstChild) out.removeChild(out.firstChild);
+    const wrap = el("div");
+    wrap.style.cssText = "text-align:left; max-width:680px; margin:1rem auto 0;";
     MANIFEST.books.forEach(b => {
-      const url = urls[b.slug];
-      html += `<div style="margin: 0.9rem 0; padding-bottom: 0.9rem; border-bottom: 1px dashed rgba(232,228,220,0.1);">
-        <div style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.3rem;">${b.title}</div>
-        <audio controls preload="none" src="${url}" style="width:100%; margin-bottom:0.4rem;"></audio>
-        <a class="download" href="${url}" download>⤓ Download MP3</a>
-      </div>`;
+      const entry = data.books[b.slug];
+      const detail = el("div", { class: "book-detail" });
+      detail.appendChild(el("h3", { text: b.title }));
+      if (entry.audio) {
+        detail.appendChild(el("audio", { controls: "", preload: "none", src: entry.audio, style: "width:100%; margin-bottom:0.4rem;" }));
+        detail.appendChild(el("a", { class: "download", href: entry.audio, download: "", text: "⤓ MP3" }));
+      }
+      if (entry.pdf) {
+        detail.appendChild(el("a", { class: "download pdf", href: entry.pdf, download: "", text: "⤓ Companion Art PDF" }));
+      }
+      wrap.appendChild(detail);
     });
-    html += '</div>';
-    out.innerHTML = html;
-    // Mark all individual cards solved too
+    if (data.bonus_pdfs && data.bonus_pdfs.length) {
+      const bonus = el("div", { class: "bonus-section" });
+      bonus.appendChild(el("div", { class: "bonus-title", text: "⟁ Bonus · Standalone Companion Art" }));
+      bonus.appendChild(el("div", { class: "bonus-sub", text: "Visual files from the BOTWAVE BOOKS art line. PDF gallery, 13-14 plates each." }));
+      data.bonus_pdfs.forEach(p => {
+        const row = el("div");
+        row.style.margin = "0.4rem 0";
+        row.appendChild(el("a", { class: "download pdf", href: p.url, download: "", text: "⤓ " + p.label }));
+        bonus.appendChild(row);
+      });
+      wrap.appendChild(bonus);
+    }
+    out.appendChild(wrap);
+    // Mark individual cards solved + populate
     MANIFEST.books.forEach(b => {
-      const c = document.getElementById('card-'+b.slug);
-      c.classList.add('solved');
-      const u = document.getElementById('unlocked-'+b.slug);
-      if (u) u.innerHTML = unlockedHTML(urls[b.slug], b.title);
-      try { localStorage.setItem('tomb_'+b.slug, '1'); } catch(e){}
+      const c = document.getElementById("card-" + b.slug);
+      c.classList.add("solved");
+      renderUnlocked(document.getElementById("unlocked-" + b.slug), data.books[b.slug]);
+      try { localStorage.setItem("tomb_" + b.slug, "1"); } catch (e) {}
     });
   } else {
-    stat.textContent = '✗ not the motto'; stat.className='status err';
+    stat.textContent = "✗ not the motto"; stat.className = "status err";
   }
 }
 </script>
