@@ -184,7 +184,6 @@ python3 Book/02_IN_PROGRESS/digital_ocean/build_digital_ocean_pdf.py
 
 - **Manuscript content:** © 2026 Kyle Jimenez. All rights reserved.
 - **BUQP protocol + tooling:** open documentation under [`quality_protocol/README.md`](quality_protocol/README.md). MIT-style intent, formal license in repository root.
-- **Daniel Miessler's PAI and fabric** are the foundational reference. Without Miessler's open-source projects, this framework does not exist. Credit is on the page because credit is first.
 
 **Operator handle (security):** `gringo1904` (HackerOne, GitHub: [Zombie760](https://github.com/Zombie760))
 **Operator byline (books):** Kyle Jimenez
