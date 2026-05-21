@@ -210,11 +210,27 @@
   justify-content: center;
 }
 
-.fny-issue-cover img {
+.fny-issue-cover img,
+.fny-cover-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: opacity 0.3s ease;
+}
+
+.fny-cover-img[src] {
+  opacity: 1;
+}
+
+.fny-cover-img[loading] {
+  opacity: 0;
+  animation: fnyFadeIn 0.4s ease forwards;
+}
+
+@keyframes fnyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Fallback tile when no cover image */

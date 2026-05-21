@@ -146,9 +146,13 @@ function buildCard(story) {
 
   var card = document.createElement('article');
   card.className = 'bwb-card';
+  // Left-edge bloc indicator
+  if (story.is_blindspot) card.classList.add('blindspot');
+  else if (story.geo_frame === 'mono-frame') card.classList.add('mono-frame');
+  else if (story.geo_frame === 'blackout') card.classList.add('blackout');
   card.addEventListener('click', function(e) {
     if (!e.target.closest('.bwb-article-link')) {
-      window.location = '/botwavebomba/story.html?id=' + encodeURIComponent(story.id);
+      window.location = '/story.html?id=' + encodeURIComponent(story.id);
     }
   });
 
@@ -330,8 +334,36 @@ function buildCard(story) {
     var pill = document.createElement('span');
     var colorClass = src.bias_bucket || src.bloc || '';
     pill.className   = 'bwb-source-pill ' + colorClass;
-    pill.title       = (src.country || '') + (src.bias_tier ? ' · ' + src.bias_tier : '');
-    pill.textContent = src.name || src.id || '';
+    // Build title from enriched data
+    var titleParts = [];
+    if (src.country) titleParts.push(src.country);
+    if (src.bloc) titleParts.push(src.bloc);
+    if (src.factuality && src.factuality !== 'unknown') titleParts.push(src.factuality);
+    if (src.primary_vs_launder && src.primary_vs_launder !== 'unknown') titleParts.push(src.primary_vs_launder);
+    if (src.political_lean && src.political_lean !== 'unknown') titleParts.push(src.political_lean);
+    pill.title = titleParts.join(' · ') || '';
+
+    // Factuality dot inside pill
+    var fDot = src.factuality || 'unknown';
+    if (fDot !== 'unknown') {
+      var dot = document.createElement('span');
+      dot.className = 'bwb-fact-dot ' + fDot;
+      pill.appendChild(dot);
+    }
+    var nameSpan = document.createElement('span');
+    nameSpan.className = 'bwb-source-pill-name';
+    nameSpan.textContent = src.name || src.id || '';
+    pill.appendChild(nameSpan);
+
+    // Launderer tag
+    var pvl = src.primary_vs_launder || 'unknown';
+    if (pvl === 'launderer' || pvl === 'aggregator') {
+      var tag = document.createElement('span');
+      tag.className = 'bwb-source-tag ' + pvl;
+      tag.textContent = pvl === 'launderer' ? 'LAUNDER' : 'AGG';
+      pill.appendChild(tag);
+    }
+
     pills.appendChild(pill);
   });
   if (total > 4) {
@@ -341,6 +373,28 @@ function buildCard(story) {
     pills.appendChild(more);
   }
   body.appendChild(pills);
+
+  // ── OWNERSHIP CONCENTRATION ──────────────────────────────────────────────
+  // Detect when 2+ sources share the same parent company
+  var parentCounts = {};
+  sources.forEach(function(src) {
+    var pc = src.parent_company || '';
+    if (pc && pc.indexOf('unknown') === -1) {
+      parentCounts[pc] = (parentCounts[pc] || 0) + 1;
+    }
+  });
+  var concentrated = Object.keys(parentCounts).filter(function(k) { return parentCounts[k] >= 2; });
+  if (concentrated.length > 0) {
+    var ownDiv = document.createElement('div');
+    ownDiv.className = 'bwb-ownership-conc';
+    concentrated.forEach(function(company) {
+      var tag = document.createElement('span');
+      tag.className = 'bwb-own-tag';
+      tag.textContent = company + ' (' + parentCounts[company] + ')';
+      ownDiv.appendChild(tag);
+    });
+    body.appendChild(ownDiv);
+  }
 
   // ── FOOTER ────────────────────────────────────────────────────────────────
   var footer = document.createElement('div');
@@ -362,8 +416,60 @@ function buildCard(story) {
   return card;
 }
 
+
+// ── FULL DATA REFRESH ──
+// When the full 2MB payload loads in the background, refresh the feed
+// with complete articles and ownership data
+window.addEventListener('bwb-full-data', function(e) {
+  var fullData = e.detail;
+  if (!fullData || !fullData.stories) return;
+  _allStories = fullData.stories;
+  _sectionsData = fullData.sections || [];
+  
+  // Update counts
+  var bsCount = _allStories.filter(function(s) { return s.is_blindspot; }).length;
+  var storyEl = document.getElementById('story-count');
+  var bsEl = document.getElementById('blindspot-count');
+  if (storyEl) storyEl.textContent = _allStories.length;
+  if (bsEl) bsEl.textContent = bsCount;
+
+  // Re-render current filter with full data (includes articles)
+  var activeFilter = document.querySelector('.bwb-filters .active[data-filter]');
+  if (activeFilter) {
+    renderFeed(activeFilter.dataset.filter);
+  } else {
+    renderFeed('all');
+  }
+});
+
 // Boot
 document.addEventListener('DOMContentLoaded', function() {
+  // Load registry stats into header
+  BWB_API.getSources().then(function(registry) {
+    var sources = registry.sources || [];
+    if (!sources.length) return;
+
+    var blocCounts = { western: 0, adversarial: 0, 'non-aligned': 0 };
+    var fpCount = 0;
+    var factHigh = 0, factMixed = 0;
+
+    sources.forEach(function(s) {
+      var bloc = s.bloc || 'unknown';
+      if (blocCounts[bloc] !== undefined) blocCounts[bloc]++;
+      if (s.axis && Object.keys(s.axis).length) fpCount++;
+      var f = s.factuality || 'unknown';
+      if (f === 'high' || f === 'mostly_factual') factHigh++;
+      else if (f === 'mixed') factMixed++;
+    });
+
+    var el = function(id) { return document.getElementById(id); };
+    if (el('source-count')) el('source-count').textContent = sources.length;
+    if (el('fp-count')) el('fp-count').textContent = fpCount;
+    if (el('western-count')) el('western-count').textContent = blocCounts.western;
+    if (el('adversarial-count')) el('adversarial-count').textContent = blocCounts.adversarial;
+    if (el('nonaligned-count')) el('nonaligned-count').textContent = blocCounts['non-aligned'];
+  });
+
   renderFeed('all');
 
   // Signal filter row — wired statically

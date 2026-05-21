@@ -142,6 +142,176 @@
   --shadow-hover:  0 4px 12px rgba(85,37,131,0.18);
 }
 
+
+/* ── THEME 5: SAN DIEGO PADRES ── */
+[data-theme="padres"] {
+  --theme-primary:    #FFC425;
+  --theme-accent:     #E87722;
+  --theme-gold:       #693F23;
+  --theme-bg-deep:    #0f0a08;
+  --theme-bg-card:    #1a110d;
+  --theme-bg-nav:     #12090a;
+  --theme-border:     rgba(255,196,37,0.20);
+  --theme-text:       #F0E4D0;
+  --theme-text-muted: rgba(240,228,208,0.35);
+  --bg:            #0f0a08;
+  --bg-card:       #1a110d;
+  --bg-hover:      #2a1a12;
+  --bg-surface:    #1a110d;
+  --text-primary:  #F0E4D0;
+  --text-secondary: rgba(240,228,208,0.75);
+  --text-muted:    rgba(240,228,208,0.35);
+  --border-subtle:  rgba(105,63,35,0.30);
+  --border-default: rgba(255,196,37,0.20);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.60);
+  --shadow-hover: 0 4px 12px rgba(232,119,34,0.18);
+}
+
+
+/* ── THEME 6: MORNING EDITION ── */
+[data-theme="morning-edition"] {
+  --theme-primary:    #1A1A1A;
+  --theme-accent:     #B22222;
+  --theme-gold:       #8B7355;
+  --theme-bg-deep:    #F5F0E8;
+  --theme-bg-card:    #FFFEF7;
+  --theme-bg-nav:     #EDE8DC;
+  --theme-border:     rgba(0,0,0,0.12);
+  --theme-text:       #1A1A1A;
+  --theme-text-muted: rgba(26,26,26,0.40);
+  --bg:            #F5F0E8;
+  --bg-card:       #FFFEF7;
+  --bg-hover:      #F0EBD8;
+  --bg-surface:    #FFFEF7;
+  --text-primary:  #1A1A1A;
+  --text-secondary: rgba(26,26,26,0.70);
+  --text-muted:    rgba(26,26,26,0.40);
+  --border-subtle:  rgba(0,0,0,0.08);
+  --border-default: rgba(0,0,0,0.12);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.08);
+  --shadow-hover: 0 4px 12px rgba(178,34,34,0.10);
+}
+
+/* ── THEME 7: GREEN SCREEN ── */
+[data-theme="green-screen"] {
+  --theme-primary:    #00FF41;
+  --theme-accent:     #FFB000;
+  --theme-gold:       #00CC33;
+  --theme-bg-deep:    #0A0A0A;
+  --theme-bg-card:    #0D120D;
+  --theme-bg-nav:     #0A0E0A;
+  --theme-border:     rgba(0,255,65,0.18);
+  --theme-text:       #00FF41;
+  --theme-text-muted: rgba(0,255,65,0.30);
+  --bg:            #0A0A0A;
+  --bg-card:       #0D120D;
+  --bg-hover:      #121A12;
+  --bg-surface:    #0D120D;
+  --text-primary:  #00FF41;
+  --text-secondary: rgba(0,255,65,0.70);
+  --text-muted:    rgba(0,255,65,0.30);
+  --border-subtle:  rgba(0,255,65,0.10);
+  --border-default: rgba(0,255,65,0.18);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.55);
+  --shadow-hover: 0 4px 12px rgba(0,255,65,0.12);
+}
+
+/* ── THEME 8: SAGE BRUSH ── */
+[data-theme="sage-brush"] {
+  --theme-primary:    #8B8552;
+  --theme-accent:     #C4A35A;
+  --theme-gold:       #5C6B3C;
+  --theme-bg-deep:    #0E0E0A;
+  --theme-bg-card:    #16160F;
+  --theme-bg-nav:     #11110B;
+  --theme-border:     rgba(139,133,82,0.22);
+  --theme-text:       #D4CCAA;
+  --theme-text-muted: rgba(212,204,170,0.30);
+  --bg:            #0E0E0A;
+  --bg-card:       #16160F;
+  --bg-hover:      #1E1E15;
+  --bg-surface:    #16160F;
+  --text-primary:  #D4CCAA;
+  --text-secondary: rgba(212,204,170,0.70);
+  --text-muted:    rgba(212,204,170,0.30);
+  --border-subtle:  rgba(139,133,82,0.12);
+  --border-default: rgba(139,133,82,0.22);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.55);
+  --shadow-hover: 0 4px 12px rgba(139,133,82,0.15);
+}
+
+/* ── THEME 9: GLOBAL SOUTH ── */
+[data-theme="global-south"] {
+  --theme-primary:    #D2691E;
+  --theme-accent:     #E8A838;
+  --theme-gold:       #8B4513;
+  --theme-bg-deep:    #100C08;
+  --theme-bg-card:    #1A1410;
+  --theme-bg-nav:     #13100A;
+  --theme-border:     rgba(210,105,30,0.22);
+  --theme-text:       #F0E0CC;
+  --theme-text-muted: rgba(240,224,204,0.30);
+  --bg:            #100C08;
+  --bg-card:       #1A1410;
+  --bg-hover:      #261A12;
+  --bg-surface:    #1A1410;
+  --text-primary:  #F0E0CC;
+  --text-secondary: rgba(240,224,204,0.70);
+  --text-muted:    rgba(240,224,204,0.30);
+  --border-subtle:  rgba(139,69,19,0.18);
+  --border-default: rgba(210,105,30,0.22);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.60);
+  --shadow-hover: 0 4px 12px rgba(210,105,30,0.15);
+}
+
+/* ── THEME 10: NIGHT SHIFT ── */
+[data-theme="night-shift"] {
+  --theme-primary:    #AAAAAA;
+  --theme-accent:     #CC4444;
+  --theme-gold:       #888888;
+  --theme-bg-deep:    #000000;
+  --theme-bg-card:    #080808;
+  --theme-bg-nav:     #040404;
+  --theme-border:     rgba(170,170,170,0.10);
+  --theme-text:       #CCCCCC;
+  --theme-text-muted: rgba(170,170,170,0.25);
+  --bg:            #000000;
+  --bg-card:       #080808;
+  --bg-hover:      #111111;
+  --bg-surface:    #080808;
+  --text-primary:  #CCCCCC;
+  --text-secondary: rgba(170,170,170,0.65);
+  --text-muted:    rgba(170,170,170,0.25);
+  --border-subtle:  rgba(170,170,170,0.06);
+  --border-default: rgba(170,170,170,0.10);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.70);
+  --shadow-hover: 0 4px 12px rgba(204,68,68,0.10);
+}
+
+/* ── THEME 11: RIOT CLUB ── */
+[data-theme="riot-club"] {
+  --theme-primary:    #FFD600;
+  --theme-accent:     #FF0054;
+  --theme-gold:       #FFD600;
+  --theme-bg-deep:    #0A0A00;
+  --theme-bg-card:    #141410;
+  --theme-bg-nav:     #0C0C06;
+  --theme-border:     rgba(255,214,0,0.22);
+  --theme-text:       #FFD600;
+  --theme-text-muted: rgba(255,214,0,0.25);
+  --bg:            #0A0A00;
+  --bg-card:       #141410;
+  --bg-hover:      #1A1A10;
+  --bg-surface:    #141410;
+  --text-primary:  #FFD600;
+  --text-secondary: rgba(255,214,0,0.70);
+  --text-muted:    rgba(255,214,0,0.25);
+  --border-subtle:  rgba(255,214,0,0.10);
+  --border-default: rgba(255,214,0,0.22);
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.60);
+  --shadow-hover: 0 4px 12px rgba(255,0,84,0.18);
+}
+
 /* ── GLOBAL RESET + BODY ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1618,10 +1788,14 @@ code {
 .bwb-theme-switcher {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   padding: 6px 10px;
   border: 1px solid var(--theme-border);
   background: var(--bg-surface);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--theme-primary) transparent;
 }
 
 .bwb-theme-switcher-label {

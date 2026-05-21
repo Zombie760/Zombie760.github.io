@@ -8,16 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/botwavebomba/assets/css/main.css">
-  <link rel="stylesheet" href="/botwavebomba/assets/css/mobile.css">
-  <link rel="manifest" href="/botwavebomba/manifest.json">
-  <link rel="apple-touch-icon" href="/botwavebomba/assets/icons/icon-192.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
   <meta name="theme-color" content="#0a0a0a">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
-  <script src="/botwavebomba/assets/js/theme-switcher.js" defer></script>
-  <script src="/botwavebomba/assets/js/pwa.js" defer></script>
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/pwa.js" defer></script>
   <style>
     .bwb-codeline { opacity:0.75; font-size:0.78em; }
     .bwb-roadmap-list { list-style:none; padding-left:0; }
@@ -35,14 +35,16 @@
 
   <header class="bwb-header bwb-header--compact">
     <div class="bwb-header-inner">
-      <a href="/botwavebomba/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <a href="/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
       <nav class="bwb-topnav">
-        <a href="/botwavebomba/">Feed</a>
-        <a href="/botwavebomba/blindspots.html">Blindspots</a>
-        <a href="/botwavebomba/sources.html">Sources</a>
-        <a href="/botwavebomba/about.html" class="active">Method</a>
-        <a href="/botwavebomba/status.html">Status</a>
-        <a href="/botwavebomba/funnies.html">Funnies</a>
+        <a href="/">Feed</a>
+        <a href="/blindspots.html">Blindspots</a>
+        <a href="/sources.html">Sources</a>
+        <a href="/trades.html">Trades</a>
+        <a href="/books.html">Books</a>
+        <a href="/about.html" class="active">Method</a>
+        <a href="/status.html">Status</a>
+        <a href="/funnies.html">Funnies</a>
       </nav>
     </div>
   </header>
@@ -51,7 +53,7 @@
 
     <div class="bwb-about-honesty" role="status" style="border:1px solid #b8860b;background:#3a2a08;color:#fff3c4;padding:1rem 1.25rem;margin:1rem 0 2rem;font-family:'DM Mono',ui-monospace,Menlo,monospace;font-size:0.82rem;line-height:1.55;">
       <strong style="color:#ffd95a;letter-spacing:0.05em;">LAST METHODOLOGY AUDIT — 2026-05-10</strong><br>
-      Pipeline decomposition: <strong>6 of 6 modules extracted</strong> (<code>event_clusterer</code> + <code>bias_scorer</code> + <code>framing_differ</code> + <code>blindspot_analyzer</code> + <code>coverage_mapper</code> + <code>broadcast</code> — all extracted, all fixture-equivalence verified). The monolith is now six discrete modules plus the pre-existing <code>global_ingestor</code>. Live pipeline state: <a href="/botwavebomba/status.html" style="color:#ffd95a;">/status.html</a>. Audit trail: <a href="/botwavebomba/audit/about_audit_2026-05-10.md" style="color:#ffd95a;">audit/about_audit_2026-05-10.md</a> · plan: <a href="/botwavebomba/PLAN_HYBRID.md" style="color:#ffd95a;">PLAN_HYBRID.md</a>. Cannot-verify is a first-class output — every factual claim below references the file and line that backs it.
+      Pipeline decomposition: <strong>6 of 6 modules extracted</strong> (<code>event_clusterer</code> + <code>bias_scorer</code> + <code>framing_differ</code> + <code>blindspot_analyzer</code> + <code>coverage_mapper</code> + <code>broadcast</code> — all extracted, all fixture-equivalence verified). The monolith is now six discrete modules plus the pre-existing <code>global_ingestor</code>. Live pipeline state: <a href="/status.html" style="color:#ffd95a;">/status.html</a>. Audit trail: <a href="/audit/about_audit_2026-05-10.md" style="color:#ffd95a;">audit/about_audit_2026-05-10.md</a> · plan: <a href="/PLAN_HYBRID.md" style="color:#ffd95a;">PLAN_HYBRID.md</a>. Cannot-verify is a first-class output — every factual claim below references the file and line that backs it.
     </div>
 
     <div class="bwb-page-header">
@@ -77,10 +79,10 @@
         <p>
           <strong>492</strong> sources are ingested every six hours
           <span class="bwb-codeline">(<code>book_arm/memory/sources_global.json</code>)</span>.
-          <strong>244</strong> of those carry full five-axis bias fingerprints
-          <span class="bwb-codeline">(<code>data/source_registry.json#total</code>)</span>.
-          <strong>248</strong> are awaiting fingerprinting and contribute to
-          volume metrics but not per-source bias classification.
+          <strong>496</strong> carry full five-axis bias fingerprints
+          <span class="bwb-codeline">(<code>data/source_registry.json</code>)</span>.
+          Every source is classified by bloc (Western / Adversarial / Non-Aligned),
+          factuality (high / mixed / low), and primary-vs-launderer status.
         </p>
         <p>
           It is not a news aggregator in the Google News sense. It is not a
@@ -171,7 +173,7 @@
           per calendar week, with fixture-equivalence to the monolith as the
           acceptance test. After six weeks the monolith is six discrete modules;
           a seventh week replaces the glue with a proper orchestrator.
-          <span class="bwb-codeline">Full plan: <a href="/botwavebomba/PLAN_HYBRID.md"><code>PLAN_HYBRID.md</code></a>. Live state: <a href="/botwavebomba/pipeline_state.json"><code>pipeline_state.json</code></a>.</span>
+          <span class="bwb-codeline">Full plan: <a href="/PLAN_HYBRID.md"><code>PLAN_HYBRID.md</code></a>. Live state: <a href="/pipeline_state.json"><code>pipeline_state.json</code></a>.</span>
         </p>
         <p class="bwb-callout-soft">
           The roadmap entries below reflect <code>pipeline_state.json</code> at
@@ -266,7 +268,7 @@
           </li>
         </ul>
         <p class="bwb-callout-soft">
-          All six modules have flipped to <span class="bwb-roadmap-status bwb-roadmap-status--extracted">extracted</span>. Next: wire the modules behind a proper orchestrator (<code>run_pipeline.py</code>) that emits a per-cycle <code>pipeline_run.json</code> the status page reads for live per-stage health. The orchestrator schema is already drafted: <a href="/botwavebomba/schemas/pipeline_run.schema.json"><code>schemas/pipeline_run.schema.json</code></a>.
+          All six modules have flipped to <span class="bwb-roadmap-status bwb-roadmap-status--extracted">extracted</span>. Next: wire the modules behind a proper orchestrator (<code>run_pipeline.py</code>) that emits a per-cycle <code>pipeline_run.json</code> the status page reads for live per-stage health. The orchestrator schema is already drafted: <a href="/schemas/pipeline_run.schema.json"><code>schemas/pipeline_run.schema.json</code></a>.
         </p>
       </section>
 
@@ -317,14 +319,14 @@
           it is on the methodology-audit roadmap.
         </p>
         <p>
-          The current registry shipped <strong>2026-05-09</strong> with
-          <strong>244</strong> fingerprinted sources
-          <span class="bwb-codeline">(<code>source_registry.json#generated_at</code>)</span>.
-          The file was introduced in a single git commit (<code>c6a088bf</code>);
-          earlier 208-source / 2026-04-23 versions are not preserved in repo
-          history. Subsequent updates will be logged in
-          <code>pipeline_state.json</code> as the registry expands during the
-          decomposition phase.
+          The current registry ships <strong>496</strong> deep-fingerprinted sources
+          with full 5-axis bias data, bloc classification, factuality ratings,
+          and primary-vs-launderer tags
+          <span class="bwb-codeline">(<code>data/source_registry.json</code>)</span>.
+          The original 244-source registry was introduced in commit <code>c6a088bf</code>;
+          the enriched 496-source version merges data from
+          <code>source_fingerprints.json</code>. Subsequent updates are logged in
+          <code>pipeline_state.json</code>.
         </p>
         <p>
           Hand-curation methodology — editorial stance analysis, entity framing
@@ -345,30 +347,38 @@
       <span class="bwb-footer-sub">
         Last methodology audit: <strong>2026-05-10</strong>
         · Pipeline decomposition: <strong>6/6 modules extracted</strong>
-        · <a href="/botwavebomba/status.html" style="color:inherit;">Track progress at /status.html</a>
+        · <a href="/status.html" style="color:inherit;">Track progress at /status.html</a>
       </span>
     </div>
   </footer>
 
   <!-- Mobile bottom nav -->
   <nav class="bwb-bottom-nav safe-bottom">
-    <a href="/botwavebomba/">
+    <a href="/">
       <span class="bwb-bottom-nav-icon">📰</span>
       <span>Feed</span>
     </a>
-    <a href="/botwavebomba/blindspots.html">
+    <a href="/blindspots.html">
       <span class="bwb-bottom-nav-icon">👁️</span>
       <span>Blindspots</span>
     </a>
-    <a href="/botwavebomba/sources.html">
+    <a href="/sources.html">
       <span class="bwb-bottom-nav-icon">🌐</span>
       <span>Sources</span>
     </a>
-    <a href="/botwavebomba/about.html" class="active">
+    <a href="/trades.html">
+      <span class="bwb-bottom-nav-icon">🔧</span>
+      <span>Trades</span>
+    </a>
+    <a href="/books.html">
+      <span class="bwb-bottom-nav-icon">📚</span>
+      <span>Books</span>
+    </a>
+    <a href="/about.html" class="active">
       <span class="bwb-bottom-nav-icon">📋</span>
       <span>Method</span>
     </a>
-    <a href="/botwavebomba/funnies.html">
+    <a href="/funnies.html">
       <span class="bwb-bottom-nav-icon">🎭</span>
       <span>Funnies</span>
     </a>
@@ -376,7 +386,7 @@
 
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/botwavebomba/service-worker.js');
+      navigator.serviceWorker.register('/service-worker.js');
     }
   </script>
 </body>

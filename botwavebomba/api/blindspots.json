@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T01:00:41.330654+00:00",
+  "generated_at": "2026-05-21T07:00:33.160229+00:00",
   "count": 81,
   "stories": [
     {
@@ -56,73 +56,97 @@
           "id": "la_nacion_ar",
           "name": "La Nación (Argentina)",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "prensa_libre",
           "name": "Prensa Libre Guatemala",
           "country": "GT",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "el_nacional_ve",
           "name": "El Nacional Venezuela",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "tercera",
           "name": "La Tercera",
           "country": "CL",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "clarin_ar",
           "name": "Clarín Argentina",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "el_dia_do",
           "name": "El Día Dominican Republic",
           "country": "DO",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "la_jornada",
           "name": "La Jornada",
           "country": "MX",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -482,10 +506,13 @@
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "trt_world",
@@ -494,7 +521,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "times_of_israel",
@@ -503,16 +533,22 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "vnexpress_en",
           "name": "VnExpress International",
           "country": "VN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -635,19 +671,25 @@
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "telesur",
           "name": "Telesur English",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -756,16 +798,22 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "telesur",
           "name": "Telesur English",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_wire_in",
@@ -774,25 +822,34 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "la_jornada",
           "name": "La Jornada",
           "country": "MX",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "nst_my",
           "name": "New Straits Times",
           "country": "MY",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "aljazeera",
@@ -801,7 +858,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Qatari state"
         }
       ],
       "articles": [
@@ -979,10 +1039,13 @@
           "id": "guardian",
           "name": "The Guardian",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "cnbc",
@@ -991,16 +1054,22 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Comcast"
         },
         {
           "id": "tercera",
           "name": "La Tercera",
           "country": "CL",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -1009,7 +1078,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         }
       ],
       "articles": [
@@ -1165,19 +1237,25 @@
           "id": "ndtv",
           "name": "NDTV",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "hindu",
           "name": "The Hindu",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_wire_in",
@@ -1186,34 +1264,46 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_print",
           "name": "The Print (India)",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "variety",
           "name": "Variety",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "nst_my",
           "name": "New Straits Times",
           "country": "MY",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "aljazeera",
@@ -1222,7 +1312,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Qatari state"
         }
       ],
       "articles": [
@@ -1606,64 +1699,85 @@
           "id": "la_nacion_ar",
           "name": "La Nación (Argentina)",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "prensa_libre",
           "name": "Prensa Libre Guatemala",
           "country": "GT",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "el_dia_do",
           "name": "El Día Dominican Republic",
           "country": "DO",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "tercera",
           "name": "La Tercera",
           "country": "CL",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "el_nacional_ve",
           "name": "El Nacional Venezuela",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "variety",
           "name": "Variety",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -1855,7 +1969,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "News Corp"
         },
         {
           "id": "scmp_business",
@@ -1864,7 +1981,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "ft",
@@ -1873,34 +1993,46 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Nikkei"
         },
         {
           "id": "nst_my",
           "name": "New Straits Times",
           "country": "MY",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "mercopress",
           "name": "MercoPress",
           "country": "UY",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "pajhwok_en",
           "name": "Pajhwok Afghan News",
           "country": "AF",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -2029,10 +2161,13 @@
           "id": "khaama",
           "name": "Khaama Press Afghanistan",
           "country": "AF",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "breitbart",
@@ -2041,7 +2176,10 @@
           "bloc": "western",
           "bias_tier": "far-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "rt_russia",
@@ -2050,7 +2188,10 @@
           "bloc": "adversarial",
           "bias_tier": "unknown",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "scmp",
@@ -2059,16 +2200,22 @@
           "bloc": "adversarial",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "nst_my",
           "name": "New Straits Times",
           "country": "MY",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "straits_times",
@@ -2077,7 +2224,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -2202,37 +2352,49 @@
           "id": "mercopress",
           "name": "MercoPress",
           "country": "UY",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "tercera",
           "name": "La Tercera",
           "country": "CL",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "nrk_en",
           "name": "NRK Norway",
           "country": "NO",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "state-democratic",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "google_news",
@@ -2241,16 +2403,22 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "el_nacional_ve",
           "name": "El Nacional Venezuela",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -2422,10 +2590,13 @@
           "id": "variety",
           "name": "Variety",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "google_news",
@@ -2434,7 +2605,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "daily_mail",
@@ -2443,25 +2617,34 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "tmz",
           "name": "TMZ",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "ny_post",
@@ -2470,7 +2653,10 @@
           "bloc": "adversarial",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -2655,55 +2841,73 @@
           "id": "sky_sports",
           "name": "Sky Sports",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "marca",
           "name": "Marca",
           "country": "ES",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "nst_my",
           "name": "New Straits Times",
           "country": "MY",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "vanguard_ng",
           "name": "Vanguard Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "la_nacion_ar",
           "name": "La Nación (Argentina)",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -2858,16 +3062,22 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "News Corp"
         },
         {
           "id": "cointelegraph",
           "name": "Cointelegraph",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "breitbart",
@@ -2876,7 +3086,10 @@
           "bloc": "western",
           "bias_tier": "far-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "jerusalem_post",
@@ -2885,16 +3098,22 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "reddit_news",
           "name": "Reddit News",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "fox_news",
@@ -2903,7 +3122,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": "Fox Corp"
         }
       ],
       "articles": [
@@ -3051,25 +3273,34 @@
           "bloc": "adversarial",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_tico_times",
           "name": "The Tico Times",
           "country": "CR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "google_news",
@@ -3078,7 +3309,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "ny_post",
@@ -3087,7 +3321,10 @@
           "bloc": "adversarial",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "fox_news",
@@ -3096,7 +3333,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": "Fox Corp"
         }
       ],
       "articles": [
@@ -3241,10 +3481,13 @@
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "times_of_israel",
@@ -3253,34 +3496,46 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "nst_my",
           "name": "New Straits Times",
           "country": "MY",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "variety",
           "name": "Variety",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -3289,7 +3544,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         }
       ],
       "articles": [
@@ -3450,10 +3708,13 @@
           "id": "eff_deeplinks",
           "name": "EFF DeepLinks",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "independent_uk",
@@ -3462,7 +3723,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "der_spiegel",
@@ -3471,16 +3735,22 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "allafrica",
           "name": "AllAfrica",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "balkan_insight",
@@ -3489,16 +3759,22 @@
           "bloc": "western",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "ndtv",
           "name": "NDTV",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -3660,46 +3936,61 @@
           "id": "la_nacion_ar",
           "name": "La Nación (Argentina)",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "tercera",
           "name": "La Tercera",
           "country": "CL",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "clarin_ar",
           "name": "Clarín Argentina",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "el_nacional_ve",
           "name": "El Nacional Venezuela",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -4169,7 +4460,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "rt",
@@ -4178,7 +4472,10 @@
           "bloc": "adversarial",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Russian state"
         },
         {
           "id": "france24",
@@ -4187,7 +4484,10 @@
           "bloc": "western",
           "bias_tier": "state-democratic",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "unknown (launderer)"
         },
         {
           "id": "google_news",
@@ -4196,16 +4496,22 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "telesur",
           "name": "Telesur English",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -4374,19 +4680,25 @@
           "id": "ndtv",
           "name": "NDTV",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "hindu",
           "name": "The Hindu",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_wire_in",
@@ -4395,7 +4707,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "bbc_news",
@@ -4404,16 +4719,22 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "BBC (public)"
         },
         {
           "id": "the_print",
           "name": "The Print (India)",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -4639,19 +4960,25 @@
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "hollywood_reporter",
           "name": "The Hollywood Reporter",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -4660,25 +4987,34 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "pagesix",
           "name": "Page Six",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "jamaica_observer",
           "name": "Jamaica Observer",
           "country": "JM",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -4833,7 +5169,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "wsj",
@@ -4842,7 +5181,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "News Corp"
         },
         {
           "id": "daily_sabah",
@@ -4851,7 +5193,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_national_ae",
@@ -4860,16 +5205,22 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "egypt_independent",
           "name": "Egypt Independent",
           "country": "EG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -5005,10 +5356,13 @@
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "rt",
@@ -5017,7 +5371,10 @@
           "bloc": "adversarial",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Russian state"
         },
         {
           "id": "balkan_insight",
@@ -5026,7 +5383,10 @@
           "bloc": "western",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "washington_examiner",
@@ -5035,7 +5395,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "google_news",
@@ -5044,7 +5407,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         }
       ],
       "articles": [
@@ -5170,46 +5536,61 @@
           "id": "el_nacional_ve",
           "name": "El Nacional Venezuela",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "clarin_ar",
           "name": "Clarín Argentina",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "tercera",
           "name": "La Tercera",
           "country": "CL",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "marca",
           "name": "Marca",
           "country": "ES",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -5363,16 +5744,22 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "reddit_news",
           "name": "Reddit News",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "nbc_news",
@@ -5381,25 +5768,34 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Comcast"
         },
         {
           "id": "tmz",
           "name": "TMZ",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "guardian",
           "name": "The Guardian",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -5647,10 +6043,13 @@
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -5659,25 +6058,34 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "variety",
           "name": "Variety",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "hollywood_reporter",
           "name": "The Hollywood Reporter",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -6226,37 +6634,49 @@
           "id": "tercera",
           "name": "La Tercera",
           "country": "CL",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "la_nacion_ar",
           "name": "La Nación (Argentina)",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "la_jornada",
           "name": "La Jornada",
           "country": "MX",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -6406,19 +6826,25 @@
           "id": "variety",
           "name": "Variety",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "hollywood_reporter",
           "name": "The Hollywood Reporter",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -6427,16 +6853,22 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -6580,7 +7012,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "straits_times",
@@ -6589,7 +7024,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "al_monitor",
@@ -6598,7 +7036,10 @@
           "bloc": "western",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "france24",
@@ -6607,7 +7048,10 @@
           "bloc": "western",
           "bias_tier": "state-democratic",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "unknown (launderer)"
         }
       ],
       "articles": [
@@ -6725,37 +7169,49 @@
           "id": "clarin_ar",
           "name": "Clarín Argentina",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "la_nacion_ar",
           "name": "La Nación (Argentina)",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "el_nacional_ve",
           "name": "El Nacional Venezuela",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -6912,19 +7368,25 @@
           "id": "rolling_stone",
           "name": "Rolling Stone",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_onion",
           "name": "The Onion",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "rt",
@@ -6933,16 +7395,22 @@
           "bloc": "adversarial",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Russian state"
         },
         {
           "id": "bbc",
           "name": "BBC News",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "unknown",
           "bias_bucket": "center",
-          "geo_cluster": ""
+          "geo_cluster": "",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -7070,7 +7538,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "ny_post",
@@ -7079,25 +7550,34 @@
           "bloc": "adversarial",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "tmz",
           "name": "TMZ",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -7243,10 +7723,13 @@
           "id": "khaama",
           "name": "Khaama Press Afghanistan",
           "country": "AF",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_wire",
@@ -7255,25 +7738,34 @@
           "bloc": "western",
           "bias_tier": "far-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "variety",
           "name": "Variety",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "telesur",
           "name": "Telesur English",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -7391,28 +7883,37 @@
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "hollywood_reporter",
           "name": "The Hollywood Reporter",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "pagesix",
           "name": "Page Six",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -7421,7 +7922,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         }
       ],
       "articles": [
@@ -7556,10 +8060,13 @@
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -7568,7 +8075,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "g4media",
@@ -7577,7 +8087,10 @@
           "bloc": "western",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -7707,25 +8220,34 @@
           "bloc": "western",
           "bias_tier": "far-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "tmz",
           "name": "TMZ",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "allafrica",
           "name": "AllAfrica",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -7827,7 +8349,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "rt",
@@ -7836,7 +8361,10 @@
           "bloc": "adversarial",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Russian state"
         },
         {
           "id": "ukrainska_pravda_en",
@@ -7845,7 +8373,10 @@
           "bloc": "western",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -7980,7 +8511,10 @@
           "bloc": "western",
           "bias_tier": "state-democratic",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "straits_times",
@@ -7989,7 +8523,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "ukrainska_pravda_en",
@@ -7998,7 +8535,10 @@
           "bloc": "western",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -8145,19 +8685,25 @@
           "id": "ndtv",
           "name": "NDTV",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "hindu",
           "name": "The Hindu",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_wire_in",
@@ -8166,7 +8712,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -8299,7 +8848,10 @@
           "bloc": "western",
           "bias_tier": "state-democratic",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "straits_times",
@@ -8308,16 +8860,22 @@
           "bloc": "adversarial",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "vietimes",
           "name": "VietTimes",
           "country": "VN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -8417,10 +8975,13 @@
           "id": "dawn",
           "name": "Dawn",
           "country": "PK",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "prothom_alo",
@@ -8429,16 +8990,22 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "nst_my",
           "name": "New Straits Times",
           "country": "MY",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -8577,7 +9144,10 @@
           "bloc": "adversarial",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -8586,16 +9156,22 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -8704,19 +9280,25 @@
           "id": "senenews",
           "name": "Senenews",
           "country": "SN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "tercera",
           "name": "La Tercera",
           "country": "CL",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "yeni_safak",
@@ -8725,7 +9307,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -8824,10 +9409,13 @@
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -8836,7 +9424,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         }
       ],
       "articles": [
@@ -9037,10 +9628,13 @@
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -9049,7 +9643,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         }
       ],
       "articles": [
@@ -9228,19 +9825,25 @@
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "la_razon_bo",
           "name": "La Razón Bolivia",
           "country": "BO",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -9359,19 +9962,25 @@
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "el_nacional_ve",
           "name": "El Nacional Venezuela",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -9557,16 +10166,22 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -9694,16 +10309,22 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_print",
           "name": "The Print (India)",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -9789,10 +10410,13 @@
           "id": "algerie360",
           "name": "Algerie360",
           "country": "DZ",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "ft",
@@ -9801,7 +10425,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Nikkei"
         }
       ],
       "articles": [
@@ -9905,10 +10532,13 @@
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -9917,7 +10547,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         }
       ],
       "articles": [
@@ -10075,16 +10708,22 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -10177,19 +10816,25 @@
           "id": "hindu",
           "name": "The Hindu",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "ndtv",
           "name": "NDTV",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -10329,19 +10974,25 @@
           "id": "la_nacion_ar",
           "name": "La Nación (Argentina)",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "clarin_ar",
           "name": "Clarín Argentina",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -10451,10 +11102,13 @@
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -10463,7 +11117,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         }
       ],
       "articles": [
@@ -10564,10 +11221,13 @@
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -10576,7 +11236,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         }
       ],
       "articles": [
@@ -10678,10 +11341,13 @@
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail",
@@ -10690,7 +11356,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         }
       ],
       "articles": [
@@ -10809,16 +11478,22 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -10912,10 +11587,13 @@
           "id": "hindu",
           "name": "The Hindu",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_wire_in",
@@ -10924,7 +11602,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -11055,7 +11736,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Paramount"
         },
         {
           "id": "google_news",
@@ -11064,7 +11748,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         }
       ],
       "articles": [
@@ -11204,19 +11891,25 @@
           "id": "hindu",
           "name": "The Hindu",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_print",
           "name": "The Print (India)",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -11317,19 +12010,25 @@
           "id": "hindu",
           "name": "The Hindu",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "ndtv",
           "name": "NDTV",
           "country": "IN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "global-south"
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -11468,7 +12167,10 @@
           "bloc": "western",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "foreign_policy",
@@ -11477,7 +12179,10 @@
           "bloc": "western",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -11570,19 +12275,25 @@
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "tercera",
           "name": "La Tercera",
           "country": "CL",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -11701,7 +12412,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "daily_mail",
@@ -11710,7 +12424,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "trt_world",
@@ -11719,7 +12436,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_national_ae",
@@ -11728,7 +12448,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "ft",
@@ -11737,7 +12460,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Nikkei"
         },
         {
           "id": "rt",
@@ -11746,7 +12472,10 @@
           "bloc": "adversarial",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Russian state"
         },
         {
           "id": "daily_wire",
@@ -11755,7 +12484,10 @@
           "bloc": "western",
           "bias_tier": "far-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "times_of_israel",
@@ -11764,7 +12496,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "fox_news",
@@ -11773,16 +12508,22 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": "Fox Corp"
         },
         {
           "id": "guardian",
           "name": "The Guardian",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "france24",
@@ -11791,7 +12532,10 @@
           "bloc": "western",
           "bias_tier": "state-democratic",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "unknown (launderer)"
         },
         {
           "id": "breitbart",
@@ -11800,7 +12544,10 @@
           "bloc": "western",
           "bias_tier": "far-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "national_post",
@@ -11809,7 +12556,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "washington_examiner",
@@ -11818,7 +12568,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -12300,7 +13053,10 @@
           "bloc": "adversarial",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_wire",
@@ -12309,34 +13065,46 @@
           "bloc": "western",
           "bias_tier": "far-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "la_nacion_ar",
           "name": "La Nación (Argentina)",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "tmz",
           "name": "TMZ",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "google_news",
@@ -12345,7 +13113,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "cbs_news",
@@ -12354,7 +13125,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Paramount"
         },
         {
           "id": "fox_news",
@@ -12363,7 +13137,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": "Fox Corp"
         },
         {
           "id": "washington_examiner",
@@ -12372,7 +13149,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_hill",
@@ -12381,16 +13161,22 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "yt_timdillonshow",
           "name": "The Tim Dillon Show",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "unknown",
           "bias_bucket": "center",
-          "geo_cluster": ""
+          "geo_cluster": "",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -12799,7 +13585,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "daily_wire",
@@ -12808,52 +13597,70 @@
           "bloc": "western",
           "bias_tier": "far-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "tmz",
           "name": "TMZ",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_onion",
           "name": "The Onion",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "pagesix",
           "name": "Page Six",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "vnexpress_en",
           "name": "VnExpress International",
           "country": "VN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "ny_post",
@@ -12862,7 +13669,10 @@
           "bloc": "adversarial",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -13074,19 +13884,25 @@
           "id": "business_day_ng",
           "name": "BusinessDay Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "bbc_sport",
           "name": "BBC Sport",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "france24",
@@ -13095,43 +13911,58 @@
           "bloc": "western",
           "bias_tier": "state-democratic",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "unknown (launderer)"
         },
         {
           "id": "nst_my",
           "name": "New Straits Times",
           "country": "MY",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "sky_sports",
           "name": "Sky Sports",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "dutchnews",
           "name": "DutchNews.nl",
           "country": "NL",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "marca",
           "name": "Marca",
           "country": "ES",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -13296,19 +14127,25 @@
           "id": "daily_maverick",
           "name": "Daily Maverick (SA)",
           "country": "ZA",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "thisday_ng",
           "name": "This Day Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "rt",
@@ -13317,16 +14154,22 @@
           "bloc": "adversarial",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Russian state"
         },
         {
           "id": "espn",
           "name": "ESPN",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Disney"
         },
         {
           "id": "premium_times",
@@ -13335,25 +14178,34 @@
           "bloc": "adversarial",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "myjoyonline",
           "name": "MyJoyOnline Ghana",
           "country": "GH",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "sunpaper_ng",
           "name": "The Sun Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -13505,52 +14357,70 @@
           "bloc": "adversarial",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_trust_ng",
           "name": "Daily Trust Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "vanguard_ng",
           "name": "Vanguard Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "punch",
           "name": "The Punch",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "thisday_ng",
           "name": "This Day Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "premium_times_ng",
           "name": "Premium Times Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -13729,37 +14599,49 @@
           "id": "allafrica",
           "name": "AllAfrica",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "myjoyonline",
           "name": "MyJoyOnline Ghana",
           "country": "GH",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "sabc_news",
           "name": "SABC News",
           "country": "ZA",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "state-democratic",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "thisday_ng",
           "name": "This Day Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "premium_times",
@@ -13768,7 +14650,10 @@
           "bloc": "adversarial",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -14020,10 +14905,13 @@
           "id": "middle_east_m",
           "name": "Middle East Monitor",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "irna",
@@ -14032,7 +14920,10 @@
           "bloc": "adversarial",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Iranian state"
         },
         {
           "id": "rt",
@@ -14041,7 +14932,10 @@
           "bloc": "adversarial",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Russian state"
         },
         {
           "id": "rt_russia",
@@ -14050,7 +14944,10 @@
           "bloc": "adversarial",
           "bias_tier": "unknown",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -14170,7 +15067,10 @@
           "bloc": "western",
           "bias_tier": "state-democratic",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "rt",
@@ -14179,7 +15079,10 @@
           "bloc": "adversarial",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Russian state"
         },
         {
           "id": "rt_russia",
@@ -14188,16 +15091,22 @@
           "bloc": "adversarial",
           "bias_tier": "unknown",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial"
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "telesur",
           "name": "Telesur English",
           "country": "VE",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "state-pro",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -14298,28 +15207,37 @@
           "id": "vanguard_ng",
           "name": "Vanguard Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_trust_ng",
           "name": "Daily Trust Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "thisday_ng",
           "name": "This Day Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -14412,28 +15330,37 @@
           "id": "inquirer_ph",
           "name": "Philippine Daily Inquirer",
           "country": "PH",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "rappler",
           "name": "Rappler",
           "country": "PH",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "phil_star",
           "name": "Philippine Star",
           "country": "PH",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -14639,10 +15566,13 @@
           "id": "hollywood_reporter",
           "name": "The Hollywood Reporter",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "google_news",
@@ -14651,16 +15581,22 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "tmz",
           "name": "TMZ",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -14752,28 +15688,37 @@
           "id": "daily_maverick",
           "name": "Daily Maverick (SA)",
           "country": "ZA",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "thisday_ng",
           "name": "This Day Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "punch",
           "name": "The Punch",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -14862,7 +15807,10 @@
           "bloc": "western",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "ukrinform_en",
@@ -14871,7 +15819,10 @@
           "bloc": "western",
           "bias_tier": "state-democratic",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -15026,10 +15977,13 @@
           "id": "espn",
           "name": "ESPN",
           "country": "US",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Disney"
         },
         {
           "id": "google_news",
@@ -15038,7 +15992,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         }
       ],
       "articles": [
@@ -15149,7 +16106,10 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "al_jazeera",
@@ -15158,25 +16118,34 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "la_nacion_ar",
           "name": "La Nación (Argentina)",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "the_national_ae",
@@ -15185,7 +16154,10 @@
           "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "cnn",
@@ -15194,16 +16166,22 @@
           "bloc": "western",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Warner Bros Discovery"
         },
         {
           "id": "senenews",
           "name": "Senenews",
           "country": "SN",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "ukrinform_en",
@@ -15212,7 +16190,10 @@
           "bloc": "western",
           "bias_tier": "state-democratic",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe"
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "premium_times",
@@ -15221,61 +16202,82 @@
           "bloc": "adversarial",
           "bias_tier": "independent",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "punch",
           "name": "The Punch",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
         },
         {
           "id": "clarin_ar",
           "name": "Clarín Argentina",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "business_day_ng",
           "name": "BusinessDay Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "sky_sports",
           "name": "Sky Sports",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "nst_my",
           "name": "New Straits Times",
           "country": "MY",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "pacific-asia"
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "daily_trust_ng",
           "name": "Daily Trust Nigeria",
           "country": "NG",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa"
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -15561,7 +16563,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "ny_post",
@@ -15570,7 +16575,10 @@
           "bloc": "adversarial",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "aljazeera",
@@ -15579,7 +16587,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "middle-east"
+          "geo_cluster": "middle-east",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Qatari state"
         },
         {
           "id": "fox_news",
@@ -15588,34 +16599,46 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": "Fox Corp"
         },
         {
           "id": "clarin_ar",
           "name": "Clarín Argentina",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "sky_sports",
           "name": "Sky Sports",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "el_dia_do",
           "name": "El Día Dominican Republic",
           "country": "DO",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -15795,10 +16818,13 @@
           "id": "infobae",
           "name": "Infobae",
           "country": "AR",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "ny_post",
@@ -15807,16 +16833,22 @@
           "bloc": "adversarial",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "prensa_libre",
           "name": "Prensa Libre Guatemala",
           "country": "GT",
-          "bloc": "neutral",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "latin-america"
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         },
         {
           "id": "google_news",
@@ -15825,7 +16857,10 @@
           "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
           "id": "cbs_news",
@@ -15834,7 +16869,10 @@
           "bloc": "adversarial",
           "bias_tier": "lean-left",
           "bias_bucket": "left",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Paramount"
         },
         {
           "id": "daily_mail",
@@ -15843,16 +16881,22 @@
           "bloc": "western",
           "bias_tier": "right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
         },
         {
           "id": "daily_mail_ent",
           "name": "Daily Mail — Showbiz",
           "country": "GB",
-          "bloc": "neutral",
+          "bloc": "western",
           "bias_tier": "lean-right",
           "bias_bucket": "right",
-          "geo_cluster": "west"
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [

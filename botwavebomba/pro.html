@@ -4,22 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BOTWAVEBOMBA PRO</title>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#BF3B2D">
+  <meta name="description" content="Real-time SSE blindspot alerts, PAI summaries, exports, and private digests. The full intelligence layer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#0a0a0a">
   <style>
-    body {font-family:system-ui;background:#111;color:#fff;padding:40px;text-align:center}
-    .pro {max-width:600px;margin:40px auto;background:#1f1f1f;padding:40px;border-radius:16px}
-    button {background:#BF3B2D;color:white;padding:18px 36px;font-size:1.3em;border:none;border-radius:9999px;cursor:pointer}
+    body {font-family:'DM Sans',system-ui,sans-serif;background:#0a0a0a;color:#F0EDE8;padding:0;margin:0}
+    .pro-wrap {max-width:680px;margin:0 auto;padding:80px 24px}
+    .pro-badge {font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:#BF3B2D;border:1px solid #BF3B2D;padding:4px 12px;display:inline-block;margin-bottom:32px}
+    .pro-h1 {font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#F0EDE8;margin:0 0 24px}
+    .pro-h1 em {font-style:italic;color:#BF3B2D}
+    .pro-body {font-weight:300;font-size:15px;line-height:1.8;color:rgba(240,237,232,0.75);margin:0 0 40px}
+    .pro-features {list-style:none;padding:0;margin:0 0 48px}
+    .pro-features li {padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:14px;color:rgba(240,237,232,0.85);display:flex;align-items:center;gap:12px}
+    .pro-features li::before {content:'';display:block;width:6px;height:6px;border-radius:50%;background:#BF3B2D;flex-shrink:0}
+    .pro-price {font-family:'DM Mono',monospace;font-size:14px;letter-spacing:1px;color:rgba(240,237,232,0.5);margin-bottom:24px}
+    .pro-price strong {color:#F0EDE8;font-size:28px;font-weight:500}
+    .pro-cta {display:inline-block;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;background:#BF3B2D;color:#fff;text-decoration:none;border:none;cursor:pointer;transition:background 0.15s}
+    .pro-cta:hover {background:#a83327}
+    .pro-note {font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.3);margin-top:32px;line-height:1.6}
   </style>
 </head>
 <body>
-  <div class="pro">
-    <h1>🔓 BOTWAVEBOMBA PRO</h1>
-    <p>Real-time SSE • Blindspot alerts • PAI summaries • Exports • Private digests</p>
-    <p><strong>$9 / month</strong> — Your AI. Your Rules. Your Hardware.</p>
-    <a href="PASTE_YOUR_GUMROAD_CHECKOUT_LINK_HERE" target="_blank">
-      <button>Unlock PRO Now — $9/mo</button>
-    </a>
+  <div class="pro-wrap">
+    <div class="pro-badge">COMING SOON</div>
+    <h1 class="pro-h1">The full <em>intelligence layer</em></h1>
+    <p class="pro-body">
+      The free feed shows you the gap. PRO shows you the architecture behind it.
+      Real-time SSE blindspot alerts. PAI-generated summaries. Full export. Private digests.
+      The same substrate that powers the journalism arm.
+    </p>
+    <ul class="pro-features">
+      <li>Real-time SSE alerts for Western Blackout and Mono-Frame events</li>
+      <li>PAI-generated story summaries with 5-axis bias fingerprints per source</li>
+      <li>Ownership concentration alerts — when 2+ sources share a parent company</li>
+      <li>Full JSON/CSV export of stories, blindspots, and source data</li>
+      <li>Private daily digest via Telegram or email</li>
+      <li>Priority access to new sources as the registry expands</li>
+      <li>5-axis deep fingerprint overlay on every story card</li>
+    </ul>
+    <div class="pro-price"><strong>$9</strong> / month</div>
+    <a href="https://gringo1904.gumroad.com/l/gmwcbj" target="_blank" class="pro-cta">Join Waitlist</a>
+    <p class="pro-note">
+      PRO is not a different product. It's the same TELOS+PAI substrate with the throttle removed.
+      Free users get the public feed. PRO users get the intelligence that the feed is built on.
+      No upsell psychology. No dark patterns. The data is the argument.
+    </p>
   </div>
 </body>
 </html>

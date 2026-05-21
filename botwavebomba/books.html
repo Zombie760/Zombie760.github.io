@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOTWAVE BOOKS — BOTWAVEBOMBA</title>
+  <meta name="description" content="Primary-source investigations by Kyle Jimenez. Every claim filed. Every source named. Map the books to today's headlines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/pwa.js" defer></script>
+  <style>
+    .books-section-title { font-family: var(--font-mono); font-size: 10px; letter-spacing: 3px; color: var(--theme-accent); text-transform: uppercase; margin: 32px 0 8px; }
+    .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 0 0 32px; }
+    .book-card { background: var(--bg-card); border: 1px solid var(--border-default); padding: 20px; transition: border-color 0.15s; }
+    .book-card:hover { border-color: var(--theme-primary); }
+    .book-tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; color: var(--theme-accent); text-transform: uppercase; margin-bottom: 6px; display: block; }
+    .book-title { font-family: var(--font-display); font-size: 20px; font-style: italic; color: var(--text-primary); line-height: 1.2; margin: 0 0 4px; }
+    .book-subtitle { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-bottom: 12px; }
+    .book-desc { font-weight: 300; font-size: 13px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 12px; }
+    .book-keywords { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+    .book-kw { font-family: var(--font-mono); font-size: 8px; letter-spacing: 1px; padding: 2px 6px; border: 1px solid var(--border-default); color: var(--text-muted); text-transform: uppercase; }
+    .book-stories { margin-top: 8px; }
+    .book-story-link { display: block; font-size: 12px; color: var(--theme-primary); text-decoration: none; padding: 4px 0; border-bottom: 1px solid var(--border-subtle); }
+    .book-story-link:hover { color: var(--theme-accent); }
+    .book-story-src { font-family: var(--font-mono); font-size: 9px; color: var(--text-muted); }
+    .book-cta { display: inline-block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 8px 20px; background: var(--theme-primary); color: var(--bg); text-decoration: none; margin-top: 8px; transition: background 0.15s; }
+    .book-cta:hover { background: var(--theme-accent); }
+    .book-cta.free { background: var(--theme-accent); }
+    .book-price { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-top: 8px; }
+    .bwb-books-banner { background: var(--bg-card); border: 1px solid var(--border-default); padding: 24px; margin-bottom: 24px; }
+    .bwb-books-banner h2 { font-family: var(--font-display); font-size: 28px; font-style: italic; color: var(--text-primary); margin: 0 0 8px; }
+    .bwb-books-banner p { font-weight: 300; font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin: 0; }
+    .bwb-diff-highlight { color: var(--theme-accent); font-weight: 500; }
+    .book-ip { background: var(--bg-surface); border: 1px dashed var(--border-default); padding: 20px; }
+    .book-ip .book-title { color: var(--text-muted); }
+    .book-ip-label { font-family: var(--font-mono); font-size: 8px; letter-spacing: 2px; color: var(--theme-accent); text-transform: uppercase; padding: 2px 8px; border: 1px solid var(--theme-accent); display: inline-block; margin-bottom: 8px; }
+    @media (max-width: 640px) { .books-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="bwb-header bwb-header--compact">
+    <div class="bwb-header-inner">
+      <a href="/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <nav class="bwb-topnav">
+        <a href="/">Feed</a>
+        <a href="/blindspots.html">Blindspots</a>
+        <a href="/sources.html">Sources</a>
+        <a href="/trades.html">Trades</a>
+        <a href="/books.html" class="active">Books</a>
+        <a href="/about.html">Method</a>
+        <a href="/funnies.html">Funnies</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="bwb-page-container">
+
+    <div class="bwb-books-banner">
+      <h2>Every claim filed. Every source named.</h2>
+      <p>
+        BOTWAVE BOOKS publishes primary-source investigations by <span class="bwb-diff-highlight">Kyle Jimenez</span>.
+        No conspiracy theories. No unnamed sources. Every assertion traces to a filed document.
+        Below each book: <span class="bwb-diff-highlight">today's headlines that connect to the same power structures</span> the book documents.
+      </p>
+    </div>
+
+    <!-- ── PUBLISHED ── -->
+    <div class="books-section-title">Published</div>
+    <div class="books-grid" id="books-grid">
+
+      <div class="book-card" data-keywords="influence,Vatican,crusade,lobbying,court,SEC,corruption,oligarch,sanction,foreign influence,political,democracy,regulation">
+        <span class="book-tag">Primary-source investigation</span>
+        <h3 class="book-title">Unwarranted Influence</h3>
+        <div class="book-subtitle">462 pages &middot; 441 source citations &middot; $24.99</div>
+        <p class="book-desc">Traces documented influence patterns from the First Crusade through 2026. Federal Register entries, SEC filings, court records, Vatican archives. The paper trail IS the narrative.</p>
+        <div class="book-keywords"><span class="book-kw">influence</span><span class="book-kw">Vatican</span><span class="book-kw">SEC</span><span class="book-kw">crusade</span><span class="book-kw">lobbying</span><span class="book-kw">court</span></div>
+        <div class="book-stories" data-book="unwarranted"></div>
+        <a href="https://gringo1904.gumroad.com/l/unwarranted-influence" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="DOGE,Musk,efficiency,government,energy,budget,Federal Register,cut,spending,Tesla,SpaceX,department,agency,federal worker,layoff,fired">
+        <span class="book-tag">Document preservation</span>
+        <h3 class="book-title">DOGE</h3>
+        <div class="book-subtitle">535 pages &middot; every memo, every budget line &middot; $14.99</div>
+        <p class="book-desc">What happens when a government efficiency commission moves faster than the archivists can catalog. Filed while the servers were still warm.</p>
+        <div class="book-keywords"><span class="book-kw">DOGE</span><span class="book-kw">Musk</span><span class="book-kw">energy</span><span class="book-kw">budget</span><span class="book-kw">Federal Register</span></div>
+        <div class="book-stories" data-book="doge"></div>
+        <a href="https://gringo1904.gumroad.com/l/doge" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="surveillance,infrastructure,access,systems,keys,NSA,CIA,FBI,intelligence,spy,data,privacy,cyber,hack">
+        <span class="book-tag">Architecture with receipts</span>
+        <h3 class="book-title">SUDO KINGDOM</h3>
+        <div class="book-subtitle">180 pages &middot; root access to the narrative layer &middot; $9.99</div>
+        <p class="book-desc">Who holds the keys to the systems that hold the keys to everything else. Not a manifesto. An architecture diagram with receipts.</p>
+        <div class="book-keywords"><span class="book-kw">surveillance</span><span class="book-kw">infrastructure</span><span class="book-kw">access</span><span class="book-kw">keys</span></div>
+        <div class="book-stories" data-book="sudo"></div>
+        <a href="https://gringo1904.gumroad.com/l/sudo-kingdom" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="boxing,contract,sports,fight,sanctioning,athlete,UFC,MMA,prize,purse">
+        <span class="book-tag">Sports investigation</span>
+        <h3 class="book-title">Did Not Step Forward</h3>
+        <div class="book-subtitle">295 pages &middot; Captain &amp; Champ &middot; $12.99</div>
+        <p class="book-desc">Two men. One ring. The fight that never happened. Every contract, every purse bid, every sanctioning-body ruling filed and cross-referenced.</p>
+        <div class="book-keywords"><span class="book-kw">boxing</span><span class="book-kw">contract</span><span class="book-kw">sports</span><span class="book-kw">fight</span></div>
+        <div class="book-stories" data-book="captain"></div>
+        <a href="https://gringo1904.gumroad.com/l/did-not-step-forward" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="athlete,protest,resistance,sports,civil rights,kneel,anthem,demonstration,racial,police brutality">
+        <span class="book-tag">Athlete ledger</span>
+        <h3 class="book-title">Kareem Ali: A Ledger of Resistance</h3>
+        <div class="book-subtitle">264 pages &middot; every protest, every response &middot; $11.99</div>
+        <p class="book-desc">The documented archive of an athlete who refused to separate sports from the world. Primary sources only. The man's own words, the league's own memos.</p>
+        <div class="book-keywords"><span class="book-kw">athlete</span><span class="book-kw">protest</span><span class="book-kw">resistance</span><span class="book-kw">civil rights</span></div>
+        <div class="book-stories" data-book="kareem"></div>
+        <a href="https://gringo1904.gumroad.com/l/kareem-ali" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="law enforcement,accountability,police,oversight,public record,use of force,shooting,body camera,qualified immunity,arrest">
+        <span class="book-tag">Accountability</span>
+        <h3 class="book-title">The Shield</h3>
+        <div class="book-subtitle">Law enforcement accountability &middot; $7.99</div>
+        <p class="book-desc">The documented intersection of law enforcement, accountability, and the public record. Filed documents, not allegations.</p>
+        <div class="book-keywords"><span class="book-kw">law enforcement</span><span class="book-kw">accountability</span><span class="book-kw">police</span><span class="book-kw">oversight</span></div>
+        <div class="book-stories" data-book="shield"></div>
+        <a href="https://gringo1904.gumroad.com/l/the-shield" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="energy,water,shell,subsidy,consumption,climate,ocean,digital,infrastructure,resource,utility">
+        <span class="book-tag">Document preservation</span>
+        <h3 class="book-title">Digital Ocean</h3>
+        <div class="book-subtitle">Energy, water, and the documented shell games &middot; $16.99</div>
+        <p class="book-desc">The resources you pay for and the documented lies behind the data. Musk's 2027 energy plans, the hidden subsidies, the shell games behind consumption numbers.</p>
+        <div class="book-keywords"><span class="book-kw">energy</span><span class="book-kw">water</span><span class="book-kw">subsidy</span><span class="book-kw">shell</span><span class="book-kw">consumption</span></div>
+        <div class="book-stories" data-book="digital-ocean"></div>
+        <a href="https://gringo1904.gumroad.com/l/digital-ocean" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="terminal,hacker,sudo,access,system,code,hack,linux,sysadmin,root">
+        <span class="book-tag">Fiction — AL GRINGO THRILLER</span>
+        <h3 class="book-title" style="font-style:normal;">#!/usr/TERMINAL STATIKVOID</h3>
+        <div class="book-subtitle">The Sudoers Cantos &middot; $14.99</div>
+        <p class="book-desc">Root access. The terminal IS the narrative. A thriller for the people who actually know what sudo means.</p>
+        <div class="book-keywords"><span class="book-kw">terminal</span><span class="book-kw">hacker</span><span class="book-kw">sudo</span><span class="book-kw">code</span><span class="book-kw">root</span></div>
+        <div class="book-stories" data-book="terminal"></div>
+        <a href="https://gringo1904.gumroad.com/l/terminal" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="compound,ranch,compound,zoning,property,land,development,compound,bunker">
+        <span class="book-tag">Fiction — AL GRINGO THRILLER</span>
+        <h3 class="book-title">The Compound</h3>
+        <div class="book-subtitle">Zorro Ranch series &middot; $12.99</div>
+        <p class="book-desc">The property that doesn't exist on any public map. The filings that do. A thriller built on real deeds, real zoning, real shell companies.</p>
+        <div class="book-keywords"><span class="book-kw">compound</span><span class="book-kw">ranch</span><span class="book-kw">property</span><span class="book-kw">shell company</span></div>
+        <div class="book-stories" data-book="compound"></div>
+        <a href="https://gringo1904.gumroad.com/l/the-compound" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="extraction,mining,resource,labor,colonialism,exploitation,raw material">
+        <span class="book-tag">Primary-source investigation</span>
+        <h3 class="book-title">The Extraction</h3>
+        <div class="book-subtitle">What they take and what they leave &middot; $19.99</div>
+        <p class="book-desc">The documented trail of extraction — from colonial charters to modern mining permits. Every claim backed by a filed document.</p>
+        <div class="book-keywords"><span class="book-kw">extraction</span><span class="book-kw">mining</span><span class="book-kw">resource</span><span class="book-kw">colonialism</span></div>
+        <div class="book-stories" data-book="extraction"></div>
+        <a href="https://gringo1904.gumroad.com/l/the-extraction" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="catalog,index,archive,reference,source,primary document">
+        <span class="book-tag">Reference</span>
+        <h3 class="book-title">The Catalog</h3>
+        <div class="book-subtitle">Complete source index &middot; $24.99</div>
+        <p class="book-desc">The full primary-source index. Every document, every filing, every citation across the BOTWAVE BOOKS catalog in one reference volume.</p>
+        <div class="book-keywords"><span class="book-kw">catalog</span><span class="book-kw">index</span><span class="book-kw">archive</span><span class="book-kw">reference</span></div>
+        <div class="book-stories" data-book="catalog"></div>
+        <a href="https://gringo1904.gumroad.com/l/the-catalog" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="patient,healthcare,medical,hospital,insurance,pharma,diagnosis,treatment">
+        <span class="book-tag">Primary-source investigation</span>
+        <h3 class="book-title">You Are the Patient</h3>
+        <div class="book-subtitle">Healthcare documented &middot; $19.99</div>
+        <p class="book-desc">The documented intersection of healthcare, insurance, and the patient. Every claim traces to a filing, a regulation, a billing code.</p>
+        <div class="book-keywords"><span class="book-kw">patient</span><span class="book-kw">healthcare</span><span class="book-kw">medical</span><span class="book-kw">insurance</span></div>
+        <div class="book-stories" data-book="patient"></div>
+        <a href="https://gringo1904.gumroad.com/l/you-are-the-patient" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="worker,labor,wage,union,blue collar,trade,plumber,construction,apprentice">
+        <span class="book-tag">Primary-source investigation</span>
+        <h3 class="book-title">You Are the Worker</h3>
+        <div class="book-subtitle">Labor documented &middot; $4.99</div>
+        <p class="book-desc">The documented reality of American labor. Built by a plumber who lived it. Every claim filed.</p>
+        <div class="book-keywords"><span class="book-kw">worker</span><span class="book-kw">labor</span><span class="book-kw">wage</span><span class="book-kw">union</span><span class="book-kw">trade</span></div>
+        <div class="book-stories" data-book="worker"></div>
+        <a href="https://gringo1904.gumroad.com/l/you-are-the-worker" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <div class="book-card" data-keywords="blue heaven,voice,transistor,radio,signal,broadcast">
+        <span class="book-tag">Companion novel</span>
+        <h3 class="book-title">Voice in the Transistor</h3>
+        <div class="book-subtitle">Blue Heaven companion &middot; $8.99</div>
+        <p class="book-desc">The signal never dies. A companion to Blue Heaven. Fiction that doesn't invent — it excavates.</p>
+        <div class="book-keywords"><span class="book-kw">voice</span><span class="book-kw">transistor</span><span class="book-kw">radio</span><span class="book-kw">signal</span></div>
+        <div class="book-stories" data-book="blue-heaven"></div>
+        <a href="https://gringo1904.gumroad.com/l/blue-heaven" target="_blank" class="book-cta">Get the book</a>
+      </div>
+
+      <!-- FREE TEASER -->
+      <div class="book-card" data-keywords="energy,water,shell,subsidy,consumption,climate,ocean,digital,Musk" style="border-color: var(--theme-accent);">
+        <span class="book-tag" style="color:var(--theme-primary);">Free teaser</span>
+        <h3 class="book-title">Digital Ocean — Preview</h3>
+        <div class="book-subtitle">First chapters, free &middot; $0.00</div>
+        <p class="book-desc">Read the opening before you buy. The preview that sold the premise.</p>
+        <a href="https://gringo1904.gumroad.com/l/digital-ocean-teaser" target="_blank" class="book-cta free">Download free</a>
+      </div>
+
+    </div>
+
+    <!-- ── IN PROGRESS ── -->
+    <div class="books-section-title">In Progress</div>
+    <div class="books-grid">
+
+      <div class="book-card book-ip" data-keywords="capital,religion,financial,catholic,Jewish,industrialist,signatory,complicity">
+        <span class="book-ip-label">Drafting</span>
+        <h3 class="book-title">Capital Has No Religion</h3>
+        <div class="book-subtitle">Financial complicity across ethnic and religious lines</div>
+        <p class="book-desc">Not "X group funded Y." The signatory list, including Gentile industrialists alongside every name the narrative left out. The accurate statement: capital transcends ethnicity and religion.</p>
+        <div class="book-keywords"><span class="book-kw">capital</span><span class="book-kw">religion</span><span class="book-kw">financial</span><span class="book-kw">complicity</span></div>
+      </div>
+
+      <div class="book-card book-ip" data-keywords="sovereign,nation,encryption,cipher,cryptology,independence">
+        <span class="book-ip-label">Drafting</span>
+        <h3 class="book-title">Sovereign Cipher</h3>
+        <div class="book-subtitle">The Sovereign Nation series — First Chamber</div>
+        <p class="book-desc">The trilogy that opens at a filed document. Voice DNA: 40% Palahniuk, 30% Ellis, 30% Wu-Tang. Built for the 85%.</p>
+        <div class="book-keywords"><span class="book-kw">sovereign</span><span class="book-kw">cipher</span><span class="book-kw">nation</span><span class="book-kw">independence</span></div>
+      </div>
+
+      <div class="book-card book-ip" data-keywords="bush,dynasty,political,family,power,president,war,oil">
+        <span class="book-ip-label">Drafting</span>
+        <h3 class="book-title">Bush Dynasty</h3>
+        <div class="book-subtitle">The documented power line</div>
+        <p class="book-desc">From Prescott to George W. Every filing, every connection, every documented power transfer. Primary sources only.</p>
+        <div class="book-keywords"><span class="book-kw">bush</span><span class="book-kw">dynasty</span><span class="book-kw">political</span><span class="book-kw">power</span></div>
+      </div>
+
+      <div class="book-card book-ip" data-keywords="NMA,daughter,family,personal,legacy">
+        <span class="book-ip-label">Private</span>
+        <h3 class="book-title">NMA</h3>
+        <div class="book-subtitle">For Natti, Milli, Abbi</div>
+        <p class="book-desc">A private book for the daughters. Not for commercial publication.</p>
+        <div class="book-keywords"><span class="book-kw">family</span><span class="book-kw">legacy</span></div>
+      </div>
+
+    </div>
+
+    <div class="bwb-books-banner" style="margin-top: 24px;">
+      <h2 style="font-size: 18px;">The same substrate that powers the news feed powers the books.</h2>
+      <p style="margin-top: 8px; font-size: 13px;">
+        Every book on this page was built using the same TELOS+PAI substrate that drives BOTWAVEBOMBA's blindspot detection.
+        The news feed above shows you <span class="bwb-diff-highlight">today's headlines that connect to the same documented power structures</span> each book investigates.
+        The gap between what the book proved and what the feed is covering right now — that's the story.
+      </p>
+    </div>
+
+    <!-- ── ECOSYSTEM ── -->
+    <div class="books-section-title">The Ecosystem</div>
+    <div class="books-grid">
+
+      <div class="book-card" data-keywords="graphic novel,comic,noir,art,illustration,visual">
+        <span class="book-tag">Graphic novel</span>
+        <h3 class="book-title">BOTWAVEMONITOS</h3>
+        <div class="book-subtitle">B&W Noir graphic novel arm</div>
+        <p class="book-desc">Forensic Noir meets Chaotic Bureaucracy. Zombie760 Synthesis — the core innovation. Two modes, one art direction.</p>
+        <div class="book-keywords"><span class="book-kw">noir</span><span class="book-kw">graphic novel</span><span class="book-kw">B&W</span><span class="book-kw">visual</span></div>
+      </div>
+
+      <div class="book-card" data-keywords="regina,russo,archive,bloodline,custody,disappeared,detective">
+        <span class="book-ip-label">Drafting</span>
+        <h3 class="book-title">Regina Russo</h3>
+        <div class="book-subtitle">4-book investigative fiction series</div>
+        <p class="book-desc">A is for Archive. B is for Bloodline. C is for Custody. D is for Disappeared. Fiction that doesn't invent — it excavates.</p>
+        <div class="book-keywords"><span class="book-kw">regina russo</span><span class="book-kw">detective</span><span class="book-kw">archive</span><span class="book-kw">bloodline</span></div>
+      </div>
+
+      <div class="book-card" data-keywords="sovereign,cipher,nation,encryption,trilogy">
+        <span class="book-ip-label">Drafting</span>
+        <h3 class="book-title">Sovereign Cipher</h3>
+        <div class="book-subtitle">3-book series: First Chamber, Build Protocol, Transmission</div>
+        <p class="book-desc">The trilogy that opens at a filed document. 40% Palahniuk, 30% Ellis, 30% Wu-Tang. Built for the 85%.</p>
+        <div class="book-keywords"><span class="book-kw">sovereign</span><span class="book-kw">cipher</span><span class="book-kw">nation</span><span class="book-kw">encryption</span></div>
+      </div>
+
+      <div class="book-card" data-keywords="sudoers,cantos,root,access,gray,protocol,consensus">
+        <span class="book-ip-label">Drafting</span>
+        <h3 class="book-title">The Sudoers Cantos</h3>
+        <div class="book-subtitle">3-book series: Root Access, Gray Protocol, Consensus</div>
+        <p class="book-desc">#!/usr/TERMINAL STATIKVOID is Book 1. The full mythos continues through Gray Protocol and Consensus.</p>
+        <div class="book-keywords"><span class="book-kw">sudo</span><span class="book-kw">root</span><span class="book-kw">protocol</span><span class="book-kw">consensus</span></div>
+      </div>
+
+      <div class="book-card" data-keywords="bug bounty,vulnerability,hacking,security,pentest,SSRF">
+        <span class="book-tag">Pipeline</span>
+        <h3 class="book-title">Bug Bounty Pipeline</h3>
+        <div class="book-subtitle">The hunter's operating system</div>
+        <p class="book-desc">Quarterback v1.1. Quarterback. Undeniable Gate. Signal-driven stops. The same tools that power the BOTWAVE bounty arm, documented.</p>
+        <div class="book-keywords"><span class="book-kw">bug bounty</span><span class="book-kw">vulnerability</span><span class="book-kw">security</span><span class="book-kw">SSRF</span></div>
+      </div>
+
+      <div class="book-card" data-keywords="paperwork,forms,templates,contract,bureaucracy,filing">
+        <span class="book-tag">Utility</span>
+        <h3 class="book-title">BOTWAVEPAPERWORK</h3>
+        <div class="book-subtitle">The filing system that fights back</div>
+        <p class="book-desc">Templates, contracts, FOIA requests, and filing systems. The administrative weapon for people who need the system to work.</p>
+        <div class="book-keywords"><span class="book-kw">paperwork</span><span class="book-kw">forms</span><span class="book-kw">contract</span><span class="book-kw">FOIA</span></div>
+      </div>
+
+      <div class="book-card" data-keywords="wavesox,sock,proxy,stealth,network,privacy">
+        <span class="book-tag">Infrastructure</span>
+        <h3 class="book-title">WAVESOX</h3>
+        <div class="book-subtitle">Stealth network infrastructure</div>
+        <p class="book-desc">Proxy rotation, stealth browser, upstream masking. The hoodstar build — cheap chassis, custom internals.</p>
+        <div class="book-keywords"><span class="book-kw">proxy</span><span class="book-kw">stealth</span><span class="book-kw">network</span><span class="book-kw">privacy</span></div>
+      </div>
+
+      <div class="book-card" data-keywords="purge,clean,audit,scan,security">
+        <span class="book-tag">Tool</span>
+        <h3 class="book-title">PURGE</h3>
+        <div class="book-subtitle">Clean. Audit. Verify.</div>
+        <p class="book-desc">The audit-before-you-ship tool. Runs the Prime Directive gate on your own claims before you publish them.</p>
+        <div class="book-keywords"><span class="book-kw">audit</span><span class="book-kw">clean</span><span class="book-kw">scan</span><span class="book-kw">verify</span></div>
+      </div>
+
+      <div class="book-card" data-keywords="botfox,firefox,extension,browser,plugin,tool">
+        <span class="book-tag">Browser Extension</span>
+        <h3 class="book-title">BOTFOX</h3>
+        <div class="book-subtitle">The browser that sees what others don't</div>
+        <p class="book-desc">A browser extension that overlays BOTWAVEBOMBA bias fingerprints on any news article you're reading. Real-time, in-page.</p>
+        <div class="book-keywords"><span class="book-kw">browser</span><span class="book-kw">extension</span><span class="book-kw">bias</span><span class="book-kw">fingerprint</span></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <nav class="bwb-bottom-nav safe-bottom">
+    <a href="/">
+      <span class="bwb-bottom-nav-icon">&#x1F4F0;</span>
+      <span>Feed</span>
+    </a>
+    <a href="/blindspots.html">
+      <span class="bwb-bottom-nav-icon">&#x1F441;</span>
+      <span>Blindspots</span>
+    </a>
+    <a href="/sources.html">
+      <span class="bwb-bottom-nav-icon">&#x1F310;</span>
+      <span>Sources</span>
+    </a>
+    <a href="/trades.html">
+      <span class="bwb-bottom-nav-icon">&#x1F527;</span>
+      <span>Trades</span>
+    </a>
+    <a href="/books.html" class="active">
+      <span class="bwb-bottom-nav-icon">&#x1F4DA;</span>
+      <span>Books</span>
+    </a>
+  </nav>
+
+  <footer class="bwb-footer">
+    <div class="bwb-footer-inner">
+      <span class="bwb-footer-logo">BOTWAVE BOOKS</span>
+      <span class="bwb-footer-sub">Primary-source investigations by Kyle Jimenez. Every claim filed. Every source named.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/api.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      BWB_API.getLatest().then(function(data) {
+        var stories = data.stories || [];
+        var cards = document.querySelectorAll('.book-card[data-keywords]');
+
+        cards.forEach(function(card) {
+          var kwString = card.dataset.keywords || '';
+          if (!kwString) return;
+          var keywords = kwString.split(',').map(function(k) { return k.trim().toLowerCase(); });
+          var container = card.querySelector('.book-stories');
+          if (!container) return;
+
+          var matched = stories.filter(function(story) {
+            var text = ((story.headline || '') + ' ' + (story.summary || '')).toLowerCase();
+            return keywords.some(function(kw) { return text.indexOf(kw) !== -1; });
+          }).slice(0, 3);
+
+          if (!matched.length) {
+            var empty = document.createElement('div');
+            empty.style.cssText = 'font-family:var(--font-mono);font-size:10px;color:var(--text-muted);padding:8px 0;';
+            empty.textContent = 'No matching stories in current pipeline run.';
+            container.appendChild(empty);
+            return;
+          }
+
+          var title = document.createElement('div');
+          title.style.cssText = 'font-family:var(--font-mono);font-size:9px;letter-spacing:2px;color:var(--theme-accent);text-transform:uppercase;margin-bottom:8px;';
+          title.textContent = 'IN TODAY'S FEED';
+          container.appendChild(title);
+
+          matched.forEach(function(story) {
+            var a = document.createElement('a');
+            a.className = 'book-story-link';
+            a.href = '/story.html?id=' + encodeURIComponent(story.id);
+            var headline = document.createElement('span');
+            headline.textContent = story.headline || '';
+            a.appendChild(headline);
+            var src = document.createElement('div');
+            src.className = 'book-story-src';
+            var sources = story.sources || [];
+            src.textContent = sources.slice(0, 2).map(function(s) { return s.name || s.id; }).join(' · ');
+            a.appendChild(src);
+            container.appendChild(a);
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

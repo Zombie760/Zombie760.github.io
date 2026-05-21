@@ -8,17 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/botwavebomba/assets/css/main.css">
-  <link rel="stylesheet" href="/botwavebomba/assets/css/funnies.css">
-  <link rel="stylesheet" href="/botwavebomba/assets/css/mobile.css">
-  <link rel="manifest" href="/botwavebomba/manifest.json">
-  <link rel="apple-touch-icon" href="/botwavebomba/assets/icons/icon-192.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/funnies.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
   <meta name="theme-color" content="#0a0a0a">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
-  <script src="/botwavebomba/assets/js/theme-switcher.js" defer></script>
-  <script src="/botwavebomba/assets/js/pwa.js" defer></script>
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/pwa.js" defer></script>
 </head>
 <body>
 
@@ -35,11 +35,13 @@
           TELOS+PAI LIVE
         </div>
         <nav class="bwb-topnav">
-          <a href="/botwavebomba/">Feed</a>
-          <a href="/botwavebomba/blindspots.html">Blindspots</a>
-          <a href="/botwavebomba/sources.html">Sources</a>
-          <a href="/botwavebomba/about.html">Method</a>
-          <a href="/botwavebomba/funnies.html" class="active">Funnies</a>
+          <a href="/">Feed</a>
+          <a href="/blindspots.html">Blindspots</a>
+          <a href="/sources.html">Sources</a>
+        <a href="/trades.html">Trades</a>
+        <a href="/books.html">Books</a>
+          <a href="/about.html">Method</a>
+          <a href="/funnies.html" class="active">Funnies</a>
         </nav>
       </div>
     </div>
@@ -111,7 +113,7 @@
       </div>
       <div class="bwb-footer-right">
         <a href="https://t.me/botwave_news" target="_blank">Telegram</a>
-        <a href="/botwavebomba/about.html">About</a>
+        <a href="/about.html">About</a>
         <a href="https://github.com/Zombie760" target="_blank">GitHub</a>
       </div>
     </div>
@@ -124,32 +126,40 @@
 
   <!-- Mobile bottom nav -->
   <nav class="bwb-bottom-nav safe-bottom">
-    <a href="/botwavebomba/">
+    <a href="/">
       <span class="bwb-bottom-nav-icon">📰</span>
       <span>Feed</span>
     </a>
-    <a href="/botwavebomba/blindspots.html">
+    <a href="/blindspots.html">
       <span class="bwb-bottom-nav-icon">👁️</span>
       <span>Blindspots</span>
     </a>
-    <a href="/botwavebomba/sources.html">
+    <a href="/sources.html">
       <span class="bwb-bottom-nav-icon">🌐</span>
       <span>Sources</span>
     </a>
-    <a href="/botwavebomba/about.html">
+    <a href="/trades.html">
+      <span class="bwb-bottom-nav-icon">🔧</span>
+      <span>Trades</span>
+    </a>
+    <a href="/books.html">
+      <span class="bwb-bottom-nav-icon">📚</span>
+      <span>Books</span>
+    </a>
+    <a href="/about.html">
       <span class="bwb-bottom-nav-icon">📋</span>
       <span>Method</span>
     </a>
-    <a href="/botwavebomba/funnies.html" class="active">
+    <a href="/funnies.html" class="active">
       <span class="bwb-bottom-nav-icon">🎭</span>
       <span>Funnies</span>
     </a>
   </nav>
 
-  <script src="/botwavebomba/assets/js/funnies.js"></script>
+  <script src="/assets/js/funnies.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/botwavebomba/service-worker.js');
+      navigator.serviceWorker.register('/service-worker.js');
     }
   </script>
 </body>

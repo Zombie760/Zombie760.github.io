@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Collar — BOTWAVEBOMBA</title>
+  <meta name="description" content="Construction, labor, infrastructure, housing — through the 5-axis bias lens. Who covers the trades. Who doesn't.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/pwa.js" defer></script>
+</head>
+<body>
+
+  <header class="bwb-header bwb-header--compact">
+    <div class="bwb-header-inner">
+      <a href="/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <nav class="bwb-topnav">
+        <a href="/">Feed</a>
+        <a href="/blindspots.html">Blindspots</a>
+        <a href="/sources.html">Sources</a>
+        <a href="/trades.html" class="active">Trades</a>
+        <a href="/books.html">Books</a>
+        <a href="/about.html">Method</a>
+        <a href="/funnies.html">Funnies</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="bwb-page-container">
+    <div class="bwb-page-header">
+      <h1 class="bwb-page-title">BLUE COLLAR</h1>
+      <p class="bwb-page-sub">
+        Construction. Labor. Infrastructure. Housing. OSHA. Unions. Who covers the trades — and who doesn't.
+        The same 5-axis bias fingerprints, the same blindspot detection, filtered for the people who actually build things.
+      </p>
+    </div>
+
+    <!-- Signal filters for trades -->
+    <nav class="bwb-filters" id="trades-filters">
+      <button class="active" data-filter="all">All Trades</button>
+      <button data-filter="construction">Construction</button>
+      <button data-filter="labor">Labor</button>
+      <button data-filter="infrastructure">Infrastructure</button>
+      <button data-filter="housing">Housing</button>
+      <button data-filter="regulation">Regulation</button>
+    </nav>
+
+    <div id="story-feed" class="bwb-feed">
+      <div class="bwb-loading">
+        <div class="bwb-loading-pulse">LOADING TRADES</div>
+        <div class="bwb-loading-sub">Filtering 496 sources for blue-collar signal</div>
+      </div>
+    </div>
+
+    <div class="bwb-trades-explainer">
+      <h3 class="bwb-sidebar-title">WHY A TRADES SECTION?</h3>
+      <p class="bwb-sidebar-body">
+        The trades build everything. The press covers almost none of it. When a crane collapses, the local paper runs the obituary. When a union contract expires, the business section covers the stock impact — not the workers. When HUD changes a regulation, nobody outside the trades even knows.
+      </p>
+      <p class="bwb-sidebar-body">
+        BOTWAVEBOMBA applies the same 5-axis bias fingerprint to trades coverage that it does to geopolitics. Western outlets frame labor as a cost. Non-aligned outlets frame it as a right. Adversarial outlets frame it as western hypocrisy. The gap IS the story.
+      </p>
+    </div>
+  </div>
+
+  <nav class="bwb-bottom-nav safe-bottom">
+    <a href="/">
+      <span class="bwb-bottom-nav-icon">&#x1F4F0;</span>
+      <span>Feed</span>
+    </a>
+    <a href="/blindspots.html">
+      <span class="bwb-bottom-nav-icon">&#x1F441;</span>
+      <span>Blindspots</span>
+    </a>
+    <a href="/sources.html">
+      <span class="bwb-bottom-nav-icon">&#x1F310;</span>
+      <span>Sources</span>
+    </a>
+    <a href="/trades.html" class="active">
+      <span class="bwb-bottom-nav-icon">&#x1F527;</span>
+      <span>Trades</span>
+    </a>
+    <a href="/books.html">
+      <span class="bwb-bottom-nav-icon">&#x1F4DA;</span>
+      <span>Books</span>
+    </a>
+  </nav>
+
+  <footer class="bwb-footer">
+    <div class="bwb-footer-inner">
+      <span class="bwb-footer-logo">BOTWAVEBOMBA</span>
+      <span class="bwb-footer-sub">Built by a plumber. Powered by TELOS+PAI substrate.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/feed.js"></script>
+  <script>
+    // Trades keyword filter — runs on top of the regular feed
+    var TRADES_KEYWORDS = {
+      'construction': ['construction', 'building', 'builder', 'contractor', 'crane', 'demolition', 'site', 'foreman', 'hard hat', 'scaffold', 'excavat'],
+      'labor': ['labor', 'union', 'worker', 'strike', 'wage', 'collective bargaining', 'apprentice', 'journeyman', 'gig worker', 'minimum wage', 'osha', 'workplace safety', 'factory worker', 'blue collar'],
+      'infrastructure': ['infrastructure', 'bridge', 'highway', 'road', 'dam', 'water main', 'sewer', 'power grid', 'grid', 'transit', 'rail', 'port', 'shipping', 'supply chain', 'freight'],
+      'housing': ['housing', 'rent', 'eviction', 'mortgage', 'foreclosure', 'zoning', 'developer', 'gentrif', 'affordable housing', 'homeless', 'shelter', 'hud', ' Section 8'],
+      'regulation': ['osha', 'epa', 'fha', 'building code', 'permit', 'inspection', 'licensure', 'regulation', 'compliance', 'deregulat', 'zoning board', 'planning commission']
+    };
+
+    var ALL_TRADES_KEYWORDS = [];
+    Object.keys(TRADES_KEYWORDS).forEach(function(cat) {
+      TRADES_KEYWORDS[cat].forEach(function(kw) { ALL_TRADES_KEYWORDS.push(kw.toLowerCase()); });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load full feed then filter
+      BWB_API.getLatest().then(function(data) {
+        var allStories = data.stories || [];
+        var tradesStories = allStories.filter(function(story) {
+          var text = ((story.headline || '') + ' ' + (story.summary || '')).toLowerCase();
+          return ALL_TRADES_KEYWORDS.some(function(kw) { return text.indexOf(kw) !== -1; });
+        });
+
+        // Tag each story with its trades category
+        tradesStories.forEach(function(story) {
+          story.trades_cats = [];
+          var text = ((story.headline || '') + ' ' + (story.summary || '')).toLowerCase();
+          Object.keys(TRADES_KEYWORDS).forEach(function(cat) {
+            if (TRADES_KEYWORDS[cat].some(function(kw) { return text.indexOf(kw) !== -1; })) {
+              story.trades_cats.push(cat);
+            }
+          });
+        });
+
+        // Store filtered stories globally for filter navigation
+        window._tradesStories = tradesStories;
+        window._tradesAll = allStories;
+
+        var feed = document.getElementById('story-feed');
+        while (feed.firstChild) feed.removeChild(feed.firstChild);
+
+        if (!tradesStories.length) {
+          var empty = document.createElement('div');
+          empty.className = 'bwb-empty';
+          empty.textContent = 'No trades-relevant stories in this pipeline run. The gap IS the story — check back after the next ingest.';
+          feed.appendChild(empty);
+          return;
+        }
+
+        tradesStories.forEach(function(story) {
+          // Add trades category badges
+          if (!story._tradesRendered) {
+            story._tradesRendered = true;
+          }
+          feed.appendChild(buildCard(story));
+        });
+
+        // Update counts
+        var countEl = document.getElementById('story-count');
+        if (countEl) countEl.textContent = tradesStories.length;
+        var bsEl = document.getElementById('blindspot-count');
+        if (bsEl) bsEl.textContent = tradesStories.filter(function(s) { return s.is_blindspot; }).length;
+      });
+
+      // Filter buttons
+      var nav = document.getElementById('trades-filters');
+      if (nav) {
+        nav.addEventListener('click', function(e) {
+          var btn = e.target.closest('[data-filter]');
+          if (!btn) return;
+          nav.querySelectorAll('button').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          var filter = btn.dataset.filter;
+
+          var stories = filter === 'all' ? window._tradesStories : window._tradesStories.filter(function(s) {
+            return s.trades_cats && s.trades_cats.indexOf(filter) !== -1;
+          });
+
+          var feed = document.getElementById('story-feed');
+          while (feed.firstChild) feed.removeChild(feed.firstChild);
+          stories.forEach(function(story) { feed.appendChild(buildCard(story)); });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

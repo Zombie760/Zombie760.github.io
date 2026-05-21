@@ -8,31 +8,31 @@
 const CACHE_VERSION = 'bwb-v3-mobile';
 
 const APP_SHELL = [
-  '/botwavebomba/',
-  '/botwavebomba/index.html',
-  '/botwavebomba/blindspots.html',
-  '/botwavebomba/sources.html',
-  '/botwavebomba/about.html',
-  '/botwavebomba/story.html',
-  '/botwavebomba/funnies.html',
-  '/botwavebomba/status.html',
-  '/botwavebomba/pipeline_state.json',
-  '/botwavebomba/DIAGNOSTIC.md',
-  '/botwavebomba/PLAN_HYBRID.md',
-  '/botwavebomba/assets/css/main.css',
-  '/botwavebomba/assets/css/mobile.css',
-  '/botwavebomba/assets/css/funnies.css',
-  '/botwavebomba/assets/js/api.js',
-  '/botwavebomba/assets/js/feed.js',
-  '/botwavebomba/assets/js/blindspot.js',
-  '/botwavebomba/assets/js/sources.js',
-  '/botwavebomba/assets/js/story.js',
-  '/botwavebomba/assets/js/heatmap.js',
-  '/botwavebomba/assets/js/funnies.js',
-  '/botwavebomba/assets/js/theme-switcher.js',
-  '/botwavebomba/assets/icons/icon-192.png',
-  '/botwavebomba/assets/icons/icon-512.png',
-  '/botwavebomba/manifest.json',
+  '/',
+  '/index.html',
+  '/blindspots.html',
+  '/sources.html',
+  '/about.html',
+  '/story.html',
+  '/funnies.html',
+  '/status.html',
+  '/pipeline_state.json',
+  '/DIAGNOSTIC.md',
+  '/PLAN_HYBRID.md',
+  '/assets/css/main.css',
+  '/assets/css/mobile.css',
+  '/assets/css/funnies.css',
+  '/assets/js/api.js',
+  '/assets/js/feed.js',
+  '/assets/js/blindspot.js',
+  '/assets/js/sources.js',
+  '/assets/js/story.js',
+  '/assets/js/heatmap.js',
+  '/assets/js/funnies.js',
+  '/assets/js/theme-switcher.js',
+  '/assets/icons/icon-192.png',
+  '/assets/icons/icon-512.png',
+  '/manifest.json',
 ];
 
 self.addEventListener('install', event => {
@@ -65,7 +65,7 @@ self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
   // API JSON — stale-while-revalidate
-  if (url.pathname.includes('/botwavebomba/api/')) {
+  if (url.pathname.includes('/api/')) {
     event.respondWith(
       caches.open(CACHE_VERSION).then(async cache => {
         const cached = await cache.match(event.request);
@@ -80,7 +80,7 @@ self.addEventListener('fetch', event => {
   }
 
   // Source registry data — cache-first
-  if (url.pathname.includes('/botwavebomba/data/')) {
+  if (url.pathname.includes('/data/')) {
     event.respondWith(
       caches.match(event.request).then(cached => {
         if (cached) return cached;
@@ -102,7 +102,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(
       caches.match(event.request).then(cached =>
         cached || fetch(event.request).catch(() =>
-          caches.match('/botwavebomba/index.html')
+          caches.match('/index.html')
         )
       )
     );

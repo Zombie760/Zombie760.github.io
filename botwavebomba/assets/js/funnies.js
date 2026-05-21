@@ -24,7 +24,43 @@ function buildCover(item) {
   var cover = document.createElement('div');
   cover.className = 'fny-issue-cover';
 
-  // MAD cover tile (no per-issue thumbnails available in this collection)
+  // Cover image from archive.org (per-issue JPG)
+  if (item.cover_img) {
+    var img = document.createElement('img');
+    img.className = 'fny-cover-img';
+    img.src = item.cover_img;
+    img.alt = item.title || ('MAD #' + item.issue);
+    img.loading = 'lazy';
+    img.onerror = function() {
+      // Fallback to text tile on load failure
+      this.remove();
+      var tile = buildFallbackTile(item);
+      cover.insertBefore(tile, cover.firstChild);
+    };
+    cover.appendChild(img);
+  } else {
+    // Fallback text tile when no cover image
+    var tile = buildFallbackTile(item);
+    cover.appendChild(tile);
+  }
+
+  // Badge overlay
+  if (isHalloween(item.issue)) {
+    var b = document.createElement('span');
+    b.className   = 'fny-cover-badge halloween';
+    b.textContent = 'HALLOWEEN';
+    cover.appendChild(b);
+  } else if (isSpyVsSpy(item.issue)) {
+    var s = document.createElement('span');
+    s.className   = 'fny-cover-badge spyvspy';
+    s.textContent = 'SPY VS SPY';
+    cover.appendChild(s);
+  }
+
+  return cover;
+}
+
+function buildFallbackTile(item) {
   var tile = document.createElement('div');
   tile.className = 'fny-cover-tile';
 
@@ -43,22 +79,7 @@ function buildCover(item) {
   yearLabel.textContent = item.year;
   tile.appendChild(yearLabel);
 
-  cover.appendChild(tile);
-
-  // Badge overlay
-  if (isHalloween(item.issue)) {
-    var b = document.createElement('span');
-    b.className   = 'fny-cover-badge halloween';
-    b.textContent = 'HALLOWEEN';
-    cover.appendChild(b);
-  } else if (isSpyVsSpy(item.issue)) {
-    var s = document.createElement('span');
-    s.className   = 'fny-cover-badge spyvspy';
-    s.textContent = 'SPY VS SPY';
-    cover.appendChild(s);
-  }
-
-  return cover;
+  return tile;
 }
 
 function buildCard(item) {
@@ -168,7 +189,7 @@ async function init() {
   main.appendChild(cs);
 
   try {
-    var resp = await fetch('/botwavebomba/data/mad_archive.json');
+    var resp = await fetch('/data/mad_archive.json');
     _allIssues = await resp.json();
   } catch (err) {
     var grid = document.getElementById('mad-grid');

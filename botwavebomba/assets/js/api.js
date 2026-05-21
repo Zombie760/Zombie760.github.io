@@ -1,46 +1,116 @@
 // BOTWAVEBOMBA — API Layer
-// Reads from /botwavebomba/api/*.json written by the systemd-fired pipeline.
-// On fetch failure: surfaces a visible error banner and returns an empty payload.
-// No silent fallback to fictional demo content — see DIAGNOSTIC.md for the rationale.
+// Fast initial load via slim endpoint, then lazy full payload.
+// On fetch failure: visible error banner, empty payload — no fictional content.
 
 const BWB_API = {
-  base: '/botwavebomba/api',
-  dataBase: '/botwavebomba/data',
+  base: '/api',
+  dataBase: '/data',
+  _fullData: null,
+  _slimLoaded: false,
+  _fullLoaded: false,
 
   async getLatest() {
+    // If we already have full data, return it
+    if (this._fullLoaded && this._fullData) return this._fullData;
+
+    // First load: fetch slim (36KB) for instant render
+    if (!this._slimLoaded) {
+      try {
+        var slimR = await fetch(this.base + '/latest_slim.json', { cache: 'no-store' });
+        if (slimR.ok) {
+          var slimData = await slimR.json();
+          this._slimLoaded = true;
+          // Background-load full data while user reads slim
+          this._loadFull();
+          return slimData;
+        }
+      } catch (e) {
+        // Slim failed, fall through to full
+      }
+    }
+
+    // Full load (or slim failed)
     try {
-      const r = await fetch(`${this.base}/latest.json`, { cache: 'no-store' });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      return await r.json();
+      var r = await fetch(this.base + '/latest.json', { cache: 'no-store' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      var data = await r.json();
+      this._fullData = data;
+      this._fullLoaded = true;
+      return data;
     } catch (e) {
       console.error('BWB: live API fetch failed', e.message);
-      this._showErrorBanner('Live pipeline data unavailable: ' + e.message + '. No fallback shown — empty state is the honest answer.');
+      if (!this._slimLoaded) {
+        this._showErrorBanner('Live pipeline data unavailable: ' + e.message + '. No fallback shown — empty state is the honest answer.');
+      }
       return this._emptyPayload(e.message);
+    }
+  },
+
+  async _loadFull() {
+    // Background: load full payload and merge into state
+    try {
+      var r = await fetch(this.base + '/latest.json', { cache: 'no-store' });
+      if (!r.ok) return;
+      var data = await r.json();
+      this._fullData = data;
+      this._fullLoaded = true;
+      // Dispatch event so feed.js can refresh with full data
+      window.dispatchEvent(new CustomEvent('bwb-full-data', { detail: data }));
+    } catch (e) {
+      // Full data load failed silently — slim data still works
+      console.warn('BWB: full data background load failed', e.message);
     }
   },
 
   async getBlindspotsData() {
     try {
-      const r = await fetch(`${this.base}/blindspots.json`, { cache: 'no-store' });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      var r = await fetch(this.base + '/blindspots.json', { cache: 'no-store' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
       return await r.json();
     } catch (e) {
-      // Intentional: empty stories triggers blindspot.js fallback that derives
-      // blindspots from latest.json. This is the documented path now that the
-      // stale blindspots fossil has been removed.
       return { stories: [] };
     }
   },
 
   async getSources() {
     try {
-      const r = await fetch(`${this.dataBase}/source_registry.json`);
+      var r = await fetch(this.dataBase + '/source_registry.json');
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return await r.json();
     } catch (e) {
       console.error('BWB: source registry fetch failed', e.message);
       this._showErrorBanner('Source registry unavailable: ' + e.message);
       return { sources: [], total: 0 };
+    }
+  },
+
+  async getStoryDetail(storyId) {
+    // For story.html — load full data and find the story
+    var data = await this.getLatest();
+    var story = (data.stories || []).find(function(s) { return s.id === storyId; });
+    if (story) return story;
+
+    // If slim data doesn't have articles, try full
+    if (!this._fullLoaded) {
+      var fullData = await this._loadFullSync();
+      if (fullData) {
+        story = (fullData.stories || []).find(function(s) { return s.id === storyId; });
+        if (story) return story;
+      }
+    }
+    return null;
+  },
+
+  async _loadFullSync() {
+    try {
+      var r = await fetch(this.base + '/latest.json', { cache: 'no-store' });
+      if (!r.ok) return null;
+      var data = await r.json();
+      this._fullData = data;
+      this._fullLoaded = true;
+      return data;
+    } catch (e) {
+      return null;
     }
   },
 
@@ -51,7 +121,7 @@ const BWB_API = {
   _showErrorBanner(message) {
     if (typeof document === 'undefined') return;
     if (document.getElementById('bwb-error-banner')) return;
-    const banner = document.createElement('div');
+    var banner = document.createElement('div');
     banner.id = 'bwb-error-banner';
     banner.setAttribute('role', 'alert');
     banner.style.cssText = [

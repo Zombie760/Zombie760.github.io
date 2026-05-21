@@ -1,7 +1,8 @@
 // BOTWAVEBOMBA — Theme Switcher
-// 5 colorways: Cold Signal (default) + Powder Blue + Bolt Navy + Dodger Blue + Showtime
+// 12 colorways: editorial + sports + aesthetic + functional
 
 const THEMES = [
+  // ── Editorial ──
   {
     id: 'default',
     label: 'COLD SIGNAL',
@@ -9,6 +10,15 @@ const THEMES = [
     accent: '#ef4444',
     gold: '#f59e0b',
   },
+  {
+    id: 'morning-edition',
+    label: 'MORNING EDITION',
+    primary: '#1A1A1A',
+    accent: '#B22222',
+    gold: '#8B7355',
+    note: 'Classic broadsheet · Cream paper · Black ink'
+  },
+  // ── SoCal Sports ──
   {
     id: 'powder-blue',
     label: 'POWDER BLUE',
@@ -40,6 +50,56 @@ const THEMES = [
     accent: '#FDB927',
     gold: '#FDB927',
     note: 'Los Angeles Lakers · PMS 268C'
+  },
+  {
+    id: 'padres',
+    label: 'SWINGIN FRIAR',
+    primary: '#FFC425',
+    accent: '#E87722',
+    gold: '#693F23',
+    note: 'San Diego Padres · Brown & Gold · PMS 469C / 7-8C'
+  },
+  // ── Aesthetic ──
+  {
+    id: 'green-screen',
+    label: 'GREEN SCREEN',
+    primary: '#00FF41',
+    accent: '#FFB000',
+    gold: '#00CC33',
+    note: 'Terminal phosphor · Amber optional · PDP-11 aesthetic'
+  },
+  {
+    id: 'sage-brush',
+    label: 'SAGE BRUSH',
+    primary: '#8B8552',
+    accent: '#C4A35A',
+    gold: '#5C6B3C',
+    note: 'Military intel · Olive/tan · DIA briefing room'
+  },
+  {
+    id: 'global-south',
+    label: 'GLOBAL SOUTH',
+    primary: '#D2691E',
+    accent: '#E8A838',
+    gold: '#8B4513',
+    note: 'Warm earth · Terracotta · Non-aligned bloc aesthetic'
+  },
+  {
+    id: 'riot-club',
+    label: 'RIOT CLUB',
+    primary: '#FFD600',
+    accent: '#FF0054',
+    gold: '#FFD600',
+    note: 'Punk flyer · Safety yellow/black · Maximum contrast'
+  },
+  // ── Functional ──
+  {
+    id: 'night-shift',
+    label: 'NIGHT SHIFT',
+    primary: '#AAAAAA',
+    accent: '#CC4444',
+    gold: '#888888',
+    note: 'AMOLED black · Zero blue · 3am doomscroll'
   }
 ];
 

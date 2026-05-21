@@ -3,12 +3,12 @@
 document.addEventListener('DOMContentLoaded', async function() {
   const storyId = BWB_API.getStoryParam();
   if (!storyId) {
-    window.location = '/botwavebomba/';
+    window.location = '/';
     return;
   }
 
-  const data = await BWB_API.getLatest();
-  const story = (data.stories || []).find(function(s) { return s.id === storyId; });
+  // Story detail needs full articles — use getStoryDetail which loads full data
+  const story = await BWB_API.getStoryDetail(storyId);
 
   if (!story) {
     document.getElementById('story-headline').textContent = 'Story not found.';
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     var heroImg = document.createElement('img');
     heroImg.alt     = story.headline || '';
     heroImg.loading = 'lazy';
-    var cardSrc = '/botwavebomba/api/cards/' + story.id + '.png';
+    var cardSrc = '/api/cards/' + story.id + '.png';
     if (story.image_url) {
       heroImg.src = story.image_url;
       heroImg.onerror = function() {
