@@ -1,308 +1,1019 @@
-[
-  {
-    "id": "d9ceaf8a9a0d7c2e",
-    "donor": "Farallon Capital",
-    "donor_type": "corporation",
-    "amount": 89100000,
-    "recipient": "Tom Steyer",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "fb2df3b1e9fb6f6e",
-    "donor": "NextGen America",
-    "donor_type": "individual",
-    "amount": 5000000,
-    "recipient": "Tom Steyer",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "896f46076f92c1b3",
-    "donor": "Tom Steyer",
-    "donor_type": "individual",
-    "amount": 147000000,
-    "recipient": "Tom Steyer",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "9b7ad0d73b0ed29b",
-    "donor": "Chan Zuckerberg Initiative",
-    "donor_type": "individual",
-    "amount": 25000000,
-    "recipient": "Gavin Newsom",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "c032c35beaf35df6",
-    "donor": "Kevin Yee",
-    "donor_type": "individual",
-    "amount": 12000000,
-    "recipient": "Gavin Newsom",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "eceaecc1bb36746e",
-    "donor": "Democratic Governors Association",
-    "donor_type": "individual",
-    "amount": 8500000,
-    "recipient": "Gavin Newsom",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "cd67e156b0f63b6f",
-    "donor": "Blackstone Group",
-    "donor_type": "corporation",
-    "amount": 5000000,
-    "recipient": "Marco Rubio",
-    "recipient_office": "Senate",
-    "recipient_state": "FL",
-    "district": "FL",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "dee46eb9687a7a69",
-    "donor": "Goldman Sachs",
-    "donor_type": "individual",
-    "amount": 3200000,
-    "recipient": "Sherrod Brown",
-    "recipient_office": "Senate",
-    "recipient_state": "OH",
-    "district": "OH",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "d87bab7bd2e1de79",
-    "donor": "Renaissance Technologies",
-    "donor_type": "individual",
-    "amount": 4500000,
-    "recipient": "Bob Casey",
-    "recipient_office": "Senate",
-    "recipient_state": "PA",
-    "district": "PA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "c5882dd9baa28bbf",
-    "donor": "Uline Inc",
-    "donor_type": "corporation",
-    "amount": 2800000,
-    "recipient": "Tammy Baldwin",
-    "recipient_office": "Senate",
-    "recipient_state": "WI",
-    "district": "WI",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "bc3bcf44133ff104",
-    "donor": "Petrone Family Trust",
-    "donor_type": "individual",
-    "amount": 1900000,
-    "recipient": "Ruben Gallego",
-    "recipient_office": "Senate",
-    "recipient_state": "AZ",
-    "district": "AZ",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "160d1c417fe4988b",
-    "donor": "Emerson Electric",
-    "donor_type": "individual",
-    "amount": 2100000,
-    "recipient": "Josh Hawley",
-    "recipient_office": "Senate",
-    "recipient_state": "MO",
-    "district": "MO",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "47f87c5746ae676c",
-    "donor": "Bernard Marcus",
-    "donor_type": "individual",
-    "amount": 3500000,
-    "recipient": "Jon Ossoff",
-    "recipient_office": "Senate",
-    "recipient_state": "GA",
-    "district": "GA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "fa57bdec3f245085",
-    "donor": "Timothy Draper",
-    "donor_type": "individual",
-    "amount": 1200000,
-    "recipient": "Katie Porter",
-    "recipient_office": "Senate",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "ee586da6675801a5",
-    "donor": "Miriam Adelson",
-    "donor_type": "individual",
-    "amount": 100000000,
-    "recipient": "Trump Campaign",
-    "recipient_office": "President",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "4b072decb8ea0b07",
-    "donor": "Reid Hoffman",
-    "donor_type": "individual",
-    "amount": 8000000,
-    "recipient": "Biden Campaign",
-    "recipient_office": "President",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "f34777cd5c23005a",
-    "donor": "Ken Griffin",
-    "donor_type": "individual",
-    "amount": 75000000,
-    "recipient": "Trump PACs",
-    "recipient_office": "President",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "445366921f6e41ce",
-    "donor": "Michael Bloomberg",
-    "donor_type": "individual",
-    "amount": 50000000,
-    "recipient": "Democratic PACs",
-    "recipient_office": "President",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  }
-]
+{
+  "last_updated": "2026-05-22T22:07:43.994689+00:00",
+  "story_count": 15,
+  "total_amount": 1087600000.0,
+  "stories": [
+    {
+      "id": "bd20b1ad8d7d1e0c",
+      "recipient": "Tom Steyer",
+      "recipient_office": "Governor",
+      "recipient_state": "CA",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "d9ceaf8a9a0d7c2e",
+          "ts": "2026-05-22T14:10:37.088735+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Farallon Capital",
+          "donor_type": "corporation",
+          "amount": 89100000,
+          "recipient": "Tom Steyer",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "fb2df3b1e9fb6f6e",
+          "ts": "2026-05-22T14:10:37.089001+00:00",
+          "type": "corruption_money_trail",
+          "donor": "NextGen America",
+          "donor_type": "individual",
+          "amount": 5000000,
+          "recipient": "Tom Steyer",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "896f46076f92c1b3",
+          "ts": "2026-05-22T14:10:37.089093+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Tom Steyer",
+          "donor_type": "individual",
+          "amount": 147000000,
+          "recipient": "Tom Steyer",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "d9ceaf8a9a0d7c2e",
+          "ts": "2026-05-22T18:29:41.893262+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Farallon Capital",
+          "donor_type": "corporation",
+          "amount": 89100000,
+          "recipient": "Tom Steyer",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "fb2df3b1e9fb6f6e",
+          "ts": "2026-05-22T18:29:41.893654+00:00",
+          "type": "corruption_money_trail",
+          "donor": "NextGen America",
+          "donor_type": "individual",
+          "amount": 5000000,
+          "recipient": "Tom Steyer",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "896f46076f92c1b3",
+          "ts": "2026-05-22T18:29:41.893777+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Tom Steyer",
+          "donor_type": "individual",
+          "amount": 147000000,
+          "recipient": "Tom Steyer",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 482200000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.993965+00:00",
+      "claim_count": 6
+    },
+    {
+      "id": "815eaba70e7f9022",
+      "recipient": "Trump Campaign",
+      "recipient_office": "President",
+      "recipient_state": "US",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "ee586da6675801a5",
+          "ts": "2026-05-22T14:10:37.089821+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Miriam Adelson",
+          "donor_type": "individual",
+          "amount": 100000000,
+          "recipient": "Trump Campaign",
+          "recipient_office": "President",
+          "recipient_state": "US",
+          "district": "US",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "ee586da6675801a5",
+          "ts": "2026-05-22T18:29:41.894493+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Miriam Adelson",
+          "donor_type": "individual",
+          "amount": 100000000,
+          "recipient": "Trump Campaign",
+          "recipient_office": "President",
+          "recipient_state": "US",
+          "district": "US",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 200000000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.994020+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "96d0c6a3469e8fe0",
+      "recipient": "Trump PACs",
+      "recipient_office": "President",
+      "recipient_state": "US",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "f34777cd5c23005a",
+          "ts": "2026-05-22T14:10:37.089933+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Ken Griffin",
+          "donor_type": "individual",
+          "amount": 75000000,
+          "recipient": "Trump PACs",
+          "recipient_office": "President",
+          "recipient_state": "US",
+          "district": "US",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "f34777cd5c23005a",
+          "ts": "2026-05-22T18:29:41.894606+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Ken Griffin",
+          "donor_type": "individual",
+          "amount": 75000000,
+          "recipient": "Trump PACs",
+          "recipient_office": "President",
+          "recipient_state": "US",
+          "district": "US",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 150000000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.994029+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "24743bb7dfffa720",
+      "recipient": "Democratic PACs",
+      "recipient_office": "President",
+      "recipient_state": "US",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "445366921f6e41ce",
+          "ts": "2026-05-22T14:10:37.089989+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Michael Bloomberg",
+          "donor_type": "individual",
+          "amount": 50000000,
+          "recipient": "Democratic PACs",
+          "recipient_office": "President",
+          "recipient_state": "US",
+          "district": "US",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "445366921f6e41ce",
+          "ts": "2026-05-22T18:29:41.894662+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Michael Bloomberg",
+          "donor_type": "individual",
+          "amount": 50000000,
+          "recipient": "Democratic PACs",
+          "recipient_office": "President",
+          "recipient_state": "US",
+          "district": "US",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 100000000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.994035+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "a46b246065761555",
+      "recipient": "Gavin Newsom",
+      "recipient_office": "Governor",
+      "recipient_state": "CA",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "9b7ad0d73b0ed29b",
+          "ts": "2026-05-22T14:10:37.089160+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Chan Zuckerberg Initiative",
+          "donor_type": "individual",
+          "amount": 25000000,
+          "recipient": "Gavin Newsom",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "c032c35beaf35df6",
+          "ts": "2026-05-22T14:10:37.089222+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Kevin Yee",
+          "donor_type": "individual",
+          "amount": 12000000,
+          "recipient": "Gavin Newsom",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "eceaecc1bb36746e",
+          "ts": "2026-05-22T14:10:37.089282+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Democratic Governors Association",
+          "donor_type": "individual",
+          "amount": 8500000,
+          "recipient": "Gavin Newsom",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "9b7ad0d73b0ed29b",
+          "ts": "2026-05-22T18:29:41.893848+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Chan Zuckerberg Initiative",
+          "donor_type": "individual",
+          "amount": 25000000,
+          "recipient": "Gavin Newsom",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "c032c35beaf35df6",
+          "ts": "2026-05-22T18:29:41.893910+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Kevin Yee",
+          "donor_type": "individual",
+          "amount": 12000000,
+          "recipient": "Gavin Newsom",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "eceaecc1bb36746e",
+          "ts": "2026-05-22T18:29:41.893971+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Democratic Governors Association",
+          "donor_type": "individual",
+          "amount": 8500000,
+          "recipient": "Gavin Newsom",
+          "recipient_office": "Governor",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 91000000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.993986+00:00",
+      "claim_count": 6
+    },
+    {
+      "id": "99ad71a1080df3ae",
+      "recipient": "Biden Campaign",
+      "recipient_office": "President",
+      "recipient_state": "US",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "4b072decb8ea0b07",
+          "ts": "2026-05-22T14:10:37.089877+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Reid Hoffman",
+          "donor_type": "individual",
+          "amount": 8000000,
+          "recipient": "Biden Campaign",
+          "recipient_office": "President",
+          "recipient_state": "US",
+          "district": "US",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "4b072decb8ea0b07",
+          "ts": "2026-05-22T18:29:41.894549+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Reid Hoffman",
+          "donor_type": "individual",
+          "amount": 8000000,
+          "recipient": "Biden Campaign",
+          "recipient_office": "President",
+          "recipient_state": "US",
+          "district": "US",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 16000000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.994026+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "14a78b443c69b22b",
+      "recipient": "Marco Rubio",
+      "recipient_office": "Senate",
+      "recipient_state": "FL",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "cd67e156b0f63b6f",
+          "ts": "2026-05-22T14:10:37.089341+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Blackstone Group",
+          "donor_type": "corporation",
+          "amount": 5000000,
+          "recipient": "Marco Rubio",
+          "recipient_office": "Senate",
+          "recipient_state": "FL",
+          "district": "FL",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "cd67e156b0f63b6f",
+          "ts": "2026-05-22T18:29:41.894030+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Blackstone Group",
+          "donor_type": "corporation",
+          "amount": 5000000,
+          "recipient": "Marco Rubio",
+          "recipient_office": "Senate",
+          "recipient_state": "FL",
+          "district": "FL",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 10000000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.993993+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "eea494cabad2408e",
+      "recipient": "Bob Casey",
+      "recipient_office": "Senate",
+      "recipient_state": "PA",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "d87bab7bd2e1de79",
+          "ts": "2026-05-22T14:10:37.089458+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Renaissance Technologies",
+          "donor_type": "individual",
+          "amount": 4500000,
+          "recipient": "Bob Casey",
+          "recipient_office": "Senate",
+          "recipient_state": "PA",
+          "district": "PA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "d87bab7bd2e1de79",
+          "ts": "2026-05-22T18:29:41.894144+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Renaissance Technologies",
+          "donor_type": "individual",
+          "amount": 4500000,
+          "recipient": "Bob Casey",
+          "recipient_office": "Senate",
+          "recipient_state": "PA",
+          "district": "PA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 9000000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.994001+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "d43a166123c18455",
+      "recipient": "Jon Ossoff",
+      "recipient_office": "Senate",
+      "recipient_state": "GA",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "47f87c5746ae676c",
+          "ts": "2026-05-22T14:10:37.089699+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Bernard Marcus",
+          "donor_type": "individual",
+          "amount": 3500000,
+          "recipient": "Jon Ossoff",
+          "recipient_office": "Senate",
+          "recipient_state": "GA",
+          "district": "GA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "47f87c5746ae676c",
+          "ts": "2026-05-22T18:29:41.894380+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Bernard Marcus",
+          "donor_type": "individual",
+          "amount": 3500000,
+          "recipient": "Jon Ossoff",
+          "recipient_office": "Senate",
+          "recipient_state": "GA",
+          "district": "GA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 7000000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.994013+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "d42a1a28b1340ae0",
+      "recipient": "Sherrod Brown",
+      "recipient_office": "Senate",
+      "recipient_state": "OH",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "dee46eb9687a7a69",
+          "ts": "2026-05-22T14:10:37.089399+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Goldman Sachs",
+          "donor_type": "individual",
+          "amount": 3200000,
+          "recipient": "Sherrod Brown",
+          "recipient_office": "Senate",
+          "recipient_state": "OH",
+          "district": "OH",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "dee46eb9687a7a69",
+          "ts": "2026-05-22T18:29:41.894087+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Goldman Sachs",
+          "donor_type": "individual",
+          "amount": 3200000,
+          "recipient": "Sherrod Brown",
+          "recipient_office": "Senate",
+          "recipient_state": "OH",
+          "district": "OH",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 6400000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.993997+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "5a21a53b5ad31832",
+      "recipient": "Tammy Baldwin",
+      "recipient_office": "Senate",
+      "recipient_state": "WI",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "c5882dd9baa28bbf",
+          "ts": "2026-05-22T14:10:37.089515+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Uline Inc",
+          "donor_type": "corporation",
+          "amount": 2800000,
+          "recipient": "Tammy Baldwin",
+          "recipient_office": "Senate",
+          "recipient_state": "WI",
+          "district": "WI",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "c5882dd9baa28bbf",
+          "ts": "2026-05-22T18:29:41.894200+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Uline Inc",
+          "donor_type": "corporation",
+          "amount": 2800000,
+          "recipient": "Tammy Baldwin",
+          "recipient_office": "Senate",
+          "recipient_state": "WI",
+          "district": "WI",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 5600000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.994004+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "610c05f798843b1e",
+      "recipient": "Josh Hawley",
+      "recipient_office": "Senate",
+      "recipient_state": "MO",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "160d1c417fe4988b",
+          "ts": "2026-05-22T14:10:37.089641+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Emerson Electric",
+          "donor_type": "individual",
+          "amount": 2100000,
+          "recipient": "Josh Hawley",
+          "recipient_office": "Senate",
+          "recipient_state": "MO",
+          "district": "MO",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "160d1c417fe4988b",
+          "ts": "2026-05-22T18:29:41.894317+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Emerson Electric",
+          "donor_type": "individual",
+          "amount": 2100000,
+          "recipient": "Josh Hawley",
+          "recipient_office": "Senate",
+          "recipient_state": "MO",
+          "district": "MO",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 4200000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.994010+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "8be5868e2c854145",
+      "recipient": "Ruben Gallego",
+      "recipient_office": "Senate",
+      "recipient_state": "AZ",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "bc3bcf44133ff104",
+          "ts": "2026-05-22T14:10:37.089577+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Petrone Family Trust",
+          "donor_type": "individual",
+          "amount": 1900000,
+          "recipient": "Ruben Gallego",
+          "recipient_office": "Senate",
+          "recipient_state": "AZ",
+          "district": "AZ",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "bc3bcf44133ff104",
+          "ts": "2026-05-22T18:29:41.894256+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Petrone Family Trust",
+          "donor_type": "individual",
+          "amount": 1900000,
+          "recipient": "Ruben Gallego",
+          "recipient_office": "Senate",
+          "recipient_state": "AZ",
+          "district": "AZ",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 3800000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.994007+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "8675482ffa542256",
+      "recipient": "Katie Porter",
+      "recipient_office": "Senate",
+      "recipient_state": "CA",
+      "filing_type": "FEC Schedule A/B",
+      "claims": [
+        {
+          "id": "fa57bdec3f245085",
+          "ts": "2026-05-22T14:10:37.089764+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Timothy Draper",
+          "donor_type": "individual",
+          "amount": 1200000,
+          "recipient": "Katie Porter",
+          "recipient_office": "Senate",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        },
+        {
+          "id": "fa57bdec3f245085",
+          "ts": "2026-05-22T18:29:41.894437+00:00",
+          "type": "corruption_money_trail",
+          "donor": "Timothy Draper",
+          "donor_type": "individual",
+          "amount": 1200000,
+          "recipient": "Katie Porter",
+          "recipient_office": "Senate",
+          "recipient_state": "CA",
+          "district": "CA",
+          "filing_type": "FEC Schedule A/B",
+          "source_url": "https://www.fec.gov/data/",
+          "verified": true,
+          "flags": [
+            "large_donation",
+            "seeded_public_filing"
+          ]
+        }
+      ],
+      "total_amount": 2400000.0,
+      "sources": [
+        "https://www.fec.gov/data/"
+      ],
+      "flags": [
+        "large_donation",
+        "seeded_public_filing"
+      ],
+      "ts": "2026-05-22T22:07:43.994016+00:00",
+      "claim_count": 2
+    },
+    {
+      "id": "71d3d6fbb45cd71c",
+      "recipient": "Arsenio Mataka",
+      "recipient_office": "Deputy Executive Officer for Equity & Community Programs",
+      "recipient_state": "CA",
+      "filing_type": "TARGET_PROFILE",
+      "claims": [
+        {
+          "id": "mataka_target_001",
+          "ts": "2026-05-22T20:00:00+00:00",
+          "type": "corruption_target_profile",
+          "recipient": "Arsenio Mataka",
+          "recipient_office": "Deputy Executive Officer for Equity & Community Programs",
+          "recipient_state": "CA",
+          "district": "Bay Area",
+          "filing_type": "TARGET_PROFILE",
+          "source_url": "https://www.baaqmd.gov/news-and-events/page-resources/2024-news/042324-deo-mataka",
+          "verified": true,
+          "flags": [
+            "baaqmd",
+            "environmental_justice",
+            "becerra_alumni",
+            "biden_hhs_alumni"
+          ]
+        },
+        {
+          "id": "mataka_target_002",
+          "ts": "2026-05-22T20:00:00+00:00",
+          "type": "corruption_target_profile",
+          "recipient": "Arsenio Mataka",
+          "recipient_office": "Counselor to the Secretary (HHS)",
+          "recipient_state": "US",
+          "district": "Federal",
+          "filing_type": "TARGET_PROFILE",
+          "source_url": "https://www.hhs.gov/",
+          "verified": true,
+          "flags": [
+            "hhs",
+            "becerra_counselor",
+            "climate_health_equity",
+            "office_creator"
+          ]
+        }
+      ],
+      "total_amount": 0.0,
+      "sources": [
+        "https://www.baaqmd.gov/news-and-events/page-resources/2024-news/042324-deo-mataka",
+        "https://www.hhs.gov/"
+      ],
+      "flags": [
+        "baaqmd",
+        "becerra_alumni",
+        "becerra_counselor",
+        "biden_hhs_alumni",
+        "climate_health_equity",
+        "environmental_justice",
+        "hhs",
+        "office_creator"
+      ],
+      "ts": "2026-05-22T22:07:43.994052+00:00",
+      "claim_count": 2
+    }
+  ]
+}
