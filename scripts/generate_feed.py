@@ -608,6 +608,15 @@ def main():
             _s = json.loads(_line)
             scored_by_cid[_s['cluster_id']] = _s
 
+    # ── Enriched registry lookup (factuality, ownership, primary_vs_launder) ──
+    registry_by_id = {}
+    _reg_path = Path(__file__).resolve().parents[1] / 'botwavebomba' / 'data' / 'source_registry.json'
+    if _reg_path.exists():
+        with open(_reg_path) as _rf:
+            _reg = json.loads(_rf.read())
+        for _rs in _reg.get('sources', []):
+            registry_by_id[_rs['id']] = _rs
+
     # Index articles by hash so we can re-attach full article dicts to
     # clusters that came back from disk carrying only member_hashes.
     art_by_hash = {(a.get('hash') or a.get('url', '')): a for a in articles}
@@ -645,14 +654,23 @@ def main():
             src_id = a.get('source', '')
             if src_id and src_id not in seen_src:
                 e = enriched_by_id.get(src_id, {})
+                # Look up enriched registry data for factuality, ownership, etc.
+                reg = registry_by_id.get(src_id, {})
+                bloc_val = e.get('bloc', reg.get('bloc', 'neutral'))
+                # Map 'neutral' → 'non-aligned' from enriched data
+                if bloc_val == 'neutral':
+                    bloc_val = reg.get('bloc', 'non-aligned')
                 seen_src[src_id] = {
-                    'id':          src_id,
-                    'name':        a.get('source_name', src_id),
-                    'country':     a.get('country', ''),
-                    'bloc':        e.get('bloc', 'neutral'),
-                    'bias_tier':   e.get('bias_tier', 'unknown'),
-                    'bias_bucket': e.get('bias_bucket', 'center'),
-                    'geo_cluster': e.get('geo_cluster') or '',
+                    'id':                src_id,
+                    'name':              a.get('source_name', src_id),
+                    'country':            a.get('country', ''),
+                    'bloc':              bloc_val,
+                    'bias_tier':         e.get('bias_tier', reg.get('political_lean', 'unknown')),
+                    'bias_bucket':       e.get('bias_bucket', 'center'),
+                    'geo_cluster':       e.get('geo_cluster') or reg.get('geo_cluster', ''),
+                    'factuality':        reg.get('factuality', 'unknown'),
+                    'primary_vs_launder': reg.get('primary_vs_launder', 'unknown'),
+                    'parent_company':    reg.get('parent_company', ''),
                 }
         sources = list(seen_src.values())
 

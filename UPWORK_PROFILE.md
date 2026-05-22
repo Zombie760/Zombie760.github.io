@@ -10,14 +10,14 @@
 
 ## OVERVIEW (About Section)
 
-I'm a professional writer with **900+ published pages** across 15+ books, spanning technical manuals, cybersecurity documentation, and narrative fiction. I specialize in making complex topics accessible and engaging.
+I'm a professional writer with **published work across multiple books** spanning technical manuals, cybersecurity documentation, and narrative fiction. My flagship investigative title runs 462 pages with 441 source citations. I specialize in making complex topics accessible and engaging.
 
 With deep expertise in **AI, blockchain, cybersecurity, and enterprise software**, I can ghostwrite technical books, create comprehensive documentation, or develop content strategies that build authority in your niche.
 
 I've written for executives, startups, and established authors who need **high-quality writing without the hassle**. My process is simple: we discuss your vision, I deliver drafts on schedule, and you get polished content ready to publish under your name.
 
 **Why work with me:**
-- 900+ pages published, 1,100+ citations
+- Flagship: 462 pages, 441 source citations, 63 primary documents indexed
 - Technical background: AI, cybersecurity, automation systems
 - Fast turnaround: 5,000+ words/week for ongoing projects
 - Professional quality: Clean prose, minimal editing required
@@ -72,8 +72,8 @@ View full portfolio: [https://zombie760.github.io/books](https://zombie760.githu
 
 ## EDUCATION
 **Self-Taught Technical Writer**
-- 900+ pages published
-- 1,100+ citations across works
+- Flagship investigation: 462 pages, 441 source citations
+- 63 primary documents indexed across Federal Register, court records, archival sources
 - Deep technical research capabilities
 
 ## CERTIFICATIONS
@@ -87,7 +87,7 @@ View full portfolio: [https://zombie760.github.io/books](https://zombie760.githu
 - Ghostwrote 15+ books for clients across multiple genres
 - Created technical documentation for enterprise software
 - Developed content strategies for SaaS companies
-- Produced 900+ pages of published content
+- Produced multiple published books, including a 462-page primary-source investigation
 
 ## OTHER EXPERIENCE
 **Botwave Systems Architect**
@@ -104,7 +104,7 @@ View full portfolio: [https://zombie760.github.io/books](https://zombie760.githu
 
 Hi [Client Name],
 
-I've reviewed your project for [specific need] and I'm confident I can deliver exceptional results. With 900+ pages of published work across 15+ books, I have the experience and discipline to meet your requirements.
+I've reviewed your project for [specific need] and I'm confident I can deliver exceptional results. With published work across multiple books — including a 462-page primary-source investigation with 441 cited sources — I have the experience and discipline to meet your requirements.
 
 **Relevant Experience:**
 - [Mention 1-2 specific, relevant projects]

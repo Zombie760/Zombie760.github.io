@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corruption Tracker — BOTWAVEBOMBA</title>
+  <meta name="description" content="Follow the money: donor → politician → vote/contract. CA Governor race 2026, traced from filed documents.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/pwa.js" defer></script>
+</head>
+<body>
+
+  <header class="bwb-header bwb-header--compact">
+    <div class="bwb-header-inner">
+      <a href="/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <nav class="bwb-topnav">
+        <a href="/">Feed</a>
+        <a href="/blindspots.html">Blindspots</a>
+        <a href="/sources.html">Sources</a>
+        <a href="/trades.html">Trades</a>
+        <a href="/books.html">Books</a>
+        <a href="/corruption.html" class="active">Corruption</a>
+        <a href="/about.html">Method</a>
+        <a href="/funnies.html">Funnies</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="bwb-page-container">
+    <div class="bwb-page-header">
+      <h1 class="bwb-page-title">USA CORRUPTION TRACKER</h1>
+      <p class="bwb-page-sub">
+        Follow the money. Politicians lie. Ledgers don't.
+        Traced from FEC filings + all 50 state SOS portals. Every claim filed. Every source named.
+      </p>
+    </div>
+
+    <!-- Money Trail Cards -->
+    <div id="money-trail-feed" class="bwb-feed">
+      <div class="bwb-loading">
+        <div class="bwb-loading-pulse">LOADING MONEY TRAIL</div>
+        <div class="bwb-loading-sub">Tracing donations from CA SOS filings</div>
+      </div>
+    </div>
+
+    <!-- Explainer -->
+    <div class="bwb-trades-explainer" style="margin-top: 2rem;">
+      <h3 class="bwb-sidebar-title">WHY TRACK THE MONEY?</h3>
+      <p class="bwb-sidebar-body">
+        Campaign finance filings are public record. CA Secretary of State Form 460 captures every donation over $100.
+        The money tells you who benefits when a politician votes, signs a contract, or changes a regulation.
+      </p>
+      <p class="bwb-sidebar-body">
+        This tracker ingests filings automatically, flags large donations from entities with state business,
+        and generates tweet-ready exposes with filed document receipts. No opinion. Just the trail.
+      </p>
+      <p class="bwb-sidebar-body">
+        <strong>BE UNDENIABLE.</strong> Every claim backed by a named, filed, publicly-verifiable primary source.
+      </p>
+    </div>
+
+    <!-- Data table -->
+    <div class="bwb-corruption-table-container">
+      <h3 class="bwb-sidebar-title">2025-2026 GOVERNOR RACE — MAJOR DONORS</h3>
+      <table class="bwb-corruption-table" id="donor-table">
+        <thead>
+          <tr>
+            <th>Donor</th>
+            <th>Amount</th>
+            <th>Recipient</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Populated by corruption.js -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <nav class="bwb-bottom-nav safe-bottom">
+    <a href="/">
+      <span class="bwb-bottom-nav-icon">&#128240;</span>
+      <span>Feed</span>
+    </a>
+    <a href="/blindspots.html">
+      <span class="bwb-bottom-nav-icon">&#128065;</span>
+      <span>Blindspots</span>
+    </a>
+    <a href="/sources.html">
+      <span class="bwb-bottom-nav-icon">&#127760;</span>
+      <span>Sources</span>
+    </a>
+    <a href="/trades.html">
+      <span class="bwb-bottom-nav-icon">&#128736;</span>
+      <span>Trades</span>
+    </a>
+    <a href="/books.html">
+      <span class="bwb-bottom-nav-icon">&#128218;</span>
+      <span>Books</span>
+    </a>
+    <a href="/corruption.html" class="active">
+      <span class="bwb-bottom-nav-icon">&#128176;</span>
+      <span>Corruption</span>
+    </a>
+    <a href="/about.html">
+      <span class="bwb-bottom-nav-icon">&#128203;</span>
+      <span>Method</span>
+    </a>
+  </nav>
+
+  <footer class="bwb-footer">
+    <div class="bwb-footer-inner">
+      <div class="bwb-footer-left">
+        <span class="bwb-footer-logo">BOTWAVEBOMBA</span>
+        <span class="bwb-footer-sub">A BOTWAVE journalism arm project. Powered by TELOS+PAI substrate.</span>
+      </div>
+      <div class="bwb-footer-right">
+        <a href="https://t.me/botwave_news" target="_blank">Telegram</a>
+        <a href="/about.html">About</a>
+        <a href="https://github.com/Zombie760" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="bwb-footer-disclaimer">
+      BOTWAVEBOMBA Corruption Tracker does not editorialize. It surfaces filed campaign finance data.
+      Every donor link is sourced from CA Secretary of State Form 460 or FEC Schedule A/B.
+    </div>
+  </footer>
+
+  <script src="/assets/js/corruption.js"></script>
+</body>
+</html>

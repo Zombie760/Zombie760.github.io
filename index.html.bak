@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOTWAVEBOMBA — Not Left/Right. Who Owns The Story.</title>
+  <meta name="description" content="496 sources deep-fingerprinted across 5 bias axes. Western, adversarial, non-aligned — see the gap. Powered by TELOS+PAI substrate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/pwa.js" defer></script>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="bwb-header">
+    <div class="bwb-header-inner">
+      <div class="bwb-logo-lockup">
+        <div class="bwb-logo">BOTWAVEBOMBA</div>
+        <div class="bwb-tagline">Not left/center/right. 5-axis bias fingerprints. The gap between blocs IS the story.</div>
+      </div>
+      <div class="bwb-header-right">
+        <div class="bwb-pipeline-badge">
+          <span class="bwb-pipe-dot"></span>
+          TELOS+PAI LIVE
+        </div>
+        <nav class="bwb-topnav">
+          <a href="/" class="active">Feed</a>
+          <a href="/blindspots.html">Blindspots</a>
+          <a href="/sources.html">Sources</a>
+          <a href="/trades.html">Trades</a>
+          <a href="/books.html">Books</a>
+          <a href="/corruption.html">Corruption</a>
+          <a href="/about.html">Method</a>
+          <a href="/funnies.html">Funnies</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="bwb-stats-bar">
+      <div class="bwb-stat">
+        <span class="bwb-stat-number" id="source-count">496</span>
+        <span class="bwb-stat-label">sources</span>
+      </div>
+      <div class="bwb-stat-divider"></div>
+      <div class="bwb-stat">
+        <span class="bwb-stat-number" id="fp-count">496</span>
+        <span class="bwb-stat-label">deep-fp</span>
+      </div>
+      <div class="bwb-stat-divider"></div>
+      <div class="bwb-stat">
+        <span class="bwb-stat-number" id="story-count">&mdash;</span>
+        <span class="bwb-stat-label">stories</span>
+      </div>
+      <div class="bwb-stat-divider"></div>
+      <div class="bwb-stat">
+        <span class="bwb-stat-number" id="blindspot-count">&mdash;</span>
+        <span class="bwb-stat-label">blindspots</span>
+      </div>
+      <div class="bwb-stat-divider"></div>
+      <div class="bwb-stat">
+        <span class="bwb-stat-number">5</span>
+        <span class="bwb-stat-label">bias axes</span>
+      </div>
+      <div class="bwb-stat-divider"></div>
+      <div class="bwb-stat">
+        <span class="bwb-stat-number" id="western-count">183</span>
+        <span class="bwb-stat-label">western</span>
+      </div>
+      <div class="bwb-stat-divider"></div>
+      <div class="bwb-stat">
+        <span class="bwb-stat-number" id="adversarial-count">33</span>
+        <span class="bwb-stat-label">adversarial</span>
+      </div>
+      <div class="bwb-stat-divider"></div>
+      <div class="bwb-stat">
+        <span class="bwb-stat-number" id="nonaligned-count">280</span>
+        <span class="bwb-stat-label">non-aligned</span>
+      </div>
+    </div>
+    <div class="bwb-differentiator">Not left/center/right. <span class="bwb-diff-highlight">5-axis bias fingerprints</span> across Western, Adversarial, and Non-Aligned blocs. <span class="bwb-diff-highlight">The gap IS the story.</span></div>
+  </header>
+
+  <!-- ── BLOC LEGEND ── -->
+  <div class="bwb-legend-bar">
+    <div class="bwb-legend-item">
+      <div class="bwb-legend-dot western"></div>
+      <span>Western — high atlanticist/interventionist score (US/NATO/Israel-aligned press)</span>
+    </div>
+    <div class="bwb-legend-item">
+      <div class="bwb-legend-dot neutral"></div>
+      <span>Non-Aligned — regional press, Global South, independent outlets</span>
+    </div>
+    <div class="bwb-legend-item">
+      <div class="bwb-legend-dot adversarial"></div>
+      <span>Adversarial — multipolar/anti-intervention framing (RT, IRNA, CGTN, Sputnik)</span>
+    </div>
+  </div>
+
+  <!-- ── SECTION TABS (populated dynamically from feed manifest) ── -->
+  <nav class="bwb-filters bwb-section-tabs" id="section-nav">
+    <button class="active" data-filter="all">All</button>
+    <!-- additional section buttons injected by feed.js -->
+  </nav>
+
+  <!-- ── SIGNAL FILTERS ── -->
+  <nav class="bwb-filters bwb-signal-filters" id="filter-nav">
+    <button data-filter="blindspot">BLINDSPOT</button>
+    <button data-filter="mono-frame">MONO-FRAME</button>
+    <button data-filter="blackout">W.BLACKOUT</button>
+    <button data-filter="has-video">Has Video</button>
+    <button data-filter="left-heavy">Left-Heavy</button>
+    <button data-filter="right-heavy">Right-Heavy</button>
+  </nav>
+
+  <!-- ── PULL TO REFRESH INDICATOR ── -->
+  <div class="ptr-indicator" id="ptr-indicator">
+    <div class="ptr-spinner"></div>
+  </div>
+
+  <!-- ── MAIN FEED ── -->
+  <main class="bwb-main" id="main-feed">
+    <div id="story-feed" class="bwb-feed">
+      <!-- Skeleton loaders for perceived performance -->
+      <div class="skeleton skeleton-card">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-text" style="width: 70%"></div>
+      </div>
+      <div class="skeleton skeleton-card">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-text" style="width: 60%"></div>
+      </div>
+      <div class="skeleton skeleton-card">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-text" style="width: 80%"></div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="bwb-sidebar">
+      <div class="bwb-sidebar-block">
+        <div class="bwb-sidebar-title">PIPELINE</div>
+        <div class="bwb-pipeline-info">
+          <div class="bwb-pipe-row">
+            <span>Ingestor</span>
+            <span class="bwb-pipe-status live">LIVE</span>
+          </div>
+          <div class="bwb-pipe-row">
+            <span>Bias Scorer</span>
+            <span class="bwb-pipe-status live">LIVE</span>
+          </div>
+          <div class="bwb-pipe-row">
+            <span>Blindspot Detector</span>
+            <span class="bwb-pipe-status live">LIVE</span>
+          </div>
+          <div class="bwb-pipe-row">
+            <span>Framing Differ</span>
+            <span class="bwb-pipe-status live">LIVE</span>
+          </div>
+          <div class="bwb-pipe-row">
+            <span>Coverage Mapper</span>
+            <span class="bwb-pipe-status live">LIVE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bwb-sidebar-block">
+        <div class="bwb-sidebar-title">BIAS AXES</div>
+        <div class="bwb-axis-legend">
+          <div class="bwb-axis-row">
+            <span class="axis-name">interventionist</span>
+            <span class="axis-desc">pro-military vs peace</span>
+          </div>
+          <div class="bwb-axis-row">
+            <span class="axis-name">zionist</span>
+            <span class="axis-desc">pro-Israel vs critical</span>
+          </div>
+          <div class="bwb-axis-row">
+            <span class="axis-name">atlanticist</span>
+            <span class="axis-desc">US-led order vs multipolar</span>
+          </div>
+          <div class="bwb-axis-row">
+            <span class="axis-name">statist</span>
+            <span class="axis-desc">pro-state vs anti-state</span>
+          </div>
+          <div class="bwb-axis-row">
+            <span class="axis-name">financialized</span>
+            <span class="axis-desc">pro-market vs critical</span>
+          </div>
+        </div>
+        <a href="/about.html" class="bwb-sidebar-link">Read methodology →</a>
+      </div>
+
+      <div class="bwb-sidebar-block">
+        <div class="bwb-sidebar-title">WHAT IS A BLINDSPOT?</div>
+        <p class="bwb-sidebar-body">A story covered heavily by one bloc — and ignored by another. The gap is the story.</p>
+        <a href="/blindspots.html" class="bwb-sidebar-link">View all blindspots →</a>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <!-- ── MOBILE BOTTOM NAV ── -->
+  <nav class="bwb-bottom-nav safe-bottom">
+    <a href="/" class="active">Feed</a>
+    <a href="/blindspots.html">Blindspots</a>
+    <a href="/sources.html">Sources</a>
+    <a href="/trades.html">Trades</a>
+    <a href="/books.html">Books</a>
+    <a href="/corruption.html">Corruption</a>
+    <a href="/about.html">Method</a>
+    <a href="/funnies.html">Funnies</a>
+  </nav>
+
+  <!-- ── PWA INSTALL PROMPT ── -->
+  <div id="pwa-install-prompt" class="pwa-install-prompt" style="display: none;">
+    <div class="pwa-install-content">
+      <p>Install BOTWAVEBOMBA for instant access and blindspot alerts.</p>
+      <div class="pwa-install-actions">
+        <button id="pwa-install-btn" class="touch-target">Install</button>
+        <button id="pwa-dismiss-btn" class="touch-target">Not now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="bwb-footer">
+    <div class="bwb-footer-inner">
+      <div class="bwb-footer-left">
+        <span class="bwb-footer-logo">BOTWAVEBOMBA</span>
+        <span class="bwb-footer-sub">A BOTWAVE journalism arm project. Powered by TELOS+PAI substrate.</span>
+      </div>
+      <div class="bwb-footer-right">
+        <a href="https://t.me/botwave_news" target="_blank">Telegram</a>
+        <a href="/about.html">About</a>
+        <a href="https://github.com/Zombie760" target="_blank">GitHub</a>
+        <a href="https://t.me/botwave_news" target="_blank">Daily Digest</a>
+      </div>
+    </div>
+    <div class="bwb-footer-disclaimer">
+      BOTWAVEBOMBA does not editorialize. It surfaces the framing delta between global sources.
+      Bias classification: AllSides + MBFC + hand-curated TELOS+PAI fingerprints.
+      Every source link is an original primary URL. Nothing invented.
+    </div>
+  </footer>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/heatmap.js"></script>
+  <script src="/assets/js/feed.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }
+  </script>
+</body>
+</html>

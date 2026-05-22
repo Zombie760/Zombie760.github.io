@@ -10,7 +10,7 @@
 1. **Company:** SentinelOne (AI Security)
    - **Contact:** tomer@sentinelone.com (Tomer Weingarten, CEO)
    - **LinkedIn:** linkedin.com/in/tomerweingarten
-   - **Pitch Angle:** "I noticed your recent Series F funding. Congrats! Many scale-ups struggle with documentation as they grow. I specialize in creating technical docs for AI security platforms. 900+ pages published, including enterprise security manuals. Happy to send samples."
+   - **Pitch Angle:** "I noticed your recent Series F funding. Congrats! Many scale-ups struggle with documentation as they grow. I specialize in creating technical docs for AI security platforms. 462 pages published, including enterprise security manuals. Happy to send samples."
 
 2. **Company:** CrowdStrike
    - **Contact:** Form on crowdstrike.com/company/contact
@@ -82,7 +82,7 @@
 
 17. **Company:** Wiley (Tech Books)
     - **Contact:** author@wiley.com
-    - **Pitch Angle:** "Technical book author seeking ghostwriting opportunities. Expertise in AI, cybersecurity, automation. 900+ pages published."
+    - **Pitch Angle:** "Technical book author seeking ghostwriting opportunities. Expertise in AI, cybersecurity, automation. 462 pages published."
 
 18. **Company:** O'Reilly Media
     - **Contact:** author@oreilly.com
@@ -115,7 +115,7 @@
 
 25. **Company:** Animalz (Content Agency)
     - **Contact:** hello@animalz.co
-    - **Pitch Angle:** "SaaS content specialist available for freelance work. Published 900+ pages, specializing in making complex tech understandable."
+    - **Pitch Angle:** "SaaS content specialist available for freelance work. Published 462 pages, specializing in making complex tech understandable."
 
 ---
 
@@ -175,7 +175,7 @@
 ### 9. Marketing Agencies (White-Label)
 37. **Agency:** Siege Media
     - **Contact:** team@siegemedia.com
-    - **Pitch:** "Content agency looking for white-label writers? I deliver high-quality long-form content. 900+ pages published. Available for retainer."
+    - **Pitch:** "Content agency looking for white-label writers? I deliver high-quality long-form content. 462 pages published. Available for retainer."
 
 38. **Agency:** Fractl
     - **Contact:** hello@fractl.com
@@ -263,7 +263,7 @@ Hi [Name],
 
 I noticed [specific thing about their company/content]. 
 
-I'm a technical writer who specializes in [relevant topic]. With 900+ pages published across 15+ books, I help companies like yours create content that educates and converts.
+I'm a technical writer who specializes in [relevant topic]. With 462 pages published across 15+ books, I help companies like yours create content that educates and converts.
 
 Are you the right person to discuss potential writing projects?
 
@@ -279,7 +279,7 @@ Hi [Name],
 
 I came across your profile and noticed your work in [industry]. Your background in [specific area] is impressive.
 
-I'm a ghostwriter and technical writer who helps busy professionals turn their expertise into published content. I've completed 15+ book projects and 900+ pages of technical documentation.
+I'm a ghostwriter and technical writer who helps busy professionals turn their expertise into published content. I've completed 15+ book projects and 462 pages of technical documentation.
 
 Would you be open to a quick chat about potential writing needs?
 
