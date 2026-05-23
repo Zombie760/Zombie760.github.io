@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T13:47:22.018230+00:00",
+  "generated_at": "2026-05-23T14:02:30.651625+00:00",
   "count": 73,
   "stories": [
     {
@@ -685,7 +685,7 @@
       "id": "9182092d6b80",
       "headline": "Israel releases two activists from Gaza-bound Global Sumud Flotilla",
       "summary": "Activists Saif Abukeshek and Thiago Avila were part of a second Global Sumud Flotilla launched from Spain on April 12 to try to break Israel's blockade of Gaza by delivering aid to the enclave.",
-      "published": "Sat, 23 May 2026 12:47:19 +0000",
+      "published": "Sat, 23 May 2026 13:47:34 +0000",
       "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/6/Reuters/image/2026_05_06T101752Z_1775141854_RC2M3LAC4PM1_RTRMADP_3_ISRAEL_PALESTINIANS_GAZA_FLOTILLA_PROTEST.JPG?width=1440&format=webp&quality=80",
       "video_url": null,
       "has_video": false,
@@ -701,14 +701,16 @@
         "dominant_pct": 43
       },
       "bias_variance": 4.87,
-      "entity_count": 25,
+      "entity_count": 27,
       "entity_list": [
         "Becomes",
         "Bilbao",
+        "Bildu",
         "Bound",
         "Consular",
         "Continues",
         "Detention",
+        "Ertzainza",
         "Exige",
         "Flotilla",
         "Humanitarian",
@@ -968,6 +970,17 @@
           "source_name": "Infobae",
           "country": "AR",
           "published": "Sat, 23 May 2026 12:47:19 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/bildu-denuncia-la-actuacion-de-la-ertzainza-al-llegar-a-bilbao-la-global-sumud-flotilla/",
+          "headline": "Bildu denuncia la actuación de la Ertzainza al llegar a Bilbao la Global Sumud Flotilla",
+          "snippet": "Bilbao, 23 may (EFE).- Bildu ha denunciado la \"dura actuación\" de la Ertzaintza en el aeropuerto de Bilbao a la llegada de los miembros de la delegación vasca de la Global Sumud Flotilla y ha anunciado que pedirá la comparecencia urgente del consejero de Seguridad, Bingen Zupiria, en el Parlamento…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 13:47:34 +0000",
           "image_url": null,
           "video_url": null
         }
@@ -5807,206 +5820,6 @@
       "section": "world"
     },
     {
-      "id": "3fb022997151",
-      "headline": "Messi, Alvarez y varias novedades en la prelista de Argentina para el Mundial 2026",
-      "summary": "",
-      "published": "Mon, 11 May 2026 13:30:55 +0000",
-      "image_url": "https://www.infobae.com/resizer/v2/7RFRBGL2VZCMPME4KLVML4XVWM.JPG?auth=8c073cbffb4471bed4e5bdd95d3a53c35182f171d567c878228b767e2a964745&smart=true&width=2964&height=1667",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 40,
-        "right_pct": 60,
-        "state_count": 0,
-        "dominant": "right",
-        "dominant_pct": 60
-      },
-      "bias_variance": 0.74,
-      "entity_count": 8,
-      "entity_list": [
-        "Alvarez",
-        "Argentina",
-        "Dolor",
-        "Messi",
-        "Molina",
-        "Mundial",
-        "Nahuel",
-        "Scaloni"
-      ],
-      "sources": [
-        {
-          "id": "el_nacional_ve",
-          "name": "El Nacional Venezuela",
-          "country": "VE",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "clarin_ar",
-          "name": "Clarín Argentina",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "tercera",
-          "name": "La Tercera",
-          "country": "CL",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "marca",
-          "name": "Marca",
-          "country": "ES",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.elnacional.com/2026/05/messi-asegura-que-hay-otros-paises-que-llegan-mejor-que-argentina-al-mundial/",
-          "headline": "Messi asegura que hay otros países que \"llegan mejor\" que Argentina al Mundial",
-          "snippet": "VER PORTADA ENLACES: Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra en Ucrania Indices Economicos Criollos Los Venezolanos en la MLB Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra…",
-          "source": "el_nacional_ve",
-          "source_name": "El Nacional Venezuela",
-          "country": "VE",
-          "published": "Fri, 08 May 2026 22:30:38 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/deportes/2026/05/10/dolor-de-cabeza-para-scaloni-se-lesiono-uno-de-los-titulares-y-encendio-las-alarmas-en-argentina-a-un-mes-del-mundial/",
-          "headline": "Dolor de cabeza para Scaloni: se lesionó uno de los titulares y encendió las alarmas en Argentina a un mes del Mundial",
-          "snippet": "Nahuel Molina sufrió una desgarro grado 1 (Photo by Luis ROBAYO / AFP) A falta de 32 días para el inicio oficial de la Copa del Mundo 2026 y a tan solo algunas semanas de la publicación de la lista de convocados definitiva, se encendieron las alarmas en la selección argentina por la lesión de…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sun, 10 May 2026 18:29:41 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/7RFRBGL2VZCMPME4KLVML4XVWM.JPG?auth=8c073cbffb4471bed4e5bdd95d3a53c35182f171d567c878228b767e2a964745&smart=true&width=2964&height=1667",
-          "video_url": null
-        },
-        {
-          "url": "https://www.clarin.com/deportes/nahuel-molina-sufrio-desgarro-alarma-enciende-seleccion-argentina-mes-mundial-2026_0_1lpkgSat0s.html",
-          "headline": "Nahuel Molina sufrió un desgarro y otra alarma se enciende en la Selección Argentina a un mes del Mundial 2026",
-          "snippet": "Nahuel Molina sufrió un desgarro en los minutos finales del partido entre Atlético de Madrid y Celta de Vigo por LaLiga de España y encendió otra señal de alarma en la Selección Argentina a poco más de un mes del inicio del Mundial 2026 que se jugará en Canadá, México y Estados Unidops. El lateral…",
-          "source": "clarin_ar",
-          "source_name": "Clarín Argentina",
-          "country": "AR",
-          "published": "Sun, 10 May 2026 18:09:47 +0000",
-          "image_url": "https://www.clarin.com/img/2026/05/10/f0i1DTs7N_1200x630__1.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.latercera.com/el-deportivo/noticia/preocupacion-en-espana-y-argentina-lesiones-ponen-en-duda-la-presencia-de-dos-de-sus-figuras-en-el-mundial/",
-          "headline": "Preocupación en España y Argentina: lesiones ponen en duda la presencia de dos de sus figuras en el Mundial",
-          "snippet": "Se encienden las alarmas en España producto de la lesión de Nico Williams . El atacante del Athletic Club abandonó el San Mamés producto de una molestia muscular en los isquiotibiales y su presencia en la convocatoria para el Mundial es una incógnita. A los 35′ de la caída por la mínima ante el…",
-          "source": "tercera",
-          "source_name": "La Tercera",
-          "country": "CL",
-          "published": "Sun, 10 May 2026 22:56:57 +0000",
-          "image_url": "https://www.latercera.com/resizer/v2/3ASJUYTULFFAZCNRCXD4DIU5KA.jpg?auth=7b9650304af2bb87369673f4acd4f1d81f60e456febecc36e2885a38acbee8fa&smart=true&width=1920&height=1080",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/11/messi-alvarez-y-varias-novedades-en-la-prelista-de-argentina-para-el-mundial-2026/",
-          "headline": "Messi, Álvarez y varias novedades en la prelista de Argentina para el Mundial 2026",
-          "snippet": "Buenos Aires, 11 may (EFE).- La selección argentina de fútbol presentó este lunes la prelista oficial de 55 jugadores para el Mundial 2026, que cuenta con las habituales figuras, varias caras nuevas y algunas ausencias de peso, y de la cual saldrán los 26 seleccionados para ir en busca del…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 13:03:51 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/deportes/2026/05/11/matematico-de-la-uba-predice-las-chances-de-argentina-en-el-mundial-2026/",
-          "headline": "Matemático de la UBA predice las chances de Argentina en el Mundial 2026",
-          "snippet": "Guillermo Durán, decano de Exactas UBA, presenta su modelo matemático para pronosticar las chances de Argentina en el Mundial 2026 En el inicio de la cuenta regresiva hacia el Mundial 2026 , hay grandes expectativas en torno a las probabilidades reales de la selección argentina de conseguir su…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 13:01:34 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/NBQSY5DVLZBP5MWAJKYKQZYDJE.jpg?auth=c3b78d95f044140470ec2e0ccc098b22dd10cee3c719c4b02e824c2d0e3c048b&smart=true&width=1920&height=1080",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/espana/agencias/2026/05/11/messi-alvarez-y-varias-novedades-en-la-prelista-de-argentina-para-el-mundial-2026/",
-          "headline": "Messi, Alvarez y varias novedades en la prelista de Argentina para el Mundial 2026",
-          "snippet": "Buenos Aires, 11 may (EFE).- La selección argentina de fútbol presentó este lunes la prelista oficial de 55 jugadores para el Mundial 2026, que cuenta con las habituales figuras, varias caras nuevas y algunas ausencias de peso, y de la cual saldrán los 26 seleccionados para la defensa del título…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 13:30:55 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.marca.com/futbol/argentina/2026/05/11/argentina-anuncia-prelista-oficial-mundial-2026.html",
-          "headline": "Argentina anuncia la prelista oficial para el Mundial 2026",
-          "snippet": "La actual campeona del mundo comienza a trazar su camino hacia el Mundial 2026 con el objetivo de revalidar el título. La selección argentina , dirigida por Lionel Scaloni , ha confirmado la prelista oficial de 55 nombres que podrán ser finalmente convocados. La principal novedad ha sido la…",
-          "source": "marca",
-          "source_name": "Marca",
-          "country": "ES",
-          "published": "Mon, 11 May 2026 15:00:36 +0200",
-          "image_url": "https://e01-xlk-ue-marca.uecdn.es/files/article_main_microformat/uploads/2026/05/11/6a01ce96ee6eb.jpeg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.156,
-        "zionist": 0.262,
-        "atlanticist": 0.416,
-        "statist": 0.228,
-        "financialized": 0.414
-      },
-      "fp_source_count": 5,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "latin-america": 4,
-        "west": 1
-      },
-      "section": "sports"
-    },
-    {
       "id": "dc8cd4eea5de",
       "headline": "Amanda Holden flaunts her incredible figure in an ab-flashing silver co-ord as she joins pregnant Vogue Williams and newly-single Millie Mackintosh on the red carpet at the BAFTA TV Awards",
       "summary": "Stars of the small screen and beyond descended on London's Royal Festival Hall for the BAFTA TV Awards on Sunday evening.",
@@ -8378,171 +8191,8 @@
       "section": "world"
     },
     {
-      "id": "b4bb61750e91",
-      "headline": "Pakistan's Test against Bangladesh evenly poised after Mehidy takes 5 wickets",
-      "summary": "<p>Mehidy Hasan Miraz claimed five wickets to give Bangladesh a slender lead after Pakistan debutant Azan Awais hit 103 on a rain-hit third day of the first Test on Sunday.</p>\n<p>Pakistan made <a href=\"https://www.dawn.com/news/1999190/debutant-azan-leads-strong-pakistan-reply-against-bd-after-abba",
-      "published": "Mon, 11 May 2026 09:45:19 +0000",
-      "image_url": "https://i.dawn.com/large/2026/05/09190056d1788ed.webp",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 33,
-        "center_pct": 67,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 67
-      },
-      "bias_variance": 1.0,
-      "entity_count": 6,
-      "entity_list": [
-        "Abbas",
-        "Australia",
-        "Bangladesh",
-        "Mehidy",
-        "Miraz",
-        "Pakistan"
-      ],
-      "sources": [
-        {
-          "id": "dawn",
-          "name": "Dawn",
-          "country": "PK",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "prothom_alo",
-          "name": "Prothom Alo (English)",
-          "country": "BD",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "nst_my",
-          "name": "New Straits Times",
-          "country": "MY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.dawn.com/news/1998944/abbas-takes-five-wickets-to-put-pakistan-ahead-in-bangladesh-test",
-          "headline": "Abbas takes five wickets to put Pakistan ahead in Bangladesh Test",
-          "snippet": "Mohammad Abbas claimed five wickets to restrict Bangladesh to 413, before two debutant batsmen combined to put Pakistan in a strong position in the first Test on Saturday. Opener Azan Awais hit an unbeaten 85 and Abdullah Fazal, also playing in his first Test, was 37 not out as Pakistan reached…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Sat, 09 May 2026 19:22:50 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/09190056d1788ed.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dawn.com/news/1998888/pakistan-bangladesh-sign-agreement-to-combat-drug-trafficking",
-          "headline": "Pakistan, Bangladesh sign agreement to combat drug trafficking",
-          "snippet": "Pakistan and Bangladesh have signed a memorandum of understanding (MoU) to strengthen bilateral cooperation against drug trafficking and narcotics abuse, the Ministry of Interior said on Saturday. The development came during Interior Minister Mohsin Naqvi’s visit to Dhaka, where he met his…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Sat, 09 May 2026 11:49:39 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/09160433083b569.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://en.prothomalo.com/sports/cricket/w11kxj9z52",
-          "headline": "Miraz’s five-for puts Bangladesh back in command against Pakistan",
-          "snippet": "Login Bangladesh International Sports Opinion Business Youth Entertainment Lifestyle Claim vs Fact Search ই-পেপার বাংলা Login Cricket 1st Test Miraz’s five-for puts Bangladesh back in command against Pakistan BSS Dhaka Published: 10 May 2026, 14: 41 Bangladesh off-spinner Mehidy Hasan Miraz…",
-          "source": "prothom_alo",
-          "source_name": "Prothom Alo (English)",
-          "country": "BD",
-          "published": "Sun, 10 May 2026 14:41:02 +0000",
-          "image_url": "https://media.prothomalo.com/prothomalo-english/2026-05-10/e4pq6j47/Miraz.avif",
-          "video_url": null
-        },
-        {
-          "url": "https://www.nst.com.my/sports/cricket/2026/05/1436622/bangladesh-pakistan-test-evenly-poised-after-mehidy-takes-5-wickets",
-          "headline": "Bangladesh-Pakistan Test evenly poised after Mehidy takes 5 wickets",
-          "snippet": "DHAKA: Mehidy Hasan Miraz claimed five wickets to give Bangladesh a slender lead after Pakistan debutant Azan Awais hit 103 on a rain-hit third day of the first Test on Sunday.",
-          "source": "nst_my",
-          "source_name": "New Straits Times",
-          "country": "MY",
-          "published": "Sun, 10 May 2026 21:49:55 +0800",
-          "image_url": "https://assets.nst.com.my/images/listing-featured/11C340039C8C112D2E2B3BC61A2D78ED_data_0_0.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dawn.com/news/1999193/pakistans-test-against-bangladesh-evenly-poised-after-mehidy-takes-5-wickets",
-          "headline": "Pakistan's Test against Bangladesh evenly poised after Mehidy takes 5 wickets",
-          "snippet": "Mehidy Hasan Miraz claimed five wickets to give Bangladesh a slender lead after Pakistan debutant Azan Awais hit 103 on a rain-hit third day of the first Test on Sunday. Pakistan made <a…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Sun, 10 May 2026 21:14:43 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/102009480a03de9.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dawn.com/news/1999380/australia-include-uncapped-trio-on-white-ball-tours-of-pakistan-bangladesh",
-          "headline": "Australia include uncapped trio on white-ball tours of Pakistan, Bangladesh",
-          "snippet": "Australia will use the upcoming white-ball tours of <a href=\"https://www.dawn.com/news/1998296\">Pakistan and Bangladesh to test their depth after naming squads featuring three potential debutants, selectors said on Monday. All-rounder Liam Scott has been included in the ODI squads for Pakistan and…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Mon, 11 May 2026 10:23:24 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/11101028dba3218.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://en.prothomalo.com/sports/cricket/oli5cfh3so",
-          "headline": "Australia include uncapped trio on white-ball tours of Bangladesh, Pakistan",
-          "snippet": "Login Bangladesh International Sports Opinion Business Youth Entertainment Lifestyle Claim vs Fact Search ই-পেপার বাংলা Login Cricket Australia include uncapped trio on white-ball tours of Bangladesh, Pakistan Reuters Melbourne Published: 11 May 2026, 09: 45 Logo of Cricket Australia Australia will…",
-          "source": "prothom_alo",
-          "source_name": "Prothom Alo (English)",
-          "country": "BD",
-          "published": "Mon, 11 May 2026 09:45:19 +0000",
-          "image_url": "https://media.prothomalo.com/prothomalo-english/2026-05-11/p6251cja/Cricket-Astralia.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.127,
-        "zionist": 0.293,
-        "atlanticist": 0.333,
-        "statist": 0.243,
-        "financialized": 0.377
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "global-south": 2,
-        "pacific-asia": 1
-      },
-      "section": "sports"
-    },
-    {
       "id": "c1fe19fae87e",
-      "headline": "England take three wickets in first two overs vs New Zealand LIVE!",
+      "headline": "England wreaking havoc with four early wickets vs New Zealand LIVE!",
       "summary": "",
       "published": "Sat, 23 May 2026 13:45:00 BST",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0935/live/23e05de0-4c74-11f1-b55d-0f258dce1735.jpg",
@@ -8706,6 +8356,17 @@
           "published": "Sat, 23 May 2026 13:45:00 BST",
           "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-lauren-bell-cricket_7256406.jpg?20260523142109",
           "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/cricket/live-blog/12040/13546976/england-vs-new-zealand-second-womens-t20-live-score-updates-video-and-analysis-from-the-spitfire-ground-in-canterbury",
+          "headline": "England wreaking havoc with four early wickets vs New Zealand LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Cricket…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:45:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-lauren-bell-cricket_7256406.jpg?20260523142109",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -8721,6 +8382,169 @@
       "geo_frame_topic": null,
       "geo_breakdown": {
         "west": 2,
+        "pacific-asia": 1
+      },
+      "section": "sports"
+    },
+    {
+      "id": "b4bb61750e91",
+      "headline": "Pakistan's Test against Bangladesh evenly poised after Mehidy takes 5 wickets",
+      "summary": "<p>Mehidy Hasan Miraz claimed five wickets to give Bangladesh a slender lead after Pakistan debutant Azan Awais hit 103 on a rain-hit third day of the first Test on Sunday.</p>\n<p>Pakistan made <a href=\"https://www.dawn.com/news/1999190/debutant-azan-leads-strong-pakistan-reply-against-bd-after-abba",
+      "published": "Mon, 11 May 2026 09:45:19 +0000",
+      "image_url": "https://i.dawn.com/large/2026/05/09190056d1788ed.webp",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 33,
+        "center_pct": 67,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 1.0,
+      "entity_count": 6,
+      "entity_list": [
+        "Abbas",
+        "Australia",
+        "Bangladesh",
+        "Mehidy",
+        "Miraz",
+        "Pakistan"
+      ],
+      "sources": [
+        {
+          "id": "dawn",
+          "name": "Dawn",
+          "country": "PK",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "prothom_alo",
+          "name": "Prothom Alo (English)",
+          "country": "BD",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "nst_my",
+          "name": "New Straits Times",
+          "country": "MY",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.dawn.com/news/1998944/abbas-takes-five-wickets-to-put-pakistan-ahead-in-bangladesh-test",
+          "headline": "Abbas takes five wickets to put Pakistan ahead in Bangladesh Test",
+          "snippet": "Mohammad Abbas claimed five wickets to restrict Bangladesh to 413, before two debutant batsmen combined to put Pakistan in a strong position in the first Test on Saturday. Opener Azan Awais hit an unbeaten 85 and Abdullah Fazal, also playing in his first Test, was 37 not out as Pakistan reached…",
+          "source": "dawn",
+          "source_name": "Dawn",
+          "country": "PK",
+          "published": "Sat, 09 May 2026 19:22:50 +0500",
+          "image_url": "https://i.dawn.com/large/2026/05/09190056d1788ed.webp",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dawn.com/news/1998888/pakistan-bangladesh-sign-agreement-to-combat-drug-trafficking",
+          "headline": "Pakistan, Bangladesh sign agreement to combat drug trafficking",
+          "snippet": "Pakistan and Bangladesh have signed a memorandum of understanding (MoU) to strengthen bilateral cooperation against drug trafficking and narcotics abuse, the Ministry of Interior said on Saturday. The development came during Interior Minister Mohsin Naqvi’s visit to Dhaka, where he met his…",
+          "source": "dawn",
+          "source_name": "Dawn",
+          "country": "PK",
+          "published": "Sat, 09 May 2026 11:49:39 +0500",
+          "image_url": "https://i.dawn.com/large/2026/05/09160433083b569.webp",
+          "video_url": null
+        },
+        {
+          "url": "https://en.prothomalo.com/sports/cricket/w11kxj9z52",
+          "headline": "Miraz’s five-for puts Bangladesh back in command against Pakistan",
+          "snippet": "Login Bangladesh International Sports Opinion Business Youth Entertainment Lifestyle Claim vs Fact Search ই-পেপার বাংলা Login Cricket 1st Test Miraz’s five-for puts Bangladesh back in command against Pakistan BSS Dhaka Published: 10 May 2026, 14: 41 Bangladesh off-spinner Mehidy Hasan Miraz…",
+          "source": "prothom_alo",
+          "source_name": "Prothom Alo (English)",
+          "country": "BD",
+          "published": "Sun, 10 May 2026 14:41:02 +0000",
+          "image_url": "https://media.prothomalo.com/prothomalo-english/2026-05-10/e4pq6j47/Miraz.avif",
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/sports/cricket/2026/05/1436622/bangladesh-pakistan-test-evenly-poised-after-mehidy-takes-5-wickets",
+          "headline": "Bangladesh-Pakistan Test evenly poised after Mehidy takes 5 wickets",
+          "snippet": "DHAKA: Mehidy Hasan Miraz claimed five wickets to give Bangladesh a slender lead after Pakistan debutant Azan Awais hit 103 on a rain-hit third day of the first Test on Sunday.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Sun, 10 May 2026 21:49:55 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/11C340039C8C112D2E2B3BC61A2D78ED_data_0_0.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dawn.com/news/1999193/pakistans-test-against-bangladesh-evenly-poised-after-mehidy-takes-5-wickets",
+          "headline": "Pakistan's Test against Bangladesh evenly poised after Mehidy takes 5 wickets",
+          "snippet": "Mehidy Hasan Miraz claimed five wickets to give Bangladesh a slender lead after Pakistan debutant Azan Awais hit 103 on a rain-hit third day of the first Test on Sunday. Pakistan made <a…",
+          "source": "dawn",
+          "source_name": "Dawn",
+          "country": "PK",
+          "published": "Sun, 10 May 2026 21:14:43 +0500",
+          "image_url": "https://i.dawn.com/large/2026/05/102009480a03de9.webp",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dawn.com/news/1999380/australia-include-uncapped-trio-on-white-ball-tours-of-pakistan-bangladesh",
+          "headline": "Australia include uncapped trio on white-ball tours of Pakistan, Bangladesh",
+          "snippet": "Australia will use the upcoming white-ball tours of <a href=\"https://www.dawn.com/news/1998296\">Pakistan and Bangladesh to test their depth after naming squads featuring three potential debutants, selectors said on Monday. All-rounder Liam Scott has been included in the ODI squads for Pakistan and…",
+          "source": "dawn",
+          "source_name": "Dawn",
+          "country": "PK",
+          "published": "Mon, 11 May 2026 10:23:24 +0500",
+          "image_url": "https://i.dawn.com/large/2026/05/11101028dba3218.webp",
+          "video_url": null
+        },
+        {
+          "url": "https://en.prothomalo.com/sports/cricket/oli5cfh3so",
+          "headline": "Australia include uncapped trio on white-ball tours of Bangladesh, Pakistan",
+          "snippet": "Login Bangladesh International Sports Opinion Business Youth Entertainment Lifestyle Claim vs Fact Search ই-পেপার বাংলা Login Cricket Australia include uncapped trio on white-ball tours of Bangladesh, Pakistan Reuters Melbourne Published: 11 May 2026, 09: 45 Logo of Cricket Australia Australia will…",
+          "source": "prothom_alo",
+          "source_name": "Prothom Alo (English)",
+          "country": "BD",
+          "published": "Mon, 11 May 2026 09:45:19 +0000",
+          "image_url": "https://media.prothomalo.com/prothomalo-english/2026-05-11/p6251cja/Cricket-Astralia.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.127,
+        "zionist": 0.293,
+        "atlanticist": 0.333,
+        "statist": 0.243,
+        "financialized": 0.377
+      },
+      "fp_source_count": 3,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "global-south": 2,
         "pacific-asia": 1
       },
       "section": "sports"
@@ -9188,6 +9012,314 @@
         "latin-america": 1
       },
       "section": "sports"
+    },
+    {
+      "id": "9c53e4e90f17",
+      "headline": "Katie Price's 'kidnapped' husband Lee Andrews follows 'biker babe' on Instagram as 'disgusted' ex glamour model fears 'billionaire' businessman has 'set his sights' on new target after failing to contact her on her birthday",
+      "summary": "Katie Price's 'kidnapped' husband Lee Andrews still appears to be active on social media in a latest bizarre twist and has followed a mystery woman on Instagram.",
+      "published": "Sat, 23 May 2026 14:50:09 +0100",
+      "image_url": "https://i.dailymail.com/1s/2026/05/09/12/108489885-0-image-m-8_1778327921169.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 0,
+        "right_pct": 100,
+        "state_count": 0,
+        "dominant": "right",
+        "dominant_pct": 100
+      },
+      "bias_variance": 1.9,
+      "entity_count": 21,
+      "entity_list": [
+        "Andre",
+        "Andrews",
+        "Chris",
+        "Dubai",
+        "Ferrari",
+        "Heartbroken",
+        "Hemsworth",
+        "Instagram",
+        "Junior",
+        "KATIE",
+        "Katie",
+        "Leviev",
+        "Mystery",
+        "Price",
+        "Princess",
+        "REFUSED",
+        "SEVENTH",
+        "Simon",
+        "Swindler",
+        "Tinder",
+        "Truth"
+      ],
+      "sources": [
+        {
+          "id": "daily_mail_ent",
+          "name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "daily_mail",
+          "name": "Daily Mail",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15803833/Katie-Price-botched-Brazilian-Bum-Lift-Lee-Andrews.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Katie Price lands back in the UK despite claiming she was stranded in Dubai... as star conceals 'botched procedures' she underwent with husband Lee Andrews",
+          "snippet": "Katie Price arrived at Gatwick Airport on Saturday from Dubai , despite claiming she was trapped in the amid ongoing Iranian missile strikes. The ex glamour model, 47, cut a casual figure as she concealed the 'botched procedures' she underwent amid the trip with new husband Lee Andrews , 43. The so…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sat, 09 May 2026 12:27:53 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/09/12/108489885-0-image-m-8_1778327921169.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15803647/Katie-Prices-husband-Lee-Andrews-Dubai-clinician-botched-corrective-surgery-pay-treatments.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Katie Price's husband Lee Andrews hits out at Dubai clinician for 'botched work' and says the couple need corrective surgery - amid claims they REFUSED to pay for treatments",
+          "snippet": "She instantly became a pop culture icon after bursting into the public eye as loudmouthed Page 3 girl, Jordan. Having tried her hand at modelling, singing, presenting, campaigning and reality TV, the glamour model quickly became a household name in Britain. Yet while Katie Price 's moniker will…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sat, 09 May 2026 10:10:42 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/09/09/108488441-0-image-m-13_1778316318426.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15801019/Katie-Price-return-road-SEVENTH-driving-ban-billionaire-Lee-Andrews-insists180K-Ferrari.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Katie Price reveals hopes to return to the road despite SEVENTH driving ban - as 'billionaire' husband Lee Andrews insists he's bought her a £180K Ferrari",
+          "snippet": "Katie Price reveals hopes to return to the road despite SEVENTH driving ban - as 'billionaire' husband Lee Andrews insists he's bought her a £180K Ferrari Get the week's hottest showbiz gossip from Katie Hind in the Spotlight newsletter. Sign up for here By GERAINT LLEWELLYN, SHOWBUSINESS REPORTER…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Fri, 08 May 2026 11:44:50 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/08/11/108466043-0-image-a-87_1778237990542.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15806547/Katie-Price-husband-Lee-Andrews-marriage-Dubai.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Katie Price and husband Lee Andrews share new edited snap as they hit back at negative comments about their relationship moving 'too fast'",
+          "snippet": "Katie Price and her husband Lee Andrews shared a new edited snap of themselves together as they hit back at criticism about their whirlwind marriage. The former glamour model, 47, reshared a post from 'businessman' Lee, 42, on her Instagram stories on Sunday as he addressed comments their…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 01:42:15 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/11/00/108511865-0-image-a-7_1778457165782.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15806547/Katie-Price-husband-Lee-Andrews-marriage-Dubai.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Katie Price and husband Lee Andrews share new edited snap as they hit back at negative comments about their relationship moving 'too fast'",
+          "snippet": "Katie Price and her husband Lee Andrews shared a new edited snap of themselves together as they hit back at criticism about their whirlwind marriage. The former glamour model, 47, reshared a post from 'businessman' Lee, 42, on her Instagram stories on Sunday as he addressed comments their…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 00:42:15 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/11/00/108511865-0-image-a-7_1778457165782.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15841307/Truth-Katie-Prices-claims-husband-kidnapped.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Katie's been talking b******* again!' As Lee Andrews is 'found' in Dubai jail after model claimed he was 'kidnapped', her 'disgusted' friends tell KATIE HIND of 'genuine fears' for her future",
+          "snippet": "As Katie Price ’s self-appointed team of apologists and supporters, their work over the years has been challenging, to put it mildly. They’ve shouldered the former glamour model through numerous bankruptcies, drink and substance abuse admissions, countless surgical procedures, dramatic weight loss…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 14:35:00 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/16/108807127-0-image-m-14_1779465087226.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/news/article-15842927/Katie-Prices-missing-husband-Lee-Andrews.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Katie Price's 'missing' husband Lee Andrews has been arrested and is locked up in Dubai prison, his father says",
+          "snippet": "Katie Price 's 'missing' husband Lee Andrews has been arrested and is locked up in a prison in Dubai , his father claimed today. Andrews vanished 11 days ago after sending the former glamour model a video of him hooded with his hands tied after being 'bundled into a van' and taken to a 'black site'…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:46:23 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/12/108820265-0-image-a-14_1779536511931.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15842173/Mystery-biker-babe-Katie-Price-husband-Lee-Andrews.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Mystery 'biker babe' followed by Katie Price's 'kidnapped' husband Lee Andrews 'sought love on a millionaire matchmaker site as the star is left furious by his social media return'",
+          "snippet": "The mystery 'biker babe' Katie Price 's husband Lee Andrews has followed on Instagram has reportedly sought love on a millionaire matchmaker site. Sources are claiming Katie has been left 'beyond furious' to see Lee has been back on social media nine days after his disappearance, after previously…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 08:12:47 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/00/108815423-0-image-m-43_1779492192404.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15841943/Katie-Price-sings-song-missing-husband-Lee-Andrews.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Heartbroken Katie Price sings emotional song titled Get Here for missing husband Lee Andrews in latest video despite earlier posts about entering her 'comeback era'",
+          "snippet": "Heartbroken Katie Price sang an emotional song for her missing husband Lee Andrews on Friday despite earlier posts about entering her 'comeback era.' After previously saying she had called off the search for the 'missing' businessman, the former glamour model, 48, revealed she had 'quickly' got in…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 07:28:26 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/21/108813917-0-image-a-114_1779483144976.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15841943/Katie-Price-sings-song-missing-husband-Lee-Andrews.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Heartbroken Katie Price sings emotional song titled Get Here for missing husband Lee Andrews in latest video despite earlier posts about entering her 'comeback era'",
+          "snippet": "Heartbroken Katie Price sang an emotional song for her missing husband Lee Andrews on Friday despite earlier posts about entering her 'comeback era.' After previously saying she had called off the search for the 'missing' businessman, the former glamour model, 48, revealed she had 'quickly' got in…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 06:28:26 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/21/108813917-0-image-a-114_1779483144976.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15841669/Princess-Junior-Andre-birthday-mum-Katie-Price-kidnapped-husband-Lee-Andrews.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Princess and Junior Andre share birthday tributes to mum Katie Price as the star celebrates turning 48 after calling off the search for 'kidnapped' husband Lee Andrews",
+          "snippet": "Princess and Junior Andre shared birthday tributes to their mum Katie Price on Friday as she celebrated turning 48. The family brushed off the recent drama surrounding the former glamour model's 'kidnapped' husband Lee Andrews as they rang in her big day after calling off the search for the…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 20:51:35 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/19/108810953-0-image-a-42_1779473235515.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15841307/Truth-Katie-Prices-claims-husband-kidnapped.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Truth behind Katie Price's claims her husband Lee Andrews had been kidnapped... and the surreal video that's left loved ones furious",
+          "snippet": "As Katie Price ’s self-appointed team of apologists and supporters, their work over the years has been challenging, to put it mildly. They’ve shouldered the former glamour model through numerous bankruptcies, drink and substance abuse admissions, countless surgical procedures, dramatic weight loss…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:25:07 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/16/108807127-0-image-m-14_1779465087226.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15842173/Mystery-biker-babe-Katie-Price-husband-Lee-Andrews.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Mystery 'biker babe' followed by Katie Price's 'kidnapped' husband Lee Andrews 'sought love on a millionaire matchmaker site as the star is left furious by his social media return'",
+          "snippet": "The mystery 'biker babe' Katie Price 's husband Lee Andrews has followed on Instagram has reportedly sought love on a millionaire matchmaker site. Sources are claiming Katie has been left 'beyond furious' to see Lee has been back on social media nine days after his disappearance, after previously…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 07:12:47 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/00/108815423-0-image-m-43_1779492192404.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15840221/Katie-Prices-husband-Lee-Andrews-follows-biker-babe-kidnapped-birthday.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Katie Price's 'kidnapped' husband Lee Andrews follows 'biker babe' on Instagram as 'disgusted' ex glamour model fears 'billionaire' businessman has 'set his sights' on new target after failing to contact her on her birthday",
+          "snippet": "Katie Price 's 'kidnapped' husband Lee Andrews still appears to be active on social media in a latest bizarre twist and has followed a mystery woman on Instagram. The 'billionaire' businessman , 43, has been missing for several days, with the glamour model believing he had been kidnapped after he…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 23:07:14 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/10/108797549-0-image-a-22_1779443499954.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15840709/Katie-Price-vows-not-broken-despite-life-trying-shake-celebrates-48th-birthday-calling-search-kidnapped-husband-Lee-Andrews.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Katie Price vows 'not to be broken despite life trying to shake her' as she celebrates her 48th birthday - after calling off search for 'kidnapped' husband Lee Andrews",
+          "snippet": "Katie Price celebrated her 48th birthday on Friday, just hours after calling off the search for her 'kidnapped' husband Lee Andrews . Taking to Instagram, the star shared a video of her son Harvey, who turns 24 next week, playing Happy Birthday on a piano app on his iPad before sharing a slew of…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 16:03:15 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/16/108807155-0-image-a-74_1779464950228.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15839275/Katie-Price-Lee-Andrews-Chris-Hemsworth-bizarre-photo.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Katie Price's 'kidnapped' husband Lee Andrews' bizarre photo from Chris Hemsworth's page resurfaces amid reports about his disappearance",
+          "snippet": "A bizarre online link has emerged between Australian actor Chris Hemsworth and 'kidnapped' businessman Lee Andrews . Katie Price 's 'billionaire' husband, 43, has been missing for several days, with the English glamour model believing he has been kidnapped after he 'went dark' last week. Now, as…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 10:00:03 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/06/108793659-0-image-a-22_1779426835866.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15836669/Katie-Price-billionaire-Lee-Andrews-parallels-Tinder-Swindler-Simon-Leviev.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Katie Price's 'billionaire' husband Lee Andrews' draws parallels to Tinder Swindler Simon Leviev - as 'kidnapped' businessman remains missing after a week of no contact",
+          "snippet": "At this point, The Tinder Swindler isn't just a Netflix documentary about convicted conman Simon Leviev - it's a genre. Flashy lifestyles, chaotic finances, endless reinventions and unwavering self-belief: the formula is hard to miss. Which may explain why comparisons have been drawn between Simon,…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 04:13:24 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/21/11/108773481-0-image-a-70_1779358539243.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15841307/Truth-Katie-Prices-claims-husband-kidnapped.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Katie's been talking b******* again!' As Lee Andrews is 'found' in Dubai jail after model claimed he was 'kidnapped', her 'disgusted' friends tell KATIE HIND of 'genuine fears' for her future",
+          "snippet": "As Katie Price ’s self-appointed team of apologists and supporters, their work over the years has been challenging, to put it mildly. They’ve shouldered the former glamour model through numerous bankruptcies, drink and substance abuse admissions, countless surgical procedures, dramatic weight loss…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:35:05 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/16/108807127-0-image-m-14_1779465087226.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15841307/Truth-Katie-Prices-claims-husband-kidnapped.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "'Katie's talking b*******!' As Lee Andrews is 'found' in Dubai jail after 'kidnap' claims, 'disgusted' pals tell KATIE HIND Junior's 'had enough' and their 'genuine fears' for her future",
+          "snippet": "As Katie Price ’s self-appointed team of apologists and supporters, their work over the years has been challenging, to put it mildly. They’ve shouldered the former glamour model through numerous bankruptcies, drink and substance abuse admissions, countless surgical procedures, dramatic weight loss…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 14:50:09 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/16/108807127-0-image-m-14_1779465087226.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15841307/Truth-Katie-Prices-claims-husband-kidnapped.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "'Katie's talking b*******!' As Lee Andrews is 'found' in Dubai jail after 'kidnap' claims, 'disgusted' pals tell KATIE HIND Junior's 'had enough' and their 'genuine fears' for her future",
+          "snippet": "As Katie Price ’s self-appointed team of apologists and supporters, their work over the years has been challenging, to put it mildly. They’ve shouldered the former glamour model through numerous bankruptcies, drink and substance abuse admissions, countless surgical procedures, dramatic weight loss…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:50:09 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/16/108807127-0-image-m-14_1779465087226.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.27,
+        "zionist": 0.415,
+        "atlanticist": 0.405,
+        "statist": -0.1,
+        "financialized": 0.57
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 2
+      },
+      "section": "chisme"
     },
     {
       "id": "4c226e187788",
