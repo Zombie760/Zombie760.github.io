@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-23T16:57:35.743116+00:00",
-  "article_count": 26453,
+  "generated_at": "2026-05-23T17:10:45.936402+00:00",
+  "article_count": 26556,
   "story_count": 160,
   "sections": [
     {
@@ -54,7 +54,7 @@
       "id": "64c47aff1fe9",
       "headline": "Guerra de Estados Unidos e Israel contra Irán, en vivo: tensión en Medio Oriente hoy, lunes 11 de mayo",
       "summary": "Cobertura en tiempo real con las novedades más importantes del conflicto y las acciones del mandatario estadounidense, Donald Trump",
-      "published": "Sat, 23 May 2026 16:49:27 +0000",
+      "published": "Sat, 23 May 2026 17:01:50 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/PW3F3Z5IGZC4BFXLBARQDTO6SA.JPG?auth=3bf20790eaa4596d49969391222e8e9aa7b9ed9737439096bf56bce53212e0c6&smart=true&width=8640&height=5760",
       "video_url": null,
       "has_video": false,
@@ -63,13 +63,13 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
+        "center_pct": 56,
+        "right_pct": 44,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 50
+        "dominant_pct": 56
       },
-      "bias_variance": 0.84,
+      "bias_variance": 0.82,
       "entity_count": 33,
       "entity_list": [
         "Algunos",
@@ -197,6 +197,18 @@
           "country": "MX",
           "bloc": "non-aligned",
           "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_razon_bo",
+          "name": "La Razón Bolivia",
+          "country": "BO",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
           "bias_bucket": "center",
           "geo_cluster": "latin-america",
           "factuality": "mixed",
@@ -655,21 +667,32 @@
           "published": "Sat, 23 May 2026 16:49:27 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/CYC2YH6L2NCWJCQ32FS3QWXX6I.JPG?auth=2998bc204ec5cbef7f9d831f5baca5aa48f1636c45329fe743fcc6bb0fe2d998&smart=true&width=800&height=533",
           "video_url": null
+        },
+        {
+          "url": "https://larazon.bo/mundo/2026/05/23/iran-y-estados-unidos-sugieren-que-estan-cerca-de-un-acuerdo/",
+          "headline": "Irán y Estados Unidos sugieren que están cerca de un acuerdo",
+          "snippet": "El secretario del Estado estadounidense, Marco Rubio, expresó su optimismo The post <a href=\"https://larazon.bo/mundo/2026/05/23/iran-y-estados-unidos-sugieren-que-estan-cerca-de-un-acuerdo/\">Irán y Estados Unidos sugieren que están cerca de un acuerdo appeared first on La Razón .",
+          "source": "la_razon_bo",
+          "source_name": "La Razón Bolivia",
+          "country": "BO",
+          "published": "Sat, 23 May 2026 17:01:50 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.25,
-        "atlanticist": 0.408,
-        "statist": 0.246,
-        "financialized": 0.476
+        "interventionist": 0.144,
+        "zionist": 0.244,
+        "atlanticist": 0.403,
+        "statist": 0.241,
+        "financialized": 0.479
       },
-      "fp_source_count": 8,
+      "fp_source_count": 9,
       "geo_frame": "blackout",
       "geo_frame_label": "Western Blackout: Middle East",
       "geo_frame_topic": "middle-east",
       "geo_breakdown": {
-        "latin-america": 8
+        "latin-america": 9
       },
       "section": "world",
       "is_front_page": true
@@ -2635,7 +2658,7 @@
       "id": "9cdbe9b98ae3",
       "headline": "Cuándo juega River vs. San Lorenzo, por los octavos de final del Torneo Apertura 2026",
       "summary": "El encuentro se disputa este domingo a las 19 en el estadio Monumental, con arbitraje de Sebastián Zunino y televisación de ESPN Premium",
-      "published": "Sat, 23 May 2026 16:35:34 +0000",
+      "published": "Sat, 23 May 2026 16:51:00 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/ZEQNLMYRZNGHLEWYBWOYMYZYWQ.jpg?auth=b326e639637aa77f3f9f2f15a14edebe00a545a0edb3109242f39fb4e8f4420b&smart=true&width=2000&height=1333",
       "video_url": null,
       "has_video": false,
@@ -3212,6 +3235,17 @@
           "country": "AR",
           "published": "Sat, 23 May 2026 16:35:34 +0000",
           "image_url": "https://resizer.glanacion.com/resizer/v2/343VKZDVA5CZXCLORJ4AOEOJY4.jpg?auth=992c01597b735276fea4b2ef96a9f2cf2fc73f65512c0e9ac91181aba732e5ac&smart=true&width=2000&height=1333",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/23/universitario-vs-cd-moquegua-en-vivo-hoy-minuto-a-minuto-fecha-16-torneo-apertura-liga-1-2026-resumen-resultado/",
+          "headline": "Universitario vs CD Moquegua EN VIVO HOY: minuto a minuto del duelo por la fecha 16 del Torneo Apertura de la Liga 1 2026",
+          "snippet": "Sin Andy Polo, José Carabalí y el ‘Tunche’ Rivera; los elegidos de Héctor Cúper Los convocados de Universitario para enfrentar a Moquegua por el Torneo Apertura 2026. “¡Garra crema en Hamburgo!” Universitario de Deportes felicitó a Ignacio Buse por coronarse campeón del 500 Hamburgo. “Felicitamos a…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:51:00 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/GP4KOCAZQRF5ZK74K3P6Y2YN3Y.jpg?auth=943847d6c50b2dd22e6842fb30bbeff1a337f014164b549b0f375d44a8d46eb2&smart=true&width=1920&height=1080",
           "video_url": null
         }
       ],
@@ -4623,7 +4657,7 @@
       "id": "832bd81eff19",
       "headline": "Franco Colapinto brilló en la carrera Sprint del Gran Premio de Canadá, avanzó cuatro puestos y quedó 9°",
       "summary": "El argentino, que inició 13°, tuvo otra buena largada y terminó en la puerta de los puntos en Montreal. Más tarde protagonizará la clasificación para la cita principal",
-      "published": "Sat, 23 May 2026 16:49:18 +0000",
+      "published": "Sat, 23 May 2026 16:55:35 +0000",
       "image_url": "https://www.clarin.com/img/2026/05/10/mUeiMXRco_1200x630__1.jpg",
       "video_url": null,
       "has_video": false,
@@ -4817,6 +4851,17 @@
           "country": "AR",
           "published": "Sat, 23 May 2026 16:49:18 +0000",
           "image_url": "https://resizer.glanacion.com/resizer/v2/XOFPZAAKMRBE5D3WOCBRHFRSRM.JPG?auth=02426a28f22002e73f00492c9197bc0a4abc8f67ee691f9d007ef54833a9d6e0&smart=true&width=4476&height=2984",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/23/franco-colapinto-hablo-tras-quedar-9-en-la-sprint-del-gran-premio-de-canada-casi-un-punto-me-da-un-poco-de-bronca/",
+          "headline": "Franco Colapinto habló tras quedar 9° en la Sprint del Gran Premio de Canadá: “Casi un punto, me da un poco de bronca”",
+          "snippet": "El análisis de Colapinto luego de la carrera Sprint en Canadá Franco Colapinto logró una destacada remontada en la carrera sprint del Gran Premio de Canadá , superando varias posiciones tras partir desde el decimotercer lugar en el Circuito Gilles Villeneuve y culminando en el 9° puesto , a sólo…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:55:35 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/OQVA4C4INJGWRLTJRVS32KY4HI.jpg?auth=8d08d3fe626630b276e62a9324f66bc157aa52c6565cb233b92a2346fcfd7ad9&smart=true&width=3072&height=1728",
           "video_url": null
         }
       ],
@@ -10361,6 +10406,322 @@
       "section": "sports"
     },
     {
+      "id": "c9dc8c59301d",
+      "headline": "Canadian GP Sprint: Reaction as Russell holds off Norris, Antonelli to win thriller",
+      "summary": "",
+      "published": "Sat, 23 May 2026 17:30:00 BST",
+      "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7238961.jpg?20260504141408",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 14% Left",
+      "blindspot_score": 3,
+      "coverage": {
+        "left_pct": 14,
+        "center_pct": 43,
+        "right_pct": 43,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 43
+      },
+      "bias_variance": 3.22,
+      "entity_count": 11,
+      "entity_list": [
+        "Antonelli",
+        "Canada",
+        "Canadian",
+        "George",
+        "Mercedes",
+        "Montreal",
+        "Norris",
+        "Reaction",
+        "Russell",
+        "Sprint",
+        "Wolff"
+      ],
+      "sources": [
+        {
+          "id": "sky_sports",
+          "name": "Sky Sports",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_jornada_mx",
+          "name": "La Jornada",
+          "country": "MX",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "bbc_sport",
+          "name": "BBC Sport",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_nacion_ar",
+          "name": "La Nación (Argentina)",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "index_hu",
+          "name": "Index Hungary",
+          "country": "HU",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "daily_mail",
+          "name": "Daily Mail",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.skysports.com/f1/news/12040/13540033/george-russell-toto-wolff-backs-mercedes-driver-to-respond-to-team-mate-kimi-antonellis-form-in-f1-title-race",
+          "headline": "'He never stops fighting!' - Wolff backs Russell to respond to Antonelli",
+          "snippet": "Mercedes team principal Toto Wolff says George Russell \"won't leave a stone unturned\" in Formula 1's title race and expects his driver to bounce back at the next race in Montreal. Russell is 20 points behind championship leader Kimi Antonelli after a disappointing weekend in Miami, where he lacked…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 06:00:00 BST",
+          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7238961.jpg?20260504141408",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/news/12040/13547012/canadian-gp-sprint-qualifying-george-russell-pips-kimi-antonelli-to-pole-in-montreal-with-lando-norris-in-third",
+          "headline": "Russell pips Antonelli to Sprint pole in Canada",
+          "snippet": "George Russell pipped Mercedes team-mate Kimi Antonelli to Sprint pole at the Canadian Grand Prix in a dramatic battle at the end of Sprint Qualifying. Russell, who is 20 points behind Antonelli after seeing the Italian teenager win the last three Grands Prix, beat Antonelli by just 0.068s as…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 22:45:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7256214.jpg?20260523102150",
+          "video_url": null
+        },
+        {
+          "url": "https://www.jornada.com.mx/2026/05/23/deportes/a11n3dep?partner=rss",
+          "headline": "Russell le arrebata a Antonelli la  pole para sprint del GP de Canadá",
+          "snippet": "Afp Periódico La Jornada Sábado 23 de mayo de 2026, p. a11 Montreal. El británico George Russell, al volante de su Mercedes, le ganó ayer el duelo a su compañero Kimi Antonelli para apropiarse del primer lugar de la parrilla para la carrera sprint del Gran Premio de Canadá de Fórmula 1, donde el…",
+          "source": "la_jornada_mx",
+          "source_name": "La Jornada",
+          "country": "MX",
+          "published": "Sat, 23 May 2026 07:30:02 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.bbc.com/sport/formula1/articles/ckgplmj1rg9o?at_medium=RSS&at_campaign=rss",
+          "headline": "Russell edges out Antonelli to take Canada sprint pole",
+          "snippet": "George Russell bounced back after a difficult recent run to beat Mercedes team-mate Kimi Antonelli to sprint pole at the Canadian Grand Prix. The Briton, who is 20 points adrift of the Italian after four races this season, headed Antonelli by 0.068 seconds after being fastest on both runs in final…",
+          "source": "bbc_sport",
+          "source_name": "BBC Sport",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 22:47:31 GMT",
+          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4522/live/ffe72e10-5627-11f1-89a3-d1f559421220.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
+          "headline": "Canadian GP: Russell on pole for 5pm Sprint, Antonelli second LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:00:00 BST",
+          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7256188.jpg?20260522222508",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
+          "headline": "Canadian GP: Russell stays ahead of Antonelli at Sprint start LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:00:00 BST",
+          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-george-russell-mercedes_7256489.png?20260523170612",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
+          "headline": "Canadian GP Sprint: Russell leads after dramatic duel with Antonelli LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:00:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/automovilismo/el-toque-entre-russell-y-antonelli-que-desato-la-bronca-entre-los-dos-companeros-de-mercedes-nid23052026/",
+          "headline": "El toque entre Russell y Antonelli que desató la bronca entre los dos compañeros de Mercedes",
+          "snippet": "La escena de disputa entre compañeros fue una constante en 2025, cuando Lando Norris y Oscar Piastri competían al límite por el título, sin tener en cuenta que respondían a la misma escudería. Aquellos duelos de los McLaren, que muchas veces terminaron en incidentes, parecen haberse trasladado a…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:36:24 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/MXEAN6LB3ZEXJMMIFPZA4NXNBM.JPG?auth=99ac0cad92d3e8cad8a9eb9273636fa7f907b8c730ceba396b8479dc7af54ce9&smart=true&width=5588&height=3725",
+          "video_url": null
+        },
+        {
+          "url": "https://index.hu/sport/forma1/2026/05/23/formula-1-2026-kanadai-nagydij-sprintfutam-george-russell-kimi-antonelli-lando-norris/",
+          "headline": "Russell és Antonelli csatájából Norris ki jött legjobban a kanadai sprintfutamon",
+          "snippet": "A sprintkvalifikáción az idény eddigi alakulásának megfelelően a Mercedesek voltak a leggyorsabbak – ezúttal George Russell volt kettejük közül a jobb –, mögéjük az előző futamra látványosat javuló McLaren duója érkezett, majd a két-két Ferrari és Red Bull állhatott az első négy sorba. Ami eddig…",
+          "source": "index_hu",
+          "source_name": "Index Hungary",
+          "country": "HU",
+          "published": "Sat, 23 May 2026 18:32:00 +0200",
+          "image_url": "https://kep.index.hu/1/0/6956/69565/695653/69565387_5133383_073d04ba9a666721cca48bac7d6ba633_wm.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
+          "headline": "Canadian GP Sprint: Russell holds off Norris, Antonelli to win thriller LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:00:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/23/polemica-en-mercedes-por-el-toque-de-george-russell-y-kimi-antonelli-que-casi-los-deja-afuera-de-la-sprint-del-gp-de-canada/",
+          "headline": "Polémica en Mercedes por el toque de George Russell y Kimi Antonelli que casi los deja afuera de la Sprint del GP de Canadá",
+          "snippet": "La competencia interna en el equipo de Mercedes quedó expuesta en la carrera Sprint del Gran Premio de Canadá: George Russell y Kimi Antonelli se sacaron chispas y perdieron terreno en el campeonato de constructores ya que el italiano salió de pista y cedió su lugar a Lando Norris, de McLaren. Los…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:48:34 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/4CXPK7WZCRGHVMONZ32YZYVKM4.jpeg?auth=0acedecafe4889c500ca376d2bc850a34eb482eebda1ba333791fefd71fa1007&smart=true&width=1025&height=577",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/russell-gana-el-sprint-de-montreal-por-delante-de-norris-y-antonelli/",
+          "headline": "Russell gana el sprint de Montreal por delante de Norris y Antonelli",
+          "snippet": "Redacción deportes, 23 may (EFE).- El inglés George Russell (Mercedes) ganó este sábado la prueba sprint del Gran Premio de Canadá, el quinto del Mundial de Fórmula Uno, que se disputa en el circuito Gilles Villeneuve de Montreal. Russell ganó el tercero de los seis sprints previstos este año -el…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:46:46 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/news/12040/13547290/canadian-gp-sprint-george-russell-wins-as-mercedes-team-mate-kimi-antonelli-left-fuming-after-going-off-track-in-battle",
+          "headline": "Russell wins Canada Sprint as Antonelli fumes after going off track in battle",
+          "snippet": "George Russell claimed victory in a thrilling Canadian Grand Prix Sprint after coming out on top of a controversial battle with his Mercedes team-mate Kimi Antonelli. Pole-sitter Russell led world championship leader Antonelli in the early stages before the pair almost made contact as they battled…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 17:30:00 BST",
+          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-george-russell-kimi_7256516.jpg?20260523172431",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
+          "headline": "Canadian GP Sprint: Reaction as Russell holds off Norris, Antonelli to win thriller",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:00:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
+          "video_url": null
+        },
+        {
+          "url": "https://www.bbc.com/sport/formula1/articles/cn9pqxjlq34o?at_medium=RSS&at_campaign=rss",
+          "headline": "Russell wins Canada sprint after dramatic battle with Antonelli",
+          "snippet": "The first of a series of flashpoints between Russell and Antonelli came on lap six after the two Mercedes had converted their front-row starting positions into a one-two on track at the start. Antonelli tried to pass Russell around the outside of Turn One, but ended up on the grass, managing to…",
+          "source": "bbc_sport",
+          "source_name": "BBC Sport",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:49:41 GMT",
+          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0fa0/live/1b9da110-56c4-11f1-89a3-d1f559421220.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/sport/formulaone/article-15843029/george-russell-canadian-grand-prix-win.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Kimi Antonelli rages as Mercedes teammate George Russell wins tense Canada sprint race... forcing Toto Wolff to step in",
+          "snippet": "Kimi Antonelli rages as Mercedes teammate George Russell wins tense Canada sprint race... forcing Toto Wolff to step in By WINTERS, DEPUTY SPORTS EDITOR Published: 12:50 EDT, 23 May 2026 | Updated: 12:59 EDT, 23 May 2026 George Russell and Kimi Antonelli made contact as their title battle ignited…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 17:59:14 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/17/108823365-0-image-m-14_1779555370876.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.139,
+        "zionist": 0.267,
+        "atlanticist": 0.394,
+        "statist": 0.067,
+        "financialized": 0.343
+      },
+      "fp_source_count": 7,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 3,
+        "eastern-europe": 1,
+        "latin-america": 3
+      },
+      "section": "sports"
+    },
+    {
       "id": "13dd49b5c0fb",
       "headline": "Ivanka Trump Assassination Plotted As Revenge Killing For Qasem Soleimani",
       "summary": "Mohammad Baqer Saad Dawood Al-Saadi had allegedly pledged to kill Ivanka in retaliation for the 2020 US drone strike in Baghdad.",
@@ -12112,7 +12473,7 @@
       "id": "4723e6538fa0",
       "headline": "China confirms dates for President Donald Trump’s state visit to Beijing",
       "summary": "US President Donald Trump will pay a state visit China from May 13 to 15, at the invitation of President Xi Jinping, the foreign ministry in Beijing said on Monday.\nIt will be the first visit to China by a US president in almost nine years and comes at a time of heightened tensions between the two c",
-      "published": "Sat, 23 May 2026 03:09:17 GMT",
+      "published": "Sat, 23 May 2026 16:51:04 +0000",
       "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/09/c3715724-661d-4470-ba5e-bedb83774ae2_9b8c7893.jpg?itok=u0ON9QEh&v=1778316097",
       "video_url": null,
       "has_video": false,
@@ -13402,6 +13763,17 @@
           "country": "RU",
           "published": "Thu, 05 Jun 2025 19:13:46 +0300",
           "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.scmp.com/news/asia/south-asia/article/3354649/rubio-renews-us-ties-india-after-trumps-china-visit?utm_source=rss_feed",
+          "headline": "Rubio renews US ties with India after Trump’s China visit",
+          "snippet": "Secretary of State Marco Rubio on Saturday called India a natural partner and invited Prime Minister Narendra Modi to Washington, turning the page at least rhetorically on friction despite new-found warmth towards China. One week after joining President Donald Trump on a state visit to Beijing,…",
+          "source": "scmp",
+          "source_name": "South China Morning Post",
+          "country": "HK",
+          "published": "Sat, 23 May 2026 16:51:04 +0000",
+          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/24/062942c1-82b6-4c4a-8f62-255e15b9cfec_83b44281.jpg?itok=tr5Hchee&v=1779555052",
           "video_url": null
         }
       ],
@@ -19393,7 +19765,7 @@
         "dominant_pct": 59
       },
       "bias_variance": 4.13,
-      "entity_count": 46,
+      "entity_count": 47,
       "entity_list": [
         "Ajayi",
         "Arsenal",
@@ -19433,6 +19805,7 @@
         "Season",
         "Shakhtar",
         "Spurs",
+        "Spygate",
         "Tigers",
         "Tottenham",
         "Trossard",
@@ -20224,6 +20597,50 @@
           "country": "GB",
           "published": "Sat, 23 May 2026 17:48:00 BST",
           "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-oli-mcburnie-hull_7256524.jpg?20260523173127",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/hull-city-vs-middlesbrough/live/555960",
+          "headline": "Reaction as LATE McBurnie winner sends Hull to Premier League!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 12:27:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-oli-mcburnie-hull_7256525.jpg?20260523173140",
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/football/2026/may/23/hull-middlesbrough-championship-playoff-final-match-report",
+          "headline": "McBurnie’s late winner sinks Middlesbrough and puts Hull in Premier League",
+          "snippet": "What a lot of unnecessary fuss that all was. For all the rigmarole over interns spying at golf courses and which team should be allowed to play at Wembley, it was Hull who were destined to become a Premier League club all along. Head coach Sergej Jakirovic had described his side as “collateral…",
+          "source": "the_guardian_au",
+          "source_name": "The Guardian Australia",
+          "country": "AU",
+          "published": "Sat, 23 May 2026 16:50:07 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/ac8eb34beafc653a70f845fd022f011f4316cd64/388_0_3957_3166/master/3957.jpg?width=140&quality=85&auto=format&fit=max&s=bee79154e6639fec837b2ecc602f4940",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/sport/football/article-15837753/Hull-City-vs-Middlesbrough-2025-26-Championship-play-final-LIVE-Result.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Hull City vs Middlesbrough - Championship play-off final LIVE: Latest score, team news and updates as Tigers WIN promotion back to the Premier League for the first time in nine years thanks to Oli McBurnie's late goal",
+          "snippet": "By MATT BARLOW, FOOTBALL WRITER and LEWIS BROWNING, SPORTS REPORTER Updated: 13:03 EDT, 23 May 2026 249 View comments Follow Daily Mail Sport's live blog for the latest score, team news and updates as Hull City take on Middlesbrough in the Championship play-off final at Wembley Stadium, with Matt…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 18:03:11 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/17/108823165-0-image-a-73_1779554646884.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/sport/football/article-15840143/Hull-City-Premier-League-promotion-Oli-McBurnie-late-winner-Middlesbrough-Spygate-drama.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Hull City secure Premier League promotion as Oli McBurnie scores late winner in play-off final - after Middlesbrough's reprieve proved temporary after Spygate drama",
+          "snippet": "After all the spies, subterfuge and pretend binoculars came the eye of the Tigers . One sucker punch from Oli McBurnie in the fifth minute of added time and Hull City are on their way back to the Premier League . This time there is no way back for Middlesbrough . They can pick up their feud with…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 17:55:20 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/17/108823303-0-image-a-7_1779554970137.jpg",
           "video_url": null
         }
       ],
@@ -31214,7 +31631,7 @@
       "id": "beedaad9994e",
       "headline": "NASCAR champion Kyle Busch’s cause of death revealed by family",
       "summary": "Two-time NASCAR Cup Series champion Kyle Busch died Thursday from complications related to “severe pneumonia [that] progressed into sepsis,&quot; according to a family statement obtained by FOX Sports on Saturday.",
-      "published": "Sat, 23 May 2026 12:45:50 -0400",
+      "published": "Sat, 23 May 2026 09:58:27 -0700",
       "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/931/523/bubba-wallace-watkins-glen-fox-news-001.jpeg?ve=1&tl=1",
       "video_url": null,
       "has_video": false,
@@ -31547,6 +31964,17 @@
           "country": "US",
           "published": "Sat, 23 May 2026 12:45:21 -0400",
           "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://nypost.com/2026/05/23/sports/nascar-garage-watches-in-silence-as-kyle-buschs-car-is-unloaded-at-track/",
+          "headline": "NASCAR garage watches in tearful silence as Kyle Busch’s former car is unloaded at track",
+          "snippet": "Silence and sadness filled the garage area at Charlotte Motor Speedway on Saturday morning as the late Kyle Busch’s race car was unloaded from storage and pushed onto the rainy track. The familiar blue and white Chevrolet with Cheddar’s Scratch Kitchen advertising was changed from No. 8 to No. 33…",
+          "source": "ny_post",
+          "source_name": "New York Post",
+          "country": "US",
+          "published": "Sat, 23 May 2026 09:58:27 -0700",
+          "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Fnewspress-collage-b9ubv7zo4-1779554509897.jpg?quality%3D90%26strip%3Dall%261779540255",
           "video_url": null
         }
       ],
@@ -33949,11 +34377,11 @@
       "section": "world"
     },
     {
-      "id": "c9dc8c59301d",
-      "headline": "Canadian GP Sprint: Reaction as Russell holds off Norris, Antonelli to win thriller",
+      "id": "87b7fa5a6e2a",
+      "headline": "Maeda puts Celtic ahead vs Dunfermline after early scare Scottish Cup final LIVE!",
       "summary": "",
-      "published": "Sat, 23 May 2026 17:30:00 BST",
-      "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7238961.jpg?20260504141408",
+      "published": "Sat, 23 May 2026 17:55:41 +0000",
+      "image_url": "https://assets.nst.com.my/images/listing-featured/8A39D2E12C6C2A444F26D0DA20017DEA_data_0.jpg",
       "video_url": null,
       "has_video": false,
       "is_blindspot": false,
@@ -33961,48 +34389,35 @@
       "blindspot_score": 0.0,
       "coverage": {
         "left_pct": 17,
-        "center_pct": 50,
-        "right_pct": 33,
+        "center_pct": 83,
+        "right_pct": 0,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 50
+        "dominant_pct": 83
       },
-      "bias_variance": 3.35,
-      "entity_count": 11,
+      "bias_variance": 0.73,
+      "entity_count": 10,
       "entity_list": [
-        "Antonelli",
-        "Canada",
-        "Canadian",
-        "George",
-        "Mercedes",
-        "Montreal",
-        "Norris",
-        "Reaction",
-        "Russell",
-        "Sprint",
-        "Wolff"
+        "Celtic",
+        "Double",
+        "Dunfermline",
+        "Engels",
+        "Iheanacho",
+        "Maeda",
+        "Neill",
+        "Premiership",
+        "Rangers",
+        "Scottish"
       ],
       "sources": [
         {
-          "id": "sky_sports",
-          "name": "Sky Sports",
-          "country": "GB",
-          "bloc": "western",
+          "id": "nst_my",
+          "name": "New Straits Times",
+          "country": "MY",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "la_jornada_mx",
-          "name": "La Jornada",
-          "country": "MX",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "latin-america",
+          "geo_cluster": "pacific-asia",
           "factuality": "mixed",
           "primary_vs_launder": "primary",
           "parent_company": ""
@@ -34020,224 +34435,225 @@
           "parent_company": ""
         },
         {
-          "id": "la_nacion_ar",
-          "name": "La Nación (Argentina)",
-          "country": "AR",
+          "id": "sky_sports",
+          "name": "Sky Sports",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_guardian_au",
+          "name": "The Guardian Australia",
+          "country": "AU",
           "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "pacific-asia",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "daily_trust_ng",
+          "name": "Daily Trust Nigeria",
+          "country": "NG",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
           "factuality": "mixed",
           "primary_vs_launder": "primary",
           "parent_company": ""
         },
         {
-          "id": "index_hu",
-          "name": "Index Hungary",
-          "country": "HU",
-          "bloc": "western",
+          "id": "punch",
+          "name": "The Punch",
+          "country": "NG",
+          "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
           "parent_company": ""
         }
       ],
       "articles": [
         {
-          "url": "https://www.skysports.com/f1/news/12040/13540033/george-russell-toto-wolff-backs-mercedes-driver-to-respond-to-team-mate-kimi-antonellis-form-in-f1-title-race",
-          "headline": "'He never stops fighting!' - Wolff backs Russell to respond to Antonelli",
-          "snippet": "Mercedes team principal Toto Wolff says George Russell \"won't leave a stone unturned\" in Formula 1's title race and expects his driver to bounce back at the next race in Montreal. Russell is 20 points behind championship leader Kimi Antonelli after a disappointing weekend in Miami, where he lacked…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 06:00:00 BST",
-          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7238961.jpg?20260504141408",
+          "url": "https://www.nst.com.my/sports/football/2026/05/1436675/celtic-keep-scottish-title-race-alive-3-1-win-over-rangers",
+          "headline": "Celtic keep Scottish title race alive with 3-1 win over Rangers",
+          "snippet": "GLASGOW: Celtic forward Daizen Maeda struck twice in five second-half minutes, including a superb bicycle kick, as his side beat Rangers 3-1 at home in Sunday’s Old Firm derby to set up a dramatic final week in the Scottish Premiership.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Sun, 10 May 2026 23:15:13 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/8A39D2E12C6C2A444F26D0DA20017DEA_data_0.jpg",
           "video_url": null
         },
         {
-          "url": "https://www.skysports.com/f1/news/12040/13547012/canadian-gp-sprint-qualifying-george-russell-pips-kimi-antonelli-to-pole-in-montreal-with-lando-norris-in-third",
-          "headline": "Russell pips Antonelli to Sprint pole in Canada",
-          "snippet": "George Russell pipped Mercedes team-mate Kimi Antonelli to Sprint pole at the Canadian Grand Prix in a dramatic battle at the end of Sprint Qualifying. Russell, who is 20 points behind Antonelli after seeing the Italian teenager win the last three Grands Prix, beat Antonelli by just 0.068s as…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
+          "url": "https://www.bbc.com/sport/football/articles/cy52e0rpdk7o?at_medium=RSS&at_campaign=rss",
+          "headline": "Are Celtic now favourites to win Scottish Premiership?",
+          "snippet": "Celtic captain Callum McGregor pointed out \"it's in our hands\" after Sunday's \"huge win\" over their city rivals. Only defeat by Motherwell on Wednesday, combined with a Hearts win, will prevent a final-day showdown. Nevertheless O'Neill believes Celtic still have \"two mountains to climb\" if he is…",
+          "source": "bbc_sport",
+          "source_name": "BBC Sport",
           "country": "GB",
-          "published": "Fri, 22 May 2026 22:45:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7256214.jpg?20260523102150",
+          "published": "Sun, 10 May 2026 17:06:18 GMT",
+          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/710d/live/7996d3e0-4c92-11f1-be30-7db5755d9347.jpg",
           "video_url": null
         },
         {
-          "url": "https://www.jornada.com.mx/2026/05/23/deportes/a11n3dep?partner=rss",
-          "headline": "Russell le arrebata a Antonelli la  pole para sprint del GP de Canadá",
-          "snippet": "Afp Periódico La Jornada Sábado 23 de mayo de 2026, p. a11 Montreal. El británico George Russell, al volante de su Mercedes, le ganó ayer el duelo a su compañero Kimi Antonelli para apropiarse del primer lugar de la parrilla para la carrera sprint del Gran Premio de Canadá de Fórmula 1, donde el…",
-          "source": "la_jornada_mx",
-          "source_name": "La Jornada",
-          "country": "MX",
-          "published": "Sat, 23 May 2026 07:30:02 GMT",
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Celtic vs Dunfermline Scottish Cup final team news LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-oneill-martin-neil_7254949.jpg?20260521164448",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Celtic vs Dunfermline Scottish Cup final LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-oneill-martin-neil_7254949.jpg?20260521164448",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Celtic survive early scare vs Dunfermline Scottish Cup final LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-oneill-martin-neil_7254949.jpg?20260521164448",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Maeda puts Celtic ahead vs Dunfermline after early scare Scottish Cup final LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-maeda-daizen-celtic_7256432.jpg?20260523152901",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Engels blasts home Celtic's second vs Dunfermline Scottish Cup final LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-arne-engels-celtic_7256441.jpg?20260523154546",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Iheanacho makes it three as Celtic edge towards Scottish Cup glory vs Dunfermline LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-arne-engels-celtic_7256441.jpg?20260523154546",
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/football/live/2026/may/23/celtic-v-dunfermline-scottish-cup-final-live",
+          "headline": "Celtic v Dunfermline: Scottish Cup final – live",
+          "snippet": "⚽️ 3pm BST kick-off; Celtic can secure domestic double ⚽️ <a href=\"https://www.theguardian.com/football/live/2026/may/23/hull-city-v-middlesbrough-championship-playoff-final-live\">Follow Championship playoff final live | <a href=\"mailto:barry.glendenning@guardian.co.uk\">Email Barry Referee: Steven…",
+          "source": "the_guardian_au",
+          "source_name": "The Guardian Australia",
+          "country": "AU",
+          "published": "Sat, 23 May 2026 15:22:39 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/2bab6e58e1524f93bd8e3c2a050eb7ab5fbd7fc8/262_0_4066_3252/master/4066.jpg?width=140&quality=85&auto=format&fit=max&s=fc46e3944847f8a4bd312ec424a0c91c",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/report/555807",
+          "headline": "Celtic win Scottish Cup as O'Neill leads them to domestic double",
+          "snippet": "A week on from snatching the Premiership title from Hearts' grasp, the 74-year-old led them to victory against Dunfermline in what could be the last game of his third spell in charge. A last-ditch clearance by Liam Scales spared some early Celtic blushes after a defensive mix-up before Daizen Maeda…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:50:00 BST",
+          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-kelechi-iheanacho_7256480.jpg?20260523165132",
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/football/live/2026/may/23/celtic-v-dunfermline-scottish-cup-final-live",
+          "headline": "Celtic 3-1 Dunfermline: Scottish Cup final – live reaction",
+          "snippet": "⚽️ Celtic secure domestic double with Hampden Park win ⚽️ <a href=\"https://www.theguardian.com/football/live/2026/may/23/hull-city-v-middlesbrough-championship-playoff-final-live\">Follow Championship playoff final live | <a href=\"mailto:barry.glendenning@guardian.co.uk\">Email Barry Referee: Steven…",
+          "source": "the_guardian_au",
+          "source_name": "The Guardian Australia",
+          "country": "AU",
+          "published": "Sat, 23 May 2026 16:06:48 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/5a78407f7960387f961ebeec853105e1dc418258/1286_396_6245_4999/master/6245.jpg?width=140&quality=85&auto=format&fit=max&s=4d4686d44e6c3187fd0748ce38913fb0",
+          "video_url": null
+        },
+        {
+          "url": "https://dailytrust.com/iheanacho-scores-as-celtic-complete-domestic-double-with-scottish-cup-win/",
+          "headline": "Iheanacho scores as Celtic complete domestic double with Scottish Cup win",
+          "snippet": "Kelechi Iheanacho scored the third goal as Celtic defeated Dunfermline Athletic 3-1 to win the Scottish Cup at Hampden Park. The win comes a week after Celtic defeated Hearts 3-1 to win the Scottish League title, and the latest victory completes a domestic double for the Bhoys. Daizen Maeda, Arne…",
+          "source": "daily_trust_ng",
+          "source_name": "Daily Trust Nigeria",
+          "country": "NG",
+          "published": "Sat, 23 May 2026 16:25:35 +0000",
           "image_url": null,
           "video_url": null
         },
         {
-          "url": "https://www.bbc.com/sport/formula1/articles/ckgplmj1rg9o?at_medium=RSS&at_campaign=rss",
-          "headline": "Russell edges out Antonelli to take Canada sprint pole",
-          "snippet": "George Russell bounced back after a difficult recent run to beat Mercedes team-mate Kimi Antonelli to sprint pole at the Canadian Grand Prix. The Briton, who is 20 points adrift of the Italian after four races this season, headed Antonelli by 0.068 seconds after being fastest on both runs in final…",
-          "source": "bbc_sport",
-          "source_name": "BBC Sport",
-          "country": "GB",
-          "published": "Fri, 22 May 2026 22:47:31 GMT",
-          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4522/live/ffe72e10-5627-11f1-89a3-d1f559421220.jpg",
+          "url": "https://www.theguardian.com/football/2026/may/23/celtic-dunfermline-scottish-cup-final-match-report",
+          "headline": "Iheanacho ensures Celtic ease past Dunfermline to win Scottish Cup and Double",
+          "snippet": "Now for the really interesting part. Celtic’s completion of a domestic double was every bit as straightforward as Dunfermline feared it could be. Whether that achievement is sufficient for Martin O’Neill to be handed an extended stay as the Celtic manager should soon become clear. O’Neill has…",
+          "source": "the_guardian_au",
+          "source_name": "The Guardian Australia",
+          "country": "AU",
+          "published": "Sat, 23 May 2026 16:04:06 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/f759ef84439147d1541616829eb15eaa7e9e754f/163_0_2560_2048/master/2560.jpg?width=140&quality=85&auto=format&fit=max&s=6aae5608b84b35a34661a762656881c8",
           "video_url": null
         },
         {
-          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
-          "headline": "Canadian GP: Russell on pole for 5pm Sprint, Antonelli second LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:00:00 BST",
-          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7256188.jpg?20260522222508",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
-          "headline": "Canadian GP: Russell stays ahead of Antonelli at Sprint start LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:00:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-george-russell-mercedes_7256489.png?20260523170612",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
-          "headline": "Canadian GP Sprint: Russell leads after dramatic duel with Antonelli LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:00:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
-          "video_url": null
-        },
-        {
-          "url": "https://www.lanacion.com.ar/deportes/automovilismo/el-toque-entre-russell-y-antonelli-que-desato-la-bronca-entre-los-dos-companeros-de-mercedes-nid23052026/",
-          "headline": "El toque entre Russell y Antonelli que desató la bronca entre los dos compañeros de Mercedes",
-          "snippet": "La escena de disputa entre compañeros fue una constante en 2025, cuando Lando Norris y Oscar Piastri competían al límite por el título, sin tener en cuenta que respondían a la misma escudería. Aquellos duelos de los McLaren, que muchas veces terminaron en incidentes, parecen haberse trasladado a…",
-          "source": "la_nacion_ar",
-          "source_name": "La Nación (Argentina)",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 16:36:24 +0000",
-          "image_url": "https://resizer.glanacion.com/resizer/v2/MXEAN6LB3ZEXJMMIFPZA4NXNBM.JPG?auth=99ac0cad92d3e8cad8a9eb9273636fa7f907b8c730ceba396b8479dc7af54ce9&smart=true&width=5588&height=3725",
-          "video_url": null
-        },
-        {
-          "url": "https://index.hu/sport/forma1/2026/05/23/formula-1-2026-kanadai-nagydij-sprintfutam-george-russell-kimi-antonelli-lando-norris/",
-          "headline": "Russell és Antonelli csatájából Norris ki jött legjobban a kanadai sprintfutamon",
-          "snippet": "A sprintkvalifikáción az idény eddigi alakulásának megfelelően a Mercedesek voltak a leggyorsabbak – ezúttal George Russell volt kettejük közül a jobb –, mögéjük az előző futamra látványosat javuló McLaren duója érkezett, majd a két-két Ferrari és Red Bull állhatott az első négy sorba. Ami eddig…",
-          "source": "index_hu",
-          "source_name": "Index Hungary",
-          "country": "HU",
-          "published": "Sat, 23 May 2026 18:32:00 +0200",
-          "image_url": "https://kep.index.hu/1/0/6956/69565/695653/69565387_5133383_073d04ba9a666721cca48bac7d6ba633_wm.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
-          "headline": "Canadian GP Sprint: Russell holds off Norris, Antonelli to win thriller LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:00:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/deportes/2026/05/23/polemica-en-mercedes-por-el-toque-de-george-russell-y-kimi-antonelli-que-casi-los-deja-afuera-de-la-sprint-del-gp-de-canada/",
-          "headline": "Polémica en Mercedes por el toque de George Russell y Kimi Antonelli que casi los deja afuera de la Sprint del GP de Canadá",
-          "snippet": "La competencia interna en el equipo de Mercedes quedó expuesta en la carrera Sprint del Gran Premio de Canadá: George Russell y Kimi Antonelli se sacaron chispas y perdieron terreno en el campeonato de constructores ya que el italiano salió de pista y cedió su lugar a Lando Norris, de McLaren. Los…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 16:48:34 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/4CXPK7WZCRGHVMONZ32YZYVKM4.jpeg?auth=0acedecafe4889c500ca376d2bc850a34eb482eebda1ba333791fefd71fa1007&smart=true&width=1025&height=577",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/russell-gana-el-sprint-de-montreal-por-delante-de-norris-y-antonelli/",
-          "headline": "Russell gana el sprint de Montreal por delante de Norris y Antonelli",
-          "snippet": "Redacción deportes, 23 may (EFE).- El inglés George Russell (Mercedes) ganó este sábado la prueba sprint del Gran Premio de Canadá, el quinto del Mundial de Fórmula Uno, que se disputa en el circuito Gilles Villeneuve de Montreal. Russell ganó el tercero de los seis sprints previstos este año -el…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 16:46:46 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/news/12040/13547290/canadian-gp-sprint-george-russell-wins-as-mercedes-team-mate-kimi-antonelli-left-fuming-after-going-off-track-in-battle",
-          "headline": "Russell wins Canada Sprint as Antonelli fumes after going off track in battle",
-          "snippet": "George Russell claimed victory in a thrilling Canadian Grand Prix Sprint after coming out on top of a controversial battle with his Mercedes team-mate Kimi Antonelli. Pole-sitter Russell led world championship leader Antonelli in the early stages before the pair almost made contact as they battled…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 17:30:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-george-russell-kimi_7256516.jpg?20260523172431",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
-          "headline": "Canadian GP Sprint: Reaction as Russell holds off Norris, Antonelli to win thriller",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:00:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
-          "video_url": null
-        },
-        {
-          "url": "https://www.bbc.com/sport/formula1/articles/cn9pqxjlq34o?at_medium=RSS&at_campaign=rss",
-          "headline": "Russell wins Canada sprint after dramatic battle with Antonelli",
-          "snippet": "The first of a series of flashpoints between Russell and Antonelli came on lap six after the two Mercedes had converted their front-row starting positions into a one-two on track at the start. Antonelli tried to pass Russell around the outside of Turn One, but ended up on the grass, managing to…",
-          "source": "bbc_sport",
-          "source_name": "BBC Sport",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:49:41 GMT",
-          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0fa0/live/1b9da110-56c4-11f1-89a3-d1f559421220.jpg",
+          "url": "https://punchng.com/iheanacho-scores-as-celtic-win-scottish-cup-to-complete-double/?utm_source=rss.punchng.com&utm_medium=web",
+          "headline": "Iheanacho scores as Celtic win Scottish Cup to complete double",
+          "snippet": "Celtic won the Scottish Cup with a 3-1 victory over Dunfermline on Saturday, sealing the double seven days after their dramatic title triumph. Martin O’Neill’s side swept into a two-goal lead before half-time thanks to goals from Daizen Maeda and Arne Engels at Hampden Park. Kelechi Iheanacho…",
+          "source": "punch",
+          "source_name": "The Punch",
+          "country": "NG",
+          "published": "Sat, 23 May 2026 17:55:41 +0000",
+          "image_url": "https://cdn.punchng.com/wp-content/uploads/2020/08/18131509/punch-logo-500x179-1.png",
           "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.095,
-        "zionist": 0.212,
-        "atlanticist": 0.377,
-        "statist": 0.128,
-        "financialized": 0.267
+        "interventionist": 0.098,
+        "zionist": 0.208,
+        "atlanticist": 0.35,
+        "statist": 0.21,
+        "financialized": 0.318
       },
-      "fp_source_count": 6,
+      "fp_source_count": 5,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
         "west": 2,
-        "eastern-europe": 1,
-        "latin-america": 3
+        "africa": 2,
+        "pacific-asia": 2
       },
       "section": "sports"
     },
@@ -35576,264 +35992,6 @@
       "section": "world"
     },
     {
-      "id": "87b7fa5a6e2a",
-      "headline": "Maeda puts Celtic ahead vs Dunfermline after early scare Scottish Cup final LIVE!",
-      "summary": "",
-      "published": "Sat, 23 May 2026 16:50:00 BST",
-      "image_url": "https://assets.nst.com.my/images/listing-featured/8A39D2E12C6C2A444F26D0DA20017DEA_data_0.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 20,
-        "center_pct": 80,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 80
-      },
-      "bias_variance": 0.59,
-      "entity_count": 10,
-      "entity_list": [
-        "Celtic",
-        "Double",
-        "Dunfermline",
-        "Engels",
-        "Iheanacho",
-        "Maeda",
-        "Neill",
-        "Premiership",
-        "Rangers",
-        "Scottish"
-      ],
-      "sources": [
-        {
-          "id": "nst_my",
-          "name": "New Straits Times",
-          "country": "MY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "bbc_sport",
-          "name": "BBC Sport",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "sky_sports",
-          "name": "Sky Sports",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_guardian_au",
-          "name": "The Guardian Australia",
-          "country": "AU",
-          "bloc": "non-aligned",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "pacific-asia",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        },
-        {
-          "id": "daily_trust_ng",
-          "name": "Daily Trust Nigeria",
-          "country": "NG",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "africa",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.nst.com.my/sports/football/2026/05/1436675/celtic-keep-scottish-title-race-alive-3-1-win-over-rangers",
-          "headline": "Celtic keep Scottish title race alive with 3-1 win over Rangers",
-          "snippet": "GLASGOW: Celtic forward Daizen Maeda struck twice in five second-half minutes, including a superb bicycle kick, as his side beat Rangers 3-1 at home in Sunday’s Old Firm derby to set up a dramatic final week in the Scottish Premiership.",
-          "source": "nst_my",
-          "source_name": "New Straits Times",
-          "country": "MY",
-          "published": "Sun, 10 May 2026 23:15:13 +0800",
-          "image_url": "https://assets.nst.com.my/images/listing-featured/8A39D2E12C6C2A444F26D0DA20017DEA_data_0.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.bbc.com/sport/football/articles/cy52e0rpdk7o?at_medium=RSS&at_campaign=rss",
-          "headline": "Are Celtic now favourites to win Scottish Premiership?",
-          "snippet": "Celtic captain Callum McGregor pointed out \"it's in our hands\" after Sunday's \"huge win\" over their city rivals. Only defeat by Motherwell on Wednesday, combined with a Hearts win, will prevent a final-day showdown. Nevertheless O'Neill believes Celtic still have \"two mountains to climb\" if he is…",
-          "source": "bbc_sport",
-          "source_name": "BBC Sport",
-          "country": "GB",
-          "published": "Sun, 10 May 2026 17:06:18 GMT",
-          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/710d/live/7996d3e0-4c92-11f1-be30-7db5755d9347.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
-          "headline": "Celtic vs Dunfermline Scottish Cup final team news LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:30:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-oneill-martin-neil_7254949.jpg?20260521164448",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
-          "headline": "Celtic vs Dunfermline Scottish Cup final LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:30:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-oneill-martin-neil_7254949.jpg?20260521164448",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
-          "headline": "Celtic survive early scare vs Dunfermline Scottish Cup final LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:30:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-oneill-martin-neil_7254949.jpg?20260521164448",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
-          "headline": "Maeda puts Celtic ahead vs Dunfermline after early scare Scottish Cup final LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:30:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-maeda-daizen-celtic_7256432.jpg?20260523152901",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
-          "headline": "Engels blasts home Celtic's second vs Dunfermline Scottish Cup final LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:30:00 BST",
-          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-arne-engels-celtic_7256441.jpg?20260523154546",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
-          "headline": "Iheanacho makes it three as Celtic edge towards Scottish Cup glory vs Dunfermline LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:30:00 BST",
-          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-arne-engels-celtic_7256441.jpg?20260523154546",
-          "video_url": null
-        },
-        {
-          "url": "https://www.theguardian.com/football/live/2026/may/23/celtic-v-dunfermline-scottish-cup-final-live",
-          "headline": "Celtic v Dunfermline: Scottish Cup final – live",
-          "snippet": "⚽️ 3pm BST kick-off; Celtic can secure domestic double ⚽️ <a href=\"https://www.theguardian.com/football/live/2026/may/23/hull-city-v-middlesbrough-championship-playoff-final-live\">Follow Championship playoff final live | <a href=\"mailto:barry.glendenning@guardian.co.uk\">Email Barry Referee: Steven…",
-          "source": "the_guardian_au",
-          "source_name": "The Guardian Australia",
-          "country": "AU",
-          "published": "Sat, 23 May 2026 15:22:39 GMT",
-          "image_url": "https://i.guim.co.uk/img/media/2bab6e58e1524f93bd8e3c2a050eb7ab5fbd7fc8/262_0_4066_3252/master/4066.jpg?width=140&quality=85&auto=format&fit=max&s=fc46e3944847f8a4bd312ec424a0c91c",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/report/555807",
-          "headline": "Celtic win Scottish Cup as O'Neill leads them to domestic double",
-          "snippet": "A week on from snatching the Premiership title from Hearts' grasp, the 74-year-old led them to victory against Dunfermline in what could be the last game of his third spell in charge. A last-ditch clearance by Liam Scales spared some early Celtic blushes after a defensive mix-up before Daizen Maeda…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:50:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-kelechi-iheanacho_7256480.jpg?20260523165132",
-          "video_url": null
-        },
-        {
-          "url": "https://www.theguardian.com/football/live/2026/may/23/celtic-v-dunfermline-scottish-cup-final-live",
-          "headline": "Celtic 3-1 Dunfermline: Scottish Cup final – live reaction",
-          "snippet": "⚽️ Celtic secure domestic double with Hampden Park win ⚽️ <a href=\"https://www.theguardian.com/football/live/2026/may/23/hull-city-v-middlesbrough-championship-playoff-final-live\">Follow Championship playoff final live | <a href=\"mailto:barry.glendenning@guardian.co.uk\">Email Barry Referee: Steven…",
-          "source": "the_guardian_au",
-          "source_name": "The Guardian Australia",
-          "country": "AU",
-          "published": "Sat, 23 May 2026 16:06:48 GMT",
-          "image_url": "https://i.guim.co.uk/img/media/5a78407f7960387f961ebeec853105e1dc418258/1286_396_6245_4999/master/6245.jpg?width=140&quality=85&auto=format&fit=max&s=4d4686d44e6c3187fd0748ce38913fb0",
-          "video_url": null
-        },
-        {
-          "url": "https://dailytrust.com/iheanacho-scores-as-celtic-complete-domestic-double-with-scottish-cup-win/",
-          "headline": "Iheanacho scores as Celtic complete domestic double with Scottish Cup win",
-          "snippet": "Kelechi Iheanacho scored the third goal as Celtic defeated Dunfermline Athletic 3-1 to win the Scottish Cup at Hampden Park. The win comes a week after Celtic defeated Hearts 3-1 to win the Scottish League title, and the latest victory completes a domestic double for the Bhoys. Daizen Maeda, Arne…",
-          "source": "daily_trust_ng",
-          "source_name": "Daily Trust Nigeria",
-          "country": "NG",
-          "published": "Sat, 23 May 2026 16:25:35 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.theguardian.com/football/2026/may/23/celtic-dunfermline-scottish-cup-final-match-report",
-          "headline": "Iheanacho ensures Celtic ease past Dunfermline to win Scottish Cup and Double",
-          "snippet": "Now for the really interesting part. Celtic’s completion of a domestic double was every bit as straightforward as Dunfermline feared it could be. Whether that achievement is sufficient for Martin O’Neill to be handed an extended stay as the Celtic manager should soon become clear. O’Neill has…",
-          "source": "the_guardian_au",
-          "source_name": "The Guardian Australia",
-          "country": "AU",
-          "published": "Sat, 23 May 2026 16:04:06 GMT",
-          "image_url": "https://i.guim.co.uk/img/media/f759ef84439147d1541616829eb15eaa7e9e754f/163_0_2560_2048/master/2560.jpg?width=140&quality=85&auto=format&fit=max&s=6aae5608b84b35a34661a762656881c8",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.098,
-        "zionist": 0.21,
-        "atlanticist": 0.363,
-        "statist": 0.188,
-        "financialized": 0.297
-      },
-      "fp_source_count": 4,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 2,
-        "africa": 1,
-        "pacific-asia": 2
-      },
-      "section": "sports"
-    },
-    {
       "id": "83d4c1ff0360",
       "headline": "Three months in, is Trump losing the war against Iran? - The Times of Israel",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxOcThIbVViTHBlbXg0dmJrNWpHYzZTYjF2UngwREhBWGxLY0FpLV85cE1MTXFpV05KNTFtODJQVnRLMnBZU2J3M1lSWFBjWThHdmJqa0poTzM0N1ktZ3Q5akZJamcwbFV6dzFDYkluaHRrM2lQcGdxYmlnZ2RYYnNrUF9oZm5RaWFzMnhj0gGQAUFVX3lxTE1uWG1WTGJIR0hTeDJBenNIc2JlbFFNUmJ4ZTRlcm",
@@ -36356,6 +36514,157 @@
       "section": "entertainment"
     },
     {
+      "id": "2466a8f218dd",
+      "headline": "Trump mocks Colbert with AI video of president throwing talk show host into dumpster",
+      "summary": "<p><a href=\"/topic/donald-trump\">Donald Trump</a> mocked <a href=\"/topic/stephen-colbert\">Stephen Colbert</a> by sharing an <a href=\"/topic/ai\">AI</a>-generated video of himself throwing the former <em>The Late Show </em>host into a dumpster.</p>",
+      "published": "Sat, 23 May 2026 16:48:35 GMT",
+      "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/05/Donald-Trump-Stephen-Colbert-05.22.png?w=900",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 25,
+        "center_pct": 50,
+        "right_pct": 25,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 5.25,
+      "entity_count": 4,
+      "entity_list": [
+        "BROADCAST",
+        "Colbert",
+        "Networks",
+        "Trump"
+      ],
+      "sources": [
+        {
+          "id": "the_hill",
+          "name": "The Hill",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "fox_news",
+          "name": "Fox News",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": "Fox Corp"
+        },
+        {
+          "id": "independent_uk",
+          "name": "The Independent (UK)",
+          "country": "GB",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "rnz",
+          "name": "RNZ",
+          "country": "NZ",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://thehill.com/homenews/administration/5892405-trump-shares-ai-video-colbert/",
+          "headline": "Trump posts AI video depicting him throwing Colbert in a dumpster and dancing",
+          "snippet": "President Trump late Friday shared an AI-generated video depicting him throwing former late night host Stephen Colbert into a dumpster and subsequently dancing — the latest instance of the president using artificial intelligence to mock his enemies. The video, posted to Truth Social , shows Colbert…",
+          "source": "the_hill",
+          "source_name": "The Hill",
+          "country": "US",
+          "published": "Sat, 23 May 2026 02:12:01 +0000",
+          "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/05/Donald-Trump-Stephen-Colbert-05.22.png?w=900",
+          "video_url": null
+        },
+        {
+          "url": "https://www.foxnews.com/opinion/broadcast-bias-networks-lament-end-colbert-show-love-anti-trump-antics",
+          "headline": "BROADCAST BIAS: Networks lament end of Colbert show. They love his anti-Trump antics",
+          "snippet": "Stephen Colbert offered an emotional address to his audience in the series finale of \"The Late Show.\" You can now listen to Fox News articles! The leftist bubble could easily be defined as people who think late-night comedians are the best Americans ever. The demise of Stephen Colbert's show was…",
+          "source": "fox_news",
+          "source_name": "Fox News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 08:00:23 -0400",
+          "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2025/03/931/523/broadcast-bias-image.jpg?ve=1&tl=1",
+          "video_url": null
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/americas/us-politics/trump-colbert-late-show-ai-truth-social-b2982341.html",
+          "headline": "Trump dances on Colbert’s Late Show grave with AI dumpster video",
+          "snippet": "Your support helps us to tell the story From reproductive rights to climate change to Big Tech, The Independent is on the ground when the story is developing. Whether it's investigating the financials of Elon Musk's pro-Trump or producing our latest documentary, 'The A Word', which shines a light…",
+          "source": "independent_uk",
+          "source_name": "The Independent (UK)",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 00:27:23 GMT",
+          "image_url": "https://static.independent.co.uk/2026/05/21/14/45/MixCollage-21-May-2026-09-58-AM-8649.jpg?width=1200&auto=webp&trim=0%2C0%2C0%2C0",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rnz.co.nz/news/world/596099/trump-says-more-late-night-talk-show-hosts-to-depart-after-colbert-exit",
+          "headline": "Trump says more late night talk show hosts to depart after Colbert exit",
+          "snippet": "By David Shepardson , Reuters People hold signs supporting Stephen Colbert outside the Ed Sullivan Theater ahead of the taping of the final episode of the \"The Late Show\" after 32 years on air. Photo: / CHARLY TRIBALLEAU President Donald Trump said more late-night talk shows will depart after he…",
+          "source": "rnz",
+          "source_name": "RNZ",
+          "country": "NZ",
+          "published": "Sat, 23 May 2026 13:31:36 +1200",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.independent.co.uk/tv/news/donald-trump-stephen-colbert-ai-dumpster-video-b2982498.html",
+          "headline": "Trump mocks Colbert with AI video of president throwing talk show host into dumpster",
+          "snippet": "Trump mocks Colbert with video of president throwing talk show host into dumpster Donald Trump mocked Stephen Colbert by sharing an -generated video of himself throwing the former The Late Show host into a dumpster. The president posted the doctored video on his social media. It shows Trump walking…",
+          "source": "independent_uk",
+          "source_name": "The Independent (UK)",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:48:35 GMT",
+          "image_url": "https://static.independent.co.uk/2026/05/23/14/56/Screenshot-2026-05-23-at-15-36-35.png?width=1200&auto=webp&trim=0%2C5%2C0%2C5",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.367,
+        "statist": -0.067,
+        "financialized": 0.4
+      },
+      "fp_source_count": 3,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 3,
+        "pacific-asia": 1
+      },
+      "section": "tech"
+    },
+    {
       "id": "b84adadb4411",
       "headline": "Zelensky rejects Merz’s proposal to grant Ukraine EU associate membership",
       "summary": "The time is right to move forward with Ukraine’s membership in a full and meaningful way, Zelensky said",
@@ -36517,146 +36826,6 @@
         "eastern-europe": 1
       },
       "section": "world"
-    },
-    {
-      "id": "2466a8f218dd",
-      "headline": "Trump dances on Colbert’s Late Show grave with AI dumpster video",
-      "summary": "<p>The president celebrated the end of the 11-season run on social media, labeling the host a ‘total jerk’ with ‘no talent, no ratings, no life’ </p>",
-      "published": "Sat, 23 May 2026 08:00:23 -0400",
-      "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/05/Donald-Trump-Stephen-Colbert-05.22.png?w=900",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 25,
-        "center_pct": 50,
-        "right_pct": 25,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 5.25,
-      "entity_count": 4,
-      "entity_list": [
-        "BROADCAST",
-        "Colbert",
-        "Networks",
-        "Trump"
-      ],
-      "sources": [
-        {
-          "id": "the_hill",
-          "name": "The Hill",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "fox_news",
-          "name": "Fox News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": "Fox Corp"
-        },
-        {
-          "id": "independent_uk",
-          "name": "The Independent (UK)",
-          "country": "GB",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "rnz",
-          "name": "RNZ",
-          "country": "NZ",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://thehill.com/homenews/administration/5892405-trump-shares-ai-video-colbert/",
-          "headline": "Trump posts AI video depicting him throwing Colbert in a dumpster and dancing",
-          "snippet": "President Trump late Friday shared an AI-generated video depicting him throwing former late night host Stephen Colbert into a dumpster and subsequently dancing — the latest instance of the president using artificial intelligence to mock his enemies. The video, posted to Truth Social , shows Colbert…",
-          "source": "the_hill",
-          "source_name": "The Hill",
-          "country": "US",
-          "published": "Sat, 23 May 2026 02:12:01 +0000",
-          "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/05/Donald-Trump-Stephen-Colbert-05.22.png?w=900",
-          "video_url": null
-        },
-        {
-          "url": "https://www.foxnews.com/opinion/broadcast-bias-networks-lament-end-colbert-show-love-anti-trump-antics",
-          "headline": "BROADCAST BIAS: Networks lament end of Colbert show. They love his anti-Trump antics",
-          "snippet": "Stephen Colbert offered an emotional address to his audience in the series finale of \"The Late Show.\" You can now listen to Fox News articles! The leftist bubble could easily be defined as people who think late-night comedians are the best Americans ever. The demise of Stephen Colbert's show was…",
-          "source": "fox_news",
-          "source_name": "Fox News",
-          "country": "US",
-          "published": "Sat, 23 May 2026 08:00:23 -0400",
-          "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2025/03/931/523/broadcast-bias-image.jpg?ve=1&tl=1",
-          "video_url": null
-        },
-        {
-          "url": "https://www.independent.co.uk/news/world/americas/us-politics/trump-colbert-late-show-ai-truth-social-b2982341.html",
-          "headline": "Trump dances on Colbert’s Late Show grave with AI dumpster video",
-          "snippet": "Your support helps us to tell the story From reproductive rights to climate change to Big Tech, The Independent is on the ground when the story is developing. Whether it's investigating the financials of Elon Musk's pro-Trump or producing our latest documentary, 'The A Word', which shines a light…",
-          "source": "independent_uk",
-          "source_name": "The Independent (UK)",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 00:27:23 GMT",
-          "image_url": "https://static.independent.co.uk/2026/05/21/14/45/MixCollage-21-May-2026-09-58-AM-8649.jpg?width=1200&auto=webp&trim=0%2C0%2C0%2C0",
-          "video_url": null
-        },
-        {
-          "url": "https://www.rnz.co.nz/news/world/596099/trump-says-more-late-night-talk-show-hosts-to-depart-after-colbert-exit",
-          "headline": "Trump says more late night talk show hosts to depart after Colbert exit",
-          "snippet": "By David Shepardson , Reuters People hold signs supporting Stephen Colbert outside the Ed Sullivan Theater ahead of the taping of the final episode of the \"The Late Show\" after 32 years on air. Photo: / CHARLY TRIBALLEAU President Donald Trump said more late-night talk shows will depart after he…",
-          "source": "rnz",
-          "source_name": "RNZ",
-          "country": "NZ",
-          "published": "Sat, 23 May 2026 13:31:36 +1200",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.2,
-        "zionist": 0.3,
-        "atlanticist": 0.367,
-        "statist": -0.067,
-        "financialized": 0.4
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 3,
-        "pacific-asia": 1
-      },
-      "section": "tech"
     },
     {
       "id": "1d174813c886",
