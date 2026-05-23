@@ -189,7 +189,7 @@ async function init() {
   main.appendChild(cs);
 
   try {
-    var resp = await fetch('/data/mad_archive.json');
+    var resp = await fetch((typeof BWB_API !== 'undefined' && BWB_API.dataBase ? BWB_API.dataBase : 'data') + '/mad_archive.json');
     _allIssues = await resp.json();
   } catch (err) {
     var grid = document.getElementById('mad-grid');

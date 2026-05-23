@@ -157,7 +157,9 @@
 <script>
 (async function () {
   const SVG_NS = 'http://www.w3.org/2000/svg';
-  const res = await fetch('/botwavebomba/data/same_hand_slice.json');
+  // Resolve relative to the document so it works at both /botwavebomba/ (GitHub Pages)
+  // and / (custom domain). data/same_hand_slice.json is a sibling of this HTML.
+  const res = await fetch('data/same_hand_slice.json');
   if (!res.ok) return;
   const data = await res.json();
   const all = Array.isArray(data.all_qualified) ? data.all_qualified : [];

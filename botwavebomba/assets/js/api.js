@@ -2,9 +2,19 @@
 // Fast initial load via slim endpoint, then lazy full payload.
 // On fetch failure: visible error banner, empty payload — no fictional content.
 
+// Use document-relative paths so the same code works whether the site is
+// served at `/` (custom domain root) or `/botwavebomba/` (GitHub Pages subpath).
+// Resolves at runtime against window.location.pathname, anchored to the
+// directory of the current document.
+const _BWB_DOC_BASE = (() => {
+  // strip filename from current path, leaving trailing slash
+  const p = window.location.pathname;
+  const last = p.lastIndexOf('/');
+  return last >= 0 ? p.substring(0, last + 1) : '/';
+})();
 const BWB_API = {
-  base: '/api',
-  dataBase: '/data',
+  base: _BWB_DOC_BASE + 'api',
+  dataBase: _BWB_DOC_BASE + 'data',
   _fullData: null,
   _slimLoaded: false,
   _fullLoaded: false,
