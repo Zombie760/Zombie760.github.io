@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-23T22:09:06.772887+00:00",
-  "article_count": 28812,
+  "generated_at": "2026-05-23T22:25:08.464058+00:00",
+  "article_count": 28925,
   "story_count": 160,
   "sections": [
     {
@@ -16,7 +16,7 @@
     {
       "id": "business",
       "label": "Business",
-      "count": 1
+      "count": 2
     },
     {
       "id": "tech",
@@ -26,7 +26,7 @@
     {
       "id": "health",
       "label": "Health",
-      "count": 6
+      "count": 5
     },
     {
       "id": "climate",
@@ -997,7 +997,7 @@
       "id": "9182092d6b80",
       "headline": "Una concentración rechaza las detenciones y cargas policiales a activistas de la Global Sumud Flotilla en Loiu (Bilbao)",
       "summary": "",
-      "published": "Sat, 23 May 2026 17:45:21 +0000",
+      "published": "Sun, 24 May 2026 09:58:59 +1200",
       "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/6/6744b6cf50b85df230b72f8d/image/ca775f5be14812cf413dc2b673663cd1488d4806bf371a4c947b3862851b8078.JPG?width=1440&format=webp&quality=80",
       "video_url": null,
       "has_video": false,
@@ -1005,12 +1005,12 @@
       "blindspot_label": null,
       "blindspot_score": 0.0,
       "coverage": {
-        "left_pct": 29,
-        "center_pct": 29,
-        "right_pct": 43,
+        "left_pct": 25,
+        "center_pct": 38,
+        "right_pct": 38,
         "state_count": 1,
-        "dominant": "right",
-        "dominant_pct": 43
+        "dominant": "center",
+        "dominant_pct": 38
       },
       "bias_variance": 4.87,
       "entity_count": 25,
@@ -1136,6 +1136,18 @@
           "geo_cluster": "latin-america",
           "factuality": "high",
           "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "rnz",
+          "name": "RNZ",
+          "country": "NZ",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
           "parent_company": ""
         }
       ],
@@ -1282,6 +1294,17 @@
           "published": "Sat, 23 May 2026 17:45:21 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/FOEZSNKUMRDYHDCXG2PTBAIV7E.jpg?auth=3d2fd4a11fd7aa6717a2ff742a51bea3b5c6ffdef3b1dc2b48f4da433da2112f&smart=true&width=1920&height=1440",
           "video_url": null
+        },
+        {
+          "url": "https://www.rnz.co.nz/news/political/596163/kiwi-pair-detained-during-global-sumud-flotilla-to-arrive-back-in-nz",
+          "headline": "Kiwi pair detained during Global Sumud Flotilla to arrive back in NZ",
+          "snippet": "The \"Global Sumud Flotilla,\" carrying international activists and journalists, aims to sail across the Mediterranean Sea to Gaza to challenge the ongoing blockade and draw attention to the humanitarian crisis in the Palestinian territory. Photo: / Murat Kocabas Two New Zealanders detained during…",
+          "source": "rnz",
+          "source_name": "RNZ",
+          "country": "NZ",
+          "published": "Sun, 24 May 2026 09:58:59 +1200",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -1298,7 +1321,7 @@
       "geo_breakdown": {
         "middle-east": 3,
         "latin-america": 3,
-        "pacific-asia": 1,
+        "pacific-asia": 2,
         "global-south": 1
       },
       "section": "world",
@@ -3095,6 +3118,262 @@
         "global-south": 5
       },
       "section": "world"
+    },
+    {
+      "id": "9ac39fbbb787",
+      "headline": "Girona y Mallorca bajan a Segunda División, mientras que Celta y Getafe jugarán en Europa: así queda la clasificación de LaLiga",
+      "summary": "El Real Madrid despide a Dani Carvajal en su último partido con goleada",
+      "published": "Sat, 23 May 2026 22:19:27 +0000",
+      "image_url": "https://www.jamaicaobserver.com/jamaicaobserver/news/wp-content/uploads/sites/4/2025/07/000_66CC37D.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 67,
+        "right_pct": 33,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 0.96,
+      "entity_count": 18,
+      "entity_list": [
+        "Bragarnik",
+        "Celta",
+        "Conferencia",
+        "Demichelis",
+        "Descenso",
+        "Diablito",
+        "Echeverri",
+        "Elche",
+        "Europa",
+        "Europu",
+        "Getafe",
+        "Girona",
+        "LaLiga",
+        "Madrid",
+        "Mallorca",
+        "Osasuna",
+        "Segunda",
+        "VIDEO"
+      ],
+      "sources": [
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "jamaica_observer",
+          "name": "Jamaica Observer",
+          "country": "JM",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "jutarnji",
+          "name": "Jutarnji List",
+          "country": "HR",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "clarin_ar",
+          "name": "Clarín Argentina",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "vanguard_ng",
+          "name": "Vanguard Nigeria",
+          "country": "NG",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_razon_bo",
+          "name": "La Razón Bolivia",
+          "country": "BO",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/la-ultima-jornada-al-descanso-mallorca-y-girona-en-descenso-celta-y-getafe-en-europa/",
+          "headline": "La última jornada al descanso: Mallorca y Girona, en descenso; Celta y Getafe, en Europa",
+          "snippet": "23 May, 2026 Argentina Estados Unidos Colombia España México Perú Centroamérica Mundo Venezuela The economist The Washington Post Realeza Opinión Últimas Noticias Nacional Economía Sociedad Cultura España Deportes Entretenimiento Gastronomía Salud Viajes Qué puedo ver Tendencias Estar Mejor…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 20:02:14 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.jamaicaobserver.com/2026/05/23/real-madrid-end-troubled-liga-season-win-mallorca-girona/",
+          "headline": "Real Madrid end troubled Liga season with win, Mallorca, Girona down",
+          "snippet": "Real Madrid's French midfielder #14 Aurelien Tchouameni, German defender #22 Antonio Ruediger, Spanish coach Xabi Alonso and Croatian midfielder #10 Luka Modric react at the end of the Club World Cup 2025 semifinal football match between France's Paris Saint-Germain and Spain's Real Madrid at the…",
+          "source": "jamaica_observer",
+          "source_name": "Jamaica Observer",
+          "country": "JM",
+          "published": "Sat, 23 May 2026 21:21:35 +0000",
+          "image_url": "https://www.jamaicaobserver.com/jamaicaobserver/news/wp-content/uploads/sites/4/2025/07/000_66CC37D.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/la-ultima-jornada-condena-al-descenso-a-mallorca-y-girona/",
+          "headline": "La última jornada condena al descenso a Mallorca y Girona",
+          "snippet": "Iñaki Dufour Madrid, 23 may (EFE).- La última jornada de LaLiga Sports no cambió nada en la zona de descenso, sin la carambola que persiguió toda la noche el Mallorca, casi condenado desde su derrota de la anterior cita con el Levante, pese al 3-0 al Oviedo de este sábado, y sin el triunfo que…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:32:01 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/el-elche-se-salva-y-manda-a-segunda-al-girona-junto-al-mallorca/",
+          "headline": "El Elche se salva y manda a Segunda al Girona junto al Mallorca",
+          "snippet": "El Elche empató (1-1) este sábado contra el Girona en la última jornada de LaLiga Sports y logró la permanencia en el duelo directo que mandó a Segunda División al equipo catalán, mismo destino que corrió un Mallorca que ganó (3-0) al Real Oviedo pero que no dependía de sí mismo. En un sábado…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:31:06 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/THY37NX5PJHCVBX2W4XZB4C4GE.jpg?auth=e644f5ae2b6a6b06d505aecca54ee4714898f305587ae448306ff235062a5e9b&smart=true&width=1920&height=1238",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/deportes/2026/05/23/girona-y-mallorca-bajan-a-segunda-division-mientras-que-celta-y-getafe-jugaran-en-europa-asi-queda-la-clasificacion-de-laliga/",
+          "headline": "Girona y Mallorca bajan a Segunda División, mientras que Celta y Getafe jugarán en Europa: así queda la clasificación de LaLiga",
+          "snippet": "Muriqi, segundo máximo goleador de LaLiga. LaLiga llega a su fin. Con la tercera plaza solamente en juego (Atlético de Madrid-Villarreal, mañana a las 21:00), el descenso y Europa se han decidido en una última jornada agónica para muchos de los equipos. Finalmente, los afortunados son Celta y…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:22:30 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/JCFQ3M3M2VHWVORX3YZ57PGFUM.jpg?auth=fcfca9fe015294f80b77b98e0a79bb0270a7f922762571342a30e1c92e1df56a&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/descenso-del-mallorca-y-el-girona-liga-europa-del-celta-y-liga-conferencia-del-getafe/",
+          "headline": "Descenso del Mallorca y el Girona, Liga Europa del Celta y Liga Conferencia del Getafe",
+          "snippet": "Madrid, 23 may (EFE).- La última jornada de LaLiga Sports supuso el descenso del Mallorca y el Girona; salvó al Levante, al Osasuna y al Elche; confirmó la plaza en la Liga Europa del Celta y llevó al Getafe a la Liga Conferencia. Los resultados de este sábado han sido los siguientes: Girona 1 –…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:19:27 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.jutarnji.hr/sportske/nogomet/rasplet-la-lige-mallorca-girona-ispadaju-getafe-u-konferencijskoj-ligi-15711512",
+          "headline": "VIDEO: U drami posljednjeg kola ispali Girona i Mallorca, Osasuna se spasila, Getafe idu u Europu",
+          "snippet": "U posljednjem, 38. kolu španjolske La Lige riješene su i posljednje dvojbe te je postalo poznato tko sve ispada u drugu ligu. Od ranije poznatom davljeniku Oviedu pridružili su se Mallorca i Girona, koji iduće sezone neće igrati u elitnom razredu. VIDEO POGLEDAJTE OVDJE. Brojne su momčadi…",
+          "source": "jutarnji",
+          "source_name": "Jutarnji List",
+          "country": "HR",
+          "published": "Sat, 23 May 2026 23:19:00 +0200",
+          "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38482904_1280.jpg?1779572824",
+          "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/deportes/laliga-espana-dramatica-definicion-descendieron-mallorca-demichelis-girona-diablito-echeverri-salvo-elche-bragarnik_0_FCeUigTB6E.html",
+          "headline": "LaLiga de España y una dramática definición: descendieron el Mallorca de Demichelis y el Girona Diablito Echeverri y se salvó el Elche Bragarnik",
+          "snippet": "No hubo milagro para Martín Demichelis y Mallorca se fue al descenso en la dramática y apasionante definición de la última fecha de la liga de España. Eran cinco los equipos que peleaban por quedarse en la máxima categoría e hizo lo que debía hacer el elenco de las Islas Baleares: venció de local…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:33:23 +0000",
+          "image_url": "https://www.clarin.com/img/2026/05/23/k6ZEdG_AC_1200x630__1.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.vanguardngr.com/2026/05/real-madrid-end-troubled-liga-season-with-win-mallorca-girona-relegated/",
+          "headline": "Real Madrid end troubled Liga season with win; Mallorca, Girona relegated",
+          "snippet": "Real Madrid ended a troubled La Liga campaign with a 4-2 win over Athletic Bilbao in Alvaro Arbeloa's last game at the helm, while Mallorca and Girona were relegated from the Spanish top flight on Saturday. The post <a…",
+          "source": "vanguard_ng",
+          "source_name": "Vanguard Nigeria",
+          "country": "NG",
+          "published": "Sat, 23 May 2026 22:02:20 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/cronica-el-elche-se-salva-y-manda-a-segunda-al-girona-junto-al-mallorca/",
+          "headline": "(Crónica) El Elche se salva y manda a Segunda al Girona junto al Mallorca",
+          "snippet": "El Elche empató (1-1) este sábado contra el Girona en la última jornada de LaLiga Sports y logró la permanencia en el duelo directo que mandó a Segunda División al equipo catalán, mismo destino que corrió un Mallorca que ganó (3-0) al Real Oviedo pero que no dependía de sí mismo. En un sábado…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 22:00:37 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/4SKTPXSGMBFGVOZ4LACPMDBHZ4.jpg?auth=8cd2a7474b39f5d0ad93073ec8276dfdd0be8eacca87a07322dc638863f7c5a4&smart=true&width=1920&height=1238",
+          "video_url": null
+        },
+        {
+          "url": "https://larazon.bo/marcas/2026/05/23/girona-y-mallorca-descienden-a-segunda-en-espana/",
+          "headline": "‎Girona y Mallorca descienden a segunda en España",
+          "snippet": "‎El equipo del que es accionista el boliviano Marcelo Claure deberá competir en la LaLiga Hypermotion la temporada 26-27 The post <a href=\"https://larazon.bo/marcas/2026/05/23/girona-y-mallorca-descienden-a-segunda-en-espana/\">‎Girona y Mallorca descienden a segunda en España appeared first on La…",
+          "source": "la_razon_bo",
+          "source_name": "La Razón Bolivia",
+          "country": "BO",
+          "published": "Sat, 23 May 2026 22:19:27 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.134,
+        "zionist": 0.236,
+        "atlanticist": 0.402,
+        "statist": 0.23,
+        "financialized": 0.462
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "latin-america": 4,
+        "eastern-europe": 1,
+        "africa": 1
+      },
+      "section": "business"
     },
     {
       "id": "9cdbe9b98ae3",
@@ -6760,7 +7039,7 @@
       "id": "4554cfa5a519",
       "headline": "¡Ignacio Buse campeón del ATP 500 Hamburgo!: Derrotó a Tommy Paul y hace historia en el tenis peruano",
       "summary": "El tenista peruano disputará su primera definición ATP frente al estadounidense en el en la cancha principal del Tennisstadion am Rothenbaum. Sigue las incidencias del vibrante duelo",
-      "published": "Sat, 23 May 2026 21:00:52 +0000",
+      "published": "Sat, 23 May 2026 22:16:28 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/URMKUOBYGBBFDEXH4FCZLTONNY.png?auth=b0b52f92ecd984790bdffe88d9e9ddff9d972ae143e064f4344680c566a7152d&smart=true&width=1920&height=1080",
       "video_url": null,
       "has_video": false,
@@ -6776,7 +7055,7 @@
         "dominant_pct": 100
       },
       "bias_variance": 0.0,
-      "entity_count": 15,
+      "entity_count": 17,
       "entity_list": [
         "Arraya",
         "Desde",
@@ -6787,9 +7066,11 @@
         "Ignacio",
         "Jaime",
         "Learner",
+        "Machu",
         "Novak",
         "Pablo",
         "Peruanos",
+        "Picchu",
         "Punto",
         "Tommy",
         "Yzaga"
@@ -7061,6 +7342,17 @@
           "country": "AR",
           "published": "Sat, 23 May 2026 21:00:52 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/LFSRDD2EXVH7NACL7UWV5CANCI.jpg?auth=09809e10c9cb1d6adf4cf833fa3be02dbb1781262bc6d07072bc90545f9aec98&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/23/machu-picchu-te-espera-amigo-la-respuesta-de-ignacio-buse-a-la-felicitacion-de-novak-djokovic-tras-su-consagracion-en-hamburgo/",
+          "headline": "“Machu Picchu te espera, amigo”: la respuesta de Ignacio Buse a la felicitación de Novak Djokovic tras su consagración en Hamburgo",
+          "snippet": "Ignacio Buse y su respuesta en Instagram a la felicitación de No0vak Djokovic. Crédito: X. La histórica consagración de Ignacio Buse en el 500 de Hamburgo traspasó las fronteras del tenis latinoamericano y generó eco en la cúspide del deporte blanco. Novak Djokovic , leyenda viva y ganador de 24…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 22:16:28 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/3GQG2IZGZ5GJLC5OYZY3CYQUMM.jpg?auth=3e95838f12ba458578a7096798f00fe472d0c7ddf0c814fd502e7d23587a07e7&smart=true&width=1920&height=1080",
           "video_url": null
         }
       ],
@@ -7541,6 +7833,122 @@
       "section": "world"
     },
     {
+      "id": "b76cb0a71821",
+      "headline": "Los Javis se unen a Almodóvar o Buñuel con su Premio de Dirección en Cannes",
+      "summary": "",
+      "published": "Sat, 23 May 2026 22:15:38 +0000",
+      "image_url": null,
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 50,
+        "right_pct": 50,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 0.9,
+      "entity_count": 5,
+      "entity_list": [
+        "Cannes",
+        "Javis",
+        "LGTBI",
+        "Lorca",
+        "Premio"
+      ],
+      "sources": [
+        {
+          "id": "el_nacional_ve",
+          "name": "El Nacional Venezuela",
+          "country": "VE",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.elnacional.com/2026/05/los-javis-envian-un-poderoso-mensaje-lgtb-en-cannes-con-la-bola-negra/",
+          "headline": "Los Javis reivindican en Cannes el mensaje LGTBI inspirados por Lorca",
+          "snippet": "VER PORTADA ENLACES: Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra en Ucrania Indices Economicos Criollos Los Venezolanos en la MLB Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra…",
+          "source": "el_nacional_ve",
+          "source_name": "El Nacional Venezuela",
+          "country": "VE",
+          "published": "Fri, 22 May 2026 04:01:00 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/los-javis-y-penelope-cruz-en-la-alfombra-roja-de-cannes-previa-a-la-gala-de-premios/",
+          "headline": "Los Javis y Penélope Cruz, en la alfombra roja de Cannes previa a la gala de premios",
+          "snippet": "Cannes (Francia), 23 may (EFE).- Javier Ambrossi y Javier Calvo, acompañados por Penélope Cruz y el resto del equipo de 'La bola negra', pasaron este sábado por la última alfombra roja del Festival de Cannes, previa a la entrega de premios de la 79.ª edición, lo que apunta a que recibirán algún…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 18:18:05 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/los-javis-tras-ganar-el-premio-de-direccion-en-cannes-se-preparan-para-rodar-en-ingles/",
+          "headline": "Los Javis tras ganar el Premio de Dirección en Cannes se preparan para rodar en inglés",
+          "snippet": "Cannes (Francia), 23 may (EFE).- Javier Ambrossi y Javier Calvo conquistaron este sábado el Festival de Cannes con 'La bola negra' y ya están pensando en su siguiente proyecto, que no descartan que sea en inglés y, por supuesto, juntos. Tras este galardón ya no hay dudas: \"Nos hemos mirado y hemos…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:45:41 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/los-javis-se-unen-a-almodovar-o-bunuel-con-su-premio-de-direccion-en-cannes/",
+          "headline": "Los Javis se unen a Almodóvar o Buñuel con su Premio de Dirección en Cannes",
+          "snippet": "Cannes (Francia), 23 may (EFE).- Javier Ambrossi y Javier Calvo, conocidos como ‘Los Javis’, se unieron este sábado a cineastas de la talla de Luis Buñuel y Pedro Almodóvar, quienes, al igual que ellos, han ganado el Premio a Mejor Dirección en el Festival de Cannes. Ellos lo ganaron por 'La bola…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 22:15:38 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.15,
+        "zionist": 0.25,
+        "atlanticist": 0.415,
+        "statist": 0.245,
+        "financialized": 0.485
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "latin-america": 2
+      },
+      "section": "entertainment"
+    },
+    {
       "id": "a0b540f449ad",
       "headline": "Married At First Sight UK hit by fresh allegations as three more stars claim they were sexually assaulted and abused on the show amid calls for the series to be axed",
       "summary": "The E4 reality series has faced calls to be axed after claims aired by BBC Panorama that two women had been raped during filming.",
@@ -7746,111 +8154,6 @@
       "section": "chisme"
     },
     {
-      "id": "b76cb0a71821",
-      "headline": "Los Javis tras ganar el Premio de Dirección en Cannes se preparan para rodar en inglés",
-      "summary": "",
-      "published": "Sat, 23 May 2026 21:45:41 +0000",
-      "image_url": null,
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 0.9,
-      "entity_count": 5,
-      "entity_list": [
-        "Cannes",
-        "Javis",
-        "LGTBI",
-        "Lorca",
-        "Premio"
-      ],
-      "sources": [
-        {
-          "id": "el_nacional_ve",
-          "name": "El Nacional Venezuela",
-          "country": "VE",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.elnacional.com/2026/05/los-javis-envian-un-poderoso-mensaje-lgtb-en-cannes-con-la-bola-negra/",
-          "headline": "Los Javis reivindican en Cannes el mensaje LGTBI inspirados por Lorca",
-          "snippet": "VER PORTADA ENLACES: Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra en Ucrania Indices Economicos Criollos Los Venezolanos en la MLB Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra…",
-          "source": "el_nacional_ve",
-          "source_name": "El Nacional Venezuela",
-          "country": "VE",
-          "published": "Fri, 22 May 2026 04:01:00 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/los-javis-y-penelope-cruz-en-la-alfombra-roja-de-cannes-previa-a-la-gala-de-premios/",
-          "headline": "Los Javis y Penélope Cruz, en la alfombra roja de Cannes previa a la gala de premios",
-          "snippet": "Cannes (Francia), 23 may (EFE).- Javier Ambrossi y Javier Calvo, acompañados por Penélope Cruz y el resto del equipo de 'La bola negra', pasaron este sábado por la última alfombra roja del Festival de Cannes, previa a la entrega de premios de la 79.ª edición, lo que apunta a que recibirán algún…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 18:18:05 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/los-javis-tras-ganar-el-premio-de-direccion-en-cannes-se-preparan-para-rodar-en-ingles/",
-          "headline": "Los Javis tras ganar el Premio de Dirección en Cannes se preparan para rodar en inglés",
-          "snippet": "Cannes (Francia), 23 may (EFE).- Javier Ambrossi y Javier Calvo conquistaron este sábado el Festival de Cannes con 'La bola negra' y ya están pensando en su siguiente proyecto, que no descartan que sea en inglés y, por supuesto, juntos. Tras este galardón ya no hay dudas: \"Nos hemos mirado y hemos…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 21:45:41 +0000",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.25,
-        "atlanticist": 0.415,
-        "statist": 0.245,
-        "financialized": 0.485
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "latin-america": 2
-      },
-      "section": "entertainment"
-    },
-    {
       "id": "8f4389c16bdf",
       "headline": "Le Sénégal dans l’incertitude politique après le divorce Diomaye-Sonko",
       "summary": "<p><img width=\"865\" height=\"509\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" data-src=\"https://www.senenews.com/wp-content/uploads/2026/05/bdf.jpg\" class=\"attachment-full size-full wp-post-image lazy\" alt=\"Le Sénégal dans l&rsquo;incertitude politique après le divorc",
@@ -7966,150 +8269,6 @@
       "geo_breakdown": {
         "west": 1,
         "africa": 1
-      },
-      "section": "chisme"
-    },
-    {
-      "id": "16f9adc52bd1",
-      "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
-      "summary": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
-      "published": "Fri, 22 May 2026 22:19:36 GMT",
-      "image_url": "https://i.dailymail.com/1s/2026/05/10/09/108501655-0-image-a-4_1778403434958.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 0,
-        "right_pct": 100,
-        "state_count": 0,
-        "dominant": "right",
-        "dominant_pct": 100
-      },
-      "bias_variance": 1.9,
-      "entity_count": 11,
-      "entity_list": [
-        "America",
-        "Attwood",
-        "Chelsea",
-        "Hollywood",
-        "London",
-        "Mackintosh",
-        "Miami",
-        "Millie",
-        "Olivia",
-        "Thompson",
-        "Wicks"
-      ],
-      "sources": [
-        {
-          "id": "daily_mail_ent",
-          "name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "daily_mail",
-          "name": "Daily Mail",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": "Daily Mail and General Trust"
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15805359/Olivia-Attwood-opts-old-school-Hollywood-vibes-1-6k-leopard-print-bodsuit-stepping-Miami-boyfriend-Pete-Wicks-shows-appreciation-saucy-snaps.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Olivia Attwood opts for old school Hollywood vibes in £1.6k leopard print bodysuit while stepping out in Miami - as 'boyfriend' Pete Wicks shows appreciation for her saucy snaps",
-          "snippet": "Olivia Attwood has been living it up alongside a slew of influencers in Miami. And on Saturday night, the sweetheart, 35, made sure she was dressed to impress in a tiny Dolce &amp; Gabbana leopard print playsuit, ringing in at £1,600, while adding in Hollywood glamour with cat-eye sunglasses and a…",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Sun, 10 May 2026 09:26:05 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/10/09/108501655-0-image-a-4_1778403434958.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15807531/Pete-Wicks-chivalrous-cuddles-girlfriend-Olivia-Attwood-collecting-airport.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
-          "snippet": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 12:53:11 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/11/108520759-0-image-a-34_1778495994660.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15807531/Pete-Wicks-chivalrous-cuddles-girlfriend-Olivia-Attwood-collecting-airport.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
-          "snippet": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 11:53:11 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/11/108520759-0-image-a-34_1778495994660.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15807315/Pete-Wicks-teased-pal-Sam-Thompson-romance-girlfriend-Olivia-Attwood.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Pete Wicks is teased by pal Sam Thompson over his romance with 'girlfriend' Olivia Attwood after they attended her birthday bash",
-          "snippet": "The longtime pals have been in the early stages of a romance, after being pictured kissing on a night out in March.",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 11:51:54 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/10/108519873-0-image-a-11_1778493448077.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15841969/Olivia-Attwood-signing-seven-figure-deal-beauty-brand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Olivia Attwood 'boosts her growing bank balance by signing a seven-figure deal with beauty brand' after launching her bid to crack America",
-          "snippet": "Olivia Attwood 'boosts her growing bank balance by signing a seven-figure deal with beauty brand' after launching her bid to crack America Have got a story? Email tips@dailymail.co.uk Want to read our hottest showbiz scoops for free? readers can claim three months of DM+ on us when you sign up to…",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Fri, 22 May 2026 22:19:36 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/22/23/108814705-0-image-a-29_1779488183128.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15839951/Millie-Mackintosh-rubbishes-glamorous-Chelsea-lifestyle-says-travelled-west-London-set-BUS-bonds-Olivia-Attwood-failed-marriages.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Millie Mackintosh rubbishes glamorous Made In Chelsea lifestyle and says she travelled to west London set on the BUS as she bonds with Olivia Attwood over failed marriages",
-          "snippet": "Millie Mackintosh has dismissed the affluent 'lifestyle' portrayed on Made In Chelsea as 'fabricated' and says she travelled to the west London set on public transport after being cast entirely by accident. The personality, 36, became a household name after landing a prominent role in the hugely…",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Fri, 22 May 2026 16:42:49 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/22/09/108796197-0-image-a-23_1779440031887.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.27,
-        "zionist": 0.415,
-        "atlanticist": 0.405,
-        "statist": -0.1,
-        "financialized": 0.57
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 2
       },
       "section": "chisme"
     },
@@ -14324,9 +14483,9 @@
     },
     {
       "id": "3f6ed2e33eb2",
-      "headline": "Trump says Strait of Hormuz to reopen after Iran peace deal ‘largely negotiated’",
-      "summary": "<p>The announcement was delivered via a social media post detailing a high-level Oval Office conference call</p>",
-      "published": "Sat, 23 May 2026 21:54:01 GMT",
+      "headline": "Trump says Iran agreement ‘largely negotiated’ after call with Middle East allies: ‘The Strait of Hormuz will be opened’",
+      "summary": "President Trump said that an agreement with Iran has been “largely negotiated” and that the Strait of Hormuz is set to be reopened upon approval.",
+      "published": "Sun, 24 May 2026 06:18:44 +0800",
       "image_url": "https://www.newsmax.com/cmspages/getfile.aspx?guid=5E0A7866-A170-47D9-992E-E8E324A69C46",
       "video_url": null,
       "has_video": false,
@@ -14342,8 +14501,9 @@
         "dominant_pct": 49
       },
       "bias_variance": 6.24,
-      "entity_count": 92,
+      "entity_count": 97,
       "entity_list": [
+        "Announces",
         "April",
         "Arabia",
         "Aramco",
@@ -14389,16 +14549,20 @@
         "Killed",
         "Korea",
         "Korean",
+        "Largely",
         "Lebanon",
         "Little",
         "Middle",
         "Military",
         "Mines",
         "Naval",
+        "Negotiated",
+        "Opened",
         "PLEASANCE",
         "Pakistan",
         "Pilots",
         "Possible",
+        "Potential",
         "Priority",
         "Project",
         "Qatar",
@@ -15986,6 +16150,39 @@
           "country": "US",
           "published": "Sat, 23 May 2026 21:54:01 GMT",
           "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.breitbart.com/europe/2026/05/23/trump-announces-iran-deal-largely-negotiated-strait-of-hormuz-to-be-opened/",
+          "headline": "Trump Announces Iran Deal 'Largely Negotiated', Strait of Hormuz to Be Opened",
+          "snippet": "President Donald Trump announced on Saturday that a peace deal between the United States, Iran, and other regional partners has been “largely negotiated”, including the opening of the Strait of Hormuz. Taking to his Truth Social platform, President Trump said that following an Oval Office call on…",
+          "source": "breitbart",
+          "source_name": "Breitbart",
+          "country": "US",
+          "published": "Sat, 23 May 2026 21:09:31 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/news/mena/2026/05/23/live-us-iran-war-pakistan-talks/",
+          "headline": "Iran war latest: Potential agreement will lead to reopening of Strait of Hormuz, US President says",
+          "snippet": "Pakistan's army chief held 'highly productive' talks in Tehran Iran says Hormuz mechanism should be agreed with coastal nations, not Araghchi holds talks with Omani counterpart Al Busaidi Deadly Israeli strikes reported in southern Lebanon Qatar and Jordan hold talks on regional developments Iran…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Sat, 23 May 2026 16:01:20 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/IOOEUYIVWHSH5NHHXKGETTKGR4.jpg?auth=5d18bf20adc68d105d9669ad7e5b09e2d1251af821f446161c0d4e713f899ece&smart=true&width=7759&height=5173",
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/world/world/2026/05/1446772/trump-claims-iran-deal-largely-negotiated-includes-reopening-hormuz",
+          "headline": "Trump claims Iran deal largely negotiated, includes reopening Hormuz Strait",
+          "snippet": "WASHINGTON: US President Donald Trump said Saturday a deal with Iran had been “largely negotiated,” with the proposal including opening the crucial Strait of Hormuz, though the agreement was “subject to finalisation.”",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Sun, 24 May 2026 06:18:44 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/C15FB55ED2FFA28755E0E048194D2649_data_0.jpg",
           "video_url": null
         }
       ],
@@ -19027,7 +19224,7 @@
         "dominant_pct": 41
       },
       "bias_variance": 4.86,
-      "entity_count": 84,
+      "entity_count": 87,
       "entity_list": [
         "Abandons",
         "Ahead",
@@ -19071,8 +19268,10 @@
         "Major",
         "Marco",
         "Marks",
+        "Marlow",
         "Marriage",
         "Marries",
+        "Massive",
         "Medio",
         "Mother",
         "Olympics",
@@ -19106,6 +19305,7 @@
         "Ukraina",
         "Unidos",
         "Venezuela",
+        "Victory",
         "Visit",
         "Wanted",
         "Washington",
@@ -20327,6 +20527,17 @@
           "published": "Sat, 23 May 2026 14:59:21 -0700",
           "image_url": "https://pagesix.com/wp-content%2Fuploads%2Fsites%2F3%2F2026%2F05%2Fkai-trump-reveals-donald-trump-128598079.jpg?w%3D1024",
           "video_url": null
+        },
+        {
+          "url": "https://www.breitbart.com/clips/2026/05/23/marlow-donald-trump-took-out-colbert-a-massive-victory/",
+          "headline": "Marlow: Donald Trump 'Took Out' Colbert, 'a Massive Victory'",
+          "snippet": "Friday on “The Alex Marlow Show,” Breitbart Editor-in-Chief Alex Marlow talked about Stephen Colbert. Marlow said, “To take off the battlefield one of their absolute field generals in the culture war, Colbert, in the middle of Trump’s term in the first half of Trump’s term another massive victory…",
+          "source": "breitbart",
+          "source_name": "Breitbart",
+          "country": "US",
+          "published": "Sat, 23 May 2026 18:22:31 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -20355,7 +20566,7 @@
       "id": "9e61af1a17f2",
       "headline": "Hull City secure Premier League promotion as Oli McBurnie scores late winner in Championship play-off final - after Middlesbrough's reprieve proved temporary after Spygate drama",
       "summary": "MATT BARLOW AT WEMBLEY: After all the spies, subterfuge and pretend binoculars came the eye of the Tigers. One sucker punch from Oli McBurnie and Hull are returning to the top flight.",
-      "published": "Sat, 23 May 2026 21:59:51 +0000",
+      "published": "Sun, 24 May 2026 06:11:26 +0800",
       "image_url": "https://i.dailymail.com/1s/2026/05/09/19/108494547-0-image-m-134_1778350294490.jpg",
       "video_url": null,
       "has_video": false,
@@ -21584,6 +21795,17 @@
           "country": "GB",
           "published": "Sat, 23 May 2026 22:48:45 +0100",
           "image_url": "https://i.dailymail.com/1s/2026/05/23/19/108824713-0-image-m-109_1779561582441.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/sports/football/2026/05/1446770/hull-promoted-premier-league-after-mcburnie-strikes-late-play-final",
+          "headline": "Hull promoted to Premier League after McBurnie strikes late in play-off final",
+          "snippet": "LONDON: Hull City were promoted to the Premier League in dramatic fashion as Oli McBurnie’s last-gasp strike sealed a 1-0 win over Middlesbrough in Saturday’s Championship play-off final, bringing an end to the ‘spygate’ controversy that overshadowed world football’s richest match.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Sun, 24 May 2026 06:11:26 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/E9584D1D2A52EF6C9EE7FD486E8B9205_data.jpg",
           "video_url": null
         }
       ],
@@ -25801,8 +26023,8 @@
     },
     {
       "id": "d5b2942df32b",
-      "headline": "Stephen Colbert Makes Quick Return to Late-Night TV… on Monroe, Michigan Public Access - Rolling Stone",
-      "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUFVJdDB4RHJkUXFYeFYwWEs4SllFRGFUMjlINzMyMHZEWVVuTUJReFRnNzdxVWpZRDR2N2NCRDVqa0syY1JDdXFLRDJSQ01mQ1RqeGVlcGktei0zLS1sWkdvNWpwdDRoZjNzQ1g1SlBaLWNGQ0dsb2RkcFU1WFRWWTNGNmFCUkpYdUxQSWNwWjNJa1hDOHIyNWgwTjgzdm5kNVNuQzFMYTRPRUVpLVJrTHFIck",
+      "headline": "Trump posts AI-generated video of himself throwing Stephen Colbert into dumpster after final ‘Late Night Show’ episode",
+      "summary": "President Trump posted an AI-generated video showing he’s ready to muscle talk host Stephen Colbert into the trash bin of history.",
       "published": "Sat, 23 May 2026 18:27:08 GMT",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9fbc/live/274cd820-5578-11f1-b682-cf91850925ea.jpg",
       "video_url": null,
@@ -25819,7 +26041,7 @@
         "dominant_pct": 41
       },
       "bias_variance": 3.74,
-      "entity_count": 87,
+      "entity_count": 90,
       "entity_list": [
         "Access",
         "Admits",
@@ -25852,6 +26074,7 @@
         "Goodbye",
         "Gutfeld",
         "Hilarious",
+        "Himself",
         "Hollywood",
         "Hosted",
         "Hours",
@@ -25891,6 +26114,7 @@
         "Stone",
         "Sullivan",
         "Surprise",
+        "Talent",
         "Tenure",
         "Theatre",
         "Tossing",
@@ -25902,6 +26126,7 @@
         "Video",
         "Viewers",
         "Viral",
+        "WATCH",
         "Watch",
         "Watched",
         "Waves",
@@ -26637,6 +26862,17 @@
           "published": "Sat, 23 May 2026 17:19:00 GMT",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.breitbart.com/entertainment/2026/05/23/watch-trump-shares-ai-clip-of-himself-tossing-no-talent-stephen-colbert-in-dumpster/",
+          "headline": "WATCH: Trump Shares AI Clip of Himself Tossing 'No Talent' Stephen Colbert in Dumpster",
+          "snippet": "President Donald Trump shared an video on Friday depicting him tossing Stephen Colbert into a dumpster on the set of his late night show. The clip showed the president approaching the host as he spoke to audience members in the studio for “The Late Show with Stephen Colbert,” the New York Post…",
+          "source": "breitbart",
+          "source_name": "Breitbart",
+          "country": "US",
+          "published": "Sat, 23 May 2026 16:44:38 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -26662,7 +26898,7 @@
       "id": "d2dc8bb7a5e7",
       "headline": "How to Watch the UEFA Women’s Champions League Final: Barcelona vs. OL Lyonnes",
       "summary": "The two teams are facing off in the final for the fourth time, as Barcelona seeks its fourth title and Lyonnes looks to clinch its ninth",
-      "published": "Sat, 23 May 2026 20:12:08 +0000",
+      "published": "Sat, 23 May 2026 21:54:13 GMT",
       "image_url": "https://www.thenationalnews.com/resizer/v2/S6Q3LBRVK2YQW2VW5YHOWL7CNM.jpg?auth=6a5bd7b231d8a23bf3f816099a3753d6c8fbfe0377cc4d9a49dbba839decc286&smart=true&width=6355&height=4237",
       "video_url": null,
       "has_video": false,
@@ -26678,7 +26914,7 @@
         "dominant_pct": 64
       },
       "bias_variance": 3.56,
-      "entity_count": 54,
+      "entity_count": 55,
       "entity_list": [
         "Agrandando",
         "Arsenal",
@@ -26699,6 +26935,7 @@
         "European",
         "Feyenoord",
         "Final",
+        "Girona",
         "Hearts",
         "Hostile",
         "Korea",
@@ -27440,6 +27677,17 @@
           "country": "NG",
           "published": "Sat, 23 May 2026 19:17:15 +0000",
           "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.bbc.com/sport/football/articles/czj2we7zpllo?at_medium=RSS&at_campaign=rss",
+          "headline": "Girona relegated a year after Champions League campaign",
+          "snippet": "Girona have been relegated from La Liga just a season after playing in the Champions League. The Catalans, who finished third two seasons ago, needed to win to stay up but were held to a 1-1 draw by Elche. Mallorca are also down despite a 3-0 win over bottom side Real Oviedo that saw them finish on…",
+          "source": "bbc_sport",
+          "source_name": "BBC Sport",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 21:54:13 GMT",
+          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/bc17/live/f0124390-56ee-11f1-8b8c-6d33e1d5abb6.jpg",
           "video_url": null
         }
       ],
@@ -33609,6 +33857,539 @@
       "section": "chisme"
     },
     {
+      "id": "5d5730da2b7b",
+      "headline": "Ukraine's Air Force reports Russian drone attack during three-day truce",
+      "summary": "Russia attacked Ukraine with 27 drones on the night 9-10 May while the truce was supposedly in effect, Ukraine's Air Force reports.",
+      "published": "Sat, 23 May 2026 15:14:35 -0700",
+      "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/2/b/825511/2b408af98babc691beeff7db58fcafce.jpeg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 8,
+        "center_pct": 67,
+        "right_pct": 25,
+        "state_count": 1,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 8.83,
+      "entity_count": 31,
+      "entity_list": [
+        "Across",
+        "Bonuses",
+        "British",
+        "Drone",
+        "Eastern",
+        "Embassy",
+        "Force",
+        "France",
+        "Gazprom",
+        "General",
+        "Independent",
+        "Injured",
+        "Kellogg",
+        "Killed",
+        "Latvia",
+        "Least",
+        "Lithuania",
+        "Losses",
+        "Mount",
+        "Naftogaz",
+        "Recruits",
+        "Russian",
+        "Signing",
+        "Skyrocketing",
+        "Staff",
+        "Strikes",
+        "Sybiha",
+        "Ukraine",
+        "Victory",
+        "Zelensky",
+        "Zelenskyy"
+      ],
+      "sources": [
+        {
+          "id": "straits_times",
+          "name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "ukrainska_pravda_en",
+          "name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "khaama",
+          "name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "der_spiegel",
+          "name": "Der Spiegel (English)",
+          "country": "DE",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "ukrinform_en",
+          "name": "Ukrinform",
+          "country": "UA",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "thelocal_fr",
+          "name": "The Local France",
+          "country": "FR",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial",
+          "bias_tier": "state-pro",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Russian state"
+        },
+        {
+          "id": "daily_mail",
+          "name": "Daily Mail",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
+        },
+        {
+          "id": "politico_eu",
+          "name": "Politico Europe",
+          "country": "BE",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "africanews",
+          "name": "Africanews",
+          "country": "FR",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "tass_en",
+          "name": "TASS English",
+          "country": "RU",
+          "bloc": "adversarial",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "jamaica_observer",
+          "name": "Jamaica Observer",
+          "country": "JM",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "ny_post",
+          "name": "New York Post",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.straitstimes.com/world/europe/pro-russian-separatist-held-in-france-over-ukraine-torture-claims",
+          "headline": "Pro-Russian separatist held in France over Ukraine torture claims",
+          "snippet": "PARIS - Human rights groups on May 9 hailed the arrest of a Ukrainian pro-Russian separatist in France on suspicion of crimes against humanity, war crimes and complicity in acts of torture. The International Federation for Human Rights (FIDH), the Ukrainian Truth Hounds, which documents and…",
+          "source": "straits_times",
+          "source_name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "published": "Sun, 10 May 2026 00:52:10 +0800",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.pravda.com.ua/eng/news/2026/05/09/8033963/",
+          "headline": "Independent Russian media outlets say over 350,000 soldiers have been killed in war in Ukraine",
+          "snippet": "Putin and soldiers. Photo: Getty Images The total number of Russian military personnel who have been killed since the start of Russia's full-scale invasion of Ukraine stood at 352,000 at the end of 2025, according to a joint study by two Russian media outlets. Source: Meduza , a Latvia-based…",
+          "source": "ukrainska_pravda_en",
+          "source_name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "published": "Sat, 09 May 2026 15:18:00 +0300",
+          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/2/b/825511/2b408af98babc691beeff7db58fcafce.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/russian-strikes-kill-at-least-27-in-eastern-ukraine/",
+          "headline": "Russian Strikes Kill At Least 27 In Eastern Ukraine",
+          "snippet": "At least 27 people were killed and more than 20 injured in a wave of Russian strikes across eastern Ukraine on Tuesday, according to Reuters and Ukrainian officials, in attacks carried out hours before a proposed ceasefire was due to take effect. One of the deadliest strikes hit the southeastern…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Wed, 06 May 2026 14:31:00 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/russian-strikes-kill-10-in-ukraine-as-both-sides-report-major-attacks/",
+          "headline": "Russian strikes kill 10 in Ukraine as both sides report major attacks",
+          "snippet": "At least 10 people were killed and dozens injured as Russia and Ukraine exchanged major air and drone strikes overnight, officials said. International media reported that at least 10 people were killed and 76 others injured following Russian airstrikes across multiple cities in Ukraine over the…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Sun, 03 May 2026 17:51:05 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.spiegel.de/international/world/the-war-in-ukraine-as-russian-losses-mount-signing-bonuses-for-recruits-are-skyrocketing-a-b1c752f6-0edb-4304-a24b-2869730b4248#ref=rss",
+          "headline": "The War in Ukraine: As Russian Losses Mount, Signing Bonuses for Recruits Are Skyrocketing",
+          "snippet": "$publish('OPEN_MENU_DRAWER'), 0)\" data-sara-click-el=\"button\" :class=\"{'lg:opacity-none lg:invisible md:opacity-none md:invisible': !isCollapsed,}\"> Menü öffnen International News Ticker Magazin Audio Account $swiper.update())\" x-swiper=\"{freeMode: true,roundLengths: false,slidesPerView:…",
+          "source": "der_spiegel",
+          "source_name": "Der Spiegel (English)",
+          "country": "DE",
+          "published": "Tue, 21 Apr 2026 10:18:00 +0200",
+          "image_url": "https://cdn.prod.www.spiegel.de/images/fb8bc5f1-6ef0-48a3-9c8a-982e89094913_w520_r2.08_fpx35_fpy48.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034033/",
+          "headline": "Ukraine's General Staff reports nearly 150 Russian attacks during \"truce\"",
+          "snippet": "A weapon. Photo: General Staff of the Armed Forces of Ukraine A total of 147 combat clashes were recorded over 9 May, when the \"truce\" between Ukraine and Russia was in effect. Source: General Staff of the Armed Forces of Ukraine on Facebook , information as of 08:00 on 10 May Details: On the North…",
+          "source": "ukrainska_pravda_en",
+          "source_name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "published": "Sun, 10 May 2026 09:25:00 +0300",
+          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/5/9/825919/598d6caf3bb36f41a47b309508fa4db1.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034025/",
+          "headline": "Ukraine's Air Force report Russian drone attack during three-day truce",
+          "snippet": "Ukrainska Pravda Укр Рос Eng Support Us Укр Рос Eng Sections News Stories Opinions Interview Podcasts Special Projects Archive Projects of &quot;Ukrainian Pravda&quot; Ukrainska Pravda (UKR) Ekonomichna Pravda (UKR) Life (UKR) Sport (UKR) European Pravda (ENG) Blogs Istorychna Pravda (ENG) Tabloid…",
+          "source": "ukrainska_pravda_en",
+          "source_name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "published": "Sun, 10 May 2026 08:22:00 +0300",
+          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/3/8/825880/387724e0cdb19118bf64ffdb91e02550.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ukrinform.net/rubric-ato/4121612-air-defense-destroys-all-27-russian-drones-launched-overnight-against-ukraine.html",
+          "headline": "Air defense destroys all 27 Russian drones launched overnight against Ukraine",
+          "snippet": "Ukraine's air defense forces neutralized all 27 drones with which Russian forces attacked Ukraine overnight on May 10. The Ukrainian Air Force announced this on Telegram , Ukrinform reports. From 00:00 on May 10, the enemy launched 27 strike Shahed, Gerbera, and Italmas UAVs, as well as drone…",
+          "source": "ukrinform_en",
+          "source_name": "Ukrinform",
+          "country": "UA",
+          "published": "Sun, 10 May 2026 08:37:00 +0300",
+          "image_url": "https://static.ukrinform.com/photos/2026_05/thumb_files/630_360_1778390764-353.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034025/",
+          "headline": "Ukraine's Air Force reports Russian drone attack during three-day truce",
+          "snippet": "Ukrainska Pravda Укр Рос Eng Support Us Укр Рос Eng Sections News Stories Opinions Interview Podcasts Special Projects Archive Projects of &quot;Ukrainian Pravda&quot; Ukrainska Pravda (UKR) Ekonomichna Pravda (UKR) Life (UKR) Sport (UKR) European Pravda (ENG) Blogs Istorychna Pravda (ENG) Tabloid…",
+          "source": "ukrainska_pravda_en",
+          "source_name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "published": "Sun, 10 May 2026 08:22:00 +0300",
+          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/3/8/825880/387724e0cdb19118bf64ffdb91e02550.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thelocal.fr/20260510/pro-russian-separatist-held-in-france-over-ukraine-torture-claims",
+          "headline": "Pro-Russian separatist held in France over Ukraine torture claims",
+          "snippet": "Human rights groups on Saturday hailed the arrest of a Ukrainian pro-Russian separatist in France on suspicion of crimes against humanity, war crimes and complicity in acts of torture. The International Federation for Human Rights (FIDH), the Ukrainian Truth Hounds, which documents and investigates…",
+          "source": "thelocal_fr",
+          "source_name": "The Local France",
+          "country": "FR",
+          "published": "Sun, 10 May 2026 09:21:36 +0200",
+          "image_url": "https://assets.thelocal.com/cdn-cgi/plain/https://apiwp.thelocal.com/wp-content/uploads/2026/05/AFP__20260415__A7UW6WV__v1__HighRes__FrancePrisonLabourDemo-1.jpg@webp",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ukrinform.net/rubric-polytics/4121765-drone-incidents-in-latvia-caused-by-russian-ew-ukraines-fm-sybiha-says.html",
+          "headline": "Drone incidents in Latvia caused by Russian EW, Ukraine’s FM Sybiha says",
+          "snippet": "Ukrainian Foreign Minister Andrii Sybiha and Latvian Foreign Minister Baiba Braže held a phone conversation regarding incidents involving drones that entered Latvia from Russian territory. The Ukrainian top diplomat reported this on social media platform X , according to Ukrinform. “The…",
+          "source": "ukrinform_en",
+          "source_name": "Ukrinform",
+          "country": "UA",
+          "published": "Sun, 10 May 2026 21:30:00 +0300",
+          "image_url": "https://static.ukrinform.com/photos/2026_02/thumb_files/630_360_1772271997-609.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rt.com/russia/639847-ukraine-victory-day-ceasefire-violations/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+          "headline": "Ukraine violated Victory Day ceasefire over 16,000 times – Russian MOD",
+          "snippet": "Civilian infrastructure in several Russian regions, including Crimea, Krasnodar, Belgorod, Kursk, Kaluga, and Rostov, came under drone attacks on Sunday The Ukrainian military has violated the Victory Day ceasefire more than 16,000 times since it took effect on Friday, the Russian Defense Ministry…",
+          "source": "rt",
+          "source_name": "RT (Russia Today)",
+          "country": "RU",
+          "published": "Mon, 11 May 2026 00:39:25 +0000",
+          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/6a011a1d2030270256084b2a.png",
+          "video_url": null
+        },
+        {
+          "url": "https://www.straitstimes.com/world/europe/ukraine-reports-russian-attacks-and-battlefield-clashes-despite-ceasefire",
+          "headline": "Ukraine reports Russian attacks and battlefield clashes despite ceasefire",
+          "snippet": "May 11 - Ukraine's military and regional officials on Monday reported Russian drone strikes and battlefield clashes over the past 24 hours, despite a U.S.-brokered ceasefire. Ukraine and Russia agreed on Friday to a ceasefire from May 9 to May 11 as part of a U.S.-led push for peace under President…",
+          "source": "straits_times",
+          "source_name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "published": "Mon, 11 May 2026 15:41:46 +0800",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.pravda.com.ua/eng/news/2026/05/23/8036076/",
+          "headline": "Zelenskyy imposes sanctions on Russian commanders responsible for missile strikes on Ukraine",
+          "snippet": "Volodymyr Zelenskyy. Photo: Office of the President of Ukraine Ukrainian President Volodymyr Zelenskyy imposed sanctions on 23 May against Russian service members responsible for missile strikes on Ukraine and against Russia's naval logistics. Source: Office of the President of Ukraine Details: The…",
+          "source": "ukrainska_pravda_en",
+          "source_name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "published": "Sat, 23 May 2026 14:13:00 +0300",
+          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/a/c/834460/ac78595c6b5cc2ab61bf0c7c4a938110.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/news/article-15842873/British-general-says-scared-formidable-Russian-army-significantly-lethal-invaded-Ukraine.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "British general says we should be scared of 'formidable' Russian army that is 'significantly more lethal' than when it invaded Ukraine",
+          "snippet": "The Russian army is a ‘formidable foe’ and ‘significantly more lethal’ now than when Putin invaded Ukraine, one of the UK’s top army chiefs has warned. Lt Gen Mike Elviss, who commands a key reactionary force, says he is concerned that the British public do not realise the scale of the threat posed…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 12:02:33 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/12/108819741-0-image-m-15_1779534117182.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.politico.eu/article/lithuania-eu-frozen-russian-assets-return-ukraine-funding-debate/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "headline": "Lithuania calls for frozen Russian assets to return to Ukraine funding debate",
+          "snippet": "Menu Search for: Submit Edition: Europe Europe UK France Germany US Policy areas Agriculture and Food Central Banker Competition and Industrial Policy Cybersecurity and Data Protection Defense Energy and Climate Energy and Climate UK Energie et Climat France Energie &amp; Klima DE Financial…",
+          "source": "politico_eu",
+          "source_name": "Politico Europe",
+          "country": "BE",
+          "published": "Sat, 23 May 2026 11:07:43 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "http://www.africanews.com/2026/05/22/russian-strike-on-sumy-injures-six-as-mass-drone-attack-hits-ukraine/",
+          "headline": "Russian strike on Sumy injures six as mass drone attack hits Ukraine",
+          "snippet": "Please select your experience En Fr No Comment Join us News Business Sport Culture Science &amp; Technology No Comment Programmes Coronavirus Live weather Close Watch Live News Business Sport Culture Science &amp; Technology No Comment Programmes Coronavirus Weather Breaking News Close Just In…",
+          "source": "africanews",
+          "source_name": "Africanews",
+          "country": "FR",
+          "published": "Fri, 22 May 2026 07:08:11 +0000",
+          "image_url": "http://images.euronews.com/articles/stories/09/76/82/02/640x360_cmsv2_ba641b92-9887-528a-95b2-455242786204-9768202.jpg?1779397783",
+          "video_url": null
+        },
+        {
+          "url": "https://tass.com/politics/2135541",
+          "headline": "Ukraine deliberately attacks civilian facilities — senior Russian lawmaker",
+          "snippet": "MOSCOW, May 23. /TASS/. The Ukrainian army deliberately attacks civilian facilities in Russia, Vyacheslav Volodin, chairman of Russia’s State Duma (lower house of parliament), said. \"Ukraine’s terrorist neo-Nazi regime carries out strikes on civilian facilities in Russia with full knowledge that…",
+          "source": "tass_en",
+          "source_name": "TASS English",
+          "country": "RU",
+          "published": "Sat, 23 May 2026 15:29:25 +0300",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://tass.com/world/1968061",
+          "headline": "Ukraine’s attack on Russian military airfields raises risks much higher — Kellogg",
+          "snippet": "YORK, June 3. /TASS/. Ukraine’s recent strikes on Russian military airfields sharply raised the level of risk in the Ukraine conflict, said special envoy for Ukraine, Keith Kellogg. \"I'm telling you, the risk levels are going way up,\" he said on Fox News. \"People have to understand, in the national…",
+          "source": "tass_en",
+          "source_name": "TASS English",
+          "country": "RU",
+          "published": "Tue, 03 Jun 2025 23:24:22 +0300",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/1-killed-30-injured-in-russian-strikes-across-ukraine/",
+          "headline": "1 Killed, 30 Injured in Russian Strikes Across Ukraine",
+          "snippet": "Russian overnight drone and missile strikes on Ukraine killed at least one person and injured around 30 others, Ukrainian officials said Monday, a day after Kyiv launched one of its largest drone assaults against Russia. According to Reuters, Russian forces targeted several Ukrainian regions,…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Mon, 18 May 2026 11:12:46 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://tass.com/economy/1969591",
+          "headline": "Gazprom files new lawsuit against Naftogaz of Ukraine in Russian court",
+          "snippet": "MOSCOW, June 6. /TASS/. Gazprom has filed a new lawsuit against Naftogaz of Ukraine in the Russian court, according to the arbitration cases database. The lawsuit was submitted to the Arbitration Court of St. Petersburg and the Leningrad Region on Thursday. No specifics are provided in the…",
+          "source": "tass_en",
+          "source_name": "TASS English",
+          "country": "RU",
+          "published": "Fri, 06 Jun 2025 10:02:47 +0300",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://tass.com/politics/1969575",
+          "headline": "Ukraine’s Zelensky turns terrorism into ideology of his country — Russian lawmaker",
+          "snippet": "MOSCOW, June 6. /TASS/. Ukraine’s Vladimir Zelensky turned terrorism into the pinnacle of Kiev regime’s ideology and he bears personal responsibility for all perpetrated terrorist attacks, Vyacheslav Volodin, the chairman of the State Duma (the Russian parliament’s lower house) said on Friday.…",
+          "source": "tass_en",
+          "source_name": "TASS English",
+          "country": "RU",
+          "published": "Fri, 06 Jun 2025 08:35:40 +0300",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.pravda.com.ua/eng/news/2026/05/23/8036112/",
+          "headline": "US Embassy warns of possible large-scale Russian strike on Ukraine within 24 hours",
+          "snippet": "Stock photo: Getty Images The Embassy has warned of a possible large-scale Russian airstrike on Ukraine within the next 24 hours. Source: Embassy website Quote: \" The embassy in Kyiv has received information concerning a potentially significant air attack that may occur at any time over the next 24…",
+          "source": "ukrainska_pravda_en",
+          "source_name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "published": "Sat, 23 May 2026 20:04:00 +0300",
+          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/c/3/834728/c3541d4b717af7da1134414f306968cd.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.jamaicaobserver.com/2026/05/23/ukraine-us-embassy-warn-possible-major-russian-airstrike/",
+          "headline": "Ukraine, US embassy warn of possible major Russian airstrike",
+          "snippet": "Ukraine's President Volodymyr Zelensky speaks during a joint press conference with European Commission President in Brussels, on August 17, 2025. Simon Wohlfahrt / KYIV, Ukraine (AFP) — Ukrainian President Volodymyr Zelensky and the embassy in Kyiv issued warnings Saturday about the risk of a major…",
+          "source": "jamaica_observer",
+          "source_name": "Jamaica Observer",
+          "country": "JM",
+          "published": "Sat, 23 May 2026 19:30:41 +0000",
+          "image_url": "https://www.jamaicaobserver.com/jamaicaobserver/news/wp-content/uploads/sites/4/2025/08/000_69QW9KY-1-scaled-1024x683.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ukrinform.net/rubric-ato/4126451-ukraines-air-defenses-down-102-out-of-124-russian-drones-launched-overnight.html",
+          "headline": "Ukraine’s air defenses down 102 out of 124 Russian drones launched overnight",
+          "snippet": "Ukraine’s air defense forces intercepted or jammed 102 out of 124 Russian drones launched against the country from the evening of May 22. Ukrinform reported this, citing a Telegram statement from the Ukrainian Air Force. From 18:30 on Friday, May 22, Russian forces attacked Ukraine with 124 strike…",
+          "source": "ukrinform_en",
+          "source_name": "Ukrinform",
+          "country": "UA",
+          "published": "Sat, 23 May 2026 10:09:00 +0300",
+          "image_url": "https://static.ukrinform.com/photos/2026_05/thumb_files/630_360_1779517388-731.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ukrinform.net/rubric-ato/4126382-russian-drone-terror-against-civilians-ukraine-opens-2010-cases-since-start-of-year.html",
+          "headline": "Russian drone terror against civilians: Ukraine opens 2,010 cases since start of year",
+          "snippet": "During the first four months of 2026, Ukrainian law enforcement agencies opened 2,010 criminal proceedings over Russian attacks involving short-range drones, the Prosecutor General's Office said on Facebook. According to the statement , Russia is increasingly using unmanned aerial vehicles,…",
+          "source": "ukrinform_en",
+          "source_name": "Ukrinform",
+          "country": "UA",
+          "published": "Sat, 23 May 2026 05:41:00 +0300",
+          "image_url": "https://static.ukrinform.com/photos/2026_05/thumb_files/630_360_1779475917-549.png",
+          "video_url": null
+        },
+        {
+          "url": "https://nypost.com/2026/05/23/world-news/ukraine-bracing-for-significant-air-attack-from-russian-hypersonic-missiles/",
+          "headline": "Ukraine bracing for ‘significant air attack’ from Russian hypersonic missiles",
+          "snippet": "Ukraine is bracing for a “significant air attack” in the next 24 hours involving Russian hypersonic missiles, President Volodymyr Zelensky warned Saturday. “We are seeing signs of preparation for a combined strike on Ukrainian territory, including Kyiv,” Zelensky wrote on X at 6:45 p.m. local time.…",
+          "source": "ny_post",
+          "source_name": "New York Post",
+          "country": "US",
+          "published": "Sat, 23 May 2026 15:14:35 -0700",
+          "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Fpart-russian-nuclear-capable-hypersonic-127061931.jpg?w%3D1024",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.094,
+        "zionist": 0.18,
+        "atlanticist": 0.189,
+        "statist": 0.178,
+        "financialized": 0.326
+      },
+      "fp_source_count": 10,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "africa": 1,
+        "west": 4,
+        "latin-america": 1,
+        "global-south": 1,
+        "eastern-europe": 3,
+        "adversarial": 2,
+        "pacific-asia": 1
+      },
+      "section": "tech"
+    },
+    {
       "id": "ac13cc083798",
       "headline": "Judge dismisses human smuggling charges against Kilmar Abrego Garcia, who was mistakenly deported",
       "summary": "A human smuggling case against Kilmar Abrego Garcia in Tennessee has been dismissed without a trial",
@@ -34646,84 +35427,42 @@
       "section": "sports"
     },
     {
-      "id": "5d5730da2b7b",
-      "headline": "Ukraine's Air Force reports Russian drone attack during three-day truce",
-      "summary": "Russia attacked Ukraine with 27 drones on the night 9-10 May while the truce was supposedly in effect, Ukraine's Air Force reports.",
-      "published": "Sat, 23 May 2026 19:30:41 +0000",
-      "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/2/b/825511/2b408af98babc691beeff7db58fcafce.jpeg",
+      "id": "e1089691643a",
+      "headline": "Trump says deal with Iran ‘largely negotiated, will be announced shortly,’ Hormuz will be opened",
+      "summary": "<p>US president claims call with Netanyahu 'went very well' but Israel said to see emerging deal as 'very big problem'; Trump also holds 'very good' conference call with regional leaders, mediators</p>\n<p>The post <a href=\"https://www.timesofisrael.com/us-iran-signal-deal-could-be-near-as-trump-says",
+      "published": "Sat, 23 May 2026 22:17:22 +0000",
+      "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fa8bf420302739f82e3052.jpg",
       "video_url": null,
       "has_video": false,
       "is_blindspot": false,
       "blindspot_label": null,
       "blindspot_score": 0.0,
       "coverage": {
-        "left_pct": 9,
-        "center_pct": 73,
-        "right_pct": 18,
-        "state_count": 1,
+        "left_pct": 8,
+        "center_pct": 67,
+        "right_pct": 25,
+        "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 73
+        "dominant_pct": 67
       },
-      "bias_variance": 9.21,
-      "entity_count": 31,
+      "bias_variance": 6.79,
+      "entity_count": 13,
       "entity_list": [
-        "Across",
-        "Bonuses",
-        "British",
-        "Drone",
-        "Eastern",
-        "Embassy",
-        "Force",
-        "France",
-        "Gazprom",
-        "General",
-        "Independent",
-        "Injured",
-        "Kellogg",
-        "Killed",
-        "Latvia",
-        "Least",
-        "Lithuania",
-        "Losses",
-        "Mount",
-        "Naftogaz",
-        "Recruits",
-        "Russian",
-        "Signing",
-        "Skyrocketing",
-        "Staff",
-        "Strikes",
-        "Sybiha",
-        "Ukraine",
-        "Victory",
-        "Zelensky",
-        "Zelenskyy"
+        "Expanded",
+        "Freedom",
+        "Guardian",
+        "Hormuz",
+        "Objavit",
+        "Operation",
+        "Pauses",
+        "Project",
+        "Rejects",
+        "Talks",
+        "Teheran",
+        "Threatens",
+        "Trump"
       ],
       "sources": [
-        {
-          "id": "straits_times",
-          "name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "ukrainska_pravda_en",
-          "name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
         {
           "id": "khaama",
           "name": "Khaama Press Afghanistan",
@@ -34737,11 +35476,83 @@
           "parent_company": ""
         },
         {
-          "id": "der_spiegel",
-          "name": "Der Spiegel (English)",
-          "country": "DE",
+          "id": "breitbart",
+          "name": "Breitbart",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "far-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "rt_russia",
+          "name": "RT (Russia Today)",
+          "country": "RU",
           "bloc": "adversarial",
-          "bias_tier": "lean-left",
+          "bias_tier": "unknown",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "nst_my",
+          "name": "New Straits Times",
+          "country": "MY",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "straits_times",
+          "name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "iran_international",
+          "name": "Iran International",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "left",
           "bias_bucket": "left",
           "geo_cluster": "west",
           "factuality": "high",
@@ -34749,57 +35560,9 @@
           "parent_company": ""
         },
         {
-          "id": "ukrinform_en",
-          "name": "Ukrinform",
-          "country": "UA",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "thelocal_fr",
-          "name": "The Local France",
-          "country": "FR",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial",
-          "bias_tier": "state-pro",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "low",
-          "primary_vs_launder": "launderer",
-          "parent_company": "Russian state"
-        },
-        {
-          "id": "daily_mail",
-          "name": "Daily Mail",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": "Daily Mail and General Trust"
-        },
-        {
-          "id": "politico_eu",
-          "name": "Politico Europe",
-          "country": "BE",
+          "id": "jutarnji",
+          "name": "Jutarnji List",
+          "country": "HR",
           "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
@@ -34809,351 +35572,218 @@
           "parent_company": ""
         },
         {
-          "id": "africanews",
-          "name": "Africanews",
-          "country": "FR",
-          "bloc": "non-aligned",
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "africa",
+          "geo_cluster": "west",
           "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
         },
         {
-          "id": "tass_en",
-          "name": "TASS English",
-          "country": "RU",
-          "bloc": "adversarial",
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western",
           "bias_tier": "center",
           "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        },
-        {
-          "id": "jamaica_observer",
-          "name": "Jamaica Observer",
-          "country": "JM",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
+          "geo_cluster": "middle-east",
           "factuality": "high",
           "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "sbs_news",
+          "name": "SBS News",
+          "country": "AU",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
           "parent_company": ""
         }
       ],
       "articles": [
         {
-          "url": "https://www.straitstimes.com/world/europe/pro-russian-separatist-held-in-france-over-ukraine-torture-claims",
-          "headline": "Pro-Russian separatist held in France over Ukraine torture claims",
-          "snippet": "PARIS - Human rights groups on May 9 hailed the arrest of a Ukrainian pro-Russian separatist in France on suspicion of crimes against humanity, war crimes and complicity in acts of torture. The International Federation for Human Rights (FIDH), the Ukrainian Truth Hounds, which documents and…",
-          "source": "straits_times",
-          "source_name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "published": "Sun, 10 May 2026 00:52:10 +0800",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/09/8033963/",
-          "headline": "Independent Russian media outlets say over 350,000 soldiers have been killed in war in Ukraine",
-          "snippet": "Putin and soldiers. Photo: Getty Images The total number of Russian military personnel who have been killed since the start of Russia's full-scale invasion of Ukraine stood at 352,000 at the end of 2025, according to a joint study by two Russian media outlets. Source: Meduza , a Latvia-based…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sat, 09 May 2026 15:18:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/2/b/825511/2b408af98babc691beeff7db58fcafce.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.khaama.com/russian-strikes-kill-at-least-27-in-eastern-ukraine/",
-          "headline": "Russian Strikes Kill At Least 27 In Eastern Ukraine",
-          "snippet": "At least 27 people were killed and more than 20 injured in a wave of Russian strikes across eastern Ukraine on Tuesday, according to Reuters and Ukrainian officials, in attacks carried out hours before a proposed ceasefire was due to take effect. One of the deadliest strikes hit the southeastern…",
+          "url": "https://www.khaama.com/trump-pauses-hormuz-operation-amid-iran-talks/",
+          "headline": "Trump Pauses Hormuz Operation Amid Iran Talks",
+          "snippet": "U.S. President Donald Trump said on Wednesday, May 6, that he has paused a military operation aimed at opening the Strait of Hormuz, citing “great progress” toward a potential agreement with Iran, even as tensions across the region continue to escalate. Trump said the U.S. military’s “Project…",
           "source": "khaama",
           "source_name": "Khaama Press Afghanistan",
           "country": "AF",
-          "published": "Wed, 06 May 2026 14:31:00 +0000",
+          "published": "Wed, 06 May 2026 07:02:00 +0000",
           "image_url": null,
           "video_url": null
         },
         {
-          "url": "https://www.khaama.com/russian-strikes-kill-10-in-ukraine-as-both-sides-report-major-attacks/",
-          "headline": "Russian strikes kill 10 in Ukraine as both sides report major attacks",
-          "snippet": "At least 10 people were killed and dozens injured as Russia and Ukraine exchanged major air and drone strikes overnight, officials said. International media reported that at least 10 people were killed and 76 others injured following Russian airstrikes across multiple cities in Ukraine over the…",
-          "source": "khaama",
-          "source_name": "Khaama Press Afghanistan",
-          "country": "AF",
-          "published": "Sun, 03 May 2026 17:51:05 +0000",
+          "url": "https://www.breitbart.com/middle-east/2026/05/08/trump-threatens-expanded-project-freedom-plus-hormuz-iran-rejects/",
+          "headline": "Trump Threatens Expanded ‘Project Freedom Plus’ in Hormuz if Iran Rejects Deal",
+          "snippet": "President Donald Trump warned Friday that the U.S. could revive and significantly expand “Project Freedom” in the Strait of Hormuz if Tehran ultimately rejects the emerging framework agreement now under discussion, as Washington awaited what Trump said was an expected Iranian response amid renewed…",
+          "source": "breitbart",
+          "source_name": "Breitbart",
+          "country": "US",
+          "published": "Sat, 09 May 2026 05:28:55 +0000",
           "image_url": null,
           "video_url": null
         },
         {
-          "url": "https://www.spiegel.de/international/world/the-war-in-ukraine-as-russian-losses-mount-signing-bonuses-for-recruits-are-skyrocketing-a-b1c752f6-0edb-4304-a24b-2869730b4248#ref=rss",
-          "headline": "The War in Ukraine: As Russian Losses Mount, Signing Bonuses for Recruits Are Skyrocketing",
-          "snippet": "$publish('OPEN_MENU_DRAWER'), 0)\" data-sara-click-el=\"button\" :class=\"{'lg:opacity-none lg:invisible md:opacity-none md:invisible': !isCollapsed,}\"> Menü öffnen International News Ticker Magazin Audio Account $swiper.update())\" x-swiper=\"{freeMode: true,roundLengths: false,slidesPerView:…",
-          "source": "der_spiegel",
-          "source_name": "Der Spiegel (English)",
-          "country": "DE",
-          "published": "Tue, 21 Apr 2026 10:18:00 +0200",
-          "image_url": "https://cdn.prod.www.spiegel.de/images/fb8bc5f1-6ef0-48a3-9c8a-982e89094913_w520_r2.08_fpx35_fpy48.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034033/",
-          "headline": "Ukraine's General Staff reports nearly 150 Russian attacks during \"truce\"",
-          "snippet": "A weapon. Photo: General Staff of the Armed Forces of Ukraine A total of 147 combat clashes were recorded over 9 May, when the \"truce\" between Ukraine and Russia was in effect. Source: General Staff of the Armed Forces of Ukraine on Facebook , information as of 08:00 on 10 May Details: On the North…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 09:25:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/5/9/825919/598d6caf3bb36f41a47b309508fa4db1.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034025/",
-          "headline": "Ukraine's Air Force report Russian drone attack during three-day truce",
-          "snippet": "Ukrainska Pravda Укр Рос Eng Support Us Укр Рос Eng Sections News Stories Opinions Interview Podcasts Special Projects Archive Projects of &quot;Ukrainian Pravda&quot; Ukrainska Pravda (UKR) Ekonomichna Pravda (UKR) Life (UKR) Sport (UKR) European Pravda (ENG) Blogs Istorychna Pravda (ENG) Tabloid…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 08:22:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/3/8/825880/387724e0cdb19118bf64ffdb91e02550.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-ato/4121612-air-defense-destroys-all-27-russian-drones-launched-overnight-against-ukraine.html",
-          "headline": "Air defense destroys all 27 Russian drones launched overnight against Ukraine",
-          "snippet": "Ukraine's air defense forces neutralized all 27 drones with which Russian forces attacked Ukraine overnight on May 10. The Ukrainian Air Force announced this on Telegram , Ukrinform reports. From 00:00 on May 10, the enemy launched 27 strike Shahed, Gerbera, and Italmas UAVs, as well as drone…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 08:37:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2026_05/thumb_files/630_360_1778390764-353.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034025/",
-          "headline": "Ukraine's Air Force reports Russian drone attack during three-day truce",
-          "snippet": "Ukrainska Pravda Укр Рос Eng Support Us Укр Рос Eng Sections News Stories Opinions Interview Podcasts Special Projects Archive Projects of &quot;Ukrainian Pravda&quot; Ukrainska Pravda (UKR) Ekonomichna Pravda (UKR) Life (UKR) Sport (UKR) European Pravda (ENG) Blogs Istorychna Pravda (ENG) Tabloid…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 08:22:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/3/8/825880/387724e0cdb19118bf64ffdb91e02550.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thelocal.fr/20260510/pro-russian-separatist-held-in-france-over-ukraine-torture-claims",
-          "headline": "Pro-Russian separatist held in France over Ukraine torture claims",
-          "snippet": "Human rights groups on Saturday hailed the arrest of a Ukrainian pro-Russian separatist in France on suspicion of crimes against humanity, war crimes and complicity in acts of torture. The International Federation for Human Rights (FIDH), the Ukrainian Truth Hounds, which documents and investigates…",
-          "source": "thelocal_fr",
-          "source_name": "The Local France",
-          "country": "FR",
-          "published": "Sun, 10 May 2026 09:21:36 +0200",
-          "image_url": "https://assets.thelocal.com/cdn-cgi/plain/https://apiwp.thelocal.com/wp-content/uploads/2026/05/AFP__20260415__A7UW6WV__v1__HighRes__FrancePrisonLabourDemo-1.jpg@webp",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-polytics/4121765-drone-incidents-in-latvia-caused-by-russian-ew-ukraines-fm-sybiha-says.html",
-          "headline": "Drone incidents in Latvia caused by Russian EW, Ukraine’s FM Sybiha says",
-          "snippet": "Ukrainian Foreign Minister Andrii Sybiha and Latvian Foreign Minister Baiba Braže held a phone conversation regarding incidents involving drones that entered Latvia from Russian territory. The Ukrainian top diplomat reported this on social media platform X , according to Ukrinform. “The…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 21:30:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2026_02/thumb_files/630_360_1772271997-609.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.rt.com/russia/639847-ukraine-victory-day-ceasefire-violations/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "headline": "Ukraine violated Victory Day ceasefire over 16,000 times – Russian MOD",
-          "snippet": "Civilian infrastructure in several Russian regions, including Crimea, Krasnodar, Belgorod, Kursk, Kaluga, and Rostov, came under drone attacks on Sunday The Ukrainian military has violated the Victory Day ceasefire more than 16,000 times since it took effect on Friday, the Russian Defense Ministry…",
-          "source": "rt",
+          "url": "https://www.rt.com/news/639502-trump-hormuz-freedom-pause/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+          "headline": "Trump pauses US military escorts in Hormuz",
+          "snippet": "The president has abruptly put ‘Project Freedom’ on hold after just two days President Donald Trump has temporarily paused a military operation to escort ships through the Strait of Hormuz, but said the blockade of Iranian ports will “remain in full force and effect” until a final agreement with…",
+          "source": "rt_russia",
           "source_name": "RT (Russia Today)",
           "country": "RU",
-          "published": "Mon, 11 May 2026 00:39:25 +0000",
-          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/6a011a1d2030270256084b2a.png",
+          "published": "Tue, 05 May 2026 23:35:24 +0000",
+          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fa8bf420302739f82e3052.jpg",
           "video_url": null
         },
         {
-          "url": "https://www.straitstimes.com/world/europe/ukraine-reports-russian-attacks-and-battlefield-clashes-despite-ceasefire",
-          "headline": "Ukraine reports Russian attacks and battlefield clashes despite ceasefire",
-          "snippet": "May 11 - Ukraine's military and regional officials on Monday reported Russian drone strikes and battlefield clashes over the past 24 hours, despite a U.S.-brokered ceasefire. Ukraine and Russia agreed on Friday to a ceasefire from May 9 to May 11 as part of a U.S.-led push for peace under President…",
+          "url": "https://www.scmp.com/news/world/middle-east/article/3353029/trump-awaits-irans-response-amid-relative-calm-hormuz?utm_source=rss_feed",
+          "headline": "Trump awaits Iran’s response amid relative calm in Hormuz",
+          "snippet": "Relative calm prevailed around the Strait of Hormuz early on Sunday after days of sporadic flare-ups, as the United States waited for Iran’s response to its latest proposals to end more than two months of fighting and begin peace talks. Secretary of State Marco Rubio said on Friday that Washington…",
+          "source": "scmp",
+          "source_name": "South China Morning Post",
+          "country": "HK",
+          "published": "Sun, 10 May 2026 06:58:24 +0000",
+          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/10/b5d61571-9f5a-4201-968c-d4d61cf4c961_a32718a3.jpg?itok=3EPytSQK&v=1778396298",
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/world/world/2026/05/1436752/trump-rejects-iran-proposal-teheran-threatens-new-strikes-and-hormuz",
+          "headline": "Trump rejects Iran proposal, Teheran threatens new strikes and Hormuz retaliation",
+          "snippet": "WASHINGTON: US President Donald Trump on Sunday branded Iran’s terms for ending the Middle East war “totally unacceptable,” raising the likelihood of renewed conflict after weeks of negotiations.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Mon, 11 May 2026 06:17:37 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/45317F893563FEDF5C3AA407F349F2FA_data_0.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.straitstimes.com/world/middle-east/trump-dismisses-irans-reply-to-peace-plan-oil-jumps-as-hormuz-closure-persists",
+          "headline": "Trump dismisses Iran’s offer; oil rises as Hormuz closure persists",
+          "snippet": "DUBAI/WASHINGTON - President Donald Trump’s swift rejection of Iran’s response to a peace proposal pushed oil prices higher on May 11 fuelling concerns that the 10-week-old conflict will drag on and continue to paralyse shipping through the Strait of Hormuz. Days after Washington floated an offer…",
           "source": "straits_times",
           "source_name": "The Straits Times (Singapore)",
           "country": "SG",
-          "published": "Mon, 11 May 2026 15:41:46 +0800",
+          "published": "Mon, 11 May 2026 18:00:00 +0800",
           "image_url": null,
           "video_url": null
         },
         {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/23/8036076/",
-          "headline": "Zelenskyy imposes sanctions on Russian commanders responsible for missile strikes on Ukraine",
-          "snippet": "Volodymyr Zelenskyy. Photo: Office of the President of Ukraine Ukrainian President Volodymyr Zelenskyy imposed sanctions on 23 May against Russian service members responsible for missile strikes on Ukraine and against Russia's naval logistics. Source: Office of the President of Ukraine Details: The…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sat, 23 May 2026 14:13:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/a/c/834460/ac78595c6b5cc2ab61bf0c7c4a938110.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/news/article-15842873/British-general-says-scared-formidable-Russian-army-significantly-lethal-invaded-Ukraine.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "British general says we should be scared of 'formidable' Russian army that is 'significantly more lethal' than when it invaded Ukraine",
-          "snippet": "The Russian army is a ‘formidable foe’ and ‘significantly more lethal’ now than when Putin invaded Ukraine, one of the UK’s top army chiefs has warned. Lt Gen Mike Elviss, who commands a key reactionary force, says he is concerned that the British public do not realise the scale of the threat posed…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
+          "url": "https://www.iranintl.com/en/202605159865",
+          "headline": "Hormuz gives battered Iran room to wait out Trump, experts say",
+          "snippet": "The panel, moderated by Iran International’s Bozorgmehr Sharafedin, brought together Danielle Pletka of the American Enterprise Institute and Jon Alterman of the Center for Strategic and International Studies to discuss what comes after a ceasefire that has not ended the wider confrontation. The…",
+          "source": "iran_international",
+          "source_name": "Iran International",
           "country": "GB",
-          "published": "Sat, 23 May 2026 12:02:33 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/23/12/108819741-0-image-m-15_1779534117182.jpg",
+          "published": "Fri, 15 May 2026 21:45:56 GMT",
+          "image_url": "https://i.iranintl.com/images/rdk9umy0/production/50e276432875379d4f7150b515df1ce53c8b2023-1920x1080.png?rect=0,38,1920,1005&w=1200&h=628&fm=jpg&q=85&fit=max&auto=format",
           "video_url": null
         },
         {
-          "url": "https://www.politico.eu/article/lithuania-eu-frozen-russian-assets-return-ukraine-funding-debate/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-          "headline": "Lithuania calls for frozen Russian assets to return to Ukraine funding debate",
-          "snippet": "Menu Search for: Submit Edition: Europe Europe UK France Germany US Policy areas Agriculture and Food Central Banker Competition and Industrial Policy Cybersecurity and Data Protection Defense Energy and Climate Energy and Climate UK Energie et Climat France Energie &amp; Klima DE Financial…",
-          "source": "politico_eu",
-          "source_name": "Politico Europe",
-          "country": "BE",
-          "published": "Sat, 23 May 2026 11:07:43 +0000",
+          "url": "https://www.theguardian.com/world/2026/may/23/trump-ceasefire-iran-strait-of-hormuz",
+          "headline": "Trump says peace deal with Iran largely reached with strait of Hormuz to open",
+          "snippet": "Donald Trump announced on Saturday that a peace deal with Iran had largely been reached, after calls with Gulf allies and Israel, potentially paving the way for an end to the war launched by the and Israel in February. Trump wrote on his social media platform that “final aspects and details” of a…",
+          "source": "guardian",
+          "source_name": "The Guardian",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 20:59:37 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/47288ceee236cc96d6fcbad4136a05149a43f3de/282_0_2125_1700/master/2125.jpg?width=140&quality=85&auto=format&fit=max&s=d182d87c72c9e740885bedb0399270b3",
+          "video_url": null
+        },
+        {
+          "url": "https://www.jutarnji.hr/vijesti/svijet/trump-najavljuje-skori-sporazum-s-iranom-uz-mogucnost-vojnog-odgovora-15711450",
+          "headline": "Trump: Objavit ću detalje mirovnog sporazuma, Hormuz će biti otvoren!",
+          "snippet": "\"Sporazum između Sjedinjenih Američkih Država, Islamske Republike Iran i raznih drugih zemalja je uglavnom ispregovaran\", objavio je Donald Trump na mreži Truth Social. \"Trenutno se raspravlja o konačnim aspektima i detaljima Sporazuma, i bit će uskoro objavljeni\", dodao je. Tvrdi i da će \"uz mnoge…",
+          "source": "jutarnji",
+          "source_name": "Jutarnji List",
+          "country": "HR",
+          "published": "Sat, 23 May 2026 19:53:27 +0200",
+          "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38977281_1280.jpg?1779570300",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQd2lFU0hNQjYxcVl1UjhFSkFQWkRxSlZNT2s2cWxUaExuMmNZcWNRNnZRU2tLd011LWlhZHZZUUNINFFPTmwtei1iYVhrNm1zX2dscXc5RU9jc2JGbTBPaEhqUmM0Tmp2TkF3U3I1TmpRck5ZcXBnZDJmMllhaG4zeHpWcnd3U3g2eXJ3?oc=5",
+          "headline": "Trump says peace deal with Iran largely reached with strait of Hormuz to open - The Guardian",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxQd2lFU0hNQjYxcVl1UjhFSkFQWkRxSlZNT2s2cWxUaExuMmNZcWNRNnZRU2tLd011LWlhZHZZUUNINFFPTmwtei1iYVhrNm1zX2dscXc5RU9jc2JGbTBPaEhqUmM0Tmp2TkF3U3I1TmpRck5ZcXBnZDJmMllhaG4zeHpWcnd3U3g2eXJ3?oc=5\" target=\"_blank\">Trump says peace deal with Iran…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 21:00:00 GMT",
           "image_url": null,
           "video_url": null
         },
         {
-          "url": "http://www.africanews.com/2026/05/22/russian-strike-on-sumy-injures-six-as-mass-drone-attack-hits-ukraine/",
-          "headline": "Russian strike on Sumy injures six as mass drone attack hits Ukraine",
-          "snippet": "Please select your experience En Fr No Comment Join us News Business Sport Culture Science &amp; Technology No Comment Programmes Coronavirus Live weather Close Watch Live News Business Sport Culture Science &amp; Technology No Comment Programmes Coronavirus Weather Breaking News Close Just In…",
-          "source": "africanews",
-          "source_name": "Africanews",
-          "country": "FR",
-          "published": "Fri, 22 May 2026 07:08:11 +0000",
-          "image_url": "http://images.euronews.com/articles/stories/09/76/82/02/640x360_cmsv2_ba641b92-9887-528a-95b2-455242786204-9768202.jpg?1779397783",
-          "video_url": null
-        },
-        {
-          "url": "https://tass.com/politics/2135541",
-          "headline": "Ukraine deliberately attacks civilian facilities — senior Russian lawmaker",
-          "snippet": "MOSCOW, May 23. /TASS/. The Ukrainian army deliberately attacks civilian facilities in Russia, Vyacheslav Volodin, chairman of Russia’s State Duma (lower house of parliament), said. \"Ukraine’s terrorist neo-Nazi regime carries out strikes on civilian facilities in Russia with full knowledge that…",
-          "source": "tass_en",
-          "source_name": "TASS English",
-          "country": "RU",
-          "published": "Sat, 23 May 2026 15:29:25 +0300",
+          "url": "https://www.timesofisrael.com/us-iran-signal-deal-could-be-near-as-trump-says-hes-50-50-on-agreement-or-strikes/",
+          "headline": "Trump declares deal with Iran ‘largely negotiated, will be announced shortly,’ Hormuz will be opened",
+          "snippet": "and Iranian officials both signaled Saturday they were nearing an agreement on a memorandum of understanding to end the war and set the stage for further talks, with President Donald Trump declaring the deal “has been largely negotiated” after suggesting he was split on whether to agree to the…",
+          "source": "times_of_israel",
+          "source_name": "The Times of Israel",
+          "country": "IL",
+          "published": "Sat, 23 May 2026 20:46:48 +0000",
           "image_url": null,
           "video_url": null
         },
         {
-          "url": "https://tass.com/world/1968061",
-          "headline": "Ukraine’s attack on Russian military airfields raises risks much higher — Kellogg",
-          "snippet": "YORK, June 3. /TASS/. Ukraine’s recent strikes on Russian military airfields sharply raised the level of risk in the Ukraine conflict, said special envoy for Ukraine, Keith Kellogg. \"I'm telling you, the risk levels are going way up,\" he said on Fox News. \"People have to understand, in the national…",
-          "source": "tass_en",
-          "source_name": "TASS English",
-          "country": "RU",
-          "published": "Tue, 03 Jun 2025 23:24:22 +0300",
+          "url": "https://www.theguardian.com/world/2026/may/23/trump-ceasefire-iran-strait-of-hormuz",
+          "headline": "Trump says peace deal with Iran ‘largely negotiated’ with strait of Hormuz to open",
+          "snippet": "Donald Trump announced on Saturday that a peace deal with Iran “has been largely negotiated”, after calls with a Pakistani mediator, Gulf allies and Israel, potentially paving the way for an end to the war launched by the and Israel in February. Trump wrote on his social media platform that “final…",
+          "source": "guardian",
+          "source_name": "The Guardian",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 21:27:45 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/47288ceee236cc96d6fcbad4136a05149a43f3de/282_0_2125_1700/master/2125.jpg?width=140&quality=85&auto=format&fit=max&s=d182d87c72c9e740885bedb0399270b3",
+          "video_url": null
+        },
+        {
+          "url": "https://www.timesofisrael.com/us-iran-signal-deal-could-be-near-as-trump-says-hes-50-50-on-agreement-or-strikes/",
+          "headline": "Trump says deal with Iran ‘largely negotiated, will be announced shortly,’ Hormuz will be opened",
+          "snippet": "and Iranian officials both signaled Saturday they were nearing an agreement on a memorandum of understanding to end the war and set the stage for further talks, with President Donald Trump declaring the deal “has been largely negotiated” after earlier suggesting he was split on whether to agree to…",
+          "source": "times_of_israel",
+          "source_name": "The Times of Israel",
+          "country": "IL",
+          "published": "Sat, 23 May 2026 20:46:48 +0000",
           "image_url": null,
           "video_url": null
         },
         {
-          "url": "https://www.khaama.com/1-killed-30-injured-in-russian-strikes-across-ukraine/",
-          "headline": "1 Killed, 30 Injured in Russian Strikes Across Ukraine",
-          "snippet": "Russian overnight drone and missile strikes on Ukraine killed at least one person and injured around 30 others, Ukrainian officials said Monday, a day after Kyiv launched one of its largest drone assaults against Russia. According to Reuters, Russian forces targeted several Ukrainian regions,…",
-          "source": "khaama",
-          "source_name": "Khaama Press Afghanistan",
-          "country": "AF",
-          "published": "Mon, 18 May 2026 11:12:46 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://tass.com/economy/1969591",
-          "headline": "Gazprom files new lawsuit against Naftogaz of Ukraine in Russian court",
-          "snippet": "MOSCOW, June 6. /TASS/. Gazprom has filed a new lawsuit against Naftogaz of Ukraine in the Russian court, according to the arbitration cases database. The lawsuit was submitted to the Arbitration Court of St. Petersburg and the Leningrad Region on Thursday. No specifics are provided in the…",
-          "source": "tass_en",
-          "source_name": "TASS English",
-          "country": "RU",
-          "published": "Fri, 06 Jun 2025 10:02:47 +0300",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://tass.com/politics/1969575",
-          "headline": "Ukraine’s Zelensky turns terrorism into ideology of his country — Russian lawmaker",
-          "snippet": "MOSCOW, June 6. /TASS/. Ukraine’s Vladimir Zelensky turned terrorism into the pinnacle of Kiev regime’s ideology and he bears personal responsibility for all perpetrated terrorist attacks, Vyacheslav Volodin, the chairman of the State Duma (the Russian parliament’s lower house) said on Friday.…",
-          "source": "tass_en",
-          "source_name": "TASS English",
-          "country": "RU",
-          "published": "Fri, 06 Jun 2025 08:35:40 +0300",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/23/8036112/",
-          "headline": "US Embassy warns of possible large-scale Russian strike on Ukraine within 24 hours",
-          "snippet": "Stock photo: Getty Images The Embassy has warned of a possible large-scale Russian airstrike on Ukraine within the next 24 hours. Source: Embassy website Quote: \" The embassy in Kyiv has received information concerning a potentially significant air attack that may occur at any time over the next 24…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sat, 23 May 2026 20:04:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/c/3/834728/c3541d4b717af7da1134414f306968cd.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.jamaicaobserver.com/2026/05/23/ukraine-us-embassy-warn-possible-major-russian-airstrike/",
-          "headline": "Ukraine, US embassy warn of possible major Russian airstrike",
-          "snippet": "Ukraine's President Volodymyr Zelensky speaks during a joint press conference with European Commission President in Brussels, on August 17, 2025. Simon Wohlfahrt / KYIV, Ukraine (AFP) — Ukrainian President Volodymyr Zelensky and the embassy in Kyiv issued warnings Saturday about the risk of a major…",
-          "source": "jamaica_observer",
-          "source_name": "Jamaica Observer",
-          "country": "JM",
-          "published": "Sat, 23 May 2026 19:30:41 +0000",
-          "image_url": "https://www.jamaicaobserver.com/jamaicaobserver/news/wp-content/uploads/sites/4/2025/08/000_69QW9KY-1-scaled-1024x683.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-ato/4126451-ukraines-air-defenses-down-102-out-of-124-russian-drones-launched-overnight.html",
-          "headline": "Ukraine’s air defenses down 102 out of 124 Russian drones launched overnight",
-          "snippet": "Ukraine’s air defense forces intercepted or jammed 102 out of 124 Russian drones launched against the country from the evening of May 22. Ukrinform reported this, citing a Telegram statement from the Ukrainian Air Force. From 18:30 on Friday, May 22, Russian forces attacked Ukraine with 124 strike…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sat, 23 May 2026 10:09:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2026_05/thumb_files/630_360_1779517388-731.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-ato/4126382-russian-drone-terror-against-civilians-ukraine-opens-2010-cases-since-start-of-year.html",
-          "headline": "Russian drone terror against civilians: Ukraine opens 2,010 cases since start of year",
-          "snippet": "During the first four months of 2026, Ukrainian law enforcement agencies opened 2,010 criminal proceedings over Russian attacks involving short-range drones, the Prosecutor General's Office said on Facebook. According to the statement , Russia is increasingly using unmanned aerial vehicles,…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sat, 23 May 2026 05:41:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2026_05/thumb_files/630_360_1779475917-549.png",
+          "url": "https://www.sbs.com.au/news/article/trump-says-agreement-with-iran-largely-negotiated-includes-hormuz-strait/v9ueihsxj",
+          "headline": "Trump says deal with Iran 'largely negotiated', but Iran disputes Hormuz claim",
+          "snippet": "President Donald Trump said on Sunday a deal with Iran had been \"largely negotiated\", with the proposal including opening the crucial Strait of Hormuz, though the agreement was \"subject to finalization\". \"An Agreement has been largely negotiated, subject to finalization between the United States of…",
+          "source": "sbs_news",
+          "source_name": "SBS News",
+          "country": "AU",
+          "published": "Sat, 23 May 2026 22:17:22 +0000",
+          "image_url": "https://assets.sbs.com.au/dims4/default/dea6438/2147483647/strip/false/crop/3321x1526+0+267/resize/1234x567!/format/jpeg/quality/90/?url=https%3A%2F%2Fsbs-au-brightspot.s3.ap-southeast-2.amazonaws.com%2F59%2F20%2F9231449e4ac9acad2eba9f907a0b%2Fdonald-trump-iran.jpg",
           "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.104,
-        "zionist": 0.2,
-        "atlanticist": 0.21,
-        "statist": 0.198,
-        "financialized": 0.362
+        "interventionist": 0.106,
+        "zionist": 0.232,
+        "atlanticist": 0.256,
+        "statist": 0.239,
+        "financialized": 0.396
       },
-      "fp_source_count": 9,
+      "fp_source_count": 10,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
-        "africa": 1,
-        "west": 3,
-        "latin-america": 1,
+        "west": 4,
+        "eastern-europe": 1,
         "global-south": 1,
-        "eastern-europe": 3,
-        "adversarial": 2,
-        "pacific-asia": 1
+        "pacific-asia": 4,
+        "adversarial": 1,
+        "middle-east": 1
       },
-      "section": "tech"
+      "section": "world"
     },
     {
       "id": "2be067c9c76e",
@@ -36364,331 +36994,6 @@
         "pacific-asia": 2
       },
       "section": "entertainment"
-    },
-    {
-      "id": "e1089691643a",
-      "headline": "Trump says peace deal with Iran ‘largely negotiated’ with strait of Hormuz to open",
-      "summary": "<p>Remarks by US president potentially mark conclusion of bombing campaign led by US and Israel</p><p><a href=\"https://www.theguardian.com/us-news/donaldtrump\">Donald Trump</a> announced on Saturday that a peace deal with Iran “has been largely negotiated”, after calls with a Pakistani mediator, Gul",
-      "published": "Sat, 23 May 2026 21:27:45 GMT",
-      "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fa8bf420302739f82e3052.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 9,
-        "center_pct": 64,
-        "right_pct": 27,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 64
-      },
-      "bias_variance": 6.79,
-      "entity_count": 13,
-      "entity_list": [
-        "Expanded",
-        "Freedom",
-        "Guardian",
-        "Hormuz",
-        "Objavit",
-        "Operation",
-        "Pauses",
-        "Project",
-        "Rejects",
-        "Talks",
-        "Teheran",
-        "Threatens",
-        "Trump"
-      ],
-      "sources": [
-        {
-          "id": "khaama",
-          "name": "Khaama Press Afghanistan",
-          "country": "AF",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "breitbart",
-          "name": "Breitbart",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "far-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "rt_russia",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial",
-          "bias_tier": "unknown",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "scmp",
-          "name": "South China Morning Post",
-          "country": "HK",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "nst_my",
-          "name": "New Straits Times",
-          "country": "MY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "straits_times",
-          "name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "iran_international",
-          "name": "Iran International",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "guardian",
-          "name": "The Guardian",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "jutarnji",
-          "name": "Jutarnji List",
-          "country": "HR",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        },
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
-        },
-        {
-          "id": "times_of_israel",
-          "name": "The Times of Israel",
-          "country": "IL",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "middle-east",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.khaama.com/trump-pauses-hormuz-operation-amid-iran-talks/",
-          "headline": "Trump Pauses Hormuz Operation Amid Iran Talks",
-          "snippet": "U.S. President Donald Trump said on Wednesday, May 6, that he has paused a military operation aimed at opening the Strait of Hormuz, citing “great progress” toward a potential agreement with Iran, even as tensions across the region continue to escalate. Trump said the U.S. military’s “Project…",
-          "source": "khaama",
-          "source_name": "Khaama Press Afghanistan",
-          "country": "AF",
-          "published": "Wed, 06 May 2026 07:02:00 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.breitbart.com/middle-east/2026/05/08/trump-threatens-expanded-project-freedom-plus-hormuz-iran-rejects/",
-          "headline": "Trump Threatens Expanded ‘Project Freedom Plus’ in Hormuz if Iran Rejects Deal",
-          "snippet": "President Donald Trump warned Friday that the U.S. could revive and significantly expand “Project Freedom” in the Strait of Hormuz if Tehran ultimately rejects the emerging framework agreement now under discussion, as Washington awaited what Trump said was an expected Iranian response amid renewed…",
-          "source": "breitbart",
-          "source_name": "Breitbart",
-          "country": "US",
-          "published": "Sat, 09 May 2026 05:28:55 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.rt.com/news/639502-trump-hormuz-freedom-pause/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "headline": "Trump pauses US military escorts in Hormuz",
-          "snippet": "The president has abruptly put ‘Project Freedom’ on hold after just two days President Donald Trump has temporarily paused a military operation to escort ships through the Strait of Hormuz, but said the blockade of Iranian ports will “remain in full force and effect” until a final agreement with…",
-          "source": "rt_russia",
-          "source_name": "RT (Russia Today)",
-          "country": "RU",
-          "published": "Tue, 05 May 2026 23:35:24 +0000",
-          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fa8bf420302739f82e3052.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.scmp.com/news/world/middle-east/article/3353029/trump-awaits-irans-response-amid-relative-calm-hormuz?utm_source=rss_feed",
-          "headline": "Trump awaits Iran’s response amid relative calm in Hormuz",
-          "snippet": "Relative calm prevailed around the Strait of Hormuz early on Sunday after days of sporadic flare-ups, as the United States waited for Iran’s response to its latest proposals to end more than two months of fighting and begin peace talks. Secretary of State Marco Rubio said on Friday that Washington…",
-          "source": "scmp",
-          "source_name": "South China Morning Post",
-          "country": "HK",
-          "published": "Sun, 10 May 2026 06:58:24 +0000",
-          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/10/b5d61571-9f5a-4201-968c-d4d61cf4c961_a32718a3.jpg?itok=3EPytSQK&v=1778396298",
-          "video_url": null
-        },
-        {
-          "url": "https://www.nst.com.my/world/world/2026/05/1436752/trump-rejects-iran-proposal-teheran-threatens-new-strikes-and-hormuz",
-          "headline": "Trump rejects Iran proposal, Teheran threatens new strikes and Hormuz retaliation",
-          "snippet": "WASHINGTON: US President Donald Trump on Sunday branded Iran’s terms for ending the Middle East war “totally unacceptable,” raising the likelihood of renewed conflict after weeks of negotiations.",
-          "source": "nst_my",
-          "source_name": "New Straits Times",
-          "country": "MY",
-          "published": "Mon, 11 May 2026 06:17:37 +0800",
-          "image_url": "https://assets.nst.com.my/images/listing-featured/45317F893563FEDF5C3AA407F349F2FA_data_0.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.straitstimes.com/world/middle-east/trump-dismisses-irans-reply-to-peace-plan-oil-jumps-as-hormuz-closure-persists",
-          "headline": "Trump dismisses Iran’s offer; oil rises as Hormuz closure persists",
-          "snippet": "DUBAI/WASHINGTON - President Donald Trump’s swift rejection of Iran’s response to a peace proposal pushed oil prices higher on May 11 fuelling concerns that the 10-week-old conflict will drag on and continue to paralyse shipping through the Strait of Hormuz. Days after Washington floated an offer…",
-          "source": "straits_times",
-          "source_name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "published": "Mon, 11 May 2026 18:00:00 +0800",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.iranintl.com/en/202605159865",
-          "headline": "Hormuz gives battered Iran room to wait out Trump, experts say",
-          "snippet": "The panel, moderated by Iran International’s Bozorgmehr Sharafedin, brought together Danielle Pletka of the American Enterprise Institute and Jon Alterman of the Center for Strategic and International Studies to discuss what comes after a ceasefire that has not ended the wider confrontation. The…",
-          "source": "iran_international",
-          "source_name": "Iran International",
-          "country": "GB",
-          "published": "Fri, 15 May 2026 21:45:56 GMT",
-          "image_url": "https://i.iranintl.com/images/rdk9umy0/production/50e276432875379d4f7150b515df1ce53c8b2023-1920x1080.png?rect=0,38,1920,1005&w=1200&h=628&fm=jpg&q=85&fit=max&auto=format",
-          "video_url": null
-        },
-        {
-          "url": "https://www.theguardian.com/world/2026/may/23/trump-ceasefire-iran-strait-of-hormuz",
-          "headline": "Trump says peace deal with Iran largely reached with strait of Hormuz to open",
-          "snippet": "Donald Trump announced on Saturday that a peace deal with Iran had largely been reached, after calls with Gulf allies and Israel, potentially paving the way for an end to the war launched by the and Israel in February. Trump wrote on his social media platform that “final aspects and details” of a…",
-          "source": "guardian",
-          "source_name": "The Guardian",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 20:59:37 GMT",
-          "image_url": "https://i.guim.co.uk/img/media/47288ceee236cc96d6fcbad4136a05149a43f3de/282_0_2125_1700/master/2125.jpg?width=140&quality=85&auto=format&fit=max&s=d182d87c72c9e740885bedb0399270b3",
-          "video_url": null
-        },
-        {
-          "url": "https://www.jutarnji.hr/vijesti/svijet/trump-najavljuje-skori-sporazum-s-iranom-uz-mogucnost-vojnog-odgovora-15711450",
-          "headline": "Trump: Objavit ću detalje mirovnog sporazuma, Hormuz će biti otvoren!",
-          "snippet": "\"Sporazum između Sjedinjenih Američkih Država, Islamske Republike Iran i raznih drugih zemalja je uglavnom ispregovaran\", objavio je Donald Trump na mreži Truth Social. \"Trenutno se raspravlja o konačnim aspektima i detaljima Sporazuma, i bit će uskoro objavljeni\", dodao je. Tvrdi i da će \"uz mnoge…",
-          "source": "jutarnji",
-          "source_name": "Jutarnji List",
-          "country": "HR",
-          "published": "Sat, 23 May 2026 19:53:27 +0200",
-          "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38977281_1280.jpg?1779570300",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQd2lFU0hNQjYxcVl1UjhFSkFQWkRxSlZNT2s2cWxUaExuMmNZcWNRNnZRU2tLd011LWlhZHZZUUNINFFPTmwtei1iYVhrNm1zX2dscXc5RU9jc2JGbTBPaEhqUmM0Tmp2TkF3U3I1TmpRck5ZcXBnZDJmMllhaG4zeHpWcnd3U3g2eXJ3?oc=5",
-          "headline": "Trump says peace deal with Iran largely reached with strait of Hormuz to open - The Guardian",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxQd2lFU0hNQjYxcVl1UjhFSkFQWkRxSlZNT2s2cWxUaExuMmNZcWNRNnZRU2tLd011LWlhZHZZUUNINFFPTmwtei1iYVhrNm1zX2dscXc5RU9jc2JGbTBPaEhqUmM0Tmp2TkF3U3I1TmpRck5ZcXBnZDJmMllhaG4zeHpWcnd3U3g2eXJ3?oc=5\" target=\"_blank\">Trump says peace deal with Iran…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sat, 23 May 2026 21:00:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.timesofisrael.com/us-iran-signal-deal-could-be-near-as-trump-says-hes-50-50-on-agreement-or-strikes/",
-          "headline": "Trump declares deal with Iran ‘largely negotiated, will be announced shortly,’ Hormuz will be opened",
-          "snippet": "and Iranian officials both signaled Saturday they were nearing an agreement on a memorandum of understanding to end the war and set the stage for further talks, with President Donald Trump declaring the deal “has been largely negotiated” after suggesting he was split on whether to agree to the…",
-          "source": "times_of_israel",
-          "source_name": "The Times of Israel",
-          "country": "IL",
-          "published": "Sat, 23 May 2026 20:46:48 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.theguardian.com/world/2026/may/23/trump-ceasefire-iran-strait-of-hormuz",
-          "headline": "Trump says peace deal with Iran ‘largely negotiated’ with strait of Hormuz to open",
-          "snippet": "Donald Trump announced on Saturday that a peace deal with Iran “has been largely negotiated”, after calls with a Pakistani mediator, Gulf allies and Israel, potentially paving the way for an end to the war launched by the and Israel in February. Trump wrote on his social media platform that “final…",
-          "source": "guardian",
-          "source_name": "The Guardian",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 21:27:45 GMT",
-          "image_url": "https://i.guim.co.uk/img/media/47288ceee236cc96d6fcbad4136a05149a43f3de/282_0_2125_1700/master/2125.jpg?width=140&quality=85&auto=format&fit=max&s=d182d87c72c9e740885bedb0399270b3",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.106,
-        "zionist": 0.232,
-        "atlanticist": 0.256,
-        "statist": 0.239,
-        "financialized": 0.396
-      },
-      "fp_source_count": 10,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 4,
-        "eastern-europe": 1,
-        "global-south": 1,
-        "pacific-asia": 3,
-        "adversarial": 1,
-        "middle-east": 1
-      },
-      "section": "world"
     },
     {
       "id": "beedaad9994e",
@@ -40540,7 +40845,7 @@
       "id": "d406aa531453",
       "headline": "Green Card Seekers Must Leave U.S. to Apply, Trump Administration Says",
       "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/hybridaaroncarroll\"> /u/hybridaaroncarroll </a> <br/> <span><a href=\"https://www.nytimes.com/2026/05/22/us/politics/green-card-changes-trump.html?unlocked_article_code=1.kVA.Rbp1.rsgRbEf9CRcV&amp;smid=url-share\">[link]</a></span> &#32; <s",
-      "published": "Sat, 23 May 2026 18:26:48 +0000",
+      "published": "Sat, 23 May 2026 19:56:25 +0000",
       "image_url": "https://static01.nyt.com/images/2026/05/10/multimedia/10trump-news-gas-prices-tfjq/10trump-news-gas-prices-tfjq-mediumSquareAt3X.jpg",
       "video_url": null,
       "has_video": false,
@@ -40556,7 +40861,7 @@
         "dominant_pct": 50
       },
       "bias_variance": 2.67,
-      "entity_count": 40,
+      "entity_count": 47,
       "entity_list": [
         "Administration",
         "Africa",
@@ -40566,12 +40871,14 @@
         "Border",
         "Broad",
         "Budget",
+        "Cases",
         "Ceiling",
         "Chips",
         "Considering",
         "Contracts",
         "Counterterrorism",
         "Defense",
+        "Denaturalization",
         "Dollar",
         "Energy",
         "Facing",
@@ -40582,9 +40889,11 @@
         "Handing",
         "Inquiry",
         "Kelly",
+        "Lawyers",
         "Leave",
         "Lower",
         "Mandates",
+        "Moves",
         "Outrageous",
         "Partner",
         "Pausing",
@@ -40595,9 +40904,12 @@
         "Request",
         "Scrutiny",
         "Seekers",
+        "Speed",
+        "Temporarily",
         "Traces",
         "Trillion",
-        "Trump"
+        "Trump",
+        "USCIS"
       ],
       "sources": [
         {
@@ -40828,6 +41140,17 @@
           "country": "US",
           "published": "Sat, 23 May 2026 18:26:48 +0000",
           "image_url": "https://static01.nyt.com/images/2026/05/23/multimedia/23dc-jan6-capitol-vcqb/23dc-jan6-capitol-vcqb-mediumSquareAt3X.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.breitbart.com/immigration/2026/05/23/trump-administration-temporarily-moves-uscis-lawyers-to-doj-to-speed-denaturalization-cases/",
+          "headline": "Trump Administration Temporarily Moves USCIS Lawyers to DOJ to Speed Denaturalization Cases",
+          "snippet": "The Trump administration is expanding its push to revoke citizenship from some naturalized Americans accused of obtaining it through fraud or other ineligibility, with immigration attorneys being temporarily assigned to Justice Department offices as officials prioritize denaturalization cases.…",
+          "source": "breitbart",
+          "source_name": "Breitbart",
+          "country": "US",
+          "published": "Sat, 23 May 2026 19:56:25 +0000",
+          "image_url": null,
           "video_url": null
         }
       ],
@@ -41956,7 +42279,7 @@
       "id": "6e876e79997a",
       "headline": "Caitlin Clark stats today in Indiana Fever vs Dallas Wings WNBA game - Hawk Central",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMigAJBVV95cUxPSERHaWJobmp1YkM4RXc1ZF9fbmdlNXJQelVsY1B4aEhqVGRIZmM2cGZZVERkZ21hZVVRWGo3a1NZSGVtZWpNSHJKXy1Cdm5SNmh6TUhYOEctbVpHaUdKd0dSckF0THdzdndtc083amM2ZXd5Y2U2SVJpNzlvbXRWbUljeEh4ZXpPVlFodmpfOXZaUjZXdU1yU1Rubm5EeWE1bW5JQkFPN3liaVpqWXVKUFNsNU",
-      "published": "Sat, 23 May 2026 08:00:08 -0700",
+      "published": "Sat, 23 May 2026 18:01:53 -0400",
       "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2025/05/931/523/caitlin-clark10.jpg?ve=1&tl=1",
       "video_url": null,
       "has_video": false,
@@ -42193,6 +42516,17 @@
           "country": "US",
           "published": "Sat, 23 May 2026 08:00:08 -0700",
           "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Findiana-fever-guard-caitlin-clark-128539264.jpg?w%3D1024",
+          "video_url": null
+        },
+        {
+          "url": "https://www.foxnews.com/outkick-sports/wnba-star-caitlin-clark-opens-mental-challenge-brought-string-injuries",
+          "headline": "WNBA star Caitlin Clark opens up about 'mental challenge' brought on by string of injuries",
+          "snippet": "Caitlin Clark will miss at least 2 weeks due to a left quad strain. Colin Cowherd and Jason McIntyre discuss what this means for the Indiana Fever and the WNBA. Caitlin Clark was a late scratch on Wednesday when the Indiana Fever hosted the Portland Fire, marking her first missed game of the…",
+          "source": "fox_news",
+          "source_name": "Fox News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 18:01:53 -0400",
+          "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/931/523/caitlin-clark-indiana-fever-fox-news-001-051926-2.jpeg?ve=1&tl=1",
           "video_url": null
         }
       ],
@@ -45147,6 +45481,150 @@
         "latin-america": 1
       },
       "section": "sports"
+    },
+    {
+      "id": "16f9adc52bd1",
+      "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
+      "summary": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
+      "published": "Fri, 22 May 2026 22:19:36 GMT",
+      "image_url": "https://i.dailymail.com/1s/2026/05/10/09/108501655-0-image-a-4_1778403434958.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 0,
+        "right_pct": 100,
+        "state_count": 0,
+        "dominant": "right",
+        "dominant_pct": 100
+      },
+      "bias_variance": 1.9,
+      "entity_count": 11,
+      "entity_list": [
+        "America",
+        "Attwood",
+        "Chelsea",
+        "Hollywood",
+        "London",
+        "Mackintosh",
+        "Miami",
+        "Millie",
+        "Olivia",
+        "Thompson",
+        "Wicks"
+      ],
+      "sources": [
+        {
+          "id": "daily_mail_ent",
+          "name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "daily_mail",
+          "name": "Daily Mail",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15805359/Olivia-Attwood-opts-old-school-Hollywood-vibes-1-6k-leopard-print-bodsuit-stepping-Miami-boyfriend-Pete-Wicks-shows-appreciation-saucy-snaps.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Olivia Attwood opts for old school Hollywood vibes in £1.6k leopard print bodysuit while stepping out in Miami - as 'boyfriend' Pete Wicks shows appreciation for her saucy snaps",
+          "snippet": "Olivia Attwood has been living it up alongside a slew of influencers in Miami. And on Saturday night, the sweetheart, 35, made sure she was dressed to impress in a tiny Dolce &amp; Gabbana leopard print playsuit, ringing in at £1,600, while adding in Hollywood glamour with cat-eye sunglasses and a…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sun, 10 May 2026 09:26:05 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/10/09/108501655-0-image-a-4_1778403434958.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15807531/Pete-Wicks-chivalrous-cuddles-girlfriend-Olivia-Attwood-collecting-airport.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
+          "snippet": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 12:53:11 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/11/11/108520759-0-image-a-34_1778495994660.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15807531/Pete-Wicks-chivalrous-cuddles-girlfriend-Olivia-Attwood-collecting-airport.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
+          "snippet": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 11:53:11 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/11/11/108520759-0-image-a-34_1778495994660.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15807315/Pete-Wicks-teased-pal-Sam-Thompson-romance-girlfriend-Olivia-Attwood.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Pete Wicks is teased by pal Sam Thompson over his romance with 'girlfriend' Olivia Attwood after they attended her birthday bash",
+          "snippet": "The longtime pals have been in the early stages of a romance, after being pictured kissing on a night out in March.",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 11:51:54 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/11/10/108519873-0-image-a-11_1778493448077.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15841969/Olivia-Attwood-signing-seven-figure-deal-beauty-brand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Olivia Attwood 'boosts her growing bank balance by signing a seven-figure deal with beauty brand' after launching her bid to crack America",
+          "snippet": "Olivia Attwood 'boosts her growing bank balance by signing a seven-figure deal with beauty brand' after launching her bid to crack America Have got a story? Email tips@dailymail.co.uk Want to read our hottest showbiz scoops for free? readers can claim three months of DM+ on us when you sign up to…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 22:19:36 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/23/108814705-0-image-a-29_1779488183128.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15839951/Millie-Mackintosh-rubbishes-glamorous-Chelsea-lifestyle-says-travelled-west-London-set-BUS-bonds-Olivia-Attwood-failed-marriages.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Millie Mackintosh rubbishes glamorous Made In Chelsea lifestyle and says she travelled to west London set on the BUS as she bonds with Olivia Attwood over failed marriages",
+          "snippet": "Millie Mackintosh has dismissed the affluent 'lifestyle' portrayed on Made In Chelsea as 'fabricated' and says she travelled to the west London set on public transport after being cast entirely by accident. The personality, 36, became a household name after landing a prominent role in the hugely…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 16:42:49 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/09/108796197-0-image-a-23_1779440031887.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.27,
+        "zionist": 0.415,
+        "atlanticist": 0.405,
+        "statist": -0.1,
+        "financialized": 0.57
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 2
+      },
+      "section": "chisme"
     },
     {
       "id": "7ff06e73564e",
@@ -60105,170 +60583,6 @@
         "africa": 1
       },
       "section": "sports"
-    },
-    {
-      "id": "d8dcccc7d400",
-      "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
-      "summary": "The passengers, none of whom has displayed signs of infection, will be tested by Spanish health authorities to ensure they remain asymptomatic and then transported to land in small boats.",
-      "published": "Sun, 10 May 2026 06:48:20 +0000",
-      "image_url": null,
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 20,
-        "center_pct": 60,
-        "right_pct": 20,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 60
-      },
-      "bias_variance": 5.63,
-      "entity_count": 3,
-      "entity_list": [
-        "Cruise",
-        "Reuters",
-        "Tenerife"
-      ],
-      "sources": [
-        {
-          "id": "aljazeera",
-          "name": "Al Jazeera English",
-          "country": "QA",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "middle-east",
-          "factuality": "mostly_factual",
-          "primary_vs_launder": "mixed",
-          "parent_company": "Qatari state"
-        },
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
-        },
-        {
-          "id": "bangkok_post",
-          "name": "Bangkok Post",
-          "country": "TH",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "straits_times",
-          "name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "kathmandu_post",
-          "name": "Kathmandu Post",
-          "country": "NP",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.aljazeera.com/news/2026/5/10/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife?traffic_source=rss",
-          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
-          "snippet": "Published On 10 May 2026 10 May 2026 The cruise ship hit by a deadly hantavirus outbreak has arrived near the Port of Granadilla in Tenerife in the Canary Islands. The Dutch-flagged Hondius arrived at the Spanish port early on Sunday, escorted by a Civil Guard vessel, according to data from the…",
-          "source": "aljazeera",
-          "source_name": "Al Jazeera English",
-          "country": "QA",
-          "published": "Sun, 10 May 2026 06:48:20 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPNTZWRnJKRW80UDVpWnhYcjVURGlTaUxjZXlrUHIxY0hKeGIxZ0h0b2FjQTZoeGxqUlNmTjZoZXNDZzlPTXU2S1dmLS1PMnpoX2VhcUQ4UGR5RDJIaXJ1UnhhVmx1NDJBRWt5bzhPZURCV0s0dUZTejE0MHB3enRMSmxham9mNmdGUXRScTkxNWxXaFFLalEtY3ZKM2NlcEF1NDgxbzdxWENGZTh4RzRrQzJTNVRYY0ZweHdyTDdqX19Sal9VMFE?oc=5",
-          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife - Reuters",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPNTZWRnJKRW80UDVpWnhYcjVURGlTaUxjZXlrUHIxY0hKeGIxZ0h0b2FjQTZoeGxqUlNmTjZoZXNDZzlPTXU2S1dmLS1PMnpoX2VhcUQ4UGR5RDJIaXJ1UnhhVmx1NDJBRWt5bzhPZURCV0s0dUZTejE0MHB3enRMSmxham9mNmdGUXRScTkxNWxXaFFLalEtY3ZKM2NlcEF1NDgxbzdxWENGZTh4RzRrQzJTNVRYY0ZweH…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sun, 10 May 2026 04:36:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.bangkokpost.com/world/3252719/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife",
-          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
-          "snippet": "PUBLISHED : 10 May 2026 at 12:00 The cruise ship Hondius arrives at the port of Granadilla de Abona after being affected by a hantavirus outbreak, in Tenerife, Spain, May 10, 2026. Reuters TENERIFE: The cruise ⁠ship ⁠hit by a deadly hantavirus ​outbreak arrived early on Sunday near the Port of…",
-          "source": "bangkok_post",
-          "source_name": "Bangkok Post",
-          "country": "TH",
-          "published": "Sun, 10 May 2026 12:00:00 +0700",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.straitstimes.com/world/europe/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife",
-          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
-          "snippet": "TENERIFE – The cruise ship hit by a deadly hantavirus outbreak arrived early on May 10 near the Port of Granadilla in Tenerife, Reuters footage showed, where it will anchor for the evacuation of the passengers and some of the crew. The passengers, none of whom has displayed signs of infection, will…",
-          "source": "straits_times",
-          "source_name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "published": "Sun, 10 May 2026 12:36:16 +0800",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://kathmandupost.com/world/2026/05/10/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife",
-          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
-          "snippet": "The cruise ship hit by a deadly hantavirus outbreak, arrived early on Sunday near the Port of Granadilla in Tenerife, Reuters footage showed, where it will anchor for the evacuation of the passengers and some of the crew. The passengers, none of whom has displayed signs of infection, will be tested…",
-          "source": "kathmandu_post",
-          "source_name": "Kathmandu Post",
-          "country": "NP",
-          "published": "",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.096,
-        "zionist": 0.102,
-        "atlanticist": 0.214,
-        "statist": 0.366,
-        "financialized": 0.526
-      },
-      "fp_source_count": 5,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "middle-east": 1,
-        "pacific-asia": 2,
-        "west": 1,
-        "global-south": 1
-      },
-      "section": "health"
     },
     {
       "id": "47988bd13874",

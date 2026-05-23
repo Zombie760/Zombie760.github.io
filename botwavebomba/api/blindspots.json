@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-23T22:09:06.772887+00:00",
-  "count": 70,
+  "generated_at": "2026-05-23T22:25:08.464058+00:00",
+  "count": 71,
   "stories": [
     {
       "id": "64c47aff1fe9",
@@ -949,7 +949,7 @@
       "id": "9182092d6b80",
       "headline": "Una concentración rechaza las detenciones y cargas policiales a activistas de la Global Sumud Flotilla en Loiu (Bilbao)",
       "summary": "",
-      "published": "Sat, 23 May 2026 17:45:21 +0000",
+      "published": "Sun, 24 May 2026 09:58:59 +1200",
       "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/6/6744b6cf50b85df230b72f8d/image/ca775f5be14812cf413dc2b673663cd1488d4806bf371a4c947b3862851b8078.JPG?width=1440&format=webp&quality=80",
       "video_url": null,
       "has_video": false,
@@ -957,12 +957,12 @@
       "blindspot_label": null,
       "blindspot_score": 0.0,
       "coverage": {
-        "left_pct": 29,
-        "center_pct": 29,
-        "right_pct": 43,
+        "left_pct": 25,
+        "center_pct": 38,
+        "right_pct": 38,
         "state_count": 1,
-        "dominant": "right",
-        "dominant_pct": 43
+        "dominant": "center",
+        "dominant_pct": 38
       },
       "bias_variance": 4.87,
       "entity_count": 25,
@@ -1088,6 +1088,18 @@
           "geo_cluster": "latin-america",
           "factuality": "high",
           "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "rnz",
+          "name": "RNZ",
+          "country": "NZ",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
           "parent_company": ""
         }
       ],
@@ -1234,6 +1246,17 @@
           "published": "Sat, 23 May 2026 17:45:21 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/FOEZSNKUMRDYHDCXG2PTBAIV7E.jpg?auth=3d2fd4a11fd7aa6717a2ff742a51bea3b5c6ffdef3b1dc2b48f4da433da2112f&smart=true&width=1920&height=1440",
           "video_url": null
+        },
+        {
+          "url": "https://www.rnz.co.nz/news/political/596163/kiwi-pair-detained-during-global-sumud-flotilla-to-arrive-back-in-nz",
+          "headline": "Kiwi pair detained during Global Sumud Flotilla to arrive back in NZ",
+          "snippet": "The \"Global Sumud Flotilla,\" carrying international activists and journalists, aims to sail across the Mediterranean Sea to Gaza to challenge the ongoing blockade and draw attention to the humanitarian crisis in the Palestinian territory. Photo: / Murat Kocabas Two New Zealanders detained during…",
+          "source": "rnz",
+          "source_name": "RNZ",
+          "country": "NZ",
+          "published": "Sun, 24 May 2026 09:58:59 +1200",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -1250,7 +1273,7 @@
       "geo_breakdown": {
         "middle-east": 3,
         "latin-america": 3,
-        "pacific-asia": 1,
+        "pacific-asia": 2,
         "global-south": 1
       },
       "section": "world",
@@ -3047,6 +3070,262 @@
         "global-south": 5
       },
       "section": "world"
+    },
+    {
+      "id": "9ac39fbbb787",
+      "headline": "Girona y Mallorca bajan a Segunda División, mientras que Celta y Getafe jugarán en Europa: así queda la clasificación de LaLiga",
+      "summary": "El Real Madrid despide a Dani Carvajal en su último partido con goleada",
+      "published": "Sat, 23 May 2026 22:19:27 +0000",
+      "image_url": "https://www.jamaicaobserver.com/jamaicaobserver/news/wp-content/uploads/sites/4/2025/07/000_66CC37D.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 67,
+        "right_pct": 33,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 0.96,
+      "entity_count": 18,
+      "entity_list": [
+        "Bragarnik",
+        "Celta",
+        "Conferencia",
+        "Demichelis",
+        "Descenso",
+        "Diablito",
+        "Echeverri",
+        "Elche",
+        "Europa",
+        "Europu",
+        "Getafe",
+        "Girona",
+        "LaLiga",
+        "Madrid",
+        "Mallorca",
+        "Osasuna",
+        "Segunda",
+        "VIDEO"
+      ],
+      "sources": [
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "jamaica_observer",
+          "name": "Jamaica Observer",
+          "country": "JM",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "jutarnji",
+          "name": "Jutarnji List",
+          "country": "HR",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "clarin_ar",
+          "name": "Clarín Argentina",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "vanguard_ng",
+          "name": "Vanguard Nigeria",
+          "country": "NG",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_razon_bo",
+          "name": "La Razón Bolivia",
+          "country": "BO",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/la-ultima-jornada-al-descanso-mallorca-y-girona-en-descenso-celta-y-getafe-en-europa/",
+          "headline": "La última jornada al descanso: Mallorca y Girona, en descenso; Celta y Getafe, en Europa",
+          "snippet": "23 May, 2026 Argentina Estados Unidos Colombia España México Perú Centroamérica Mundo Venezuela The economist The Washington Post Realeza Opinión Últimas Noticias Nacional Economía Sociedad Cultura España Deportes Entretenimiento Gastronomía Salud Viajes Qué puedo ver Tendencias Estar Mejor…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 20:02:14 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.jamaicaobserver.com/2026/05/23/real-madrid-end-troubled-liga-season-win-mallorca-girona/",
+          "headline": "Real Madrid end troubled Liga season with win, Mallorca, Girona down",
+          "snippet": "Real Madrid's French midfielder #14 Aurelien Tchouameni, German defender #22 Antonio Ruediger, Spanish coach Xabi Alonso and Croatian midfielder #10 Luka Modric react at the end of the Club World Cup 2025 semifinal football match between France's Paris Saint-Germain and Spain's Real Madrid at the…",
+          "source": "jamaica_observer",
+          "source_name": "Jamaica Observer",
+          "country": "JM",
+          "published": "Sat, 23 May 2026 21:21:35 +0000",
+          "image_url": "https://www.jamaicaobserver.com/jamaicaobserver/news/wp-content/uploads/sites/4/2025/07/000_66CC37D.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/la-ultima-jornada-condena-al-descenso-a-mallorca-y-girona/",
+          "headline": "La última jornada condena al descenso a Mallorca y Girona",
+          "snippet": "Iñaki Dufour Madrid, 23 may (EFE).- La última jornada de LaLiga Sports no cambió nada en la zona de descenso, sin la carambola que persiguió toda la noche el Mallorca, casi condenado desde su derrota de la anterior cita con el Levante, pese al 3-0 al Oviedo de este sábado, y sin el triunfo que…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:32:01 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/el-elche-se-salva-y-manda-a-segunda-al-girona-junto-al-mallorca/",
+          "headline": "El Elche se salva y manda a Segunda al Girona junto al Mallorca",
+          "snippet": "El Elche empató (1-1) este sábado contra el Girona en la última jornada de LaLiga Sports y logró la permanencia en el duelo directo que mandó a Segunda División al equipo catalán, mismo destino que corrió un Mallorca que ganó (3-0) al Real Oviedo pero que no dependía de sí mismo. En un sábado…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:31:06 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/THY37NX5PJHCVBX2W4XZB4C4GE.jpg?auth=e644f5ae2b6a6b06d505aecca54ee4714898f305587ae448306ff235062a5e9b&smart=true&width=1920&height=1238",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/deportes/2026/05/23/girona-y-mallorca-bajan-a-segunda-division-mientras-que-celta-y-getafe-jugaran-en-europa-asi-queda-la-clasificacion-de-laliga/",
+          "headline": "Girona y Mallorca bajan a Segunda División, mientras que Celta y Getafe jugarán en Europa: así queda la clasificación de LaLiga",
+          "snippet": "Muriqi, segundo máximo goleador de LaLiga. LaLiga llega a su fin. Con la tercera plaza solamente en juego (Atlético de Madrid-Villarreal, mañana a las 21:00), el descenso y Europa se han decidido en una última jornada agónica para muchos de los equipos. Finalmente, los afortunados son Celta y…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:22:30 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/JCFQ3M3M2VHWVORX3YZ57PGFUM.jpg?auth=fcfca9fe015294f80b77b98e0a79bb0270a7f922762571342a30e1c92e1df56a&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/descenso-del-mallorca-y-el-girona-liga-europa-del-celta-y-liga-conferencia-del-getafe/",
+          "headline": "Descenso del Mallorca y el Girona, Liga Europa del Celta y Liga Conferencia del Getafe",
+          "snippet": "Madrid, 23 may (EFE).- La última jornada de LaLiga Sports supuso el descenso del Mallorca y el Girona; salvó al Levante, al Osasuna y al Elche; confirmó la plaza en la Liga Europa del Celta y llevó al Getafe a la Liga Conferencia. Los resultados de este sábado han sido los siguientes: Girona 1 –…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:19:27 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.jutarnji.hr/sportske/nogomet/rasplet-la-lige-mallorca-girona-ispadaju-getafe-u-konferencijskoj-ligi-15711512",
+          "headline": "VIDEO: U drami posljednjeg kola ispali Girona i Mallorca, Osasuna se spasila, Getafe idu u Europu",
+          "snippet": "U posljednjem, 38. kolu španjolske La Lige riješene su i posljednje dvojbe te je postalo poznato tko sve ispada u drugu ligu. Od ranije poznatom davljeniku Oviedu pridružili su se Mallorca i Girona, koji iduće sezone neće igrati u elitnom razredu. VIDEO POGLEDAJTE OVDJE. Brojne su momčadi…",
+          "source": "jutarnji",
+          "source_name": "Jutarnji List",
+          "country": "HR",
+          "published": "Sat, 23 May 2026 23:19:00 +0200",
+          "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38482904_1280.jpg?1779572824",
+          "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/deportes/laliga-espana-dramatica-definicion-descendieron-mallorca-demichelis-girona-diablito-echeverri-salvo-elche-bragarnik_0_FCeUigTB6E.html",
+          "headline": "LaLiga de España y una dramática definición: descendieron el Mallorca de Demichelis y el Girona Diablito Echeverri y se salvó el Elche Bragarnik",
+          "snippet": "No hubo milagro para Martín Demichelis y Mallorca se fue al descenso en la dramática y apasionante definición de la última fecha de la liga de España. Eran cinco los equipos que peleaban por quedarse en la máxima categoría e hizo lo que debía hacer el elenco de las Islas Baleares: venció de local…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:33:23 +0000",
+          "image_url": "https://www.clarin.com/img/2026/05/23/k6ZEdG_AC_1200x630__1.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.vanguardngr.com/2026/05/real-madrid-end-troubled-liga-season-with-win-mallorca-girona-relegated/",
+          "headline": "Real Madrid end troubled Liga season with win; Mallorca, Girona relegated",
+          "snippet": "Real Madrid ended a troubled La Liga campaign with a 4-2 win over Athletic Bilbao in Alvaro Arbeloa's last game at the helm, while Mallorca and Girona were relegated from the Spanish top flight on Saturday. The post <a…",
+          "source": "vanguard_ng",
+          "source_name": "Vanguard Nigeria",
+          "country": "NG",
+          "published": "Sat, 23 May 2026 22:02:20 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/cronica-el-elche-se-salva-y-manda-a-segunda-al-girona-junto-al-mallorca/",
+          "headline": "(Crónica) El Elche se salva y manda a Segunda al Girona junto al Mallorca",
+          "snippet": "El Elche empató (1-1) este sábado contra el Girona en la última jornada de LaLiga Sports y logró la permanencia en el duelo directo que mandó a Segunda División al equipo catalán, mismo destino que corrió un Mallorca que ganó (3-0) al Real Oviedo pero que no dependía de sí mismo. En un sábado…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 22:00:37 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/4SKTPXSGMBFGVOZ4LACPMDBHZ4.jpg?auth=8cd2a7474b39f5d0ad93073ec8276dfdd0be8eacca87a07322dc638863f7c5a4&smart=true&width=1920&height=1238",
+          "video_url": null
+        },
+        {
+          "url": "https://larazon.bo/marcas/2026/05/23/girona-y-mallorca-descienden-a-segunda-en-espana/",
+          "headline": "‎Girona y Mallorca descienden a segunda en España",
+          "snippet": "‎El equipo del que es accionista el boliviano Marcelo Claure deberá competir en la LaLiga Hypermotion la temporada 26-27 The post <a href=\"https://larazon.bo/marcas/2026/05/23/girona-y-mallorca-descienden-a-segunda-en-espana/\">‎Girona y Mallorca descienden a segunda en España appeared first on La…",
+          "source": "la_razon_bo",
+          "source_name": "La Razón Bolivia",
+          "country": "BO",
+          "published": "Sat, 23 May 2026 22:19:27 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.134,
+        "zionist": 0.236,
+        "atlanticist": 0.402,
+        "statist": 0.23,
+        "financialized": 0.462
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "latin-america": 4,
+        "eastern-europe": 1,
+        "africa": 1
+      },
+      "section": "business"
     },
     {
       "id": "9cdbe9b98ae3",
@@ -6712,7 +6991,7 @@
       "id": "4554cfa5a519",
       "headline": "¡Ignacio Buse campeón del ATP 500 Hamburgo!: Derrotó a Tommy Paul y hace historia en el tenis peruano",
       "summary": "El tenista peruano disputará su primera definición ATP frente al estadounidense en el en la cancha principal del Tennisstadion am Rothenbaum. Sigue las incidencias del vibrante duelo",
-      "published": "Sat, 23 May 2026 21:00:52 +0000",
+      "published": "Sat, 23 May 2026 22:16:28 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/URMKUOBYGBBFDEXH4FCZLTONNY.png?auth=b0b52f92ecd984790bdffe88d9e9ddff9d972ae143e064f4344680c566a7152d&smart=true&width=1920&height=1080",
       "video_url": null,
       "has_video": false,
@@ -6728,7 +7007,7 @@
         "dominant_pct": 100
       },
       "bias_variance": 0.0,
-      "entity_count": 15,
+      "entity_count": 17,
       "entity_list": [
         "Arraya",
         "Desde",
@@ -6739,9 +7018,11 @@
         "Ignacio",
         "Jaime",
         "Learner",
+        "Machu",
         "Novak",
         "Pablo",
         "Peruanos",
+        "Picchu",
         "Punto",
         "Tommy",
         "Yzaga"
@@ -7013,6 +7294,17 @@
           "country": "AR",
           "published": "Sat, 23 May 2026 21:00:52 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/LFSRDD2EXVH7NACL7UWV5CANCI.jpg?auth=09809e10c9cb1d6adf4cf833fa3be02dbb1781262bc6d07072bc90545f9aec98&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/23/machu-picchu-te-espera-amigo-la-respuesta-de-ignacio-buse-a-la-felicitacion-de-novak-djokovic-tras-su-consagracion-en-hamburgo/",
+          "headline": "“Machu Picchu te espera, amigo”: la respuesta de Ignacio Buse a la felicitación de Novak Djokovic tras su consagración en Hamburgo",
+          "snippet": "Ignacio Buse y su respuesta en Instagram a la felicitación de No0vak Djokovic. Crédito: X. La histórica consagración de Ignacio Buse en el 500 de Hamburgo traspasó las fronteras del tenis latinoamericano y generó eco en la cúspide del deporte blanco. Novak Djokovic , leyenda viva y ganador de 24…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 22:16:28 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/3GQG2IZGZ5GJLC5OYZY3CYQUMM.jpg?auth=3e95838f12ba458578a7096798f00fe472d0c7ddf0c814fd502e7d23587a07e7&smart=true&width=1920&height=1080",
           "video_url": null
         }
       ],
@@ -7493,6 +7785,122 @@
       "section": "world"
     },
     {
+      "id": "b76cb0a71821",
+      "headline": "Los Javis se unen a Almodóvar o Buñuel con su Premio de Dirección en Cannes",
+      "summary": "",
+      "published": "Sat, 23 May 2026 22:15:38 +0000",
+      "image_url": null,
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 50,
+        "right_pct": 50,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 0.9,
+      "entity_count": 5,
+      "entity_list": [
+        "Cannes",
+        "Javis",
+        "LGTBI",
+        "Lorca",
+        "Premio"
+      ],
+      "sources": [
+        {
+          "id": "el_nacional_ve",
+          "name": "El Nacional Venezuela",
+          "country": "VE",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.elnacional.com/2026/05/los-javis-envian-un-poderoso-mensaje-lgtb-en-cannes-con-la-bola-negra/",
+          "headline": "Los Javis reivindican en Cannes el mensaje LGTBI inspirados por Lorca",
+          "snippet": "VER PORTADA ENLACES: Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra en Ucrania Indices Economicos Criollos Los Venezolanos en la MLB Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra…",
+          "source": "el_nacional_ve",
+          "source_name": "El Nacional Venezuela",
+          "country": "VE",
+          "published": "Fri, 22 May 2026 04:01:00 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/los-javis-y-penelope-cruz-en-la-alfombra-roja-de-cannes-previa-a-la-gala-de-premios/",
+          "headline": "Los Javis y Penélope Cruz, en la alfombra roja de Cannes previa a la gala de premios",
+          "snippet": "Cannes (Francia), 23 may (EFE).- Javier Ambrossi y Javier Calvo, acompañados por Penélope Cruz y el resto del equipo de 'La bola negra', pasaron este sábado por la última alfombra roja del Festival de Cannes, previa a la entrega de premios de la 79.ª edición, lo que apunta a que recibirán algún…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 18:18:05 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/los-javis-tras-ganar-el-premio-de-direccion-en-cannes-se-preparan-para-rodar-en-ingles/",
+          "headline": "Los Javis tras ganar el Premio de Dirección en Cannes se preparan para rodar en inglés",
+          "snippet": "Cannes (Francia), 23 may (EFE).- Javier Ambrossi y Javier Calvo conquistaron este sábado el Festival de Cannes con 'La bola negra' y ya están pensando en su siguiente proyecto, que no descartan que sea en inglés y, por supuesto, juntos. Tras este galardón ya no hay dudas: \"Nos hemos mirado y hemos…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:45:41 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/los-javis-se-unen-a-almodovar-o-bunuel-con-su-premio-de-direccion-en-cannes/",
+          "headline": "Los Javis se unen a Almodóvar o Buñuel con su Premio de Dirección en Cannes",
+          "snippet": "Cannes (Francia), 23 may (EFE).- Javier Ambrossi y Javier Calvo, conocidos como ‘Los Javis’, se unieron este sábado a cineastas de la talla de Luis Buñuel y Pedro Almodóvar, quienes, al igual que ellos, han ganado el Premio a Mejor Dirección en el Festival de Cannes. Ellos lo ganaron por 'La bola…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 22:15:38 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.15,
+        "zionist": 0.25,
+        "atlanticist": 0.415,
+        "statist": 0.245,
+        "financialized": 0.485
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "latin-america": 2
+      },
+      "section": "entertainment"
+    },
+    {
       "id": "a0b540f449ad",
       "headline": "Married At First Sight UK hit by fresh allegations as three more stars claim they were sexually assaulted and abused on the show amid calls for the series to be axed",
       "summary": "The E4 reality series has faced calls to be axed after claims aired by BBC Panorama that two women had been raped during filming.",
@@ -7698,111 +8106,6 @@
       "section": "chisme"
     },
     {
-      "id": "b76cb0a71821",
-      "headline": "Los Javis tras ganar el Premio de Dirección en Cannes se preparan para rodar en inglés",
-      "summary": "",
-      "published": "Sat, 23 May 2026 21:45:41 +0000",
-      "image_url": null,
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 0.9,
-      "entity_count": 5,
-      "entity_list": [
-        "Cannes",
-        "Javis",
-        "LGTBI",
-        "Lorca",
-        "Premio"
-      ],
-      "sources": [
-        {
-          "id": "el_nacional_ve",
-          "name": "El Nacional Venezuela",
-          "country": "VE",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.elnacional.com/2026/05/los-javis-envian-un-poderoso-mensaje-lgtb-en-cannes-con-la-bola-negra/",
-          "headline": "Los Javis reivindican en Cannes el mensaje LGTBI inspirados por Lorca",
-          "snippet": "VER PORTADA ENLACES: Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra en Ucrania Indices Economicos Criollos Los Venezolanos en la MLB Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra…",
-          "source": "el_nacional_ve",
-          "source_name": "El Nacional Venezuela",
-          "country": "VE",
-          "published": "Fri, 22 May 2026 04:01:00 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/los-javis-y-penelope-cruz-en-la-alfombra-roja-de-cannes-previa-a-la-gala-de-premios/",
-          "headline": "Los Javis y Penélope Cruz, en la alfombra roja de Cannes previa a la gala de premios",
-          "snippet": "Cannes (Francia), 23 may (EFE).- Javier Ambrossi y Javier Calvo, acompañados por Penélope Cruz y el resto del equipo de 'La bola negra', pasaron este sábado por la última alfombra roja del Festival de Cannes, previa a la entrega de premios de la 79.ª edición, lo que apunta a que recibirán algún…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 18:18:05 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/los-javis-tras-ganar-el-premio-de-direccion-en-cannes-se-preparan-para-rodar-en-ingles/",
-          "headline": "Los Javis tras ganar el Premio de Dirección en Cannes se preparan para rodar en inglés",
-          "snippet": "Cannes (Francia), 23 may (EFE).- Javier Ambrossi y Javier Calvo conquistaron este sábado el Festival de Cannes con 'La bola negra' y ya están pensando en su siguiente proyecto, que no descartan que sea en inglés y, por supuesto, juntos. Tras este galardón ya no hay dudas: \"Nos hemos mirado y hemos…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 21:45:41 +0000",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.25,
-        "atlanticist": 0.415,
-        "statist": 0.245,
-        "financialized": 0.485
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "latin-america": 2
-      },
-      "section": "entertainment"
-    },
-    {
       "id": "8f4389c16bdf",
       "headline": "Le Sénégal dans l’incertitude politique après le divorce Diomaye-Sonko",
       "summary": "<p><img width=\"865\" height=\"509\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" data-src=\"https://www.senenews.com/wp-content/uploads/2026/05/bdf.jpg\" class=\"attachment-full size-full wp-post-image lazy\" alt=\"Le Sénégal dans l&rsquo;incertitude politique après le divorc",
@@ -7918,150 +8221,6 @@
       "geo_breakdown": {
         "west": 1,
         "africa": 1
-      },
-      "section": "chisme"
-    },
-    {
-      "id": "16f9adc52bd1",
-      "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
-      "summary": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
-      "published": "Fri, 22 May 2026 22:19:36 GMT",
-      "image_url": "https://i.dailymail.com/1s/2026/05/10/09/108501655-0-image-a-4_1778403434958.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 0,
-        "right_pct": 100,
-        "state_count": 0,
-        "dominant": "right",
-        "dominant_pct": 100
-      },
-      "bias_variance": 1.9,
-      "entity_count": 11,
-      "entity_list": [
-        "America",
-        "Attwood",
-        "Chelsea",
-        "Hollywood",
-        "London",
-        "Mackintosh",
-        "Miami",
-        "Millie",
-        "Olivia",
-        "Thompson",
-        "Wicks"
-      ],
-      "sources": [
-        {
-          "id": "daily_mail_ent",
-          "name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "daily_mail",
-          "name": "Daily Mail",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": "Daily Mail and General Trust"
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15805359/Olivia-Attwood-opts-old-school-Hollywood-vibes-1-6k-leopard-print-bodsuit-stepping-Miami-boyfriend-Pete-Wicks-shows-appreciation-saucy-snaps.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Olivia Attwood opts for old school Hollywood vibes in £1.6k leopard print bodysuit while stepping out in Miami - as 'boyfriend' Pete Wicks shows appreciation for her saucy snaps",
-          "snippet": "Olivia Attwood has been living it up alongside a slew of influencers in Miami. And on Saturday night, the sweetheart, 35, made sure she was dressed to impress in a tiny Dolce &amp; Gabbana leopard print playsuit, ringing in at £1,600, while adding in Hollywood glamour with cat-eye sunglasses and a…",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Sun, 10 May 2026 09:26:05 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/10/09/108501655-0-image-a-4_1778403434958.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15807531/Pete-Wicks-chivalrous-cuddles-girlfriend-Olivia-Attwood-collecting-airport.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
-          "snippet": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 12:53:11 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/11/108520759-0-image-a-34_1778495994660.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15807531/Pete-Wicks-chivalrous-cuddles-girlfriend-Olivia-Attwood-collecting-airport.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
-          "snippet": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 11:53:11 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/11/108520759-0-image-a-34_1778495994660.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15807315/Pete-Wicks-teased-pal-Sam-Thompson-romance-girlfriend-Olivia-Attwood.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Pete Wicks is teased by pal Sam Thompson over his romance with 'girlfriend' Olivia Attwood after they attended her birthday bash",
-          "snippet": "The longtime pals have been in the early stages of a romance, after being pictured kissing on a night out in March.",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 11:51:54 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/10/108519873-0-image-a-11_1778493448077.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15841969/Olivia-Attwood-signing-seven-figure-deal-beauty-brand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Olivia Attwood 'boosts her growing bank balance by signing a seven-figure deal with beauty brand' after launching her bid to crack America",
-          "snippet": "Olivia Attwood 'boosts her growing bank balance by signing a seven-figure deal with beauty brand' after launching her bid to crack America Have got a story? Email tips@dailymail.co.uk Want to read our hottest showbiz scoops for free? readers can claim three months of DM+ on us when you sign up to…",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Fri, 22 May 2026 22:19:36 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/22/23/108814705-0-image-a-29_1779488183128.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15839951/Millie-Mackintosh-rubbishes-glamorous-Chelsea-lifestyle-says-travelled-west-London-set-BUS-bonds-Olivia-Attwood-failed-marriages.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Millie Mackintosh rubbishes glamorous Made In Chelsea lifestyle and says she travelled to west London set on the BUS as she bonds with Olivia Attwood over failed marriages",
-          "snippet": "Millie Mackintosh has dismissed the affluent 'lifestyle' portrayed on Made In Chelsea as 'fabricated' and says she travelled to the west London set on public transport after being cast entirely by accident. The personality, 36, became a household name after landing a prominent role in the hugely…",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Fri, 22 May 2026 16:42:49 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/22/09/108796197-0-image-a-23_1779440031887.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.27,
-        "zionist": 0.415,
-        "atlanticist": 0.405,
-        "statist": -0.1,
-        "financialized": 0.57
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 2
       },
       "section": "chisme"
     },
@@ -15162,6 +15321,150 @@
         "latin-america": 1
       },
       "section": "sports"
+    },
+    {
+      "id": "16f9adc52bd1",
+      "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
+      "summary": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
+      "published": "Fri, 22 May 2026 22:19:36 GMT",
+      "image_url": "https://i.dailymail.com/1s/2026/05/10/09/108501655-0-image-a-4_1778403434958.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 0,
+        "right_pct": 100,
+        "state_count": 0,
+        "dominant": "right",
+        "dominant_pct": 100
+      },
+      "bias_variance": 1.9,
+      "entity_count": 11,
+      "entity_list": [
+        "America",
+        "Attwood",
+        "Chelsea",
+        "Hollywood",
+        "London",
+        "Mackintosh",
+        "Miami",
+        "Millie",
+        "Olivia",
+        "Thompson",
+        "Wicks"
+      ],
+      "sources": [
+        {
+          "id": "daily_mail_ent",
+          "name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "daily_mail",
+          "name": "Daily Mail",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15805359/Olivia-Attwood-opts-old-school-Hollywood-vibes-1-6k-leopard-print-bodsuit-stepping-Miami-boyfriend-Pete-Wicks-shows-appreciation-saucy-snaps.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Olivia Attwood opts for old school Hollywood vibes in £1.6k leopard print bodysuit while stepping out in Miami - as 'boyfriend' Pete Wicks shows appreciation for her saucy snaps",
+          "snippet": "Olivia Attwood has been living it up alongside a slew of influencers in Miami. And on Saturday night, the sweetheart, 35, made sure she was dressed to impress in a tiny Dolce &amp; Gabbana leopard print playsuit, ringing in at £1,600, while adding in Hollywood glamour with cat-eye sunglasses and a…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sun, 10 May 2026 09:26:05 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/10/09/108501655-0-image-a-4_1778403434958.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15807531/Pete-Wicks-chivalrous-cuddles-girlfriend-Olivia-Attwood-collecting-airport.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
+          "snippet": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 12:53:11 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/11/11/108520759-0-image-a-34_1778495994660.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15807531/Pete-Wicks-chivalrous-cuddles-girlfriend-Olivia-Attwood-collecting-airport.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
+          "snippet": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 11:53:11 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/11/11/108520759-0-image-a-34_1778495994660.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15807315/Pete-Wicks-teased-pal-Sam-Thompson-romance-girlfriend-Olivia-Attwood.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Pete Wicks is teased by pal Sam Thompson over his romance with 'girlfriend' Olivia Attwood after they attended her birthday bash",
+          "snippet": "The longtime pals have been in the early stages of a romance, after being pictured kissing on a night out in March.",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 11:51:54 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/11/10/108519873-0-image-a-11_1778493448077.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15841969/Olivia-Attwood-signing-seven-figure-deal-beauty-brand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Olivia Attwood 'boosts her growing bank balance by signing a seven-figure deal with beauty brand' after launching her bid to crack America",
+          "snippet": "Olivia Attwood 'boosts her growing bank balance by signing a seven-figure deal with beauty brand' after launching her bid to crack America Have got a story? Email tips@dailymail.co.uk Want to read our hottest showbiz scoops for free? readers can claim three months of DM+ on us when you sign up to…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 22:19:36 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/23/108814705-0-image-a-29_1779488183128.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15839951/Millie-Mackintosh-rubbishes-glamorous-Chelsea-lifestyle-says-travelled-west-London-set-BUS-bonds-Olivia-Attwood-failed-marriages.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Millie Mackintosh rubbishes glamorous Made In Chelsea lifestyle and says she travelled to west London set on the BUS as she bonds with Olivia Attwood over failed marriages",
+          "snippet": "Millie Mackintosh has dismissed the affluent 'lifestyle' portrayed on Made In Chelsea as 'fabricated' and says she travelled to the west London set on public transport after being cast entirely by accident. The personality, 36, became a household name after landing a prominent role in the hugely…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 16:42:49 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/22/09/108796197-0-image-a-23_1779440031887.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.27,
+        "zionist": 0.415,
+        "atlanticist": 0.405,
+        "statist": -0.1,
+        "financialized": 0.57
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 2
+      },
+      "section": "chisme"
     },
     {
       "id": "7ff06e73564e",
