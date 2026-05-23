@@ -691,10 +691,33 @@ def main():
         # ── Path B Week 2 — bias_variance from bias_scorer output ──────
         bias_variance = scored.get('bias_variance', 0.0)
 
-        # Latest published timestamp across cluster
-        pub_dates = [a.get('published', '') for a in arts if a.get('published', '')]
-        pub_dates.sort(reverse=True)
-        published = pub_dates[0] if pub_dates else ''
+        # Latest published timestamp across cluster.
+        # String-sort on RFC-2822 dates ("Wed, 29 Apr 2026...") is WRONG —
+        # it ranks by day-of-week alphabetically, not chronologically.
+        # Parse to datetimes, take max, format back as the original string.
+        def _parse_pub(s):
+            if not s:
+                return None
+            try:
+                from email.utils import parsedate_to_datetime
+                if ',' in s:
+                    return parsedate_to_datetime(s)
+                from datetime import datetime as _dt
+                return _dt.fromisoformat(s.replace('Z', '+00:00'))
+            except Exception:
+                return None
+        _pub_pairs = [(s, _parse_pub(s)) for s in (a.get('published', '') for a in arts) if s]
+        _pub_pairs = [(s, d) for s, d in _pub_pairs if d is not None]
+        if _pub_pairs:
+            from datetime import timezone as _tz
+            # Normalize to UTC for comparison
+            _normalized = []
+            for s, d in _pub_pairs:
+                _normalized.append((s, d if d.tzinfo else d.replace(tzinfo=_tz.utc)))
+            _normalized.sort(key=lambda p: p[1], reverse=True)
+            published = _normalized[0][0]
+        else:
+            published = ''
 
         # ── Path B Week 3 — image/video + article_cards from framing_differ ──
         image_url = framed.get('image_url')
@@ -756,10 +779,31 @@ def main():
             'section':         classify_story(sources, headline),
         })
 
-    # Sort: geo-frame + blindspot stories first, then by source count
+    # Sort: recency tier FIRST (so a 13-day-old blackout can't outrank
+    # today's stories), then geo-frame priority + blindspot signal + source
+    # count within the same tier. Previously had no recency factor at all,
+    # which is why the same May 10 Iran cluster kept the front page for
+    # 13 days even after fresher content landed.
+    from datetime import datetime as _dt, timezone as _tz
+    from email.utils import parsedate_to_datetime as _parsedate
+    _now = _dt.now(_tz.utc)
+    def _story_age_hours(s):
+        p = s.get('published', '')
+        if not p:
+            return 9999
+        try:
+            d = _parsedate(p) if ',' in p else _dt.fromisoformat(p.replace('Z', '+00:00'))
+            if d.tzinfo is None:
+                d = d.replace(tzinfo=_tz.utc)
+            return (_now - d).total_seconds() / 3600.0
+        except Exception:
+            return 9999
     def sort_key(s):
+        age_h = _story_age_hours(s)
+        # 0=today, 1=this-week, 2=this-month, 3=older. Lower-better.
+        recency = 0 if age_h < 24 else 1 if age_h < 168 else 2 if age_h < 720 else 3
         geo_priority = 2 if s['geo_frame'] == 'blackout' else 1 if s['geo_frame'] == 'mono-frame' else 0
-        return (-geo_priority, -s['blindspot_score'], -len(s['sources']))
+        return (recency, -geo_priority, -s['blindspot_score'], -len(s['sources']))
     stories.sort(key=sort_key)
 
     # Build ordered section manifest — only sections that have stories, in newspaper order

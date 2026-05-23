@@ -57,6 +57,13 @@ echo "[2.5/4] Generating story cards..."
 $PY "$REPO/zombie760.github.io/scripts/generate_cards.py" || true
 echo "[2.5/4] Done."
 
+# ── 2.6. Publish corruption ledger from substrate ──────────────────────────
+# Pulls Telos/substrate/usa_corruption/claims.jsonl (same source the Discord
+# bot reads) → api/corruption.json for the live dashboard.
+echo "[2.6/4] Publishing corruption ledger..."
+$PY "$REPO/zombie760.github.io/scripts/publish_corruption.py" || true
+echo "[2.6/4] Done."
+
 # ── 3. Sync generated assets to staging ─────────────────────────────────────
 echo "[3/4] Syncing assets to staging..."
 rsync -a --delete \
@@ -101,6 +108,6 @@ echo "[5/6] Done."
 
 # ── 6. Broadcast new stories to Discord + X ─────────────────────────────────
 echo "[6/6] Broadcasting to Discord + X..."
-$PY "$REPO/broadcaster.py" || true
+$PY "$REPO/tools/broadcaster.py" || true
 echo "[6/6] Done."
 echo "=== DONE ==="
