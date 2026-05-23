@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-23T15:10:20.496454+00:00",
-  "count": 70,
+  "generated_at": "2026-05-23T15:25:38.919453+00:00",
+  "count": 68,
   "stories": [
     {
       "id": "64c47aff1fe9",
@@ -4997,145 +4997,6 @@
       "section": "sports"
     },
     {
-      "id": "b84adadb4411",
-      "headline": "Ông Zelensky: Gần 20 quốc gia quan tâm hợp tác drone với Ukraine",
-      "summary": "<a href=\"https://viettimes.vn/ong-zelensky-gan-20-quoc-gia-quan-tam-hop-tac-drone-voi-ukraine-post197554.html\"><img src=\"https://cdn.viettimes.vn/images/bb38a62a6880ba09fbe78ab8751d62b90432e1a52d038e874c41d1121ec521d234641d2bec2485f46cef7f59ac9405998cef3e385ee0a5aedcf5545bc0d146986a2c4b7432e71935262",
-      "published": "Sat, 23 May 2026 15:40:17 +0800",
-      "image_url": "https://static.ukrinform.com/photos/2025_12/thumb_files/630_360_1766672883-305.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 67,
-        "right_pct": 33,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 67
-      },
-      "bias_variance": 3.19,
-      "entity_count": 4,
-      "entity_list": [
-        "Costa",
-        "Norway",
-        "Ukraine",
-        "Zelensky"
-      ],
-      "sources": [
-        {
-          "id": "ukrinform_en",
-          "name": "Ukrinform",
-          "country": "UA",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "straits_times",
-          "name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "vietimes",
-          "name": "VietTimes",
-          "country": "VN",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.ukrinform.net/rubric-polytics/4121490-zelensky-costa-discuss-ukraines-eu-integration-steps.html",
-          "headline": "Zelensky, Costa discuss Ukraine's EU integration steps",
-          "snippet": "Ukrainian President Volodymyr Zelensky has discussed steps toward Ukraine's European integration with President of the European Council Antonio Costa. The head of state announced this on Telegram , Ukrinform reports. \"We discussed with Antonio our joint work on Ukraine's further European…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sat, 09 May 2026 15:00:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2025_12/thumb_files/630_360_1766672883-305.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-defense/4121768-ukraine-norway-agree-on-joint-production-of-155-mm-artillery-shells-zelensky.html",
-          "headline": "Ukraine, Norway agree on joint production of 155 mm artillery shells – Zelensky",
-          "snippet": "Ukraine and Norway have agreed to jointly produce long-range 155 mm artillery shells. According to Ukrinform, President Volodymyr Zelensky announced this in his evening address . “Our warriors on the frontline, in virtually all combat brigades, are talking about long-range artillery calibre –…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 21:52:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2025_12/thumb_files/630_360_1765272138-818.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.straitstimes.com/world/europe/zelenskiy-says-some-20-countries-interested-in-drone-deals-with-ukraine",
-          "headline": "Zelensky says some 20 countries interested in drone deals with Ukraine",
-          "snippet": "– Nearly 20 countries are interested in drone deals with Ukraine and four agreements have already been signed, Ukrainian President Volodymyr Zelensky said on May 11. Since the outbreak of the Iran war in late February, Mr Zelensky has managed to leverage Ukraine’s expertise in drone warfare into a…",
-          "source": "straits_times",
-          "source_name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "published": "Mon, 11 May 2026 18:16:47 +0800",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://viettimes.vn/ong-zelensky-gan-20-quoc-gia-quan-tam-hop-tac-drone-voi-ukraine-post197554.html",
-          "headline": "Ông Zelensky: Gần 20 quốc gia quan tâm hợp tác drone với Ukraine",
-          "snippet": "Ông Zelensky: Gần 20 quốc gia quan tâm hợp tác drone với Ukraine Tổng thống Volodymyr Zelensky cho biết gần 20 quốc gia đang đàm phán hợp tác drone với Ukraine, trong đó đã có 4 thỏa thuận được ký kết giữa lúc Kiev đẩy mạnh “ngoại giao drone”. Tổng thống Ukraine Volodymyr Zelensky đến tham dự hội…",
-          "source": "vietimes",
-          "source_name": "VietTimes",
-          "country": "VN",
-          "published": "Mon, 11 May 2026 18:00:35 +07:00",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.straitstimes.com/world/europe/ukraines-zelenskiy-says-proposal-of-associate-eu-membership-unfair",
-          "headline": "Ukraine’s Zelensky says proposal of associate EU membership ‘unfair’",
-          "snippet": "- Ukrainian President Volodymyr Zelensky said in a letter to leaders that a German proposal to grant Ukraine “associate” membership of the European Union was “unfair” because it would leave Kyiv without a voice inside the bloc. German Chancellor Friedrich Merz has suggested allowing Ukraine to…",
-          "source": "straits_times",
-          "source_name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "published": "Sat, 23 May 2026 15:40:17 +0800",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.207,
-        "atlanticist": 0.337,
-        "statist": 0.387,
-        "financialized": 0.38
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "pacific-asia": 2,
-        "eastern-europe": 1
-      },
-      "section": "tech"
-    },
-    {
       "id": "9a07b8c72c5e",
       "headline": "WHO Declares Global Health Emergency Over Ebola Outbreak",
       "summary": "<p>World Health Organization on Sunday declared a public health emergency of international concern following more than 300 suspected Ebola cases and 88 deaths linked to outbreaks in Democratic Republic of the Congo and Uganda. The WHO said the outbreak does not currently meet the criteria for a glob",
@@ -5265,7 +5126,7 @@
       "id": "7dcffd44c7b7",
       "headline": "Barthélémy Dias réagit au limogeage d’Ousmane Sonko par Bassirou Diomaye Faye",
       "summary": "<p><img width=\"756\" height=\"354\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" data-src=\"https://www.senenews.com/wp-content/uploads/2025/08/barthelemy-dias-ousmane-sonko.jpg\" class=\"attachment-full size-full wp-post-image lazy\" alt=\"Mairie de Dakar : Ce lundi 25 août,",
-      "published": "Sat, 23 May 2026 13:40:26 +0000",
+      "published": "Sat, 23 May 2026 15:12:22 +0000",
       "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/ous-ous-ous-ous-1106x675-1.webp",
       "video_url": null,
       "has_video": false,
@@ -5589,6 +5450,17 @@
           "country": "SN",
           "published": "Sat, 23 May 2026 13:40:26 +0000",
           "image_url": "https://www.senenews.com/wp-content/uploads/2025/07/pastef-e1673898601480-770x470-1.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/en-direct-live/direct-ousmane-sonko-limoge-zoom-sur-lossature-du-nouveau-gouvernement_587408.html",
+          "headline": "DIRECT : Ousmane Sonko limogé, zoom sur l’ossature du nouveau gouvernement",
+          "snippet": "Une rédaction libre et indépendante, soutenue aussi par une publicité responsable. Nous utilisons des cookies pour vous offrir un accès gratuit à l’information et améliorer votre navigation sur le site. Politique de confidentialité Nos sites SeneNews.com SeneNews Madame SeneNews Étudiant SeneNews…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sat, 23 May 2026 15:12:22 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/whatsapp-image-2026-05-23-at-15.09.29.jpeg",
           "video_url": null
         }
       ],
@@ -15569,172 +15441,6 @@
         "west": 2
       },
       "section": "chisme"
-    },
-    {
-      "id": "8eeda8c4ac2e",
-      "headline": "Three-hour meeting fails to end impasse over Congress Chief Minister for Kerala",
-      "summary": "Deepa Dasmunsi, party general secretary in charge of Kerala, told the media after the meeting that the high command had time until May 23 to finalise the candidate; senior leaders said party chief Mallikarjun Kharge and Lok Sabha LoP Rahul Gandhi were visibly dismayed by the poster wars and public m",
-      "published": "Mon, 11 May 2026 17:34:44 +0530",
-      "image_url": "https://th-i.thgim.com/public/incoming/rlh4s4/article70960183.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-05-09%20at%2019.38.59.jpeg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 100,
-        "center_pct": 0,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "left",
-        "dominant_pct": 100
-      },
-      "bias_variance": 1.0,
-      "entity_count": 11,
-      "entity_list": [
-        "Congress",
-        "Demand",
-        "Government",
-        "Impasse",
-        "Indecision",
-        "Kerala",
-        "Leaders",
-        "Nothing",
-        "Satheesan",
-        "Stabs",
-        "Uncertainty"
-      ],
-      "sources": [
-        {
-          "id": "hindu",
-          "name": "The Hindu",
-          "country": "IN",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "ndtv",
-          "name": "NDTV",
-          "country": "IN",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.thehindu.com/elections/kerala-assembly/impasse-over-congress-chief-minister-for-kerala/article70959697.ece",
-          "headline": "Three-hour meeting fails to end impasse over Congress Chief Minister for Kerala",
-          "snippet": "Congress workers remove posters supporting V.D. Satheesan, K.C. Venugopal and others from Vellayambalam in Thiruvananthapuram upon instructions from Congress high command as the race for Kerala Chief Minister continues. | Photo Credit: Nirmal Harindra The Congress’s bid to name a Chief Minister for…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sat, 09 May 2026 22:21:32 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/rlh4s4/article70960183.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-05-09%20at%2019.38.59.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/national/kerala/uncertainty-continues-over-congress-kerala-cm-pick/article70962590.ece",
-          "headline": "Uncertainty continues over Congress’ Kerala CM pick",
-          "snippet": "Posters supporting K. C. Venugopal and V. D. Satheesan kept next to each other at Vellayambalam circle as the Congress race for Kerala Chief Minister continues. | Photo Credit: The Hindu Uncertainty continued to loom over the Congress’s Chief Minister pick for Kerala, with the party’s high command…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 20:39:36 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/tys7zd/article70962932.ece/alternates/LANDSCAPE_1200/standalone_3colG81FV3J2C.4.jpg.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/national/kerala/in-kerala-nearly-half-of-congress-mla-elects-are-young-faces/article70962314.ece",
-          "headline": "In Kerala, nearly half of Congress’ MLA-elects are young faces",
-          "snippet": "Youth Congress leader Abin Varkey, who is among the first-time MLAs of the Congress, defeated Health Minister Veena George in the Aranmula Assembly constituency. | Photo Credit: KAMAL The crop of young Congress leaders, all first-time legislators, are impatiently waiting to kick-start their…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 19:15:33 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/rh4x9a/article70962569.ece/alternates/LANDSCAPE_1200/80693_4_5_2026_19_45_15_1_ABINVARKEY.JPG",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ndtv.com/india-news/pm-narendra-modis-stabs-own-leaders-in-back-jibe-at-congress-over-kerala-cm-indecision-11475639#publisher=newsstand",
-          "headline": "PM Modi's 'Stabs Own Leaders In Back' Jibe At Congress Over Kerala Indecision",
-          "snippet": "The Mallikarjun Kharge-led party hasn't yet announced the name of their chief ministerial pick in Kerala, several days after its alliance scored a landslide victory in the Assembly elections.",
-          "source": "ndtv",
-          "source_name": "NDTV",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 23:01:04 +0530",
-          "image_url": "https://c.ndtvimg.com/2026-05/8m6thl7s_modi_625x300_10_May_26.jpg?im=FeatureCrop,algorithm=dnn,width=1200,height=738",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/national/kerala/in-kerala-nearly-half-of-congress-mla-elects-are-young-faces/article70962314.ece",
-          "headline": "In Kerala, nearly half of Congress’ MLAs-elect are young faces",
-          "snippet": "Youth Congress leader Abin Varkey, who is among the first-time MLAs of the Congress, defeated Health Minister Veena George in the Aranmula Assembly constituency. | Photo Credit: KAMAL The crop of young Congress leaders, all first-time legislators, are impatiently waiting to kick-start their…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 23:44:03 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/rh4x9a/article70962569.ece/alternates/LANDSCAPE_1200/80693_4_5_2026_19_45_15_1_ABINVARKEY.JPG",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/elections/kerala-assembly/kerala-government-formation-udf-congress-delay-over-new-cm-candidate-live-updates-may-11-2026/article70961445.ece",
-          "headline": "Kerala Government formation LIVE: Impasse over chief ministerial candidate in Congress",
-          "snippet": "Amid suspense over the next Kerala Chief Minister, Senior Congress leader Ramesh Chennithala launched a sharp attack on Prime Minister Narendra Modi, remarking that the appears to have “memory loss” regarding his own party’s history of leadership delays in Delhi. Responding to the Prime Minister’s…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Mon, 11 May 2026 11:24:08 +0530",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.ndtv.com/india-news/kerala-chief-minister-rahul-gandhi-kerala-chief-minister-or-nothing-vd-satheesans-big-demand-to-congress-11479048#publisher=newsstand",
-          "headline": "Kerala Chief Minister Or Nothing: VD Satheesan's Big Demand To Congress",
-          "snippet": "VD Satheesan - who is the choice of the people as well as the Congress's Keral ally and UDF constituent IUML -- is not ready to accept a secondary role.",
-          "source": "ndtv",
-          "source_name": "NDTV",
-          "country": "IN",
-          "published": "Mon, 11 May 2026 17:34:44 +0530",
-          "image_url": "https://c.ndtvimg.com/2026-05/lq7cept_vd-satheesan-rahul-gandhi-_650x400_11_May_26.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/national/kerala/bjp-wades-into-power-struggle-in-congress-for-keralas-chief-minister-post/article70965165.ece",
-          "headline": "BJP wades into power struggle in Congress for Kerala’s Chief Minister post",
-          "snippet": "File photo of Kerala chief Rajeev Chandrasekhar | Photo Credit: The Hindu The Bharatiya Janata Party (BJP) on Monday (May 11, 2026) sought to further muddy the alleged “cloak-and-dagger power struggle” in the Congress for the post of Kerala Chief Minister . State president, Rajeev Chandrasekhar,…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Mon, 11 May 2026 16:22:20 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/do67k/article70965196.ece/alternates/LANDSCAPE_1200/NH28RajeevChandrasekhar02.JPG",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.35,
-        "atlanticist": 0.35,
-        "statist": 0.25,
-        "financialized": 0.35
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "global-south": 2
-      },
-      "section": "world"
     },
     {
       "id": "cdae2cc1c666",
