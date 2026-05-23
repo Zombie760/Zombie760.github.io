@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-23T14:24:52.127437+00:00",
-  "count": 70,
+  "generated_at": "2026-05-23T14:39:56.717021+00:00",
+  "count": 73,
   "stories": [
     {
       "id": "64c47aff1fe9",
@@ -1043,14 +1043,14 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 58,
-        "right_pct": 42,
+        "center_pct": 62,
+        "right_pct": 38,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 58
+        "dominant_pct": 62
       },
-      "bias_variance": 1.67,
-      "entity_count": 25,
+      "bias_variance": 1.6,
+      "entity_count": 26,
       "entity_list": [
         "ANTARA",
         "Afghan",
@@ -1069,6 +1069,7 @@
         "Meloni",
         "Ministry",
         "Nassr",
+        "Pakistan",
         "Prepares",
         "Program",
         "Project",
@@ -1221,6 +1222,18 @@
           "geo_cluster": "africa",
           "factuality": "unknown",
           "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "khaama",
+          "name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
           "parent_company": ""
         }
       ],
@@ -1444,16 +1457,27 @@
           "published": "Fri, 22 May 2026 11:35:29 +0000",
           "image_url": "http://images.euronews.com/articles/stories/09/76/83/49/640x360_cmsv2_8c428188-c013-5e3f-8c69-58bb6d014087-9768349.jpg?1779423705",
           "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/pakistan-deploys-8000-troops-and-fighter-jets-to-saudi-arabia/",
+          "headline": "Pakistan deploys 8,000 troops and fighter jets to Saudi Arabia",
+          "snippet": "Reuters reported that Pakistan has deployed significant military forces to Saudi Arabia during the ongoing conflict involving Iran. According to the report, Pakistan sent 8,000 troops, around 16 jointly produced Chinese-Pakistani JF-17 fighter jets, two drone squadrons and China’s HQ-9 air defense…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Tue, 19 May 2026 08:17:49 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.221,
-        "zionist": 0.312,
-        "atlanticist": 0.415,
-        "statist": 0.195,
-        "financialized": 0.46
+        "interventionist": 0.219,
+        "zionist": 0.319,
+        "atlanticist": 0.413,
+        "statist": 0.209,
+        "financialized": 0.478
       },
-      "fp_source_count": 11,
+      "fp_source_count": 12,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
@@ -1462,7 +1486,7 @@
         "pacific-asia": 1,
         "west": 3,
         "middle-east": 4,
-        "global-south": 1
+        "global-south": 2
       },
       "section": "sports",
       "is_front_page": true
@@ -1480,16 +1504,15 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 44,
-        "right_pct": 56,
+        "center_pct": 56,
+        "right_pct": 44,
         "state_count": 0,
-        "dominant": "right",
+        "dominant": "center",
         "dominant_pct": 56
       },
-      "bias_variance": 2.69,
-      "entity_count": 23,
+      "bias_variance": 2.11,
+      "entity_count": 20,
       "entity_list": [
-        "Alignment",
         "Arbitrum",
         "Check",
         "China",
@@ -1498,12 +1521,10 @@
         "Doing",
         "Estranged",
         "Everything",
-        "Fault",
         "Helps",
         "Inspect",
         "Jinping",
         "Korea",
-        "Lines",
         "Naval",
         "North",
         "Partnership",
@@ -1587,18 +1608,6 @@
           "parent_company": "Fox Corp"
         },
         {
-          "id": "national_interest",
-          "name": "The National Interest",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
           "id": "war_on_rocks",
           "name": "War on the Rocks",
           "country": "US",
@@ -1613,6 +1622,18 @@
         {
           "id": "pajhwok_en",
           "name": "Pajhwok Afghan News",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "khaama",
+          "name": "Khaama Press Afghanistan",
           "country": "AF",
           "bloc": "non-aligned",
           "bias_tier": "independent",
@@ -1702,17 +1723,6 @@
           "video_url": null
         },
         {
-          "url": "https://nationalinterest.org/blog/silk-road-rivalries/the-fault-lines-in-the-china-russia-iran-north-korea-alignment",
-          "headline": "The Fault Lines in the China-Russia-Iran-North Korea Alignment",
-          "snippet": "Treating America’s various adversaries as monolithic in their geopolitical outlook—and ignoring their internal frustrations with one another—would be a vast strategic mistake. The post <a…",
-          "source": "national_interest",
-          "source_name": "The National Interest",
-          "country": "US",
-          "published": "Fri, 22 May 2026 14:00:00 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
           "url": "https://www.breitbart.com/asia/2026/05/22/report-chinas-xi-jinping-planning-trip-estranged-north-korea/",
           "headline": "Report: China's Xi Jinping Planning Trip to Estranged North Korea",
           "snippet": "Reports in South Korean media this week claimed that genocidal Chinese dictator Xi Jinping is planning to visit North Korea in the near future for only the second time since seizing power in China and may arrive in Pyongyang next week. Neither the governments of China nor North Korea have offered…",
@@ -1744,23 +1754,34 @@
           "published": "Thu, 21 May 2026 06:01:25 +0000",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/chinas-xi-may-visit-north-korea-soon/",
+          "headline": "China’s Xi may visit North Korea soon",
+          "snippet": "Yonhap News Agency reported that Xi Jinping may soon visit North Korea in an effort to help revive diplomacy between Kim Jong Un and Donald Trump. According to senior South Korean government officials cited by Yonhap, Chinese security and protocol teams recently traveled to Pyongyang to prepare for…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Thu, 21 May 2026 13:44:00 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.227,
-        "zionist": 0.411,
-        "atlanticist": 0.444,
-        "statist": 0.026,
-        "financialized": 0.576
+        "interventionist": 0.282,
+        "zionist": 0.422,
+        "atlanticist": 0.467,
+        "statist": 0.033,
+        "financialized": 0.617
       },
       "fp_source_count": 9,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
-        "west": 7,
+        "west": 6,
         "middle-east": 1,
-        "global-south": 1
+        "global-south": 2
       },
       "section": "sports",
       "is_front_page": true
@@ -2569,6 +2590,344 @@
       "section": "entertainment"
     },
     {
+      "id": "1ca79f410101",
+      "headline": "Suvendu Adhikari: The Strongman Chief Minister Bengal Now Has to Live With - TheWire.in",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOWWNyT1JRU2puVHpLRXByWVIyN2tXbzlUN3Q5UmNjaHM2cmltYWQ5TkVxZUpMa3QtR2E2NFQwZjhsSWZucGxYeklKdHhKS1Q1bUJfdFYwdi1TTnBnVWZBR3JxZ0k2MHlya24wMnBKdnFncUVFelR4MmVwaktLTHpxVWRIc3ZYRi1XSkxNSk5td3dXZ3N4RWlORG9EZklHN1RNQkdJT0p5YXFodmlwQ2RnQtIBugFBVV95cU",
+      "published": "Sat, 23 May 2026 20:03:19 +0530",
+      "image_url": "https://c.ndtvimg.com/2024-08/81hfi6o_sheikh-hasina_625x300_07_August_24.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 67,
+        "center_pct": 33,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "left",
+        "dominant_pct": 67
+      },
+      "bias_variance": 2.27,
+      "entity_count": 35,
+      "entity_list": [
+        "Adhikari",
+        "Advisor",
+        "Appointed",
+        "Awami",
+        "Ayushman",
+        "Bangladeshis",
+        "Bengal",
+        "Bharat",
+        "Bihar",
+        "Cabinet",
+        "Census",
+        "Commission",
+        "Courts",
+        "Detained",
+        "Directly",
+        "Hasina",
+        "Killers",
+        "Leadership",
+        "Leads",
+        "League",
+        "Mamatas",
+        "Observer",
+        "Oriented",
+        "Payment",
+        "People",
+        "Plaza",
+        "Praises",
+        "Right",
+        "Sheikh",
+        "Shooting",
+        "Special",
+        "Strong",
+        "Strongman",
+        "Suvendu",
+        "TheWire"
+      ],
+      "sources": [
+        {
+          "id": "ndtv",
+          "name": "NDTV",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_wire_in",
+          "name": "The Wire (India)",
+          "country": "IN",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "bbc_news",
+          "name": "BBC News",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "BBC (public)"
+        },
+        {
+          "id": "the_print",
+          "name": "The Print (India)",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.ndtv.com/india-news/sheikh-hasina-praises-suvendu-adhikari-strong-people-oriented-leadership-11471403#publisher=newsstand",
+          "headline": "Sheikh Hasina Praises Suvendu Adhikari: 'Strong, People-Oriented Leadership'",
+          "snippet": "Suvendu Adhikari was sworn in as Bengal's chief minister along with four other members of the state Council of Ministers at a high-profile ceremony.",
+          "source": "ndtv",
+          "source_name": "NDTV",
+          "country": "IN",
+          "published": "Sat, 09 May 2026 16:52:05 +0530",
+          "image_url": "https://c.ndtvimg.com/2024-08/81hfi6o_sheikh-hasina_625x300_07_August_24.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/national/sheikh-hasina-awami-league-congratulate-suvendu-adhikari/article70959986.ece",
+          "headline": "Sheikh Hasina, Awami League congratulate Suvendu Adhikari",
+          "snippet": "West Bengal Chief Minister Suvendu Adhikari offers prayers at the Kalighat Temple after he takes oath, in Kolkata on May 9, 2026. Photo: Suvendhu Adhikari Official via Deposed Prime Minister of Bangladesh Sheikh Hasina has congratulated the new Chief Minister of West Bengal, Suvendu Adhikari . In a…",
+          "source": "hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Sat, 09 May 2026 23:44:44 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/rwv37g/article70960298.ece/alternates/LANDSCAPE_1200/20260509525L.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOeDJMQVhiR0ZxWFV3NkVfM1F4ODJxdnBzU280UGxFMEM2VEl0bkducG13WFVkRENOWlJDdW5kTDdCSnFnSHpRYjZpU0xSY1BxYVctTnFhQVpXX2RpUEoyQ1lmdm5na3p4eVg0VF9SV09Ndi1VTnNEeG9CRVY1bkdqZG83b25NdXFVR083WnYxeG5pMWR1TXM1YjdYQdIBoAFBVV95cUxNVFZsOFU4TjNWN3hLQ2c2ZVEyY2ZzWTcxUDE5WktYWTVqOUdMQWcxWlFQck5URjZxYjNreFFpSzNmM3kyTDNpZW1nY0xLOTNJaWNDR1hmU2JLSzlnVHdrdmFOSmZJWm1HSE14RVNqa2doaWVQYUVuSXh5X3dxOERBLUtpX0duTFhoY29nZ1RzQnNsTmFpaTVMVGtoZHhTRWUz?oc=5",
+          "headline": "Suvendu Adhikari, Once Mamatas Right-Hand Man, Is BJPs CM Pick for West Bengal - TheWire.in",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxOeDJMQVhiR0ZxWFV3NkVfM1F4ODJxdnBzU280UGxFMEM2VEl0bkducG13WFVkRENOWlJDdW5kTDdCSnFnSHpRYjZpU0xSY1BxYVctTnFhQVpXX2RpUEoyQ1lmdm5na3p4eVg0VF9SV09Ndi1VTnNEeG9CRVY1bkdqZG83b25NdXFVR083WnYxeG5pMWR1TXM1YjdYQdIBoAFBVV95cUxNVFZsOFU4TjNWN3hLQ2c2ZVEyY2…",
+          "source": "the_wire_in",
+          "source_name": "The Wire (India)",
+          "country": "IN",
+          "published": "Fri, 08 May 2026 11:34:21 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.bbc.com/news/articles/cwy2gp1wewjo?at_medium=RSS&at_campaign=rss",
+          "headline": "From trusted aide to biggest rival: Suvendu Adhikari becomes West Bengal chief minister",
+          "snippet": "A former ally of Mamata Banerjee, the BJP leader will be West Bengal’s next chief minister.",
+          "source": "bbc_news",
+          "source_name": "BBC News",
+          "country": "GB",
+          "published": "Fri, 08 May 2026 23:47:39 GMT",
+          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/09d2/live/32e2f320-4b7f-11f1-8c26-6bd0062f709f.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/national/west-bengal/suvendu-adhikari-the-bengal-pivot/article70960054.ece",
+          "headline": "Suvendu Adhikari | The Bengal pivot",
+          "snippet": "Illustration: Sreejith R. Kumar Weeks before Suvendu Adhikari defected from the Trinamool Congress to join the in December 2020 , several senior Trinamool leaders tried to persuade him to stay. But Mr. Adhikari’s close aides knew that he had made up his mind: he wanted to become the Chief Minister…",
+          "source": "hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Sat, 09 May 2026 22:22:00 +0530",
+          "image_url": "https://th-i.thgim.com/public/news/national/53txc/article70960047.ece/alternates/LANDSCAPE_1200/Suvendu_Adhikari.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ndtv.com/india-news/suvendu-adhikari-aide-chandranath-rath-killers-knew-where-he-sat-in-car-before-shooting-cops-11473556#publisher=newsstand",
+          "headline": "Suvendu Adhikari Aide's Killers Knew Where He Sat In Car Before Shooting: Cops",
+          "snippet": "Three people have been detained in connection with the killing and are being questioned, police said, adding that no arrests have been made so far.",
+          "source": "ndtv",
+          "source_name": "NDTV",
+          "country": "IN",
+          "published": "Sun, 10 May 2026 09:23:52 +0530",
+          "image_url": "https://c.ndtvimg.com/2026-05/rmmifmbo_suvendu-adhikari-pa-chandranath-rath_625x300_07_May_26.jpg?im=FeatureCrop,algorithm=dnn,width=1200,height=738",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZjRPMWxES1AzWDRmcjNtYW4wOHUtRWljRlI4ZUNNcGpMUlVFTWYzSjRCSzgyMVNFNTVIa1pZMlZUeC1GN3V2SlVrVmJzNW5xRFBWaUdJRjlXTU5PcUU2bFBtdTdNLVZhTXpzU0FiYVR6M2lpMVVFS1ZDNXJxY0NFWXRMYlZMRE5PdXpJVlZpZnBLQk5oUTdvWFZEMUk5T2doTEJXY2d2Zk5fRFk5dHZrcnd6Y2JoOU5aSGRxRtIBwgFBVV95cUxNWWpITDRaNzBuZTdWejFTRnZBQUFYLXlVdVpxSHktZGloTEhKTVdHWjllbkVPZnBtOXhmVmU3NnIyeTU0Q1BTdGRjSTFHYUppdFV1RlNiVjRITUxpUFZMT09BOGNkMzRSbDNONmR6OTlqb2JJY0JaSE9xMEZoZk51OE42a2FIR2tmRXRyQk9KU1h3NWRCLVZrVWdDSy0xMnVLNWt6cUxPTGJmUTJyYTJlSVpkSGUtRUx4WkZVWUthUnZSZw?oc=5",
+          "headline": "‘Special Roll Observer’ of SIR is Appointed Bengal CM Suvendu Adhikari’s Advisor - TheWire.in",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOZjRPMWxES1AzWDRmcjNtYW4wOHUtRWljRlI4ZUNNcGpMUlVFTWYzSjRCSzgyMVNFNTVIa1pZMlZUeC1GN3V2SlVrVmJzNW5xRFBWaUdJRjlXTU5PcUU2bFBtdTdNLVZhTXpzU0FiYVR6M2lpMVVFS1ZDNXJxY0NFWXRMYlZMRE5PdXpJVlZpZnBLQk5oUTdvWFZEMUk5T2doTEJXY2d2Zk5fRFk5dHZrcnd6Y2JoOU5aSG…",
+          "source": "the_wire_in",
+          "source_name": "The Wire (India)",
+          "country": "IN",
+          "published": "Sun, 10 May 2026 04:45:00 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.ndtv.com/india-news/chandranath-rath-a-upi-payment-at-toll-plaza-that-may-lead-cops-to-suvendu-adhikari-aides-killers-11474385#publisher=newsstand",
+          "headline": "A UPI Payment At Toll Plaza That May Lead Cops To Suvendu Adhikari Aide's Killers",
+          "snippet": "Chandranath Rath, a close aide of West Bengal's new Chief Minister Suvendu Adhikari, was shot dead on a busy road on Wednesday.",
+          "source": "ndtv",
+          "source_name": "NDTV",
+          "country": "IN",
+          "published": "Sun, 10 May 2026 14:09:40 +0530",
+          "image_url": "https://c.ndtvimg.com/2026-05/3c6didcg_chandranath-rath-_625x300_10_May_26.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/elections/west-bengal-assembly/wb-cm-suvendu-adhikari-to-chair-first-cabinet-meeting-today/article70963091.ece",
+          "headline": "WB CM Suvendu Adhikari to chair first cabinet meeting today",
+          "snippet": "West Bengal Chief Minister Suvendu Adhikari. | Photo Credit: West Bengal Chief Minister Suvendu Adhikari will hold his first cabinet meeting on Monday (May 11, 2026) at Nabanna, the administrative headquarters of the State. On Monday (May 11), Mr. Adhikari will enter Nabanna for the first time as…",
+          "source": "hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Sun, 10 May 2026 22:19:12 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/x8dzq9/article70963252.ece/alternates/LANDSCAPE_1200/PTI05_10_2026_000753B.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOWWNyT1JRU2puVHpLRXByWVIyN2tXbzlUN3Q5UmNjaHM2cmltYWQ5TkVxZUpMa3QtR2E2NFQwZjhsSWZucGxYeklKdHhKS1Q1bUJfdFYwdi1TTnBnVWZBR3JxZ0k2MHlya24wMnBKdnFncUVFelR4MmVwaktLTHpxVWRIc3ZYRi1XSkxNSk5td3dXZ3N4RWlORG9EZklHN1RNQkdJT0p5YXFodmlwQ2RnQtIBugFBVV95cUxQV1RaRFlURHk4UlJfX05NektWbjdxMzBTRzJJZDNiOEtOcDMxa3p2blBLLWFjRWs4RFo5LXhlNHh5RHpmSkgwVzkyeDV6R1VlUDJxSXdNb21HR2Ixei1qMWo3VE9HQ0w0VE9waG1nTjdCRjZ2Vy1oZk9rdG5oaG1iVWNxNXloUjBLSFJodnlTZkZVcklqM2pXYWhGLTVVS1JCdEh6VGYwRkhqc1FVVGVNdk5Ec2ZBQ0Jyc0E?oc=5",
+          "headline": "Suvendu Adhikari: The Strongman Chief Minister Bengal Now Has to Live With - TheWire.in",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOWWNyT1JRU2puVHpLRXByWVIyN2tXbzlUN3Q5UmNjaHM2cmltYWQ5TkVxZUpMa3QtR2E2NFQwZjhsSWZucGxYeklKdHhKS1Q1bUJfdFYwdi1TTnBnVWZBR3JxZ0k2MHlya24wMnBKdnFncUVFelR4MmVwaktLTHpxVWRIc3ZYRi1XSkxNSk5td3dXZ3N4RWlORG9EZklHN1RNQkdJT0p5YXFodmlwQ2RnQtIBugFBVV95cU…",
+          "source": "the_wire_in",
+          "source_name": "The Wire (India)",
+          "country": "IN",
+          "published": "Sun, 10 May 2026 07:35:23 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/elections/west-bengal-assembly/suvendu-adhikari-to-chair-first-cabinet-meeting-on-may-11-2026/article70963091.ece",
+          "headline": "Suvendu Adhikari to chair first Cabinet meeting on May 11",
+          "snippet": "West Bengal Chief Minister Suvendu Adhikari. | Photo Credit: West Bengal Chief Minister Suvendu Adhikari will hold his first cabinet meeting on Monday (May 11, 2026) at Nabanna, the administrative headquarters of the State. On Monday (May 11), Mr. Adhikari will enter Nabanna for the first time as…",
+          "source": "hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Mon, 11 May 2026 02:31:32 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/x8dzq9/article70963252.ece/alternates/LANDSCAPE_1200/PTI05_10_2026_000753B.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ndtv.com/india-news/chandranath-rath-murder-3-arrested-from-up-bihar-in-suvendu-adhikaris-aide-murder-case-11477011#publisher=newsstand",
+          "headline": "UPI Payment Leads Cops To Suvendu Adhikari's Aide's Killers In UP, Bihar",
+          "snippet": "The three men identified as Vishal Srivastava, Raj Singh and Mayank Mishra have been arrested in Bihar and Uttar Pradesh.",
+          "source": "ndtv",
+          "source_name": "NDTV",
+          "country": "IN",
+          "published": "Mon, 11 May 2026 11:26:36 +0530",
+          "image_url": "https://c.ndtvimg.com/2026-05/3c6didcg_chandranath-rath-_625x300_10_May_26.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=738",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/national/west-bengal/west-bengal-chief-minister-suvendu-adhikari-chairs-first-cabinet-meeting-finalises-six-projects/article70964807.ece",
+          "headline": "Suvendu Adhikari Cabinet approves BSF land transfer for border fencing, initiates Census exercise in Bengal",
+          "snippet": "West Bengal Chief Minister Suvendu Adhikari accorded Guard of Honour at Nabanna after assuming office, in Howrah on May 11, 2026. | Photo Credit: After taking oath as West Bengal Chief Minister on May 9, 2026, Suvendu Adhikari chaired his first Cabinet meeting on Monday (May 11, 2026) and said his…",
+          "source": "hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Mon, 11 May 2026 14:44:59 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/113q5g/article70964810.ece/alternates/LANDSCAPE_1200/PTI05_11_2026_000129A.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://theprint.in/india/bengal-govt-to-decide-on-da-7th-pay-commission-in-next-cabinet-meeting-cm-suvendu-adhikari/2928145/",
+          "headline": "Bengal govt to decide on DA, 7th Pay Commission in next cabinet meeting: CM Suvendu Adhikari",
+          "snippet": "Kolkata, May 11 (PTI) The second cabinet meeting of the West Bengal government is scheduled to be held on May 18, where key decisions on DA, implementation of the Seventh Pay Commission and other administrative issues are expected to be taken, Chief Minister Suvendu Adhikari said on Monday.…",
+          "source": "the_print",
+          "source_name": "The Print (India)",
+          "country": "IN",
+          "published": "Mon, 11 May 2026 13:15:58 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/national/west-bengal/west-bengal-gets-3000-crore-for-healthcare-revamp-ayushman-bharat-card-rollout-from-july-cm-suvendu-adhikari/article71014164.ece",
+          "headline": "West Bengal gets ₹3,000 crore for healthcare revamp, Ayushman Bharat card rollout from July: CM Suvendu Adhikari",
+          "snippet": "West Bengal Suvendu Adhikari said that opportunities will also be made available to fresh applicants who did not opt for the Swasthya Sathi cards. File | Photo Credit: West Bengal Chief Minister Suvendu Adhikari on Saturday (May 23, 2026) announced that his government has received a sanction of…",
+          "source": "hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Sat, 23 May 2026 18:57:19 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/h45h0s/article71014212.ece/alternates/LANDSCAPE_1200/20260520353L.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPQklXNm9PWHQxSTVhUGhsR3p2NlpoUDhHWUk3aGM3MnBjMkxrSTlEeFFCbncxRGhaSWw5ZVN4cmE0M0pGWi00S1FzdUN3ZjBCTzNrTEhvU1BvVVdlMGNPeUIxZGRXU3kzNU1EMUhZcWljRFo5RUczNkZxU1dLWGxPMmlBWU9ydXpQdmhYZEpmemRUb3MtN3ZOeHJOeVB5YUFBTk5KU0p4Zmt2alVJR29iRGtDaWhsX09za3RzY1AxbG83YWdrOE1WZGZIcV85YVFaS0l3QlBQd9IB3AFBVV95cUxOV25GUVFPQ19jM29xMkM3NzJ4Z1BNY1JmMjZTbTRBaDRvVy14N3MtM0dFbjNMWUNfNmpSREhWTGN1OFc1VTlOd1p6MUxjUkZUd1ZCMnVqdTFmMTNOd19sc0hUVUk0Y0l0T2d2YVhrTk9Lbmgyd1VRODJMVzhtUDJHOU5nQU9xOFJ5TENMVE1oV1NXd2p0YUw2amdrMkctQ3A1SjBjN2JEWXdpNllFX0lPZE1jWnB1V083Sm16dnloUk5oekdzd0NKcV82dTJNQTdvQzllbEZ1Y2p6TU9m?oc=5",
+          "headline": "West Bengal CM Suvendu Adhikari Says Govt to Hand Over Detained Bangladeshis Directly to BSF, Not Courts - TheWire.in",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxPQklXNm9PWHQxSTVhUGhsR3p2NlpoUDhHWUk3aGM3MnBjMkxrSTlEeFFCbncxRGhaSWw5ZVN4cmE0M0pGWi00S1FzdUN3ZjBCTzNrTEhvU1BvVVdlMGNPeUIxZGRXU3kzNU1EMUhZcWljRFo5RUczNkZxU1dLWGxPMmlBWU9ydXpQdmhYZEpmemRUb3MtN3ZOeHJOeVB5YUFBTk5KU0p4Zmt2alVJR29iRGtDaWhsX09za3…",
+          "source": "the_wire_in",
+          "source_name": "The Wire (India)",
+          "country": "IN",
+          "published": "Fri, 22 May 2026 11:55:16 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/national/west-bengal/west-bengal-gets-3000-crore-for-healthcare-revamp-ayushman-bharat-card-rollout-from-july-cm-suvendu-adhikari/article71014164.ece",
+          "headline": "Ayushman Bharat scheme to roll out in West Bengal from July 1: CM Suvendu Adhikari",
+          "snippet": "West Bengal Suvendu Adhikari said that opportunities will also be made available to fresh applicants who did not opt for the Swasthya Sathi cards. File | Photo Credit: West Bengal Chief Minister Suvendu Adhikari on Saturday held a meeting with Union Health Minister J. P. Nadda and announced that…",
+          "source": "the_hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Sat, 23 May 2026 20:03:19 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/h45h0s/article71014212.ece/alternates/LANDSCAPE_1200/20260520353L.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.144,
+        "zionist": 0.308,
+        "atlanticist": 0.396,
+        "statist": 0.174,
+        "financialized": 0.354
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 1,
+        "global-south": 5
+      },
+      "section": "world"
+    },
+    {
       "id": "c847aef95702",
       "headline": "Guardiola confirma su salida del Manchester City: \"Es mi momento\"",
       "summary": "<p>El técnico español de 55 años se despidió del club que dirigió por 10 años y en más de 500 partidos, en los que conquistó 20 títulos oficiales y revolucionó el fútbol inglés. “Nada es eterno”, aseguró en un comunicado.</p>\n<p>The post <a href=\"https://www.elnacional.com/2026/05/guardiola-deja-el-",
@@ -2797,7 +3156,7 @@
       "id": "9cdbe9b98ae3",
       "headline": "Cuándo juega River vs. San Lorenzo, por los octavos de final del Torneo Apertura 2026",
       "summary": "El encuentro se disputa este domingo a las 19 en el estadio Monumental, con arbitraje de Sebastián Zunino y televisación de ESPN Premium",
-      "published": "Sat, 23 May 2026 14:09:37 +0000",
+      "published": "Sat, 23 May 2026 14:21:15 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/ZEQNLMYRZNGHLEWYBWOYMYZYWQ.jpg?auth=b326e639637aa77f3f9f2f15a14edebe00a545a0edb3109242f39fb4e8f4420b&smart=true&width=2000&height=1333",
       "video_url": null,
       "has_video": false,
@@ -2813,7 +3172,7 @@
         "dominant_pct": 80
       },
       "bias_variance": 0.76,
-      "entity_count": 34,
+      "entity_count": 35,
       "entity_list": [
         "Alianza",
         "Alineaciones",
@@ -2824,6 +3183,7 @@
         "Bombonera",
         "Callao",
         "Central",
+        "Chankas",
         "Cristal",
         "Esgrima",
         "Estudiantes",
@@ -3341,6 +3701,17 @@
           "published": "Sat, 23 May 2026 14:09:37 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/RYV7UR3LOZG6ZNL22ZLJBG3F64.png?auth=0de59f98115d33c0715ff1c42f3aad310809246bf40cbac6ef5ad16514360b4b&smart=true&width=1920&height=1080",
           "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/22/a-que-hora-juega-alianza-lima-vs-los-chankas-partido-matute-fecha-16-torneo-apertura-liga-1-2026-horario/",
+          "headline": "A qué hora juega Alianza Lima vs Los Chankas HOY: partido decisivo en Matute por fecha 16 del Torneo Apertura de Liga 1 2026",
+          "snippet": "Alianza Lima recibe a Los Chankas en Matute por la penúltima fecha del Torneo Apertura 2026. Hoy, sábado 23 de mayo, el estadio Alejandro Villanueva será escenario de uno de los partidos más trascendentales de la temporada en la Liga 1 2026 . Alianza Lima y Los Chankas protagonizarán un duelo…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 14:21:15 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/6EDXPGPXDBCYLAPWVY2K3OCVSM.png?auth=bd6c44fed6a7dd889440e55acd8617ebd35df47421264e101dd6f62261f9ea00&smart=true&width=1920&height=1080",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -3356,321 +3727,6 @@
       "geo_frame_topic": null,
       "geo_breakdown": {
         "latin-america": 5
-      },
-      "section": "world"
-    },
-    {
-      "id": "1ca79f410101",
-      "headline": "Suvendu Adhikari: The Strongman Chief Minister Bengal Now Has to Live With - TheWire.in",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOWWNyT1JRU2puVHpLRXByWVIyN2tXbzlUN3Q5UmNjaHM2cmltYWQ5TkVxZUpMa3QtR2E2NFQwZjhsSWZucGxYeklKdHhKS1Q1bUJfdFYwdi1TTnBnVWZBR3JxZ0k2MHlya24wMnBKdnFncUVFelR4MmVwaktLTHpxVWRIc3ZYRi1XSkxNSk5td3dXZ3N4RWlORG9EZklHN1RNQkdJT0p5YXFodmlwQ2RnQtIBugFBVV95cU",
-      "published": "Sat, 23 May 2026 18:57:19 +0530",
-      "image_url": "https://c.ndtvimg.com/2024-08/81hfi6o_sheikh-hasina_625x300_07_August_24.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 60,
-        "center_pct": 40,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "left",
-        "dominant_pct": 60
-      },
-      "bias_variance": 2.27,
-      "entity_count": 35,
-      "entity_list": [
-        "Adhikari",
-        "Advisor",
-        "Appointed",
-        "Awami",
-        "Ayushman",
-        "Bangladeshis",
-        "Bengal",
-        "Bharat",
-        "Bihar",
-        "Cabinet",
-        "Census",
-        "Commission",
-        "Courts",
-        "Detained",
-        "Directly",
-        "Hasina",
-        "Killers",
-        "Leadership",
-        "Leads",
-        "League",
-        "Mamatas",
-        "Observer",
-        "Oriented",
-        "Payment",
-        "People",
-        "Plaza",
-        "Praises",
-        "Right",
-        "Sheikh",
-        "Shooting",
-        "Special",
-        "Strong",
-        "Strongman",
-        "Suvendu",
-        "TheWire"
-      ],
-      "sources": [
-        {
-          "id": "ndtv",
-          "name": "NDTV",
-          "country": "IN",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "hindu",
-          "name": "The Hindu",
-          "country": "IN",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_wire_in",
-          "name": "The Wire (India)",
-          "country": "IN",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "bbc_news",
-          "name": "BBC News",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": "BBC (public)"
-        },
-        {
-          "id": "the_print",
-          "name": "The Print (India)",
-          "country": "IN",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.ndtv.com/india-news/sheikh-hasina-praises-suvendu-adhikari-strong-people-oriented-leadership-11471403#publisher=newsstand",
-          "headline": "Sheikh Hasina Praises Suvendu Adhikari: 'Strong, People-Oriented Leadership'",
-          "snippet": "Suvendu Adhikari was sworn in as Bengal's chief minister along with four other members of the state Council of Ministers at a high-profile ceremony.",
-          "source": "ndtv",
-          "source_name": "NDTV",
-          "country": "IN",
-          "published": "Sat, 09 May 2026 16:52:05 +0530",
-          "image_url": "https://c.ndtvimg.com/2024-08/81hfi6o_sheikh-hasina_625x300_07_August_24.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/national/sheikh-hasina-awami-league-congratulate-suvendu-adhikari/article70959986.ece",
-          "headline": "Sheikh Hasina, Awami League congratulate Suvendu Adhikari",
-          "snippet": "West Bengal Chief Minister Suvendu Adhikari offers prayers at the Kalighat Temple after he takes oath, in Kolkata on May 9, 2026. Photo: Suvendhu Adhikari Official via Deposed Prime Minister of Bangladesh Sheikh Hasina has congratulated the new Chief Minister of West Bengal, Suvendu Adhikari . In a…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sat, 09 May 2026 23:44:44 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/rwv37g/article70960298.ece/alternates/LANDSCAPE_1200/20260509525L.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOeDJMQVhiR0ZxWFV3NkVfM1F4ODJxdnBzU280UGxFMEM2VEl0bkducG13WFVkRENOWlJDdW5kTDdCSnFnSHpRYjZpU0xSY1BxYVctTnFhQVpXX2RpUEoyQ1lmdm5na3p4eVg0VF9SV09Ndi1VTnNEeG9CRVY1bkdqZG83b25NdXFVR083WnYxeG5pMWR1TXM1YjdYQdIBoAFBVV95cUxNVFZsOFU4TjNWN3hLQ2c2ZVEyY2ZzWTcxUDE5WktYWTVqOUdMQWcxWlFQck5URjZxYjNreFFpSzNmM3kyTDNpZW1nY0xLOTNJaWNDR1hmU2JLSzlnVHdrdmFOSmZJWm1HSE14RVNqa2doaWVQYUVuSXh5X3dxOERBLUtpX0duTFhoY29nZ1RzQnNsTmFpaTVMVGtoZHhTRWUz?oc=5",
-          "headline": "Suvendu Adhikari, Once Mamatas Right-Hand Man, Is BJPs CM Pick for West Bengal - TheWire.in",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxOeDJMQVhiR0ZxWFV3NkVfM1F4ODJxdnBzU280UGxFMEM2VEl0bkducG13WFVkRENOWlJDdW5kTDdCSnFnSHpRYjZpU0xSY1BxYVctTnFhQVpXX2RpUEoyQ1lmdm5na3p4eVg0VF9SV09Ndi1VTnNEeG9CRVY1bkdqZG83b25NdXFVR083WnYxeG5pMWR1TXM1YjdYQdIBoAFBVV95cUxNVFZsOFU4TjNWN3hLQ2c2ZVEyY2…",
-          "source": "the_wire_in",
-          "source_name": "The Wire (India)",
-          "country": "IN",
-          "published": "Fri, 08 May 2026 11:34:21 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.bbc.com/news/articles/cwy2gp1wewjo?at_medium=RSS&at_campaign=rss",
-          "headline": "From trusted aide to biggest rival: Suvendu Adhikari becomes West Bengal chief minister",
-          "snippet": "A former ally of Mamata Banerjee, the BJP leader will be West Bengal’s next chief minister.",
-          "source": "bbc_news",
-          "source_name": "BBC News",
-          "country": "GB",
-          "published": "Fri, 08 May 2026 23:47:39 GMT",
-          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/09d2/live/32e2f320-4b7f-11f1-8c26-6bd0062f709f.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/national/west-bengal/suvendu-adhikari-the-bengal-pivot/article70960054.ece",
-          "headline": "Suvendu Adhikari | The Bengal pivot",
-          "snippet": "Illustration: Sreejith R. Kumar Weeks before Suvendu Adhikari defected from the Trinamool Congress to join the in December 2020 , several senior Trinamool leaders tried to persuade him to stay. But Mr. Adhikari’s close aides knew that he had made up his mind: he wanted to become the Chief Minister…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sat, 09 May 2026 22:22:00 +0530",
-          "image_url": "https://th-i.thgim.com/public/news/national/53txc/article70960047.ece/alternates/LANDSCAPE_1200/Suvendu_Adhikari.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ndtv.com/india-news/suvendu-adhikari-aide-chandranath-rath-killers-knew-where-he-sat-in-car-before-shooting-cops-11473556#publisher=newsstand",
-          "headline": "Suvendu Adhikari Aide's Killers Knew Where He Sat In Car Before Shooting: Cops",
-          "snippet": "Three people have been detained in connection with the killing and are being questioned, police said, adding that no arrests have been made so far.",
-          "source": "ndtv",
-          "source_name": "NDTV",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 09:23:52 +0530",
-          "image_url": "https://c.ndtvimg.com/2026-05/rmmifmbo_suvendu-adhikari-pa-chandranath-rath_625x300_07_May_26.jpg?im=FeatureCrop,algorithm=dnn,width=1200,height=738",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZjRPMWxES1AzWDRmcjNtYW4wOHUtRWljRlI4ZUNNcGpMUlVFTWYzSjRCSzgyMVNFNTVIa1pZMlZUeC1GN3V2SlVrVmJzNW5xRFBWaUdJRjlXTU5PcUU2bFBtdTdNLVZhTXpzU0FiYVR6M2lpMVVFS1ZDNXJxY0NFWXRMYlZMRE5PdXpJVlZpZnBLQk5oUTdvWFZEMUk5T2doTEJXY2d2Zk5fRFk5dHZrcnd6Y2JoOU5aSGRxRtIBwgFBVV95cUxNWWpITDRaNzBuZTdWejFTRnZBQUFYLXlVdVpxSHktZGloTEhKTVdHWjllbkVPZnBtOXhmVmU3NnIyeTU0Q1BTdGRjSTFHYUppdFV1RlNiVjRITUxpUFZMT09BOGNkMzRSbDNONmR6OTlqb2JJY0JaSE9xMEZoZk51OE42a2FIR2tmRXRyQk9KU1h3NWRCLVZrVWdDSy0xMnVLNWt6cUxPTGJmUTJyYTJlSVpkSGUtRUx4WkZVWUthUnZSZw?oc=5",
-          "headline": "‘Special Roll Observer’ of SIR is Appointed Bengal CM Suvendu Adhikari’s Advisor - TheWire.in",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOZjRPMWxES1AzWDRmcjNtYW4wOHUtRWljRlI4ZUNNcGpMUlVFTWYzSjRCSzgyMVNFNTVIa1pZMlZUeC1GN3V2SlVrVmJzNW5xRFBWaUdJRjlXTU5PcUU2bFBtdTdNLVZhTXpzU0FiYVR6M2lpMVVFS1ZDNXJxY0NFWXRMYlZMRE5PdXpJVlZpZnBLQk5oUTdvWFZEMUk5T2doTEJXY2d2Zk5fRFk5dHZrcnd6Y2JoOU5aSG…",
-          "source": "the_wire_in",
-          "source_name": "The Wire (India)",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 04:45:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.ndtv.com/india-news/chandranath-rath-a-upi-payment-at-toll-plaza-that-may-lead-cops-to-suvendu-adhikari-aides-killers-11474385#publisher=newsstand",
-          "headline": "A UPI Payment At Toll Plaza That May Lead Cops To Suvendu Adhikari Aide's Killers",
-          "snippet": "Chandranath Rath, a close aide of West Bengal's new Chief Minister Suvendu Adhikari, was shot dead on a busy road on Wednesday.",
-          "source": "ndtv",
-          "source_name": "NDTV",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 14:09:40 +0530",
-          "image_url": "https://c.ndtvimg.com/2026-05/3c6didcg_chandranath-rath-_625x300_10_May_26.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/elections/west-bengal-assembly/wb-cm-suvendu-adhikari-to-chair-first-cabinet-meeting-today/article70963091.ece",
-          "headline": "WB CM Suvendu Adhikari to chair first cabinet meeting today",
-          "snippet": "West Bengal Chief Minister Suvendu Adhikari. | Photo Credit: West Bengal Chief Minister Suvendu Adhikari will hold his first cabinet meeting on Monday (May 11, 2026) at Nabanna, the administrative headquarters of the State. On Monday (May 11), Mr. Adhikari will enter Nabanna for the first time as…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 22:19:12 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/x8dzq9/article70963252.ece/alternates/LANDSCAPE_1200/PTI05_10_2026_000753B.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOWWNyT1JRU2puVHpLRXByWVIyN2tXbzlUN3Q5UmNjaHM2cmltYWQ5TkVxZUpMa3QtR2E2NFQwZjhsSWZucGxYeklKdHhKS1Q1bUJfdFYwdi1TTnBnVWZBR3JxZ0k2MHlya24wMnBKdnFncUVFelR4MmVwaktLTHpxVWRIc3ZYRi1XSkxNSk5td3dXZ3N4RWlORG9EZklHN1RNQkdJT0p5YXFodmlwQ2RnQtIBugFBVV95cUxQV1RaRFlURHk4UlJfX05NektWbjdxMzBTRzJJZDNiOEtOcDMxa3p2blBLLWFjRWs4RFo5LXhlNHh5RHpmSkgwVzkyeDV6R1VlUDJxSXdNb21HR2Ixei1qMWo3VE9HQ0w0VE9waG1nTjdCRjZ2Vy1oZk9rdG5oaG1iVWNxNXloUjBLSFJodnlTZkZVcklqM2pXYWhGLTVVS1JCdEh6VGYwRkhqc1FVVGVNdk5Ec2ZBQ0Jyc0E?oc=5",
-          "headline": "Suvendu Adhikari: The Strongman Chief Minister Bengal Now Has to Live With - TheWire.in",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOWWNyT1JRU2puVHpLRXByWVIyN2tXbzlUN3Q5UmNjaHM2cmltYWQ5TkVxZUpMa3QtR2E2NFQwZjhsSWZucGxYeklKdHhKS1Q1bUJfdFYwdi1TTnBnVWZBR3JxZ0k2MHlya24wMnBKdnFncUVFelR4MmVwaktLTHpxVWRIc3ZYRi1XSkxNSk5td3dXZ3N4RWlORG9EZklHN1RNQkdJT0p5YXFodmlwQ2RnQtIBugFBVV95cU…",
-          "source": "the_wire_in",
-          "source_name": "The Wire (India)",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 07:35:23 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/elections/west-bengal-assembly/suvendu-adhikari-to-chair-first-cabinet-meeting-on-may-11-2026/article70963091.ece",
-          "headline": "Suvendu Adhikari to chair first Cabinet meeting on May 11",
-          "snippet": "West Bengal Chief Minister Suvendu Adhikari. | Photo Credit: West Bengal Chief Minister Suvendu Adhikari will hold his first cabinet meeting on Monday (May 11, 2026) at Nabanna, the administrative headquarters of the State. On Monday (May 11), Mr. Adhikari will enter Nabanna for the first time as…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Mon, 11 May 2026 02:31:32 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/x8dzq9/article70963252.ece/alternates/LANDSCAPE_1200/PTI05_10_2026_000753B.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ndtv.com/india-news/chandranath-rath-murder-3-arrested-from-up-bihar-in-suvendu-adhikaris-aide-murder-case-11477011#publisher=newsstand",
-          "headline": "UPI Payment Leads Cops To Suvendu Adhikari's Aide's Killers In UP, Bihar",
-          "snippet": "The three men identified as Vishal Srivastava, Raj Singh and Mayank Mishra have been arrested in Bihar and Uttar Pradesh.",
-          "source": "ndtv",
-          "source_name": "NDTV",
-          "country": "IN",
-          "published": "Mon, 11 May 2026 11:26:36 +0530",
-          "image_url": "https://c.ndtvimg.com/2026-05/3c6didcg_chandranath-rath-_625x300_10_May_26.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=738",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/national/west-bengal/west-bengal-chief-minister-suvendu-adhikari-chairs-first-cabinet-meeting-finalises-six-projects/article70964807.ece",
-          "headline": "Suvendu Adhikari Cabinet approves BSF land transfer for border fencing, initiates Census exercise in Bengal",
-          "snippet": "West Bengal Chief Minister Suvendu Adhikari accorded Guard of Honour at Nabanna after assuming office, in Howrah on May 11, 2026. | Photo Credit: After taking oath as West Bengal Chief Minister on May 9, 2026, Suvendu Adhikari chaired his first Cabinet meeting on Monday (May 11, 2026) and said his…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Mon, 11 May 2026 14:44:59 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/113q5g/article70964810.ece/alternates/LANDSCAPE_1200/PTI05_11_2026_000129A.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://theprint.in/india/bengal-govt-to-decide-on-da-7th-pay-commission-in-next-cabinet-meeting-cm-suvendu-adhikari/2928145/",
-          "headline": "Bengal govt to decide on DA, 7th Pay Commission in next cabinet meeting: CM Suvendu Adhikari",
-          "snippet": "Kolkata, May 11 (PTI) The second cabinet meeting of the West Bengal government is scheduled to be held on May 18, where key decisions on DA, implementation of the Seventh Pay Commission and other administrative issues are expected to be taken, Chief Minister Suvendu Adhikari said on Monday.…",
-          "source": "the_print",
-          "source_name": "The Print (India)",
-          "country": "IN",
-          "published": "Mon, 11 May 2026 13:15:58 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/national/west-bengal/west-bengal-gets-3000-crore-for-healthcare-revamp-ayushman-bharat-card-rollout-from-july-cm-suvendu-adhikari/article71014164.ece",
-          "headline": "West Bengal gets ₹3,000 crore for healthcare revamp, Ayushman Bharat card rollout from July: CM Suvendu Adhikari",
-          "snippet": "West Bengal Suvendu Adhikari said that opportunities will also be made available to fresh applicants who did not opt for the Swasthya Sathi cards. File | Photo Credit: West Bengal Chief Minister Suvendu Adhikari on Saturday (May 23, 2026) announced that his government has received a sanction of…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sat, 23 May 2026 18:57:19 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/h45h0s/article71014212.ece/alternates/LANDSCAPE_1200/20260520353L.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPQklXNm9PWHQxSTVhUGhsR3p2NlpoUDhHWUk3aGM3MnBjMkxrSTlEeFFCbncxRGhaSWw5ZVN4cmE0M0pGWi00S1FzdUN3ZjBCTzNrTEhvU1BvVVdlMGNPeUIxZGRXU3kzNU1EMUhZcWljRFo5RUczNkZxU1dLWGxPMmlBWU9ydXpQdmhYZEpmemRUb3MtN3ZOeHJOeVB5YUFBTk5KU0p4Zmt2alVJR29iRGtDaWhsX09za3RzY1AxbG83YWdrOE1WZGZIcV85YVFaS0l3QlBQd9IB3AFBVV95cUxOV25GUVFPQ19jM29xMkM3NzJ4Z1BNY1JmMjZTbTRBaDRvVy14N3MtM0dFbjNMWUNfNmpSREhWTGN1OFc1VTlOd1p6MUxjUkZUd1ZCMnVqdTFmMTNOd19sc0hUVUk0Y0l0T2d2YVhrTk9Lbmgyd1VRODJMVzhtUDJHOU5nQU9xOFJ5TENMVE1oV1NXd2p0YUw2amdrMkctQ3A1SjBjN2JEWXdpNllFX0lPZE1jWnB1V083Sm16dnloUk5oekdzd0NKcV82dTJNQTdvQzllbEZ1Y2p6TU9m?oc=5",
-          "headline": "West Bengal CM Suvendu Adhikari Says Govt to Hand Over Detained Bangladeshis Directly to BSF, Not Courts - TheWire.in",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxPQklXNm9PWHQxSTVhUGhsR3p2NlpoUDhHWUk3aGM3MnBjMkxrSTlEeFFCbncxRGhaSWw5ZVN4cmE0M0pGWi00S1FzdUN3ZjBCTzNrTEhvU1BvVVdlMGNPeUIxZGRXU3kzNU1EMUhZcWljRFo5RUczNkZxU1dLWGxPMmlBWU9ydXpQdmhYZEpmemRUb3MtN3ZOeHJOeVB5YUFBTk5KU0p4Zmt2alVJR29iRGtDaWhsX09za3…",
-          "source": "the_wire_in",
-          "source_name": "The Wire (India)",
-          "country": "IN",
-          "published": "Fri, 22 May 2026 11:55:16 GMT",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.144,
-        "zionist": 0.308,
-        "atlanticist": 0.396,
-        "statist": 0.174,
-        "financialized": 0.354
-      },
-      "fp_source_count": 5,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 1,
-        "global-south": 4
       },
       "section": "world"
     },
@@ -5056,6 +5112,132 @@
         "pacific-asia": 1
       },
       "section": "sports"
+    },
+    {
+      "id": "9a07b8c72c5e",
+      "headline": "WHO Declares Global Health Emergency Over Ebola Outbreak",
+      "summary": "<p>World Health Organization on Sunday declared a public health emergency of international concern following more than 300 suspected Ebola cases and 88 deaths linked to outbreaks in Democratic Republic of the Congo and Uganda. The WHO said the outbreak does not currently meet the criteria for a glob",
+      "published": "Fri, 22 May 2026 17:13:48 GMT",
+      "image_url": "https://theintercept.com/wp-content/uploads/2026/05/GettyImages-2276542341-e1779219610343.jpg?fit=3594%2C1800",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 33,
+        "center_pct": 67,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 6.38,
+      "entity_count": 12,
+      "entity_list": [
+        "Africa",
+        "Declares",
+        "Ebola",
+        "Emergency",
+        "Gutted",
+        "Health",
+        "Likely",
+        "Outbreak",
+        "Rages",
+        "Safeguards",
+        "Trump",
+        "Women"
+      ],
+      "sources": [
+        {
+          "id": "intercept",
+          "name": "The Intercept",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "allafrica",
+          "name": "AllAfrica",
+          "country": "NG",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "khaama",
+          "name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://theintercept.com/2026/05/19/ebola-outbreak-trump-who/",
+          "headline": "Ebola Outbreak Rages After Trump Gutted Global Health Safeguards",
+          "snippet": "The World Health Organization’s chief said on Tuesday that he was “deeply concerned about the scale and speed” of an Ebola outbreak in the Democratic Republic of Congo and Uganda that has resulted in a spike in deaths — to at least 130 — and more than 500 suspected cases. The outbreak is…",
+          "source": "intercept",
+          "source_name": "The Intercept",
+          "country": "US",
+          "published": "Tue, 19 May 2026 20:58:12 +0000",
+          "image_url": "https://theintercept.com/wp-content/uploads/2026/05/GettyImages-2276542341-e1779219610343.jpg?fit=3594%2C1800",
+          "video_url": null
+        },
+        {
+          "url": "https://allafrica.com/stories/202605220763.html",
+          "headline": "Africa: Women More Likely Than Men to Die During an Ebola Outbreak: UN Body",
+          "snippet": "Geneva — History has repeatedly shown us that women are more likely than men to die during an Ebola outbreak, the chief of humanitarian action of Women has said in Geneva. \"This is not because the disease is more deadly for women once they are infected,\" Sofia Calltorp addressed journalists at a…",
+          "source": "allafrica",
+          "source_name": "AllAfrica",
+          "country": "NG",
+          "published": "Fri, 22 May 2026 17:13:48 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/who-declares-global-health-emergency-over-ebola-outbreak/",
+          "headline": "WHO Declares Global Health Emergency Over Ebola Outbreak",
+          "snippet": "World Health Organization on Sunday declared a public health emergency of international concern following more than 300 suspected Ebola cases and 88 deaths linked to outbreaks in Democratic Republic of the Congo and Uganda. The WHO said the outbreak does not currently meet the criteria for a global…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Mon, 18 May 2026 09:40:00 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": -0.11,
+        "zionist": 0.127,
+        "atlanticist": 0.15,
+        "statist": -0.02,
+        "financialized": 0.213
+      },
+      "fp_source_count": 3,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "africa": 1,
+        "west": 1,
+        "global-south": 1
+      },
+      "section": "health"
     },
     {
       "id": "7dcffd44c7b7",
@@ -6827,6 +7009,135 @@
       "section": "world"
     },
     {
+      "id": "73e03fb99fc8",
+      "headline": "Putin left China, without a pipeline deal. Why didn’t the Hormuz crisis open the valve?",
+      "summary": "In an era when technology seems to defy all limits, one age-old barrier has managed to endure: geography.\nAs geopolitical turbulence continues to disrupt traffic through the Strait of Hormuz – a vital shipping artery, especially for energy – the search for other fuel sources, and other means of tran",
+      "published": "Fri, 22 May 2026 22:00:13 +0000",
+      "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/23/d3ba375c-73fb-4776-852b-167c6c575ea3_4705fcbf.jpg?itok=3cxdC1B-&v=1779488607",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 50,
+        "right_pct": 50,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 3.0,
+      "entity_count": 6,
+      "entity_list": [
+        "China",
+        "Hormuz",
+        "Kremlin",
+        "Putin",
+        "VIDEO",
+        "VIDEOS"
+      ],
+      "sources": [
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "rt_russia",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial",
+          "bias_tier": "unknown",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.scmp.com/economy/global-economy/article/3354560/putin-left-china-without-pipeline-deal-why-didnt-hormuz-crisis-open-valve?utm_source=rss_feed",
+          "headline": "Putin left China, without a pipeline deal. Why didn’t the Hormuz crisis open the valve?",
+          "snippet": "In an era when technology seems to defy all limits, one age-old barrier has managed to endure: geography. As geopolitical turbulence continues to disrupt traffic through the Strait of Hormuz – a vital shipping artery, especially for energy – the search for other fuel sources, and other means of…",
+          "source": "scmp",
+          "source_name": "South China Morning Post",
+          "country": "HK",
+          "published": "Fri, 22 May 2026 22:00:13 +0000",
+          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/23/d3ba375c-73fb-4776-852b-167c6c575ea3_4705fcbf.jpg?itok=3cxdC1B-&v=1779488607",
+          "video_url": null
+        },
+        {
+          "url": "https://www.scmp.com/economy/global-economy/article/3354560/putin-left-china-without-pipeline-deal-why-didnt-hormuz-crisis-open-valve?utm_source=rss_feed",
+          "headline": "Putin left China, without a pipeline deal. Why didn’t the Hormuz crisis open the valve?",
+          "snippet": "In an era when technology seems to defy all limits, one age-old barrier has managed to endure: geography. As geopolitical turbulence continues to disrupt traffic through the Strait of Hormuz – a vital shipping artery, especially for energy – the search for other fuel sources, and other means of…",
+          "source": "scmp",
+          "source_name": "South China Morning Post",
+          "country": "HK",
+          "published": "Fri, 22 May 2026 22:00:13 +0000",
+          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/23/d3ba375c-73fb-4776-852b-167c6c575ea3_4705fcbf.jpg?itok=3cxdC1B-&v=1779488607",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rt.com/news/640300-putin-visit-china-results/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+          "headline": "Putin’s China visit: Key moments and results in VIDEOS",
+          "snippet": "Moscow and Beijing have inked dozens of agreements and pledged deeper cooperation Russian President Vladimir Putin has wrapped up a two-day state visit to Beijing, during which he and his Chinese counterpart, Xi Jinping, hailed “unprecedented” bilateral ties, describing the relationship as a…",
+          "source": "rt_russia",
+          "source_name": "RT (Russia Today)",
+          "country": "RU",
+          "published": "Wed, 20 May 2026 21:51:09 +0000",
+          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/6a0e2c73203027401213a0fe.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rt.com/news/640184-russia-putin-china-visit/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+          "headline": "Putin arrives in China (VIDEO)",
+          "snippet": "The Russian president has travelled to Beijing for a two-day official visit at the invitation of his counterpart, Xi Jinping Russian President Vladimir Putin has arrived in Beijing. He has travelled to China for a two-day official visit at the invitation of Chinese President Xi Jinping. The trip…",
+          "source": "rt_russia",
+          "source_name": "RT (Russia Today)",
+          "country": "RU",
+          "published": "Tue, 19 May 2026 15:30:35 +0000",
+          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/6a0c840a85f5404c2b51be31.png",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rt.com/news/640138-putin-china-visit-xi/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+          "headline": "Kremlin details Putin’s official visit to China",
+          "snippet": "The Russian president will arrive in Beijing on May 19 at the invitation of his Chinese counterpart Russian President Vladimir Putin will travel to Beijing this week with a high-level delegation for talks with Chinese President Xi Jinping focused on bilateral ties, trade, energy cooperation, and…",
+          "source": "rt_russia",
+          "source_name": "RT (Russia Today)",
+          "country": "RU",
+          "published": "Mon, 18 May 2026 20:00:34 +0000",
+          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/6a0b6a2e85f54034d571481d.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.0,
+        "zionist": 0.05,
+        "atlanticist": -0.35,
+        "statist": 0.45,
+        "financialized": 0.3
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "adversarial": 1,
+        "pacific-asia": 1
+      },
+      "section": "world"
+    },
+    {
       "id": "04cb78e19fa1",
       "headline": "Kerala Standoff: Rahul Gandhi Caught Between KC Venugopal And Satheesan",
       "summary": "While KC Venugopal is reportedly the choice of the MLAs, VD Satheesan appears to be the choice of the public. Congress workers in Kerala have been taking to the streets to hold rallies in support of Satheesan",
@@ -7001,112 +7312,6 @@
       "geo_frame_topic": null,
       "geo_breakdown": {
         "global-south": 2
-      },
-      "section": "world"
-    },
-    {
-      "id": "e9cc87bdbe96",
-      "headline": "Nagy Attila Tibor: Magyar Péter nem tart igényt Orbán Viktor véleményére, pedig nem ártana",
-      "summary": "Az elemző szerint nem kellene kidobni az ablakon tizenhat év miniszterelnöki tapasztalatait.",
-      "published": "Sat, 23 May 2026 08:09:00 +0200",
-      "image_url": "https://www.latercera.com/resizer/v2/MSXWJLT3MVBZDKLQQ3G5N4EZCY.jpg?auth=b16517ff3835b9d69be3080b1ef563bf081fed6e0ee9c2a2fe937c15c907accd&smart=true&width=3984&height=2656",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 1.4,
-      "entity_count": 5,
-      "entity_list": [
-        "Attila",
-        "Leadta",
-        "Magyar",
-        "Tibor",
-        "Viktor"
-      ],
-      "sources": [
-        {
-          "id": "tercera",
-          "name": "La Tercera",
-          "country": "CL",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "index_hu",
-          "name": "Index Hungary",
-          "country": "HU",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.latercera.com/mundo/noticia/peter-magyar-asume-como-primer-ministro-de-hungria-y-pone-fin-a-16-anos-de-viktor-orban/",
-          "headline": "Péter Magyar asume como primer ministro de Hungría y pone fin a 16 años de Viktor Orbán",
-          "snippet": "El líder opositor húngaro Péter Magyar juró este sábado como nuevo primer ministro de Hungría, poniendo fin a los 16 años de gobierno de Viktor Orbán y abriendo una nueva etapa política marcada por promesas de reformas institucionales y recuperación económica. Magyar asumió el cargo tras imponerse…",
-          "source": "tercera",
-          "source_name": "La Tercera",
-          "country": "CL",
-          "published": "Sat, 09 May 2026 16:48:26 +0000",
-          "image_url": "https://www.latercera.com/resizer/v2/MSXWJLT3MVBZDKLQQ3G5N4EZCY.jpg?auth=b16517ff3835b9d69be3080b1ef563bf081fed6e0ee9c2a2fe937c15c907accd&smart=true&width=3984&height=2656",
-          "video_url": null
-        },
-        {
-          "url": "https://index.hu/gazdasag/2026/05/10/forint-forintarfolyam-inflacio-gdp-novekedes-osszefoglalo/",
-          "headline": "Leadta a kulcsokat Orbán Viktor, megkapta az utolsó leltárt Magyar Péter",
-          "snippet": "A forint kifejezetten erős hetet zárt, és ezúttal nem elsősorban a hazai folyamatok, hanem a nemzetközi hangulat változása mozgatta a piacot. A közel-keleti geopolitikai feszültségek enyhülése, valamint az ezzel párhuzamosan csökkenő energiaárak érezhetően javították a befektetői hangulatot, ebből…",
-          "source": "index_hu",
-          "source_name": "Index Hungary",
-          "country": "HU",
-          "published": "Sun, 10 May 2026 05:59:00 +0200",
-          "image_url": "https://kep.index.hu/1/0/6115/61156/611564/61156491_4523911_bcdfe7bfd13fa36217456a9659ddc87e_wm.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://index.hu/velemeny/2026/05/23/magyar-peter-miniszterelnok-kormanyfo-orban-viktor-tapasztalat-politika-diplomacia-kulpolitika/",
-          "headline": "Nagy Attila Tibor: Magyar Péter nem tart igényt Orbán Viktor véleményére, pedig nem ártana",
-          "snippet": "Ahhoz képest, hogy Magyar Péter még egy nagyon kezdő miniszterelnök, meghökkentően magabiztos. Bizonytalanságnak, kétkedésnek, belső marcangolásnak nyoma sincs a kamerák előtt. Pedig volna miért feltennie magának a kérdést: biztosan megfelel-e a miniszterelnöki tisztséggel járó hatalmas…",
-          "source": "index_hu",
-          "source_name": "Index Hungary",
-          "country": "HU",
-          "published": "Sat, 23 May 2026 08:09:00 +0200",
-          "image_url": "https://kep.index.hu/1/0/6689/66892/668926/66892607_4938649_3cd03a55cc192aeb3d4ecd42883ea841_wm.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.185,
-        "zionist": 0.255,
-        "atlanticist": 0.47,
-        "statist": 0.125,
-        "financialized": 0.29
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "eastern-europe": 1,
-        "latin-america": 1
       },
       "section": "world"
     },
@@ -8260,10 +8465,800 @@
       "section": "chisme"
     },
     {
+      "id": "6ccdb5e991f5",
+      "headline": "Pakistan army chief holds lengthy talks with FM Araghchi in Tehran",
+      "summary": "Tehran, IRNA – Field Marshal Asim Munir, the commander of Pakistan’s army, has held extended talks with Foreign Minister Abbas Araghchi in Tehran, as diplomatic efforts intensify to prevent further escalation in the region.",
+      "published": "Sat, 23 May 2026 12:46:35 GMT",
+      "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/7/6745d28fd740015febe32182/image/34af7b3fe7adbb6745371316b0a913a36de8fb8f48ec18371d70b98feb2607a5.JPG?width=1440&format=webp&quality=80",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 11% Left",
+      "blindspot_score": 6,
+      "coverage": {
+        "left_pct": 11,
+        "center_pct": 44,
+        "right_pct": 44,
+        "state_count": 1,
+        "dominant": "center",
+        "dominant_pct": 44
+      },
+      "bias_variance": 7.99,
+      "entity_count": 14,
+      "entity_list": [
+        "Again",
+        "Araghchi",
+        "Interior",
+        "Islamabad",
+        "Israeli",
+        "Munir",
+        "Pakistan",
+        "Parliament",
+        "Regional",
+        "Rubio",
+        "Talks",
+        "Tehran",
+        "Visits",
+        "Washington"
+      ],
+      "sources": [
+        {
+          "id": "trt_world",
+          "name": "TRT World",
+          "country": "TR",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "dawn",
+          "name": "Dawn",
+          "country": "PK",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Nikkei"
+        },
+        {
+          "id": "irna",
+          "name": "IRNA",
+          "country": "IR",
+          "bloc": "adversarial",
+          "bias_tier": "state-pro",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Iranian state"
+        },
+        {
+          "id": "straits_times",
+          "name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_national_ae",
+          "name": "The National UAE",
+          "country": "AE",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "middle_east_m",
+          "name": "Middle East Monitor",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "pajhwok_en",
+          "name": "Pajhwok Afghan News",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "khaama",
+          "name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "/article/a9c86ed5f27e",
+          "headline": "Pakistan expects US-Iran pact ‘soon’ as Tehran reviews Washington's proposal",
+          "snippet": "If the US-Iran agreement \"is reached in Pakistan, it would be an honour for us,\" Islamabad says.",
+          "source": "trt_world",
+          "source_name": "TRT World",
+          "country": "TR",
+          "published": "Thu, 07 May 2026 10:41:36 GMT",
+          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/7/6745d28fd740015febe32182/image/34af7b3fe7adbb6745371316b0a913a36de8fb8f48ec18371d70b98feb2607a5.JPG?width=1440&format=webp&quality=80",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dawn.com/news/1999181/tehran-sends-response-to-us-peace-proposal-via-pakistan",
+          "headline": "Tehran sends response to US peace proposal via Pakistan",
+          "snippet": "Prime Minister Shehbaz Sharif confirmed on Sunday that Pakistan received Iran’s response to a US proposal to end the war in the region. Speaking at a <a href=\"https://www.dawn.com/news/1999191/pm-shehbaz-recalls-pakistans-historic-response-to-india-on-marka-i-haqs-first-anniversary\">ceremony held…",
+          "source": "dawn",
+          "source_name": "Dawn",
+          "country": "PK",
+          "published": "Sun, 10 May 2026 20:21:22 +0500",
+          "image_url": "https://i.dawn.com/large/2026/05/10192215a39280f.webp",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ft.com/content/4fd37931-1f30-43e7-92ed-3ae26c87a00f",
+          "headline": "Pakistan army chief visits Tehran in push for US-Iran deal",
+          "snippet": "Asim Munir joined mediators including Qatar as effort to prevent resumption of full-scale war intensifies",
+          "source": "ft",
+          "source_name": "Financial Times",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 12:46:35 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://en.irna.ir/news/86162534/Pakistan-Army-chief-holds-meeting-with-FM-Araghchi-in-Tehran",
+          "headline": "Pakistan Army chief holds meeting with FM Araghchi in Tehran",
+          "snippet": "Tehran, IRNA – Pakistan’s Army Chief, Field Marshal Asim Munir, who is visiting Tehran, has held talks with Foreign Minister Abbas Araghchi.",
+          "source": "irna",
+          "source_name": "IRNA",
+          "country": "IR",
+          "published": "Sat, 23 May 2026 11:43:08 GMT",
+          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172882931.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://en.irna.ir/news/86162480/Parliament-speaker-Pakistan-army-chief-meet-in-Tehran",
+          "headline": "Parliament speaker, Pakistan army chief meet in Tehran",
+          "snippet": "Tehran, IRNA – Pakistan’s Army Chief, Field Marshal Asim Munir, who is visiting Tehran, has held talks with Parliament Speaker Mohammad Bagher Ghalibaf.",
+          "source": "irna",
+          "source_name": "IRNA",
+          "country": "IR",
+          "published": "Sat, 23 May 2026 11:24:44 GMT",
+          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172882700.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://en.irna.ir/news/86161985/Pakistan-army-chief-holds-lengthy-talks-with-FM-Araghchi-in-Tehran",
+          "headline": "Pakistan army chief holds lengthy talks with FM Araghchi in Tehran",
+          "snippet": "Tehran, IRNA – Field Marshal Asim Munir, the commander of Pakistan’s army, has held extended talks with Foreign Minister Abbas Araghchi in Tehran, as diplomatic efforts intensify to prevent further escalation in the region.",
+          "source": "irna",
+          "source_name": "IRNA",
+          "country": "IR",
+          "published": "Sat, 23 May 2026 05:45:36 GMT",
+          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172881071.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ft.com/content/4fd37931-1f30-43e7-92ed-3ae26c87a00f",
+          "headline": "Pakistan army chief visits Tehran in push for US-Iran deal",
+          "snippet": "Asim Munir joined mediators including Qatar as effort to prevent resumption of full-scale war intensifies",
+          "source": "ft",
+          "source_name": "Financial Times",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 12:46:35 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://en.irna.ir/news/86162534/Pakistan-Army-chief-holds-meeting-with-FM-Araghchi-in-Tehran",
+          "headline": "Pakistan Army chief holds meeting with FM Araghchi in Tehran",
+          "snippet": "Tehran, IRNA – Pakistan’s Army Chief, Field Marshal Asim Munir, who is visiting Tehran, has held talks with Foreign Minister Abbas Araghchi.",
+          "source": "irna",
+          "source_name": "IRNA",
+          "country": "IR",
+          "published": "Sat, 23 May 2026 11:43:08 GMT",
+          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172882931.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://en.irna.ir/news/86162480/Parliament-speaker-Pakistan-army-chief-meet-in-Tehran",
+          "headline": "Parliament speaker, Pakistan army chief meet in Tehran",
+          "snippet": "Tehran, IRNA – Pakistan’s Army Chief, Field Marshal Asim Munir, who is visiting Tehran, has held talks with Parliament Speaker Mohammad Bagher Ghalibaf.",
+          "source": "irna",
+          "source_name": "IRNA",
+          "country": "IR",
+          "published": "Sat, 23 May 2026 11:24:44 GMT",
+          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172882700.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://en.irna.ir/news/86161985/Pakistan-army-chief-holds-lengthy-talks-with-FM-Araghchi-in-Tehran",
+          "headline": "Pakistan army chief holds lengthy talks with FM Araghchi in Tehran",
+          "snippet": "Tehran, IRNA – Field Marshal Asim Munir, the commander of Pakistan’s army, has held extended talks with Foreign Minister Abbas Araghchi in Tehran, as diplomatic efforts intensify to prevent further escalation in the region.",
+          "source": "irna",
+          "source_name": "IRNA",
+          "country": "IR",
+          "published": "Sat, 23 May 2026 05:45:36 GMT",
+          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172881071.jpg",
+          "video_url": null
+        },
+        {
+          "url": "/article/947e7eaeb986",
+          "headline": "Pakistan's Asim Munir in Tehran as Iran weighs peace deal and US reportedly mulls new strikes",
+          "snippet": "Tehran says disagreements between Iran and US remain \"deep and extensive,\" even as Asim Munir launches final push to secure a deal.",
+          "source": "trt_world",
+          "source_name": "TRT World",
+          "country": "TR",
+          "published": "Sat, 23 May 2026 01:00:49 GMT",
+          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/23/673237f78ea54fa96847bfca/image/162d393e5c35dc701c16a5f56a5b323c2df7a6f876e381e58137b39f49fbecf5.png?width=1440&format=webp&quality=80",
+          "video_url": null
+        },
+        {
+          "url": "/article/f57ceaac909e",
+          "headline": "Rubio sees hope for talks to end US-Israeli war on Iran ahead of Pakistan army chief's Tehran visit",
+          "snippet": "US Secretary of State Marco Rubio reports \"some good signs\" in Islamabad-mediated talks and expresses hope that Asim Munir's visit to Tehran will help advance negotiations further.",
+          "source": "trt_world",
+          "source_name": "TRT World",
+          "country": "TR",
+          "published": "Thu, 21 May 2026 20:00:53 GMT",
+          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/21/Reuters/image/2026_05_21T155941Z_805501113_RC2RDLAWMY6R_RTRMADP_3_NATO_DIPLOMACY_SWEDEN.JPG?width=1440&format=webp&quality=80",
+          "video_url": null
+        },
+        {
+          "url": "https://www.straitstimes.com/world/middle-east/pakistan-military-chief-arrives-in-tehran-in-push-to-end-iran-war",
+          "headline": "Pakistan military chief arrives in Tehran, in push to end Iran war",
+          "snippet": "TEHRAN - Pakistan’s powerful army chief arrived in Tehran on May 22, with Islamabad mediating as the Islamic republic examines a new proposal to end the Middle East war. Iran’s foreign ministry spokesman, Mr Esmaeil Baqaei, however, said the visit did not necessarily mean “we have reached a turning…",
+          "source": "straits_times",
+          "source_name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "published": "Sat, 23 May 2026 03:22:32 +0800",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/news/mena/2026/05/23/live-us-iran-war-pakistan-talks/",
+          "headline": "Iran war latest: Pakistan's army chief in Tehran as Islamabad steps up mediation efforts",
+          "snippet": "Araghchi holds talks with Omani counterpart Al Busaidi Deadly Israeli strikes reported in southern Lebanon Qatar and Jordan hold talks on regional developments Iran is 'holding global economy hostage’, Nato chief says Turkey joins regional push for US-Iran breakthrough talks UAE's Dr Gargash says…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Sat, 23 May 2026 08:06:58 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/E2FB7MG7IFHGNO7FFABF2R3VHY.jpg?auth=e13b07291a98fea7313a3182f2b268cc886eab796c6d16357d716a72dc937894&smart=true&width=1125&height=633",
+          "video_url": null
+        },
+        {
+          "url": "https://www.middleeastmonitor.com/20260522-pakistan-army-chief-heads-to-tehran-to-discuss-us-iran-talks/",
+          "headline": "Pakistan army chief heads to Tehran to discuss US-Iran talks",
+          "snippet": "Pakistan’s army chief Field Marshal Asim Munir departed for Tehran on Friday to discuss the Iran-talks, Anadolu reports. During the visit, Munir will meet key senior Iranian figures, the sources added. It would be the second such trip to Tehran by Munir amid Pakistani mediation efforts to end the…",
+          "source": "middle_east_m",
+          "source_name": "Middle East Monitor",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 16:12:29 +0000",
+          "image_url": "https://www.middleeastmonitor.com/wp-content/uploads/2023/07/AA-20230716-31694079-31694076-RAISIASIM_MUNIR_MEETING_IN_TEHRAN.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://pajhwok.com/2026/05/20/pakistans-interior-minister-visits-tehran-again-2/",
+          "headline": "Pakistan’s interior minister visits Tehran again",
+          "snippet": "KABUL (Pajhwok): Pakistan’s Interior Minister Syed Mohsin Naqvi has arrived in Tehran, the capital of Iran, for talks with Iranian officials. The Mehr News Agency reported that Naqvi travelled to Tehran on Wednesday for the second time within a week. It added that during his previous visit to…",
+          "source": "pajhwok_en",
+          "source_name": "Pajhwok Afghan News",
+          "country": "AF",
+          "published": "Wed, 20 May 2026 11:50:06 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/international/pakistan-army-chief-munir-and-iran-fm-araghchi-hold-talks-in-tehran-to-end-west-asia-conflict/article71014242.ece",
+          "headline": "Pakistan Army Chief Munir and Iran FM Araghchi hold talks in Tehran to end West Asia conflict",
+          "snippet": "This handout photograph taken and released by the Iranian Foreign Ministry on May 23, 2026 shows Iran's Foreign Minister Abbas Araghchi (R) meeting with Pakistan's Army Chief Syed Asim Munir, in Tehran. | Photo Credit: Pakistan’s Army Chief Field Marshal Asim Munir has held talks with Iran’s…",
+          "source": "the_hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Sat, 23 May 2026 17:56:28 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/cy7hly/article71014539.ece/alternates/LANDSCAPE_1200/AFP_B3TG8FV.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/pakistan-army-chief-to-visit-tehran-today/",
+          "headline": "Pakistan army chief to visit Tehran today",
+          "snippet": "Syed Asim Munir, Pakistan’s army chief and chairman of the joint chiefs of staff committee, is expected to visit Tehran on Thursday as Islamabad intensifies diplomatic contacts between Iran and the United States. Iranian media reported that the visit comes as part of continuing consultations…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Thu, 21 May 2026 09:27:25 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/pakistan-interior-minister-visits-tehran-again-for-regional-talks/",
+          "headline": "Pakistan Interior Minister Visits Tehran Again for Regional Talks",
+          "snippet": "Pakistani media reported that Mohsin Naqvi traveled to Tehran for the second time in less than a week to discuss regional tensions and diplomatic efforts with Iranian officials. During the visit, Naqvi held meetings with Masoud Pezeshkian and other senior Iranian leaders. Iranian officials praised…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Wed, 20 May 2026 13:02:03 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.142,
+        "zionist": 0.176,
+        "atlanticist": 0.282,
+        "statist": 0.399,
+        "financialized": 0.473
+      },
+      "fp_source_count": 9,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "global-south": 4,
+        "west": 2,
+        "adversarial": 1,
+        "pacific-asia": 1,
+        "middle-east": 2
+      },
+      "section": "world"
+    },
+    {
+      "id": "29cfe5e45bbe",
+      "headline": "On Marka-i-Haq's first anniversary, PM Shehbaz commemorates Pakistan's 'historic response' to India",
+      "summary": "<p>Prime Minister Shehbaz Sharif recalled the “historic” response of Pakistan to India during <em>Marka-i-Haq</em> on Sunday as he addressed a ceremony held at the Pakistan Monument in Islamabad to commemorate the conflict’s first anniversary.</p>\n<p>The <a href=\"https://www.dawn.com/news/1996978/th",
+      "published": "Sat, 23 May 2026 07:22:12 +0000",
+      "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2025/5/14/Reuters/image/2025_05_14T171719Z_64379619_RC2CHEAZV0V3_RTRMADP_3_INDIA_PAKISTAN.JPG?width=1440&format=webp&quality=80",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 11% Right",
+      "blindspot_score": 6,
+      "coverage": {
+        "left_pct": 33,
+        "center_pct": 56,
+        "right_pct": 11,
+        "state_count": 1,
+        "dominant": "center",
+        "dominant_pct": 56
+      },
+      "bias_variance": 9.38,
+      "entity_count": 25,
+      "entity_list": [
+        "Afghanistan",
+        "Applicants",
+        "Balance",
+        "Bangladesh",
+        "Broker",
+        "Chinese",
+        "Citizenship",
+        "India",
+        "Indispensable",
+        "Introduces",
+        "Islamabad",
+        "Later",
+        "Marka",
+        "Operation",
+        "Outmaneuvers",
+        "Pakistan",
+        "Rules",
+        "Russia",
+        "Sheet",
+        "Shehbaz",
+        "Sindoor",
+        "Stage",
+        "Stand",
+        "TheWire",
+        "Watch"
+      ],
+      "sources": [
+        {
+          "id": "trt_world",
+          "name": "TRT World",
+          "country": "TR",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "iran_international",
+          "name": "Iran International",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_wire_in",
+          "name": "The Wire (India)",
+          "country": "IN",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial",
+          "bias_tier": "state-pro",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Russian state"
+        },
+        {
+          "id": "war_on_rocks",
+          "name": "War on the Rocks",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "dawn",
+          "name": "Dawn",
+          "country": "PK",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_news_pk",
+          "name": "The News International",
+          "country": "PK",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "middle-east",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Qatari state"
+        },
+        {
+          "id": "prothom_alo",
+          "name": "Prothom Alo (English)",
+          "country": "BD",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "khaama",
+          "name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "/article/476b46f2c342",
+          "headline": "How a brief India-Pakistan war boosted Chinese arms sales and lifted Islamabad's global image",
+          "snippet": "A year on, airspace closures, frozen Pakistan-India diplomacy and water disputes continue to keep South Asia on edge, while Islamabad’s international standing and ties with China have strengthened and New Delhi grapples with strategic constraints.",
+          "source": "trt_world",
+          "source_name": "TRT World",
+          "country": "TR",
+          "published": "Fri, 08 May 2026 12:23:44 GMT",
+          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2025/5/14/Reuters/image/2025_05_14T171719Z_64379619_RC2CHEAZV0V3_RTRMADP_3_INDIA_PAKISTAN.JPG?width=1440&format=webp&quality=80",
+          "video_url": null
+        },
+        {
+          "url": "/article/64fc57d0ace8",
+          "headline": "A year after four-day war, India and Pakistan aren’t any closer to mending ties",
+          "snippet": "New Delhi’s rigid posture on key issues has ensured that ties with Islamabad remain frozen. Without a softening of stance, a thaw is unlikely soon.",
+          "source": "trt_world",
+          "source_name": "TRT World",
+          "country": "TR",
+          "published": "Thu, 07 May 2026 13:41:56 GMT",
+          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/7/6748780fd34651dabf0b79ef/image/3e4f0964b234a29537b6709939d7e83e34981659fb0fa64efccccbf8f255d654.JPG?width=1440&format=webp&quality=80",
+          "video_url": null
+        },
+        {
+          "url": "/article/101f7433d775",
+          "headline": "Pakistan warns of strong response to any attack on anniversary of conflict with India",
+          "snippet": "Islamabad has renewed warnings against India as the South Asian neighbours mark a year since their deadliest military confrontation in decades.",
+          "source": "trt_world",
+          "source_name": "TRT World",
+          "country": "TR",
+          "published": "Thu, 07 May 2026 07:50:58 GMT",
+          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/7/6745d28fd740015febe32182/image/f8c41b1daa96c439829718f8950bed1eb417306e5c783ed83cccfa991bb08e3c.JPG?width=1440&format=webp&quality=80",
+          "video_url": null
+        },
+        {
+          "url": "https://www.iranintl.com/en/202605056181",
+          "headline": "India and Pakistan condemn Iran’s attacks on UAE",
+          "snippet": "One consequence of the shutdown has been the emergence of short-term, urgent migration to countries such as Armenia and Turkey. Individuals whose businesses depend on global markets have been forced to temporarily leave the country to preserve their livelihoods. A technology specialist currently in…",
+          "source": "iran_international",
+          "source_name": "Iran International",
+          "country": "GB",
+          "published": "Tue, 05 May 2026 07:51:35 GMT",
+          "image_url": "https://i.iranintl.com/images/rdk9umy0/production/5f9476b4fbf588bc61f898c59e772844b161ab1e-4973x3430.jpg?rect=0,414,4973,2603&w=1200&h=628&fm=jpg&q=85&fit=max&auto=format",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxONmhVNGM1X0VUX1BBd0JLejhabUs1dTNsd0lXci1TLXJGNXFGYkFtRkpZYmV4LW51QmhiTC1Ga3ZwX2ZEbk1TVTZubDVHbklrLWJaOWtOQlB5RjZEQUI0dlpxNGR5RWd0Z1BVckw0dDFPQ21HUTVVMVpzSktPZDFockgwcXdoYlpUNUVKOVNjWnR0T2pRMFZILXByY3g1cElRVm1PRlRkZmNDLXU1ZTRZTGhzZmJzaWJpTW45M9IBwgFBVV95cUxQLTVXcDdFQTNBdm1ITUdmZnFNdGg1RDRyZG50OXRGUUJxSkxMdXN1dlRlWnlVeE1VVWRMbGlxcUFzVzBsZ1E2MVBQMFI3RnFGb0Z1ak9tTnFMRjBKTlNQbGh3aHZjT1ZpdlotZktDT1FKckt2WnFEQUxkbGQ4TnhuVlhIYnhBaDlueWNsNUljdUxBb2dnMHRnblRPR3BlN3ZieXFyNjNJY0ZMMEpKck9VTm9pYU1EQkROODQwX094VnZKQQ?oc=5",
+          "headline": "Full Text | Operation Sindoor Balance Sheet: A Year Later, Where Do India and Pakistan Stand? - TheWire.in",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxONmhVNGM1X0VUX1BBd0JLejhabUs1dTNsd0lXci1TLXJGNXFGYkFtRkpZYmV4LW51QmhiTC1Ga3ZwX2ZEbk1TVTZubDVHbklrLWJaOWtOQlB5RjZEQUI0dlpxNGR5RWd0Z1BVckw0dDFPQ21HUTVVMVpzSktPZDFockgwcXdoYlpUNUVKOVNjWnR0T2pRMFZILXByY3g1cElRVm1PRlRkZmNDLXU1ZTRZTGhzZmJzaWJpTW…",
+          "source": "the_wire_in",
+          "source_name": "The Wire (India)",
+          "country": "IN",
+          "published": "Sat, 09 May 2026 02:52:25 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVUYxa2FGRW96NVF5N0F4WHNWTWJhOWF3RHJlT1duRTNrN0NfWk5Md2ZFR2QzYlpVd2NFWXcza1o4dUVHZFBlVGZyQ1g2RUx1N0R4QURBTy1adGFpSEt0LXFUUmo5elFxeGliQ1hIcUFNT1JZb1dEd1ZhZDZETUF3aUpHLUY1QjVuVklvdmEtZkZNelRMQ3ZMUW81Wk5IWlk0S2F2SEY0R2tpVTRzTV9OMEI0NUTSAb4BQVVfeXFMTjN6Y3VQMWxFNUoyVXJ2QnZrRF9JemJPYlNsYWxYaHRncGlqbEdYVm52ajFuRHhxNTNnZUptT3hPV2xOX29NRDNMN3RSdzM0T0NnajVQcS1jZWRqRFBaellKY01uLU5oMFZOTm5jLVkwY2VmMmtZeVZ5aFE2cGdEZ0Zpa2JPU1B3dTJDMnIwQkt3Y0NNbXFhOVBwRklVS01SWGFpcEFvYTNGSjhUTGw5cDdvbkJsbVdvcElVNWhXZw?oc=5",
+          "headline": "Watch | Op Sindoor Balance Sheet One Year Later: Where Do India and Pakistan Stand? - TheWire.in",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPVUYxa2FGRW96NVF5N0F4WHNWTWJhOWF3RHJlT1duRTNrN0NfWk5Md2ZFR2QzYlpVd2NFWXcza1o4dUVHZFBlVGZyQ1g2RUx1N0R4QURBTy1adGFpSEt0LXFUUmo5elFxeGliQ1hIcUFNT1JZb1dEd1ZhZDZETUF3aUpHLUY1QjVuVklvdmEtZkZNelRMQ3ZMUW81Wk5IWlk0S2F2SEY0R2tpVTRzTV9OMEI0NUTSAb4BQV…",
+          "source": "the_wire_in",
+          "source_name": "The Wire (India)",
+          "country": "IN",
+          "published": "Thu, 07 May 2026 15:00:18 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.rt.com/india/639566-india-policy-cricket-pakistan/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+          "headline": "India announces new policy for cricket with Pakistan",
+          "snippet": "New Delhi has reaffirmed a ban on bilateral sporting events, but opened the door to Pakistani players for international events on its soil The Indian Sports Ministry has fromalized policy for cricketing events with Pakistan, a year after New Delhi imposed curbs on sporting activity with its…",
+          "source": "rt",
+          "source_name": "RT (Russia Today)",
+          "country": "RU",
+          "published": "Thu, 07 May 2026 14:35:52 +0000",
+          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fc824f85f54022e8477a2e.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rt.com/india/639552-indias-modi-vows-to-keep/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+          "headline": "India’s Modi vows to keep up fight against terror a year after Pakistan standoff",
+          "snippet": "The prime minister has hailed the armed forces’ “precision and resolve” to destroy the ecosystem of terrorism India has vowed to keep up its fight against terrorism, a year after a tense military stand-off with Pakistan. Indian Prime Minister Narendra Modi on Thursday hailed the “unparalleled…",
+          "source": "rt",
+          "source_name": "RT (Russia Today)",
+          "country": "RU",
+          "published": "Thu, 07 May 2026 12:36:08 +0000",
+          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fca73185f540265b6ec6c0.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://warontherocks.com/iran-and-the-indispensable-broker-how-pakistan-outmaneuvers-india-on-the-world-stage/",
+          "headline": "Iran and the Indispensable Broker: How Pakistan Outmaneuvers India on the World Stage",
+          "snippet": "In Sept. 2025, Pakistan and Saudi Arabia signed a mutual defense pact, formalizing what decades of quiet cooperation had already made real. The defense pact signed in Riyadh was presented in official communiqués as a natural deepening of bilateral ties. It was that, but it was also something…",
+          "source": "war_on_rocks",
+          "source_name": "War on the Rocks",
+          "country": "US",
+          "published": "Mon, 20 Apr 2026 07:30:06 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.dawn.com/news/1997496/a-look-at-the-new-capabilities-pakistan-employed-against-india-during-marka-i-haq",
+          "headline": "A look at the new capabilities Pakistan employed against India during Marka-i-Haq",
+          "snippet": "A year ago, Pakistan and India fought a short but intense war — the worst <a href=\"https://www.dawn.com/news/1910509\">military confrontation between the two nuclear-armed neighbours in decades. During the period of Marka-i-Haq (the battle for truth), Indian fighter jets were shot down, and Pakistan…",
+          "source": "dawn",
+          "source_name": "Dawn",
+          "country": "PK",
+          "published": "Sat, 09 May 2026 20:10:14 +0500",
+          "image_url": "https://i.dawn.com/large/2026/05/042002089e164be.webp",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenews.com.pk/latest/1381699-us-report-validates-pakistan-military-edge-over-india-pm",
+          "headline": "US report validates Pakistan military edge over India: PM",
+          "snippet": "Prime Minister Shehbaz Sharif addresses ceremony in Azad Jammu and Kashmir on November 20, 2025. — X/@GovtofPakistan Prime Minister Shehbaz Sharif on Thursday said a recent report endorsing Pakistan’s downing of Indian aircraft stands as formal validation of the country’s military strength. He made…",
+          "source": "the_news_pk",
+          "source_name": "The News International",
+          "country": "PK",
+          "published": "Thu, 20 Nov 2025 20:55:00 +0500",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenews.com.pk/latest/1359098-russia-ready-to-mediate-pakistans-issues-with-india-afghanistan-envoy",
+          "headline": "Russia ready to mediate Pakistan's issues with India, Afghanistan: envoy",
+          "snippet": "Russia's ambassador to Pakistan has extended his country's offer to mediate Islamabad's conflicts with India and Afghanistan, amid strained relations with its neighbouring countries. Islamabad's relations with India have remained tense since the four-day war in May, while the Afghan Taliban regime…",
+          "source": "the_news_pk",
+          "source_name": "The News International",
+          "country": "PK",
+          "published": "Wed, 19 Nov 2025 23:14:28 +0500",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenews.com.pk/latest/1359013-pakistan-achieved-military-success-over-india-in-may-war-us-report",
+          "headline": "Pakistan achieved 'military success over India' in May war: US report",
+          "snippet": "A Pakistan Air Force J-10C fighter jet in this undated photo. — X/@DGPR_PAF Pakistan achieved \"military success over India\" during the May conflict, according to a report submitted to the United States Congress, which also acknowledged that Islamabad downed Indian jets, including French-made Rafale…",
+          "source": "the_news_pk",
+          "source_name": "The News International",
+          "country": "PK",
+          "published": "Wed, 19 Nov 2025 17:12:00 +0500",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/5/10/two-wins-two-losses-what-india-pakistan-have-learned-a-year-after-war?traffic_source=rss",
+          "headline": "Two wins, two losses: What India, Pakistan have learned a year after war",
+          "snippet": "Islamabad, Pakistan – In Pakistan, May began with streets in major cities dotted with banners and posters honouring the military leadership that, in the official telling, guided the country’s defences and led the nation to victory in the four-day aerial war with India last year. At the Nur Khan…",
+          "source": "aljazeera",
+          "source_name": "Al Jazeera English",
+          "country": "QA",
+          "published": "Sun, 10 May 2026 05:11:43 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.dawn.com/news/1999191/pm-shehbaz-recalls-pakistans-historic-response-to-india-on-marka-i-haqs-first-anniversary",
+          "headline": "PM Shehbaz recalls Pakistan's 'historic response' to India on Marka-i-Haq's first anniversary",
+          "snippet": "<figure class='media w-full w-full media-- media--uneven media--stretch' data-original-src='https://www.youtube.com/watch?v=18GMGtHrf2c'> <div class='media__item media__item--youtube '><iframe src='https://www.youtube.com/embed/18GMGtHrf2c?enablejsapi=1&controls=1&modestbranding=1&rel=0'…",
+          "source": "dawn",
+          "source_name": "Dawn",
+          "country": "PK",
+          "published": "Sun, 10 May 2026 20:28:10 +0500",
+          "image_url": "https://i.dawn.com/large/2026/05/101903115f53024.webp",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dawn.com/news/1999191/on-marka-i-haqs-first-anniversary-pm-shehbaz-commemorates-pakistans-historic-response-to-india",
+          "headline": "On Marka-i-Haq's first anniversary, PM Shehbaz commemorates Pakistan's 'historic response' to India",
+          "snippet": "Prime Minister Shehbaz Sharif recalled the “historic” response of Pakistan to India during Marka-i-Haq on Sunday as he addressed a ceremony held at the Pakistan Monument in Islamabad to commemorate the conflict’s first anniversary. The <a…",
+          "source": "dawn",
+          "source_name": "Dawn",
+          "country": "PK",
+          "published": "Sun, 10 May 2026 23:34:40 +0500",
+          "image_url": "https://i.dawn.com/large/2026/05/10223033ead6450.webp",
+          "video_url": null
+        },
+        {
+          "url": "/article/612b91c7044e",
+          "headline": "After diplomatic reset, Bangladesh shifts civil servant training from India to Pakistan",
+          "snippet": "The shift reflects Dhaka’s attempt to diversify its bureaucratic exposure and strengthen ties with Islamabad after years of strained relations, analysts say.",
+          "source": "trt_world",
+          "source_name": "TRT World",
+          "country": "TR",
+          "published": "Thu, 21 May 2026 09:06:50 GMT",
+          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/21/6748780fd34651dabf0b79ef/image/2be7feba0368011dc5b9b6395f46e034b9adad0249a263ebdd94e1026b0f0ef4.JPG?width=1440&format=webp&quality=80",
+          "video_url": null
+        },
+        {
+          "url": "https://en.prothomalo.com/opinion/op-ed/0nq8ea0py6",
+          "headline": "Who is ahead in the India–Pakistan ‘cold war’ over Bangladesh?",
+          "snippet": "After the July mass uprising, many of the institutional frameworks underpinning India–Bangladesh relations, including agreements related to the training of civil servants, collapsed. It can be said that during the Yunus government, relations with India deteriorated in almost every sector except…",
+          "source": "prothom_alo",
+          "source_name": "Prothom Alo (English)",
+          "country": "BD",
+          "published": "Sat, 23 May 2026 07:22:12 +0000",
+          "image_url": "https://media.prothomalo.com/prothomalo-english/2026-05-23/dhine4hf/flags.avif",
+          "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/india-introduces-new-citizenship-rules-for-applicants-from-afghanistan-pakistan-and-bangladesh/",
+          "headline": "India Introduces New Citizenship Rules for Applicants From Afghanistan, Pakistan and Bangladesh",
+          "snippet": "India has introduced new citizenship rules requiring applicants from Afghanistan, Pakistan and Bangladesh to declare and surrender previous passports after approval. India has introduced stricter citizenship requirements for applicants from Afghanistan, Pakistan and Bangladesh, requiring them to…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Tue, 19 May 2026 11:39:00 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.106,
+        "zionist": 0.189,
+        "atlanticist": 0.205,
+        "statist": 0.293,
+        "financialized": 0.335
+      },
+      "fp_source_count": 10,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "middle-east": 2,
+        "global-south": 5,
+        "west": 2,
+        "adversarial": 1
+      },
+      "section": "world"
+    },
+    {
       "id": "5a6666db781b",
       "headline": "Con goles de Lionel Messi y Rodrigo De Paul, Inter Miami le ganó a Toronto como visitante por la MLS",
       "summary": "En Canadá, el equipo de Florida se impuso por 4-2 por la fecha 12 de la liga norteamericana",
-      "published": "Sat, 23 May 2026 12:34:00 +0000",
+      "published": "Sat, 23 May 2026 16:24:00 +0200",
       "image_url": "https://resizer.glanacion.com/resizer/v2/6WAJWOIFZNH6TD6TSVHDQCVFC4.jpg?auth=0964984e37b45bcd34eb8f7e92c3eee604a2795a3464f8bd27920be6d97e6337&smart=true&width=5958&height=3972",
       "video_url": null,
       "has_video": false,
@@ -8279,13 +9274,14 @@
         "dominant_pct": 56
       },
       "bias_variance": 3.82,
-      "entity_count": 29,
+      "entity_count": 31,
       "entity_list": [
         "Anchors",
         "Barcelona",
         "Boards",
         "Cannes",
         "Clasamentul",
+        "Cristiano",
         "DECADE",
         "EXCLUSIVE",
         "GAUGHAN",
@@ -8305,6 +9301,7 @@
         "Project",
         "Reinventor",
         "Rodrigo",
+        "Ronaldo",
         "Saint",
         "Sinner",
         "Toronto",
@@ -8576,6 +9573,17 @@
           "published": "Sat, 23 May 2026 09:10:35 +0100",
           "image_url": "https://i.dailymail.com/1s/2026/05/21/13/108775943-0-image-a-33_1779365664659.jpg",
           "video_url": null
+        },
+        {
+          "url": "https://index.hu/sport/futball/2026/05/23/labdarugas-fizetes-cristiano-ronaldo-al-nasszr-lionel-messi-inter-miami-fc-okolvivas-saul-alvarez/",
+          "headline": "Lionel Messi dollármilliárdos lett, de még így is óriási Cristiano Ronaldo fölénye",
+          "snippet": "Lionel Messi dollármilliárdos lett, de még így is óriási Cristiano Ronaldo fölénye Kövesse az Indexet Facebookon is! Követem! A szaúdi al-Nasszr futballistája, Cristiano Ronaldo vezeti a világ legjobban fizetett sportolóinak listáját a Forbes magazinnál. Az azzal kezdi hírét, hogy a legfrissebb…",
+          "source": "index_hu",
+          "source_name": "Index Hungary",
+          "country": "HU",
+          "published": "Sat, 23 May 2026 16:24:00 +0200",
+          "image_url": "https://kep.index.hu/1/0/6956/69563/695638/69563887_5133269_4db8af5e88578bcb0ad87ac5b50131d1_wm.jpg",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -8598,730 +9606,6 @@
         "africa": 1
       },
       "section": "entertainment"
-    },
-    {
-      "id": "29cfe5e45bbe",
-      "headline": "On Marka-i-Haq's first anniversary, PM Shehbaz commemorates Pakistan's 'historic response' to India",
-      "summary": "<p>Prime Minister Shehbaz Sharif recalled the “historic” response of Pakistan to India during <em>Marka-i-Haq</em> on Sunday as he addressed a ceremony held at the Pakistan Monument in Islamabad to commemorate the conflict’s first anniversary.</p>\n<p>The <a href=\"https://www.dawn.com/news/1996978/th",
-      "published": "Sat, 23 May 2026 07:22:12 +0000",
-      "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2025/5/14/Reuters/image/2025_05_14T171719Z_64379619_RC2CHEAZV0V3_RTRMADP_3_INDIA_PAKISTAN.JPG?width=1440&format=webp&quality=80",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 12% Right",
-      "blindspot_score": 5,
-      "coverage": {
-        "left_pct": 38,
-        "center_pct": 50,
-        "right_pct": 12,
-        "state_count": 1,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 9.79,
-      "entity_count": 21,
-      "entity_list": [
-        "Afghanistan",
-        "Balance",
-        "Bangladesh",
-        "Broker",
-        "Chinese",
-        "India",
-        "Indispensable",
-        "Islamabad",
-        "Later",
-        "Marka",
-        "Operation",
-        "Outmaneuvers",
-        "Pakistan",
-        "Russia",
-        "Sheet",
-        "Shehbaz",
-        "Sindoor",
-        "Stage",
-        "Stand",
-        "TheWire",
-        "Watch"
-      ],
-      "sources": [
-        {
-          "id": "trt_world",
-          "name": "TRT World",
-          "country": "TR",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "middle-east",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "iran_international",
-          "name": "Iran International",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_wire_in",
-          "name": "The Wire (India)",
-          "country": "IN",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial",
-          "bias_tier": "state-pro",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "low",
-          "primary_vs_launder": "launderer",
-          "parent_company": "Russian state"
-        },
-        {
-          "id": "war_on_rocks",
-          "name": "War on the Rocks",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "dawn",
-          "name": "Dawn",
-          "country": "PK",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_news_pk",
-          "name": "The News International",
-          "country": "PK",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "aljazeera",
-          "name": "Al Jazeera English",
-          "country": "QA",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "middle-east",
-          "factuality": "mostly_factual",
-          "primary_vs_launder": "mixed",
-          "parent_company": "Qatari state"
-        },
-        {
-          "id": "prothom_alo",
-          "name": "Prothom Alo (English)",
-          "country": "BD",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "/article/476b46f2c342",
-          "headline": "How a brief India-Pakistan war boosted Chinese arms sales and lifted Islamabad's global image",
-          "snippet": "A year on, airspace closures, frozen Pakistan-India diplomacy and water disputes continue to keep South Asia on edge, while Islamabad’s international standing and ties with China have strengthened and New Delhi grapples with strategic constraints.",
-          "source": "trt_world",
-          "source_name": "TRT World",
-          "country": "TR",
-          "published": "Fri, 08 May 2026 12:23:44 GMT",
-          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2025/5/14/Reuters/image/2025_05_14T171719Z_64379619_RC2CHEAZV0V3_RTRMADP_3_INDIA_PAKISTAN.JPG?width=1440&format=webp&quality=80",
-          "video_url": null
-        },
-        {
-          "url": "/article/64fc57d0ace8",
-          "headline": "A year after four-day war, India and Pakistan aren’t any closer to mending ties",
-          "snippet": "New Delhi’s rigid posture on key issues has ensured that ties with Islamabad remain frozen. Without a softening of stance, a thaw is unlikely soon.",
-          "source": "trt_world",
-          "source_name": "TRT World",
-          "country": "TR",
-          "published": "Thu, 07 May 2026 13:41:56 GMT",
-          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/7/6748780fd34651dabf0b79ef/image/3e4f0964b234a29537b6709939d7e83e34981659fb0fa64efccccbf8f255d654.JPG?width=1440&format=webp&quality=80",
-          "video_url": null
-        },
-        {
-          "url": "/article/101f7433d775",
-          "headline": "Pakistan warns of strong response to any attack on anniversary of conflict with India",
-          "snippet": "Islamabad has renewed warnings against India as the South Asian neighbours mark a year since their deadliest military confrontation in decades.",
-          "source": "trt_world",
-          "source_name": "TRT World",
-          "country": "TR",
-          "published": "Thu, 07 May 2026 07:50:58 GMT",
-          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/7/6745d28fd740015febe32182/image/f8c41b1daa96c439829718f8950bed1eb417306e5c783ed83cccfa991bb08e3c.JPG?width=1440&format=webp&quality=80",
-          "video_url": null
-        },
-        {
-          "url": "https://www.iranintl.com/en/202605056181",
-          "headline": "India and Pakistan condemn Iran’s attacks on UAE",
-          "snippet": "One consequence of the shutdown has been the emergence of short-term, urgent migration to countries such as Armenia and Turkey. Individuals whose businesses depend on global markets have been forced to temporarily leave the country to preserve their livelihoods. A technology specialist currently in…",
-          "source": "iran_international",
-          "source_name": "Iran International",
-          "country": "GB",
-          "published": "Tue, 05 May 2026 07:51:35 GMT",
-          "image_url": "https://i.iranintl.com/images/rdk9umy0/production/5f9476b4fbf588bc61f898c59e772844b161ab1e-4973x3430.jpg?rect=0,414,4973,2603&w=1200&h=628&fm=jpg&q=85&fit=max&auto=format",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxONmhVNGM1X0VUX1BBd0JLejhabUs1dTNsd0lXci1TLXJGNXFGYkFtRkpZYmV4LW51QmhiTC1Ga3ZwX2ZEbk1TVTZubDVHbklrLWJaOWtOQlB5RjZEQUI0dlpxNGR5RWd0Z1BVckw0dDFPQ21HUTVVMVpzSktPZDFockgwcXdoYlpUNUVKOVNjWnR0T2pRMFZILXByY3g1cElRVm1PRlRkZmNDLXU1ZTRZTGhzZmJzaWJpTW45M9IBwgFBVV95cUxQLTVXcDdFQTNBdm1ITUdmZnFNdGg1RDRyZG50OXRGUUJxSkxMdXN1dlRlWnlVeE1VVWRMbGlxcUFzVzBsZ1E2MVBQMFI3RnFGb0Z1ak9tTnFMRjBKTlNQbGh3aHZjT1ZpdlotZktDT1FKckt2WnFEQUxkbGQ4TnhuVlhIYnhBaDlueWNsNUljdUxBb2dnMHRnblRPR3BlN3ZieXFyNjNJY0ZMMEpKck9VTm9pYU1EQkROODQwX094VnZKQQ?oc=5",
-          "headline": "Full Text | Operation Sindoor Balance Sheet: A Year Later, Where Do India and Pakistan Stand? - TheWire.in",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxONmhVNGM1X0VUX1BBd0JLejhabUs1dTNsd0lXci1TLXJGNXFGYkFtRkpZYmV4LW51QmhiTC1Ga3ZwX2ZEbk1TVTZubDVHbklrLWJaOWtOQlB5RjZEQUI0dlpxNGR5RWd0Z1BVckw0dDFPQ21HUTVVMVpzSktPZDFockgwcXdoYlpUNUVKOVNjWnR0T2pRMFZILXByY3g1cElRVm1PRlRkZmNDLXU1ZTRZTGhzZmJzaWJpTW…",
-          "source": "the_wire_in",
-          "source_name": "The Wire (India)",
-          "country": "IN",
-          "published": "Sat, 09 May 2026 02:52:25 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVUYxa2FGRW96NVF5N0F4WHNWTWJhOWF3RHJlT1duRTNrN0NfWk5Md2ZFR2QzYlpVd2NFWXcza1o4dUVHZFBlVGZyQ1g2RUx1N0R4QURBTy1adGFpSEt0LXFUUmo5elFxeGliQ1hIcUFNT1JZb1dEd1ZhZDZETUF3aUpHLUY1QjVuVklvdmEtZkZNelRMQ3ZMUW81Wk5IWlk0S2F2SEY0R2tpVTRzTV9OMEI0NUTSAb4BQVVfeXFMTjN6Y3VQMWxFNUoyVXJ2QnZrRF9JemJPYlNsYWxYaHRncGlqbEdYVm52ajFuRHhxNTNnZUptT3hPV2xOX29NRDNMN3RSdzM0T0NnajVQcS1jZWRqRFBaellKY01uLU5oMFZOTm5jLVkwY2VmMmtZeVZ5aFE2cGdEZ0Zpa2JPU1B3dTJDMnIwQkt3Y0NNbXFhOVBwRklVS01SWGFpcEFvYTNGSjhUTGw5cDdvbkJsbVdvcElVNWhXZw?oc=5",
-          "headline": "Watch | Op Sindoor Balance Sheet One Year Later: Where Do India and Pakistan Stand? - TheWire.in",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPVUYxa2FGRW96NVF5N0F4WHNWTWJhOWF3RHJlT1duRTNrN0NfWk5Md2ZFR2QzYlpVd2NFWXcza1o4dUVHZFBlVGZyQ1g2RUx1N0R4QURBTy1adGFpSEt0LXFUUmo5elFxeGliQ1hIcUFNT1JZb1dEd1ZhZDZETUF3aUpHLUY1QjVuVklvdmEtZkZNelRMQ3ZMUW81Wk5IWlk0S2F2SEY0R2tpVTRzTV9OMEI0NUTSAb4BQV…",
-          "source": "the_wire_in",
-          "source_name": "The Wire (India)",
-          "country": "IN",
-          "published": "Thu, 07 May 2026 15:00:18 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.rt.com/india/639566-india-policy-cricket-pakistan/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "headline": "India announces new policy for cricket with Pakistan",
-          "snippet": "New Delhi has reaffirmed a ban on bilateral sporting events, but opened the door to Pakistani players for international events on its soil The Indian Sports Ministry has fromalized policy for cricketing events with Pakistan, a year after New Delhi imposed curbs on sporting activity with its…",
-          "source": "rt",
-          "source_name": "RT (Russia Today)",
-          "country": "RU",
-          "published": "Thu, 07 May 2026 14:35:52 +0000",
-          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fc824f85f54022e8477a2e.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.rt.com/india/639552-indias-modi-vows-to-keep/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "headline": "India’s Modi vows to keep up fight against terror a year after Pakistan standoff",
-          "snippet": "The prime minister has hailed the armed forces’ “precision and resolve” to destroy the ecosystem of terrorism India has vowed to keep up its fight against terrorism, a year after a tense military stand-off with Pakistan. Indian Prime Minister Narendra Modi on Thursday hailed the “unparalleled…",
-          "source": "rt",
-          "source_name": "RT (Russia Today)",
-          "country": "RU",
-          "published": "Thu, 07 May 2026 12:36:08 +0000",
-          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fca73185f540265b6ec6c0.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://warontherocks.com/iran-and-the-indispensable-broker-how-pakistan-outmaneuvers-india-on-the-world-stage/",
-          "headline": "Iran and the Indispensable Broker: How Pakistan Outmaneuvers India on the World Stage",
-          "snippet": "In Sept. 2025, Pakistan and Saudi Arabia signed a mutual defense pact, formalizing what decades of quiet cooperation had already made real. The defense pact signed in Riyadh was presented in official communiqués as a natural deepening of bilateral ties. It was that, but it was also something…",
-          "source": "war_on_rocks",
-          "source_name": "War on the Rocks",
-          "country": "US",
-          "published": "Mon, 20 Apr 2026 07:30:06 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.dawn.com/news/1997496/a-look-at-the-new-capabilities-pakistan-employed-against-india-during-marka-i-haq",
-          "headline": "A look at the new capabilities Pakistan employed against India during Marka-i-Haq",
-          "snippet": "A year ago, Pakistan and India fought a short but intense war — the worst <a href=\"https://www.dawn.com/news/1910509\">military confrontation between the two nuclear-armed neighbours in decades. During the period of Marka-i-Haq (the battle for truth), Indian fighter jets were shot down, and Pakistan…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Sat, 09 May 2026 20:10:14 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/042002089e164be.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenews.com.pk/latest/1381699-us-report-validates-pakistan-military-edge-over-india-pm",
-          "headline": "US report validates Pakistan military edge over India: PM",
-          "snippet": "Prime Minister Shehbaz Sharif addresses ceremony in Azad Jammu and Kashmir on November 20, 2025. — X/@GovtofPakistan Prime Minister Shehbaz Sharif on Thursday said a recent report endorsing Pakistan’s downing of Indian aircraft stands as formal validation of the country’s military strength. He made…",
-          "source": "the_news_pk",
-          "source_name": "The News International",
-          "country": "PK",
-          "published": "Thu, 20 Nov 2025 20:55:00 +0500",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenews.com.pk/latest/1359098-russia-ready-to-mediate-pakistans-issues-with-india-afghanistan-envoy",
-          "headline": "Russia ready to mediate Pakistan's issues with India, Afghanistan: envoy",
-          "snippet": "Russia's ambassador to Pakistan has extended his country's offer to mediate Islamabad's conflicts with India and Afghanistan, amid strained relations with its neighbouring countries. Islamabad's relations with India have remained tense since the four-day war in May, while the Afghan Taliban regime…",
-          "source": "the_news_pk",
-          "source_name": "The News International",
-          "country": "PK",
-          "published": "Wed, 19 Nov 2025 23:14:28 +0500",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenews.com.pk/latest/1359013-pakistan-achieved-military-success-over-india-in-may-war-us-report",
-          "headline": "Pakistan achieved 'military success over India' in May war: US report",
-          "snippet": "A Pakistan Air Force J-10C fighter jet in this undated photo. — X/@DGPR_PAF Pakistan achieved \"military success over India\" during the May conflict, according to a report submitted to the United States Congress, which also acknowledged that Islamabad downed Indian jets, including French-made Rafale…",
-          "source": "the_news_pk",
-          "source_name": "The News International",
-          "country": "PK",
-          "published": "Wed, 19 Nov 2025 17:12:00 +0500",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.aljazeera.com/news/2026/5/10/two-wins-two-losses-what-india-pakistan-have-learned-a-year-after-war?traffic_source=rss",
-          "headline": "Two wins, two losses: What India, Pakistan have learned a year after war",
-          "snippet": "Islamabad, Pakistan – In Pakistan, May began with streets in major cities dotted with banners and posters honouring the military leadership that, in the official telling, guided the country’s defences and led the nation to victory in the four-day aerial war with India last year. At the Nur Khan…",
-          "source": "aljazeera",
-          "source_name": "Al Jazeera English",
-          "country": "QA",
-          "published": "Sun, 10 May 2026 05:11:43 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.dawn.com/news/1999191/pm-shehbaz-recalls-pakistans-historic-response-to-india-on-marka-i-haqs-first-anniversary",
-          "headline": "PM Shehbaz recalls Pakistan's 'historic response' to India on Marka-i-Haq's first anniversary",
-          "snippet": "<figure class='media w-full w-full media-- media--uneven media--stretch' data-original-src='https://www.youtube.com/watch?v=18GMGtHrf2c'> <div class='media__item media__item--youtube '><iframe src='https://www.youtube.com/embed/18GMGtHrf2c?enablejsapi=1&controls=1&modestbranding=1&rel=0'…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Sun, 10 May 2026 20:28:10 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/101903115f53024.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dawn.com/news/1999191/on-marka-i-haqs-first-anniversary-pm-shehbaz-commemorates-pakistans-historic-response-to-india",
-          "headline": "On Marka-i-Haq's first anniversary, PM Shehbaz commemorates Pakistan's 'historic response' to India",
-          "snippet": "Prime Minister Shehbaz Sharif recalled the “historic” response of Pakistan to India during Marka-i-Haq on Sunday as he addressed a ceremony held at the Pakistan Monument in Islamabad to commemorate the conflict’s first anniversary. The <a…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Sun, 10 May 2026 23:34:40 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/10223033ead6450.webp",
-          "video_url": null
-        },
-        {
-          "url": "/article/612b91c7044e",
-          "headline": "After diplomatic reset, Bangladesh shifts civil servant training from India to Pakistan",
-          "snippet": "The shift reflects Dhaka’s attempt to diversify its bureaucratic exposure and strengthen ties with Islamabad after years of strained relations, analysts say.",
-          "source": "trt_world",
-          "source_name": "TRT World",
-          "country": "TR",
-          "published": "Thu, 21 May 2026 09:06:50 GMT",
-          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/21/6748780fd34651dabf0b79ef/image/2be7feba0368011dc5b9b6395f46e034b9adad0249a263ebdd94e1026b0f0ef4.JPG?width=1440&format=webp&quality=80",
-          "video_url": null
-        },
-        {
-          "url": "https://en.prothomalo.com/opinion/op-ed/0nq8ea0py6",
-          "headline": "Who is ahead in the India–Pakistan ‘cold war’ over Bangladesh?",
-          "snippet": "After the July mass uprising, many of the institutional frameworks underpinning India–Bangladesh relations, including agreements related to the training of civil servants, collapsed. It can be said that during the Yunus government, relations with India deteriorated in almost every sector except…",
-          "source": "prothom_alo",
-          "source_name": "Prothom Alo (English)",
-          "country": "BD",
-          "published": "Sat, 23 May 2026 07:22:12 +0000",
-          "image_url": "https://media.prothomalo.com/prothomalo-english/2026-05-23/dhine4hf/flags.avif",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.096,
-        "zionist": 0.166,
-        "atlanticist": 0.183,
-        "statist": 0.284,
-        "financialized": 0.298
-      },
-      "fp_source_count": 9,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "middle-east": 2,
-        "global-south": 4,
-        "west": 2,
-        "adversarial": 1
-      },
-      "section": "world"
-    },
-    {
-      "id": "6ccdb5e991f5",
-      "headline": "Pakistan army chief holds lengthy talks with FM Araghchi in Tehran",
-      "summary": "Tehran, IRNA – Field Marshal Asim Munir, the commander of Pakistan’s army, has held extended talks with Foreign Minister Abbas Araghchi in Tehran, as diplomatic efforts intensify to prevent further escalation in the region.",
-      "published": "Sat, 23 May 2026 12:46:35 GMT",
-      "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/7/6745d28fd740015febe32182/image/34af7b3fe7adbb6745371316b0a913a36de8fb8f48ec18371d70b98feb2607a5.JPG?width=1440&format=webp&quality=80",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 12% Left",
-      "blindspot_score": 5,
-      "coverage": {
-        "left_pct": 12,
-        "center_pct": 38,
-        "right_pct": 50,
-        "state_count": 1,
-        "dominant": "right",
-        "dominant_pct": 50
-      },
-      "bias_variance": 8.43,
-      "entity_count": 9,
-      "entity_list": [
-        "Araghchi",
-        "Islamabad",
-        "Israeli",
-        "Munir",
-        "Pakistan",
-        "Parliament",
-        "Rubio",
-        "Tehran",
-        "Washington"
-      ],
-      "sources": [
-        {
-          "id": "trt_world",
-          "name": "TRT World",
-          "country": "TR",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "middle-east",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "dawn",
-          "name": "Dawn",
-          "country": "PK",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "ft",
-          "name": "Financial Times",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Nikkei"
-        },
-        {
-          "id": "irna",
-          "name": "IRNA",
-          "country": "IR",
-          "bloc": "adversarial",
-          "bias_tier": "state-pro",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "unknown",
-          "primary_vs_launder": "launderer",
-          "parent_company": "Iranian state"
-        },
-        {
-          "id": "straits_times",
-          "name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_national_ae",
-          "name": "The National UAE",
-          "country": "AE",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "middle-east",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "middle_east_m",
-          "name": "Middle East Monitor",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "pajhwok_en",
-          "name": "Pajhwok Afghan News",
-          "country": "AF",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_hindu",
-          "name": "The Hindu",
-          "country": "IN",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "/article/a9c86ed5f27e",
-          "headline": "Pakistan expects US-Iran pact ‘soon’ as Tehran reviews Washington's proposal",
-          "snippet": "If the US-Iran agreement \"is reached in Pakistan, it would be an honour for us,\" Islamabad says.",
-          "source": "trt_world",
-          "source_name": "TRT World",
-          "country": "TR",
-          "published": "Thu, 07 May 2026 10:41:36 GMT",
-          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/7/6745d28fd740015febe32182/image/34af7b3fe7adbb6745371316b0a913a36de8fb8f48ec18371d70b98feb2607a5.JPG?width=1440&format=webp&quality=80",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dawn.com/news/1999181/tehran-sends-response-to-us-peace-proposal-via-pakistan",
-          "headline": "Tehran sends response to US peace proposal via Pakistan",
-          "snippet": "Prime Minister Shehbaz Sharif confirmed on Sunday that Pakistan received Iran’s response to a US proposal to end the war in the region. Speaking at a <a href=\"https://www.dawn.com/news/1999191/pm-shehbaz-recalls-pakistans-historic-response-to-india-on-marka-i-haqs-first-anniversary\">ceremony held…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Sun, 10 May 2026 20:21:22 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/10192215a39280f.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ft.com/content/4fd37931-1f30-43e7-92ed-3ae26c87a00f",
-          "headline": "Pakistan army chief visits Tehran in push for US-Iran deal",
-          "snippet": "Asim Munir joined mediators including Qatar as effort to prevent resumption of full-scale war intensifies",
-          "source": "ft",
-          "source_name": "Financial Times",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 12:46:35 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://en.irna.ir/news/86162534/Pakistan-Army-chief-holds-meeting-with-FM-Araghchi-in-Tehran",
-          "headline": "Pakistan Army chief holds meeting with FM Araghchi in Tehran",
-          "snippet": "Tehran, IRNA – Pakistan’s Army Chief, Field Marshal Asim Munir, who is visiting Tehran, has held talks with Foreign Minister Abbas Araghchi.",
-          "source": "irna",
-          "source_name": "IRNA",
-          "country": "IR",
-          "published": "Sat, 23 May 2026 11:43:08 GMT",
-          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172882931.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://en.irna.ir/news/86162480/Parliament-speaker-Pakistan-army-chief-meet-in-Tehran",
-          "headline": "Parliament speaker, Pakistan army chief meet in Tehran",
-          "snippet": "Tehran, IRNA – Pakistan’s Army Chief, Field Marshal Asim Munir, who is visiting Tehran, has held talks with Parliament Speaker Mohammad Bagher Ghalibaf.",
-          "source": "irna",
-          "source_name": "IRNA",
-          "country": "IR",
-          "published": "Sat, 23 May 2026 11:24:44 GMT",
-          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172882700.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://en.irna.ir/news/86161985/Pakistan-army-chief-holds-lengthy-talks-with-FM-Araghchi-in-Tehran",
-          "headline": "Pakistan army chief holds lengthy talks with FM Araghchi in Tehran",
-          "snippet": "Tehran, IRNA – Field Marshal Asim Munir, the commander of Pakistan’s army, has held extended talks with Foreign Minister Abbas Araghchi in Tehran, as diplomatic efforts intensify to prevent further escalation in the region.",
-          "source": "irna",
-          "source_name": "IRNA",
-          "country": "IR",
-          "published": "Sat, 23 May 2026 05:45:36 GMT",
-          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172881071.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ft.com/content/4fd37931-1f30-43e7-92ed-3ae26c87a00f",
-          "headline": "Pakistan army chief visits Tehran in push for US-Iran deal",
-          "snippet": "Asim Munir joined mediators including Qatar as effort to prevent resumption of full-scale war intensifies",
-          "source": "ft",
-          "source_name": "Financial Times",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 12:46:35 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://en.irna.ir/news/86162534/Pakistan-Army-chief-holds-meeting-with-FM-Araghchi-in-Tehran",
-          "headline": "Pakistan Army chief holds meeting with FM Araghchi in Tehran",
-          "snippet": "Tehran, IRNA – Pakistan’s Army Chief, Field Marshal Asim Munir, who is visiting Tehran, has held talks with Foreign Minister Abbas Araghchi.",
-          "source": "irna",
-          "source_name": "IRNA",
-          "country": "IR",
-          "published": "Sat, 23 May 2026 11:43:08 GMT",
-          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172882931.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://en.irna.ir/news/86162480/Parliament-speaker-Pakistan-army-chief-meet-in-Tehran",
-          "headline": "Parliament speaker, Pakistan army chief meet in Tehran",
-          "snippet": "Tehran, IRNA – Pakistan’s Army Chief, Field Marshal Asim Munir, who is visiting Tehran, has held talks with Parliament Speaker Mohammad Bagher Ghalibaf.",
-          "source": "irna",
-          "source_name": "IRNA",
-          "country": "IR",
-          "published": "Sat, 23 May 2026 11:24:44 GMT",
-          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172882700.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://en.irna.ir/news/86161985/Pakistan-army-chief-holds-lengthy-talks-with-FM-Araghchi-in-Tehran",
-          "headline": "Pakistan army chief holds lengthy talks with FM Araghchi in Tehran",
-          "snippet": "Tehran, IRNA – Field Marshal Asim Munir, the commander of Pakistan’s army, has held extended talks with Foreign Minister Abbas Araghchi in Tehran, as diplomatic efforts intensify to prevent further escalation in the region.",
-          "source": "irna",
-          "source_name": "IRNA",
-          "country": "IR",
-          "published": "Sat, 23 May 2026 05:45:36 GMT",
-          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172881071.jpg",
-          "video_url": null
-        },
-        {
-          "url": "/article/947e7eaeb986",
-          "headline": "Pakistan's Asim Munir in Tehran as Iran weighs peace deal and US reportedly mulls new strikes",
-          "snippet": "Tehran says disagreements between Iran and US remain \"deep and extensive,\" even as Asim Munir launches final push to secure a deal.",
-          "source": "trt_world",
-          "source_name": "TRT World",
-          "country": "TR",
-          "published": "Sat, 23 May 2026 01:00:49 GMT",
-          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/23/673237f78ea54fa96847bfca/image/162d393e5c35dc701c16a5f56a5b323c2df7a6f876e381e58137b39f49fbecf5.png?width=1440&format=webp&quality=80",
-          "video_url": null
-        },
-        {
-          "url": "/article/f57ceaac909e",
-          "headline": "Rubio sees hope for talks to end US-Israeli war on Iran ahead of Pakistan army chief's Tehran visit",
-          "snippet": "US Secretary of State Marco Rubio reports \"some good signs\" in Islamabad-mediated talks and expresses hope that Asim Munir's visit to Tehran will help advance negotiations further.",
-          "source": "trt_world",
-          "source_name": "TRT World",
-          "country": "TR",
-          "published": "Thu, 21 May 2026 20:00:53 GMT",
-          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/21/Reuters/image/2026_05_21T155941Z_805501113_RC2RDLAWMY6R_RTRMADP_3_NATO_DIPLOMACY_SWEDEN.JPG?width=1440&format=webp&quality=80",
-          "video_url": null
-        },
-        {
-          "url": "https://www.straitstimes.com/world/middle-east/pakistan-military-chief-arrives-in-tehran-in-push-to-end-iran-war",
-          "headline": "Pakistan military chief arrives in Tehran, in push to end Iran war",
-          "snippet": "TEHRAN - Pakistan’s powerful army chief arrived in Tehran on May 22, with Islamabad mediating as the Islamic republic examines a new proposal to end the Middle East war. Iran’s foreign ministry spokesman, Mr Esmaeil Baqaei, however, said the visit did not necessarily mean “we have reached a turning…",
-          "source": "straits_times",
-          "source_name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "published": "Sat, 23 May 2026 03:22:32 +0800",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenationalnews.com/news/mena/2026/05/23/live-us-iran-war-pakistan-talks/",
-          "headline": "Iran war latest: Pakistan's army chief in Tehran as Islamabad steps up mediation efforts",
-          "snippet": "Araghchi holds talks with Omani counterpart Al Busaidi Deadly Israeli strikes reported in southern Lebanon Qatar and Jordan hold talks on regional developments Iran is 'holding global economy hostage’, Nato chief says Turkey joins regional push for US-Iran breakthrough talks UAE's Dr Gargash says…",
-          "source": "the_national_ae",
-          "source_name": "The National UAE",
-          "country": "AE",
-          "published": "Sat, 23 May 2026 08:06:58 +0000",
-          "image_url": "https://www.thenationalnews.com/resizer/v2/E2FB7MG7IFHGNO7FFABF2R3VHY.jpg?auth=e13b07291a98fea7313a3182f2b268cc886eab796c6d16357d716a72dc937894&smart=true&width=1125&height=633",
-          "video_url": null
-        },
-        {
-          "url": "https://www.middleeastmonitor.com/20260522-pakistan-army-chief-heads-to-tehran-to-discuss-us-iran-talks/",
-          "headline": "Pakistan army chief heads to Tehran to discuss US-Iran talks",
-          "snippet": "Pakistan’s army chief Field Marshal Asim Munir departed for Tehran on Friday to discuss the Iran-talks, Anadolu reports. During the visit, Munir will meet key senior Iranian figures, the sources added. It would be the second such trip to Tehran by Munir amid Pakistani mediation efforts to end the…",
-          "source": "middle_east_m",
-          "source_name": "Middle East Monitor",
-          "country": "GB",
-          "published": "Fri, 22 May 2026 16:12:29 +0000",
-          "image_url": "https://www.middleeastmonitor.com/wp-content/uploads/2023/07/AA-20230716-31694079-31694076-RAISIASIM_MUNIR_MEETING_IN_TEHRAN.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://pajhwok.com/2026/05/20/pakistans-interior-minister-visits-tehran-again-2/",
-          "headline": "Pakistan’s interior minister visits Tehran again",
-          "snippet": "KABUL (Pajhwok): Pakistan’s Interior Minister Syed Mohsin Naqvi has arrived in Tehran, the capital of Iran, for talks with Iranian officials. The Mehr News Agency reported that Naqvi travelled to Tehran on Wednesday for the second time within a week. It added that during his previous visit to…",
-          "source": "pajhwok_en",
-          "source_name": "Pajhwok Afghan News",
-          "country": "AF",
-          "published": "Wed, 20 May 2026 11:50:06 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/international/pakistan-army-chief-munir-and-iran-fm-araghchi-hold-talks-in-tehran-to-end-west-asia-conflict/article71014242.ece",
-          "headline": "Pakistan Army Chief Munir and Iran FM Araghchi hold talks in Tehran to end West Asia conflict",
-          "snippet": "This handout photograph taken and released by the Iranian Foreign Ministry on May 23, 2026 shows Iran's Foreign Minister Abbas Araghchi (R) meeting with Pakistan's Army Chief Syed Asim Munir, in Tehran. | Photo Credit: Pakistan’s Army Chief Field Marshal Asim Munir has held talks with Iran’s…",
-          "source": "the_hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sat, 23 May 2026 17:56:28 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/cy7hly/article71014539.ece/alternates/LANDSCAPE_1200/AFP_B3TG8FV.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.135,
-        "zionist": 0.148,
-        "atlanticist": 0.267,
-        "statist": 0.403,
-        "financialized": 0.449
-      },
-      "fp_source_count": 8,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "global-south": 3,
-        "west": 2,
-        "adversarial": 1,
-        "pacific-asia": 1,
-        "middle-east": 2
-      },
-      "section": "world"
     },
     {
       "id": "7ff06e73564e",
@@ -10318,6 +10602,212 @@
       "section": "tech"
     },
     {
+      "id": "f05f53d853d9",
+      "headline": "Africa: Plenary Council of the Society of African Missions - Inclusion and a Sense of Belonging for a Renewed Mission",
+      "summary": "[Agenzia Fides] Lagos -- \"Let us commit ourselves to including everyone,\" urged Father Fran&#xE7;ois du Penhoat, Superior General of the Society of African Missions (SMA), at the opening of the 2026 Plenary Council, which has been taking place since Monday, May 18, at the Domus Fidei of the Sisters ",
+      "published": "Sat, 23 May 2026 14:23:35 +0000",
+      "image_url": "https://www.jamaicaobserver.com/jamaicaobserver/news/wp-content/uploads/sites/4/2026/05/AFP__20260521__B3N73QV__v1__MidRes__DrcongoHealthVirusEbola-1024x683.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "No partisan coverage",
+      "blindspot_score": 5.0,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 100,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 100
+      },
+      "bias_variance": 0.2,
+      "entity_count": 50,
+      "entity_list": [
+        "Access",
+        "Affairs",
+        "Africa",
+        "African",
+        "Agency",
+        "Assured",
+        "Belonging",
+        "Burayu",
+        "Capacity",
+        "Cards",
+        "Charter",
+        "Council",
+        "Dangerous",
+        "Declaration",
+        "Draft",
+        "Ebola",
+        "Engagement",
+        "Family",
+        "Flawed",
+        "Framework",
+        "Health",
+        "Homegrown",
+        "Inclusion",
+        "Influencers",
+        "Interference",
+        "Internal",
+        "Joint",
+        "Landmark",
+        "Launch",
+        "Mechanism",
+        "Medicines",
+        "Mission",
+        "Missions",
+        "Narrative",
+        "Peace",
+        "Plenary",
+        "Products",
+        "Quality",
+        "Renewed",
+        "Reshape",
+        "Review",
+        "Security",
+        "Sense",
+        "Society",
+        "Storytelling",
+        "Strengthen",
+        "TrustAfrica",
+        "Union",
+        "Values",
+        "Years"
+      ],
+      "sources": [
+        {
+          "id": "allafrica",
+          "name": "AllAfrica",
+          "country": "NG",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "jamaica_observer",
+          "name": "Jamaica Observer",
+          "country": "JM",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://allafrica.com/stories/202605080403.html",
+          "headline": "Africa: African MPs Push Back Against EU 'Interference' in Internal Affairs",
+          "snippet": "Deputy Speaker Thomas Tayebwa has led African legislators in condemning what they described as growing interference by the European Parliament in the internal affairs of African countries, urging members of the Organization of African, Caribbean and Pacific States (OACPS) to defend the continent's…",
+          "source": "allafrica",
+          "source_name": "AllAfrica",
+          "country": "NG",
+          "published": "Fri, 08 May 2026 12:23:14 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://allafrica.com/stories/202605110122.html",
+          "headline": "Africa: African Influencers Urge Homegrown Storytelling to Reshape Global Narrative On Africa",
+          "snippet": "Addis Ababa — Prominent African content creators have called for stronger support for digital storytellers and urged Africans to take the lead in shaping the continent's global image. They stressed that social media is playing a growing role in challenging stereotypes and showcasing Africa's…",
+          "source": "allafrica",
+          "source_name": "AllAfrica",
+          "country": "NG",
+          "published": "Mon, 11 May 2026 06:29:53 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://allafrica.com/stories/202605110540.html",
+          "headline": "Africa: Joint Burayu Declaration On Five Years of Engagement Between the Peace and Security Council of the African Union and the African Peer Review Mechanism (2021-2026)",
+          "snippet": "We, the Members of the Peace and Security Council (PSC) of the African Union (AU) and African Peer Review Mechanism (APRM), meeting and marking the fifth (5th) year of our Joint Retreat, in Burayu, Ethiopia, from 29 to 30 April 2026. Recalling the Protocol Relating to the Establishment of the of…",
+          "source": "allafrica",
+          "source_name": "AllAfrica",
+          "country": "NG",
+          "published": "Mon, 11 May 2026 11:56:43 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://allafrica.com/stories/202605220574.html",
+          "headline": "Africa: WHO and African Medicines Agency Launch Landmark Framework to Strengthen Access to Quality-Assured Health Products in Africa",
+          "snippet": "New collaboration marks a major step towards a harmonized, resilient regulatory ecosystem and accelerated access to health products across the continent Geneva -- The World Health Organization (WHO) and the African Medicines Agency (AMA) have signed a Framework Agreement for Collaboration, marking…",
+          "source": "allafrica",
+          "source_name": "AllAfrica",
+          "country": "NG",
+          "published": "Fri, 22 May 2026 13:30:21 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://allafrica.com/stories/202605220575.html",
+          "headline": "Africa: Plenary Council of the Society of African Missions - Inclusion and a Sense of Belonging for a Renewed Mission",
+          "snippet": "Lagos — \"Let us commit ourselves to including everyone,\" urged Father François du Penhoat, Superior General of the Society of African Missions (SMA), at the opening of the 2026 Plenary Council, which has been taking place since Monday, May 18, at the Domus Fidei of the Sisters of the Eucharistic…",
+          "source": "allafrica",
+          "source_name": "AllAfrica",
+          "country": "NG",
+          "published": "Fri, 22 May 2026 13:30:50 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://allafrica.com/stories/202605220009.html",
+          "headline": "Africa: A Draft African Charter On 'Family Values' Is On the Cards - Why It's Flawed and Dangerous",
+          "snippet": "A series of conferences held in Entebbe, Uganda, between 2023 and 2025 have resulted in a draft African Charter on Family, Sovereignty and Values . The meetings were organised by the Inter-parliamentary Network on African Sovereignty and Values, which organises continental conferences for African…",
+          "source": "allafrica",
+          "source_name": "AllAfrica",
+          "country": "NG",
+          "published": "Fri, 22 May 2026 04:09:15 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://allafrica.com/stories/202605210399.html",
+          "headline": "Africa: African Risk Capacity and TrustAfrica sign MoU to advance gender-responsive disaster risk management and climate action across Africa",
+          "snippet": "The African Risk Capacity Agency (ARC), a specialized agency of the African Union, and TrustAfrica today announced the signing of a Memorandum of Understanding (MoU) to establish a strategic partnership for advancing gender-responsive disaster risk management (DRM), climate action, and social…",
+          "source": "allafrica",
+          "source_name": "AllAfrica",
+          "country": "NG",
+          "published": "Thu, 21 May 2026 12:11:13 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.jamaicaobserver.com/2026/05/23/ebola-epidemic-threatens-10-african-countries-africa-cdc/",
+          "headline": "Ebola epidemic threatens 10 African countries — Africa CDC",
+          "snippet": "Medical staff wearing personal protective equipment (PPE) transport a patient at the hospital in Rwampara on May 21, 2026. (Photo: AFP) May 23, 2026 Ebola epidemic threatens 10 African countries — Africa ADDIS ABABA, Ethiopia (AFP) — Ten African countries are at risk of being affected by the Ebola…",
+          "source": "jamaica_observer",
+          "source_name": "Jamaica Observer",
+          "country": "JM",
+          "published": "Sat, 23 May 2026 14:23:35 +0000",
+          "image_url": "https://www.jamaicaobserver.com/jamaicaobserver/news/wp-content/uploads/sites/4/2026/05/AFP__20260521__B3N73QV__v1__MidRes__DrcongoHealthVirusEbola-1024x683.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.085,
+        "zionist": 0.19,
+        "atlanticist": 0.36,
+        "statist": 0.185,
+        "financialized": 0.435
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "africa": 1,
+        "latin-america": 1
+      },
+      "section": "world"
+    },
+    {
       "id": "27d2feb3831a",
       "headline": "Trump, Xi set for high-stakes talks on trade, Iran, AI in Beijing",
       "summary": "US President Donald Trump and Chinese President Xi Jinping are expected to discuss Iran, Taiwan, artificial intelligence and nuclear weapons during Trump’s two-day visit to China this week, according to US officials.",
@@ -10759,6 +11249,325 @@
         "pacific-asia": 1
       },
       "section": "world"
+    },
+    {
+      "id": "32ac59c45a7e",
+      "headline": "Xi says China views Beijing-Minsk relations in strategic terms",
+      "summary": "The Chinese leader noted that the two sides have always treated each other with sincerity and trust",
+      "published": "Mon, 18 May 2026 12:00:05 +0000",
+      "image_url": "https://i.iranintl.com/images/rdk9umy0/production/2852fe98dfb8f1b3eb626c92e73ac075adaa91ab-1280x1280.jpg?rect=69,366,1167,611&w=1200&h=628&fm=jpg&q=85&fit=max&auto=format",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 67,
+        "right_pct": 33,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 5.85,
+      "entity_count": 7,
+      "entity_list": [
+        "Beijing",
+        "China",
+        "Escalating",
+        "France",
+        "Minsk",
+        "Targets",
+        "Tehran"
+      ],
+      "sources": [
+        {
+          "id": "iran_international",
+          "name": "Iran International",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "pajhwok_en",
+          "name": "Pajhwok Afghan News",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "icij",
+          "name": "ICIJ",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "scmp_business",
+          "name": "SCMP Business",
+          "country": "HK",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "tass_en",
+          "name": "TASS English",
+          "country": "RU",
+          "bloc": "adversarial",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.iranintl.com/en/202605088862",
+          "headline": "Tehran hails China’s support, but Beijing’s limits are showing",
+          "snippet": "President Donald Trump said on Wednesday that a deal with Tehran “will happen” but insisted there was “never a deadline” for negotiations. When asked whether a deal could come before his planned trip to China next week, he said “it’s possible,” while stressing that renewed strikes also remained on…",
+          "source": "iran_international",
+          "source_name": "Iran International",
+          "country": "GB",
+          "published": "Fri, 08 May 2026 01:42:34 GMT",
+          "image_url": "https://i.iranintl.com/images/rdk9umy0/production/2852fe98dfb8f1b3eb626c92e73ac075adaa91ab-1280x1280.jpg?rect=69,366,1167,611&w=1200&h=628&fm=jpg&q=85&fit=max&auto=format",
+          "video_url": null
+        },
+        {
+          "url": "https://pajhwok.com/2026/05/06/iran-china-fms-meet-in-beijing/",
+          "headline": "Iran, China FMs meet in Beijing",
+          "snippet": "KABUL (Pajhwok): Iranian Foreign Minister Seyed Abbas Araghchi has met his Chinese counterpart Wang Yi in Beijing, a media report said on Wednesday. Mehr News Agency reported that Araghchi arrived in Beijing, the capital of China, this morning at 3:00am Iran time at the head of a diplomatic…",
+          "source": "pajhwok_en",
+          "source_name": "Pajhwok Afghan News",
+          "country": "AF",
+          "published": "Wed, 06 May 2026 04:53:37 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.scmp.com/news/china/diplomacy/article/3353004/beijing-urges-france-respect-one-china-principle-during-high-level-talks?utm_source=rss_feed",
+          "headline": "Beijing urges France to respect one-China principle during high-level talks",
+          "snippet": "China and France must respect each other’s core interests, particularly the one-China principle, and strengthen a strategic partnership “free from external interference”, top diplomat Wang Yi said during talks with a senior adviser to the French president on Friday. Wang, director of the Office of…",
+          "source": "scmp",
+          "source_name": "South China Morning Post",
+          "country": "HK",
+          "published": "Sat, 09 May 2026 13:00:06 +0000",
+          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/09/b96b5dda-7956-4715-8dae-1ac1dc5d745a_721b1eac.jpg?itok=am6hFV4B&v=1778326916",
+          "video_url": null
+        },
+        {
+          "url": "https://www.icij.org/investigations/china-targets/escalating-efforts-a-year-after-china-targets-beijings-global-campaign-against-dissenters-continues/",
+          "headline": "‘Escalating efforts’: A year after China Targets, Beijing’s global campaign against dissenters continues",
+          "snippet": "For more than 15 hours, Abdulhakim Idris stared at the walls of a detention room in a Malaysian airport. The room, dirty and ridden with bed bugs, held dozens of detainees from around the world. Many of them slept on the floor. Idris is the executive director of the Center for Uyghur Studies, a…",
+          "source": "icij",
+          "source_name": "ICIJ",
+          "country": "US",
+          "published": "Tue, 28 Apr 2026 14:00:46 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.scmp.com/economy/china-economy/article/3353975/chinas-yuan-emerges-global-currency-beijing-faces-balancing-act?utm_source=rss_feed",
+          "headline": "As China’s yuan emerges as a global currency, Beijing faces a balancing act",
+          "snippet": "As the yuan’s exchange rate hovers near a three-year high against the dollar, an article by China’s top foreign exchange regulator suggests that authorities remain focused on stability and risk control. Zhu Hexin, head of China’s State Administration of Foreign Exchange, called for “a more…",
+          "source": "scmp_business",
+          "source_name": "SCMP Business",
+          "country": "HK",
+          "published": "Mon, 18 May 2026 12:00:05 +0000",
+          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/18/da5fa0ee-f71a-4302-b2a8-448bef173228_2e1a616d.jpg?itok=H_bIhDgz&v=1779095934",
+          "video_url": null
+        },
+        {
+          "url": "https://tass.com/world/1968129",
+          "headline": "Xi says China views Beijing-Minsk relations in strategic terms",
+          "snippet": "BEIJING, June 4. /TASS/. Beijing attaches strategic importance to the development of Chinese-Belarusian relations, Chinese leader Xi Jinping told visiting Belarusian President Alexander Lukashenko at a meeting. \"China and Belarus are true friends and good partners, and the two sides have always…",
+          "source": "tass_en",
+          "source_name": "TASS English",
+          "country": "RU",
+          "published": "Wed, 04 Jun 2025 09:01:30 +0300",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.016,
+        "zionist": 0.182,
+        "atlanticist": 0.158,
+        "statist": 0.186,
+        "financialized": 0.36
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 2,
+        "global-south": 1,
+        "pacific-asia": 2,
+        "adversarial": 1
+      },
+      "section": "world"
+    },
+    {
+      "id": "f635e011fa79",
+      "headline": "Putin Says Economy Is Main Focus of China Visit",
+      "summary": "<p>Vladimir Putin said Wednesday that economic cooperation remains the main focus of talks with Xi Jinping during his visit to Beijing. According to Anadolu Agency, Putin said relations between Russia and China had reached an “unprecedented level,” adding that bilateral trade has increased more than",
+      "published": "Wed, 20 May 2026 10:40:00 +0000",
+      "image_url": "https://cdn.prod.www.spiegel.de/images/00f3f242-6ceb-43cc-9f74-51da0520a2b4_w520_r2.08_fpx40_fpy58.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 67,
+        "center_pct": 33,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "left",
+        "dominant_pct": 67
+      },
+      "bias_variance": 3.35,
+      "entity_count": 15,
+      "entity_list": [
+        "Aging",
+        "Child",
+        "China",
+        "Economy",
+        "Focus",
+        "Ground",
+        "India",
+        "Policy",
+        "Population",
+        "Putin",
+        "TheWire",
+        "Trumps",
+        "Visit",
+        "Watch",
+        "Years"
+      ],
+      "sources": [
+        {
+          "id": "der_spiegel",
+          "name": "Der Spiegel (English)",
+          "country": "DE",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_wire_in",
+          "name": "The Wire (India)",
+          "country": "IN",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "khaama",
+          "name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.spiegel.de/international/world/ten-years-after-the-end-of-the-one-child-policy-a-visit-to-ground-zero-of-chinas-aging-population-a-7b669939-a8f8-4af5-9b77-ac9f08bb691d#ref=rss",
+          "headline": "Ten Years after the End of the One-Child Policy: A Visit to Ground Zero of China's Aging Population",
+          "snippet": "$publish('OPEN_MENU_DRAWER'), 0)\" data-sara-click-el=\"button\" :class=\"{'lg:opacity-none lg:invisible md:opacity-none md:invisible': !isCollapsed,}\"> Menü öffnen International News Ticker Magazin Audio Account $swiper.update())\" x-swiper=\"{freeMode: true,roundLengths: false,slidesPerView:…",
+          "source": "der_spiegel",
+          "source_name": "Der Spiegel (English)",
+          "country": "DE",
+          "published": "Mon, 27 Apr 2026 14:35:00 +0200",
+          "image_url": "https://cdn.prod.www.spiegel.de/images/00f3f242-6ceb-43cc-9f74-51da0520a2b4_w520_r2.08_fpx40_fpy58.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNYW4zcG1pV2dtVWFISlpyZm5GbWQwU0pjM2xGcnJmOEdfemx3ZTV4cGZZMXZ0SGJvQ19BWVQ4TWxBRHZlZHZ5Sl9qdGZjcjZWel9hMU5EVGNJREdFcS11S0hlTzlxbDJYM2pMZXFDdmFLSjhZcS1Pa0JfdEZLN0tsOXVOSE9vczhwNDFBYWVha1kzX1RmTFRnV2p4TVRqNmvSAaoBQVVfeXFMT3V0Zk1tRlZwRDNvWERMbzdLRGRFQzJORVJqdlJsaUtGUDc4YnUzLTg0ZzF2YTZicnlVLVJPeG96bjZzX2pNeVZXYjZfMERGNGhHZFJBRE55Q3ltbGtTbkN0aUFjdnZ3eGZWVV81bEhLX01sUkhLNlBOamNVVGtMMmtxb1ZBX1ZrcmZ2NFE1eUsxU19jTjI4NFpqXzBpbmZtcXdDd1dxdXJfOHc?oc=5",
+          "headline": "Watch | What Does Trumps China Visit Mean For India And the World? - TheWire.in",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNYW4zcG1pV2dtVWFISlpyZm5GbWQwU0pjM2xGcnJmOEdfemx3ZTV4cGZZMXZ0SGJvQ19BWVQ4TWxBRHZlZHZ5Sl9qdGZjcjZWel9hMU5EVGNJREdFcS11S0hlTzlxbDJYM2pMZXFDdmFLSjhZcS1Pa0JfdEZLN0tsOXVOSE9vczhwNDFBYWVha1kzX1RmTFRnV2p4TVRqNmvSAaoBQVVfeXFMT3V0Zk1tRlZwRDNvWERMbz…",
+          "source": "the_wire_in",
+          "source_name": "The Wire (India)",
+          "country": "IN",
+          "published": "Mon, 18 May 2026 09:39:08 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/putin-says-economy-is-main-focus-of-china-visit/",
+          "headline": "Putin Says Economy Is Main Focus of China Visit",
+          "snippet": "Vladimir Putin said Wednesday that economic cooperation remains the main focus of talks with Xi Jinping during his visit to Beijing. According to Anadolu Agency, Putin said relations between Russia and China had reached an “unprecedented level,” adding that bilateral trade has increased more than…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Wed, 20 May 2026 10:40:00 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.073,
+        "zionist": 0.213,
+        "atlanticist": 0.227,
+        "statist": 0.09,
+        "financialized": 0.257
+      },
+      "fp_source_count": 3,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 1,
+        "global-south": 2
+      },
+      "section": "business"
     },
     {
       "id": "0ed1f8502fea",
@@ -13957,6 +14766,116 @@
       "section": "sports"
     },
     {
+      "id": "a4d596c9d2ed",
+      "headline": "West Bengal CMO gets 9 new officers as Suvendu takes charge",
+      "summary": "Kolkata, May 10 (PTI) The West Bengal government on Sunday carried out a bureaucratic reshuffle, appointing two IAS officers and seven WBCS (Executive) officers in the Chief Minister&#8217;s Office (CMO), according to official notifications. P Promoth, currently serving as joint secretary in the MSM",
+      "published": "Sun, 10 May 2026 15:16:18 +0000",
+      "image_url": null,
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 50,
+        "center_pct": 50,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "left",
+        "dominant_pct": 50
+      },
+      "bias_variance": 1.2,
+      "entity_count": 10,
+      "entity_list": [
+        "Adhikaris",
+        "Baisakh",
+        "Bengal",
+        "Continues",
+        "Hopeful",
+        "Mamata",
+        "Poila",
+        "Suvendu",
+        "TheWire",
+        "Violence"
+      ],
+      "sources": [
+        {
+          "id": "the_wire_in",
+          "name": "The Wire (India)",
+          "country": "IN",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_print",
+          "name": "The Print (India)",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZEstNDhyN3E0a1FDX2hwTmNWSEJwemU1eUNOVmhKNlhJdlI2Tm45UGU3Q242VjhkcmVrZFhFTElhY2E4OEFNWF96WmxNdWY0akV0SkV3bV9ZZFZ1OUZ3OFhCZnV2SkZKc3VhbGZ4RDhnNC01SHFGR3dOTmI2Ykd4Q0UyclJoSzZQdWV5VTdoVU95QW5OenhpelVaM2NJS0tSckkweHhUY2szR1ZkV2ZhOGdDaWRLbkhnWG1ZZl9scEpQWlVvckHSAcsBQVVfeXFMUDVkQmxpQkRIX3ZUV2Z1WHZsM2otZXpaWHNtZnJBcm4yaGNnaHk0c0F3bDJqX0p2N3ZJWlNGQzhUMDFDNEd2VFJJQUc1SGVhQ2QxMUtXYWJ3djVKN0daRnNEdjlOeDNTNHNuNnBlLTc1dDk2VXdZY1NoR1F6TmRYajlJY1BzQ3ZZV0p2NVRmajZ5MDBuU3hXOFpIMW1DODI5czFMS3JUSHFUalh2U2xLTTA2VHJSTE42aUp2aHVmWk9LUF9vdjBzM0l4MHc?oc=5",
+          "headline": "BJP CM Hopeful Suvendu Adhikaris Aide Shot Dead as Violence Continues in Post-Poll Bengal - TheWire.in",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOZEstNDhyN3E0a1FDX2hwTmNWSEJwemU1eUNOVmhKNlhJdlI2Tm45UGU3Q242VjhkcmVrZFhFTElhY2E4OEFNWF96WmxNdWY0akV0SkV3bV9ZZFZ1OUZ3OFhCZnV2SkZKc3VhbGZ4RDhnNC01SHFGR3dOTmI2Ykd4Q0UyclJoSzZQdWV5VTdoVU95QW5OenhpelVaM2NJS0tSckkweHhUY2szR1ZkV2ZhOGdDaWRLbkhnWG…",
+          "source": "the_wire_in",
+          "source_name": "The Wire (India)",
+          "country": "IN",
+          "published": "Thu, 07 May 2026 03:20:31 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://theprint.in/india/new-cm-suvendu-for-observing-west-bengal-day-on-june-20-not-poila-baisakh-chosen-by-mamata/2926942/",
+          "headline": "New CM Suvendu for observing ‘West Bengal Day’ on June 20, not Poila Baisakh chosen by Mamata",
+          "snippet": "Kolkata, May 9 (PTI) West Bengal’s new Chief Minister Suvendu Adhikari on Saturday said his government would propose observing “West Bengal Day” on June 20 instead of Poila Baisakh, the Bengali New Year’s Day, which was chosen by his predecessor Mamata Banerjee. Asserting that the date marked the…",
+          "source": "the_print",
+          "source_name": "The Print (India)",
+          "country": "IN",
+          "published": "Sat, 09 May 2026 17:15:58 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://theprint.in/india/west-bengal-cmo-gets-9-new-officers-as-suvendu-takes-charge/2927388/",
+          "headline": "West Bengal CMO gets 9 new officers as Suvendu takes charge",
+          "snippet": "Kolkata, May 10 (PTI) The West Bengal government on Sunday carried out a bureaucratic reshuffle, appointing two officers and seven (Executive) officers in the Chief Minister’s Office (CMO), according to official notifications. P Promoth, currently serving as joint secretary in the and Textiles…",
+          "source": "the_print",
+          "source_name": "The Print (India)",
+          "country": "IN",
+          "published": "Sun, 10 May 2026 15:16:18 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.11,
+        "zionist": 0.32,
+        "atlanticist": 0.34,
+        "statist": 0.135,
+        "financialized": 0.385
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "global-south": 2
+      },
+      "section": "world"
+    },
+    {
       "id": "33c0274c1241",
       "headline": "Stacey Solomon makes a splash with sister Jemma as the pair show off their figures in swimwear while larking around poolside during influencer-packed Miami getaway",
       "summary": "Stacey Solomon made a splash with her sister Jemma as the pair wowed in swimwear during an influencer-packed getaway to Miami.",
@@ -14169,116 +15088,6 @@
         "west": 2
       },
       "section": "chisme"
-    },
-    {
-      "id": "a4d596c9d2ed",
-      "headline": "West Bengal CMO gets 9 new officers as Suvendu takes charge",
-      "summary": "Kolkata, May 10 (PTI) The West Bengal government on Sunday carried out a bureaucratic reshuffle, appointing two IAS officers and seven WBCS (Executive) officers in the Chief Minister&#8217;s Office (CMO), according to official notifications. P Promoth, currently serving as joint secretary in the MSM",
-      "published": "Sun, 10 May 2026 15:16:18 +0000",
-      "image_url": null,
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 50,
-        "center_pct": 50,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "left",
-        "dominant_pct": 50
-      },
-      "bias_variance": 1.2,
-      "entity_count": 10,
-      "entity_list": [
-        "Adhikaris",
-        "Baisakh",
-        "Bengal",
-        "Continues",
-        "Hopeful",
-        "Mamata",
-        "Poila",
-        "Suvendu",
-        "TheWire",
-        "Violence"
-      ],
-      "sources": [
-        {
-          "id": "the_wire_in",
-          "name": "The Wire (India)",
-          "country": "IN",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_print",
-          "name": "The Print (India)",
-          "country": "IN",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZEstNDhyN3E0a1FDX2hwTmNWSEJwemU1eUNOVmhKNlhJdlI2Tm45UGU3Q242VjhkcmVrZFhFTElhY2E4OEFNWF96WmxNdWY0akV0SkV3bV9ZZFZ1OUZ3OFhCZnV2SkZKc3VhbGZ4RDhnNC01SHFGR3dOTmI2Ykd4Q0UyclJoSzZQdWV5VTdoVU95QW5OenhpelVaM2NJS0tSckkweHhUY2szR1ZkV2ZhOGdDaWRLbkhnWG1ZZl9scEpQWlVvckHSAcsBQVVfeXFMUDVkQmxpQkRIX3ZUV2Z1WHZsM2otZXpaWHNtZnJBcm4yaGNnaHk0c0F3bDJqX0p2N3ZJWlNGQzhUMDFDNEd2VFJJQUc1SGVhQ2QxMUtXYWJ3djVKN0daRnNEdjlOeDNTNHNuNnBlLTc1dDk2VXdZY1NoR1F6TmRYajlJY1BzQ3ZZV0p2NVRmajZ5MDBuU3hXOFpIMW1DODI5czFMS3JUSHFUalh2U2xLTTA2VHJSTE42aUp2aHVmWk9LUF9vdjBzM0l4MHc?oc=5",
-          "headline": "BJP CM Hopeful Suvendu Adhikaris Aide Shot Dead as Violence Continues in Post-Poll Bengal - TheWire.in",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOZEstNDhyN3E0a1FDX2hwTmNWSEJwemU1eUNOVmhKNlhJdlI2Tm45UGU3Q242VjhkcmVrZFhFTElhY2E4OEFNWF96WmxNdWY0akV0SkV3bV9ZZFZ1OUZ3OFhCZnV2SkZKc3VhbGZ4RDhnNC01SHFGR3dOTmI2Ykd4Q0UyclJoSzZQdWV5VTdoVU95QW5OenhpelVaM2NJS0tSckkweHhUY2szR1ZkV2ZhOGdDaWRLbkhnWG…",
-          "source": "the_wire_in",
-          "source_name": "The Wire (India)",
-          "country": "IN",
-          "published": "Thu, 07 May 2026 03:20:31 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://theprint.in/india/new-cm-suvendu-for-observing-west-bengal-day-on-june-20-not-poila-baisakh-chosen-by-mamata/2926942/",
-          "headline": "New CM Suvendu for observing ‘West Bengal Day’ on June 20, not Poila Baisakh chosen by Mamata",
-          "snippet": "Kolkata, May 9 (PTI) West Bengal’s new Chief Minister Suvendu Adhikari on Saturday said his government would propose observing “West Bengal Day” on June 20 instead of Poila Baisakh, the Bengali New Year’s Day, which was chosen by his predecessor Mamata Banerjee. Asserting that the date marked the…",
-          "source": "the_print",
-          "source_name": "The Print (India)",
-          "country": "IN",
-          "published": "Sat, 09 May 2026 17:15:58 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://theprint.in/india/west-bengal-cmo-gets-9-new-officers-as-suvendu-takes-charge/2927388/",
-          "headline": "West Bengal CMO gets 9 new officers as Suvendu takes charge",
-          "snippet": "Kolkata, May 10 (PTI) The West Bengal government on Sunday carried out a bureaucratic reshuffle, appointing two officers and seven (Executive) officers in the Chief Minister’s Office (CMO), according to official notifications. P Promoth, currently serving as joint secretary in the and Textiles…",
-          "source": "the_print",
-          "source_name": "The Print (India)",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 15:16:18 +0000",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.11,
-        "zionist": 0.32,
-        "atlanticist": 0.34,
-        "statist": 0.135,
-        "financialized": 0.385
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "global-south": 2
-      },
-      "section": "world"
     },
     {
       "id": "798079cb6f5a",
@@ -16232,158 +17041,6 @@
         "pacific-asia": 2
       },
       "section": "sports"
-    },
-    {
-      "id": "c0a8f743ff78",
-      "headline": "Trump pulled plug on ‘Project Freedom’ after Saudi snub – NBC",
-      "summary": "<img alt=\"Preview\" align=\"left\" style=\"margin-right: 10px;\" src=\"https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fc99142030277eeb087923.jpg\" /> Saudi Arabia reportedly refused to let the US use its airspace and bases for ‘Project Freedom’, forcing Trump to pause the operation <br/><a href=\"https://w",
-      "published": "Sat, 09 May 2026 10:28:53 +0000",
-      "image_url": "https://www.middleeastmonitor.com/wp-content/uploads/2026/05/AA-20260501-41265011-41265010-US_PRESIDENT_DONALD_TRUMP_DEPARTS_WHITE_HOUSE_FOR_VISIT_TO_FLORIDA.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "No partisan coverage",
-      "blindspot_score": 5.0,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 100,
-        "right_pct": 0,
-        "state_count": 2,
-        "dominant": "center",
-        "dominant_pct": 100
-      },
-      "bias_variance": 10.63,
-      "entity_count": 5,
-      "entity_list": [
-        "Freedom",
-        "Hormuz",
-        "Project",
-        "Saudi",
-        "Trump"
-      ],
-      "sources": [
-        {
-          "id": "middle_east_m",
-          "name": "Middle East Monitor",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "irna",
-          "name": "IRNA",
-          "country": "IR",
-          "bloc": "adversarial",
-          "bias_tier": "state-pro",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "unknown",
-          "primary_vs_launder": "launderer",
-          "parent_company": "Iranian state"
-        },
-        {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial",
-          "bias_tier": "state-pro",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "low",
-          "primary_vs_launder": "launderer",
-          "parent_company": "Russian state"
-        },
-        {
-          "id": "rt_russia",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial",
-          "bias_tier": "unknown",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.middleeastmonitor.com/20260509-trump-threatens-to-resume-project-freedom-plus-if-iran-deal-not-sealed/",
-          "headline": "Trump threatens to resume ‘Project Freedom Plus’ if Iran deal not sealed",
-          "snippet": "President Donald Trump warned Friday that Washington may escalate its military posture in the Strait of Hormuz if a deal with Iran is not finalized, threatening to revive and expand the paused “Project Freedom” operation, Anadolu Agency reports. “We’ll go a different route if everything doesn’t get…",
-          "source": "middle_east_m",
-          "source_name": "Middle East Monitor",
-          "country": "GB",
-          "published": "Sat, 09 May 2026 10:28:53 +0000",
-          "image_url": "https://www.middleeastmonitor.com/wp-content/uploads/2026/05/AA-20260501-41265011-41265010-US_PRESIDENT_DONALD_TRUMP_DEPARTS_WHITE_HOUSE_FOR_VISIT_TO_FLORIDA.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.middleeastmonitor.com/20260508-epic-nonsense-trump-shelves-project-freedom/",
-          "headline": "Epic nonsense: Trump shelves Project Freedom",
-          "snippet": "The waxwork figures of the Pentagon recently glowed with excitement with the announcement that the military would be finally called upon to reopen the Strait of Hormuz. With the ceasefire between Teheran and Washington barely holding, President Donald Trump, as far as his attention span would…",
-          "source": "middle_east_m",
-          "source_name": "Middle East Monitor",
-          "country": "GB",
-          "published": "Fri, 08 May 2026 10:55:39 +0000",
-          "image_url": "https://www.middleeastmonitor.com/wp-content/uploads/2026/03/AA-20260302-40714079-40714075-TRUMP_MONITORS_MILITARY_OPERATIONS_AT_WHITE_HOUSE-1.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://en.irna.ir/photo/86149457/CNN-Project-Freedom-was-a-bust",
-          "headline": "CNN: Project Freedom was a bust",
-          "snippet": "CNN reported that the US President Donald Trump’s military plan in the Strait of Hormuz managed to get only two vessels out of 1,600 trapped in the Persian Gulf to pass through.",
-          "source": "irna",
-          "source_name": "IRNA",
-          "country": "IR",
-          "published": "Sat, 09 May 2026 10:20:56 GMT",
-          "image_url": "https://img9.irna.ir/d/r2/2026/05/09/4/172852827.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.rt.com/news/639570-hormuz-us-saudi-snub/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "headline": "Trump pulled plug on ‘Project Freedom’ after Saudi snub – NBC",
-          "snippet": "Riyadh reportedly blocked key military assets after Trump announced the Strait of Hormuz operation without coordination Saudi Arabia reportedly refused to allow the military to use its airspace and a key airbase for President Donald Trump’s ‘Project Freedom’ in the Strait of Hormuz, forcing the…",
-          "source": "rt",
-          "source_name": "RT (Russia Today)",
-          "country": "RU",
-          "published": "Thu, 07 May 2026 13:53:36 +0000",
-          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fc99142030277eeb087923.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.rt.com/news/639508-iran-new-hormuz-rules/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "headline": "Iran rolls out new Hormuz rules as ‘Project Freedom’ paused – media",
-          "snippet": "Under the framework, ships will receive emails with transit rules they must comply with to secure permits to pass Iran has officially launched a new mechanism to oversee maritime traffic through the Strait of Hormuz amid a lingering standoff with the over the strategic waterway, state outlet Press…",
-          "source": "rt_russia",
-          "source_name": "RT (Russia Today)",
-          "country": "RU",
-          "published": "Wed, 06 May 2026 10:22:25 +0000",
-          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fb0ce685f54032f7446530.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": -0.155,
-        "zionist": -0.198,
-        "atlanticist": -0.478,
-        "statist": 0.54,
-        "financialized": 0.008
-      },
-      "fp_source_count": 4,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "adversarial": 3,
-        "west": 1
-      },
-      "section": "world"
     },
     {
       "id": "25076e440b5d",
