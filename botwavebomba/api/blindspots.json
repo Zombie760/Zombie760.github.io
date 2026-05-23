@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T17:23:00.319688+00:00",
+  "generated_at": "2026-05-23T17:37:59.181219+00:00",
   "count": 68,
   "stories": [
     {
@@ -4131,7 +4131,7 @@
         "dominant_pct": 67
       },
       "bias_variance": 0.0,
-      "entity_count": 8,
+      "entity_count": 9,
       "entity_list": [
         "Bouchier",
         "Capsey",
@@ -4140,6 +4140,7 @@
         "Devine",
         "England",
         "Green",
+        "Sophie",
         "Zealand"
       ],
       "sources": [
@@ -4388,6 +4389,17 @@
           "country": "AU",
           "published": "Sat, 23 May 2026 16:55:50 GMT",
           "image_url": "https://i.guim.co.uk/img/media/a345b54781897517bad1ae4e42ed5fcc24637b21/486_0_2127_1702/master/2127.jpg?width=140&quality=85&auto=format&fit=max&s=5133f6c16fc455aa81d5be0affc17348",
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/sport/2026/may/23/england-new-zealand-women-t201-match-report",
+          "headline": "Sophie Devine sparks New Zealand’s recovery to foil nervy England",
+          "snippet": "New Zealand staged a miraculous comeback to win the second T20 at Canterbury having begun the game by collapsing to 11 for four. Their recovery came by virtue of a 159-run partnership from 98 balls between Sophie Devine and Maddy Green – a record against England in T20 internationals. The…",
+          "source": "the_guardian_au",
+          "source_name": "The Guardian Australia",
+          "country": "AU",
+          "published": "Sat, 23 May 2026 17:05:17 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/9e40e7d097dda7d692cc897efeb2648d00da939a/439_64_2353_1882/master/2353.jpg?width=140&quality=85&auto=format&fit=max&s=03072b0fbcbcdef4d9627aeea06ed6b2",
           "video_url": null
         }
       ],
@@ -6104,6 +6116,113 @@
       "section": "world"
     },
     {
+      "id": "7d3bceba06e5",
+      "headline": "Horario y dónde ver la final de Champions femenina entre Barça y Olympique de Lyon: Barcelona pondrá una pantalla gigante para seguir el partido",
+      "summary": "El regreso de Aitana Bonmatí es una de las mejores noticias, que apunta al once de Pere Romeu",
+      "published": "Sat, 23 May 2026 14:08:31 +0000",
+      "image_url": "https://www.infobae.com/resizer/v2/HNYAUICFMJBVPJIQPAK6T7VHHQ.jpg?auth=4bbc8a3fcd11d46297ecff901e83b514b3d1376c7b7d58bad9775e0da80ea447&smart=true&width=1920&height=1278",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 50,
+        "right_pct": 50,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 1.1,
+      "entity_count": 6,
+      "entity_list": [
+        "Barcelona",
+        "Champions",
+        "Femenina",
+        "Horario",
+        "Olofsson",
+        "Olympique"
+      ],
+      "sources": [
+        {
+          "id": "business_day_ng",
+          "name": "BusinessDay Nigeria",
+          "country": "NG",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://businessday.ng/sports/article/barcelona-crowned-la-liga-champions/",
+          "headline": "Barcelona crowned La Liga Champions",
+          "snippet": "Barcelona were crowned back-to-back Spanish champions after defeating Real Madrid 2-0 in El Clásico to move 14 points clear at the top of La Liga with three games remaining. Marcus Rashford scored a stunning free-kick before Ferran Torres added a second as Barcelona sealed their 29th La Liga title…",
+          "source": "business_day_ng",
+          "source_name": "BusinessDay Nigeria",
+          "country": "NG",
+          "published": "Sun, 10 May 2026 21:35:05 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/11/la-sueca-tess-olofsson-pitara-la-final-de-la-champions-femenina-entre-el-barcelona-y-el-olympique-de-lyon/",
+          "headline": "La sueca Tess Olofsson pitará la final de la Champions Femenina entre el Barcelona y el Olympique de Lyon",
+          "snippet": "La colegiada sueca Tess Olofsson fue designada por la para pitar la final de la Champions Femenina entre el Barcelona y el Olympique de Lyon, que se disputará en el Ullevaal Stadion de Oslo (Noruega) el 23 de mayo (18.00), mientras que el italiano Maurizio Mariana pitará la de la Conference League,…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 11 May 2026 13:46:05 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/HNYAUICFMJBVPJIQPAK6T7VHHQ.jpg?auth=4bbc8a3fcd11d46297ecff901e83b514b3d1376c7b7d58bad9775e0da80ea447&smart=true&width=1920&height=1278",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/deportes/2026/05/23/horario-y-donde-ver-la-final-de-champions-femenina-entre-barca-y-olympique-de-lyon-barcelona-pondra-una-pantalla-gigante-para-seguir-el-partido/",
+          "headline": "Horario y dónde ver la final de Champions femenina entre Barça y Olympique de Lyon: Barcelona pondrá una pantalla gigante para seguir el partido",
+          "snippet": "Aitana Bonmatí. (EFE/Quique García) El Barcelona femenino vuelve a citarse con la historia . El conjunto azulgrana disputa este sábado a las 18:00 horas la final de la Women’s Champions League Final frente al Lyonnes en el Ullevaal Stadion de Oslo. La cita tiene aroma a revancha y también a legado.…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 14:08:31 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/WN6GLUPXTZDDRDBOC7NNSE3VCY.jpg?auth=8d3dc020de2609970227df92cb28d17a8e29e75e7f71801ce394a93f658c4577&smart=true&width=7994&height=5330",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.135,
+        "zionist": 0.24,
+        "atlanticist": 0.405,
+        "statist": 0.23,
+        "financialized": 0.42
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "africa": 1,
+        "latin-america": 1
+      },
+      "section": "world"
+    },
+    {
       "id": "16f9adc52bd1",
       "headline": "Pete Wicks shows his chivalrous side as he cuddles 'girlfriend' Olivia Attwood after collecting her from the airport",
       "summary": "The longtime friends are thought to be in the early stages of a romance after the Love Island star split from her husband Bradley Dack in January.",
@@ -6440,113 +6559,6 @@
         "west": 2
       },
       "section": "chisme"
-    },
-    {
-      "id": "7d3bceba06e5",
-      "headline": "Horario y dónde ver la final de Champions femenina entre Barça y Olympique de Lyon: Barcelona pondrá una pantalla gigante para seguir el partido",
-      "summary": "El regreso de Aitana Bonmatí es una de las mejores noticias, que apunta al once de Pere Romeu",
-      "published": "Sat, 23 May 2026 14:08:31 +0000",
-      "image_url": "https://www.infobae.com/resizer/v2/HNYAUICFMJBVPJIQPAK6T7VHHQ.jpg?auth=4bbc8a3fcd11d46297ecff901e83b514b3d1376c7b7d58bad9775e0da80ea447&smart=true&width=1920&height=1278",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 1.1,
-      "entity_count": 6,
-      "entity_list": [
-        "Barcelona",
-        "Champions",
-        "Femenina",
-        "Horario",
-        "Olofsson",
-        "Olympique"
-      ],
-      "sources": [
-        {
-          "id": "business_day_ng",
-          "name": "BusinessDay Nigeria",
-          "country": "NG",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "africa",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://businessday.ng/sports/article/barcelona-crowned-la-liga-champions/",
-          "headline": "Barcelona crowned La Liga Champions",
-          "snippet": "Barcelona were crowned back-to-back Spanish champions after defeating Real Madrid 2-0 in El Clásico to move 14 points clear at the top of La Liga with three games remaining. Marcus Rashford scored a stunning free-kick before Ferran Torres added a second as Barcelona sealed their 29th La Liga title…",
-          "source": "business_day_ng",
-          "source_name": "BusinessDay Nigeria",
-          "country": "NG",
-          "published": "Sun, 10 May 2026 21:35:05 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/11/la-sueca-tess-olofsson-pitara-la-final-de-la-champions-femenina-entre-el-barcelona-y-el-olympique-de-lyon/",
-          "headline": "La sueca Tess Olofsson pitará la final de la Champions Femenina entre el Barcelona y el Olympique de Lyon",
-          "snippet": "La colegiada sueca Tess Olofsson fue designada por la para pitar la final de la Champions Femenina entre el Barcelona y el Olympique de Lyon, que se disputará en el Ullevaal Stadion de Oslo (Noruega) el 23 de mayo (18.00), mientras que el italiano Maurizio Mariana pitará la de la Conference League,…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 13:46:05 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/HNYAUICFMJBVPJIQPAK6T7VHHQ.jpg?auth=4bbc8a3fcd11d46297ecff901e83b514b3d1376c7b7d58bad9775e0da80ea447&smart=true&width=1920&height=1278",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/espana/deportes/2026/05/23/horario-y-donde-ver-la-final-de-champions-femenina-entre-barca-y-olympique-de-lyon-barcelona-pondra-una-pantalla-gigante-para-seguir-el-partido/",
-          "headline": "Horario y dónde ver la final de Champions femenina entre Barça y Olympique de Lyon: Barcelona pondrá una pantalla gigante para seguir el partido",
-          "snippet": "Aitana Bonmatí. (EFE/Quique García) El Barcelona femenino vuelve a citarse con la historia . El conjunto azulgrana disputa este sábado a las 18:00 horas la final de la Women’s Champions League Final frente al Lyonnes en el Ullevaal Stadion de Oslo. La cita tiene aroma a revancha y también a legado.…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 14:08:31 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/WN6GLUPXTZDDRDBOC7NNSE3VCY.jpg?auth=8d3dc020de2609970227df92cb28d17a8e29e75e7f71801ce394a93f658c4577&smart=true&width=7994&height=5330",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.135,
-        "zionist": 0.24,
-        "atlanticist": 0.405,
-        "statist": 0.23,
-        "financialized": 0.42
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "africa": 1,
-        "latin-america": 1
-      },
-      "section": "world"
     },
     {
       "id": "8f4389c16bdf",
@@ -9041,6 +9053,357 @@
       "section": "entertainment"
     },
     {
+      "id": "c9dc8c59301d",
+      "headline": "Kimi Antonelli rages as Mercedes teammate George Russell wins tense Canada sprint race... forcing Toto Wolff to step in",
+      "summary": "George Russell edged his Mercedes teammate Kimi Antonelli to win the sprint race at the Canadian Grand Prix.",
+      "published": "Sat, 23 May 2026 17:30:00 BST",
+      "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7238961.jpg?20260504141408",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 12% Left",
+      "blindspot_score": 5,
+      "coverage": {
+        "left_pct": 12,
+        "center_pct": 50,
+        "right_pct": 38,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 3.05,
+      "entity_count": 11,
+      "entity_list": [
+        "Antonelli",
+        "Canada",
+        "Canadian",
+        "George",
+        "Mercedes",
+        "Montreal",
+        "Norris",
+        "Reaction",
+        "Russell",
+        "Sprint",
+        "Wolff"
+      ],
+      "sources": [
+        {
+          "id": "sky_sports",
+          "name": "Sky Sports",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_jornada_mx",
+          "name": "La Jornada",
+          "country": "MX",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "bbc_sport",
+          "name": "BBC Sport",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_nacion_ar",
+          "name": "La Nación (Argentina)",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "index_hu",
+          "name": "Index Hungary",
+          "country": "HU",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "daily_mail",
+          "name": "Daily Mail",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
+        },
+        {
+          "id": "nst_my",
+          "name": "New Straits Times",
+          "country": "MY",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.skysports.com/f1/news/12040/13540033/george-russell-toto-wolff-backs-mercedes-driver-to-respond-to-team-mate-kimi-antonellis-form-in-f1-title-race",
+          "headline": "'He never stops fighting!' - Wolff backs Russell to respond to Antonelli",
+          "snippet": "Mercedes team principal Toto Wolff says George Russell \"won't leave a stone unturned\" in Formula 1's title race and expects his driver to bounce back at the next race in Montreal. Russell is 20 points behind championship leader Kimi Antonelli after a disappointing weekend in Miami, where he lacked…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 06:00:00 BST",
+          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7238961.jpg?20260504141408",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/news/12040/13547012/canadian-gp-sprint-qualifying-george-russell-pips-kimi-antonelli-to-pole-in-montreal-with-lando-norris-in-third",
+          "headline": "Russell pips Antonelli to Sprint pole in Canada",
+          "snippet": "George Russell pipped Mercedes team-mate Kimi Antonelli to Sprint pole at the Canadian Grand Prix in a dramatic battle at the end of Sprint Qualifying. Russell, who is 20 points behind Antonelli after seeing the Italian teenager win the last three Grands Prix, beat Antonelli by just 0.068s as…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 22:45:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7256214.jpg?20260523102150",
+          "video_url": null
+        },
+        {
+          "url": "https://www.jornada.com.mx/2026/05/23/deportes/a11n3dep?partner=rss",
+          "headline": "Russell le arrebata a Antonelli la  pole para sprint del GP de Canadá",
+          "snippet": "Afp Periódico La Jornada Sábado 23 de mayo de 2026, p. a11 Montreal. El británico George Russell, al volante de su Mercedes, le ganó ayer el duelo a su compañero Kimi Antonelli para apropiarse del primer lugar de la parrilla para la carrera sprint del Gran Premio de Canadá de Fórmula 1, donde el…",
+          "source": "la_jornada_mx",
+          "source_name": "La Jornada",
+          "country": "MX",
+          "published": "Sat, 23 May 2026 07:30:02 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.bbc.com/sport/formula1/articles/ckgplmj1rg9o?at_medium=RSS&at_campaign=rss",
+          "headline": "Russell edges out Antonelli to take Canada sprint pole",
+          "snippet": "George Russell bounced back after a difficult recent run to beat Mercedes team-mate Kimi Antonelli to sprint pole at the Canadian Grand Prix. The Briton, who is 20 points adrift of the Italian after four races this season, headed Antonelli by 0.068 seconds after being fastest on both runs in final…",
+          "source": "bbc_sport",
+          "source_name": "BBC Sport",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 22:47:31 GMT",
+          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4522/live/ffe72e10-5627-11f1-89a3-d1f559421220.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
+          "headline": "Canadian GP: Russell on pole for 5pm Sprint, Antonelli second LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:00:00 BST",
+          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7256188.jpg?20260522222508",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
+          "headline": "Canadian GP: Russell stays ahead of Antonelli at Sprint start LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:00:00 BST",
+          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-george-russell-mercedes_7256489.png?20260523170612",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
+          "headline": "Canadian GP Sprint: Russell leads after dramatic duel with Antonelli LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:00:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/automovilismo/el-toque-entre-russell-y-antonelli-que-desato-la-bronca-entre-los-dos-companeros-de-mercedes-nid23052026/",
+          "headline": "El toque entre Russell y Antonelli que desató la bronca entre los dos compañeros de Mercedes",
+          "snippet": "La escena de disputa entre compañeros fue una constante en 2025, cuando Lando Norris y Oscar Piastri competían al límite por el título, sin tener en cuenta que respondían a la misma escudería. Aquellos duelos de los McLaren, que muchas veces terminaron en incidentes, parecen haberse trasladado a…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:36:24 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/MXEAN6LB3ZEXJMMIFPZA4NXNBM.JPG?auth=99ac0cad92d3e8cad8a9eb9273636fa7f907b8c730ceba396b8479dc7af54ce9&smart=true&width=5588&height=3725",
+          "video_url": null
+        },
+        {
+          "url": "https://index.hu/sport/forma1/2026/05/23/formula-1-2026-kanadai-nagydij-sprintfutam-george-russell-kimi-antonelli-lando-norris/",
+          "headline": "Russell és Antonelli csatájából Norris ki jött legjobban a kanadai sprintfutamon",
+          "snippet": "A sprintkvalifikáción az idény eddigi alakulásának megfelelően a Mercedesek voltak a leggyorsabbak – ezúttal George Russell volt kettejük közül a jobb –, mögéjük az előző futamra látványosat javuló McLaren duója érkezett, majd a két-két Ferrari és Red Bull állhatott az első négy sorba. Ami eddig…",
+          "source": "index_hu",
+          "source_name": "Index Hungary",
+          "country": "HU",
+          "published": "Sat, 23 May 2026 18:32:00 +0200",
+          "image_url": "https://kep.index.hu/1/0/6956/69565/695653/69565387_5133383_073d04ba9a666721cca48bac7d6ba633_wm.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
+          "headline": "Canadian GP Sprint: Russell holds off Norris, Antonelli to win thriller LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:00:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/23/polemica-en-mercedes-por-el-toque-de-george-russell-y-kimi-antonelli-que-casi-los-deja-afuera-de-la-sprint-del-gp-de-canada/",
+          "headline": "Polémica en Mercedes por el toque de George Russell y Kimi Antonelli que casi los deja afuera de la Sprint del GP de Canadá",
+          "snippet": "La competencia interna en el equipo de Mercedes quedó expuesta en la carrera Sprint del Gran Premio de Canadá: George Russell y Kimi Antonelli se sacaron chispas y perdieron terreno en el campeonato de constructores ya que el italiano salió de pista y cedió su lugar a Lando Norris, de McLaren. Los…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:48:34 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/4CXPK7WZCRGHVMONZ32YZYVKM4.jpeg?auth=0acedecafe4889c500ca376d2bc850a34eb482eebda1ba333791fefd71fa1007&smart=true&width=1025&height=577",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/russell-gana-el-sprint-de-montreal-por-delante-de-norris-y-antonelli/",
+          "headline": "Russell gana el sprint de Montreal por delante de Norris y Antonelli",
+          "snippet": "Redacción deportes, 23 may (EFE).- El inglés George Russell (Mercedes) ganó este sábado la prueba sprint del Gran Premio de Canadá, el quinto del Mundial de Fórmula Uno, que se disputa en el circuito Gilles Villeneuve de Montreal. Russell ganó el tercero de los seis sprints previstos este año -el…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:46:46 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/news/12040/13547290/canadian-gp-sprint-george-russell-wins-as-mercedes-team-mate-kimi-antonelli-left-fuming-after-going-off-track-in-battle",
+          "headline": "Russell wins Canada Sprint as Antonelli fumes after going off track in battle",
+          "snippet": "George Russell claimed victory in a thrilling Canadian Grand Prix Sprint after coming out on top of a controversial battle with his Mercedes team-mate Kimi Antonelli. Pole-sitter Russell led world championship leader Antonelli in the early stages before the pair almost made contact as they battled…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 17:30:00 BST",
+          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-george-russell-kimi_7256516.jpg?20260523172431",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
+          "headline": "Canadian GP Sprint: Reaction as Russell holds off Norris, Antonelli to win thriller",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:00:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
+          "video_url": null
+        },
+        {
+          "url": "https://www.bbc.com/sport/formula1/articles/cn9pqxjlq34o?at_medium=RSS&at_campaign=rss",
+          "headline": "Russell wins Canada sprint after dramatic battle with Antonelli",
+          "snippet": "The first of a series of flashpoints between Russell and Antonelli came on lap six after the two Mercedes had converted their front-row starting positions into a one-two on track at the start. Antonelli tried to pass Russell around the outside of Turn One, but ended up on the grass, managing to…",
+          "source": "bbc_sport",
+          "source_name": "BBC Sport",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 16:49:41 GMT",
+          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0fa0/live/1b9da110-56c4-11f1-89a3-d1f559421220.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/sport/formulaone/article-15843029/george-russell-canadian-grand-prix-win.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Kimi Antonelli rages as Mercedes teammate George Russell wins tense Canada sprint race... forcing Toto Wolff to step in",
+          "snippet": "Kimi Antonelli rages as Mercedes teammate George Russell wins tense Canada sprint race... forcing Toto Wolff to step in By WINTERS, DEPUTY SPORTS EDITOR Published: 12:50 EDT, 23 May 2026 | Updated: 12:59 EDT, 23 May 2026 George Russell and Kimi Antonelli made contact as their title battle ignited…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 17:59:14 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/17/108823365-0-image-m-14_1779555370876.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/george-russell-gana-la-sprint-pese-al-empuje-de-su-companero-kimi-antonelli/",
+          "headline": "George Russell gana la Sprint pese al empuje de su compañero Kimi Antonelli",
+          "snippet": "El piloto inglés George Russell (Mercedes) ha ganado este sábado por delante del también inglés Lando Norris (McLaren) la Sprint del Gran Premio de Canadá de Fórmula 1, quinta prueba del Campeonato del Mundo, mientras que el español Carlos Sainz (Williams) ha sido décimo y su compatriota Fernando…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 17:15:35 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/SIX2C5NPEFEULMZCYOPOI2CI5A.jpg?auth=afb33025d4f20b7829472cf5735741b8b568ce4a8c8cae55bb6a5fd3c23ae5f7&smart=true&width=1920&height=1229",
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/sports/motor-sports/2026/05/1446765/russell-wins-montreal-sprint-antonelli-fumes",
+          "headline": "Russell wins Montreal sprint as Antonelli fumes",
+          "snippet": "MONTREAL: George Russell won the Canadian Grand Prix sprint from pole position on Saturday with Formula One leader Kimi Antonelli third and crying foul as the gloves came off between the Mercedes teammates.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Sun, 24 May 2026 01:28:11 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/2CEF0FD5C32CC3255A80A4439FC68703_data_0.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.141,
+        "zionist": 0.264,
+        "atlanticist": 0.385,
+        "statist": 0.116,
+        "financialized": 0.345
+      },
+      "fp_source_count": 8,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 3,
+        "eastern-europe": 1,
+        "latin-america": 3,
+        "pacific-asia": 1
+      },
+      "section": "sports"
+    },
+    {
       "id": "e62a3ffcfd3d",
       "headline": "Spurs’ Victor Wembanyama ejected for elbowing Timberwolves player in shocking Game 4 scene",
       "summary": "If the Spurs are able to take a 3-1 lead on the Timberwolves, they’ll need to do so without Victor Wembanyama the rest of Game 4.",
@@ -10799,322 +11162,6 @@
         "latin-america": 1,
         "pacific-asia": 2,
         "global-south": 1
-      },
-      "section": "sports"
-    },
-    {
-      "id": "c9dc8c59301d",
-      "headline": "Canadian GP Sprint: Reaction as Russell holds off Norris, Antonelli to win thriller",
-      "summary": "",
-      "published": "Sat, 23 May 2026 17:30:00 BST",
-      "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7238961.jpg?20260504141408",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 14% Left",
-      "blindspot_score": 3,
-      "coverage": {
-        "left_pct": 14,
-        "center_pct": 43,
-        "right_pct": 43,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 43
-      },
-      "bias_variance": 3.22,
-      "entity_count": 11,
-      "entity_list": [
-        "Antonelli",
-        "Canada",
-        "Canadian",
-        "George",
-        "Mercedes",
-        "Montreal",
-        "Norris",
-        "Reaction",
-        "Russell",
-        "Sprint",
-        "Wolff"
-      ],
-      "sources": [
-        {
-          "id": "sky_sports",
-          "name": "Sky Sports",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "la_jornada_mx",
-          "name": "La Jornada",
-          "country": "MX",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "bbc_sport",
-          "name": "BBC Sport",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "la_nacion_ar",
-          "name": "La Nación (Argentina)",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "index_hu",
-          "name": "Index Hungary",
-          "country": "HU",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "daily_mail",
-          "name": "Daily Mail",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": "Daily Mail and General Trust"
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.skysports.com/f1/news/12040/13540033/george-russell-toto-wolff-backs-mercedes-driver-to-respond-to-team-mate-kimi-antonellis-form-in-f1-title-race",
-          "headline": "'He never stops fighting!' - Wolff backs Russell to respond to Antonelli",
-          "snippet": "Mercedes team principal Toto Wolff says George Russell \"won't leave a stone unturned\" in Formula 1's title race and expects his driver to bounce back at the next race in Montreal. Russell is 20 points behind championship leader Kimi Antonelli after a disappointing weekend in Miami, where he lacked…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 06:00:00 BST",
-          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7238961.jpg?20260504141408",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/news/12040/13547012/canadian-gp-sprint-qualifying-george-russell-pips-kimi-antonelli-to-pole-in-montreal-with-lando-norris-in-third",
-          "headline": "Russell pips Antonelli to Sprint pole in Canada",
-          "snippet": "George Russell pipped Mercedes team-mate Kimi Antonelli to Sprint pole at the Canadian Grand Prix in a dramatic battle at the end of Sprint Qualifying. Russell, who is 20 points behind Antonelli after seeing the Italian teenager win the last three Grands Prix, beat Antonelli by just 0.068s as…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Fri, 22 May 2026 22:45:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7256214.jpg?20260523102150",
-          "video_url": null
-        },
-        {
-          "url": "https://www.jornada.com.mx/2026/05/23/deportes/a11n3dep?partner=rss",
-          "headline": "Russell le arrebata a Antonelli la  pole para sprint del GP de Canadá",
-          "snippet": "Afp Periódico La Jornada Sábado 23 de mayo de 2026, p. a11 Montreal. El británico George Russell, al volante de su Mercedes, le ganó ayer el duelo a su compañero Kimi Antonelli para apropiarse del primer lugar de la parrilla para la carrera sprint del Gran Premio de Canadá de Fórmula 1, donde el…",
-          "source": "la_jornada_mx",
-          "source_name": "La Jornada",
-          "country": "MX",
-          "published": "Sat, 23 May 2026 07:30:02 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.bbc.com/sport/formula1/articles/ckgplmj1rg9o?at_medium=RSS&at_campaign=rss",
-          "headline": "Russell edges out Antonelli to take Canada sprint pole",
-          "snippet": "George Russell bounced back after a difficult recent run to beat Mercedes team-mate Kimi Antonelli to sprint pole at the Canadian Grand Prix. The Briton, who is 20 points adrift of the Italian after four races this season, headed Antonelli by 0.068 seconds after being fastest on both runs in final…",
-          "source": "bbc_sport",
-          "source_name": "BBC Sport",
-          "country": "GB",
-          "published": "Fri, 22 May 2026 22:47:31 GMT",
-          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4522/live/ffe72e10-5627-11f1-89a3-d1f559421220.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
-          "headline": "Canadian GP: Russell on pole for 5pm Sprint, Antonelli second LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:00:00 BST",
-          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-f1-george-russell_7256188.jpg?20260522222508",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
-          "headline": "Canadian GP: Russell stays ahead of Antonelli at Sprint start LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:00:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-george-russell-mercedes_7256489.png?20260523170612",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
-          "headline": "Canadian GP Sprint: Russell leads after dramatic duel with Antonelli LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:00:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
-          "video_url": null
-        },
-        {
-          "url": "https://www.lanacion.com.ar/deportes/automovilismo/el-toque-entre-russell-y-antonelli-que-desato-la-bronca-entre-los-dos-companeros-de-mercedes-nid23052026/",
-          "headline": "El toque entre Russell y Antonelli que desató la bronca entre los dos compañeros de Mercedes",
-          "snippet": "La escena de disputa entre compañeros fue una constante en 2025, cuando Lando Norris y Oscar Piastri competían al límite por el título, sin tener en cuenta que respondían a la misma escudería. Aquellos duelos de los McLaren, que muchas veces terminaron en incidentes, parecen haberse trasladado a…",
-          "source": "la_nacion_ar",
-          "source_name": "La Nación (Argentina)",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 16:36:24 +0000",
-          "image_url": "https://resizer.glanacion.com/resizer/v2/MXEAN6LB3ZEXJMMIFPZA4NXNBM.JPG?auth=99ac0cad92d3e8cad8a9eb9273636fa7f907b8c730ceba396b8479dc7af54ce9&smart=true&width=5588&height=3725",
-          "video_url": null
-        },
-        {
-          "url": "https://index.hu/sport/forma1/2026/05/23/formula-1-2026-kanadai-nagydij-sprintfutam-george-russell-kimi-antonelli-lando-norris/",
-          "headline": "Russell és Antonelli csatájából Norris ki jött legjobban a kanadai sprintfutamon",
-          "snippet": "A sprintkvalifikáción az idény eddigi alakulásának megfelelően a Mercedesek voltak a leggyorsabbak – ezúttal George Russell volt kettejük közül a jobb –, mögéjük az előző futamra látványosat javuló McLaren duója érkezett, majd a két-két Ferrari és Red Bull állhatott az első négy sorba. Ami eddig…",
-          "source": "index_hu",
-          "source_name": "Index Hungary",
-          "country": "HU",
-          "published": "Sat, 23 May 2026 18:32:00 +0200",
-          "image_url": "https://kep.index.hu/1/0/6956/69565/695653/69565387_5133383_073d04ba9a666721cca48bac7d6ba633_wm.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
-          "headline": "Canadian GP Sprint: Russell holds off Norris, Antonelli to win thriller LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:00:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/deportes/2026/05/23/polemica-en-mercedes-por-el-toque-de-george-russell-y-kimi-antonelli-que-casi-los-deja-afuera-de-la-sprint-del-gp-de-canada/",
-          "headline": "Polémica en Mercedes por el toque de George Russell y Kimi Antonelli que casi los deja afuera de la Sprint del GP de Canadá",
-          "snippet": "La competencia interna en el equipo de Mercedes quedó expuesta en la carrera Sprint del Gran Premio de Canadá: George Russell y Kimi Antonelli se sacaron chispas y perdieron terreno en el campeonato de constructores ya que el italiano salió de pista y cedió su lugar a Lando Norris, de McLaren. Los…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 16:48:34 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/4CXPK7WZCRGHVMONZ32YZYVKM4.jpeg?auth=0acedecafe4889c500ca376d2bc850a34eb482eebda1ba333791fefd71fa1007&smart=true&width=1025&height=577",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/russell-gana-el-sprint-de-montreal-por-delante-de-norris-y-antonelli/",
-          "headline": "Russell gana el sprint de Montreal por delante de Norris y Antonelli",
-          "snippet": "Redacción deportes, 23 may (EFE).- El inglés George Russell (Mercedes) ganó este sábado la prueba sprint del Gran Premio de Canadá, el quinto del Mundial de Fórmula Uno, que se disputa en el circuito Gilles Villeneuve de Montreal. Russell ganó el tercero de los seis sprints previstos este año -el…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 16:46:46 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/news/12040/13547290/canadian-gp-sprint-george-russell-wins-as-mercedes-team-mate-kimi-antonelli-left-fuming-after-going-off-track-in-battle",
-          "headline": "Russell wins Canada Sprint as Antonelli fumes after going off track in battle",
-          "snippet": "George Russell claimed victory in a thrilling Canadian Grand Prix Sprint after coming out on top of a controversial battle with his Mercedes team-mate Kimi Antonelli. Pole-sitter Russell led world championship leader Antonelli in the early stages before the pair almost made contact as they battled…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 17:30:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-george-russell-kimi_7256516.jpg?20260523172431",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/f1/live-blog/12040/13546203/f1-canadian-gp-live-sprint-qualifying-updates-results-stream-highlights-video-from-montreal-race-weekend",
-          "headline": "Canadian GP Sprint: Reaction as Russell holds off Norris, Antonelli to win thriller",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports F1 Fastest Lap…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:00:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-russell-antonelli_7256499.png?20260523171120",
-          "video_url": null
-        },
-        {
-          "url": "https://www.bbc.com/sport/formula1/articles/cn9pqxjlq34o?at_medium=RSS&at_campaign=rss",
-          "headline": "Russell wins Canada sprint after dramatic battle with Antonelli",
-          "snippet": "The first of a series of flashpoints between Russell and Antonelli came on lap six after the two Mercedes had converted their front-row starting positions into a one-two on track at the start. Antonelli tried to pass Russell around the outside of Turn One, but ended up on the grass, managing to…",
-          "source": "bbc_sport",
-          "source_name": "BBC Sport",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:49:41 GMT",
-          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0fa0/live/1b9da110-56c4-11f1-89a3-d1f559421220.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/sport/formulaone/article-15843029/george-russell-canadian-grand-prix-win.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Kimi Antonelli rages as Mercedes teammate George Russell wins tense Canada sprint race... forcing Toto Wolff to step in",
-          "snippet": "Kimi Antonelli rages as Mercedes teammate George Russell wins tense Canada sprint race... forcing Toto Wolff to step in By WINTERS, DEPUTY SPORTS EDITOR Published: 12:50 EDT, 23 May 2026 | Updated: 12:59 EDT, 23 May 2026 George Russell and Kimi Antonelli made contact as their title battle ignited…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 17:59:14 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/23/17/108823365-0-image-m-14_1779555370876.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.139,
-        "zionist": 0.267,
-        "atlanticist": 0.394,
-        "statist": 0.067,
-        "financialized": 0.343
-      },
-      "fp_source_count": 7,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 3,
-        "eastern-europe": 1,
-        "latin-america": 3
       },
       "section": "sports"
     },
