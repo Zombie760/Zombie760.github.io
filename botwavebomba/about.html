@@ -379,18 +379,54 @@
   </div>
 
     <!-- ── FOOTER (5-column editorial) ── -->
+    <!-- ── FOOTER (9-column — mirrors Ground News structure, Bomba content) ── -->
   <footer class="bwb-footer-v2">
     <div class="bwb-footer-cols">
+
       <section class="bwb-footer-col">
         <h4>News</h4>
         <ul>
           <li><a href=".">Home / Feed</a></li>
           <li><a href="local.html">Local</a></li>
-          <li><a href="blindspots.html">Blindspots</a></li>
-          <li><a href="story.html">Story view</a></li>
+          <li><a href="blindspots.html">Blindspot Feed</a></li>
           <li><a href="status.html">Pipeline status</a></li>
         </ul>
       </section>
+
+      <section class="bwb-footer-col">
+        <h4>International</h4>
+        <ul>
+          <li><a href="local.html#region=north-america">North America</a></li>
+          <li><a href="local.html#region=south-america">South America / Latin</a></li>
+          <li><a href="local.html#region=europe">Europe</a></li>
+          <li><a href="local.html#region=middle-east">Middle East</a></li>
+          <li><a href="local.html#region=asia">Asia</a></li>
+          <li><a href="local.html#region=africa">Africa</a></li>
+          <li><a href="local.html#region=oceania">Oceania</a></li>
+        </ul>
+      </section>
+
+      <section class="bwb-footer-col">
+        <h4>Trending Internationally</h4>
+        <ul id="footer-trending-intl">
+          <li class="bwb-footer-skeleton">&hellip;</li>
+        </ul>
+      </section>
+
+      <section class="bwb-footer-col">
+        <h4>Trending in U.S.</h4>
+        <ul id="footer-trending-us">
+          <li class="bwb-footer-skeleton">&hellip;</li>
+        </ul>
+      </section>
+
+      <section class="bwb-footer-col">
+        <h4>Adversarial-Bloc Trending</h4>
+        <ul id="footer-trending-adv">
+          <li class="bwb-footer-skeleton">&hellip;</li>
+        </ul>
+      </section>
+
       <section class="bwb-footer-col">
         <h4>Investigations</h4>
         <ul>
@@ -401,16 +437,20 @@
           <li><a href="funnies.html">Funnies / MAD archive</a></li>
         </ul>
       </section>
+
       <section class="bwb-footer-col">
         <h4>Method</h4>
         <ul>
-          <li><a href="about.html">The 5 axes</a></li>
+          <li><a href="about.html">About BOTWAVEBOMBA</a></li>
+          <li><a href="about.html#axes">The 5 bias axes</a></li>
           <li><a href="about.html#blocs">3 blocs explained</a></li>
           <li><a href="about.html#blindspot">What is a blindspot?</a></li>
           <li><a href="about.html#provenance">Citation receipts</a></li>
-          <li><a href="pro.html">Bomba Pro</a></li>
+          <li><a href="sources.html">Media bias ratings</a></li>
+          <li><a href="same-hand.html">Ownership &amp; factuality</a></li>
         </ul>
       </section>
+
       <section class="bwb-footer-col">
         <h4>Open Data</h4>
         <ul>
@@ -418,23 +458,27 @@
           <li><a href="data/sources_wide.json">sources_wide.json (26k)</a></li>
           <li><a href="data/extension_lookup.json">extension_lookup.json</a></li>
           <li><a href="data/same_hand_slice.json">same_hand_slice.json</a></li>
+          <li><a href="data/ownership_graph.json">ownership_graph.json</a></li>
           <li><a href="api/latest.json">api/latest.json</a></li>
+          <li><a href="api/blindspots.json">api/blindspots.json</a></li>
+          <li><a href="api/corruption.json">api/corruption.json</a></li>
         </ul>
       </section>
+
       <section class="bwb-footer-col">
-        <h4>By Bloc</h4>
+        <h4>Tools &amp; Channels</h4>
         <ul>
-          <li><a href="sources.html#western"><span class="bwb-legend-dot western"></span>Western</a></li>
-          <li><a href="sources.html#neutral"><span class="bwb-legend-dot neutral"></span>Non-Aligned</a></li>
-          <li><a href="sources.html#adversarial"><span class="bwb-legend-dot adversarial"></span>Adversarial</a></li>
-        </ul>
-        <h4 style="margin-top: 22px;">Channels</h4>
-        <ul>
-          <li><a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="pro.html">Bomba Pro</a></li>
+          <li><a href="#" data-soon="Browser extension — beta soon">Browser extension</a></li>
+          <li><a href="#" data-soon="Android APK — sideload via Tailscale">Android app</a></li>
+          <li><a href="#" data-soon="iOS — built via Codemagic CI">iOS app</a></li>
+          <li><a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram digest</a></li>
           <li><a href="https://github.com/Zombie760" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </section>
+
     </div>
+
     <div class="bwb-footer-base">
       <div class="bwb-footer-brand">
         <span class="bwb-footer-wordmark">BOTWAVEBOMBA</span>
@@ -444,12 +488,76 @@
         BE UNDENIABLE &mdash; every claim filed, every source named, every line auditable.
       </div>
     </div>
+
     <div class="bwb-footer-disclaimer">
       BOTWAVEBOMBA does not editorialize. It surfaces the framing delta between global sources.
       Bias classification: AllSides + MBFC + hand-curated TELOS+PAI fingerprints.
       Every source link is an original primary URL. Nothing invented.
     </div>
   </footer>
+
+  <script>
+  // Populate trending-* footer columns from latest.json.
+  // Splits entities by which bloc covered them most.
+  (async function () {
+    const intl = document.getElementById('footer-trending-intl');
+    const us   = document.getElementById('footer-trending-us');
+    const adv  = document.getElementById('footer-trending-adv');
+    if (!intl && !us && !adv) return;
+    let data;
+    try {
+      const r = await fetch('api/latest.json', { cache: 'no-store' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      data = await r.json();
+    } catch (e) { return; }
+
+    // Per-entity bloc counts
+    const ents = {};
+    for (const s of (data.stories || [])) {
+      const hasUS  = (s.sources || []).some(src => src.country === 'US');
+      const hasAdv = (s.sources || []).some(src => src.bloc === 'adversarial');
+      for (const e of (s.entity_list || [])) {
+        if (!e || e.length < 3) continue;
+        const r = ents[e] || (ents[e] = { total: 0, us: 0, adv: 0 });
+        r.total += 1;
+        if (hasUS)  r.us  += 1;
+        if (hasAdv) r.adv += 1;
+      }
+    }
+    const arr = Object.entries(ents);
+    function render(targetEl, sortFn, limit) {
+      if (!targetEl) return;
+      const ranked = arr.slice().sort(sortFn).filter(([, r]) => r.total >= 2).slice(0, limit);
+      targetEl.textContent = '';
+      if (!ranked.length) {
+        const li = document.createElement('li');
+        li.className = 'bwb-footer-skeleton';
+        li.textContent = 'no data';
+        targetEl.appendChild(li);
+        return;
+      }
+      for (const [name, rec] of ranked) {
+        const li = document.createElement('li');
+        const a  = document.createElement('a');
+        a.href = '#trending=' + encodeURIComponent(name);
+        a.textContent = name;
+        li.appendChild(a);
+        targetEl.appendChild(li);
+      }
+    }
+    render(intl, (a, b) => (b[1].total - b[1].us) - (a[1].total - a[1].us), 6);
+    render(us,   (a, b) => b[1].us - a[1].us, 6);
+    render(adv,  (a, b) => b[1].adv - a[1].adv, 6);
+  })();
+
+  // "data-soon" tooltips so the not-yet-shipped links don't 404.
+  document.querySelectorAll('a[data-soon]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      alert(a.getAttribute('data-soon'));
+    });
+  });
+  </script>
 
   <!-- Mobile bottom nav -->
   <nav class="bwb-bottom-nav safe-bottom">

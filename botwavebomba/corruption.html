@@ -74,56 +74,130 @@
     </div>
   </header>
 
-<div class="bwb-page-container">
-    <div class="bwb-page-header">
-      <h1 class="bwb-page-title">USA CORRUPTION TRACKER</h1>
-      <p class="bwb-page-sub">
-        Follow the money. Politicians lie. Ledgers don't.
-        Traced from FEC filings + all 50 state SOS portals. Every claim filed. Every source named.
-      </p>
-    </div>
+<div class="bwb-page-container corr-container">
 
-    <!-- Money Trail Cards -->
-    <div id="money-trail-feed" class="bwb-feed">
-      <div class="bwb-loading">
-        <div class="bwb-loading-pulse">LOADING MONEY TRAIL</div>
-        <div class="bwb-loading-sub">Tracing donations from CA SOS filings</div>
+    <!-- HERO -->
+    <div class="corr-hero">
+      <div class="corr-hero-tag">2026 MIDTERM CYCLE · FOLLOW THE MONEY</div>
+      <h1 class="corr-hero-title">Who's <em>funding</em> the side?</h1>
+      <p class="corr-hero-sub">
+        Every donor. Every recipient. Every FEC + state SOS filing receipt cited.
+        The Discord feed posts the live drops; this page is the receipts ledger.
+      </p>
+      <div class="corr-hero-stats" id="corr-stats">
+        <div class="corr-stat"><span class="corr-stat-num" id="corr-stat-total">—</span><span class="corr-stat-label">Tracked donations</span></div>
+        <div class="corr-stat"><span class="corr-stat-num" id="corr-stat-sum">—</span><span class="corr-stat-label">Total amount</span></div>
+        <div class="corr-stat"><span class="corr-stat-num" id="corr-stat-candidates">—</span><span class="corr-stat-label">Candidates</span></div>
+        <div class="corr-stat"><span class="corr-stat-num" id="corr-stat-states">—</span><span class="corr-stat-label">States</span></div>
+        <div class="corr-stat"><span class="corr-stat-num" id="corr-stat-flagged">—</span><span class="corr-stat-label">Flagged donations</span></div>
       </div>
     </div>
 
-    <!-- Explainer -->
-    <div class="bwb-trades-explainer" style="margin-top: 2rem;">
-      <h3 class="bwb-sidebar-title">WHY TRACK THE MONEY?</h3>
-      <p class="bwb-sidebar-body">
-        Campaign finance filings are public record. CA Secretary of State Form 460 captures every donation over $100.
-        The money tells you who benefits when a politician votes, signs a contract, or changes a regulation.
-      </p>
-      <p class="bwb-sidebar-body">
-        This tracker ingests filings automatically, flags large donations from entities with state business,
-        and generates tweet-ready exposes with filed document receipts. No opinion. Just the trail.
-      </p>
-      <p class="bwb-sidebar-body">
-        <strong>BE UNDENIABLE.</strong> Every claim backed by a named, filed, publicly-verifiable primary source.
-      </p>
+    <!-- FILTERS -->
+    <div class="corr-filters">
+      <div class="corr-filter-group">
+        <label for="corr-state">State</label>
+        <select id="corr-state"><option value="">— all —</option></select>
+      </div>
+      <div class="corr-filter-group">
+        <label for="corr-office">Office</label>
+        <select id="corr-office"><option value="">— all —</option></select>
+      </div>
+      <div class="corr-filter-group">
+        <label for="corr-donor-type">Donor type</label>
+        <select id="corr-donor-type"><option value="">— all —</option></select>
+      </div>
+      <div class="corr-filter-group">
+        <label for="corr-min-amount">Min $ amount</label>
+        <select id="corr-min-amount">
+          <option value="0">any</option>
+          <option value="1000">$1,000+</option>
+          <option value="10000">$10,000+</option>
+          <option value="100000">$100,000+</option>
+          <option value="1000000">$1M+</option>
+          <option value="10000000" selected>$10M+</option>
+        </select>
+      </div>
+      <div class="corr-filter-group">
+        <label for="corr-flag">Flag</label>
+        <select id="corr-flag">
+          <option value="">— any —</option>
+          <option value="large_donation">large_donation</option>
+          <option value="seeded_public_filing">seeded_public_filing</option>
+          <option value="industry_pac">industry_pac</option>
+          <option value="anomaly">anomaly</option>
+        </select>
+      </div>
     </div>
 
-    <!-- Data table -->
-    <div class="bwb-corruption-table-container">
-      <h3 class="bwb-sidebar-title">2025-2026 GOVERNOR RACE — MAJOR DONORS</h3>
+    <!-- TOP RECIPIENTS LEADERBOARD -->
+    <section class="corr-section">
+      <div class="corr-section-head">
+        <h2 class="corr-section-title">2026 Midterm — top recipients by money raised</h2>
+        <a class="corr-section-link" href="api/corruption.json" target="_blank">api/corruption.json &rarr;</a>
+      </div>
+      <div id="corr-leaderboard" class="corr-leaderboard">
+        <div class="corr-loading">loading recipients…</div>
+      </div>
+    </section>
+
+    <!-- DONOR-SIDE LEADERBOARD -->
+    <section class="corr-section">
+      <div class="corr-section-head">
+        <h2 class="corr-section-title">Top donors this cycle</h2>
+        <span class="corr-section-sub">who's writing the biggest checks</span>
+      </div>
+      <div id="corr-donor-board" class="corr-leaderboard corr-leaderboard--donors">
+        <div class="corr-loading">loading donors…</div>
+      </div>
+    </section>
+
+    <!-- LIVE FEED -->
+    <section class="corr-section">
+      <div class="corr-section-head">
+        <h2 class="corr-section-title">Live drops</h2>
+        <span class="corr-section-sub">filtered ledger &mdash; <span id="corr-feed-count">0</span> records</span>
+      </div>
       <table class="bwb-corruption-table" id="donor-table">
         <thead>
           <tr>
             <th>Donor</th>
+            <th>Type</th>
             <th>Amount</th>
             <th>Recipient</th>
+            <th>Office</th>
+            <th>Flags</th>
             <th>Source</th>
           </tr>
         </thead>
-        <tbody>
-          <!-- Populated by corruption.js -->
-        </tbody>
+        <tbody id="corr-feed-rows"></tbody>
       </table>
+      <div class="corr-load-more" id="corr-load-more" hidden>
+        <button type="button" id="corr-load-more-btn">Load 50 more</button>
+      </div>
+    </section>
+
+    <!-- METHOD CALLOUT -->
+    <div class="corr-method-callout">
+      <h3>WHY TRACK THE MONEY?</h3>
+      <p>
+        Campaign finance filings are public record. CA Secretary of State Form 460 captures every donation over $100;
+        FEC Schedule A/B is the federal mirror. The money tells you who benefits when a politician votes, signs a contract,
+        or changes a regulation. This tracker ingests filings automatically, flags large donations from entities with
+        state business, and surfaces them here with filed-document receipts.
+      </p>
+      <p>
+        <strong>BE UNDENIABLE.</strong> Every claim is backed by a named, filed, publicly-verifiable primary source.
+        Every row links to its FEC or SOS receipt. The Discord drop and this page are the same substrate.
+      </p>
+      <p class="corr-method-channels">
+        <span>Channels:</span>
+        <a href="https://discord.gg/botwave" target="_blank" rel="noopener">Discord #news-corruption</a>
+        &middot;
+        <a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram daily</a>
+      </p>
     </div>
+
   </div>
 
   <nav class="bwb-bottom-nav safe-bottom">
@@ -158,18 +232,54 @@
   </nav>
 
     <!-- ── FOOTER (5-column editorial) ── -->
+    <!-- ── FOOTER (9-column — mirrors Ground News structure, Bomba content) ── -->
   <footer class="bwb-footer-v2">
     <div class="bwb-footer-cols">
+
       <section class="bwb-footer-col">
         <h4>News</h4>
         <ul>
           <li><a href=".">Home / Feed</a></li>
           <li><a href="local.html">Local</a></li>
-          <li><a href="blindspots.html">Blindspots</a></li>
-          <li><a href="story.html">Story view</a></li>
+          <li><a href="blindspots.html">Blindspot Feed</a></li>
           <li><a href="status.html">Pipeline status</a></li>
         </ul>
       </section>
+
+      <section class="bwb-footer-col">
+        <h4>International</h4>
+        <ul>
+          <li><a href="local.html#region=north-america">North America</a></li>
+          <li><a href="local.html#region=south-america">South America / Latin</a></li>
+          <li><a href="local.html#region=europe">Europe</a></li>
+          <li><a href="local.html#region=middle-east">Middle East</a></li>
+          <li><a href="local.html#region=asia">Asia</a></li>
+          <li><a href="local.html#region=africa">Africa</a></li>
+          <li><a href="local.html#region=oceania">Oceania</a></li>
+        </ul>
+      </section>
+
+      <section class="bwb-footer-col">
+        <h4>Trending Internationally</h4>
+        <ul id="footer-trending-intl">
+          <li class="bwb-footer-skeleton">&hellip;</li>
+        </ul>
+      </section>
+
+      <section class="bwb-footer-col">
+        <h4>Trending in U.S.</h4>
+        <ul id="footer-trending-us">
+          <li class="bwb-footer-skeleton">&hellip;</li>
+        </ul>
+      </section>
+
+      <section class="bwb-footer-col">
+        <h4>Adversarial-Bloc Trending</h4>
+        <ul id="footer-trending-adv">
+          <li class="bwb-footer-skeleton">&hellip;</li>
+        </ul>
+      </section>
+
       <section class="bwb-footer-col">
         <h4>Investigations</h4>
         <ul>
@@ -180,16 +290,20 @@
           <li><a href="funnies.html">Funnies / MAD archive</a></li>
         </ul>
       </section>
+
       <section class="bwb-footer-col">
         <h4>Method</h4>
         <ul>
-          <li><a href="about.html">The 5 axes</a></li>
+          <li><a href="about.html">About BOTWAVEBOMBA</a></li>
+          <li><a href="about.html#axes">The 5 bias axes</a></li>
           <li><a href="about.html#blocs">3 blocs explained</a></li>
           <li><a href="about.html#blindspot">What is a blindspot?</a></li>
           <li><a href="about.html#provenance">Citation receipts</a></li>
-          <li><a href="pro.html">Bomba Pro</a></li>
+          <li><a href="sources.html">Media bias ratings</a></li>
+          <li><a href="same-hand.html">Ownership &amp; factuality</a></li>
         </ul>
       </section>
+
       <section class="bwb-footer-col">
         <h4>Open Data</h4>
         <ul>
@@ -197,23 +311,27 @@
           <li><a href="data/sources_wide.json">sources_wide.json (26k)</a></li>
           <li><a href="data/extension_lookup.json">extension_lookup.json</a></li>
           <li><a href="data/same_hand_slice.json">same_hand_slice.json</a></li>
+          <li><a href="data/ownership_graph.json">ownership_graph.json</a></li>
           <li><a href="api/latest.json">api/latest.json</a></li>
+          <li><a href="api/blindspots.json">api/blindspots.json</a></li>
+          <li><a href="api/corruption.json">api/corruption.json</a></li>
         </ul>
       </section>
+
       <section class="bwb-footer-col">
-        <h4>By Bloc</h4>
+        <h4>Tools &amp; Channels</h4>
         <ul>
-          <li><a href="sources.html#western"><span class="bwb-legend-dot western"></span>Western</a></li>
-          <li><a href="sources.html#neutral"><span class="bwb-legend-dot neutral"></span>Non-Aligned</a></li>
-          <li><a href="sources.html#adversarial"><span class="bwb-legend-dot adversarial"></span>Adversarial</a></li>
-        </ul>
-        <h4 style="margin-top: 22px;">Channels</h4>
-        <ul>
-          <li><a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="pro.html">Bomba Pro</a></li>
+          <li><a href="#" data-soon="Browser extension — beta soon">Browser extension</a></li>
+          <li><a href="#" data-soon="Android APK — sideload via Tailscale">Android app</a></li>
+          <li><a href="#" data-soon="iOS — built via Codemagic CI">iOS app</a></li>
+          <li><a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram digest</a></li>
           <li><a href="https://github.com/Zombie760" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </section>
+
     </div>
+
     <div class="bwb-footer-base">
       <div class="bwb-footer-brand">
         <span class="bwb-footer-wordmark">BOTWAVEBOMBA</span>
@@ -223,6 +341,7 @@
         BE UNDENIABLE &mdash; every claim filed, every source named, every line auditable.
       </div>
     </div>
+
     <div class="bwb-footer-disclaimer">
       BOTWAVEBOMBA does not editorialize. It surfaces the framing delta between global sources.
       Bias classification: AllSides + MBFC + hand-curated TELOS+PAI fingerprints.
@@ -230,13 +349,270 @@
     </div>
   </footer>
 
-  <script src="assets/js/corruption.js"></script>
+  <script>
+  // Populate trending-* footer columns from latest.json.
+  // Splits entities by which bloc covered them most.
+  (async function () {
+    const intl = document.getElementById('footer-trending-intl');
+    const us   = document.getElementById('footer-trending-us');
+    const adv  = document.getElementById('footer-trending-adv');
+    if (!intl && !us && !adv) return;
+    let data;
+    try {
+      const r = await fetch('api/latest.json', { cache: 'no-store' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      data = await r.json();
+    } catch (e) { return; }
+
+    // Per-entity bloc counts
+    const ents = {};
+    for (const s of (data.stories || [])) {
+      const hasUS  = (s.sources || []).some(src => src.country === 'US');
+      const hasAdv = (s.sources || []).some(src => src.bloc === 'adversarial');
+      for (const e of (s.entity_list || [])) {
+        if (!e || e.length < 3) continue;
+        const r = ents[e] || (ents[e] = { total: 0, us: 0, adv: 0 });
+        r.total += 1;
+        if (hasUS)  r.us  += 1;
+        if (hasAdv) r.adv += 1;
+      }
+    }
+    const arr = Object.entries(ents);
+    function render(targetEl, sortFn, limit) {
+      if (!targetEl) return;
+      const ranked = arr.slice().sort(sortFn).filter(([, r]) => r.total >= 2).slice(0, limit);
+      targetEl.textContent = '';
+      if (!ranked.length) {
+        const li = document.createElement('li');
+        li.className = 'bwb-footer-skeleton';
+        li.textContent = 'no data';
+        targetEl.appendChild(li);
+        return;
+      }
+      for (const [name, rec] of ranked) {
+        const li = document.createElement('li');
+        const a  = document.createElement('a');
+        a.href = '#trending=' + encodeURIComponent(name);
+        a.textContent = name;
+        li.appendChild(a);
+        targetEl.appendChild(li);
+      }
+    }
+    render(intl, (a, b) => (b[1].total - b[1].us) - (a[1].total - a[1].us), 6);
+    render(us,   (a, b) => b[1].us - a[1].us, 6);
+    render(adv,  (a, b) => b[1].adv - a[1].adv, 6);
+  })();
+
+  // "data-soon" tooltips so the not-yet-shipped links don't 404.
+  document.querySelectorAll('a[data-soon]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      alert(a.getAttribute('data-soon'));
+    });
+  });
+  </script>
 
   <script>
     (function () {
       var d = document.getElementById('util-date');
       if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
     })();
+  </script>
+
+  <!-- ── Corruption dashboard (2026-05-23) — uses api/corruption.json ── -->
+  <script>
+  (async function () {
+    let all = [];
+    try {
+      const r = await fetch('api/corruption.json', { cache: 'no-store' });
+      if (r.ok) all = await r.json();
+    } catch (e) {}
+    if (!Array.isArray(all)) all = [];
+
+    // ── helpers ──
+    const fmt$ = n => {
+      if (n == null) return '—';
+      if (n >= 1e9) return '$' + (n/1e9).toFixed(2) + 'B';
+      if (n >= 1e6) return '$' + (n/1e6).toFixed(2) + 'M';
+      if (n >= 1e3) return '$' + Math.round(n/1e3) + 'k';
+      return '$' + n;
+    };
+    const text = (el, v) => { if (el) el.textContent = v; };
+
+    // ── headline stats ──
+    const sum = all.reduce((a, c) => a + (c.amount || 0), 0);
+    text(document.getElementById('corr-stat-total'), all.length.toLocaleString());
+    text(document.getElementById('corr-stat-sum'),   fmt$(sum));
+    text(document.getElementById('corr-stat-candidates'), new Set(all.map(c => c.recipient).filter(Boolean)).size);
+    text(document.getElementById('corr-stat-states'),     new Set(all.map(c => c.recipient_state).filter(Boolean)).size);
+    text(document.getElementById('corr-stat-flagged'),    all.filter(c => Array.isArray(c.flags) && c.flags.length > 0).length);
+
+    // ── filter dropdowns ──
+    function fillSelect(id, items) {
+      const sel = document.getElementById(id);
+      if (!sel) return;
+      for (const it of items) {
+        const o = document.createElement('option');
+        o.value = it;
+        o.textContent = it;
+        sel.appendChild(o);
+      }
+    }
+    fillSelect('corr-state',      [...new Set(all.map(c => c.recipient_state).filter(Boolean))].sort());
+    fillSelect('corr-office',     [...new Set(all.map(c => c.recipient_office).filter(Boolean))].sort());
+    fillSelect('corr-donor-type', [...new Set(all.map(c => c.donor_type).filter(Boolean))].sort());
+
+    // ── leaderboards ──
+    function buildLeaderboard(targetId, keyFn, labelFn, opts = {}) {
+      const el = document.getElementById(targetId);
+      if (!el) return;
+      const groups = {};
+      for (const c of all) {
+        const k = keyFn(c);
+        if (!k) continue;
+        const g = groups[k] || (groups[k] = { key: k, total: 0, count: 0, top_donor: null, top_amount: 0, sample: c });
+        g.total += c.amount || 0;
+        g.count += 1;
+        if (opts.trackDonor && (c.amount || 0) > g.top_amount) {
+          g.top_donor = c.donor;
+          g.top_amount = c.amount;
+        }
+      }
+      const ranked = Object.values(groups).sort((a, b) => b.total - a.total).slice(0, 12);
+      el.textContent = '';
+      if (!ranked.length) {
+        const empty = document.createElement('div');
+        empty.className = 'corr-loading';
+        empty.textContent = 'no records';
+        el.appendChild(empty);
+        return;
+      }
+      for (const r of ranked) {
+        const card = document.createElement('div');
+        card.className = 'corr-leader-card';
+
+        const left = document.createElement('div');
+        left.className = 'corr-leader-left';
+        const name = document.createElement('div');
+        name.className = 'corr-leader-name';
+        name.textContent = r.key;
+        left.appendChild(name);
+        if (labelFn) {
+          const sub = document.createElement('div');
+          sub.className = 'corr-leader-sub';
+          sub.textContent = labelFn(r);
+          left.appendChild(sub);
+        }
+        card.appendChild(left);
+
+        const right = document.createElement('div');
+        right.className = 'corr-leader-right';
+        const amount = document.createElement('div');
+        amount.className = 'corr-leader-amount';
+        amount.textContent = fmt$(r.total);
+        right.appendChild(amount);
+        const count = document.createElement('div');
+        count.className = 'corr-leader-count';
+        count.textContent = r.count + (r.count === 1 ? ' donation' : ' donations');
+        right.appendChild(count);
+        card.appendChild(right);
+
+        el.appendChild(card);
+      }
+    }
+
+    buildLeaderboard(
+      'corr-leaderboard',
+      c => c.recipient,
+      r => (r.sample.recipient_office || '') + (r.sample.recipient_state ? ' · ' + r.sample.recipient_state : '') + (r.top_donor ? ' · top donor: ' + r.top_donor : ''),
+      { trackDonor: true }
+    );
+    buildLeaderboard(
+      'corr-donor-board',
+      c => c.donor,
+      r => (r.sample.donor_type || 'donor') + ' · funded ' + r.count + (r.count === 1 ? ' candidate' : ' candidates')
+    );
+
+    // ── filterable ledger table ──
+    const rowsEl = document.getElementById('corr-feed-rows');
+    const countEl = document.getElementById('corr-feed-count');
+    const moreBtn = document.getElementById('corr-load-more');
+    const moreBtnEl = document.getElementById('corr-load-more-btn');
+    let page = 0;
+    const PAGE_SIZE = 50;
+    let currentFiltered = [];
+
+    function applyFilters() {
+      const s   = document.getElementById('corr-state').value;
+      const off = document.getElementById('corr-office').value;
+      const dt  = document.getElementById('corr-donor-type').value;
+      const min = parseInt(document.getElementById('corr-min-amount').value, 10) || 0;
+      const fl  = document.getElementById('corr-flag').value;
+      currentFiltered = all.filter(c => {
+        if (s && c.recipient_state !== s) return false;
+        if (off && c.recipient_office !== off) return false;
+        if (dt && c.donor_type !== dt) return false;
+        if (min && (c.amount || 0) < min) return false;
+        if (fl && !(Array.isArray(c.flags) && c.flags.includes(fl))) return false;
+        return true;
+      }).sort((a, b) => (b.amount || 0) - (a.amount || 0));
+      page = 0;
+      rowsEl.textContent = '';
+      countEl.textContent = currentFiltered.length;
+      renderPage();
+    }
+
+    function renderPage() {
+      const start = page * PAGE_SIZE;
+      const slice = currentFiltered.slice(start, start + PAGE_SIZE);
+      for (const c of slice) {
+        const tr = document.createElement('tr');
+
+        const td = (cls, content, isLink) => {
+          const cell = document.createElement('td');
+          if (cls) cell.className = cls;
+          if (isLink && typeof content === 'string') {
+            const a = document.createElement('a');
+            a.href = content;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.textContent = 'receipt ↗';
+            cell.appendChild(a);
+          } else {
+            cell.textContent = content == null ? '—' : String(content);
+          }
+          return cell;
+        };
+
+        tr.appendChild(td('corr-cell-donor', c.donor));
+        tr.appendChild(td('corr-cell-type', c.donor_type));
+        tr.appendChild(td('corr-cell-amount', fmt$(c.amount)));
+        tr.appendChild(td('corr-cell-recipient', c.recipient));
+        tr.appendChild(td('corr-cell-office', (c.recipient_office || '') + (c.recipient_state ? ' · ' + c.recipient_state : '')));
+
+        const flagsCell = document.createElement('td');
+        flagsCell.className = 'corr-cell-flags';
+        for (const f of (c.flags || [])) {
+          const chip = document.createElement('span');
+          chip.className = 'corr-flag';
+          chip.textContent = f;
+          flagsCell.appendChild(chip);
+        }
+        tr.appendChild(flagsCell);
+
+        tr.appendChild(td('corr-cell-source', c.source_url || '—', true));
+        rowsEl.appendChild(tr);
+      }
+      page += 1;
+      moreBtn.hidden = page * PAGE_SIZE >= currentFiltered.length;
+    }
+
+    document.querySelectorAll('#corr-state, #corr-office, #corr-donor-type, #corr-min-amount, #corr-flag')
+      .forEach(el => el.addEventListener('change', applyFilters));
+    moreBtnEl.addEventListener('click', renderPage);
+
+    applyFilters();
+  })();
   </script>
 
 </body>
