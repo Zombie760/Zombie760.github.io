@@ -79,7 +79,7 @@ function buildBlindspostCard(story) {
   const card = document.createElement('article');
   card.className = 'bwb-card bwb-blindspot-card ' + bsType;
   card.addEventListener('click', function() {
-    window.location = '/story.html?id=' + encodeURIComponent(story.id);
+    window.location = 'story.html?id=' + encodeURIComponent(story.id);
   });
 
   // Thumbnail — article photo with card PNG fallback

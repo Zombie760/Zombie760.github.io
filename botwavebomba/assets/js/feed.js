@@ -152,7 +152,7 @@ function buildCard(story) {
   else if (story.geo_frame === 'blackout') card.classList.add('blackout');
   card.addEventListener('click', function(e) {
     if (!e.target.closest('.bwb-article-link')) {
-      window.location = '/story.html?id=' + encodeURIComponent(story.id);
+      window.location = 'story.html?id=' + encodeURIComponent(story.id);
     }
   });
 

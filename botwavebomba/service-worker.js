@@ -4,8 +4,11 @@
 // v4 (2026-05-23): all paths relative (works on /botwavebomba/ subpath);
 // adds local, trades, corruption, books, pro, same-hand, corkboard pages
 // + extension_lookup data + sources_wide + ownership_graph. BE UNDENIABLE.
+// v5 (2026-05-23): card-click handlers in feed.js / blindspot.js / story.js
+// switched from absolute '/story.html' to relative 'story.html' — the v4
+// "all paths relative" sweep missed three window.location assignments.
 
-const CACHE_VERSION = 'bwb-v4-2026-05-23';
+const CACHE_VERSION = 'bwb-v5-2026-05-23';
 
 // All paths relative — '/' or '/index.html' would 404 under the
 // /botwavebomba/ GitHub Pages subpath. Browser resolves these against

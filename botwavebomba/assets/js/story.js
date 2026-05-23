@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', async function() {
   const storyId = BWB_API.getStoryParam();
   if (!storyId) {
-    window.location = '/';
+    window.location = './';
     return;
   }
 
