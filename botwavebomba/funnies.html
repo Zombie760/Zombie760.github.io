@@ -22,32 +22,60 @@
 </head>
 <body>
 
-  <!-- ── HEADER ── -->
+  <!-- ── HEADER (4-LAYER EDITORIAL STACK) ── -->
+
+  <aside class="bwb-promo" role="region" aria-label="Bomba positioning">
+    <div class="bwb-promo-inner">
+      <p class="bwb-promo-line">
+        <span class="bwb-promo-lede">See <em>who's funding</em> the side.</span>
+        <span class="bwb-promo-rest">Not just who's reporting it.</span>
+      </p>
+      <a class="bwb-promo-cta" href="about.html">Read methodology &rarr;</a>
+    </div>
+  </aside>
+
+  <div class="bwb-util" role="region" aria-label="Pipeline state">
+    <div class="bwb-util-inner">
+      <div class="bwb-util-group">
+        <span class="bwb-pipeline-badge"><span class="bwb-pipe-dot"></span>TELOS+PAI LIVE</span>
+        <span class="bwb-util-sep">&middot;</span>
+        <span class="bwb-util-stat"><b>26,542</b> sources cataloged</span>
+        <span class="bwb-util-sep">&middot;</span>
+        <span class="bwb-util-stat"><b>496</b> deep-fingerprinted</span>
+      </div>
+      <div class="bwb-util-group bwb-util-right">
+        <span class="bwb-util-date" id="util-date"></span>
+        <span class="bwb-util-sep">&middot;</span>
+        <a class="bwb-util-link" href="data/sources_wide.json">OPEN DATA &darr;</a>
+      </div>
+    </div>
+  </div>
+
   <header class="bwb-header">
     <div class="bwb-header-inner">
-      <div class="bwb-logo-lockup">
-        <div class="bwb-logo">BOTWAVEBOMBA</div>
-        <div class="bwb-tagline">Same story. Different framings. You decide.</div>
-      </div>
-      <div class="bwb-header-right">
-        <div class="bwb-pipeline-badge">
-          <span class="bwb-pipe-dot"></span>
-          TELOS+PAI LIVE
-        </div>
-        <nav class="bwb-topnav">
-          <a href=".">Feed</a>
-          <a href="blindspots.html">Blindspots</a>
-          <a href="sources.html">Sources</a>
+      <a href="." class="bwb-brand" aria-label="BOTWAVEBOMBA &mdash; Home">
+        <span class="bwb-brand-mark">BOTWAVE<em>BOMBA</em></span>
+        <span class="bwb-brand-axes">5-axis &middot; 3-bloc &middot; adversarial included</span>
+      </a>
+      <nav class="bwb-topnav" aria-label="Primary">
+        <a href=".">Feed</a>
+        <a href="local.html">Local</a>
+        <a href="blindspots.html">Blindspots</a>
+        <a href="sources.html">Sources</a>
         <a href="trades.html">Trades</a>
         <a href="books.html">Books</a>
-          <a href="about.html">Method</a>
-          <a href="funnies.html" class="active">Funnies</a>
-        </nav>
+        <a href="corkboard/">Corkboard</a>
+        <a href="corruption.html">Corruption</a>
+        <a href="about.html">Method</a>
+        <a href="funnies.html" class="active">Funnies</a>
+      </nav>
+      <div class="bwb-header-right">
+        <a class="bwb-pro-btn" href="pro.html">Pro</a>
       </div>
     </div>
   </header>
 
-  <!-- ── FUNNIES MASTHEAD ── -->
+<!-- ── FUNNIES MASTHEAD ── -->
   <div class="fny-masthead">
     <div class="fny-masthead-inner">
       <div class="fny-title-block">
@@ -105,22 +133,76 @@
   </main>
 
   <!-- ── FOOTER ── -->
-  <footer class="bwb-footer">
-    <div class="bwb-footer-inner">
-      <div class="bwb-footer-left">
-        <span class="bwb-footer-logo">BOTWAVEBOMBA</span>
-        <span class="bwb-footer-sub">A BOTWAVE journalism arm project. Powered by TELOS+PAI substrate.</span>
+    <!-- ── FOOTER (5-column editorial) ── -->
+  <footer class="bwb-footer-v2">
+    <div class="bwb-footer-cols">
+      <section class="bwb-footer-col">
+        <h4>News</h4>
+        <ul>
+          <li><a href=".">Home / Feed</a></li>
+          <li><a href="local.html">Local</a></li>
+          <li><a href="blindspots.html">Blindspots</a></li>
+          <li><a href="story.html">Story view</a></li>
+          <li><a href="status.html">Pipeline status</a></li>
+        </ul>
+      </section>
+      <section class="bwb-footer-col">
+        <h4>Investigations</h4>
+        <ul>
+          <li><a href="corruption.html">Corruption tracker</a></li>
+          <li><a href="trades.html">Congressional trades</a></li>
+          <li><a href="same-hand.html">Same-hand ownership</a></li>
+          <li><a href="books.html">Books / long-form</a></li>
+          <li><a href="funnies.html">Funnies / MAD archive</a></li>
+        </ul>
+      </section>
+      <section class="bwb-footer-col">
+        <h4>Method</h4>
+        <ul>
+          <li><a href="about.html">The 5 axes</a></li>
+          <li><a href="about.html#blocs">3 blocs explained</a></li>
+          <li><a href="about.html#blindspot">What is a blindspot?</a></li>
+          <li><a href="about.html#provenance">Citation receipts</a></li>
+          <li><a href="pro.html">Bomba Pro</a></li>
+        </ul>
+      </section>
+      <section class="bwb-footer-col">
+        <h4>Open Data</h4>
+        <ul>
+          <li><a href="data/source_registry.json">source_registry.json</a></li>
+          <li><a href="data/sources_wide.json">sources_wide.json (26k)</a></li>
+          <li><a href="data/extension_lookup.json">extension_lookup.json</a></li>
+          <li><a href="data/same_hand_slice.json">same_hand_slice.json</a></li>
+          <li><a href="api/latest.json">api/latest.json</a></li>
+        </ul>
+      </section>
+      <section class="bwb-footer-col">
+        <h4>By Bloc</h4>
+        <ul>
+          <li><a href="sources.html#western"><span class="bwb-legend-dot western"></span>Western</a></li>
+          <li><a href="sources.html#neutral"><span class="bwb-legend-dot neutral"></span>Non-Aligned</a></li>
+          <li><a href="sources.html#adversarial"><span class="bwb-legend-dot adversarial"></span>Adversarial</a></li>
+        </ul>
+        <h4 style="margin-top: 22px;">Channels</h4>
+        <ul>
+          <li><a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="https://github.com/Zombie760" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="bwb-footer-base">
+      <div class="bwb-footer-brand">
+        <span class="bwb-footer-wordmark">BOTWAVEBOMBA</span>
+        <span class="bwb-footer-tagline">A BOTWAVE journalism arm project &middot; powered by TELOS+PAI substrate</span>
       </div>
-      <div class="bwb-footer-right">
-        <a href="https://t.me/botwave_news" target="_blank">Telegram</a>
-        <a href="about.html">About</a>
-        <a href="https://github.com/Zombie760" target="_blank">GitHub</a>
+      <div class="bwb-footer-mantra">
+        BE UNDENIABLE &mdash; every claim filed, every source named, every line auditable.
       </div>
     </div>
     <div class="bwb-footer-disclaimer">
-      MAD Magazine archive sourced from the Internet Archive (archive.org) public domain collection.
-      All materials remain the property of their respective creators.
-      BOTWAVEBOMBA links only — no redistribution.
+      BOTWAVEBOMBA does not editorialize. It surfaces the framing delta between global sources.
+      Bias classification: AllSides + MBFC + hand-curated TELOS+PAI fingerprints.
+      Every source link is an original primary URL. Nothing invented.
     </div>
   </footer>
 
@@ -162,5 +244,13 @@
       navigator.serviceWorker.register("service-worker.js");
     }
   </script>
+
+  <script>
+    (function () {
+      var d = document.getElementById('util-date');
+      if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    })();
+  </script>
+
 </body>
 </html>

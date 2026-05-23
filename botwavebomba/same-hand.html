@@ -48,20 +48,59 @@
   </style>
 </head>
 <body>
-<div class="wrap">
 
-<nav class="nav">
-  <a href=".">Home</a>
-  <a href="blindspots.html">Blindspots</a>
-  <a href="corruption/">Corruption</a>
-  <a href="sources.html">Sources</a>
-  <a href="about.html">About</a>
-</nav>
+  <!-- ── HEADER (4-LAYER EDITORIAL STACK) ── -->
 
-<header>
-  <h1>The Same Hand</h1>
-  <p class="lede">Ground News rates news outlets on one axis: Left or Right. Bomba rates them on six. The one Ground News refuses to plot is the one that proves left and right is the puppet show. It's called <em>financialized</em>.</p>
-</header>
+  <aside class="bwb-promo" role="region" aria-label="Bomba positioning">
+    <div class="bwb-promo-inner">
+      <p class="bwb-promo-line">
+        <span class="bwb-promo-lede">See <em>who's funding</em> the side.</span>
+        <span class="bwb-promo-rest">Not just who's reporting it.</span>
+      </p>
+      <a class="bwb-promo-cta" href="about.html">Read methodology &rarr;</a>
+    </div>
+  </aside>
+
+  <div class="bwb-util" role="region" aria-label="Pipeline state">
+    <div class="bwb-util-inner">
+      <div class="bwb-util-group">
+        <span class="bwb-pipeline-badge"><span class="bwb-pipe-dot"></span>TELOS+PAI LIVE</span>
+        <span class="bwb-util-sep">&middot;</span>
+        <span class="bwb-util-stat"><b>26,542</b> sources cataloged</span>
+        <span class="bwb-util-sep">&middot;</span>
+        <span class="bwb-util-stat"><b>496</b> deep-fingerprinted</span>
+      </div>
+      <div class="bwb-util-group bwb-util-right">
+        <span class="bwb-util-date" id="util-date"></span>
+        <span class="bwb-util-sep">&middot;</span>
+        <a class="bwb-util-link" href="data/sources_wide.json">OPEN DATA &darr;</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="bwb-header">
+    <div class="bwb-header-inner">
+      <a href="." class="bwb-brand" aria-label="BOTWAVEBOMBA &mdash; Home">
+        <span class="bwb-brand-mark">BOTWAVE<em>BOMBA</em></span>
+        <span class="bwb-brand-axes">5-axis &middot; 3-bloc &middot; adversarial included</span>
+      </a>
+      <nav class="bwb-topnav" aria-label="Primary">
+        <a href=".">Feed</a>
+        <a href="local.html">Local</a>
+        <a href="blindspots.html">Blindspots</a>
+        <a href="sources.html">Sources</a>
+        <a href="trades.html">Trades</a>
+        <a href="books.html">Books</a>
+        <a href="corkboard/">Corkboard</a>
+        <a href="corruption.html">Corruption</a>
+        <a href="about.html">Method</a>
+        <a href="funnies.html">Funnies</a>
+      </nav>
+      <div class="bwb-header-right">
+        <a class="bwb-pro-btn" href="pro.html">Pro</a>
+      </div>
+    </div>
+  </header>
 
 <section>
   <h2>The pitch</h2>
@@ -148,9 +187,78 @@
   Left or right doesn't matter. It's the same hand pulling every puppet string. They don't care who wins. They own the game.
 </blockquote>
 
-<footer>
-  <p>BOTWAVE BOMBA — built by Kyle Jimenez / Al Gringo, gringo1904. <a href="about.html">About</a>. <a href="sources.html">Source registry</a>. Every claim backed by a filed document. <strong>BE UNDENIABLE.</strong></p>
-</footer>
+  <!-- ── FOOTER (5-column editorial) ── -->
+  <footer class="bwb-footer-v2">
+    <div class="bwb-footer-cols">
+      <section class="bwb-footer-col">
+        <h4>News</h4>
+        <ul>
+          <li><a href=".">Home / Feed</a></li>
+          <li><a href="local.html">Local</a></li>
+          <li><a href="blindspots.html">Blindspots</a></li>
+          <li><a href="story.html">Story view</a></li>
+          <li><a href="status.html">Pipeline status</a></li>
+        </ul>
+      </section>
+      <section class="bwb-footer-col">
+        <h4>Investigations</h4>
+        <ul>
+          <li><a href="corruption.html">Corruption tracker</a></li>
+          <li><a href="trades.html">Congressional trades</a></li>
+          <li><a href="same-hand.html">Same-hand ownership</a></li>
+          <li><a href="books.html">Books / long-form</a></li>
+          <li><a href="funnies.html">Funnies / MAD archive</a></li>
+        </ul>
+      </section>
+      <section class="bwb-footer-col">
+        <h4>Method</h4>
+        <ul>
+          <li><a href="about.html">The 5 axes</a></li>
+          <li><a href="about.html#blocs">3 blocs explained</a></li>
+          <li><a href="about.html#blindspot">What is a blindspot?</a></li>
+          <li><a href="about.html#provenance">Citation receipts</a></li>
+          <li><a href="pro.html">Bomba Pro</a></li>
+        </ul>
+      </section>
+      <section class="bwb-footer-col">
+        <h4>Open Data</h4>
+        <ul>
+          <li><a href="data/source_registry.json">source_registry.json</a></li>
+          <li><a href="data/sources_wide.json">sources_wide.json (26k)</a></li>
+          <li><a href="data/extension_lookup.json">extension_lookup.json</a></li>
+          <li><a href="data/same_hand_slice.json">same_hand_slice.json</a></li>
+          <li><a href="api/latest.json">api/latest.json</a></li>
+        </ul>
+      </section>
+      <section class="bwb-footer-col">
+        <h4>By Bloc</h4>
+        <ul>
+          <li><a href="sources.html#western"><span class="bwb-legend-dot western"></span>Western</a></li>
+          <li><a href="sources.html#neutral"><span class="bwb-legend-dot neutral"></span>Non-Aligned</a></li>
+          <li><a href="sources.html#adversarial"><span class="bwb-legend-dot adversarial"></span>Adversarial</a></li>
+        </ul>
+        <h4 style="margin-top: 22px;">Channels</h4>
+        <ul>
+          <li><a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="https://github.com/Zombie760" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="bwb-footer-base">
+      <div class="bwb-footer-brand">
+        <span class="bwb-footer-wordmark">BOTWAVEBOMBA</span>
+        <span class="bwb-footer-tagline">A BOTWAVE journalism arm project &middot; powered by TELOS+PAI substrate</span>
+      </div>
+      <div class="bwb-footer-mantra">
+        BE UNDENIABLE &mdash; every claim filed, every source named, every line auditable.
+      </div>
+    </div>
+    <div class="bwb-footer-disclaimer">
+      BOTWAVEBOMBA does not editorialize. It surfaces the framing delta between global sources.
+      Bias classification: AllSides + MBFC + hand-curated TELOS+PAI fingerprints.
+      Every source link is an original primary URL. Nothing invented.
+    </div>
+  </footer>
 
 </div>
 
@@ -225,6 +333,14 @@
   });
 })();
 </script>
+
+
+  <script>
+    (function () {
+      var d = document.getElementById('util-date');
+      if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    })();
+  </script>
 
 </body>
 </html>

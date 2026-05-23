@@ -331,6 +331,79 @@
   <script src="assets/js/heatmap.js"></script>
   <script src="assets/js/feed.js"></script>
   <script>
+    // util-date in the layer-2 utility bar
+    (function () {
+      var d = document.getElementById('util-date');
+      if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    })();
+
+    // Trending entity chips — pull top entities across stories, render as clickable filters.
+    // Uses textContent + createElement (no innerHTML on dynamic data).
+    (async function () {
+      var chips = document.getElementById('trending-chips');
+      if (!chips) return;
+      var data;
+      try {
+        var r = await fetch('api/latest.json', { cache: 'no-store' });
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        data = await r.json();
+      } catch (e) {
+        chips.textContent = '';
+        var err = document.createElement('span');
+        err.className = 'bwb-trending-placeholder';
+        err.textContent = 'trending unavailable';
+        chips.appendChild(err);
+        return;
+      }
+      var counts = {};
+      for (var i = 0; i < (data.stories || []).length; i++) {
+        var ents = data.stories[i].entity_list || [];
+        for (var j = 0; j < ents.length; j++) {
+          var e = ents[j];
+          if (!e || e.length < 3) continue;
+          counts[e] = (counts[e] || 0) + 1;
+        }
+      }
+      var ranked = Object.keys(counts).map(function (k) { return [k, counts[k]]; })
+        .sort(function (a, b) { return b[1] - a[1]; })
+        .filter(function (kv) { return kv[1] >= 3; })
+        .slice(0, 14);
+      chips.textContent = '';
+      if (!ranked.length) {
+        var none = document.createElement('span');
+        none.className = 'bwb-trending-placeholder';
+        none.textContent = 'no trending entities yet';
+        chips.appendChild(none);
+        return;
+      }
+      for (var k = 0; k < ranked.length; k++) {
+        var ent = ranked[k][0], n = ranked[k][1];
+        var a = document.createElement('a');
+        a.className = 'bwb-trending-chip';
+        a.href = '#trending=' + encodeURIComponent(ent);
+        a.dataset.entity = ent;
+        a.title = n + ' stories mention ' + ent;
+        var lbl = document.createElement('span');
+        lbl.textContent = ent;
+        var cnt = document.createElement('span');
+        cnt.className = 'count';
+        cnt.textContent = n;
+        a.appendChild(lbl);
+        a.appendChild(cnt);
+        a.addEventListener('click', function (ev) {
+          ev.preventDefault();
+          // toggle active state
+          var all = chips.querySelectorAll('.bwb-trending-chip');
+          for (var x = 0; x < all.length; x++) all[x].classList.remove('active');
+          ev.currentTarget.classList.add('active');
+          // dispatch a custom event feed.js can listen to for filtering
+          var evt = new CustomEvent('bwb-trending-filter', { detail: { entity: ev.currentTarget.dataset.entity } });
+          document.dispatchEvent(evt);
+        });
+        chips.appendChild(a);
+      }
+    })();
+
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register("service-worker.js");
     }
