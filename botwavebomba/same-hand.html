@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Same Hand — BOTWAVE BOMBA</title>
+  <meta name="description" content="Ground News rates outlets Left or Right. Bomba rates them on six axes. The financialized axis is the one Ground News refuses to plot — and the one that proves left and right is the puppet show.">
+  <link rel="manifest" href="/botwavebomba/manifest.json">
+  <style>
+    :root {
+      --bg: #0e0e10;
+      --fg: #f4f4f5;
+      --muted: #8b8b8f;
+      --accent: #d4af37;
+      --left: #4a90e2;
+      --right: #e94e4e;
+      --center: #c8c8d0;
+      --line: #1e1e22;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace; background: var(--bg); color: var(--fg); line-height: 1.55; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 32px 20px 80px; }
+    header { border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 32px; }
+    h1 { font-size: 28px; margin: 0 0 8px; letter-spacing: -0.5px; }
+    h2 { font-size: 18px; margin: 32px 0 12px; color: var(--accent); }
+    h3 { font-size: 15px; margin: 20px 0 8px; color: var(--fg); }
+    p { margin: 0 0 14px; color: var(--fg); }
+    .lede { font-size: 16px; color: var(--muted); }
+    .filing { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+    a:hover { border-bottom-style: solid; }
+    .chart-wrap { border: 1px solid var(--line); padding: 16px; border-radius: 4px; background: #08080a; margin-bottom: 24px; overflow-x: auto; }
+    .chart-wrap svg { display: block; max-width: 100%; height: auto; }
+    .legend { font-size: 12px; color: var(--muted); margin-top: 12px; display: flex; gap: 18px; flex-wrap: wrap; }
+    .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+    .dot-left { background: var(--left); }
+    .dot-right { background: var(--right); }
+    .dot-center { background: var(--center); }
+    .dot-other { background: var(--muted); }
+    .outlet-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 13px; }
+    .outlet-table th, .outlet-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+    .outlet-table th { color: var(--muted); font-weight: normal; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
+    .outlet-table td.right { text-align: right; font-variant-numeric: tabular-nums; }
+    blockquote { border-left: 3px solid var(--accent); margin: 24px 0; padding: 4px 16px; color: var(--muted); font-style: italic; }
+    footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 20px; font-size: 12px; color: var(--muted); }
+    .nav { font-size: 13px; margin-bottom: 16px; }
+    .nav a { margin-right: 18px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="nav">
+  <a href="/botwavebomba/">Home</a>
+  <a href="/botwavebomba/blindspots.html">Blindspots</a>
+  <a href="/botwavebomba/corruption/">Corruption</a>
+  <a href="/botwavebomba/sources.html">Sources</a>
+  <a href="/botwavebomba/about.html">About</a>
+</nav>
+
+<header>
+  <h1>The Same Hand</h1>
+  <p class="lede">Ground News rates news outlets on one axis: Left or Right. Bomba rates them on six. The one Ground News refuses to plot is the one that proves left and right is the puppet show. It's called <em>financialized</em>.</p>
+</header>
+
+<section>
+  <h2>The pitch</h2>
+  <p>An outlet's L/R lean tells you which team it cheers for. It does not tell you who pays the bill.</p>
+  <p>The <em>financialized</em> axis measures how heavily an outlet's coverage tilts toward capital interests — institutional money, asset managers, executive-pay framing, the dignity of markets. When an outlet rated centrist on AllSides also scores high on financialized, that's the tell. The colors of the jersey change. The owner of the league does not.</p>
+  <p>The chart below plots outlets that AllSides + MBFC rate across the L/R spectrum and that Bomba's editorial review scored at <strong>financialized ≥ 0.5</strong>. Note where the dots cluster.</p>
+</section>
+
+<section>
+  <h2>The chart</h2>
+  <div class="chart-wrap">
+    <svg id="puppet-chart" viewBox="0 0 880 460" xmlns="http://www.w3.org/2000/svg" aria-label="Scatter chart: AllSides political lean on X axis, Bomba financialized score on Y axis, one dot per outlet">
+      <line x1="80" y1="40" x2="80" y2="400" stroke="#3a3a40" stroke-width="1"/>
+      <line x1="80" y1="400" x2="840" y2="400" stroke="#3a3a40" stroke-width="1"/>
+      <g font-size="11" fill="#8b8b8f" font-family="ui-monospace,monospace">
+        <text x="74" y="404" text-anchor="end">0.0</text>
+        <text x="74" y="314" text-anchor="end">0.25</text>
+        <text x="74" y="224" text-anchor="end">0.5</text>
+        <text x="74" y="134" text-anchor="end">0.75</text>
+        <text x="74" y="44" text-anchor="end">1.0</text>
+      </g>
+      <g stroke="#1e1e22" stroke-width="0.5">
+        <line x1="80" y1="314" x2="840" y2="314"/>
+        <line x1="80" y1="224" x2="840" y2="224"/>
+        <line x1="80" y1="134" x2="840" y2="134"/>
+        <line x1="80" y1="44" x2="840" y2="44"/>
+      </g>
+      <g font-size="11" fill="#8b8b8f" font-family="ui-monospace,monospace" text-anchor="middle">
+        <text x="156" y="420">left</text>
+        <text x="280" y="420">lean_left</text>
+        <text x="408" y="420">center</text>
+        <text x="536" y="420">lean_right</text>
+        <text x="660" y="420">right</text>
+        <text x="780" y="420">other</text>
+      </g>
+      <rect x="80" y="44" width="760" height="180" fill="#d4af37" fill-opacity="0.05"/>
+      <text x="836" y="58" text-anchor="end" font-size="11" fill="#d4af37" font-family="ui-monospace,monospace">puppet zone</text>
+      <text x="460" y="448" text-anchor="middle" font-size="12" fill="#f4f4f5" font-family="ui-monospace,monospace">AllSides / MBFC political lean →</text>
+      <text x="24" y="220" text-anchor="middle" font-size="12" fill="#f4f4f5" font-family="ui-monospace,monospace" transform="rotate(-90 24 220)">↑ Bomba financialized score</text>
+      <g id="dots"></g>
+    </svg>
+
+    <div class="legend">
+      <span><span class="legend-dot dot-left"></span>left / lean_left</span>
+      <span><span class="legend-dot dot-center"></span>center</span>
+      <span><span class="legend-dot dot-right"></span>right / lean_right</span>
+      <span><span class="legend-dot dot-other"></span>state_aligned / independent / unknown</span>
+    </div>
+  </div>
+  <p class="filing">Data: <a href="/botwavebomba/data/same_hand_slice.json">same_hand_slice.json</a> (generated 2026-05-23 from <a href="/botwavebomba/data/source_registry.json">source_registry.json</a>, 496 deep-fingerprinted outlets). Methodology: AllSides political_lean on X, Bomba editorial financialized axis on Y.</p>
+</section>
+
+<section>
+  <h2>What the dots tell you</h2>
+  <p>Read the chart with one question: <em>if left vs right were the real fight, why do the dots pile horizontally inside the puppet zone?</em></p>
+  <p>The L/R spread sells the tribal storyline. The vertical pile-up inside the puppet zone shows you what the storyline is selling for. An outlet at <code>left</code> and an outlet at <code>right</code> can both score <code>financialized 0.7</code>. They disagree on identity politics. They agree on capital.</p>
+  <p>Ground News literally cannot show you this picture. Their entire product is built on the X-axis. If they added the Y-axis, the product collapses.</p>
+</section>
+
+<section>
+  <h2>Sample puppet-zone outlets</h2>
+  <p>A slice from the outlets currently in the puppet zone — the financialized ≥ 0.5 band — sorted by financialized score.</p>
+  <table class="outlet-table" id="sample-table">
+    <thead>
+      <tr>
+        <th>Outlet</th>
+        <th>Country</th>
+        <th>AllSides lean</th>
+        <th class="right">Financialized</th>
+        <th>Parent</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Why Bomba can do this and Ground News can't</h2>
+  <p>Bomba scores every outlet on six axes — western, adversarial, atlanticist, interventionist, statist, financialized — with a provenance trail on every dimension (which third-party rater, what date, what confidence). Ground News averages three raters into one number on one axis and calls it political-bias.</p>
+  <p>One axis is a tribe. Six axes are a fingerprint. The fingerprint shows the same hand.</p>
+</section>
+
+<blockquote>
+  Left or right doesn't matter. It's the same hand pulling every puppet string. They don't care who wins. They own the game.
+</blockquote>
+
+<footer>
+  <p>BOTWAVE BOMBA — built by Kyle Jimenez / Al Gringo, gringo1904. <a href="/botwavebomba/about.html">About</a>. <a href="/botwavebomba/sources.html">Source registry</a>. Every claim backed by a filed document. <strong>BE UNDENIABLE.</strong></p>
+</footer>
+
+</div>
+
+<script>
+(async function () {
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+  const res = await fetch('/botwavebomba/data/same_hand_slice.json');
+  if (!res.ok) return;
+  const data = await res.json();
+  const all = Array.isArray(data.all_qualified) ? data.all_qualified : [];
+  const puppet = Array.isArray(data.puppet_slice) ? data.puppet_slice : [];
+
+  const xByLean = { left: 156, lean_left: 280, center: 408, lean_right: 536, right: 660 };
+  const otherX = 780;
+  function xOf(lean) { return xByLean[lean] != null ? xByLean[lean] : otherX; }
+  function colorOf(lean) {
+    if (lean === 'left' || lean === 'lean_left') return 'var(--left)';
+    if (lean === 'right' || lean === 'lean_right') return 'var(--right)';
+    if (lean === 'center') return 'var(--center)';
+    return 'var(--muted)';
+  }
+
+  const dots = document.getElementById('dots');
+  all.forEach((o, i) => {
+    const fin = (typeof o.financialized === 'number') ? o.financialized : 0;
+    const baseX = xOf(o.lean);
+    const jitter = (((i * 9301 + 49297) % 233280) / 233280 - 0.5) * 56;
+    const cx = baseX + jitter;
+    const cy = 400 - (fin * 360);
+    const inPuppet = fin >= 0.5;
+    const c = document.createElementNS(SVG_NS, 'circle');
+    c.setAttribute('cx', cx);
+    c.setAttribute('cy', cy);
+    c.setAttribute('r', inPuppet ? 4.5 : 3);
+    c.setAttribute('fill', colorOf(o.lean));
+    c.setAttribute('fill-opacity', inPuppet ? 0.85 : 0.22);
+    c.setAttribute('stroke', inPuppet ? '#0e0e10' : 'none');
+    c.setAttribute('stroke-width', '0.7');
+    const t = document.createElementNS(SVG_NS, 'title');
+    t.textContent =
+      (o.name || o.id) +
+      ' (' + (o.country || '—') + ')' +
+      ' — lean: ' + o.lean +
+      ', financialized: ' + fin.toFixed(2) +
+      (o.parent_company ? ', parent: ' + o.parent_company : '');
+    c.appendChild(t);
+    dots.appendChild(c);
+  });
+
+  const sample = puppet.slice().sort(function (a, b) {
+    return (b.financialized || 0) - (a.financialized || 0);
+  }).slice(0, 25);
+  const tbody = document.querySelector('#sample-table tbody');
+  sample.forEach(function (o) {
+    const tr = document.createElement('tr');
+    const cols = [
+      o.name || o.id || '',
+      o.country || '—',
+      o.lean || '',
+      (typeof o.financialized === 'number' ? o.financialized.toFixed(2) : ''),
+      o.parent_company || '—',
+    ];
+    cols.forEach(function (v, idx) {
+      const td = document.createElement('td');
+      if (idx === 3) td.className = 'right';
+      td.textContent = v;
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+})();
+</script>
+
+</body>
+</html>
