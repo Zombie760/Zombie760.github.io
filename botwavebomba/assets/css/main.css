@@ -2620,3 +2620,17 @@ code {
 @media (max-width: 480px) {
   .bwb-footer-cols { grid-template-columns: 1fr; }
 }
+
+/* ── MOBILE BOTTOM NAV — horizontal scroll when ≥8 items ── */
+.bwb-bottom-nav {
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.bwb-bottom-nav::-webkit-scrollbar { display: none; }
+.bwb-bottom-nav a {
+  flex-shrink: 0 !important;
+  min-width: 76px;
+}

@@ -1,38 +1,48 @@
 // BOTWAVEBOMBA Service Worker
 // App shell: cache-first. API JSON: stale-while-revalidate.
-// v2 (2026-05-10): adds post-sprint audit surface to offline cache so the
-// TWA APK ships with status.html, pipeline_state.json, and the diagnostic
-// docs accessible without network. BE UNDENIABLE — claims auditable even
-// when offline.
+// v2 (2026-05-10): adds post-sprint audit surface to offline cache.
+// v4 (2026-05-23): all paths relative (works on /botwavebomba/ subpath);
+// adds local, trades, corruption, books, pro, same-hand, corkboard pages
+// + extension_lookup data + sources_wide + ownership_graph. BE UNDENIABLE.
 
-const CACHE_VERSION = 'bwb-v3-mobile';
+const CACHE_VERSION = 'bwb-v4-2026-05-23';
 
+// All paths relative — '/' or '/index.html' would 404 under the
+// /botwavebomba/ GitHub Pages subpath. Browser resolves these against
+// the service-worker scope (the site root from SW's POV is /botwavebomba/).
 const APP_SHELL = [
-  '/',
-  '/index.html',
-  '/blindspots.html',
-  '/sources.html',
-  '/about.html',
-  '/story.html',
-  '/funnies.html',
-  '/status.html',
-  '/pipeline_state.json',
-  '/DIAGNOSTIC.md',
-  '/PLAN_HYBRID.md',
-  '/assets/css/main.css',
-  '/assets/css/mobile.css',
-  '/assets/css/funnies.css',
-  '/assets/js/api.js',
-  '/assets/js/feed.js',
-  '/assets/js/blindspot.js',
-  '/assets/js/sources.js',
-  '/assets/js/story.js',
-  '/assets/js/heatmap.js',
-  '/assets/js/funnies.js',
-  '/assets/js/theme-switcher.js',
-  '/assets/icons/icon-192.png',
-  '/assets/icons/icon-512.png',
-  '/manifest.json',
+  './',
+  'index.html',
+  'local.html',
+  'blindspots.html',
+  'sources.html',
+  'trades.html',
+  'books.html',
+  'corruption.html',
+  'about.html',
+  'story.html',
+  'status.html',
+  'funnies.html',
+  'pro.html',
+  'same-hand.html',
+  'pipeline_state.json',
+  'DIAGNOSTIC.md',
+  'PLAN_HYBRID.md',
+  'assets/css/main.css',
+  'assets/css/mobile.css',
+  'assets/css/funnies.css',
+  'assets/js/api.js',
+  'assets/js/feed.js',
+  'assets/js/blindspot.js',
+  'assets/js/sources.js',
+  'assets/js/story.js',
+  'assets/js/heatmap.js',
+  'assets/js/funnies.js',
+  'assets/js/theme-switcher.js',
+  'assets/js/pwa.js',
+  'assets/icons/icon-192.png',
+  'assets/icons/icon-512.png',
+  'manifest.json',
 ];
 
 self.addEventListener('install', event => {
