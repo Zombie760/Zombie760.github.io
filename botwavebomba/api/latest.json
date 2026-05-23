@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-23T15:25:38.919453+00:00",
-  "article_count": 25435,
+  "generated_at": "2026-05-23T15:40:22.984998+00:00",
+  "article_count": 25555,
   "story_count": 160,
   "sections": [
     {
@@ -11,7 +11,7 @@
     {
       "id": "world",
       "label": "World",
-      "count": 76
+      "count": 74
     },
     {
       "id": "business",
@@ -36,7 +36,7 @@
     {
       "id": "sports",
       "label": "Sports",
-      "count": 28
+      "count": 29
     },
     {
       "id": "entertainment",
@@ -46,7 +46,7 @@
     {
       "id": "chisme",
       "label": "Chisme",
-      "count": 29
+      "count": 30
     }
   ],
   "stories": [
@@ -2987,231 +2987,6 @@
       "section": "world"
     },
     {
-      "id": "c847aef95702",
-      "headline": "Guardiola confirma su salida del Manchester City: \"Es mi momento\"",
-      "summary": "<p>El técnico español de 55 años se despidió del club que dirigió por 10 años y en más de 500 partidos, en los que conquistó 20 títulos oficiales y revolucionó el fútbol inglés. “Nada es eterno”, aseguró en un comunicado.</p>\n<p>The post <a href=\"https://www.elnacional.com/2026/05/guardiola-deja-el-",
-      "published": "Sat, 23 May 2026 13:57:58 +0000",
-      "image_url": "https://www.latercera.com/resizer/v2/II4AALQ7TBAG7CD7ESLNVD2YLA.jpg?auth=84e90e92f36923633447791acc06c4f2b04950080803a024ae29f858a812e59d&smart=true&width=1080&height=608",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 1.22,
-      "entity_count": 8,
-      "entity_list": [
-        "Demanding",
-        "England",
-        "Guardiola",
-        "Manchester",
-        "North",
-        "Pastures",
-        "Stand",
-        "Sunday"
-      ],
-      "sources": [
-        {
-          "id": "tercera",
-          "name": "La Tercera",
-          "country": "CL",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "prensa_libre",
-          "name": "Prensa Libre Guatemala",
-          "country": "GT",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_national_ae",
-          "name": "The National UAE",
-          "country": "AE",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "middle-east",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "el_nacional_ve",
-          "name": "El Nacional Venezuela",
-          "country": "VE",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "daily_mail",
-          "name": "Daily Mail",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": "Daily Mail and General Trust"
-        },
-        {
-          "id": "g4media",
-          "name": "G4Media",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.latercera.com/el-deportivo/noticia/no-me-pregunten-los-motivos-por-los-que-me-voy-la-carta-de-despedida-de-pep-guardiola-en-su-adios-del-manchester-city/",
-          "headline": "“No me pregunten los motivos por los que me voy”: la carta de despedida de Pep Guardiola en su adiós del Manchester City",
-          "snippet": "Manchester City tendrá un gran cambio en su banca. Después de diez años en el cargo, Pep Guardiola deja la institución con un palmarés que suma 20 títulos, destacando la primera Champions League de la institución. El anuncio lo hizo a través de un emotivo mensaje de despedida. “Cuando llegué, mi…",
-          "source": "tercera",
-          "source_name": "La Tercera",
-          "country": "CL",
-          "published": "Sat, 23 May 2026 13:13:17 +0000",
-          "image_url": "https://www.latercera.com/resizer/v2/II4AALQ7TBAG7CD7ESLNVD2YLA.jpg?auth=84e90e92f36923633447791acc06c4f2b04950080803a024ae29f858a812e59d&smart=true&width=1080&height=608",
-          "video_url": null
-        },
-        {
-          "url": "https://www.prensalibre.com/deportes/futbol-internacional/pep-guardiola-se-despide-del-manchester-city-tras-diez-anos-y-20-titulos-se-que-es-mi-momento-breaking/",
-          "headline": "Pep Guardiola se despide del Manchester City tras diez años y 20 títulos: “Sé que es mi momento”",
-          "snippet": "Pep Guardiola pondrá fin a una de las etapas más exitosas en la historia del Manchester City. El técnico español confirmó que dejará el club al finalizar la temporada, cerrando un ciclo de diez años en el que transformó al equipo mancuniano en una potencia del fútbol europeo. Guardiola se marcha…",
-          "source": "prensa_libre",
-          "source_name": "Prensa Libre Guatemala",
-          "country": "GT",
-          "published": "Fri, 22 May 2026 14:45:00 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenationalnews.com/sport/2026/05/22/man-city-rename-pep-guardiola-stand/",
-          "headline": "Manchester City to rename North Stand after Pep Guardiola",
-          "snippet": "Manchester City will honour legendary manager Pep Guardiola by renaming the North Stand at Etihad Stadium after the Spaniard. Guardiola, 55, announced on Friday he will be leaving City after a decade at the helm in which he led the club to 20 trophies and elevated them to new heights. Fittingly,…",
-          "source": "the_national_ae",
-          "source_name": "The National UAE",
-          "country": "AE",
-          "published": "Fri, 22 May 2026 11:30:58 +0000",
-          "image_url": "https://www.thenationalnews.com/resizer/v2/CTHJFV3FPRDF5AVVCTJCETAUXY.jpg?auth=76c69f1ffe7ec99758ea3b7b1c214578115b0148bc9cb7e32986fe46e1aa9bf3&smart=true&width=4883&height=2747",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenationalnews.com/sport/football/2026/05/23/pep-guardiola-changed-manchester-city-and-what-england-thought-football-could-be/",
-          "headline": "Pep Guardiola changed Manchester City and what England thought football could be",
-          "snippet": "Arsenal were crowned Premier League champions on Tuesday, but in reality, it was surrendered long before then; the Gunners proving to be by far the best team in England this season. While that realisation will sting Manchester City, more mournful than any lost title will be the contemplation of…",
-          "source": "the_national_ae",
-          "source_name": "The National UAE",
-          "country": "AE",
-          "published": "Fri, 22 May 2026 10:05:00 +0000",
-          "image_url": "https://www.thenationalnews.com/resizer/v2/VDDAEJW7QBGHJN4ZIY7Q6R3JGA?auth=df862c7a75744a72f8f0f711d96f3d8695daabb542209b878597091ee236d1aa&smart=true&width=2109&height=1582",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenationalnews.com/sport/football/2026/05/22/demanding-draining-genius-my-10-years-working-with-pep-guardiola-at-manchester-city/",
-          "headline": "Demanding, draining, genius: my 10 years working with Pep Guardiola at Manchester City",
-          "snippet": "The news that Manchester City fans have dreaded for years is finally a reality. Pep Guardiola is leaving. His decision , whilst not a huge surprise after 10 trophy-laden, energy draining seasons at the helm, is still a crushing blow for the Etihad faithful. Few would have dreamed back in 2016 that…",
-          "source": "the_national_ae",
-          "source_name": "The National UAE",
-          "country": "AE",
-          "published": "Fri, 22 May 2026 10:05:00 +0000",
-          "image_url": "https://www.thenationalnews.com/resizer/v2/Y6NMMGDHYU4YQKHK5MLZ47DBIE.jpg?auth=ca39fb125f03970a60cfaa028c60ca2e53350a7b60f47dcde0752e87c941bd2e&smart=true&width=4000&height=2957",
-          "video_url": null
-        },
-        {
-          "url": "https://www.elnacional.com/2026/05/guardiola-deja-el-manchester-city-es-mi-momento/",
-          "headline": "Guardiola confirma su salida del Manchester City: \"Es mi momento\"",
-          "snippet": "VER PORTADA ENLACES: Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra en Ucrania Indices Economicos Criollos Los Venezolanos en la MLB Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra…",
-          "source": "el_nacional_ve",
-          "source_name": "El Nacional Venezuela",
-          "country": "VE",
-          "published": "Fri, 22 May 2026 14:15:42 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/sport/football/article-15842703/pep-guardiola-man-city-joe-hart-regret.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Pep Guardiola reveals his only regret as Man City boss as legendary manager says goodbye after heavily decorated 10-year stint in Manchester",
-          "snippet": "Manchester City manager Pep Guardiola has admitted his biggest regret from his time at the club - his ruthless decision to move on former goalkeeper Joe Hart. Guardiola, who on Friday confirmed Daily Mail Sport’s exclusive that he will leave at the end of the season, is preparing to take charge of…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 14:21:57 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/23/08/108818339-0-image-m-16_1779521624212.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/sport/football/article-15841279/Pastures-new-Pep-Guardiola-wastes-no-time-moving-Manchester-apartment-DAYS-Man-City-swansong-outgoing-boss-confirming-Sunday-final-game.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Pastures new for Pep! Guardiola wastes no time moving out of his Manchester apartment DAYS BEFORE his Man City swansong - with outgoing boss confirming Sunday will be his final game",
-          "snippet": "Pep Guardiola appears to have begun the process of moving out of his Manchester apartment after finally confirming his departure from Man City . Guardiola will step down as Man City boss on Sunday after a trophy-laden 10 years in charge. Hours after Man City confirmed Guardiola's departure -…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 12:15:34 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/22/21/108813845-0-image-a-22_1779483076233.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/pep-guardiola-spune-ca-a-facut-multe-greseli-in-mandatul-de-zece-ani-de-la-manchester-city.html",
-          "headline": "Pep Guardiola spune că „a făcut multe greșeli” în mandatul de zece ani de la Manchester City",
-          "snippet": "Pep Guardiola își va încheia mandatul de antrenor al celor de la Manchester City, duminică, la meciul cu Aston Villa din ultima etapă din Premier League. În cei zece ani de pe „Etihad Stadium”, antrenorul spaniol spune că a făcut multe greșeli. Marele regret al lui Guardiola de la City: l-a lăsat…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sat, 23 May 2026 13:57:58 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2025/07/profimedia-1016645282.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.207,
-        "zionist": 0.3,
-        "atlanticist": 0.44,
-        "statist": 0.11,
-        "financialized": 0.468
-      },
-      "fp_source_count": 6,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 1,
-        "latin-america": 3,
-        "eastern-europe": 1,
-        "middle-east": 1
-      },
-      "section": "world"
-    },
-    {
       "id": "9cdbe9b98ae3",
       "headline": "Cuándo juega River vs. San Lorenzo, por los octavos de final del Torneo Apertura 2026",
       "summary": "El encuentro se disputa este domingo a las 19 en el estadio Monumental, con arbitraje de Sebastián Zunino y televisación de ESPN Premium",
@@ -4403,207 +4178,6 @@
       "geo_frame_topic": null,
       "geo_breakdown": {
         "latin-america": 4
-      },
-      "section": "world"
-    },
-    {
-      "id": "35afd30e6d96",
-      "headline": "Probe Agency Gets 7-Day Custody Of Punjab Minister Sanjeev Arora In Money Laundering Case",
-      "summary": "Sanjeev Arora was produced before the court at around 11:20 pm on Friday night. While the ED had sought 10 days' custodial interrogation, the court granted seven days of ED custody.",
-      "published": "Sat, 23 May 2026 12:19:28 +0000",
-      "image_url": "https://c.ndtvimg.com/2026-04/0hn0giqs_sanjeev-arora-ani_625x300_17_April_26.jpeg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 75,
-        "center_pct": 25,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "left",
-        "dominant_pct": 75
-      },
-      "bias_variance": 1.11,
-      "entity_count": 22,
-      "entity_list": [
-        "Accuses",
-        "Agencies",
-        "Agency",
-        "Arora",
-        "Arrested",
-        "Central",
-        "Charges",
-        "Custody",
-        "Faith",
-        "Gurugram",
-        "Kejriwal",
-        "Laundering",
-        "Linked",
-        "Money",
-        "Probe",
-        "Punjab",
-        "Raids",
-        "Refutes",
-        "Sanjeev",
-        "TheWire",
-        "Using",
-        "Weapons"
-      ],
-      "sources": [
-        {
-          "id": "ndtv",
-          "name": "NDTV",
-          "country": "IN",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "hindu",
-          "name": "The Hindu",
-          "country": "IN",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_wire_in",
-          "name": "The Wire (India)",
-          "country": "IN",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_print",
-          "name": "The Print (India)",
-          "country": "IN",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.ndtv.com/india-news/punjab-minister-sanjeev-arora-arrested-by-probe-agency-ed-after-raids-11471323#publisher=newsstand",
-          "headline": "Punjab Minister Sanjeev Arora Arrested By Probe Agency ED After Raids",
-          "snippet": "Punjab Minister Sanjeev Arora Arrested By Probe Agency ED After Raids",
-          "source": "ndtv",
-          "source_name": "NDTV",
-          "country": "IN",
-          "published": "Sat, 09 May 2026 17:23:59 +0530",
-          "image_url": "https://c.ndtvimg.com/2026-04/0hn0giqs_sanjeev-arora-ani_625x300_17_April_26.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/national/punjab/punjab-minister-sanjeev-arora-money-laundering-case-ed-custody/article70961371.ece",
-          "headline": "Punjab Minister Sanjeev Arora sent to seven-day ED custody",
-          "snippet": "A file image of Punjab’s Industries Minister Sanjeev Arora | Photo Credit: A court in Gurugram has sent Punjab's Industries Minister Sanjeev Arora to seven days of custody in a money laundering case, officials said on Sunday (May 10, 2026). Mr. Arora, 62, was arrested on Saturday (May 9, 2026)…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 08:20:52 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/bn4zw5/article70961373.ece/alternates/LANDSCAPE_1200/20250625085L.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ndtv.com/india-news/punjab-minister-sanjeev-arora-gets-7-day-probe-agency-custody-in-money-laundering-case-11474306#publisher=newsstand",
-          "headline": "Probe Agency Gets 7-Day Custody Of Punjab Minister Sanjeev Arora In Money Laundering Case",
-          "snippet": "Sanjeev Arora was produced before the court at around 11:20 pm on Friday night. While the ED had sought 10 days' custodial interrogation, the court granted seven days of ED custody.",
-          "source": "ndtv",
-          "source_name": "NDTV",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 18:56:29 +0530",
-          "image_url": "https://c.ndtvimg.com/2026-05/8k2cfsi4_sanjeev-arora-ani_625x300_10_May_26.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ndtv.com/india-news/full-faith-punjab-minister-sanjeev-arora-linked-firm-refutes-probe-agency-ed-charges-11474477#publisher=newsstand",
-          "headline": "\"Full Faith\": Punjab Minister Sanjeev Arora-Linked Firm Refutes Probe Agency Charges",
-          "snippet": "The company said it entered the mobile phone export business in May 2023 in line with the Government of India's \"Make in India\" initiative and the Production Linked Incentive (PLI) scheme.",
-          "source": "ndtv",
-          "source_name": "NDTV",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 14:53:58 +0530",
-          "image_url": "https://c.ndtvimg.com/2026-05/d1j0hce8_sanjeev-arora-ani_625x300_10_May_26.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/national/punjab/aap-holds-protests-against-bjp-over-ed-action-against-punjab-minister-sanjeev-arora/article70961862.ece",
-          "headline": "AAP holds protests against BJP over ED action against Punjab Minister Sanjeev Arora",
-          "snippet": "The Aam Aadmi Party () on Sunday (May 10, 2026) held protests across Punjab against the over the action against Cabinet Minister Sanjeev Arora, accusing the Centre of misusing central agencies against its party leaders. At a few places, tension prevailed when the and workers came face to face,…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 23:18:58 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/f1jtu/article70961875.ece/alternates/LANDSCAPE_1200/20250625085L.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/national/punjab/punjab-minister-sanjeev-arora-money-laundering-case-ed-custody/article70961371.ece",
-          "headline": "ED gets seven-day custody of Punjab Minister Sanjeev Arora",
-          "snippet": "A file image of Punjab’s Industries Minister Sanjeev Arora | Photo Credit: The Enforcement Directorate (ED) has secured seven-day custody of Sanjeev Arora, Industries Minister in the Aam Aadmi Party (AAP) government in Punjab, in connection with an alleged money-laundering case. Mr. Arora was…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sun, 10 May 2026 23:17:08 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/bn4zw5/article70961373.ece/alternates/LANDSCAPE_1200/20250625085L.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNeDdBWk5ndjFqWkk2Y012d0FBdjdYbnJKdjlpODB2YThhamhPTDB5NjdtWDdLTUFSUDRzTktoZEw3QV9MR2dpYU5LeC1GY19Vci1ZbEhfMFZRN25BTTUxRWVjMXNlamhJaDBGRWRUVHlIZHdVeXlDQXpmSkNIOFdET2NzWENNTjdldDlwcnA3SHFrSUdUdG4xeEJfRGN6YmRRUHdvOGtuaThpbFI1Z01MSXVYR2hzNGx3ZG43WHVPaHJHZGdFRVlvQURWcTdYb0d3NUwyUXJaTnNDRUhXREE?oc=5",
-          "headline": "ED Gets 7-Day Custody of Punjab Minister Sanjeev Arora, AAP Accuses BJP of Using Central Agencies as Weapons - TheWire.in",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxNeDdBWk5ndjFqWkk2Y012d0FBdjdYbnJKdjlpODB2YThhamhPTDB5NjdtWDdLTUFSUDRzTktoZEw3QV9MR2dpYU5LeC1GY19Vci1ZbEhfMFZRN25BTTUxRWVjMXNlamhJaDBGRWRUVHlIZHdVeXlDQXpmSkNIOFdET2NzWENNTjdldDlwcnA3SHFrSUdUdG4xeEJfRGN6YmRRUHdvOGtuaThpbFI1Z01MSXVYR2hzNGx3ZG…",
-          "source": "the_wire_in",
-          "source_name": "The Wire (India)",
-          "country": "IN",
-          "published": "Mon, 11 May 2026 11:28:58 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://theprint.in/india/cm-mann-kejriwal-meet-sanjeev-arora-lodged-in-gurugram-jail/2939643/",
-          "headline": "CM Mann, Kejriwal meet Sanjeev Arora lodged in Gurugram jail",
-          "snippet": "Chandigarh/Gurugram, May 23 (PTI) Punjab Chief Minister Bhagwant Mann and national convener Arvind Kejriwal met jailed state minister Sanjeev Arora in Gurugram on Saturday. Arora is in judicial custody in Bhondsi jail in Gurugram in an alleged Rs 100-crore money-laundering case. A Gurugram court…",
-          "source": "the_print",
-          "source_name": "The Print (India)",
-          "country": "IN",
-          "published": "Sat, 23 May 2026 12:19:28 +0000",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.13,
-        "zionist": 0.335,
-        "atlanticist": 0.345,
-        "statist": 0.193,
-        "financialized": 0.368
-      },
-      "fp_source_count": 4,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "global-south": 4
       },
       "section": "world"
     },
@@ -10540,6 +10114,256 @@
       "section": "sports"
     },
     {
+      "id": "13dd49b5c0fb",
+      "headline": "Ivanka Trump Assassination Plotted As Revenge Killing For Qasem Soleimani",
+      "summary": "Mohammad Baqer Saad Dawood Al-Saadi had allegedly pledged to kill Ivanka in retaliation for the 2020 US drone strike in Baghdad.",
+      "published": "Sat, 23 May 2026 15:10:15 +0000",
+      "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/931/523/jared-kushner-ivanka-trump-miami-fox-news-001.jpeg?ve=1&tl=1",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 14% Left",
+      "blindspot_score": 3,
+      "coverage": {
+        "left_pct": 14,
+        "center_pct": 43,
+        "right_pct": 43,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 43
+      },
+      "bias_variance": 2.01,
+      "entity_count": 22,
+      "entity_list": [
+        "ASSASSINATION",
+        "Assassination",
+        "Chilling",
+        "Iraqi",
+        "Ivanka",
+        "Jared",
+        "Jewish",
+        "Killing",
+        "Kushner",
+        "Linked",
+        "Mother",
+        "Network",
+        "Plotted",
+        "Qasem",
+        "Reportedly",
+        "Revenge",
+        "Soleimani",
+        "Subject",
+        "Targeted",
+        "Terror",
+        "Terrorist",
+        "Trump"
+      ],
+      "sources": [
+        {
+          "id": "fox_news",
+          "name": "Fox News",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": "Fox Corp"
+        },
+        {
+          "id": "daily_mail",
+          "name": "Daily Mail",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
+        },
+        {
+          "id": "ndtv",
+          "name": "NDTV",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "daily_wire",
+          "name": "The Daily Wire",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "far-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "tmz",
+          "name": "TMZ",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "khaama",
+          "name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.foxnews.com/lifestyle/ivanka-trump-jared-kushner-enjoy-date-night-after-she-opens-up-about-deep-bond",
+          "headline": "Ivanka Trump and Jared Kushner enjoy date night after she opens up about deep bond",
+          "snippet": "Donald Trump, Jr. and his daughter Kai tell 'The Story' about the 'softer' side of former President Trump that few see and more hours before the final night of the RNC. You can now listen to Fox News articles! Ivanka Trump and Jared Kushner recently enjoyed a Saturday date night during Miami Race…",
+          "source": "fox_news",
+          "source_name": "Fox News",
+          "country": "US",
+          "published": "Sat, 09 May 2026 14:32:47 -0400",
+          "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/931/523/jared-kushner-ivanka-trump-miami-fox-news-001.jpeg?ve=1&tl=1",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/lifestyle/article-15805825/ivanka-trump-mothers-day-tribute-late-mom-ivana.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Ivanka Trump pens emotional Mother's Day tribute... as she shares series of heartwarming throwback snaps",
+          "snippet": "Ivanka Trump has penned a heartfelt tribute on Mother's Day. The 44-year-old took to Instagram to share an emotional post dedicated to late mom Ivana, who was married to President Donald Trump from 1977 to 1990, her grandmother Babi and her own three kids. She shared a carousel of snapshots, which…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sun, 10 May 2026 19:28:48 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/10/18/108507359-0-image-a-25_1778435293011.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ndtv.com/world-news/iraqi-man-had-plotted-ivanka-trumps-killing-was-seeking-revenge-report-11536207#publisher=newsstand",
+          "headline": "Ivanka Trump Assassination Plotted As Revenge Killing For Qasem Soleimani",
+          "snippet": "Mohammad Baqer Saad Dawood Al-Saadi had allegedly pledged to kill Ivanka in retaliation for the 2020 US drone strike in Baghdad.",
+          "source": "ndtv",
+          "source_name": "NDTV",
+          "country": "IN",
+          "published": "Sat, 23 May 2026 16:08:05 +0530",
+          "image_url": "https://c.ndtvimg.com/2025-01/cpj7gpu8_ivanka-trump_625x300_18_January_25.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ndtv.com/world-news/iraqi-man-had-plotted-ivanka-trumps-killing-was-seeking-revenge-report-11536207#publisher=newsstand",
+          "headline": "Ivanka Trump Assassination Plotted As Revenge Killing For Qasem Soleimani",
+          "snippet": "Mohammad Baqer Saad Dawood Al-Saadi had allegedly pledged to kill Ivanka in retaliation for the 2020 US drone strike in Baghdad.",
+          "source": "ndtv",
+          "source_name": "NDTV",
+          "country": "IN",
+          "published": "Sat, 23 May 2026 16:08:05 +0530",
+          "image_url": "https://c.ndtvimg.com/2025-01/cpj7gpu8_ivanka-trump_625x300_18_January_25.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailywire.com/news/ivanka-trump-targeted-in-chilling-plot-tied-to-iran-linked-terror-network",
+          "headline": "Ivanka Trump Targeted In Chilling Plot Tied To Iran-Linked Terror Network",
+          "snippet": "Shows &amp; Movies All Access Shop Kids DWTV Download App Search LOG IN SIGN UP SIGN UP Menu Close Download the Daily Wire App Home Search Shows &amp; Movies All Access Shop Kids DWTV LOG IN SIGN UP — News — Ivanka Trump Targeted In Chilling Plot Tied To Iran-Linked Terror&nbsp;Network &quot;Burn…",
+          "source": "daily_wire",
+          "source_name": "The Daily Wire",
+          "country": "US",
+          "published": "Sat, 23 May 2026 06:13:36 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.tmz.com/2026/05/23/ivanka-trump-subject-of-terrorist-assassination-plot/",
+          "headline": "Ivanka Trump Reportedly the Subject of Terrorist Assassination Plot",
+          "snippet": "Ivanka Trump Reportedly the Subject of Terrorist Assassination Plot Ivanka Trump Terrorist Wanted To Kill First Daughter ... Had Blueprint To Her Home, Report Says Published May 23, 2026 5:59 Ivanka Trump was on the radar of an Islamic terrorist who wanted to kill the First Daughter and even had…",
+          "source": "tmz",
+          "source_name": "TMZ",
+          "country": "US",
+          "published": "",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/news/article-15842467/Ivanka-Trump-targeted-ASSASSINATION-plot-seek-revenge-president.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Ivanka Trump targeted in twisted ASSASSINATION plot to seek revenge on president - reports",
+          "snippet": "An Iraqi terror chief plotted to assassinate Ivanka Trump to avenge the death of his mentor, Iranian military commander Qasem Soleimani, according to a report. Mohammad Baqer Saad Dawood al-Saadi, 32, vowed to 'kill' the First Daughter and even had a map of her $24 million Florida mansion, the New…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:40:50 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/03/108816785-0-image-m-18_1779504691092.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/us-charges-iraq-linked-militant-over-alleged-plot-targeting-ivanka-trump/",
+          "headline": "US charges Iraq-linked militant over alleged plot targeting Ivanka Trump",
+          "snippet": "An Iraqi man accused of links to Islamic Revolutionary Guard Corps and the armed group Kataib Hezbollah allegedly planned to target Ivanka Trump, according to a report published by New York Post citing informed sources. The suspect, identified as 32-year-old Mohammed Baqir Saad Dawood al-Saadi, was…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Sat, 23 May 2026 05:44:09 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.timesofisrael.com/iraqi-irgc-operative-behind-attacks-on-jewish-targets-plotted-to-kill-ivanka-trump-report/",
+          "headline": "Iraqi IRGC operative behind attacks on Jewish targets plotted to kill Ivanka Trump — report",
+          "snippet": "Ivanka Trump, the daughter of President Donald Trump and the wife of key negotiator Jared Kushner, was the target of an Iranian assassination plot, the New York Post reported Friday. The newspaper identified the suspect as Mohammad Baqer Saad Dawood al-Saadi, a 32-year-old militia commander in…",
+          "source": "times_of_israel",
+          "source_name": "The Times of Israel",
+          "country": "IL",
+          "published": "Sat, 23 May 2026 15:10:15 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.269,
+        "zionist": 0.473,
+        "atlanticist": 0.484,
+        "statist": -0.01,
+        "financialized": 0.571
+      },
+      "fp_source_count": 7,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 4,
+        "global-south": 2,
+        "middle-east": 1
+      },
+      "section": "chisme"
+    },
+    {
       "id": "3f6ed2e33eb2",
       "headline": "Qatari tanker crosses Strait of Hormuz as Trump awaits Tehran response",
       "summary": "Iran has sent its response to a US proposal to end the war in the region via Pakistan, Iranian state media reported on Sunday, as a Qatari natural gas tanker crossed the Strait of Hormuz for the first time since the start of the war, heading for Pakistan.\n“The Islamic Republic of Iran sent today thr",
@@ -15784,7 +15608,7 @@
       "id": "4d5aabe7e7ac",
       "headline": "SpaceX launches its biggest, most beefed-up Starship yet on a test flight",
       "summary": "SpaceX launches its 12th Starship on uncrewed test flight from Texas, in high-stakes trial run of major upgrades to its next-generation spacecraft as Elon Musk's rocket company nears record-breaking public listing.",
-      "published": "Sat, 23 May 2026 10:29:16 -0400",
+      "published": "Sat, 23 May 2026 15:10:55 +0000",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/98ff/live/9fa417a0-565b-11f1-b682-cf91850925ea.jpg",
       "video_url": null,
       "has_video": false,
@@ -15793,13 +15617,13 @@
       "blindspot_score": 0.0,
       "coverage": {
         "left_pct": 19,
-        "center_pct": 46,
-        "right_pct": 35,
+        "center_pct": 44,
+        "right_pct": 37,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 46
+        "dominant_pct": 44
       },
-      "bias_variance": 5.45,
+      "bias_variance": 5.5,
       "entity_count": 14,
       "entity_list": [
         "Engadget",
@@ -16124,6 +15948,18 @@
           "country": "US",
           "bloc": "western",
           "bias_tier": "far-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "washington_examiner",
+          "name": "Washington Examiner",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
           "bias_bucket": "right",
           "geo_cluster": "west",
           "factuality": "mostly_factual",
@@ -16472,21 +16308,32 @@
           "published": "Sat, 23 May 2026 10:29:16 -0400",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.washingtonexaminer.com/policy/space/4580578/spacex-launch-super-heavy-starship-test-ipo/",
+          "headline": "SpaceX launches extra powerful Super Heavy-Starship test flight as company races toward IPO",
+          "snippet": "The 407-foot-tall V3 Starship rocket, designed as the most powerful ever built, blasted off into space from the company’s Starbase facility. There were some issues with the booster, which crashed into the Gulf of America, but the upper-stage spacecraft made it past Earth’s atmosphere. The vehicle…",
+          "source": "washington_examiner",
+          "source_name": "Washington Examiner",
+          "country": "US",
+          "published": "Sat, 23 May 2026 15:10:55 +0000",
+          "image_url": "https://www.washingtonexaminer.com/wp-content/uploads/2026/05/AP26143053613944.jpg?w=696",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.166,
-        "zionist": 0.258,
-        "atlanticist": 0.341,
-        "statist": 0.122,
-        "financialized": 0.454
+        "interventionist": 0.16,
+        "zionist": 0.248,
+        "atlanticist": 0.328,
+        "statist": 0.117,
+        "financialized": 0.437
       },
-      "fp_source_count": 25,
+      "fp_source_count": 26,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
-        "west": 15,
+        "west": 16,
         "global-south": 1,
         "latin-america": 3,
         "eastern-europe": 1,
@@ -21330,7 +21177,7 @@
       "id": "487e8b37a90f",
       "headline": "Israel kills 21 more in fresh south Lebanon attacks despite ceasefire",
       "summary": "Despite the ceasefire announced on April 17 and extended until May 17, the Israeli army continues to conduct daily strikes in Lebanon.",
-      "published": "Sat, 23 May 2026 12:01:48 GMT",
+      "published": "2026-05-23T09:30:21-0400",
       "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/8/Reuters/image/2026_05_08T085351Z_446983069_RC2V4LAJRHCS_RTRMADP_3_IRAN_CRISIS_LEBANON_ISRAEL.JPG?width=1440&format=webp&quality=80",
       "video_url": null,
       "has_video": false,
@@ -21346,7 +21193,7 @@
         "dominant_pct": 56
       },
       "bias_variance": 8.15,
-      "entity_count": 23,
+      "entity_count": 24,
       "entity_list": [
         "Attacks",
         "Beirut",
@@ -21354,6 +21201,7 @@
         "Destroyed",
         "Dismiss",
         "Escalates",
+        "Hezbollah",
         "Israel",
         "Lebanon",
         "Medical",
@@ -21986,6 +21834,17 @@
           "source_name": "Khaama Press Afghanistan",
           "country": "AF",
           "published": "Tue, 19 May 2026 06:14:04 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/05/israel-hits-lebanon-hezbollah-says-iran-wont-abandon-group",
+          "headline": "Israel hits Lebanon as Hezbollah says Iran won't abandon group",
+          "snippet": "Israel struck south Lebanon on Saturday despite a ceasefire as Hezbollah said its backer Tehran had pledged not to abandon the militant group. Hezbollah said its chief Naim Qassem had received a message from Iran's Foreign Minister Abbas Araghchi, saying the latest proposal through Pakistani…",
+          "source": "al_monitor",
+          "source_name": "Al-Monitor",
+          "country": "US",
+          "published": "2026-05-23T09:30:21-0400",
           "image_url": null,
           "video_url": null
         }
@@ -23343,7 +23202,7 @@
       "id": "d5b2942df32b",
       "headline": "Trump posts AI-generated video of himself throwing Stephen Colbert into dumpster after final ‘Late Night Show’ episode",
       "summary": "President Trump posted an AI-generated video showing he’s ready to muscle talk host Stephen Colbert into the trash bin of history.",
-      "published": "Sat, 23 May 2026 13:13:14 +0000",
+      "published": "Sat, 23 May 2026 15:28:39 GMT",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9fbc/live/274cd820-5578-11f1-b682-cf91850925ea.jpg",
       "video_url": null,
       "has_video": false,
@@ -23351,15 +23210,15 @@
       "blindspot_label": null,
       "blindspot_score": 0.0,
       "coverage": {
-        "left_pct": 24,
-        "center_pct": 41,
-        "right_pct": 35,
+        "left_pct": 28,
+        "center_pct": 39,
+        "right_pct": 33,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 41
+        "dominant_pct": 39
       },
-      "bias_variance": 3.76,
-      "entity_count": 71,
+      "bias_variance": 3.64,
+      "entity_count": 73,
       "entity_list": [
         "Access",
         "Admits",
@@ -23408,12 +23267,14 @@
         "Reporter",
         "Return",
         "Reynolds",
+        "Rolling",
         "Setting",
         "Shares",
         "Signing",
         "Sketch",
         "Stage",
         "Stephen",
+        "Stone",
         "Sullivan",
         "Surprise",
         "Tenure",
@@ -23635,6 +23496,18 @@
           "bias_bucket": "right",
           "geo_cluster": "west",
           "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
           "primary_vs_launder": "primary",
           "parent_company": ""
         }
@@ -23947,21 +23820,54 @@
           "published": "Sat, 23 May 2026 13:05:19 GMT",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/tv-and-radio/2026/may/23/stephen-colbert-hosts-michigan-public-show-day",
+          "headline": "Stephen Colbert hosts Michigan public access show day after last appearance on Late Show",
+          "snippet": "After his last appearance on as host of The Late Show, Stephen Colbert continued his television hosting duties – on a public access show in Michigan . Colbert on Friday night hosted Only in Monroe in Monroe, Michigan, just one day after signing off from The Late Show. Colbert had been the host of…",
+          "source": "guardian",
+          "source_name": "The Guardian",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 15:28:39 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/2a16786b0a133593bf40cec8ee21694dc5cc8944/94_0_3333_2667/master/3333.jpg?width=140&quality=85&auto=format&fit=max&s=e65a707e4da1d18675376f75e01b7b5a",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUFVJdDB4RHJkUXFYeFYwWEs4SllFRGFUMjlINzMyMHZEWVVuTUJReFRnNzdxVWpZRDR2N2NCRDVqa0syY1JDdXFLRDJSQ01mQ1RqeGVlcGktei0zLS1sWkdvNWpwdDRoZjNzQ1g1SlBaLWNGQ0dsb2RkcFU1WFRWWTNGNmFCUkpYdUxQSWNwWjNJa1hDOHIyNWgwTjgzdm5kNVNuQzFMYTRPRUVpLVJrTHFIckRCaWMz?oc=5",
+          "headline": "Stephen Colbert Makes Quick Return to Late-Night TV… on Monroe, Michigan Public Access - Rolling Stone",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUFVJdDB4RHJkUXFYeFYwWEs4SllFRGFUMjlINzMyMHZEWVVuTUJReFRnNzdxVWpZRDR2N2NCRDVqa0syY1JDdXFLRDJSQ01mQ1RqeGVlcGktei0zLS1sWkdvNWpwdDRoZjNzQ1g1SlBaLWNGQ0dsb2RkcFU1WFRWWTNGNmFCUkpYdUxQSWNwWjNJa1hDOHIyNWgwTjgzdm5kNVNuQzFMYTRPRUVpLVJrTHFIckRCaWMz?o…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 13:13:14 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.foxnews.com/media/democrats-roasted-thanking-stephen-colbert-one-day-late-night-era-came-close",
+          "headline": "Democrats roasted for thanking Stephen Colbert one day after his late-night era came to a close",
+          "snippet": "Fox News contributor Joe Concha offers a sharp critique of Stephen Colbert's exit from 'The Late Show,' following strong social media comments from President Trump. Concha reveals the show's high staff count, predictable anti-Trump monologues and significant financial losses for CBS, arguing its…",
+          "source": "fox_news",
+          "source_name": "Fox News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 11:15:14 -0400",
+          "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/03/931/523/colbert-next-move-lotr.jpg?ve=1&tl=1",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.132,
-        "zionist": 0.246,
-        "atlanticist": 0.339,
-        "statist": -0.028,
-        "financialized": 0.353
+        "interventionist": 0.105,
+        "zionist": 0.218,
+        "atlanticist": 0.336,
+        "statist": -0.02,
+        "financialized": 0.306
       },
-      "fp_source_count": 15,
+      "fp_source_count": 16,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
-        "west": 13,
+        "west": 14,
         "latin-america": 1,
         "pacific-asia": 2,
         "eastern-europe": 1
@@ -32204,12 +32110,15 @@
         "dominant_pct": 43
       },
       "bias_variance": 3.66,
-      "entity_count": 19,
+      "entity_count": 26,
       "entity_list": [
         "American",
         "Audio",
+        "Became",
         "Bubba",
         "Busch",
+        "Cancelling",
+        "Chevrolet",
         "Death",
         "Donnell",
         "Driver",
@@ -32219,12 +32128,16 @@
         "Legendary",
         "Moments",
         "NASCAR",
+        "Racing",
         "Reserved",
         "Reveals",
         "Simulator",
+        "Sports",
+        "Sudden",
         "Unresponsive",
         "Until",
-        "Wallace"
+        "Wallace",
+        "Yahoo"
       ],
       "sources": [
         {
@@ -32409,6 +32322,17 @@
           "source_name": "Google News",
           "country": "US",
           "published": "Fri, 22 May 2026 22:14:11 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQa3hSVlQtMGMtby1OdzFERG5fUVlvd3d0amM2aHA4NWpsREVCSDJSQ3k2aFRRRGlSQXBKdmowTm9nOHdfcTJxSVBfeUczeHhrb21MemxXcDlZY3pLeG5PUVFxcnFBYk52TFlXM0dXc0FkOEc0OFV1SVh4cFdkektIRWIxNDFVUzFUeGVjc0UwZmtWa1E?oc=5",
+          "headline": "Kyle Busch Became Unresponsive in Chevrolet Racing Simulator Before Sudden Death; NASCAR Not Cancelling Coca-Cola 600 - Yahoo Sports",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxQa3hSVlQtMGMtby1OdzFERG5fUVlvd3d0amM2aHA4NWpsREVCSDJSQ3k2aFRRRGlSQXBKdmowTm9nOHdfcTJxSVBfeUczeHhrb21MemxXcDlZY3pLeG5PUVFxcnFBYk52TFlXM0dXc0FkOEc0OFV1SVh4cFdkektIRWIxNDFVUzFUeGVjc0UwZmtWa1E?oc=5\" target=\"_blank\">Kyle Busch Became…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Fri, 22 May 2026 14:28:52 GMT",
           "image_url": null,
           "video_url": null
         }
@@ -32906,6 +32830,244 @@
         "west": 6
       },
       "section": "chisme"
+    },
+    {
+      "id": "e630b1a16560",
+      "headline": "Senegal president sacks PM Sonko, dissolves government after months of friction",
+      "summary": "Senegal President Bassirou Diomaye Faye ​on Friday dismissed Prime Minister Ousmane Sonko and dissolved the government, a move that risks deepening uncertainty in a ‌country already grappling with a debt crisis and drawn-out talks with the International Monetary Fund.",
+      "published": "Sat, 23 May 2026 15:27:27 +0000",
+      "image_url": "https://s.france24.com/media/display/3ff9a1ea-5646-11f1-9cdf-005056bfb2b6/w:1024/p:16x9/8c18286a75f54e6313dba2cbe5d72b3c12821c09.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 20,
+        "center_pct": 60,
+        "right_pct": 20,
+        "state_count": 1,
+        "dominant": "center",
+        "dominant_pct": 60
+      },
+      "bias_variance": 5.61,
+      "entity_count": 9,
+      "entity_list": [
+        "Alliance",
+        "Changes",
+        "Dakar",
+        "Dismissal",
+        "Government",
+        "Senegal",
+        "Shake",
+        "Shocking",
+        "Sonko"
+      ],
+      "sources": [
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "unknown (launderer)"
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "middle-east",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Qatari state"
+        },
+        {
+          "id": "straits_times",
+          "name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "myjoyonline",
+          "name": "MyJoyOnline Ghana",
+          "country": "GH",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "africanews",
+          "name": "Africanews",
+          "country": "FR",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "telesur",
+          "name": "Telesur English",
+          "country": "VE",
+          "bloc": "non-aligned",
+          "bias_tier": "state-pro",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.france24.com/en/africa/20260523-senegal-s-president-sacks-pm-after-months-of-tensions",
+          "headline": "Senegal's president fires PM Sonko, dissolves government",
+          "snippet": "Senegal President Bassirou Diomaye Faye on Friday dismissed Prime Minister Ousmane Sonko and dissolved the government after months of mounting tensions between the two leaders, plunging the debt-stricken West African nation deeper into political uncertainty.",
+          "source": "france24",
+          "source_name": "France 24",
+          "country": "FR",
+          "published": "Sat, 23 May 2026 01:25:15 GMT",
+          "image_url": "https://s.france24.com/media/display/3ff9a1ea-5646-11f1-9cdf-005056bfb2b6/w:1024/p:16x9/8c18286a75f54e6313dba2cbe5d72b3c12821c09.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/5/23/senegals-president-faye-sacks-pm-sonko-and-dissolves-government?traffic_source=rss",
+          "headline": "Senegal’s President Faye sacks PM Sonko and dissolves government",
+          "snippet": "Senegal’s President Faye sacks Sonko and dissolves government The renewed instability could complicate bailout negotiations with the International Monetary Fund. Published On 23 May 2026 23 May 2026 Senegal’s President Bassirou Diomaye Faye has dismissed Prime Minister Ousmane Sonko and dissolved…",
+          "source": "aljazeera",
+          "source_name": "Al Jazeera English",
+          "country": "QA",
+          "published": "Sat, 23 May 2026 10:35:41 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/5/23/senegals-president-faye-sacks-pm-sonko-as-deepening-rift-erupts?traffic_source=rss",
+          "headline": "Senegal’s President Faye sacks PM Sonko as deepening rift erupts",
+          "snippet": "play Live Sign up Show navigation menu .css-15ru6p1{font-size:inherit;font-weight:normal;} Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Opinion Sport Video More Show more sections Features Economy Human Rights Climate…",
+          "source": "aljazeera",
+          "source_name": "Al Jazeera English",
+          "country": "QA",
+          "published": "Sat, 23 May 2026 10:19:48 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.straitstimes.com/world/senegal-president-sacks-pm-sonko-dissolves-government-amid-rising-tensions",
+          "headline": "Senegal president sacks PM Sonko, dissolves government after months of friction",
+          "snippet": "DAKAR, May 22 - Senegal President Bassirou Diomaye Faye on Friday dismissed Prime Minister Ousmane Sonko and dissolved the government, a move that risks deepening uncertainty in a country already grappling with a debt crisis and drawn-out talks with the International Monetary Fund. A statement read…",
+          "source": "straits_times",
+          "source_name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "published": "Sat, 23 May 2026 07:10:09 +0800",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.myjoyonline.com/senegal-president-sacks-pm-sonko-dissolves-government-after-months-of-friction/",
+          "headline": "Senegal president sacks PM Sonko, dissolves government after months of friction",
+          "snippet": "PHOTO: Senegal's Prime Minister Ousmane Sonko of the ruling party PASTEF (African Patriots of Senegal for Work, Ethics and Fraternity) speaks during a political rally in Dakar, Senegal, November 8, 2025. REUTERS/Anait Senegal President Bassirou Diomaye Faye ​on Friday dismissed Prime Minister…",
+          "source": "myjoyonline",
+          "source_name": "MyJoyOnline Ghana",
+          "country": "GH",
+          "published": "Sat, 23 May 2026 03:39:25 +0000",
+          "image_url": "https://www.myjoyonline.com/wp-content/uploads/2026/05/6742d08488fd08723c8ab8435a15726a.webp",
+          "video_url": null
+        },
+        {
+          "url": "http://www.africanews.com/2026/05/23/senegals-president-faye-sacks-pm-sonko-after-months-of-tensions/",
+          "headline": "Senegal's President Faye sacks PM Sonko after months of tensions",
+          "snippet": "Senegal President Bassirou Diomaye Faye on Friday sacked Prime Minister Ousmane Sonko and dissolved the government after months of tensions, deepening a crisis in the debt-laden west African nation. The shock announcement was made on state television in a decree read out by presidential aide Oumar…",
+          "source": "africanews",
+          "source_name": "Africanews",
+          "country": "FR",
+          "published": "Sat, 23 May 2026 07:39:15 +0000",
+          "image_url": "http://images.euronews.com/articles/stories/09/76/99/01/640x360_cmsv2_bef29e28-99ef-5d96-acac-ad65678dfdc5-9769901.jpg?1779517316",
+          "video_url": null
+        },
+        {
+          "url": "http://www.africanews.com/2026/05/23/dakar-residents-react-to-sacking-of-senegals-pm-sonko/",
+          "headline": "Dakar residents react to sacking of Senegal's PM Sonko",
+          "snippet": "Residents of Dakar have been reacting to Friday’s sacking of prime minister Ousmane Sonko. After months of tensions , Senegal’s President Bassirou Diomaye Faye dissolved government and fired Sonko. But the former prime minister retains a passionate following among the country’s youth. \"Thank God.…",
+          "source": "africanews",
+          "source_name": "Africanews",
+          "country": "FR",
+          "published": "Sat, 23 May 2026 13:18:01 +0000",
+          "image_url": "http://images.euronews.com/articles/stories/09/73/98/94/640x360_cmsv2_58ca14bc-bf51-5190-a37f-fa550ae901c2-9739894.jpg?1779535452",
+          "video_url": null
+        },
+        {
+          "url": "https://www.france24.com/en/video/20260523-senegal-s-president-faye-sacks-pm-sonko-after-months-of-tension",
+          "headline": "Senegal's president Faye sacks PM Sonko after months of tension",
+          "snippet": "Paul Melly, Consulting Fellow, Africa Programme, Chatham House, is our guest.",
+          "source": "france24",
+          "source_name": "France 24",
+          "country": "FR",
+          "published": "Sat, 23 May 2026 14:55:39 GMT",
+          "image_url": "https://s.france24.com/media/display/5d524728-56b0-11f1-a7bd-005056bfb2b6/w:1024/p:16x9/EN-20260523-130904-131847-CS.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.myjoyonline.com/senegal-president-sacks-pm-sonko-dissolves-government-after-months-of-friction-2/",
+          "headline": "Senegal president sacks PM Sonko, dissolves government after months of friction",
+          "snippet": "Senegal President Bassirou Diomaye Faye ​on Friday dismissed Prime Minister Ousmane Sonko and dissolved the government, a move that risks deepening uncertainty in a ‌country already grappling with a debt crisis and drawn-out talks with the International Monetary Fund. A statement read on state…",
+          "source": "myjoyonline",
+          "source_name": "MyJoyOnline Ghana",
+          "country": "GH",
+          "published": "Sat, 23 May 2026 15:06:28 +0000",
+          "image_url": "https://www.myjoyonline.com/wp-content/uploads/2026/05/image-2663.png",
+          "video_url": null
+        },
+        {
+          "url": "https://www.telesurenglish.net/senegal-government-dismissal/",
+          "headline": "Senegal Government Dismissal: 7 Shocking Changes Shake Faye-Sonko Alliance",
+          "snippet": "President Bassirou Diomaye Faye dismisses Prime Minister Ousmane Sonko, triggering a major political rupture in Senegal. May 23, 2026 Hour: 11:27 am 🔗 Comparte este artículo Senegal government dismissal ends the Faye-Sonko partnership as President Bassirou Diomaye Faye removes his prime minister…",
+          "source": "telesur",
+          "source_name": "Telesur English",
+          "country": "VE",
+          "published": "Sat, 23 May 2026 15:27:27 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.078,
+        "zionist": 0.05,
+        "atlanticist": 0.214,
+        "statist": 0.314,
+        "financialized": 0.374
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "africa": 2,
+        "middle-east": 1,
+        "west": 1,
+        "pacific-asia": 1,
+        "latin-america": 1
+      },
+      "section": "world"
     },
     {
       "id": "2b4556890b82",
@@ -33830,214 +33992,6 @@
       "section": "entertainment"
     },
     {
-      "id": "e630b1a16560",
-      "headline": "Senegal president sacks PM Sonko, dissolves government after months of friction",
-      "summary": "Senegal President Bassirou Diomaye Faye ​on Friday dismissed Prime Minister Ousmane Sonko and dissolved the government, a move that risks deepening uncertainty in a ‌country already grappling with a debt crisis and drawn-out talks with the International Monetary Fund.",
-      "published": "Sat, 23 May 2026 15:06:28 +0000",
-      "image_url": "https://s.france24.com/media/display/3ff9a1ea-5646-11f1-9cdf-005056bfb2b6/w:1024/p:16x9/8c18286a75f54e6313dba2cbe5d72b3c12821c09.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 20,
-        "center_pct": 60,
-        "right_pct": 20,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 60
-      },
-      "bias_variance": 6.02,
-      "entity_count": 3,
-      "entity_list": [
-        "Dakar",
-        "Senegal",
-        "Sonko"
-      ],
-      "sources": [
-        {
-          "id": "france24",
-          "name": "France 24",
-          "country": "FR",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "launderer",
-          "parent_company": "unknown (launderer)"
-        },
-        {
-          "id": "aljazeera",
-          "name": "Al Jazeera English",
-          "country": "QA",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "middle-east",
-          "factuality": "mostly_factual",
-          "primary_vs_launder": "mixed",
-          "parent_company": "Qatari state"
-        },
-        {
-          "id": "straits_times",
-          "name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "myjoyonline",
-          "name": "MyJoyOnline Ghana",
-          "country": "GH",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "africa",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "africanews",
-          "name": "Africanews",
-          "country": "FR",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "africa",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.france24.com/en/africa/20260523-senegal-s-president-sacks-pm-after-months-of-tensions",
-          "headline": "Senegal's president fires PM Sonko, dissolves government",
-          "snippet": "Senegal President Bassirou Diomaye Faye on Friday dismissed Prime Minister Ousmane Sonko and dissolved the government after months of mounting tensions between the two leaders, plunging the debt-stricken West African nation deeper into political uncertainty.",
-          "source": "france24",
-          "source_name": "France 24",
-          "country": "FR",
-          "published": "Sat, 23 May 2026 01:25:15 GMT",
-          "image_url": "https://s.france24.com/media/display/3ff9a1ea-5646-11f1-9cdf-005056bfb2b6/w:1024/p:16x9/8c18286a75f54e6313dba2cbe5d72b3c12821c09.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.aljazeera.com/news/2026/5/23/senegals-president-faye-sacks-pm-sonko-and-dissolves-government?traffic_source=rss",
-          "headline": "Senegal’s President Faye sacks PM Sonko and dissolves government",
-          "snippet": "Senegal’s President Faye sacks Sonko and dissolves government The renewed instability could complicate bailout negotiations with the International Monetary Fund. Published On 23 May 2026 23 May 2026 Senegal’s President Bassirou Diomaye Faye has dismissed Prime Minister Ousmane Sonko and dissolved…",
-          "source": "aljazeera",
-          "source_name": "Al Jazeera English",
-          "country": "QA",
-          "published": "Sat, 23 May 2026 10:35:41 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/5/23/senegals-president-faye-sacks-pm-sonko-as-deepening-rift-erupts?traffic_source=rss",
-          "headline": "Senegal’s President Faye sacks PM Sonko as deepening rift erupts",
-          "snippet": "play Live Sign up Show navigation menu .css-15ru6p1{font-size:inherit;font-weight:normal;} Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Opinion Sport Video More Show more sections Features Economy Human Rights Climate…",
-          "source": "aljazeera",
-          "source_name": "Al Jazeera English",
-          "country": "QA",
-          "published": "Sat, 23 May 2026 10:19:48 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.straitstimes.com/world/senegal-president-sacks-pm-sonko-dissolves-government-amid-rising-tensions",
-          "headline": "Senegal president sacks PM Sonko, dissolves government after months of friction",
-          "snippet": "DAKAR, May 22 - Senegal President Bassirou Diomaye Faye on Friday dismissed Prime Minister Ousmane Sonko and dissolved the government, a move that risks deepening uncertainty in a country already grappling with a debt crisis and drawn-out talks with the International Monetary Fund. A statement read…",
-          "source": "straits_times",
-          "source_name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "published": "Sat, 23 May 2026 07:10:09 +0800",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.myjoyonline.com/senegal-president-sacks-pm-sonko-dissolves-government-after-months-of-friction/",
-          "headline": "Senegal president sacks PM Sonko, dissolves government after months of friction",
-          "snippet": "PHOTO: Senegal's Prime Minister Ousmane Sonko of the ruling party PASTEF (African Patriots of Senegal for Work, Ethics and Fraternity) speaks during a political rally in Dakar, Senegal, November 8, 2025. REUTERS/Anait Senegal President Bassirou Diomaye Faye ​on Friday dismissed Prime Minister…",
-          "source": "myjoyonline",
-          "source_name": "MyJoyOnline Ghana",
-          "country": "GH",
-          "published": "Sat, 23 May 2026 03:39:25 +0000",
-          "image_url": "https://www.myjoyonline.com/wp-content/uploads/2026/05/6742d08488fd08723c8ab8435a15726a.webp",
-          "video_url": null
-        },
-        {
-          "url": "http://www.africanews.com/2026/05/23/senegals-president-faye-sacks-pm-sonko-after-months-of-tensions/",
-          "headline": "Senegal's President Faye sacks PM Sonko after months of tensions",
-          "snippet": "Senegal President Bassirou Diomaye Faye on Friday sacked Prime Minister Ousmane Sonko and dissolved the government after months of tensions, deepening a crisis in the debt-laden west African nation. The shock announcement was made on state television in a decree read out by presidential aide Oumar…",
-          "source": "africanews",
-          "source_name": "Africanews",
-          "country": "FR",
-          "published": "Sat, 23 May 2026 07:39:15 +0000",
-          "image_url": "http://images.euronews.com/articles/stories/09/76/99/01/640x360_cmsv2_bef29e28-99ef-5d96-acac-ad65678dfdc5-9769901.jpg?1779517316",
-          "video_url": null
-        },
-        {
-          "url": "http://www.africanews.com/2026/05/23/dakar-residents-react-to-sacking-of-senegals-pm-sonko/",
-          "headline": "Dakar residents react to sacking of Senegal's PM Sonko",
-          "snippet": "Residents of Dakar have been reacting to Friday’s sacking of prime minister Ousmane Sonko. After months of tensions , Senegal’s President Bassirou Diomaye Faye dissolved government and fired Sonko. But the former prime minister retains a passionate following among the country’s youth. \"Thank God.…",
-          "source": "africanews",
-          "source_name": "Africanews",
-          "country": "FR",
-          "published": "Sat, 23 May 2026 13:18:01 +0000",
-          "image_url": "http://images.euronews.com/articles/stories/09/73/98/94/640x360_cmsv2_58ca14bc-bf51-5190-a37f-fa550ae901c2-9739894.jpg?1779535452",
-          "video_url": null
-        },
-        {
-          "url": "https://www.france24.com/en/video/20260523-senegal-s-president-faye-sacks-pm-sonko-after-months-of-tension",
-          "headline": "Senegal's president Faye sacks PM Sonko after months of tension",
-          "snippet": "Paul Melly, Consulting Fellow, Africa Programme, Chatham House, is our guest.",
-          "source": "france24",
-          "source_name": "France 24",
-          "country": "FR",
-          "published": "Sat, 23 May 2026 14:55:39 GMT",
-          "image_url": "https://s.france24.com/media/display/5d524728-56b0-11f1-a7bd-005056bfb2b6/w:1024/p:16x9/EN-20260523-130904-131847-CS.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.myjoyonline.com/senegal-president-sacks-pm-sonko-dissolves-government-after-months-of-friction-2/",
-          "headline": "Senegal president sacks PM Sonko, dissolves government after months of friction",
-          "snippet": "Senegal President Bassirou Diomaye Faye ​on Friday dismissed Prime Minister Ousmane Sonko and dissolved the government, a move that risks deepening uncertainty in a ‌country already grappling with a debt crisis and drawn-out talks with the International Monetary Fund. A statement read on state…",
-          "source": "myjoyonline",
-          "source_name": "MyJoyOnline Ghana",
-          "country": "GH",
-          "published": "Sat, 23 May 2026 15:06:28 +0000",
-          "image_url": "https://www.myjoyonline.com/wp-content/uploads/2026/05/image-2663.png",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.072,
-        "zionist": 0.013,
-        "atlanticist": 0.175,
-        "statist": 0.343,
-        "financialized": 0.343
-      },
-      "fp_source_count": 4,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "africa": 2,
-        "middle-east": 1,
-        "west": 1,
-        "pacific-asia": 1
-      },
-      "section": "world"
-    },
-    {
       "id": "fca096b5ae59",
       "headline": "Activistas italianos de la Flotilla acusan de violencia a Israel a su regreso a su país",
       "summary": "",
@@ -34740,6 +34694,205 @@
         "west": 4
       },
       "section": "world"
+    },
+    {
+      "id": "87b7fa5a6e2a",
+      "headline": "Maeda puts Celtic ahead vs Dunfermline after early scare Scottish Cup final LIVE!",
+      "summary": "",
+      "published": "Sat, 23 May 2026 15:22:39 GMT",
+      "image_url": "https://assets.nst.com.my/images/listing-featured/8A39D2E12C6C2A444F26D0DA20017DEA_data_0.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 25,
+        "center_pct": 75,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 75
+      },
+      "bias_variance": 0.66,
+      "entity_count": 8,
+      "entity_list": [
+        "Celtic",
+        "Dunfermline",
+        "Engels",
+        "Iheanacho",
+        "Maeda",
+        "Premiership",
+        "Rangers",
+        "Scottish"
+      ],
+      "sources": [
+        {
+          "id": "nst_my",
+          "name": "New Straits Times",
+          "country": "MY",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "bbc_sport",
+          "name": "BBC Sport",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "sky_sports",
+          "name": "Sky Sports",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_guardian_au",
+          "name": "The Guardian Australia",
+          "country": "AU",
+          "bloc": "non-aligned",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "pacific-asia",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.nst.com.my/sports/football/2026/05/1436675/celtic-keep-scottish-title-race-alive-3-1-win-over-rangers",
+          "headline": "Celtic keep Scottish title race alive with 3-1 win over Rangers",
+          "snippet": "GLASGOW: Celtic forward Daizen Maeda struck twice in five second-half minutes, including a superb bicycle kick, as his side beat Rangers 3-1 at home in Sunday’s Old Firm derby to set up a dramatic final week in the Scottish Premiership.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Sun, 10 May 2026 23:15:13 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/8A39D2E12C6C2A444F26D0DA20017DEA_data_0.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.bbc.com/sport/football/articles/cy52e0rpdk7o?at_medium=RSS&at_campaign=rss",
+          "headline": "Are Celtic now favourites to win Scottish Premiership?",
+          "snippet": "Celtic captain Callum McGregor pointed out \"it's in our hands\" after Sunday's \"huge win\" over their city rivals. Only defeat by Motherwell on Wednesday, combined with a Hearts win, will prevent a final-day showdown. Nevertheless O'Neill believes Celtic still have \"two mountains to climb\" if he is…",
+          "source": "bbc_sport",
+          "source_name": "BBC Sport",
+          "country": "GB",
+          "published": "Sun, 10 May 2026 17:06:18 GMT",
+          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/710d/live/7996d3e0-4c92-11f1-be30-7db5755d9347.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Celtic vs Dunfermline Scottish Cup final team news LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-oneill-martin-neil_7254949.jpg?20260521164448",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Celtic vs Dunfermline Scottish Cup final LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-oneill-martin-neil_7254949.jpg?20260521164448",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Celtic survive early scare vs Dunfermline Scottish Cup final LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-oneill-martin-neil_7254949.jpg?20260521164448",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Maeda puts Celtic ahead vs Dunfermline after early scare Scottish Cup final LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-maeda-daizen-celtic_7256432.jpg?20260523152901",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Engels blasts home Celtic's second vs Dunfermline Scottish Cup final LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-arne-engels-celtic_7256441.jpg?20260523154546",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/celtic-vs-dunfermline-athletic/live/555807",
+          "headline": "Iheanacho makes it three as Celtic edge towards Scottish Cup glory vs Dunfermline LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 13:30:00 BST",
+          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-arne-engels-celtic_7256441.jpg?20260523154546",
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/football/live/2026/may/23/celtic-v-dunfermline-scottish-cup-final-live",
+          "headline": "Celtic v Dunfermline: Scottish Cup final – live",
+          "snippet": "⚽️ 3pm BST kick-off; Celtic can secure domestic double ⚽️ <a href=\"https://www.theguardian.com/football/live/2026/may/23/hull-city-v-middlesbrough-championship-playoff-final-live\">Follow Championship playoff final live | <a href=\"mailto:barry.glendenning@guardian.co.uk\">Email Barry Referee: Steven…",
+          "source": "the_guardian_au",
+          "source_name": "The Guardian Australia",
+          "country": "AU",
+          "published": "Sat, 23 May 2026 15:22:39 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/2bab6e58e1524f93bd8e3c2a050eb7ab5fbd7fc8/262_0_4066_3252/master/4066.jpg?width=140&quality=85&auto=format&fit=max&s=fc46e3944847f8a4bd312ec424a0c91c",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.107,
+        "zionist": 0.22,
+        "atlanticist": 0.367,
+        "statist": 0.193,
+        "financialized": 0.273
+      },
+      "fp_source_count": 3,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 2,
+        "pacific-asia": 2
+      },
+      "section": "sports"
     },
     {
       "id": "15b25aacc504",
@@ -52893,170 +53046,6 @@
       "section": "sports"
     },
     {
-      "id": "d8dcccc7d400",
-      "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
-      "summary": "The passengers, none of whom has displayed signs of infection, will be tested by Spanish health authorities to ensure they remain asymptomatic and then transported to land in small boats.",
-      "published": "Sun, 10 May 2026 06:48:20 +0000",
-      "image_url": null,
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 20,
-        "center_pct": 60,
-        "right_pct": 20,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 60
-      },
-      "bias_variance": 5.63,
-      "entity_count": 3,
-      "entity_list": [
-        "Cruise",
-        "Reuters",
-        "Tenerife"
-      ],
-      "sources": [
-        {
-          "id": "aljazeera",
-          "name": "Al Jazeera English",
-          "country": "QA",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "middle-east",
-          "factuality": "mostly_factual",
-          "primary_vs_launder": "mixed",
-          "parent_company": "Qatari state"
-        },
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
-        },
-        {
-          "id": "bangkok_post",
-          "name": "Bangkok Post",
-          "country": "TH",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "straits_times",
-          "name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "kathmandu_post",
-          "name": "Kathmandu Post",
-          "country": "NP",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.aljazeera.com/news/2026/5/10/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife?traffic_source=rss",
-          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
-          "snippet": "Published On 10 May 2026 10 May 2026 The cruise ship hit by a deadly hantavirus outbreak has arrived near the Port of Granadilla in Tenerife in the Canary Islands. The Dutch-flagged Hondius arrived at the Spanish port early on Sunday, escorted by a Civil Guard vessel, according to data from the…",
-          "source": "aljazeera",
-          "source_name": "Al Jazeera English",
-          "country": "QA",
-          "published": "Sun, 10 May 2026 06:48:20 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPNTZWRnJKRW80UDVpWnhYcjVURGlTaUxjZXlrUHIxY0hKeGIxZ0h0b2FjQTZoeGxqUlNmTjZoZXNDZzlPTXU2S1dmLS1PMnpoX2VhcUQ4UGR5RDJIaXJ1UnhhVmx1NDJBRWt5bzhPZURCV0s0dUZTejE0MHB3enRMSmxham9mNmdGUXRScTkxNWxXaFFLalEtY3ZKM2NlcEF1NDgxbzdxWENGZTh4RzRrQzJTNVRYY0ZweHdyTDdqX19Sal9VMFE?oc=5",
-          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife - Reuters",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPNTZWRnJKRW80UDVpWnhYcjVURGlTaUxjZXlrUHIxY0hKeGIxZ0h0b2FjQTZoeGxqUlNmTjZoZXNDZzlPTXU2S1dmLS1PMnpoX2VhcUQ4UGR5RDJIaXJ1UnhhVmx1NDJBRWt5bzhPZURCV0s0dUZTejE0MHB3enRMSmxham9mNmdGUXRScTkxNWxXaFFLalEtY3ZKM2NlcEF1NDgxbzdxWENGZTh4RzRrQzJTNVRYY0ZweH…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sun, 10 May 2026 04:36:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.bangkokpost.com/world/3252719/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife",
-          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
-          "snippet": "PUBLISHED : 10 May 2026 at 12:00 The cruise ship Hondius arrives at the port of Granadilla de Abona after being affected by a hantavirus outbreak, in Tenerife, Spain, May 10, 2026. Reuters TENERIFE: The cruise ⁠ship ⁠hit by a deadly hantavirus ​outbreak arrived early on Sunday near the Port of…",
-          "source": "bangkok_post",
-          "source_name": "Bangkok Post",
-          "country": "TH",
-          "published": "Sun, 10 May 2026 12:00:00 +0700",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.straitstimes.com/world/europe/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife",
-          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
-          "snippet": "TENERIFE – The cruise ship hit by a deadly hantavirus outbreak arrived early on May 10 near the Port of Granadilla in Tenerife, Reuters footage showed, where it will anchor for the evacuation of the passengers and some of the crew. The passengers, none of whom has displayed signs of infection, will…",
-          "source": "straits_times",
-          "source_name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "published": "Sun, 10 May 2026 12:36:16 +0800",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://kathmandupost.com/world/2026/05/10/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife",
-          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
-          "snippet": "The cruise ship hit by a deadly hantavirus outbreak, arrived early on Sunday near the Port of Granadilla in Tenerife, Reuters footage showed, where it will anchor for the evacuation of the passengers and some of the crew. The passengers, none of whom has displayed signs of infection, will be tested…",
-          "source": "kathmandu_post",
-          "source_name": "Kathmandu Post",
-          "country": "NP",
-          "published": "",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.096,
-        "zionist": 0.102,
-        "atlanticist": 0.214,
-        "statist": 0.366,
-        "financialized": 0.526
-      },
-      "fp_source_count": 5,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "middle-east": 1,
-        "pacific-asia": 2,
-        "west": 1,
-        "global-south": 1
-      },
-      "section": "health"
-    },
-    {
       "id": "9854da4667d8",
       "headline": "IDF reservist killed in Hezbollah explosive drone attack in northern Israel",
       "summary": "<p>Alexander Glovanyov, 47, survived by wife, baby daughter, teen son; 3 troops lightly injured in drone attack in south Lebanon; IDF probing strike that killed man, 12-year-old daughter</p>\n<p>The post <a href=\"https://www.timesofisrael.com/idf-reservist-killed-in-hezbollah-explosive-drone-attack-i",
@@ -53245,6 +53234,170 @@
         "pacific-asia": 1
       },
       "section": "tech"
+    },
+    {
+      "id": "d8dcccc7d400",
+      "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
+      "summary": "The passengers, none of whom has displayed signs of infection, will be tested by Spanish health authorities to ensure they remain asymptomatic and then transported to land in small boats.",
+      "published": "Sun, 10 May 2026 06:48:20 +0000",
+      "image_url": null,
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 20,
+        "center_pct": 60,
+        "right_pct": 20,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 60
+      },
+      "bias_variance": 5.63,
+      "entity_count": 3,
+      "entity_list": [
+        "Cruise",
+        "Reuters",
+        "Tenerife"
+      ],
+      "sources": [
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "middle-east",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Qatari state"
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
+        },
+        {
+          "id": "bangkok_post",
+          "name": "Bangkok Post",
+          "country": "TH",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "straits_times",
+          "name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "kathmandu_post",
+          "name": "Kathmandu Post",
+          "country": "NP",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.aljazeera.com/news/2026/5/10/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife?traffic_source=rss",
+          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
+          "snippet": "Published On 10 May 2026 10 May 2026 The cruise ship hit by a deadly hantavirus outbreak has arrived near the Port of Granadilla in Tenerife in the Canary Islands. The Dutch-flagged Hondius arrived at the Spanish port early on Sunday, escorted by a Civil Guard vessel, according to data from the…",
+          "source": "aljazeera",
+          "source_name": "Al Jazeera English",
+          "country": "QA",
+          "published": "Sun, 10 May 2026 06:48:20 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPNTZWRnJKRW80UDVpWnhYcjVURGlTaUxjZXlrUHIxY0hKeGIxZ0h0b2FjQTZoeGxqUlNmTjZoZXNDZzlPTXU2S1dmLS1PMnpoX2VhcUQ4UGR5RDJIaXJ1UnhhVmx1NDJBRWt5bzhPZURCV0s0dUZTejE0MHB3enRMSmxham9mNmdGUXRScTkxNWxXaFFLalEtY3ZKM2NlcEF1NDgxbzdxWENGZTh4RzRrQzJTNVRYY0ZweHdyTDdqX19Sal9VMFE?oc=5",
+          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife - Reuters",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPNTZWRnJKRW80UDVpWnhYcjVURGlTaUxjZXlrUHIxY0hKeGIxZ0h0b2FjQTZoeGxqUlNmTjZoZXNDZzlPTXU2S1dmLS1PMnpoX2VhcUQ4UGR5RDJIaXJ1UnhhVmx1NDJBRWt5bzhPZURCV0s0dUZTejE0MHB3enRMSmxham9mNmdGUXRScTkxNWxXaFFLalEtY3ZKM2NlcEF1NDgxbzdxWENGZTh4RzRrQzJTNVRYY0ZweH…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 10 May 2026 04:36:00 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.bangkokpost.com/world/3252719/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife",
+          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
+          "snippet": "PUBLISHED : 10 May 2026 at 12:00 The cruise ship Hondius arrives at the port of Granadilla de Abona after being affected by a hantavirus outbreak, in Tenerife, Spain, May 10, 2026. Reuters TENERIFE: The cruise ⁠ship ⁠hit by a deadly hantavirus ​outbreak arrived early on Sunday near the Port of…",
+          "source": "bangkok_post",
+          "source_name": "Bangkok Post",
+          "country": "TH",
+          "published": "Sun, 10 May 2026 12:00:00 +0700",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.straitstimes.com/world/europe/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife",
+          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
+          "snippet": "TENERIFE – The cruise ship hit by a deadly hantavirus outbreak arrived early on May 10 near the Port of Granadilla in Tenerife, Reuters footage showed, where it will anchor for the evacuation of the passengers and some of the crew. The passengers, none of whom has displayed signs of infection, will…",
+          "source": "straits_times",
+          "source_name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "published": "Sun, 10 May 2026 12:36:16 +0800",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://kathmandupost.com/world/2026/05/10/cruise-ship-hit-by-hantavirus-outbreak-arrives-in-tenerife",
+          "headline": "Cruise ship hit by hantavirus outbreak arrives in Tenerife",
+          "snippet": "The cruise ship hit by a deadly hantavirus outbreak, arrived early on Sunday near the Port of Granadilla in Tenerife, Reuters footage showed, where it will anchor for the evacuation of the passengers and some of the crew. The passengers, none of whom has displayed signs of infection, will be tested…",
+          "source": "kathmandu_post",
+          "source_name": "Kathmandu Post",
+          "country": "NP",
+          "published": "",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.096,
+        "zionist": 0.102,
+        "atlanticist": 0.214,
+        "statist": 0.366,
+        "financialized": 0.526
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "middle-east": 1,
+        "pacific-asia": 2,
+        "west": 1,
+        "global-south": 1
+      },
+      "section": "health"
     },
     {
       "id": "47988bd13874",

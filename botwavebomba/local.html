@@ -98,8 +98,8 @@
   <section class="local-hero">
     <h1>Choose a country to build a <em>local feed</em>.</h1>
     <p>Filter the world feed to stories where at least one source is from your region.
-       No location permission. No tracking. We don't know where you are, we just filter on
-       the <code>country_code</code> field every source already carries.</p>
+       <strong>No location permission. No tracking.</strong> We don't know where you are; we filter on the
+       <code>country_code</code> already attached to every source. Privacy is the differentiator.</p>
 
     <div class="local-picker">
       <select id="country-select" aria-label="Country">
@@ -109,6 +109,17 @@
     </div>
 
     <div class="local-shortcuts" id="shortcuts" aria-label="Top countries"></div>
+
+    <details class="local-locperm">
+      <summary>Or auto-detect from browser (one-time, you can deny)</summary>
+      <p>
+        Click below to ask your browser for an approximate location, then we'll resolve the country code
+        client-side via Mozilla's free reverse-geocode service. Nothing leaves your browser except the
+        coordinate-to-country lookup (which doesn't include your IP). No cookies, no profile, no log.
+      </p>
+      <button type="button" id="auto-detect-btn" class="local-shortcut" style="margin: 6px 0;">Use my location once</button>
+      <p id="auto-detect-status" class="local-disclaimer" style="margin: 4px 0; min-height: 18px;"></p>
+    </details>
 
     <p class="local-disclaimer">
       Adversarial sources are included by design. If a story has a TRT, RT, or IRNA source from your region,
@@ -125,6 +136,19 @@
   <main id="local-feed">
     <div class="local-empty">Pick a country above. Or hit one of the shortcuts.</div>
   </main>
+
+  <!-- LOCAL PUBLISHERS PANEL — appears after a country is picked -->
+  <section class="local-publishers" id="local-publishers" hidden>
+    <div class="local-publishers-inner">
+      <h2 class="local-publishers-title">Local publishers &mdash; <span id="lp-country">—</span></h2>
+      <p class="local-publishers-sub">
+        Sources from this region in the BOTWAVEBOMBA registry, with their 5-axis fingerprint and bloc.
+        Open data &mdash; download the full schema:
+        <a href="data/source_registry.json">source_registry.json</a>.
+      </p>
+      <div class="local-publishers-grid" id="lp-grid"></div>
+    </div>
+  </section>
 
   <footer class="bwb-footer-v2">
     <div class="bwb-footer-cols">
@@ -229,9 +253,14 @@
     };
 
     let latest = null;
+    let registry = null;
     try {
       const r = await fetch('api/latest.json', { cache: 'no-store' });
       if (r.ok) latest = await r.json();
+    } catch (e) {}
+    try {
+      const r2 = await fetch('data/source_registry.json', { cache: 'no-store' });
+      if (r2.ok) registry = await r2.json();
     } catch (e) {}
 
     const feed = document.getElementById('local-feed');
@@ -324,7 +353,116 @@
         story.appendChild(summary);
         feed.appendChild(story);
       }
+
+      // Publishers panel: registry sources where country === cc
+      const panel = document.getElementById('local-publishers');
+      const grid  = document.getElementById('lp-grid');
+      document.getElementById('lp-country').textContent = COUNTRY_NAMES[cc] || cc;
+      grid.textContent = '';
+      const all_local = (registry && Array.isArray(registry.sources))
+        ? registry.sources.filter(s => (s.country || '').toUpperCase() === cc)
+        : [];
+      if (!all_local.length) {
+        panel.hidden = true;
+      } else {
+        panel.hidden = false;
+        // Sort: deep-fingerprinted (has axis) first, then by name
+        all_local.sort((a, b) => {
+          const aFp = a.axis && Object.keys(a.axis).length > 0 ? 1 : 0;
+          const bFp = b.axis && Object.keys(b.axis).length > 0 ? 1 : 0;
+          if (aFp !== bFp) return bFp - aFp;
+          return (a.name || a.id || '').localeCompare(b.name || b.id || '');
+        });
+        for (const src of all_local) {
+          const card = document.createElement('a');
+          card.className = 'lp-card';
+          card.href = 'sources.html#' + encodeURIComponent(src.id || src.name);
+          const bloc = (src.bloc || 'neutral').toLowerCase();
+          card.dataset.bloc = bloc;
+
+          const name = document.createElement('div');
+          name.className = 'lp-name';
+          name.textContent = src.name || src.id || '';
+
+          const meta2 = document.createElement('div');
+          meta2.className = 'lp-meta';
+          const bdot = document.createElement('span');
+          bdot.className = 'bwb-legend-dot ' + bloc;
+          meta2.appendChild(bdot);
+          const txt = document.createElement('span');
+          const parts = [];
+          if (src.bloc) parts.push(src.bloc);
+          if (src.factuality) parts.push(src.factuality);
+          if (src.primary_vs_launder === 'launder') parts.push('LAUNDER');
+          txt.textContent = parts.join(' · ');
+          meta2.appendChild(txt);
+
+          const axis = document.createElement('div');
+          axis.className = 'lp-axis';
+          if (src.axis && typeof src.axis === 'object') {
+            const top2 = Object.entries(src.axis)
+              .filter(([k, v]) => typeof v === 'number')
+              .sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]))
+              .slice(0, 2);
+            axis.textContent = top2.map(([k, v]) => k + ' ' + v.toFixed(1)).join(' · ');
+          } else {
+            axis.textContent = 'no axis yet';
+            axis.style.opacity = '0.4';
+          }
+
+          if (src.parent_company) {
+            const own = document.createElement('div');
+            own.className = 'lp-own';
+            own.textContent = 'Owner: ' + src.parent_company;
+            card.appendChild(name);
+            card.appendChild(meta2);
+            card.appendChild(axis);
+            card.appendChild(own);
+          } else {
+            card.appendChild(name);
+            card.appendChild(meta2);
+            card.appendChild(axis);
+          }
+          grid.appendChild(card);
+        }
+      }
     }
+
+    // ── BROWSER GEOLOCATION (opt-in, one-shot, reverse-geocode via Mozilla) ──
+    document.getElementById('auto-detect-btn').addEventListener('click', () => {
+      const status = document.getElementById('auto-detect-status');
+      if (!navigator.geolocation) {
+        status.textContent = 'Browser geolocation unavailable.';
+        return;
+      }
+      status.textContent = 'asking your browser for permission…';
+      navigator.geolocation.getCurrentPosition(
+        async (pos) => {
+          const { latitude, longitude } = pos.coords;
+          status.textContent = 'looking up country for ' + latitude.toFixed(2) + ', ' + longitude.toFixed(2) + '…';
+          try {
+            const r = await fetch('https://nominatim.openstreetmap.org/reverse?format=json&zoom=3&lat=' + latitude + '&lon=' + longitude, {
+              headers: { 'Accept': 'application/json' }
+            });
+            const data = await r.json();
+            const cc = (data.address && data.address.country_code) ? data.address.country_code.toUpperCase() : '';
+            if (cc && document.querySelector('#country-select option[value="' + cc + '"]')) {
+              sel.value = cc;
+              render(cc);
+              status.textContent = 'detected: ' + (COUNTRY_NAMES[cc] || cc) + ' — feed loaded.';
+            } else {
+              status.textContent = cc ? ('country ' + cc + ' not in feed — pick another') : 'no country resolved';
+            }
+          } catch (e) {
+            status.textContent = 'reverse-geocode failed; pick manually above.';
+          }
+        },
+        (err) => {
+          status.textContent = 'denied / unavailable — pick manually above.';
+        },
+        { enableHighAccuracy: false, timeout: 8000, maximumAge: 600000 }
+      );
+    });
 
     document.getElementById('apply-btn').addEventListener('click', () => {
       const cc = sel.value;
