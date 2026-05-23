@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/mobile.css">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
   <meta name="theme-color" content="#0a0a0a">
   <meta name="mobile-web-app-capable" content="yes">
@@ -136,14 +136,14 @@
 
   <header class="bwb-header bwb-header--compact">
     <div class="bwb-header-inner">
-      <a href="/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <a href="." class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
       <nav class="bwb-topnav">
-        <a href="/">Feed</a>
-        <a href="/blindspots.html">Blindspots</a>
-        <a href="/sources.html">Sources</a>
-        <a href="/about.html">Method</a>
-        <a href="/status.html" class="active">Status</a>
-        <a href="/funnies.html">Funnies</a>
+        <a href=".">Feed</a>
+        <a href="blindspots.html">Blindspots</a>
+        <a href="sources.html">Sources</a>
+        <a href="about.html">Method</a>
+        <a href="status.html" class="active">Status</a>
+        <a href="funnies.html">Funnies</a>
       </nav>
     </div>
   </header>
@@ -225,7 +225,7 @@
       <p>
         Path B build: extract one analytical stage from <code>generate_feed.py</code>
         per calendar week. Six modules, then a seventh week for the orchestrator.
-        Plan: <a href="/PLAN_HYBRID.md"><code>PLAN_HYBRID.md</code></a>.
+        Plan: <a href="PLAN_HYBRID.md"><code>PLAN_HYBRID.md</code></a>.
       </p>
       <div class="bwb-decomp-bar"><div id="bwb-decomp-fill" class="bwb-decomp-bar__fill" style="width:0%"></div></div>
       <p class="bwb-status-subtext">
@@ -248,7 +248,7 @@
       <p class="bwb-status-subtext">
         After Week 7 of the decomposition, this page will read per-stage health
         from <code>api/pipeline_run.json</code> (schema already drafted at
-        <a href="/schemas/pipeline_run.schema.json"><code>schemas/pipeline_run.schema.json</code></a>).
+        <a href="schemas/pipeline_run.schema.json"><code>schemas/pipeline_run.schema.json</code></a>).
         Until then, status is inferred from the freshness of <code>api/latest.json</code>
         and from the manually-maintained <code>pipeline_state.json</code>.
       </p>
@@ -256,7 +256,7 @@
 
     <div class="bwb-status-foot">
       <span id="bwb-status-foot-audit">Last methodology audit: 2026-05-10</span>
-      · <a href="/audit/about_audit_2026-05-10.md" style="color:inherit;">audit/about_audit_2026-05-10.md</a>
+      · <a href="audit/about_audit_2026-05-10.md" style="color:inherit;">audit/about_audit_2026-05-10.md</a>
       · Page rendered <span id="bwb-status-foot-rendered">—</span>
       · Auto-refresh every 60s
     </div>
@@ -462,27 +462,27 @@
 
   <!-- Mobile bottom nav -->
   <nav class="bwb-bottom-nav safe-bottom">
-    <a href="/">
+    <a href=".">
       <span class="bwb-bottom-nav-icon">📰</span>
       <span>Feed</span>
     </a>
-    <a href="/blindspots.html">
+    <a href="blindspots.html">
       <span class="bwb-bottom-nav-icon">👁️</span>
       <span>Blindspots</span>
     </a>
-    <a href="/sources.html">
+    <a href="sources.html">
       <span class="bwb-bottom-nav-icon">🌐</span>
       <span>Sources</span>
     </a>
-    <a href="/about.html">
+    <a href="about.html">
       <span class="bwb-bottom-nav-icon">📋</span>
       <span>Method</span>
     </a>
-    <a href="/status.html" class="active">
+    <a href="status.html" class="active">
       <span class="bwb-bottom-nav-icon">📊</span>
       <span>Status</span>
     </a>
-    <a href="/funnies.html">
+    <a href="funnies.html">
       <span class="bwb-bottom-nav-icon">🎭</span>
       <span>Funnies</span>
     </a>
@@ -490,7 +490,7 @@
 
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js');
+      navigator.serviceWorker.register("service-worker.js");
     }
   </script>
 </body>

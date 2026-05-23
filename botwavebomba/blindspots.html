@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/mobile.css">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
   <meta name="theme-color" content="#0a0a0a">
   <meta name="mobile-web-app-capable" content="yes">
@@ -23,15 +23,15 @@
 
   <header class="bwb-header bwb-header--compact">
     <div class="bwb-header-inner">
-      <a href="/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <a href="." class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
       <nav class="bwb-topnav">
-        <a href="/">Feed</a>
-        <a href="/blindspots.html" class="active">Blindspots</a>
-        <a href="/sources.html">Sources</a>
-        <a href="/trades.html">Trades</a>
-        <a href="/books.html">Books</a>
-        <a href="/about.html">Method</a>
-        <a href="/funnies.html">Funnies</a>
+        <a href=".">Feed</a>
+        <a href="blindspots.html" class="active">Blindspots</a>
+        <a href="sources.html">Sources</a>
+        <a href="trades.html">Trades</a>
+        <a href="books.html">Books</a>
+        <a href="about.html">Method</a>
+        <a href="funnies.html">Funnies</a>
       </nav>
     </div>
   </header>
@@ -96,31 +96,31 @@
 
   <!-- Mobile bottom nav -->
   <nav class="bwb-bottom-nav safe-bottom">
-    <a href="/">
+    <a href=".">
       <span class="bwb-bottom-nav-icon">📰</span>
       <span>Feed</span>
     </a>
-    <a href="/blindspots.html" class="active">
+    <a href="blindspots.html" class="active">
       <span class="bwb-bottom-nav-icon">👁️</span>
       <span>Blindspots</span>
     </a>
-    <a href="/sources.html">
+    <a href="sources.html">
       <span class="bwb-bottom-nav-icon">🌐</span>
       <span>Sources</span>
     </a>
-    <a href="/trades.html">
+    <a href="trades.html">
       <span class="bwb-bottom-nav-icon">🔧</span>
       <span>Trades</span>
     </a>
-    <a href="/books.html">
+    <a href="books.html">
       <span class="bwb-bottom-nav-icon">📚</span>
       <span>Books</span>
     </a>
-    <a href="/about.html">
+    <a href="about.html">
       <span class="bwb-bottom-nav-icon">📋</span>
       <span>Method</span>
     </a>
-    <a href="/funnies.html">
+    <a href="funnies.html">
       <span class="bwb-bottom-nav-icon">🎭</span>
       <span>Funnies</span>
     </a>
@@ -142,7 +142,7 @@
   <script src="assets/js/blindspot.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js');
+      navigator.serviceWorker.register("service-worker.js");
     }
   </script>
 </body>
