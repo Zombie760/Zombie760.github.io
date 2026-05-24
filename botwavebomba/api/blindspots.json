@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-24T03:25:29.220698+00:00",
+  "generated_at": "2026-05-24T03:41:54.504989+00:00",
   "count": 63,
   "stories": [
     {
       "id": "64c47aff1fe9",
       "headline": "Guerra de Estados Unidos e Israel contra Irán, en vivo: tensión en Medio Oriente hoy, lunes 11 de mayo",
       "summary": "Cobertura en tiempo real con las novedades más importantes del conflicto y las acciones del mandatario estadounidense, Donald Trump",
-      "published": "Sun, 24 May 2026 03:00:00 +0000",
+      "published": "Sun, 24 May 2026 03:30:00 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/PW3F3Z5IGZC4BFXLBARQDTO6SA.JPG?auth=3bf20790eaa4596d49969391222e8e9aa7b9ed9737439096bf56bce53212e0c6&smart=true&width=8640&height=5760",
       "video_url": null,
       "has_video": false,
@@ -22,7 +22,7 @@
         "dominant_pct": 56
       },
       "bias_variance": 0.82,
-      "entity_count": 49,
+      "entity_count": 50,
       "entity_list": [
         "Alejandro",
         "Algunos",
@@ -60,6 +60,7 @@
         "Medio",
         "Mientras",
         "Migrantes",
+        "Millones",
         "Model",
         "Mundial",
         "Nueva",
@@ -778,6 +779,17 @@
           "published": "Sun, 24 May 2026 03:00:00 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/ROBQRBODARABBB4FXHJOBPZMOQ.JPG?auth=0004e17837ff2d2cc8fb5298793c4c81a390f8eee4cbac342c46f349916e9085&smart=true&width=800&height=533",
           "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/sociedad/policiales/2026/05/24/millones-de-dolares-a-estados-unidos-la-ruta-del-dinero-de-la-secta-del-porno/",
+          "headline": "Millones de dólares a Estados Unidos: la ruta del dinero de la secta del porno",
+          "snippet": "Juan Perkowicz y Susana Barneix (sentada con la mano en su cara) durante la detención del jefe de la Escuela de Yoga Rara vez se habla de dinero cuando se habla de la Escuela de Yoga Buenos Aires. La discusión casi siempre se trata de sexo, la carta más impactante en su historia. El lugar, que…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 03:30:00 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/HZR6PX5ZB5FGXGMWHONPXBRPU4.jpg?auth=fe3121ed496d1541b15634aaacd5f6f52993594eb509905401d21fa783b4dfeb&smart=true&width=1920&height=1080",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -801,7 +813,7 @@
       "id": "2d59c7e4b3b0",
       "headline": "María Corina Machado afirma que será candidata a la presidencia en unas elecciones “limpias y libres” en Venezuela",
       "summary": "La líder opositora y Premio Nobel de la Paz participó de un encuentro en Panamá donde además explicó que para avanzar en las elecciones en su país es necesario un nuevo consejo electoral y afirmó que regresará \"pronto\" a territorio venezolano.",
-      "published": "Sat, 23 May 2026 23:45:22 +0000",
+      "published": "Sun, 24 May 2026 03:13:51 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/RGKDYAFE3RGSBPKVZC5MJHB72A.jpeg?auth=0184a8d0ba951c6f96a061516d79a5d990759b30d1036deca639dc2924b27eb8&smart=true&width=1280&height=854",
       "video_url": null,
       "has_video": false,
@@ -810,15 +822,16 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 33,
-        "right_pct": 67,
+        "center_pct": 50,
+        "right_pct": 50,
         "state_count": 0,
-        "dominant": "right",
-        "dominant_pct": 67
+        "dominant": "center",
+        "dominant_pct": 50
       },
-      "bias_variance": 0.75,
-      "entity_count": 12,
+      "bias_variance": 0.73,
+      "entity_count": 16,
       "entity_list": [
+        "Conference",
         "Corina",
         "Cotton",
         "Delcy",
@@ -826,8 +839,11 @@
         "Estamos",
         "Liberen",
         "Machado",
+        "Maria",
         "Miembros",
+        "Panama",
         "Plataforma",
+        "Press",
         "Trump",
         "Unitaria",
         "Venezuela"
@@ -867,6 +883,18 @@
           "geo_cluster": "latin-america",
           "factuality": "unknown",
           "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "havana_times",
+          "name": "Havana Times",
+          "country": "CU",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
           "parent_company": ""
         }
       ],
@@ -1024,21 +1052,32 @@
           "published": "Sat, 23 May 2026 23:31:08 +0000",
           "image_url": "https://www.latercera.com/resizer/v2/LM2NVZJI7NAGBEDVYN2X4QH63Y.jpeg?auth=ab8c09b969a756799e2f0b3bfa9fe24d8738c8143596e2b0a3d508524b0de93b&smart=true&width=1279&height=789",
           "video_url": null
+        },
+        {
+          "url": "https://havanatimes.org/features/venezuela-maria-corina-machados-press-conference-in-panama/",
+          "headline": "Venezuela: Maria Corina Machado’s Press Conference in Panama",
+          "snippet": "10 Key Takeaways “My job is to weave connections, to coordinate everyone, because everyone must be heard,” she said regarding her political work. By Efecto Cocuyo HAVANA TIMES – In the midst of an image rarely seen in recent years, accompanied by Venezuelan representatives and leaders from the…",
+          "source": "havana_times",
+          "source_name": "Havana Times",
+          "country": "CU",
+          "published": "Sun, 24 May 2026 03:13:51 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.167,
-        "zionist": 0.267,
-        "atlanticist": 0.41,
-        "statist": 0.263,
-        "financialized": 0.457
+        "interventionist": 0.15,
+        "zionist": 0.25,
+        "atlanticist": 0.4,
+        "statist": 0.247,
+        "financialized": 0.468
       },
-      "fp_source_count": 3,
+      "fp_source_count": 4,
       "geo_frame": "blackout",
       "geo_frame_label": "Western Blackout: US Foreign Policy Target",
       "geo_frame_topic": "us-foreign-policy",
       "geo_breakdown": {
-        "latin-america": 3
+        "latin-america": 4
       },
       "section": "world",
       "is_front_page": true
@@ -3321,7 +3360,7 @@
       "id": "9cdbe9b98ae3",
       "headline": "A qué hora juega Alianza Lima vs Los Chankas HOY: partido decisivo en Matute por fecha 16 del Torneo Apertura de Liga 1 2026",
       "summary": "El equipo de Pablo Guede saldrá por triunfo que le permita coronarse ganador del campeonato frente los ‘guerreros’ con Matute totalmente lleno de hinchas ‘blanquiazules’. Conoce los horarios vibrante duelo",
-      "published": "Sun, 24 May 2026 03:17:38 +0000",
+      "published": "Sun, 24 May 2026 03:31:21 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/ZEQNLMYRZNGHLEWYBWOYMYZYWQ.jpg?auth=b326e639637aa77f3f9f2f15a14edebe00a545a0edb3109242f39fb4e8f4420b&smart=true&width=2000&height=1333",
       "video_url": null,
       "has_video": false,
@@ -3337,7 +3376,7 @@
         "dominant_pct": 80
       },
       "bias_variance": 0.76,
-      "entity_count": 40,
+      "entity_count": 41,
       "entity_list": [
         "Alianza",
         "Alineaciones",
@@ -3355,6 +3394,7 @@
         "Esgrima",
         "Estudiantes",
         "Gimnasia",
+        "Goles",
         "Independiente",
         "Jefferson",
         "Juniors",
@@ -4035,6 +4075,28 @@
           "country": "AR",
           "published": "Sun, 24 May 2026 03:17:38 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/FKTSX4UA4BC2RLTWLYXQG3JNNE.png?auth=a71d9e6d635d0b159c73546be7e970ceaa643bd0c805cea924b8e3977d687c24&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/23/alianza-lima-vs-los-chankas-en-vivo-hoy-minuto-a-minuto-partido-matute-fecha-16-torneo-apertura-liga-1-2026-goles-resumen-resultado-celebraciones-ganador/",
+          "headline": "¡Alianza Lima ganador del Torneo Apertura 2026! Goles y resumen del triunfazo 3-0 ante Los Chankas en Matute por Liga 1",
+          "snippet": "24 May, 2026 Argentina Estados Unidos Colombia España México Perú Centroamérica Mundo Venezuela The economist The Washington Post Realeza Opinión Últimas Noticias Entretenimiento Deportes Tendencias Estar Mejor Tecno Cultura Malditos Nerds Virales Salud Podcasts ; Bienvenido Por favor, ingresa a tu…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 03:31:21 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/MZS3WZDRKBGZ7PAAMEUXEGJ4SI.png?auth=7c0bb958d827d321587bc6dc424eee41e184ab5cdb66f9f9b8ac85e9f95650e8&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/24/alianza-lima-ganador-del-torneo-apertura-de-la-liga-1-2026-las-claves-para-la-consagracion-blanquiazul/",
+          "headline": "Alianza Lima, ganador del Torneo Apertura de la Liga 1 2026: las claves para la consagración ‘blanquiazul’",
+          "snippet": "Alianza Lima ganó con mucha solvencia el Torneo Apertura 2026. - Crédito: Sergio Vela Alianza Lima acaba de realizar su primer paso exitoso en la campaña: se ha consagrado como ganador del Torneo Apertura 2026 con una dinámica de juego esplendorosa y brillante, que cuenta con varias aristas…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 03:25:26 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/N7VMGPAFFBFS7BLIVKN6EVRFP4.jpg?auth=c69b9ba280d93e3089a4bd81524d113549bd168e44839ff7bb8db3965832e767&smart=true&width=1920&height=1080",
           "video_url": null
         }
       ],
