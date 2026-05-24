@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T01:04:12.041158+00:00",
-  "count": 67,
+  "generated_at": "2026-05-24T01:10:12.232782+00:00",
+  "count": 64,
   "stories": [
     {
       "id": "64c47aff1fe9",
@@ -787,8 +787,8 @@
     },
     {
       "id": "2d59c7e4b3b0",
-      "headline": "María Corina Machado: \"Seré candidata\" en unas \"elecciones limpias y libres\" en Venezuela",
-      "summary": "",
+      "headline": "María Corina Machado afirma que será candidata a la presidencia en unas elecciones “limpias y libres” en Venezuela",
+      "summary": "La líder opositora y Premio Nobel de la Paz participó de un encuentro en Panamá donde además explicó que para avanzar en las elecciones en su país es necesario un nuevo consejo electoral y afirmó que regresará \"pronto\" a territorio venezolano.",
       "published": "Sat, 23 May 2026 23:45:22 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/RGKDYAFE3RGSBPKVZC5MJHB72A.jpeg?auth=0184a8d0ba951c6f96a061516d79a5d990759b30d1036deca639dc2924b27eb8&smart=true&width=1280&height=854",
       "video_url": null,
@@ -798,13 +798,13 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
+        "center_pct": 33,
+        "right_pct": 67,
         "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
+        "dominant": "right",
+        "dominant_pct": 67
       },
-      "bias_variance": 0.9,
+      "bias_variance": 0.75,
       "entity_count": 12,
       "entity_list": [
         "Corina",
@@ -843,6 +843,18 @@
           "geo_cluster": "latin-america",
           "factuality": "high",
           "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
           "parent_company": ""
         }
       ],
@@ -989,21 +1001,32 @@
           "published": "Sat, 23 May 2026 23:45:22 +0000",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.latercera.com/mundo/noticia/maria-corina-machado-afirma-que-sera-candidata-a-la-presidencia-en-unas-elecciones-limpias-y-libres-en-venezuela/",
+          "headline": "María Corina Machado afirma que será candidata a la presidencia en unas elecciones “limpias y libres” en Venezuela",
+          "snippet": "La líder opositora venezolana María Corina Machado afirmó este sábado en Panamá que será candidata presidencial en unas elecciones “limpias y libres” en Venezuela, como parte de un plan de diferentes fases para restaurar la “libertad” en su país. Durante una intervención pública en Ciudad de…",
+          "source": "tercera",
+          "source_name": "La Tercera",
+          "country": "CL",
+          "published": "Sat, 23 May 2026 23:31:08 +0000",
+          "image_url": "https://www.latercera.com/resizer/v2/LM2NVZJI7NAGBEDVYN2X4QH63Y.jpeg?auth=ab8c09b969a756799e2f0b3bfa9fe24d8738c8143596e2b0a3d508524b0de93b&smart=true&width=1279&height=789",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.25,
-        "atlanticist": 0.415,
-        "statist": 0.245,
-        "financialized": 0.485
+        "interventionist": 0.167,
+        "zionist": 0.267,
+        "atlanticist": 0.41,
+        "statist": 0.263,
+        "financialized": 0.457
       },
-      "fp_source_count": 2,
+      "fp_source_count": 3,
       "geo_frame": "blackout",
       "geo_frame_label": "Western Blackout: US Foreign Policy Target",
       "geo_frame_topic": "us-foreign-policy",
       "geo_breakdown": {
-        "latin-america": 2
+        "latin-america": 3
       },
       "section": "world",
       "is_front_page": true
@@ -2945,6 +2968,284 @@
       "section": "world"
     },
     {
+      "id": "7803956b1ac2",
+      "headline": "Cuatro argentinos hacen su estreno en Roland Garros: hora, rivales y cómo ver los partidos en vivo",
+      "summary": "Thiago Tirante, Tomás Etcheverry, Marco Trungelliti y Solana Sierra serán los primeros representantes nacionales en debutar este domingo en París, en el arranque del segundo Grand Slam de la temporada",
+      "published": "Sun, 24 May 2026 00:27:20 +0000",
+      "image_url": "https://www.infobae.com/resizer/v2/PC2O2BXCJZFDBEPBAGIXI5NMFE.JPG?auth=bff9e936e2d017aee081017a6c3fbf40c69492df9c740e9b27a0a4874d28d3d5&smart=true&width=800&height=533",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 50,
+        "right_pct": 50,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 1.15,
+      "entity_count": 18,
+      "entity_list": [
+        "Andrey",
+        "Arthur",
+        "Belgrano",
+        "Colapinto",
+        "Cuatro",
+        "French",
+        "Garros",
+        "Grand",
+        "Ignacio",
+        "Livestream",
+        "Messi",
+        "Online",
+        "Previa",
+        "River",
+        "Roland",
+        "Rublev",
+        "Sinner",
+        "Watch"
+      ],
+      "sources": [
+        {
+          "id": "el_nacional_ve",
+          "name": "El Nacional Venezuela",
+          "country": "VE",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "index_hu",
+          "name": "Index Hungary",
+          "country": "HU",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_nacion_ar",
+          "name": "La Nación (Argentina)",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "hollywood_reporter",
+          "name": "The Hollywood Reporter",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.elnacional.com/2026/05/roland-garros-se-muestra-inflexible-con-los-premios/",
+          "headline": "Roland Garros se muestra inflexible con los premios",
+          "snippet": "VER PORTADA ENLACES: Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra en Ucrania Indices Economicos Criollos Los Venezolanos en la MLB Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra…",
+          "source": "el_nacional_ve",
+          "source_name": "El Nacional Venezuela",
+          "country": "VE",
+          "published": "Fri, 22 May 2026 13:37:32 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/23/como-llegan-los-tenistas-argentinos-a-roland-garros-y-cual-sera-su-posible-recorrido/",
+          "headline": "Cómo llegan los tenistas argentinos a Roland Garros y cuál será su posible recorrido",
+          "snippet": "Roland Garros espera a varios argentinos (Foto REUTERS/Stephanie Lecocq) Roland Garros siempre ha sido el Norte de la brújula del tenis argentino, la meta a la cual llegar para cumplir un primer sueño: disputar el Abierto de Francia, el Mundial sobre polvo de ladrillo. La afinidad de la superficie…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 14:54:04 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/PC2O2BXCJZFDBEPBAGIXI5NMFE.JPG?auth=bff9e936e2d017aee081017a6c3fbf40c69492df9c740e9b27a0a4874d28d3d5&smart=true&width=800&height=533",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/arthur-fils-renuncia-a-roland-garros/",
+          "headline": "Arthur Fils renuncia a Roland Garros",
+          "snippet": "París, 23 may (EFE).- El francés Arthur Fils, la principal baza de los locales en esta edición de Roland Garros, anunció este sábado que no podrá disputar el torneo por los problemas que arrastra en una pierna, lo que supone un nuevo duro golpe para el torneo, que contaba con su tirón entre la…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 15:30:19 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://index.hu/sport/tenisz/2026/05/23/roland-garros-2026-nulladik-nap-jannik-sinner-nyilatkozat-helyszini-riport-gael-mofils-elina-szvitolina/",
+          "headline": "A Roland Garros kedvenc házaspárja ellopta a show-t, történelmi torna kezdődik Párizsban",
+          "snippet": "A Grand Slam-tornák szervezői minden évben próbálkoznak különböző programokkal, újdonságokkal, hogy a „nulladik hetet”, tehát a selejtezős meccsek napjait is megtöltsék élettel, sztárokkal, izgalmas programokkal. A Openen az amerikaiak azt találták ki, hogy a legnagyobb sztárokat párba állítják, és…",
+          "source": "index_hu",
+          "source_name": "Index Hungary",
+          "country": "HU",
+          "published": "Sat, 23 May 2026 18:35:00 +0200",
+          "image_url": "https://kep.index.hu/1/0/6956/69564/695642/69564291_5133299_1cb03279766e409c1d9d8751a26a389d_wm.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/previa-un-sinner-crecido-quiere-el-grand-slam-en-el-roland-garros-de-la-nueva-hornada-espanola/",
+          "headline": "(Previa) Un Sinner crecido quiere el 'Grand Slam' en el Roland Garros de la nueva hornada española",
+          "snippet": "Roland Garros, segundo 'grande' de la temporada, empieza este domingo con un favorito muy por encima del resto, el italiano Jannik Sinner, después de que el número uno del mundo triunfase en la tierra de Montecarlo, Madrid y Roma escribiendo la historia del tenis como busca en París, donde la nueva…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 17:01:48 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/Q7U5BTZQRZHMXNVMR6Z2KUCEXI.jpg?auth=59217cf4d0a656749207d6b990443520497441a5d406730a2c7ebd6348b4a02d&smart=true&width=1920&height=1280",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/23/cuando-vuelve-a-jugar-ignacio-buse-su-debut-en-roland-garros-y-el-calendario-de-torneos-de-la-temporada/",
+          "headline": "¿Cuándo vuelve a jugar Ignacio Buse? Su debut en Roland Garros y el calendario de torneos de la temporada",
+          "snippet": "Ignacio Buse no tendrá descanso tras conquistar el Bitpanda Hamburg Open. El campeón peruano debuta este lunes en Roland Garros Ignacio Buse no tendrá tiempo de aterrizar la celebración. El tenista peruano de 22 años conquistó este sábado el Bitpanda Hamburg Open —su primer título y el primero de…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:53:26 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/NAA5NRV6FNBNXCVNHG4IOQTNX4.JPG?auth=e85fde7bf436fe10ea72e7e87f709ec29147eb7fbc2451513e956be35df51041&smart=true&width=6256&height=4476",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/tenis/se-abre-el-telon-de-roland-garros-aunque-los-actores-juegan-bajo-protesta-nid23052026/",
+          "headline": "Se abre el telón de Roland Garros, aunque los actores juegan bajo protesta",
+          "snippet": "Empieza la fiesta del tenis sobre polvo de ladrillo, aunque con un mar de fondo inquietante. Desde este domingo y hasta el 7 de junio, se disputa Roland Garros, el segundo Grand Slam de la temporada y el preferido históricamente por los tenistas argentinos, al ser el único de los cuatro grandes que…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 20:59:16 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/TRRA6DCLDJH45BEQSHHZBTILME.jpg?auth=7f054923c0cbae1086067b5b5b8b02d9012508d3dbf79c15205ef104fabac4c6&smart=true&width=2000&height=1333",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/23/andrey-rublev-el-laureado-e-irascible-rival-a-vencer-para-ignacio-buse-en-su-estreno-en-roland-garros-2026/",
+          "headline": "Andrey Rublev, el laureado e irascible rival a vencer para Ignacio Buse en su estreno en Roland Garros 2026",
+          "snippet": "Andrey Rublev, el ruso de 28 años que será la primera prueba de Ignacio Buse en Roland Garros 2026. Crédito: ATP. El sorteo del cuadro principal de Roland Garros 2026 deparó un debut de máxima exigencia para Ignacio Buse . La primera raqueta peruana medirá fuerzas en la ronda inicial ante el ruso…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:02:46 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/UWZCWJDKFVCHLJ42G5F3UIOATM.jpg?auth=9d7a1f2dfda8090eb9e0a32cae9315bf621d49558c504ab05c6b905f3c259ca1&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/23/cuatro-argentinos-hacen-su-estreno-en-roland-garros-hora-rivales-y-como-ver-los-partidos-en-vivo/",
+          "headline": "Cuatro argentinos hacen su estreno en Roland Garros: hora, rivales y cómo ver los partidos en vivo",
+          "snippet": "Tomás Etcheverry debutará ante Nuno Borges (Instagram: @tomasetcheverry123) La espera terminó. Este domingo comenzará la edición 2026 de Roland Garros y los primeros argentinos en salir a escena serán Thiago Tirante, Tomás Etcheverry, Marco Trungelliti y Solana Sierra . El objetivo en común es…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:30:09 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/AYC4LEU6JZCJTPUUVMW4NCYFDY.jfif?auth=a7c1530785b90c82012b8126c9d0b86a8e22df5b8faab49b433e7c07db7defdd&smart=true&width=1920&height=1247",
+          "video_url": null
+        },
+        {
+          "url": "https://www.hollywoodreporter.com/tv/tv-news/watch-stream-french-open-2026-tennis-live-online-free-1236603842/",
+          "headline": "Roland-Garros 2026 Livestream: Here’s Where to Watch the French Open Online",
+          "snippet": "If you purchase an independently reviewed product or service through a link on our website, The Hollywood Reporter may receive an affiliate commission. The 2026 French Open is here, marking an opportunity for No. 4-ranked player Coco Gauff to repeat. Although the American superstar won the French…",
+          "source": "hollywood_reporter",
+          "source_name": "The Hollywood Reporter",
+          "country": "US",
+          "published": "Sat, 23 May 2026 22:00:00 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/la-agenda-de-tv-y-streaming-river-vs-belgrano-juega-messi-colapinto-en-la-formula-1-y-roland-garros-nid23052026/",
+          "headline": "La agenda de TV y streaming: River vs. Belgrano, juega Messi, Colapinto en la Fórmula 1 y Roland Garros",
+          "snippet": "Fútbol europeo, tenis, básquetbol y ciclismo completan la actividad deportiva en el cierre del fin de semana, disponible a través de las pantallas",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 23:08:28 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/ADSUSQNY2RATJLKMJZM7V7D6RA.jpg?auth=b76d9f2da1e372fa2e17923735038261ae2b37c99c3019516aec7b3a478882a3&smart=true&width=2000&height=1333",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/23/ignacio-buse-entre-las-cuatro-estrellas-emergentes-del-panorama-actual-que-participara-en-el-roland-garros/",
+          "headline": "Ignacio Buse, entre las “cuatro estrellas emergentes” del panorama actual que participará en el Roland Garros",
+          "snippet": "Ignacio Buse, de 22 años, ha coronado una semana de ensueño con la consecución del Abierto de Hamburgo. - Crédito: El tenis que ejerce Ignacio Buse , de 22 años, no solo ha revolucionado al Perú , también al mundo entero, que viene siguiendo perplejo su desmesurado avance tanto en el campo como en…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 23:52:40 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/7NKL4KPGDBG2TLI6DOXPU5XKSU.jpg?auth=5920b930c1ff679ea08cae46465fc16bdb98f68b72379ff12ff641155db20ffe&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.latercera.com/el-deportivo/noticia/roland-garros-arranca-en-medio-de-la-polemica-por-la-reparticion-de-los-premios/",
+          "headline": "Roland Garros arranca en medio de la polémica por la repartición de los premios",
+          "snippet": "Este domingo comienza Roland Garros , el segundo Grand Slam de la temporada y el único que se disputa sobre arcilla. El magnetismo único de París recibe a las principales estrellas del tenis. Sin embargo, una de ellas no podrá decir presente: el bicampeón defensor Carlos Alcaraz, quien se bajó por…",
+          "source": "tercera",
+          "source_name": "La Tercera",
+          "country": "CL",
+          "published": "Sun, 24 May 2026 00:27:20 +0000",
+          "image_url": "https://www.latercera.com/resizer/v2/2NJNTHTP7FHDTC72E7NDU634RY.jpg?auth=e2808aa01789b92cbd9ee855852dd13bcfef7cfb80087af7d1e8f42a3379b194&smart=true&width=900&height=600",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.158,
+        "zionist": 0.253,
+        "atlanticist": 0.437,
+        "statist": 0.182,
+        "financialized": 0.375
+      },
+      "fp_source_count": 6,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "latin-america": 4,
+        "west": 1,
+        "eastern-europe": 1
+      },
+      "section": "entertainment"
+    },
+    {
       "id": "9cdbe9b98ae3",
       "headline": "Cuándo juega River vs. San Lorenzo, por los octavos de final del Torneo Apertura 2026",
       "summary": "El encuentro se disputa este domingo a las 19 en el estadio Monumental, con arbitraje de Sebastián Zunino y televisación de ESPN Premium",
@@ -4037,261 +4338,6 @@
       "section": "world"
     },
     {
-      "id": "7803956b1ac2",
-      "headline": "Cuatro argentinos hacen su estreno en Roland Garros: hora, rivales y cómo ver los partidos en vivo",
-      "summary": "Thiago Tirante, Tomás Etcheverry, Marco Trungelliti y Solana Sierra serán los primeros representantes nacionales en debutar este domingo en París, en el arranque del segundo Grand Slam de la temporada",
-      "published": "Sat, 23 May 2026 23:52:40 +0000",
-      "image_url": "https://www.infobae.com/resizer/v2/PC2O2BXCJZFDBEPBAGIXI5NMFE.JPG?auth=bff9e936e2d017aee081017a6c3fbf40c69492df9c740e9b27a0a4874d28d3d5&smart=true&width=800&height=533",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 60,
-        "right_pct": 40,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 60
-      },
-      "bias_variance": 1.2,
-      "entity_count": 18,
-      "entity_list": [
-        "Andrey",
-        "Arthur",
-        "Belgrano",
-        "Colapinto",
-        "Cuatro",
-        "French",
-        "Garros",
-        "Grand",
-        "Ignacio",
-        "Livestream",
-        "Messi",
-        "Online",
-        "Previa",
-        "River",
-        "Roland",
-        "Rublev",
-        "Sinner",
-        "Watch"
-      ],
-      "sources": [
-        {
-          "id": "el_nacional_ve",
-          "name": "El Nacional Venezuela",
-          "country": "VE",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "index_hu",
-          "name": "Index Hungary",
-          "country": "HU",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "la_nacion_ar",
-          "name": "La Nación (Argentina)",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "hollywood_reporter",
-          "name": "The Hollywood Reporter",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.elnacional.com/2026/05/roland-garros-se-muestra-inflexible-con-los-premios/",
-          "headline": "Roland Garros se muestra inflexible con los premios",
-          "snippet": "VER PORTADA ENLACES: Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra en Ucrania Indices Economicos Criollos Los Venezolanos en la MLB Guerra en Ucrania Oscars y Premios 2025 George Harris Los Venezolanos en la MLB El 'TPS'a Americano Guerra…",
-          "source": "el_nacional_ve",
-          "source_name": "El Nacional Venezuela",
-          "country": "VE",
-          "published": "Fri, 22 May 2026 13:37:32 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/deportes/2026/05/23/como-llegan-los-tenistas-argentinos-a-roland-garros-y-cual-sera-su-posible-recorrido/",
-          "headline": "Cómo llegan los tenistas argentinos a Roland Garros y cuál será su posible recorrido",
-          "snippet": "Roland Garros espera a varios argentinos (Foto REUTERS/Stephanie Lecocq) Roland Garros siempre ha sido el Norte de la brújula del tenis argentino, la meta a la cual llegar para cumplir un primer sueño: disputar el Abierto de Francia, el Mundial sobre polvo de ladrillo. La afinidad de la superficie…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 14:54:04 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/PC2O2BXCJZFDBEPBAGIXI5NMFE.JPG?auth=bff9e936e2d017aee081017a6c3fbf40c69492df9c740e9b27a0a4874d28d3d5&smart=true&width=800&height=533",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/espana/agencias/2026/05/23/arthur-fils-renuncia-a-roland-garros/",
-          "headline": "Arthur Fils renuncia a Roland Garros",
-          "snippet": "París, 23 may (EFE).- El francés Arthur Fils, la principal baza de los locales en esta edición de Roland Garros, anunció este sábado que no podrá disputar el torneo por los problemas que arrastra en una pierna, lo que supone un nuevo duro golpe para el torneo, que contaba con su tirón entre la…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 15:30:19 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://index.hu/sport/tenisz/2026/05/23/roland-garros-2026-nulladik-nap-jannik-sinner-nyilatkozat-helyszini-riport-gael-mofils-elina-szvitolina/",
-          "headline": "A Roland Garros kedvenc házaspárja ellopta a show-t, történelmi torna kezdődik Párizsban",
-          "snippet": "A Grand Slam-tornák szervezői minden évben próbálkoznak különböző programokkal, újdonságokkal, hogy a „nulladik hetet”, tehát a selejtezős meccsek napjait is megtöltsék élettel, sztárokkal, izgalmas programokkal. A Openen az amerikaiak azt találták ki, hogy a legnagyobb sztárokat párba állítják, és…",
-          "source": "index_hu",
-          "source_name": "Index Hungary",
-          "country": "HU",
-          "published": "Sat, 23 May 2026 18:35:00 +0200",
-          "image_url": "https://kep.index.hu/1/0/6956/69564/695642/69564291_5133299_1cb03279766e409c1d9d8751a26a389d_wm.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/previa-un-sinner-crecido-quiere-el-grand-slam-en-el-roland-garros-de-la-nueva-hornada-espanola/",
-          "headline": "(Previa) Un Sinner crecido quiere el 'Grand Slam' en el Roland Garros de la nueva hornada española",
-          "snippet": "Roland Garros, segundo 'grande' de la temporada, empieza este domingo con un favorito muy por encima del resto, el italiano Jannik Sinner, después de que el número uno del mundo triunfase en la tierra de Montecarlo, Madrid y Roma escribiendo la historia del tenis como busca en París, donde la nueva…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 17:01:48 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/Q7U5BTZQRZHMXNVMR6Z2KUCEXI.jpg?auth=59217cf4d0a656749207d6b990443520497441a5d406730a2c7ebd6348b4a02d&smart=true&width=1920&height=1280",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/peru/deportes/2026/05/23/cuando-vuelve-a-jugar-ignacio-buse-su-debut-en-roland-garros-y-el-calendario-de-torneos-de-la-temporada/",
-          "headline": "¿Cuándo vuelve a jugar Ignacio Buse? Su debut en Roland Garros y el calendario de torneos de la temporada",
-          "snippet": "Ignacio Buse no tendrá descanso tras conquistar el Bitpanda Hamburg Open. El campeón peruano debuta este lunes en Roland Garros Ignacio Buse no tendrá tiempo de aterrizar la celebración. El tenista peruano de 22 años conquistó este sábado el Bitpanda Hamburg Open —su primer título y el primero de…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 16:53:26 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/NAA5NRV6FNBNXCVNHG4IOQTNX4.JPG?auth=e85fde7bf436fe10ea72e7e87f709ec29147eb7fbc2451513e956be35df51041&smart=true&width=6256&height=4476",
-          "video_url": null
-        },
-        {
-          "url": "https://www.lanacion.com.ar/deportes/tenis/se-abre-el-telon-de-roland-garros-aunque-los-actores-juegan-bajo-protesta-nid23052026/",
-          "headline": "Se abre el telón de Roland Garros, aunque los actores juegan bajo protesta",
-          "snippet": "Empieza la fiesta del tenis sobre polvo de ladrillo, aunque con un mar de fondo inquietante. Desde este domingo y hasta el 7 de junio, se disputa Roland Garros, el segundo Grand Slam de la temporada y el preferido históricamente por los tenistas argentinos, al ser el único de los cuatro grandes que…",
-          "source": "la_nacion_ar",
-          "source_name": "La Nación (Argentina)",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 20:59:16 +0000",
-          "image_url": "https://resizer.glanacion.com/resizer/v2/TRRA6DCLDJH45BEQSHHZBTILME.jpg?auth=7f054923c0cbae1086067b5b5b8b02d9012508d3dbf79c15205ef104fabac4c6&smart=true&width=2000&height=1333",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/peru/deportes/2026/05/23/andrey-rublev-el-laureado-e-irascible-rival-a-vencer-para-ignacio-buse-en-su-estreno-en-roland-garros-2026/",
-          "headline": "Andrey Rublev, el laureado e irascible rival a vencer para Ignacio Buse en su estreno en Roland Garros 2026",
-          "snippet": "Andrey Rublev, el ruso de 28 años que será la primera prueba de Ignacio Buse en Roland Garros 2026. Crédito: ATP. El sorteo del cuadro principal de Roland Garros 2026 deparó un debut de máxima exigencia para Ignacio Buse . La primera raqueta peruana medirá fuerzas en la ronda inicial ante el ruso…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 21:02:46 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/UWZCWJDKFVCHLJ42G5F3UIOATM.jpg?auth=9d7a1f2dfda8090eb9e0a32cae9315bf621d49558c504ab05c6b905f3c259ca1&smart=true&width=1920&height=1080",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/deportes/2026/05/23/cuatro-argentinos-hacen-su-estreno-en-roland-garros-hora-rivales-y-como-ver-los-partidos-en-vivo/",
-          "headline": "Cuatro argentinos hacen su estreno en Roland Garros: hora, rivales y cómo ver los partidos en vivo",
-          "snippet": "Tomás Etcheverry debutará ante Nuno Borges (Instagram: @tomasetcheverry123) La espera terminó. Este domingo comenzará la edición 2026 de Roland Garros y los primeros argentinos en salir a escena serán Thiago Tirante, Tomás Etcheverry, Marco Trungelliti y Solana Sierra . El objetivo en común es…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 21:30:09 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/AYC4LEU6JZCJTPUUVMW4NCYFDY.jfif?auth=a7c1530785b90c82012b8126c9d0b86a8e22df5b8faab49b433e7c07db7defdd&smart=true&width=1920&height=1247",
-          "video_url": null
-        },
-        {
-          "url": "https://www.hollywoodreporter.com/tv/tv-news/watch-stream-french-open-2026-tennis-live-online-free-1236603842/",
-          "headline": "Roland-Garros 2026 Livestream: Here’s Where to Watch the French Open Online",
-          "snippet": "If you purchase an independently reviewed product or service through a link on our website, The Hollywood Reporter may receive an affiliate commission. The 2026 French Open is here, marking an opportunity for No. 4-ranked player Coco Gauff to repeat. Although the American superstar won the French…",
-          "source": "hollywood_reporter",
-          "source_name": "The Hollywood Reporter",
-          "country": "US",
-          "published": "Sat, 23 May 2026 22:00:00 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.lanacion.com.ar/deportes/la-agenda-de-tv-y-streaming-river-vs-belgrano-juega-messi-colapinto-en-la-formula-1-y-roland-garros-nid23052026/",
-          "headline": "La agenda de TV y streaming: River vs. Belgrano, juega Messi, Colapinto en la Fórmula 1 y Roland Garros",
-          "snippet": "Fútbol europeo, tenis, básquetbol y ciclismo completan la actividad deportiva en el cierre del fin de semana, disponible a través de las pantallas",
-          "source": "la_nacion_ar",
-          "source_name": "La Nación (Argentina)",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 23:08:28 +0000",
-          "image_url": "https://resizer.glanacion.com/resizer/v2/ADSUSQNY2RATJLKMJZM7V7D6RA.jpg?auth=b76d9f2da1e372fa2e17923735038261ae2b37c99c3019516aec7b3a478882a3&smart=true&width=2000&height=1333",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/peru/deportes/2026/05/23/ignacio-buse-entre-las-cuatro-estrellas-emergentes-del-panorama-actual-que-participara-en-el-roland-garros/",
-          "headline": "Ignacio Buse, entre las “cuatro estrellas emergentes” del panorama actual que participará en el Roland Garros",
-          "snippet": "Ignacio Buse, de 22 años, ha coronado una semana de ensueño con la consecución del Abierto de Hamburgo. - Crédito: El tenis que ejerce Ignacio Buse , de 22 años, no solo ha revolucionado al Perú , también al mundo entero, que viene siguiendo perplejo su desmesurado avance tanto en el campo como en…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 23:52:40 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/7NKL4KPGDBG2TLI6DOXPU5XKSU.jpg?auth=5920b930c1ff679ea08cae46465fc16bdb98f68b72379ff12ff641155db20ffe&smart=true&width=1920&height=1080",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.244,
-        "atlanticist": 0.444,
-        "statist": 0.158,
-        "financialized": 0.37
-      },
-      "fp_source_count": 5,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "latin-america": 3,
-        "west": 1,
-        "eastern-europe": 1
-      },
-      "section": "entertainment"
-    },
-    {
       "id": "abd4670c1e69",
       "headline": "Twisha Sharma death case: husband Samarth Singh brought to Bhopal, police to seek remand",
       "summary": "Bhopal Commissioner said local police would continue the investigation until the central agency formally takes over the case; yet to be reached for recording my statement, says Giribala Singh",
@@ -5219,129 +5265,6 @@
         "latin-america": 3
       },
       "section": "world"
-    },
-    {
-      "id": "7eafa91be735",
-      "headline": "Cannes encumbra a los Javis con el Premio de Dirección y da segunda Palma de Oro a Mungiu",
-      "summary": "Javier Ambrossi y Javier Calvo reciben en Cannes el Premio de Dirección por “La bola negra”, y Cristian Mungiu recibe la Palma de Oro por \"Fjord”.",
-      "published": "Sun, 24 May 2026 00:30:06 +0000",
-      "image_url": null,
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 67,
-        "right_pct": 33,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 67
-      },
-      "bias_variance": 1.39,
-      "entity_count": 10,
-      "entity_list": [
-        "Andrej",
-        "Cannes",
-        "Cristian",
-        "Javis",
-        "Mungiu",
-        "Palma",
-        "Premio",
-        "Velkou",
-        "Zlatou",
-        "Zvjagincev"
-      ],
-      "sources": [
-        {
-          "id": "novinky_cz",
-          "name": "Novinky.cz",
-          "country": "CZ",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "prensa_libre",
-          "name": "Prensa Libre Guatemala",
-          "country": "GT",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.novinky.cz/clanek/kultura-filmy-serialy-filmovy-festival-v-cannes-rozdal-ceny-zlatou-palmu-ziskal-rumunsky-film-fjord-40579580",
-          "headline": "Zlatou palmu v Cannes získal rumunský režisér Cristian Mungiu. Velkou cenu má ruský režisér Andrej Zvjagincev",
-          "snippet": "Něco nám brání v načtení stránky It seems the page failed to load correctly Zdá se, že se stránka nepodařila správně načíst. Může to být způsobeno některými rozšířeními prohlížečů, jako jsou blokátory reklam, nebo připojení přes či proxy. This may be caused by certain browser extensions, such as ad…",
-          "source": "novinky_cz",
-          "source_name": "Novinky.cz",
-          "country": "CZ",
-          "published": "Sat, 23 May 2026 21:43:16 +0200",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/cannes-encumbra-a-los-javis-con-el-premio-de-direccion-y-da-segunda-palma-de-oro-a-mungiu/",
-          "headline": "Cannes encumbra a los Javis con el Premio de Dirección y da segunda Palma de Oro a Mungiu",
-          "snippet": "Alicia García de Francisco y Nerea González Cannes (Francia), 23 may (EFE).- El Festival de Cannes respaldó este sábado el cine de Javier Ambrossi y Javier Calvo, con el Premio de Dirección por 'La bola negra', una propuesta muy bien valorada por el jurado presidido por el cineasta Park Chan-Wook,…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 22:31:38 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.prensalibre.com/vida/escenario/cannes-encumbra-a-los-javis-con-el-premio-de-direccion-y-da-segunda-palma-de-oro-a-mungiu/",
-          "headline": "Cannes encumbra a los Javis con el Premio de Dirección y da segunda Palma de Oro a Mungiu",
-          "snippet": "El Festival de Cannes respaldó este sábado el cine de Javier Ambrossi y Javier Calvo, con el Premio de Dirección por ‘La bola negra’, una propuesta muy bien valorada por el jurado presidido por el cineasta Park Chan-Wook, que otorgó su segunda Palma de Oro al rumano Cristian Mungiu, esta vez por…",
-          "source": "prensa_libre",
-          "source_name": "Prensa Libre Guatemala",
-          "country": "GT",
-          "published": "Sun, 24 May 2026 00:30:06 +0000",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.157,
-        "zionist": 0.237,
-        "atlanticist": 0.457,
-        "statist": 0.147,
-        "financialized": 0.383
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "latin-america": 2,
-        "eastern-europe": 1
-      },
-      "section": "entertainment"
     },
     {
       "id": "c1fe19fae87e",
@@ -7988,7 +7911,7 @@
       "id": "d0707c7424c0",
       "headline": "Taylor Swift reaches for another LBD for romantic date night with Travis Kelce as wedding nears",
       "summary": "The engaged couple were spotted holding hands as they arrived at Italian restaurant Sartiano's at the Mercer Hotel in SoHo.",
-      "published": "Sat, 23 May 2026 16:37:04 GMT",
+      "published": "Sat, 23 May 2026 20:39:06 -0400",
       "image_url": "https://i.dailymail.com/1s/2026/05/08/16/108474819-0-image-m-40_1778253807131.jpg",
       "video_url": null,
       "has_video": false,
@@ -8004,7 +7927,7 @@
         "dominant_pct": 50
       },
       "bias_variance": 2.89,
-      "entity_count": 45,
+      "entity_count": 51,
       "entity_list": [
         "Additional",
         "Ahead",
@@ -8015,7 +7938,10 @@
         "Blood",
         "Boston",
         "Brown",
+        "Cavaliers",
         "Chris",
+        "Cleveland",
+        "Courtside",
         "Dates",
         "Delevingne",
         "Difference",
@@ -8026,11 +7952,13 @@
         "Forgot",
         "Frigin",
         "Furious",
+        "Gives",
         "Halle",
         "Having",
         "Intimate",
         "Justin",
         "Kelce",
+        "Knicks",
         "Larsson",
         "London",
         "Miami",
@@ -8039,6 +7967,7 @@
         "Nominee",
         "Nueva",
         "Photographed",
+        "Playoff",
         "Poppy",
         "Prince",
         "Radio",
@@ -8552,6 +8481,28 @@
           "published": "Sat, 23 May 2026 09:37:42 -0400",
           "image_url": "https://pagesix.com/wp-content%2Fuploads%2Fsites%2F3%2F2026%2F05%2Fexclusive-new-york-ny-taylor-128558693.jpg?w%3D677",
           "video_url": null
+        },
+        {
+          "url": "https://nypost.com/2026/05/23/sports/travis-kelce-taylor-swift-take-in-knicks-cavaliers-game-3-courtside/",
+          "headline": "Travis Kelce, Taylor Swift take in Knicks-Cavaliers Game 3 courtside in Cleveland",
+          "snippet": "The Garden has Celebrity Row, and now the Cavaliers have Travis Kelce and Taylor Swift. As Cleveland hosted the Knicks at Rocket Arena for Game 3 of the Eastern Conference finals on Saturday, the Chiefs tight end and Swift — who have been a couple since 2023 and are set to get married in less than…",
+          "source": "ny_post",
+          "source_name": "New York Post",
+          "country": "US",
+          "published": "Sat, 23 May 2026 20:39:06 -0400",
+          "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Fkelce-swift.jpg?w%3D1024",
+          "video_url": null
+        },
+        {
+          "url": "https://www.tmz.com/2026/05/23/travis-kelce-taylor-swift-attend-knicks-cavs-playoff-game/",
+          "headline": "Taylor Swift Gives Travis Kelce Gum Courtside at Knicks-Cavs Playoff Game",
+          "snippet": "Taylor Swift Gives Travis Kelce Gum Courtside at Knicks-Cavs Playoff Game Taylor Swift Chew On This, Trav Slips Fiancé Gum at Eastern Conference Finals Published May 23, 2026 6:00 Taylor Swift and Travis Kelce are hoping the Cleveland Cavaliers will avoid a heartbreaking playoff defeat and…",
+          "source": "tmz",
+          "source_name": "TMZ",
+          "country": "US",
+          "published": "",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -8577,7 +8528,7 @@
       "id": "cdae2cc1c666",
       "headline": "Spencer Pratt talks Los Angeles mayoral campaign, debate performance: Watch the full interview - CBS News",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxNMlU4ZlVZVXNfaHhzWEFBQUpXTjlVZ2s3MFJxOVBCZG5BQUxyb3hqdDR2NXZVU2llcUxTNjBYeXl2dW9JM3A1djBMeUZPbnVTZVJzalVpbVBsNTFaa1BlWW5QR2cwNngyYXFwaExZdHpZc3ZDRmRNUFBuR0FFZF9hSE83TDZSNzVWQlg40gGQAUFVX3lxTFBRNktZMWJyWVhpYXVZcGFuN1g2X2UyenRINmsxVk",
-      "published": "Sun, 24 May 2026 00:20:40 GMT",
+      "published": "Sat, 23 May 2026 20:54:26 -0400",
       "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Fspencer-pratt-speaks-reporters-filing-120334981.jpg?w%3D1024",
       "video_url": null,
       "has_video": false,
@@ -9184,6 +9135,17 @@
           "country": "GB",
           "published": "Sun, 24 May 2026 00:20:40 GMT",
           "image_url": "https://i.dailymail.com/1s/2026/05/24/00/108828669-0-image-a-5_1779580540192.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://nypost.com/2026/05/23/us-news/spencer-pratt-campaigns-for-mayor-in-downtown-los-angeles/",
+          "headline": "Spencer Pratt takes his right for LA’s future straight to downtown",
+          "snippet": "Los Angeles mayoral hopeful Spencer Pratt brought his fight for the city’s future straight into the heart of downtown Saturday, where roughly 300 people packed the ballroom of the historic downtown Alexandria Hotel. The event doubled as a meet-and-greet and get-out-the-vote rally, drawing a mix of…",
+          "source": "ny_post",
+          "source_name": "New York Post",
+          "country": "US",
+          "published": "Sat, 23 May 2026 20:54:26 -0400",
+          "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Fspencer-pratt-meet-greet-hotel-128611787.jpg?w%3D1024",
           "video_url": null
         }
       ],
@@ -11301,16 +11263,12 @@
         "dominant": "center",
         "dominant_pct": 100
       },
-      "bias_variance": 1.04,
-      "entity_count": 9,
+      "bias_variance": 1.1,
+      "entity_count": 5,
       "entity_list": [
         "Award",
-        "CANNES",
         "Cannes",
-        "Cristian",
         "Films",
-        "ISTORIE",
-        "Mungiu",
         "Palme",
         "Teases"
       ],
@@ -11326,18 +11284,6 @@
           "factuality": "unknown",
           "primary_vs_launder": "launderer",
           "parent_company": "unknown (launderer)"
-        },
-        {
-          "id": "g4media",
-          "name": "G4Media",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
         },
         {
           "id": "variety",
@@ -11376,17 +11322,6 @@
           "video_url": null
         },
         {
-          "url": "https://www.g4media.ro/istorie-la-cannes-cristian-mungiu-intra-in-clubul-exclusivist-al-regizorilor-cu-doua-trofee-palme-dor-cannes-pamantul-fagaduintei-pentru-mungiu.html",
-          "headline": "ISTORIE LA CANNES: Cristian Mungiu intră în clubul exclusivist al regizorilor cu două trofee Palme d’Or. Cannes, pământul făgăduinței pentru Mungiu",
-          "snippet": "Regizorul Cristian Mungiu a intrat în istoria cinematografului european după ce a câștigat sâmbătă seară cel de-al doilea trofeu Palme d’Or din carieră. Prin această performanță istorică, cineastul român devine al 11-lea regizor din întreaga istorie a Festivalului de la Cannes care reușește să își…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sat, 23 May 2026 19:58:08 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/profimedia-1104698297.jpg",
-          "video_url": null
-        },
-        {
           "url": "https://variety.com/2026/film/news/cannes-park-chan-wook-joke-palme-dor-jury-president-1236757779/",
           "headline": "Cannes Jury President Park Chan-wook Teases: ‘I Didn’t Want to Award the Palme d’Or to Any of the Films’",
           "snippet": "Cannes’ jury president, Park Chan-wook — long a Cannes favorite, never a Palme winner — managed to roast himself and plug his latest movie at the closing press conference of the 79th Cannes Film Festival . Park quipped that he struggled with the decision of which film should take this year’s top…",
@@ -11399,19 +11334,18 @@
         }
       ],
       "axis_avg": {
-        "interventionist": 0.16,
-        "zionist": 0.237,
-        "atlanticist": 0.463,
-        "statist": 0.087,
-        "financialized": 0.21
+        "interventionist": 0.19,
+        "zionist": 0.255,
+        "atlanticist": 0.445,
+        "statist": 0.28,
+        "financialized": 0.215
       },
-      "fp_source_count": 3,
+      "fp_source_count": 2,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
-        "west": 2,
-        "eastern-europe": 1
+        "west": 2
       },
       "section": "entertainment"
     },
@@ -12329,7 +12263,7 @@
       "id": "159b3889062c",
       "headline": "Demi Moore turns heads in a bizarre sleeping-bag-inspired look as she covers up on the red carpet alongside a glam Eva Longoria and Penelope Cruz at Cannes Film Festival's star-studded closing ceremony",
       "summary": "Demi Moore turned heads in a bizarre look as she joined Eva Longoria and Penelope Cruz at the 79th Cannes Film Festival's closing ceremony on Saturday.",
-      "published": "Sat, 23 May 2026 22:20:40 GMT",
+      "published": "Sat, 23 May 2026 22:45:12 GMT",
       "image_url": "https://assets.nst.com.my/images/listing-featured/5D26A907006C04233242C205A6388A1D_data_1.jpg",
       "video_url": null,
       "has_video": false,
@@ -12345,7 +12279,7 @@
         "dominant_pct": 42
       },
       "bias_variance": 3.46,
-      "entity_count": 91,
+      "entity_count": 92,
       "entity_list": [
         "Abentueur",
         "Aditi",
@@ -12430,6 +12364,7 @@
         "Thank",
         "TheWire",
         "Thielen",
+        "Times",
         "Tovar",
         "Updating",
         "Video",
@@ -13272,6 +13207,17 @@
           "source_name": "RNZ",
           "country": "NZ",
           "published": "Sun, 24 May 2026 09:31:18 +1200",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWF9PNFB6b2RnX05lYU51N2pYR2w1b2xZVVU0VlhSVkZJT1RzREVYMkdJcFFFWnBDSkdfTHZOOW93VXVQMDRudy1ZTDV5ZmtCVk9tWm9Ib0dCb3dybDRZQkExMFBxRF80dkJYSXdpZ0ZOc3Z6bzBkRmtEMVMzTzFIVnF3?oc=5",
+          "headline": "Director Cristian Mungiu’s ‘Fjord’ Wins Palme d’Or at Cannes Film Festival - The New York Times",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxQWF9PNFB6b2RnX05lYU51N2pYR2w1b2xZVVU0VlhSVkZJT1RzREVYMkdJcFFFWnBDSkdfTHZOOW93VXVQMDRudy1ZTDV5ZmtCVk9tWm9Ib0dCb3dybDRZQkExMFBxRF80dkJYSXdpZ0ZOc3Z6bzBkRmtEMVMzTzFIVnF3?oc=5\" target=\"_blank\">Director Cristian Mungiu’s ‘Fjord’ Wins Palme d’Or…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 22:45:12 GMT",
           "image_url": null,
           "video_url": null
         }
@@ -18076,169 +18022,6 @@
       "section": "chisme"
     },
     {
-      "id": "299e8d45f9c9",
-      "headline": "Germany's Social Democrats considering idea of former chancellor Schröder as EU negotiator with Russia",
-      "summary": "Voices within Germany's SPD are calling for discussion of Schröder's candidacy as a negotiator on Russia's war against Ukraine.",
-      "published": "Mon, 11 May 2026 09:29:00 +0300",
-      "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/4/30/Reuters/image/2026_04_30T093805Z_527814885_RC2LZKAYQP27_RTRMADP_3_UKRAINE_CRISIS_RUSSIA.JPG?width=1440&format=webp&quality=80",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
-        "state_count": 1,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 14.33,
-      "entity_count": 5,
-      "entity_list": [
-        "Germany",
-        "Medvedev",
-        "Russia",
-        "Social",
-        "Spiegel"
-      ],
-      "sources": [
-        {
-          "id": "trt_world",
-          "name": "TRT World",
-          "country": "TR",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "middle-east",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "rt",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial",
-          "bias_tier": "state-pro",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "low",
-          "primary_vs_launder": "launderer",
-          "parent_company": "Russian state"
-        },
-        {
-          "id": "ukrainska_pravda_en",
-          "name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "/article/4ec66b23cbb5",
-          "headline": "Russia's Medvedev accuses Germany of revanchism, rewriting WWII history",
-          "snippet": "On the eve of Victory Day, the Russian Security Council deputy claims German military expansion signals 'revanchism'.",
-          "source": "trt_world",
-          "source_name": "TRT World",
-          "country": "TR",
-          "published": "Thu, 07 May 2026 10:43:01 GMT",
-          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/4/30/Reuters/image/2026_04_30T093805Z_527814885_RC2LZKAYQP27_RTRMADP_3_UKRAINE_CRISIS_RUSSIA.JPG?width=1440&format=webp&quality=80",
-          "video_url": null
-        },
-        {
-          "url": "https://www.rt.com/russia/597224-wwii-victory-day-russia/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "headline": "May 9th: How the anniversary of Nazi Germany’s surrender became the chief national holiday in modern Russia",
-          "snippet": "The day isn’t just a celebration of military triumph – it is a celebration of victory over death Victory Day, celebrated in Russia on May 9, has become a special holiday. The war was both the greatest trial and the greatest triumph in Russia’s modern history. However, the celebrations acquired…",
-          "source": "rt",
-          "source_name": "RT (Russia Today)",
-          "country": "RU",
-          "published": "Fri, 08 May 2026 01:03:41 +0000",
-          "image_url": "https://mf.b37mrtl.ru/files/2024.05/thumbnail/663c1fff85f54010695cc4dc.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034068/",
-          "headline": "Germany's social democrats considering former chancellor Schröder as EU negotiator with Russia",
-          "snippet": "Schröder. Photo: picture alliance via Getty Images A number of representatives from Germany's Social Democratic Party (SPD) are open to a proposal by Russian ruler Vladimir Putin to appoint former German Chancellor Gerhard Schröder as an negotiator on the Russo-Ukrainian war. Source:…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 16:50:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/7/d/826038/7dfe60a2ca9f4c556c52893514eb46ca.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034078/",
-          "headline": "Germany's ruling coalition has another candidate for EU negotiator with Russia – Spiegel",
-          "snippet": "Frank-Walter Steinmeier. Photo: picture alliance via Getty Images Germany is reportedly planning to discuss the candidacy of incumbent President Frank-Walter Steinmeier for the role of negotiator on the Russo-Ukrainian war. Source: Spiegel, citing sources in the ruling coalition, as reported by…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 17:58:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/d/2/826084/d200400f580d992174d35b74537ebf53.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034068/",
-          "headline": "Germany's Social Democrats considering former chancellor Schröder as EU negotiator with Russia",
-          "snippet": "Schröder. Photo: picture alliance via Getty Images A number of representatives from Germany's Social Democratic Party (SPD) are open to a proposal by Russian ruler Vladimir Putin that former German chancellor Gerhard Schröder serve as an negotiator on Russia's war against Ukraine. Source:…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 16:50:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/7/d/826038/7dfe60a2ca9f4c556c52893514eb46ca.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034068/",
-          "headline": "Germany's Social Democrats considering idea of former chancellor Schröder as EU negotiator with Russia",
-          "snippet": "Schröder. Photo: picture alliance via Getty Images A number of representatives from Germany's Social Democratic Party (SPD) have said they are open to a proposal by Russian ruler Vladimir Putin that former German chancellor Gerhard Schröder serve as an negotiator on Russia's war against Ukraine.…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 16:50:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/7/d/826038/7dfe60a2ca9f4c556c52893514eb46ca.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/11/8034140/",
-          "headline": "EU chief diplomat says Germany's former chancellor Schröder cannot negotiate with Russia on behalf of EU",
-          "snippet": "Kaja Kallas. Photo: Getty Images Kaja Kallas, High Representative for Foreign Affairs and Security Policy, has said that former German chancellor Gerhard Schröder, who has long been associated with Russian state energy companies, cannot serve as a European Union negotiator in talks aimed at ending…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Mon, 11 May 2026 09:29:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/0/2/826383/028d036cc5f429514218a591990fbe79.jpeg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.07,
-        "zionist": 0.103,
-        "atlanticist": 0.013,
-        "statist": 0.437,
-        "financialized": 0.23
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "adversarial": 1,
-        "middle-east": 1,
-        "eastern-europe": 1
-      },
-      "section": "world"
-    },
-    {
       "id": "a4d596c9d2ed",
       "headline": "West Bengal CMO gets 9 new officers as Suvendu takes charge",
       "summary": "Kolkata, May 10 (PTI) The West Bengal government on Sunday carried out a bureaucratic reshuffle, appointing two IAS officers and seven WBCS (Executive) officers in the Chief Minister&#8217;s Office (CMO), according to official notifications. P Promoth, currently serving as joint secretary in the MSM",
@@ -18895,152 +18678,6 @@
         "latin-america": 2
       },
       "section": "world"
-    },
-    {
-      "id": "e9dd89a8f334",
-      "headline": "Simon Cowell laments his, Amanda Holden and Piers Morgan's 'awful and horrible' behaviour towards Susan Boyle on Britain's Got Talent admitting her audition was 'a wake-up call'",
-      "summary": "The music mogul, 66, admitted the singer's audition back in 2009 was 'a wake-up call' for the panel after their 'disgusting' reactions to her were televised.",
-      "published": "Mon, 11 May 2026 12:38:40 +0100",
-      "image_url": "https://i.dailymail.com/1s/2026/05/09/18/108494179-0-image-a-4_1778348018879.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 0,
-        "right_pct": 100,
-        "state_count": 0,
-        "dominant": "right",
-        "dominant_pct": 100
-      },
-      "bias_variance": 1.9,
-      "entity_count": 13,
-      "entity_list": [
-        "Amanda",
-        "BAFTAs",
-        "Boyle",
-        "Britain",
-        "Cowell",
-        "Faith",
-        "Holden",
-        "Morgan",
-        "Paloma",
-        "Piers",
-        "Simon",
-        "Susan",
-        "Talent"
-      ],
-      "sources": [
-        {
-          "id": "daily_mail",
-          "name": "Daily Mail",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": "Daily Mail and General Trust"
-        },
-        {
-          "id": "daily_mail_ent",
-          "name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15804089/Simon-Cowell-Amanda-Holden-Piers-Morgan-awful-behaviour-Susan-Boyle-Britains-Got-Talent.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Simon Cowell laments his, Amanda Holden and Piers Morgan's 'awful and horrible' behaviour towards Susan Boyle on Britain's Got Talent admitting her audition was 'a wake-up call'",
-          "snippet": "Simon Cowell has lamented his, Amanda Holden and Piers Morgan 's 'awful and horrible' behaviour towards Susan Boyle on Britain's Got Talent in a new interview. The music mogul, 66, admitted the singer's audition back in 2009 was 'a wake-up call' for the panel after their 'disgusting' reactions to…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sat, 09 May 2026 19:57:42 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/09/18/108494179-0-image-a-4_1778348018879.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15804089/Simon-Cowell-Amanda-Holden-Piers-Morgan-awful-behaviour-Susan-Boyle-Britains-Got-Talent.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Simon Cowell laments his, Amanda Holden and Piers Morgan's 'awful and horrible' behaviour towards Susan Boyle on Britain's Got Talent admitting her audition was 'a wake-up call'",
-          "snippet": "Simon Cowell has lamented his, Amanda Holden and Piers Morgan 's 'awful and horrible' behaviour towards Susan Boyle on Britain's Got Talent in a new interview. The music mogul, 66, admitted the singer's audition back in 2009 was 'a wake-up call' for the panel after their 'disgusting' reactions to…",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Sat, 09 May 2026 19:16:16 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/09/18/108494179-0-image-a-4_1778348018879.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15804427/Amanda-Holden-flashes-underwear-Britains-Got-Talent.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Amanda Holden, 55, looks incredible as she flashes her underwear in a daring sheer dress for Britain's Got Talent's live semi-final",
-          "snippet": "Amanda Holden looked out of this world in a shimmering sheer dress for Britain's Got Talent's live semi-final on Saturday night. The radio host and actress, 55, cheekily flashed her underwear in the daring number as she posed for stunning snaps. Amanda put on an eye-popping display as she joined…",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Sat, 09 May 2026 19:08:35 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/09/19/108494777-0-image-a-6_1778351670391.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15804427/Amanda-Holden-flashes-underwear-Britains-Got-Talent.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Amanda Holden, 55, looks incredible as she flashes her underwear in a daring sheer dress for Britain's Got Talent's live semi-final",
-          "snippet": "Amanda Holden looked out of this world in a shimmering sheer dress for Britain's Got Talent's live semi-final on Saturday night. The radio host and actress, 55, cheekily flashed her underwear in the daring number as she posed for stunning snaps. Amanda put on an eye-popping display as she joined…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sun, 10 May 2026 00:23:15 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/09/19/108494777-0-image-a-6_1778351670391.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15807021/Paloma-Faith-pumps-BAFTAs-toilets-help-Amanda-Holden-proudly-posing-bags-breastmilk-shares-reality-attending-awards-nine-weeks-giving-birth.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Paloma Faith pumps in BAFTAs toilets with help from Amanda Holden before proudly posing with bags of breast milk as she shares reality of attending awards nine weeks after giving birth",
-          "snippet": "The singer, 44, welcomed her son with boyfriend Stevie Thomas in March and is already mum to two daughters, aged nine and five, with her ex Leyman Lahcine.",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 12:38:40 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/10/108518211-0-image-m-3_1778491893170.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15807021/Paloma-Faith-pumps-BAFTAs-toilets-help-Amanda-Holden-proudly-posing-bags-breastmilk-shares-reality-attending-awards-nine-weeks-giving-birth.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Paloma Faith pumps in BAFTAs toilets with help from Amanda Holden before proudly posing with bags of breast milk as she shares reality of attending awards nine weeks after giving birth",
-          "snippet": "The singer, 44, welcomed her son with boyfriend Stevie Thomas in March and is already mum to two daughters, aged nine and five, with her ex Leyman Lahcine.",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 11:38:40 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/10/108518211-0-image-m-3_1778491893170.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.27,
-        "zionist": 0.415,
-        "atlanticist": 0.405,
-        "statist": -0.1,
-        "financialized": 0.57
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 2
-      },
-      "section": "chisme"
     },
     {
       "id": "9ce2625751f2",
