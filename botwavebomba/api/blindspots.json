@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T14:38:12.347360+00:00",
-  "count": 62,
+  "generated_at": "2026-05-24T14:58:08.150984+00:00",
+  "count": 63,
   "stories": [
     {
       "id": "64c47aff1fe9",
@@ -2772,14 +2772,14 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
+        "center_pct": 56,
+        "right_pct": 44,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 50
+        "dominant_pct": 56
       },
-      "bias_variance": 1.28,
-      "entity_count": 24,
+      "bias_variance": 1.36,
+      "entity_count": 25,
       "entity_list": [
         "Arsenal",
         "Aston",
@@ -2793,6 +2793,7 @@
         "Europa",
         "Excited",
         "Forest",
+        "Guardiola",
         "Guillermo",
         "Inglaterra",
         "League",
@@ -2902,6 +2903,18 @@
           "factuality": "low",
           "primary_vs_launder": "primary",
           "parent_company": "Daily Mail and General Trust"
+        },
+        {
+          "id": "vnexpress_en",
+          "name": "VnExpress International",
+          "country": "VN",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
         }
       ],
       "articles": [
@@ -3036,23 +3049,34 @@
           "published": "Sun, 24 May 2026 14:30:00 BST",
           "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-man-city-aston-villa_7252987.jpg?20260519112354",
           "video_url": null
+        },
+        {
+          "url": "https://vnexpress.net/truc-tiep-tran-man-city-vs-aston-villa-o-vong-38-ngoai-hang-anh-5077641.html",
+          "headline": "Man City - Aston Villa: Trận đấu khép lại kỷ nguyên Guardiola",
+          "snippet": "-1?\"ttf\":\"woff\";localStorage.setItem(formatStorageKey,format)}return format}();var fonts=document.querySelectorAll(\".webfont\");var urlAttribute=\"data-cache-file-\"+fontFormat;var hashAttribute=\"data-cache-hash-\"+fontFormat;var nameAttribute=\"data-cache-name\";for(var i=0,j=fonts.length;i…",
+          "source": "vnexpress_en",
+          "source_name": "VnExpress International",
+          "country": "VN",
+          "published": "Sun, 24 May 2026 21:15:47 +0700",
+          "image_url": "https://vcdn1-thethao.vnecdn.net/2026/05/24/ap24272444811296-1779631817-5742-1779631826.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=p9_Sveb8qcyA5MVu6r5iBw",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.191,
-        "zionist": 0.292,
-        "atlanticist": 0.421,
-        "statist": 0.199,
-        "financialized": 0.418
+        "interventionist": 0.188,
+        "zionist": 0.287,
+        "atlanticist": 0.41,
+        "statist": 0.228,
+        "financialized": 0.411
       },
-      "fp_source_count": 8,
+      "fp_source_count": 9,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
         "west": 3,
         "latin-america": 2,
-        "pacific-asia": 1,
+        "pacific-asia": 2,
         "middle-east": 1,
         "africa": 1
       },
@@ -3432,6 +3456,193 @@
         "global-south": 5
       },
       "section": "world"
+    },
+    {
+      "id": "4c9ac528d847",
+      "headline": "Iran says it will 'never bow' as Trump rejects peace counteroffer, prolonging Middle East conflict",
+      "summary": "Washington has sought to press Beijing to lean on Tehran to reopen the strait, though China's appetite to act as a pressure mechanism remains unclear.",
+      "published": "Sun, 24 May 2026 14:39:50 GMT",
+      "image_url": "https://assets.nst.com.my/images/listing-featured/686A3AE719FDC445F6D918E51AD2AE49_data.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 33,
+        "center_pct": 67,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 2.67,
+      "entity_count": 5,
+      "entity_list": [
+        "Independent",
+        "Middle",
+        "Powers",
+        "Summit",
+        "Trump"
+      ],
+      "sources": [
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
+        },
+        {
+          "id": "nst_my",
+          "name": "New Straits Times",
+          "country": "MY",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "New York Times Co"
+        },
+        {
+          "id": "cnbc",
+          "name": "CNBC",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Comcast"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "unknown (launderer)"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMXNPRGZ2WTh3dkR5S3RqQzc4WnBiazR2Ul9MZV9POXczaWJRMHJxaFQwUVp5MmROM19sNzZPSGtWaFJfMWc4a0pFZDFvbTNSZEFyYnRjMzlPai1tR3UzanM5dEcxSWFVLTRFdUF3N0R0SkdsNmlHVWJQZkVWTGdSS05KY3pFUjZfWGkzcXh2RWd3elg1NlpwRGdFZ0xJZmx5X2dOeXlJSGIxZjNIZ3hFWGlYNFA0WS0ya0dnUA?oc=5",
+          "headline": "UK sends warship to Middle East as Trump awaits Iran’s response to peace plan – live - The Independent",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQMXNPRGZ2WTh3dkR5S3RqQzc4WnBiazR2Ul9MZV9POXczaWJRMHJxaFQwUVp5MmROM19sNzZPSGtWaFJfMWc4a0pFZDFvbTNSZEFyYnRjMzlPai1tR3UzanM5dEcxSWFVLTRFdUF3N0R0SkdsNmlHVWJQZkVWTGdSS05KY3pFUjZfWGkzcXh2RWd3elg1NlpwRGdFZ0xJZmx5X2dOeXlJSGIxZjNIZ3hFWGlYNFA0WS0ya0…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 10 May 2026 00:01:12 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/world/world/2026/05/1436770/war-middle-east-trump-rejects-iran-deal-gulf-tensions-and-drone-attacks",
+          "headline": "War in the Middle East: Trump rejects Iran deal as Gulf tensions and drone attacks escalate",
+          "snippet": "PARIS: Here are the latest developments in the Middle East war:",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Mon, 11 May 2026 06:58:26 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/686A3AE719FDC445F6D918E51AD2AE49_data.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.nytimes.com/2026/05/11/world/asia/trump-xi-china-summit-iran.html",
+          "headline": "What Middle Powers Fear from the Trump-Xi Summit",
+          "snippet": "Asian nations worry that the president might trade security commitments for better economic terms with China during his planned meeting with Xi Jinping this week.",
+          "source": "nytimes",
+          "source_name": "The New York Times",
+          "country": "US",
+          "published": "Mon, 11 May 2026 04:01:08 +0000",
+          "image_url": "https://static01.nyt.com/images/2026/05/11/multimedia/11trump-xi-asia-01-vkcf/11trump-xi-asia-01-vkcf-mediumSquareAt3X.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html",
+          "headline": "Iran says it will 'never bow' as Trump rejects peace counteroffer, prolonging Middle East conflict",
+          "snippet": "In this picture obtained from Iran's news agency and taken on May 2, 2026, the Gambia-flagged tanker vessel Bili is pictured anchored in the Strait of Hormuz off Bandar Abbas in southern Iran. (Photo by Amirhossein KHORGOOEI / / via Getty Images) / Amirhossein Khorgooei | Afp | Getty Images U.S.…",
+          "source": "cnbc",
+          "source_name": "CNBC",
+          "country": "US",
+          "published": "Mon, 11 May 2026 04:44:54 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.france24.com/en/war-in-the-middle-east-trump-says-iran-deal-largely-negociated",
+          "headline": "War in the Middle East: Trump says Iran deal 'largely negociated'",
+          "snippet": "Fraser Jackson has more.",
+          "source": "france24",
+          "source_name": "France 24",
+          "country": "FR",
+          "published": "Sun, 24 May 2026 09:54:41 GMT",
+          "image_url": "https://s.france24.com/media/display/691ff1ce-5749-11f1-bdb3-005056a97e36/w:1024/p:16x9/EN-20260524-080310-080516-CS.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/world/live/2026/may/24/iran-deal-strait-of-hormuz-trump-middle-east-crisis-live",
+          "headline": "Middle East crisis live: Trump says blockade on Iran will remain in ‘full force’ until deal is reached",
+          "snippet": "Trump says he has told his representatives to not 'rush' into a deal with Iran In a post to Truth Social, President Donald Trump said talks with Iran are “proceeding in an orderly and constructive manner”, adding that he has told his representatives to not “rush” into a deal because time is on…",
+          "source": "guardian",
+          "source_name": "The Guardian",
+          "country": "GB",
+          "published": "Sun, 24 May 2026 14:39:50 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/57332ab77a1ff3de9605e3380dce6fc4a9d2a13e/278_0_2764_2212/master/2764.jpg?width=140&quality=85&auto=format&fit=max&s=ecae891dc1b419b125919a8aa933db5f",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.177,
+        "zionist": 0.257,
+        "atlanticist": 0.47,
+        "statist": 0.31,
+        "financialized": 0.41
+      },
+      "fp_source_count": 6,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 5,
+        "pacific-asia": 1
+      },
+      "section": "sports"
     },
     {
       "id": "c847aef95702",
@@ -10093,7 +10304,7 @@
       "id": "91509f7b1667",
       "headline": "House of Tara founder Tara Fela-Durotoye’s debut book achieves Amazon Business bestseller status in Canada and the United States — a succession story that sold itself",
       "summary": "<img src=\"https://cdn.businessday.ng/wp-content/uploads/2026/05/20260523_170149_0000-large.png\" alt=\"_20260523_170149_0000\" srcset=\"https://cdn.businessday.ng/wp-content/uploads/2026/05/20260523_170149_0000-medium.png 300w, https://cdn.businessday.ng/wp-content/uploads/2026/05/20260523_170149_0000-l",
-      "published": "Sun, 24 May 2026 07:33:15 +0000",
+      "published": "Sun, 24 May 2026 10:25:27 -0400",
       "image_url": "https://foreignpolicy.com/wp-content/uploads/2026/05/south-korea-navy-GettyImages-1249670143.jpg",
       "video_url": null,
       "has_video": false,
@@ -10101,15 +10312,15 @@
       "blindspot_label": "Only 8% Right",
       "blindspot_score": 9,
       "coverage": {
-        "left_pct": 33,
-        "center_pct": 58,
+        "left_pct": 38,
+        "center_pct": 54,
         "right_pct": 8,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 58
+        "dominant_pct": 54
       },
-      "bias_variance": 6.04,
-      "entity_count": 35,
+      "bias_variance": 6.21,
+      "entity_count": 37,
       "entity_list": [
         "Amazon",
         "Biggest",
@@ -10128,6 +10339,7 @@
         "Iranian",
         "Itself",
         "Korea",
+        "Marshall",
         "Mexico",
         "Middle",
         "Military",
@@ -10141,6 +10353,7 @@
         "States",
         "Strategy",
         "Supremacist",
+        "These",
         "Trump",
         "United",
         "Verge",
@@ -10291,6 +10504,18 @@
           "factuality": "mixed",
           "primary_vs_launder": "primary",
           "parent_company": ""
+        },
+        {
+          "id": "cbs_news",
+          "name": "CBS News",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Paramount"
         }
       ],
       "articles": [
@@ -10447,21 +10672,32 @@
           "published": "Sun, 24 May 2026 07:33:15 +0000",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.cbsnews.com/video/these-united-states-the-marshall-plan/",
+          "headline": "These United States: The Marshall Plan",
+          "snippet": "Your web browser is not fully supported by CBS News and CBSNews.com. For optimal experience and full features, please upgrade to a modern browser. You can get the new Microsoft Edge at microsoft.com/edge, available to download on all versions of Windows in more than 90 languages. ';…",
+          "source": "cbs_news",
+          "source_name": "CBS News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 10:25:27 -0400",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.232,
-        "zionist": 0.235,
-        "atlanticist": 0.41,
-        "statist": 0.194,
-        "financialized": 0.309
+        "interventionist": 0.212,
+        "zionist": 0.216,
+        "atlanticist": 0.376,
+        "statist": 0.177,
+        "financialized": 0.283
       },
-      "fp_source_count": 11,
+      "fp_source_count": 12,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
-        "west": 7,
+        "west": 8,
         "middle-east": 2,
         "africa": 1,
         "latin-america": 1,
