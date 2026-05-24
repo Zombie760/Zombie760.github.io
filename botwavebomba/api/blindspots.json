@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T06:26:13.303860+00:00",
-  "count": 66,
+  "generated_at": "2026-05-24T06:40:39.896663+00:00",
+  "count": 65,
   "stories": [
     {
       "id": "64c47aff1fe9",
@@ -7329,6 +7329,125 @@
       "section": "world"
     },
     {
+      "id": "029b2ff9fbbe",
+      "headline": "VIDEO: Dominație Mercedes în calificările de F1 din Canada – Russell, în pole position",
+      "summary": "<p>George Russell a stabilit cel mai bun timp în calificările pentru Marele Premiu de Formula 1 din Canada. Britanicul va fi urmat pe grila de start de coechipierul Kimi Antonelli (Mercedes) și de piloții McLaren: Lando Norris pe trei și Oscar Piastri pe patru. După cele trei plecări consecutive din",
+      "published": "Sun, 24 May 2026 05:22:49 +0000",
+      "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38984741_1280.jpg?1779572824",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 67,
+        "right_pct": 33,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 0.4,
+      "entity_count": 6,
+      "entity_list": [
+        "Canada",
+        "Kanadi",
+        "Mercedes",
+        "Montreal",
+        "Russell",
+        "VIDEO"
+      ],
+      "sources": [
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "jutarnji",
+          "name": "Jutarnji List",
+          "country": "HR",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "g4media",
+          "name": "G4Media",
+          "country": "RO",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/russell-gano-el-sprint-de-montreal-que-marco-el-primer-encontronazo-mercedes/",
+          "headline": "Russell ganó el sprint de Montreal, que marcó el primer 'encontronazo' Mercedes",
+          "snippet": "Madrid, 23 may (EFE).- El inglés George Russell (Mercedes) ganó este sábado la prueba sprint del Gran Premio de Canadá, el quinto del Mundial de Fórmula Uno, que se disputa en el circuito Gilles Villeneuve de Montreal, donde se impuso por delante de su compatriota Lando Norris (McLaren) -último…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 18:00:20 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.jutarnji.hr/sportske/sport-mix/automoto/formula1/russell-pole-montreal-antonelli-drugi-vn-kanade-f1-15711516",
+          "headline": "Mercedes razbio konkurenciju u Kanadi, Russell kreće s prve pozicije",
+          "snippet": "Britanac George Russell , vozač Mercedesa, nastavio je dominirati stazom u Montrealu, na Velikoj nagradi Kanade te je ostvario najbrže vrijeme na službenim kvalifikacijama. Russell je prethodno bio najbrži u kvalifikacijama za sprint, a potom je ranije u subotu i pobijedio u sprinterskoj utrci od…",
+          "source": "jutarnji",
+          "source_name": "Jutarnji List",
+          "country": "HR",
+          "published": "Sat, 23 May 2026 23:32:16 +0200",
+          "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38984741_1280.jpg?1779572824",
+          "video_url": null
+        },
+        {
+          "url": "https://www.g4media.ro/video-dominatie-mercedes-in-calificarile-de-f1-din-canada-russell-in-pole-position.html",
+          "headline": "VIDEO: Dominație Mercedes în calificările de F1 din Canada – Russell, în pole position",
+          "snippet": "George Russell a stabilit cel mai bun timp în calificările pentru Marele Premiu de Formula 1 din Canada. Britanicul va fi urmat pe grila de start de coechipierul Kimi Antonelli (Mercedes) și de piloții McLaren: Lando Norris pe trei și Oscar Piastri pe patru. După cele trei plecări consecutive din…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sun, 24 May 2026 05:22:49 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/03/8059783-Hepta_Mediafax_Foto-DPA_Hepta.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.15,
+        "zionist": 0.25,
+        "atlanticist": 0.48,
+        "statist": -0.005,
+        "financialized": 0.335
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "eastern-europe": 2,
+        "latin-america": 1
+      },
+      "section": "sports"
+    },
+    {
       "id": "7dcffd44c7b7",
       "headline": "Barthélémy Dias réagit au limogeage d’Ousmane Sonko par Bassirou Diomaye Faye",
       "summary": "<p><img width=\"756\" height=\"354\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" data-src=\"https://www.senenews.com/wp-content/uploads/2025/08/barthelemy-dias-ousmane-sonko.jpg\" class=\"attachment-full size-full wp-post-image lazy\" alt=\"Mairie de Dakar : Ce lundi 25 août,",
@@ -13611,9 +13730,9 @@
     },
     {
       "id": "2b4556890b82",
-      "headline": "Rusia lanzó un ataque masivo con misiles balísticos contra Kiev y hay alerta en toda Ucrania: al menos un muerto y 16 heridos",
+      "headline": "Rusia lanzó un ataque masivo con misiles balísticos contra Kiev y hubo alertas en toda Ucrania: al menos un muerto y 16 heridos",
       "summary": "Decenas de civiles se refugiaron en las estaciones de metro de la capital. Zelensky había advertido que Moscú preparaba un ataque de gran magnitud y podía emplear el misil hipersónico Orechnik",
-      "published": "Sun, 24 May 2026 05:37:57 +0000",
+      "published": "Sun, 24 May 2026 06:25:18 +0000",
       "image_url": "https://www.latercera.com/resizer/v2/REKS4ZYIOJDGZCN7F2WECCIIPM.jpg?auth=ee342a4d403892dabfa1cc848b751ff24f509f0d8ad3d6eb03f7870fb856ae18&smart=true&width=1280&height=720",
       "video_url": null,
       "has_video": false,
@@ -13868,6 +13987,17 @@
           "source_name": "Infobae",
           "country": "AR",
           "published": "Sun, 24 May 2026 05:37:57 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/WNWEEYNRTRDSJNFAMW7WJYJ3VQ.jpg?auth=cf6c14c858734dbb4df33bd2132f6030dd776a8347f56018eead6d7b9c834f20&smart=true&width=4750&height=3166",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/mundo/2026/05/24/rusia-lanzo-un-ataque-masivo-con-misiles-balisticos-contra-kiev-y-hay-alerta-en-toda-ucrania/",
+          "headline": "Rusia lanzó un ataque masivo con misiles balísticos contra Kiev y hubo alertas en toda Ucrania: al menos 2 muertos y 16 heridos",
+          "snippet": "Rusia lanzó un ataque con misiles balísticos y drones sobre Kiev durante la noche del sábado y la madrugada del domingo. El bombardeo que impactó edificios en el centro de la ciudad, incluidas oficinas gubernamentales, viviendas y escuelas . Las autoridades locales informaron que al menos dos…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 06:25:18 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/WNWEEYNRTRDSJNFAMW7WJYJ3VQ.jpg?auth=cf6c14c858734dbb4df33bd2132f6030dd776a8347f56018eead6d7b9c834f20&smart=true&width=4750&height=3166",
           "video_url": null
         }
@@ -17520,276 +17650,6 @@
       "section": "world"
     },
     {
-      "id": "4a7717eb23a1",
-      "headline": "Dwayne 'The Rock' Johnson shocks Kevin Hart with raunchy jokes about wife Eniko at comedian's Netflix roast",
-      "summary": "The NFL legend brought up Hart's admitted past marital infidelity while making overtures toward the comic's wife Eniko Hart.",
-      "published": "Mon, 11 May 2026 05:45:00 -0700",
-      "image_url": "https://variety.com/wp-content/uploads/2026/05/MixCollage-10-May-2026-08-23-PM-5741.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 3.39,
-      "entity_count": 34,
-      "entity_list": [
-        "Academy",
-        "Affair",
-        "Award",
-        "Brady",
-        "Comedy",
-        "Coming",
-        "Deserves",
-        "Duplicate",
-        "Dwayne",
-        "Eniko",
-        "Explosive",
-        "Festival",
-        "Gives",
-        "Jennifer",
-        "Johnson",
-        "Jokes",
-        "Kevin",
-        "Likes",
-        "Lopez",
-        "Netflix",
-        "Pretending",
-        "Raunchy",
-        "Revenge",
-        "Riyadh",
-        "Roast",
-        "Short",
-        "Stream",
-        "Success",
-        "Supposed",
-        "Today",
-        "Trying",
-        "Williams",
-        "Yahoo",
-        "Years"
-      ],
-      "sources": [
-        {
-          "id": "variety",
-          "name": "Variety",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
-        },
-        {
-          "id": "daily_mail",
-          "name": "Daily Mail",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": "Daily Mail and General Trust"
-        },
-        {
-          "id": "tmz",
-          "name": "TMZ",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "daily_mail_ent",
-          "name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "ny_post",
-          "name": "New York Post",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://variety.com/2026/tv/news/tom-brady-kevin-hart-netflix-roast-affair-1236744257/",
-          "headline": "Tom Brady Gets Revenge on Kevin Hart During Netflix Roast, Jokes About Hart’s Affair: ‘Not Supposed to Talk About It? F— It’",
-          "snippet": "Tom Brady , who was the victim of Netflix’s last celebrity roast in 2024, made a surprise appearance at Kevin Hart ’s roast Sunday to launch a few jokes at the comedian before the night got underway. “All right, this won’t take long, because, as you guys know, I’m a busy man,” Brady quipped…",
-          "source": "variety",
-          "source_name": "Variety",
-          "country": "US",
-          "published": "Mon, 11 May 2026 00:52:05 +0000",
-          "image_url": "https://variety.com/wp-content/uploads/2026/05/MixCollage-10-May-2026-08-23-PM-5741.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPRkY3RHJsZmtiOEJUb2NPTl9QZFBST0FNbXBLZE45bkdBYWlSR01SYkRZUDVXbkZpS2hZMWJXTVZtclNtTTcwcFFkV083Vkg1amMxSmpqVm9IbGlCV1RDajd1LUVqWDFyV25IQ2JuX0VMY2UyeWRWeE1GVjNKSThfdll3NTQwd01BTTd1QUd6U3JLZHVwNUtQVWs2amduTHJ1ZVp6dllQQXc5cTh0V29fVVVOQnVYNVRyNi1BRGY2LXNha25X?oc=5",
-          "headline": "Tom Brady crashes Kevin Hart's Netflix roast, hits on star's wife - USA Today",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPRkY3RHJsZmtiOEJUb2NPTl9QZFBST0FNbXBLZE45bkdBYWlSR01SYkRZUDVXbkZpS2hZMWJXTVZtclNtTTcwcFFkV083Vkg1amMxSmpqVm9IbGlCV1RDajd1LUVqWDFyV25IQ2JuX0VMY2UyeWRWeE1GVjNKSThfdll3NTQwd01BTTd1QUd6U3JLZHVwNUtQVWs2amduTHJ1ZVp6dllQQXc5cTh0V29fVVVOQnVYNVRyNi…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Mon, 11 May 2026 04:24:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15806845/Jennifer-Lopez-plunging-red-dress-Netflix-Roast-Kevin-Hart.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Jennifer Lopez, 56, stuns in plunging red dress for Netflix's live special The Roast of Kevin Hart",
-          "snippet": "Jennifer Lopez flaunted maximum cleavage to attend Netflix Is A Joke Festival's live special The Roast of Kevin Hart , which was held at the Kia Forum in Inglewood, California on Sunday at 5pm PT. The 56-year-old Bronx-born pop diva went bra-less while showcasing her suspiciously perky assets in a…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 08:05:58 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/06/108515481-0-image-a-42_1778475921806.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15806713/tom-brady-kevin-hart-wife-netflix-roast.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Dwayne 'The Rock' Johnson shocks Kevin Hart with raunchy jokes about wife Eniko at comedian's Netflix roast",
-          "snippet": "Dwayne 'The Rock' Johnson took a number of jabs at Kevin Hart at his Netflix roast in Los Angeles on Sunday, with some alluding to the comic's wife Eniko Hart. 'I want to just take a moment to give a shout out to all the ladies up here on this dais,' Johnson said. 'You all look beautiful,…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 05:34:21 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/05/108514757-0-image-a-66_1778472577916.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://variety.com/2026/tv/news/kevin-hart-netflix-roast-dwayne-johnson-jumanji-1236744296/",
-          "headline": "Dwayne Johnson Gives Raunchy Netflix Roast of Kevin Hart and Hits on His Wife: She Deserves ‘An Academy Award for Pretending She Likes to F— You’",
-          "snippet": "Dwayne “The Rock” Johnson and Kevin Hart reunited at Hart’s Netflix roast before his “Jumanji” co-star launched into a lengthy, R-rated set that largely centered on Hart’s wife, Eniko. Following a dramatic entrance to the stage — complete with a special effects and Queen’s “We Will Rock You”…",
-          "source": "variety",
-          "source_name": "Variety",
-          "country": "US",
-          "published": "Mon, 11 May 2026 03:22:00 +0000",
-          "image_url": "https://variety.com/wp-content/uploads/2026/05/Dwayne-Johnson-Kevin-Hart.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://variety.com/2026/tv/news/kevin-hart-katt-williams-netflix-roast-feud-riyadh-1236744270/",
-          "headline": "Kevin Hart and Katt Williams End Their Feud at Netflix Roast: ‘B—-, This Is My Riyadh Comedy Festival’",
-          "snippet": "Katt Williams was a surprise guest at Netflix’s roast of Kevin Hart , and the two comedians ended their years-long public feud — after Williams launched several jokes at Hart’s expense. “I’m surprised they invited me,” Williams said after Regina Hall introduced him to the stage at Los Angeles’ Kia…",
-          "source": "variety",
-          "source_name": "Variety",
-          "country": "US",
-          "published": "Mon, 11 May 2026 02:43:30 +0000",
-          "image_url": "https://variety.com/wp-content/uploads/2026/05/MixCollage-10-May-2026-10-03-PM-6226.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.tmz.com/2026/05/10/kevin-hart-tom-brady-roast-netflix-is-a-joke/",
-          "headline": "Tom Brady Hits On Kevin Hart's Wife During Netflix is a Joke Roast",
-          "snippet": "Tom Brady Hits On Kevin Hart's Wife During Netflix is a Joke Roast Tom Brady Shoots Shot with Kevin Hart's Wife During Netflix Roast Published May 10, 2026 6:21 A-listers gathered on Sunday to roast the crap out of Kevin Hart ... but the comedian wanted to get things started by taking a few shots…",
-          "source": "tmz",
-          "source_name": "TMZ",
-          "country": "US",
-          "published": "",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15806845/Jennifer-Lopez-plunging-red-dress-Netflix-Roast-Kevin-Hart.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Jennifer Lopez, 56, stuns in plunging red dress for Netflix's live special The Roast of Kevin Hart",
-          "snippet": "Jennifer Lopez flaunted maximum cleavage to attend Netflix Is A Joke Festival's live special The Roast of Kevin Hart , which was held at the Kia Forum in Inglewood, California on Sunday at 5pm PT. The 56-year-old Bronx-born pop diva went bra-less while showcasing her suspiciously perky assets in a…",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 07:05:58 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/06/108515481-0-image-a-42_1778475921806.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/tvshowbiz/article-15806713/tom-brady-kevin-hart-wife-netflix-roast.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "headline": "Dwayne 'The Rock' Johnson shocks Kevin Hart with raunchy jokes about wife Eniko at comedian's Netflix roast",
-          "snippet": "Dwayne 'The Rock' Johnson took a number of jabs at Kevin Hart at his Netflix roast in Los Angeles on Sunday, with some alluding to the comic's wife Eniko Hart. 'I want to just take a moment to give a shout out to all the ladies up here on this dais,' Johnson said. 'You all look beautiful,…",
-          "source": "daily_mail_ent",
-          "source_name": "Daily Mail — Showbiz",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 04:34:21 GMT",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/05/108514757-0-image-a-66_1778472577916.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://decider.com/2026/05/11/the-roast-of-kevin-hart-netflix-review/",
-          "headline": "Stream It Or Skip It: ‘The Roast Of Kevin Hart’ On Netflix, Trying To Duplicate The Success Of Tom Brady And Coming Up Short",
-          "snippet": "Two years ago, Netflix scored a massive ratings hit with The Greatest Roast Of All Time: Tom Brqdy by broadcasting it as a live three-hour event from the Kia Forum in Inglewood, with an arena full of New England Patriots fans, surprise appearances by Brady’s estranged coach, Bill Belichick, and…",
-          "source": "ny_post",
-          "source_name": "New York Post",
-          "country": "US",
-          "published": "Mon, 11 May 2026 05:45:00 -0700",
-          "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2FTHE-ROAST-OF-KEVIN-HART-NETFLIX-REVIEW.jpg?quality%3D90%26strip%3Dall",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQm1mYmlMQ2tyZXQ0Z1Z6a0pXSEtSaUZoX1FLLXl2bVZhR1BWZzktbG9jeFNHUHlFam8weWNnaC1HTzZVVEs3ZG9KZ2dSQ1p1TTlfVjd5MHFDTkY5X01qTHYtOU9ObmZlVTZ6MVlJRXl5NnAxMXNpVFhmZ25NdDZpN1k3czZ6YjhwOUg3VFJVSWc5Tk1SNXMxeTQ1QzEwOEU?oc=5",
-          "headline": "Kevin Hart and Katt Williams End Years-Long Feud During Explosive Netflix Roast - Yahoo",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPQm1mYmlMQ2tyZXQ0Z1Z6a0pXSEtSaUZoX1FLLXl2bVZhR1BWZzktbG9jeFNHUHlFam8weWNnaC1HTzZVVEs3ZG9KZ2dSQ1p1TTlfVjd5MHFDTkY5X01qTHYtOU9ObmZlVTZ6MVlJRXl5NnAxMXNpVFhmZ25NdDZpN1k3czZ6YjhwOUg3VFJVSWc5Tk1SNXMxeTQ1QzEwOEU?oc=5\" target=\"_blank\">Kevin Hart…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Mon, 11 May 2026 11:13:19 GMT",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.258,
-        "atlanticist": 0.348,
-        "statist": 0.037,
-        "financialized": 0.4
-      },
-      "fp_source_count": 6,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 6
-      },
-      "section": "chisme"
-    },
-    {
       "id": "880e43a5952f",
       "headline": "Week in pictures: Met Gala, Russia's Victory Day parade and the far right makes gains in the UK",
       "summary": "Fashionable A-listers evoked the theme “fashion is art” to embody works of art at the Met Gala, Moscow held a modest annual Victory Day parade that didn’t include heavy weapons for the first time in nearly two decades and anti-immigration party Reform UK made significant gains across England in loca",
@@ -20219,132 +20079,6 @@
         "pacific-asia": 3
       },
       "section": "world"
-    },
-    {
-      "id": "7840ca4ec417",
-      "headline": "Pete Davidson Jokes That Kanye West is a 'Gay Nazi' During Kevin Hart Roast",
-      "summary": "If you thought the beef between Pete Davidson and Kanye West was over, then think again ... because Pete may have just poured gasoline on the fire. Here's the deal ... Pete came out on stage at the Kia Forum in L.A. Sunday night to roast Kevin Hart&hellip;",
-      "published": "Mon, 11 May 2026 12:14:00 GMT",
-      "image_url": null,
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "No partisan coverage",
-      "blindspot_score": 5.0,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 100,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 100
-      },
-      "bias_variance": 1.04,
-      "entity_count": 14,
-      "entity_list": [
-        "Brady",
-        "Comedian",
-        "Cracks",
-        "Davidson",
-        "Filmography",
-        "Height",
-        "Jokes",
-        "Kanye",
-        "Kevin",
-        "Roast",
-        "Taylor",
-        "Teyana",
-        "Today",
-        "Williams"
-      ],
-      "sources": [
-        {
-          "id": "hollywood_reporter",
-          "name": "The Hollywood Reporter",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
-        },
-        {
-          "id": "tmz",
-          "name": "TMZ",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.hollywoodreporter.com/tv/tv-news/kevin-hart-roast-best-jokes-the-rock-katt-williams-more-1236591696/",
-          "headline": "Kevin Hart Roast: Comedian Ends Katt Williams Beef as The Rock, Teyana Taylor and More Cracks Jokes About Hart’s Height and Filmography",
-          "snippet": "Dwayne “The Rock” Johnson, Katt Williams, Teyana Taylor and other famous faces took shots at a game Kevin Hart on Sunday night at The Roast of Kevin Hart, which was held at Los Angeles’ Kia Forum as part of the Netflix Is a Joke Festival. Among the most common topics during the three-hour event,…",
-          "source": "hollywood_reporter",
-          "source_name": "The Hollywood Reporter",
-          "country": "US",
-          "published": "Mon, 11 May 2026 03:22:27 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPRkY3RHJsZmtiOEJUb2NPTl9QZFBST0FNbXBLZE45bkdBYWlSR01SYkRZUDVXbkZpS2hZMWJXTVZtclNtTTcwcFFkV083Vkg1amMxSmpqVm9IbGlCV1RDajd1LUVqWDFyV25IQ2JuX0VMY2UyeWRWeE1GVjNKSThfdll3NTQwd01BTTd1QUd6U3JLZHVwNUtQVWs2amduTHJ1ZVp6dllQQXc5cTh0V29fVVVOQnVYNVRyNi1BRGY2LXNha25X?oc=5",
-          "headline": "'Roast of Kevin Hart' features surprise Tom Brady MVP appearance - USA Today",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPRkY3RHJsZmtiOEJUb2NPTl9QZFBST0FNbXBLZE45bkdBYWlSR01SYkRZUDVXbkZpS2hZMWJXTVZtclNtTTcwcFFkV083Vkg1amMxSmpqVm9IbGlCV1RDajd1LUVqWDFyV25IQ2JuX0VMY2UyeWRWeE1GVjNKSThfdll3NTQwd01BTTd1QUd6U3JLZHVwNUtQVWs2amduTHJ1ZVp6dllQQXc5cTh0V29fVVVOQnVYNVRyNi…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Mon, 11 May 2026 12:14:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.tmz.com/2026/05/11/pete-davidson-calls-kanye-west-nazi-during-kevin-hart-roast/",
-          "headline": "Pete Davidson Jokes That Kanye West is a 'Gay Nazi' During Kevin Hart Roast",
-          "snippet": "Pete Davidson Jokes That Kanye West is a 'Gay Nazi' During Kevin Hart Roast Pete Davidson Kanye West Is A 'Gay Nazi' ... Just Joking!!! Published May 11, 2026 2:15 | Updated May 11, 2026 6:05 If you thought the beef between Pete Davidson and Kanye West was over, then think again ... because Pete…",
-          "source": "tmz",
-          "source_name": "TMZ",
-          "country": "US",
-          "published": "",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.12,
-        "zionist": 0.24,
-        "atlanticist": 0.427,
-        "statist": 0.14,
-        "financialized": 0.42
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 3
-      },
-      "section": "entertainment"
     }
   ]
 }
