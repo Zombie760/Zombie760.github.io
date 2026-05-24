@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T15:43:29.046847+00:00",
-  "article_count": 36235,
+  "generated_at": "2026-05-24T15:58:25.526943+00:00",
+  "article_count": 36361,
   "story_count": 160,
   "sections": [
     {
@@ -21,7 +21,7 @@
     {
       "id": "tech",
       "label": "Tech",
-      "count": 8
+      "count": 7
     },
     {
       "id": "health",
@@ -31,7 +31,7 @@
     {
       "id": "sports",
       "label": "Sports",
-      "count": 31
+      "count": 32
     },
     {
       "id": "entertainment",
@@ -8577,7 +8577,7 @@
       "id": "7dcffd44c7b7",
       "headline": "Barthélémy Dias réagit au limogeage d’Ousmane Sonko par Bassirou Diomaye Faye",
       "summary": "<p><img width=\"756\" height=\"354\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" data-src=\"https://www.senenews.com/wp-content/uploads/2025/08/barthelemy-dias-ousmane-sonko.jpg\" class=\"attachment-full size-full wp-post-image lazy\" alt=\"Mairie de Dakar : Ce lundi 25 août,",
-      "published": "Sun, 24 May 2026 14:19:13 +0000",
+      "published": "Sun, 24 May 2026 15:51:16 +0000",
       "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/ous-ous-ous-ous-1106x675-1.webp",
       "video_url": null,
       "has_video": false,
@@ -8593,7 +8593,7 @@
         "dominant_pct": 50
       },
       "bias_variance": 0.4,
-      "entity_count": 38,
+      "entity_count": 39,
       "entity_list": [
         "Accueil",
         "Administration",
@@ -8612,6 +8612,7 @@
         "Gueye",
         "Hadji",
         "Instagram",
+        "Ismaila",
         "Kilifeu",
         "Limogeage",
         "Maimouna",
@@ -9011,6 +9012,17 @@
           "country": "SN",
           "published": "Sun, 24 May 2026 14:19:13 +0000",
           "image_url": "https://www.senenews.com/wp-content/uploads/2025/11/ousmane-sonko-bassirou-diomaye-faye-scaled.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/senegal-le-depute-ismaila-wone-pret-a-ceder-son-siege-a-ousmane-sonko_587497.html",
+          "headline": "Sénégal : le député Ismaila Wone prêt à céder son siège à Ousmane Sonko",
+          "snippet": "Le député Ismaila Wone a exprimé son soutien à Ousmane Sonko en annonçant sa volonté de lui céder son siège à l’Assemblée Nationale. Cette déclaration intervient dans un contexte de tension au sein de PASTEF suite au limogeage de l’ancien Premier ministre, suscitant de vives réactions. Le limogeage…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sun, 24 May 2026 15:51:16 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/img_3388.jpeg",
           "video_url": null
         }
       ],
@@ -10199,10 +10211,230 @@
       "section": "world"
     },
     {
+      "id": "daf2ef799a86",
+      "headline": "VÍDEO: Enrique Riquelme presenta su candidatura \"a favor del Real Madrid\": \"Les pido a los socios que no tengan miedo\"",
+      "summary": "",
+      "published": "Sun, 24 May 2026 15:45:37 +0000",
+      "image_url": "https://www.dailymotion.com/crawler/video/xaacf3o",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 50,
+        "right_pct": 50,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 0.7,
+      "entity_count": 9,
+      "entity_list": [
+        "Carvajal",
+        "Electoral",
+        "Enrique",
+        "Junta",
+        "Madrid",
+        "Riquelme",
+        "Roberto",
+        "Santiago",
+        "Vienen"
+      ],
+      "sources": [
+        {
+          "id": "marca",
+          "name": "Marca",
+          "country": "ES",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.marca.com/radio/2026/05/20/aviso-roberto-gomez-enrique-riquelme-da-igual-aval-proyecto-deportivo.html",
+          "headline": "El aviso de Roberto Gómez a Enrique Riquelme",
+          "snippet": "R oberto Gómez pasó por los micrófonos de La Tribu de Radio MARCA junto a Raúl Varela para repasar varios temas de actualidad futbolística, aunque gran parte de la conversación giró alrededor de la posible candidatura de Enrique Riquelme a las elecciones del Real Madrid . El veterano periodista fue…",
+          "source": "marca",
+          "source_name": "Marca",
+          "country": "ES",
+          "published": "Wed, 20 May 2026 08:52:04 +0200",
+          "image_url": "https://www.dailymotion.com/crawler/video/xaacf3o",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/la-entidad-avalista-de-enrique-riquelme-ya-ha-firmado-el-aval-por-1937-millones-de-euros/",
+          "headline": "La entidad avalista de Enrique Riquelme ya ha firmado el aval por 193,7 millones de euros",
+          "snippet": "Madrid, 23 may (EFE).- El aval a la candidatura a la presidencia del Real Madrid que encabeza el empresario Enrique Riquelme ha sido firmado este sábado con la entidad Andbank España por el importe total exigido, que asciende a 193,7 millones de euros, informaron a fuentes del mercado. Tras cerrar…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 15:15:52 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/enrique-riquelme-presenta-la-documentacion-para-optar-a-presidencia-real-madrid/",
+          "headline": "Enrique Riquelme presenta la documentación para optar a presidencia Real Madrid",
+          "snippet": "Madrid, 23 may (EFE).- Enrique Riquelme, presidente de la empresa Cox Energy, entregó este sábado la documentación requerida para confirmar su candidatura a la presidencia del Real Madrid, que tendrá que ser aprobada por la junta electoral para continuar con el proceso. El empresario alicantino…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:15:19 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/deportes/2026/05/23/enrique-riquelme-presenta-su-candidatura-para-presidir-el-real-madrid/",
+          "headline": "Enrique Riquelme presenta su candidatura para presidir el Real Madrid: “Después de 20 años, se va a poder votar”",
+          "snippet": "El empresario Enrique Riquelme. (EFE/Sáshenka Gutiérrez) Los socios del Real Madrid irán a las urnas. Enrique Riquelme , presidente de la empresa energética Cox Energy, ha presentado este sábado la documentación necesaria para formalizar su candidatura a la presidencia del Real Madrid. La junta…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:44:14 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/3IFZTUQ6PZB77DBRSBCX2M4JEU.jpg?auth=8ca7d1f7a9584ea750c6f4dac4053e3f482c64be658c6e9575810f2f157f1fe8&smart=true&width=5784&height=3856",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/enrique-riquelme-presenta-su-candidatura-a-favor-del-real-madrid-les-pido-a-los-socios-que-no-tengan-miedo/",
+          "headline": "Enrique Riquelme presenta su candidatura \"a favor del Real Madrid\": \"Les pido a los socios que no tengan miedo\"",
+          "snippet": "El consejero delegado de Cox Energy, Enrique Riquelme, ha pedido \"a los socios\" del Real Madrid \"que no tengan miedo\" de cara a las elecciones a la presidencia, cuando \"la Junta Electoral\" los valide \"oficialmente\" a él y sus colaboradores tras haber presentado \"una candidatura a favor\" del club…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 17:01:31 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/TYJ2ADYNDRCGVDVLKGFXJH4GMU.jpg?auth=7b485e1d9a135fe25f02fe1b5b311f863383ab6edc43194946931097a845464a&smart=true&width=1920&height=1280",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/video-enrique-riquelme-presenta-su-candidatura-a-favor-del-real-madrid-les-pido-a-los-socios-que-no-tengan-miedo/",
+          "headline": "VÍDEO: Enrique Riquelme presenta su candidatura \"a favor del Real Madrid\": \"Les pido a los socios que no tengan miedo\"",
+          "snippet": "El consejero delegado de Cox Energy, Enrique Riquelme, ha pedido \"a los socios\" del Real Madrid \"que no tengan miedo\" de cara a las elecciones a la presidencia, cuando \"la Junta Electoral\" los valide \"oficialmente\" a él y sus colaboradores tras haber presentado \"una candidatura a favor\" del club…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 17:00:56 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/I2R2K54BWNGGJBZQEU4FAJJKMI.jpg?auth=34557f36d9372b25f1f67f8eeda64c5beff273b4b3d93a3cdd4a48abe9d7691f&smart=true&width=1920&height=1280",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/enrique-riquelme-en-el-bernabeu-es-un-dia-importante-porque-habra-elecciones-pronto/",
+          "headline": "Enrique Riquelme, en el Bernabéu: \"Es un día importante porque habrá elecciones pronto\"",
+          "snippet": "Madrid, 23 may (EFE).- El empresario Enrique Riquelme, quien se ha postulado como candidato, a la espera de que la junta electoral valide la documentación, a la presidencia del Real Madrid, en oposición a Florentino Pérez, acudió este sábado al Santiago Bernabéu a presenciar el último partido de la…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 19:01:09 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/deportes/2026/05/23/enrique-riquelme-acude-al-santiago-bernabeu-con-la-camiseta-de-dani-carvajal-se-vienen-dos-semanas-interesantes/",
+          "headline": "Enrique Riquelme acude al Santiago Bernabéu con la camiseta de Dani Carvajal: “Se vienen dos semanas interesantes”",
+          "snippet": "Enrique Riquelme acude al Santiago Bernabéu con la camiseta de Dani Carvajal. (Instagram/enriqueriquelmev) La afición ya sabe que va a tener elecciones. El fundador y presidente de Cox Energy, Enrique Riquelme , ha presentado a eso de las 17:30 toda la documentación necesaria para luchar por la…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 19:32:00 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/SMFG4G4RQFEDPMJ2Q3C6Z2J5SY.jpg?auth=26b97a51c40528d28027bd90717ff3c07c72a9934890a73319525fc0356bb686&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/enrique-riquelme-vienen-dos-semanas-muy-interesantes/",
+          "headline": "Enrique Riquelme: \"Vienen dos semanas muy interesantes\"",
+          "snippet": "El consejero delegado de Cox Energy, Enrique Riquelme, aseguró este sábado que \"vienen dos semanas muy interesantes\" para \"poder hablar de la campaña y la candidatura\" a la presidencia del Real Madrid, al mismo tiempo que mostró su respeto hacia Dani Carvajal, \"un titán\" del conjunto merengue que…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 19:30:53 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/5IEY5SQUANF2HAREDCM6LN5ZPI.jpg?auth=86fd45116b064c7897850e82cb4de4917fbc51622147ccc147e85262b720e679&smart=true&width=1920&height=1280",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/24/enrique-riquelme-el-real-madrid-tiene-que-recuperar-sus-valores/",
+          "headline": "Enrique Riquelme: \"El Real Madrid tiene que recuperar sus valores\"",
+          "snippet": "El aspirante a la presidencia del Real Madrid Enrique Riquelme ha asegurado que se siente con la \"obligación moral y ética de dar un paso adelante\" para ayudar al club a \"recuperar sus valores\" y ser \"profesionalizado\", y ha desvelado que ha aportado el 100% del aval necesario con su fortuna…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 14:01:06 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/ECEPOBBUSRA3VJZIRCCOXDRWC4.jpg?auth=bf2884683e6ec6be1267313c952c3a6a2211235bce9f462fcb20f198409ce6d5&smart=true&width=1920&height=1280",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/deportes/2026/05/24/la-junta-electoral-del-real-madrid-aprueba-la-candidatura-de-enrique-riquelme-y-habra-elecciones-despues-de-20-anos/",
+          "headline": "La Junta Electoral del Real Madrid aprueba la candidatura de Enrique Riquelme y habrá elecciones por primera vez después de 20 años",
+          "snippet": "Primer plano de Enrique Riquelme. (Europa Press) Después de 20 años , Florentino Pérez tendrá un rival en las elecciones a la presidencia del Real Madrid. A pesar de que se llevaba hablando varios días sobre la figura de Enrique Riquelme , la Junta Electoral del Real Madrid acaba de aprobar la…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 15:38:25 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/H6CEOSP2QJBM5DC3WJDJ3TXC2I.jpg?auth=0b6f149ec768a8cac920281b5d85dc7ceafeaf1ca415d84d2d753e867ebe4264&smart=true&width=1920&height=1280",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/24/la-junta-electoral-valida-la-candidatura-de-enrique-riquelme-a-presidencia-real-madrid/",
+          "headline": "La junta electoral valida la candidatura de Enrique Riquelme a presidencia  Real Madrid",
+          "snippet": "24 May, 2026 Argentina Estados Unidos Colombia España México Perú Centroamérica Mundo Venezuela The economist The Washington Post Realeza Opinión Últimas Noticias Nacional Economía Sociedad Cultura España Deportes Entretenimiento Gastronomía Salud Viajes Qué puedo ver Tendencias Estar Mejor…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 15:30:38 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/24/la-junta-electoral-valida-la-candidatura-de-enrique-riquelme-a-presidencia-del-real-madrid/",
+          "headline": "La junta electoral valida la candidatura de Enrique Riquelme a presidencia del Real Madrid",
+          "snippet": "Madrid, 24 may (EFE).- La junta electoral del Real Madrid comunicó este domingo que la documentación presentada por Enrique Riquelme cumple con todos los requisitos para postularse como candidato a la presidencia del club, por lo que habrá elecciones, en las que se enfrentará a Florentino Pérez.…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 15:45:37 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.14,
+        "zionist": 0.255,
+        "atlanticist": 0.425,
+        "statist": 0.175,
+        "financialized": 0.35
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "latin-america": 1,
+        "west": 1
+      },
+      "section": "sports"
+    },
+    {
       "id": "d0707c7424c0",
       "headline": "Taylor Swift reaches for another LBD for romantic date night with Travis Kelce as wedding nears",
       "summary": "The engaged couple were spotted holding hands as they arrived at Italian restaurant Sartiano's at the Mercer Hotel in SoHo.",
-      "published": "Sun, 24 May 2026 07:58:49 -0700",
+      "published": "Sun, 24 May 2026 15:49:16 +0000",
       "image_url": "https://i.dailymail.com/1s/2026/05/08/16/108474819-0-image-m-40_1778253807131.jpg",
       "video_url": null,
       "has_video": false,
@@ -10211,13 +10443,13 @@
       "blindspot_score": 11,
       "coverage": {
         "left_pct": 6,
-        "center_pct": 50,
-        "right_pct": 44,
+        "center_pct": 47,
+        "right_pct": 47,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 50
+        "dominant_pct": 47
       },
-      "bias_variance": 2.81,
+      "bias_variance": 2.74,
       "entity_count": 61,
       "entity_list": [
         "Additional",
@@ -10473,6 +10705,18 @@
           "geo_cluster": "pacific-asia",
           "factuality": "unknown",
           "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
           "parent_company": ""
         }
       ],
@@ -10949,21 +11193,32 @@
           "published": "Sun, 24 May 2026 07:58:49 -0700",
           "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2FScreenshot-2026-05-24-091902-1.png",
           "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/entretenimiento/2026/05/24/la-boda-de-taylor-swift-y-travis-kelce-toma-forma-quienes-estan-en-la-lista-y-quienes-podrian-no-estar-invitados/",
+          "headline": "La boda de Taylor Swift y Travis Kelce toma forma: quiénes están en la lista y quiénes podrían no estar invitados",
+          "snippet": "La lista de invitados a la boda de Taylor Swift y Travis Kelce sigue rodeada de misterio, con celebridades y familiares en la mira (Instagram/@taylorswift) Quién está y quién no en la boda de Taylor Swift y Travis Kelce es actualmente una de las mayores interrogantes del mundo del espectáculo.…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 15:49:16 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/CPIL5KZWFRG3BKJBMWXTSBGYNM.jpg?auth=97da612bd19f6ca6fcc23025a877d7b9c8aac2dcb7c5326678b3c4a5d2ed8918&smart=true&width=1920&height=1080",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.182,
+        "interventionist": 0.183,
         "zionist": 0.293,
-        "atlanticist": 0.399,
-        "statist": 0.063,
-        "financialized": 0.448
+        "atlanticist": 0.402,
+        "statist": 0.077,
+        "financialized": 0.449
       },
-      "fp_source_count": 15,
+      "fp_source_count": 16,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
-        "latin-america": 3,
+        "latin-america": 4,
         "west": 10,
         "eastern-europe": 1,
         "pacific-asia": 2
@@ -16412,7 +16667,7 @@
       "id": "88353299b6e4",
       "headline": "Gunman killed after opening fire on Secret Service checkpoint outside White House, officials say - CBS News",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE1uT3F6QU5hNjZHd1dIZnl1SnBDY0NLQkF4NkthalZvMlZDd3NtSnhGMk14clAzdWd2b1RuN2lZMDd6T3lqMjVVaElhUXQtMHdCYnhiellPOWtYSk9YOFdjN0tWaWZVa0psaGVhdzYtNDk1UDZBN21FdDRR?oc=5\" target=\"_blank\">Gunman killed after opening fire on Secret Service chec",
-      "published": "2026-05-24T14:34:29Z",
+      "published": "Sun, 24 May 2026 15:53:11 +0000",
       "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/931/523/save-girls-sports.jpeg?ve=1&tl=1",
       "video_url": null,
       "has_video": false,
@@ -16420,19 +16675,20 @@
       "blindspot_label": null,
       "blindspot_score": 0.0,
       "coverage": {
-        "left_pct": 23,
+        "left_pct": 24,
         "center_pct": 50,
-        "right_pct": 27,
+        "right_pct": 26,
         "state_count": 0,
         "dominant": "center",
         "dominant_pct": 50
       },
-      "bias_variance": 5.22,
-      "entity_count": 155,
+      "bias_variance": 5.23,
+      "entity_count": 156,
       "entity_list": [
         "Actually",
         "Agencies",
         "Allegedly",
+        "AlterNet",
         "Alternet",
         "Anderson",
         "Announces",
@@ -17257,6 +17513,30 @@
           "geo_cluster": "middle-east",
           "factuality": "unknown",
           "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "pbs",
+          "name": "PBS NewsHour",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "nation_news",
+          "name": "Nation News Barbados",
+          "country": "BB",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
           "parent_company": ""
         }
       ],
@@ -19559,24 +19839,68 @@
           "published": "Sun, 24 May 2026 11:23:00 GMT",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1hVnUtNllfZ3k2TWNFaTlWVzhIMFBveEVoTkt2UkhxS1ZJZ0F0dXBsMFdyVmlHN0JoSzVPdjJlWGd1b0xOSUs4cjRtRldoX2dFTWVmNXJVaVY?oc=5",
+          "headline": "Trump admin delay pulls back the curtain on a deeply divided White House - AlterNet",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiWEFVX3lxTE1hVnUtNllfZ3k2TWNFaTlWVzhIMFBveEVoTkt2UkhxS1ZJZ0F0dXBsMFdyVmlHN0JoSzVPdjJlWGd1b0xOSUs4cjRtRldoX2dFTWVmNXJVaVY?oc=5\" target=\"_blank\">Trump admin delay pulls back the curtain on a deeply divided White House &nbsp;&nbsp; AlterNet <a…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 11:23:00 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.pbs.org/newshour/nation/suspect-killed-after-firing-shots-near-white-house-security-checkpoint-secret-service-says",
+          "headline": "Suspect killed after firing shots near White House security checkpoint, Secret Service says",
+          "snippet": "WASHINGTON (AP) — A man who opened fire Saturday near a White House security checkpoint is dead after being shot by officers who returned fire, the U.S. Secret Service said. It was the third incidence of gunfire in the vicinity of President Donald Trump in the past month. The law enforcement agency…",
+          "source": "pbs",
+          "source_name": "PBS NewsHour",
+          "country": "US",
+          "published": "Sun, 24 May 2026 11:33:26 -0400",
+          "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/05/2026-05-24T000405Z_844063395_RC2CFLAV6BIO_RTRMADP_3_USA-WASHINGTON-SHOOTING-1024x683.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.foxnews.com/politics/rally-gunfire-white-house-shooting-threats-president-trump-continue-mount",
+          "headline": "From rally gunfire to White House shooting, threats against President Trump continue to mount",
+          "snippet": "Madeleine Rivera reports live from Washington, D.C., on the shooting incident near the White House where a gunman was killed after allegedly opening fire. Retired Secret Service agent Jeff James provides expert analysis on the incident during 'Fox &amp; Friends Weekend.' You can now listen to Fox…",
+          "source": "fox_news",
+          "source_name": "Fox News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 11:42:29 -0400",
+          "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/931/523/donald-trumpp-waving-crowd.png?ve=1&tl=1",
+          "video_url": null
+        },
+        {
+          "url": "https://nationnews.com/2026/05/24/suspect-killed-after-opening-fire-on-secret-service-near-white-house/?utm_source=rss&utm_medium=rss&utm_campaign=suspect-killed-after-opening-fire-on-secret-service-near-white-house",
+          "headline": "Suspect killed after opening fire on Secret Service near White House",
+          "snippet": "A gunman who shot at a White House security checkpoint was killed in an exchange of fire with Secret Service agents on Saturday evening, officials have confirmed. The BBC’s media partner named the suspect as Nasire Best, a 21-year-old man who was known to the agency and had a documented history of…",
+          "source": "nation_news",
+          "source_name": "Nation News Barbados",
+          "country": "BB",
+          "published": "Sun, 24 May 2026 15:53:11 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.132,
-        "zionist": 0.226,
-        "atlanticist": 0.309,
+        "interventionist": 0.134,
+        "zionist": 0.227,
+        "atlanticist": 0.314,
         "statist": 0.141,
         "financialized": 0.372
       },
-      "fp_source_count": 50,
+      "fp_source_count": 51,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
-        "west": 27,
+        "west": 28,
         "middle-east": 5,
         "global-south": 8,
-        "latin-america": 1,
+        "latin-america": 2,
         "africa": 5,
         "pacific-asia": 8,
         "adversarial": 2
@@ -21773,7 +22097,7 @@
       "id": "3ca5aafc1ebc",
       "headline": "Russia and Ukraine trade blame as fragile US-brokered ceasefire rocked by deadly drone strikes",
       "summary": "<p>Russia accused Ukraine of violating a ceasefire on Sunday</p>",
-      "published": "Sun, 24 May 2026 15:04:40 GMT",
+      "published": "Sun, 24 May 2026 15:13:23 +0000",
       "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/5/AP/image/Russia_Ukraine_War_454_7.jpg?width=1440&format=webp&quality=80",
       "video_url": null,
       "has_video": false,
@@ -21782,13 +22106,13 @@
       "blindspot_score": 0.0,
       "coverage": {
         "left_pct": 32,
-        "center_pct": 42,
-        "right_pct": 25,
+        "center_pct": 41,
+        "right_pct": 27,
         "state_count": 1,
         "dominant": "center",
-        "dominant_pct": 42
+        "dominant_pct": 41
       },
-      "bias_variance": 6.69,
+      "bias_variance": 6.68,
       "entity_count": 82,
       "entity_list": [
         "Accuses",
@@ -22365,6 +22689,18 @@
           "geo_cluster": "africa",
           "factuality": "unknown",
           "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "washington_examiner",
+          "name": "Washington Examiner",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
           "parent_company": ""
         }
       ],
@@ -23842,21 +24178,32 @@
           "published": "Sun, 24 May 2026 15:04:40 GMT",
           "image_url": "https://static.independent.co.uk/2026/05/21/15/download.-11.?width=1200&auto=webp&crop=3%3A2",
           "video_url": null
+        },
+        {
+          "url": "https://www.washingtonexaminer.com/news/world/4580915/russia-attacks-ukraine-nuclear-capable-missile-third-time-since-war-began/",
+          "headline": "Russia attacks Ukraine with nuclear-capable missile for the third time since war began",
+          "snippet": "“It is important that this does not pass without consequences for Russia. Today, everyone in the world who will not stay silent and chooses to help Ukraine is a defender of life. It is critically important to continue working to secure air defense for Ukraine, especially anti-ballistic…",
+          "source": "washington_examiner",
+          "source_name": "Washington Examiner",
+          "country": "US",
+          "published": "Sun, 24 May 2026 15:13:23 +0000",
+          "image_url": "https://www.washingtonexaminer.com/wp-content/uploads/2026/02/Russian-missile.jpg?w=696",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.156,
-        "zionist": 0.219,
-        "atlanticist": 0.321,
-        "statist": 0.177,
-        "financialized": 0.378
+        "interventionist": 0.152,
+        "zionist": 0.214,
+        "atlanticist": 0.313,
+        "statist": 0.173,
+        "financialized": 0.369
       },
-      "fp_source_count": 38,
+      "fp_source_count": 39,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
-        "west": 19,
+        "west": 20,
         "middle-east": 3,
         "eastern-europe": 4,
         "africa": 4,
@@ -26665,7 +27012,7 @@
       "id": "9e61af1a17f2",
       "headline": "Premier League final day LIVE: Tottenham vs Everton and West Ham vs Leeds headline survival battle as Arsenal celebrate title, Guardiola says goodbye and SIX other games",
       "summary": "Follow Daily Mail Sport's live blog for the latest score, team news and updates from the final day of the 2025-26 Premier League as Arsenal are crowned champions at Selhurst Park.",
-      "published": "Sun, 24 May 2026 15:04:48 GMT",
+      "published": "Sun, 24 May 2026 16:45:00 BST",
       "image_url": "https://i.dailymail.com/1s/2026/05/09/19/108494547-0-image-m-134_1778350294490.jpg",
       "video_url": null,
       "has_video": false,
@@ -28244,6 +28591,28 @@
           "country": "GB",
           "published": "Sun, 24 May 2026 15:04:48 GMT",
           "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a178/live/10e49b00-577a-11f1-bafe-434e6ec4ac4b.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/sport/football/article-15837763/2025-26-Premier-League-Final-Day-Tottenham-vs-Everton-West-Ham-vs-Leeds-Crystal-Palace-vs-Arsenal.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Premier League final day LIVE: Tottenham LEAD to send West Ham towards relegation, Bruno Fernandes breaks record, Chelsea in trouble, Arsenal partying - and five other matches",
+          "snippet": "By HARRY BAMFORTH, LIVE SPORTS COVERAGE REPORTER Updated: 11:49 EDT, 24 May 2026 166 View comments Follow Daily Mail Sport's live blog for the latest score, team news and updates from the final day of the 2025-26 Premier League as Arsenal are crowned champions at Selhurst Park as Tottenham and West…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sun, 24 May 2026 16:52:07 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/24/15/108834811-0-image-m-25_1779632794360.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/news/12040/13538833/bruno-fernandes-man-utd-captain-breaks-premier-league-assists-record-for-a-single-season",
+          "headline": "Fernandes breaks Premier League assists record",
+          "snippet": "Bruno Fernandes has broken the record for the most assists in a single Premier League season after the Manchester United captain set up Patrick Dorgu's goal against Brighton on the final day of the campaign. It was Fernandes' 21st assist in the top flight this campaign, surpassing the record of 20…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sun, 24 May 2026 16:45:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-bruno-fernandes-manchester-united_7243378.jpg?20260509124252",
           "video_url": null
         }
       ],
@@ -37739,7 +38108,7 @@
       "id": "554adcd13c1a",
       "headline": "Marco Rubio India Visit Live Updates: Marco Rubio To Hold Talks With S Jaishankar, Attend US Embassy Event In Delhi",
       "summary": "Marco Rubio India Visit Live Updates: The top US diplomat is scheduled to hold talks with External Affairs Minister S Jaishankar and attend a meeting of the Quad foreign ministers.",
-      "published": "Sun, 24 May 2026 19:58:00 +0530",
+      "published": "Sun, 24 May 2026 21:23:05 +0530",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e532/live/25169120-4a49-11f1-b55d-0f258dce1735.jpg",
       "video_url": null,
       "has_video": false,
@@ -38563,6 +38932,17 @@
           "country": "IN",
           "published": "Sun, 24 May 2026 19:58:00 +0530",
           "image_url": "https://th-i.thgim.com/public/incoming/mcbvwm/article71017858.ece/alternates/LANDSCAPE_1200/Nearby_Shape-wiG91G0BBCC.3.jpg.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/national/marco-rubio-india-visit-live-updates-donald-trump-official-to-meet-s-jaishankar-pm-modi-may-24-2026/article71017144.ece",
+          "headline": "Marco Rubio in India LIVE: Jaishankar addresses National Day reception at the U.S. Embassy",
+          "snippet": "External Affairs Minister S. Jaishankar on Sunday (May 24, 2026) highlighted that India is among the few countries in the world with strong relations and real interests in the Gulf and that it wants peace and stability in the region. Addressing a joint press conference with U.S. Secretary of State…",
+          "source": "the_hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Sun, 24 May 2026 21:23:05 +0530",
+          "image_url": null,
           "video_url": null
         }
       ],
@@ -39850,7 +40230,7 @@
       "id": "5d5730da2b7b",
       "headline": "Zelenskyy on latest Russian attack: 4 killed and 100 injured across Ukraine, 30 buildings damaged in Kyiv – photos",
       "summary": "Four people have been killed and around 100 injured across Ukraine as a result of a large-scale Russian attack on the night of 23-24 May, with approximately 30 residential buildings damaged or destroyed in Kyiv alone.",
-      "published": "Sun, 24 May 2026 17:21:00 +0300",
+      "published": "Sun, 24 May 2026 18:29:00 +0300",
       "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/2/b/825511/2b408af98babc691beeff7db58fcafce.jpeg",
       "video_url": null,
       "has_video": false,
@@ -39866,13 +40246,14 @@
         "dominant_pct": 62
       },
       "bias_variance": 8.74,
-      "entity_count": 43,
+      "entity_count": 45,
       "entity_list": [
         "Across",
         "Attack",
         "Bonuses",
         "British",
         "Cabinet",
+        "Council",
         "Drone",
         "Eastern",
         "Embassy",
@@ -39901,6 +40282,7 @@
         "PsyOps",
         "Recruits",
         "Russian",
+        "Security",
         "Signing",
         "Skyrocketing",
         "Staff",
@@ -40546,6 +40928,17 @@
           "country": "UA",
           "published": "Sun, 24 May 2026 17:21:00 +0300",
           "image_url": "https://static.ukrinform.com/photos/2026_05/thumb_files/630_360_1779631774-908.png",
+          "video_url": null
+        },
+        {
+          "url": "https://www.pravda.com.ua/eng/news/2026/05/24/8036216/",
+          "headline": "Ukraine demands emergency UN Security Council meeting and OSCE sessions following Russian attack",
+          "snippet": "Andrii Sybiha. Photo: Getty Images Ukraine is demanding an emergency meeting of the Security Council and a joint session of the Forum for Security Co-operation and the Permanent Council following a large-scale Russian attack on the night of 23-24 May. Source: Ukrainian Foreign Minister Andrii…",
+          "source": "ukrainska_pravda_en",
+          "source_name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "published": "Sun, 24 May 2026 18:29:00 +0300",
+          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/c/d/835254/cd28ab885added026905a083de46fc39.jpeg",
           "video_url": null
         }
       ],
@@ -42244,6 +42637,17 @@
           "published": "Sun, 24 May 2026 15:32:57 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/LWH7TBIDUND2NKV2767SKP6O2M.JPG?auth=be6e22ab3d08b306810009f47d575b333dd14a2394f1781dccdef31971f65350&smart=true&width=1933&height=1087",
           "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxObS1SSHBpdlVqaXRjMlpBcUdLYkZlY3E4ZnRkS2I5MVRVTmpNX2pnY3p4Z0JFUzdpZXhNam5yLUJFamVyMWMyc0VGV0xrLVFqd3d1U2NtY0x0R1o5dUhwa3lta29RWEMtcV8wNlEyOHhueWx6bmxjRk1nWDJTZU9wUk9RQXhaeGNDVVJvTTlTTDN6dTF5WTlpMVJvRWVoc2ozRHU4ZHV3eDh2TGozZ3pRSjdCS2k?oc=5",
+          "headline": "Box Office: ‘Mandalorian and Grogu’ Lifts Off With $102 Million Over Memorial Day Holiday, ‘Obsession’ Scores $28 Million in Huge Second Weekend - Variety",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxObS1SSHBpdlVqaXRjMlpBcUdLYkZlY3E4ZnRkS2I5MVRVTmpNX2pnY3p4Z0JFUzdpZXhNam5yLUJFamVyMWMyc0VGV0xrLVFqd3d1U2NtY0x0R1o5dUhwa3lta29RWEMtcV8wNlEyOHhueWx6bmxjRk1nWDJTZU9wUk9RQXhaeGNDVVJvTTlTTDN6dTF5WTlpMVJvRWVoc2ozRHU4ZHV3eDh2TGozZ3pRSjdCS2k?oc=5\"…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 15:10:00 GMT",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -43753,7 +44157,7 @@
       "id": "46f1c734f431",
       "headline": "Cristian Mungiu wins second Palme d’Or at Cannes for child abuse drama Fjord - The Guardian",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPazJ4SldtajFIMHVaSGpIRlF5V2NrTmlpVXVNN2FnbEF2WlBHa09vZzFsTGpVSU1Yc25VR18xN0JQXzNwUHdYSzRDd2xvbzhlYWF2V3RBbGIteTdRRjZsd0pXUEJ6Wm1BWXAxUTZlZHhsOEpybk1DRW5tWUJRY0tSYk9LdUJEUm1zdjFnTDJfN1FsX0piNjh0NU1iMl9haUhGbzhZWmE1Q3NhckJXSEE?oc=5\" ",
-      "published": "Sun, 24 May 2026 09:41:50 GMT",
+      "published": "Sun, 24 May 2026 15:05:36 GMT",
       "image_url": "https://cdn.romania-insider.com/sites/default/files/2026-05/cristian_mungiu_fjord_cannes_-_photo_ministerul_culturii_on_fb_by_laurent_hou.jpg",
       "video_url": null,
       "has_video": false,
@@ -43769,8 +44173,12 @@
         "dominant_pct": 64
       },
       "bias_variance": 5.6,
-      "entity_count": 32,
+      "entity_count": 39,
       "entity_list": [
+        "Aishwarya",
+        "Bachchan",
+        "Bella",
+        "Bellucci",
         "Cannes",
         "Consecutive",
         "Cristian",
@@ -43783,7 +44191,9 @@
         "Guldpalmen",
         "Gullpalmen",
         "Guvernul",
+        "Hadid",
         "Ministry",
+        "Monica",
         "Mungiu",
         "Norsk",
         "Norway",
@@ -43802,6 +44212,7 @@
         "Tudor",
         "Variety",
         "Winners",
+        "Yahoo",
         "Zlatou"
       ],
       "sources": [
@@ -44215,6 +44626,17 @@
           "country": "FR",
           "published": "Sun, 24 May 2026 09:41:50 GMT",
           "image_url": "https://s.france24.com/media/display/d03f2948-574d-11f1-8125-005056a90284/w:1024/p:16x9/EN-20260524-082442-082639-CS.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxPZEQydklPdHFfaEFsa29WVkR4d0V2MDN4ZmtHMDJGM3BqT0J5ejZQbU9GbXRUU2pFXzJDcjE5bFFnTGY4QlpHMFVZUXpJQklxeUZteFdQdElvUl9MTVNhTVFzMXBxQ0hTaXpRTTMyakhfSXB4Q1VGR1BRek9mNUV5UFZJVFBfY241ZWRvdlFzZ0FtcEtVNUJGRDdGa1NPTllxbWpNSF9TWlIzbm9QbVJYTGxVVG5VTGZvS3VIRjdwSDh2MDh1a3JreGhhUXVORWo2MlpCZmdwSUlMOURXRFNKazg4V18zVThVdE02eEJVaDFfOEZWLVN2MEZudmVUbDBSOXpXZnZqWnVUOG1NUm53SkFmd0Vjakp2VG9ReE01N3lINXJJYXQ1THJ0cnJfWHhVdHdOZmJn?oc=5",
+          "headline": "Cannes 2026 fashion: Monica Bellucci, Aishwarya Rai Bachchan and Bella Hadid bring the heat as Sebastian Stan-led 'Fjord' takes home the Palme d'Or - Yahoo",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMitgJBVV95cUxPZEQydklPdHFfaEFsa29WVkR4d0V2MDN4ZmtHMDJGM3BqT0J5ejZQbU9GbXRUU2pFXzJDcjE5bFFnTGY4QlpHMFVZUXpJQklxeUZteFdQdElvUl9MTVNhTVFzMXBxQ0hTaXpRTTMyakhfSXB4Q1VGR1BRek9mNUV5UFZJVFBfY241ZWRvdlFzZ0FtcEtVNUJGRDdGa1NPTllxbWpNSF9TWlIzbm9QbVJYTGxVVG5VTGZvS3…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 15:05:36 GMT",
+          "image_url": null,
           "video_url": null
         }
       ],
@@ -48592,6 +49014,352 @@
       "section": "sports"
     },
     {
+      "id": "58a1fc592f42",
+      "headline": "Liverpool vs Brentford team news LIVE! Final starts for Salah and Robertson?",
+      "summary": "",
+      "published": "Sun, 24 May 2026 16:42:12 +0000",
+      "image_url": "https://www.thenationalnews.com/resizer/v2/BVQJRCSJNECLS7K34PXW3ZZSR4.jpg?auth=e54e865f2a782bbc2151a1e312ad0b58a9af87773802b202df111dfc5e996023&smart=true&width=5755&height=3730",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 20,
+        "center_pct": 60,
+        "right_pct": 20,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 60
+      },
+      "bias_variance": 4.31,
+      "entity_count": 15,
+      "entity_list": [
+        "Anfield",
+        "Brentford",
+        "Earth",
+        "Egyptian",
+        "FILES",
+        "Farewell",
+        "Final",
+        "Liverpool",
+        "Mohamed",
+        "Online",
+        "Robertson",
+        "SALAH",
+        "Salah",
+        "Scorched",
+        "Watch"
+      ],
+      "sources": [
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "middle-east",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Qatari state"
+        },
+        {
+          "id": "the_national_ae",
+          "name": "The National UAE",
+          "country": "AE",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "espn",
+          "name": "ESPN",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Disney"
+        },
+        {
+          "id": "sky_sports",
+          "name": "Sky Sports",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "nst_my",
+          "name": "New Straits Times",
+          "country": "MY",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "daily_mail",
+          "name": "Daily Mail",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
+        },
+        {
+          "id": "senenews",
+          "name": "Senenews",
+          "country": "SN",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "bbc_sport",
+          "name": "BBC Sport",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "rolling_stone",
+          "name": "Rolling Stone",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "punch",
+          "name": "The Punch",
+          "country": "NG",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.aljazeera.com/sports/2026/5/23/mohamed-salah-liverpool-final-match-legacy?traffic_source=rss",
+          "headline": "As Salah plays final Liverpool match, his legacy goes far beyond the pitch",
+          "snippet": "When Mohamed Salah plays his last match for Liverpool this Sunday, he will leave as a cultural icon with a lasting legacy well beyond the game. The 33-year-old Egyptian forward announced in March that he would leave Anfield at the end of this season, with Liverpool boss Arne Slot saying he “…",
+          "source": "aljazeera",
+          "source_name": "Al Jazeera English",
+          "country": "QA",
+          "published": "Sat, 23 May 2026 09:13:23 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/sport/football/2026/05/22/mo-salahs-liverpool-farewell-raises-question-where-next-for-anfields-egyptian-king/",
+          "headline": "Mohamed Salah’s Liverpool farewell raises question: Where next for Anfield's 'Egyptian King'?",
+          "snippet": "Mohamed Salah's Liverpool story comes to an end this Sunday after nine successful years in what is sure to be an emotional afternoon at Anfield. Granted, the final chapter has not gone as planned, with relations between Salah and manager Arne Slot having long since broken down. And there will be no…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Fri, 22 May 2026 03:00:00 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/BVQJRCSJNECLS7K34PXW3ZZSR4.jpg?auth=e54e865f2a782bbc2151a1e312ad0b58a9af87773802b202df111dfc5e996023&smart=true&width=5755&height=3730",
+          "video_url": null
+        },
+        {
+          "url": "https://www.espn.com/soccer/story/_/id/48841999/mohamed-salah-given-everything-liverpool-deserves-fitting-finale",
+          "headline": "Salah has given everything to Liverpool and deserv...",
+          "snippet": "Mohamed Salah arrived at Liverpool in 2017 under pressure to shake off his \"Chelsea flop\" tag but, nine years later, he leaves as a legend who transcended the sport.",
+          "source": "espn",
+          "source_name": "ESPN",
+          "country": "US",
+          "published": "Sat, 23 May 2026 07:20:45 EST",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/news/12040/13546959/why-mohamed-salah-and-andy-robertson-will-leave-anfield-as-all-time-liverpool-greats",
+          "headline": "Why Salah and Robertson will leave Anfield as all-time Liverpool greats",
+          "snippet": "Mohamed Salah and Andy Robertson, signed within weeks of each other in the summer of 2017, will bid farewell to Anfield against Brentford on Sunday - two era-defining figures whose journeys have helped reshape Liverpool’s modern history. Both crucially came with points to prove to all the doubters…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 08:00:00 BST",
+          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-salah-robertson_7255663.jpg?20260522120023",
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/sports/football/2026/05/1446445/salah-says-he-will-always-love-liverpool",
+          "headline": "Salah says he will always love Liverpool",
+          "snippet": "LONDON: Liverpool forward Mohamed Salah insists he will always love the club as he prepares to bid farewell after nine years, PA Media/dpa reported.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Sat, 23 May 2026 16:28:06 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/F14C4AE66CF2AA12479432974C8B429B_data_0.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/sport/football/article-15837967/Mohamed-Salah-Files-Five-Liverpool-Slot-Exit.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "THE SALAH FILES, Part 5: Scorched Earth. How Mo Salah set 'fire' to his Liverpool farewell, why he was so furious with Arne Slot, the men who masterminded his exit... and an ominous warning for what comes next",
+          "snippet": "‘If I speak today, there will be fire.' That was Mohamed Salah's warning, delivered after the penultimate away trip of the Jurgen Klopp era. He was referring to an on-pitch spat with his manager that, had the German not been leaving the club a fortnight later, might have had much more dramatic…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 02:46:10 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/21/18/108784675-0-image-a-1_1779385856784.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/liverpool-les-adieux-tumultueux-de-mohamed-salah-a-anfield_587422.html",
+          "headline": "Liverpool : les adieux tumultueux de Mohamed Salah à Anfield",
+          "snippet": "Mohamed Salah fait ses adieux à Anfield après une carrière exceptionnelle de neuf ans avec Liverpool, mais ces derniers moments sont assombries par une polémique. Le \"Roi Égyptien\" laisse derrière lui une légende, marquée par des performances éblouissantes et des tensions récentes avec son…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sat, 23 May 2026 16:42:50 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/salahhh.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.bbc.com/sport/football/articles/cgkp386p60jo?at_medium=RSS&at_campaign=rss",
+          "headline": "Farewell to Salah, Liverpool's 'Egyptian king'",
+          "snippet": "Perhaps the fullest realisation of what Mohamed Salah has achieved at Liverpool will only come with time. But as he prepares to say his goodbyes on Sunday, there is plenty to appreciate and admire in the here and now. There are the standards Salah helped to set that emanated through the club in his…",
+          "source": "bbc_sport",
+          "source_name": "BBC Sport",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 18:03:26 GMT",
+          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ddde/live/abbdae30-4e49-11f1-ae62-ab9d6bf96137.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/sport/football/article-15843635/Mohamed-Salah-message-Arne-Slot-Liverpool-team-mates-departing.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Mohamed Salah sends message to Arne Slot and Liverpool team-mates - as departing star warns 'it is the worst club in the world when you lose'",
+          "snippet": "Mohamed Salah sends message to Arne Slot and Liverpool team-mates - as departing star warns 'it is the worst club in the world when you lose' By MICHAEL PAVITT, SPORTS REPORTER Published: 17:47 EDT, 23 May 2026 | Updated: 17:47 EDT, 23 May 2026 Mohamed Salah has told Liverpool boss Arne Slot and…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 22:47:58 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/22/108826967-0-image-m-61_1779572701883.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.bbc.com/sport/football/videos/ce8leeg8q53o?at_medium=RSS&at_campaign=rss",
+          "headline": "Salah's best goals for Liverpool",
+          "snippet": "Watch some of the standout goals scored by Mohamed Salah for Liverpool. The Egyptian forward has revealed he will leave the club at the end of the season.",
+          "source": "bbc_sport",
+          "source_name": "BBC Sport",
+          "country": "GB",
+          "published": "Tue, 24 Mar 2026 19:48:08 GMT",
+          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f3b7/live/c19e58e0-27b5-11f1-a79a-77e93010d956.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rollingstone.com/product-recommendations/streaming/where-to-watch-mohamed-salah-last-liverpool-game-for-free-stream-1235566952/",
+          "headline": "Where to Watch Mohamed Salah’s Final Game With Liverpool Online for Free",
+          "snippet": "If you purchase an independently reviewed product or service through a link on our website, Rolling Stone may receive an affiliate commission. Mohamed Salah, the superstar forward for Liverpool Club, is set to play his final match with the team after a nine-year run. Nicknamed “The Egyptian King,”…",
+          "source": "rolling_stone",
+          "source_name": "Rolling Stone",
+          "country": "US",
+          "published": "Sun, 24 May 2026 10:00:00 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/liverpool-vs-brentford/live/531503",
+          "headline": "Liverpool vs Brentford team news LIVE! Final starts for Salah and Robertson?",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Thu, 21 May 2026 12:03:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-liverpool-brentford_7252989.jpg?20260519112438",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/liverpool-vs-brentford/live/531503",
+          "headline": "Liverpool vs Brentford team news as Salah and Robertson start LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sun, 24 May 2026 14:30:00 BST",
+          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-liverpool-brentford_7252989.jpg?20260519112438",
+          "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/football/liverpool-vs-brentford/live/531503",
+          "headline": "Salah curls the ball against the post for Liverpool against Brentford LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Sun, 24 May 2026 14:30:00 BST",
+          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-premier-league-liverpool_7257169.jpg?20260524162211",
+          "video_url": null
+        },
+        {
+          "url": "https://punchng.com/epl-salah-starts-in-final-liverpool-game/?utm_source=rss.punchng.com&utm_medium=web",
+          "headline": "EPL: Salah starts in final Liverpool game",
+          "snippet": "Mohamed Salah was in the starting line-up in his Liverpool farewell against Brentford on Sunday, days after making explosive comments about the team’s playing style under manager Arne Slot. The “Egyptian King” leaves Anfield after a glittering nine-year spell at the club, bidding farewell alongside…",
+          "source": "punch",
+          "source_name": "The Punch",
+          "country": "NG",
+          "published": "Sun, 24 May 2026 16:42:12 +0000",
+          "image_url": "https://cdn.punchng.com/wp-content/uploads/2020/08/18131509/punch-logo-500x179-1.png",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.115,
+        "zionist": 0.172,
+        "atlanticist": 0.315,
+        "statist": 0.175,
+        "financialized": 0.343
+      },
+      "fp_source_count": 10,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "middle-east": 2,
+        "west": 5,
+        "pacific-asia": 1,
+        "africa": 2
+      },
+      "section": "sports"
+    },
+    {
       "id": "a1035bae5a47",
       "headline": "Kevin Warsh sworn in by Clarence Thomas as Trump claims he wants ‘independent’ Fed Reserve under his hand-picked chair",
       "summary": "<p>Trump has spent years attempting to bully the central bank into lowering interest rates to artificially juice the U.S. economy</p>",
@@ -50497,304 +51265,6 @@
         "pacific-asia": 2
       },
       "section": "world"
-    },
-    {
-      "id": "58a1fc592f42",
-      "headline": "Mohamed Salah’s Liverpool farewell raises question: Where next for Anfield's 'Egyptian King'?",
-      "summary": "",
-      "published": "Sun, 24 May 2026 14:30:00 BST",
-      "image_url": "https://www.thenationalnews.com/resizer/v2/BVQJRCSJNECLS7K34PXW3ZZSR4.jpg?auth=e54e865f2a782bbc2151a1e312ad0b58a9af87773802b202df111dfc5e996023&smart=true&width=5755&height=3730",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 12,
-        "center_pct": 62,
-        "right_pct": 25,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 62
-      },
-      "bias_variance": 4.82,
-      "entity_count": 13,
-      "entity_list": [
-        "Anfield",
-        "Brentford",
-        "Earth",
-        "Egyptian",
-        "FILES",
-        "Farewell",
-        "Final",
-        "Liverpool",
-        "Mohamed",
-        "Robertson",
-        "SALAH",
-        "Salah",
-        "Scorched"
-      ],
-      "sources": [
-        {
-          "id": "aljazeera",
-          "name": "Al Jazeera English",
-          "country": "QA",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "middle-east",
-          "factuality": "mostly_factual",
-          "primary_vs_launder": "mixed",
-          "parent_company": "Qatari state"
-        },
-        {
-          "id": "the_national_ae",
-          "name": "The National UAE",
-          "country": "AE",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "middle-east",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "espn",
-          "name": "ESPN",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Disney"
-        },
-        {
-          "id": "sky_sports",
-          "name": "Sky Sports",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "nst_my",
-          "name": "New Straits Times",
-          "country": "MY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "daily_mail",
-          "name": "Daily Mail",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": "Daily Mail and General Trust"
-        },
-        {
-          "id": "senenews",
-          "name": "Senenews",
-          "country": "SN",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "africa",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "bbc_sport",
-          "name": "BBC Sport",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.aljazeera.com/sports/2026/5/23/mohamed-salah-liverpool-final-match-legacy?traffic_source=rss",
-          "headline": "As Salah plays final Liverpool match, his legacy goes far beyond the pitch",
-          "snippet": "When Mohamed Salah plays his last match for Liverpool this Sunday, he will leave as a cultural icon with a lasting legacy well beyond the game. The 33-year-old Egyptian forward announced in March that he would leave Anfield at the end of this season, with Liverpool boss Arne Slot saying he “…",
-          "source": "aljazeera",
-          "source_name": "Al Jazeera English",
-          "country": "QA",
-          "published": "Sat, 23 May 2026 09:13:23 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenationalnews.com/sport/football/2026/05/22/mo-salahs-liverpool-farewell-raises-question-where-next-for-anfields-egyptian-king/",
-          "headline": "Mohamed Salah’s Liverpool farewell raises question: Where next for Anfield's 'Egyptian King'?",
-          "snippet": "Mohamed Salah's Liverpool story comes to an end this Sunday after nine successful years in what is sure to be an emotional afternoon at Anfield. Granted, the final chapter has not gone as planned, with relations between Salah and manager Arne Slot having long since broken down. And there will be no…",
-          "source": "the_national_ae",
-          "source_name": "The National UAE",
-          "country": "AE",
-          "published": "Fri, 22 May 2026 03:00:00 +0000",
-          "image_url": "https://www.thenationalnews.com/resizer/v2/BVQJRCSJNECLS7K34PXW3ZZSR4.jpg?auth=e54e865f2a782bbc2151a1e312ad0b58a9af87773802b202df111dfc5e996023&smart=true&width=5755&height=3730",
-          "video_url": null
-        },
-        {
-          "url": "https://www.espn.com/soccer/story/_/id/48841999/mohamed-salah-given-everything-liverpool-deserves-fitting-finale",
-          "headline": "Salah has given everything to Liverpool and deserv...",
-          "snippet": "Mohamed Salah arrived at Liverpool in 2017 under pressure to shake off his \"Chelsea flop\" tag but, nine years later, he leaves as a legend who transcended the sport.",
-          "source": "espn",
-          "source_name": "ESPN",
-          "country": "US",
-          "published": "Sat, 23 May 2026 07:20:45 EST",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/news/12040/13546959/why-mohamed-salah-and-andy-robertson-will-leave-anfield-as-all-time-liverpool-greats",
-          "headline": "Why Salah and Robertson will leave Anfield as all-time Liverpool greats",
-          "snippet": "Mohamed Salah and Andy Robertson, signed within weeks of each other in the summer of 2017, will bid farewell to Anfield against Brentford on Sunday - two era-defining figures whose journeys have helped reshape Liverpool’s modern history. Both crucially came with points to prove to all the doubters…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 08:00:00 BST",
-          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-salah-robertson_7255663.jpg?20260522120023",
-          "video_url": null
-        },
-        {
-          "url": "https://www.nst.com.my/sports/football/2026/05/1446445/salah-says-he-will-always-love-liverpool",
-          "headline": "Salah says he will always love Liverpool",
-          "snippet": "LONDON: Liverpool forward Mohamed Salah insists he will always love the club as he prepares to bid farewell after nine years, PA Media/dpa reported.",
-          "source": "nst_my",
-          "source_name": "New Straits Times",
-          "country": "MY",
-          "published": "Sat, 23 May 2026 16:28:06 +0800",
-          "image_url": "https://assets.nst.com.my/images/listing-featured/F14C4AE66CF2AA12479432974C8B429B_data_0.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/sport/football/article-15837967/Mohamed-Salah-Files-Five-Liverpool-Slot-Exit.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "THE SALAH FILES, Part 5: Scorched Earth. How Mo Salah set 'fire' to his Liverpool farewell, why he was so furious with Arne Slot, the men who masterminded his exit... and an ominous warning for what comes next",
-          "snippet": "‘If I speak today, there will be fire.' That was Mohamed Salah's warning, delivered after the penultimate away trip of the Jurgen Klopp era. He was referring to an on-pitch spat with his manager that, had the German not been leaving the club a fortnight later, might have had much more dramatic…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 02:46:10 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/21/18/108784675-0-image-a-1_1779385856784.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/actualites/liverpool-les-adieux-tumultueux-de-mohamed-salah-a-anfield_587422.html",
-          "headline": "Liverpool : les adieux tumultueux de Mohamed Salah à Anfield",
-          "snippet": "Mohamed Salah fait ses adieux à Anfield après une carrière exceptionnelle de neuf ans avec Liverpool, mais ces derniers moments sont assombries par une polémique. Le \"Roi Égyptien\" laisse derrière lui une légende, marquée par des performances éblouissantes et des tensions récentes avec son…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Sat, 23 May 2026 16:42:50 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/salahhh.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.bbc.com/sport/football/articles/cgkp386p60jo?at_medium=RSS&at_campaign=rss",
-          "headline": "Farewell to Salah, Liverpool's 'Egyptian king'",
-          "snippet": "Perhaps the fullest realisation of what Mohamed Salah has achieved at Liverpool will only come with time. But as he prepares to say his goodbyes on Sunday, there is plenty to appreciate and admire in the here and now. There are the standards Salah helped to set that emanated through the club in his…",
-          "source": "bbc_sport",
-          "source_name": "BBC Sport",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 18:03:26 GMT",
-          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ddde/live/abbdae30-4e49-11f1-ae62-ab9d6bf96137.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/sport/football/article-15843635/Mohamed-Salah-message-Arne-Slot-Liverpool-team-mates-departing.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Mohamed Salah sends message to Arne Slot and Liverpool team-mates - as departing star warns 'it is the worst club in the world when you lose'",
-          "snippet": "Mohamed Salah sends message to Arne Slot and Liverpool team-mates - as departing star warns 'it is the worst club in the world when you lose' By MICHAEL PAVITT, SPORTS REPORTER Published: 17:47 EDT, 23 May 2026 | Updated: 17:47 EDT, 23 May 2026 Mohamed Salah has told Liverpool boss Arne Slot and…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 22:47:58 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/23/22/108826967-0-image-m-61_1779572701883.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.bbc.com/sport/football/videos/ce8leeg8q53o?at_medium=RSS&at_campaign=rss",
-          "headline": "Salah's best goals for Liverpool",
-          "snippet": "Watch some of the standout goals scored by Mohamed Salah for Liverpool. The Egyptian forward has revealed he will leave the club at the end of the season.",
-          "source": "bbc_sport",
-          "source_name": "BBC Sport",
-          "country": "GB",
-          "published": "Tue, 24 Mar 2026 19:48:08 GMT",
-          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f3b7/live/c19e58e0-27b5-11f1-a79a-77e93010d956.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/liverpool-vs-brentford/live/531503",
-          "headline": "Liverpool vs Brentford team news LIVE! Final starts for Salah and Robertson?",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Thu, 21 May 2026 12:03:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-liverpool-brentford_7252989.jpg?20260519112438",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/liverpool-vs-brentford/live/531503",
-          "headline": "Liverpool vs Brentford team news as Salah and Robertson start LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sun, 24 May 2026 14:30:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-liverpool-brentford_7252989.jpg?20260519112438",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/liverpool-vs-brentford/live/531503",
-          "headline": "Salah curls the ball against the post for Liverpool against Brentford LIVE!",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sun, 24 May 2026 14:30:00 BST",
-          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-premier-league-liverpool_7257169.jpg?20260524162211",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.126,
-        "zionist": 0.169,
-        "atlanticist": 0.318,
-        "statist": 0.171,
-        "financialized": 0.354
-      },
-      "fp_source_count": 8,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "middle-east": 2,
-        "west": 4,
-        "pacific-asia": 1,
-        "africa": 1
-      },
-      "section": "sports"
     },
     {
       "id": "d406aa531453",
@@ -53639,192 +54109,6 @@
       "section": "world"
     },
     {
-      "id": "0024f8b2cf7d",
-      "headline": "IDF says it attacked Hezbollah sites, as at least 5 reported killed in south Lebanon",
-      "summary": "<p>Military says overnight strikes targeted underground weapons production site in Beqaa and other infrastructure in Tyre, where state media reports 'severe damage' to a hospital</p>\n<p>The post <a href=\"https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed",
-      "published": "Sat, 23 May 2026 15:48:19 GMT",
-      "image_url": "https://cdn.dailymaverick.co.za/attachments/2991/GettyImages-2272430129_705066.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 75,
-        "right_pct": 25,
-        "state_count": 1,
-        "dominant": "center",
-        "dominant_pct": 75
-      },
-      "bias_variance": 10.89,
-      "entity_count": 3,
-      "entity_list": [
-        "Hezbollah",
-        "Iranian",
-        "Lebanon"
-      ],
-      "sources": [
-        {
-          "id": "times_of_israel",
-          "name": "The Times of Israel",
-          "country": "IL",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "middle-east",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "daily_maverick",
-          "name": "Daily Maverick (SA)",
-          "country": "ZA",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "africa",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_national_ae",
-          "name": "The National UAE",
-          "country": "AE",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "middle-east",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "irna",
-          "name": "IRNA",
-          "country": "IR",
-          "bloc": "adversarial",
-          "bias_tier": "state-pro",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "unknown",
-          "primary_vs_launder": "launderer",
-          "parent_company": "Iranian state"
-        },
-        {
-          "id": "middle_east_eye",
-          "name": "Middle East Eye",
-          "country": "GB",
-          "bloc": "adversarial",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed-in-south-lebanon/",
-          "headline": "IDF says it attacked Hezbollah sites, as at least 5 reported killed in south Lebanon",
-          "snippet": "The Israel Defense Forces on Saturday said it hit Hezbollah sites in the terror group’s strongholds in south and east Lebanon overnight following evacuation warnings. The military issued further warnings Saturday afternoon for 10 southern Lebanese villages on both banks of the Litani River, pending…",
-          "source": "times_of_israel",
-          "source_name": "The Times of Israel",
-          "country": "IL",
-          "published": "Sat, 23 May 2026 12:44:53 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed-in-south-lebanon/",
-          "headline": "IDF says it attacked Hezbollah sites, as at least 5 reported killed in south Lebanon",
-          "snippet": "The Israel Defense Forces on Saturday said it hit Hezbollah sites in the terror group’s strongholds in south and east Lebanon overnight following evacuation warnings. The military issued further warnings Saturday afternoon for 10 southern Lebanese villages on both banks of the Litani River, pending…",
-          "source": "times_of_israel",
-          "source_name": "The Times of Israel",
-          "country": "IL",
-          "published": "Sat, 23 May 2026 12:44:53 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymaverick.co.za/article/2026-05-22-us-hits-nine-hezbollah-aligned-individuals-in-lebanon-with-sanctions/",
-          "headline": "US hits nine Hezbollah-aligned individuals in Lebanon with sanctions",
-          "snippet": "By Andrea Shalal Treasury's Office of Foreign Assets Control said the officials were embedded across Lebanon’s parliament, military, and security sectors, where they worked to preserve Hezbollah's influence over key Lebanese state institutions. “Hezbollah is a terrorist organization and must be…",
-          "source": "daily_maverick",
-          "source_name": "Daily Maverick (SA)",
-          "country": "ZA",
-          "published": "Fri, 22 May 2026 04:38:56 GMT",
-          "image_url": "https://cdn.dailymaverick.co.za/attachments/2991/GettyImages-2272430129_705066.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenationalnews.com/news/us/2026/05/21/us-announces-sanctions-on-lebanon-security-officials-and-mps-due-to-hezbollah-influence/",
-          "headline": "US imposes sanctions on Lebanon security officials and MPs due to Hezbollah influence",
-          "snippet": "The has imposed sanctions on nine people in Lebanon accused of blocking the peace process and impeding efforts to disarm Hezbollah . Among those under sanctions are Hezbollah -affiliated MPs, state security officials and allies of the group. \"These Hezbollah-aligned officials include individuals…",
-          "source": "the_national_ae",
-          "source_name": "The National UAE",
-          "country": "AE",
-          "published": "Thu, 21 May 2026 21:15:21 +0000",
-          "image_url": "https://www.thenationalnews.com/resizer/v2/E3TWZNFJJFFEFO7JMPC2ZR4N4E?auth=2e606d77a3305748f5be1db27434495ac2301dafd99af34bc67a37bf696dcc10&smart=true&width=2689&height=1512",
-          "video_url": null
-        },
-        {
-          "url": "https://en.irna.ir/news/86162694/Lebanon-ceasefire-will-be-included-in-any-deal-with-US-Iran",
-          "headline": "Lebanon ceasefire will be included in any deal with US, Iran FM tells Hezbollah leader",
-          "snippet": "Tehran, IRNA – Foreign Minister Abbas Araghchi has told Hezbollah’s secretary-general that any agreement with Washington must be linked to a ceasefire in Lebanon, stressing that Tehran’s latest proposal for ending the war, delivered via Pakistani mediation, included the necessity of a Lebanon truce.",
-          "source": "irna",
-          "source_name": "IRNA",
-          "country": "IR",
-          "published": "Sat, 23 May 2026 15:48:19 GMT",
-          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172883335.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hezbollah-lebanon-ceasefire-included-latest-iranian-proposal-us",
-          "headline": "Hezbollah: Lebanon ceasefire included in latest Iranian proposal to US",
-          "snippet": "Hezbollah says it has received a message from Iranian Foreign Minister Abbas Araghchi stating that Lebanon’s inclusion in any agreement with the United States was explicitly emphasised in Tehran's latest proposal presnted to Pakistani mediators. In the letter to Hezbollah Secretary-General Sheikh…",
-          "source": "middle_east_eye",
-          "source_name": "Middle East Eye",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 14:33:34 +0100",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenationalnews.com/news/mena/2026/03/27/lebanon-persists-with-move-to-declare-irans-ambassador-persona-non-grata-despite-hezbollah-opposition/",
-          "headline": "Lebanon persists with move to declare Iran's ambassador persona non grata despite Hezbollah opposition",
-          "snippet": "Live updates: Follow the latest news on US-Iran war Lebanon will persist with its decision to withdraw approval of Iran’s ambassador-designate to Beirut, despite intense opposition from Lebanon's two main Shiite parties. None of the four ministers nominated by the two parties – Iran-backed…",
-          "source": "the_national_ae",
-          "source_name": "The National UAE",
-          "country": "AE",
-          "published": "Fri, 27 Mar 2026 11:39:32 +0000",
-          "image_url": "https://www.thenationalnews.com/resizer/v2/KYPOKY2K3R5M5FT2C5DQN6DFNE.jpg?auth=4747f2e1ee8cc9d50f444b49ae8193522bb3a35519e4f2ff32c95a88dd84bc29&smart=true&width=6000&height=4000",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.002,
-        "zionist": -0.064,
-        "atlanticist": 0.11,
-        "statist": 0.346,
-        "financialized": 0.176
-      },
-      "fp_source_count": 5,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "africa": 1,
-        "adversarial": 1,
-        "west": 1,
-        "middle-east": 2
-      },
-      "section": "world"
-    },
-    {
       "id": "2466a8f218dd",
       "headline": "Trump mocks Colbert with AI video of president throwing talk show host into dumpster",
       "summary": "<p><a href=\"/topic/donald-trump\">Donald Trump</a> mocked <a href=\"/topic/stephen-colbert\">Stephen Colbert</a> by sharing an <a href=\"/topic/ai\">AI</a>-generated video of himself throwing the former <em>The Late Show </em>host into a dumpster.</p>",
@@ -54704,20 +54988,16 @@
         "dominant_pct": 50
       },
       "bias_variance": 3.21,
-      "entity_count": 16,
+      "entity_count": 12,
       "entity_list": [
         "Backlash",
         "Canadian",
-        "Final",
         "Finale",
         "French",
         "Grand",
-        "Liverpool",
         "Livestream",
         "Marshals",
-        "Mohamed",
         "Online",
-        "Salah",
         "Season",
         "Tonight",
         "Tracker",
@@ -54805,17 +55085,6 @@
           "country": "US",
           "published": "Sun, 24 May 2026 03:22:57 +0000",
           "image_url": "https://variety.com/wp-content/uploads/2025/06/Tennis-French-Open-Jannik-Sinner-Getty-VR-Featured.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.rollingstone.com/product-recommendations/streaming/where-to-watch-mohamed-salah-last-liverpool-game-for-free-stream-1235566952/",
-          "headline": "Where to Watch Mohamed Salah’s Final Game With Liverpool Online for Free",
-          "snippet": "If you purchase an independently reviewed product or service through a link on our website, Rolling Stone may receive an affiliate commission. Mohamed Salah, the superstar forward for Liverpool Club, is set to play his final match with the team after a nine-year run. Nicknamed “The Egyptian King,”…",
-          "source": "rolling_stone",
-          "source_name": "Rolling Stone",
-          "country": "US",
-          "published": "Sun, 24 May 2026 10:00:00 +0000",
-          "image_url": null,
           "video_url": null
         },
         {
@@ -57548,211 +57817,6 @@
         "latin-america": 2
       },
       "section": "sports"
-    },
-    {
-      "id": "00271f0e92e7",
-      "headline": "Woman killed and man injured in Russian drone strike on Kherson Oblast",
-      "summary": "A woman was killed and a man was injured in a Russian drone strike on the village of Nezlamne in the Kherson district on 9 May.",
-      "published": "Sat, 23 May 2026 18:19:00 +0300",
-      "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/c/0/825570/c04cc9e3820ded2022caf9e097ebc5bc.jpeg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "No partisan coverage",
-      "blindspot_score": 5.0,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 100,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 100
-      },
-      "bias_variance": 0.0,
-      "entity_count": 6,
-      "entity_list": [
-        "Kharkiv",
-        "Kherson",
-        "Oblast",
-        "Russian",
-        "Seven",
-        "Woman"
-      ],
-      "sources": [
-        {
-          "id": "ukrainska_pravda_en",
-          "name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "ukrinform_en",
-          "name": "Ukrinform",
-          "country": "UA",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/09/8033970/",
-          "headline": "Woman killed and man injured in Russian drone strike on Kherson Oblast",
-          "snippet": "Ukrainska Pravda Укр Рос Eng Support Us Укр Рос Eng Sections News Stories Opinions Interview Podcasts Special Projects Archive Projects of &quot;Ukrainian Pravda&quot; Ukrainska Pravda (UKR) Ekonomichna Pravda (UKR) Life (UKR) Sport (UKR) European Pravda (ENG) Blogs Istorychna Pravda (ENG) Tabloid…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sat, 09 May 2026 16:19:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/c/0/825570/c04cc9e3820ded2022caf9e097ebc5bc.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-ato/4121546-russian-attacks-leave-one-civilian-killed-three-injured-in-kherson-region.html",
-          "headline": "Russian attacks leave one civilian killed, three injured in Kherson region",
-          "snippet": "A 58-year-old woman was killed in the Kherson region as a result of a Russian drone strike, while three other people were injured. This was reported by the Kherson Regional Prosecutor’s Office on Telegram , according to Ukrinform. “On May 9, 2026, Russian forces struck settlements across the…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sat, 09 May 2026 18:45:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2026_02/thumb_files/630_360_1772293156-291.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034024/",
-          "headline": "Two injured in Russian drone attacks in Kherson Oblast",
-          "snippet": "A UAV. Stock photo: Getty Images Two people have been injured in Russian drone attacks on the city of Kherson and the Kherson hromada. [A hromada is an administrative unit designating a village, several villages, or a town, and their adjacent territories – ed.] Source: Kherson City Military…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 07:58:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/5/d/825879/5db93c25d720ab9a81f4a874243212f1.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-ato/4121631-russian-forces-damage-highrise-building-and-private-houses-in-kherson-region-casualties-reported.html",
-          "headline": "Russian forces damage high-rise building and private houses in Kherson region; casualties reported",
-          "snippet": "In the Kherson region over the past 24 hours, Russian forces targeted critical and social infrastructure, damaging a high-rise building and eight private homes. Seven people were injured, including a child. According to Ukrinform, the head of the Kherson Regional Military Administration, Oleksandr…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 10:04:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2025_09/thumb_files/630_360_1758540701-246.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/10/8034064/",
-          "headline": "Russian drone attacks vehicle of Kherson city council employee",
-          "snippet": "The use of site materials is allowed only with a reference (for online publications — a hyperlink) to \"Ukrainska Pravda\" no lower than the third paragraph. Any copying, publication, reprinting, or further distribution of information containing a reference to \" Interfax-Ukraine \" is strictly…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 15:51:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/2/d/825997/2d239f5dc8c5bd7175a2025df24bde02.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-ato/4121736-russian-attacks-leave-four-civilians-injured-in-kherson-region.html",
-          "headline": "Russian attacks leave four civilians injured in Kherson region",
-          "snippet": "Four civilians were injured in Russia’s attacks on the Kherson region during the day. This is according to the Kherson Regional Prosecutor’s Office , as reported by Ukrinform, On May 10, Russian forces attacked settlements in the region using various types of drones. As of 17:30, four people were…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 18:22:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2026_05/thumb_files/630_360_1778422526-659.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-ato/4121704-russian-drone-attack-in-kherson-injures-city-council-employee.html",
-          "headline": "Russian drone attack in Kherson injures city council employee",
-          "snippet": "Russian forces targeted the vehicle of a city council employee in the Korabelnyi district of Kherson with a drone. Yaroslav Shanko, head of the Kherson City Military Administration, announced this on Telegram , Ukrinform reports. \"At around 08:40, a Russian drone attacked the car of a 53-year-old…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sun, 10 May 2026 15:46:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2026_01/thumb_files/630_360_1769278340-327.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/11/8034117/",
-          "headline": "Woman injured in Russian drone attack dies in Kherson Oblast",
-          "snippet": "An ambulance. Stock photo: Kherson Oblast Military Administration on Telegram A woman injured in a Russian drone attack on Kherson Oblast has died in hospital. Source: Oleksandr Prokudin, Head of Kherson Oblast Military Administration, on Telegram Quote: \"A resident of Komyshany who suffered…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Mon, 11 May 2026 02:14:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/e/2/826307/e22ed08e816ac952fde80933a1b8cdf7.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-ato/4121984-five-injured-including-teen-in-russian-shelling-of-kherson.html",
-          "headline": "Five injured, including teen, in Russian shelling of Kherson",
-          "snippet": "Five people, including a teenager, were injured in Kherson as a result of Russian shelling. According to Ukrinform, the Kherson Regional Military Administration announced this on Telegram . \"Approximately at 10:00, the Russians attacked a shop in the Korabelnyi district of Kherson using a drone,\"…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Mon, 11 May 2026 14:05:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2025_07/thumb_files/630_360_1753162459-630.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/23/8036055/",
-          "headline": "Four killed and 25 injured in Russian strikes on Kherson and Kharkiv oblasts",
-          "snippet": "Damaged buildings. Photo: Kharkiv Oblast Military Administration Russian strikes on Kherson and Kharkiv oblasts on 22 May killed four people and injured a further 25. Source: Kherson Oblast Military Administration ; Kharkiv Oblast Military Administration Details: One person was killed and 20…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sat, 23 May 2026 08:50:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/f/6/834360/f69934483876d7e6d957aa4af6264f0e.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/23/8036104/",
-          "headline": "Seven civilians injured in Russian attacks on Kherson Oblast in single day",
-          "snippet": "Stock photo: Anadolu via Getty Images Seven civilians were injured in Kherson O blast as a result of Russian strikes on 23 May. Source: Kherson Oblast Prosecutor's Office Details: Russian forces struck settlements across Kherson O blast on 23 May using artillery, mortars and drones. : As of 17:30,…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sat, 23 May 2026 18:19:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/6/f/834653/6f7bbb081dbf854e0ca21d200487ba4f.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-ato/4126531-body-of-woman-killed-in-nighttime-russian-drone-strike-found-in-kherson.html",
-          "headline": "Body of woman killed in nighttime Russian drone strike found in Kherson",
-          "snippet": "The body of a woman was found in Kherson after a Russian drone struck a private home in the Korabelny district overnight. Yaroslav Shanko, head of the Kherson Regional Military Administration, reported this on Telegram , according to Ukrinform. “Yesterday around midnight, Russian terrorists struck…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sat, 23 May 2026 14:42:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2025_07/thumb_files/630_360_1753162459-630.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.17,
-        "zionist": 0.21,
-        "atlanticist": 0.54,
-        "statist": 0.125,
-        "financialized": 0.18
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "eastern-europe": 2
-      },
-      "section": "tech"
     },
     {
       "id": "b5273e64091c",
@@ -61352,6 +61416,192 @@
         "west": 2,
         "africa": 1,
         "eastern-europe": 1
+      },
+      "section": "world"
+    },
+    {
+      "id": "0024f8b2cf7d",
+      "headline": "IDF says it attacked Hezbollah sites, as at least 5 reported killed in south Lebanon",
+      "summary": "<p>Military says overnight strikes targeted underground weapons production site in Beqaa and other infrastructure in Tyre, where state media reports 'severe damage' to a hospital</p>\n<p>The post <a href=\"https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed",
+      "published": "Sat, 23 May 2026 15:48:19 GMT",
+      "image_url": "https://cdn.dailymaverick.co.za/attachments/2991/GettyImages-2272430129_705066.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 75,
+        "right_pct": 25,
+        "state_count": 1,
+        "dominant": "center",
+        "dominant_pct": 75
+      },
+      "bias_variance": 10.89,
+      "entity_count": 3,
+      "entity_list": [
+        "Hezbollah",
+        "Iranian",
+        "Lebanon"
+      ],
+      "sources": [
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "daily_maverick",
+          "name": "Daily Maverick (SA)",
+          "country": "ZA",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_national_ae",
+          "name": "The National UAE",
+          "country": "AE",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "irna",
+          "name": "IRNA",
+          "country": "IR",
+          "bloc": "adversarial",
+          "bias_tier": "state-pro",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Iranian state"
+        },
+        {
+          "id": "middle_east_eye",
+          "name": "Middle East Eye",
+          "country": "GB",
+          "bloc": "adversarial",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed-in-south-lebanon/",
+          "headline": "IDF says it attacked Hezbollah sites, as at least 5 reported killed in south Lebanon",
+          "snippet": "The Israel Defense Forces on Saturday said it hit Hezbollah sites in the terror group’s strongholds in south and east Lebanon overnight following evacuation warnings. The military issued further warnings Saturday afternoon for 10 southern Lebanese villages on both banks of the Litani River, pending…",
+          "source": "times_of_israel",
+          "source_name": "The Times of Israel",
+          "country": "IL",
+          "published": "Sat, 23 May 2026 12:44:53 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed-in-south-lebanon/",
+          "headline": "IDF says it attacked Hezbollah sites, as at least 5 reported killed in south Lebanon",
+          "snippet": "The Israel Defense Forces on Saturday said it hit Hezbollah sites in the terror group’s strongholds in south and east Lebanon overnight following evacuation warnings. The military issued further warnings Saturday afternoon for 10 southern Lebanese villages on both banks of the Litani River, pending…",
+          "source": "times_of_israel",
+          "source_name": "The Times of Israel",
+          "country": "IL",
+          "published": "Sat, 23 May 2026 12:44:53 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymaverick.co.za/article/2026-05-22-us-hits-nine-hezbollah-aligned-individuals-in-lebanon-with-sanctions/",
+          "headline": "US hits nine Hezbollah-aligned individuals in Lebanon with sanctions",
+          "snippet": "By Andrea Shalal Treasury's Office of Foreign Assets Control said the officials were embedded across Lebanon’s parliament, military, and security sectors, where they worked to preserve Hezbollah's influence over key Lebanese state institutions. “Hezbollah is a terrorist organization and must be…",
+          "source": "daily_maverick",
+          "source_name": "Daily Maverick (SA)",
+          "country": "ZA",
+          "published": "Fri, 22 May 2026 04:38:56 GMT",
+          "image_url": "https://cdn.dailymaverick.co.za/attachments/2991/GettyImages-2272430129_705066.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/news/us/2026/05/21/us-announces-sanctions-on-lebanon-security-officials-and-mps-due-to-hezbollah-influence/",
+          "headline": "US imposes sanctions on Lebanon security officials and MPs due to Hezbollah influence",
+          "snippet": "The has imposed sanctions on nine people in Lebanon accused of blocking the peace process and impeding efforts to disarm Hezbollah . Among those under sanctions are Hezbollah -affiliated MPs, state security officials and allies of the group. \"These Hezbollah-aligned officials include individuals…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Thu, 21 May 2026 21:15:21 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/E3TWZNFJJFFEFO7JMPC2ZR4N4E?auth=2e606d77a3305748f5be1db27434495ac2301dafd99af34bc67a37bf696dcc10&smart=true&width=2689&height=1512",
+          "video_url": null
+        },
+        {
+          "url": "https://en.irna.ir/news/86162694/Lebanon-ceasefire-will-be-included-in-any-deal-with-US-Iran",
+          "headline": "Lebanon ceasefire will be included in any deal with US, Iran FM tells Hezbollah leader",
+          "snippet": "Tehran, IRNA – Foreign Minister Abbas Araghchi has told Hezbollah’s secretary-general that any agreement with Washington must be linked to a ceasefire in Lebanon, stressing that Tehran’s latest proposal for ending the war, delivered via Pakistani mediation, included the necessity of a Lebanon truce.",
+          "source": "irna",
+          "source_name": "IRNA",
+          "country": "IR",
+          "published": "Sat, 23 May 2026 15:48:19 GMT",
+          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172883335.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hezbollah-lebanon-ceasefire-included-latest-iranian-proposal-us",
+          "headline": "Hezbollah: Lebanon ceasefire included in latest Iranian proposal to US",
+          "snippet": "Hezbollah says it has received a message from Iranian Foreign Minister Abbas Araghchi stating that Lebanon’s inclusion in any agreement with the United States was explicitly emphasised in Tehran's latest proposal presnted to Pakistani mediators. In the letter to Hezbollah Secretary-General Sheikh…",
+          "source": "middle_east_eye",
+          "source_name": "Middle East Eye",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 14:33:34 +0100",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/news/mena/2026/03/27/lebanon-persists-with-move-to-declare-irans-ambassador-persona-non-grata-despite-hezbollah-opposition/",
+          "headline": "Lebanon persists with move to declare Iran's ambassador persona non grata despite Hezbollah opposition",
+          "snippet": "Live updates: Follow the latest news on US-Iran war Lebanon will persist with its decision to withdraw approval of Iran’s ambassador-designate to Beirut, despite intense opposition from Lebanon's two main Shiite parties. None of the four ministers nominated by the two parties – Iran-backed…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Fri, 27 Mar 2026 11:39:32 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/KYPOKY2K3R5M5FT2C5DQN6DFNE.jpg?auth=4747f2e1ee8cc9d50f444b49ae8193522bb3a35519e4f2ff32c95a88dd84bc29&smart=true&width=6000&height=4000",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.002,
+        "zionist": -0.064,
+        "atlanticist": 0.11,
+        "statist": 0.346,
+        "financialized": 0.176
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "africa": 1,
+        "adversarial": 1,
+        "west": 1,
+        "middle-east": 2
       },
       "section": "world"
     },
