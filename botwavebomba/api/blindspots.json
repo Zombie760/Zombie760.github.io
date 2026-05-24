@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T10:40:39.237030+00:00",
-  "count": 66,
+  "generated_at": "2026-05-24T10:55:45.774133+00:00",
+  "count": 65,
   "stories": [
     {
       "id": "64c47aff1fe9",
@@ -1162,6 +1162,236 @@
       "is_front_page": true
     },
     {
+      "id": "9dafab0d8622",
+      "headline": "El mensaje que Zapatero envió a Julio Martínez tras unos contactos “al más alto nivel” para favorecer vuelos de Plus Ultra en Venezuela: “Exitosa gestión”",
+      "summary": "La UDEF detalla los contactos mantenidos con el Instituto Nacional de Aeronáutica Civil de Venezuela por los problemas operativos de Plus Ultra",
+      "published": "Sun, 24 May 2026 10:46:32 +0000",
+      "image_url": "https://www.infobae.com/resizer/v2/HASGSNE7DNFTFJSLJEST6HBLBE.jpg?auth=5388f7688520e7b57f8c7ec94cdbf23e26b989908f3a7b573ab6d263006d2d32&smart=true&width=1920&height=1279",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 0,
+        "right_pct": 100,
+        "state_count": 0,
+        "dominant": "right",
+        "dominant_pct": 100
+      },
+      "bias_variance": 0.0,
+      "entity_count": 8,
+      "entity_list": [
+        "Exitosa",
+        "Gobierno",
+        "Julio",
+        "Maduro",
+        "Nuevas",
+        "Ultra",
+        "Venezuela",
+        "Zapatero"
+      ],
+      "sources": [
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "clarin_ar",
+          "name": "Clarín Argentina",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/feijoo-dice-que-zapatero-tenia-al-gobierno-detras-en-el-caso-plus-ultra-no-era-un-jubilado-haciendo-negocios/",
+          "headline": "Feijóo dice que Zapatero \"tenía al Gobierno detrás\" en el caso Plus Ultra: \"No era un jubilado haciendo negocios\"",
+          "snippet": "El líder del PP, Alberto Núñez Feijóo, ha sostenido que el expresidente del Gobierno José Luis Rodríguez Zapatero, imputado esta semana en el caso Plus Ultra, \"no era un jubilado haciendo negocios por su cuenta\" sino que \"tenía detrás al poder, al Consejo de Ministros y a la Presidencia del…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 13:31:19 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/HASGSNE7DNFTFJSLJEST6HBLBE.jpg?auth=5388f7688520e7b57f8c7ec94cdbf23e26b989908f3a7b573ab6d263006d2d32&smart=true&width=1920&height=1279",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/el-presidente-de-plus-ultra-satisfecho-tras-hablar-con-el-hombre-de-zapatero-en-venezuela/",
+          "headline": "El presidente de Plus Ultra, satisfecho tras hablar con el hombre de Zapatero en Venezuela",
+          "snippet": "Madrid, 23 may (EFE).- Un informe de la Unidad de Delincuencia Económica y Fiscal (UDEF) de la Policía Nacional, al que ha tenido acceso EFE, recoge un mensaje del presidente de Plus Ultra, Julio Martínez Sola, con un accionista de la aerolínea, a quien le dice haber tenido una \"conversación…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 20:03:55 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/zapatero-y-sus-hijas-principales-beneficiarios-de-la-red-de-plus-ultra-segun-la-udef/",
+          "headline": "Zapatero y sus hijas, principales beneficiarios de la red de Plus Ultra, según la UDEF",
+          "snippet": "Madrid, 23 may (EFE).- El expresidente del Gobierno José Luis Rodríguez Zapatero y sus hijas son los principales beneficiarios finales de los fondos obtenidos por la red de Plus Ultra con el rescate del Gobierno durante la pandemia, según un informe de la Unidad de Delincuencia Económica y Fiscal…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 20:03:38 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/la-presunta-trama-de-plus-ultra-recurrio-a-zapatero-por-ser-pro-sanchez-y-pro-maduro-el-fin-justifica-los-medios/",
+          "headline": "La presunta trama de Plus Ultra recurrió a Zapatero por ser \"pro Sánchez y pro Maduro\": \"El fin justifica los medios\"",
+          "snippet": "La Unidad de Delincuencia Económica y Fiscal (UDEF) de la Policía Nacional detectó conversaciones de los implicados en la presunta trama del 'caso Plus Ultra' que investiga la Audiencia Nacional en la que conversaban sobre el rol del expresidente del Gobierno José Luis Rodríguez Zapatero para…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:16:09 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/M3AZMBPLFFA4ZEMJLF764WMQWE.jpg?auth=36e1c0e30bb8e0759bb726e502550c0c73e9307d11e5057d4314491540003fe3&smart=true&width=1920&height=1280",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/zapatero-y-sus-hijasprincipales-beneficiarios-de-red-de-plus-ultradice-policia-espanola/",
+          "headline": "Zapatero y sus hijas,principales beneficiarios de red de Plus Ultra,dice Policía española",
+          "snippet": "(Corrige en la EX6227 el primer intertítulo, bien: La trama intentó boicotear la investigación) Madrid, 23 may (EFE).- El expresidente del Gobierno español José Luis Rodríguez Zapatero y sus hijas son los principales beneficiarios finales de los fondos obtenidos por la red de Plus Ultra con el…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 22:03:33 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/2026/05/23/el-informe-de-la-udef-senala-a-zapatero-como-lider-de-una-red-que-gestiono-ayudas-publicas-a-plus-ultra-por-53-millones-de-euros/",
+          "headline": "El informe de la UDEF señala a Zapatero como líder de una red que gestionó ayudas públicas a Plus Ultra por 53 millones de euros",
+          "snippet": "José Luis Rodríguez Zapatero, expresidente del Gobierno. / Europa Press El informe de la Unidad de Delincuencia Económica y Fiscal (UDEF) de la Policía, al que ha tenido acceso Infobae, señala al ex presidente del Gobierno, José Luis Rodríguez Zapatero , como líder de una red que gestionó ayudas…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 22:29:37 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/KF7Y5S3JURCGHMENFXPMTPAAL4.jpg?auth=d913d20535cbe5677d46312120834bd1cf0b5d2e03bbfba1f26da56e6f1b4a61&smart=true&width=6686&height=4376",
+          "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/mundo/nuevas-revelaciones-jose-luis-rodriguez-zapatero-caso-plus-ultra-empresa-intentaron-boicotear-investigacion_0_MmOS7S8DA8.html",
+          "headline": "Nuevas revelaciones sobre José Luis Rodríguez Zapatero y el caso Plus Ultra: desde la empresa intentaron boicotear la investigación",
+          "snippet": "Nuevos informes policiales sacaron a la luz nuevos detalles del caso Plus Ultra, por el que investigan al expresidente del Gobierno de España, José Luis Rodríguez Zapatero , como líder de una supuesta red de tráfico de influencias. El nuevo material expone intentos desde la empresa para boicotear…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 01:13:22 +0000",
+          "image_url": "https://www.clarin.com/img/2026/05/19/4RE08XdXS_1200x630__1.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/2026/05/24/es-pro-sanchez-y-pro-maduro-el-fin-justifica-los-medios-la-policia-revela-como-los-jefes-de-plus-ultra-decidieron-buscar-la-influencia-de-zapatero-para-rescatar-la-aerolinea/",
+          "headline": "“Es pro Sánchez y pro Maduro. El fin justifica los medios”: la Policía revela cómo los jefes de Plus Ultra decidieron buscar la influencia de Zapatero para rescatar la aerolínea",
+          "snippet": "Zapatero en Caracas con Delcy Rodríguez, en una foto de archivo. (Europa Press) Hubo, desde el principio, dos nombres que los jefes de Plus Ultra pusieron sobre la mesa cuando empezaron a organizarse para conseguir que España rescatara la aerolínea en plena pandemia del covid: José Luis Rodríguez…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 04:00:05 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/B4BURUC265HJTGYJNZSW7FJSIA.jpg?auth=060e18e10fd45be6a6cd4b48a9b554cb45ec5a702faed9fe0ea30ecf69dae8dc&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/24/exitosa-gestion-el-mensaje-de-zapatero-al-lugarteniente-del-caso-plus-ultra/",
+          "headline": "\"Exitosa gestión\": el mensaje de Zapatero al \"lugarteniente\" del caso Plus Ultra",
+          "snippet": "Madrid, 24 may (EFE).- Uno de los informes policiales del caso Plus Ultra destaca un mensaje que los agentes atribuyen al expresidente José Luis Rodríguez Zapatero en el que felicita a su amigo y \"lugarteniente\" de la trama, Julio Martínez, tras una gestión \"al más alto nivel con Venezuela\". \"En…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 08:31:10 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/24/los-trabajos-de-maquetacion-de-las-hijas-de-zapatero-en-el-foco-del-caso-plus-ultra/",
+          "headline": "Los trabajos de maquetación de las hijas de Zapatero, en el foco del caso Plus Ultra",
+          "snippet": "Madrid, 24 may (EFE).- Las hijas de José Luis Rodríguez Zapatero realizaron para la empresa de Julio Martínez Martínez, supuesto \"lugarteniente\" del expresidente del Gobierno, trabajos de maquetación de informes, unas tareas de \"escasa entidad técnica\" que llevan a los investigadores a sospechar…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 09:46:43 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/2026/05/24/el-mensaje-que-zapatero-envio-a-julio-martinez-tras-unas-gestiones-al-mas-alto-nivel-para-favorecer-vuelos-de-plus-ultra-en-venezuela-exitosa-gestion/",
+          "headline": "El mensaje que Zapatero envió a Julio Martínez tras unas gestiones “al más alto nivel” para favorecer vuelos de Plus Ultra en Venezuela: “Exitosa gestión”",
+          "snippet": "El expresidente del Gobierno, José Luis Rodríguez Zapatero, y el empresario Julio Martínez (Montaje Infobae) La Unidad de Delincuencia Económica y Fiscal (UDEF) atribuye a José Luis Rodríguez Zapatero un mensaje enviado a uno de los principales investigados del ‘caso Plus Ultra’, Julio Martínez,…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 10:26:54 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/MGOI6OH52RDCBFAOKIF66AWWCQ.png?auth=b1519199de097d3558a675f68b22999d62ddd237862a7a63e35005fd2c927005&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/2026/05/24/el-mensaje-que-zapatero-envio-a-julio-martinez-tras-unas-gestiones-al-mas-alto-nivel-para-favorecer-vuelos-de-plus-ultra-en-venezuela-exitosa-gestion/",
+          "headline": "El mensaje que Zapatero envió a Julio Martínez tras unos contactos “al más alto nivel” para favorecer vuelos de Plus Ultra en Venezuela: “Exitosa gestión”",
+          "snippet": "El expresidente del Gobierno, José Luis Rodríguez Zapatero, y el empresario Julio Martínez (Montaje Infobae) La Unidad de Delincuencia Económica y Fiscal (UDEF) atribuye a José Luis Rodríguez Zapatero un mensaje enviado a uno de los principales investigados del ‘caso Plus Ultra’, Julio Martínez,…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 10:46:32 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/MGOI6OH52RDCBFAOKIF66AWWCQ.png?auth=b1519199de097d3558a675f68b22999d62ddd237862a7a63e35005fd2c927005&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/2026/05/24/quien-es-quien-en-el-caso-plus-ultra-un-entramado-de-empresarios-politicos-y-sociedades-que-coloca-en-el-centro-de-la-investigacion-a-zapatero/",
+          "headline": "Quién es quién en el caso Plus Ultra: un entramado de empresarios, políticos y sociedades que coloca en el centro de la investigación a Zapatero",
+          "snippet": "Composición fotográfica de los imlicados en el caso Plus Ultra (Montaje Infobae) La escena política española ha quedado eclipsada por las informaciones que surgen día a día sobre el caso Plus Ultra, que coloca en el centro de una trama de corrupción al expresidente socialista José Luis Rodríguez…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 10:41:24 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/ENPLQLDJYZBTTJWAZGQGF2EWRI.png?auth=4f0cde39943a8377d6b69c967ed3bd83499bfc29615121757ff5e1daa40b8a25&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/2026/05/24/la-reunion-entre-el-director-de-plus-ultra-y-los-zapatero-y-los-chinos-durante-la-tramitacion-del-rescate-a-plus-ultra/",
+          "headline": "La reunión entre el director de Plus Ultra y “los Zapatero y los chinos” durante la tramitación del rescate a la aerolínea",
+          "snippet": "02/03/2026 El expresidente del Gobierno José Luis Rodríguez Zapatero en el Senado. (Eduardo Parra - Europa Press) El expresidente del Gobierno, José Luis Rodríguez Zapatero, se reunió en persona con el presidente de Plus Ultra, Julio Martínez Sola, y con unos empresarios de nacionalidad china en…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 10:40:52 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/ZUX4BQF4WRGYVDRSWPE553ZXKM.jpg?auth=4e24174dae8ed5a16c8374c4a703f504a8a6117dda8c6837509ce697de4c7775&smart=true&width=1920&height=1328",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.46,
+        "statist": 0.29,
+        "financialized": 0.47
+      },
+      "fp_source_count": 2,
+      "geo_frame": "blackout",
+      "geo_frame_label": "Western Blackout: US Foreign Policy Target",
+      "geo_frame_topic": "us-foreign-policy",
+      "geo_breakdown": {
+        "latin-america": 2
+      },
+      "section": "world",
+      "is_front_page": true
+    },
+    {
       "id": "9182092d6b80",
       "headline": "Israel releases two activists from Gaza-bound Global Sumud Flotilla",
       "summary": "Activists Saif Abukeshek and Thiago Avila were part of a second Global Sumud Flotilla launched from Spain on April 12 to try to break Israel's blockade of Gaza by delivering aid to the enclave.",
@@ -2069,7 +2299,7 @@
       "id": "7803956b1ac2",
       "headline": "Agenda de TV y streaming: River vs. Belgrano, juega Messi, Colapinto en la Fórmula 1 y Roland Garros",
       "summary": "Fútbol europeo, tenis, básquetbol y ciclismo completan la actividad deportiva en el cierre del fin de semana, disponible a través de las pantallas",
-      "published": "Sun, 24 May 2026 09:35:52 GMT",
+      "published": "Sun, 24 May 2026 10:38:16 GMT",
       "image_url": "https://www.infobae.com/resizer/v2/PC2O2BXCJZFDBEPBAGIXI5NMFE.JPG?auth=bff9e936e2d017aee081017a6c3fbf40c69492df9c740e9b27a0a4874d28d3d5&smart=true&width=800&height=533",
       "video_url": null,
       "has_video": false,
@@ -2085,7 +2315,7 @@
         "dominant_pct": 64
       },
       "bias_variance": 1.41,
-      "entity_count": 26,
+      "entity_count": 27,
       "entity_list": [
         "Agenda",
         "Andrey",
@@ -2106,6 +2336,7 @@
         "Nadal",
         "Online",
         "Opening",
+        "Paris",
         "Previa",
         "Provjerite",
         "River",
@@ -2479,6 +2710,17 @@
           "published": "Sun, 24 May 2026 09:35:52 GMT",
           "image_url": "https://s.france24.com/media/display/ae459a1c-574c-11f1-9dd8-005056bfb2b6/w:1024/p:16x9/EN-20260524-081929-082107-CS.jpg",
           "video_url": null
+        },
+        {
+          "url": "https://www.france24.com/en/roland-garros-2026-french-open-starts-amid-heat-wave-in-paris",
+          "headline": "Roland-Garros 2026: French Open starts amid heat wave in Paris",
+          "snippet": "James Vasina is live from Paris.",
+          "source": "france24",
+          "source_name": "France 24",
+          "country": "FR",
+          "published": "Sun, 24 May 2026 10:38:16 GMT",
+          "image_url": "https://s.france24.com/media/display/a585131c-575b-11f1-88e5-005056bfb2b6/w:1024/p:16x9/EN-20260524-121250-121503-CS.jpg",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -2809,8 +3051,7 @@
         "west": 7,
         "eastern-europe": 2
       },
-      "section": "chisme",
-      "is_front_page": true
+      "section": "chisme"
     },
     {
       "id": "6f052045714b",
@@ -6217,165 +6458,6 @@
       "geo_frame_topic": null,
       "geo_breakdown": {
         "global-south": 4
-      },
-      "section": "world"
-    },
-    {
-      "id": "0b49d46304ce",
-      "headline": "BREAKING Cristian Mungiu a câștigat premiul Palme d’Or cu filmul Fjord / Regizorul român intră în istorie cu al doilea Palme d’Or  alături de Francis Ford Coppola și Emir Kusturica",
-      "summary": "<p>Regizorul român Cristian Mungiu a primit sâmbătă seară premiul Palme d&#8217;Or la Festivalul Cannes 2026, potrivit transmisiei live de la eveniment. El intră în istoria cinematografului european cu cel de-al doilea premiu la Cannes. Cristian Mungiu câștigase prestigiosul trofeu Palme d&#8217;Or ",
-      "published": "Sun, 24 May 2026 08:05:14 GMT",
-      "image_url": "https://www.g4media.ro//wp-content/uploads/2025/02/ID78691_INQUAM_Photos_Octav_Ganea.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 33,
-        "center_pct": 67,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 67
-      },
-      "bias_variance": 4.73,
-      "entity_count": 13,
-      "entity_list": [
-        "BREAKING",
-        "Coppola",
-        "Cristian",
-        "Filmul",
-        "Fjord",
-        "Francis",
-        "Kusturica",
-        "Mungiu",
-        "Oscar",
-        "Palme",
-        "Prima",
-        "Regizorul",
-        "Romanian"
-      ],
-      "sources": [
-        {
-          "id": "g4media",
-          "name": "G4Media",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "romanian_insider",
-          "name": "Romanian Insider",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "la_jornada_mx",
-          "name": "La Jornada",
-          "country": "MX",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.g4media.ro/prima-reactie-a-lui-cristian-mungiu-dupa-ce-a-castigat-palme-dor-cu-filmul-fjord-societatile-astazi-sunt-fracturate-si-radicalizate.html",
-          "headline": "Prima reacție a lui Cristian Mungiu după ce a câștigat Palme d’Or cu filmul Fjord: ”Societățile, astăzi, sunt fracturate și radicalizate”,",
-          "snippet": "Cristian Mungiu a declarat sâmbătă noaptea la Cannes, imediat după ce a primit Palme d’Or pentru filmul Fjord, că ”Starea lumii de astăzi nu este bună. Nu sunt mândru de ceea ce lăsăm copiilor noștri. Era de datoria noastră să facem schimbarea”, transmite Le Monde. ”Societățile, astăzi, sunt…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sat, 23 May 2026 19:53:50 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2025/02/ID78691_INQUAM_Photos_Octav_Ganea.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/breaking-cristian-mungiu-a-castigat-premiul-palme-dor-cu-filmul-fjord-regizorul-roman-intra-in-istorie-cu-al-doilea-palme-dor.html",
-          "headline": "BREAKING Cristian Mungiu a câștigat premiul Palme d’Or cu filmul Fjord / Regizorul român intră în istorie cu al doilea Palme d’Or  alături de Francis Ford Coppola și Emir Kusturica",
-          "snippet": "Regizorul român Cristian Mungiu a primit sâmbătă seară premiul Palme d’Or la Festivalul Cannes 2026, potrivit transmisiei live de la eveniment. El intră în istoria cinematografului european cu cel de-al doilea premiu la Cannes. Cristian Mungiu câștigase prestigiosul trofeu Palme d’Or la Festivalul…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sat, 23 May 2026 19:40:01 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/Cristian-Mungiu-si-Sebastian-Stan.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.romania-insider.com/mungiu-palme-dor-fjord-may-2026",
-          "headline": "Romanian director Cristian Mungiu wins second Palme d’Or for Fjord",
-          "snippet": "Cristian Mungiu’s Fjord , starring Sebastian Stan and Renate Reinsve, has won the Palme d’Or for best film at this year’s Cannes Film Festival. It is the second time the Romanian director wins the award, after his 2007 win for the abortion drama 4 Months, 3 Weeks and 2 Days . At the Cannes…",
-          "source": "romanian_insider",
-          "source_name": "Romanian Insider",
-          "country": "RO",
-          "published": "Sat, 23 May 2026 23:04:18 +0300",
-          "image_url": "https://cdn.romania-insider.com/sites/default/files/2026-05/mungiu_fjordthefilm_fb.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/afp-cristian-mungiu-autorul-unor-radiografii-implacabile-despre-diviziunile-sociale.html",
-          "headline": "AFP: Cristian Mungiu, autorul unor „radiografii” implacabile despre diviziunile sociale",
-          "snippet": "Câştigând al doilea său trofeu Palme d’Or la Festivalul de la Cannes sâmbătă seară, românul Cristian Mungiu a intrat într-un club foarte select de cineaşti şi confirmă totodată talentul său de observator perspicace al diviziunilor din ţara sa şi din societatea occidentală, afirmă jurnaliştii de la…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sun, 24 May 2026 04:13:26 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/Cristian-Mungiu-Cannes-2.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/filmul-fjord-al-lui-cristian-mungiu-inclus-automat-in-cursa-pentru-nominalizare-la-oscar.html",
-          "headline": "Filmul ”Fjord” al lui Cristian Mungiu, inclus automat în cursa pentru nominalizare la Oscar",
-          "snippet": "Succesul filmului „Fjord” la Cannes nu înseamnă doar al doilea Palme d’Or din cariera lui Cristian Mungiu, ci și un avantaj important în perspectiva sezonului premiilor de la Hollywood, putând deveni primul film de ficțiune românesc nominalizat la Premiile Oscar, potrivit Mediafax . Grație noilor…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sun, 24 May 2026 05:17:53 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/profimedia-1104790850.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.jornada.com.mx/2026/05/24/espectaculos/a06n1esp?partner=rss",
-          "headline": "“Las sociedades de hoy están fracturadas, radicalizadas”: señala Cristian Mungiu",
-          "snippet": "▲ El director, guionista y productor rumano Cristian Mungiu celebra en el escenario tras ganar la Palma de Oro por la película Fjord durante la ceremonia de clausura de la 79 edición del Festival de Cine de Cannes. Foto Afp Afp Periódico La Jornada Domingo 24 de mayo de 2026, p. 6 Cannes. El rumano…",
-          "source": "la_jornada_mx",
-          "source_name": "La Jornada",
-          "country": "MX",
-          "published": "Sun, 24 May 2026 08:05:14 GMT",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.037,
-        "zionist": 0.15,
-        "atlanticist": 0.353,
-        "statist": -0.077,
-        "financialized": 0.133
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "eastern-europe": 2,
-        "latin-america": 1
       },
       "section": "world"
     },
@@ -12988,216 +13070,6 @@
         "eastern-europe": 2
       },
       "section": "tech"
-    },
-    {
-      "id": "8f787ff08bd3",
-      "headline": "Champions Cup final recap: Holders Bordeaux DEMOLISH Leinster in Bilbao",
-      "summary": "",
-      "published": "Sat, 23 May 2026 20:44:19 GMT",
-      "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-doris-bielle-biarrey_7256389.jpg?20260523132011",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "No partisan coverage",
-      "blindspot_score": 5.0,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 100,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 100
-      },
-      "bias_variance": 0.0,
-      "entity_count": 11,
-      "entity_list": [
-        "Begles",
-        "Bilbao",
-        "Bordeaux",
-        "Champions",
-        "DEMOLISH",
-        "Holders",
-        "Leinster",
-        "Magnificent",
-        "Masters",
-        "McIlroy",
-        "THRASHING"
-      ],
-      "sources": [
-        {
-          "id": "sky_sports",
-          "name": "Sky Sports",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "bbc_sport",
-          "name": "BBC Sport",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.skysports.com/rugby-union/leinster-vs-bordeaux-beg/live/111166",
-          "headline": "Champions Cup final LIVE! Leinster seek to end years of hurt vs holders Bordeaux",
-          "snippet": "",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:38:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-doris-bielle-biarrey_7256389.jpg?20260523132011",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/rugby-union/leinster-vs-bordeaux-beg/live/111166",
-          "headline": "Champions Cup final LIVE! Leinster lead early vs holders Bordeaux",
-          "snippet": "",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:38:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-doris-bielle-biarrey_7256389.jpg?20260523132011",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/rugby-union/leinster-vs-bordeaux-beg/live/111166",
-          "headline": "Champions Cup final LIVE! Holders Bordeaux hit back vs Leinster",
-          "snippet": "",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:38:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-doris-bielle-biarrey_7256389.jpg?20260523132011",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/rugby-union/leinster-vs-bordeaux-beg/live/111166",
-          "headline": "Champions Cup final LIVE! Holders Bordeaux stretch lead vs Leinster",
-          "snippet": "",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:38:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-doris-bielle-biarrey_7256389.jpg?20260523132011",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/rugby-union/leinster-vs-bordeaux-beg/live/111166",
-          "headline": "Champions Cup final LIVE! Holders Bordeaux THRASHING Leinster in Bilbao",
-          "snippet": "",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:38:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-doris-bielle-biarrey_7256389.jpg?20260523132011",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/rugby-union/leinster-vs-bordeaux-beg/report/111166",
-          "headline": "Bordeaux-Begles dominate Leinster to retain Champions Cup",
-          "snippet": "Michael Cantillon Sports Journalist Champions Cup final: Bordeaux-Begles 41-19 Leinster as French side dominate to retain title Maxime Lucu, Pablo Uberti, Louis Bielle-Biarrey (two) and Yoram Moefana score tries as Bordeaux-Begles dominate Leinster to clinch Champions Cup title in Bilbao, backing…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 16:49:00 BST",
-          "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-maxime-lucu-bordeaux_7256453.jpg?20260523155531",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/rugby-union/leinster-vs-bordeaux-beg/live/111166",
-          "headline": "Champions Cup final LIVE! Holders Bordeaux DEMOLISH Leinster in Bilbao",
-          "snippet": "",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:38:00 BST",
-          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-louis-bielle-biarrey_7256447.jpg?20260523155300",
-          "video_url": null
-        },
-        {
-          "url": "https://www.bbc.com/sport/rugby-union/articles/cddpn1ly4y5o?at_medium=RSS&at_campaign=rss",
-          "headline": "Magnificent Bordeaux thrash Leinster to retain Champions Cup",
-          "snippet": "Bordeaux-Begles score five first-half tries to retain the Champions Cup title with a comfortable victory over Leinster in the final in Bilbao and prolong the Irish team's agony in European rugby's showpiece game.",
-          "source": "bbc_sport",
-          "source_name": "BBC Sport",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 15:48:42 GMT",
-          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/73dc/live/0bb07c10-56b9-11f1-a8ac-b93df832a6b3.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/rugby-union/live-blog/12040/13547088/champions-cup-final-live-leinster-vs-holders-bordeaux-begles-updates-latest-scores-team-news-commentary-from-san-mames-bilbao",
-          "headline": "Champions Cup final: Holders Bordeaux DEMOLISH Leinster in Bilbao",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Rugby Union All…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:38:00 BST",
-          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-louis-bielle-biarrey_7256447.jpg?20260523155300",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/rugby-union/live-blog/12040/13547088/champions-cup-final-live-leinster-vs-holders-bordeaux-begles-updates-latest-scores-team-news-commentary-from-san-mames-bilbao",
-          "headline": "Champions Cup final recap: Holders Bordeaux DEMOLISH Leinster in Bilbao",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Rugby Union All…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 13:38:00 BST",
-          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-louis-bielle-biarrey_7256447.jpg?20260523155300",
-          "video_url": null
-        },
-        {
-          "url": "https://www.bbc.com/sport/rugby-union/articles/cz7283x1w7po?at_medium=RSS&at_campaign=rss",
-          "headline": "'Too high a mountain' for Leinster as Bordeaux lift Champions Cup",
-          "snippet": "Leinster travelled to Bilbao with dreams of a fifth European star to add to their badge. They had hoped for redemption in the Basque city, the site of their last Champions Cup triumph in 2018, where they could wipe away the pain of their previous four defeats. However, after being blown away by a…",
-          "source": "bbc_sport",
-          "source_name": "BBC Sport",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 18:09:22 GMT",
-          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1224/live/0c71e790-56ca-11f1-8061-9f414900f587.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.bbc.com/sport/rugby-union/articles/cgjp0772ey5o?at_medium=RSS&at_campaign=rss",
-          "headline": "Champions Bordeaux inspired by McIlroy's Masters feat",
-          "snippet": "Six Nations. Champions Cup. Challenge Cup. Bordeaux Begles' demolition job over Leinster completed the European clean sweep for French men's rugby teams. Leinster, a side full to the brim of Irish internationals, did not have an answer as Bordeaux romped to a 41-19 victory in Bilbao to become only…",
-          "source": "bbc_sport",
-          "source_name": "BBC Sport",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 20:44:19 GMT",
-          "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8fd6/live/96b418c0-56c4-11f1-a46a-27799ce67605.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.08,
-        "zionist": 0.21,
-        "atlanticist": 0.39,
-        "statist": 0.06,
-        "financialized": 0.23
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 2
-      },
-      "section": "sports"
     },
     {
       "id": "2b4556890b82",
