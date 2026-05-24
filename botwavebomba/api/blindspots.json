@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-24T18:13:22.492505+00:00",
-  "count": 62,
+  "generated_at": "2026-05-24T18:29:15.410964+00:00",
+  "count": 63,
   "stories": [
     {
       "id": "64c47aff1fe9",
       "headline": "Guerra de Estados Unidos e Israel contra Irán, en vivo: tensión en Medio Oriente hoy, domingo 24 de mayo",
       "summary": "Cobertura en tiempo real con las novedades más importantes del conflicto y las acciones del mandatario estadounidense, Donald Trump",
-      "published": "Sun, 24 May 2026 17:08:30 +0000",
+      "published": "Sun, 24 May 2026 18:17:15 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/PW3F3Z5IGZC4BFXLBARQDTO6SA.JPG?auth=3bf20790eaa4596d49969391222e8e9aa7b9ed9737439096bf56bce53212e0c6&smart=true&width=8640&height=5760",
       "video_url": null,
       "has_video": false,
@@ -22,10 +22,11 @@
         "dominant_pct": 56
       },
       "bias_variance": 0.82,
-      "entity_count": 63,
+      "entity_count": 66,
       "entity_list": [
         "Alejandro",
         "Algunos",
+        "Apenas",
         "Aumenta",
         "Basil",
         "Beijing",
@@ -39,6 +40,7 @@
         "Chapitos",
         "China",
         "Cobrar",
+        "Colombia",
         "Colombianos",
         "Comando",
         "Confirmado",
@@ -83,6 +85,7 @@
         "Trump",
         "Uganda",
         "Unidos",
+        "Uribe",
         "Venezuela",
         "Walmart",
         "Waymo",
@@ -967,6 +970,17 @@
           "country": "AR",
           "published": "Sun, 24 May 2026 16:34:44 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/4QHDXKAHOZCLLC6SZAEP5LDZFY.jpeg?auth=7af415380272ba3d83484a597081319b2a32cf0ad416568f366b3aece037aeb4&smart=true&width=1600&height=1065",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/24/alvaro-uribe-envio-mensaje-a-los-grupos-armados-ilegales-de-colombia-apenas-sienta-el-apreton-de-estados-unidos-los-entrega/",
+          "headline": "Álvaro Uribe envió mensaje a los grupos armados ilegales de Colombia: “Apenas sienta el apretón de Estados Unidos, los entrega”",
+          "snippet": "El pronunciamiento del expresidente colombiano (2002-2010) y líder natural del Centro Democrático lo hizo desde el municipio de Segovia, en Antioquia - crédito @AlvaroUribeVel/X Desde el municipio de Segovia, Antioquia, el expresidente Álvaro Uribe Vélez se refirió nuevamente al candidato…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 18:17:15 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/LXMXPQZ4NRG2PCQMMEZAO5Q3IQ.jpg?auth=43265c8c4e8778b21dbe5f187cdd833d7ee4172b3ec190087036474a379dc47f&smart=true&width=900&height=600",
           "video_url": null
         }
       ],
@@ -2404,7 +2418,7 @@
       "id": "464a80d30106",
       "headline": "Guardiola says goodbye to Man City in final game against Aston Villa",
       "summary": "<p>Pep Guardiola bid an emotional farewell to Manchester City as a 2-1 defeat to Aston Villa on Sunday brought down the curtain on a glittering decade under the Catalan.</p>\n<p>The post <a href=\"https://www.vanguardngr.com/2026/05/guardiola-says-goodbye-to-man-city-in-final-game-against-aston-villa/",
-      "published": "Sun, 24 May 2026 18:15:00 BST",
+      "published": "Sun, 24 May 2026 19:17:08 +0000",
       "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-alessia-russo-arsenal_7243373.jpg?20260509123401",
       "video_url": null,
       "has_video": false,
@@ -2413,13 +2427,13 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 60,
-        "right_pct": 40,
+        "center_pct": 64,
+        "right_pct": 36,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 60
+        "dominant_pct": 64
       },
-      "bias_variance": 1.32,
+      "bias_variance": 1.39,
       "entity_count": 26,
       "entity_list": [
         "Arsenal",
@@ -2568,6 +2582,18 @@
           "geo_cluster": "latin-america",
           "factuality": "high",
           "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "punch",
+          "name": "The Punch",
+          "country": "NG",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
           "parent_company": ""
         }
       ],
@@ -2791,16 +2817,27 @@
           "published": "Sun, 24 May 2026 17:31:33 +0000",
           "image_url": "https://www.jamaicaobserver.com/jamaicaobserver/news/wp-content/uploads/sites/4/2026/05/AFP__20260522__B3B79KE__v1__MidRes__FilesFblEngPrManCityGuardiola-1024x676.jpg",
           "video_url": null
+        },
+        {
+          "url": "https://punchng.com/epl-guardiola-goodbye-spoiled-by-man-city-2-1-loss-to-aston-villa/?utm_source=rss.punchng.com&utm_medium=web",
+          "headline": "EPL: Guardiola goodbye spoiled by Man City 2-1 loss to Aston Villa",
+          "snippet": "Pep Guardiola bid an emotional farewell to Manchester City as a 2-1 defeat to Aston Villa on Sunday brought down the curtain on a glittering decade under the Catalan. The 55-year-old announced Friday that he is set to depart after winning 20 trophies in 10 seasons that made City the dominant force…",
+          "source": "punch",
+          "source_name": "The Punch",
+          "country": "NG",
+          "published": "Sun, 24 May 2026 19:17:08 +0000",
+          "image_url": "https://cdn.punchng.com/wp-content/uploads/2020/08/18131509/punch-logo-500x179-1.png",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.179,
-        "zionist": 0.278,
-        "atlanticist": 0.406,
-        "statist": 0.225,
-        "financialized": 0.42
+        "interventionist": 0.172,
+        "zionist": 0.271,
+        "atlanticist": 0.396,
+        "statist": 0.232,
+        "financialized": 0.418
       },
-      "fp_source_count": 10,
+      "fp_source_count": 11,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
@@ -2808,8 +2845,8 @@
         "west": 3,
         "latin-america": 3,
         "pacific-asia": 2,
-        "middle-east": 1,
-        "africa": 1
+        "africa": 2,
+        "middle-east": 1
       },
       "section": "sports",
       "is_front_page": true
@@ -11264,9 +11301,9 @@
     },
     {
       "id": "4e6735c191de",
-      "headline": "Transcript: Dr. Deborah Birx on \"Face the Nation with Margaret Brennan,\" May 24, 2026",
-      "summary": "The following is the transcript of the interview with Dr. Deborah Birx that aired on \"Face the Nation with Margaret Brennan\" on May 24, 2026.",
-      "published": "Sun, 24 May 2026 12:31:22 -0400",
+      "headline": "Transcript: Sen. Chris Van Hollen on \"Face the Nation with Margaret Brennan,\" May 24, 2026",
+      "summary": "The following is the transcript of the interview with Sen. Chris Van Hollen, Democrat of Maryland, that aired on \"Face the Nation with Margaret Brennan\" on May 24, 2026.",
+      "published": "Sun, 24 May 2026 14:08:49 -0400",
       "image_url": null,
       "video_url": null,
       "has_video": false,
@@ -11282,7 +11319,7 @@
         "dominant_pct": 50
       },
       "bias_variance": 5.0,
-      "entity_count": 25,
+      "entity_count": 26,
       "entity_list": [
         "Brennan",
         "Children",
@@ -11293,6 +11330,7 @@
         "Gottheimer",
         "Gottlieb",
         "Hassett",
+        "Hollen",
         "Janti",
         "Kelly",
         "Kevin",
@@ -11490,6 +11528,17 @@
           "published": "Sun, 24 May 2026 12:19:22 -0400",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.cbsnews.com/news/chris-van-hollen-maryland-democrat-face-the-nation-transcript-05-24-2026/",
+          "headline": "Transcript: Sen. Chris Van Hollen on \"Face the Nation with Margaret Brennan,\" May 24, 2026",
+          "snippet": "The following is the transcript of the interview with Sen. Chris Van Hollen, Democrat of Maryland, that aired on \"Face the Nation with Margaret Brennan\" on May 24, 2026. NANCY CORDES: We turn now to Maryland Democratic Senator Chris Van Hollen. Senator, thank you so much for being with me. SENATOR…",
+          "source": "cbs_news",
+          "source_name": "CBS News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 14:08:49 -0400",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -11505,6 +11554,232 @@
       "geo_frame_topic": null,
       "geo_breakdown": {
         "west": 2
+      },
+      "section": "world"
+    },
+    {
+      "id": "89fc68ed80ae",
+      "headline": "Periodista acusó a Gustavo Petro de drogarse por sus declaraciones sobre la violencia en Antioquia y el presidente respondió: “No saben entender la historia”",
+      "summary": "Salud Hernández-Mora señaló que el jefe de Estado manipula la historia con el objetivo de menospreciar a Antioquia y recordó el tiempo que le resta en el cargo",
+      "published": "Sun, 24 May 2026 18:13:14 +0000",
+      "image_url": "https://www.infobae.com/resizer/v2/4YGKTUGNJJCVXFYKLJYNWBQU34.png?auth=822d8e393a97e338eb0e23f9a66ca1d2ce894b6ede513d7829684edf59c45fbc&smart=true&width=1920&height=1080",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 0,
+        "right_pct": 100,
+        "state_count": 0,
+        "dominant": "right",
+        "dominant_pct": 100
+      },
+      "bias_variance": 0.0,
+      "entity_count": 16,
+      "entity_list": [
+        "Alejandro",
+        "Antioquia",
+        "Ayuso",
+        "Cepeda",
+        "Disidencias",
+        "Fuerte",
+        "Gaviria",
+        "Gustavo",
+        "Intocable",
+        "Isabel",
+        "Mateo",
+        "Momposina",
+        "Pacto",
+        "Periodista",
+        "Petro",
+        "Procurador"
+      ],
+      "sources": [
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_nacion_ar",
+          "name": "La Nación (Argentina)",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/09/disidencias-de-las-farc-acusan-al-presidente-gustavo-petro-de-pagar-su-campana-de-la-mano-de-grupos-criminales-la-financio-la-mafia-la-sangre-colombiana/",
+          "headline": "Disidencias de las Farc acusan al presidente Gustavo Petro de pagar su campaña de la mano de grupos criminales: “La financió la mafia, la sangre colombiana”",
+          "snippet": "Guerrillero de Farc increpa a Petro por financiación de campaña - crédito @SALVARANM/X Las tensiones entre disidencias de las Farc y el presidente Gustavo Petro escalaron después de que un vocero rebelde dirigiera acusaciones directas al mandatario ante recientes operaciones militares en Arauca.…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 09 May 2026 18:35:20 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/4YGKTUGNJJCVXFYKLJYNWBQU34.png?auth=822d8e393a97e338eb0e23f9a66ca1d2ce894b6ede513d7829684edf59c45fbc&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/09/por-crimen-de-periodista-mateo-perez-andres-julian-rendon-arremetio-contra-gustavo-petro-por-defender-a-calarca-intocable-en-su-gobierno/",
+          "headline": "Por crimen de periodista Mateo Pérez, Andrés Julián Rendón arremetió contra Gustavo Petro por defender a ‘Calarcá’: “Intocable en su gobierno”",
+          "snippet": "Rendón le contestó a Petro la mañana del sábado 9 de mayo de 2026 - créditos @andresjrendonc/| @gustavopetrourrego/| red social Facebook El hallazgo del cuerpo de Mateo Pérez Rueda, estudiante de ciencia política y periodista de Yarumal, en la zona rural de Briceño (Antioquia), ha desatado un…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 09 May 2026 18:28:03 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/75NE3GXNSNGSXLKTA3QGJLMJIM.png?auth=31ab1fa6f66420603f719dcfbb7582296d553522f428a29da029c6f84a14d1e6&smart=true&width=1890&height=1063",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/el-mundo/fuerte-cruce-en-redes-de-gustavo-petro-a-isabel-diaz-ayuso-por-hernan-cortes-nid09052026/",
+          "headline": "Fuerte cruce en redes de Gustavo Petro a Isabel Díaz Ayuso por Hernán Cortés",
+          "snippet": "El presidente de Colombia, Gustavo Petro , salió este sábado al cruce de la presidenta de la Comunidad de Madrid, Isabel Díaz Ayuso , por la defensa que la alcaldesa hiciera de la figura del conquistador español Hernán Cortés durante su última visita a México. “Hernán Cortés fue un genocida…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sat, 09 May 2026 22:06:09 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/3TVNJBX7OZAEVDGQTDN5DJHQDQ.JPG?auth=9ed79b5630cd9d17517b4dba88c0c94c9b6effbad9064c68cafa69de7d25fc0e&smart=true&width=5392&height=3592",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/10/gustavo-petro-confeso-que-le-propuso-a-ivan-cepeda-ser-el-candidato-del-pacto-historico-lo-hice-por-dos-razones/",
+          "headline": "Gustavo Petro confesó que le propuso a Iván Cepeda ser el candidato del Pacto Histórico: “Lo hice por dos razones”",
+          "snippet": "El mandatario aseguró que pensó en Iván Cepeda como relevo presidencial dentro de su colectividad por su trayectoria en derechos humanos y paz - crédito Colprensa En medio de la campaña electoral que se adelanta en Colombia, el presidente Gustavo reveló un detalle particular que ha llamado la…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 10 May 2026 18:39:38 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/7KYNYGCG6ZHAREJ2KHVJTTF6LQ.jpg?auth=a78ae7948bcf4cbc534d87c834f51d993cf41de063760540046200bd730274db&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/11/periodista-acuso-a-gustavo-petro-de-drogarse-tras-declaraciones-sobre-la-violencia-en-antioquia-y-el-presidente-respondio-no-saben-entender-la-historia/",
+          "headline": "Periodista acusó a Gustavo Petro de drogarse tras declaraciones sobre la violencia en Antioquia y el presidente respondió: “No saben entender la historia”",
+          "snippet": "Gustavo Petro respondió a los señalamientos de Salud Hernández-Mora - crédito Leonardo Fernandez Viloria/REUTERS/El presidente de Colombia, Gustavo Petro, en una extensa publicación en su cuenta oficial de X, vinculó la violencia en Antioquia con la explotación de oro y las políticas mineras…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 11 May 2026 13:07:24 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/DHTW57PZ6JHA5H7QYM4LGDCHD4.JPG?auth=8753943d0086e25e4c31190395217e90140b0a52dd5ff62529131aad2a4c02a2&smart=true&width=6500&height=4333",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/11/periodista-acuso-a-gustavo-petro-de-drogarse-tras-declaraciones-sobre-la-violencia-en-antioquia-y-el-presidente-respondio-no-saben-entender-la-historia/",
+          "headline": "Periodista acusó a Gustavo Petro de drogarse por sus declaraciones sobre la violencia en Antioquia y el presidente respondió: “No saben entender la historia”",
+          "snippet": "Gustavo Petro respondió a los señalamientos de Salud Hernández-Mora - crédito Leonardo Fernandez Viloria/REUTERS/El presidente de Colombia, Gustavo Petro, en una extensa publicación en su cuenta oficial de X, vinculó la violencia en Antioquia con la explotación de oro y las políticas mineras desde…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 11 May 2026 13:55:37 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/OWWGU3PFKBDZDPDUCOV7SAW74I.jpg?auth=5860ac32bd78d901d2e0833518f0503fa62998fb6f9c57854204e113572711cd&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/23/gustavo-petro-decreto-tres-dias-de-duelo-nacional-por-la-muerte-de-toto-la-momposina-y-anuncio-maximo-homenaje/",
+          "headline": "Gustavo Petro decretó tres días de duelo nacional por la muerte de Totó la Momposina y anunció máximo homenaje",
+          "snippet": "Figuras de la cultura, la política y el entretenimiento lamentaron la partida de una de las voces más emblemáticas de la música colombiana - crédito Colprensa El presidente Gustavo Petro decretó tres días de duelo nacional tras la muerte de la cantante y folclorista Sonia Bazanta Vides, más…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 22:44:30 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/PK2TD6EVUFHSPOHPJ2ZUEDSJ3A.jpg?auth=cba4ba4f92015092b024be764476f37d72aff2f4012ad59efdb8d90c205aa0f2&smart=true&width=900&height=606",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/23/alejandro-gaviria-hablo-sin-filtros-sobre-gustavo-petro-todo-era-impacto-politico-y-no-solucionar-problemas/",
+          "headline": "Alejandro Gaviria habló sin filtros sobre Gustavo Petro: “Todo era impacto político y no solucionar problemas”",
+          "snippet": "Alejandro Gaviria critica el liderazgo de Gustavo Petro y señala una ruptura con las promesas de pluralidad en su gabinete - crédito Colprensa Las diferencias entre Alejandro Gaviria y el presidente Gustavo Petro dejaron de ser un rumor político hace mucho tiempo. Sin embargo, en una reciente…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 23:36:57 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/NEQW7L5VJ5DUFDM62KJIOLFABQ.jpg?auth=be8faca063358634115246471680cb0756c8d48200fdded56c84b6b502c10ec1&smart=true&width=900&height=600",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/24/procurador-advierte-a-gustavo-petro-sobre-el-uso-del-poder-para-hacer-politica-no-puede-pasarse-de-ese-limite/",
+          "headline": "Procurador advierte a Gustavo Petro sobre el uso del poder para hacer política: “No puede pasarse de ese límite”",
+          "snippet": "El procurador Gregorio Eljach se refirió al papel del presidente Gustavo Petro en el debate público y a los límites en el uso de su investidura durante el periodo electoral. - crédito Carlos Ortega/EFE/Colprensa El procurador general de la Nación, Gregorio Eljach, lanzó una advertencia directa al…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 07:36:52 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/JNNAXQHC3VA6XGVZGFK5OQOIBE.jpg?auth=2bf393ea3378bae24c4731de077063c6ad8925251b8f355aba803f98bb44d493&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/24/gustavo-petro-sigue-cayendo-en-su-imagen-positiva-entre-los-colombianos-segun-encuesta-del-cnc/",
+          "headline": "Gustavo Petro sigue cayendo en su imagen positiva entre los colombianos, según encuesta del CNC",
+          "snippet": "Aunque disminuyó dos puntos porcentuales, el presidente mantiene una favorabilidad cercana al 50% - crédito Joel González/Presidencia de Colombia A 76 días para que culmine su periodo, el presidente Gustavo Petro registró una caída considerable en la percepción positiva que tiene entre los…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 11:31:02 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/MCZPRUAZOJFNVJSWDK2UMKAG5Y.jpg?auth=759a8023beebd04821fca2a3fbcda567e2aa0d866053fe0ef8efb2ef35b373df&smart=true&width=1280&height=720",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/24/gustavo-petro-insiste-en-fraude-electoral-y-llama-a-la-ciudadania-a-movilizarse-para-cuidar-el-voto-y-su-transparencia/",
+          "headline": "Gustavo Petro insiste en fraude electoral y llama a la ciudadanía a movilizarse para “cuidar el voto y su transparencia”",
+          "snippet": "El llamado del presidente Gustavo Petro lo realizó a través de su cuenta oficial de X - crédito Leonardo Fernández Viloria/REUTERS El presidente de Colombia, Gustavo Petro, pidió nuevamente a los ciudadanos movilizarse de forma masiva para proteger el voto y garantizar su transparencia, ante la…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 13:59:38 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/A632UWHLQVDTJK5L25QRK7XTY4.JPG?auth=be2d2faf1d56d923bc158f46f330aa7034a77909fcbda418df6c3d9e2a5828da&smart=true&width=6500&height=4335",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/24/gustavo-petro-denuncio-acaparamiento-coordinado-de-medicamentos-y-anuncio-acciones-ante-la-cpi-pedire-investigacion-internacional/",
+          "headline": "Gustavo Petro denunció acaparamiento coordinado de medicamentos y anunció acciones ante la CPI: “Pediré investigación internacional”",
+          "snippet": "Gustavo Petro afirmó en X que existiría un acaparamiento coordinado de medicamentos, citó cifras de incautaciones de la Policía Nacional - crédito Imagen Ilustrativa Infobae El presidente de Colombia, Gustavo Petro, declaró que existe un supuesto acaparamiento coordinado de medicamentos en el país…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 16:02:47 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/HXTTTZXR2RGQVG3TIW6FUSBM6E.png?auth=12b6140d1c4cd996cb7bed130e6b51e3b3126d39840589ac89f9c79bbbf7dd9d&smart=true&width=1536&height=1024",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/24/gustavo-petro-y-fico-gutierrez-tuvieron-otro-agarron-por-supuesta-financiacion-de-campanas-desde-isa-peru-no-se-cansa-de-hablar-bobadas/",
+          "headline": "Gustavo Petro y ‘Fico’ Gutiérrez tuvieron otro agarrón por supuesta financiación de campañas desde ISA Perú: “No se cansa de hablar bobadas”",
+          "snippet": "El conflicto entre Petro y Gutiérrez surge tras la denuncia de presunto financiamiento externo de campañas, lo que podría violar la ley electoral colombiana - crédito Colprensa Las recientes acusaciones del presidente Gustavo Petro sobre presuntas irregularidades en los contratos de de la filial…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 18:13:14 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/T5HCGLNVZNAZZN3N4DLFYAILZE.png?auth=902147cd3270d7e593c16a0184cafee103a3b90e9276ed9617dd400397c33101&smart=true&width=1920&height=1080",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.46,
+        "statist": 0.29,
+        "financialized": 0.47
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "latin-america": 2
       },
       "section": "world"
     },
@@ -14694,7 +14969,7 @@
       "id": "2b4556890b82",
       "headline": "Rusia lanzó un ataque masivo con misiles balísticos contra Kiev y hubo alertas en toda Ucrania: al menos 4 muertos y 83 heridos",
       "summary": "Durante el bombardeo, decenas de civiles se refugiaron en las estaciones de metro de la capital. El presidente Volodimir Zelensky confirmó que las fuerzas de Moscú utilizaron 600 drones y el misil hipersónico Oreshnik",
-      "published": "Sun, 24 May 2026 13:47:04 +0000",
+      "published": "Sun, 24 May 2026 18:07:20 +0000",
       "image_url": "https://www.latercera.com/resizer/v2/REKS4ZYIOJDGZCN7F2WECCIIPM.jpg?auth=ee342a4d403892dabfa1cc848b751ff24f509f0d8ad3d6eb03f7870fb856ae18&smart=true&width=1280&height=720",
       "video_url": null,
       "has_video": false,
@@ -14710,16 +14985,18 @@
         "dominant_pct": 43
       },
       "bias_variance": 2.8,
-      "entity_count": 13,
+      "entity_count": 15,
       "entity_list": [
         "Anuncia",
         "Bielorrusia",
+        "Consejo",
         "Desfile",
         "Gobierno",
         "Inteligencia",
         "Oreshnik",
         "Putin",
         "Rusia",
+        "Seguridad",
         "Servicio",
         "Tregua",
         "Trump",
@@ -15054,6 +15331,17 @@
           "published": "Sun, 24 May 2026 13:47:04 +0000",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/mundo/2026/05/24/ucrania-solicito-una-reunion-urgente-del-consejo-de-seguridad-de-la-onu-tras-el-destructivo-ataque-de-rusia-sobre-kiev/",
+          "headline": "Ucrania solicitó una reunión urgente del Consejo de Seguridad de la ONU tras el destructivo ataque de Rusia sobre Kiev",
+          "snippet": "Un integrante de los equipos de emergencia trabaja entre los restos de edificios dañados tras el ataque nocturno ruso con misiles y drones sobre Kiev, en medio de la escalada de la guerra en Ucrania (REUTERS/Thomas Peter) Ucrania solicitó este jueves una reunión urgente del Consejo de Seguridad de…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 18:07:20 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/AGZLUX2WXRC4VGWMIGFDBF4WRU.JPG?auth=91636ba6fbb20a33813f8a1d52207aea92ba56066894c2687e1d2aeef2348e47&smart=true&width=2518&height=1641",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -15328,9 +15616,9 @@
     },
     {
       "id": "dd762252d82d",
-      "headline": "California Gov. Newsom declares state of emergency for Orange County chemical leak as DA launches probe into its cause - CBS News",
+      "headline": "California Gov. Newsom declares state of emergency for Orange County chemical leak as officials search for solutions - CBS News",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQZUZURDEzLUp2dUR0TEFmY0RkdXFyU3lWa0FXZEVPaWRJZVpSU0JZRFVMNVoxT1htRGpnR0RBdmFOQlExYkVhYzBCU3loUGdya2h0dGw1WUZpUTB3c2gwOEJmM3F0dlFwYmZBc2hlRERpclpnREZRMGIxdEZoVUxPbXppQW5IbE9NV21mYUxNa2xuQXRHTE03MkRYNklYZ3RLSl9MR3pxc0NVMUFFVkc0?oc=5\"",
-      "published": "Sun, 24 May 2026 17:59:29 GMT",
+      "published": "Sun, 24 May 2026 14:04:50 -0400",
       "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Funified-incident-commander-craig-covey-128578302.jpg?w%3D1024",
       "video_url": null,
       "has_video": false,
@@ -15346,12 +15634,13 @@
         "dominant_pct": 71
       },
       "bias_variance": 4.39,
-      "entity_count": 14,
+      "entity_count": 15,
       "entity_list": [
         "Angeles",
         "California",
         "Catastrophic",
         "County",
+        "Efforts",
         "Emergencia",
         "Empty",
         "Garden",
@@ -15625,6 +15914,17 @@
           "published": "Sun, 24 May 2026 17:59:29 GMT",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.cbsnews.com/news/california-chemical-leak-orange-county-garden-grove-emergency/",
+          "headline": "Efforts to stop California chemical leak in Orange County on \"new trajectory,\" officials say, as 50,000 remain evacuated",
+          "snippet": "Efforts to stop a California industrial disaster were on a \"new trajectory\" on Sunday, officials said, revealing that crews discovered a pressure-relieving crack in the tank behind a toxic chemical leak in Orange County, where 50,000 people remain evacuated. In a post to X , Orange County Fire…",
+          "source": "cbs_news",
+          "source_name": "CBS News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 14:04:50 -0400",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -15643,7 +15943,7 @@
         "latin-america": 1,
         "middle-east": 1
       },
-      "section": "tech"
+      "section": "world"
     },
     {
       "id": "159b3889062c",
