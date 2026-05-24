@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-24T11:40:32.950517+00:00",
+  "generated_at": "2026-05-24T11:55:37.912244+00:00",
   "count": 65,
   "stories": [
     {
       "id": "64c47aff1fe9",
       "headline": "Guerra de Estados Unidos e Israel contra Irán, en vivo: tensión en Medio Oriente hoy, domingo 24 de mayo",
       "summary": "Cobertura en tiempo real con las novedades más importantes del conflicto y las acciones del mandatario estadounidense, Donald Trump",
-      "published": "Sun, 24 May 2026 08:06:02 +0000",
+      "published": "Sun, 24 May 2026 11:10:36 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/PW3F3Z5IGZC4BFXLBARQDTO6SA.JPG?auth=3bf20790eaa4596d49969391222e8e9aa7b9ed9737439096bf56bce53212e0c6&smart=true&width=8640&height=5760",
       "video_url": null,
       "has_video": false,
@@ -22,11 +22,12 @@
         "dominant_pct": 56
       },
       "bias_variance": 0.82,
-      "entity_count": 51,
+      "entity_count": 53,
       "entity_list": [
         "Alejandro",
         "Algunos",
         "Aumenta",
+        "Basil",
         "Blanca",
         "California",
         "Caracas",
@@ -54,6 +55,7 @@
         "Fuerte",
         "Green",
         "Guerra",
+        "Inglaterra",
         "Inzunza",
         "Israel",
         "Machado",
@@ -845,6 +847,17 @@
           "country": "AR",
           "published": "Sun, 24 May 2026 08:06:02 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/CKEWGIDR4NDG3JUYJABIGN5JFM.jpg?auth=dfe0fcb7aab1d00ba73f9720f170c2f54cab27181c6b5bff4f48f091033372ee&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/internacional/basil-zorro-rojo-viajo-polizon-inglaterra-estados-unidos_0_B5LUCwy8lP.html",
+          "headline": "Basil, el zorro rojo que viajó como polizón de Inglaterra a Estados Unidos",
+          "snippet": "El zorro rojo que sorprendió a muchos neoyorquinos tras ser descubierto como polizón en un barco que viajó desde Inglaterra hasta un puerto de Estados Unidos se encuentra en perfecto estado de salud tras completar una cuarentena y ya tiene nombre: Basi l, informó el zoológico de el Bronx, que lo…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 11:10:36 +0000",
+          "image_url": "https://www.clarin.com/img/2026/05/24/qRfWk2SCF_1200x630__1.jpg",
           "video_url": null
         }
       ],
@@ -3967,6 +3980,197 @@
       "section": "world"
     },
     {
+      "id": "f5991b6c342b",
+      "headline": "At least two killed as Russia uses hypersonic Oreshnik missile in mass attack on Kyiv area",
+      "summary": "<p>Russia says the large-scale attack, using drones and missiles, was retaliation for Ukrainian strikes on 'civilian facilities on Russian territory'</p>\n<p>The post <a href=\"https://www.timesofisrael.com/at-least-two-killed-as-russia-uses-hypersonic-oreshnik-missile-in-mass-attack-on-kyiv-area/\">At",
+      "published": "Sun, 24 May 2026 11:20:02 +0000",
+      "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/6/3/834874/63bb378fcfc310321e32da48dd29d8e1.jpeg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 33,
+        "center_pct": 67,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 8.92,
+      "entity_count": 6,
+      "entity_list": [
+        "Kallas",
+        "Oreshnik",
+        "Ritter",
+        "Russia",
+        "Scott",
+        "Tserkva"
+      ],
+      "sources": [
+        {
+          "id": "ukrainska_pravda_en",
+          "name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "rt_russia",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial",
+          "bias_tier": "unknown",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "npr",
+          "name": "NPR",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "NPR (nonprofit)"
+        },
+        {
+          "id": "the_hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "ukrinform_en",
+          "name": "Ukrinform",
+          "country": "UA",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.pravda.com.ua/eng/news/2026/05/24/8036135/",
+          "headline": "Russia strikes Bila Tserkva with Oreshnik missile – social media",
+          "snippet": "A fire. Stock photo: Suspilne Russia has likely struck the city of Bila Tserkva in Kyiv Oblast with an Oreshnik medium-range ballistic missile. Source: Telegram channels; videos published by eyewitnesses on social media Details: Footage published online appears to show the characteristic impact…",
+          "source": "ukrainska_pravda_en",
+          "source_name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "published": "Sun, 24 May 2026 01:54:00 +0300",
+          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/6/3/834874/63bb378fcfc310321e32da48dd29d8e1.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rt.com/news/640505-oreshnik-kiev-ukraine-ritter/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+          "headline": "Russia hit target ‘worthy of Oreshnik strike’ – Scott Ritter",
+          "snippet": "Moscow is taking action in response to “atrocities” perpetrated by Kiev in Lugansk, the former weapons inspector has said Footage of the Russian strike near Ukrainian capital, Kiev, indicates that an Oreshnik missile was likely deployed by Moscow, former weapons inspector Scott Ritter has said. On…",
+          "source": "rt_russia",
+          "source_name": "RT (Russia Today)",
+          "country": "RU",
+          "published": "Sun, 24 May 2026 06:19:39 +0000",
+          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/6a1284152030277845511087.png",
+          "video_url": null
+        },
+        {
+          "url": "https://www.npr.org/2026/05/24/nx-s1-5833050/russia-uses-hypersonic-oreshnik-missile-in-mass-attack-on-kyiv",
+          "headline": "Russia uses hypersonic Oreshnik missile in mass attack on Kyiv",
+          "snippet": "A man carries a box from a burning trade center after a Russian strike on Kyiv, Ukraine, on Sunday, May 24, 2026. Evgeniy Maloletka/hide caption toggle caption Evgeniy Maloletka/KYIV, Ukraine — Ukrainian President Volodymyr Zelenskyy said Sunday Russia used the powerful hypersonic Oreshnik…",
+          "source": "npr",
+          "source_name": "NPR",
+          "country": "US",
+          "published": "Sun, 24 May 2026 05:12:28 -0400",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/international/russia-uses-hypersonic-oreshnik-missile-in-mass-attack-on-kyiv/article71017374.ece",
+          "headline": "Russia uses hypersonic Oreshnik missile in mass attack on Kyiv",
+          "snippet": "Ukrainian President Volodymyr Zelenskyy said on Sunday (May 24, 2026) that Russia used the powerful hypersonic Oreshnik ballistic missile during a mass drone and missile attack on Kyiv on Sunday (May 24), which killed at least two people, marking the third time the weapon has been used in the…",
+          "source": "the_hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Sun, 24 May 2026 15:04:48 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/nfpcef/article71017394.ece/alternates/LANDSCAPE_1200/2026-05-24T071030Z_334829742_RC2JFLA072SK_RTRMADP_3_UKRAINE-CRISIS-ATTACK-ORESHNIK.JPG",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ukrinform.net/rubric-polytics/4126712-eu-to-discuss-stepping-up-pressure-on-russia-after-oreshnik-attack-on-kyiv-region-kallas.html",
+          "headline": "EU to discuss stepping up pressure on Russia after Oreshnik attack on Kyiv region – Kallas",
+          "snippet": "High Representative for Foreign Affairs and Security Policy Kaja Kallas described today’s Russian Oreshnik attack on Ukraine as a reckless risk of nuclear war and said Foreign Ministers would discuss increasing pressure on Moscow the following week. According to Ukrinform, Kallas wrote this on X .…",
+          "source": "ukrinform_en",
+          "source_name": "Ukrinform",
+          "country": "UA",
+          "published": "Sun, 24 May 2026 13:30:00 +0300",
+          "image_url": "https://static.ukrinform.com/photos/2025_10/thumb_files/630_360_1760346846-966.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.timesofisrael.com/at-least-two-killed-as-russia-uses-hypersonic-oreshnik-missile-in-mass-attack-on-kyiv-area/",
+          "headline": "At least two killed as Russia uses hypersonic Oreshnik missile in mass attack on Kyiv area",
+          "snippet": "KYIV, Ukraine (AP) — Ukrainian President Volodymyr Zelensky said Sunday Russia used the powerful hypersonic Oreshnik ballistic missile during a mass drone and missile attack on Kyiv on Sunday that killed at least two people, marking the third time the weapon has been used in the four-year war. The…",
+          "source": "times_of_israel",
+          "source_name": "The Times of Israel",
+          "country": "IL",
+          "published": "Sun, 24 May 2026 11:20:02 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.108,
+        "zionist": 0.184,
+        "atlanticist": 0.256,
+        "statist": 0.17,
+        "financialized": 0.132
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 1,
+        "adversarial": 1,
+        "global-south": 1,
+        "middle-east": 1,
+        "eastern-europe": 2
+      },
+      "section": "world"
+    },
+    {
       "id": "9cdbe9b98ae3",
       "headline": "A qué hora juega Alianza Lima vs Los Chankas HOY: partido decisivo en Matute por fecha 16 del Torneo Apertura de Liga 1 2026",
       "summary": "El equipo de Pablo Guede saldrá por triunfo que le permita coronarse ganador del campeonato frente los ‘guerreros’ con Matute totalmente lleno de hinchas ‘blanquiazules’. Conoce los horarios vibrante duelo",
@@ -4821,173 +5025,6 @@
       "geo_frame_topic": null,
       "geo_breakdown": {
         "latin-america": 5
-      },
-      "section": "world"
-    },
-    {
-      "id": "f5991b6c342b",
-      "headline": "Russia uses hypersonic Oreshnik missile in mass attack on Kyiv",
-      "summary": "The intense aerial assault damaged buildings across the Ukrainian capital, including near government offices, residential buildings and schools",
-      "published": "Sun, 24 May 2026 13:30:00 +0300",
-      "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/6/3/834874/63bb378fcfc310321e32da48dd29d8e1.jpeg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 40,
-        "center_pct": 60,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 60
-      },
-      "bias_variance": 8.66,
-      "entity_count": 6,
-      "entity_list": [
-        "Kallas",
-        "Oreshnik",
-        "Ritter",
-        "Russia",
-        "Scott",
-        "Tserkva"
-      ],
-      "sources": [
-        {
-          "id": "ukrainska_pravda_en",
-          "name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "rt_russia",
-          "name": "RT (Russia Today)",
-          "country": "RU",
-          "bloc": "adversarial",
-          "bias_tier": "unknown",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "npr",
-          "name": "NPR",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "NPR (nonprofit)"
-        },
-        {
-          "id": "the_hindu",
-          "name": "The Hindu",
-          "country": "IN",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        },
-        {
-          "id": "ukrinform_en",
-          "name": "Ukrinform",
-          "country": "UA",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/24/8036135/",
-          "headline": "Russia strikes Bila Tserkva with Oreshnik missile – social media",
-          "snippet": "A fire. Stock photo: Suspilne Russia has likely struck the city of Bila Tserkva in Kyiv Oblast with an Oreshnik medium-range ballistic missile. Source: Telegram channels; videos published by eyewitnesses on social media Details: Footage published online appears to show the characteristic impact…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Sun, 24 May 2026 01:54:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/6/3/834874/63bb378fcfc310321e32da48dd29d8e1.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.rt.com/news/640505-oreshnik-kiev-ukraine-ritter/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
-          "headline": "Russia hit target ‘worthy of Oreshnik strike’ – Scott Ritter",
-          "snippet": "Moscow is taking action in response to “atrocities” perpetrated by Kiev in Lugansk, the former weapons inspector has said Footage of the Russian strike near Ukrainian capital, Kiev, indicates that an Oreshnik missile was likely deployed by Moscow, former weapons inspector Scott Ritter has said. On…",
-          "source": "rt_russia",
-          "source_name": "RT (Russia Today)",
-          "country": "RU",
-          "published": "Sun, 24 May 2026 06:19:39 +0000",
-          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/6a1284152030277845511087.png",
-          "video_url": null
-        },
-        {
-          "url": "https://www.npr.org/2026/05/24/nx-s1-5833050/russia-uses-hypersonic-oreshnik-missile-in-mass-attack-on-kyiv",
-          "headline": "Russia uses hypersonic Oreshnik missile in mass attack on Kyiv",
-          "snippet": "A man carries a box from a burning trade center after a Russian strike on Kyiv, Ukraine, on Sunday, May 24, 2026. Evgeniy Maloletka/hide caption toggle caption Evgeniy Maloletka/KYIV, Ukraine — Ukrainian President Volodymyr Zelenskyy said Sunday Russia used the powerful hypersonic Oreshnik…",
-          "source": "npr",
-          "source_name": "NPR",
-          "country": "US",
-          "published": "Sun, 24 May 2026 05:12:28 -0400",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thehindu.com/news/international/russia-uses-hypersonic-oreshnik-missile-in-mass-attack-on-kyiv/article71017374.ece",
-          "headline": "Russia uses hypersonic Oreshnik missile in mass attack on Kyiv",
-          "snippet": "Ukrainian President Volodymyr Zelenskyy said on Sunday (May 24, 2026) that Russia used the powerful hypersonic Oreshnik ballistic missile during a mass drone and missile attack on Kyiv on Sunday (May 24), which killed at least two people, marking the third time the weapon has been used in the…",
-          "source": "the_hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sun, 24 May 2026 15:04:48 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/nfpcef/article71017394.ece/alternates/LANDSCAPE_1200/2026-05-24T071030Z_334829742_RC2JFLA072SK_RTRMADP_3_UKRAINE-CRISIS-ATTACK-ORESHNIK.JPG",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-polytics/4126712-eu-to-discuss-stepping-up-pressure-on-russia-after-oreshnik-attack-on-kyiv-region-kallas.html",
-          "headline": "EU to discuss stepping up pressure on Russia after Oreshnik attack on Kyiv region – Kallas",
-          "snippet": "High Representative for Foreign Affairs and Security Policy Kaja Kallas described today’s Russian Oreshnik attack on Ukraine as a reckless risk of nuclear war and said Foreign Ministers would discuss increasing pressure on Moscow the following week. According to Ukrinform, Kallas wrote this on X .…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sun, 24 May 2026 13:30:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2025_10/thumb_files/630_360_1760346846-966.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.085,
-        "zionist": 0.105,
-        "atlanticist": 0.145,
-        "statist": 0.188,
-        "financialized": 0.09
-      },
-      "fp_source_count": 4,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 1,
-        "adversarial": 1,
-        "global-south": 1,
-        "eastern-europe": 2
       },
       "section": "world"
     },
@@ -6663,6 +6700,289 @@
       "section": "world"
     },
     {
+      "id": "40bec3f5c195",
+      "headline": "Senegal's President Bassirou Diomaye Faye fires prime minister after years of simmering tension",
+      "summary": "Senegal's President Bassirou Diomaye Faye has fired Prime Minister Ousmane Sonko after years of simmering tension.",
+      "published": "Sun, 24 May 2026 11:50:24 +0000",
+      "image_url": "https://www.senenews.com/wp-content/uploads/2026/03/whatsapp-image-2026-03-03-at-07.58.38.jpeg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 67,
+        "right_pct": 33,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 1.41,
+      "entity_count": 27,
+      "entity_list": [
+        "Antoine",
+        "Bassirou",
+        "Coalition",
+        "Comment",
+        "Dialogue",
+        "Diomaye",
+        "Diome",
+        "Emmanuel",
+        "Farba",
+        "Gning",
+        "Kenya",
+        "Macron",
+        "Mbour",
+        "Mohammed",
+        "Nairobi",
+        "Ndiaye",
+        "Ngouille",
+        "Nouveau",
+        "PASTEF",
+        "Palais",
+        "Pastef",
+        "Premier",
+        "Proche",
+        "Remaniement",
+        "Rendez",
+        "Renvoi",
+        "Senegal"
+      ],
+      "sources": [
+        {
+          "id": "senenews",
+          "name": "Senenews",
+          "country": "SN",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "unknown (launderer)"
+        },
+        {
+          "id": "washington_times",
+          "name": "Washington Times",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.senenews.com/actualites/pastef-proche-de-bassirou-diomaye-faye-leon-gning-officiellement-suspendu_585803.html",
+          "headline": "Pastef : Proche de Bassirou Diomaye Faye, Léon Gning officiellement suspendu",
+          "snippet": "Le Mouvement Patriotique Doomu Jàngu bi (MOPADJ) a officiellement suspendu Léon Diomaye Gning en raison d'une publication non autorisée sur Facebook. Cette décision souligne la volonté du mouvement de maintenir l'intégrité de ses lignes politiques tout en soutenant le président Ousmane Sonko. Le…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sat, 09 May 2026 11:19:45 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/03/whatsapp-image-2026-03-03-at-07.58.38.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/renvoi-du-code-electoral-la-contre-attaque-du-pastef-contre-bassirou-diomaye-faye_585779.html",
+          "headline": "Renvoi du Code électoral : La contre-attaque du Pastef contre Bassirou Diomaye Faye",
+          "snippet": "Le groupe parlementaire Pastef réagit vivement à la demande du président de la République pour une seconde délibération du Code électoral, dénonçant une manœuvre dilatoire. Ayib Daffé affirme que la majorité est résolue à faire avancer la réforme malgré les obstacles évoqués par le chef de l'État.…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sat, 09 May 2026 08:00:12 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/whatsapp-image-2026-05-03-at-18.52.27.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/mbour-bassirou-diomaye-faye-sadresse-aux-militants-par-video-avant-son-deplacement-a-nairobi_585844.html",
+          "headline": "Mbour : Bassirou Diomaye Faye s’adresse aux militants par vidéo avant son déplacement à Nairobi",
+          "snippet": "Avant son départ pour le sommet « Africa Forward » à Nairobi, Bassirou Diomaye Faye adresse un message vidéo touchant aux militants de Mbour. Dans cette intervention, il évoque son lien avec la localité et appelle à l'unité pour le développement du Sénégal. Attendu à Nairobi dans les prochaines…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sun, 10 May 2026 08:41:51 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/diomaye-joj.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/premium/rendez-vous-du-kenya-bassirou-diomaye-faye-emmanuel-macron-et-les-autres-regards-sur-la-nouvelle-strategie_585860.html",
+          "headline": "Rendez-vous du Kenya : Bassirou Diomaye Faye, Emmanuel Macron et les autres… regards sur la nouvelle stratégie",
+          "snippet": "Emmanuel Macron marque un tournant stratégique en choisissant le Kenya comme plaque tournante de la diplomatie française en Afrique. Cette visite, symbolique et économique, souligne l'engagement renouvelé de la France vers des partenariats dynamiques avec des pays anglophones, loin des anciennes…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sun, 10 May 2026 17:55:31 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/bassirou-diomaye-faye-emmanuel-macron.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/premium/bassirou-diomaye-faye-et-farba-ngom-la-nouvelle-union-inesperee_585856.html",
+          "headline": "Bassirou Diomaye Faye et Farba Ngom, la nouvelle union inespérée ?",
+          "snippet": "À l'heure où les alliances politiques battent leur plein, Bassirou Diomaye Faye pourrait séduire Farba Ngom, un atout stratégique pour la majorité présidentielle. Ce rapprochement, alimenté par des soutiens récents, soulève des interrogations sur l'avenir des équilibres politiques du pays. Si Farba…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sun, 10 May 2026 16:00:50 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/hq720-1-e1778417273377.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/le-president-bassirou-diomaye-faye-va-encore-renforcer-sa-coalition_585932.html",
+          "headline": "Le président Bassirou Diomaye Faye va encore renforcer sa Coalition",
+          "snippet": "Le président Bassirou Diomaye Faye, absent d'un meeting à Mbour pour participer au sommet « Africa Forward » à Nairobi, a lancé un appel fort à l'unité et la mobilisation des compétences au service du développement du Sénégal. Son message souligne l'importance de la cohésion sociale et de…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Mon, 11 May 2026 12:32:24 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2025/11/bassirou-diomaye-faye-aminata-toure.webp",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/presidentielle-2029-la-candidature-du-president-bassirou-diomaye-faye-lancee_585929.html",
+          "headline": "Présidentielle 2029 : La candidature du président Bassirou Diomaye Faye lancée",
+          "snippet": "La coalition Diomaye-Président est en marche pour soutenir la candidature du président Bassirou Diomaye Faye à la présidentielle de 2029. Lors d'un meeting à Mbour, les responsables ont affirmé l'importance d'unir leurs forces pour assurer sa réélection, tout en faisant l'éloge de son bilan. La…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Mon, 11 May 2026 10:15:27 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2025/12/img_3189.png",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/remaniement-ministeriel-vers-un-gouvernement-dunion-nationale-pour-bassirou-diomaye-faye_585931.html",
+          "headline": "Remaniement ministériel : Vers un gouvernement d’union nationale pour Bassirou Diomaye Faye ?",
+          "snippet": "Le Président Bassirou Diomaye Faye appelle à l'unité et à la mobilisation des compétences pour le développement du Sénégal, laissant planer des rumeurs sur un possible remaniement ministériel. Les spéculations autour d'un gouvernement d'union nationale s'intensifient, tandis que les décisions…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Mon, 11 May 2026 07:58:56 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/03/conseil-des-ministres-ousmane-sonko-bassirou-diomaye-faye-2-scaled.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.france24.com/en/africa/20260523-senegal-s-president-sacks-pm-after-months-of-tensions",
+          "headline": "🔴 Senegal's President Bassirou Diomaye Faye fires prime minister after years of tensions",
+          "snippet": "",
+          "source": "france24",
+          "source_name": "France 24",
+          "country": "FR",
+          "published": "Sat, 23 May 2026 07:08:33 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.washingtontimes.com/news/2026/may/22/senegals-president-bassirou-diomaye-faye-fires-prime-minister-years/",
+          "headline": "Senegal's President Bassirou Diomaye Faye fires prime minister after years of simmering tension",
+          "snippet": "(the \"OPINION:\" eyebrow) so it doesn't count // toward the visible-paragraph budget. var $bodyParagraphs = $btext.children('p').filter(function () { return !$(this).hasClass('article-category'); }); var $lastVisible = $bodyParagraphs.eq(paragraphsToKeep - 1); if ($lastVisible.length) { // Remove…",
+          "source": "washington_times",
+          "source_name": "Washington Times",
+          "country": "US",
+          "published": "Fri, 22 May 2026 18:38:11 -0400",
+          "image_url": "https://twt-thumbs.washtimes.com/media/image/2026/05/22/Kenya_France_34_44_s1440x960.jpg?f72536d07237fdd262042ae8f5e6e6de3b865f3c",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/premium/nouveau-gouvernement-ces-17-ministres-qui-ne-seront-pas-reconduits-par-bassirou-diomaye-faye_587366.html",
+          "headline": "Nouveau gouvernement : Ces 17 ministres qui ne seront pas reconduits par Bassirou Diomaye Faye",
+          "snippet": "Le limogeage de 17 ministres proches d'Ousmane Sonko par Bassirou Diomaye Faye marque un tournant crucial dans la politique sénégalaise. Ce remaniement révélateur suscite des spéculations sur la recomposition gouvernementale à venir et l'avenir des figures clés du parti Pastef. Le limogeage du…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sat, 23 May 2026 08:16:25 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2025/06/conseil-des-ministres.webp",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/premium/comment-le-president-bassirou-diomaye-faye-peut-diviser-les-cadres-de-pastef_587355.html",
+          "headline": "Comment le président Bassirou Diomaye Faye peut diviser les cadres de Pastef",
+          "snippet": "Le départ d’Ousmane Sonko de la Primature exacerbe les tensions au sein de Pastef, mettant à l'épreuve la loyauté de ses cadres face aux enjeux politiques actuels. Les responsables du parti doivent désormais naviguer entre leurs fonctions gouvernementales et leurs engagements envers le leader…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sat, 23 May 2026 07:45:46 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2025/12/img_3189.png",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/grace-des-supporters-senegalais-bassirou-diomaye-faye-salue-la-decision-du-roi-mohammed-vi-et-exprime-sa-gratitude_587443.html",
+          "headline": "Le Président Bassirou Diomaye Faye salue la grâce royale du Roi Mohammed VI",
+          "snippet": "Le Président Bassirou Diomaye Faye a salué la grâce royale accordée par le Roi Mohammed aux supporters sénégalais incarcérés depuis janvier. Dans un message empreint de gratitude, il souligne l'importance de ce geste pour renforcer les liens entre le Sénégal et le Maroc. Ce samedi 23 mai 2026, le…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sat, 23 May 2026 18:58:38 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/deux.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/palais-presidentiel-bassirou-diomaye-faye-en-concertation-avec-antoine-felix-diome_587446.html",
+          "headline": "Palais présidentiel : Bassirou Diomaye Faye en concertation avec Antoine Félix Diome",
+          "snippet": "Le président de la République, Bassirou Diomaye Faye, a rencontré ce samedi l’ancien ministre de l’Intérieur, Antoine Félix Diome, dans le cadre du dialogue politique. Cet échange a pour but de discuter des enjeux cruciaux pour la nation et de renforcer le lien entre les anciennes figures des…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sat, 23 May 2026 19:06:09 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/705394831_993901696488262_2888403110031306740_n.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/bassirou-diomaye-faye-envisagerait-un-premier-ministre-hors-de-pastef-apres-le-dialogue-national_587453.html",
+          "headline": "Bassirou Diomaye Faye envisagerait un Premier ministre hors de PASTEF après le Dialogue national",
+          "snippet": "Le président de la République, Bassirou Diomaye Faye, pourrait nommer un Premier ministre en dehors de PASTEF après le Dialogue national, marquant ainsi un tournant politique significatif. Cette perspective suscite déjà de vives spéculations et pourrait redéfinir les équilibres au sein du pouvoir…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sat, 23 May 2026 19:57:50 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/pm-dioms.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/senegal-aly-ngouille-ndiaye-recu-par-le-president-bassirou-diomaye-faye_587484.html",
+          "headline": "Sénégal : Aly Ngouille Ndiaye reçu par le président Bassirou Diomaye Faye",
+          "snippet": "Ce samedi 23 mai 2026, le président de la République, Bassirou Diomaye Faye, a reçu en audience l’ancien ministre de l’Intérieur, Aly Ngouille Ndiaye, au Palais présidentiel. Des échanges sur des enjeux économiques, politiques et sécuritaires ont eu lieu, suscitant des réactions sur les réseaux…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sun, 24 May 2026 11:50:24 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/img_3383.jpeg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.257,
+        "zionist": 0.36,
+        "atlanticist": 0.45,
+        "statist": 0.123,
+        "financialized": 0.457
+      },
+      "fp_source_count": 3,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 2,
+        "africa": 1
+      },
+      "section": "world"
+    },
+    {
       "id": "c1fe19fae87e",
       "headline": "New Zealand beat England by 14 runs to win second women’s T20 international – as it happened",
       "summary": "<p>A big-hitting Sophie Devine leads New Zealand to a 14-run victory over England and levels the series 1-1</p><p><strong>Gaze has a hasty heave</strong> and loses her middle stump to a cracking ball that nudges in.</p><p><strong>1st over: New Zealand 4-1 (Plimmer 0) </strong>Bell, blond hair in an ",
@@ -6981,276 +7301,6 @@
         "pacific-asia": 1
       },
       "section": "sports"
-    },
-    {
-      "id": "40bec3f5c195",
-      "headline": "Senegal's President Bassirou Diomaye Faye fires prime minister after years of simmering tension",
-      "summary": "Senegal's President Bassirou Diomaye Faye has fired Prime Minister Ousmane Sonko after years of simmering tension.",
-      "published": "Sat, 23 May 2026 19:57:50 +0000",
-      "image_url": "https://www.senenews.com/wp-content/uploads/2026/03/whatsapp-image-2026-03-03-at-07.58.38.jpeg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 67,
-        "right_pct": 33,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 67
-      },
-      "bias_variance": 1.41,
-      "entity_count": 25,
-      "entity_list": [
-        "Antoine",
-        "Bassirou",
-        "Coalition",
-        "Comment",
-        "Dialogue",
-        "Diomaye",
-        "Diome",
-        "Emmanuel",
-        "Farba",
-        "Gning",
-        "Kenya",
-        "Macron",
-        "Mbour",
-        "Mohammed",
-        "Nairobi",
-        "Nouveau",
-        "PASTEF",
-        "Palais",
-        "Pastef",
-        "Premier",
-        "Proche",
-        "Remaniement",
-        "Rendez",
-        "Renvoi",
-        "Senegal"
-      ],
-      "sources": [
-        {
-          "id": "senenews",
-          "name": "Senenews",
-          "country": "SN",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "africa",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "france24",
-          "name": "France 24",
-          "country": "FR",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "launderer",
-          "parent_company": "unknown (launderer)"
-        },
-        {
-          "id": "washington_times",
-          "name": "Washington Times",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.senenews.com/actualites/pastef-proche-de-bassirou-diomaye-faye-leon-gning-officiellement-suspendu_585803.html",
-          "headline": "Pastef : Proche de Bassirou Diomaye Faye, Léon Gning officiellement suspendu",
-          "snippet": "Le Mouvement Patriotique Doomu Jàngu bi (MOPADJ) a officiellement suspendu Léon Diomaye Gning en raison d'une publication non autorisée sur Facebook. Cette décision souligne la volonté du mouvement de maintenir l'intégrité de ses lignes politiques tout en soutenant le président Ousmane Sonko. Le…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Sat, 09 May 2026 11:19:45 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2026/03/whatsapp-image-2026-03-03-at-07.58.38.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/actualites/renvoi-du-code-electoral-la-contre-attaque-du-pastef-contre-bassirou-diomaye-faye_585779.html",
-          "headline": "Renvoi du Code électoral : La contre-attaque du Pastef contre Bassirou Diomaye Faye",
-          "snippet": "Le groupe parlementaire Pastef réagit vivement à la demande du président de la République pour une seconde délibération du Code électoral, dénonçant une manœuvre dilatoire. Ayib Daffé affirme que la majorité est résolue à faire avancer la réforme malgré les obstacles évoqués par le chef de l'État.…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Sat, 09 May 2026 08:00:12 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/whatsapp-image-2026-05-03-at-18.52.27.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/actualites/mbour-bassirou-diomaye-faye-sadresse-aux-militants-par-video-avant-son-deplacement-a-nairobi_585844.html",
-          "headline": "Mbour : Bassirou Diomaye Faye s’adresse aux militants par vidéo avant son déplacement à Nairobi",
-          "snippet": "Avant son départ pour le sommet « Africa Forward » à Nairobi, Bassirou Diomaye Faye adresse un message vidéo touchant aux militants de Mbour. Dans cette intervention, il évoque son lien avec la localité et appelle à l'unité pour le développement du Sénégal. Attendu à Nairobi dans les prochaines…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Sun, 10 May 2026 08:41:51 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/diomaye-joj.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/premium/rendez-vous-du-kenya-bassirou-diomaye-faye-emmanuel-macron-et-les-autres-regards-sur-la-nouvelle-strategie_585860.html",
-          "headline": "Rendez-vous du Kenya : Bassirou Diomaye Faye, Emmanuel Macron et les autres… regards sur la nouvelle stratégie",
-          "snippet": "Emmanuel Macron marque un tournant stratégique en choisissant le Kenya comme plaque tournante de la diplomatie française en Afrique. Cette visite, symbolique et économique, souligne l'engagement renouvelé de la France vers des partenariats dynamiques avec des pays anglophones, loin des anciennes…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Sun, 10 May 2026 17:55:31 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/bassirou-diomaye-faye-emmanuel-macron.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/premium/bassirou-diomaye-faye-et-farba-ngom-la-nouvelle-union-inesperee_585856.html",
-          "headline": "Bassirou Diomaye Faye et Farba Ngom, la nouvelle union inespérée ?",
-          "snippet": "À l'heure où les alliances politiques battent leur plein, Bassirou Diomaye Faye pourrait séduire Farba Ngom, un atout stratégique pour la majorité présidentielle. Ce rapprochement, alimenté par des soutiens récents, soulève des interrogations sur l'avenir des équilibres politiques du pays. Si Farba…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Sun, 10 May 2026 16:00:50 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/hq720-1-e1778417273377.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/actualites/le-president-bassirou-diomaye-faye-va-encore-renforcer-sa-coalition_585932.html",
-          "headline": "Le président Bassirou Diomaye Faye va encore renforcer sa Coalition",
-          "snippet": "Le président Bassirou Diomaye Faye, absent d'un meeting à Mbour pour participer au sommet « Africa Forward » à Nairobi, a lancé un appel fort à l'unité et la mobilisation des compétences au service du développement du Sénégal. Son message souligne l'importance de la cohésion sociale et de…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Mon, 11 May 2026 12:32:24 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2025/11/bassirou-diomaye-faye-aminata-toure.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/actualites/presidentielle-2029-la-candidature-du-president-bassirou-diomaye-faye-lancee_585929.html",
-          "headline": "Présidentielle 2029 : La candidature du président Bassirou Diomaye Faye lancée",
-          "snippet": "La coalition Diomaye-Président est en marche pour soutenir la candidature du président Bassirou Diomaye Faye à la présidentielle de 2029. Lors d'un meeting à Mbour, les responsables ont affirmé l'importance d'unir leurs forces pour assurer sa réélection, tout en faisant l'éloge de son bilan. La…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Mon, 11 May 2026 10:15:27 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2025/12/img_3189.png",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/actualites/remaniement-ministeriel-vers-un-gouvernement-dunion-nationale-pour-bassirou-diomaye-faye_585931.html",
-          "headline": "Remaniement ministériel : Vers un gouvernement d’union nationale pour Bassirou Diomaye Faye ?",
-          "snippet": "Le Président Bassirou Diomaye Faye appelle à l'unité et à la mobilisation des compétences pour le développement du Sénégal, laissant planer des rumeurs sur un possible remaniement ministériel. Les spéculations autour d'un gouvernement d'union nationale s'intensifient, tandis que les décisions…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Mon, 11 May 2026 07:58:56 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2026/03/conseil-des-ministres-ousmane-sonko-bassirou-diomaye-faye-2-scaled.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.france24.com/en/africa/20260523-senegal-s-president-sacks-pm-after-months-of-tensions",
-          "headline": "🔴 Senegal's President Bassirou Diomaye Faye fires prime minister after years of tensions",
-          "snippet": "",
-          "source": "france24",
-          "source_name": "France 24",
-          "country": "FR",
-          "published": "Sat, 23 May 2026 07:08:33 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.washingtontimes.com/news/2026/may/22/senegals-president-bassirou-diomaye-faye-fires-prime-minister-years/",
-          "headline": "Senegal's President Bassirou Diomaye Faye fires prime minister after years of simmering tension",
-          "snippet": "(the \"OPINION:\" eyebrow) so it doesn't count // toward the visible-paragraph budget. var $bodyParagraphs = $btext.children('p').filter(function () { return !$(this).hasClass('article-category'); }); var $lastVisible = $bodyParagraphs.eq(paragraphsToKeep - 1); if ($lastVisible.length) { // Remove…",
-          "source": "washington_times",
-          "source_name": "Washington Times",
-          "country": "US",
-          "published": "Fri, 22 May 2026 18:38:11 -0400",
-          "image_url": "https://twt-thumbs.washtimes.com/media/image/2026/05/22/Kenya_France_34_44_s1440x960.jpg?f72536d07237fdd262042ae8f5e6e6de3b865f3c",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/premium/nouveau-gouvernement-ces-17-ministres-qui-ne-seront-pas-reconduits-par-bassirou-diomaye-faye_587366.html",
-          "headline": "Nouveau gouvernement : Ces 17 ministres qui ne seront pas reconduits par Bassirou Diomaye Faye",
-          "snippet": "Le limogeage de 17 ministres proches d'Ousmane Sonko par Bassirou Diomaye Faye marque un tournant crucial dans la politique sénégalaise. Ce remaniement révélateur suscite des spéculations sur la recomposition gouvernementale à venir et l'avenir des figures clés du parti Pastef. Le limogeage du…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Sat, 23 May 2026 08:16:25 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2025/06/conseil-des-ministres.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/premium/comment-le-president-bassirou-diomaye-faye-peut-diviser-les-cadres-de-pastef_587355.html",
-          "headline": "Comment le président Bassirou Diomaye Faye peut diviser les cadres de Pastef",
-          "snippet": "Le départ d’Ousmane Sonko de la Primature exacerbe les tensions au sein de Pastef, mettant à l'épreuve la loyauté de ses cadres face aux enjeux politiques actuels. Les responsables du parti doivent désormais naviguer entre leurs fonctions gouvernementales et leurs engagements envers le leader…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Sat, 23 May 2026 07:45:46 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2025/12/img_3189.png",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/actualites/grace-des-supporters-senegalais-bassirou-diomaye-faye-salue-la-decision-du-roi-mohammed-vi-et-exprime-sa-gratitude_587443.html",
-          "headline": "Le Président Bassirou Diomaye Faye salue la grâce royale du Roi Mohammed VI",
-          "snippet": "Le Président Bassirou Diomaye Faye a salué la grâce royale accordée par le Roi Mohammed aux supporters sénégalais incarcérés depuis janvier. Dans un message empreint de gratitude, il souligne l'importance de ce geste pour renforcer les liens entre le Sénégal et le Maroc. Ce samedi 23 mai 2026, le…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Sat, 23 May 2026 18:58:38 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/deux.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/actualites/palais-presidentiel-bassirou-diomaye-faye-en-concertation-avec-antoine-felix-diome_587446.html",
-          "headline": "Palais présidentiel : Bassirou Diomaye Faye en concertation avec Antoine Félix Diome",
-          "snippet": "Le président de la République, Bassirou Diomaye Faye, a rencontré ce samedi l’ancien ministre de l’Intérieur, Antoine Félix Diome, dans le cadre du dialogue politique. Cet échange a pour but de discuter des enjeux cruciaux pour la nation et de renforcer le lien entre les anciennes figures des…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Sat, 23 May 2026 19:06:09 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/705394831_993901696488262_2888403110031306740_n.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.senenews.com/actualites/bassirou-diomaye-faye-envisagerait-un-premier-ministre-hors-de-pastef-apres-le-dialogue-national_587453.html",
-          "headline": "Bassirou Diomaye Faye envisagerait un Premier ministre hors de PASTEF après le Dialogue national",
-          "snippet": "Le président de la République, Bassirou Diomaye Faye, pourrait nommer un Premier ministre en dehors de PASTEF après le Dialogue national, marquant ainsi un tournant politique significatif. Cette perspective suscite déjà de vives spéculations et pourrait redéfinir les équilibres au sein du pouvoir…",
-          "source": "senenews",
-          "source_name": "Senenews",
-          "country": "SN",
-          "published": "Sat, 23 May 2026 19:57:50 +0000",
-          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/pm-dioms.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.257,
-        "zionist": 0.36,
-        "atlanticist": 0.45,
-        "statist": 0.123,
-        "financialized": 0.457
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 2,
-        "africa": 1
-      },
-      "section": "world"
     },
     {
       "id": "869f5c870146",
@@ -12011,6 +12061,248 @@
         "latin-america": 1,
         "west": 3,
         "pacific-asia": 1
+      },
+      "section": "sports"
+    },
+    {
+      "id": "27d2feb3831a",
+      "headline": "Trump, Xi set for high-stakes talks on trade, Iran, AI in Beijing",
+      "summary": "US President Donald Trump and Chinese President Xi Jinping are expected to discuss Iran, Taiwan, artificial intelligence and nuclear weapons during Trump’s two-day visit to China this week, according to US officials.",
+      "published": "Sun, 24 May 2026 11:43:15 +0000",
+      "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/08/998d79ed-6263-4135-bbaa-ed43164ce5a4_7b7ece56.jpg?itok=OFWHnVJr&v=1778230525",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 12% Left",
+      "blindspot_score": 5,
+      "coverage": {
+        "left_pct": 12,
+        "center_pct": 50,
+        "right_pct": 38,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 8.33,
+      "entity_count": 11,
+      "entity_list": [
+        "Beijing",
+        "Prashad",
+        "Putin",
+        "Readiness",
+        "Signals",
+        "Simboluri",
+        "Taiwan",
+        "Trade",
+        "Trump",
+        "Vijay",
+        "Wednesday"
+      ],
+      "sources": [
+        {
+          "id": "wsj",
+          "name": "The Wall Street Journal",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "News Corp"
+        },
+        {
+          "id": "scmp_business",
+          "name": "SCMP Business",
+          "country": "HK",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Nikkei"
+        },
+        {
+          "id": "nst_my",
+          "name": "New Straits Times",
+          "country": "MY",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "mercopress",
+          "name": "MercoPress",
+          "country": "UY",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "pajhwok_en",
+          "name": "Pajhwok Afghan News",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "consortium_news",
+          "name": "Consortium News",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "far-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "g4media",
+          "name": "G4Media",
+          "country": "RO",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+          "headline": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+          "snippet": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+          "source": "wsj",
+          "source_name": "The Wall Street Journal",
+          "country": "US",
+          "published": "Fri, 24 Jan 2025 19:58:00 -0500",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.scmp.com/plus/news/china/diplomacy/article/3352886/trumps-beijing-trip-iran-war-diplomacy-tech-earnings?utm_source=rss_feed",
+          "headline": "Trump’s Beijing trip, Iran war diplomacy, tech earnings",
+          "snippet": "US President Donald Trump will bring a scaled-back group of chief executive officers with him on a trip to Beijing next week, reflecting limited expectations for a summit that may be overshadowed by the war on Iran. The White House considered inviting about a dozen business leaders on the May 14-15…",
+          "source": "scmp_business",
+          "source_name": "SCMP Business",
+          "country": "HK",
+          "published": "Fri, 08 May 2026 09:00:11 +0000",
+          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/08/998d79ed-6263-4135-bbaa-ed43164ce5a4_7b7ece56.jpg?itok=OFWHnVJr&v=1778230525",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ft.com/content/76bdf230-b4a2-439b-bfcc-d604c2610d92",
+          "headline": "Trump embarks on two-day visit to Beijing",
+          "snippet": "Plus, US Treasury secretary visits Tokyo and Starmer attempts reset in the UK after disastrous local election results",
+          "source": "ft",
+          "source_name": "Financial Times",
+          "country": "GB",
+          "published": "Sun, 10 May 2026 17:15:06 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/world/world/2026/05/1436755/trump-confront-xi-over-iran-high-stakes-beijing-talks",
+          "headline": "Trump to confront Xi over Iran in high-stakes Beijing talks",
+          "snippet": "WASHINGTON: US President Donald Trump will press China’s Xi Jinping on Iran when they meet in Beijing in coming days, but their “highly symbolic” superpower summit will focus on easing trade tensions, officials said Sunday.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Mon, 11 May 2026 06:24:36 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/4EC47AE174FAD2D5596D4F66A93214DD_data_0.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://en.mercopress.com/2026/05/11/trade-iran-and-taiwan-dominate-agenda-of-trump-xi-summit-beginning-wednesday-in-beijing?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+          "headline": "Trade, Iran and Taiwan dominate agenda of Trump-Xi summit beginning Wednesday in Beijing",
+          "snippet": "Trade, Iran and Taiwan dominate agenda of Trump-Xi summit beginning Wednesday in Beijing Monday, May 11th 2026 - 03:55 Full article Trump will attend the official welcome ceremony on Thursday, hold his bilateral meeting with Xi, visit the Temple of Heaven, and attend a state banquet China confirmed…",
+          "source": "mercopress",
+          "source_name": "MercoPress",
+          "country": "UY",
+          "published": "Mon, 11 May 2026 03:55:00 GMT",
+          "image_url": "https://en.mercopress.com/data/cache/noticias/110078/100x80/dtchina.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://pajhwok.com/2026/05/11/trump-xi-set-for-high-stakes-talks-on-trade-iran-ai-in-beijing/",
+          "headline": "Trump, Xi set for high-stakes talks on trade, Iran, AI in Beijing",
+          "snippet": "KABUL (Pajhwok): President Donald Trump and Chinese President Xi Jinping are expected to discuss Iran, Taiwan, artificial intelligence and nuclear weapons during Trump’s two-day visit to China this week, according to officials. Trump is scheduled to arrive in Beijing on Wednesday, ahead of meetings…",
+          "source": "pajhwok_en",
+          "source_name": "Pajhwok Afghan News",
+          "country": "AF",
+          "published": "Mon, 11 May 2026 04:36:11 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://consortiumnews.com/2026/05/22/vijay-prashad-trump-in-beijing-hat-in-hand/",
+          "headline": "Vijay Prashad: Trump in Beijing, Hat in Hand",
+          "snippet": "For the Global South, Xi’s calmness at the summit offered an example of how to engage an unstable imperialist power. The United States remains militarily dangerous, but it no longer possesses unquestioned political authority. China’s President Xi Jinping and U.S. President Donald Trump in a…",
+          "source": "consortium_news",
+          "source_name": "Consortium News",
+          "country": "US",
+          "published": "Fri, 22 May 2026 18:00:11 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.g4media.ro/trump-si-putin-la-curtea-imparatului-simboluri-in-cele-doua-vizite-la-beijing-si-interesele-lui-xi.html",
+          "headline": "Trump și Putin la curtea Împăratului: Simboluri în cele două vizite la Beijing și interesele lui Xi",
+          "snippet": "În ultima săptămână, cele mai importante drumuri din lume au dus la Beijing. Donald Trump a petrecut două zile în capitala Chinei, unde a primit un tratament „regal”, după cum îl descrie presa de stat chineză, câteva înțelegeri economice modeste și o amenințare voalată pe tema Taiwanului.…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sun, 24 May 2026 11:43:15 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2025/10/profimedia-1041854473.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.058,
+        "zionist": 0.18,
+        "atlanticist": 0.224,
+        "statist": 0.091,
+        "financialized": 0.491
+      },
+      "fp_source_count": 8,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 3,
+        "eastern-europe": 1,
+        "latin-america": 1,
+        "pacific-asia": 2,
+        "global-south": 1
       },
       "section": "sports"
     },
@@ -18591,222 +18883,6 @@
         "middle-east": 1,
         "west": 5,
         "latin-america": 2
-      },
-      "section": "sports"
-    },
-    {
-      "id": "27d2feb3831a",
-      "headline": "Trump, Xi set for high-stakes talks on trade, Iran, AI in Beijing",
-      "summary": "US President Donald Trump and Chinese President Xi Jinping are expected to discuss Iran, Taiwan, artificial intelligence and nuclear weapons during Trump’s two-day visit to China this week, according to US officials.",
-      "published": "Fri, 22 May 2026 18:00:11 +0000",
-      "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/08/998d79ed-6263-4135-bbaa-ed43164ce5a4_7b7ece56.jpg?itok=OFWHnVJr&v=1778230525",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 14% Left",
-      "blindspot_score": 3,
-      "coverage": {
-        "left_pct": 14,
-        "center_pct": 43,
-        "right_pct": 43,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 43
-      },
-      "bias_variance": 8.62,
-      "entity_count": 9,
-      "entity_list": [
-        "Beijing",
-        "Prashad",
-        "Readiness",
-        "Signals",
-        "Taiwan",
-        "Trade",
-        "Trump",
-        "Vijay",
-        "Wednesday"
-      ],
-      "sources": [
-        {
-          "id": "wsj",
-          "name": "The Wall Street Journal",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": "News Corp"
-        },
-        {
-          "id": "scmp_business",
-          "name": "SCMP Business",
-          "country": "HK",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "ft",
-          "name": "Financial Times",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Nikkei"
-        },
-        {
-          "id": "nst_my",
-          "name": "New Straits Times",
-          "country": "MY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "mercopress",
-          "name": "MercoPress",
-          "country": "UY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "pajhwok_en",
-          "name": "Pajhwok Afghan News",
-          "country": "AF",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "consortium_news",
-          "name": "Consortium News",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "far-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-          "headline": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-          "snippet": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-          "source": "wsj",
-          "source_name": "The Wall Street Journal",
-          "country": "US",
-          "published": "Fri, 24 Jan 2025 19:58:00 -0500",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.scmp.com/plus/news/china/diplomacy/article/3352886/trumps-beijing-trip-iran-war-diplomacy-tech-earnings?utm_source=rss_feed",
-          "headline": "Trump’s Beijing trip, Iran war diplomacy, tech earnings",
-          "snippet": "US President Donald Trump will bring a scaled-back group of chief executive officers with him on a trip to Beijing next week, reflecting limited expectations for a summit that may be overshadowed by the war on Iran. The White House considered inviting about a dozen business leaders on the May 14-15…",
-          "source": "scmp_business",
-          "source_name": "SCMP Business",
-          "country": "HK",
-          "published": "Fri, 08 May 2026 09:00:11 +0000",
-          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/08/998d79ed-6263-4135-bbaa-ed43164ce5a4_7b7ece56.jpg?itok=OFWHnVJr&v=1778230525",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ft.com/content/76bdf230-b4a2-439b-bfcc-d604c2610d92",
-          "headline": "Trump embarks on two-day visit to Beijing",
-          "snippet": "Plus, US Treasury secretary visits Tokyo and Starmer attempts reset in the UK after disastrous local election results",
-          "source": "ft",
-          "source_name": "Financial Times",
-          "country": "GB",
-          "published": "Sun, 10 May 2026 17:15:06 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.nst.com.my/world/world/2026/05/1436755/trump-confront-xi-over-iran-high-stakes-beijing-talks",
-          "headline": "Trump to confront Xi over Iran in high-stakes Beijing talks",
-          "snippet": "WASHINGTON: US President Donald Trump will press China’s Xi Jinping on Iran when they meet in Beijing in coming days, but their “highly symbolic” superpower summit will focus on easing trade tensions, officials said Sunday.",
-          "source": "nst_my",
-          "source_name": "New Straits Times",
-          "country": "MY",
-          "published": "Mon, 11 May 2026 06:24:36 +0800",
-          "image_url": "https://assets.nst.com.my/images/listing-featured/4EC47AE174FAD2D5596D4F66A93214DD_data_0.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://en.mercopress.com/2026/05/11/trade-iran-and-taiwan-dominate-agenda-of-trump-xi-summit-beginning-wednesday-in-beijing?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
-          "headline": "Trade, Iran and Taiwan dominate agenda of Trump-Xi summit beginning Wednesday in Beijing",
-          "snippet": "Trade, Iran and Taiwan dominate agenda of Trump-Xi summit beginning Wednesday in Beijing Monday, May 11th 2026 - 03:55 Full article Trump will attend the official welcome ceremony on Thursday, hold his bilateral meeting with Xi, visit the Temple of Heaven, and attend a state banquet China confirmed…",
-          "source": "mercopress",
-          "source_name": "MercoPress",
-          "country": "UY",
-          "published": "Mon, 11 May 2026 03:55:00 GMT",
-          "image_url": "https://en.mercopress.com/data/cache/noticias/110078/100x80/dtchina.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://pajhwok.com/2026/05/11/trump-xi-set-for-high-stakes-talks-on-trade-iran-ai-in-beijing/",
-          "headline": "Trump, Xi set for high-stakes talks on trade, Iran, AI in Beijing",
-          "snippet": "KABUL (Pajhwok): President Donald Trump and Chinese President Xi Jinping are expected to discuss Iran, Taiwan, artificial intelligence and nuclear weapons during Trump’s two-day visit to China this week, according to officials. Trump is scheduled to arrive in Beijing on Wednesday, ahead of meetings…",
-          "source": "pajhwok_en",
-          "source_name": "Pajhwok Afghan News",
-          "country": "AF",
-          "published": "Mon, 11 May 2026 04:36:11 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://consortiumnews.com/2026/05/22/vijay-prashad-trump-in-beijing-hat-in-hand/",
-          "headline": "Vijay Prashad: Trump in Beijing, Hat in Hand",
-          "snippet": "For the Global South, Xi’s calmness at the summit offered an example of how to engage an unstable imperialist power. The United States remains militarily dangerous, but it no longer possesses unquestioned political authority. China’s President Xi Jinping and U.S. President Donald Trump in a…",
-          "source": "consortium_news",
-          "source_name": "Consortium News",
-          "country": "US",
-          "published": "Fri, 22 May 2026 18:00:11 +0000",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.051,
-        "zionist": 0.177,
-        "atlanticist": 0.184,
-        "statist": 0.147,
-        "financialized": 0.533
-      },
-      "fp_source_count": 7,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 3,
-        "latin-america": 1,
-        "pacific-asia": 2,
-        "global-south": 1
       },
       "section": "sports"
     },
