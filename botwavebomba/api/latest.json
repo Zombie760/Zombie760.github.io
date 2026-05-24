@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T04:25:45.806220+00:00",
-  "article_count": 30835,
+  "generated_at": "2026-05-24T04:41:24.484002+00:00",
+  "article_count": 30926,
   "story_count": 160,
   "sections": [
     {
@@ -52,9 +52,9 @@
   "stories": [
     {
       "id": "64c47aff1fe9",
-      "headline": "Guerra de Estados Unidos e Israel contra Irán, en vivo: tensión en Medio Oriente hoy, lunes 11 de mayo",
+      "headline": "Guerra de Estados Unidos e Israel contra Irán, en vivo: tensión en Medio Oriente hoy, domingo 24 de mayo",
       "summary": "Cobertura en tiempo real con las novedades más importantes del conflicto y las acciones del mandatario estadounidense, Donald Trump",
-      "published": "Sun, 24 May 2026 03:52:49 +0000",
+      "published": "Sun, 24 May 2026 04:31:41 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/PW3F3Z5IGZC4BFXLBARQDTO6SA.JPG?auth=3bf20790eaa4596d49969391222e8e9aa7b9ed9737439096bf56bce53212e0c6&smart=true&width=8640&height=5760",
       "video_url": null,
       "has_video": false,
@@ -850,6 +850,17 @@
           "published": "Sun, 24 May 2026 03:52:49 +0000",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/el-mundo/guerra-de-estados-unidos-e-israel-contra-iran-en-vivo-tension-en-medio-oriente-hoy-domingo-24-de-nid24052026/",
+          "headline": "Guerra de Estados Unidos e Israel contra Irán, en vivo: tensión en Medio Oriente hoy, domingo 24 de mayo",
+          "snippet": "Cobertura en tiempo real con las novedades más importantes del conflicto y las acciones del mandatario estadounidense, Donald Trump",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 04:31:41 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/PS7PDH3MM5AU7KQ64TRLKHVQYQ.JPG?auth=d6310700147fc5fd5eb3e66bffa09d976607ef4e43da5fb0a0323e1e3b1e5cc4&smart=true&width=2400&height=1601",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -873,7 +884,7 @@
       "id": "2d59c7e4b3b0",
       "headline": "María Corina Machado afirma que será candidata a la presidencia en unas elecciones “limpias y libres” en Venezuela",
       "summary": "La líder opositora y Premio Nobel de la Paz participó de un encuentro en Panamá donde además explicó que para avanzar en las elecciones en su país es necesario un nuevo consejo electoral y afirmó que regresará \"pronto\" a territorio venezolano.",
-      "published": "Sun, 24 May 2026 03:13:51 +0000",
+      "published": "Sun, 24 May 2026 04:23:59 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/RGKDYAFE3RGSBPKVZC5MJHB72A.jpeg?auth=0184a8d0ba951c6f96a061516d79a5d990759b30d1036deca639dc2924b27eb8&smart=true&width=1280&height=854",
       "video_url": null,
       "has_video": false,
@@ -882,13 +893,13 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
+        "center_pct": 40,
+        "right_pct": 60,
         "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
+        "dominant": "right",
+        "dominant_pct": 60
       },
-      "bias_variance": 0.73,
+      "bias_variance": 0.81,
       "entity_count": 16,
       "entity_list": [
         "Conference",
@@ -952,6 +963,18 @@
           "bloc": "non-aligned",
           "bias_tier": "independent",
           "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_nacion_ar",
+          "name": "La Nación (Argentina)",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
           "geo_cluster": "latin-america",
           "factuality": "mixed",
           "primary_vs_launder": "primary",
@@ -1123,21 +1146,32 @@
           "published": "Sun, 24 May 2026 03:13:51 +0000",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/el-mundo/maria-corina-machado-anuncio-que-sera-candidata-a-la-presidencia-de-venezuela-nid24052026/",
+          "headline": "María Corina Machado anunció que será candidata a la presidencia de Venezuela",
+          "snippet": "CIUDAD PANAMÁ.- La dirigente opositora venezolana María Corina Machado anunció este sábado que planea postularse a la presidencia. Además, dijo que antes de que termine 2026 pretende estar de vuelta en Venezuela. En tanto, tras la captura a Nicolás Maduro, todavía no se sabe cuando habrá elecciones…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 04:23:59 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/ZD2LLII45ZA7RPT3HCBXD442IY.JPG?auth=fc28f52e70e16ad9607a57956c0dd5c52672ba3056ea523be3227097bc366990&smart=true&width=6922&height=4615",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.25,
-        "atlanticist": 0.4,
-        "statist": 0.247,
+        "interventionist": 0.16,
+        "zionist": 0.26,
+        "atlanticist": 0.412,
+        "statist": 0.256,
         "financialized": 0.468
       },
-      "fp_source_count": 4,
+      "fp_source_count": 5,
       "geo_frame": "blackout",
       "geo_frame_label": "Western Blackout: US Foreign Policy Target",
       "geo_frame_topic": "us-foreign-policy",
       "geo_breakdown": {
-        "latin-america": 4
+        "latin-america": 5
       },
       "section": "world",
       "is_front_page": true
@@ -1950,13 +1984,13 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 62,
-        "right_pct": 38,
+        "center_pct": 56,
+        "right_pct": 44,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 62
+        "dominant_pct": 56
       },
-      "bias_variance": 1.42,
+      "bias_variance": 1.38,
       "entity_count": 21,
       "entity_list": [
         "Agenda",
@@ -2074,6 +2108,18 @@
           "bias_tier": "center",
           "bias_bucket": "center",
           "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "clarin_ar",
+          "name": "Clarín Argentina",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
           "factuality": "mixed",
           "primary_vs_launder": "primary",
           "parent_company": ""
@@ -2266,21 +2312,32 @@
           "published": "Sun, 24 May 2026 04:13:40 +0000",
           "image_url": "https://resizer.glanacion.com/resizer/v2/ADSUSQNY2RATJLKMJZM7V7D6RA.jpg?auth=b76d9f2da1e372fa2e17923735038261ae2b37c99c3019516aec7b3a478882a3&smart=true&width=2000&height=1333",
           "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/deportes/roland-garros-2026-dia-1-vivo-argentinos-saltan-cancha-polvo-ladrillo-paris_0_HeOx1QNQCd.html",
+          "headline": "Roland Garros 2026, día 1, EN VIVO: cuatro argentinos saltan a la cancha en el polvo de ladrillo de París",
+          "snippet": "La edición 2026 de Roland Garros , que comienza este domingo, tiene 128 jugadores en el cuadro masculino, pero un gran favorito al título: Jannik Sinner. Invicto desde febrero, el italiano llega a París con una racha de 29 victorias consecutivas y tras conquistar los cinco Masters 1000 disputados…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 03:46:06 +0000",
+          "image_url": "https://www.clarin.com/img/2026/05/24/V_nSO7Zg7_1200x630__1.jpg",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.159,
-        "zionist": 0.25,
-        "atlanticist": 0.407,
-        "statist": 0.251,
-        "financialized": 0.371
+        "interventionist": 0.163,
+        "zionist": 0.256,
+        "atlanticist": 0.413,
+        "statist": 0.256,
+        "financialized": 0.382
       },
-      "fp_source_count": 8,
+      "fp_source_count": 9,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
-        "latin-america": 4,
+        "latin-america": 5,
         "west": 1,
         "eastern-europe": 1,
         "pacific-asia": 2
@@ -3636,7 +3693,7 @@
       "id": "9cdbe9b98ae3",
       "headline": "A qué hora juega Alianza Lima vs Los Chankas HOY: partido decisivo en Matute por fecha 16 del Torneo Apertura de Liga 1 2026",
       "summary": "El equipo de Pablo Guede saldrá por triunfo que le permita coronarse ganador del campeonato frente los ‘guerreros’ con Matute totalmente lleno de hinchas ‘blanquiazules’. Conoce los horarios vibrante duelo",
-      "published": "Sun, 24 May 2026 03:41:08 +0000",
+      "published": "Sun, 24 May 2026 04:29:05 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/ZEQNLMYRZNGHLEWYBWOYMYZYWQ.jpg?auth=b326e639637aa77f3f9f2f15a14edebe00a545a0edb3109242f39fb4e8f4420b&smart=true&width=2000&height=1333",
       "video_url": null,
       "has_video": false,
@@ -3652,7 +3709,7 @@
         "dominant_pct": 80
       },
       "bias_variance": 0.76,
-      "entity_count": 44,
+      "entity_count": 47,
       "entity_list": [
         "Alianza",
         "Alineaciones",
@@ -3667,12 +3724,14 @@
         "Chankas",
         "Collazos",
         "Cristal",
+        "Cuando",
         "Esgrima",
         "Estudiantes",
         "Fernando",
         "Gaibor",
         "Gimnasia",
         "Goles",
+        "Guede",
         "Independiente",
         "Jefferson",
         "Juniors",
@@ -3680,6 +3739,7 @@
         "Lorenzo",
         "Matute",
         "Moquegua",
+        "Pablo",
         "Penal",
         "Plata",
         "Plate",
@@ -4399,6 +4459,17 @@
           "published": "Sun, 24 May 2026 03:32:59 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/32JIC32QPBD3XDGPPPTDWCILJ4.jpg?auth=8fecd745c4607bd2a5455e755ac01c89024ac1e199bac9b4a3c59d933521790c&smart=true&width=1920&height=1080",
           "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/24/renzo-garces-elogia-a-pablo-guede-tras-la-obtencion-del-torneo-apertura-cuando-hay-un-lider-positivo-se-ve-reflejado-en-la-cancha/",
+          "headline": "Renzo Garcés elogia a Pablo Guede tras la obtención del Torneo Apertura: “Cuando hay un líder positivo, se ve reflejado en la cancha”",
+          "snippet": "En una conmovedora entrevista post partido, Renzo Garcés analiza el camino de Alianza Lima hacia el título del Apertura. Resalta los momentos complicados que superaron y agradece a Dios y a la hinchada por el apoyo constante. La consagración anticipada de Alianza Lima en el Torneo Apertura 2026…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 04:29:05 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/IREB26R7WRBLDCV4YGAP2JW32M.jpg?auth=467bbd855cfdb40bf14c2463c2165ddd8b84f97be9967036798d9484aba73e6d&smart=true&width=1920&height=1080",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -4830,9 +4901,9 @@
     },
     {
       "id": "47dd201d6ea1",
-      "headline": "Clima hoy en Punta Rasa, Buenos Aires: el pronóstico del tiempo para este domingo 24 mayo de 2026",
-      "summary": "<ul><li>El SMN anticipa para este domingo temperaturas entre 11°C y 13°C.</li><li>El pronóstico extendido durante la jornada. ¿Cómo estará el cielo? ¿Cuál es la probabilidad de lluvias?</li></ul>",
-      "published": "Sun, 24 May 2026 03:23:14 +0000",
+      "headline": "Clima hoy en Punta Lara, Buenos Aires: el pronóstico del tiempo para este domingo 24 mayo de 2026",
+      "summary": "<ul><li>El SMN anticipa para este domingo temperaturas entre 9°C y 14°C.</li><li>El pronóstico extendido durante la jornada. ¿Cómo estará el cielo? ¿Cuál es la probabilidad de lluvias?</li></ul>",
+      "published": "Sun, 24 May 2026 03:41:39 +0000",
       "image_url": "https://www.clarin.com/img/2025/04/30/k1TUADqrD_1200x630__1.jpg",
       "video_url": null,
       "has_video": false,
@@ -5167,6 +5238,17 @@
           "country": "AR",
           "published": "Sun, 24 May 2026 03:19:09 +0000",
           "image_url": "https://www.clarin.com/img/2025/04/30/OKwzDy8-G_1200x630__1.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/informacion-general/clima-hoy-punta-lara-buenos-aires-pronostico-tiempo-domingo-24-mayo-2026_0_Mqqow8xxnC.html",
+          "headline": "Clima hoy en Punta Lara, Buenos Aires: el pronóstico del tiempo para este domingo 24 mayo de 2026",
+          "snippet": "El pronóstico del tiempo para Punta Lara este domingo 24 de mayo indica que la temperatura máxima será de 14°C y la mínima de 9°C. A su vez, de acuerdo con el Servicio Meteorológico Nacional (SMN) , se estiman vientos de 14 km/h, y la humedad promedio será del 92%. El reporte del informa que en las…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 03:41:39 +0000",
+          "image_url": "https://www.clarin.com/img/2025/04/30/wQXHTTuRr_1200x630__1.jpg",
           "video_url": null
         }
       ],
@@ -13689,7 +13771,7 @@
       "id": "88353299b6e4",
       "headline": "White House shooting live: Gun-wielding suspect killed by Secret Service as shots fired toward executive mansion",
       "summary": "<p>Trump was at home as incident unfolded in nation’s capital on Saturday evening </p>",
-      "published": "Sun, 24 May 2026 03:58:20 +0000",
+      "published": "Sun, 24 May 2026 09:38:28 +0500",
       "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/931/523/save-girls-sports.jpeg?ve=1&tl=1",
       "video_url": null,
       "has_video": false,
@@ -13697,12 +13779,12 @@
       "blindspot_label": null,
       "blindspot_score": 0.0,
       "coverage": {
-        "left_pct": 26,
-        "center_pct": 44,
-        "right_pct": 30,
+        "left_pct": 25,
+        "center_pct": 45,
+        "right_pct": 29,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 44
+        "dominant_pct": 45
       },
       "bias_variance": 5.5,
       "entity_count": 138,
@@ -14445,6 +14527,18 @@
           "geo_cluster": "middle-east",
           "factuality": "high",
           "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "dawn_pk",
+          "name": "Dawn",
+          "country": "PK",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
           "parent_company": ""
         }
       ],
@@ -16153,6 +16247,28 @@
           "published": "Sun, 24 May 2026 03:58:20 +0000",
           "image_url": "https://www.thenationalnews.com/resizer/v2/WIH4ESFUVIEUJRSBWZHJ6GTVKM.jpg?auth=7f91c6db03a2517566e6b8ae250691a39189d67010d2e248a22635c2c7096e20&smart=true&width=8256&height=5504",
           "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPbXBKRVlURW1WNTVTM3Ntc3RxbmxNUWZMaGx3TmZ0bUJYRE11a3dTZ0RjSmVoeXRTa2hyWnZvejZYUGt0eTEtUllfRzE0T09PdW4taXN2dUJaZFIyN1FGOTRXMXY3dXFiN0tKZk5IX243MjFjZkwySm9uLXJfeEJDYmJNcWVBR0htNDg2SlB2S0VfZDVzOFdZ?oc=5",
+          "headline": "Secret Service kills man who opened fire at White House security checkpoint - NBC News",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPbXBKRVlURW1WNTVTM3Ntc3RxbmxNUWZMaGx3TmZ0bUJYRE11a3dTZ0RjSmVoeXRTa2hyWnZvejZYUGt0eTEtUllfRzE0T09PdW4taXN2dUJaZFIyN1FGOTRXMXY3dXFiN0tKZk5IX243MjFjZkwySm9uLXJfeEJDYmJNcWVBR0htNDg2SlB2S0VfZDVzOFdZ?oc=5\" target=\"_blank\">Secret Service kills…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 22:53:00 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.dawn.com/news/2002729/gunman-killed-by-us-secret-service-after-opening-fire-near-white-house",
+          "headline": "Gunman killed by US Secret Service after opening fire near White House",
+          "snippet": "A gunman opened fire near the White House on Saturday evening, with US Secret Service agents killing the assailant in a shoot-out during which a bystander was also struck, authorities said. President Donald Trump was in the White House at the time — on a day when he was working to <a…",
+          "source": "dawn_pk",
+          "source_name": "Dawn",
+          "country": "PK",
+          "published": "Sun, 24 May 2026 09:38:28 +0500",
+          "image_url": "https://i.dawn.com/large/2026/05/24092957c3d8a1b.webp",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -16169,7 +16285,7 @@
       "geo_breakdown": {
         "west": 27,
         "middle-east": 4,
-        "global-south": 7,
+        "global-south": 8,
         "latin-america": 1,
         "africa": 3,
         "pacific-asia": 6,
@@ -22549,7 +22665,7 @@
       "id": "9e61af1a17f2",
       "headline": "Hull City secure Premier League promotion as Oli McBurnie scores late winner in Championship play-off final - after Middlesbrough's reprieve proved temporary after Spygate drama",
       "summary": "MATT BARLOW AT WEMBLEY: After all the spies, subterfuge and pretend binoculars came the eye of the Tigers. One sucker punch from Oli McBurnie and Hull are returning to the top flight.",
-      "published": "Sun, 24 May 2026 03:16:45 +0000",
+      "published": "Sun, 24 May 2026 04:30:00 +0000",
       "image_url": "https://i.dailymail.com/1s/2026/05/09/19/108494547-0-image-m-134_1778350294490.jpg",
       "video_url": null,
       "has_video": false,
@@ -22565,7 +22681,7 @@
         "dominant_pct": 67
       },
       "bias_variance": 3.75,
-      "entity_count": 65,
+      "entity_count": 67,
       "entity_list": [
         "Ajayi",
         "Arsenal",
@@ -22612,6 +22728,7 @@
         "Ranking",
         "Reaction",
         "Reilly",
+        "Roberto",
         "Ronaldo",
         "Salah",
         "Season",
@@ -22631,7 +22748,8 @@
         "Villa",
         "Vipers",
         "Watch",
-        "Wembley"
+        "Wembley",
+        "Zerbi"
       ],
       "sources": [
         {
@@ -23874,6 +23992,17 @@
           "country": "NG",
           "published": "Sun, 24 May 2026 03:16:45 +0000",
           "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/sport/football/2026/05/24/roberto-de-zerbi-confirms-tottenham-future-ahead-of-premier-league-relegation-decider/",
+          "headline": "Roberto De Zerbi confirms Tottenham future ahead of Premier League relegation decider",
+          "snippet": "Roberto De Zerbi has reaffirmed he will be in charge of Tottenham next season and urged his squad to embrace the pressure of Sunday’s relegation decider with Everton. Spurs start the final day of the Premier League season in 17th spot and two points above West Ham, who are at home to Leeds and must…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Sun, 24 May 2026 04:30:00 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/WOCLMSM2FPNVVFPGMJPTOKZGQE.jpg?auth=c60a00205ca4dc354eeb6092ffa0b94178f05479da0d30aa0d8d95923de70c6b&smart=true&width=4290&height=2860",
           "video_url": null
         }
       ],
@@ -37201,6 +37330,17 @@
           "published": "Sat, 23 May 2026 22:10:14 GMT",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQM2UzZFYxRkprekxmNmdEd3dUR0J1SS1peENBbkZyazZKYVk4Vi1DckdnU1FqejlIRXF5TlE1X1pVeG5PdlVqTFdiRVlNeUY5RlVtMmpOTW5TSmQ1V3I4Znc3WTBueHlwNHlPN2ZicHM0aEN4RzFJTG1UOFVEVElaRA?oc=5",
+          "headline": "Romanian director Cristian Mungiu's 'Fjord' wins top prize at Cannes - NPR",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxQM2UzZFYxRkprekxmNmdEd3dUR0J1SS1peENBbkZyazZKYVk4Vi1DckdnU1FqejlIRXF5TlE1X1pVeG5PdlVqTFdiRVlNeUY5RlVtMmpOTW5TSmQ1V3I4Znc3WTBueHlwNHlPN2ZicHM0aEN4RzFJTG1UOFVEVElaRA?oc=5\" target=\"_blank\">Romanian director Cristian Mungiu's 'Fjord' wins top…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 00:13:33 GMT",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -45875,6 +46015,192 @@
       "section": "chisme"
     },
     {
+      "id": "7eafa91be735",
+      "headline": "Cannes encumbra a los Javis con el Premio de Dirección y da segunda Palma de Oro a Mungiu",
+      "summary": "Javier Ambrossi y Javier Calvo reciben en Cannes el Premio de Dirección por “La bola negra”, y Cristian Mungiu recibe la Palma de Oro por \"Fjord”.",
+      "published": "Sun, 24 May 2026 04:11:48 +0000",
+      "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/profimedia-1104698297.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 20,
+        "center_pct": 60,
+        "right_pct": 20,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 60
+      },
+      "bias_variance": 1.88,
+      "entity_count": 15,
+      "entity_list": [
+        "Andrej",
+        "CANNES",
+        "Cannes",
+        "Cristian",
+        "FOTOGALERIE",
+        "ISTORIE",
+        "Javis",
+        "Mungiu",
+        "Palma",
+        "Palme",
+        "Premio",
+        "Romania",
+        "Velkou",
+        "Zlatou",
+        "Zvjagincev"
+      ],
+      "sources": [
+        {
+          "id": "g4media",
+          "name": "G4Media",
+          "country": "RO",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "novinky_cz",
+          "name": "Novinky.cz",
+          "country": "CZ",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "prensa_libre",
+          "name": "Prensa Libre Guatemala",
+          "country": "GT",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "prothom_alo",
+          "name": "Prothom Alo (English)",
+          "country": "BD",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.g4media.ro/istorie-la-cannes-cristian-mungiu-intra-in-clubul-exclusivist-al-regizorilor-cu-doua-trofee-palme-dor-cannes-pamantul-fagaduintei-pentru-mungiu.html",
+          "headline": "ISTORIE LA CANNES: Cristian Mungiu intră în clubul exclusivist al regizorilor cu două trofee Palme d’Or. Cannes, pământul făgăduinței pentru Mungiu",
+          "snippet": "Regizorul Cristian Mungiu a intrat în istoria cinematografului european după ce a câștigat sâmbătă seară cel de-al doilea trofeu Palme d’Or din carieră. Prin această performanță istorică, cineastul român devine al 11-lea regizor din întreaga istorie a Festivalului de la Cannes care reușește să își…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sat, 23 May 2026 19:58:08 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/profimedia-1104698297.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.novinky.cz/clanek/kultura-filmy-serialy-filmovy-festival-v-cannes-rozdal-ceny-zlatou-palmu-ziskal-rumunsky-film-fjord-40579580",
+          "headline": "Zlatou palmu v Cannes získal rumunský režisér Cristian Mungiu. Velkou cenu má ruský režisér Andrej Zvjagincev",
+          "snippet": "Něco nám brání v načtení stránky It seems the page failed to load correctly Zdá se, že se stránka nepodařila správně načíst. Může to být způsobeno některými rozšířeními prohlížečů, jako jsou blokátory reklam, nebo připojení přes či proxy. This may be caused by certain browser extensions, such as ad…",
+          "source": "novinky_cz",
+          "source_name": "Novinky.cz",
+          "country": "CZ",
+          "published": "Sat, 23 May 2026 21:43:16 +0200",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/cannes-encumbra-a-los-javis-con-el-premio-de-direccion-y-da-segunda-palma-de-oro-a-mungiu/",
+          "headline": "Cannes encumbra a los Javis con el Premio de Dirección y da segunda Palma de Oro a Mungiu",
+          "snippet": "Alicia García de Francisco y Nerea González Cannes (Francia), 23 may (EFE).- El Festival de Cannes respaldó este sábado el cine de Javier Ambrossi y Javier Calvo, con el Premio de Dirección por 'La bola negra', una propuesta muy bien valorada por el jurado presidido por el cineasta Park Chan-Wook,…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 22:31:38 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.prensalibre.com/vida/escenario/cannes-encumbra-a-los-javis-con-el-premio-de-direccion-y-da-segunda-palma-de-oro-a-mungiu/",
+          "headline": "Cannes encumbra a los Javis con el Premio de Dirección y da segunda Palma de Oro a Mungiu",
+          "snippet": "El Festival de Cannes respaldó este sábado el cine de Javier Ambrossi y Javier Calvo, con el Premio de Dirección por ‘La bola negra’, una propuesta muy bien valorada por el jurado presidido por el cineasta Park Chan-Wook, que otorgó su segunda Palma de Oro al rumano Cristian Mungiu, esta vez por…",
+          "source": "prensa_libre",
+          "source_name": "Prensa Libre Guatemala",
+          "country": "GT",
+          "published": "Sun, 24 May 2026 00:30:06 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.g4media.ro/fotogalerie-cristian-mungiu-pe-covorul-rosu-de-la-cannes-dupa-ce-a-castigat-al-doilea-palme-dor-din-cariera.html",
+          "headline": "FOTOGALERIE Cristian Mungiu pe covorul roșu de la Cannes după ce a câștigat al doilea Palme d’Or din carieră",
+          "snippet": "Cristian Mungiu a primit sâmbătă noaptea premiul Palme d’Or de la actrița britanică Tilda Swinton într-o ceremonie cu accente emoționale, iar alături de el pe scenă s-au aflat actorii din rolurile principale ale filmului Fjord: Renate Reinsve, Cristian Mungiu și Sebastian Stan. Regizorul român a…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sun, 24 May 2026 04:07:37 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/profimedia-1104855286.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://en.prothomalo.com/entertainment/movies/iao1wwc57q",
+          "headline": "Romania's Mungiu wins top prize at glitzy Cannes finale",
+          "snippet": "Geena Davis, star of \"Thelma &amp; Louise\" which features on the Cannes poster this year, reflected on how the 1991 movie was meant to be a breakthrough for women as she presented a prize. \"All these years later, we have to acknowledge that the change is happening slowly,\" she said. Other prizes in…",
+          "source": "prothom_alo",
+          "source_name": "Prothom Alo (English)",
+          "country": "BD",
+          "published": "Sun, 24 May 2026 04:11:48 +0000",
+          "image_url": "https://media.prothomalo.com/prothomalo-english/2026-05-24/kihtpizq/2026-05-23T215521Z792402324UP1EM5N1KN81JRTRMADP3FILMFESTIVAL-CANNES-AWARDS.JPG",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.118,
+        "zionist": 0.23,
+        "atlanticist": 0.43,
+        "statist": 0.008,
+        "financialized": 0.29
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "eastern-europe": 2,
+        "latin-america": 2,
+        "global-south": 1
+      },
+      "section": "entertainment"
+    },
+    {
       "id": "0024f8b2cf7d",
       "headline": "IDF says it attacked Hezbollah sites, as at least 5 reported killed in south Lebanon",
       "summary": "<p>Military says overnight strikes targeted underground weapons production site in Beqaa and other infrastructure in Tyre, where state media reports 'severe damage' to a hospital</p>\n<p>The post <a href=\"https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed",
@@ -46579,167 +46905,6 @@
         "latin-america": 2
       },
       "section": "world"
-    },
-    {
-      "id": "7eafa91be735",
-      "headline": "Cannes encumbra a los Javis con el Premio de Dirección y da segunda Palma de Oro a Mungiu",
-      "summary": "Javier Ambrossi y Javier Calvo reciben en Cannes el Premio de Dirección por “La bola negra”, y Cristian Mungiu recibe la Palma de Oro por \"Fjord”.",
-      "published": "Sun, 24 May 2026 04:07:37 +0000",
-      "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/profimedia-1104698297.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 75,
-        "right_pct": 25,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 75
-      },
-      "bias_variance": 1.26,
-      "entity_count": 14,
-      "entity_list": [
-        "Andrej",
-        "CANNES",
-        "Cannes",
-        "Cristian",
-        "FOTOGALERIE",
-        "ISTORIE",
-        "Javis",
-        "Mungiu",
-        "Palma",
-        "Palme",
-        "Premio",
-        "Velkou",
-        "Zlatou",
-        "Zvjagincev"
-      ],
-      "sources": [
-        {
-          "id": "g4media",
-          "name": "G4Media",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "novinky_cz",
-          "name": "Novinky.cz",
-          "country": "CZ",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "prensa_libre",
-          "name": "Prensa Libre Guatemala",
-          "country": "GT",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.g4media.ro/istorie-la-cannes-cristian-mungiu-intra-in-clubul-exclusivist-al-regizorilor-cu-doua-trofee-palme-dor-cannes-pamantul-fagaduintei-pentru-mungiu.html",
-          "headline": "ISTORIE LA CANNES: Cristian Mungiu intră în clubul exclusivist al regizorilor cu două trofee Palme d’Or. Cannes, pământul făgăduinței pentru Mungiu",
-          "snippet": "Regizorul Cristian Mungiu a intrat în istoria cinematografului european după ce a câștigat sâmbătă seară cel de-al doilea trofeu Palme d’Or din carieră. Prin această performanță istorică, cineastul român devine al 11-lea regizor din întreaga istorie a Festivalului de la Cannes care reușește să își…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sat, 23 May 2026 19:58:08 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/profimedia-1104698297.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.novinky.cz/clanek/kultura-filmy-serialy-filmovy-festival-v-cannes-rozdal-ceny-zlatou-palmu-ziskal-rumunsky-film-fjord-40579580",
-          "headline": "Zlatou palmu v Cannes získal rumunský režisér Cristian Mungiu. Velkou cenu má ruský režisér Andrej Zvjagincev",
-          "snippet": "Něco nám brání v načtení stránky It seems the page failed to load correctly Zdá se, že se stránka nepodařila správně načíst. Může to být způsobeno některými rozšířeními prohlížečů, jako jsou blokátory reklam, nebo připojení přes či proxy. This may be caused by certain browser extensions, such as ad…",
-          "source": "novinky_cz",
-          "source_name": "Novinky.cz",
-          "country": "CZ",
-          "published": "Sat, 23 May 2026 21:43:16 +0200",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/cannes-encumbra-a-los-javis-con-el-premio-de-direccion-y-da-segunda-palma-de-oro-a-mungiu/",
-          "headline": "Cannes encumbra a los Javis con el Premio de Dirección y da segunda Palma de Oro a Mungiu",
-          "snippet": "Alicia García de Francisco y Nerea González Cannes (Francia), 23 may (EFE).- El Festival de Cannes respaldó este sábado el cine de Javier Ambrossi y Javier Calvo, con el Premio de Dirección por 'La bola negra', una propuesta muy bien valorada por el jurado presidido por el cineasta Park Chan-Wook,…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 22:31:38 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.prensalibre.com/vida/escenario/cannes-encumbra-a-los-javis-con-el-premio-de-direccion-y-da-segunda-palma-de-oro-a-mungiu/",
-          "headline": "Cannes encumbra a los Javis con el Premio de Dirección y da segunda Palma de Oro a Mungiu",
-          "snippet": "El Festival de Cannes respaldó este sábado el cine de Javier Ambrossi y Javier Calvo, con el Premio de Dirección por ‘La bola negra’, una propuesta muy bien valorada por el jurado presidido por el cineasta Park Chan-Wook, que otorgó su segunda Palma de Oro al rumano Cristian Mungiu, esta vez por…",
-          "source": "prensa_libre",
-          "source_name": "Prensa Libre Guatemala",
-          "country": "GT",
-          "published": "Sun, 24 May 2026 00:30:06 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/fotogalerie-cristian-mungiu-pe-covorul-rosu-de-la-cannes-dupa-ce-a-castigat-al-doilea-palme-dor-din-cariera.html",
-          "headline": "FOTOGALERIE Cristian Mungiu pe covorul roșu de la Cannes după ce a câștigat al doilea Palme d’Or din carieră",
-          "snippet": "Cristian Mungiu a primit sâmbătă noaptea premiul Palme d’Or de la actrița britanică Tilda Swinton într-o ceremonie cu accente emoționale, iar alături de el pe scenă s-au aflat actorii din rolurile principale ale filmului Fjord: Renate Reinsve, Cristian Mungiu și Sebastian Stan. Regizorul român a…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sun, 24 May 2026 04:07:37 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/profimedia-1104855286.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.143,
-        "zionist": 0.227,
-        "atlanticist": 0.468,
-        "statist": 0.035,
-        "financialized": 0.337
-      },
-      "fp_source_count": 4,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "eastern-europe": 2,
-        "latin-america": 2
-      },
-      "section": "entertainment"
     },
     {
       "id": "b84adadb4411",
