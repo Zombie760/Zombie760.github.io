@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T09:56:50.384151+00:00",
-  "count": 67,
+  "generated_at": "2026-05-24T10:10:33.099254+00:00",
+  "count": 66,
   "stories": [
     {
       "id": "64c47aff1fe9",
@@ -1163,10 +1163,10 @@
     },
     {
       "id": "9182092d6b80",
-      "headline": "Una concentración rechaza las detenciones y cargas policiales a activistas de la Global Sumud Flotilla en Loiu (Bilbao)",
-      "summary": "",
-      "published": "Sun, 24 May 2026 09:58:59 +1200",
-      "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/6/6744b6cf50b85df230b72f8d/image/ca775f5be14812cf413dc2b673663cd1488d4806bf371a4c947b3862851b8078.JPG?width=1440&format=webp&quality=80",
+      "headline": "Israel releases two activists from Gaza-bound Global Sumud Flotilla",
+      "summary": "Activists Saif Abukeshek and Thiago Avila were part of a second Global Sumud Flotilla launched from Spain on April 12 to try to break Israel's blockade of Gaza by delivering aid to the enclave.",
+      "published": "Sun, 24 May 2026 08:05:14 GMT",
+      "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/6/Reuters/image/2026_05_06T101752Z_1775141854_RC2M3LAC4PM1_RTRMADP_3_ISRAEL_PALESTINIANS_GAZA_FLOTILLA_PROTEST.JPG?width=1440&format=webp&quality=80",
       "video_url": null,
       "has_video": false,
       "is_blindspot": false,
@@ -1181,7 +1181,7 @@
         "dominant_pct": 38
       },
       "bias_variance": 4.87,
-      "entity_count": 25,
+      "entity_count": 30,
       "entity_list": [
         "Becomes",
         "Bilbao",
@@ -1190,12 +1190,15 @@
         "Chilena",
         "Consular",
         "Continues",
+        "Detention",
+        "Ertzaintza",
         "Ertzainza",
         "Exige",
         "Flotilla",
         "Humanitarian",
         "Incidentes",
         "Indian",
+        "Israel",
         "Israeli",
         "Marmaris",
         "Mexicans",
@@ -1203,6 +1206,8 @@
         "Naidu",
         "Nikita",
         "Offers",
+        "Releases",
+        "Reprime",
         "Sails",
         "Sheinbaum",
         "Sumud",
@@ -1210,6 +1215,18 @@
         "Turkiye"
       ],
       "sources": [
+        {
+          "id": "trt_world",
+          "name": "TRT World",
+          "country": "TR",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
         {
           "id": "telesur",
           "name": "Telesur English",
@@ -1235,13 +1252,13 @@
           "parent_company": ""
         },
         {
-          "id": "trt_world",
-          "name": "TRT World",
-          "country": "TR",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "middle-east",
+          "id": "la_jornada",
+          "name": "La Jornada",
+          "country": "MX",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
           "factuality": "mixed",
           "primary_vs_launder": "primary",
           "parent_company": ""
@@ -1269,18 +1286,6 @@
           "factuality": "mostly_factual",
           "primary_vs_launder": "mixed",
           "parent_company": "Qatari state"
-        },
-        {
-          "id": "la_jornada",
-          "name": "La Jornada",
-          "country": "MX",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
         },
         {
           "id": "daily_sabah",
@@ -1321,6 +1326,17 @@
       ],
       "articles": [
         {
+          "url": "/article/4f92744b4fa4",
+          "headline": "Israel to release two activists from Global Sumud Flotilla",
+          "snippet": "An Israeli advocacy group said Israel informed lawyers about plans to release and deport Brazilian national Thiago de Avila and Spanish activist of Palestinian origin Saif Abukeshek.",
+          "source": "trt_world",
+          "source_name": "TRT World",
+          "country": "TR",
+          "published": "Sat, 09 May 2026 12:34:23 GMT",
+          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/6/Reuters/image/2026_05_06T101752Z_1775141854_RC2M3LAC4PM1_RTRMADP_3_ISRAEL_PALESTINIANS_GAZA_FLOTILLA_PROTEST.JPG?width=1440&format=webp&quality=80",
+          "video_url": null
+        },
+        {
           "url": "https://www.telesurenglish.net/global-sumud-flotilla-turkiye-gaza/",
           "headline": "Global Sumud Flotilla Sails for Türkiye, Continues Gaza Humanitarian Mission",
           "snippet": "The fleet will join more than 30 additional vessels to hold an International Assembly. Photo: EFE. May 8, 2026 Hour: 3:54 pm 🔗 Comparte este artículo The Global Sumud Flotilla will unite with over 30 additional vessels for an International Assembly to define the next phases of its humanitarian…",
@@ -1354,6 +1370,17 @@
           "video_url": null
         },
         {
+          "url": "/article/07b81a2cb22b",
+          "headline": "Israel releases two activists from Gaza-bound Global Sumud Flotilla",
+          "snippet": "Activists Saif Abukeshek and Thiago Avila were part of a second Global Sumud Flotilla launched from Spain on April 12 to try to break Israel's blockade of Gaza by delivering aid to the enclave.",
+          "source": "trt_world",
+          "source_name": "TRT World",
+          "country": "TR",
+          "published": "Sun, 10 May 2026 04:04:57 GMT",
+          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/1/Reuters/image/2026_05_01T142931Z_1783791095_RC2A0LATYXV2_RTRMADP_3_ISRAEL_PALESTINIANS_GAZA_FLOTILLA.JPG?width=1440&format=webp&quality=80",
+          "video_url": null
+        },
+        {
           "url": "/article/8637c95ec710",
           "headline": "Global Sumud Flotilla reaches Türkiye's Marmaris after Israeli interception",
           "snippet": "Activists aboard the Gaza-bound flotilla underwent entry and medical procedures after the vessels docked in Türkiye’s Marmaris district.",
@@ -1362,6 +1389,17 @@
           "country": "TR",
           "published": "Sun, 10 May 2026 13:21:42 GMT",
           "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/6/6744b6cf50b85df230b72f8d/image/ca775f5be14812cf413dc2b673663cd1488d4806bf371a4c947b3862851b8078.JPG?width=1440&format=webp&quality=80",
+          "video_url": null
+        },
+        {
+          "url": "https://www.jornada.com.mx/2026/05/10/mundo/017n1mun?partner=rss",
+          "headline": "Israel expulsa a los activistas de la Global Sumud Flotilla",
+          "snippet": "Reuters, Afp, Xinhua y Europa Press Periódico La Jornada Domingo 10 de mayo de 2026, p. 17 Jerusalén. Israel expulsó ayer a los dos activistas, ciudadanos de España y de Brasil, que fueron secuestrados cuando iban a bordo de una flotilla humanitaria con destino a la franja de Gaza, informó el…",
+          "source": "la_jornada",
+          "source_name": "La Jornada",
+          "country": "MX",
+          "published": "Sun, 10 May 2026 10:54:13 GMT",
+          "image_url": null,
           "video_url": null
         },
         {
@@ -1383,6 +1421,17 @@
           "source_name": "Al Jazeera English",
           "country": "QA",
           "published": "Mon, 11 May 2026 08:40:03 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.telesurenglish.net/israel-releases-sumud-flotilla-activists-after-six-days-in-detention/",
+          "headline": "Israel Releases Sumud Flotilla Activists After Six Days in Detention",
+          "snippet": "Saif Abukeshek (C), May 10, 2026. X/ @FPedroZerolo May 11, 2026 Hour: 8:00 am 🔗 Comparte este artículo Zionist forces held Avila and Abukeshek incommunicado and subjected them to threats and abuse. On Sunday, lawyers from the human rights legal center Adalah confirmed that the Zionist state…",
+          "source": "telesur",
+          "source_name": "Telesur English",
+          "country": "VE",
+          "published": "Mon, 11 May 2026 12:00:21 +0000",
           "image_url": null,
           "video_url": null
         },
@@ -1464,6 +1513,17 @@
           "video_url": null
         },
         {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/23/la-flotilla-global-sumud-gsf-acusa-a-la-ertzaintza-de-copiar-la-brutalidad-de-israel/",
+          "headline": "La Flotilla Global Sumud (GSF) acusa a la Ertzaintza de copiar la brutalidad de Israel",
+          "snippet": "Bilbao, 23 may (EFE).- La Flotilla Global Sumud (GSF) ha expresado su \"profunda indignación y condena\" por la \"violenta agresión\" de la Ertzaintza contra varios de sus activistas este sábado a su llegada al Aeropuerto de Bilbao, y ha acusado a la policía vasca de emplear \"las mismas tácticas…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:34:29 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
           "url": "https://www.rnz.co.nz/news/political/596163/kiwi-pair-detained-during-global-sumud-flotilla-to-arrive-back-in-nz",
           "headline": "Kiwi pair detained during Global Sumud Flotilla to arrive back in NZ",
           "snippet": "The \"Global Sumud Flotilla,\" carrying international activists and journalists, aims to sail across the Mediterranean Sea to Gaza to challenge the ongoing blockade and draw attention to the humanitarian crisis in the Palestinian territory. Photo: / Murat Kocabas Two New Zealanders detained during…",
@@ -1471,6 +1531,17 @@
           "source_name": "RNZ",
           "country": "NZ",
           "published": "Sun, 24 May 2026 09:58:59 +1200",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.jornada.com.mx/2026/05/24/mundo/016n1mun?partner=rss",
+          "headline": "Reprime la policía vasca la recepción de activistas de Global Sumud Flotilla",
+          "snippet": "▲ Los uniformados vascos detuvieron a los activistas de la Global Sumud Flotilla apenas aterrizaron en el aeropuerto de Bilbao. Foto Afp Armando G. Tejeda Corresponsal Periódico La Jornada Domingo 24 de mayo de 2026, p. 16 Madrid. La policía autonómica vasca, la Ertzaintza, reprimió ayer con dureza…",
+          "source": "la_jornada",
+          "source_name": "La Jornada",
+          "country": "MX",
+          "published": "Sun, 24 May 2026 08:05:14 GMT",
           "image_url": null,
           "video_url": null
         }
@@ -4845,213 +4916,6 @@
       "section": "world"
     },
     {
-      "id": "12b360771fdf",
-      "headline": "El precio del petróleo volvió a subir tras la falta de acuerdo entre EEUU e Irán para lograr la paz en Medio Oriente",
-      "summary": "La referencia internacional Brent subió un 4,75% hasta los 105,50 dólares por barril, mientras que el West Texas Intermediate avanzó un 4,16% hasta los 99,95 dólares por barril",
-      "published": "Sun, 24 May 2026 00:09:35 +0000",
-      "image_url": "https://www.latercera.com/resizer/v2/YNCSVYCCGRFHFM7ZZ7C5FBY64U.jpeg?auth=c7e20d6b7dece8a140e4f314d4ba36c1f962db5b638127320fe37eee02a42e3a&smart=true&width=1200&height=750",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 40,
-        "right_pct": 60,
-        "state_count": 0,
-        "dominant": "right",
-        "dominant_pct": 60
-      },
-      "bias_variance": 0.81,
-      "entity_count": 5,
-      "entity_list": [
-        "Medio",
-        "Oriente",
-        "Ormuz",
-        "Reino",
-        "Unido"
-      ],
-      "sources": [
-        {
-          "id": "tercera",
-          "name": "La Tercera",
-          "country": "CL",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "la_nacion_ar",
-          "name": "La Nación (Argentina)",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "la_jornada",
-          "name": "La Jornada",
-          "country": "MX",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "prensa_libre",
-          "name": "Prensa Libre Guatemala",
-          "country": "GT",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.latercera.com/mundo/noticia/reino-unido-envia-su-buque-destructor-al-medio-oriente-para-una-posible-mision-de-proteccion-al-estrecho-de-ormuz/",
-          "headline": "Reino Unido envía su buque destructor al Medio Oriente para una posible misión de protección al estrecho de Ormuz",
-          "snippet": "Por Daniela Silva 9 2026 Estrecho de Ormuz. Imagen @MarioNawfal en X. Este sábado, Reino Unido ha anunciado el despliegue de su buque destructor, el Dragon , al Medio Oriente en preparación para una posible operación con el objetivo de proteger el transporte marítimo en el estrecho de Ormuz , según…",
-          "source": "tercera",
-          "source_name": "La Tercera",
-          "country": "CL",
-          "published": "Sat, 09 May 2026 16:15:33 +0000",
-          "image_url": "https://www.latercera.com/resizer/v2/YNCSVYCCGRFHFM7ZZ7C5FBY64U.jpeg?auth=c7e20d6b7dece8a140e4f314d4ba36c1f962db5b638127320fe37eee02a42e3a&smart=true&width=1200&height=750",
-          "video_url": null
-        },
-        {
-          "url": "https://www.lanacion.com.ar/el-mundo/reino-unido-envia-un-destructor-a-medio-oriente-y-advierte-sobre-una-futura-mision-en-el-estrecho-de-nid09052026/",
-          "headline": "Reino Unido envía un destructor a Medio Oriente y advierte sobre una futura misión en el estrecho de Ormuz",
-          "snippet": "LONDRES.- Mientras las conversaciones entre Estados Unidos e Irán se encuentran estancadas a la espera de una respuesta del régimen a la última propuesta de Washington para dar fin a la guerra y reabrir el estrecho de Ormuz, Reino Unido anunció este sábado que d esplegará un buque de guerra en…",
-          "source": "la_nacion_ar",
-          "source_name": "La Nación (Argentina)",
-          "country": "AR",
-          "published": "Sat, 09 May 2026 19:12:53 +0000",
-          "image_url": "https://resizer.glanacion.com/resizer/v2/XIBGI66AENEJDM3L2ZZV7WNHNQ.png?auth=387b4c9f74506f5004e1cd9acebc387686adecf9fcb56526f36b8444acbad52e&smart=true&width=1225&height=763",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/mundo/2026/05/10/el-regimen-de-iran-amenazo-con-atacar-instalaciones-de-eeuu-en-medio-oriente-si-sus-petroleros-son-agredidos/",
-          "headline": "El régimen de Irán amenazó con atacar instalaciones de EEUU en Medio Oriente si sus petroleros son agredidos",
-          "snippet": "Miembros de la Guardia Revolucionaria de Irán patrullan el estrecho de Ormuz (U.S. Navy via AP) La Guardia Revolucionaria Islámica de Irán emitió una amenaza de represalia directa contra instalaciones estadounidenses en la región y buques identificados como enemigos si alguno de sus petroleros es…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sun, 10 May 2026 00:03:11 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/MMVT2MCXG5GPTIZPBBOTPELHBY.jpg?auth=187a5654a175e8fdccfca6bb4c443c6492db6fa70afd1cf2b09ea49d3be64bf1&smart=true&width=1920&height=1086",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/opinion/2026/05/10/el-nuevo-medio-oriente-que-surgira-el-dia-que-iran-acepte-su-derrota/",
-          "headline": "El nuevo Medio Oriente que surgirá el día que Irán acepte su derrota",
-          "snippet": "Manifestantes iraníes exigen la liberación de su país Se sabía que EE. UU. e Israel derrotarían militarmente a Irán desde la guerra de los 12 días del año pasado, que lo dejó sin defensas aéreas y con su programa nuclear en ruinas. Sin embargo, el problema es que este año, a partir del 28 de…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sun, 10 May 2026 07:00:00 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/DMRRGHNVGREVRAHOQZQJ7VYTIA.jpeg?auth=3073e5c0b3420814eaa467fd539065522dcd3d6ae2ab7bd981c6e6c52d2a120b&smart=true&width=2048&height=1365",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/mundo/2026/05/10/en-vivo-pakistan-prometio-continuar-con-sus-esfuerzos-de-mediacion-para-dar-fin-a-la-guerra-en-medio-oriente/",
-          "headline": "EN VIVO | El precio del petróleo volvió a subir tras la falta de acuerdo entre EEUU e Irán para lograr la paz en Medio Oriente",
-          "snippet": "| El precio del petróleo volvió a subir tras la falta de acuerdo entre e Irán para lograr la paz en Medio Oriente La referencia internacional Brent subió un 2,69% hasta los 104,01 dólares por barril, mientras que el West Texas Intermediate avanzó un 2,54% hasta los 97,84 dólares por barril 10 May,…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 00:50:01 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/ODSUVS3RUZB5XC6JWC3B77TEU4.JPG?auth=501db9ede88ec01f5d59432e4f556e89facead163404356b178a387a45256fb1&smart=true&width=800&height=533",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/mundo/2026/05/11/el-precio-del-petroleo-volvio-a-subir-tras-la-falta-de-acuerdo-entre-eeuu-e-iran-para-lograr-la-paz-en-medio-oriente/",
-          "headline": "El precio del petróleo volvió a subir tras la falta de acuerdo entre EEUU e Irán para lograr la paz en Medio Oriente",
-          "snippet": "El precio del petróleo volvió a subir tras la falta de acuerdo entre e Irán para lograr la paz en Medio Oriente (REUTERS) El petróleo subió este lunes en los mercados asiáticos después de que el presidente de Estados Unidos, Donald Trump , rechazara las condiciones planteadas por Irán para poner…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 04:41:11 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/LMOTDVDM5FAE5P4V7O7WRCVCKQ.JPG?auth=c32f55a4162b218646da0ae45db019ebd335d275bf963eecb97d88ff2710e8ef&smart=true&width=6500&height=4333",
-          "video_url": null
-        },
-        {
-          "url": "https://www.jornada.com.mx/2026/05/11/mundo/020n2mun?partner=rss",
-          "headline": "Sube el petróleo de nuevo por la incertidumbre en Medio Oriente",
-          "snippet": "De La Redacción Periódico La Jornada Lunes 11 de mayo de 2026, p. 20 Después de que el presidente de Estados Unidos, Donald Trump, rechazara la respuesta de Irán a una propuesta de paz por parte de Washington y que el país asiático renovara sus amenazas en el estrecho de Ormuz, los precios del…",
-          "source": "la_jornada",
-          "source_name": "La Jornada",
-          "country": "MX",
-          "published": "Mon, 11 May 2026 08:27:27 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.jornada.com.mx/2026/05/23/mundo/018n3mun?partner=rss",
-          "headline": "Sube precio del petróleo tras ponerse en duda progreso de negociaciones en Medio Oriente",
-          "snippet": "Sube precio del petróleo tras ponerse en duda progreso de negociaciones en Medio Oriente Reuters, Afp y Redacción Periódico La Jornada Sábado 23 de mayo de 2026, p. 18 Los precios del petróleo subieron ayer, ya que los inversores pusieron en duda las perspectivas de avance en las negociaciones de…",
-          "source": "la_jornada",
-          "source_name": "La Jornada",
-          "country": "MX",
-          "published": "Sat, 23 May 2026 07:30:01 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.prensalibre.com/internacional/como-el-conflicto-en-medio-oriente-podria-conllevar-oportunidades-para-algunos-paises-de-america/",
-          "headline": "Cómo el conflicto en Medio Oriente podría conllevar oportunidades para algunos países de América",
-          "snippet": "Mientras el alto el fuego entre Estados Unidos e Irán disminuye la tensión mundial, el estrecho de Ormuz sigue siendo el centro de la energía global. Por esta angosta vía marítima circula el 20% del petróleo y gas natural licuado que se consume en el mundo , y sus bloqueos intermitentes han…",
-          "source": "prensa_libre",
-          "source_name": "Prensa Libre Guatemala",
-          "country": "GT",
-          "published": "Sun, 24 May 2026 00:09:35 +0000",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.16,
-        "zionist": 0.26,
-        "atlanticist": 0.412,
-        "statist": 0.256,
-        "financialized": 0.468
-      },
-      "fp_source_count": 5,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "latin-america": 5
-      },
-      "section": "world"
-    },
-    {
       "id": "abfc873f50e9",
       "headline": "Oleksandr Usyk earns controversial 11th-round stoppage win over kickboxer Rico Verhoeven to retain his WBC belt with Anthony Joshua in support - as Dutchman demands rematch and questions ref's verdict",
       "summary": "Usyk remarkably appeared at risk of losing to the impressive Dutchman, who was competing in just his second professional fight in front of the Egyptian pyramids in Giza.",
@@ -6462,6 +6326,165 @@
         "adversarial": 1,
         "global-south": 1,
         "eastern-europe": 1
+      },
+      "section": "world"
+    },
+    {
+      "id": "0b49d46304ce",
+      "headline": "BREAKING Cristian Mungiu a câștigat premiul Palme d’Or cu filmul Fjord / Regizorul român intră în istorie cu al doilea Palme d’Or  alături de Francis Ford Coppola și Emir Kusturica",
+      "summary": "<p>Regizorul român Cristian Mungiu a primit sâmbătă seară premiul Palme d&#8217;Or la Festivalul Cannes 2026, potrivit transmisiei live de la eveniment. El intră în istoria cinematografului european cu cel de-al doilea premiu la Cannes. Cristian Mungiu câștigase prestigiosul trofeu Palme d&#8217;Or ",
+      "published": "Sun, 24 May 2026 08:05:14 GMT",
+      "image_url": "https://www.g4media.ro//wp-content/uploads/2025/02/ID78691_INQUAM_Photos_Octav_Ganea.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 33,
+        "center_pct": 67,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 4.73,
+      "entity_count": 13,
+      "entity_list": [
+        "BREAKING",
+        "Coppola",
+        "Cristian",
+        "Filmul",
+        "Fjord",
+        "Francis",
+        "Kusturica",
+        "Mungiu",
+        "Oscar",
+        "Palme",
+        "Prima",
+        "Regizorul",
+        "Romanian"
+      ],
+      "sources": [
+        {
+          "id": "g4media",
+          "name": "G4Media",
+          "country": "RO",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "romanian_insider",
+          "name": "Romanian Insider",
+          "country": "RO",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_jornada_mx",
+          "name": "La Jornada",
+          "country": "MX",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.g4media.ro/prima-reactie-a-lui-cristian-mungiu-dupa-ce-a-castigat-palme-dor-cu-filmul-fjord-societatile-astazi-sunt-fracturate-si-radicalizate.html",
+          "headline": "Prima reacție a lui Cristian Mungiu după ce a câștigat Palme d’Or cu filmul Fjord: ”Societățile, astăzi, sunt fracturate și radicalizate”,",
+          "snippet": "Cristian Mungiu a declarat sâmbătă noaptea la Cannes, imediat după ce a primit Palme d’Or pentru filmul Fjord, că ”Starea lumii de astăzi nu este bună. Nu sunt mândru de ceea ce lăsăm copiilor noștri. Era de datoria noastră să facem schimbarea”, transmite Le Monde. ”Societățile, astăzi, sunt…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sat, 23 May 2026 19:53:50 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2025/02/ID78691_INQUAM_Photos_Octav_Ganea.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.g4media.ro/breaking-cristian-mungiu-a-castigat-premiul-palme-dor-cu-filmul-fjord-regizorul-roman-intra-in-istorie-cu-al-doilea-palme-dor.html",
+          "headline": "BREAKING Cristian Mungiu a câștigat premiul Palme d’Or cu filmul Fjord / Regizorul român intră în istorie cu al doilea Palme d’Or  alături de Francis Ford Coppola și Emir Kusturica",
+          "snippet": "Regizorul român Cristian Mungiu a primit sâmbătă seară premiul Palme d’Or la Festivalul Cannes 2026, potrivit transmisiei live de la eveniment. El intră în istoria cinematografului european cu cel de-al doilea premiu la Cannes. Cristian Mungiu câștigase prestigiosul trofeu Palme d’Or la Festivalul…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sat, 23 May 2026 19:40:01 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/Cristian-Mungiu-si-Sebastian-Stan.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.romania-insider.com/mungiu-palme-dor-fjord-may-2026",
+          "headline": "Romanian director Cristian Mungiu wins second Palme d’Or for Fjord",
+          "snippet": "Cristian Mungiu’s Fjord , starring Sebastian Stan and Renate Reinsve, has won the Palme d’Or for best film at this year’s Cannes Film Festival. It is the second time the Romanian director wins the award, after his 2007 win for the abortion drama 4 Months, 3 Weeks and 2 Days . At the Cannes…",
+          "source": "romanian_insider",
+          "source_name": "Romanian Insider",
+          "country": "RO",
+          "published": "Sat, 23 May 2026 23:04:18 +0300",
+          "image_url": "https://cdn.romania-insider.com/sites/default/files/2026-05/mungiu_fjordthefilm_fb.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.g4media.ro/afp-cristian-mungiu-autorul-unor-radiografii-implacabile-despre-diviziunile-sociale.html",
+          "headline": "AFP: Cristian Mungiu, autorul unor „radiografii” implacabile despre diviziunile sociale",
+          "snippet": "Câştigând al doilea său trofeu Palme d’Or la Festivalul de la Cannes sâmbătă seară, românul Cristian Mungiu a intrat într-un club foarte select de cineaşti şi confirmă totodată talentul său de observator perspicace al diviziunilor din ţara sa şi din societatea occidentală, afirmă jurnaliştii de la…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sun, 24 May 2026 04:13:26 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/Cristian-Mungiu-Cannes-2.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.g4media.ro/filmul-fjord-al-lui-cristian-mungiu-inclus-automat-in-cursa-pentru-nominalizare-la-oscar.html",
+          "headline": "Filmul ”Fjord” al lui Cristian Mungiu, inclus automat în cursa pentru nominalizare la Oscar",
+          "snippet": "Succesul filmului „Fjord” la Cannes nu înseamnă doar al doilea Palme d’Or din cariera lui Cristian Mungiu, ci și un avantaj important în perspectiva sezonului premiilor de la Hollywood, putând deveni primul film de ficțiune românesc nominalizat la Premiile Oscar, potrivit Mediafax . Grație noilor…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sun, 24 May 2026 05:17:53 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/profimedia-1104790850.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.jornada.com.mx/2026/05/24/espectaculos/a06n1esp?partner=rss",
+          "headline": "“Las sociedades de hoy están fracturadas, radicalizadas”: señala Cristian Mungiu",
+          "snippet": "▲ El director, guionista y productor rumano Cristian Mungiu celebra en el escenario tras ganar la Palma de Oro por la película Fjord durante la ceremonia de clausura de la 79 edición del Festival de Cine de Cannes. Foto Afp Afp Periódico La Jornada Domingo 24 de mayo de 2026, p. 6 Cannes. El rumano…",
+          "source": "la_jornada_mx",
+          "source_name": "La Jornada",
+          "country": "MX",
+          "published": "Sun, 24 May 2026 08:05:14 GMT",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.037,
+        "zionist": 0.15,
+        "atlanticist": 0.353,
+        "statist": -0.077,
+        "financialized": 0.133
+      },
+      "fp_source_count": 3,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "eastern-europe": 2,
+        "latin-america": 1
       },
       "section": "world"
     },
@@ -8018,6 +8041,151 @@
         "latin-america": 1
       },
       "section": "sports"
+    },
+    {
+      "id": "bec03f8b0f82",
+      "headline": "Here’s Where to Watch the 2026 French Open Live Online",
+      "summary": "The best and brightest tennis players in the world, like Jannik Sinner, Novak Djokovic, Aryna Sabalenka, Coco Gauff and others, travel to Paris to compete during the 125th French Open at Roland Garros Stadium. For the Grand Slam tennis tournament, live matches are spread over two networks, TNT and t",
+      "published": "Sun, 24 May 2026 10:00:00 +0000",
+      "image_url": "https://variety.com/wp-content/uploads/2025/05/WWE-Roman-Reigns-Getty-VR-Featured.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 33,
+        "center_pct": 67,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 0.75,
+      "entity_count": 11,
+      "entity_list": [
+        "Backlash",
+        "Canadian",
+        "Final",
+        "French",
+        "Grand",
+        "Liverpool",
+        "Livestream",
+        "Mohamed",
+        "Online",
+        "Salah",
+        "Watch"
+      ],
+      "sources": [
+        {
+          "id": "variety",
+          "name": "Variety",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "rolling_stone",
+          "name": "Rolling Stone",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "hollywood_reporter",
+          "name": "The Hollywood Reporter",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://variety.com/2026/shopping/news/how-to-watch-stream-wwe-backlash-2026-live-online-1235991559/",
+          "headline": "Here’s Where to Watch WWE Backlash 2026 Live Online",
+          "snippet": "If you purchase an independently reviewed product or service through a link on our website, Variety may receive an affiliate commission. After a thrilling two-night WrestleMania 42 in April, the first major event after all of the drama unfolded is Backlash 2026. This year’s premium live event is in…",
+          "source": "variety",
+          "source_name": "Variety",
+          "country": "US",
+          "published": "Sat, 09 May 2026 17:00:16 +0000",
+          "image_url": "https://variety.com/wp-content/uploads/2025/05/WWE-Roman-Reigns-Getty-VR-Featured.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rollingstone.com/product-recommendations/streaming/where-to-watch-french-open-2026-stream-tennis-online-1235566748/",
+          "headline": "Where to Watch the 2026 French Open Online",
+          "snippet": "If you purchase an independently reviewed product or service through a link on our website, Rolling Stone may receive an affiliate commission. The world’s best tennis players have arrived on the clay courts of Roland-Garros for the second major of the season, the French Open. Well, almost all of…",
+          "source": "rolling_stone",
+          "source_name": "Rolling Stone",
+          "country": "US",
+          "published": "Sat, 23 May 2026 17:21:00 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://variety.com/2026/shopping/news/how-to-watch-french-open-2026-live-online-tennis-streaming-1236416827/",
+          "headline": "Here’s Where to Watch the 2026 French Open Live Online",
+          "snippet": "If you purchase an independently reviewed product or service through a link on our website, Variety may receive an affiliate commission. The best and brightest tennis players in the world, like Jannik Sinner, Novak Djokovic, Aryna Sabalenka, Coco Gauff and others, travel to Paris to compete during…",
+          "source": "variety",
+          "source_name": "Variety",
+          "country": "US",
+          "published": "Sun, 24 May 2026 03:22:57 +0000",
+          "image_url": "https://variety.com/wp-content/uploads/2025/06/Tennis-French-Open-Jannik-Sinner-Getty-VR-Featured.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rollingstone.com/product-recommendations/streaming/where-to-watch-mohamed-salah-last-liverpool-game-for-free-stream-1235566952/",
+          "headline": "Where to Watch Mohamed Salah’s Final Game With Liverpool Online for Free",
+          "snippet": "If you purchase an independently reviewed product or service through a link on our website, Rolling Stone may receive an affiliate commission. Mohamed Salah, the superstar forward for Liverpool Club, is set to play his final match with the team after a nine-year run. Nicknamed “The Egyptian King,”…",
+          "source": "rolling_stone",
+          "source_name": "Rolling Stone",
+          "country": "US",
+          "published": "Sun, 24 May 2026 10:00:00 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.hollywoodreporter.com/tv/tv-news/where-to-watch-f1-canadian-grand-prix-2026-live-stream-free-1236602542/",
+          "headline": "F1 Canadian Grand Prix Livestream: Here’s When and Where to Watch the 2026 Race Online",
+          "snippet": "If you purchase an independently reviewed product or service through a link on our website, The Hollywood Reporter may receive an affiliate commission. The Formula 1 returns with round five in the 2026 season. And this time, F1 travels to Canada for the Lenovo Canadian Grand Prix. The motorsports…",
+          "source": "hollywood_reporter",
+          "source_name": "The Hollywood Reporter",
+          "country": "US",
+          "published": "Sun, 24 May 2026 10:00:00 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.067,
+        "zionist": 0.197,
+        "atlanticist": 0.363,
+        "statist": 0.067,
+        "financialized": 0.22
+      },
+      "fp_source_count": 3,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 3
+      },
+      "section": "entertainment"
     },
     {
       "id": "7dcffd44c7b7",
@@ -12331,141 +12499,6 @@
       "section": "world"
     },
     {
-      "id": "0b49d46304ce",
-      "headline": "BREAKING Cristian Mungiu a câștigat premiul Palme d’Or cu filmul Fjord / Regizorul român intră în istorie cu al doilea Palme d’Or  alături de Francis Ford Coppola și Emir Kusturica",
-      "summary": "<p>Regizorul român Cristian Mungiu a primit sâmbătă seară premiul Palme d&#8217;Or la Festivalul Cannes 2026, potrivit transmisiei live de la eveniment. El intră în istoria cinematografului european cu cel de-al doilea premiu la Cannes. Cristian Mungiu câștigase prestigiosul trofeu Palme d&#8217;Or ",
-      "published": "Sun, 24 May 2026 05:17:53 +0000",
-      "image_url": "https://www.g4media.ro//wp-content/uploads/2025/02/ID78691_INQUAM_Photos_Octav_Ganea.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "No partisan coverage",
-      "blindspot_score": 5.0,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 100,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 100
-      },
-      "bias_variance": 0.4,
-      "entity_count": 13,
-      "entity_list": [
-        "BREAKING",
-        "Coppola",
-        "Cristian",
-        "Filmul",
-        "Fjord",
-        "Francis",
-        "Kusturica",
-        "Mungiu",
-        "Oscar",
-        "Palme",
-        "Prima",
-        "Regizorul",
-        "Romanian"
-      ],
-      "sources": [
-        {
-          "id": "g4media",
-          "name": "G4Media",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "romanian_insider",
-          "name": "Romanian Insider",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.g4media.ro/prima-reactie-a-lui-cristian-mungiu-dupa-ce-a-castigat-palme-dor-cu-filmul-fjord-societatile-astazi-sunt-fracturate-si-radicalizate.html",
-          "headline": "Prima reacție a lui Cristian Mungiu după ce a câștigat Palme d’Or cu filmul Fjord: ”Societățile, astăzi, sunt fracturate și radicalizate”,",
-          "snippet": "Cristian Mungiu a declarat sâmbătă noaptea la Cannes, imediat după ce a primit Palme d’Or pentru filmul Fjord, că ”Starea lumii de astăzi nu este bună. Nu sunt mândru de ceea ce lăsăm copiilor noștri. Era de datoria noastră să facem schimbarea”, transmite Le Monde. ”Societățile, astăzi, sunt…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sat, 23 May 2026 19:53:50 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2025/02/ID78691_INQUAM_Photos_Octav_Ganea.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/breaking-cristian-mungiu-a-castigat-premiul-palme-dor-cu-filmul-fjord-regizorul-roman-intra-in-istorie-cu-al-doilea-palme-dor.html",
-          "headline": "BREAKING Cristian Mungiu a câștigat premiul Palme d’Or cu filmul Fjord / Regizorul român intră în istorie cu al doilea Palme d’Or  alături de Francis Ford Coppola și Emir Kusturica",
-          "snippet": "Regizorul român Cristian Mungiu a primit sâmbătă seară premiul Palme d’Or la Festivalul Cannes 2026, potrivit transmisiei live de la eveniment. El intră în istoria cinematografului european cu cel de-al doilea premiu la Cannes. Cristian Mungiu câștigase prestigiosul trofeu Palme d’Or la Festivalul…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sat, 23 May 2026 19:40:01 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/Cristian-Mungiu-si-Sebastian-Stan.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.romania-insider.com/mungiu-palme-dor-fjord-may-2026",
-          "headline": "Romanian director Cristian Mungiu wins second Palme d’Or for Fjord",
-          "snippet": "Cristian Mungiu’s Fjord , starring Sebastian Stan and Renate Reinsve, has won the Palme d’Or for best film at this year’s Cannes Film Festival. It is the second time the Romanian director wins the award, after his 2007 win for the abortion drama 4 Months, 3 Weeks and 2 Days . At the Cannes…",
-          "source": "romanian_insider",
-          "source_name": "Romanian Insider",
-          "country": "RO",
-          "published": "Sat, 23 May 2026 23:04:18 +0300",
-          "image_url": "https://cdn.romania-insider.com/sites/default/files/2026-05/mungiu_fjordthefilm_fb.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/afp-cristian-mungiu-autorul-unor-radiografii-implacabile-despre-diviziunile-sociale.html",
-          "headline": "AFP: Cristian Mungiu, autorul unor „radiografii” implacabile despre diviziunile sociale",
-          "snippet": "Câştigând al doilea său trofeu Palme d’Or la Festivalul de la Cannes sâmbătă seară, românul Cristian Mungiu a intrat într-un club foarte select de cineaşti şi confirmă totodată talentul său de observator perspicace al diviziunilor din ţara sa şi din societatea occidentală, afirmă jurnaliştii de la…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sun, 24 May 2026 04:13:26 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/Cristian-Mungiu-Cannes-2.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/filmul-fjord-al-lui-cristian-mungiu-inclus-automat-in-cursa-pentru-nominalizare-la-oscar.html",
-          "headline": "Filmul ”Fjord” al lui Cristian Mungiu, inclus automat în cursa pentru nominalizare la Oscar",
-          "snippet": "Succesul filmului „Fjord” la Cannes nu înseamnă doar al doilea Palme d’Or din cariera lui Cristian Mungiu, ci și un avantaj important în perspectiva sezonului premiilor de la Hollywood, putând deveni primul film de ficțiune românesc nominalizat la Premiile Oscar, potrivit Mediafax . Grație noilor…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sun, 24 May 2026 05:17:53 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/profimedia-1104790850.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.135,
-        "zionist": 0.205,
-        "atlanticist": 0.52,
-        "statist": -0.175,
-        "financialized": 0.19
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "eastern-europe": 2
-      },
-      "section": "world"
-    },
-    {
       "id": "c1818445ea55",
       "headline": "Cannes Jury President Park Chan-wook Teases: ‘I Didn’t Want to Award the Palme d’Or to Any of the Films’",
       "summary": "Cannes&#8217; jury president, Park Chan-wook — long a Cannes favorite, never a Palme winner — managed to roast himself and plug his latest movie at the closing press conference of the 79th Cannes Film Festival. Park quipped that he struggled with the decision of which film should take this year&#821",
@@ -16014,6 +16047,17 @@
           "country": "AR",
           "published": "Sun, 24 May 2026 09:15:29 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/XQOZN4KJCBGILDOFG75SW7YD6M.jpg?auth=90f9c8ed9a99278d0c7926e16651a8f9e565071dac0d3e8f57937c72d05810b2&smart=true&width=1920&height=1440",
+          "video_url": null
+        },
+        {
+          "url": "https://www.jornada.com.mx/2026/05/24/opinion/a07o1esp?partner=rss",
+          "headline": "Leonardo García Tsao: 79 Festival de Cannes",
+          "snippet": "▲ Virginie Efira (izquierda) y Tao Okamoto obtuvieron ex eaquo el premio a la mejor actriz por la cinta Soudain. Foto Afp ▲ Sobre estas líneas, Emmanuel Macchia (izquierda) y Valentin Campagne ganaron mejor actor por la película Coward. Foto Afp E sta vez no puedo quejarme tantísimo del palmarés…",
+          "source": "la_jornada_mx",
+          "source_name": "La Jornada",
+          "country": "MX",
+          "published": "Sun, 24 May 2026 08:05:14 GMT",
+          "image_url": null,
           "video_url": null
         }
       ],
@@ -20649,209 +20693,6 @@
           "country": "BO",
           "published": "Mon, 11 May 2026 02:54:10 +0000",
           "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.25,
-        "atlanticist": 0.415,
-        "statist": 0.245,
-        "financialized": 0.485
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "latin-america": 2
-      },
-      "section": "world"
-    },
-    {
-      "id": "ea66177bee36",
-      "headline": "EN VIVO | Muerte de Germán Vargas Lleras: inicia el segundo día de honras fúnebres del exvicepresidente en Bogotá",
-      "summary": "En el centro de Bogotá, en el Palacio San Carlos se lleva a cabo la cámara ardiente del dirigente político del partido Cambio Radical, que perdió la batalla contra el cáncer a los 64 años",
-      "published": "Mon, 11 May 2026 13:56:05 +0000",
-      "image_url": "https://www.infobae.com/resizer/v2/AYX54DCR6VDPXFVCHQN6ZITVB4.jpg?auth=6f672946e7195fd8390c6a984d9b1a42870ae791c23f155c791e1ae5dbb80c16&smart=true&width=1890&height=1063",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 0.9,
-      "entity_count": 15,
-      "entity_list": [
-        "Cambio",
-        "Carlos",
-        "Catedral",
-        "Cepeda",
-        "Colombia",
-        "Ernesto",
-        "Hermano",
-        "Lleras",
-        "Muerte",
-        "Primada",
-        "Radical",
-        "Restrepo",
-        "Samper",
-        "Uribe",
-        "Vargas"
-      ],
-      "sources": [
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "el_nacional_ve",
-          "name": "El Nacional Venezuela",
-          "country": "VE",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.infobae.com/colombia/2026/05/09/alvaro-uribe-velez-se-pronuncio-por-la-muerte-de-german-vargas-lleras-lider-de-cambio-radical-mala-hora-de-la-patria/",
-          "headline": "Álvaro Uribe Vélez se pronunció por la muerte de Germán Vargas Lleras, líder de Cambio Radical: “Mala hora de la patria”",
-          "snippet": "Álvaro Uribe Vélez fue uno de los políticos que envió sus condolencias por la muerte de Germán Vargas Lleras - crédito Lina Gasca y Camila Díaz / Colprensa El mundo de la política en Colombia sufrió un duro golpe con la noticia de la muerte de Germán Vargas Lleras, líder natural del partido Cambio…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 09 May 2026 19:04:32 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/AYX54DCR6VDPXFVCHQN6ZITVB4.jpg?auth=6f672946e7195fd8390c6a984d9b1a42870ae791c23f155c791e1ae5dbb80c16&smart=true&width=1890&height=1063",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/colombia/2026/05/09/en-vivomuerte-de-german-vargas-lleras-sacude-a-colombia-fundacion-santa-fe-de-bogota-se-pronuncio-y-politicos-reaccionaron/",
-          "headline": "EN VIVO | Muerte de Germán Vargas Lleras sacude a Colombia: reacciones y el inicio de las honras fúnebres en Bogotá",
-          "snippet": "| Muerte de Germán Vargas Lleras sacude a Colombia: reacciones y el inicio de las honras fúnebres en Bogotá El exvicepresidente tuvo una larga trayectoria política. Su vida estuvo marcada por atentados y por la lucha contra el cáncer 09 May, 2026 05:16 a. m. El líder político, nacido en Bogotá en…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 09 May 2026 19:02:27 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/2EEOPSA7VRCMDBFBQIK7UESSTY.png?auth=dd8a3d9cdfc137d8366c034e87a3f4ed950372e27e024150ddc001741e741ee7&smart=true&width=1920&height=1080",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/colombia/2026/05/09/la-entrevista-en-la-que-german-vargas-lleras-hablo-sobre-la-influencia-de-su-abuelo-en-su-carrera-politica-el-expresidente-carlos-lleras-restrepo/",
-          "headline": "La entrevista en la que Germán Vargas Lleras habló sobre la influencia de su abuelo en su carrera política: el expresidente Carlos Lleras Restrepo",
-          "snippet": "Un joven Germán Vargas Lleras junto a su abuelo: Carlos Lleras Restrepo - créditos Lina Gasca/Colprensa | archivo Colprensa Siguen conociéndose nuevos videos y reacciones de dirigentes por cuenta del fallecimiento del exvicepresidente de Colombia, Germán Vargas Lleras (64 años) la noche del viernes…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 09 May 2026 19:01:46 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/NXSHYOW6HJHC5N6MCZO43WAKWE.png?auth=bb42b01082e51a15ecf9d8cf47e9782d5e6059b23186e5e5eeb86036564a05a2&smart=true&width=1890&height=1063",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/colombia/2026/05/09/en-vivomuerte-de-german-vargas-lleras-sacude-a-colombia-fundacion-santa-fe-de-bogota-se-pronuncio-y-politicos-reaccionaron/",
-          "headline": "EN VIVO · Muerte de Germán Vargas Lleras: finalizó el primer día de cámara ardiente, continúan las reacciones y homenajes al exvicepresidente",
-          "snippet": "Ernesto Samper explicó cómo fue la cercanía que tuvo con la familia de Germán Vargas Lleras - crédito Lina Gasca/Colprensa y David Aguilar/Desde el Salón Bolívar del Palacio de San Carlos de Bogotá (sede de la Cancillería), el expresidente de Colombia Ernesto Samper Pizano se pronunció ante los…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sun, 10 May 2026 01:16:35 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/TC42ELLB5RBCVCEDIUHXB7VCKI.png?auth=67dfa3774ee0e5b53a5c87adbed8cff0a82cabac6fb7bc001eb3eb11bf65f0e4&smart=true&width=1800&height=1080",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/colombia/2026/05/10/ernesto-samper-se-pronuncio-sobre-el-fallecimiento-de-german-vargas-lleras-y-resalto-su-trabajo-politico-era-una-figura-muy-importante/",
-          "headline": "Ernesto Samper se pronunció sobre el fallecimiento de Germán Vargas Lleras y resaltó su trabajo político: “Era una figura muy importante”",
-          "snippet": "Ernesto Samper explicó cómo fue la cercanía que tuvo con la familia de Germán Vargas Lleras - crédito Lina Gasca/Colprensa y David Aguilar/Desde el Salón Bolívar del Palacio de San Carlos de Bogotá (sede de la Cancillería), el expresidente de Colombia Ernesto Samper Pizano se pronunció ante los…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sun, 10 May 2026 00:09:04 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/UW4WLJSJ3VDONKFDWEHM5JZKII.png?auth=09d84879b1bd16b8ec0ffab3188928426ed55b45a00a2ea57a9d177d98094eff&smart=true&width=1800&height=1080",
-          "video_url": null
-        },
-        {
-          "url": "https://www.elnacional.com/2026/05/fallecio-german-vargas-lleras-ex-vicepresidente-colombiano/",
-          "headline": "Falleció Germán Vargas Lleras, ex vicepresidente colombiano",
-          "snippet": "El exvicepresidente colombiano Germán Vargas Lleras , una figura prominente de la derecha del país, murió este viernes en Bogotá a los 64 años de edad a consecuencia de un tumor cerebral, informaron fuentes de su entorno y el presidente Gustavo Petro. El político, nieto del expresidente liberal…",
-          "source": "el_nacional_ve",
-          "source_name": "El Nacional Venezuela",
-          "country": "VE",
-          "published": "Sat, 09 May 2026 21:36:13 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/colombia/2026/05/09/en-vivomuerte-de-german-vargas-lleras-sacude-a-colombia-fundacion-santa-fe-de-bogota-se-pronuncio-y-politicos-reaccionaron/",
-          "headline": "EN VIVO | Muerte de Germán Vargas Lleras: inicia el segundo día de honras fúnebres del exvicepresidente en Bogotá",
-          "snippet": "| Muerte de Germán Vargas Lleras: inicia el segundo día de honras fúnebres del exvicepresidente en Bogotá En el centro de Bogotá, en el Palacio San Carlos se lleva a cabo la cámara ardiente del dirigente político del partido Cambio Radical, que perdió la batalla contra el cáncer a los 64 años 10…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sun, 10 May 2026 18:41:38 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/TC42ELLB5RBCVCEDIUHXB7VCKI.png?auth=67dfa3774ee0e5b53a5c87adbed8cff0a82cabac6fb7bc001eb3eb11bf65f0e4&smart=true&width=1800&height=1080",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/colombia/2026/05/09/en-vivomuerte-de-german-vargas-lleras-sacude-a-colombia-fundacion-santa-fe-de-bogota-se-pronuncio-y-politicos-reaccionaron/",
-          "headline": "Muerte de Germán Vargas Lleras: figuras públicas y mensajes que dejó el segundo día de honras fúnebres en Bogotá",
-          "snippet": "Las honras fúnebres de Germán Vargas Lleras continuarán hasta las 7:00 p. m., del domingo 10 de mayo en el Palacio de San Carlos, en el centro de Bogotá. La jornada ha reunido a familiares, amigos, figuras de la vida política y ciudadanos que han querido rendir tributo y expresar sus condolencias…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 00:38:53 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/TC42ELLB5RBCVCEDIUHXB7VCKI.png?auth=67dfa3774ee0e5b53a5c87adbed8cff0a82cabac6fb7bc001eb3eb11bf65f0e4&smart=true&width=1800&height=1080",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/colombia/2026/05/11/hermano-de-german-vargas-lleras-califico-al-exvicepresidente-como-un-guerrero-de-la-politica-creimos-que-era-invencible/",
-          "headline": "Hermano de Germán Vargas Lleras realizó un recorrido por la vida y los atentados contra el reconocido político: “Creímos que era invencible”",
-          "snippet": "Adiós a un líder: José Antonio Vargas Lleras honra el legado de su hermano Germán - crédito imagen ilustrativa Infobae/U. Externado/Colprensa En medio del luto que vive la familia del exvicepresidente Germán Vargas Lleras, tras la muerte del líder natural del partido Cambio Radical, José Antonio…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 12:53:31 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/KSXLCUVYBJHNTME6WAFZVTWIME.png?auth=c0f74ed68f762aceb7c4fe3f58c20e9f1d00631d52a0e84792eaa23662ba9343&smart=true&width=2752&height=1536",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/colombia/2026/05/11/hija-de-german-vargas-lleras-pidio-a-los-colombianos-no-votar-por-ivan-cepeda-en-las-elecciones-presidenciales-hagamosle-un-homenaje-y-salvemos-este-pais/",
-          "headline": "Hija de Germán Vargas Lleras pidió a los colombianos no votar por Iván Cepeda: “Hagámosle un homenaje y salvemos este país”",
-          "snippet": "La hija del exvicepresidente colombiano remarcó que su padre tenía sus capacidades para ser gobernante de la nación - crédito Archivo Colprensa Sigue el duelo en Colombia tras conocerse que Germán Vargas Lleras, exvicepresidente y exlíder natural de Cambio Radical, falleció en la noche del viernes…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 13:56:05 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/JUFU7WYMBRB73K25C3WAY75XSE.jpg?auth=064dc2a3437c26359c5bb705d307fc52bea11155bc23f24d2b7b12a6105353dc&smart=true&width=828&height=545",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/colombia/2026/05/11/asi-sera-el-ultimo-dia-de-homenajes-a-german-vargas-lleras-su-cuerpo-sera-trasladado-a-la-catedral-primada-de-colombia/",
-          "headline": "Así será el último día de homenajes a Germán Vargas Lleras: su cuerpo será trasladado a la Catedral Primada de Colombia",
-          "snippet": "El cuerpo de Germán Vargas Lleras será trasladado a la Catedral Primada este lunes para la ceremonia de exequias - crédito Colprensa Luego de un intenso fin de semana de honras fúnebres para el líder natural de Cambio Radical, Germán Vargas Lleras, el cuerpo del político colombiano será trasladado…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 13:17:00 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/4FZBP3YTYNBSJNU4LCN62OQIN4.jpg?auth=025e53fb2988ce987d803e7d313cd688651af75dd41f017cbda7d89e05d2fee5&smart=true&width=900&height=601",
           "video_url": null
         }
       ],
