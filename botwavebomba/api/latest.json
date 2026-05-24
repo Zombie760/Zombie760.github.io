@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T09:11:31.354497+00:00",
-  "article_count": 32775,
+  "generated_at": "2026-05-24T09:26:35.681632+00:00",
+  "article_count": 32895,
   "story_count": 160,
   "sections": [
     {
@@ -11,7 +11,7 @@
     {
       "id": "world",
       "label": "World",
-      "count": 70
+      "count": 71
     },
     {
       "id": "business",
@@ -36,7 +36,7 @@
     {
       "id": "sports",
       "label": "Sports",
-      "count": 31
+      "count": 30
     },
     {
       "id": "entertainment",
@@ -7264,129 +7264,10 @@
       "section": "world"
     },
     {
-      "id": "029b2ff9fbbe",
-      "headline": "VIDEO: Dominație Mercedes în calificările de F1 din Canada – Russell, în pole position",
-      "summary": "<p>George Russell a stabilit cel mai bun timp în calificările pentru Marele Premiu de Formula 1 din Canada. Britanicul va fi urmat pe grila de start de coechipierul Kimi Antonelli (Mercedes) și de piloții McLaren: Lando Norris pe trei și Oscar Piastri pe patru. După cele trei plecări consecutive din",
-      "published": "Sun, 24 May 2026 05:22:49 +0000",
-      "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38984741_1280.jpg?1779572824",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 67,
-        "right_pct": 33,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 67
-      },
-      "bias_variance": 0.4,
-      "entity_count": 6,
-      "entity_list": [
-        "Canada",
-        "Kanadi",
-        "Mercedes",
-        "Montreal",
-        "Russell",
-        "VIDEO"
-      ],
-      "sources": [
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "jutarnji",
-          "name": "Jutarnji List",
-          "country": "HR",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        },
-        {
-          "id": "g4media",
-          "name": "G4Media",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/russell-gano-el-sprint-de-montreal-que-marco-el-primer-encontronazo-mercedes/",
-          "headline": "Russell ganó el sprint de Montreal, que marcó el primer 'encontronazo' Mercedes",
-          "snippet": "Madrid, 23 may (EFE).- El inglés George Russell (Mercedes) ganó este sábado la prueba sprint del Gran Premio de Canadá, el quinto del Mundial de Fórmula Uno, que se disputa en el circuito Gilles Villeneuve de Montreal, donde se impuso por delante de su compatriota Lando Norris (McLaren) -último…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 18:00:20 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.jutarnji.hr/sportske/sport-mix/automoto/formula1/russell-pole-montreal-antonelli-drugi-vn-kanade-f1-15711516",
-          "headline": "Mercedes razbio konkurenciju u Kanadi, Russell kreće s prve pozicije",
-          "snippet": "Britanac George Russell , vozač Mercedesa, nastavio je dominirati stazom u Montrealu, na Velikoj nagradi Kanade te je ostvario najbrže vrijeme na službenim kvalifikacijama. Russell je prethodno bio najbrži u kvalifikacijama za sprint, a potom je ranije u subotu i pobijedio u sprinterskoj utrci od…",
-          "source": "jutarnji",
-          "source_name": "Jutarnji List",
-          "country": "HR",
-          "published": "Sat, 23 May 2026 23:32:16 +0200",
-          "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38984741_1280.jpg?1779572824",
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/video-dominatie-mercedes-in-calificarile-de-f1-din-canada-russell-in-pole-position.html",
-          "headline": "VIDEO: Dominație Mercedes în calificările de F1 din Canada – Russell, în pole position",
-          "snippet": "George Russell a stabilit cel mai bun timp în calificările pentru Marele Premiu de Formula 1 din Canada. Britanicul va fi urmat pe grila de start de coechipierul Kimi Antonelli (Mercedes) și de piloții McLaren: Lando Norris pe trei și Oscar Piastri pe patru. După cele trei plecări consecutive din…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sun, 24 May 2026 05:22:49 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/03/8059783-Hepta_Mediafax_Foto-DPA_Hepta.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.25,
-        "atlanticist": 0.48,
-        "statist": -0.005,
-        "financialized": 0.335
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "eastern-europe": 2,
-        "latin-america": 1
-      },
-      "section": "sports"
-    },
-    {
       "id": "04cb78e19fa1",
       "headline": "Rahul Gandhi trying to create ‘anarchy’ to topple Modi govt: BJP",
       "summary": "New Delhi, May 24 (PTI) The BJP on Sunday accused Congress leader Rahul Gandhi of conspiring to destabilise the Narendra Modi government by &#8220;creating anarchy&#8221; in the country, alleging that he was acting at the behest of foreign forces. Several BJP leaders, including Union minister Piyush",
-      "published": "Sun, 24 May 2026 08:16:01 +0000",
+      "published": "Sun, 24 May 2026 09:15:03 +0000",
       "image_url": "https://th-i.thgim.com/public/incoming/e4b1j0/article70960060.ece/alternates/LANDSCAPE_1200/20260508284L.jpg",
       "video_url": null,
       "has_video": false,
@@ -7402,16 +7283,21 @@
         "dominant_pct": 67
       },
       "bias_variance": 0.94,
-      "entity_count": 25,
+      "entity_count": 33,
       "entity_list": [
+        "Aimed",
+        "Anarchy",
         "Bachao",
         "Behind",
         "Bihar",
         "Bonhomie",
         "Caught",
         "Congress",
+        "Conspiracy",
+        "Fadnavis",
         "Gandhi",
         "Government",
+        "Grave",
         "Instagram",
         "Jagga",
         "Jawaharlal",
@@ -7423,8 +7309,11 @@
         "Privately",
         "Rahul",
         "Reddy",
+        "Remark",
         "Samvidhan",
         "Satheesan",
+        "Slams",
+        "Spreading",
         "Standoff",
         "Venugopal",
         "Vijay",
@@ -7600,6 +7489,28 @@
           "published": "Sun, 24 May 2026 08:16:01 +0000",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.ndtv.com/india-news/bjp-slams-rahul-gandhi-remark-piyush-goyal-calls-it-grave-conspiracy-aimed-at-spreading-anarchy-11540184#publisher=newsstand",
+          "headline": "\"Grave Conspiracy Aimed At Spreading Anarchy\": BJP Slams Rahul Gandhi Remark",
+          "snippet": "Several BJP leaders claimed that Rahul Gandhi's \"plan\" was exposed after he reportedly said that the Modi government would fall within a year.",
+          "source": "ndtv",
+          "source_name": "NDTV",
+          "country": "IN",
+          "published": "Sun, 24 May 2026 13:44:54 +0530",
+          "image_url": "https://c.ndtvimg.com/2024-10/bpuj7hh8_rahul-gandhi-on-haryana-loss_160x120_09_October_24.jpg?im=FeatureCrop,algorithm=dnn,width=1200,height=738",
+          "video_url": null
+        },
+        {
+          "url": "https://theprint.in/india/rahul-gandhis-remarks-predicting-nda-govt-fall-mere-daydream-fadnavis/2940161/",
+          "headline": "Rahul Gandhi’s remarks predicting NDA govt fall mere daydream: Fadnavis",
+          "snippet": "Nagpur, May 24 (PTI) Maharashtra Chief Minister Devendra Fadnavis on Sunday dismissed Rahul Gandhi’s claim that the government will collapse soon, likening the Congress leader’s remarks to daydreaming and calling it mere imagination. The has alleged that Gandhi, the Leader of the Opposition in Lok…",
+          "source": "the_print",
+          "source_name": "The Print (India)",
+          "country": "IN",
+          "published": "Sun, 24 May 2026 09:15:03 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -7619,10 +7530,248 @@
       "section": "world"
     },
     {
+      "id": "f5991b6c342b",
+      "headline": "Russia uses hypersonic Oreshnik missile in mass attack on Kyiv",
+      "summary": "Ukrainian President Volodymyr Zelenskyy said Sunday Russia used the powerful hypersonic Oreshnik ballistic missile during a mass drone and missile attack on Kyiv on Sunday that killed at least two people.",
+      "published": "Sun, 24 May 2026 05:12:28 -0400",
+      "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/6/3/834874/63bb378fcfc310321e32da48dd29d8e1.jpeg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 33,
+        "center_pct": 67,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 8.49,
+      "entity_count": 5,
+      "entity_list": [
+        "Oreshnik",
+        "Ritter",
+        "Russia",
+        "Scott",
+        "Tserkva"
+      ],
+      "sources": [
+        {
+          "id": "ukrainska_pravda_en",
+          "name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "rt_russia",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial",
+          "bias_tier": "unknown",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "npr",
+          "name": "NPR",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "NPR (nonprofit)"
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.pravda.com.ua/eng/news/2026/05/24/8036135/",
+          "headline": "Russia strikes Bila Tserkva with Oreshnik missile – social media",
+          "snippet": "A fire. Stock photo: Suspilne Russia has likely struck the city of Bila Tserkva in Kyiv Oblast with an Oreshnik medium-range ballistic missile. Source: Telegram channels; videos published by eyewitnesses on social media Details: Footage published online appears to show the characteristic impact…",
+          "source": "ukrainska_pravda_en",
+          "source_name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "published": "Sun, 24 May 2026 01:54:00 +0300",
+          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/6/3/834874/63bb378fcfc310321e32da48dd29d8e1.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rt.com/news/640505-oreshnik-kiev-ukraine-ritter/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+          "headline": "Russia hit target ‘worthy of Oreshnik strike’ – Scott Ritter",
+          "snippet": "Moscow is taking action in response to “atrocities” perpetrated by Kiev in Lugansk, the former weapons inspector has said Footage of the Russian strike near Ukrainian capital, Kiev, indicates that an Oreshnik missile was likely deployed by Moscow, former weapons inspector Scott Ritter has said. On…",
+          "source": "rt_russia",
+          "source_name": "RT (Russia Today)",
+          "country": "RU",
+          "published": "Sun, 24 May 2026 06:19:39 +0000",
+          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/6a1284152030277845511087.png",
+          "video_url": null
+        },
+        {
+          "url": "https://www.npr.org/2026/05/24/nx-s1-5833050/russia-uses-hypersonic-oreshnik-missile-in-mass-attack-on-kyiv",
+          "headline": "Russia uses hypersonic Oreshnik missile in mass attack on Kyiv",
+          "snippet": "A man carries a box from a burning trade center after a Russian strike on Kyiv, Ukraine, on Sunday, May 24, 2026. Evgeniy Maloletka/hide caption toggle caption Evgeniy Maloletka/KYIV, Ukraine — Ukrainian President Volodymyr Zelenskyy said Sunday Russia used the powerful hypersonic Oreshnik…",
+          "source": "npr",
+          "source_name": "NPR",
+          "country": "US",
+          "published": "Sun, 24 May 2026 05:12:28 -0400",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.057,
+        "zionist": 0.07,
+        "atlanticist": 0.013,
+        "statist": 0.15,
+        "financialized": 0.06
+      },
+      "fp_source_count": 3,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 1,
+        "adversarial": 1,
+        "eastern-europe": 1
+      },
+      "section": "world"
+    },
+    {
+      "id": "029b2ff9fbbe",
+      "headline": "VIDEO: Dominație Mercedes în calificările de F1 din Canada – Russell, în pole position",
+      "summary": "<p>George Russell a stabilit cel mai bun timp în calificările pentru Marele Premiu de Formula 1 din Canada. Britanicul va fi urmat pe grila de start de coechipierul Kimi Antonelli (Mercedes) și de piloții McLaren: Lando Norris pe trei și Oscar Piastri pe patru. După cele trei plecări consecutive din",
+      "published": "Sun, 24 May 2026 05:22:49 +0000",
+      "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38984741_1280.jpg?1779572824",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 67,
+        "right_pct": 33,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 0.4,
+      "entity_count": 6,
+      "entity_list": [
+        "Canada",
+        "Kanadi",
+        "Mercedes",
+        "Montreal",
+        "Russell",
+        "VIDEO"
+      ],
+      "sources": [
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "jutarnji",
+          "name": "Jutarnji List",
+          "country": "HR",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "g4media",
+          "name": "G4Media",
+          "country": "RO",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/russell-gano-el-sprint-de-montreal-que-marco-el-primer-encontronazo-mercedes/",
+          "headline": "Russell ganó el sprint de Montreal, que marcó el primer 'encontronazo' Mercedes",
+          "snippet": "Madrid, 23 may (EFE).- El inglés George Russell (Mercedes) ganó este sábado la prueba sprint del Gran Premio de Canadá, el quinto del Mundial de Fórmula Uno, que se disputa en el circuito Gilles Villeneuve de Montreal, donde se impuso por delante de su compatriota Lando Norris (McLaren) -último…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 18:00:20 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.jutarnji.hr/sportske/sport-mix/automoto/formula1/russell-pole-montreal-antonelli-drugi-vn-kanade-f1-15711516",
+          "headline": "Mercedes razbio konkurenciju u Kanadi, Russell kreće s prve pozicije",
+          "snippet": "Britanac George Russell , vozač Mercedesa, nastavio je dominirati stazom u Montrealu, na Velikoj nagradi Kanade te je ostvario najbrže vrijeme na službenim kvalifikacijama. Russell je prethodno bio najbrži u kvalifikacijama za sprint, a potom je ranije u subotu i pobijedio u sprinterskoj utrci od…",
+          "source": "jutarnji",
+          "source_name": "Jutarnji List",
+          "country": "HR",
+          "published": "Sat, 23 May 2026 23:32:16 +0200",
+          "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38984741_1280.jpg?1779572824",
+          "video_url": null
+        },
+        {
+          "url": "https://www.g4media.ro/video-dominatie-mercedes-in-calificarile-de-f1-din-canada-russell-in-pole-position.html",
+          "headline": "VIDEO: Dominație Mercedes în calificările de F1 din Canada – Russell, în pole position",
+          "snippet": "George Russell a stabilit cel mai bun timp în calificările pentru Marele Premiu de Formula 1 din Canada. Britanicul va fi urmat pe grila de start de coechipierul Kimi Antonelli (Mercedes) și de piloții McLaren: Lando Norris pe trei și Oscar Piastri pe patru. După cele trei plecări consecutive din…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sun, 24 May 2026 05:22:49 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/03/8059783-Hepta_Mediafax_Foto-DPA_Hepta.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.15,
+        "zionist": 0.25,
+        "atlanticist": 0.48,
+        "statist": -0.005,
+        "financialized": 0.335
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "eastern-europe": 2,
+        "latin-america": 1
+      },
+      "section": "sports"
+    },
+    {
       "id": "7dcffd44c7b7",
       "headline": "Barthélémy Dias réagit au limogeage d’Ousmane Sonko par Bassirou Diomaye Faye",
       "summary": "<p><img width=\"756\" height=\"354\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" data-src=\"https://www.senenews.com/wp-content/uploads/2025/08/barthelemy-dias-ousmane-sonko.jpg\" class=\"attachment-full size-full wp-post-image lazy\" alt=\"Mairie de Dakar : Ce lundi 25 août,",
-      "published": "Sun, 24 May 2026 08:49:25 +0000",
+      "published": "Sun, 24 May 2026 09:14:44 +0000",
       "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/ous-ous-ous-ous-1106x675-1.webp",
       "video_url": null,
       "has_video": false,
@@ -8019,6 +8168,17 @@
           "source_name": "Senenews",
           "country": "SN",
           "published": "Sun, 24 May 2026 08:49:25 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/03/guy-marius-sagna.webp",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/guy-marius-sagna-aux-proches-de-ousmane-sonko-ce-nest-pas-a-vous-de-demissionner-2_587474.html",
+          "headline": "Guy Marius Sagna aux proches de Ousmane Sonko : « Ce n’est pas à vous de démissionner »",
+          "snippet": "Le député Guy Marius Sagna a vivement réagi à la démission de certains cadres du parti Pastef après le départ d'Ousmane Sonko. Dans une déclaration percutante, il appelle le dissident à prendre ses responsabilités et à justifier sa décision devant les Sénégalais. Le député Guy Marius Sagna a réagi…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Sun, 24 May 2026 09:14:44 +0000",
           "image_url": "https://www.senenews.com/wp-content/uploads/2026/03/guy-marius-sagna.webp",
           "video_url": null
         }
@@ -8730,133 +8890,6 @@
       "section": "world"
     },
     {
-      "id": "fafb068e74d4",
-      "headline": "El director argentino Federico Luis ganó la Palma de Oro al mejor cortometraje en Cannes",
-      "summary": "La máxima distinción en su categoría le fue otorgada por ‘Los contrincantes’, una obra que explora el entorno del boxeo infantil en un barrio popular de la Ciudad de México",
-      "published": "Sat, 23 May 2026 21:40:29 +0000",
-      "image_url": "https://www.infobae.com/resizer/v2/2YF2USHUBBDWLBJL6EWHOU42WA.JPG?auth=df3265be419db6b06d60f3fd19753a61b3f90af390b777cba36f684a7489efc1&smart=true&width=7536&height=5018",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 0,
-        "right_pct": 100,
-        "state_count": 0,
-        "dominant": "right",
-        "dominant_pct": 100
-      },
-      "bias_variance": 0.0,
-      "entity_count": 5,
-      "entity_list": [
-        "Cannes",
-        "Federico",
-        "Palma",
-        "Tengo",
-        "Tepito"
-      ],
-      "sources": [
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "clarin_ar",
-          "name": "Clarín Argentina",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/el-argentino-federico-luis-gana-la-palma-de-oro-al-mejor-cortometraje-de-cannes/",
-          "headline": "El argentino Federico Luis gana la Palma de Oro al mejor cortometraje de Cannes",
-          "snippet": "Cannes (Francia), 23 may (EFE).- El argentino Federico Luis ganó este sábado la Palma de Oro al mejor cortometraje del Festival de Cannes con 'Para los contrincantes', sobre el boxeo infantil en México. Cannes (Francia), 23 may (EFE).- El argentino Federico Luis ganó este sábado la Palma de Oro al…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 18:45:21 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/el-argentino-federico-luis-gana-la-palma-de-oro-al-mejor-documental-de-cannes/",
-          "headline": "El argentino Federico Luis gana la Palma de Oro al mejor documental de Cannes",
-          "snippet": "23 May, 2026 Argentina Estados Unidos Colombia España México Perú Centroamérica Mundo Venezuela The economist The Washington Post Realeza Opinión Últimas Noticias Entretenimiento Deportes Tendencias Estar Mejor Tecno Cultura Malditos Nerds Virales Salud Podcasts ; Bienvenido Por favor, ingresa a tu…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 18:33:31 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/cultura/2026/05/23/el-director-argentino-federico-luis-gano-la-palma-de-oro-al-mejor-cortometraje-en-cannes/",
-          "headline": "El director argentino Federico Luis ganó la Palma de Oro al mejor cortometraje en Cannes",
-          "snippet": "Federico Luis gana la Palma de Oro en Cannes con su cortometraje sobre el boxeo infantil en México El director argentino Federico Luis ganó la Palma de Oro al mejor cortometraje del Festival de Cannes con Para los contrincantes , sobre el boxeo infantil en México. “Es maravilloso estar aquí y…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 20:01:21 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/2YF2USHUBBDWLBJL6EWHOU42WA.JPG?auth=df3265be419db6b06d60f3fd19753a61b3f90af390b777cba36f684a7489efc1&smart=true&width=7536&height=5018",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/mexico/2026/05/23/para-los-contrincantes-corto-filmado-en-tepito-sobre-un-nino-apasionado-por-el-boxeo-gana-la-palma-de-oro-en-cannes/",
-          "headline": "“Para los contrincantes”, corto filmado en Tepito sobre un niño apasionado por el boxeo, gana la Palma de Oro en Cannes",
-          "snippet": "“Para los contrincantes” de Federico Luis recibe premio en Cannes. El cortometraje Para contrincantes del argentino Federico Luis ganó la Palma de Oro al Mejor Cortometraje en el Festival de Canne s con una historia ambientada en Tepito sobre un niño que pelea en un torneo de boxeo. El premio…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 20:53:52 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/Z5FRVR46Y5CA3P6MRFC5FU5YVY.jpg?auth=f32723fc60ee7dfdd6ae1230e8d065fb4d8e4dd497e0cf251b7f17ee7d0437ab&smart=true&width=1920&height=1080",
-          "video_url": null
-        },
-        {
-          "url": "https://www.clarin.com/espectaculos/cannes-federico-luis-ganador-palma-oro-sensacion-recien-empezando_0_LwyfrLmNO4.html",
-          "headline": "En Cannes con Federico Luis, ganador de la Palma de Oro: \"Tengo la sensación de que recién estoy empezando\"",
-          "snippet": "Federico Luis fue el primer premiado de la noche aquí en el Festival de Cannes . Su corto Para los contrincantes , que rodó en México, ganó la Palma de Oro al mejor cortometraje en el Festival más importante del mundo. Ya había competido aquí, en 2019, con otro corto, La siesta , y en 2024 fue a la…",
-          "source": "clarin_ar",
-          "source_name": "Clarín Argentina",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 21:40:29 +0000",
-          "image_url": "https://www.clarin.com/img/2026/05/23/W2-PEKcsz_1200x630__1.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.2,
-        "zionist": 0.3,
-        "atlanticist": 0.46,
-        "statist": 0.29,
-        "financialized": 0.47
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "latin-america": 2
-      },
-      "section": "entertainment"
-    },
-    {
       "id": "b76cb0a71821",
       "headline": "Cannes encumbra a los Javis con el Premio de Dirección",
       "summary": "<p>La película La bola negra, de los directores españoles, tiene como protagonistas al músico Guitarricadelafuente, en su debut como actor, a Carlos González y a Milo Quifes.</p>\n<p>The post <a href=\"https://www.elnacional.com/2026/05/cannes-encumbra-a-los-javis-con-el-premio-de-direccion/\">Cannes e",
@@ -8984,52 +9017,54 @@
       "section": "entertainment"
     },
     {
-      "id": "06594006efd4",
-      "headline": "PM”s development for all vision guiding principle for BJP govt in Bengal: CM Adhikari",
-      "summary": "Kolkata, May 11 (PTI) West Bengal Chief Minister Suvendu Adhikari on Monday said that Prime Minister Narendra Modi&#8217;s vision of development for all was the guiding principle for the new BJP government in the state. He visited the BJP office at Salt Lake in the eastern part of Kolkata, along wit",
-      "published": "Sat, 23 May 2026 14:50:28 +0530",
-      "image_url": "https://th-i.thgim.com/public/incoming/xvm751/article70964605.ece/alternates/LANDSCAPE_1200/20260509332L.jpg",
+      "id": "fafb068e74d4",
+      "headline": "El director argentino Federico Luis ganó la Palma de Oro al mejor cortometraje en Cannes",
+      "summary": "La máxima distinción en su categoría le fue otorgada por ‘Los contrincantes’, una obra que explora el entorno del boxeo infantil en un barrio popular de la Ciudad de México",
+      "published": "Sat, 23 May 2026 21:40:29 +0000",
+      "image_url": "https://www.infobae.com/resizer/v2/2YF2USHUBBDWLBJL6EWHOU42WA.JPG?auth=df3265be419db6b06d60f3fd19753a61b3f90af390b777cba36f684a7489efc1&smart=true&width=7536&height=5018",
       "video_url": null,
       "has_video": false,
       "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
+      "blindspot_label": "Only 0% Left",
       "blindspot_score": 17,
       "coverage": {
-        "left_pct": 50,
-        "center_pct": 50,
-        "right_pct": 0,
+        "left_pct": 0,
+        "center_pct": 0,
+        "right_pct": 100,
         "state_count": 0,
-        "dominant": "left",
-        "dominant_pct": 50
+        "dominant": "right",
+        "dominant_pct": 100
       },
-      "bias_variance": 1.0,
-      "entity_count": 3,
+      "bias_variance": 0.0,
+      "entity_count": 5,
       "entity_list": [
-        "Adhikari",
-        "Bengal",
-        "Budget"
+        "Cannes",
+        "Federico",
+        "Palma",
+        "Tengo",
+        "Tepito"
       ],
       "sources": [
         {
-          "id": "hindu",
-          "name": "The Hindu",
-          "country": "IN",
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
           "bloc": "non-aligned",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "unknown",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
           "primary_vs_launder": "primary",
           "parent_company": ""
         },
         {
-          "id": "the_print",
-          "name": "The Print (India)",
-          "country": "IN",
+          "id": "clarin_ar",
+          "name": "Clarín Argentina",
+          "country": "AR",
           "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
           "factuality": "mixed",
           "primary_vs_launder": "primary",
           "parent_company": ""
@@ -9037,54 +9072,76 @@
       ],
       "articles": [
         {
-          "url": "https://www.thehindu.com/news/national/west-bengal/pms-development-for-all-vision-guiding-principle-for-bjp-government-in-west-bengal-says-cm-adhikari/article70964482.ece",
-          "headline": "PM’s development for all vision guiding principle for BJP government in West Bengal, says CM Adhikari",
-          "snippet": "File photo of West Bengal Chief Minister Suvendu Adhikari. | Photo Credit: West Bengal Chief Minister Suvendu Adhikari on Monday (May 11, 2026) said that Prime Minister Narendra Modi's vision of development for all was the guiding principle for the new government in the State. Mr. Adhikari visited…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Mon, 11 May 2026 11:53:19 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/xvm751/article70964605.ece/alternates/LANDSCAPE_1200/20260509332L.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://theprint.in/india/pms-development-for-all-vision-guiding-principle-for-bjp-govt-in-bengal-cm-adhikari/2927664/",
-          "headline": "PM”s development for all vision guiding principle for BJP govt in Bengal: CM Adhikari",
-          "snippet": "Kolkata, May 11 (PTI) West Bengal Chief Minister Suvendu Adhikari on Monday said that Prime Minister Narendra Modi’s vision of development for all was the guiding principle for the new government in the state. He visited the office at Salt Lake in the eastern part of Kolkata, along with the party’s…",
-          "source": "the_print",
-          "source_name": "The Print (India)",
-          "country": "IN",
-          "published": "Mon, 11 May 2026 06:15:33 +0000",
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/el-argentino-federico-luis-gana-la-palma-de-oro-al-mejor-cortometraje-de-cannes/",
+          "headline": "El argentino Federico Luis gana la Palma de Oro al mejor cortometraje de Cannes",
+          "snippet": "Cannes (Francia), 23 may (EFE).- El argentino Federico Luis ganó este sábado la Palma de Oro al mejor cortometraje del Festival de Cannes con 'Para los contrincantes', sobre el boxeo infantil en México. Cannes (Francia), 23 may (EFE).- El argentino Federico Luis ganó este sábado la Palma de Oro al…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 18:45:21 +0000",
           "image_url": null,
           "video_url": null
         },
         {
-          "url": "https://www.thehindu.com/news/national/west-bengal/west-bengal-gained-infamy-due-to-recruitment-scams-will-bring-state-out-of-this-situation-cm-suvendu-adhikari/article71013661.ece",
-          "headline": "West Bengal gained infamy due to recruitment scams, new policy in next Budget session: CM Adhikari",
-          "snippet": "Maintaining that West Bengal gained infamy due to various recruitment scams during the previous regime , Chief Minister Suvendu Adhikari on Saturday (May 23, 2026) said his government will introduce a new recruitment policy in the next Budget session of the Assembly. Noting that the Calcutta High…",
-          "source": "hindu",
-          "source_name": "The Hindu",
-          "country": "IN",
-          "published": "Sat, 23 May 2026 14:50:28 +0530",
-          "image_url": "https://th-i.thgim.com/public/incoming/1wjl1y/article71013679.ece/alternates/LANDSCAPE_1200/PTI05_21_2026_000472B.jpg",
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/el-argentino-federico-luis-gana-la-palma-de-oro-al-mejor-documental-de-cannes/",
+          "headline": "El argentino Federico Luis gana la Palma de Oro al mejor documental de Cannes",
+          "snippet": "23 May, 2026 Argentina Estados Unidos Colombia España México Perú Centroamérica Mundo Venezuela The economist The Washington Post Realeza Opinión Últimas Noticias Entretenimiento Deportes Tendencias Estar Mejor Tecno Cultura Malditos Nerds Virales Salud Podcasts ; Bienvenido Por favor, ingresa a tu…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 18:33:31 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/cultura/2026/05/23/el-director-argentino-federico-luis-gano-la-palma-de-oro-al-mejor-cortometraje-en-cannes/",
+          "headline": "El director argentino Federico Luis ganó la Palma de Oro al mejor cortometraje en Cannes",
+          "snippet": "Federico Luis gana la Palma de Oro en Cannes con su cortometraje sobre el boxeo infantil en México El director argentino Federico Luis ganó la Palma de Oro al mejor cortometraje del Festival de Cannes con Para los contrincantes , sobre el boxeo infantil en México. “Es maravilloso estar aquí y…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 20:01:21 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/2YF2USHUBBDWLBJL6EWHOU42WA.JPG?auth=df3265be419db6b06d60f3fd19753a61b3f90af390b777cba36f684a7489efc1&smart=true&width=7536&height=5018",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/mexico/2026/05/23/para-los-contrincantes-corto-filmado-en-tepito-sobre-un-nino-apasionado-por-el-boxeo-gana-la-palma-de-oro-en-cannes/",
+          "headline": "“Para los contrincantes”, corto filmado en Tepito sobre un niño apasionado por el boxeo, gana la Palma de Oro en Cannes",
+          "snippet": "“Para los contrincantes” de Federico Luis recibe premio en Cannes. El cortometraje Para contrincantes del argentino Federico Luis ganó la Palma de Oro al Mejor Cortometraje en el Festival de Canne s con una historia ambientada en Tepito sobre un niño que pelea en un torneo de boxeo. El premio…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 20:53:52 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/Z5FRVR46Y5CA3P6MRFC5FU5YVY.jpg?auth=f32723fc60ee7dfdd6ae1230e8d065fb4d8e4dd497e0cf251b7f17ee7d0437ab&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/espectaculos/cannes-federico-luis-ganador-palma-oro-sensacion-recien-empezando_0_LwyfrLmNO4.html",
+          "headline": "En Cannes con Federico Luis, ganador de la Palma de Oro: \"Tengo la sensación de que recién estoy empezando\"",
+          "snippet": "Federico Luis fue el primer premiado de la noche aquí en el Festival de Cannes . Su corto Para los contrincantes , que rodó en México, ganó la Palma de Oro al mejor cortometraje en el Festival más importante del mundo. Ya había competido aquí, en 2019, con otro corto, La siesta , y en 2024 fue a la…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:40:29 +0000",
+          "image_url": "https://www.clarin.com/img/2026/05/23/W2-PEKcsz_1200x630__1.jpg",
           "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.35,
-        "atlanticist": 0.35,
-        "statist": 0.285,
-        "financialized": 0.485
+        "interventionist": 0.2,
+        "zionist": 0.3,
+        "atlanticist": 0.46,
+        "statist": 0.29,
+        "financialized": 0.47
       },
       "fp_source_count": 2,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
-        "global-south": 2
+        "latin-america": 2
       },
-      "section": "world"
+      "section": "entertainment"
     },
     {
       "id": "14bd4d26885b",
@@ -14203,7 +14260,7 @@
       "id": "159b3889062c",
       "headline": "Demi Moore turns heads in a bizarre sleeping-bag-inspired look as she covers up on the red carpet alongside a glam Eva Longoria and Penelope Cruz at Cannes Film Festival's star-studded closing ceremony",
       "summary": "Demi Moore turned heads in a bizarre look as she joined Eva Longoria and Penelope Cruz at the 79th Cannes Film Festival's closing ceremony on Saturday.",
-      "published": "Sat, 23 May 2026 22:45:12 GMT",
+      "published": "Sun, 24 May 2026 09:15:29 +0000",
       "image_url": "https://assets.nst.com.my/images/listing-featured/5D26A907006C04233242C205A6388A1D_data_1.jpg",
       "video_url": null,
       "has_video": false,
@@ -15176,6 +15233,17 @@
           "published": "Sat, 23 May 2026 21:44:00 GMT",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/24/penelope-cruz-lleva-a-lo-mas-alto-a-los-javis-en-el-festival-de-cine-de-cannes/",
+          "headline": "Penélope Cruz lleva a lo más alto a los Javis en el Festival de cine de Cannes",
+          "snippet": "Algo intuyó Penélope Cruz cuando decidió llamar a los Javis para formar parte de 'La bola negra', el proyecto que tenían entre manos y que narra la historia de Federico García Lorca. La oscarizada actriz de Alcobendas tenía que estar y la ovación de 17 minutos que les brindó el Gran Teatro Lumière…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 09:15:29 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/XQOZN4KJCBGILDOFG75SW7YD6M.jpg?auth=90f9c8ed9a99278d0c7926e16651a8f9e565071dac0d3e8f57937c72d05810b2&smart=true&width=1920&height=1440",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -15210,14 +15278,14 @@
       "blindspot_label": null,
       "blindspot_score": 0.0,
       "coverage": {
-        "left_pct": 24,
-        "center_pct": 49,
+        "left_pct": 23,
+        "center_pct": 50,
         "right_pct": 27,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 49
+        "dominant_pct": 50
       },
-      "bias_variance": 5.27,
+      "bias_variance": 5.22,
       "entity_count": 146,
       "entity_list": [
         "Actually",
@@ -16026,6 +16094,18 @@
           "geo_cluster": "africa",
           "factuality": "unknown",
           "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "egypt_independent",
+          "name": "Egypt Independent",
+          "country": "EG",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "middle-east",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
           "parent_company": ""
         }
       ],
@@ -18064,22 +18144,33 @@
           "published": "Sun, 24 May 2026 08:06:20 +0000",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.egyptindependent.com/shooting-outside-white-house-forces-security-lockdown/",
+          "headline": "Shooting outside White House forces security lockdown",
+          "snippet": "A deployment of police and security vehicles near the White House complex following a security incident The White House was placed under lockdown following a shooting incident just outside its perimeter, Al-Qahera News Channel (Cairo News Channel) reported on Sunday. media outlets added that the…",
+          "source": "egypt_independent",
+          "source_name": "Egypt Independent",
+          "country": "EG",
+          "published": "Sun, 24 May 2026 09:17:34 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.135,
-        "zionist": 0.228,
+        "interventionist": 0.132,
+        "zionist": 0.226,
         "atlanticist": 0.309,
-        "statist": 0.15,
-        "financialized": 0.377
+        "statist": 0.141,
+        "financialized": 0.372
       },
-      "fp_source_count": 49,
+      "fp_source_count": 50,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
         "west": 27,
-        "middle-east": 4,
+        "middle-east": 5,
         "global-south": 8,
         "latin-america": 1,
         "africa": 5,
@@ -34619,507 +34710,6 @@
       "section": "world"
     },
     {
-      "id": "b5273e64091c",
-      "headline": "Hungary’s Peter Magyar is set to be sworn in as prime minister, ending Viktor Orban’s 16-year rule",
-      "summary": "BUDAPEST, Hungary (AP) — Hungary’s incoming prime minister,&#160;Peter Magyar, arrived Saturday at the Parliament building to be sworn into office, ending&#160;Viktor Orban’s autocratic 16-year rule. Magyar’s center-right Tisza party defeated Orban’s nationalist-populist Fidesz in&#160;a stunning bl",
-      "published": "Sat, 23 May 2026 09:25:31 +0000",
-      "image_url": "https://i.guim.co.uk/img/media/64861c017b1e92af5021e9080ef54bb2f629d384/332_0_3320_2656/master/3320.jpg?width=140&quality=85&auto=format&fit=max&s=350aef7b85d8be98ac7adc20b08cb543",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 31,
-        "center_pct": 44,
-        "right_pct": 25,
-        "state_count": 1,
-        "dominant": "center",
-        "dominant_pct": 44
-      },
-      "bias_variance": 5.52,
-      "entity_count": 19,
-      "entity_list": [
-        "Brussels",
-        "Clean",
-        "Dansul",
-        "Europeni",
-        "Facebook",
-        "Hungary",
-        "Magyar",
-        "Ministrul",
-        "Orban",
-        "Peter",
-        "Polish",
-        "Popularii",
-        "Reuters",
-        "Sworn",
-        "Takes",
-        "Times",
-        "VIRAL",
-        "Viktor",
-        "Welcome"
-      ],
-      "sources": [
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
-        },
-        {
-          "id": "the_guardian",
-          "name": "The Guardian",
-          "country": "GB",
-          "bloc": "adversarial",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Scott Trust"
-        },
-        {
-          "id": "trt_world",
-          "name": "TRT World",
-          "country": "TR",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "middle-east",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "straits_times",
-          "name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "ukrinform_en",
-          "name": "Ukrinform",
-          "country": "UA",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "scmp",
-          "name": "South China Morning Post",
-          "country": "HK",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "aljazeera",
-          "name": "Al Jazeera English",
-          "country": "QA",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "middle-east",
-          "factuality": "mostly_factual",
-          "primary_vs_launder": "mixed",
-          "parent_company": "Qatari state"
-        },
-        {
-          "id": "france24",
-          "name": "France 24",
-          "country": "FR",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "launderer",
-          "parent_company": "unknown (launderer)"
-        },
-        {
-          "id": "cbs_news",
-          "name": "CBS News",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Paramount"
-        },
-        {
-          "id": "washington_examiner",
-          "name": "Washington Examiner",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "mostly_factual",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "independent_uk",
-          "name": "The Independent (UK)",
-          "country": "GB",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "telesur",
-          "name": "Telesur English",
-          "country": "VE",
-          "bloc": "non-aligned",
-          "bias_tier": "state-pro",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "g4media",
-          "name": "G4Media",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "telex_hu",
-          "name": "Telex",
-          "country": "HU",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "guardian",
-          "name": "The Guardian",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "ukrainska_pravda_en",
-          "name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "politico_eu",
-          "name": "Politico Europe",
-          "country": "BE",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQT25oY3c3Y1BBOEF5TGFuNGZBdlhkdTdMSEl5SF93VkhSX1lXT2RXby1lV3VLNS1UdlhQMFFSUERXM0xCaHdBV1FubnJBdHF6aVpqQWd1R09XNjVsVTNxUVQ1V3pWVUpXRFFQMXdPX0tPLVpQMnFzcXl5ODRySlZYLTFmMmJ3SnVUZUoxYkdwNA?oc=5",
-          "headline": "Peter Magyar Takes Over as Hungary’s Leader From Viktor Orban - The New York Times",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQT25oY3c3Y1BBOEF5TGFuNGZBdlhkdTdMSEl5SF93VkhSX1lXT2RXby1lV3VLNS1UdlhQMFFSUERXM0xCaHdBV1FubnJBdHF6aVpqQWd1R09XNjVsVTNxUVQ1V3pWVUpXRFFQMXdPX0tPLVpQMnFzcXl5ODRySlZYLTFmMmJ3SnVUZUoxYkdwNA?oc=5\" target=\"_blank\">Peter Magyar Takes Over as…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sat, 09 May 2026 15:06:21 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.theguardian.com/world/2026/may/09/hungary-prime-minister-peter-magyar-sworn-in-viktor-oban",
-          "headline": "Péter Magyar sworn in as Hungary’s prime minister ending 16-year Orbán era",
-          "snippet": "The pro-European centre-right leader Péter Magyar has been sworn in as prime minister of Hungary, marking the official end to Viktor Orbán’s 16 years in power. Saturday’s ceremony – during which Magyar had invited people to join him to “write Hungarian history” together and “step through the gate…",
-          "source": "the_guardian",
-          "source_name": "The Guardian",
-          "country": "GB",
-          "published": "Sat, 09 May 2026 17:48:10 GMT",
-          "image_url": "https://i.guim.co.uk/img/media/64861c017b1e92af5021e9080ef54bb2f629d384/332_0_3320_2656/master/3320.jpg?width=140&quality=85&auto=format&fit=max&s=350aef7b85d8be98ac7adc20b08cb543",
-          "video_url": null
-        },
-        {
-          "url": "/article/f8dedd5a8610",
-          "headline": "Peter Magyar sworn in as Hungary prime minister on change promise",
-          "snippet": "New Hungarian leader Peter Magyar faces economic challenges, EU funding negotiations and rising deficit while promising anti-corruption reforms.",
-          "source": "trt_world",
-          "source_name": "TRT World",
-          "country": "TR",
-          "published": "Sat, 09 May 2026 14:00:36 GMT",
-          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/9/Reuters/image/2026_05_09T130328Z_129426619_RC2P5LAJBAXJ_RTRMADP_3_HUNGARY_POLITICS_INAUGURATION.JPG?width=1440&format=webp&quality=80",
-          "video_url": null
-        },
-        {
-          "url": "https://www.straitstimes.com/world/europe/magyar-sworn-in-as-hungarys-prime-minister-on-promises-of-change",
-          "headline": "Peter Magyar takes over as Hungary’s prime minister, closing Orban era",
-          "snippet": "BUDAPEST - Peter Magyar, a pro-conservative, was sworn in as Hungary’s new prime minister on May 9, closing the chapter on the 16-year rule of his nationalist predecessor, Mr Viktor Orban. The former government insider turned critic whose Tisza party resoundingly won April 12 legislative elections,…",
-          "source": "straits_times",
-          "source_name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "published": "Sat, 09 May 2026 21:16:06 +0800",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.straitstimes.com/world/europe/magyar-to-become-hungarys-regime-change-pm",
-          "headline": "Magyar sworn in as Hungary’s ‘regime change’ PM",
-          "snippet": "BUDAPEST - Pro-European conservative Peter Magyar was ceremonially sworn in as prime minister on May 9, vowing “regime change” after nationalist Viktor Orban’s 16 years in power. The former government insider-turned-critic swept to a landslide victory in April , marking a clear break from his…",
-          "source": "straits_times",
-          "source_name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "published": "Sat, 09 May 2026 17:50:00 +0800",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.ukrinform.net/rubric-polytics/4121523-magyar-sworn-in-as-hungarys-prime-minister.html",
-          "headline": "Magyar sworn in as Hungary’s Prime Minister",
-          "snippet": "Newly elected Hungarian Prime Minister Péter Magyar arrived at the country’s parliament building on Saturday, May 9, and took his oath of office. This is reported by Reuters , Ukrinform cites. “Centre-right leader Peter Magyar was sworn in as Hungary's prime ⁠minister on Saturday,” the report says.…",
-          "source": "ukrinform_en",
-          "source_name": "Ukrinform",
-          "country": "UA",
-          "published": "Sat, 09 May 2026 17:15:00 +0300",
-          "image_url": "https://static.ukrinform.com/photos/2026_05/thumb_files/630_360_1778334226-717.png",
-          "video_url": null
-        },
-        {
-          "url": "https://www.scmp.com/news/world/europe/article/3353010/hungarys-new-pm-peter-magyar-sworn-ending-viktor-orbans-16-year-rule?utm_source=rss_feed",
-          "headline": "Hungary’s new PM Peter Magyar sworn in, ending Viktor Orban’s 16-year rule",
-          "snippet": "Hungary’s Peter Magyar took his oath of office on Saturday to become the country’s new prime minister, ending Viktor Orban’s 16 years of autocratic rule. Magyar’s centre-right Tisza party defeated Orban’s nationalist-populist Fidesz in a stunning blow last month, gaining more votes and seats in…",
-          "source": "scmp",
-          "source_name": "South China Morning Post",
-          "country": "HK",
-          "published": "Sat, 09 May 2026 14:24:17 +0000",
-          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/09/bea4e59a-cf0e-40f2-a40a-271daa9a6ff3_9dff2ff2.jpg?itok=F_4qyTVW&v=1778336644",
-          "video_url": null
-        },
-        {
-          "url": "https://www.aljazeera.com/news/2026/5/9/peter-magyar-sworn-in-as-hungarys-pm-ending-orbans-16-years-in-power?traffic_source=rss",
-          "headline": "Peter Magyar sworn in as Hungary’s PM, ending Orban’s 16 years in power",
-          "snippet": "Peter Magyar has been sworn in as Hungary’s new prime minister, almost a month after parliamentary elections that ended Viktor Orban’s 16 years in power. Magyar, 45, who leads the centre-right Tisza party, was propelled into office on promises of change after years of economic stagnation under…",
-          "source": "aljazeera",
-          "source_name": "Al Jazeera English",
-          "country": "QA",
-          "published": "Sat, 09 May 2026 13:38:10 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.france24.com/en/clean-break-with-orban-hungary-s-magyar-to-usher-in-new-era",
-          "headline": "'Clean break' with Orban: Hungary's Magyar to usher in 'new era'",
-          "snippet": "Hungary's incoming prime minister Pater Magyar is marking a \"clean break\" with his predecessor Viktor Orban as he is set to be sworn into office on Saturday. \"It's officially a new era\", said Zsolt Kerner, senior reporter at Hungarian online media 24.hu. Magyar was previously a member of Orban's…",
-          "source": "france24",
-          "source_name": "France 24",
-          "country": "FR",
-          "published": "Sat, 09 May 2026 11:30:31 GMT",
-          "image_url": "https://s.france24.com/media/display/43131f1c-4b99-11f1-b899-005056a97e36/w:1024/p:16x9/EN-20260509-130624-131523-CS.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.france24.com/en/magyar-to-succeed-orban-as-hungary-s-new-prime-minister",
-          "headline": "Magyar to succeed Orban as Hungary's new prime minister",
-          "snippet": "Pro-European conservative Peter Magyar arrived at Hungary's parliament Saturday morning to be sworn in as prime minister, on a promise of \"regime change\" after nationalist Viktor Orban's 16 years in power. The former government insider-turned-critic scored a landslide victory last month, pledging…",
-          "source": "france24",
-          "source_name": "France 24",
-          "country": "FR",
-          "published": "Sat, 09 May 2026 10:25:35 GMT",
-          "image_url": "https://s.france24.com/media/display/10dc2c08-4b91-11f1-9b4c-005056a90284/w:1024/p:16x9/EN-20260509-120755-120956-CS.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.france24.com/en/hungary-s-magyar-set-to-be-sworn-in-as-new-prime-minister",
-          "headline": "Hungary’s Magyar set to be sworn in as new prime minister",
-          "snippet": "Hungary's incoming prime minister, Peter Magyar, arrived Saturday at the Parliament building to be sworn into office, ending Viktor Orban's autocratic 16-year rule. RFI Correspondent Florence Le Bruyère reports from Budapest.",
-          "source": "france24",
-          "source_name": "France 24",
-          "country": "FR",
-          "published": "Sat, 09 May 2026 10:04:46 GMT",
-          "image_url": "https://s.france24.com/media/display/48d2c8de-4b8b-11f1-8765-005056a90284/w:1024/p:16x9/EN-20260509-110606-110923-CS.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQUnlWRGctZnNnS1dTNTlWY0JZZGdkcE8tS3Fic3dGaENfNTNQYXpDN01GUFFrWUxxUWZHT3NFZ05JTmpKWlJsb1FmNjlLTG8zYUw2MUg4ek5VUTBOV1BFLUFkSURHMC1FLUROMUR0MVdUQ05zY1R6R1hwQXlMeXRBbGs2dngtdTlENFEtLWs3YkJqSzg0RlUxUktn?oc=5",
-          "headline": "Magyar sworn in as Hungary's prime minister on promises of change - Reuters",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQUnlWRGctZnNnS1dTNTlWY0JZZGdkcE8tS3Fic3dGaENfNTNQYXpDN01GUFFrWUxxUWZHT3NFZ05JTmpKWlJsb1FmNjlLTG8zYUw2MUg4ek5VUTBOV1BFLUFkSURHMC1FLUROMUR0MVdUQ05zY1R6R1hwQXlMeXRBbGs2dngtdTlENFEtLWs3YkJqSzg0RlUxUktn?oc=5\" target=\"_blank\">Magyar sworn in as…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sat, 09 May 2026 21:12:14 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.cbsnews.com/news/peter-magyar-sworn-in-hungary-prime-minister-end-viktor-orban-rule/",
-          "headline": "Péter Magyar sworn in as Hungary's prime minister, ending Viktor Orbán's rule",
-          "snippet": "Hungary's Péter Magyar took his oath of office on Saturday to become the country's new prime minister, ending Viktor Orbán's 16 years of autocratic rule. Magyar's center-right Tisza party defeated Orbán's nationalist-populist Fidesz in a stunning blow last month, gaining more votes and seats in…",
-          "source": "cbs_news",
-          "source_name": "CBS News",
-          "country": "US",
-          "published": "Sat, 09 May 2026 10:50:51 -0400",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.washingtonexaminer.com/news/world/4561797/hungary-peter-magyar-sworn-in-prime-minister-ending-viktor-orban-rule/",
-          "headline": "Hungary’s Peter Magyar is set to be sworn in as prime minister, ending Viktor Orban’s 16-year rule",
-          "snippet": "Magyar’s center-right Tisza party defeated Orban’s nationalist-populist Fidesz in a stunning blow last month, gaining more votes and seats in Parliament than any other party in Hungary’s post-Communist history. The win, which gave Tisza a two-thirds parliamentary majority, will allow it to roll…",
-          "source": "washington_examiner",
-          "source_name": "Washington Examiner",
-          "country": "US",
-          "published": "Sat, 09 May 2026 13:35:13 +0000",
-          "image_url": "https://www.washingtonexaminer.com/wp-content/uploads/2026/05/AP26129286490850.jpg?w=696",
-          "video_url": null
-        },
-        {
-          "url": "https://www.independent.co.uk/news/world/europe/peter-magyar-viktor-orban-hungary-prime-minister-b2973493.html",
-          "headline": "Péter Magyar to be sworn in as Hungary prime minister as Viktor Orbán’s 16-year rule ends",
-          "snippet": "Your support helps us to tell the story From reproductive rights to climate change to Big Tech, The Independent is on the ground when the story is developing. Whether it's investigating the financials of Elon Musk's pro-Trump or producing our latest documentary, 'The A Word', which shines a light…",
-          "source": "independent_uk",
-          "source_name": "The Independent (UK)",
-          "country": "GB",
-          "published": "Sat, 09 May 2026 09:51:11 GMT",
-          "image_url": "https://static.independent.co.uk/2026/05/09/10/2275282534.jpg?width=1200&auto=webp&crop=3%3A2",
-          "video_url": null
-        },
-        {
-          "url": "https://www.telesurenglish.net/magyar-sworn-in-as-hungarys-new-prime-minister/",
-          "headline": "Magyar Sworn in as Hungary’s New Prime Minister",
-          "snippet": "Leader of the election-winning Tisza Party Peter Magyar (L) takes the oath of office as Prime Minister of Hungary during the inaugural session of the new National Assembly in Budapest, Hungary, 09 May 2026. Photo: /EPA/Tibor Illyes HUNGARY May 9, 2026 Hour: 10:04 am 🔗 Comparte este artículo…",
-          "source": "telesur",
-          "source_name": "Telesur English",
-          "country": "VE",
-          "published": "Sat, 09 May 2026 14:04:12 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/viral-ministrul-ungar-al-sanatatii-o-comite-din-nou-dansul-sau-celebru-la-petrecerea-care-a-marcat-preluarea-puterii-de-magyar-dupa-ce-l-a-zdrobit-pe-orban-in-alegeri-popularii.html",
-          "headline": "VIRAL Ministrul ungar al Sănătății ”o comite” din nou: Dansul său celebru, la petrecerea care a marcat preluarea puterii de Magyar, după ce l-a zdrobit pe Orban în alegeri / Popularii Europeni, pe Facebook: ”Welcome back, Hungary!”",
-          "snippet": "Ministrul ungar al Sănătății, Zsolt Hegedűs, a ”comis-o” din nou la momentul festiv care a marcat preluarea puterii de către Peter Magyar, după ce Tisza a zdrobit Fidesz-ul lui Viktor Orban în alegerile generale: Ministrul și-a etalat dansul devenit deja celebru la petrecerea cu sute de mii de…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sun, 10 May 2026 05:33:51 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/hegedus-peter-magyar-dans-victorie-ungaria.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://telex.hu/english/2026/05/09/i-will-serve-my-country-not-rule-over-it-peter-magyar-sworn-in-as-hungary-s-new-prime-minister",
-          "headline": "“I will serve my country, not rule over it” – Péter Magyar sworn in as Hungary’s new Prime Minister",
-          "snippet": "After the elected parliamentary representatives took an oath of office, Péter Magyar was elected as Hungary's next Prime Minister with 140 votes in favor and 54 against on Saturday, 9 May. The events inside parliament were followed by thousands on huge screens on the adjacent Kossuth Lajos Square,…",
-          "source": "telex_hu",
-          "source_name": "Telex",
-          "country": "HU",
-          "published": "Sat, 09 May 2026 20:34:29 +0200",
-          "image_url": "https://assets.telex.hu/images/20260509/1778350988-temp-v379nn7nqudmekomkhm_cimlap-normal.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.theguardian.com/world/2026/may/11/polish-ex-minister-zbigniew-ziobro-flees-hungary-usa",
-          "headline": "Polish ex-minister flees Hungary to the US after PM Magyar says country won’t protect people wanted elsewhere",
-          "snippet": "Poland’s former justice minister Zbigniew Ziobro, wanted on several criminal charges in his home country, has fled Hungary to the United States, he confirmed on Sunday, after being granted asylum from former Hungarian prime minister Viktor Orbán’s government last year. “I am in the United States,”…",
-          "source": "guardian",
-          "source_name": "The Guardian",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 02:51:33 GMT",
-          "image_url": "https://i.guim.co.uk/img/media/41b4f2ce623bc52efbba7b00a1c2bd11aefdf752/683_0_6827_5464/master/6827.jpg?width=140&quality=85&auto=format&fit=max&s=3b5d04fee732f01f1927e93d9ee79891",
-          "video_url": null
-        },
-        {
-          "url": "https://www.pravda.com.ua/eng/news/2026/05/11/8034147/",
-          "headline": "Magyar's minister pledges Hungary will no longer use veto to blackmail EU",
-          "snippet": "Hungary's new Foreign Minister Anita Orbán, ahead of the Foreign Affairs Council meeting on 11 May, stated that her country will no longer use its veto right on European Union policy as an instrument of blackmail and will work to restore the trust of its and partners. Source: European Pravda…",
-          "source": "ukrainska_pravda_en",
-          "source_name": "Ukrainska Pravda (English)",
-          "country": "UA",
-          "published": "Mon, 11 May 2026 10:57:00 +0300",
-          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/9/4/826418/94e067b4d238c70db794c09b8e56acee.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.politico.eu/article/hungary-peter-magyar-brussels-eu-frozen-funds-negotiations/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-          "headline": "Magyar to visit Brussels next week to discuss unfreezing funds for Hungary",
-          "snippet": "Menu Search for: Submit Edition: Europe Europe UK France Germany US Policy areas Agriculture and Food Central Banker Competition and Industrial Policy Cybersecurity and Data Protection Defense Energy and Climate Energy and Climate UK Energie et Climat France Energie &amp; Klima DE Financial…",
-          "source": "politico_eu",
-          "source_name": "Politico Europe",
-          "country": "BE",
-          "published": "Sat, 23 May 2026 09:25:31 +0000",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.056,
-        "zionist": 0.087,
-        "atlanticist": 0.237,
-        "statist": 0.138,
-        "financialized": 0.223
-      },
-      "fp_source_count": 16,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "middle-east": 2,
-        "west": 7,
-        "eastern-europe": 5,
-        "pacific-asia": 2,
-        "latin-america": 1
-      },
-      "section": "world"
-    },
-    {
       "id": "2be067c9c76e",
       "headline": "Rubio touts US energy on India trip meant to repair ties",
       "summary": "<p>NEW DELHI: US Secretary of State Marco Rubio discussed trade and energy with Indian Prime Minister Narendra Modi on Saturday on a visit aimed at shoring up relations battered by Washington’s tariffs and engagement with New Delhi’s rivals Pakistan and China.",
@@ -40270,7 +39860,7 @@
       "id": "46f1c734f431",
       "headline": "Cristian Mungiu wins second Palme d’Or at Cannes for child abuse drama Fjord - The Guardian",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPazJ4SldtajFIMHVaSGpIRlF5V2NrTmlpVXVNN2FnbEF2WlBHa09vZzFsTGpVSU1Yc25VR18xN0JQXzNwUHdYSzRDd2xvbzhlYWF2V3RBbGIteTdRRjZsd0pXUEJ6Wm1BWXAxUTZlZHhsOEpybk1DRW5tWUJRY0tSYk9LdUJEUm1zdjFnTDJfN1FsX0piNjh0NU1iMl9haUhGbzhZWmE1Q3NhckJXSEE?oc=5\" ",
-      "published": "Sat, 23 May 2026 20:13:33 -0400",
+      "published": "Sun, 24 May 2026 09:11:52 +0000",
       "image_url": "https://cdn.romania-insider.com/sites/default/files/2026-05/cristian_mungiu_fjord_cannes_-_photo_ministerul_culturii_on_fb_by_laurent_hou.jpg",
       "video_url": null,
       "has_video": false,
@@ -40286,7 +39876,7 @@
         "dominant_pct": 62
       },
       "bias_variance": 5.73,
-      "entity_count": 25,
+      "entity_count": 31,
       "entity_list": [
         "Cannes",
         "Consecutive",
@@ -40295,13 +39885,18 @@
         "Deadline",
         "Extends",
         "Fjord",
+        "Giurgiu",
         "Guardian",
         "Guldpalmen",
         "Gullpalmen",
+        "Guvernul",
         "Ministry",
         "Mungiu",
         "Norsk",
+        "Oscar",
         "Palme",
+        "Premiul",
+        "Regizorul",
         "Reinsve",
         "Renate",
         "Reuters",
@@ -40310,6 +39905,7 @@
         "Sebastian",
         "Seven",
         "Starrer",
+        "Tudor",
         "Variety",
         "Winners",
         "Zlatou"
@@ -40691,6 +40287,17 @@
           "country": "AU",
           "published": "Sat, 23 May 2026 22:39:07 GMT",
           "image_url": "https://i.guim.co.uk/img/media/7de85ba90e40891dc20ca5c348dc44f1494dfe1e/407_0_4057_3247/master/4057.jpg?width=140&quality=85&auto=format&fit=max&s=118c5fcfdde4bf1caf2a9e870c871ddf",
+          "video_url": null
+        },
+        {
+          "url": "https://www.g4media.ro/regizorul-tudor-giurgiu-premiul-de-la-cannes-pentru-filmul-fjord-il-consacra-definitiv-pe-cristian-mungiu-drept-cel-mai-important-si-influent-cineast-roman-din-toate-timpurile-guv.html",
+          "headline": "Regizorul Tudor Giurgiu: Premiul de la Cannes pentru filmul ”Fjord” îl consacrǎ definitiv pe Cristian Mungiu drept cel mai important și influent cineast român din toate timpurile / Guvernul să sprijine campania de marketing pentru premiul Oscar",
+          "snippet": "Regizorul și producătorul Tudor Giurgiu l-a numit duminică pe Cristian Mungiu, autorul filmului ”Fjord” premiat cu Palme d’Or la Festivalul de la Cannes, ”cel mai important și influent cineast român din toate timpurile”. Tudor Giurgiu a spus într-o postare pe rețelele sociale că Festivalul de la…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sun, 24 May 2026 09:11:52 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/Cristian-Mungiu-Cannes-4.jpg",
           "video_url": null
         }
       ],
@@ -43709,6 +43316,321 @@
         "pacific-asia": 1,
         "latin-america": 1,
         "middle-east": 2
+      },
+      "section": "world"
+    },
+    {
+      "id": "a1035bae5a47",
+      "headline": "Kevin Warsh sworn in by Clarence Thomas as Trump claims he wants ‘independent’ Fed Reserve under his hand-picked chair",
+      "summary": "<p>Trump has spent years attempting to bully the central bank into lowering interest rates to artificially juice the U.S. economy</p>",
+      "published": "Sun, 24 May 2026 09:02:25 +0000",
+      "image_url": "https://i.guim.co.uk/img/media/6c102ab2f5f8a76a5030fe143dcfb70a4d9589c3/437_0_4585_3668/master/4585.jpg?width=140&quality=85&auto=format&fit=max&s=92121966d0f31544b025bf3695733864",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 40,
+        "center_pct": 30,
+        "right_pct": 30,
+        "state_count": 0,
+        "dominant": "left",
+        "dominant_pct": 40
+      },
+      "bias_variance": 3.58,
+      "entity_count": 17,
+      "entity_list": [
+        "Bitcoin",
+        "Ceremony",
+        "Chairman",
+        "Clarence",
+        "Crypto",
+        "Federal",
+        "Jerome",
+        "Kevin",
+        "Powell",
+        "Replacing",
+        "Reserve",
+        "Senate",
+        "Street",
+        "Sworn",
+        "Thomas",
+        "Trump",
+        "Warsh"
+      ],
+      "sources": [
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "ndtv",
+          "name": "NDTV",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "cnbc",
+          "name": "CNBC",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Comcast"
+        },
+        {
+          "id": "cbs_news",
+          "name": "CBS News",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Paramount"
+        },
+        {
+          "id": "cointelegraph",
+          "name": "Cointelegraph",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "breitbart",
+          "name": "Breitbart",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "far-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "independent_uk",
+          "name": "The Independent (UK)",
+          "country": "GB",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "dr_nyheder",
+          "name": "DR Nyheder",
+          "country": "DK",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_national_ae",
+          "name": "The National UAE",
+          "country": "AE",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.theguardian.com/business/2026/may/11/senate-kevin-warsh-federal-reserve-chair",
+          "headline": "US Senate expected to confirm Kevin Warsh as next Federal Reserve chair",
+          "snippet": "The Senate is expected to confirm Kevin Warsh this week as chair of the Federal Reserve , as Donald Trump continues his campaign to influence the world’s most important central bank. The Fed’s influence over the economy spans from the job market to mortgage rates, and its every move is carefully…",
+          "source": "guardian",
+          "source_name": "The Guardian",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 08:00:49 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/6c102ab2f5f8a76a5030fe143dcfb70a4d9589c3/437_0_4585_3668/master/4585.jpg?width=140&quality=85&auto=format&fit=max&s=92121966d0f31544b025bf3695733864",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ndtv.com/world-news/meet-kevin-warsh-the-pro-crypto-man-replacing-jerome-powell-as-fed-chief-11536849#publisher=newsstand",
+          "headline": "Meet Kevin Warsh, \"Pro-Crypto\" Man Replacing Jerome Powell As US Fed Chief",
+          "snippet": "Born in New York in 1970, Warsh was also considered for the Fed chair role during Donald Trump’s first term.",
+          "source": "ndtv",
+          "source_name": "NDTV",
+          "country": "IN",
+          "published": "Sat, 23 May 2026 15:44:09 +0530",
+          "image_url": "https://c.ndtvimg.com/2026-05/el2pu91k_kevin-warsh_625x300_14_May_26.jpeg?im=FeatureCrop,algorithm=dnn,width=1200,height=738",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ndtv.com/world-news/meet-kevin-warsh-the-pro-crypto-man-replacing-jerome-powell-as-fed-chief-11536849#publisher=newsstand",
+          "headline": "Meet Kevin Warsh, \"Pro-Crypto\" Man Replacing Jerome Powell As US Fed Chief",
+          "snippet": "Born in New York in 1970, Warsh was also considered for the Fed chair role during Donald Trump’s first term.",
+          "source": "ndtv",
+          "source_name": "NDTV",
+          "country": "IN",
+          "published": "Sat, 23 May 2026 15:44:09 +0530",
+          "image_url": "https://c.ndtvimg.com/2026-05/el2pu91k_kevin-warsh_625x300_14_May_26.jpeg?im=FeatureCrop,algorithm=dnn,width=1200,height=738",
+          "video_url": null
+        },
+        {
+          "url": "https://www.cnbc.com/2026/05/22/kevin-warshs-real-fed-regime-change-may-happen-deep-inside-wall-streets-plumbing.html",
+          "headline": "Kevin Warsh's real Fed 'regime change' may happen deep inside Wall Street's plumbing",
+          "snippet": "Kevin Warsh, then U.S. President Donald Trump's nominee for Chair of the Federal Reserve, delivers an opening statement during his Senate Committee on Banking, Housing, and Urban Affairs confirmation hearing in the Dirksen Senate Office Building on April 21, 2026 in Washington, DC. Andrew Harnik |…",
+          "source": "cnbc",
+          "source_name": "CNBC",
+          "country": "US",
+          "published": "Fri, 22 May 2026 18:23:49 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.cbsnews.com/news/kevin-warsh-sworn-in-federal-reserve-chair/",
+          "headline": "Kevin Warsh sworn in as new Fed chair, replacing Powell",
+          "snippet": "Washington — Kevin Warsh was sworn in as the chairman of the Federal Reserve on Friday, taking the reins of the central bank from Jerome Powell after a ceremony at the White House. \"With this oath, I've accepted a high and solemn responsibility,\" Warsh said. \"Our mandate at the Fed is to promote…",
+          "source": "cbs_news",
+          "source_name": "CBS News",
+          "country": "US",
+          "published": "Fri, 22 May 2026 17:14:55 -0400",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://cointelegraph.com/news/kevin-warsh-sworn-fed-chair-traders-rate-hikes-2026?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+          "headline": "Kevin Warsh sworn in as Fed chair, as traders forecast rate hikes in 2026",
+          "snippet": "Kevin Warsh was sworn in on Friday as the chairman of the United States Federal Reserve, but investors and traders still forecast no interest rate cuts for the rest of 2026. Speaking at the ceremony, President Donald Trump said that Warsh will remain “independent” of the Executive Branch regarding…",
+          "source": "cointelegraph",
+          "source_name": "Cointelegraph",
+          "country": "US",
+          "published": "Fri, 22 May 2026 22:12:01 +0000",
+          "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy1pbWFnZXMuY3RtZWRpYS5pby9tZWRpYS9hcnRpY2xlLWNvdmVycy9rZXZpbi13YXJzaC0yLTMuanBn.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.breitbart.com/economy/2026/05/22/kevin-warsh-sworn-in-federal-reserve-chairman-east-room-ceremony/",
+          "headline": "Kevin Warsh Sworn In as Federal Reserve Chairman in East Room Ceremony",
+          "snippet": "Kevin Warsh was sworn in as the 17th chairman of the Federal Reserve on Friday during a ceremony at the White House. Warsh took the oath of office from Supreme Court Justice Clarence Thomas in the East Room after President Donald Trump delivered remarks, in which he predicted Warsh “will go down as…",
+          "source": "breitbart",
+          "source_name": "Breitbart",
+          "country": "US",
+          "published": "Fri, 22 May 2026 18:22:48 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/americas/us-politics/trump-federal-reserve-kevin-warsh-b2982141.html",
+          "headline": "Kevin Warsh sworn in by Clarence Thomas as Trump claims he wants ‘independent’ Fed Reserve under his hand-picked chair",
+          "snippet": "Your support helps us to tell the story From reproductive rights to climate change to Big Tech, The Independent is on the ground when the story is developing. Whether it's investigating the financials of Elon Musk's pro-Trump or producing our latest documentary, 'The A Word', which shines a light…",
+          "source": "independent_uk",
+          "source_name": "The Independent (UK)",
+          "country": "GB",
+          "published": "Fri, 22 May 2026 16:57:48 GMT",
+          "image_url": "https://static.independent.co.uk/2026/05/22/17/2026-05-22T161648Z_1137454935_RC2CELA13ZZO_RTRMADP_3_USA-FED-WARSH.JPG?width=1200&auto=webp&crop=3%3A2",
+          "video_url": null
+        },
+        {
+          "url": "https://www.latercera.com/pulso/noticia/kevin-warsh-el-candidato-de-trump-jura-como-nuevo-presidente-de-la-fed/",
+          "headline": "Kevin Warsh, el candidato de Trump, jura como nuevo presidente de la Fed",
+          "snippet": "Kevin Warsh , el candidato nominado por Donald Trump para asumir la presidencia de la Reserva Federal (Fed) en reemplazo de Jerome Powell , juró este viernes en el máximo cargo del banco central estadounidense, en una ceremonia realizada en la Casa Blanca. En el acto de juramento Trump afirmó que…",
+          "source": "tercera",
+          "source_name": "La Tercera",
+          "country": "CL",
+          "published": "Fri, 22 May 2026 17:02:26 +0000",
+          "image_url": "https://www.latercera.com/resizer/v2/RCTEHWCDQNCNVCZI7EEYZHP7KM.jpg?auth=422719804937ad70b22a730a369ec8f11ffe91fe9a4dc81f3566b99f575dc260&smart=true&width=4096&height=2730",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dr.dk/nyheder/seneste/kevin-warsh-taget-i-ed-som-ny-centralbankchef-i-usa",
+          "headline": "Kevin Warsh taget i ed som ny centralbankchef i USA",
+          "snippet": "58 dage er gået siden valget. Det er derfor på høje tid, at Danmark får en ny regering, sagde Venstres formand, Troels Lund Poulsen, på et pressemøde fredag. Men efter 14 dage som forhandlingsleder fik han et nej fra Moderaternes leder, Lars Løkke Rasmussen, til at danne en VLAK-mindretalsregering.…",
+          "source": "dr_nyheder",
+          "source_name": "DR Nyheder",
+          "country": "DK",
+          "published": "Fri, 22 May 2026 16:49:00 GMT",
+          "image_url": "https://asset.dr.dk/drdk/umbraco-images/r1pd4mkl/20260522-183546-2.jpg?im=AspectCrop=(1200,675),xPosition=.5,yPosition=.5;Resize=(1200,675)&impolicy=medium",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/business/economy/2026/05/22/kevin-warsh-takes-charge-at-us-federal-reserve-as-markets-brace-for-rate-increases/",
+          "headline": "Kevin Warsh takes charge at US Federal Reserve as markets brace for rate increases",
+          "snippet": "Kevin Warsh assumed office as Federal Reserve chairman on Friday, with heightening inflation fears over a prolonged Iran war pushing up odds of higher interest rates . Mr Warsh takes charge of the world's most influential central bank at a precarious time for the American and global economies.…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Fri, 22 May 2026 17:08:40 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/FB6V7ZY4XMVX7APQEC2AJHGAKU.jpg?auth=0e7b4910ff2a29e9958f224e9cb8d5ddafdcb20bfd9001c53794dfd19ac9e694&smart=true&width=5500&height=3668",
+          "video_url": null
+        },
+        {
+          "url": "https://cointelegraph.com/markets/why-is-bitcoin-falling-despite-pro-crypto-kevin-warsh-becoming-fed-chair?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+          "headline": "Why is Bitcoin falling despite pro-crypto Kevin Warsh becoming Fed chair?",
+          "snippet": "Bitcoin (BTC) fell to $74,190 on Saturday, its lowest level in more than a month, despite pro-crypto Kevin Warsh being sworn in as Federal Reserve chairman a day earlier. BTC/daily chart. Source: TradingView Key takeaways: Higher odds of a rate hike in 2026 are pressuring the Bitcoin market.…",
+          "source": "cointelegraph",
+          "source_name": "Cointelegraph",
+          "country": "US",
+          "published": "Sun, 24 May 2026 09:02:25 +0000",
+          "image_url": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy1pbWFnZXMuY3RtZWRpYS5pby9tZWRpYS9hcnRpY2xlLWNvdmVycy9oaS13aGF0LWlzLWltcGVybWFuZW50LWxvc3MtYW5kLWhvdy10by1hdm9pZC1pdDItMS5qcGc=.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.112,
+        "zionist": 0.211,
+        "atlanticist": 0.329,
+        "statist": 0.102,
+        "financialized": 0.334
+      },
+      "fp_source_count": 10,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 7,
+        "global-south": 1,
+        "latin-america": 1,
+        "middle-east": 1
       },
       "section": "world"
     },
@@ -49825,397 +49747,6 @@
       "section": "world"
     },
     {
-      "id": "1d174813c886",
-      "headline": "Streeting 'coup' plot begins as his ally joins calls for Starmer to quit after make-or-break speech - as Rayner tees up hard-Left 'dream ticket' with Burnham",
-      "summary": "The timetable for appointing a new PM is emerging as the critical issue as Blairites and the hard-Left wrestle for control.",
-      "published": "Sat, 23 May 2026 22:39:26 +0100",
-      "image_url": "https://i.dailymail.com/1/2026/05/09/21/108495771-0-image-m-20_1778359805211.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 25,
-        "center_pct": 25,
-        "right_pct": 50,
-        "state_count": 0,
-        "dominant": "right",
-        "dominant_pct": 50
-      },
-      "bias_variance": 2.18,
-      "entity_count": 13,
-      "entity_list": [
-        "Angela",
-        "Burnham",
-        "Digital",
-        "Downing",
-        "Manchester",
-        "Rayner",
-        "Rebellion",
-        "Starmer",
-        "Street",
-        "Streeting",
-        "TODAY",
-        "Tories",
-        "Veteran"
-      ],
-      "sources": [
-        {
-          "id": "daily_mail",
-          "name": "Daily Mail",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": "Daily Mail and General Trust"
-        },
-        {
-          "id": "guardian",
-          "name": "The Guardian",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "ft",
-          "name": "Financial Times",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Nikkei"
-        },
-        {
-          "id": "theregister",
-          "name": "The Register",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.dailymail.com/news/article-15804553/Starmer-MPs-zombie-PM-rivals-circle-No10.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "'If Starmer ever had a plot, he's lost it': Veteran MP's withering verdict as 'zombie' PM faces stalking horse challenge - and Andy Burnham moves a step closer to Downing Street",
-          "snippet": "Andy Burnham moved a step closer to Downing Street last night after Sir Keir Starmer was accused of ‘losing the plot’ over the threat to his leadership. The damaging claim from one of the Prime Minister’s own senior MPs came after he unexpectedly appointed two ‘relics’ of the Tony Blair era –…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sun, 10 May 2026 01:07:41 +0100",
-          "image_url": "https://i.dailymail.com/1/2026/05/09/21/108495771-0-image-m-20_1778359805211.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.theguardian.com/politics/live/2026/may/10/may-elections-keir-starmer-catherine-west-labour-leadership-nigel-farage-reform-conservatives-kemi-badenoch-richard-tice-bridget-phillipson-uk-politics-latest-news-updates",
-          "headline": "Angela Rayner calls blocking Andy Burnham’s return to parliament a mistake as pressure mounts on Keir Starmer – as it happened",
-          "snippet": "Angela Rayner calls blocking Andy Burnham's return to parliament a mistake Angela Rayner has just released a statement on the fallout from Thursday’s elections. The most significant passage is one in which she calls the decision to block Andy Burnham from parliament a mistake and says Keir Starmer…",
-          "source": "guardian",
-          "source_name": "The Guardian",
-          "country": "GB",
-          "published": "Sun, 10 May 2026 17:09:42 GMT",
-          "image_url": "https://i.guim.co.uk/img/media/ef89e6d973b2d1173f1dff0d29de38013d336ef3/393_0_3928_3143/master/3928.jpg?width=140&quality=85&auto=format&fit=max&s=d15617f822c67e9768c41a302eb1709c",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ft.com/content/99c8774e-e6ba-408a-82a8-9ab8ab5138ff",
-          "headline": "Angela Rayner calls for Andy Burnham’s return as she accuses Starmer of ‘crony culture’",
-          "snippet": "Former deputy prime minister says Labour ‘needs to change’ in first remarks since local elections defeat",
-          "source": "ft",
-          "source_name": "Financial Times",
-          "country": "GB",
-          "published": "Sun, 10 May 2026 17:09:31 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/news/article-15806345/rebellion-Starmer-fate-Rayner-hard-Left-prospectus-pact-Burnham-Streeting.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Rebellion that could seal Starmer's fate TODAY: Rayner unveils her hard-Left prospectus and pact with Burnham, and Streeting is 'ready to go'",
-          "snippet": "Keir Starmer was on the brink last night as his rivals for the top job prepared to strike. In an explosive intervention, Angela Rayner broke cover with an extraordinary statement eviscerating the Prime Minister's record in office. She also unveiled her hard-Left prospectus for power and signalled…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 01:56:37 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/01/108512161-0-image-m-76_1778457638161.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/news/article-15807279/Keir-Starmer-mutiny-Labour-MPs-Brexit-speech-elections.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Streeting 'coup' plot begins as his ally joins calls for Starmer to quit after make-or-break speech - as Rayner tees up hard-Left 'dream ticket' with Burnham",
-          "snippet": "The timetable for appointing a new PM is emerging as the critical issue as Blairites and the hard-Left wrestle for control.",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Mon, 11 May 2026 13:45:57 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/11/10/108519291-0-image-a-46_1778491603172.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ft.com/content/f742162f-24d3-4e12-871f-396f7830ec5a",
-          "headline": "As Burnham kicks off campaign, Starmer fights to stay in the game",
-          "snippet": "Supporters say PM is ‘tough’ but few are prepared to state categorically that he would fight a leadership contest if Greater Manchester mayor wins Makerfield",
-          "source": "ft",
-          "source_name": "Financial Times",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 04:00:46 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.ft.com/content/f742162f-24d3-4e12-871f-396f7830ec5a",
-          "headline": "As Burnham kicks off campaign, Starmer fights to stay in the game",
-          "snippet": "Supporters say PM is ‘tough’ but few are prepared to state categorically that he would fight a leadership contest if Greater Manchester mayor wins Makerfield",
-          "source": "ft",
-          "source_name": "Financial Times",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 04:00:46 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.theregister.com/public-sector/2026/05/22/burnham-backlash-uk-digital-id-plans-in-peril-if-manchester-mayor-succeeds-starmer/5243195",
-          "headline": "Burnham backlash: UK Digital ID plans in peril if Manchester mayor succeeds Starmer",
-          "snippet": "Public Sector Burnham backlash: Digital plans in peril if Manchester mayor succeeds Starmer He'll have to beat Nigel Farage in a Brexit-backing constituency first, though The government’s plans to introduce digital could be put in doubt if Andy Burnham, who spoke out against the scheme last…",
-          "source": "theregister",
-          "source_name": "The Register",
-          "country": "GB",
-          "published": "Fri, 22 May 2026 11:15:00 +0200",
-          "image_url": "https://image.theregister.com/?imageId=5243256&width=800",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/news/article-15843721/Starmer-ex-chief-staff-Sue-Gray-Burnham-adviser-election.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Starmer's ex-chief of staff Sue Gray joins team Burnham as key adviser - as Tories prepare for snap election",
-          "snippet": "Sue Gray , Sir Keir Starmer ’s former Chief of Staff, is advising Andy Burnham on how to ‘transition to power’ if he topples the Prime Minister, sources have told The Mail on Sunday. Lady Gray, ousted from No 10 in the early months of Sir Keir’s premiership, is understood to be helping the…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 22:39:26 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/23/22/108826843-0-image-m-9_1779572231532.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.1,
-        "zionist": 0.225,
-        "atlanticist": 0.475,
-        "statist": -0.075,
-        "financialized": 0.4
-      },
-      "fp_source_count": 4,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 4
-      },
-      "section": "world"
-    },
-    {
-      "id": "b4bb61750e91",
-      "headline": "Pakistan's Test against Bangladesh evenly poised after Mehidy takes 5 wickets",
-      "summary": "<p>Mehidy Hasan Miraz claimed five wickets to give Bangladesh a slender lead after Pakistan debutant Azan Awais hit 103 on a rain-hit third day of the first Test on Sunday.</p>\n<p>Pakistan made <a href=\"https://www.dawn.com/news/1999190/debutant-azan-leads-strong-pakistan-reply-against-bd-after-abba",
-      "published": "Sat, 23 May 2026 22:00:10 +0000",
-      "image_url": "https://i.dawn.com/large/2026/05/09190056d1788ed.webp",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 25,
-        "center_pct": 50,
-        "right_pct": 25,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 4.7,
-      "entity_count": 8,
-      "entity_list": [
-        "Abbas",
-        "Australia",
-        "Bangladesh",
-        "China",
-        "Indian",
-        "Mehidy",
-        "Miraz",
-        "Pakistan"
-      ],
-      "sources": [
-        {
-          "id": "dawn",
-          "name": "Dawn",
-          "country": "PK",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "prothom_alo",
-          "name": "Prothom Alo (English)",
-          "country": "BD",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "nst_my",
-          "name": "New Straits Times",
-          "country": "MY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "scmp",
-          "name": "South China Morning Post",
-          "country": "HK",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.dawn.com/news/1998944/abbas-takes-five-wickets-to-put-pakistan-ahead-in-bangladesh-test",
-          "headline": "Abbas takes five wickets to put Pakistan ahead in Bangladesh Test",
-          "snippet": "Mohammad Abbas claimed five wickets to restrict Bangladesh to 413, before two debutant batsmen combined to put Pakistan in a strong position in the first Test on Saturday. Opener Azan Awais hit an unbeaten 85 and Abdullah Fazal, also playing in his first Test, was 37 not out as Pakistan reached…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Sat, 09 May 2026 19:22:50 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/09190056d1788ed.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dawn.com/news/1998888/pakistan-bangladesh-sign-agreement-to-combat-drug-trafficking",
-          "headline": "Pakistan, Bangladesh sign agreement to combat drug trafficking",
-          "snippet": "Pakistan and Bangladesh have signed a memorandum of understanding (MoU) to strengthen bilateral cooperation against drug trafficking and narcotics abuse, the Ministry of Interior said on Saturday. The development came during Interior Minister Mohsin Naqvi’s visit to Dhaka, where he met his…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Sat, 09 May 2026 11:49:39 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/09160433083b569.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://en.prothomalo.com/sports/cricket/w11kxj9z52",
-          "headline": "Miraz’s five-for puts Bangladesh back in command against Pakistan",
-          "snippet": "Login Bangladesh International Sports Opinion Business Youth Entertainment Lifestyle Claim vs Fact Search ই-পেপার বাংলা Login Cricket 1st Test Miraz’s five-for puts Bangladesh back in command against Pakistan BSS Dhaka Published: 10 May 2026, 14: 41 Bangladesh off-spinner Mehidy Hasan Miraz…",
-          "source": "prothom_alo",
-          "source_name": "Prothom Alo (English)",
-          "country": "BD",
-          "published": "Sun, 10 May 2026 14:41:02 +0000",
-          "image_url": "https://media.prothomalo.com/prothomalo-english/2026-05-10/e4pq6j47/Miraz.avif",
-          "video_url": null
-        },
-        {
-          "url": "https://www.nst.com.my/sports/cricket/2026/05/1436622/bangladesh-pakistan-test-evenly-poised-after-mehidy-takes-5-wickets",
-          "headline": "Bangladesh-Pakistan Test evenly poised after Mehidy takes 5 wickets",
-          "snippet": "DHAKA: Mehidy Hasan Miraz claimed five wickets to give Bangladesh a slender lead after Pakistan debutant Azan Awais hit 103 on a rain-hit third day of the first Test on Sunday.",
-          "source": "nst_my",
-          "source_name": "New Straits Times",
-          "country": "MY",
-          "published": "Sun, 10 May 2026 21:49:55 +0800",
-          "image_url": "https://assets.nst.com.my/images/listing-featured/11C340039C8C112D2E2B3BC61A2D78ED_data_0_0.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dawn.com/news/1999193/pakistans-test-against-bangladesh-evenly-poised-after-mehidy-takes-5-wickets",
-          "headline": "Pakistan's Test against Bangladesh evenly poised after Mehidy takes 5 wickets",
-          "snippet": "Mehidy Hasan Miraz claimed five wickets to give Bangladesh a slender lead after Pakistan debutant Azan Awais hit 103 on a rain-hit third day of the first Test on Sunday. Pakistan made <a…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Sun, 10 May 2026 21:14:43 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/102009480a03de9.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dawn.com/news/1999380/australia-include-uncapped-trio-on-white-ball-tours-of-pakistan-bangladesh",
-          "headline": "Australia include uncapped trio on white-ball tours of Pakistan, Bangladesh",
-          "snippet": "Australia will use the upcoming white-ball tours of <a href=\"https://www.dawn.com/news/1998296\">Pakistan and Bangladesh to test their depth after naming squads featuring three potential debutants, selectors said on Monday. All-rounder Liam Scott has been included in the ODI squads for Pakistan and…",
-          "source": "dawn",
-          "source_name": "Dawn",
-          "country": "PK",
-          "published": "Mon, 11 May 2026 10:23:24 +0500",
-          "image_url": "https://i.dawn.com/large/2026/05/11101028dba3218.webp",
-          "video_url": null
-        },
-        {
-          "url": "https://en.prothomalo.com/sports/cricket/oli5cfh3so",
-          "headline": "Australia include uncapped trio on white-ball tours of Bangladesh, Pakistan",
-          "snippet": "Login Bangladesh International Sports Opinion Business Youth Entertainment Lifestyle Claim vs Fact Search ই-পেপার বাংলা Login Cricket Australia include uncapped trio on white-ball tours of Bangladesh, Pakistan Reuters Melbourne Published: 11 May 2026, 09: 45 Logo of Cricket Australia Australia will…",
-          "source": "prothom_alo",
-          "source_name": "Prothom Alo (English)",
-          "country": "BD",
-          "published": "Mon, 11 May 2026 09:45:19 +0000",
-          "image_url": "https://media.prothomalo.com/prothomalo-english/2026-05-11/p6251cja/Cricket-Astralia.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.scmp.com/news/china/military/article/3354643/why-bangladesh-could-raise-indian-red-flags-buying-china-pakistan-fighter-jet?utm_source=rss_feed",
-          "headline": "Why Bangladesh could raise Indian red flags by buying a China-Pakistan fighter jet",
-          "snippet": "Bangladesh’s potential purchase of a Sino-Pakistani fighter jet could raise tensions in India’s sensitive northeast, as relations between Dhaka and New Delhi remain tense, analysts said. Fighter jet simulators replicate the experience of flying an aircraft and are used to train pilots in combat…",
-          "source": "scmp",
-          "source_name": "South China Morning Post",
-          "country": "HK",
-          "published": "Sat, 23 May 2026 22:00:10 +0000",
-          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/23/0ae560c8-afb9-4620-9921-0569e0102fa0_5b80dfce.jpg?itok=m6hN7sXY&v=1779543150",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.095,
-        "zionist": 0.245,
-        "atlanticist": 0.2,
-        "statist": 0.283,
-        "financialized": 0.432
-      },
-      "fp_source_count": 4,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "global-south": 2,
-        "pacific-asia": 2
-      },
-      "section": "sports"
-    },
-    {
       "id": "5c1e0168d4b7",
       "headline": "Who is Don Jr’s fiancée Bettina Anderson? The Palm Beach socialite set to marry President Trump’s son",
       "summary": "<p> Don Jr. and Bettina Anderson are reportedly set to tie the knot in the Bahamas - but his father may not be able to attend</p>",
@@ -51248,6 +50779,109 @@
         "west": 2
       },
       "section": "chisme"
+    },
+    {
+      "id": "06594006efd4",
+      "headline": "PM”s development for all vision guiding principle for BJP govt in Bengal: CM Adhikari",
+      "summary": "Kolkata, May 11 (PTI) West Bengal Chief Minister Suvendu Adhikari on Monday said that Prime Minister Narendra Modi&#8217;s vision of development for all was the guiding principle for the new BJP government in the state. He visited the BJP office at Salt Lake in the eastern part of Kolkata, along wit",
+      "published": "Sat, 23 May 2026 14:50:28 +0530",
+      "image_url": "https://th-i.thgim.com/public/incoming/xvm751/article70964605.ece/alternates/LANDSCAPE_1200/20260509332L.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 50,
+        "center_pct": 50,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "left",
+        "dominant_pct": 50
+      },
+      "bias_variance": 1.0,
+      "entity_count": 3,
+      "entity_list": [
+        "Adhikari",
+        "Bengal",
+        "Budget"
+      ],
+      "sources": [
+        {
+          "id": "hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_print",
+          "name": "The Print (India)",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.thehindu.com/news/national/west-bengal/pms-development-for-all-vision-guiding-principle-for-bjp-government-in-west-bengal-says-cm-adhikari/article70964482.ece",
+          "headline": "PM’s development for all vision guiding principle for BJP government in West Bengal, says CM Adhikari",
+          "snippet": "File photo of West Bengal Chief Minister Suvendu Adhikari. | Photo Credit: West Bengal Chief Minister Suvendu Adhikari on Monday (May 11, 2026) said that Prime Minister Narendra Modi's vision of development for all was the guiding principle for the new government in the State. Mr. Adhikari visited…",
+          "source": "hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Mon, 11 May 2026 11:53:19 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/xvm751/article70964605.ece/alternates/LANDSCAPE_1200/20260509332L.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://theprint.in/india/pms-development-for-all-vision-guiding-principle-for-bjp-govt-in-bengal-cm-adhikari/2927664/",
+          "headline": "PM”s development for all vision guiding principle for BJP govt in Bengal: CM Adhikari",
+          "snippet": "Kolkata, May 11 (PTI) West Bengal Chief Minister Suvendu Adhikari on Monday said that Prime Minister Narendra Modi’s vision of development for all was the guiding principle for the new government in the state. He visited the office at Salt Lake in the eastern part of Kolkata, along with the party’s…",
+          "source": "the_print",
+          "source_name": "The Print (India)",
+          "country": "IN",
+          "published": "Mon, 11 May 2026 06:15:33 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/national/west-bengal/west-bengal-gained-infamy-due-to-recruitment-scams-will-bring-state-out-of-this-situation-cm-suvendu-adhikari/article71013661.ece",
+          "headline": "West Bengal gained infamy due to recruitment scams, new policy in next Budget session: CM Adhikari",
+          "snippet": "Maintaining that West Bengal gained infamy due to various recruitment scams during the previous regime , Chief Minister Suvendu Adhikari on Saturday (May 23, 2026) said his government will introduce a new recruitment policy in the next Budget session of the Assembly. Noting that the Calcutta High…",
+          "source": "hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Sat, 23 May 2026 14:50:28 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/1wjl1y/article71013679.ece/alternates/LANDSCAPE_1200/PTI05_21_2026_000472B.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.15,
+        "zionist": 0.35,
+        "atlanticist": 0.35,
+        "statist": 0.285,
+        "financialized": 0.485
+      },
+      "fp_source_count": 2,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "global-south": 2
+      },
+      "section": "world"
     },
     {
       "id": "58d210ce1956",
@@ -52858,6 +52492,507 @@
         "global-south": 1
       },
       "section": "sports"
+    },
+    {
+      "id": "b5273e64091c",
+      "headline": "Hungary’s Peter Magyar is set to be sworn in as prime minister, ending Viktor Orban’s 16-year rule",
+      "summary": "BUDAPEST, Hungary (AP) — Hungary’s incoming prime minister,&#160;Peter Magyar, arrived Saturday at the Parliament building to be sworn into office, ending&#160;Viktor Orban’s autocratic 16-year rule. Magyar’s center-right Tisza party defeated Orban’s nationalist-populist Fidesz in&#160;a stunning bl",
+      "published": "Sat, 23 May 2026 09:25:31 +0000",
+      "image_url": "https://i.guim.co.uk/img/media/64861c017b1e92af5021e9080ef54bb2f629d384/332_0_3320_2656/master/3320.jpg?width=140&quality=85&auto=format&fit=max&s=350aef7b85d8be98ac7adc20b08cb543",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 31,
+        "center_pct": 44,
+        "right_pct": 25,
+        "state_count": 1,
+        "dominant": "center",
+        "dominant_pct": 44
+      },
+      "bias_variance": 5.52,
+      "entity_count": 19,
+      "entity_list": [
+        "Brussels",
+        "Clean",
+        "Dansul",
+        "Europeni",
+        "Facebook",
+        "Hungary",
+        "Magyar",
+        "Ministrul",
+        "Orban",
+        "Peter",
+        "Polish",
+        "Popularii",
+        "Reuters",
+        "Sworn",
+        "Takes",
+        "Times",
+        "VIRAL",
+        "Viktor",
+        "Welcome"
+      ],
+      "sources": [
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
+        },
+        {
+          "id": "the_guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "adversarial",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Scott Trust"
+        },
+        {
+          "id": "trt_world",
+          "name": "TRT World",
+          "country": "TR",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "middle-east",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "straits_times",
+          "name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "ukrinform_en",
+          "name": "Ukrinform",
+          "country": "UA",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "middle-east",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Qatari state"
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "unknown (launderer)"
+        },
+        {
+          "id": "cbs_news",
+          "name": "CBS News",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Paramount"
+        },
+        {
+          "id": "washington_examiner",
+          "name": "Washington Examiner",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "independent_uk",
+          "name": "The Independent (UK)",
+          "country": "GB",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "telesur",
+          "name": "Telesur English",
+          "country": "VE",
+          "bloc": "non-aligned",
+          "bias_tier": "state-pro",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "g4media",
+          "name": "G4Media",
+          "country": "RO",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "telex_hu",
+          "name": "Telex",
+          "country": "HU",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "ukrainska_pravda_en",
+          "name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "politico_eu",
+          "name": "Politico Europe",
+          "country": "BE",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQT25oY3c3Y1BBOEF5TGFuNGZBdlhkdTdMSEl5SF93VkhSX1lXT2RXby1lV3VLNS1UdlhQMFFSUERXM0xCaHdBV1FubnJBdHF6aVpqQWd1R09XNjVsVTNxUVQ1V3pWVUpXRFFQMXdPX0tPLVpQMnFzcXl5ODRySlZYLTFmMmJ3SnVUZUoxYkdwNA?oc=5",
+          "headline": "Peter Magyar Takes Over as Hungary’s Leader From Viktor Orban - The New York Times",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQT25oY3c3Y1BBOEF5TGFuNGZBdlhkdTdMSEl5SF93VkhSX1lXT2RXby1lV3VLNS1UdlhQMFFSUERXM0xCaHdBV1FubnJBdHF6aVpqQWd1R09XNjVsVTNxUVQ1V3pWVUpXRFFQMXdPX0tPLVpQMnFzcXl5ODRySlZYLTFmMmJ3SnVUZUoxYkdwNA?oc=5\" target=\"_blank\">Peter Magyar Takes Over as…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sat, 09 May 2026 15:06:21 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/world/2026/may/09/hungary-prime-minister-peter-magyar-sworn-in-viktor-oban",
+          "headline": "Péter Magyar sworn in as Hungary’s prime minister ending 16-year Orbán era",
+          "snippet": "The pro-European centre-right leader Péter Magyar has been sworn in as prime minister of Hungary, marking the official end to Viktor Orbán’s 16 years in power. Saturday’s ceremony – during which Magyar had invited people to join him to “write Hungarian history” together and “step through the gate…",
+          "source": "the_guardian",
+          "source_name": "The Guardian",
+          "country": "GB",
+          "published": "Sat, 09 May 2026 17:48:10 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/64861c017b1e92af5021e9080ef54bb2f629d384/332_0_3320_2656/master/3320.jpg?width=140&quality=85&auto=format&fit=max&s=350aef7b85d8be98ac7adc20b08cb543",
+          "video_url": null
+        },
+        {
+          "url": "/article/f8dedd5a8610",
+          "headline": "Peter Magyar sworn in as Hungary prime minister on change promise",
+          "snippet": "New Hungarian leader Peter Magyar faces economic challenges, EU funding negotiations and rising deficit while promising anti-corruption reforms.",
+          "source": "trt_world",
+          "source_name": "TRT World",
+          "country": "TR",
+          "published": "Sat, 09 May 2026 14:00:36 GMT",
+          "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/9/Reuters/image/2026_05_09T130328Z_129426619_RC2P5LAJBAXJ_RTRMADP_3_HUNGARY_POLITICS_INAUGURATION.JPG?width=1440&format=webp&quality=80",
+          "video_url": null
+        },
+        {
+          "url": "https://www.straitstimes.com/world/europe/magyar-sworn-in-as-hungarys-prime-minister-on-promises-of-change",
+          "headline": "Peter Magyar takes over as Hungary’s prime minister, closing Orban era",
+          "snippet": "BUDAPEST - Peter Magyar, a pro-conservative, was sworn in as Hungary’s new prime minister on May 9, closing the chapter on the 16-year rule of his nationalist predecessor, Mr Viktor Orban. The former government insider turned critic whose Tisza party resoundingly won April 12 legislative elections,…",
+          "source": "straits_times",
+          "source_name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "published": "Sat, 09 May 2026 21:16:06 +0800",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.straitstimes.com/world/europe/magyar-to-become-hungarys-regime-change-pm",
+          "headline": "Magyar sworn in as Hungary’s ‘regime change’ PM",
+          "snippet": "BUDAPEST - Pro-European conservative Peter Magyar was ceremonially sworn in as prime minister on May 9, vowing “regime change” after nationalist Viktor Orban’s 16 years in power. The former government insider-turned-critic swept to a landslide victory in April , marking a clear break from his…",
+          "source": "straits_times",
+          "source_name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "published": "Sat, 09 May 2026 17:50:00 +0800",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.ukrinform.net/rubric-polytics/4121523-magyar-sworn-in-as-hungarys-prime-minister.html",
+          "headline": "Magyar sworn in as Hungary’s Prime Minister",
+          "snippet": "Newly elected Hungarian Prime Minister Péter Magyar arrived at the country’s parliament building on Saturday, May 9, and took his oath of office. This is reported by Reuters , Ukrinform cites. “Centre-right leader Peter Magyar was sworn in as Hungary's prime ⁠minister on Saturday,” the report says.…",
+          "source": "ukrinform_en",
+          "source_name": "Ukrinform",
+          "country": "UA",
+          "published": "Sat, 09 May 2026 17:15:00 +0300",
+          "image_url": "https://static.ukrinform.com/photos/2026_05/thumb_files/630_360_1778334226-717.png",
+          "video_url": null
+        },
+        {
+          "url": "https://www.scmp.com/news/world/europe/article/3353010/hungarys-new-pm-peter-magyar-sworn-ending-viktor-orbans-16-year-rule?utm_source=rss_feed",
+          "headline": "Hungary’s new PM Peter Magyar sworn in, ending Viktor Orban’s 16-year rule",
+          "snippet": "Hungary’s Peter Magyar took his oath of office on Saturday to become the country’s new prime minister, ending Viktor Orban’s 16 years of autocratic rule. Magyar’s centre-right Tisza party defeated Orban’s nationalist-populist Fidesz in a stunning blow last month, gaining more votes and seats in…",
+          "source": "scmp",
+          "source_name": "South China Morning Post",
+          "country": "HK",
+          "published": "Sat, 09 May 2026 14:24:17 +0000",
+          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/09/bea4e59a-cf0e-40f2-a40a-271daa9a6ff3_9dff2ff2.jpg?itok=F_4qyTVW&v=1778336644",
+          "video_url": null
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/5/9/peter-magyar-sworn-in-as-hungarys-pm-ending-orbans-16-years-in-power?traffic_source=rss",
+          "headline": "Peter Magyar sworn in as Hungary’s PM, ending Orban’s 16 years in power",
+          "snippet": "Peter Magyar has been sworn in as Hungary’s new prime minister, almost a month after parliamentary elections that ended Viktor Orban’s 16 years in power. Magyar, 45, who leads the centre-right Tisza party, was propelled into office on promises of change after years of economic stagnation under…",
+          "source": "aljazeera",
+          "source_name": "Al Jazeera English",
+          "country": "QA",
+          "published": "Sat, 09 May 2026 13:38:10 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.france24.com/en/clean-break-with-orban-hungary-s-magyar-to-usher-in-new-era",
+          "headline": "'Clean break' with Orban: Hungary's Magyar to usher in 'new era'",
+          "snippet": "Hungary's incoming prime minister Pater Magyar is marking a \"clean break\" with his predecessor Viktor Orban as he is set to be sworn into office on Saturday. \"It's officially a new era\", said Zsolt Kerner, senior reporter at Hungarian online media 24.hu. Magyar was previously a member of Orban's…",
+          "source": "france24",
+          "source_name": "France 24",
+          "country": "FR",
+          "published": "Sat, 09 May 2026 11:30:31 GMT",
+          "image_url": "https://s.france24.com/media/display/43131f1c-4b99-11f1-b899-005056a97e36/w:1024/p:16x9/EN-20260509-130624-131523-CS.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.france24.com/en/magyar-to-succeed-orban-as-hungary-s-new-prime-minister",
+          "headline": "Magyar to succeed Orban as Hungary's new prime minister",
+          "snippet": "Pro-European conservative Peter Magyar arrived at Hungary's parliament Saturday morning to be sworn in as prime minister, on a promise of \"regime change\" after nationalist Viktor Orban's 16 years in power. The former government insider-turned-critic scored a landslide victory last month, pledging…",
+          "source": "france24",
+          "source_name": "France 24",
+          "country": "FR",
+          "published": "Sat, 09 May 2026 10:25:35 GMT",
+          "image_url": "https://s.france24.com/media/display/10dc2c08-4b91-11f1-9b4c-005056a90284/w:1024/p:16x9/EN-20260509-120755-120956-CS.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.france24.com/en/hungary-s-magyar-set-to-be-sworn-in-as-new-prime-minister",
+          "headline": "Hungary’s Magyar set to be sworn in as new prime minister",
+          "snippet": "Hungary's incoming prime minister, Peter Magyar, arrived Saturday at the Parliament building to be sworn into office, ending Viktor Orban's autocratic 16-year rule. RFI Correspondent Florence Le Bruyère reports from Budapest.",
+          "source": "france24",
+          "source_name": "France 24",
+          "country": "FR",
+          "published": "Sat, 09 May 2026 10:04:46 GMT",
+          "image_url": "https://s.france24.com/media/display/48d2c8de-4b8b-11f1-8765-005056a90284/w:1024/p:16x9/EN-20260509-110606-110923-CS.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQUnlWRGctZnNnS1dTNTlWY0JZZGdkcE8tS3Fic3dGaENfNTNQYXpDN01GUFFrWUxxUWZHT3NFZ05JTmpKWlJsb1FmNjlLTG8zYUw2MUg4ek5VUTBOV1BFLUFkSURHMC1FLUROMUR0MVdUQ05zY1R6R1hwQXlMeXRBbGs2dngtdTlENFEtLWs3YkJqSzg0RlUxUktn?oc=5",
+          "headline": "Magyar sworn in as Hungary's prime minister on promises of change - Reuters",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQUnlWRGctZnNnS1dTNTlWY0JZZGdkcE8tS3Fic3dGaENfNTNQYXpDN01GUFFrWUxxUWZHT3NFZ05JTmpKWlJsb1FmNjlLTG8zYUw2MUg4ek5VUTBOV1BFLUFkSURHMC1FLUROMUR0MVdUQ05zY1R6R1hwQXlMeXRBbGs2dngtdTlENFEtLWs3YkJqSzg0RlUxUktn?oc=5\" target=\"_blank\">Magyar sworn in as…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sat, 09 May 2026 21:12:14 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.cbsnews.com/news/peter-magyar-sworn-in-hungary-prime-minister-end-viktor-orban-rule/",
+          "headline": "Péter Magyar sworn in as Hungary's prime minister, ending Viktor Orbán's rule",
+          "snippet": "Hungary's Péter Magyar took his oath of office on Saturday to become the country's new prime minister, ending Viktor Orbán's 16 years of autocratic rule. Magyar's center-right Tisza party defeated Orbán's nationalist-populist Fidesz in a stunning blow last month, gaining more votes and seats in…",
+          "source": "cbs_news",
+          "source_name": "CBS News",
+          "country": "US",
+          "published": "Sat, 09 May 2026 10:50:51 -0400",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.washingtonexaminer.com/news/world/4561797/hungary-peter-magyar-sworn-in-prime-minister-ending-viktor-orban-rule/",
+          "headline": "Hungary’s Peter Magyar is set to be sworn in as prime minister, ending Viktor Orban’s 16-year rule",
+          "snippet": "Magyar’s center-right Tisza party defeated Orban’s nationalist-populist Fidesz in a stunning blow last month, gaining more votes and seats in Parliament than any other party in Hungary’s post-Communist history. The win, which gave Tisza a two-thirds parliamentary majority, will allow it to roll…",
+          "source": "washington_examiner",
+          "source_name": "Washington Examiner",
+          "country": "US",
+          "published": "Sat, 09 May 2026 13:35:13 +0000",
+          "image_url": "https://www.washingtonexaminer.com/wp-content/uploads/2026/05/AP26129286490850.jpg?w=696",
+          "video_url": null
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/europe/peter-magyar-viktor-orban-hungary-prime-minister-b2973493.html",
+          "headline": "Péter Magyar to be sworn in as Hungary prime minister as Viktor Orbán’s 16-year rule ends",
+          "snippet": "Your support helps us to tell the story From reproductive rights to climate change to Big Tech, The Independent is on the ground when the story is developing. Whether it's investigating the financials of Elon Musk's pro-Trump or producing our latest documentary, 'The A Word', which shines a light…",
+          "source": "independent_uk",
+          "source_name": "The Independent (UK)",
+          "country": "GB",
+          "published": "Sat, 09 May 2026 09:51:11 GMT",
+          "image_url": "https://static.independent.co.uk/2026/05/09/10/2275282534.jpg?width=1200&auto=webp&crop=3%3A2",
+          "video_url": null
+        },
+        {
+          "url": "https://www.telesurenglish.net/magyar-sworn-in-as-hungarys-new-prime-minister/",
+          "headline": "Magyar Sworn in as Hungary’s New Prime Minister",
+          "snippet": "Leader of the election-winning Tisza Party Peter Magyar (L) takes the oath of office as Prime Minister of Hungary during the inaugural session of the new National Assembly in Budapest, Hungary, 09 May 2026. Photo: /EPA/Tibor Illyes HUNGARY May 9, 2026 Hour: 10:04 am 🔗 Comparte este artículo…",
+          "source": "telesur",
+          "source_name": "Telesur English",
+          "country": "VE",
+          "published": "Sat, 09 May 2026 14:04:12 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.g4media.ro/viral-ministrul-ungar-al-sanatatii-o-comite-din-nou-dansul-sau-celebru-la-petrecerea-care-a-marcat-preluarea-puterii-de-magyar-dupa-ce-l-a-zdrobit-pe-orban-in-alegeri-popularii.html",
+          "headline": "VIRAL Ministrul ungar al Sănătății ”o comite” din nou: Dansul său celebru, la petrecerea care a marcat preluarea puterii de Magyar, după ce l-a zdrobit pe Orban în alegeri / Popularii Europeni, pe Facebook: ”Welcome back, Hungary!”",
+          "snippet": "Ministrul ungar al Sănătății, Zsolt Hegedűs, a ”comis-o” din nou la momentul festiv care a marcat preluarea puterii de către Peter Magyar, după ce Tisza a zdrobit Fidesz-ul lui Viktor Orban în alegerile generale: Ministrul și-a etalat dansul devenit deja celebru la petrecerea cu sute de mii de…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sun, 10 May 2026 05:33:51 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/05/hegedus-peter-magyar-dans-victorie-ungaria.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://telex.hu/english/2026/05/09/i-will-serve-my-country-not-rule-over-it-peter-magyar-sworn-in-as-hungary-s-new-prime-minister",
+          "headline": "“I will serve my country, not rule over it” – Péter Magyar sworn in as Hungary’s new Prime Minister",
+          "snippet": "After the elected parliamentary representatives took an oath of office, Péter Magyar was elected as Hungary's next Prime Minister with 140 votes in favor and 54 against on Saturday, 9 May. The events inside parliament were followed by thousands on huge screens on the adjacent Kossuth Lajos Square,…",
+          "source": "telex_hu",
+          "source_name": "Telex",
+          "country": "HU",
+          "published": "Sat, 09 May 2026 20:34:29 +0200",
+          "image_url": "https://assets.telex.hu/images/20260509/1778350988-temp-v379nn7nqudmekomkhm_cimlap-normal.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/world/2026/may/11/polish-ex-minister-zbigniew-ziobro-flees-hungary-usa",
+          "headline": "Polish ex-minister flees Hungary to the US after PM Magyar says country won’t protect people wanted elsewhere",
+          "snippet": "Poland’s former justice minister Zbigniew Ziobro, wanted on several criminal charges in his home country, has fled Hungary to the United States, he confirmed on Sunday, after being granted asylum from former Hungarian prime minister Viktor Orbán’s government last year. “I am in the United States,”…",
+          "source": "guardian",
+          "source_name": "The Guardian",
+          "country": "GB",
+          "published": "Mon, 11 May 2026 02:51:33 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/41b4f2ce623bc52efbba7b00a1c2bd11aefdf752/683_0_6827_5464/master/6827.jpg?width=140&quality=85&auto=format&fit=max&s=3b5d04fee732f01f1927e93d9ee79891",
+          "video_url": null
+        },
+        {
+          "url": "https://www.pravda.com.ua/eng/news/2026/05/11/8034147/",
+          "headline": "Magyar's minister pledges Hungary will no longer use veto to blackmail EU",
+          "snippet": "Hungary's new Foreign Minister Anita Orbán, ahead of the Foreign Affairs Council meeting on 11 May, stated that her country will no longer use its veto right on European Union policy as an instrument of blackmail and will work to restore the trust of its and partners. Source: European Pravda…",
+          "source": "ukrainska_pravda_en",
+          "source_name": "Ukrainska Pravda (English)",
+          "country": "UA",
+          "published": "Mon, 11 May 2026 10:57:00 +0300",
+          "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/9/4/826418/94e067b4d238c70db794c09b8e56acee.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.politico.eu/article/hungary-peter-magyar-brussels-eu-frozen-funds-negotiations/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "headline": "Magyar to visit Brussels next week to discuss unfreezing funds for Hungary",
+          "snippet": "Menu Search for: Submit Edition: Europe Europe UK France Germany US Policy areas Agriculture and Food Central Banker Competition and Industrial Policy Cybersecurity and Data Protection Defense Energy and Climate Energy and Climate UK Energie et Climat France Energie &amp; Klima DE Financial…",
+          "source": "politico_eu",
+          "source_name": "Politico Europe",
+          "country": "BE",
+          "published": "Sat, 23 May 2026 09:25:31 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.056,
+        "zionist": 0.087,
+        "atlanticist": 0.237,
+        "statist": 0.138,
+        "financialized": 0.223
+      },
+      "fp_source_count": 16,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "middle-east": 2,
+        "west": 7,
+        "eastern-europe": 5,
+        "pacific-asia": 2,
+        "latin-america": 1
+      },
+      "section": "world"
     },
     {
       "id": "ac13cc083798",
