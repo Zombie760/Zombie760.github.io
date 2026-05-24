@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T02:40:48.675010+00:00",
-  "article_count": 30246,
+  "generated_at": "2026-05-24T02:55:44.473770+00:00",
+  "article_count": 30300,
   "story_count": 160,
   "sections": [
     {
@@ -13064,7 +13064,7 @@
       "id": "88353299b6e4",
       "headline": "White House shooting live: Gun-wielding suspect killed by Secret Service as shots fired toward executive mansion",
       "summary": "<p>Trump was at home as incident unfolded in nation’s capital on Saturday evening </p>",
-      "published": "Sun, 24 May 2026 07:41:49 +0530",
+      "published": "Sun, 24 May 2026 02:33:13 +0000",
       "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/931/523/save-girls-sports.jpeg?ve=1&tl=1",
       "video_url": null,
       "has_video": false,
@@ -13072,14 +13072,14 @@
       "blindspot_label": null,
       "blindspot_score": 0.0,
       "coverage": {
-        "left_pct": 26,
-        "center_pct": 45,
-        "right_pct": 30,
+        "left_pct": 27,
+        "center_pct": 44,
+        "right_pct": 29,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 45
+        "dominant_pct": 44
       },
-      "bias_variance": 5.65,
+      "bias_variance": 5.59,
       "entity_count": 130,
       "entity_list": [
         "Actually",
@@ -13775,6 +13775,18 @@
           "bias_bucket": "center",
           "geo_cluster": "middle-east",
           "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "prothom_alo",
+          "name": "Prothom Alo (English)",
+          "country": "BD",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
           "primary_vs_launder": "primary",
           "parent_company": ""
         }
@@ -15352,23 +15364,34 @@
           "published": "Sun, 24 May 2026 07:11:23 +0530",
           "image_url": "https://c.ndtvimg.com/2026-05/p4ipvke4_white-house-shooting_625x300_24_May_26.jpeg",
           "video_url": null
+        },
+        {
+          "url": "https://en.prothomalo.com/international/snce16egnp",
+          "headline": "Gunman killed by US Secret Service after opening fire near White House",
+          "snippet": "A gunman opened fire near the White House on Saturday evening, with Secret Service agents killing the assailant in a shoot-out during which a bystander was also struck, authorities said. President Donald Trump was in the White House at the time -- on a day when he working to negotiate a deal with…",
+          "source": "prothom_alo",
+          "source_name": "Prothom Alo (English)",
+          "country": "BD",
+          "published": "Sun, 24 May 2026 02:33:13 +0000",
+          "image_url": "https://media.prothomalo.com/prothomalo-english/2026-05-24/wl4grj1n/752426-01-02.jpg",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.136,
+        "interventionist": 0.133,
         "zionist": 0.229,
-        "atlanticist": 0.303,
-        "statist": 0.127,
-        "financialized": 0.384
+        "atlanticist": 0.302,
+        "statist": 0.122,
+        "financialized": 0.377
       },
-      "fp_source_count": 42,
+      "fp_source_count": 43,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
         "west": 27,
         "middle-east": 3,
-        "global-south": 6,
+        "global-south": 7,
         "latin-america": 1,
         "africa": 2,
         "pacific-asia": 6,
@@ -32734,7 +32757,7 @@
       "id": "554adcd13c1a",
       "headline": "Marco Rubio Meets PM Modi, Highlights India-US Progress Across Sectors",
       "summary": "Security has been stepped up at the 'jhalmuri' stall, which Prime Minister Narendra Modi visited during his campaign for the West Bengal election last month, after its owner allegedly received death threats, police said on Saturday.",
-      "published": "Sun, 24 May 2026 00:07:28 GMT",
+      "published": "Sun, 24 May 2026 08:18:59 +0530",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e532/live/25169120-4a49-11f1-b55d-0f258dce1735.jpg",
       "video_url": null,
       "has_video": false,
@@ -32750,7 +32773,7 @@
         "dominant_pct": 40
       },
       "bias_variance": 3.28,
-      "entity_count": 44,
+      "entity_count": 46,
       "entity_list": [
         "Across",
         "Ambition",
@@ -32759,6 +32782,7 @@
         "Cuban",
         "Delcy",
         "Delhi",
+        "Digest",
         "Efforts",
         "Europa",
         "Expectativa",
@@ -32775,6 +32799,7 @@
         "Llamas",
         "Marco",
         "Meets",
+        "Morning",
         "Narendra",
         "Nueva",
         "Opinion",
@@ -33320,6 +33345,17 @@
           "published": "Sun, 24 May 2026 00:07:28 GMT",
           "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/uploads/image/1779575385254-3auqyp-df1496f2816a3505879e760438fc91d5921ef7096419a9766c0de2f92da226ae.jpg?width=1440&format=webp&quality=80",
           "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/morning-digest-may-24-2026/article71015851.ece",
+          "headline": "Morning Digest: Trump says agreement with Iran ‘largely negotiated’; Marco Rubio arrives in New Delhi to reset strained bilateral relations, and more",
+          "snippet": "Trump says agreement with Iran ‘largely negotiated’, includes opening Strait U.S. President Donald Trump said on Saturday (May 23, 2026) a deal with Iran had been “largely negotiated,” with the proposal including opening the crucial Strait of Hormuz, though the agreement was “subject to…",
+          "source": "the_hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Sun, 24 May 2026 08:18:59 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/ox2xak/article71016753.ece/alternates/LANDSCAPE_1200/2026-05-23T020124Z_807974125_RC2FCLALWQH9_RTRMADP_3_USA-CONGRESS-WEAPONIZATION.JPG",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -33343,8 +33379,8 @@
     },
     {
       "id": "e1089691643a",
-      "headline": "Trump says peace deal with Iran ‘largely negotiated’ with strait of Hormuz to open",
-      "summary": "<p>Remarks by US president potentially mark conclusion of bombing campaign led by US and Israel</p><p><a href=\"https://www.theguardian.com/us-news/donaldtrump\">Donald Trump</a> announced on Saturday that a peace deal with Iran “has been largely negotiated”, after calls with a Pakistani mediator, Gul",
+      "headline": "Trump claims peace deal with Iran ‘largely negotiated’ with strait of Hormuz to open",
+      "summary": "<p>President’s claim is tempered by Pakistani PM’s hopes of hosting more talks ‘very soon’, and Iran’s Fars news agency saying strait of Hormuz will remain under Iranian control</p><ul><li><p><a href=\"https://www.theguardian.com/world/live/2026/may/24/iran-deal-strait-of-hormuz-trump-middle-east-cri",
       "published": "Sun, 24 May 2026 01:29:52 GMT",
       "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fa8bf420302739f82e3052.jpg",
       "video_url": null,
@@ -33734,6 +33770,17 @@
           "country": "GB",
           "published": "Sun, 24 May 2026 01:29:52 GMT",
           "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/world/2026/may/23/trump-ceasefire-iran-strait-of-hormuz",
+          "headline": "Trump claims peace deal with Iran ‘largely negotiated’ with strait of Hormuz to open",
+          "snippet": "Donald Trump claimed on Saturday that a peace deal with Iran “has been largely negotiated”, after calls with a Pakistani mediator, Gulf allies and Israel, potentially paving the way for an end to the war launched by the and Israel in February. Trump wrote on his social media platform that “final…",
+          "source": "guardian",
+          "source_name": "The Guardian",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 22:26:44 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/47288ceee236cc96d6fcbad4136a05149a43f3de/282_0_2125_1700/master/2125.jpg?width=140&quality=85&auto=format&fit=max&s=d182d87c72c9e740885bedb0399270b3",
           "video_url": null
         }
       ],
