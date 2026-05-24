@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T19:28:37.827736+00:00",
+  "generated_at": "2026-05-24T19:43:25.973832+00:00",
   "count": 66,
   "stories": [
     {
@@ -3245,6 +3245,289 @@
       "section": "chisme"
     },
     {
+      "id": "4c9ac528d847",
+      "headline": "Middle East crisis live: Trump says blockade on Iran will remain in ‘full force’ until deal is reached - The Guardian",
+      "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb2VlN0MwT3lsRXRFVjFBLUZxaGRtZ1c2V3NLc0F5U3JCUWJrcGVtcWU3WDJVZ2F1SlR1bDNRSDFpd2UzRjJJdTh6eEtNdERNQTFyX0FGT3h0eHNja3BDc3NyWUNGU0Jjc09ISVpqeXB6Y3d3clJMX3VsdlZrUEZzQ1BrTWhCdVltZjhfOUN1aW9OVXhJNUpGaWtFZG5jMW9LYUxQLWM1OU5RbFU?oc=5\" targ",
+      "published": "Sun, 24 May 2026 20:31:08 +0000",
+      "image_url": "https://assets.nst.com.my/images/listing-featured/686A3AE719FDC445F6D918E51AD2AE49_data.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 33,
+        "center_pct": 67,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 3.91,
+      "entity_count": 8,
+      "entity_list": [
+        "Guardian",
+        "Independent",
+        "Middle",
+        "Powers",
+        "States",
+        "Summit",
+        "Trump",
+        "United"
+      ],
+      "sources": [
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
+        },
+        {
+          "id": "nst_my",
+          "name": "New Straits Times",
+          "country": "MY",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "New York Times Co"
+        },
+        {
+          "id": "cnbc",
+          "name": "CNBC",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Comcast"
+        },
+        {
+          "id": "al_jazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "middle-east",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "unknown (launderer)"
+        },
+        {
+          "id": "guardian",
+          "name": "The Guardian",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "al_monitor",
+          "name": "Al-Monitor",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "punch",
+          "name": "The Punch",
+          "country": "NG",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMXNPRGZ2WTh3dkR5S3RqQzc4WnBiazR2Ul9MZV9POXczaWJRMHJxaFQwUVp5MmROM19sNzZPSGtWaFJfMWc4a0pFZDFvbTNSZEFyYnRjMzlPai1tR3UzanM5dEcxSWFVLTRFdUF3N0R0SkdsNmlHVWJQZkVWTGdSS05KY3pFUjZfWGkzcXh2RWd3elg1NlpwRGdFZ0xJZmx5X2dOeXlJSGIxZjNIZ3hFWGlYNFA0WS0ya0dnUA?oc=5",
+          "headline": "UK sends warship to Middle East as Trump awaits Iran’s response to peace plan – live - The Independent",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQMXNPRGZ2WTh3dkR5S3RqQzc4WnBiazR2Ul9MZV9POXczaWJRMHJxaFQwUVp5MmROM19sNzZPSGtWaFJfMWc4a0pFZDFvbTNSZEFyYnRjMzlPai1tR3UzanM5dEcxSWFVLTRFdUF3N0R0SkdsNmlHVWJQZkVWTGdSS05KY3pFUjZfWGkzcXh2RWd3elg1NlpwRGdFZ0xJZmx5X2dOeXlJSGIxZjNIZ3hFWGlYNFA0WS0ya0…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 10 May 2026 00:01:12 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/world/world/2026/05/1436770/war-middle-east-trump-rejects-iran-deal-gulf-tensions-and-drone-attacks",
+          "headline": "War in the Middle East: Trump rejects Iran deal as Gulf tensions and drone attacks escalate",
+          "snippet": "PARIS: Here are the latest developments in the Middle East war:",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Mon, 11 May 2026 06:58:26 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/686A3AE719FDC445F6D918E51AD2AE49_data.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.nytimes.com/2026/05/11/world/asia/trump-xi-china-summit-iran.html",
+          "headline": "What Middle Powers Fear from the Trump-Xi Summit",
+          "snippet": "Asian nations worry that the president might trade security commitments for better economic terms with China during his planned meeting with Xi Jinping this week.",
+          "source": "nytimes",
+          "source_name": "The New York Times",
+          "country": "US",
+          "published": "Mon, 11 May 2026 04:01:08 +0000",
+          "image_url": "https://static01.nyt.com/images/2026/05/11/multimedia/11trump-xi-asia-01-vkcf/11trump-xi-asia-01-vkcf-mediumSquareAt3X.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html",
+          "headline": "Iran says it will 'never bow' as Trump rejects peace counteroffer, prolonging Middle East conflict",
+          "snippet": "In this picture obtained from Iran's news agency and taken on May 2, 2026, the Gambia-flagged tanker vessel Bili is pictured anchored in the Strait of Hormuz off Bandar Abbas in southern Iran. (Photo by Amirhossein KHORGOOEI / / via Getty Images) / Amirhossein Khorgooei | Afp | Getty Images U.S.…",
+          "source": "cnbc",
+          "source_name": "CNBC",
+          "country": "US",
+          "published": "Mon, 11 May 2026 04:44:54 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/5/23/united-states-of-the-middle-east-trump-posts-us-flag-covering-iran?traffic_source=rss",
+          "headline": "‘United States of the Middle East?’: Trump posts US flag covering Iran",
+          "snippet": "Washington, – President Donald Trump has posted a photo of the United States flag covering the map of Iran, with the question: “United States of the Middle East?” The post on Truth Social on Saturday represented another potentially incendiary message from Trump amid ongoing negotiations for a more…",
+          "source": "al_jazeera",
+          "source_name": "Al Jazeera English",
+          "country": "QA",
+          "published": "Sat, 23 May 2026 17:56:27 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.france24.com/en/war-in-the-middle-east-trump-says-iran-deal-largely-negociated",
+          "headline": "War in the Middle East: Trump says Iran deal 'largely negociated'",
+          "snippet": "Fraser Jackson has more.",
+          "source": "france24",
+          "source_name": "France 24",
+          "country": "FR",
+          "published": "Sun, 24 May 2026 09:54:41 GMT",
+          "image_url": "https://s.france24.com/media/display/691ff1ce-5749-11f1-bdb3-005056a97e36/w:1024/p:16x9/EN-20260524-080310-080516-CS.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/world/live/2026/may/24/iran-deal-strait-of-hormuz-trump-middle-east-crisis-live",
+          "headline": "Middle East crisis live: Trump says blockade on Iran will remain in ‘full force’ until deal is reached",
+          "snippet": "Trump says he has told his representatives to not 'rush' into a deal with Iran In a post to Truth Social, President Donald Trump said talks with Iran are “proceeding in an orderly and constructive manner”, adding that he has told his representatives to not “rush” into a deal because time is on…",
+          "source": "guardian",
+          "source_name": "The Guardian",
+          "country": "GB",
+          "published": "Sun, 24 May 2026 14:39:50 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/57332ab77a1ff3de9605e3380dce6fc4a9d2a13e/278_0_2764_2212/master/2764.jpg?width=140&quality=85&auto=format&fit=max&s=ecae891dc1b419b125919a8aa933db5f",
+          "video_url": null
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/05/trump-tempers-expectations-middle-east-deal-iran",
+          "headline": "Trump tempers expectations of a Middle East deal with Iran",
+          "snippet": "President Donald Trump tempered expectations of a Middle East deal by saying he had told his negotiators not to \"rush\", hours after his top diplomat said the and Iran could strike a bargain to end the regional war as early as Sunday. Washington and Tehran have observed a ceasefire since April 8…",
+          "source": "al_monitor",
+          "source_name": "Al-Monitor",
+          "country": "US",
+          "published": "2026-05-24T12:30:17-0400",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb2VlN0MwT3lsRXRFVjFBLUZxaGRtZ1c2V3NLc0F5U3JCUWJrcGVtcWU3WDJVZ2F1SlR1bDNRSDFpd2UzRjJJdTh6eEtNdERNQTFyX0FGT3h0eHNja3BDc3NyWUNGU0Jjc09ISVpqeXB6Y3d3clJMX3VsdlZrUEZzQ1BrTWhCdVltZjhfOUN1aW9OVXhJNUpGaWtFZG5jMW9LYUxQLWM1OU5RbFU?oc=5",
+          "headline": "Middle East crisis live: Trump says blockade on Iran will remain in ‘full force’ until deal is reached - The Guardian",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb2VlN0MwT3lsRXRFVjFBLUZxaGRtZ1c2V3NLc0F5U3JCUWJrcGVtcWU3WDJVZ2F1SlR1bDNRSDFpd2UzRjJJdTh6eEtNdERNQTFyX0FGT3h0eHNja3BDc3NyWUNGU0Jjc09ISVpqeXB6Y3d3clJMX3VsdlZrUEZzQ1BrTWhCdVltZjhfOUN1aW9OVXhJNUpGaWtFZG5jMW9LYUxQLWM1OU5RbFU?oc=5\"…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 16:59:00 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/world/live/2026/may/24/iran-deal-strait-of-hormuz-trump-middle-east-crisis-live",
+          "headline": "Middle East crisis live: Trump claims ‘I don’t make bad deals’ as questions remain over negotiation progress",
+          "snippet": "'If I make a deal with Iran, it will be a good and proper one,' Donald Trump posts online Donald Trump has given an update of sorts about the ceasefire negotiations with Iran and the apparent lack of detail, adding that talks are still ongoing. The president wrote on Truth Social: “If I make a deal…",
+          "source": "guardian",
+          "source_name": "The Guardian",
+          "country": "GB",
+          "published": "Sun, 24 May 2026 18:36:47 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/57332ab77a1ff3de9605e3380dce6fc4a9d2a13e/278_0_2764_2212/master/2764.jpg?width=140&quality=85&auto=format&fit=max&s=ecae891dc1b419b125919a8aa933db5f",
+          "video_url": null
+        },
+        {
+          "url": "https://punchng.com/trump-tempers-expectations-of-a-middle-east-deal-with-iran/?utm_source=rss.punchng.com&utm_medium=web",
+          "headline": "Trump tempers expectations of a Middle East deal with Iran",
+          "snippet": "President Donald Trump tempered expectations of a Middle East deal by saying on Sunday he had told his negotiators not to “rush”, even after both Tehran and Washington signalled signs of progress towards an agreement to end the war. The United States and Iran have observed a ceasefire since April 8…",
+          "source": "punch",
+          "source_name": "The Punch",
+          "country": "NG",
+          "published": "Sun, 24 May 2026 20:31:08 +0000",
+          "image_url": "https://cdn.punchng.com/wp-content/uploads/2020/08/18131509/punch-logo-500x179-1.png",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.162,
+        "zionist": 0.238,
+        "atlanticist": 0.413,
+        "statist": 0.262,
+        "financialized": 0.351
+      },
+      "fp_source_count": 9,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "middle-east": 1,
+        "west": 6,
+        "pacific-asia": 1,
+        "africa": 1
+      },
+      "section": "world"
+    },
+    {
       "id": "27080bdef27c",
       "headline": "'The Devil Wears Prada 2' bests ‘Mortal Kombat II’ at the box office - ABC News - Breaking News, Latest News and Videos",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxPa1BjeGRjRlRBSGwwWWV2NWFEYkVERlVJWk85bV9FclVUTHlBdk81NHJjYWwxa0t4R2pSUTBhVDBlRTViM3IxNnVORmZwYS1WT29rYkdNVFdYVEtTNWxtZ3k2MXV4ejRtYjFIbWxJRkRSak9tUHZQdk9jU0ZjNVk5OGV5Nlk4NW83dTVTU2hLSGVWUjlPeEJkWUlPd03SAaIBQVVfeXFMTUZHRXFBVkxrR3lxc1",
@@ -3928,265 +4211,6 @@
         "africa": 6,
         "latin-america": 1,
         "west": 1,
-        "pacific-asia": 1
-      },
-      "section": "world"
-    },
-    {
-      "id": "4c9ac528d847",
-      "headline": "Middle East crisis live: Trump says blockade on Iran will remain in ‘full force’ until deal is reached - The Guardian",
-      "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb2VlN0MwT3lsRXRFVjFBLUZxaGRtZ1c2V3NLc0F5U3JCUWJrcGVtcWU3WDJVZ2F1SlR1bDNRSDFpd2UzRjJJdTh6eEtNdERNQTFyX0FGT3h0eHNja3BDc3NyWUNGU0Jjc09ISVpqeXB6Y3d3clJMX3VsdlZrUEZzQ1BrTWhCdVltZjhfOUN1aW9OVXhJNUpGaWtFZG5jMW9LYUxQLWM1OU5RbFU?oc=5\" targ",
-      "published": "Sun, 24 May 2026 18:36:47 GMT",
-      "image_url": "https://assets.nst.com.my/images/listing-featured/686A3AE719FDC445F6D918E51AD2AE49_data.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 38,
-        "center_pct": 62,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 62
-      },
-      "bias_variance": 4.06,
-      "entity_count": 8,
-      "entity_list": [
-        "Guardian",
-        "Independent",
-        "Middle",
-        "Powers",
-        "States",
-        "Summit",
-        "Trump",
-        "United"
-      ],
-      "sources": [
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
-        },
-        {
-          "id": "nst_my",
-          "name": "New Straits Times",
-          "country": "MY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "nytimes",
-          "name": "The New York Times",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": "New York Times Co"
-        },
-        {
-          "id": "cnbc",
-          "name": "CNBC",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": "Comcast"
-        },
-        {
-          "id": "al_jazeera",
-          "name": "Al Jazeera English",
-          "country": "QA",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "middle-east",
-          "factuality": "mostly_factual",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "france24",
-          "name": "France 24",
-          "country": "FR",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "launderer",
-          "parent_company": "unknown (launderer)"
-        },
-        {
-          "id": "guardian",
-          "name": "The Guardian",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "al_monitor",
-          "name": "Al-Monitor",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMXNPRGZ2WTh3dkR5S3RqQzc4WnBiazR2Ul9MZV9POXczaWJRMHJxaFQwUVp5MmROM19sNzZPSGtWaFJfMWc4a0pFZDFvbTNSZEFyYnRjMzlPai1tR3UzanM5dEcxSWFVLTRFdUF3N0R0SkdsNmlHVWJQZkVWTGdSS05KY3pFUjZfWGkzcXh2RWd3elg1NlpwRGdFZ0xJZmx5X2dOeXlJSGIxZjNIZ3hFWGlYNFA0WS0ya0dnUA?oc=5",
-          "headline": "UK sends warship to Middle East as Trump awaits Iran’s response to peace plan – live - The Independent",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQMXNPRGZ2WTh3dkR5S3RqQzc4WnBiazR2Ul9MZV9POXczaWJRMHJxaFQwUVp5MmROM19sNzZPSGtWaFJfMWc4a0pFZDFvbTNSZEFyYnRjMzlPai1tR3UzanM5dEcxSWFVLTRFdUF3N0R0SkdsNmlHVWJQZkVWTGdSS05KY3pFUjZfWGkzcXh2RWd3elg1NlpwRGdFZ0xJZmx5X2dOeXlJSGIxZjNIZ3hFWGlYNFA0WS0ya0…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sun, 10 May 2026 00:01:12 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.nst.com.my/world/world/2026/05/1436770/war-middle-east-trump-rejects-iran-deal-gulf-tensions-and-drone-attacks",
-          "headline": "War in the Middle East: Trump rejects Iran deal as Gulf tensions and drone attacks escalate",
-          "snippet": "PARIS: Here are the latest developments in the Middle East war:",
-          "source": "nst_my",
-          "source_name": "New Straits Times",
-          "country": "MY",
-          "published": "Mon, 11 May 2026 06:58:26 +0800",
-          "image_url": "https://assets.nst.com.my/images/listing-featured/686A3AE719FDC445F6D918E51AD2AE49_data.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.nytimes.com/2026/05/11/world/asia/trump-xi-china-summit-iran.html",
-          "headline": "What Middle Powers Fear from the Trump-Xi Summit",
-          "snippet": "Asian nations worry that the president might trade security commitments for better economic terms with China during his planned meeting with Xi Jinping this week.",
-          "source": "nytimes",
-          "source_name": "The New York Times",
-          "country": "US",
-          "published": "Mon, 11 May 2026 04:01:08 +0000",
-          "image_url": "https://static01.nyt.com/images/2026/05/11/multimedia/11trump-xi-asia-01-vkcf/11trump-xi-asia-01-vkcf-mediumSquareAt3X.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html",
-          "headline": "Iran says it will 'never bow' as Trump rejects peace counteroffer, prolonging Middle East conflict",
-          "snippet": "In this picture obtained from Iran's news agency and taken on May 2, 2026, the Gambia-flagged tanker vessel Bili is pictured anchored in the Strait of Hormuz off Bandar Abbas in southern Iran. (Photo by Amirhossein KHORGOOEI / / via Getty Images) / Amirhossein Khorgooei | Afp | Getty Images U.S.…",
-          "source": "cnbc",
-          "source_name": "CNBC",
-          "country": "US",
-          "published": "Mon, 11 May 2026 04:44:54 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.aljazeera.com/news/2026/5/23/united-states-of-the-middle-east-trump-posts-us-flag-covering-iran?traffic_source=rss",
-          "headline": "‘United States of the Middle East?’: Trump posts US flag covering Iran",
-          "snippet": "Washington, – President Donald Trump has posted a photo of the United States flag covering the map of Iran, with the question: “United States of the Middle East?” The post on Truth Social on Saturday represented another potentially incendiary message from Trump amid ongoing negotiations for a more…",
-          "source": "al_jazeera",
-          "source_name": "Al Jazeera English",
-          "country": "QA",
-          "published": "Sat, 23 May 2026 17:56:27 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.france24.com/en/war-in-the-middle-east-trump-says-iran-deal-largely-negociated",
-          "headline": "War in the Middle East: Trump says Iran deal 'largely negociated'",
-          "snippet": "Fraser Jackson has more.",
-          "source": "france24",
-          "source_name": "France 24",
-          "country": "FR",
-          "published": "Sun, 24 May 2026 09:54:41 GMT",
-          "image_url": "https://s.france24.com/media/display/691ff1ce-5749-11f1-bdb3-005056a97e36/w:1024/p:16x9/EN-20260524-080310-080516-CS.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.theguardian.com/world/live/2026/may/24/iran-deal-strait-of-hormuz-trump-middle-east-crisis-live",
-          "headline": "Middle East crisis live: Trump says blockade on Iran will remain in ‘full force’ until deal is reached",
-          "snippet": "Trump says he has told his representatives to not 'rush' into a deal with Iran In a post to Truth Social, President Donald Trump said talks with Iran are “proceeding in an orderly and constructive manner”, adding that he has told his representatives to not “rush” into a deal because time is on…",
-          "source": "guardian",
-          "source_name": "The Guardian",
-          "country": "GB",
-          "published": "Sun, 24 May 2026 14:39:50 GMT",
-          "image_url": "https://i.guim.co.uk/img/media/57332ab77a1ff3de9605e3380dce6fc4a9d2a13e/278_0_2764_2212/master/2764.jpg?width=140&quality=85&auto=format&fit=max&s=ecae891dc1b419b125919a8aa933db5f",
-          "video_url": null
-        },
-        {
-          "url": "https://www.al-monitor.com/originals/2026/05/trump-tempers-expectations-middle-east-deal-iran",
-          "headline": "Trump tempers expectations of a Middle East deal with Iran",
-          "snippet": "President Donald Trump tempered expectations of a Middle East deal by saying he had told his negotiators not to \"rush\", hours after his top diplomat said the and Iran could strike a bargain to end the regional war as early as Sunday. Washington and Tehran have observed a ceasefire since April 8…",
-          "source": "al_monitor",
-          "source_name": "Al-Monitor",
-          "country": "US",
-          "published": "2026-05-24T12:30:17-0400",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb2VlN0MwT3lsRXRFVjFBLUZxaGRtZ1c2V3NLc0F5U3JCUWJrcGVtcWU3WDJVZ2F1SlR1bDNRSDFpd2UzRjJJdTh6eEtNdERNQTFyX0FGT3h0eHNja3BDc3NyWUNGU0Jjc09ISVpqeXB6Y3d3clJMX3VsdlZrUEZzQ1BrTWhCdVltZjhfOUN1aW9OVXhJNUpGaWtFZG5jMW9LYUxQLWM1OU5RbFU?oc=5",
-          "headline": "Middle East crisis live: Trump says blockade on Iran will remain in ‘full force’ until deal is reached - The Guardian",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb2VlN0MwT3lsRXRFVjFBLUZxaGRtZ1c2V3NLc0F5U3JCUWJrcGVtcWU3WDJVZ2F1SlR1bDNRSDFpd2UzRjJJdTh6eEtNdERNQTFyX0FGT3h0eHNja3BDc3NyWUNGU0Jjc09ISVpqeXB6Y3d3clJMX3VsdlZrUEZzQ1BrTWhCdVltZjhfOUN1aW9OVXhJNUpGaWtFZG5jMW9LYUxQLWM1OU5RbFU?oc=5\"…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sun, 24 May 2026 16:59:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.theguardian.com/world/live/2026/may/24/iran-deal-strait-of-hormuz-trump-middle-east-crisis-live",
-          "headline": "Middle East crisis live: Trump claims ‘I don’t make bad deals’ as questions remain over negotiation progress",
-          "snippet": "'If I make a deal with Iran, it will be a good and proper one,' Donald Trump posts online Donald Trump has given an update of sorts about the ceasefire negotiations with Iran and the apparent lack of detail, adding that talks are still ongoing. The president wrote on Truth Social: “If I make a deal…",
-          "source": "guardian",
-          "source_name": "The Guardian",
-          "country": "GB",
-          "published": "Sun, 24 May 2026 18:36:47 GMT",
-          "image_url": "https://i.guim.co.uk/img/media/57332ab77a1ff3de9605e3380dce6fc4a9d2a13e/278_0_2764_2212/master/2764.jpg?width=140&quality=85&auto=format&fit=max&s=ecae891dc1b419b125919a8aa933db5f",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.17,
-        "zionist": 0.242,
-        "atlanticist": 0.427,
-        "statist": 0.258,
-        "financialized": 0.345
-      },
-      "fp_source_count": 8,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "middle-east": 1,
-        "west": 6,
         "pacific-asia": 1
       },
       "section": "world"
@@ -5416,9 +5440,9 @@
     },
     {
       "id": "9cdbe9b98ae3",
-      "headline": "A qué hora juega Alianza Lima vs Los Chankas HOY: partido decisivo en Matute por fecha 16 del Torneo Apertura de Liga 1 2026",
-      "summary": "El equipo de Pablo Guede saldrá por triunfo que le permita coronarse ganador del campeonato frente los ‘guerreros’ con Matute totalmente lleno de hinchas ‘blanquiazules’. Conoce los horarios vibrante duelo",
-      "published": "Sun, 24 May 2026 19:09:11 +0000",
+      "headline": "En qué canal pasan hoy River vs. Belgrano, por la final del Torneo Apertura 2026",
+      "summary": "El encuentro que definirá al primer campeón de la temporada del fútbol argentino se disputa este domingo a las 15.30 en el estadio Mario Alberto Kempes",
+      "published": "Sun, 24 May 2026 19:19:43 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/ZEQNLMYRZNGHLEWYBWOYMYZYWQ.jpg?auth=b326e639637aa77f3f9f2f15a14edebe00a545a0edb3109242f39fb4e8f4420b&smart=true&width=2000&height=1333",
       "video_url": null,
       "has_video": false,
@@ -6442,6 +6466,17 @@
           "country": "AR",
           "published": "Sun, 24 May 2026 19:09:11 +0000",
           "image_url": "https://resizer.glanacion.com/resizer/v2/GYTLV2VMZFDRBDG5375IQWCP2Q.JPG?auth=251939a7ba8d663a191fce76ec9211517915419fdb3543bfae1a130a41052d7d&smart=true&width=2000&height=1333",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/futbol/goles-de-river-vs-belgrano-por-la-final-del-torneo-apertura-2026-nid24052026/",
+          "headline": "Goles de River vs. Belgrano, por la final del Torneo Apertura 2026",
+          "snippet": "El Millonario y el Pirata se enfrentan en el estadio Mario Alberto Kempes por el primer título de la temporada 2026 del fútbol argentino",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 19:19:43 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/VJOFEDOMGNFP7OEAOCCLAMQOKA.jpg?auth=3795200b9c3cc1238570430fedb88ea04b230933ac717595d710cbaa03a0dbed&smart=true&width=2000&height=1333",
           "video_url": null
         }
       ],
@@ -10025,7 +10060,7 @@
       "id": "daf2ef799a86",
       "headline": "La junta electoral valida la candidatura de Enrique Riquelme a presidencia del Real Madrid",
       "summary": "",
-      "published": "Sun, 24 May 2026 16:41:44 +0000",
+      "published": "Sun, 24 May 2026 19:30:57 +0000",
       "image_url": "https://www.dailymotion.com/crawler/video/xaacf3o",
       "video_url": null,
       "has_video": false,
@@ -10243,6 +10278,17 @@
           "source_name": "El Nacional Venezuela",
           "country": "VE",
           "published": "Sun, 24 May 2026 16:41:44 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/24/enrique-riquelme-anuncia-su-junta-directiva-para-su-candidatura-a-presidir-el-real-madrid/",
+          "headline": "Enrique Riquelme anuncia su junta directiva para su candidatura a presidir el Real Madrid",
+          "snippet": "Madrid, 24 may (EFE).- El empresario Enrique Riquelme, presidente de Cox Energy, encabeza una candidatura a la presidencia del Real Madrid rodeado de perfiles ligados al ámbito empresarial, financiero, jurídico y directivo, con experiencia en grandes corporaciones y en el propio conjunto blanco. La…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 19:30:57 +0000",
           "image_url": null,
           "video_url": null
         }
@@ -12238,7 +12284,7 @@
         "dominant_pct": 50
       },
       "bias_variance": 2.65,
-      "entity_count": 65,
+      "entity_count": 72,
       "entity_list": [
         "Additional",
         "Adorable",
@@ -12257,6 +12303,7 @@
         "Celebrities",
         "Chris",
         "Cleveland",
+        "Couples",
         "Courtside",
         "Dates",
         "Delevingne",
@@ -12273,6 +12320,7 @@
         "Halle",
         "Having",
         "Hidden",
+        "Hilariously",
         "Intimate",
         "James",
         "Justin",
@@ -12283,6 +12331,7 @@
         "London",
         "Meaning",
         "Miami",
+        "Moment",
         "Music",
         "Night",
         "Nominee",
@@ -12292,10 +12341,14 @@
         "Playoff",
         "Poppy",
         "Prince",
+        "Private",
         "Radio",
+        "Relatable",
+        "Sharing",
         "Sheepish",
         "Sitting",
         "Spark",
+        "Spotted",
         "Swift",
         "Taylor",
         "Travis",
@@ -13061,6 +13114,17 @@
           "source_name": "Google News",
           "country": "US",
           "published": "Sun, 24 May 2026 14:08:40 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQMS1sTk9nRmZLUVlaaXBQdmFwbDRLb0FEY3o0Zl9nWExlWW5ValNDSDN1QmZ0TU5Ub0M0MnhiNk9TODkzZFVPVjdHb2U4SEhWVGRSVVkxdHRaSVM2a0pxUXpYeFdpVjZ3UlMyWnhYeS11WkFOdEVCYWRyTDEzVmRRVEI4T3JweDJlbGxsYldYeTI?oc=5",
+          "headline": "Taylor Swift and Travis Kelce Spotted Sharing a Hilariously Relatable Private Couples Moment During Game Day Date - instyle.com",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxQMS1sTk9nRmZLUVlaaXBQdmFwbDRLb0FEY3o0Zl9nWExlWW5ValNDSDN1QmZ0TU5Ub0M0MnhiNk9TODkzZFVPVjdHb2U4SEhWVGRSVVkxdHRaSVM2a0pxUXpYeFdpVjZ3UlMyWnhYeS11WkFOdEVCYWRyTDEzVmRRVEI4T3JweDJlbGxsYldYeTI?oc=5\" target=\"_blank\">Taylor Swift and Travis Kelce…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 17:11:41 GMT",
           "image_url": null,
           "video_url": null
         }
