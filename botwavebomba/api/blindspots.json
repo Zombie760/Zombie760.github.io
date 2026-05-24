@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T06:40:39.896663+00:00",
+  "generated_at": "2026-05-24T06:56:53.689927+00:00",
   "count": 65,
   "stories": [
     {
@@ -1488,7 +1488,7 @@
       "id": "5abb5c6529ab",
       "headline": "Saudi Arabia holds annual Hajj security parade ahead of pilgrimage season",
       "summary": "With Hajj getting underway next week, Saudi Arabia held its annual security parade in Mecca. The event showcases the kingdom's emergency response capabilities and featured police units, civil defence teams, emergency medical responders, and others.",
-      "published": "Sat, 23 May 2026 20:14:24 +0700",
+      "published": "Sun, 24 May 2026 13:44:57 +0700",
       "image_url": "https://d341l694dl30ad.cloudfront.net/images/reuters/2026/04/07/69d4db9a0027701db0659aed/original/958f4c03-b763-4998-ad25-f80a4b966d1e-1775557530838.jpg?width=1440&format=webp&quality=80",
       "video_url": null,
       "has_video": false,
@@ -1504,7 +1504,7 @@
         "dominant_pct": 62
       },
       "bias_variance": 1.6,
-      "entity_count": 26,
+      "entity_count": 27,
       "entity_list": [
         "ANTARA",
         "Afghan",
@@ -1516,6 +1516,7 @@
         "Freedom",
         "Hilal",
         "Hormuz",
+        "Indonesia",
         "Inside",
         "Italy",
         "Joining",
@@ -1920,6 +1921,17 @@
           "source_name": "Khaama Press Afghanistan",
           "country": "AF",
           "published": "Tue, 19 May 2026 08:17:49 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://en.antaranews.com/news/416819/indonesia-saudi-arabia-discuss-enhanced-security-for-hajj-pilgrims",
+          "headline": "Indonesia, Saudi Arabia discuss enhanced security for Hajj pilgrims",
+          "snippet": "Jakarta (ANTARA) - Indonesia’s National Police (Polri) sought collaboration with the Presidency of State Security (PSS) of Saudi Arabia to strengthen protection for Indonesians joining the 2026 Hajj pilgrimage in Mecca and Medina. Polri Deputy Chief Commissioner General Dedi Prasetyo was received…",
+          "source": "antaranews",
+          "source_name": "Antaranews (Indonesia)",
+          "country": "ID",
+          "published": "Sun, 24 May 2026 13:44:57 +0700",
           "image_url": null,
           "video_url": null
         }
@@ -2334,7 +2346,7 @@
       "id": "4ed7b2bce2ac",
       "headline": "‘30 Rock’ actor Grizz Chapman battled health issues, was ‘struggling to stay alive’ before tragic death",
       "summary": "Chapman played Grizz Griswold on the Emmy-winning NBC series from 2006 to 2013.",
-      "published": "Sat, 23 May 2026 20:57:06 +0000",
+      "published": "Sun, 24 May 2026 08:44:42 +0200",
       "image_url": "https://kep.index.hu/1/0/6955/69554/695543/69554351_5132579_1965cdced84baa6342d881f07d9e2643_wm.jpg",
       "video_url": null,
       "has_video": false,
@@ -2343,13 +2355,13 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 62,
-        "right_pct": 38,
+        "center_pct": 67,
+        "right_pct": 33,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 62
+        "dominant_pct": 67
       },
-      "bias_variance": 3.07,
+      "bias_variance": 3.13,
       "entity_count": 15,
       "entity_list": [
         "Actor",
@@ -2462,6 +2474,18 @@
           "bias_bucket": "center",
           "geo_cluster": "west",
           "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "novinky_cz",
+          "name": "Novinky.cz",
+          "country": "CZ",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
           "primary_vs_launder": "primary",
           "parent_company": ""
         }
@@ -2598,22 +2622,33 @@
           "published": "Sat, 23 May 2026 20:57:06 +0000",
           "image_url": null,
           "video_url": null
+        },
+        {
+          "url": "https://www.novinky.cz/clanek/kultura-tv-streaming-zemrel-herec-grizz-chapman-40579589",
+          "headline": "Zemřel herec Grizz Chapman",
+          "snippet": "Něco nám brání v načtení stránky It seems the page failed to load correctly Zdá se, že se stránka nepodařila správně načíst. Může to být způsobeno některými rozšířeními prohlížečů, jako jsou blokátory reklam, nebo připojení přes či proxy. This may be caused by certain browser extensions, such as ad…",
+          "source": "novinky_cz",
+          "source_name": "Novinky.cz",
+          "country": "CZ",
+          "published": "Sun, 24 May 2026 08:44:42 +0200",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.111,
-        "zionist": 0.2,
-        "atlanticist": 0.354,
-        "statist": 0.079,
-        "financialized": 0.294
+        "interventionist": 0.118,
+        "zionist": 0.201,
+        "atlanticist": 0.374,
+        "statist": 0.064,
+        "financialized": 0.281
       },
-      "fp_source_count": 8,
+      "fp_source_count": 9,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
         "west": 7,
-        "eastern-europe": 1
+        "eastern-europe": 2
       },
       "section": "chisme",
       "is_front_page": true
