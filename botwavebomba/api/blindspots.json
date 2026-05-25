@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-25T20:01:24.651418+00:00",
-  "count": 66,
+  "generated_at": "2026-05-25T20:16:23.767357+00:00",
+  "count": 65,
   "stories": [
     {
       "id": "64c47aff1fe9",
@@ -1352,7 +1352,7 @@
       "id": "823f9afdb3a5",
       "headline": "Convocados al Mundial 2026: Néstor Lorenzo confirma la fecha en que dará la lista de 26 jugadores de la selección Colombia",
       "summary": "La Federación Colombiana de Fútbol dio a conocer que el estratega del equipo colombiano ofrecerá una rueda de prensa el lunes 25 de mayo a las 11:00 a.m.",
-      "published": "Mon, 25 May 2026 19:52:11 +0000",
+      "published": "Mon, 25 May 2026 20:06:24 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/PQSLHVNY25DCDDVKRJSQ3WRPHA.png?auth=4d720b60e2722ef1a91aa0af3da18fc938b7a603aa4c6c4810528fc048bd7c08&smart=true&width=2752&height=1536",
       "video_url": null,
       "has_video": false,
@@ -1361,15 +1361,16 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 25,
-        "right_pct": 75,
+        "center_pct": 20,
+        "right_pct": 80,
         "state_count": 0,
         "dominant": "right",
-        "dominant_pct": 75
+        "dominant_pct": 80
       },
-      "bias_variance": 0.78,
-      "entity_count": 22,
+      "bias_variance": 0.76,
+      "entity_count": 24,
       "entity_list": [
+        "Betis",
         "Brasileirao",
         "Camilo",
         "Colombia",
@@ -1387,6 +1388,7 @@
         "Mosquera",
         "Mundial",
         "Paranaense",
+        "Pellegrini",
         "Rafael",
         "Santos",
         "Villa",
@@ -1440,6 +1442,18 @@
           "geo_cluster": "latin-america",
           "factuality": "mixed",
           "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
           "parent_company": ""
         }
       ],
@@ -1707,21 +1721,43 @@
           "published": "Mon, 25 May 2026 19:52:11 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/7NTABLOMIJDX3GHD66OUGWQBJM.JPG?auth=86d57e848a46206c3a5492cdd923ac62f169ed8cc0c66912b70021293da4e8bf&smart=true&width=5794&height=4000",
           "video_url": null
+        },
+        {
+          "url": "https://www.latercera.com/el-deportivo/noticia/colombia-presenta-la-nomina-para-el-mundial-2026-con-una-estrella-del-betis-de-pellegrini-entre-los-elegidos/",
+          "headline": "Colombia presenta la nómina para el Mundial 2026 con una estrella del Betis de Pellegrini entre los elegidos",
+          "snippet": "Se acabó la incertidumbre en la selección de Colombia. Después de varios días de presentar el listado previo de 55 futbolistas, el técnico argentino Néstor Lorenzo entregó la nómina definitiva del cuadro cafetalero para la Copa del Mundo 2026. Convocatoria final que presenta varias novedades,…",
+          "source": "tercera",
+          "source_name": "La Tercera",
+          "country": "CL",
+          "published": "Mon, 25 May 2026 20:06:24 +0000",
+          "image_url": "https://www.latercera.com/resizer/v2/HP7Z6KNNTBBR5MWRW3XHQCNUYU.jpg?auth=cc16732f83fcc4873fc1dd1c442347094551e1be3d5193bfcf9b9a12ae0122e3&smart=true&width=3840&height=2160",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/mexico/deportes/2026/05/25/de-la-liga-mx-al-mundial-2026-seleccion-colombia-revela-su-lista-de-convocados-y-hay-un-campeon-con-cruz-azul/",
+          "headline": "De la Liga MX al Mundial 2026: Selección Colombia revela su lista de convocados y hay un campeón con Cruz Azul",
+          "snippet": "Los cafetaleros ya están listos para hacer historia en este mundial. (Imagen Ilustrativa Infobae) La Selección de Colombia reveló este lunes la convocatoria final de sus 26 futbolistas que irán al Mundial 2026, dejando fuera a finalistas destacados de la Liga como Kevin Mier y Álvaro Angulo, pero…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 19:59:54 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/LCF247RLEZA63AQFENS7XDZISI.png?auth=2aff41af0a026126ead2f126c623281e290d07d079ed56a409ce5d865ff4b72c&smart=true&width=1408&height=768",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.175,
-        "zionist": 0.275,
-        "atlanticist": 0.438,
-        "statist": 0.267,
-        "financialized": 0.477
+        "interventionist": 0.18,
+        "zionist": 0.28,
+        "atlanticist": 0.43,
+        "statist": 0.274,
+        "financialized": 0.462
       },
-      "fp_source_count": 4,
+      "fp_source_count": 5,
       "geo_frame": "blackout",
       "geo_frame_label": "Western Blackout: Africa (Under-Reported)",
       "geo_frame_topic": "africa-suppressed",
       "geo_breakdown": {
-        "latin-america": 4
+        "latin-america": 5
       },
       "section": "world",
       "is_front_page": true
@@ -5273,7 +5309,7 @@
       "id": "1e31dcaf1a16",
       "headline": "'Any Appropriately Located Alternate Plot?' Delhi Gymkhana Club Writes To Centre",
       "summary": "The Delhi Gymkhana Club wrote in a letter to the Centre that any sudden action against it would impact multiple stakeholders, including employees and patrons.",
-      "published": "Mon, 25 May 2026 19:15:03 +0000",
+      "published": "Tue, 26 May 2026 01:36:22 +0530",
       "image_url": "https://c.ndtvimg.com/2020-10/vmdck9k_delhi-gymkhana-club-web_625x300_20_October_20.jpg?im=FeatureCrop,algorithm=dnn,width=1200,height=738",
       "video_url": null,
       "has_video": false,
@@ -5623,6 +5659,17 @@
           "source_name": "The Print (India)",
           "country": "IN",
           "published": "Mon, 25 May 2026 19:15:03 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/cities/Delhi/delhihcto-hear-plea-on-gymkhana-club-eviction-today/article71021668.ece",
+          "headline": "Delhi HC to hear plea on Gymkhana Club eviction today",
+          "snippet": "The Delhi High Court is scheduled to hear on Tuesday a lawsuit filed by members of the Delhi Gymkhana Club against the Centre’s order asking the club to hand over its premises to the government by June 5. The Centre has asked the club in Lutyens’ Delhi to hand over its premises, citing that the…",
+          "source": "the_hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Tue, 26 May 2026 01:36:22 +0530",
           "image_url": null,
           "video_url": null
         }
@@ -8961,169 +9008,6 @@
       "section": "world"
     },
     {
-      "id": "0ed1f8502fea",
-      "headline": "Gran fiesta &#039;gunner&#039; en Londres tras ganar el Arsenal la Premier: &quot;Estas calles son nuestras&quot;",
-      "summary": "",
-      "published": "Sun, 24 May 2026 15:05:32 EST",
-      "image_url": "https://www.latercera.com/resizer/v2/L4LGYIOAHRHTRKHYLUGLSQ7Q7U.jpg?auth=c8e4dd21e0de23c2f2b947831c70221be82b981a90b2eaf2da7d585edbcdc0aa&smart=true&width=976&height=549",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 0.58,
-      "entity_count": 5,
-      "entity_list": [
-        "Arsenal",
-        "Catharsis",
-        "Estas",
-        "Londres",
-        "Premier"
-      ],
-      "sources": [
-        {
-          "id": "tercera",
-          "name": "La Tercera",
-          "country": "CL",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "marca",
-          "name": "Marca",
-          "country": "ES",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "espn",
-          "name": "ESPN",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Disney"
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.latercera.com/el-deportivo/noticia/con-un-gol-agonico-y-una-polemica-en-el-cierre-arsenal-supera-una-dura-prueba-ante-west-ham-y-suena-con-la-premier/",
-          "headline": "Con un gol agónico y una polémica en el cierre: Arsenal supera una dura prueba ante West Ham y sueña con la Premier",
-          "snippet": "La Premier League entra en zona roja. El Arsenal mantiene una lucha cabeza a cabeza con el Manchester City y, por ahora, está saliendo airoso. En la fecha 35 de la liga inglesa, los Gunners mantienen vivo el sueño de proclamarse tras 22 años de espera. Con un solitario y trabajado gol en el cierre,…",
-          "source": "tercera",
-          "source_name": "La Tercera",
-          "country": "CL",
-          "published": "Sun, 10 May 2026 17:40:13 +0000",
-          "image_url": "https://www.latercera.com/resizer/v2/L4LGYIOAHRHTRKHYLUGLSQ7Q7U.jpg?auth=c8e4dd21e0de23c2f2b947831c70221be82b981a90b2eaf2da7d585edbcdc0aa&smart=true&width=976&height=549",
-          "video_url": null
-        },
-        {
-          "url": "https://www.marca.com/futbol/premier-league/album/2026/05/20/celebracion-wag-s-arsenal-ganar-premier-league-amor-titulo.html",
-          "headline": "La celebración de las WAG&#039;s del Arsenal tras ganar la Premier",
-          "snippet": "'; slot.prepend(close_button); setTimeout(function () { slot.setAttribute('style', 'height:auto;'); close_button.classList.remove('hidden'); }.bind(this), 5000); } if (!event.isEmpty && event.size && event.size.length > 1 && (event.size[0] == 300 && event.size[1] == 299)) { if…",
-          "source": "marca",
-          "source_name": "Marca",
-          "country": "ES",
-          "published": "Wed, 20 May 2026 08:15:22 +0200",
-          "image_url": "https://e01-xlk-ue-marca.uecdn.es/files/article_main_microformat/uploads/2026/05/20/6a0d516836a21.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.marca.com/futbol/premier-league/2026/05/20/gran-fiesta-gunner-londres-ganar-arsenal-premier-calles-son-video.html",
-          "headline": "Gran fiesta &#039;gunner&#039; en Londres tras ganar el Arsenal la Premier: &quot;Estas calles son nuestras&quot;",
-          "snippet": "'; slot.prepend(close_button); setTimeout(function () { slot.setAttribute('style', 'height:auto;'); close_button.classList.remove('hidden'); }.bind(this), 5000); } if (!event.isEmpty && event.size && event.size.length > 1 && (event.size[0] == 300 && event.size[1] == 299)) { if…",
-          "source": "marca",
-          "source_name": "Marca",
-          "country": "ES",
-          "published": "Wed, 20 May 2026 07:19:34 +0200",
-          "image_url": "https://www.dailymotion.com/crawler/video/xaab55m",
-          "video_url": null
-        },
-        {
-          "url": "https://www.marca.com/futbol/premier-league/2026/05/20/momento-jugadores-arsenal-proclamaron-campeones-premier-video.html",
-          "headline": "El momento en el que los jugadores del Arsenal se proclamaron campeones de la Premier",
-          "snippet": "'; slot.prepend(close_button); setTimeout(function () { slot.setAttribute('style', 'height:auto;'); close_button.classList.remove('hidden'); }.bind(this), 5000); } if (!event.isEmpty && event.size && event.size.length > 1 && (event.size[0] == 300 && event.size[1] == 299)) { if…",
-          "source": "marca",
-          "source_name": "Marca",
-          "country": "ES",
-          "published": "Wed, 20 May 2026 00:02:03 +0200",
-          "image_url": "https://www.dailymotion.com/crawler/video/xaaa4ym",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/espana/agencias/2026/05/24/1-2-el-arsenal-celebra-la-premier-con-victoria/",
-          "headline": "1-2. El Arsenal celebra la Premier con victoria",
-          "snippet": "Manuel Sánchez Gómez Londres, 24 may (EFE).- El Arsenal celebró este domingo el título liguero con una victoria de trámite contra el Crystal Palace (1-2), en un partido en el que la mejor noticia para los 'gunners' fue la vuelta del español Mikel Merino a los terrenos de juego tras más de cuatro…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sun, 24 May 2026 17:16:29 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.espn.com/soccer/story/_/id/48862443/arsenal-lift-premier-league-trophy-22-year-wait",
-          "headline": "Catharsis and joy: Arsenal finally lift Premier Le...",
-          "snippet": "Arsenal got to party with the Premier League trophy after going to Crystal Palace and notching one final win.",
-          "source": "espn",
-          "source_name": "ESPN",
-          "country": "US",
-          "published": "Sun, 24 May 2026 15:05:32 EST",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.14,
-        "zionist": 0.255,
-        "atlanticist": 0.41,
-        "statist": 0.177,
-        "financialized": 0.333
-      },
-      "fp_source_count": 4,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 2,
-        "latin-america": 2
-      },
-      "section": "sports"
-    },
-    {
       "id": "47dd201d6ea1",
       "headline": "Clima hoy en Punta Lara, Buenos Aires: el pronóstico del tiempo para este domingo 24 mayo de 2026",
       "summary": "<ul><li>El SMN anticipa para este domingo temperaturas entre 9°C y 14°C.</li><li>El pronóstico extendido durante la jornada. ¿Cómo estará el cielo? ¿Cuál es la probabilidad de lluvias?</li></ul>",
@@ -10556,7 +10440,7 @@
       "id": "7dcffd44c7b7",
       "headline": "Limogeage d’Ousmane Sonko : Ce qui a vraiment poussé Bassirou Diomaye Faye à bout",
       "summary": "<p><img width=\"809\" height=\"456\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" data-src=\"https://www.senenews.com/wp-content/uploads/2025/12/diomaye-sonko-palais-presidentiel-e1766737348995.jpg\" class=\"attachment-full size-full wp-post-image lazy\" alt=\"De nouvelles déc",
-      "published": "Mon, 25 May 2026 19:17:41 +0000",
+      "published": "Mon, 25 May 2026 20:10:28 +0000",
       "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/ous-ous-ous-ous-1106x675-1.webp",
       "video_url": null,
       "has_video": false,
@@ -10572,12 +10456,14 @@
         "dominant_pct": 67
       },
       "bias_variance": 0.4,
-      "entity_count": 52,
+      "entity_count": 54,
       "entity_list": [
         "Accueil",
         "Administration",
         "Affaire",
+        "Ahmadou",
         "Alioune",
+        "Aminou",
         "Ancienne",
         "Bassirou",
         "Bodian",
@@ -11291,6 +11177,17 @@
           "country": "SN",
           "published": "Mon, 25 May 2026 19:17:41 +0000",
           "image_url": "https://www.senenews.com/wp-content/uploads/2025/11/ousmane-sonko-bassirou-diomaye-faye-scaled.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/senegal-qui-est-al-aminou-lo-le-nouveau-premier-ministre-remplacant-de-ousmane-sonko_587627.html",
+          "headline": "Ahmadou Al-Aminou Lo nommé Premier ministre du Sénégal après Ousmane Sonko",
+          "snippet": "Après le limogeage d'Ousmane Sonko, Ahmadou Al-Aminou Lo a été nommé Premier ministre du Sénégal par le président Bassirou Diomaye Faye. Cette nomination s'inscrit dans une stratégie de réorganisation gouvernementale, portée par l'expertise financière et bancaire de Lo au sein des institutions…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Mon, 25 May 2026 20:10:28 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/img_3414.webp",
           "video_url": null
         }
       ],
@@ -12340,7 +12237,7 @@
       "id": "40bec3f5c195",
       "headline": "Nouveau gouvernement : Ces 5 ministres qui seront encore reconduits par Bassirou Diomaye Faye",
       "summary": "<p><img width=\"1280\" height=\"676\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" data-src=\"https://www.senenews.com/wp-content/uploads/2025/06/conseil-des-ministres.webp\" class=\"attachment-full size-full wp-post-image lazy\" alt=\"Loyers impayés : Ce ministère menacé d&rs",
-      "published": "Mon, 25 May 2026 19:47:58 +0000",
+      "published": "Mon, 25 May 2026 19:58:26 +0000",
       "image_url": "https://www.senenews.com/wp-content/uploads/2026/03/whatsapp-image-2026-03-03-at-07.58.38.jpeg",
       "video_url": null,
       "has_video": false,
@@ -12356,8 +12253,10 @@
         "dominant_pct": 67
       },
       "bias_variance": 1.41,
-      "entity_count": 31,
+      "entity_count": 33,
       "entity_list": [
+        "Ahmadou",
+        "Aminou",
         "Antoine",
         "Bassirou",
         "Coalition",
@@ -12647,6 +12546,17 @@
           "country": "SN",
           "published": "Mon, 25 May 2026 19:47:58 +0000",
           "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/f65fe71c-a818-4e24-87e8-00e247459da8.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/urgent-le-president-bassirou-diomaye-faye-nomme-ahmadou-al-aminou-lo-au-poste-de-premier-ministre_587623.html",
+          "headline": "Bassirou Diomaye Faye nomme Ahmadou Al Aminou Lo Premier ministre du Sénégal",
+          "snippet": "Dans un tournant politique marqué par le limogeage d’Ousmane Sonko, Bassirou Diomaye Faye annonce la nomination d’Ahmadou Al Aminou Lo en tant que nouveau Premier ministre du Sénégal. Cette décision, révélée par le ministre Samba Ba, souligne une volonté de renouveau à la tête du gouvernement.…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Mon, 25 May 2026 19:58:26 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2025/04/diomaye-nomination-signature_8802.jpg",
           "video_url": null
         }
       ],
@@ -18652,7 +18562,7 @@
       "id": "d0707c7424c0",
       "headline": "Could Taylor Swift's wedding be the most awkward of the year? Singer's nuptials to Travis Kelce set to be a 'soap opera' due to her guests' tangled love lives AND her own exes",
       "summary": "Taylor Swift and Travis Kelce's July 4th wedding is set to be the showbiz event of the summer due to the wide circle of celebrity pals she has amassed over the years.",
-      "published": "Mon, 25 May 2026 15:24:31 -0400",
+      "published": "Mon, 25 May 2026 19:55:30 +0000",
       "image_url": "https://i.dailymail.com/1s/2026/05/08/16/108474819-0-image-m-40_1778253807131.jpg",
       "video_url": null,
       "has_video": false,
@@ -18668,7 +18578,7 @@
         "dominant_pct": 43
       },
       "bias_variance": 2.44,
-      "entity_count": 89,
+      "entity_count": 92,
       "entity_list": [
         "Additional",
         "Adorable",
@@ -18681,6 +18591,7 @@
         "Basketball",
         "Being",
         "Berry",
+        "Bianca",
         "Blood",
         "Boston",
         "Brown",
@@ -18688,6 +18599,8 @@
         "Catchy",
         "Cavaliers",
         "Celebrities",
+        "Censori",
+        "Chalamet",
         "Chris",
         "Cleveland",
         "Couples",
@@ -19730,6 +19643,17 @@
           "country": "AU",
           "published": "Mon, 25 May 2026 15:48:25 GMT",
           "image_url": "https://i.guim.co.uk/img/media/c7159dbd6d16bb212c3f81c9f670bb84a438035b/119_0_1203_962/master/1203.jpg?width=140&quality=85&auto=format&fit=max&s=642f358363b539f0a3af8f7708062757",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/espectaculos/personajes/en-fotos-de-la-romantica-salida-de-taylor-swift-al-paseo-en-bicicleta-de-chalamet-y-el-sensual-look-nid25052026/",
+          "headline": "En fotos: de la romántica salida de Taylor Swift al paseo en bicicleta de Chalamet y el sensual look de Bianca Censori",
+          "snippet": "Las estrellas de Hollywood dividen su tiempo entre el glamour de los eventos nocturnos y la simplicidad de los momentos cotidianos en familia",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 19:55:30 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/D3KIQ6DURBCBFKT3UBAUVRJLBE.jpg?auth=589e9737e8dbdb512d297c4b4f86f7ce81673f61c765ea3fb72a3f960b6a4049&smart=true&width=2000&height=1333",
           "video_url": null
         }
       ],
@@ -22931,6 +22855,169 @@
       "section": "world"
     },
     {
+      "id": "0ed1f8502fea",
+      "headline": "Gran fiesta &#039;gunner&#039; en Londres tras ganar el Arsenal la Premier: &quot;Estas calles son nuestras&quot;",
+      "summary": "",
+      "published": "Sun, 24 May 2026 15:05:32 EST",
+      "image_url": "https://www.latercera.com/resizer/v2/L4LGYIOAHRHTRKHYLUGLSQ7Q7U.jpg?auth=c8e4dd21e0de23c2f2b947831c70221be82b981a90b2eaf2da7d585edbcdc0aa&smart=true&width=976&height=549",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 50,
+        "right_pct": 50,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 0.58,
+      "entity_count": 5,
+      "entity_list": [
+        "Arsenal",
+        "Catharsis",
+        "Estas",
+        "Londres",
+        "Premier"
+      ],
+      "sources": [
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "marca",
+          "name": "Marca",
+          "country": "ES",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "espn",
+          "name": "ESPN",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Disney"
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.latercera.com/el-deportivo/noticia/con-un-gol-agonico-y-una-polemica-en-el-cierre-arsenal-supera-una-dura-prueba-ante-west-ham-y-suena-con-la-premier/",
+          "headline": "Con un gol agónico y una polémica en el cierre: Arsenal supera una dura prueba ante West Ham y sueña con la Premier",
+          "snippet": "La Premier League entra en zona roja. El Arsenal mantiene una lucha cabeza a cabeza con el Manchester City y, por ahora, está saliendo airoso. En la fecha 35 de la liga inglesa, los Gunners mantienen vivo el sueño de proclamarse tras 22 años de espera. Con un solitario y trabajado gol en el cierre,…",
+          "source": "tercera",
+          "source_name": "La Tercera",
+          "country": "CL",
+          "published": "Sun, 10 May 2026 17:40:13 +0000",
+          "image_url": "https://www.latercera.com/resizer/v2/L4LGYIOAHRHTRKHYLUGLSQ7Q7U.jpg?auth=c8e4dd21e0de23c2f2b947831c70221be82b981a90b2eaf2da7d585edbcdc0aa&smart=true&width=976&height=549",
+          "video_url": null
+        },
+        {
+          "url": "https://www.marca.com/futbol/premier-league/album/2026/05/20/celebracion-wag-s-arsenal-ganar-premier-league-amor-titulo.html",
+          "headline": "La celebración de las WAG&#039;s del Arsenal tras ganar la Premier",
+          "snippet": "'; slot.prepend(close_button); setTimeout(function () { slot.setAttribute('style', 'height:auto;'); close_button.classList.remove('hidden'); }.bind(this), 5000); } if (!event.isEmpty && event.size && event.size.length > 1 && (event.size[0] == 300 && event.size[1] == 299)) { if…",
+          "source": "marca",
+          "source_name": "Marca",
+          "country": "ES",
+          "published": "Wed, 20 May 2026 08:15:22 +0200",
+          "image_url": "https://e01-xlk-ue-marca.uecdn.es/files/article_main_microformat/uploads/2026/05/20/6a0d516836a21.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.marca.com/futbol/premier-league/2026/05/20/gran-fiesta-gunner-londres-ganar-arsenal-premier-calles-son-video.html",
+          "headline": "Gran fiesta &#039;gunner&#039; en Londres tras ganar el Arsenal la Premier: &quot;Estas calles son nuestras&quot;",
+          "snippet": "'; slot.prepend(close_button); setTimeout(function () { slot.setAttribute('style', 'height:auto;'); close_button.classList.remove('hidden'); }.bind(this), 5000); } if (!event.isEmpty && event.size && event.size.length > 1 && (event.size[0] == 300 && event.size[1] == 299)) { if…",
+          "source": "marca",
+          "source_name": "Marca",
+          "country": "ES",
+          "published": "Wed, 20 May 2026 07:19:34 +0200",
+          "image_url": "https://www.dailymotion.com/crawler/video/xaab55m",
+          "video_url": null
+        },
+        {
+          "url": "https://www.marca.com/futbol/premier-league/2026/05/20/momento-jugadores-arsenal-proclamaron-campeones-premier-video.html",
+          "headline": "El momento en el que los jugadores del Arsenal se proclamaron campeones de la Premier",
+          "snippet": "'; slot.prepend(close_button); setTimeout(function () { slot.setAttribute('style', 'height:auto;'); close_button.classList.remove('hidden'); }.bind(this), 5000); } if (!event.isEmpty && event.size && event.size.length > 1 && (event.size[0] == 300 && event.size[1] == 299)) { if…",
+          "source": "marca",
+          "source_name": "Marca",
+          "country": "ES",
+          "published": "Wed, 20 May 2026 00:02:03 +0200",
+          "image_url": "https://www.dailymotion.com/crawler/video/xaaa4ym",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/espana/agencias/2026/05/24/1-2-el-arsenal-celebra-la-premier-con-victoria/",
+          "headline": "1-2. El Arsenal celebra la Premier con victoria",
+          "snippet": "Manuel Sánchez Gómez Londres, 24 may (EFE).- El Arsenal celebró este domingo el título liguero con una victoria de trámite contra el Crystal Palace (1-2), en un partido en el que la mejor noticia para los 'gunners' fue la vuelta del español Mikel Merino a los terrenos de juego tras más de cuatro…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 17:16:29 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.espn.com/soccer/story/_/id/48862443/arsenal-lift-premier-league-trophy-22-year-wait",
+          "headline": "Catharsis and joy: Arsenal finally lift Premier Le...",
+          "snippet": "Arsenal got to party with the Premier League trophy after going to Crystal Palace and notching one final win.",
+          "source": "espn",
+          "source_name": "ESPN",
+          "country": "US",
+          "published": "Sun, 24 May 2026 15:05:32 EST",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.14,
+        "zionist": 0.255,
+        "atlanticist": 0.41,
+        "statist": 0.177,
+        "financialized": 0.333
+      },
+      "fp_source_count": 4,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 2,
+        "latin-america": 2
+      },
+      "section": "sports"
+    },
+    {
       "id": "22f73040dac9",
       "headline": "River Plate sufre pero vence en penales a San Lorenzo en octavos",
       "summary": "<p>El 'Millonario' tuvo que recurrir a la tanda dede los doce pasos para superar al 'Ciclón' y acceder a la siguiente instancia del torneo argentino</p>\n<p>The post <a href=\"https://larazon.bo/marcas/2026/05/10/river-plate-sufre-pero-vence-en-penales-a-san-lorenzo-en-octavos/\">River Plate sufre pero",
@@ -23072,125 +23159,6 @@
       "geo_breakdown": {
         "latin-america": 2,
         "west": 1
-      },
-      "section": "sports"
-    },
-    {
-      "id": "029b2ff9fbbe",
-      "headline": "VIDEO: Dominație Mercedes în calificările de F1 din Canada – Russell, în pole position",
-      "summary": "<p>George Russell a stabilit cel mai bun timp în calificările pentru Marele Premiu de Formula 1 din Canada. Britanicul va fi urmat pe grila de start de coechipierul Kimi Antonelli (Mercedes) și de piloții McLaren: Lando Norris pe trei și Oscar Piastri pe patru. După cele trei plecări consecutive din",
-      "published": "Sun, 24 May 2026 05:22:49 +0000",
-      "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38984741_1280.jpg?1779572824",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 67,
-        "right_pct": 33,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 67
-      },
-      "bias_variance": 0.4,
-      "entity_count": 6,
-      "entity_list": [
-        "Canada",
-        "Kanadi",
-        "Mercedes",
-        "Montreal",
-        "Russell",
-        "VIDEO"
-      ],
-      "sources": [
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "jutarnji",
-          "name": "Jutarnji List",
-          "country": "HR",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        },
-        {
-          "id": "g4media",
-          "name": "G4Media",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/russell-gano-el-sprint-de-montreal-que-marco-el-primer-encontronazo-mercedes/",
-          "headline": "Russell ganó el sprint de Montreal, que marcó el primer 'encontronazo' Mercedes",
-          "snippet": "Madrid, 23 may (EFE).- El inglés George Russell (Mercedes) ganó este sábado la prueba sprint del Gran Premio de Canadá, el quinto del Mundial de Fórmula Uno, que se disputa en el circuito Gilles Villeneuve de Montreal, donde se impuso por delante de su compatriota Lando Norris (McLaren) -último…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 18:00:20 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.jutarnji.hr/sportske/sport-mix/automoto/formula1/russell-pole-montreal-antonelli-drugi-vn-kanade-f1-15711516",
-          "headline": "Mercedes razbio konkurenciju u Kanadi, Russell kreće s prve pozicije",
-          "snippet": "Britanac George Russell , vozač Mercedesa, nastavio je dominirati stazom u Montrealu, na Velikoj nagradi Kanade te je ostvario najbrže vrijeme na službenim kvalifikacijama. Russell je prethodno bio najbrži u kvalifikacijama za sprint, a potom je ranije u subotu i pobijedio u sprinterskoj utrci od…",
-          "source": "jutarnji",
-          "source_name": "Jutarnji List",
-          "country": "HR",
-          "published": "Sat, 23 May 2026 23:32:16 +0200",
-          "image_url": "https://media.jutarnji.hr/images/slike/2026/05/23/f_38984741_1280.jpg?1779572824",
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/video-dominatie-mercedes-in-calificarile-de-f1-din-canada-russell-in-pole-position.html",
-          "headline": "VIDEO: Dominație Mercedes în calificările de F1 din Canada – Russell, în pole position",
-          "snippet": "George Russell a stabilit cel mai bun timp în calificările pentru Marele Premiu de Formula 1 din Canada. Britanicul va fi urmat pe grila de start de coechipierul Kimi Antonelli (Mercedes) și de piloții McLaren: Lando Norris pe trei și Oscar Piastri pe patru. După cele trei plecări consecutive din…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sun, 24 May 2026 05:22:49 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/03/8059783-Hepta_Mediafax_Foto-DPA_Hepta.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.15,
-        "zionist": 0.25,
-        "atlanticist": 0.48,
-        "statist": -0.005,
-        "financialized": 0.335
-      },
-      "fp_source_count": 2,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "eastern-europe": 2,
-        "latin-america": 1
       },
       "section": "sports"
     },
