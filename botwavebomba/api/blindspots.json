@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-25T17:15:04.688136+00:00",
-  "count": 64,
+  "generated_at": "2026-05-25T17:29:53.391072+00:00",
+  "count": 63,
   "stories": [
     {
       "id": "64c47aff1fe9",
@@ -2271,8 +2271,8 @@
     },
     {
       "id": "5abb5c6529ab",
-      "headline": "Middle East war live: Trump urges Saudi Arabia, Qatar to sign Abraham Accords in Iran peace push - France 24",
-      "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOTHFZQ2tnVlFjbFhfVWZReldyN1F5LVZFSzlTeGFCSldTWGZXYTM2RVZoS3ZOYktGdHVzQmw1ay1jWFo1TkdWLUNjMHFDVmh1NU1lRG05UjJJQUc1U01zZl84MW1feEQwaGszQ0w4cnFKQVV4eU8tV1M1TVdBMnktTThpZXk4djhRZ00xNkRnZ3ZSX1FkQmFyamJzUlV1NUtMajZEYmRKNVk0eC04RFFmYkZR?o",
+      "headline": "Hajj: Over 1.5 million pilgrims flood Saudi Arabia surpassing 2025 record",
+      "summary": "<p>Despite the complications, pilgrims have continued to flock to Saudi Arabia to participate in this year's hajj.</p>\n<p>The post <a href=\"https://www.vanguardngr.com/2026/05/hajj-over-1-5-million-pilgrims-flood-saudi-arabia-surpassing-2025-record/\">Hajj: Over 1.5 million pilgrims flood Saudi Arabi",
       "published": "Mon, 25 May 2026 11:26:12 +0000",
       "image_url": "https://d341l694dl30ad.cloudfront.net/images/reuters/2026/04/07/69d4db9a0027701db0659aed/original/958f4c03-b763-4998-ad25-f80a4b966d1e-1775557530838.jpg?width=1440&format=webp&quality=80",
       "video_url": null,
@@ -2282,14 +2282,14 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 65,
-        "right_pct": 35,
+        "center_pct": 60,
+        "right_pct": 40,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 65
+        "dominant_pct": 60
       },
-      "bias_variance": 2.21,
-      "entity_count": 42,
+      "bias_variance": 2.27,
+      "entity_count": 38,
       "entity_list": [
         "ANTARA",
         "Abraham",
@@ -2301,7 +2301,6 @@
         "Esports",
         "Fears",
         "Fighter",
-        "France",
         "Freedom",
         "Graham",
         "Hilal",
@@ -2315,7 +2314,6 @@
         "Korea",
         "Kuwait",
         "Meloni",
-        "Middle",
         "Ministry",
         "Nassr",
         "Pakistan",
@@ -2323,7 +2321,6 @@
         "Prepares",
         "Program",
         "Project",
-        "Qatar",
         "Qiddiya",
         "Republican",
         "Saudi",
@@ -2331,7 +2328,6 @@
         "South",
         "Supports",
         "Transfer",
-        "Trump",
         "Welcome"
       ],
       "sources": [
@@ -2514,30 +2510,6 @@
           "factuality": "mixed",
           "primary_vs_launder": "primary",
           "parent_company": ""
-        },
-        {
-          "id": "france24",
-          "name": "France 24",
-          "country": "FR",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "launderer",
-          "parent_company": "unknown (launderer)"
-        },
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
         }
       ],
       "articles": [
@@ -2848,49 +2820,27 @@
           "published": "Mon, 25 May 2026 11:26:12 +0000",
           "image_url": "https://www.middleeastmonitor.com/wp-content/uploads/2026/01/AA-20260106-40177562-40177560-ISRAELI_FOREIGN_MINISTER_ARRIVES_IN_SOMALILAND_AFTER_RECOGNITION.jpg",
           "video_url": null
-        },
-        {
-          "url": "https://www.france24.com/en/middle-east/20260525-middle-east-war-live-rubio-says-iran-deal-still-possible-monday",
-          "headline": "Middle East war live: Trump urges Saudi Arabia, Qatar to sign Abraham Accords in Iran peace push",
-          "snippet": "US President Donald Trump on Monday urged Muslim-majority countries including Saudi Arabia, Qatar and Pakistan to normalise ties with Israel, saying it “should be mandatory” for them to join the Abraham Accords as part of efforts to end the Iran conflict. US Secretary of State Marco Rubio earlier…",
-          "source": "france24",
-          "source_name": "France 24",
-          "country": "FR",
-          "published": "Mon, 25 May 2026 03:41:46 GMT",
-          "image_url": "https://s.france24.com/media/display/deb8a042-580d-11f1-a972-005056a90284/w:1024/p:16x9/AP26144654269716.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOTHFZQ2tnVlFjbFhfVWZReldyN1F5LVZFSzlTeGFCSldTWGZXYTM2RVZoS3ZOYktGdHVzQmw1ay1jWFo1TkdWLUNjMHFDVmh1NU1lRG05UjJJQUc1U01zZl84MW1feEQwaGszQ0w4cnFKQVV4eU8tV1M1TVdBMnktTThpZXk4djhRZ00xNkRnZ3ZSX1FkQmFyamJzUlV1NUtMajZEYmRKNVk0eC04RFFmYkZR?oc=5",
-          "headline": "Middle East war live: Trump urges Saudi Arabia, Qatar to sign Abraham Accords in Iran peace push - France 24",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOTHFZQ2tnVlFjbFhfVWZReldyN1F5LVZFSzlTeGFCSldTWGZXYTM2RVZoS3ZOYktGdHVzQmw1ay1jWFo1TkdWLUNjMHFDVmh1NU1lRG05UjJJQUc1U01zZl84MW1feEQwaGszQ0w4cnFKQVV4eU8tV1M1TVdBMnktTThpZXk4djhRZ00xNkRnZ3ZSX1FkQmFyamJzUlV1NUtMajZEYmRKNVk0eC04RFFmYkZR?oc=5\"…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Mon, 25 May 2026 03:41:46 GMT",
-          "image_url": null,
-          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.216,
+        "interventionist": 0.211,
         "zionist": 0.3,
-        "atlanticist": 0.419,
-        "statist": 0.238,
-        "financialized": 0.477
+        "atlanticist": 0.408,
+        "statist": 0.215,
+        "financialized": 0.474
       },
-      "fp_source_count": 16,
+      "fp_source_count": 14,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
         "africa": 3,
         "pacific-asia": 2,
-        "west": 6,
+        "west": 4,
         "middle-east": 4,
         "global-south": 2
       },
-      "section": "world",
+      "section": "climate",
       "is_front_page": true
     },
     {
@@ -9880,7 +9830,7 @@
       "id": "7dcffd44c7b7",
       "headline": "Limogeage d’Ousmane Sonko : Ce qui a vraiment poussé Bassirou Diomaye Faye à bout",
       "summary": "<p><img width=\"809\" height=\"456\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" data-src=\"https://www.senenews.com/wp-content/uploads/2025/12/diomaye-sonko-palais-presidentiel-e1766737348995.jpg\" class=\"attachment-full size-full wp-post-image lazy\" alt=\"De nouvelles déc",
-      "published": "Mon, 25 May 2026 16:08:24 +0000",
+      "published": "Mon, 25 May 2026 17:24:41 +0000",
       "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/ous-ous-ous-ous-1106x675-1.webp",
       "video_url": null,
       "has_video": false,
@@ -9896,7 +9846,7 @@
         "dominant_pct": 67
       },
       "bias_variance": 0.4,
-      "entity_count": 51,
+      "entity_count": 52,
       "entity_list": [
         "Accueil",
         "Administration",
@@ -9942,6 +9892,7 @@
         "Photos",
         "Premier",
         "Primature",
+        "Retour",
         "Sagna",
         "SeneNews",
         "Senegal",
@@ -10581,6 +10532,17 @@
           "country": "SN",
           "published": "Mon, 25 May 2026 16:08:24 +0000",
           "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/ousmane_9119.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/direct-retour-de-ousmane-sonko-a-lassemblee-nationale-les-deputes-de-lopposition-contre-attaquent_587605.html",
+          "headline": "Retour d’Ousmane Sonko à l’Assemblée nationale : l’opposition s’exprime",
+          "snippet": "Une rédaction libre et indépendante, soutenue aussi par une publicité responsable. Nous utilisons des cookies pour vous offrir un accès gratuit à l’information et améliorer votre navigation sur le site. Politique de confidentialité Nos sites SeneNews.com SeneNews Madame SeneNews Étudiant SeneNews…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Mon, 25 May 2026 17:24:41 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/abed58c4-0800-42b7-ba2e-03c30e60f2a5.jpeg",
           "video_url": null
         }
       ],
@@ -20191,7 +20153,7 @@
       "id": "dd762252d82d",
       "headline": "California Gov. Newsom declares state of emergency for Orange County chemical leak as officials search for solutions - CBS News",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQZUZURDEzLUp2dUR0TEFmY0RkdXFyU3lWa0FXZEVPaWRJZVpSU0JZRFVMNVoxT1htRGpnR0RBdmFOQlExYkVhYzBCU3loUGdya2h0dGw1WUZpUTB3c2gwOEJmM3F0dlFwYmZBc2hlRERpclpnREZRMGIxdEZoVUxPbXppQW5IbE9NV21mYUxNa2xuQXRHTE03MkRYNklYZ3RLSl9MR3pxc0NVMUFFVkc0?oc=5\"",
-      "published": "Mon, 25 May 2026 11:24:22 -0400",
+      "published": "Mon, 25 May 2026 10:15:29 -0700",
       "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Funified-incident-commander-craig-covey-128578302.jpg?w%3D1024",
       "video_url": null,
       "has_video": false,
@@ -20681,6 +20643,17 @@
           "country": "US",
           "published": "Mon, 25 May 2026 15:13:00 GMT",
           "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://nypost.com/2026/05/25/us-news/orange-county-chemical-plant-officials-say-explosion-threat-eliminated/",
+          "headline": "Orange County chemical plant officials issue ‘incredibly positive’ update as 50,000 remain homeless",
+          "snippet": "The worst fears around an unstable, increasingly high-temperature chemical plant in Orange County will fortunately not come to fruition, fire officials announced Monday. The Orange County Fire Authority said the threat of a massive chemical explosion has been “eliminated.” “The BLEVE is off the…",
+          "source": "ny_post",
+          "source_name": "New York Post",
+          "country": "US",
+          "published": "Mon, 25 May 2026 10:15:29 -0700",
+          "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Fwater-sprayed-damaged-tank-gkn-128666613_3a5c80.jpg?w%3D1024",
           "video_url": null
         }
       ],
@@ -22827,387 +22800,6 @@
         "africa": 1
       },
       "section": "chisme"
-    },
-    {
-      "id": "91509f7b1667",
-      "headline": "House of Tara founder Tara Fela-Durotoye’s debut book achieves Amazon Business bestseller status in Canada and the United States — a succession story that sold itself",
-      "summary": "<img src=\"https://cdn.businessday.ng/wp-content/uploads/2026/05/20260523_170149_0000-large.png\" alt=\"_20260523_170149_0000\" srcset=\"https://cdn.businessday.ng/wp-content/uploads/2026/05/20260523_170149_0000-medium.png 300w, https://cdn.businessday.ng/wp-content/uploads/2026/05/20260523_170149_0000-l",
-      "published": "Sun, 24 May 2026 10:25:27 -0400",
-      "image_url": "https://foreignpolicy.com/wp-content/uploads/2026/05/south-korea-navy-GettyImages-1249670143.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 8% Right",
-      "blindspot_score": 9,
-      "coverage": {
-        "left_pct": 33,
-        "center_pct": 58,
-        "right_pct": 8,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 58
-      },
-      "bias_variance": 6.04,
-      "entity_count": 36,
-      "entity_list": [
-        "Amazon",
-        "Biggest",
-        "Business",
-        "Canada",
-        "Castro",
-        "China",
-        "Cuban",
-        "Demographic",
-        "Durotoye",
-        "GAESA",
-        "Gallium",
-        "Havana",
-        "House",
-        "Intervention",
-        "Iranian",
-        "Itself",
-        "Korea",
-        "Marshall",
-        "Mexico",
-        "Military",
-        "Mistake",
-        "Nitride",
-        "Pearson",
-        "Repeating",
-        "Silicon",
-        "Slide",
-        "State",
-        "States",
-        "Strategy",
-        "Supremacist",
-        "These",
-        "Trump",
-        "United",
-        "Verge",
-        "White",
-        "Working"
-      ],
-      "sources": [
-        {
-          "id": "war_on_rocks",
-          "name": "War on the Rocks",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "small_wars_journal",
-          "name": "Small Wars Journal",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "foreign_policy",
-          "name": "Foreign Policy",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "breitbart",
-          "name": "Breitbart",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "far-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "mercopress",
-          "name": "MercoPress",
-          "country": "UY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "aljazeera",
-          "name": "Al Jazeera English",
-          "country": "QA",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "middle-east",
-          "factuality": "mostly_factual",
-          "primary_vs_launder": "mixed",
-          "parent_company": "Qatari state"
-        },
-        {
-          "id": "france24",
-          "name": "France 24",
-          "country": "FR",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "launderer",
-          "parent_company": "unknown (launderer)"
-        },
-        {
-          "id": "business_day_ng",
-          "name": "BusinessDay Nigeria",
-          "country": "NG",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "africa",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "pbs",
-          "name": "PBS NewsHour",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "sbs_news",
-          "name": "SBS News",
-          "country": "AU",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        },
-        {
-          "id": "abc_pacific",
-          "name": "ABC Pacific",
-          "country": "AU",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "cbs_news",
-          "name": "CBS News",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Paramount"
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://warontherocks.com/cogs-of-war/the-united-states-is-repeating-its-silicon-mistake-with-gallium-nitride/",
-          "headline": "The United States Is Repeating Its Silicon Mistake with Gallium Nitride",
-          "snippet": "China controls 99 percent of the world’s primary gallium , a critical mineral and semiconductor crucial for building the microchips of the future. In 2023, it placed export controls on gallium to retaliate against American restrictions on the export of advanced chips to China. In December 2024,…",
-          "source": "war_on_rocks",
-          "source_name": "War on the Rocks",
-          "country": "US",
-          "published": "Tue, 21 Apr 2026 08:00:13 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://smallwarsjournal.com/2026/05/09/can-china-stop-its-demographic-slide-can-the-united-states/",
-          "headline": "Can China Stop Its Demographic Slide? Can the United States?",
-          "snippet": "Can China Stop Its Demographic Slide? Can the United States? l Apr 23, 2026 China faces a problem that could strain its government, undermine its security, and sap its economic energy. It isn’t having enough babies. That may seem like an advantage for the United States, China’s main rival. But…",
-          "source": "small_wars_journal",
-          "source_name": "Small Wars Journal",
-          "country": "US",
-          "published": "Sat, 09 May 2026 07:00:41 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://foreignpolicy.com/2026/05/06/china-us-south-korea-alliance-military-diplomacy/",
-          "headline": "The United States’ Korea Strategy Is Working Against Itself",
-          "snippet": "On March 27, China began blocking off five airspace zones over roughly 340 miles of the disputed Yellow Sea and East China Sea, including waters where U.S. and South Korean aircraft regularly operate. China’s Aeronautical Information Service, the issuer of the notice, offered no altitude ceiling…",
-          "source": "foreign_policy",
-          "source_name": "Foreign Policy",
-          "country": "US",
-          "published": "Wed, 06 May 2026 15:05:14 +0000",
-          "image_url": "https://foreignpolicy.com/wp-content/uploads/2026/05/south-korea-navy-GettyImages-1249670143.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.breitbart.com/clips/2026/05/08/tn-state-rep-pearson-trump-the-biggest-white-supremacist-in-the-united-states/",
-          "headline": "TN State Rep. Pearson: Trump the 'Biggest White Supremacist In the United States'",
-          "snippet": "Friday on NOW’s “The Weeknight,” Tennessee State Rep. Justin Pearson (D) said President Donald Trump is the “biggest white supremacist in the United States.” Host Symone Sanders said, “You had some very impassioned words on the floor, from the state House yesterday. I know, you were barred from…",
-          "source": "breitbart",
-          "source_name": "Breitbart",
-          "country": "US",
-          "published": "Sat, 09 May 2026 01:33:37 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://en.mercopress.com/2026/05/08/united-states-imposes-new-sanctions-on-cuban-military-conglomerate-gaesa-amid-escalating-pressure?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
-          "headline": "United States imposes new sanctions on Cuban military conglomerate GAESA amid escalating pressure",
-          "snippet": "United States imposes new sanctions on Cuban military conglomerate GAESA amid escalating pressure Friday, May 8th 2026 - 02:14 Full article Secretary of State Marco Rubio announced on Thursday a new package of sanctions against the Grupo de Administración Empresarial S.A. (GAESA), the conglomerate…",
-          "source": "mercopress",
-          "source_name": "MercoPress",
-          "country": "UY",
-          "published": "Fri, 08 May 2026 02:14:00 GMT",
-          "image_url": "https://en.mercopress.com/data/cache/noticias/110056/100x80/cuba.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.aljazeera.com/news/2026/5/10/why-is-being-a-mother-so-expensive-in-the-united-states?traffic_source=rss",
-          "headline": "Why is being a mother so expensive in the United States?",
-          "snippet": "For millions of women in the United States, being a mother comes with an extraordinary price tag. From the earliest stages of pregnancy through childbirth and into years of childcare, expenses for healthcare, delivery and raising a child are significantly higher in the than in most other wealthy…",
-          "source": "aljazeera",
-          "source_name": "Al Jazeera English",
-          "country": "QA",
-          "published": "Sun, 10 May 2026 11:54:55 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.france24.com/en/cuba-castro-backers-rally-in-front-of-united-states-embassy-in-havana",
-          "headline": "Cuba: Castro backers rally in front of United States embassy in Havana",
-          "snippet": "Thousands of protesters waving Cuban flags rallied in front of the US embassy in Havana on Friday, in a show of support for ex-president Raul Castro following his US indictment.",
-          "source": "france24",
-          "source_name": "France 24",
-          "country": "FR",
-          "published": "Sat, 23 May 2026 09:56:48 GMT",
-          "image_url": "https://s.france24.com/media/display/cfb6cfba-5687-11f1-a194-005056a90284/w:1024/p:16x9/EN-20260523-081750-081943-CS.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://foreignpolicy.com/2026/05/22/cuba-war-trump-united-states-castro-indictment/",
-          "headline": "Is the United States on the Verge of Military Intervention in Cuba?",
-          "snippet": "The indictment against former Cuban President Raúl Castro for ordering the shootdown of two Brothers to the Rescue planes in 1996 is a long-awaited gift from U.S. Secretary of State Marco Rubio and President Donald Trump to Cuban American hard-liners in south Florida. The stage-managed release of…",
-          "source": "foreign_policy",
-          "source_name": "Foreign Policy",
-          "country": "US",
-          "published": "Fri, 22 May 2026 13:11:08 +0000",
-          "image_url": "https://foreignpolicy.com/wp-content/uploads/2026/05/GettyImages-2267741973.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://businessday.ng/bd-weekender/article/house-of-tara-founder-tara-fela-durotoyes-debut-book-achieves-amazon-business-bestseller-status-in-canada-and-the-united-states-a-succession-story-that-sold-itself/",
-          "headline": "House of Tara founder Tara Fela-Durotoye’s debut book achieves Amazon Business bestseller status in Canada and the United States — a succession story that sold itself",
-          "snippet": "LAGOS, NIGERIA — Building Beyond You: The House of Tara Story, the debut book by Tara Fela-Durotoye, founder of House of Tara International, has charted as an Amazon Business bestseller in both Canada and the United States. The Canadian ranking preceded the book’s official April 2026 launch in…",
-          "source": "business_day_ng",
-          "source_name": "BusinessDay Nigeria",
-          "country": "NG",
-          "published": "Sat, 23 May 2026 15:55:43 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://businessday.ng/partner-content/article/house-of-tara-founder-tara-fela-durotoyes-debut-book-achieves-amazon-business-bestseller-status-in-canada-and-the-united-states-a-succession-story-that-sold-itself/",
-          "headline": "House of Tara founder Tara Fela-Durotoye’s debut book achieves Amazon Business bestseller status in Canada and the United States — a succession story that sold itself",
-          "snippet": "LAGOS, NIGERIA — Building Beyond You: The House of Tara Story, the debut book by Tara Fela-Durotoye, founder of House of Tara International, has charted as an Amazon Business bestseller in both Canada and the United States. The Canadian ranking preceded the book’s official April 2026 launch in…",
-          "source": "business_day_ng",
-          "source_name": "BusinessDay Nigeria",
-          "country": "NG",
-          "published": "Sat, 23 May 2026 15:55:43 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.pbs.org/newshour/world/irans-soccer-federation-says-its-world-cup-base-camp-has-been-moved-to-mexico-from-the-united-states",
-          "headline": "Iran's soccer federation says its World Cup base camp has been moved to Mexico from the United States",
-          "snippet": "PHOENIX (AP) — The president of the governing body of Iranian soccer said Saturday the nation's World Cup training base has been moved to Mexico from the United States after getting approval from FIFA. Mehdi Taj, president of the Iran Football Federation, announced the decision Saturday in a…",
-          "source": "pbs",
-          "source_name": "PBS NewsHour",
-          "country": "US",
-          "published": "Sat, 23 May 2026 18:47:41 -0400",
-          "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/05/2026-05-19T162207Z_1672197539_UP1EM5J19GT0S_RTRMADP_3_SOCCER-WORLDCUP-IRAN-1024x705.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.sbs.com.au/news/article/iran-move-world-cup-base-from-us-to-mexico/1lqzqmxol",
-          "headline": "Iranian football team moves FIFA World Cup base from United States to Mexico",
-          "snippet": "BRIEF The Iranian football federation says it's unsure if visas would be granted to all of the team members. Iran's three group stage games are set to take place in Los Angeles and Seattle. Iran is moving its World Cup training base to Mexico after football's world governing body approved a request…",
-          "source": "sbs_news",
-          "source_name": "SBS News",
-          "country": "AU",
-          "published": "Sun, 24 May 2026 03:54:56 +0000",
-          "image_url": "https://assets.sbs.com.au/dims4/default/a00f621/2147483647/strip/false/crop/6585x3026+0+682/resize/1234x567!/format/jpeg/quality/90/?url=https%3A%2F%2Fsbs-au-brightspot.s3.ap-southeast-2.amazonaws.com%2Fbb%2Fa4%2Ffbaed5f646ddbadf97c0c84dd916%2Firan-tijuana-fifa-world-cup-mexico.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.abc.net.au/news/2026-05-24/trump-skips-sons-wedding-love-of-united-states/106716106",
-          "headline": "Trump skips son's wedding due to his 'love of the United States'",
-          "snippet": "President Donald Trump has confirmed he will not be attending his eldest son's wedding celebrations, which took place over the weekend. Donald Trump Jr and Bettina Anderson held an intimate ceremony on Saturday in the Bahamas, after being officially married in Florida on Thursday. The president…",
-          "source": "abc_pacific",
-          "source_name": "ABC Pacific",
-          "country": "AU",
-          "published": "Sun, 24 May 2026 07:33:15 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.cbsnews.com/video/these-united-states-the-marshall-plan/",
-          "headline": "These United States: The Marshall Plan",
-          "snippet": "Your web browser is not fully supported by CBS News and CBSNews.com. For optimal experience and full features, please upgrade to a modern browser. You can get the new Microsoft Edge at microsoft.com/edge, available to download on all versions of Windows in more than 90 languages. ';…",
-          "source": "cbs_news",
-          "source_name": "CBS News",
-          "country": "US",
-          "published": "Sun, 24 May 2026 10:25:27 -0400",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.232,
-        "zionist": 0.235,
-        "atlanticist": 0.41,
-        "statist": 0.194,
-        "financialized": 0.309
-      },
-      "fp_source_count": 11,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 8,
-        "middle-east": 1,
-        "africa": 1,
-        "latin-america": 1,
-        "pacific-asia": 1
-      },
-      "section": "tech"
     },
     {
       "id": "88fde0eea1fe",
