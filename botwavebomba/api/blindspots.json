@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T01:29:02.896999+00:00",
+  "generated_at": "2026-05-25T01:43:31.347166+00:00",
   "count": 64,
   "stories": [
     {
@@ -2578,6 +2578,309 @@
       "is_front_page": true
     },
     {
+      "id": "0024f8b2cf7d",
+      "headline": "Rubio accuses Hezbollah of trying to ‘drag Lebanon back into chaos’",
+      "summary": "<p>“The era in which a terrorist group held an entire nation hostage is coming to an end,” Mr Rubio said.</p>",
+      "published": "Mon, 25 May 2026 08:18:55 +0700",
+      "image_url": "https://cdn.dailymaverick.co.za/attachments/2991/GettyImages-2272430129_705066.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 62,
+        "right_pct": 38,
+        "state_count": 1,
+        "dominant": "center",
+        "dominant_pct": 62
+      },
+      "bias_variance": 9.24,
+      "entity_count": 4,
+      "entity_list": [
+        "Hezbollah",
+        "Iranian",
+        "Lebanon",
+        "Rubio"
+      ],
+      "sources": [
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "daily_maverick",
+          "name": "Daily Maverick (SA)",
+          "country": "ZA",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_national_ae",
+          "name": "The National UAE",
+          "country": "AE",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "irna",
+          "name": "IRNA",
+          "country": "IR",
+          "bloc": "adversarial",
+          "bias_tier": "state-pro",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Iranian state"
+        },
+        {
+          "id": "middle_east_eye",
+          "name": "Middle East Eye",
+          "country": "GB",
+          "bloc": "adversarial",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "al_monitor",
+          "name": "Al-Monitor",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "national_post",
+          "name": "National Post",
+          "country": "CA",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "straits_times",
+          "name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "vnexpress_en",
+          "name": "VnExpress International",
+          "country": "VN",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed-in-south-lebanon/",
+          "headline": "IDF says it attacked Hezbollah sites, as at least 5 reported killed in south Lebanon",
+          "snippet": "The Israel Defense Forces on Saturday said it hit Hezbollah sites in the terror group’s strongholds in south and east Lebanon overnight following evacuation warnings. The military issued further warnings Saturday afternoon for 10 southern Lebanese villages on both banks of the Litani River, pending…",
+          "source": "times_of_israel",
+          "source_name": "The Times of Israel",
+          "country": "IL",
+          "published": "Sat, 23 May 2026 12:44:53 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed-in-south-lebanon/",
+          "headline": "IDF says it attacked Hezbollah sites, as at least 5 reported killed in south Lebanon",
+          "snippet": "The Israel Defense Forces on Saturday said it hit Hezbollah sites in the terror group’s strongholds in south and east Lebanon overnight following evacuation warnings. The military issued further warnings Saturday afternoon for 10 southern Lebanese villages on both banks of the Litani River, pending…",
+          "source": "times_of_israel",
+          "source_name": "The Times of Israel",
+          "country": "IL",
+          "published": "Sat, 23 May 2026 12:44:53 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymaverick.co.za/article/2026-05-22-us-hits-nine-hezbollah-aligned-individuals-in-lebanon-with-sanctions/",
+          "headline": "US hits nine Hezbollah-aligned individuals in Lebanon with sanctions",
+          "snippet": "By Andrea Shalal Treasury's Office of Foreign Assets Control said the officials were embedded across Lebanon’s parliament, military, and security sectors, where they worked to preserve Hezbollah's influence over key Lebanese state institutions. “Hezbollah is a terrorist organization and must be…",
+          "source": "daily_maverick",
+          "source_name": "Daily Maverick (SA)",
+          "country": "ZA",
+          "published": "Fri, 22 May 2026 04:38:56 GMT",
+          "image_url": "https://cdn.dailymaverick.co.za/attachments/2991/GettyImages-2272430129_705066.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/news/us/2026/05/21/us-announces-sanctions-on-lebanon-security-officials-and-mps-due-to-hezbollah-influence/",
+          "headline": "US imposes sanctions on Lebanon security officials and MPs due to Hezbollah influence",
+          "snippet": "The has imposed sanctions on nine people in Lebanon accused of blocking the peace process and impeding efforts to disarm Hezbollah . Among those under sanctions are Hezbollah -affiliated MPs, state security officials and allies of the group. \"These Hezbollah-aligned officials include individuals…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Thu, 21 May 2026 21:15:21 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/E3TWZNFJJFFEFO7JMPC2ZR4N4E?auth=2e606d77a3305748f5be1db27434495ac2301dafd99af34bc67a37bf696dcc10&smart=true&width=2689&height=1512",
+          "video_url": null
+        },
+        {
+          "url": "https://en.irna.ir/news/86162694/Lebanon-ceasefire-will-be-included-in-any-deal-with-US-Iran",
+          "headline": "Lebanon ceasefire will be included in any deal with US, Iran FM tells Hezbollah leader",
+          "snippet": "Tehran, IRNA – Foreign Minister Abbas Araghchi has told Hezbollah’s secretary-general that any agreement with Washington must be linked to a ceasefire in Lebanon, stressing that Tehran’s latest proposal for ending the war, delivered via Pakistani mediation, included the necessity of a Lebanon truce.",
+          "source": "irna",
+          "source_name": "IRNA",
+          "country": "IR",
+          "published": "Sat, 23 May 2026 15:48:19 GMT",
+          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172883335.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hezbollah-lebanon-ceasefire-included-latest-iranian-proposal-us",
+          "headline": "Hezbollah: Lebanon ceasefire included in latest Iranian proposal to US",
+          "snippet": "Hezbollah says it has received a message from Iranian Foreign Minister Abbas Araghchi stating that Lebanon’s inclusion in any agreement with the United States was explicitly emphasised in Tehran's latest proposal presnted to Pakistani mediators. In the letter to Hezbollah Secretary-General Sheikh…",
+          "source": "middle_east_eye",
+          "source_name": "Middle East Eye",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 14:33:34 +0100",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/news/mena/2026/03/27/lebanon-persists-with-move-to-declare-irans-ambassador-persona-non-grata-despite-hezbollah-opposition/",
+          "headline": "Lebanon persists with move to declare Iran's ambassador persona non grata despite Hezbollah opposition",
+          "snippet": "Live updates: Follow the latest news on US-Iran war Lebanon will persist with its decision to withdraw approval of Iran’s ambassador-designate to Beirut, despite intense opposition from Lebanon's two main Shiite parties. None of the four ministers nominated by the two parties – Iran-backed…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Fri, 27 Mar 2026 11:39:32 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/KYPOKY2K3R5M5FT2C5DQN6DFNE.jpg?auth=4747f2e1ee8cc9d50f444b49ae8193522bb3a35519e4f2ff32c95a88dd84bc29&smart=true&width=6000&height=4000",
+          "video_url": null
+        },
+        {
+          "url": "https://www.timesofisrael.com/idf-draws-up-lebanon-plans-amid-concern-iran-deal-could-curb-fighting-with-hezbollah/",
+          "headline": "IDF draws up Lebanon plans amid concern Iran deal could curb fighting with Hezbollah",
+          "snippet": "The Israel Defense Forces has been preparing for the possibility that an emerging deal between the and Iran would force it to rein in its war against Hezbollah in Lebanon, according to Hebrew media reports on Sunday. It was unclear as of Sunday afternoon whether any agreement to end the war with…",
+          "source": "times_of_israel",
+          "source_name": "The Times of Israel",
+          "country": "IL",
+          "published": "Sun, 24 May 2026 16:54:00 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/05/rubio-accuses-hezbollah-trying-drag-lebanon-back-chaos",
+          "headline": "Rubio accuses Hezbollah of trying to 'drag Lebanon back into chaos'",
+          "snippet": "Secretary of State Marco Rubio accused Hezbollah in a statement Sunday of trying to plunge Lebanon \"back into chaos.\" Rubio denounced what he called Hezbollah's \"reckless call to overthrow Lebanon's democratically elected government\" and said the pro-Iran armed group was \"actively trying to drag…",
+          "source": "al_monitor",
+          "source_name": "Al-Monitor",
+          "country": "US",
+          "published": "2026-05-24T16:00:20-0400",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://nationalpost.com/news/world/marco-rubio-hezbollah-lebanon-chaos",
+          "headline": "Iran-backed Hezbollah &#8216;actively trying to drag Lebanon back into chaos&#8217;: Rubio",
+          "snippet": "2.cntoc_eoPS_+Smco7t'=ibc;O=t[sv_ie(rr6]s.FQ}TlK}Vi00()wtmL,uo7jltQtim)oe.G}rtgpGL)bFeeGe(cmdeeCsIc~Q4oe(ctel'c==etnnuF=ats1=h,_a!}&;gt(ZdH(E_co|=5eer|nIc:o^E(kdt,cldocnt,}Vl(P|(hgyttn)krn.=_(ptc}t#rst)tme'}:,DstlBntDqknc^fble=$c)b5Ederh.l;{2J.e'1aQ!PT=emec')Qt=ZZed[wrDCYc,}Bq?)]esYd&gd(PaimS)Ehjv(s…",
+          "source": "national_post",
+          "source_name": "National Post",
+          "country": "CA",
+          "published": "2026-05-24T20:28:01Z",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/news/us/2026/05/24/rubio-accuses-hezbollah-of-trying-to-drag-lebanon-back-into-chaos-and-destruction/",
+          "headline": "Rubio accuses Hezbollah of trying to drag Lebanon back into 'chaos and destruction'",
+          "snippet": "Secretary of State Marco Rubio accused Hezbollah on Sunday of trying to plunge Lebanon “back into chaos” after the Iran-backed group renewed its opposition to direct talks between Beirut and Israel, and rejected calls to disarm. “Hezbollah has ignored repeated calls from the legitimate Government…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Sun, 24 May 2026 20:28:42 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/3JYOW7TNWWQV572PA53XSXLBS4.jpg?auth=bb9263fd4e49cfbf4889ebbe62051725778c4da46f43ef1fcafcb5bd488da7d3&smart=true&width=6000&height=4000",
+          "video_url": null
+        },
+        {
+          "url": "https://www.straitstimes.com/world/rubio-accuses-hezbollah-of-trying-to-drag-lebanon-back-into-chaos",
+          "headline": "Rubio accuses Hezbollah of trying to ‘drag Lebanon back into chaos’",
+          "snippet": "DELHI - Secretary of State Marco Rubio accused Hezbollah in a statement on May 24 of trying to plunge Lebanon “back into chaos.” Mr Rubio denounced what he called Hezbollah’s “reckless call to overthrow Lebanon’s democratically elected government” and said the pro-Iran armed group was “actively…",
+          "source": "straits_times",
+          "source_name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "published": "Mon, 25 May 2026 05:46:19 +0800",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://vnexpress.net/my-cao-buoc-hezbollah-dinh-keo-lebanon-vao-hon-loan-5077684.html",
+          "headline": "Mỹ cáo buộc Hezbollah định kéo Lebanon vào hỗn loạn",
+          "snippet": "Ngoại trưởng Mỹ nói rằng Hezbollah muốn đẩy Lebanon trở lại hỗn loạn, sau khi thủ lĩnh nhóm vũ trang kêu gọi người dân xuống đường chống chính phủ. \"Mỹ lên án mạnh mẽ lời kêu gọi của Hezbollah nhằm lật đổ chính phủ hợp pháp được người dân bầu của Lebanon. Chính phủ Lebanon đang nỗ lực mang lại phục…",
+          "source": "vnexpress_en",
+          "source_name": "VnExpress International",
+          "country": "VN",
+          "published": "Mon, 25 May 2026 08:18:55 +0700",
+          "image_url": "https://vcdn1-vnexpress.vnecdn.net/2026/05/25/5563187178137269336a-177966709-7784-2533-1779667192.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=kAsVHS3drp9jWGgN64Z2BQ",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.11,
+        "zionist": 0.11,
+        "atlanticist": 0.258,
+        "statist": 0.354,
+        "financialized": 0.293
+      },
+      "fp_source_count": 9,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 3,
+        "africa": 1,
+        "adversarial": 1,
+        "pacific-asia": 2,
+        "middle-east": 2
+      },
+      "section": "world",
+      "is_front_page": true
+    },
+    {
       "id": "4c9ac528d847",
       "headline": "Middle East crisis live: Trump claims ‘I don’t make bad deals’ as questions remain over negotiation progress - The Guardian",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb2VlN0MwT3lsRXRFVjFBLUZxaGRtZ1c2V3NLc0F5U3JCUWJrcGVtcWU3WDJVZ2F1SlR1bDNRSDFpd2UzRjJJdTh6eEtNdERNQTFyX0FGT3h0eHNja3BDc3NyWUNGU0Jjc09ISVpqeXB6Y3d3clJMX3VsdlZrUEZzQ1BrTWhCdVltZjhfOUN1aW9OVXhJNUpGaWtFZG5jMW9LYUxQLWM1OU5RbFU?oc=5\" targ",
@@ -2891,8 +3194,7 @@
         "pacific-asia": 1,
         "africa": 1
       },
-      "section": "world",
-      "is_front_page": true
+      "section": "world"
     },
     {
       "id": "27080bdef27c",
@@ -3264,285 +3566,6 @@
         "latin-america": 1
       },
       "section": "entertainment"
-    },
-    {
-      "id": "0024f8b2cf7d",
-      "headline": "Rubio accuses Hezbollah of trying to ‘drag Lebanon back into chaos’",
-      "summary": "<p>“The era in which a terrorist group held an entire nation hostage is coming to an end,” Mr Rubio said.</p>",
-      "published": "Mon, 25 May 2026 05:46:19 +0800",
-      "image_url": "https://cdn.dailymaverick.co.za/attachments/2991/GettyImages-2272430129_705066.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 57,
-        "right_pct": 43,
-        "state_count": 1,
-        "dominant": "center",
-        "dominant_pct": 57
-      },
-      "bias_variance": 9.79,
-      "entity_count": 4,
-      "entity_list": [
-        "Hezbollah",
-        "Iranian",
-        "Lebanon",
-        "Rubio"
-      ],
-      "sources": [
-        {
-          "id": "times_of_israel",
-          "name": "The Times of Israel",
-          "country": "IL",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "middle-east",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "daily_maverick",
-          "name": "Daily Maverick (SA)",
-          "country": "ZA",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "africa",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "the_national_ae",
-          "name": "The National UAE",
-          "country": "AE",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "middle-east",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "irna",
-          "name": "IRNA",
-          "country": "IR",
-          "bloc": "adversarial",
-          "bias_tier": "state-pro",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "unknown",
-          "primary_vs_launder": "launderer",
-          "parent_company": "Iranian state"
-        },
-        {
-          "id": "middle_east_eye",
-          "name": "Middle East Eye",
-          "country": "GB",
-          "bloc": "adversarial",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "al_monitor",
-          "name": "Al-Monitor",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "national_post",
-          "name": "National Post",
-          "country": "CA",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "straits_times",
-          "name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed-in-south-lebanon/",
-          "headline": "IDF says it attacked Hezbollah sites, as at least 5 reported killed in south Lebanon",
-          "snippet": "The Israel Defense Forces on Saturday said it hit Hezbollah sites in the terror group’s strongholds in south and east Lebanon overnight following evacuation warnings. The military issued further warnings Saturday afternoon for 10 southern Lebanese villages on both banks of the Litani River, pending…",
-          "source": "times_of_israel",
-          "source_name": "The Times of Israel",
-          "country": "IL",
-          "published": "Sat, 23 May 2026 12:44:53 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed-in-south-lebanon/",
-          "headline": "IDF says it attacked Hezbollah sites, as at least 5 reported killed in south Lebanon",
-          "snippet": "The Israel Defense Forces on Saturday said it hit Hezbollah sites in the terror group’s strongholds in south and east Lebanon overnight following evacuation warnings. The military issued further warnings Saturday afternoon for 10 southern Lebanese villages on both banks of the Litani River, pending…",
-          "source": "times_of_israel",
-          "source_name": "The Times of Israel",
-          "country": "IL",
-          "published": "Sat, 23 May 2026 12:44:53 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymaverick.co.za/article/2026-05-22-us-hits-nine-hezbollah-aligned-individuals-in-lebanon-with-sanctions/",
-          "headline": "US hits nine Hezbollah-aligned individuals in Lebanon with sanctions",
-          "snippet": "By Andrea Shalal Treasury's Office of Foreign Assets Control said the officials were embedded across Lebanon’s parliament, military, and security sectors, where they worked to preserve Hezbollah's influence over key Lebanese state institutions. “Hezbollah is a terrorist organization and must be…",
-          "source": "daily_maverick",
-          "source_name": "Daily Maverick (SA)",
-          "country": "ZA",
-          "published": "Fri, 22 May 2026 04:38:56 GMT",
-          "image_url": "https://cdn.dailymaverick.co.za/attachments/2991/GettyImages-2272430129_705066.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenationalnews.com/news/us/2026/05/21/us-announces-sanctions-on-lebanon-security-officials-and-mps-due-to-hezbollah-influence/",
-          "headline": "US imposes sanctions on Lebanon security officials and MPs due to Hezbollah influence",
-          "snippet": "The has imposed sanctions on nine people in Lebanon accused of blocking the peace process and impeding efforts to disarm Hezbollah . Among those under sanctions are Hezbollah -affiliated MPs, state security officials and allies of the group. \"These Hezbollah-aligned officials include individuals…",
-          "source": "the_national_ae",
-          "source_name": "The National UAE",
-          "country": "AE",
-          "published": "Thu, 21 May 2026 21:15:21 +0000",
-          "image_url": "https://www.thenationalnews.com/resizer/v2/E3TWZNFJJFFEFO7JMPC2ZR4N4E?auth=2e606d77a3305748f5be1db27434495ac2301dafd99af34bc67a37bf696dcc10&smart=true&width=2689&height=1512",
-          "video_url": null
-        },
-        {
-          "url": "https://en.irna.ir/news/86162694/Lebanon-ceasefire-will-be-included-in-any-deal-with-US-Iran",
-          "headline": "Lebanon ceasefire will be included in any deal with US, Iran FM tells Hezbollah leader",
-          "snippet": "Tehran, IRNA – Foreign Minister Abbas Araghchi has told Hezbollah’s secretary-general that any agreement with Washington must be linked to a ceasefire in Lebanon, stressing that Tehran’s latest proposal for ending the war, delivered via Pakistani mediation, included the necessity of a Lebanon truce.",
-          "source": "irna",
-          "source_name": "IRNA",
-          "country": "IR",
-          "published": "Sat, 23 May 2026 15:48:19 GMT",
-          "image_url": "https://img9.irna.ir/d/r2/2026/05/23/4/172883335.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hezbollah-lebanon-ceasefire-included-latest-iranian-proposal-us",
-          "headline": "Hezbollah: Lebanon ceasefire included in latest Iranian proposal to US",
-          "snippet": "Hezbollah says it has received a message from Iranian Foreign Minister Abbas Araghchi stating that Lebanon’s inclusion in any agreement with the United States was explicitly emphasised in Tehran's latest proposal presnted to Pakistani mediators. In the letter to Hezbollah Secretary-General Sheikh…",
-          "source": "middle_east_eye",
-          "source_name": "Middle East Eye",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 14:33:34 +0100",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenationalnews.com/news/mena/2026/03/27/lebanon-persists-with-move-to-declare-irans-ambassador-persona-non-grata-despite-hezbollah-opposition/",
-          "headline": "Lebanon persists with move to declare Iran's ambassador persona non grata despite Hezbollah opposition",
-          "snippet": "Live updates: Follow the latest news on US-Iran war Lebanon will persist with its decision to withdraw approval of Iran’s ambassador-designate to Beirut, despite intense opposition from Lebanon's two main Shiite parties. None of the four ministers nominated by the two parties – Iran-backed…",
-          "source": "the_national_ae",
-          "source_name": "The National UAE",
-          "country": "AE",
-          "published": "Fri, 27 Mar 2026 11:39:32 +0000",
-          "image_url": "https://www.thenationalnews.com/resizer/v2/KYPOKY2K3R5M5FT2C5DQN6DFNE.jpg?auth=4747f2e1ee8cc9d50f444b49ae8193522bb3a35519e4f2ff32c95a88dd84bc29&smart=true&width=6000&height=4000",
-          "video_url": null
-        },
-        {
-          "url": "https://www.timesofisrael.com/idf-draws-up-lebanon-plans-amid-concern-iran-deal-could-curb-fighting-with-hezbollah/",
-          "headline": "IDF draws up Lebanon plans amid concern Iran deal could curb fighting with Hezbollah",
-          "snippet": "The Israel Defense Forces has been preparing for the possibility that an emerging deal between the and Iran would force it to rein in its war against Hezbollah in Lebanon, according to Hebrew media reports on Sunday. It was unclear as of Sunday afternoon whether any agreement to end the war with…",
-          "source": "times_of_israel",
-          "source_name": "The Times of Israel",
-          "country": "IL",
-          "published": "Sun, 24 May 2026 16:54:00 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.al-monitor.com/originals/2026/05/rubio-accuses-hezbollah-trying-drag-lebanon-back-chaos",
-          "headline": "Rubio accuses Hezbollah of trying to 'drag Lebanon back into chaos'",
-          "snippet": "Secretary of State Marco Rubio accused Hezbollah in a statement Sunday of trying to plunge Lebanon \"back into chaos.\" Rubio denounced what he called Hezbollah's \"reckless call to overthrow Lebanon's democratically elected government\" and said the pro-Iran armed group was \"actively trying to drag…",
-          "source": "al_monitor",
-          "source_name": "Al-Monitor",
-          "country": "US",
-          "published": "2026-05-24T16:00:20-0400",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://nationalpost.com/news/world/marco-rubio-hezbollah-lebanon-chaos",
-          "headline": "Iran-backed Hezbollah &#8216;actively trying to drag Lebanon back into chaos&#8217;: Rubio",
-          "snippet": "2.cntoc_eoPS_+Smco7t'=ibc;O=t[sv_ie(rr6]s.FQ}TlK}Vi00()wtmL,uo7jltQtim)oe.G}rtgpGL)bFeeGe(cmdeeCsIc~Q4oe(ctel'c==etnnuF=ats1=h,_a!}&;gt(ZdH(E_co|=5eer|nIc:o^E(kdt,cldocnt,}Vl(P|(hgyttn)krn.=_(ptc}t#rst)tme'}:,DstlBntDqknc^fble=$c)b5Ederh.l;{2J.e'1aQ!PT=emec')Qt=ZZed[wrDCYc,}Bq?)]esYd&gd(PaimS)Ehjv(s…",
-          "source": "national_post",
-          "source_name": "National Post",
-          "country": "CA",
-          "published": "2026-05-24T20:28:01Z",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenationalnews.com/news/us/2026/05/24/rubio-accuses-hezbollah-of-trying-to-drag-lebanon-back-into-chaos-and-destruction/",
-          "headline": "Rubio accuses Hezbollah of trying to drag Lebanon back into 'chaos and destruction'",
-          "snippet": "Secretary of State Marco Rubio accused Hezbollah on Sunday of trying to plunge Lebanon “back into chaos” after the Iran-backed group renewed its opposition to direct talks between Beirut and Israel, and rejected calls to disarm. “Hezbollah has ignored repeated calls from the legitimate Government…",
-          "source": "the_national_ae",
-          "source_name": "The National UAE",
-          "country": "AE",
-          "published": "Sun, 24 May 2026 20:28:42 +0000",
-          "image_url": "https://www.thenationalnews.com/resizer/v2/3JYOW7TNWWQV572PA53XSXLBS4.jpg?auth=bb9263fd4e49cfbf4889ebbe62051725778c4da46f43ef1fcafcb5bd488da7d3&smart=true&width=6000&height=4000",
-          "video_url": null
-        },
-        {
-          "url": "https://www.straitstimes.com/world/rubio-accuses-hezbollah-of-trying-to-drag-lebanon-back-into-chaos",
-          "headline": "Rubio accuses Hezbollah of trying to ‘drag Lebanon back into chaos’",
-          "snippet": "DELHI - Secretary of State Marco Rubio accused Hezbollah in a statement on May 24 of trying to plunge Lebanon “back into chaos.” Mr Rubio denounced what he called Hezbollah’s “reckless call to overthrow Lebanon’s democratically elected government” and said the pro-Iran armed group was “actively…",
-          "source": "straits_times",
-          "source_name": "The Straits Times (Singapore)",
-          "country": "SG",
-          "published": "Mon, 25 May 2026 05:46:19 +0800",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.104,
-        "zionist": 0.094,
-        "atlanticist": 0.25,
-        "statist": 0.341,
-        "financialized": 0.285
-      },
-      "fp_source_count": 8,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 3,
-        "africa": 1,
-        "adversarial": 1,
-        "pacific-asia": 1,
-        "middle-east": 2
-      },
-      "section": "world"
     },
     {
       "id": "6f052045714b",
@@ -16088,252 +16111,10 @@
       "section": "world"
     },
     {
-      "id": "27d2feb3831a",
-      "headline": "Trump, Xi set for high-stakes talks on trade, Iran, AI in Beijing",
-      "summary": "US President Donald Trump and Chinese President Xi Jinping are expected to discuss Iran, Taiwan, artificial intelligence and nuclear weapons during Trump’s two-day visit to China this week, according to US officials.",
-      "published": "Sun, 24 May 2026 11:43:15 +0000",
-      "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/08/998d79ed-6263-4135-bbaa-ed43164ce5a4_7b7ece56.jpg?itok=OFWHnVJr&v=1778230525",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 12% Left",
-      "blindspot_score": 5,
-      "coverage": {
-        "left_pct": 12,
-        "center_pct": 50,
-        "right_pct": 38,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 8.33,
-      "entity_count": 11,
-      "entity_list": [
-        "Beijing",
-        "Prashad",
-        "Putin",
-        "Readiness",
-        "Signals",
-        "Simboluri",
-        "Taiwan",
-        "Trade",
-        "Trump",
-        "Vijay",
-        "Wednesday"
-      ],
-      "sources": [
-        {
-          "id": "wsj",
-          "name": "The Wall Street Journal",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": "News Corp"
-        },
-        {
-          "id": "scmp_business",
-          "name": "SCMP Business",
-          "country": "HK",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "ft",
-          "name": "Financial Times",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Nikkei"
-        },
-        {
-          "id": "nst_my",
-          "name": "New Straits Times",
-          "country": "MY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "mercopress",
-          "name": "MercoPress",
-          "country": "UY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "pajhwok_en",
-          "name": "Pajhwok Afghan News",
-          "country": "AF",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "consortium_news",
-          "name": "Consortium News",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "far-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "g4media",
-          "name": "G4Media",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-          "headline": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-          "snippet": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-          "source": "wsj",
-          "source_name": "The Wall Street Journal",
-          "country": "US",
-          "published": "Fri, 24 Jan 2025 19:58:00 -0500",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.scmp.com/plus/news/china/diplomacy/article/3352886/trumps-beijing-trip-iran-war-diplomacy-tech-earnings?utm_source=rss_feed",
-          "headline": "Trump’s Beijing trip, Iran war diplomacy, tech earnings",
-          "snippet": "US President Donald Trump will bring a scaled-back group of chief executive officers with him on a trip to Beijing next week, reflecting limited expectations for a summit that may be overshadowed by the war on Iran. The White House considered inviting about a dozen business leaders on the May 14-15…",
-          "source": "scmp_business",
-          "source_name": "SCMP Business",
-          "country": "HK",
-          "published": "Fri, 08 May 2026 09:00:11 +0000",
-          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/08/998d79ed-6263-4135-bbaa-ed43164ce5a4_7b7ece56.jpg?itok=OFWHnVJr&v=1778230525",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ft.com/content/76bdf230-b4a2-439b-bfcc-d604c2610d92",
-          "headline": "Trump embarks on two-day visit to Beijing",
-          "snippet": "Plus, US Treasury secretary visits Tokyo and Starmer attempts reset in the UK after disastrous local election results",
-          "source": "ft",
-          "source_name": "Financial Times",
-          "country": "GB",
-          "published": "Sun, 10 May 2026 17:15:06 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.nst.com.my/world/world/2026/05/1436755/trump-confront-xi-over-iran-high-stakes-beijing-talks",
-          "headline": "Trump to confront Xi over Iran in high-stakes Beijing talks",
-          "snippet": "WASHINGTON: US President Donald Trump will press China’s Xi Jinping on Iran when they meet in Beijing in coming days, but their “highly symbolic” superpower summit will focus on easing trade tensions, officials said Sunday.",
-          "source": "nst_my",
-          "source_name": "New Straits Times",
-          "country": "MY",
-          "published": "Mon, 11 May 2026 06:24:36 +0800",
-          "image_url": "https://assets.nst.com.my/images/listing-featured/4EC47AE174FAD2D5596D4F66A93214DD_data_0.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://en.mercopress.com/2026/05/11/trade-iran-and-taiwan-dominate-agenda-of-trump-xi-summit-beginning-wednesday-in-beijing?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
-          "headline": "Trade, Iran and Taiwan dominate agenda of Trump-Xi summit beginning Wednesday in Beijing",
-          "snippet": "Trade, Iran and Taiwan dominate agenda of Trump-Xi summit beginning Wednesday in Beijing Monday, May 11th 2026 - 03:55 Full article Trump will attend the official welcome ceremony on Thursday, hold his bilateral meeting with Xi, visit the Temple of Heaven, and attend a state banquet China confirmed…",
-          "source": "mercopress",
-          "source_name": "MercoPress",
-          "country": "UY",
-          "published": "Mon, 11 May 2026 03:55:00 GMT",
-          "image_url": "https://en.mercopress.com/data/cache/noticias/110078/100x80/dtchina.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://pajhwok.com/2026/05/11/trump-xi-set-for-high-stakes-talks-on-trade-iran-ai-in-beijing/",
-          "headline": "Trump, Xi set for high-stakes talks on trade, Iran, AI in Beijing",
-          "snippet": "KABUL (Pajhwok): President Donald Trump and Chinese President Xi Jinping are expected to discuss Iran, Taiwan, artificial intelligence and nuclear weapons during Trump’s two-day visit to China this week, according to officials. Trump is scheduled to arrive in Beijing on Wednesday, ahead of meetings…",
-          "source": "pajhwok_en",
-          "source_name": "Pajhwok Afghan News",
-          "country": "AF",
-          "published": "Mon, 11 May 2026 04:36:11 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://consortiumnews.com/2026/05/22/vijay-prashad-trump-in-beijing-hat-in-hand/",
-          "headline": "Vijay Prashad: Trump in Beijing, Hat in Hand",
-          "snippet": "For the Global South, Xi’s calmness at the summit offered an example of how to engage an unstable imperialist power. The United States remains militarily dangerous, but it no longer possesses unquestioned political authority. China’s President Xi Jinping and U.S. President Donald Trump in a…",
-          "source": "consortium_news",
-          "source_name": "Consortium News",
-          "country": "US",
-          "published": "Fri, 22 May 2026 18:00:11 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/trump-si-putin-la-curtea-imparatului-simboluri-in-cele-doua-vizite-la-beijing-si-interesele-lui-xi.html",
-          "headline": "Trump și Putin la curtea Împăratului: Simboluri în cele două vizite la Beijing și interesele lui Xi",
-          "snippet": "În ultima săptămână, cele mai importante drumuri din lume au dus la Beijing. Donald Trump a petrecut două zile în capitala Chinei, unde a primit un tratament „regal”, după cum îl descrie presa de stat chineză, câteva înțelegeri economice modeste și o amenințare voalată pe tema Taiwanului.…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sun, 24 May 2026 11:43:15 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2025/10/profimedia-1041854473.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.058,
-        "zionist": 0.18,
-        "atlanticist": 0.224,
-        "statist": 0.091,
-        "financialized": 0.491
-      },
-      "fp_source_count": 8,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 3,
-        "eastern-europe": 1,
-        "latin-america": 1,
-        "pacific-asia": 2,
-        "global-south": 1
-      },
-      "section": "sports"
-    },
-    {
       "id": "347243398db6",
       "headline": "Oklahoma City Thunder vs. San Antonio Spurs Game 4 preview: Gilgeous-Alexander is controlling this series - NBC Sports",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxNM2Y1dFBKT1RVZVdHdEpXa3ByVG1ZMXBPcjl3aW1Ta3FteFhXVmpnb1JMRzhlMWdSSWgwb3pwOEx1Rkd6OG9GX2x1QXhyOGpGSTFncHhKNTlwMGFpeFkwZVhwSkpBeWtQbmY4RzNBVzlvYUU1VTgwVk5uUkI0cUstUzZYSXktZ2RlempTVHdOMm5obGlGdVUwNTRVUDRNRmlodnpNeDlXMFdNaU41YnhGTHcwUz",
-      "published": "Sun, 24 May 2026 13:30:56 -0700",
+      "published": "Mon, 25 May 2026 00:00:00 GMT",
       "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2FAP_Thunder_Spurs_Basketball_9514_-99572-0.jpg?quality%3D90%26strip%3Dall",
       "video_url": null,
       "has_video": false,
@@ -16670,6 +16451,17 @@
           "published": "Sun, 24 May 2026 13:30:56 -0700",
           "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Fnewspress-collage-76oelvrne-1779654919187.jpg?quality%3D90%26strip%3Dall%261779640564",
           "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQbkdOSlE3Zi1XOUxHLW9aUmE5NmQtT05rb2FiQ29xSk5KUUdMTWFfOW9VZ2trTnpJYU5Pek50UmpERmtpNU5OMUwyRVFTZlV1dldsLXNxY2puN3RlZ0JQbVQ2WUwxQVFUYjU3VHdBRUZGMzJLeXpsdVFOU1U4RXlGRUZrNURCRjlsSVBIaWEyRkpfTFpjYThxS01LZjh1RkVmRGdOZmVBUWE0U3JCVmFNTm9QSTgwRktVMG5LZk9HRQ?oc=5",
+          "headline": "NBA playoffs 2026: Live updates from Thunder-Spurs Game 4 - ESPN",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQbkdOSlE3Zi1XOUxHLW9aUmE5NmQtT05rb2FiQ29xSk5KUUdMTWFfOW9VZ2trTnpJYU5Pek50UmpERmtpNU5OMUwyRVFTZlV1dldsLXNxY2puN3RlZ0JQbVQ2WUwxQVFUYjU3VHdBRUZGMzJLeXpsdVFOU1U4RXlGRUZrNURCRjlsSVBIaWEyRkpfTFpjYThxS01LZjh1RkVmRGdOZmVBUWE0U3JCVmFNTm9QSTgwRktVMG…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Mon, 25 May 2026 00:00:00 GMT",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -16687,6 +16479,248 @@
         "latin-america": 3,
         "west": 4,
         "middle-east": 1
+      },
+      "section": "sports"
+    },
+    {
+      "id": "27d2feb3831a",
+      "headline": "Trump, Xi set for high-stakes talks on trade, Iran, AI in Beijing",
+      "summary": "US President Donald Trump and Chinese President Xi Jinping are expected to discuss Iran, Taiwan, artificial intelligence and nuclear weapons during Trump’s two-day visit to China this week, according to US officials.",
+      "published": "Sun, 24 May 2026 11:43:15 +0000",
+      "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/08/998d79ed-6263-4135-bbaa-ed43164ce5a4_7b7ece56.jpg?itok=OFWHnVJr&v=1778230525",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 12% Left",
+      "blindspot_score": 5,
+      "coverage": {
+        "left_pct": 12,
+        "center_pct": 50,
+        "right_pct": 38,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 8.33,
+      "entity_count": 11,
+      "entity_list": [
+        "Beijing",
+        "Prashad",
+        "Putin",
+        "Readiness",
+        "Signals",
+        "Simboluri",
+        "Taiwan",
+        "Trade",
+        "Trump",
+        "Vijay",
+        "Wednesday"
+      ],
+      "sources": [
+        {
+          "id": "wsj",
+          "name": "The Wall Street Journal",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "News Corp"
+        },
+        {
+          "id": "scmp_business",
+          "name": "SCMP Business",
+          "country": "HK",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "ft",
+          "name": "Financial Times",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Nikkei"
+        },
+        {
+          "id": "nst_my",
+          "name": "New Straits Times",
+          "country": "MY",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "mercopress",
+          "name": "MercoPress",
+          "country": "UY",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "pajhwok_en",
+          "name": "Pajhwok Afghan News",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "consortium_news",
+          "name": "Consortium News",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "far-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "g4media",
+          "name": "G4Media",
+          "country": "RO",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+          "headline": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+          "snippet": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+          "source": "wsj",
+          "source_name": "The Wall Street Journal",
+          "country": "US",
+          "published": "Fri, 24 Jan 2025 19:58:00 -0500",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.scmp.com/plus/news/china/diplomacy/article/3352886/trumps-beijing-trip-iran-war-diplomacy-tech-earnings?utm_source=rss_feed",
+          "headline": "Trump’s Beijing trip, Iran war diplomacy, tech earnings",
+          "snippet": "US President Donald Trump will bring a scaled-back group of chief executive officers with him on a trip to Beijing next week, reflecting limited expectations for a summit that may be overshadowed by the war on Iran. The White House considered inviting about a dozen business leaders on the May 14-15…",
+          "source": "scmp_business",
+          "source_name": "SCMP Business",
+          "country": "HK",
+          "published": "Fri, 08 May 2026 09:00:11 +0000",
+          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/08/998d79ed-6263-4135-bbaa-ed43164ce5a4_7b7ece56.jpg?itok=OFWHnVJr&v=1778230525",
+          "video_url": null
+        },
+        {
+          "url": "https://www.ft.com/content/76bdf230-b4a2-439b-bfcc-d604c2610d92",
+          "headline": "Trump embarks on two-day visit to Beijing",
+          "snippet": "Plus, US Treasury secretary visits Tokyo and Starmer attempts reset in the UK after disastrous local election results",
+          "source": "ft",
+          "source_name": "Financial Times",
+          "country": "GB",
+          "published": "Sun, 10 May 2026 17:15:06 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/world/world/2026/05/1436755/trump-confront-xi-over-iran-high-stakes-beijing-talks",
+          "headline": "Trump to confront Xi over Iran in high-stakes Beijing talks",
+          "snippet": "WASHINGTON: US President Donald Trump will press China’s Xi Jinping on Iran when they meet in Beijing in coming days, but their “highly symbolic” superpower summit will focus on easing trade tensions, officials said Sunday.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Mon, 11 May 2026 06:24:36 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/4EC47AE174FAD2D5596D4F66A93214DD_data_0.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://en.mercopress.com/2026/05/11/trade-iran-and-taiwan-dominate-agenda-of-trump-xi-summit-beginning-wednesday-in-beijing?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
+          "headline": "Trade, Iran and Taiwan dominate agenda of Trump-Xi summit beginning Wednesday in Beijing",
+          "snippet": "Trade, Iran and Taiwan dominate agenda of Trump-Xi summit beginning Wednesday in Beijing Monday, May 11th 2026 - 03:55 Full article Trump will attend the official welcome ceremony on Thursday, hold his bilateral meeting with Xi, visit the Temple of Heaven, and attend a state banquet China confirmed…",
+          "source": "mercopress",
+          "source_name": "MercoPress",
+          "country": "UY",
+          "published": "Mon, 11 May 2026 03:55:00 GMT",
+          "image_url": "https://en.mercopress.com/data/cache/noticias/110078/100x80/dtchina.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://pajhwok.com/2026/05/11/trump-xi-set-for-high-stakes-talks-on-trade-iran-ai-in-beijing/",
+          "headline": "Trump, Xi set for high-stakes talks on trade, Iran, AI in Beijing",
+          "snippet": "KABUL (Pajhwok): President Donald Trump and Chinese President Xi Jinping are expected to discuss Iran, Taiwan, artificial intelligence and nuclear weapons during Trump’s two-day visit to China this week, according to officials. Trump is scheduled to arrive in Beijing on Wednesday, ahead of meetings…",
+          "source": "pajhwok_en",
+          "source_name": "Pajhwok Afghan News",
+          "country": "AF",
+          "published": "Mon, 11 May 2026 04:36:11 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://consortiumnews.com/2026/05/22/vijay-prashad-trump-in-beijing-hat-in-hand/",
+          "headline": "Vijay Prashad: Trump in Beijing, Hat in Hand",
+          "snippet": "For the Global South, Xi’s calmness at the summit offered an example of how to engage an unstable imperialist power. The United States remains militarily dangerous, but it no longer possesses unquestioned political authority. China’s President Xi Jinping and U.S. President Donald Trump in a…",
+          "source": "consortium_news",
+          "source_name": "Consortium News",
+          "country": "US",
+          "published": "Fri, 22 May 2026 18:00:11 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.g4media.ro/trump-si-putin-la-curtea-imparatului-simboluri-in-cele-doua-vizite-la-beijing-si-interesele-lui-xi.html",
+          "headline": "Trump și Putin la curtea Împăratului: Simboluri în cele două vizite la Beijing și interesele lui Xi",
+          "snippet": "În ultima săptămână, cele mai importante drumuri din lume au dus la Beijing. Donald Trump a petrecut două zile în capitala Chinei, unde a primit un tratament „regal”, după cum îl descrie presa de stat chineză, câteva înțelegeri economice modeste și o amenințare voalată pe tema Taiwanului.…",
+          "source": "g4media",
+          "source_name": "G4Media",
+          "country": "RO",
+          "published": "Sun, 24 May 2026 11:43:15 +0000",
+          "image_url": "https://www.g4media.ro//wp-content/uploads/2025/10/profimedia-1041854473.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.058,
+        "zionist": 0.18,
+        "atlanticist": 0.224,
+        "statist": 0.091,
+        "financialized": 0.491
+      },
+      "fp_source_count": 8,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 3,
+        "eastern-europe": 1,
+        "latin-america": 1,
+        "pacific-asia": 2,
+        "global-south": 1
       },
       "section": "sports"
     },

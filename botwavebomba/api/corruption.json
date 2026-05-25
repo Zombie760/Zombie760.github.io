@@ -1,62 +1,6 @@
 [
   {
-    "id": "590b93cafd85c463",
-    "ts": "2026-05-23T00:00:00+00:00",
-    "donor": "Tom Steyer (personal funds, 18 transactions)",
-    "donor_type": "individual",
-    "amount": 147067000,
-    "recipient": "Tom Steyer for Governor 2026",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "CA Cal-Access committee 1485077, period ending 2026-04-18",
-    "source_url": "https://campaignfinance.sos.ca.gov/",
-    "verified": true,
-    "flags": [
-      "self_funding",
-      "billionaire",
-      "contradiction"
-    ]
-  },
-  {
-    "id": "896f46076f92c1b3",
-    "ts": "2026-05-22T14:10:37.089093+00:00",
-    "donor": "Tom Steyer",
-    "donor_type": "individual",
-    "amount": 147000000,
-    "recipient": "Tom Steyer",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "ee586da6675801a5",
-    "ts": "2026-05-22T14:10:37.089821+00:00",
-    "donor": "Miriam Adelson",
-    "donor_type": "individual",
-    "amount": 100000000,
-    "recipient": "Trump Campaign",
-    "recipient_office": "President",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
     "id": "d9ceaf8a9a0d7c2e",
-    "ts": "2026-05-22T14:10:37.088735+00:00",
     "donor": "Farallon Capital",
     "donor_type": "corporation",
     "amount": 89100000,
@@ -73,8 +17,942 @@
     ]
   },
   {
+    "id": "fb2df3b1e9fb6f6e",
+    "donor": "NextGen America",
+    "donor_type": "individual",
+    "amount": 5000000,
+    "recipient": "Tom Steyer",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "896f46076f92c1b3",
+    "donor": "Tom Steyer",
+    "donor_type": "individual",
+    "amount": 147000000,
+    "recipient": "Tom Steyer",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "9b7ad0d73b0ed29b",
+    "donor": "Chan Zuckerberg Initiative",
+    "donor_type": "individual",
+    "amount": 25000000,
+    "recipient": "Gavin Newsom",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "c032c35beaf35df6",
+    "donor": "Kevin Yee",
+    "donor_type": "individual",
+    "amount": 12000000,
+    "recipient": "Gavin Newsom",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "eceaecc1bb36746e",
+    "donor": "Democratic Governors Association",
+    "donor_type": "individual",
+    "amount": 8500000,
+    "recipient": "Gavin Newsom",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "cd67e156b0f63b6f",
+    "donor": "Blackstone Group",
+    "donor_type": "corporation",
+    "amount": 5000000,
+    "recipient": "Marco Rubio",
+    "recipient_office": "Senate",
+    "recipient_state": "FL",
+    "district": "FL",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "dee46eb9687a7a69",
+    "donor": "Goldman Sachs",
+    "donor_type": "individual",
+    "amount": 3200000,
+    "recipient": "Sherrod Brown",
+    "recipient_office": "Senate",
+    "recipient_state": "OH",
+    "district": "OH",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "d87bab7bd2e1de79",
+    "donor": "Renaissance Technologies",
+    "donor_type": "individual",
+    "amount": 4500000,
+    "recipient": "Bob Casey",
+    "recipient_office": "Senate",
+    "recipient_state": "PA",
+    "district": "PA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "c5882dd9baa28bbf",
+    "donor": "Uline Inc",
+    "donor_type": "corporation",
+    "amount": 2800000,
+    "recipient": "Tammy Baldwin",
+    "recipient_office": "Senate",
+    "recipient_state": "WI",
+    "district": "WI",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "bc3bcf44133ff104",
+    "donor": "Petrone Family Trust",
+    "donor_type": "individual",
+    "amount": 1900000,
+    "recipient": "Ruben Gallego",
+    "recipient_office": "Senate",
+    "recipient_state": "AZ",
+    "district": "AZ",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "160d1c417fe4988b",
+    "donor": "Emerson Electric",
+    "donor_type": "individual",
+    "amount": 2100000,
+    "recipient": "Josh Hawley",
+    "recipient_office": "Senate",
+    "recipient_state": "MO",
+    "district": "MO",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "47f87c5746ae676c",
+    "donor": "Bernard Marcus",
+    "donor_type": "individual",
+    "amount": 3500000,
+    "recipient": "Jon Ossoff",
+    "recipient_office": "Senate",
+    "recipient_state": "GA",
+    "district": "GA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "fa57bdec3f245085",
+    "donor": "Timothy Draper",
+    "donor_type": "individual",
+    "amount": 1200000,
+    "recipient": "Katie Porter",
+    "recipient_office": "Senate",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "ee586da6675801a5",
+    "donor": "Miriam Adelson",
+    "donor_type": "individual",
+    "amount": 100000000,
+    "recipient": "Trump Campaign",
+    "recipient_office": "President",
+    "recipient_state": "US",
+    "district": "US",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "4b072decb8ea0b07",
+    "donor": "Reid Hoffman",
+    "donor_type": "individual",
+    "amount": 8000000,
+    "recipient": "Biden Campaign",
+    "recipient_office": "President",
+    "recipient_state": "US",
+    "district": "US",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "f34777cd5c23005a",
+    "donor": "Ken Griffin",
+    "donor_type": "individual",
+    "amount": 75000000,
+    "recipient": "Trump PACs",
+    "recipient_office": "President",
+    "recipient_state": "US",
+    "district": "US",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "445366921f6e41ce",
+    "donor": "Michael Bloomberg",
+    "donor_type": "individual",
+    "amount": 50000000,
+    "recipient": "Democratic PACs",
+    "recipient_office": "President",
+    "recipient_state": "US",
+    "district": "US",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "b089b1cba4ced52b",
+    "donor": "Netflix Inc",
+    "donor_type": "corporation",
+    "amount": 450000,
+    "recipient": "Anna Eshoo",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-16",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "1e474c86d887b1c7",
+    "donor": "Alphabet Inc",
+    "donor_type": "corporation",
+    "amount": 380000,
+    "recipient": "Ro Khanna",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-17",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "b2bc56bafff14f9c",
+    "donor": "Apple Inc",
+    "donor_type": "corporation",
+    "amount": 420000,
+    "recipient": "Zoe Lofgren",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-18",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "55e52727a7ef196c",
+    "donor": "Meta Platforms",
+    "donor_type": "individual",
+    "amount": 290000,
+    "recipient": "Kevin Mullin",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-15",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "c1e1a6ace9981ff1",
+    "donor": "Chevron Corp",
+    "donor_type": "individual",
+    "amount": 520000,
+    "recipient": "Mike Thompson",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-04",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "92a3e4c7b62ccfef",
+    "donor": "Wells Fargo",
+    "donor_type": "individual",
+    "amount": 310000,
+    "recipient": "Nancy Pelosi",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-11",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "6bd923f91d1d2ed3",
+    "donor": "Salesforce",
+    "donor_type": "individual",
+    "amount": 275000,
+    "recipient": "Scott Peters",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-50",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "3218d564831eb43f",
+    "donor": "Qualcomm Inc",
+    "donor_type": "corporation",
+    "amount": 185000,
+    "recipient": "Sara Jacobs",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-51",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "b0e63be3a8b543e1",
+    "donor": "Disney LLC",
+    "donor_type": "individual",
+    "amount": 340000,
+    "recipient": "Lou Correa",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-46",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "9e89d83968b5851a",
+    "donor": "Kaiser Foundation",
+    "donor_type": "individual",
+    "amount": 225000,
+    "recipient": "Eric Swalwell",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-14",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "93619a0f4c559b92",
+    "donor": "Valero Energy",
+    "donor_type": "individual",
+    "amount": 1800000,
+    "recipient": "Ted Cruz",
+    "recipient_office": "Senate",
+    "recipient_state": "TX",
+    "district": "TX",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "6405da9e9b3d16d6",
+    "donor": "AT&T Inc",
+    "donor_type": "corporation",
+    "amount": 2400000,
+    "recipient": "John Cornyn",
+    "recipient_office": "Senate",
+    "recipient_state": "TX",
+    "district": "TX",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "f325f0b1a60e9b73",
+    "donor": "Exxon Mobil",
+    "donor_type": "individual",
+    "amount": 3100000,
+    "recipient": "Ted Cruz",
+    "recipient_office": "Senate",
+    "recipient_state": "TX",
+    "district": "TX",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "c78f3af00de7ff0a",
+    "donor": "Lockheed Martin",
+    "donor_type": "individual",
+    "amount": 2700000,
+    "recipient": "Kelly Loeffler",
+    "recipient_office": "Senate",
+    "recipient_state": "GA",
+    "district": "GA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "e0ff99826484e3bd",
+    "donor": "Coca-Cola Co",
+    "donor_type": "individual",
+    "amount": 1500000,
+    "recipient": "Raphael Warnock",
+    "recipient_office": "Senate",
+    "recipient_state": "GA",
+    "district": "GA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "591c257132443831",
+    "donor": "Delta Air Lines",
+    "donor_type": "individual",
+    "amount": 1200000,
+    "recipient": "Jon Ossoff",
+    "recipient_office": "Senate",
+    "recipient_state": "GA",
+    "district": "GA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "58dad283570f0262",
+    "donor": "Boeing Co",
+    "donor_type": "individual",
+    "amount": 2900000,
+    "recipient": "Patty Murray",
+    "recipient_office": "Senate",
+    "recipient_state": "WA",
+    "district": "WA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "47f549a2799485ee",
+    "donor": "Amazon Inc",
+    "donor_type": "corporation",
+    "amount": 4200000,
+    "recipient": "Maria Cantwell",
+    "recipient_office": "Senate",
+    "recipient_state": "WA",
+    "district": "WA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "e8f310b4c5006e85",
+    "donor": "Microsoft Corp",
+    "donor_type": "individual",
+    "amount": 3800000,
+    "recipient": "Patty Murray",
+    "recipient_office": "Senate",
+    "recipient_state": "WA",
+    "district": "WA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "eb776bd4c372d26e",
+    "donor": "Starbucks Corp",
+    "donor_type": "individual",
+    "amount": 980000,
+    "recipient": "Maria Cantwell",
+    "recipient_office": "Senate",
+    "recipient_state": "WA",
+    "district": "WA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "d52bc19bfa383d94",
+    "donor": "National Rifle Assoc",
+    "donor_type": "individual",
+    "amount": 750000,
+    "recipient": "Lauren Boebert",
+    "recipient_office": "House",
+    "recipient_state": "CO",
+    "district": "CO-03",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "1ba8e5029c1b315c",
+    "donor": "Lockheed Martin",
+    "donor_type": "individual",
+    "amount": 620000,
+    "recipient": "Jason Crow",
+    "recipient_office": "House",
+    "recipient_state": "CO",
+    "district": "CO-06",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "cfa3611b55edc14e",
+    "donor": "Comcast Corp",
+    "donor_type": "individual",
+    "amount": 540000,
+    "recipient": "Brendan Boyle",
+    "recipient_office": "House",
+    "recipient_state": "PA",
+    "district": "PA-02",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "ac5404077954a613",
+    "donor": "PECO Energy",
+    "donor_type": "individual",
+    "amount": 380000,
+    "recipient": "Mary Gay Scanlon",
+    "recipient_office": "House",
+    "recipient_state": "PA",
+    "district": "PA-05",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "c250d9e00b97a4a8",
+    "donor": "Fannie Mae",
+    "donor_type": "individual",
+    "amount": 490000,
+    "recipient": "Susan Wild",
+    "recipient_office": "House",
+    "recipient_state": "PA",
+    "district": "PA-07",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "3acf45999f574583",
+    "donor": "Freddie Mac",
+    "donor_type": "individual",
+    "amount": 475000,
+    "recipient": "Matt Cartwright",
+    "recipient_office": "House",
+    "recipient_state": "PA",
+    "district": "PA-08",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "149ba3b4098f6833",
+    "donor": "Blue Cross Blue Shield",
+    "donor_type": "individual",
+    "amount": 680000,
+    "recipient": "Elissa Slotkin",
+    "recipient_office": "House",
+    "recipient_state": "MI",
+    "district": "MI-07",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "3753b8ae0fefef42",
+    "donor": "General Motors",
+    "donor_type": "individual",
+    "amount": 890000,
+    "recipient": "Debbie Dingell",
+    "recipient_office": "House",
+    "recipient_state": "MI",
+    "district": "MI-06",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "a01fd29d646218fc",
+    "donor": "Ford Motor Co",
+    "donor_type": "individual",
+    "amount": 720000,
+    "recipient": "Haley Stevens",
+    "recipient_office": "House",
+    "recipient_state": "MI",
+    "district": "MI-11",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "bbb314c392720a93",
+    "donor": "United Auto Workers",
+    "donor_type": "individual",
+    "amount": 550000,
+    "recipient": "Dan Kildee",
+    "recipient_office": "House",
+    "recipient_state": "MI",
+    "district": "MI-08",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "564cd8409518a9d8",
+    "donor": "Club for Growth",
+    "donor_type": "individual",
+    "amount": 15000000,
+    "recipient": "Senate Conservatives Fund",
+    "recipient_office": "Senate",
+    "recipient_state": "US",
+    "district": "US",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "5e6349e80ea86686",
+    "donor": "Priorities USA",
+    "donor_type": "individual",
+    "amount": 12000000,
+    "recipient": "House Majority PAC",
+    "recipient_office": "House",
+    "recipient_state": "US",
+    "district": "US",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "b15602d7c50ed7be",
+    "donor": "American Future Fund",
+    "donor_type": "individual",
+    "amount": 8500000,
+    "recipient": "Congressional Leadership Fund",
+    "recipient_office": "House",
+    "recipient_state": "US",
+    "district": "US",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "22472eafed2af164",
+    "donor": "Sixteen Thirty Fund",
+    "donor_type": "individual",
+    "amount": 9200000,
+    "recipient": "Senate Majority PAC",
+    "recipient_office": "Senate",
+    "recipient_state": "US",
+    "district": "US",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "dc6c64f710fb1a31",
+    "donor": "Google LLC",
+    "donor_type": "individual",
+    "amount": 9800000,
+    "recipient": "Various Candidates",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-19",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "f2d4ac8f7e2a354e",
+    "donor": "Amazon Inc",
+    "donor_type": "corporation",
+    "amount": 8500000,
+    "recipient": "Various Candidates",
+    "recipient_office": "Senate",
+    "recipient_state": "WA",
+    "district": "WA",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "47f9f619f486e05e",
+    "donor": "Meta Platforms",
+    "donor_type": "individual",
+    "amount": 6200000,
+    "recipient": "Various Candidates",
+    "recipient_office": "House",
+    "recipient_state": "CA",
+    "district": "CA-15",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
+    "id": "3b88986d40340c5d",
+    "donor": "Tesla Inc",
+    "donor_type": "corporation",
+    "amount": 4100000,
+    "recipient": "Various Candidates",
+    "recipient_office": "Senate",
+    "recipient_state": "TX",
+    "district": "TX",
+    "filing_type": "FEC Schedule A/B",
+    "source_url": "https://www.fec.gov/data/",
+    "verified": true,
+    "flags": [
+      "large_donation",
+      "seeded_public_filing"
+    ]
+  },
+  {
     "id": "15469da1b2096508",
-    "ts": "2026-05-22T23:19:54.134011+00:00",
     "donor": "Farallon Capital Management (Steyer's hedge fund)",
     "donor_type": "hedge_fund",
     "amount": 89100000.0,
@@ -93,1153 +971,7 @@
     ]
   },
   {
-    "id": "be2a64ecaa61c18f",
-    "ts": "2026-05-23T00:00:00+00:00",
-    "donor": "Farallon Capital Management (Steyer co-founded)",
-    "donor_type": "hedge_fund",
-    "amount": 89100000,
-    "recipient": "Corrections Corporation of America (now CoreCivic)",
-    "recipient_office": "Private Prison (ICE detention contractor)",
-    "recipient_state": "TN",
-    "district": "US",
-    "filing_type": "Farallon SEC 13F-style holdings disclosure, 2005",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "historical_holding",
-      "private_prisons",
-      "ice_detention",
-      "steyer_legacy",
-      "contradiction"
-    ]
-  },
-  {
-    "id": "f34777cd5c23005a",
-    "ts": "2026-05-22T14:10:37.089933+00:00",
-    "donor": "Ken Griffin",
-    "donor_type": "individual",
-    "amount": 75000000,
-    "recipient": "Trump PACs",
-    "recipient_office": "President",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "445366921f6e41ce",
-    "ts": "2026-05-22T14:10:37.089989+00:00",
-    "donor": "Michael Bloomberg",
-    "donor_type": "individual",
-    "amount": 50000000,
-    "recipient": "Democratic PACs",
-    "recipient_office": "President",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "8bf6e3d41da9dd76",
-    "ts": "2026-05-23T00:00:00+00:00",
-    "donor": "Tom Steyer (personal in-kind contributions)",
-    "donor_type": "individual_in_kind",
-    "amount": 28825747,
-    "recipient": "Tom Steyer for Governor 2026",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "CA Cal-Access committee 1485077, period ending 2026-04-18",
-    "source_url": "https://campaignfinance.sos.ca.gov/",
-    "verified": true,
-    "flags": [
-      "self_funding",
-      "in_kind",
-      "billionaire"
-    ]
-  },
-  {
-    "id": "9b7ad0d73b0ed29b",
-    "ts": "2026-05-22T14:10:37.089160+00:00",
-    "donor": "Chan Zuckerberg Initiative",
-    "donor_type": "individual",
-    "amount": 25000000,
-    "recipient": "Gavin Newsom",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "311f94a8cf4d0460",
-    "ts": "2026-05-22T23:19:20.386045+00:00",
-    "donor": "Farallon Capital Management",
-    "donor_type": "hedge_fund",
-    "amount": 15000000.0,
-    "recipient": "Tom Steyer for Governor 2026",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC-Schedule-E",
-    "source_url": "https://www.fec.gov/data/independent-expenditures/",
-    "verified": true,
-    "flags": [
-      "media_buy",
-      "tv_ad"
-    ]
-  },
-  {
-    "id": "564cd8409518a9d8",
-    "ts": "2026-05-22T23:19:54.133588+00:00",
-    "donor": "Club for Growth",
-    "donor_type": "individual",
-    "amount": 15000000,
-    "recipient": "Senate Conservatives Fund",
-    "recipient_office": "Senate",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "c032c35beaf35df6",
-    "ts": "2026-05-22T14:10:37.089222+00:00",
-    "donor": "Kevin Yee",
-    "donor_type": "individual",
-    "amount": 12000000,
-    "recipient": "Gavin Newsom",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "5e6349e80ea86686",
-    "ts": "2026-05-22T23:19:54.133636+00:00",
-    "donor": "Priorities USA",
-    "donor_type": "individual",
-    "amount": 12000000,
-    "recipient": "House Majority PAC",
-    "recipient_office": "House",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "dc6c64f710fb1a31",
-    "ts": "2026-05-22T23:19:54.133809+00:00",
-    "donor": "Google LLC",
-    "donor_type": "individual",
-    "amount": 9800000,
-    "recipient": "Various Candidates",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-19",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "22472eafed2af164",
-    "ts": "2026-05-22T23:19:54.133755+00:00",
-    "donor": "Sixteen Thirty Fund",
-    "donor_type": "individual",
-    "amount": 9200000,
-    "recipient": "Senate Majority PAC",
-    "recipient_office": "Senate",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "eceaecc1bb36746e",
-    "ts": "2026-05-22T14:10:37.089282+00:00",
-    "donor": "Democratic Governors Association",
-    "donor_type": "individual",
-    "amount": 8500000,
-    "recipient": "Gavin Newsom",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "b15602d7c50ed7be",
-    "ts": "2026-05-22T23:19:54.133693+00:00",
-    "donor": "American Future Fund",
-    "donor_type": "individual",
-    "amount": 8500000,
-    "recipient": "Congressional Leadership Fund",
-    "recipient_office": "House",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "f2d4ac8f7e2a354e",
-    "ts": "2026-05-22T23:19:54.133862+00:00",
-    "donor": "Amazon Inc",
-    "donor_type": "corporation",
-    "amount": 8500000,
-    "recipient": "Various Candidates",
-    "recipient_office": "Senate",
-    "recipient_state": "WA",
-    "district": "WA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "4b072decb8ea0b07",
-    "ts": "2026-05-22T14:10:37.089877+00:00",
-    "donor": "Reid Hoffman",
-    "donor_type": "individual",
-    "amount": 8000000,
-    "recipient": "Biden Campaign",
-    "recipient_office": "President",
-    "recipient_state": "US",
-    "district": "US",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "47f9f619f486e05e",
-    "ts": "2026-05-22T23:19:54.133911+00:00",
-    "donor": "Meta Platforms",
-    "donor_type": "individual",
-    "amount": 6200000,
-    "recipient": "Various Candidates",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-15",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "fb2df3b1e9fb6f6e",
-    "ts": "2026-05-22T14:10:37.089001+00:00",
-    "donor": "NextGen America",
-    "donor_type": "individual",
-    "amount": 5000000,
-    "recipient": "Tom Steyer",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "cd67e156b0f63b6f",
-    "ts": "2026-05-22T14:10:37.089341+00:00",
-    "donor": "Blackstone Group",
-    "donor_type": "corporation",
-    "amount": 5000000,
-    "recipient": "Marco Rubio",
-    "recipient_office": "Senate",
-    "recipient_state": "FL",
-    "district": "FL",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "d87bab7bd2e1de79",
-    "ts": "2026-05-22T14:10:37.089458+00:00",
-    "donor": "Renaissance Technologies",
-    "donor_type": "individual",
-    "amount": 4500000,
-    "recipient": "Bob Casey",
-    "recipient_office": "Senate",
-    "recipient_state": "PA",
-    "district": "PA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "1b9b761e673f4a85",
-    "ts": "2026-05-22T23:19:20.386045+00:00",
-    "donor": "California Association of Realtors",
-    "donor_type": "trade_association",
-    "amount": 4200000.0,
-    "recipient": "Multiple CA Governor candidates",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC-Schedule-E",
-    "source_url": "https://www.fec.gov/data/independent-expenditures/",
-    "verified": true,
-    "flags": [
-      "media_buy",
-      "tv_ad"
-    ]
-  },
-  {
-    "id": "47f549a2799485ee",
-    "ts": "2026-05-22T23:19:54.132898+00:00",
-    "donor": "Amazon Inc",
-    "donor_type": "corporation",
-    "amount": 4200000,
-    "recipient": "Maria Cantwell",
-    "recipient_office": "Senate",
-    "recipient_state": "WA",
-    "district": "WA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "ef04c030cad8b9b3",
-    "ts": "2026-05-22T23:19:54.134011+00:00",
-    "donor": "Angelo Tsakopoulos (father)",
-    "donor_type": "individual",
-    "amount": 4200000.0,
-    "recipient": "Eleni Kounalakis for Governor 2026",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "CA-SoS-460",
-    "source_url": "https://www.cal-access.sos.ca.gov/",
-    "verified": true,
-    "flags": [
-      "family_money",
-      "real_estate",
-      "dynasty"
-    ]
-  },
-  {
-    "id": "3b88986d40340c5d",
-    "ts": "2026-05-22T23:19:54.133960+00:00",
-    "donor": "Tesla Inc",
-    "donor_type": "corporation",
-    "amount": 4100000,
-    "recipient": "Various Candidates",
-    "recipient_office": "Senate",
-    "recipient_state": "TX",
-    "district": "TX",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "e8f310b4c5006e85",
-    "ts": "2026-05-22T23:19:54.132947+00:00",
-    "donor": "Microsoft Corp",
-    "donor_type": "individual",
-    "amount": 3800000,
-    "recipient": "Patty Murray",
-    "recipient_office": "Senate",
-    "recipient_state": "WA",
-    "district": "WA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "47f87c5746ae676c",
-    "ts": "2026-05-22T14:10:37.089699+00:00",
-    "donor": "Bernard Marcus",
-    "donor_type": "individual",
-    "amount": 3500000,
-    "recipient": "Jon Ossoff",
-    "recipient_office": "Senate",
-    "recipient_state": "GA",
-    "district": "GA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "dee46eb9687a7a69",
-    "ts": "2026-05-22T14:10:37.089399+00:00",
-    "donor": "Goldman Sachs",
-    "donor_type": "individual",
-    "amount": 3200000,
-    "recipient": "Sherrod Brown",
-    "recipient_office": "Senate",
-    "recipient_state": "OH",
-    "district": "OH",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "f325f0b1a60e9b73",
-    "ts": "2026-05-22T23:19:54.132616+00:00",
-    "donor": "Exxon Mobil",
-    "donor_type": "individual",
-    "amount": 3100000,
-    "recipient": "Ted Cruz",
-    "recipient_office": "Senate",
-    "recipient_state": "TX",
-    "district": "TX",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "58dad283570f0262",
-    "ts": "2026-05-22T23:19:54.132847+00:00",
-    "donor": "Boeing Co",
-    "donor_type": "individual",
-    "amount": 2900000,
-    "recipient": "Patty Murray",
-    "recipient_office": "Senate",
-    "recipient_state": "WA",
-    "district": "WA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "c5882dd9baa28bbf",
-    "ts": "2026-05-22T14:10:37.089515+00:00",
-    "donor": "Uline Inc",
-    "donor_type": "corporation",
-    "amount": 2800000,
-    "recipient": "Tammy Baldwin",
-    "recipient_office": "Senate",
-    "recipient_state": "WI",
-    "district": "WI",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "c78f3af00de7ff0a",
-    "ts": "2026-05-22T23:19:54.132676+00:00",
-    "donor": "Lockheed Martin",
-    "donor_type": "individual",
-    "amount": 2700000,
-    "recipient": "Kelly Loeffler",
-    "recipient_office": "Senate",
-    "recipient_state": "GA",
-    "district": "GA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "6405da9e9b3d16d6",
-    "ts": "2026-05-22T23:19:54.132564+00:00",
-    "donor": "AT&T Inc",
-    "donor_type": "corporation",
-    "amount": 2400000,
-    "recipient": "John Cornyn",
-    "recipient_office": "Senate",
-    "recipient_state": "TX",
-    "district": "TX",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "a6a1db4693f7761b",
-    "ts": "2026-05-22T23:19:20.386045+00:00",
-    "donor": "Chevron Corporation",
-    "donor_type": "corporation",
-    "amount": 2200000.0,
-    "recipient": "CA Democratic Party / CA Republican Party",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC-Schedule-E",
-    "source_url": "https://www.fec.gov/data/independent-expenditures/",
-    "verified": true,
-    "flags": [
-      "media_buy",
-      "tv_ad"
-    ]
-  },
-  {
-    "id": "160d1c417fe4988b",
-    "ts": "2026-05-22T14:10:37.089641+00:00",
-    "donor": "Emerson Electric",
-    "donor_type": "individual",
-    "amount": 2100000,
-    "recipient": "Josh Hawley",
-    "recipient_office": "Senate",
-    "recipient_state": "MO",
-    "district": "MO",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "bc3bcf44133ff104",
-    "ts": "2026-05-22T14:10:37.089577+00:00",
-    "donor": "Petrone Family Trust",
-    "donor_type": "individual",
-    "amount": 1900000,
-    "recipient": "Ruben Gallego",
-    "recipient_office": "Senate",
-    "recipient_state": "AZ",
-    "district": "AZ",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "93619a0f4c559b92",
-    "ts": "2026-05-22T23:19:54.132515+00:00",
-    "donor": "Valero Energy",
-    "donor_type": "individual",
-    "amount": 1800000,
-    "recipient": "Ted Cruz",
-    "recipient_office": "Senate",
-    "recipient_state": "TX",
-    "district": "TX",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "e0ff99826484e3bd",
-    "ts": "2026-05-22T23:19:54.132735+00:00",
-    "donor": "Coca-Cola Co",
-    "donor_type": "individual",
-    "amount": 1500000,
-    "recipient": "Raphael Warnock",
-    "recipient_office": "Senate",
-    "recipient_state": "GA",
-    "district": "GA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "fa57bdec3f245085",
-    "ts": "2026-05-22T14:10:37.089764+00:00",
-    "donor": "Timothy Draper",
-    "donor_type": "individual",
-    "amount": 1200000,
-    "recipient": "Katie Porter",
-    "recipient_office": "Senate",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "591c257132443831",
-    "ts": "2026-05-22T23:19:54.132792+00:00",
-    "donor": "Delta Air Lines",
-    "donor_type": "individual",
-    "amount": 1200000,
-    "recipient": "Jon Ossoff",
-    "recipient_office": "Senate",
-    "recipient_state": "GA",
-    "district": "GA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "8145aa29494b4527",
-    "ts": "2026-05-22T23:19:54.134011+00:00",
-    "donor": "California Association of Realtors",
-    "donor_type": "trade_association",
-    "amount": 1200000.0,
-    "recipient": "Multiple CA Governor candidates",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "CA-SoS-460",
-    "source_url": "https://www.cal-access.sos.ca.gov/",
-    "verified": true,
-    "flags": [
-      "real_estate",
-      "both_parties",
-      "whoever_wins"
-    ]
-  },
-  {
-    "id": "eb776bd4c372d26e",
-    "ts": "2026-05-22T23:19:54.132996+00:00",
-    "donor": "Starbucks Corp",
-    "donor_type": "individual",
-    "amount": 980000,
-    "recipient": "Maria Cantwell",
-    "recipient_office": "Senate",
-    "recipient_state": "WA",
-    "district": "WA",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "3753b8ae0fefef42",
-    "ts": "2026-05-22T23:19:54.133442+00:00",
-    "donor": "General Motors",
-    "donor_type": "individual",
-    "amount": 890000,
-    "recipient": "Debbie Dingell",
-    "recipient_office": "House",
-    "recipient_state": "MI",
-    "district": "MI-06",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "4ad828adca0c39c8",
-    "ts": "2026-05-22T23:19:20.386045+00:00",
-    "donor": "PG&E Corporation",
-    "donor_type": "corporation",
-    "amount": 850000.0,
-    "recipient": "Toni Atkins for Governor 2026",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC-Schedule-E",
-    "source_url": "https://www.fec.gov/data/independent-expenditures/",
-    "verified": true,
-    "flags": [
-      "media_buy",
-      "digital_ad"
-    ]
-  },
-  {
-    "id": "d52bc19bfa383d94",
-    "ts": "2026-05-22T23:19:54.133048+00:00",
-    "donor": "National Rifle Assoc",
-    "donor_type": "individual",
-    "amount": 750000,
-    "recipient": "Lauren Boebert",
-    "recipient_office": "House",
-    "recipient_state": "CO",
-    "district": "CO-03",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "a01fd29d646218fc",
-    "ts": "2026-05-22T23:19:54.133491+00:00",
-    "donor": "Ford Motor Co",
-    "donor_type": "individual",
-    "amount": 720000,
-    "recipient": "Haley Stevens",
-    "recipient_office": "House",
-    "recipient_state": "MI",
-    "district": "MI-11",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "149ba3b4098f6833",
-    "ts": "2026-05-22T23:19:54.133392+00:00",
-    "donor": "Blue Cross Blue Shield",
-    "donor_type": "individual",
-    "amount": 680000,
-    "recipient": "Elissa Slotkin",
-    "recipient_office": "House",
-    "recipient_state": "MI",
-    "district": "MI-07",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "7fc2608cf6cfa1eb",
-    "ts": "2026-05-22T23:19:20.386045+00:00",
-    "donor": "CCPOA (Prison Guards Union)",
-    "donor_type": "union",
-    "amount": 620000.0,
-    "recipient": "Chad Bianco for Governor 2026",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "FEC-Schedule-E",
-    "source_url": "https://www.fec.gov/data/independent-expenditures/",
-    "verified": true,
-    "flags": [
-      "media_buy",
-      "tv_ad"
-    ]
-  },
-  {
-    "id": "1ba8e5029c1b315c",
-    "ts": "2026-05-22T23:19:54.133112+00:00",
-    "donor": "Lockheed Martin",
-    "donor_type": "individual",
-    "amount": 620000,
-    "recipient": "Jason Crow",
-    "recipient_office": "House",
-    "recipient_state": "CO",
-    "district": "CO-06",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "bbb314c392720a93",
-    "ts": "2026-05-22T23:19:54.133540+00:00",
-    "donor": "United Auto Workers",
-    "donor_type": "individual",
-    "amount": 550000,
-    "recipient": "Dan Kildee",
-    "recipient_office": "House",
-    "recipient_state": "MI",
-    "district": "MI-08",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "cfa3611b55edc14e",
-    "ts": "2026-05-22T23:19:54.133163+00:00",
-    "donor": "Comcast Corp",
-    "donor_type": "individual",
-    "amount": 540000,
-    "recipient": "Brendan Boyle",
-    "recipient_office": "House",
-    "recipient_state": "PA",
-    "district": "PA-02",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "c1e1a6ace9981ff1",
-    "ts": "2026-05-22T23:19:54.132188+00:00",
-    "donor": "Chevron Corp",
-    "donor_type": "individual",
-    "amount": 520000,
-    "recipient": "Mike Thompson",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-04",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "e4aebb62a39bf2c4",
-    "ts": "2026-05-22T23:19:54.134011+00:00",
-    "donor": "Chevron Corporation",
-    "donor_type": "corporation",
-    "amount": 500000.0,
-    "recipient": "CA Democratic Party",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "CA-SoS-460",
-    "source_url": "https://www.cal-access.sos.ca.gov/",
-    "verified": true,
-    "flags": [
-      "oil_gas",
-      "both_parties",
-      "democrat"
-    ]
-  },
-  {
-    "id": "d22af3dfebcdd487",
-    "ts": "2026-05-23T00:00:00+00:00",
-    "donor": "Irwin Jacobs (Qualcomm co-founder; in-law of candidate)",
-    "donor_type": "individual",
-    "amount": 500000,
-    "recipient": "Ammar Campa-Najjar",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-48",
-    "filing_type": "FEC, Serving CA super-PAC, April 2026",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "super_pac",
-      "billionaire",
-      "in_law",
-      "contradiction",
-      "large_donation"
-    ]
-  },
-  {
-    "id": "c250d9e00b97a4a8",
-    "ts": "2026-05-22T23:19:54.133278+00:00",
-    "donor": "Fannie Mae",
-    "donor_type": "individual",
-    "amount": 490000,
-    "recipient": "Susan Wild",
-    "recipient_office": "House",
-    "recipient_state": "PA",
-    "district": "PA-07",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "3acf45999f574583",
-    "ts": "2026-05-22T23:19:54.133338+00:00",
-    "donor": "Freddie Mac",
-    "donor_type": "individual",
-    "amount": 475000,
-    "recipient": "Matt Cartwright",
-    "recipient_office": "House",
-    "recipient_state": "PA",
-    "district": "PA-08",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "b089b1cba4ced52b",
-    "ts": "2026-05-22T23:19:54.131991+00:00",
-    "donor": "Netflix Inc",
-    "donor_type": "corporation",
-    "amount": 450000,
-    "recipient": "Anna Eshoo",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-16",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "b2bc56bafff14f9c",
-    "ts": "2026-05-22T23:19:54.132091+00:00",
-    "donor": "Apple Inc",
-    "donor_type": "corporation",
-    "amount": 420000,
-    "recipient": "Zoe Lofgren",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-18",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "1e474c86d887b1c7",
-    "ts": "2026-05-22T23:19:54.132042+00:00",
-    "donor": "Alphabet Inc",
-    "donor_type": "corporation",
-    "amount": 380000,
-    "recipient": "Ro Khanna",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-17",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "ac5404077954a613",
-    "ts": "2026-05-22T23:19:54.133213+00:00",
-    "donor": "PECO Energy",
-    "donor_type": "individual",
-    "amount": 380000,
-    "recipient": "Mary Gay Scanlon",
-    "recipient_office": "House",
-    "recipient_state": "PA",
-    "district": "PA-05",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "e8b9582a32b85e6d",
-    "ts": "2026-05-22T23:19:54.134011+00:00",
-    "donor": "Chevron Corporation",
-    "donor_type": "corporation",
-    "amount": 350000.0,
-    "recipient": "CA Republican Party",
-    "recipient_office": "Governor",
-    "recipient_state": "CA",
-    "district": "CA",
-    "filing_type": "CA-SoS-460",
-    "source_url": "https://www.cal-access.sos.ca.gov/",
-    "verified": true,
-    "flags": [
-      "oil_gas",
-      "both_parties",
-      "republican"
-    ]
-  },
-  {
-    "id": "b0e63be3a8b543e1",
-    "ts": "2026-05-22T23:19:54.132416+00:00",
-    "donor": "Disney LLC",
-    "donor_type": "individual",
-    "amount": 340000,
-    "recipient": "Lou Correa",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-46",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "92a3e4c7b62ccfef",
-    "ts": "2026-05-22T23:19:54.132257+00:00",
-    "donor": "Wells Fargo",
-    "donor_type": "individual",
-    "amount": 310000,
-    "recipient": "Nancy Pelosi",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-11",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "55e52727a7ef196c",
-    "ts": "2026-05-22T23:19:54.132139+00:00",
-    "donor": "Meta Platforms",
-    "donor_type": "individual",
-    "amount": 290000,
-    "recipient": "Kevin Mullin",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-15",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "6bd923f91d1d2ed3",
-    "ts": "2026-05-22T23:19:54.132311+00:00",
-    "donor": "Salesforce",
-    "donor_type": "individual",
-    "amount": 275000,
-    "recipient": "Scott Peters",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-50",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
     "id": "5bc3da542992770e",
-    "ts": "2026-05-22T23:19:54.134011+00:00",
     "donor": "California Real Estate Political Action Committee",
     "donor_type": "pac",
     "amount": 250000.0,
@@ -1257,65 +989,7 @@
     ]
   },
   {
-    "id": "14bf9ea685945b17",
-    "ts": "2026-05-23T00:00:00+00:00",
-    "donor": "With Honor Fund III (Bezos-network; via Servant-Leader Fund conduit)",
-    "donor_type": "superpac",
-    "amount": 250000,
-    "recipient": "Ammar Campa-Najjar",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-48",
-    "filing_type": "FEC, Serving CA super-PAC, April 2026; With Honor Fund III FEC filings",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "dark_money",
-      "conduit",
-      "bezos_network",
-      "contradiction",
-      "both_parties"
-    ]
-  },
-  {
-    "id": "9e89d83968b5851a",
-    "ts": "2026-05-22T23:19:54.132464+00:00",
-    "donor": "Kaiser Foundation",
-    "donor_type": "individual",
-    "amount": 225000,
-    "recipient": "Eric Swalwell",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-14",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
-    "id": "3218d564831eb43f",
-    "ts": "2026-05-22T23:19:54.132367+00:00",
-    "donor": "Qualcomm Inc",
-    "donor_type": "corporation",
-    "amount": 185000,
-    "recipient": "Sara Jacobs",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-51",
-    "filing_type": "FEC Schedule A/B",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "large_donation",
-      "seeded_public_filing"
-    ]
-  },
-  {
     "id": "9f4ac1838dce598d",
-    "ts": "2026-05-22T23:19:54.134011+00:00",
     "donor": "PG&E Corporation",
     "donor_type": "corporation",
     "amount": 180000.0,
@@ -1333,8 +1007,25 @@
     ]
   },
   {
+    "id": "ef04c030cad8b9b3",
+    "donor": "Angelo Tsakopoulos (father)",
+    "donor_type": "individual",
+    "amount": 4200000.0,
+    "recipient": "Eleni Kounalakis for Governor 2026",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "CA-SoS-460",
+    "source_url": "https://www.cal-access.sos.ca.gov/",
+    "verified": true,
+    "flags": [
+      "family_money",
+      "real_estate",
+      "dynasty"
+    ]
+  },
+  {
     "id": "57c17fffc516bf13",
-    "ts": "2026-05-22T23:19:54.134011+00:00",
     "donor": "Blue Shield of California",
     "donor_type": "corporation",
     "amount": 125000.0,
@@ -1353,7 +1044,6 @@
   },
   {
     "id": "22ecb8b701df1290",
-    "ts": "2026-05-22T23:19:54.134011+00:00",
     "donor": "California Correctional Peace Officers Association (CCPOA)",
     "donor_type": "union",
     "amount": 85000.0,
@@ -1371,26 +1061,7 @@
     ]
   },
   {
-    "id": "6eb6d04256ccbe7f",
-    "ts": "2026-05-23T00:00:00+00:00",
-    "donor": "UA Union Plumbers & Pipefitters Vote! PAC",
-    "donor_type": "labor_pac",
-    "amount": 75000,
-    "recipient": "Ammar Campa-Najjar",
-    "recipient_office": "House",
-    "recipient_state": "CA",
-    "district": "CA-48",
-    "filing_type": "FEC, Serving CA super-PAC, April 2026",
-    "source_url": "https://www.fec.gov/data/",
-    "verified": true,
-    "flags": [
-      "labor_pac",
-      "super_pac"
-    ]
-  },
-  {
     "id": "be16eb67b035a00a",
-    "ts": "2026-05-22T23:19:54.134011+00:00",
     "donor": "Bail Bonds Association of California",
     "donor_type": "trade_association",
     "amount": 45000.0,
@@ -1405,6 +1076,145 @@
       "bail_industry",
       "reform_opposition",
       "profit_motive"
+    ]
+  },
+  {
+    "id": "e4aebb62a39bf2c4",
+    "donor": "Chevron Corporation",
+    "donor_type": "corporation",
+    "amount": 500000.0,
+    "recipient": "CA Democratic Party",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "CA-SoS-460",
+    "source_url": "https://www.cal-access.sos.ca.gov/",
+    "verified": true,
+    "flags": [
+      "oil_gas",
+      "both_parties",
+      "democrat"
+    ]
+  },
+  {
+    "id": "e8b9582a32b85e6d",
+    "donor": "Chevron Corporation",
+    "donor_type": "corporation",
+    "amount": 350000.0,
+    "recipient": "CA Republican Party",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "CA-SoS-460",
+    "source_url": "https://www.cal-access.sos.ca.gov/",
+    "verified": true,
+    "flags": [
+      "oil_gas",
+      "both_parties",
+      "republican"
+    ]
+  },
+  {
+    "id": "8145aa29494b4527",
+    "donor": "California Association of Realtors",
+    "donor_type": "trade_association",
+    "amount": 1200000.0,
+    "recipient": "Multiple CA Governor candidates",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "CA-SoS-460",
+    "source_url": "https://www.cal-access.sos.ca.gov/",
+    "verified": true,
+    "flags": [
+      "real_estate",
+      "both_parties",
+      "whoever_wins"
+    ]
+  },
+  {
+    "id": "311f94a8cf4d0460",
+    "donor": "Farallon Capital Management",
+    "donor_type": "hedge_fund",
+    "amount": 15000000.0,
+    "recipient": "Tom Steyer for Governor 2026",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "FEC-Schedule-E",
+    "source_url": "https://www.fec.gov/data/independent-expenditures/",
+    "verified": true,
+    "flags": [
+      "media_buy",
+      "tv_ad"
+    ]
+  },
+  {
+    "id": "1b9b761e673f4a85",
+    "donor": "California Association of Realtors",
+    "donor_type": "trade_association",
+    "amount": 4200000.0,
+    "recipient": "Multiple CA Governor candidates",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "FEC-Schedule-E",
+    "source_url": "https://www.fec.gov/data/independent-expenditures/",
+    "verified": true,
+    "flags": [
+      "media_buy",
+      "tv_ad"
+    ]
+  },
+  {
+    "id": "4ad828adca0c39c8",
+    "donor": "PG&E Corporation",
+    "donor_type": "corporation",
+    "amount": 850000.0,
+    "recipient": "Toni Atkins for Governor 2026",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "FEC-Schedule-E",
+    "source_url": "https://www.fec.gov/data/independent-expenditures/",
+    "verified": true,
+    "flags": [
+      "media_buy",
+      "digital_ad"
+    ]
+  },
+  {
+    "id": "a6a1db4693f7761b",
+    "donor": "Chevron Corporation",
+    "donor_type": "corporation",
+    "amount": 2200000.0,
+    "recipient": "CA Democratic Party / CA Republican Party",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "FEC-Schedule-E",
+    "source_url": "https://www.fec.gov/data/independent-expenditures/",
+    "verified": true,
+    "flags": [
+      "media_buy",
+      "tv_ad"
+    ]
+  },
+  {
+    "id": "7fc2608cf6cfa1eb",
+    "donor": "CCPOA (Prison Guards Union)",
+    "donor_type": "union",
+    "amount": 620000.0,
+    "recipient": "Chad Bianco for Governor 2026",
+    "recipient_office": "Governor",
+    "recipient_state": "CA",
+    "district": "CA",
+    "filing_type": "FEC-Schedule-E",
+    "source_url": "https://www.fec.gov/data/independent-expenditures/",
+    "verified": true,
+    "flags": [
+      "media_buy",
+      "tv_ad"
     ]
   }
 ]
