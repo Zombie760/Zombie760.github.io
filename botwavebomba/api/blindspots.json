@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T13:14:14.518675+00:00",
+  "generated_at": "2026-05-25T13:30:10.723358+00:00",
   "count": 64,
   "stories": [
     {
@@ -1862,14 +1862,14 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 60,
-        "right_pct": 40,
+        "center_pct": 62,
+        "right_pct": 38,
         "state_count": 0,
         "dominant": "center",
-        "dominant_pct": 60
+        "dominant_pct": 62
       },
-      "bias_variance": 2.27,
-      "entity_count": 38,
+      "bias_variance": 2.24,
+      "entity_count": 41,
       "entity_list": [
         "ANTARA",
         "Abraham",
@@ -1894,6 +1894,7 @@
         "Korea",
         "Kuwait",
         "Meloni",
+        "Middle",
         "Ministry",
         "Nassr",
         "Pakistan",
@@ -1901,6 +1902,7 @@
         "Prepares",
         "Program",
         "Project",
+        "Qatar",
         "Qiddiya",
         "Republican",
         "Saudi",
@@ -1908,6 +1910,7 @@
         "South",
         "Supports",
         "Transfer",
+        "Trump",
         "Welcome"
       ],
       "sources": [
@@ -2090,6 +2093,18 @@
           "factuality": "mixed",
           "primary_vs_launder": "primary",
           "parent_company": ""
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "unknown (launderer)"
         }
       ],
       "articles": [
@@ -2400,23 +2415,34 @@
           "published": "Mon, 25 May 2026 11:26:12 +0000",
           "image_url": "https://www.middleeastmonitor.com/wp-content/uploads/2026/01/AA-20260106-40177562-40177560-ISRAELI_FOREIGN_MINISTER_ARRIVES_IN_SOMALILAND_AFTER_RECOGNITION.jpg",
           "video_url": null
+        },
+        {
+          "url": "https://www.france24.com/en/middle-east/20260525-middle-east-war-live-rubio-says-iran-deal-still-possible-monday",
+          "headline": "Middle East war live: Trump urges Saudi Arabia, Qatar to sign Abraham Accords in Iran peace push",
+          "snippet": "US President Donald Trump on Monday urged Muslim-majority countries including Saudi Arabia, Qatar and Pakistan to normalise ties with Israel, saying it “should be mandatory” for them to join the Abraham Accords as part of efforts to end the Iran conflict. US Secretary of State Marco Rubio earlier…",
+          "source": "france24",
+          "source_name": "France 24",
+          "country": "FR",
+          "published": "Mon, 25 May 2026 03:41:46 GMT",
+          "image_url": "https://s.france24.com/media/display/deb8a042-580d-11f1-a972-005056a90284/w:1024/p:16x9/AP26144654269716.jpg",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.211,
+        "interventionist": 0.217,
         "zionist": 0.3,
-        "atlanticist": 0.408,
-        "statist": 0.215,
-        "financialized": 0.474
+        "atlanticist": 0.414,
+        "statist": 0.234,
+        "financialized": 0.455
       },
-      "fp_source_count": 14,
+      "fp_source_count": 15,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
         "africa": 3,
         "pacific-asia": 2,
-        "west": 4,
+        "west": 5,
         "middle-east": 4,
         "global-south": 2
       },
@@ -2946,7 +2972,7 @@
       "id": "4c9ac528d847",
       "headline": "Middle East crisis live: Trump claims ‘I don’t make bad deals’ as questions remain over negotiation progress - The Guardian",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb2VlN0MwT3lsRXRFVjFBLUZxaGRtZ1c2V3NLc0F5U3JCUWJrcGVtcWU3WDJVZ2F1SlR1bDNRSDFpd2UzRjJJdTh6eEtNdERNQTFyX0FGT3h0eHNja3BDc3NyWUNGU0Jjc09ISVpqeXB6Y3d3clJMX3VsdlZrUEZzQ1BrTWhCdVltZjhfOUN1aW9OVXhJNUpGaWtFZG5jMW9LYUxQLWM1OU5RbFU?oc=5\" targ",
-      "published": "Mon, 25 May 2026 10:22:58 GMT",
+      "published": "Mon, 25 May 2026 13:06:10 GMT",
       "image_url": "https://assets.nst.com.my/images/listing-featured/686A3AE719FDC445F6D918E51AD2AE49_data.jpg",
       "video_url": null,
       "has_video": false,
@@ -2962,12 +2988,13 @@
         "dominant_pct": 60
       },
       "bias_variance": 3.8,
-      "entity_count": 8,
+      "entity_count": 9,
       "entity_list": [
         "Guardian",
         "Independent",
         "Middle",
         "Powers",
+        "Shock",
         "States",
         "Summit",
         "Trump",
@@ -3270,6 +3297,17 @@
           "country": "GB",
           "published": "Mon, 25 May 2026 10:22:58 GMT",
           "image_url": "https://i.guim.co.uk/img/media/434f15713c335a0ff592762185b8da8bf456b8a4/454_0_4554_3643/master/4554.jpg?width=140&quality=85&auto=format&fit=max&s=93ff4fa8fb1595666384c44c82df5af4",
+          "video_url": null
+        },
+        {
+          "url": "https://www.theguardian.com/world/2026/may/25/shock-iran-war-middle-east-rivals-trump-peace-deal",
+          "headline": "Shock of Iran war unites Middle East rivals in pushing Trump towards peace",
+          "snippet": "The shock of the Iran war and its fallout has driven rivals in the Middle East to get behind a peace deal, pushing the Trump administration to accept a tentative agreement in the face of furious opposition from Israel and its supporters in Washington. The diplomatic efforts come as the region is…",
+          "source": "guardian",
+          "source_name": "The Guardian",
+          "country": "GB",
+          "published": "Mon, 25 May 2026 13:06:10 GMT",
+          "image_url": "https://i.guim.co.uk/img/media/8478f6ad7cfcf55310d1c1c74d07e8636c0777e8/0_0_3094_2476/master/3094.jpg?width=140&quality=85&auto=format&fit=max&s=1889dd59a3a1e599d3bfad19d3d4c5f7",
           "video_url": null
         }
       ],
@@ -8408,7 +8446,7 @@
       "id": "47dd201d6ea1",
       "headline": "Clima hoy en Punta Lara, Buenos Aires: el pronóstico del tiempo para este domingo 24 mayo de 2026",
       "summary": "<ul><li>El SMN anticipa para este domingo temperaturas entre 9°C y 14°C.</li><li>El pronóstico extendido durante la jornada. ¿Cómo estará el cielo? ¿Cuál es la probabilidad de lluvias?</li></ul>",
-      "published": "Mon, 25 May 2026 08:02:42 +0000",
+      "published": "Mon, 25 May 2026 13:14:40 +0000",
       "image_url": "https://www.clarin.com/img/2025/04/30/k1TUADqrD_1200x630__1.jpg",
       "video_url": null,
       "has_video": false,
@@ -8424,17 +8462,19 @@
         "dominant_pct": 75
       },
       "bias_variance": 0.78,
-      "entity_count": 36,
+      "entity_count": 39,
       "entity_list": [
         "Adolf",
         "Aires",
         "Alice",
         "Arroyos",
         "Audiencia",
+        "Basta",
         "Buenos",
         "Calendario",
         "Ciudad",
         "Clima",
+        "Cuerva",
         "Desbarataron",
         "Dorrego",
         "Eichmann",
@@ -8442,6 +8482,7 @@
         "Feria",
         "Fernando",
         "Fiestas",
+        "Jorge",
         "Libro",
         "Madres",
         "Madrid",
@@ -8832,6 +8873,17 @@
           "published": "Mon, 25 May 2026 08:02:42 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/TR52TYXUVFBWPIULI3W4FUHNDU.jpeg?auth=f82999f9bc8151c4b434cca81f6fa8231d0ab65fb0365c6284a2e9d1821e7148&smart=true&width=2560&height=1706",
           "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/politica/jorge-garcia-cuerva-arzobispo-de-buenos-aires-basta-de-arengar-la-division-y-la-polarizacion-nid25052026/",
+          "headline": "Jorge García Cuerva, arzobispo de Buenos Aires: “Basta de arengar la división y la polarización”",
+          "snippet": "El religioso dio el tradicional Tedeum del 25 de mayo desde la catedral metropolitana",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 13:14:40 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/FPP7P4BPDZHXXPFNAFPHN65JOY.png?auth=2963fcd913eac35c47c1b2541ccf5f2d688bc773213cf92e68bb21bea44348d3&smart=true&width=2000&height=1333",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -8995,7 +9047,7 @@
       "id": "04cb78e19fa1",
       "headline": "Burning of effigy of Rahul Gandhi sparks tension in Sirkazhi",
       "summary": "Deputy Superintendent of Police Saravanan, Inspector of Police Kamal Raj and other police personnel rushed to the spot and attempted to remove the burning effigy",
-      "published": "Mon, 25 May 2026 09:46:33 +0530",
+      "published": "Mon, 25 May 2026 13:16:26 +0000",
       "image_url": "https://th-i.thgim.com/public/incoming/e4b1j0/article70960060.ece/alternates/LANDSCAPE_1200/20260508284L.jpg",
       "video_url": null,
       "has_video": false,
@@ -9011,7 +9063,7 @@
         "dominant_pct": 75
       },
       "bias_variance": 0.94,
-      "entity_count": 37,
+      "entity_count": 38,
       "entity_list": [
         "Aimed",
         "Anarchy",
@@ -9028,6 +9080,7 @@
         "Gandhi",
         "Government",
         "Grave",
+        "India",
         "Instagram",
         "Jagga",
         "Jawaharlal",
@@ -9287,6 +9340,17 @@
           "country": "IN",
           "published": "Mon, 25 May 2026 09:46:33 +0530",
           "image_url": "https://th-i.thgim.com/public/incoming/job2fx/article71018536.ece/alternates/LANDSCAPE_1200/1002182942.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://theprint.in/india/bjp-counters-rahul-gandhi-says-modi-averted-fuel-shortage-in-india-amid-global-crisis/2941125/",
+          "headline": "BJP counters Rahul Gandhi, says Modi averted fuel shortage in India amid global crisis",
+          "snippet": "New Delhi, May 25 (PTI) The BJP on Monday slammed Rahul Gandhi for his comments on the recent spree of fuel price hikes, accusing the Congress leader of attempting to undermine the country. This response followed Gandhi&#8217;s scathing attack on Prime Minister Narendra Modi over the latest fuel…",
+          "source": "the_print",
+          "source_name": "The Print (India)",
+          "country": "IN",
+          "published": "Mon, 25 May 2026 13:16:26 +0000",
+          "image_url": null,
           "video_url": null
         }
       ],
@@ -10893,6 +10957,17 @@
           "published": "Mon, 25 May 2026 13:55:00 BST",
           "image_url": "https://e2.365dm.com/26/05/1920x1080/skysports-charlotte-edwards_7258094.jpg?20260525123129",
           "video_url": null
+        },
+        {
+          "url": "https://www.skysports.com/cricket/live-blog/12040/13547882/england-vs-new-zealand-third-womens-t20-live-score-updates-video-and-analysis-from-series-decider-in-hove",
+          "headline": "England to bat first in T20 series decider vs New Zealand LIVE!",
+          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Cricket…",
+          "source": "sky_sports",
+          "source_name": "Sky Sports",
+          "country": "GB",
+          "published": "Mon, 25 May 2026 13:55:00 BST",
+          "image_url": "https://e1.365dm.com/26/05/1920x1080/skysports-alice-capsey-england-women-t20-cricket_7254411.jpg?20260520221852",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -11780,7 +11855,7 @@
       "id": "7dcffd44c7b7",
       "headline": "Limogeage d’Ousmane Sonko : La vérité dévoilée, ce qui a poussé Bassirou Diomaye Faye à bout",
       "summary": "<p><img width=\"809\" height=\"456\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" data-src=\"https://www.senenews.com/wp-content/uploads/2025/12/diomaye-sonko-palais-presidentiel-e1766737348995.jpg\" class=\"attachment-full size-full wp-post-image lazy\" alt=\"De nouvelles déc",
-      "published": "Mon, 25 May 2026 13:05:47 +0000",
+      "published": "Mon, 25 May 2026 13:10:51 +0000",
       "image_url": "https://www.senenews.com/wp-content/uploads/2026/05/ous-ous-ous-ous-1106x675-1.webp",
       "video_url": null,
       "has_video": false,
@@ -12401,6 +12476,17 @@
           "published": "Mon, 25 May 2026 13:05:47 +0000",
           "image_url": "https://www.senenews.com/wp-content/uploads/2026/02/ousmane-sonko-assemblee-e1772094150918.jpg",
           "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/assemblee-un-document-de-2024-ressurgit-sur-le-mandat-dousmane-sonko-photo_587570.html",
+          "headline": "Assemblée : Un document de 2024 ressurgit sur le mandat d’Ousmane Sonko (photo)",
+          "snippet": "la lutte pour le statut parlementaire d’Ousmane Sonko, un document controversé relance les tensions entre majorité et opposition. Ce dernier, daté de décembre 2023, remet en question les interprétations divergentes sur la nature de sa « suspension » de mandat, plongeant l’Assemblée nationale dans…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Mon, 25 May 2026 13:10:51 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2024/12/470520780_991222213044041_7315958978477970690_n-e1735556739721.jpg",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -12931,9 +13017,9 @@
     },
     {
       "id": "7b3391d10fa7",
-      "headline": "Esteban Pavez se convierte en el héroe de Alianza Lima al marcar un golazo en el clásico ante Sporting Cristal",
-      "summary": "El excapitán de Colo Colo marcó la agónica cifra de los blanquiazules en la igualdad por 1-1 frente al cuadro cervecero.",
-      "published": "Sun, 24 May 2026 22:14:32 +0000",
+      "headline": "Zé Ricardo proyecta un Sporting Cristal “más experimentado” con dos o tres refuerzos para el Torneo Clausura 2026",
+      "summary": "El entrenador del conjunto ’cervecero’ se refirió a los movimientos en el mercado de cara al segundo certamen del año en el que los del Rímac deberán robustecer sus filas para exhibir una mejor imagen",
+      "published": "Mon, 25 May 2026 13:13:40 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/LAOFGXHRWRAADM3W4DA3UJVXHM.jpg?auth=5c65ff53b381a589ff9ec2af70f23bd038eb7c995cc291e34774e05656475dae&smart=true&width=1920&height=1080",
       "video_url": null,
       "has_video": false,
@@ -13098,6 +13184,17 @@
           "country": "AR",
           "published": "Sun, 24 May 2026 22:11:22 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/HEUZJLZG5JGUBOZARNYCUWF6UQ.jpg?auth=c4c52e9dc560f37fab39eaa0af4b62ec24510e63cca26109eedc913111408ebc&smart=true&width=1920&height=1039",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/25/sporting-cristal-haria-una-revolucion-para-el-torneo-clausura-2026-van-a-evaluar-la-estructura-deportiva/",
+          "headline": "Sporting Cristal haría una revolución para el Torneo Clausura 2026: “Van a evaluar la estructura deportiva”",
+          "snippet": "Periodistas analizan el futuro de Sporting Cristal ante los malos resultados en la Liga 1 y Copa Libertadores. L1MAx La agónica victoria de Sporting Cristal frente a en el estadio Alberto Gallardo , correspondiente a la penúltima fecha del Torneo Apertura, no logró ocultar el desencanto general que…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 13:13:40 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/C6XSGEY7IFGYHARVOZZNGDQC54.png?auth=aa2794227dccd236dc20cfcc821678acbb87cfd2bc0568be190d2d63e608bd7e&smart=true&width=1920&height=1080",
           "video_url": null
         }
       ],
@@ -13434,7 +13531,7 @@
       "id": "89fc68ed80ae",
       "headline": "Periodista acusó a Gustavo Petro de drogarse por sus declaraciones sobre la violencia en Antioquia y el presidente respondió: “No saben entender la historia”",
       "summary": "Salud Hernández-Mora señaló que el jefe de Estado manipula la historia con el objetivo de menospreciar a Antioquia y recordó el tiempo que le resta en el cargo",
-      "published": "Mon, 25 May 2026 01:46:04 +0000",
+      "published": "Mon, 25 May 2026 13:16:22 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/4YGKTUGNJJCVXFYKLJYNWBQU34.png?auth=822d8e393a97e338eb0e23f9a66ca1d2ce894b6ede513d7829684edf59c45fbc&smart=true&width=1920&height=1080",
       "video_url": null,
       "has_video": false,
@@ -13450,11 +13547,12 @@
         "dominant_pct": 100
       },
       "bias_variance": 0.0,
-      "entity_count": 28,
+      "entity_count": 29,
       "entity_list": [
         "Alejandro",
         "Antioquia",
         "Ayuso",
+        "Barranquilla",
         "Cabemos",
         "Cepeda",
         "Colombia",
@@ -13704,6 +13802,17 @@
           "country": "AR",
           "published": "Mon, 25 May 2026 01:46:04 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/GSHXQZKG5FD6TNILZBZZKJFQ6U.jpg?auth=612a2da6c00ad4cdeeac27a9d9b5c9a82b50f5a67cc5af3d433b652b6c77bfef&smart=true&width=1381&height=857",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/25/petro-fue-criticado-por-destacar-la-multitud-que-acompano-a-cepeda-en-barranquilla-y-hablar-de-candidatos-filosofos-te-pasas-la-ley-por-el-trasero/",
+          "headline": "Gustavo Petro recibió críticas por destacar la multitud que acompañó a Iván Cepeda en Barranquilla: “Actúas igual a cuando eras guerrillero y delincuente”",
+          "snippet": "El presidente Gustavo Petro no mencionó al candidato Iván Cepeda, pero si destacó la multitud que lo acompañó en Barranquilla - crédito Imagen Ilustrativa Infobae El presidente Gustavo Petro destacó en su cuenta oficial de X la multitud que acompañó el cierre de campaña del candidato presidencial…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 13:16:22 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/F7FIJPF62BCI3DP6REOLSVHW6Q.png?auth=f56834b235e5ad81f2a1e18fa9112efc5dc0c8f3e315583f58e7a5429c250b07&smart=true&width=1536&height=1024",
           "video_url": null
         }
       ],
@@ -17231,6 +17340,17 @@
           "source_name": "New York Post",
           "country": "US",
           "published": "Mon, 25 May 2026 05:27:36 -0700",
+          "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2F2026-lionel-messi-exited-inter-128700696.jpg?w%3D1024",
+          "video_url": null
+        },
+        {
+          "url": "https://nypost.com/2026/05/25/sports/lionel-messi-exits-inter-miami-match-with-injury-in-potential-concern-just-before-world-cup/",
+          "headline": "Lionel Messi exits Inter Miami match with injury in potential concern just before World Cup",
+          "snippet": "With the World Cup rapidly approaching , the tournament’s biggest star exited with an injury that could potentially throw the soccer world into a tailspin. Inter Miami superstar Lionel Messi departed the team’s 6-4 win Sunday against the Philadelphia Union after he was seen grabbing his left thigh.…",
+          "source": "ny_post",
+          "source_name": "New York Post",
+          "country": "US",
+          "published": "Mon, 25 May 2026 08:27:36 -0400",
           "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2F2026-lionel-messi-exited-inter-128700696.jpg?w%3D1024",
           "video_url": null
         }
