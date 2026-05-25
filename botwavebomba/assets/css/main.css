@@ -2602,11 +2602,35 @@ code {
   .bwb-brand-axes { font-size: 8.5px; }
   .bwb-header .bwb-topnav {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     flex-wrap: nowrap;
     width: 100%;
     scrollbar-width: none;
   }
   .bwb-header .bwb-topnav::-webkit-scrollbar { display: none; }
+  .bwb-header .bwb-topnav a {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .bwb-promo-line {
+    flex-basis: 100%;
+    max-width: 100%;
+    white-space: normal;
+  }
+  .bwb-util-stat,
+  .bwb-util-group .bwb-pipeline-badge {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .bwb-trending-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .bwb-trending-chips::-webkit-scrollbar { display: none; }
+  .bwb-trending-chip { flex-shrink: 0; white-space: nowrap; }
+  .bwb-filters button { flex-shrink: 0; }
   .bwb-search-btn span { display: none; }
   .bwb-search-btn { padding: 8px; }
   .bwb-trending-inner { padding: 10px 16px; gap: 12px; }
