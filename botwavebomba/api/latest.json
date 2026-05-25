@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-25T22:16:06.303456+00:00",
-  "article_count": 52680,
+  "generated_at": "2026-05-25T22:30:51.699313+00:00",
+  "article_count": 52767,
   "story_count": 160,
   "sections": [
     {
@@ -1859,7 +1859,7 @@
       "id": "9dafab0d8622",
       "headline": "Última hora del caso Plus Ultra, en directo | El juez Calama solicita todos los correos de Zapatero y sus hijas desde 2020",
       "summary": "Una catarata de hallazgos de la UDEF apunta al expresidente del Gobierno en una causa que puede tumbar a Pedro Sánchez: los socios empiezan a caerse",
-      "published": "Mon, 25 May 2026 17:51:46 +0000",
+      "published": "Mon, 25 May 2026 22:18:27 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/HASGSNE7DNFTFJSLJEST6HBLBE.jpg?auth=5388f7688520e7b57f8c7ec94cdbf23e26b989908f3a7b573ab6d263006d2d32&smart=true&width=1920&height=1279",
       "video_url": null,
       "has_video": false,
@@ -1868,13 +1868,13 @@
       "blindspot_score": 17,
       "coverage": {
         "left_pct": 0,
-        "center_pct": 33,
-        "right_pct": 67,
+        "center_pct": 25,
+        "right_pct": 75,
         "state_count": 0,
         "dominant": "right",
-        "dominant_pct": 67
+        "dominant_pct": 75
       },
-      "bias_variance": 0.85,
+      "bias_variance": 0.78,
       "entity_count": 17,
       "entity_list": [
         "Amaro",
@@ -1927,6 +1927,18 @@
           "bloc": "non-aligned",
           "bias_tier": "center",
           "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_nacion_ar",
+          "name": "La Nación (Argentina)",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
           "geo_cluster": "latin-america",
           "factuality": "mixed",
           "primary_vs_launder": "primary",
@@ -2252,21 +2264,32 @@
           "published": "Mon, 25 May 2026 17:51:46 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/RY5VFRI326UQOBSSMQ5VBB3CYQ.jpg?auth=ee9ca44a1ddb391168149b8da8ca4bee7122479872540e0297d8d4b2f0327fb2&smart=true&width=6000&height=4000",
           "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/el-mundo/un-juez-ubica-a-jose-luis-rodriguez-zapatero-en-la-cima-de-la-trama-del-rescate-de-plus-ultra-nid25052026/",
+          "headline": "Un juez ubica a José Luis Rodríguez Zapatero en la cima de la trama del rescate de Plus Ultra",
+          "snippet": "MADRID.– Dos informes de la Unidad de Delincuencia Económica y Fiscal (UDEF) de España sitúan al expresidente José Luis Rodríguez Zapatero en la “cúspide” de una presunta red de tráfico de influencias vinculada al rescate de la aerolínea Plus Ultra Líneas Aéreas, aprobado en marzo de 2021. Según la…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 22:18:27 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/WL4LJW2JLRE2NBNUCKUBL7QLYQ.jpg?auth=e75dac802f9e4c8a9ffc0f62ca3bb9bc2bf42a20ef775aac429ac5140dd7f6b4&smart=true&width=2000&height=1333",
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.167,
-        "zionist": 0.267,
-        "atlanticist": 0.43,
-        "statist": 0.26,
-        "financialized": 0.48
+        "interventionist": 0.175,
+        "zionist": 0.275,
+        "atlanticist": 0.438,
+        "statist": 0.267,
+        "financialized": 0.477
       },
-      "fp_source_count": 3,
+      "fp_source_count": 4,
       "geo_frame": "blackout",
       "geo_frame_label": "Western Blackout: US Foreign Policy Target",
       "geo_frame_topic": "us-foreign-policy",
       "geo_breakdown": {
-        "latin-america": 3
+        "latin-america": 4
       },
       "section": "world",
       "is_front_page": true
@@ -14409,7 +14432,7 @@
       "id": "2055e8f0292e",
       "headline": "Iván Cepeda y Abelardo de la Espriella lideran en intención de voto; Paloma Valencia aparece distante, según encuesta del CNC",
       "summary": "A pocos días de las elecciones presidenciales en Colombia, Iván Cepeda lidera la intención de voto con el 33,4%, seguido por Abelardo de la Espriella, que alcanza el 30,9%",
-      "published": "Mon, 25 May 2026 20:30:29 +0000",
+      "published": "Mon, 25 May 2026 22:20:12 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/ACW3D72PDBBHTLJDQWBEPHCR6U.png?auth=33f3fafc70743e847573d0290842434b4bdc4c6db3b2ca68a5d4626e848bde33&smart=true&width=1800&height=1080",
       "video_url": null,
       "has_video": false,
@@ -14425,9 +14448,10 @@
         "dominant_pct": 50
       },
       "bias_variance": 0.9,
-      "entity_count": 34,
+      "entity_count": 35,
       "entity_list": [
         "Abelardo",
+        "Alfredo",
         "Amapola",
         "Barranquilla",
         "Caicedo",
@@ -14784,6 +14808,17 @@
           "country": "AR",
           "published": "Mon, 25 May 2026 20:30:29 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/QHGNRITPUFFAPPOUA5ZA6IRWAE.jpg?auth=0834b40b54c353e5ef36f436d74e83676245dfdf595749cd9f6bc139a16f2dd4&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/25/centro-democratico-rechazo-el-secuestro-de-alfredo-ivan-guzman-hijo-del-exalcalde-de-tame-y-coordinador-de-la-campana-de-paloma-valencia/",
+          "headline": "Centro Democrático rechazó el secuestro de Alfredo Iván Guzmán, hijo del exalcalde de Tame y coordinador de la campaña de Paloma Valencia",
+          "snippet": "Alfredo Iván Guzmán Varcarcel, coordinador de la campaña a la presidencia de Paloma Valencia en Arauca, fue secuestrado; lo que causó una fuerte reacción del Centro Democrático - crédito suministrado a Infobae Colombia El secuestro de Alfredo Iván Guzmán Valcárcel, coordinador de campaña de Paloma…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 22:20:12 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/OXCQVIMFZZB4RDBXYGZ2D7HUNQ.png?auth=e464b8787356beae5c6f9b5c46df1a4ef903fe838de36660f0b6fc7c9aeeaed0&smart=true&width=1920&height=1080",
           "video_url": null
         }
       ],
@@ -16319,7 +16354,7 @@
       "id": "5a6666db781b",
       "headline": "Lionel Messi y las tres claves por la lesión que preocupa a la Selección rumbo al Mundial 2026: diagnóstico, reposo y decisión personal",
       "summary": "<ul><li>Pidió el cambio en el último partido antes del receso con el Inter Miami y se realizó estudios.</li><li>El resultado trajo algo de alivio, pero obliga a ocuparse de cara al debut contra Argelia.</li></ul>",
-      "published": "Mon, 25 May 2026 19:20:39 +0000",
+      "published": "Mon, 25 May 2026 22:16:31 +0000",
       "image_url": "https://kep.index.hu/1/0/6932/69320/693205/69320583_5115737_4844d4975908835a2c8c75a593c9786c_wm.jpg",
       "video_url": null,
       "has_video": false,
@@ -16663,6 +16698,17 @@
           "country": "AR",
           "published": "Mon, 25 May 2026 19:20:39 +0000",
           "image_url": "https://www.clarin.com/img/2026/05/24/8wN4GSz9Y_1200x630__1.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/25/se-confirmo-la-lesion-que-sufrio-lionel-messi-cuanto-le-demandara-su-recuperacion/",
+          "headline": "Se confirmó la lesión que sufrió Lionel Messi: cuánto le demandará su recuperación",
+          "snippet": "Lionel Messi sufrió una leve lesión en el isquiotibial de su pierna izquierda (Megan Briggs/Getty Images/AFP) Lionel Messi encendió una alarma mundial luego de salir con una molestia física en su última presentación con el Inter Miami , que venció por 6-4 a Philadelphia Union . A 16 días del debut…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 22:16:31 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/QT22RD7VLJDL3IMPRAJVZZYEJ4.jpg?auth=9a544e61163cca72ce3bbf757f4f824ca09f044c47e0846fe20f2235032475f5&smart=true&width=3856&height=2169",
           "video_url": null
         }
       ],
@@ -17393,7 +17439,7 @@
       "id": "e1fef642dc7c",
       "headline": "La estrella de Hollywood que deliró con la magia de Lionel Messi en el último partido del Inter Miami antes del Mundial",
       "summary": "Tom Holland, uno de los actores que interpretó a Spider-Man, estuvo entre las decenas de celebridades que asistieron a ver al astro argentino en la MLS, una tendencia que arrancó desde la noche de su debut con Las Garzas en 2023",
-      "published": "Mon, 25 May 2026 22:05:46 +0000",
+      "published": "Mon, 25 May 2026 22:14:02 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/6WAJWOIFZNH6TD6TSVHDQCVFC4.jpg?auth=0964984e37b45bcd34eb8f7e92c3eee604a2795a3464f8bd27920be6d97e6337&smart=true&width=5958&height=3972",
       "video_url": null,
       "has_video": false,
@@ -17915,6 +17961,17 @@
           "country": "AR",
           "published": "Mon, 25 May 2026 22:05:46 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/NGQNV5FXXBF4LB3EMTYWLSLRU4.jpg?auth=ba21404c304e9ab078c76374cafcc5bb1ce3e7153d09e675ef8f32e83cd87536&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/25/el-comunicado-oficial-del-inter-miami-sobre-la-lesion-que-sufrio-lionel-messi-antes-el-mundial-2026/",
+          "headline": "El comunicado oficial del Inter Miami sobre la lesión que sufrió Lionel Messi antes el Mundial 2026",
+          "snippet": "A pesar de la molestia física, Lionel Messi llegará de forma óptima al Mundial 2026 (Megan Briggs/Getty Images/AFP) En la victoria de Inter Miami por 6-4 ante Philadelphia Union , Lionel Messi acaparó los flashes al pedir el cambio tras sentir una molestia física . A semanas del debut de la…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 22:14:02 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/LW4L4PS3Q5H7LMNAK4DRXUXKRA.jpg?auth=eef723cf6db787f65b50147b1cb9050bd1dcbacd605c40204ae32f15982ee738&smart=true&width=5112&height=2876",
           "video_url": null
         }
       ],
@@ -57870,7 +57927,7 @@
       "id": "7803956b1ac2",
       "headline": "A qué hora juega Ignacio Buse vs Andrey Rublev HOY: partido por primera ronda de Roland Garros 2026",
       "summary": "El peruano se cita por segunda vez en el cuadro principal de un Grand Slam. En París, el ’Colorado’ apunta a extender su gran momento luego de conquistar el ATP 500 de Hamburgo. Al frente, el #13 del mundo",
-      "published": "Mon, 25 May 2026 22:07:48 +0000",
+      "published": "Tue, 26 May 2026 06:25:05 +0800",
       "image_url": "https://www.infobae.com/resizer/v2/PC2O2BXCJZFDBEPBAGIXI5NMFE.JPG?auth=bff9e936e2d017aee081017a6c3fbf40c69492df9c740e9b27a0a4874d28d3d5&smart=true&width=800&height=533",
       "video_url": null,
       "has_video": false,
@@ -59152,6 +59209,17 @@
           "country": "RO",
           "published": "Mon, 25 May 2026 22:07:48 +0000",
           "image_url": "https://www.g4media.ro//wp-content/uploads/2024/10/profimedia-0888441762-1.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/sports/racquet-sports/2026/05/1448479/swiatek-rybakina-cruise-through-roland-garros-openers",
+          "headline": "Swiatek, Rybakina cruise through Roland Garros openers",
+          "snippet": "PARIS: Four-time French Open champion Iga Swiatek and second seed Elena Rybakina both eased into the second round with comfortable wins at a sweltering Roland Garros on Monday, as Stan Wawrinka bade an emotional farewell to the tournament.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Tue, 26 May 2026 06:25:05 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/708FCA1AB59B26AA9294A187C1ADDA17_data_0.jpg",
           "video_url": null
         }
       ],
@@ -63412,7 +63480,7 @@
       "id": "347243398db6",
       "headline": "Spurs-Thunder: Victor Wembanyama beats first-half buzzer with half-court shot in dominant Spurs win - Yahoo Sports",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMi9wFBVV95cUxOSUtjd3RBU3JRVFFUY00xcnFFaXprRVo2dVUzNk9pWmFDNHlHY0pjWkpxYjY4TFNNYnpQa3JFNXgwZ2ZOVXlCRERiRTlYbUZGRkh2N0NYZHZZNmhjd1l5cHhoai1GM3d4V0dTNG1SaGpoWUx6WVE0NnkzVzJUYVVqeUpBV0Q5eHB1QW1vODVPMGVyQnRnT1NJelYxNUdKZ1FJRlAxQkxwbzRhUE4yZHZROGtUME",
-      "published": "Mon, 25 May 2026 18:26:25 GMT",
+      "published": "Mon, 25 May 2026 21:50:05 +0000",
       "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2FAP_Thunder_Spurs_Basketball_9514_-99572-0.jpg?quality%3D90%26strip%3Dall",
       "video_url": null,
       "has_video": false,
@@ -64054,6 +64122,17 @@
           "country": "US",
           "published": "Mon, 25 May 2026 18:26:25 GMT",
           "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/estados-unidos/wembanyama-y-los-spurs-igualan-2-2-al-thunder-y-el-juego-5-parece-que-sera-una-partida-de-ajedrez_0_EVp8AmIreq.html",
+          "headline": "Wembanyama y los Spurs igualan 2-2 al Thunder y el juego 5 parece que será una partida de ajedrez",
+          "snippet": "Es como si Victor Wembanyama ya hubiera estado aquí antes. El 28 de diciembre de 2024 fue una mañana fría y lluviosa en Nueva York. Wembanyama tenía algo de tiempo libre antes de que el vuelo chárter de los Spurs de San Antonio saliera rumbo a Minnesota esa tarde, así que publicó un mensaje en…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 21:50:05 +0000",
+          "image_url": "https://www.clarin.com/img/2026/04/16/ox6pYwAJj_1200x630__1.jpg",
           "video_url": null
         }
       ],
