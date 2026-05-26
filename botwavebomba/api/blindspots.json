@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T07:01:02.569833+00:00",
+  "generated_at": "2026-05-26T07:16:03.907871+00:00",
   "count": 64,
   "stories": [
     {
@@ -5602,6 +5602,230 @@
       "section": "entertainment"
     },
     {
+      "id": "9a07b8c72c5e",
+      "headline": "WHO Declares Global Health Emergency Over Ebola Outbreak",
+      "summary": "<p>World Health Organization on Sunday declared a public health emergency of international concern following more than 300 suspected Ebola cases and 88 deaths linked to outbreaks in Democratic Republic of the Congo and Uganda. The WHO said the outbreak does not currently meet the criteria for a glob",
+      "published": "Tue, 26 May 2026 04:06:29 +0000",
+      "image_url": "https://theintercept.com/wp-content/uploads/2026/05/GettyImages-2276542341-e1779219610343.jpg?fit=3594%2C1800",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 40,
+        "center_pct": 60,
+        "right_pct": 0,
+        "state_count": 1,
+        "dominant": "center",
+        "dominant_pct": 60
+      },
+      "bias_variance": 6.16,
+      "entity_count": 29,
+      "entity_list": [
+        "Alert",
+        "Attacks",
+        "Become",
+        "Cases",
+        "Completes",
+        "Deaths",
+        "Declares",
+        "Eastern",
+        "Ebola",
+        "Emergency",
+        "Facilities",
+        "Fears",
+        "Football",
+        "Gutted",
+        "Health",
+        "HuffPost",
+        "Isolation",
+        "Outbreak",
+        "Pandemic",
+        "Preparation",
+        "Rages",
+        "Raise",
+        "Regional",
+        "Safeguards",
+        "Significant",
+        "States",
+        "Trump",
+        "Urges",
+        "Warns"
+      ],
+      "sources": [
+        {
+          "id": "intercept",
+          "name": "The Intercept",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "khaama",
+          "name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
+        },
+        {
+          "id": "telesur",
+          "name": "Telesur English",
+          "country": "VE",
+          "bloc": "non-aligned",
+          "bias_tier": "state-pro",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "New York Times Co"
+        },
+        {
+          "id": "thisday_ng",
+          "name": "This Day Nigeria",
+          "country": "NG",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://theintercept.com/2026/05/19/ebola-outbreak-trump-who/",
+          "headline": "Ebola Outbreak Rages After Trump Gutted Global Health Safeguards",
+          "snippet": "The World Health Organization’s chief said on Tuesday that he was “deeply concerned about the scale and speed” of an Ebola outbreak in the Democratic Republic of Congo and Uganda that has resulted in a spike in deaths — to at least 130 — and more than 500 suspected cases. The outbreak is…",
+          "source": "intercept",
+          "source_name": "The Intercept",
+          "country": "US",
+          "published": "Tue, 19 May 2026 20:58:12 +0000",
+          "image_url": "https://theintercept.com/wp-content/uploads/2026/05/GettyImages-2276542341-e1779219610343.jpg?fit=3594%2C1800",
+          "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/who-declares-global-health-emergency-over-ebola-outbreak/",
+          "headline": "WHO Declares Global Health Emergency Over Ebola Outbreak",
+          "snippet": "World Health Organization on Sunday declared a public health emergency of international concern following more than 300 suspected Ebola cases and 88 deaths linked to outbreaks in Democratic Republic of the Congo and Uganda. The WHO said the outbreak does not currently meet the criteria for a global…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Mon, 18 May 2026 09:40:00 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVl8xdjBJZkVybU5HLVlSNGFlR0dTT2FoakRHNDRsZkNxQkVqemxXb1R6ZGZEV21sTFIzemZiZGotSms3NU1mX3RmZk9qMkswSVphU2hrS0FTMXZWUE00dnR2b1AwbExZWFdmaXJOYVZ0RFlCYTI1bmlUem5DcFNDOFZNcFNFTlpTYnZmZk9kM3VtYThnN1h3QXBSUdIBoAFBVV95cUxPWWFDd0RXZENUbk1kOEJ0bDJGNXdhdUF6NFppbVREbkVJRG1CLXZ2UHc4LVlRVlR6Zlh2c3pFdWY4bEptWGxFOXFGdV9UdFRIR0RlREI3TE1GM194YjNXQXJKWklXbW1VaTJoemNlOXpLRGswNkZMQzhYdDZ5UTg3SG1ocDB0aVY1Z0I0cFdKZjBFUFJTZmpCOWg2N0g5MVkw?oc=5",
+          "headline": "Ex-CDC Chief Warns Ebola Outbreak Could Become ‘Very Significant Pandemic’ - HuffPost",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQVl8xdjBJZkVybU5HLVlSNGFlR0dTT2FoakRHNDRsZkNxQkVqemxXb1R6ZGZEV21sTFIzemZiZGotSms3NU1mX3RmZk9qMkswSVphU2hrS0FTMXZWUE00dnR2b1AwbExZWFdmaXJOYVZ0RFlCYTI1bmlUem5DcFNDOFZNcFNFTlpTYnZmZk9kM3VtYThnN1h3QXBSUdIBoAFBVV95cUxPWWFDd0RXZENUbk1kOEJ0bDJGNX…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Fri, 22 May 2026 07:56:32 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.telesurenglish.net/easterndrc-ebola-regional-outbreak-fears/",
+          "headline": "Eastern DRC Ebola Attacks Raise Regional Outbreak Fears",
+          "snippet": "Attacks on Ebola facilities in eastern are increasing as mistrust over burial measures and resource shortages strain the response effort. Ebola treatment facilities in eastern have come under attack amid rising infections and tensions over burial protocols. Photo: May 24, 2026 Hour: 8:01 am 🔗…",
+          "source": "telesur",
+          "source_name": "Telesur English",
+          "country": "VE",
+          "published": "Sun, 24 May 2026 12:01:48 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.nytimes.com/2026/05/17/world/africa/what-to-know-ebola-africa.html",
+          "headline": "What to Know About the Ebola Outbreak as Cases and Deaths Rise",
+          "snippet": "More than 170 deaths and about 750 cases are suspected. The United States restricted entry for people who have been to three African countries.",
+          "source": "nytimes",
+          "source_name": "The New York Times",
+          "country": "US",
+          "published": "Sat, 23 May 2026 11:38:18 +0000",
+          "image_url": "https://static01.nyt.com/images/2026/05/22/multimedia/22int-ebola-WTK-zwlv/22int-ebola-WTK-zwlv-mediumSquareAt3X.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thisdaylive.com/2026/05/25/ebola-outbreak-ncdc-puts-states-on-high-alert-urges-preparation-of-emergency-facilities/",
+          "headline": "Ebola Outbreak: NCDC Puts States on High Alert, Urges Preparation of Emergency Facilities",
+          "snippet": "Onyebuchi Ezigbo in Abuja The Nigeria Centre for Disease Control and Prevention (NCDC) has asked states to get their facilities ready in the event of a fresh Ebola disease outbreak in the country. It said its assessment estimated the risk of Ebola importation into Nigeria as high due to the ongoing…",
+          "source": "thisday_ng",
+          "source_name": "This Day Nigeria",
+          "country": "NG",
+          "published": "Mon, 25 May 2026 03:10:53 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.telesurenglish.net/drc-football-team-completes-21%e2%80%91day-u-s-isolation-to-play-world-cup-amid-ebola-outbreak/",
+          "headline": "DRC Football Team Completes 21‑Day U.S. Isolation to Play World Cup Amid Ebola Outbreak",
+          "snippet": "May 26, 2026 Hour: 12:06 am 🔗 Comparte este artículo The Congolese Football Federation (FECOFA) confirmed that its national team, the Leopards, is strictly adhering to a 21‑day isolation protocol imposed by the United States government following an Ebola outbreak in northeastern DRC, forcing the…",
+          "source": "telesur",
+          "source_name": "Telesur English",
+          "country": "VE",
+          "published": "Tue, 26 May 2026 04:06:29 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.078,
+        "zionist": 0.247,
+        "atlanticist": 0.337,
+        "statist": 0.123,
+        "financialized": 0.423
+      },
+      "fp_source_count": 6,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 3,
+        "global-south": 1,
+        "latin-america": 1,
+        "africa": 1
+      },
+      "section": "health"
+    },
+    {
       "id": "1e31dcaf1a16",
       "headline": "'Any Appropriately Located Alternate Plot?' Delhi Gymkhana Club Writes To Centre",
       "summary": "The Delhi Gymkhana Club wrote in a letter to the Centre that any sudden action against it would impact multiple stakeholders, including employees and patrons.",
@@ -5986,230 +6210,6 @@
         "global-south": 5
       },
       "section": "tech"
-    },
-    {
-      "id": "9a07b8c72c5e",
-      "headline": "WHO Declares Global Health Emergency Over Ebola Outbreak",
-      "summary": "<p>World Health Organization on Sunday declared a public health emergency of international concern following more than 300 suspected Ebola cases and 88 deaths linked to outbreaks in Democratic Republic of the Congo and Uganda. The WHO said the outbreak does not currently meet the criteria for a glob",
-      "published": "Tue, 26 May 2026 04:06:29 +0000",
-      "image_url": "https://theintercept.com/wp-content/uploads/2026/05/GettyImages-2276542341-e1779219610343.jpg?fit=3594%2C1800",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 40,
-        "center_pct": 60,
-        "right_pct": 0,
-        "state_count": 1,
-        "dominant": "center",
-        "dominant_pct": 60
-      },
-      "bias_variance": 6.16,
-      "entity_count": 29,
-      "entity_list": [
-        "Alert",
-        "Attacks",
-        "Become",
-        "Cases",
-        "Completes",
-        "Deaths",
-        "Declares",
-        "Eastern",
-        "Ebola",
-        "Emergency",
-        "Facilities",
-        "Fears",
-        "Football",
-        "Gutted",
-        "Health",
-        "HuffPost",
-        "Isolation",
-        "Outbreak",
-        "Pandemic",
-        "Preparation",
-        "Rages",
-        "Raise",
-        "Regional",
-        "Safeguards",
-        "Significant",
-        "States",
-        "Trump",
-        "Urges",
-        "Warns"
-      ],
-      "sources": [
-        {
-          "id": "intercept",
-          "name": "The Intercept",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "khaama",
-          "name": "Khaama Press Afghanistan",
-          "country": "AF",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
-        },
-        {
-          "id": "telesur",
-          "name": "Telesur English",
-          "country": "VE",
-          "bloc": "non-aligned",
-          "bias_tier": "state-pro",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "nytimes",
-          "name": "The New York Times",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": "New York Times Co"
-        },
-        {
-          "id": "thisday_ng",
-          "name": "This Day Nigeria",
-          "country": "NG",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "africa",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://theintercept.com/2026/05/19/ebola-outbreak-trump-who/",
-          "headline": "Ebola Outbreak Rages After Trump Gutted Global Health Safeguards",
-          "snippet": "The World Health Organization’s chief said on Tuesday that he was “deeply concerned about the scale and speed” of an Ebola outbreak in the Democratic Republic of Congo and Uganda that has resulted in a spike in deaths — to at least 130 — and more than 500 suspected cases. The outbreak is…",
-          "source": "intercept",
-          "source_name": "The Intercept",
-          "country": "US",
-          "published": "Tue, 19 May 2026 20:58:12 +0000",
-          "image_url": "https://theintercept.com/wp-content/uploads/2026/05/GettyImages-2276542341-e1779219610343.jpg?fit=3594%2C1800",
-          "video_url": null
-        },
-        {
-          "url": "https://www.khaama.com/who-declares-global-health-emergency-over-ebola-outbreak/",
-          "headline": "WHO Declares Global Health Emergency Over Ebola Outbreak",
-          "snippet": "World Health Organization on Sunday declared a public health emergency of international concern following more than 300 suspected Ebola cases and 88 deaths linked to outbreaks in Democratic Republic of the Congo and Uganda. The WHO said the outbreak does not currently meet the criteria for a global…",
-          "source": "khaama",
-          "source_name": "Khaama Press Afghanistan",
-          "country": "AF",
-          "published": "Mon, 18 May 2026 09:40:00 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVl8xdjBJZkVybU5HLVlSNGFlR0dTT2FoakRHNDRsZkNxQkVqemxXb1R6ZGZEV21sTFIzemZiZGotSms3NU1mX3RmZk9qMkswSVphU2hrS0FTMXZWUE00dnR2b1AwbExZWFdmaXJOYVZ0RFlCYTI1bmlUem5DcFNDOFZNcFNFTlpTYnZmZk9kM3VtYThnN1h3QXBSUdIBoAFBVV95cUxPWWFDd0RXZENUbk1kOEJ0bDJGNXdhdUF6NFppbVREbkVJRG1CLXZ2UHc4LVlRVlR6Zlh2c3pFdWY4bEptWGxFOXFGdV9UdFRIR0RlREI3TE1GM194YjNXQXJKWklXbW1VaTJoemNlOXpLRGswNkZMQzhYdDZ5UTg3SG1ocDB0aVY1Z0I0cFdKZjBFUFJTZmpCOWg2N0g5MVkw?oc=5",
-          "headline": "Ex-CDC Chief Warns Ebola Outbreak Could Become ‘Very Significant Pandemic’ - HuffPost",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQVl8xdjBJZkVybU5HLVlSNGFlR0dTT2FoakRHNDRsZkNxQkVqemxXb1R6ZGZEV21sTFIzemZiZGotSms3NU1mX3RmZk9qMkswSVphU2hrS0FTMXZWUE00dnR2b1AwbExZWFdmaXJOYVZ0RFlCYTI1bmlUem5DcFNDOFZNcFNFTlpTYnZmZk9kM3VtYThnN1h3QXBSUdIBoAFBVV95cUxPWWFDd0RXZENUbk1kOEJ0bDJGNX…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Fri, 22 May 2026 07:56:32 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.telesurenglish.net/easterndrc-ebola-regional-outbreak-fears/",
-          "headline": "Eastern DRC Ebola Attacks Raise Regional Outbreak Fears",
-          "snippet": "Attacks on Ebola facilities in eastern are increasing as mistrust over burial measures and resource shortages strain the response effort. Ebola treatment facilities in eastern have come under attack amid rising infections and tensions over burial protocols. Photo: May 24, 2026 Hour: 8:01 am 🔗…",
-          "source": "telesur",
-          "source_name": "Telesur English",
-          "country": "VE",
-          "published": "Sun, 24 May 2026 12:01:48 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.nytimes.com/2026/05/17/world/africa/what-to-know-ebola-africa.html",
-          "headline": "What to Know About the Ebola Outbreak as Cases and Deaths Rise",
-          "snippet": "More than 170 deaths and about 750 cases are suspected. The United States restricted entry for people who have been to three African countries.",
-          "source": "nytimes",
-          "source_name": "The New York Times",
-          "country": "US",
-          "published": "Sat, 23 May 2026 11:38:18 +0000",
-          "image_url": "https://static01.nyt.com/images/2026/05/22/multimedia/22int-ebola-WTK-zwlv/22int-ebola-WTK-zwlv-mediumSquareAt3X.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thisdaylive.com/2026/05/25/ebola-outbreak-ncdc-puts-states-on-high-alert-urges-preparation-of-emergency-facilities/",
-          "headline": "Ebola Outbreak: NCDC Puts States on High Alert, Urges Preparation of Emergency Facilities",
-          "snippet": "Onyebuchi Ezigbo in Abuja The Nigeria Centre for Disease Control and Prevention (NCDC) has asked states to get their facilities ready in the event of a fresh Ebola disease outbreak in the country. It said its assessment estimated the risk of Ebola importation into Nigeria as high due to the ongoing…",
-          "source": "thisday_ng",
-          "source_name": "This Day Nigeria",
-          "country": "NG",
-          "published": "Mon, 25 May 2026 03:10:53 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.telesurenglish.net/drc-football-team-completes-21%e2%80%91day-u-s-isolation-to-play-world-cup-amid-ebola-outbreak/",
-          "headline": "DRC Football Team Completes 21‑Day U.S. Isolation to Play World Cup Amid Ebola Outbreak",
-          "snippet": "May 26, 2026 Hour: 12:06 am 🔗 Comparte este artículo The Congolese Football Federation (FECOFA) confirmed that its national team, the Leopards, is strictly adhering to a 21‑day isolation protocol imposed by the United States government following an Ebola outbreak in northeastern DRC, forcing the…",
-          "source": "telesur",
-          "source_name": "Telesur English",
-          "country": "VE",
-          "published": "Tue, 26 May 2026 04:06:29 +0000",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.078,
-        "zionist": 0.247,
-        "atlanticist": 0.337,
-        "statist": 0.123,
-        "financialized": 0.423
-      },
-      "fp_source_count": 6,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 3,
-        "global-south": 1,
-        "latin-america": 1,
-        "africa": 1
-      },
-      "section": "health"
     },
     {
       "id": "3fb022997151",
@@ -12737,191 +12737,10 @@
       "section": "sports"
     },
     {
-      "id": "22f73040dac9",
-      "headline": "La respuesta de Thiago Almada cuando le preguntaron por el interés de River Plate",
-      "summary": "El volante ofensivo podría marcharse del Atlético de Madrid y el Millonario pretende sus servicios",
-      "published": "Tue, 26 May 2026 05:07:27 +0000",
-      "image_url": "https://www.infobae.com/resizer/v2/RVQDV5KHD5H4XKC5E24KKKZ5QU.JPG?auth=83144e63c198c0421d3173668f2534a91ea32d1825554f536ff8a09d133b8890&smart=true&width=4458&height=2508",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 67,
-        "right_pct": 33,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 67
-      },
-      "bias_variance": 0.77,
-      "entity_count": 13,
-      "entity_list": [
-        "Almada",
-        "Correa",
-        "Coudet",
-        "Eterna",
-        "Imposible",
-        "Lorenzo",
-        "Marcos",
-        "Plate",
-        "Quintero",
-        "Reali",
-        "River",
-        "Thiago",
-        "Torino"
-      ],
-      "sources": [
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "la_razon_bo",
-          "name": "La Razón Bolivia",
-          "country": "BO",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "marca",
-          "name": "Marca",
-          "country": "ES",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.infobae.com/deportes/2026/05/10/combinacion-quirurgica-con-quintero-y-zurdazo-cruzado-asi-fue-el-golazo-de-marcos-acuna-para-river-plate-ante-san-lorenzo/",
-          "headline": "Combinación quirúrgica con Quintero y zurdazo cruzado: así fue el golazo de Marcos Acuña para River Plate ante San Lorenzo",
-          "snippet": "Marcos Acuña concretó un golazo para decretar el empate para River Plate frente a San Lorenzo , en el encuentro correspondiente a los octavos de final del Torneo Apertura 2026 . El tanto surgió después de una jugada colectiva que involucró a Juan Fernando Quintero , quien recién había ingresado al…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 00:33:37 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/RVQDV5KHD5H4XKC5E24KKKZ5QU.JPG?auth=83144e63c198c0421d3173668f2534a91ea32d1825554f536ff8a09d133b8890&smart=true&width=4458&height=2508",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/deportes/2026/05/10/la-lupa-sobre-la-expulsion-de-matias-reali-que-dejo-a-san-lorenzo-con-diez-jugadores-frente-a-river-plate/",
-          "headline": "La lupa sobre la expulsión de Matías Reali que dejó a San Lorenzo con diez jugadores frente a River Plate",
-          "snippet": "Los primeros momentos del duelo entre River Plate y San Lorenzo por los octavos de final del Torneo Apertura mostraron mucha intensidad. El juego tuvo un punto de inflexión cuando Matías Reali dejó con un hombre menos al Ciclón tras una dura entrada a Tomás Galván. Antes de eso, la presión ejercida…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sun, 10 May 2026 23:30:51 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/CWN34VMWURCXLHN5NHYUAJV6UU.jpg?auth=c86a969c34d697c58a3b4b59c0489556603ecd273ba6d2c94ad207eae685a363&smart=true&width=1920&height=1080",
-          "video_url": null
-        },
-        {
-          "url": "https://larazon.bo/marcas/2026/05/10/river-plate-sufre-pero-vence-en-penales-a-san-lorenzo-en-octavos/",
-          "headline": "River Plate sufre pero vence en penales a San Lorenzo en octavos",
-          "snippet": "El 'Millonario' tuvo que recurrir a la tanda dede los doce pasos para superar al 'Ciclón' y acceder a la siguiente instancia del torneo argentino The post <a href=\"https://larazon.bo/marcas/2026/05/10/river-plate-sufre-pero-vence-en-penales-a-san-lorenzo-en-octavos/\">River Plate sufre pero vence en…",
-          "source": "la_razon_bo",
-          "source_name": "La Razón Bolivia",
-          "country": "BO",
-          "published": "Mon, 11 May 2026 02:54:10 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.marca.com/futbol/atletico/2026/05/20/river-plate-pregunta-almada.html",
-          "headline": "River Plate sueña con juntar a Thiago Almada y a Ángel Correa",
-          "snippet": "El estreno de Thiago Almada no ha sido el esperado. Ni por el propio jugador, ni por la afición rojiblanca , que aspiraban a que el rendimiento del futbolista fuera mucho más destacado de lo que ha sido. Llegó como un desconocido para muchos y, prácticamente, va a concluir el curso sin saber mucho…",
-          "source": "marca",
-          "source_name": "Marca",
-          "country": "ES",
-          "published": "Wed, 20 May 2026 11:43:24 +0200",
-          "image_url": "https://e01-xlk-ue-marca.uecdn.es/files/article_main_microformat/uploads/2026/05/20/6a0d836a28250.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://larazon.bo/marcas/2026/05/24/bolivar-debuto-con-derrota-ante-river-plate-en-la-copa-imposible/",
-          "headline": "Bolívar debutó con derrota ante River Plate en la Copa Imposible",
-          "snippet": "‎La sub-17 de Bolívar debutó con derrota en la Copa Imposible 2026 tras caer por 1-3 ante River Plate, en el encuentro correspondiente a la primera jornada del Grupo D. ‎ ‎ ‎El partido se disputó en Medellín, donde el conjunto ‘Millonario’ mostró superioridad desde el inicio y resolvió el…",
-          "source": "la_razon_bo",
-          "source_name": "La Razón Bolivia",
-          "country": "BO",
-          "published": "Sun, 24 May 2026 18:57:37 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/deportes/2026/05/25/los-6-nombres-que-integran-la-lista-de-negociables-de-river-plate-y-cuantos-refuerzos-quiere-coudet/",
-          "headline": "Los 6 nombres que integran la lista de negociables de River Plate y cuántos refuerzos quiere Coudet",
-          "snippet": "La formación de River Plate en la final ante Belgrano (REUTERS/Agustin Marcarian) Luego de su último partido del semestre ante Blooming , pautado para este miércoles, por el Grupo H de la Copa Sudamericana , River Plate afrontará una reestructuración del plantel, que no tiene que ver con el…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 25 May 2026 21:36:48 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/OL35IJGVYFGPZO3TTPJHUNMGLY.JPG?auth=678398569c394c98ad9087b8759ff374278c6dd2eb3fe962d74bd3b2f0c3039a&smart=true&width=2255&height=1480",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/deportes/2026/05/25/la-respuesta-de-thiago-almada-cuando-le-preguntaron-por-el-interes-de-river-plate/",
-          "headline": "La respuesta de Thiago Almada cuando le preguntaron por el interés de River Plate",
-          "snippet": "Entre los jugadores del Atlético de Madrid que se pondrán a disposición del cuerpo técnico de la selección argentina está Thiago Almada , uno de los candidatos a integrar la nómina definitiva de Lionel Scaloni . El volante ofensivo no tuvo la mejor de sus temporadas en el Colchonero y, en medio de…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 25 May 2026 21:45:59 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/UPVUDYNVY5E6JIO2VI6YZRNQ3I.JPG?auth=2be50c51bb096a80b041849627b4acafd980f348415cc515f2e68cb5463748cb&smart=true&width=3548&height=1996",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/deportes/2026/05/26/el-noble-gesto-de-river-plate-con-el-torino-luego-de-la-tragedia-que-cambio-su-historia-eterna-amistad/",
-          "headline": "El noble gesto de River Plate con el Torino luego de la tragedia que cambió su historia: “Eterna amistad”",
-          "snippet": "River Plate y Torino: el histórico amistoso de 1949 tras la tragedia de Superga Corría el año 1949. El dolor en las tribunas del estadio Comunal de Turín era palpable. La ciudad italiana aún lloraba a sus héroes . Sin embargo, la tarde del 26 de mayo de aquel año, el fútbol, una vez más, intentó…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Tue, 26 May 2026 05:07:27 +0000",
-          "image_url": "https://www.infobae.com/resizer/v2/M2HPMORGP5BIFAFLQOLGT5Y4C4.jpg?auth=d057b8f21653c6a49259bcbed26fd331fef6278856aafa1e451ef1858e533499&smart=true&width=620&height=350",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.127,
-        "zionist": 0.237,
-        "atlanticist": 0.407,
-        "statist": 0.183,
-        "financialized": 0.4
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "latin-america": 2,
-        "west": 1
-      },
-      "section": "sports"
-    },
-    {
       "id": "40bec3f5c195",
       "headline": "Nouveau gouvernement : Ces 5 ministres qui seront encore reconduits par Bassirou Diomaye Faye",
       "summary": "<p><img width=\"1280\" height=\"676\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" data-src=\"https://www.senenews.com/wp-content/uploads/2025/06/conseil-des-ministres.webp\" class=\"attachment-full size-full wp-post-image lazy\" alt=\"Loyers impayés : Ce ministère menacé d&rs",
-      "published": "Mon, 25 May 2026 19:58:26 +0000",
+      "published": "Tue, 26 May 2026 06:59:34 +0000",
       "image_url": "https://www.senenews.com/wp-content/uploads/2026/03/whatsapp-image-2026-03-03-at-07.58.38.jpeg",
       "video_url": null,
       "has_video": false,
@@ -12937,7 +12756,7 @@
         "dominant_pct": 67
       },
       "bias_variance": 1.41,
-      "entity_count": 33,
+      "entity_count": 34,
       "entity_list": [
         "Ahmadou",
         "Aminou",
@@ -12945,6 +12764,7 @@
         "Bassirou",
         "Coalition",
         "Comment",
+        "Conseil",
         "DIRECT",
         "Dialogue",
         "Diomaye",
@@ -13242,6 +13062,17 @@
           "published": "Mon, 25 May 2026 19:58:26 +0000",
           "image_url": "https://www.senenews.com/wp-content/uploads/2025/04/diomaye-nomination-signature_8802.jpg",
           "video_url": null
+        },
+        {
+          "url": "https://www.senenews.com/actualites/le-president-bassirou-diomaye-faye-a-saisi-le-conseil-constitutionnel_587640.html",
+          "headline": "Le président Bassirou Diomaye Faye a saisi le Conseil constitutionnel",
+          "snippet": "Le président Bassirou Diomaye Faye a saisi le Conseil constitutionnel, amplifiant une crise politique déjà profonde au Sénégal. Cette décision, visant à réintégrer Ousmane Sonko à l'Assemblée nationale, ouvre un débat crucial sur l'équilibre des pouvoirs et la légalité constitutionnelle dans un…",
+          "source": "senenews",
+          "source_name": "Senenews",
+          "country": "SN",
+          "published": "Tue, 26 May 2026 06:59:34 +0000",
+          "image_url": "https://www.senenews.com/wp-content/uploads/2025/12/img_3189.png",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -13260,6 +13091,187 @@
         "africa": 1
       },
       "section": "world"
+    },
+    {
+      "id": "22f73040dac9",
+      "headline": "La respuesta de Thiago Almada cuando le preguntaron por el interés de River Plate",
+      "summary": "El volante ofensivo podría marcharse del Atlético de Madrid y el Millonario pretende sus servicios",
+      "published": "Tue, 26 May 2026 05:07:27 +0000",
+      "image_url": "https://www.infobae.com/resizer/v2/RVQDV5KHD5H4XKC5E24KKKZ5QU.JPG?auth=83144e63c198c0421d3173668f2534a91ea32d1825554f536ff8a09d133b8890&smart=true&width=4458&height=2508",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 67,
+        "right_pct": 33,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 67
+      },
+      "bias_variance": 0.77,
+      "entity_count": 13,
+      "entity_list": [
+        "Almada",
+        "Correa",
+        "Coudet",
+        "Eterna",
+        "Imposible",
+        "Lorenzo",
+        "Marcos",
+        "Plate",
+        "Quintero",
+        "Reali",
+        "River",
+        "Thiago",
+        "Torino"
+      ],
+      "sources": [
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "la_razon_bo",
+          "name": "La Razón Bolivia",
+          "country": "BO",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "marca",
+          "name": "Marca",
+          "country": "ES",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/10/combinacion-quirurgica-con-quintero-y-zurdazo-cruzado-asi-fue-el-golazo-de-marcos-acuna-para-river-plate-ante-san-lorenzo/",
+          "headline": "Combinación quirúrgica con Quintero y zurdazo cruzado: así fue el golazo de Marcos Acuña para River Plate ante San Lorenzo",
+          "snippet": "Marcos Acuña concretó un golazo para decretar el empate para River Plate frente a San Lorenzo , en el encuentro correspondiente a los octavos de final del Torneo Apertura 2026 . El tanto surgió después de una jugada colectiva que involucró a Juan Fernando Quintero , quien recién había ingresado al…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 11 May 2026 00:33:37 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/RVQDV5KHD5H4XKC5E24KKKZ5QU.JPG?auth=83144e63c198c0421d3173668f2534a91ea32d1825554f536ff8a09d133b8890&smart=true&width=4458&height=2508",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/10/la-lupa-sobre-la-expulsion-de-matias-reali-que-dejo-a-san-lorenzo-con-diez-jugadores-frente-a-river-plate/",
+          "headline": "La lupa sobre la expulsión de Matías Reali que dejó a San Lorenzo con diez jugadores frente a River Plate",
+          "snippet": "Los primeros momentos del duelo entre River Plate y San Lorenzo por los octavos de final del Torneo Apertura mostraron mucha intensidad. El juego tuvo un punto de inflexión cuando Matías Reali dejó con un hombre menos al Ciclón tras una dura entrada a Tomás Galván. Antes de eso, la presión ejercida…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 10 May 2026 23:30:51 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/CWN34VMWURCXLHN5NHYUAJV6UU.jpg?auth=c86a969c34d697c58a3b4b59c0489556603ecd273ba6d2c94ad207eae685a363&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://larazon.bo/marcas/2026/05/10/river-plate-sufre-pero-vence-en-penales-a-san-lorenzo-en-octavos/",
+          "headline": "River Plate sufre pero vence en penales a San Lorenzo en octavos",
+          "snippet": "El 'Millonario' tuvo que recurrir a la tanda dede los doce pasos para superar al 'Ciclón' y acceder a la siguiente instancia del torneo argentino The post <a href=\"https://larazon.bo/marcas/2026/05/10/river-plate-sufre-pero-vence-en-penales-a-san-lorenzo-en-octavos/\">River Plate sufre pero vence en…",
+          "source": "la_razon_bo",
+          "source_name": "La Razón Bolivia",
+          "country": "BO",
+          "published": "Mon, 11 May 2026 02:54:10 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.marca.com/futbol/atletico/2026/05/20/river-plate-pregunta-almada.html",
+          "headline": "River Plate sueña con juntar a Thiago Almada y a Ángel Correa",
+          "snippet": "El estreno de Thiago Almada no ha sido el esperado. Ni por el propio jugador, ni por la afición rojiblanca , que aspiraban a que el rendimiento del futbolista fuera mucho más destacado de lo que ha sido. Llegó como un desconocido para muchos y, prácticamente, va a concluir el curso sin saber mucho…",
+          "source": "marca",
+          "source_name": "Marca",
+          "country": "ES",
+          "published": "Wed, 20 May 2026 11:43:24 +0200",
+          "image_url": "https://e01-xlk-ue-marca.uecdn.es/files/article_main_microformat/uploads/2026/05/20/6a0d836a28250.jpeg",
+          "video_url": null
+        },
+        {
+          "url": "https://larazon.bo/marcas/2026/05/24/bolivar-debuto-con-derrota-ante-river-plate-en-la-copa-imposible/",
+          "headline": "Bolívar debutó con derrota ante River Plate en la Copa Imposible",
+          "snippet": "‎La sub-17 de Bolívar debutó con derrota en la Copa Imposible 2026 tras caer por 1-3 ante River Plate, en el encuentro correspondiente a la primera jornada del Grupo D. ‎ ‎ ‎El partido se disputó en Medellín, donde el conjunto ‘Millonario’ mostró superioridad desde el inicio y resolvió el…",
+          "source": "la_razon_bo",
+          "source_name": "La Razón Bolivia",
+          "country": "BO",
+          "published": "Sun, 24 May 2026 18:57:37 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/25/los-6-nombres-que-integran-la-lista-de-negociables-de-river-plate-y-cuantos-refuerzos-quiere-coudet/",
+          "headline": "Los 6 nombres que integran la lista de negociables de River Plate y cuántos refuerzos quiere Coudet",
+          "snippet": "La formación de River Plate en la final ante Belgrano (REUTERS/Agustin Marcarian) Luego de su último partido del semestre ante Blooming , pautado para este miércoles, por el Grupo H de la Copa Sudamericana , River Plate afrontará una reestructuración del plantel, que no tiene que ver con el…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 21:36:48 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/OL35IJGVYFGPZO3TTPJHUNMGLY.JPG?auth=678398569c394c98ad9087b8759ff374278c6dd2eb3fe962d74bd3b2f0c3039a&smart=true&width=2255&height=1480",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/25/la-respuesta-de-thiago-almada-cuando-le-preguntaron-por-el-interes-de-river-plate/",
+          "headline": "La respuesta de Thiago Almada cuando le preguntaron por el interés de River Plate",
+          "snippet": "Entre los jugadores del Atlético de Madrid que se pondrán a disposición del cuerpo técnico de la selección argentina está Thiago Almada , uno de los candidatos a integrar la nómina definitiva de Lionel Scaloni . El volante ofensivo no tuvo la mejor de sus temporadas en el Colchonero y, en medio de…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 21:45:59 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/UPVUDYNVY5E6JIO2VI6YZRNQ3I.JPG?auth=2be50c51bb096a80b041849627b4acafd980f348415cc515f2e68cb5463748cb&smart=true&width=3548&height=1996",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/26/el-noble-gesto-de-river-plate-con-el-torino-luego-de-la-tragedia-que-cambio-su-historia-eterna-amistad/",
+          "headline": "El noble gesto de River Plate con el Torino luego de la tragedia que cambió su historia: “Eterna amistad”",
+          "snippet": "River Plate y Torino: el histórico amistoso de 1949 tras la tragedia de Superga Corría el año 1949. El dolor en las tribunas del estadio Comunal de Turín era palpable. La ciudad italiana aún lloraba a sus héroes . Sin embargo, la tarde del 26 de mayo de aquel año, el fútbol, una vez más, intentó…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Tue, 26 May 2026 05:07:27 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/M2HPMORGP5BIFAFLQOLGT5Y4C4.jpg?auth=d057b8f21653c6a49259bcbed26fd331fef6278856aafa1e451ef1858e533499&smart=true&width=620&height=350",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.127,
+        "zionist": 0.237,
+        "atlanticist": 0.407,
+        "statist": 0.183,
+        "financialized": 0.4
+      },
+      "fp_source_count": 3,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "latin-america": 2,
+        "west": 1
+      },
+      "section": "sports"
     },
     {
       "id": "e02e72d26a20",
@@ -20515,14 +20527,15 @@
         "dominant": "center",
         "dominant_pct": 100
       },
-      "bias_variance": 9.31,
-      "entity_count": 23,
+      "bias_variance": 8.64,
+      "entity_count": 24,
       "entity_list": [
         "Africa",
         "BRIEF",
         "Belaruskali",
         "Chinese",
         "ECOSOC",
+        "Egyptian",
         "European",
         "Final",
         "Foreign",
@@ -20624,6 +20637,18 @@
           "bias_bucket": "center",
           "geo_cluster": "pacific-asia",
           "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "egypt_independent",
+          "name": "Egypt Independent",
+          "country": "EG",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "middle-east",
+          "factuality": "unknown",
           "primary_vs_launder": "primary",
           "parent_company": ""
         }
@@ -20837,20 +20862,32 @@
           "published": "Tue, 26 May 2026 06:41:00 +0300",
           "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/d/e/836100/de37f95272dc396607c896103ea0718c.jpeg",
           "video_url": null
+        },
+        {
+          "url": "https://www.egyptindependent.com/us-iran-negotiations-reach-a-critical-turning-point-and-decisive-phase-egyptian-foreign-ministry/",
+          "headline": "US-Iran negotiations reach a critical turning point and decisive phase: Egyptian Foreign Ministry",
+          "snippet": "The Egyptian Ministry of Foreign Affairs has revealed that negotiations between the United States and Iran have reached a delicate turning point and a decisive phase, noting positive indicators and cautious optimism regarding the possibility of reaching an agreement in the near future. Ambassador…",
+          "source": "egypt_independent",
+          "source_name": "Egypt Independent",
+          "country": "EG",
+          "published": "Tue, 26 May 2026 03:00:31 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
-        "interventionist": 0.042,
-        "zionist": 0.042,
-        "atlanticist": 0.223,
-        "statist": 0.29,
-        "financialized": 0.17
+        "interventionist": 0.036,
+        "zionist": 0.05,
+        "atlanticist": 0.234,
+        "statist": 0.206,
+        "financialized": 0.16
       },
-      "fp_source_count": 6,
+      "fp_source_count": 7,
       "geo_frame": null,
       "geo_frame_label": null,
       "geo_frame_topic": null,
       "geo_breakdown": {
+        "middle-east": 1,
         "adversarial": 2,
         "west": 1,
         "pacific-asia": 1,
