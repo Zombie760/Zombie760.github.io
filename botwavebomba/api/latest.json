@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-26T05:31:14.048999+00:00",
-  "article_count": 55626,
+  "generated_at": "2026-05-26T05:46:11.294382+00:00",
+  "article_count": 55731,
   "story_count": 160,
   "sections": [
     {
@@ -21,7 +21,7 @@
     {
       "id": "tech",
       "label": "Tech",
-      "count": 8
+      "count": 9
     },
     {
       "id": "health",
@@ -36,7 +36,7 @@
     {
       "id": "sports",
       "label": "Sports",
-      "count": 39
+      "count": 38
     },
     {
       "id": "entertainment",
@@ -14616,188 +14616,6 @@
       "geo_breakdown": {
         "latin-america": 2,
         "west": 1
-      },
-      "section": "sports"
-    },
-    {
-      "id": "fdcbc3855734",
-      "headline": "Crystal Palace latest: Wharton injury scare ahead of Conference League final",
-      "summary": "",
-      "published": "Mon, 25 May 2026 09:16:45 +0000",
-      "image_url": "https://e01-xlk-ue-marca.uecdn.es/files/article_main_microformat/uploads/2026/05/08/69fd4da8774b0.jpeg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 67,
-        "right_pct": 33,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 67
-      },
-      "bias_variance": 0.66,
-      "entity_count": 14,
-      "entity_list": [
-        "Conference",
-        "Crystal",
-        "Iraola",
-        "League",
-        "Mariani",
-        "Maurizio",
-        "Palace",
-        "Papers",
-        "Puskas",
-        "Resumen",
-        "Shakhtar",
-        "Stefano",
-        "Vallecano",
-        "Wharton"
-      ],
-      "sources": [
-        {
-          "id": "marca",
-          "name": "Marca",
-          "country": "ES",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "sky_sports",
-          "name": "Sky Sports",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.marca.com/futbol/conference-league/2026/05/08/rayo-tendra-11-500-entradas-final-conference-league-crystal-palace-precios.html",
-          "headline": "El Rayo tendrá 11.500 entradas para la final de la Conference League contra el Crystal Palace: los precios",
-          "snippet": "El Rayo Vallecano , clasificado para la final de la Conference League frente al Crystal Palace inglés, dispondrá de 11.500 entradas para sus aficionados para el partido del 27 de mayo en el Red Bull Arena de Leipzig (Alemania) , según informó la tras conocerse el nombre de los dos equipos…",
-          "source": "marca",
-          "source_name": "Marca",
-          "country": "ES",
-          "published": "Fri, 08 May 2026 04:42:56 +0200",
-          "image_url": "https://e01-xlk-ue-marca.uecdn.es/files/article_main_microformat/uploads/2026/05/08/69fd4da8774b0.jpeg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.marca.com/futbol/conference-league/2026/05/07/crystal-palace-2-1-shakhtar-resumen-conference-leagu-video.html",
-          "headline": "Crystal Palace 2-1 Shakhtar | Resumen ​Conference League",
-          "snippet": "'; slot.prepend(close_button); setTimeout(function () { slot.setAttribute('style', 'height:auto;'); close_button.classList.remove('hidden'); }.bind(this), 5000); } if (!event.isEmpty && event.size && event.size.length > 1 && (event.size[0] == 300 && event.size[1] == 299)) { if…",
-          "source": "marca",
-          "source_name": "Marca",
-          "country": "ES",
-          "published": "Thu, 07 May 2026 23:33:37 +0200",
-          "image_url": "https://www.dailymotion.com/crawler/video/k2QAMc6Gt4y97KFSXaw",
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/news/12040/13542154/andoni-iraola-crystal-palace-step-up-efforts-to-hire-bournemouth-boss-on-three-year-deal-paper-talk",
-          "headline": "Papers: Crystal Palace step up Iraola efforts",
-          "snippet": "The top stories and transfer rumours from Sunday's newspapers... PREMIER LEAGUE Crystal Palace are stepping up their attempts to convince Bournemouth's Andoni Iraola to take over from Oliver Glasner and are set to offer him a lucrative three-year contract - The Guardian Please use Chrome browser…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Fri, 08 May 2026 22:15:00 BST",
-          "image_url": "https://e1.365dm.com/25/03/1920x1080/skysports-paper-talk-brand-refresh_6852897.jpg?20250311094415",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/espana/agencias/2026/05/11/el-italiano-maurizio-mariani-arbitrara-la-final-crystal-palace-rayo-vallecano/",
-          "headline": "El italiano Maurizio Mariani arbitrará la final Crystal Palace-Rayo Vallecano",
-          "snippet": "Madrid, 11 may (EFE).- El italiano Maurizio Mariani arbitrará la final de la Liga Conferencia entre el Crystal Palace y el Rayo Vallecano, el miércoles 27 de mayo en la localidad alemana de Leipzig (21.00h HEC), según anunció este lunes la Comisión de Árbitros de la UEFA. El equipo arbitral de la…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 11 May 2026 13:15:40 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/espana/agencias/2026/05/24/el-crystal-palace-de-debut-europeo-a-una-final-historica/",
-          "headline": "El Crystal Palace, de debut europeo a una final histórica",
-          "snippet": "Londres, 24 may (EFE).- En su primera participación en Europa y tras ser relegado de la Liga Europa a la Liga Conferencia por cuestiones reglamentarias de la UEFA, el Crystal Palace ha firmado un recorrido largo, irregular por momentos, pero finalmente brillante hasta alcanzar una final histórica…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sun, 24 May 2026 11:31:08 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/espana/agencias/2026/05/24/el-partido-60-del-curso-del-crystal-palace-con-21-triunfos-19-empates-y-19-derrotas/",
-          "headline": "El partido 60 del curso del Crystal Palace, con 21 triunfos, 19 empates y 19 derrotas",
-          "snippet": "Madrid, 24 may (EFE).- El Crystal Palace llegará al encuentro por el título de la Liga Conferencia contra el Rayo Vallecano después 21 victorias, 19 empates y 19 derrotas a lo largo de sus 59 choques entre todas las competiciones, en los que sumó 75 goles a favor y 69 en contra, además de…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sun, 24 May 2026 17:30:21 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-          "headline": "Crystal Palace latest: Wharton injury scare ahead of Conference League final",
-          "snippet": "Football F1 Cricket Rugby Union Rugby League Golf Boxing NFL Tennis NBA Racing Darts Netball MMA More Sports Scores Watch Sky Bet More Podcasts Upcoming on Sky Get Sky Sports Sky Sports App Sky Sports with no contract Kick It Out British South Asians in Football Watch Sky Sports Football All Teams…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Thu, 21 May 2026 16:30:00 BST",
-          "image_url": "https://e2.365dm.com/25/10/1920x1080/skysports-crystal-palace-news_7039251.jpg?20251002160103",
-          "video_url": null
-        },
-        {
-          "url": "https://www.infobae.com/espana/agencias/2026/05/25/el-crystal-palace-el-equipo-de-barrio-al-que-vencieron-puskas-y-di-stefano/",
-          "headline": "El Crystal Palace, el equipo de barrio al que vencieron Puskas y Di Stefano",
-          "snippet": "(corrige quinto párrafo: bien \"titulares\" y no \"títulos\" Manuel Sánchez Gómez Londres, 25 may (EFE).- Al sur de Londres, a 11 kilómetros del centro de la ciudad, se encuentra Selhurst Park, uno de los pocos estadios de la Premier League aún definidos por el corte del antiguo fútbol inglés.…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Mon, 25 May 2026 09:16:45 +0000",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.12,
-        "zionist": 0.24,
-        "atlanticist": 0.413,
-        "statist": 0.137,
-        "financialized": 0.31
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "latin-america": 1,
-        "west": 2
       },
       "section": "sports"
     },
@@ -31202,6 +31020,17 @@
           "published": "Tue, 26 May 2026 04:42:06 GMT",
           "image_url": "https://static.independent.co.uk/2026/05/26/02/2276029252..?width=1200&auto=webp&crop=3%3A2",
           "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/news/mena/2026/05/25/iran-demands-service-fees-for-vessels-in-hormuz-ahead-of-potential-us-deal/",
+          "headline": "Iran demands ‘service fees’ for vessels in Strait of Hormuz ahead of potential US deal",
+          "snippet": "Iran claimed on Monday that it is not seeking to impose “tolls” on ships passing through the Strait of Hormuz, but warned that vessels could face other charges as peace talks with the go on. Tehran’s vague approach appears aimed at avoiding accusations of illegally monetising transit through one of…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Mon, 25 May 2026 12:36:47 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/NPE7AKUHTCBCYCJYTO45DZ3ZLY.jpg?auth=1c2ea8aa16a2579d8b963636bcfe6229eef426088f6bcfd061cf343faec30b98&smart=true&width=4597&height=3065",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -44448,8 +44277,8 @@
     },
     {
       "id": "487e8b37a90f",
-      "headline": "Israel escalates strikes in Lebanon as Netanyahu vows to ‘crush’ Hezbollah",
-      "summary": "<p>Hezbollah and Israel launch attacks amid increasingly imperilled ceasefire and stalling talks between US and Iran</p><ul><li><p><a href=\"https://www.theguardian.com/world/live/2026/may/25/iran-war-news-middle-east-crisis-oil-price-us-tehran-peace-talks-deal-strait-hormuz#top-of-blog\">Middle East ",
+      "headline": "Israel escalates strikes in Lebanon as Netanyahu vows to ‘crush’ Hezbollah - The Guardian",
+      "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPVnhabGZSOXB5TzhwZVdZUEZRWTVCLWswaUtFbTVlMEViM0JVem1tWUFtYnBITmtYQkNtaHFJUENYdnBucTBIZ2w2RFRjdzM2NkhPYzdwazUtSkh5SXBpMEowREtVSGRwNzBkZGhjQ2Y4VWc2ZTZLbWZ2OG9RZzY4bktuaWRya3lvckFRT0laNmhKS0RZVGt0bkZmSVMzR01KR1V0X01KTk9YSjRQVWFEcmwwTG",
       "published": "Tue, 26 May 2026 00:01:52 GMT",
       "image_url": "https://d2udx5iz3h7s4h.cloudfront.net/2026/5/8/Reuters/image/2026_05_08T085351Z_446983069_RC2V4LAJRHCS_RTRMADP_3_IRAN_CRISIS_LEBANON_ISRAEL.JPG?width=1440&format=webp&quality=80",
       "video_url": null,
@@ -44466,7 +44295,7 @@
         "dominant_pct": 46
       },
       "bias_variance": 7.76,
-      "entity_count": 38,
+      "entity_count": 39,
       "entity_list": [
         "Attacks",
         "Beirut",
@@ -44475,6 +44304,7 @@
         "Destroyed",
         "Dismiss",
         "Escalates",
+        "Guardian",
         "Hezbollah",
         "Intensify",
         "Irans",
@@ -45614,6 +45444,17 @@
           "country": "AE",
           "published": "Mon, 25 May 2026 18:51:33 +0000",
           "image_url": "https://www.thenationalnews.com/resizer/v2/VA5HQLRJ5CFMFKYYFDRPLI62SE.jpg?auth=edefffb349ce2dd27603b1f5f8a63d14f1e0eec4ac486617ec7b155a3362339b&smart=true&width=5500&height=3668",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVnhabGZSOXB5TzhwZVdZUEZRWTVCLWswaUtFbTVlMEViM0JVem1tWUFtYnBITmtYQkNtaHFJUENYdnBucTBIZ2w2RFRjdzM2NkhPYzdwazUtSkh5SXBpMEowREtVSGRwNzBkZGhjQ2Y4VWc2ZTZLbWZ2OG9RZzY4bktuaWRya3lvckFRT0laNmhKS0RZVGt0bkZmSVMzR01KR1V0X01KTk9YSjRQVWFEcmwwTGRkTVY3RWc?oc=5",
+          "headline": "Israel escalates strikes in Lebanon as Netanyahu vows to ‘crush’ Hezbollah - The Guardian",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPVnhabGZSOXB5TzhwZVdZUEZRWTVCLWswaUtFbTVlMEViM0JVem1tWUFtYnBITmtYQkNtaHFJUENYdnBucTBIZ2w2RFRjdzM2NkhPYzdwazUtSkh5SXBpMEowREtVSGRwNzBkZGhjQ2Y4VWc2ZTZLbWZ2OG9RZzY4bktuaWRya3lvckFRT0laNmhKS0RZVGt0bkZmSVMzR01KR1V0X01KTk9YSjRQVWFEcmwwTGRkTVY3RW…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Tue, 26 May 2026 00:01:00 GMT",
+          "image_url": null,
           "video_url": null
         }
       ],
@@ -47370,7 +47211,7 @@
       "id": "4069b3a35ede",
       "headline": "‘I’m sick and tired of this country’ – Ghanaians in South Africa pour out frustrations at meeting with Foreign Affairs Minister",
       "summary": "At an emotionally charged meeting with Ghana’s Foreign Affairs and Regional Integration Minister, Samuel Okudzeto Ablakwa, at the Ghana High Commission in Pretoria, distressed Ghanaian nationals shared painful accounts of fear, legal uncertainty and economic hardship amid the growing wave of xenopho",
-      "published": "Tue, 26 May 2026 04:00:04 GMT",
+      "published": "Tue, 26 May 2026 05:28:56 GMT",
       "image_url": "https://i.dailymail.com/1s/2026/05/08/16/108475981-0-image-a-34_1778255932907.jpg",
       "video_url": null,
       "has_video": false,
@@ -47386,7 +47227,7 @@
         "dominant_pct": 68
       },
       "bias_variance": 6.25,
-      "entity_count": 123,
+      "entity_count": 127,
       "entity_list": [
         "AMVCA",
         "Across",
@@ -47415,6 +47256,7 @@
         "Chinese",
         "Closed",
         "Collins",
+        "Combat",
         "Commission",
         "Cooperation",
         "Cross",
@@ -47427,6 +47269,7 @@
         "Diversity",
         "Double",
         "Ebola",
+        "Efforts",
         "Electricity",
         "Ending",
         "Ethiopia",
@@ -47450,6 +47293,7 @@
         "Investment",
         "Itself",
         "Joburg",
+        "Joins",
         "Joint",
         "Kanayo",
         "Kruger",
@@ -47472,6 +47316,7 @@
         "Needs",
         "Nigerian",
         "Nigerians",
+        "Outbreak",
         "Palestinian",
         "Pamela",
         "Petitions",
@@ -48495,6 +48340,17 @@
           "source_name": "Financial Times",
           "country": "GB",
           "published": "Tue, 26 May 2026 04:00:04 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://allafrica.com/stories/202605260055.html",
+          "headline": "Africa: South Africa Joins Efforts to Combat Ebola Outbreak",
+          "snippet": "South Africa has pledged an initial $5 million contribution to support a $319 million continental preparedness and response plan, as Africa mobilises to combat its second-largest Ebola outbreak in history. This, according to President Cyril Ramaphosa, who addressed a High-Level Meeting of African…",
+          "source": "allafrica",
+          "source_name": "AllAfrica",
+          "country": "NG",
+          "published": "Tue, 26 May 2026 05:28:56 GMT",
           "image_url": null,
           "video_url": null
         }
@@ -53811,7 +53667,7 @@
       "id": "2be067c9c76e",
       "headline": "Rubio's visit to India focuses on U.S. trade tensions, the Quad alliance and sightseeing",
       "summary": "U.S. Secretary of State Marco Rubio's visit to India marks an effort by Washington and New Delhi to steady strained relations as the two countries seek to reinforce strategic and economic ties despite recent trade tensions.",
-      "published": "Mon, 25 May 2026 16:42:28 -0400",
+      "published": "Tue, 26 May 2026 13:40:51 +0800",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6457/live/9f324bc0-5697-11f1-8b8c-6d33e1d5abb6.jpg",
       "video_url": null,
       "has_video": false,
@@ -54508,6 +54364,17 @@
           "country": "US",
           "published": "Mon, 25 May 2026 16:42:28 -0400",
           "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/05/2026-05-25T100555Z_1752621649_RC29GLA730RA_RTRMADP_3_INDIA-USA-1024x682.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/world/world/2026/05/1448781/rubio-revives-quad-alliance-india-staying-power-unclear",
+          "headline": "Rubio revives 'Quad' alliance in India, but staying power unclear",
+          "snippet": "NEW DELHI: US Secretary of State Marco Rubio called Tuesday for a revival of joint cooperation with Australia, India and Japan – the so-called Quad grouping viewed suspiciously by China – following disagreement on Iran and questions over US commitment.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Tue, 26 May 2026 13:40:51 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/35BFD04FBEDD0463E3DA731A7AB6296F_data_0.jpg",
           "video_url": null
         }
       ],
@@ -58400,7 +58267,7 @@
       "id": "23f79d23d944",
       "headline": "In rare clash, North Korea defeats South Korea … on the soccer field",
       "summary": "In an inter-peninsula match-up between women's teams that showed the limits of sports diplomacy, players from North Korea remained stone-faced — until they won.",
-      "published": "Tue, 26 May 2026 10:26:00 +0530",
+      "published": "Tue, 26 May 2026 10:51:57 +0530",
       "image_url": "https://cdn.dailymaverick.co.za/attachments/2991/13960029_327079.jpg",
       "video_url": null,
       "has_video": false,
@@ -58972,6 +58839,17 @@
           "country": "IN",
           "published": "Tue, 26 May 2026 10:26:00 +0530",
           "image_url": "https://th-i.thgim.com/public/incoming/n6nuto/article71023674.ece/alternates/LANDSCAPE_1200/North_Korea_04711.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/international/kim-vows-to-irreversibly-cement-north-koreas-nuclear-status-calls-south-most-hostile/article70778208.ece",
+          "headline": "Kim vows to ’irreversibly’ cement North Korea’s nuclear status, calls South ’most hostile’",
+          "snippet": "In this photo provided by the North Korean government, its leader Kim Jong Un delivers a speech during a session of the Supreme People’s Assembly at parliament in Pyongyang, North Korea on March 23, 2026. Independent journalists were not given access to cover the event depicted in this image…",
+          "source": "the_hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Tue, 26 May 2026 10:51:57 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/74krji/article70778211.ece/alternates/LANDSCAPE_1200/North_Korea_04711.jpg",
           "video_url": null
         }
       ],
@@ -72493,6 +72371,17 @@
           "published": "Tue, 26 May 2026 03:52:42 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/7XHICEGBXJHBLJFIMAZ5RGDNAE.JPG?auth=cc0e66da07bc43750ebe99414aff2918c47d6258f84822f5a0282d20b2230657&smart=true&width=7246&height=4076",
           "video_url": null
+        },
+        {
+          "url": "https://nypost.com/2026/05/26/sports/charles-barkley-evisorates-cavaliers-for-shameful-effort-against-knicks/",
+          "headline": "Charles Barkley eviscerates Cavaliers for their shameful ‘effort’ against Knicks",
+          "snippet": "Charles Barkley didn’t even wait for the final buzzer to tear into the Cavaliers during their season-ending loss, which punched the Knicks’ ticket to the Finals for the first time since 1999. The Cavaliers started off Monday’s elimination game strong before the Knicks overpowered them for over…",
+          "source": "ny_post",
+          "source_name": "New York Post",
+          "country": "US",
+          "published": "Mon, 25 May 2026 21:20:12 -0700",
+          "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2F05-25-26-cleveland-cavaliers-128738322.jpg?w%3D1024",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -72514,328 +72403,6 @@
         "pacific-asia": 2
       },
       "section": "sports"
-    },
-    {
-      "id": "46f1c734f431",
-      "headline": "Norway-set drama about political polarization ‘Fjord’ wins Palme d’Or at Cannes",
-      "summary": "Cristian Mungiu’s Norway-set drama about political polarization, “Fjord,” has won the Palme d’Or, handing the Cannes Film Festival ’s top honor for the second time to Mungiu, the Romanian director of “4 Months, 3 Weeks and 2 Days.”At a 79th Cannes Film Festival that saw few films cause a stir, “Fjor",
-      "published": "Mon, 25 May 2026 17:30:00 +0000",
-      "image_url": "https://gfx.nrk.no/zISGexAvA1V0QF1TswdHtwVFf2Rlr6Y0v1nEBtZ-iqvw.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": false,
-      "blindspot_label": null,
-      "blindspot_score": 0.0,
-      "coverage": {
-        "left_pct": 10,
-        "center_pct": 60,
-        "right_pct": 30,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 60
-      },
-      "bias_variance": 4.67,
-      "entity_count": 24,
-      "entity_list": [
-        "Aishwarya",
-        "Bachchan",
-        "Bella",
-        "Bellucci",
-        "Cannes",
-        "Deadline",
-        "Fjord",
-        "Guldpalmen",
-        "Gullpalmen",
-        "Hadid",
-        "Monica",
-        "Mungiu",
-        "Norsk",
-        "Norway",
-        "Oscar",
-        "Palme",
-        "Reinsve",
-        "Renate",
-        "Romania",
-        "Sebastian",
-        "Starrer",
-        "Winners",
-        "Yahoo",
-        "Zlatou"
-      ],
-      "sources": [
-        {
-          "id": "infobae",
-          "name": "Infobae",
-          "country": "AR",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "nrk_en",
-          "name": "NRK Norway",
-          "country": "NO",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "novinky_cz",
-          "name": "Novinky.cz",
-          "country": "CZ",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "hollywood_reporter",
-          "name": "The Hollywood Reporter",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
-        },
-        {
-          "id": "dn_nyheter",
-          "name": "Dagens Nyheter",
-          "country": "SE",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "scmp",
-          "name": "South China Morning Post",
-          "country": "HK",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "france24",
-          "name": "France 24",
-          "country": "FR",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "launderer",
-          "parent_company": "unknown (launderer)"
-        },
-        {
-          "id": "nbc_news",
-          "name": "NBC News",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Comcast"
-        },
-        {
-          "id": "tercera",
-          "name": "La Tercera",
-          "country": "CL",
-          "bloc": "non-aligned",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "latin-america",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.infobae.com/america/agencias/2026/05/23/fjord-del-rumano-mungiu-y-la-chilena-la-perra-reciben-premios-paralelos-en-cannes/",
-          "headline": "'Fjord', del rumano Mungiu, y la chilena 'La perra' reciben premios paralelos en Cannes",
-          "snippet": "Cannes (Francia), 23 may (EFE).- La película rumana 'Fjord', de Cristian Mungiu, ha sido recompensada con el premio de los críticos internacionales (Fipresci), el premio Ecuménico y el de la Ciudadanía 2026, mientras que la chilena 'La perra', de Dominga Sotomayor, se llevó la Palma de Perro y…",
-          "source": "infobae",
-          "source_name": "Infobae",
-          "country": "AR",
-          "published": "Sat, 23 May 2026 16:31:23 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.nrk.no/nyheter/norsk-rumenske-_fjord_-vant-gullpalmen-i-cannes-1.17895259",
-          "headline": "Norsk-rumenske «Fjord» vant Gullpalmen i Cannes",
-          "snippet": ":where(body) { margin: 0; } .nrkno-header-wrapper:before { content:''; display:block; background:url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 35 14\" id=\"nrk-logo-nrk\" fill=\"white\"%3E%3Cpath d=\"M0 12.999v-12h3.937v12H0Zm9.294-10.09L11.558…",
-          "source": "nrk_en",
-          "source_name": "NRK Norway",
-          "country": "NO",
-          "published": "Sat, 23 May 2026 19:39:13 GMT",
-          "image_url": "https://gfx.nrk.no/zISGexAvA1V0QF1TswdHtwVFf2Rlr6Y0v1nEBtZ-iqvw.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.novinky.cz/clanek/kultura-filmy-serialy-filmovy-festival-v-cannes-rozdal-ceny-zlatou-palmu-ziskal-rumunsky-film-fjord-40579580",
-          "headline": "Filmový festival v Cannes rozdal ceny. Zlatou palmu získal rumunský Fjord",
-          "snippet": "Něco nám brání v načtení stránky It seems the page failed to load correctly Zdá se, že se stránka nepodařila správně načíst. Může to být způsobeno některými rozšířeními prohlížečů, jako jsou blokátory reklam, nebo připojení přes či proxy. This may be caused by certain browser extensions, such as ad…",
-          "source": "novinky_cz",
-          "source_name": "Novinky.cz",
-          "country": "CZ",
-          "published": "Sat, 23 May 2026 21:43:16 +0200",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.hollywoodreporter.com/movies/movie-news/fjord-renate-reinsve-sebastian-stan-wins-palme-d-or-cannes-1236604901/",
-          "headline": "Cannes Palme d’Or Goes to Renate Reinsve, Sebastian Stan Starrer ‘Fjord’",
-          "snippet": "Cristian Mungiu ‘s Fjord , starring Renate Reinsve and Sebastian Stan as Romanian religious parents who relocate to a small Norwegian village and find themselves accused of child abuse, has won the Palme d’Or at the 79th Cannes Film Festival — the Romanian director’s English-language debut. With…",
-          "source": "hollywood_reporter",
-          "source_name": "The Hollywood Reporter",
-          "country": "US",
-          "published": "Sat, 23 May 2026 18:00:00 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPLTNIaTZyVWJsaEZMUzE5eHZQSURPZHpXUWxaQjJxQmtuV3RiNXB1VUJPbk5aaHl4MUx3aTdCYXhMWEkxVVBhek1EV19sUEtiWTJYanhXYzIxS1ZaN0VBY2hzVXB2QTdZRVA0cjdxME5zeE9NUXpsNEhCRGJ6di11Mg?oc=5",
-          "headline": "Neon continued to make history with its seventh Palme D'Or win at Cannes with the movie 'Fjord' - Deadline",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxPLTNIaTZyVWJsaEZMUzE5eHZQSURPZHpXUWxaQjJxQmtuV3RiNXB1VUJPbk5aaHl4MUx3aTdCYXhMWEkxVVBhek1EV19sUEtiWTJYanhXYzIxS1ZaN0VBY2hzVXB2QTdZRVA0cjdxME5zeE9NUXpsNEhCRGJ6di11Mg?oc=5\" target=\"_blank\">Neon continued to make history with its seventh…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sat, 23 May 2026 19:43:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.dn.se/kultur/norsk-rumanska-fjord-skrallvinner-guldpalmen-i-cannes/",
-          "headline": "Norsk-rumänska ”Fjord” skrällvinner Guldpalmen i Cannes",
-          "snippet": "För snart 20 år sedan vann Christian Mungiu sin första Guldpalm med det känslostarka abortdramat ”4 månader, 3 veckor och 2 dagar”. På lördagskvällen tog han hem sin andra Palm d'Or för ”Fjord”, en komplex skildring av kulturkrockar när samhället ingriper i en familjs liv. I dramat spelar Sebastian…",
-          "source": "dn_nyheter",
-          "source_name": "Dagens Nyheter",
-          "country": "SE",
-          "published": "Sat, 23 May 2026 22:37:08 +0200",
-          "image_url": "https://static.bonniernews.se/ba/536cc324-c07c-4d6a-9c01-a7f8d34c2e71.jpeg?io=1&width=1000",
-          "video_url": null
-        },
-        {
-          "url": "https://www.scmp.com/news/world/europe/article/3354651/fjord-romanias-mungiu-wins-palme-dor-cannes?utm_source=rss_feed",
-          "headline": "‘Fjord’ by Romania’s Mungiu wins Palme d’Or at Cannes",
-          "snippet": "Cristian Mungiu’s Norway-set drama about political polarisation Fjord has won the Palme d’Or, handing the Cannes Film Festival’s top honour for the second time to Mungiu, the Romanian director of 4 Months, 3 Weeks and 2 Days . At a 79th Cannes Film Festival that saw few films break out, Fjord found…",
-          "source": "scmp",
-          "source_name": "South China Morning Post",
-          "country": "HK",
-          "published": "Sat, 23 May 2026 21:00:08 +0000",
-          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/24/61bb335f-268a-4eac-b927-9a4929b5e817_caf96a03.jpg?itok=8rVSAtIn&v=1779569996",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5lSFdtZEhCaXVybUVlN0R0c211RHZFUDNURnJWVkU1bm5YV0NQUVdqd3ZmYVZ3UHVsQmxZcEI0MHYzdThnUFcteGpCWlZvMm1CUVpvVVJPNlJCbzBWcXBZcjAwelNldWFXSndmRllwYVZvU0o0VjNvSVI0VlZHd1k?oc=5",
-          "headline": "Full Cannes 2026 Winners List: ‘Fjord’ Wins Palme D’Or - Deadline",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE5lSFdtZEhCaXVybUVlN0R0c211RHZFUDNURnJWVkU1bm5YV0NQUVdqd3ZmYVZ3UHVsQmxZcEI0MHYzdThnUFcteGpCWlZvMm1CUVpvVVJPNlJCbzBWcXBZcjAwelNldWFXSndmRllwYVZvU0o0VjNvSVI0VlZHd1k?oc=5\" target=\"_blank\">Full Cannes 2026 Winners List: ‘Fjord’ Wins Palme D’Or…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sat, 23 May 2026 18:45:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.france24.com/en/norway-set-drama-about-political-polarization-fjord-wins-palme-d-or-at-cannes",
-          "headline": "Norway-set drama about political polarization ‘Fjord’ wins Palme d’Or at Cannes",
-          "snippet": "Cristian Mungiu’s Norway-set drama about political polarization, “Fjord,” has won the Palme d’Or, handing the Cannes Film Festival ’s top honor for the second time to Mungiu, the Romanian director of “4 Months, 3 Weeks and 2 Days.”",
-          "source": "france24",
-          "source_name": "France 24",
-          "country": "FR",
-          "published": "Sun, 24 May 2026 09:41:50 GMT",
-          "image_url": "https://s.france24.com/media/display/d03f2948-574d-11f1-8125-005056a90284/w:1024/p:16x9/EN-20260524-082442-082639-CS.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxPZEQydklPdHFfaEFsa29WVkR4d0V2MDN4ZmtHMDJGM3BqT0J5ejZQbU9GbXRUU2pFXzJDcjE5bFFnTGY4QlpHMFVZUXpJQklxeUZteFdQdElvUl9MTVNhTVFzMXBxQ0hTaXpRTTMyakhfSXB4Q1VGR1BRek9mNUV5UFZJVFBfY241ZWRvdlFzZ0FtcEtVNUJGRDdGa1NPTllxbWpNSF9TWlIzbm9QbVJYTGxVVG5VTGZvS3VIRjdwSDh2MDh1a3JreGhhUXVORWo2MlpCZmdwSUlMOURXRFNKazg4V18zVThVdE02eEJVaDFfOEZWLVN2MEZudmVUbDBSOXpXZnZqWnVUOG1NUm53SkFmd0Vjakp2VG9ReE01N3lINXJJYXQ1THJ0cnJfWHhVdHdOZmJn?oc=5",
-          "headline": "Cannes 2026 fashion: Monica Bellucci, Aishwarya Rai Bachchan and Bella Hadid bring the heat as Sebastian Stan-led 'Fjord' takes home the Palme d'Or - Yahoo",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMitgJBVV95cUxPZEQydklPdHFfaEFsa29WVkR4d0V2MDN4ZmtHMDJGM3BqT0J5ejZQbU9GbXRUU2pFXzJDcjE5bFFnTGY4QlpHMFVZUXpJQklxeUZteFdQdElvUl9MTVNhTVFzMXBxQ0hTaXpRTTMyakhfSXB4Q1VGR1BRek9mNUV5UFZJVFBfY241ZWRvdlFzZ0FtcEtVNUJGRDdGa1NPTllxbWpNSF9TWlIzbm9QbVJYTGxVVG5VTGZvS3…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sun, 24 May 2026 15:05:36 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.nbcnews.com/pop-culture/movies/fjord-wins-palme-d-cannes-rcna346701",
-          "headline": "Norway-set drama about political polarization ‘Fjord’ wins Palme d’Or at Cannes",
-          "snippet": "Cristian Mungiu’s Norway-set drama about political polarization, “Fjord,” has won the Palme d’Or, handing the Cannes Film Festival ’s top honor for the second time to Mungiu, the Romanian director of “4 Months, 3 Weeks and 2 Days.” Subscribe to read this story ad-free Get unlimited access to…",
-          "source": "nbc_news",
-          "source_name": "NBC News",
-          "country": "US",
-          "published": "Sun, 24 May 2026 15:52:02 GMT",
-          "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit_1500w/rockcms/2026-05/260524-Cristian-Mungiu-fjord-palme-d-or-vl-1136a-67048f.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.latercera.com/culto/noticia/cannes-2026-el-positivo-paso-del-cine-chileno-y-como-la-ganadora-fjord-puede-alcanzar-los-oscar/",
-          "headline": "Cannes 2026: el positivo paso del cine chileno y cómo la ganadora Fjord puede alcanzar los Oscar",
-          "snippet": "Se llama Fjord (Fiordo) y es la película de la que todo el mundo está hablando . Es la flamante ganadora de la Palma de Oro del Festival de Cine de Cannes de 2026, escrita, coproducida y dirigida por el cineasta rumano Cristian Mungiu . Fjord es un drama judicial y familiar rodado en Noruega, con…",
-          "source": "tercera",
-          "source_name": "La Tercera",
-          "country": "CL",
-          "published": "Mon, 25 May 2026 17:30:00 +0000",
-          "image_url": "https://www.latercera.com/resizer/v2/ZSKZWCYMJRDMRPZ2EEIY3D6QNQ.jpg?auth=952988726904a8e2c293a186e77b273c391c7ab65f71eff68cb035ed2cfd8a57&smart=true&width=1800&height=1200",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.143,
-        "zionist": 0.223,
-        "atlanticist": 0.348,
-        "statist": 0.206,
-        "financialized": 0.341
-      },
-      "fp_source_count": 10,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 6,
-        "latin-america": 2,
-        "eastern-europe": 1,
-        "pacific-asia": 1
-      },
-      "section": "entertainment"
     },
     {
       "id": "9854da4667d8",
@@ -73159,6 +72726,328 @@
         "pacific-asia": 1
       },
       "section": "tech"
+    },
+    {
+      "id": "46f1c734f431",
+      "headline": "Norway-set drama about political polarization ‘Fjord’ wins Palme d’Or at Cannes",
+      "summary": "Cristian Mungiu’s Norway-set drama about political polarization, “Fjord,” has won the Palme d’Or, handing the Cannes Film Festival ’s top honor for the second time to Mungiu, the Romanian director of “4 Months, 3 Weeks and 2 Days.”At a 79th Cannes Film Festival that saw few films cause a stir, “Fjor",
+      "published": "Mon, 25 May 2026 17:30:00 +0000",
+      "image_url": "https://gfx.nrk.no/zISGexAvA1V0QF1TswdHtwVFf2Rlr6Y0v1nEBtZ-iqvw.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 10,
+        "center_pct": 60,
+        "right_pct": 30,
+        "state_count": 0,
+        "dominant": "center",
+        "dominant_pct": 60
+      },
+      "bias_variance": 4.67,
+      "entity_count": 24,
+      "entity_list": [
+        "Aishwarya",
+        "Bachchan",
+        "Bella",
+        "Bellucci",
+        "Cannes",
+        "Deadline",
+        "Fjord",
+        "Guldpalmen",
+        "Gullpalmen",
+        "Hadid",
+        "Monica",
+        "Mungiu",
+        "Norsk",
+        "Norway",
+        "Oscar",
+        "Palme",
+        "Reinsve",
+        "Renate",
+        "Romania",
+        "Sebastian",
+        "Starrer",
+        "Winners",
+        "Yahoo",
+        "Zlatou"
+      ],
+      "sources": [
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "nrk_en",
+          "name": "NRK Norway",
+          "country": "NO",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "novinky_cz",
+          "name": "Novinky.cz",
+          "country": "CZ",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "hollywood_reporter",
+          "name": "The Hollywood Reporter",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
+        },
+        {
+          "id": "dn_nyheter",
+          "name": "Dagens Nyheter",
+          "country": "SE",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "scmp",
+          "name": "South China Morning Post",
+          "country": "HK",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "france24",
+          "name": "France 24",
+          "country": "FR",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "launderer",
+          "parent_company": "unknown (launderer)"
+        },
+        {
+          "id": "nbc_news",
+          "name": "NBC News",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": "Comcast"
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/23/fjord-del-rumano-mungiu-y-la-chilena-la-perra-reciben-premios-paralelos-en-cannes/",
+          "headline": "'Fjord', del rumano Mungiu, y la chilena 'La perra' reciben premios paralelos en Cannes",
+          "snippet": "Cannes (Francia), 23 may (EFE).- La película rumana 'Fjord', de Cristian Mungiu, ha sido recompensada con el premio de los críticos internacionales (Fipresci), el premio Ecuménico y el de la Ciudadanía 2026, mientras que la chilena 'La perra', de Dominga Sotomayor, se llevó la Palma de Perro y…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 16:31:23 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.nrk.no/nyheter/norsk-rumenske-_fjord_-vant-gullpalmen-i-cannes-1.17895259",
+          "headline": "Norsk-rumenske «Fjord» vant Gullpalmen i Cannes",
+          "snippet": ":where(body) { margin: 0; } .nrkno-header-wrapper:before { content:''; display:block; background:url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 35 14\" id=\"nrk-logo-nrk\" fill=\"white\"%3E%3Cpath d=\"M0 12.999v-12h3.937v12H0Zm9.294-10.09L11.558…",
+          "source": "nrk_en",
+          "source_name": "NRK Norway",
+          "country": "NO",
+          "published": "Sat, 23 May 2026 19:39:13 GMT",
+          "image_url": "https://gfx.nrk.no/zISGexAvA1V0QF1TswdHtwVFf2Rlr6Y0v1nEBtZ-iqvw.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.novinky.cz/clanek/kultura-filmy-serialy-filmovy-festival-v-cannes-rozdal-ceny-zlatou-palmu-ziskal-rumunsky-film-fjord-40579580",
+          "headline": "Filmový festival v Cannes rozdal ceny. Zlatou palmu získal rumunský Fjord",
+          "snippet": "Něco nám brání v načtení stránky It seems the page failed to load correctly Zdá se, že se stránka nepodařila správně načíst. Může to být způsobeno některými rozšířeními prohlížečů, jako jsou blokátory reklam, nebo připojení přes či proxy. This may be caused by certain browser extensions, such as ad…",
+          "source": "novinky_cz",
+          "source_name": "Novinky.cz",
+          "country": "CZ",
+          "published": "Sat, 23 May 2026 21:43:16 +0200",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.hollywoodreporter.com/movies/movie-news/fjord-renate-reinsve-sebastian-stan-wins-palme-d-or-cannes-1236604901/",
+          "headline": "Cannes Palme d’Or Goes to Renate Reinsve, Sebastian Stan Starrer ‘Fjord’",
+          "snippet": "Cristian Mungiu ‘s Fjord , starring Renate Reinsve and Sebastian Stan as Romanian religious parents who relocate to a small Norwegian village and find themselves accused of child abuse, has won the Palme d’Or at the 79th Cannes Film Festival — the Romanian director’s English-language debut. With…",
+          "source": "hollywood_reporter",
+          "source_name": "The Hollywood Reporter",
+          "country": "US",
+          "published": "Sat, 23 May 2026 18:00:00 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPLTNIaTZyVWJsaEZMUzE5eHZQSURPZHpXUWxaQjJxQmtuV3RiNXB1VUJPbk5aaHl4MUx3aTdCYXhMWEkxVVBhek1EV19sUEtiWTJYanhXYzIxS1ZaN0VBY2hzVXB2QTdZRVA0cjdxME5zeE9NUXpsNEhCRGJ6di11Mg?oc=5",
+          "headline": "Neon continued to make history with its seventh Palme D'Or win at Cannes with the movie 'Fjord' - Deadline",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxPLTNIaTZyVWJsaEZMUzE5eHZQSURPZHpXUWxaQjJxQmtuV3RiNXB1VUJPbk5aaHl4MUx3aTdCYXhMWEkxVVBhek1EV19sUEtiWTJYanhXYzIxS1ZaN0VBY2hzVXB2QTdZRVA0cjdxME5zeE9NUXpsNEhCRGJ6di11Mg?oc=5\" target=\"_blank\">Neon continued to make history with its seventh…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 19:43:00 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.dn.se/kultur/norsk-rumanska-fjord-skrallvinner-guldpalmen-i-cannes/",
+          "headline": "Norsk-rumänska ”Fjord” skrällvinner Guldpalmen i Cannes",
+          "snippet": "För snart 20 år sedan vann Christian Mungiu sin första Guldpalm med det känslostarka abortdramat ”4 månader, 3 veckor och 2 dagar”. På lördagskvällen tog han hem sin andra Palm d'Or för ”Fjord”, en komplex skildring av kulturkrockar när samhället ingriper i en familjs liv. I dramat spelar Sebastian…",
+          "source": "dn_nyheter",
+          "source_name": "Dagens Nyheter",
+          "country": "SE",
+          "published": "Sat, 23 May 2026 22:37:08 +0200",
+          "image_url": "https://static.bonniernews.se/ba/536cc324-c07c-4d6a-9c01-a7f8d34c2e71.jpeg?io=1&width=1000",
+          "video_url": null
+        },
+        {
+          "url": "https://www.scmp.com/news/world/europe/article/3354651/fjord-romanias-mungiu-wins-palme-dor-cannes?utm_source=rss_feed",
+          "headline": "‘Fjord’ by Romania’s Mungiu wins Palme d’Or at Cannes",
+          "snippet": "Cristian Mungiu’s Norway-set drama about political polarisation Fjord has won the Palme d’Or, handing the Cannes Film Festival’s top honour for the second time to Mungiu, the Romanian director of 4 Months, 3 Weeks and 2 Days . At a 79th Cannes Film Festival that saw few films break out, Fjord found…",
+          "source": "scmp",
+          "source_name": "South China Morning Post",
+          "country": "HK",
+          "published": "Sat, 23 May 2026 21:00:08 +0000",
+          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/24/61bb335f-268a-4eac-b927-9a4929b5e817_caf96a03.jpg?itok=8rVSAtIn&v=1779569996",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5lSFdtZEhCaXVybUVlN0R0c211RHZFUDNURnJWVkU1bm5YV0NQUVdqd3ZmYVZ3UHVsQmxZcEI0MHYzdThnUFcteGpCWlZvMm1CUVpvVVJPNlJCbzBWcXBZcjAwelNldWFXSndmRllwYVZvU0o0VjNvSVI0VlZHd1k?oc=5",
+          "headline": "Full Cannes 2026 Winners List: ‘Fjord’ Wins Palme D’Or - Deadline",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE5lSFdtZEhCaXVybUVlN0R0c211RHZFUDNURnJWVkU1bm5YV0NQUVdqd3ZmYVZ3UHVsQmxZcEI0MHYzdThnUFcteGpCWlZvMm1CUVpvVVJPNlJCbzBWcXBZcjAwelNldWFXSndmRllwYVZvU0o0VjNvSVI0VlZHd1k?oc=5\" target=\"_blank\">Full Cannes 2026 Winners List: ‘Fjord’ Wins Palme D’Or…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 18:45:00 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.france24.com/en/norway-set-drama-about-political-polarization-fjord-wins-palme-d-or-at-cannes",
+          "headline": "Norway-set drama about political polarization ‘Fjord’ wins Palme d’Or at Cannes",
+          "snippet": "Cristian Mungiu’s Norway-set drama about political polarization, “Fjord,” has won the Palme d’Or, handing the Cannes Film Festival ’s top honor for the second time to Mungiu, the Romanian director of “4 Months, 3 Weeks and 2 Days.”",
+          "source": "france24",
+          "source_name": "France 24",
+          "country": "FR",
+          "published": "Sun, 24 May 2026 09:41:50 GMT",
+          "image_url": "https://s.france24.com/media/display/d03f2948-574d-11f1-8125-005056a90284/w:1024/p:16x9/EN-20260524-082442-082639-CS.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxPZEQydklPdHFfaEFsa29WVkR4d0V2MDN4ZmtHMDJGM3BqT0J5ejZQbU9GbXRUU2pFXzJDcjE5bFFnTGY4QlpHMFVZUXpJQklxeUZteFdQdElvUl9MTVNhTVFzMXBxQ0hTaXpRTTMyakhfSXB4Q1VGR1BRek9mNUV5UFZJVFBfY241ZWRvdlFzZ0FtcEtVNUJGRDdGa1NPTllxbWpNSF9TWlIzbm9QbVJYTGxVVG5VTGZvS3VIRjdwSDh2MDh1a3JreGhhUXVORWo2MlpCZmdwSUlMOURXRFNKazg4V18zVThVdE02eEJVaDFfOEZWLVN2MEZudmVUbDBSOXpXZnZqWnVUOG1NUm53SkFmd0Vjakp2VG9ReE01N3lINXJJYXQ1THJ0cnJfWHhVdHdOZmJn?oc=5",
+          "headline": "Cannes 2026 fashion: Monica Bellucci, Aishwarya Rai Bachchan and Bella Hadid bring the heat as Sebastian Stan-led 'Fjord' takes home the Palme d'Or - Yahoo",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMitgJBVV95cUxPZEQydklPdHFfaEFsa29WVkR4d0V2MDN4ZmtHMDJGM3BqT0J5ejZQbU9GbXRUU2pFXzJDcjE5bFFnTGY4QlpHMFVZUXpJQklxeUZteFdQdElvUl9MTVNhTVFzMXBxQ0hTaXpRTTMyakhfSXB4Q1VGR1BRek9mNUV5UFZJVFBfY241ZWRvdlFzZ0FtcEtVNUJGRDdGa1NPTllxbWpNSF9TWlIzbm9QbVJYTGxVVG5VTGZvS3…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 15:05:36 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.nbcnews.com/pop-culture/movies/fjord-wins-palme-d-cannes-rcna346701",
+          "headline": "Norway-set drama about political polarization ‘Fjord’ wins Palme d’Or at Cannes",
+          "snippet": "Cristian Mungiu’s Norway-set drama about political polarization, “Fjord,” has won the Palme d’Or, handing the Cannes Film Festival ’s top honor for the second time to Mungiu, the Romanian director of “4 Months, 3 Weeks and 2 Days.” Subscribe to read this story ad-free Get unlimited access to…",
+          "source": "nbc_news",
+          "source_name": "NBC News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 15:52:02 GMT",
+          "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit_1500w/rockcms/2026-05/260524-Cristian-Mungiu-fjord-palme-d-or-vl-1136a-67048f.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.latercera.com/culto/noticia/cannes-2026-el-positivo-paso-del-cine-chileno-y-como-la-ganadora-fjord-puede-alcanzar-los-oscar/",
+          "headline": "Cannes 2026: el positivo paso del cine chileno y cómo la ganadora Fjord puede alcanzar los Oscar",
+          "snippet": "Se llama Fjord (Fiordo) y es la película de la que todo el mundo está hablando . Es la flamante ganadora de la Palma de Oro del Festival de Cine de Cannes de 2026, escrita, coproducida y dirigida por el cineasta rumano Cristian Mungiu . Fjord es un drama judicial y familiar rodado en Noruega, con…",
+          "source": "tercera",
+          "source_name": "La Tercera",
+          "country": "CL",
+          "published": "Mon, 25 May 2026 17:30:00 +0000",
+          "image_url": "https://www.latercera.com/resizer/v2/ZSKZWCYMJRDMRPZ2EEIY3D6QNQ.jpg?auth=952988726904a8e2c293a186e77b273c391c7ab65f71eff68cb035ed2cfd8a57&smart=true&width=1800&height=1200",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.143,
+        "zionist": 0.223,
+        "atlanticist": 0.348,
+        "statist": 0.206,
+        "financialized": 0.341
+      },
+      "fp_source_count": 10,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 6,
+        "latin-america": 2,
+        "eastern-europe": 1,
+        "pacific-asia": 1
+      },
+      "section": "entertainment"
     },
     {
       "id": "f5991b6c342b",
@@ -77216,6 +77105,196 @@
         "west": 1
       },
       "section": "world"
+    },
+    {
+      "id": "52c9efc10347",
+      "headline": "Israeli right-wing Ministers urge Netanyahu to resume Beirut strikes to counter Hezbollah drone attacks",
+      "summary": "Israeli finance minister Bezalel Smotrich, leader of a small ‌far-right ⁠party in Mr. Netanyahu’s cabinet, has frequently made comments that go beyond official Israeli ⁠policy, including that Israel must annex southern Lebanon and Gaza",
+      "published": "Tue, 26 May 2026 03:12:14 +0000",
+      "image_url": "https://th-i.thgim.com/public/incoming/ni10t6/article71022564.ece/alternates/LANDSCAPE_1200/2026-05-25T162223Z_591007958_RC2DGLAAKTGY_RTRMADP_3_IRAN-CRISIS-LEBANON-ISRAEL.JPG",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": false,
+      "blindspot_label": null,
+      "blindspot_score": 0.0,
+      "coverage": {
+        "left_pct": 33,
+        "center_pct": 33,
+        "right_pct": 33,
+        "state_count": 0,
+        "dominant": "left",
+        "dominant_pct": 33
+      },
+      "bias_variance": 7.24,
+      "entity_count": 5,
+      "entity_list": [
+        "Beirut",
+        "Hezbollah",
+        "Israeli",
+        "Ministers",
+        "Netanyahu"
+      ],
+      "sources": [
+        {
+          "id": "straits_times",
+          "name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "pacific-asia",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "al_monitor",
+          "name": "Al-Monitor",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "the_hindu",
+          "name": "The Hindu",
+          "country": "IN",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "global-south",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "times_of_israel",
+          "name": "The Times of Israel",
+          "country": "IL",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "aljazeera",
+          "name": "Al Jazeera English",
+          "country": "QA",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "middle-east",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "mixed",
+          "parent_company": "Qatari state"
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.straitstimes.com/world/middle-east/israeli-right-wing-ministers-urge-netanyahu-to-resume-beirut-strikes-to-counter-hezbollah-drone",
+          "headline": "Israeli right-wing ministers urge Netanyahu to resume Beirut strikes to counter Hezbollah drone attacks",
+          "snippet": "JERUSALEM/BEIRUT, May 25 - Israeli Finance Minister Bezalel Smotrich on Monday called on Prime Minister Benjamin Netanyahu to resume bombing Beirut in response to increased explosive drone attacks by Hezbollah on Israeli troops and northern Israel towns. Smotrich's comments came after an Israeli…",
+          "source": "straits_times",
+          "source_name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "published": "Mon, 25 May 2026 20:08:52 +0800",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/05/israeli-right-wing-ministers-urge-netanyahu-resume-beirut-strikes-counter",
+          "headline": "Israeli right-wing ministers urge Netanyahu to resume Beirut strikes to counter Hezbollah drone attacks",
+          "snippet": "By Steven Scheer and Maya Gebeily JERUSALEM/BEIRUT, May 25 (Reuters) - Israeli Finance Minister Bezalel Smotrich on Monday called on Prime Minister Benjamin Netanyahu to resume bombing Beirut in response to increased explosive drone attacks by Hezbollah on Israeli troops and northern Israel towns.…",
+          "source": "al_monitor",
+          "source_name": "Al-Monitor",
+          "country": "US",
+          "published": "2026-05-25T08:36:42-0400",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.thehindu.com/news/international/israeli-right-wing-ministers-urge-netanyahu-to-resume-beirut-strikes-to-counter-hezbollah-drone-attacks/article71022553.ece",
+          "headline": "Israeli right-wing Ministers urge Netanyahu to resume Beirut strikes to counter Hezbollah drone attacks",
+          "snippet": "People hold Hezbollah flags while commemorating Israel’s withdrawal from southern Lebanon in 2000, in the southern suburbs of Beirut, Lebanon, on May 25, 2026. | Photo Credit: Reuters Israeli Finance Minister Bezalel Smotrich on Monday (May 25, 2026) called on Prime Minister Benjamin Netanyahu ‌to…",
+          "source": "the_hindu",
+          "source_name": "The Hindu",
+          "country": "IN",
+          "published": "Mon, 25 May 2026 23:06:04 +0530",
+          "image_url": "https://th-i.thgim.com/public/incoming/ni10t6/article71022564.ece/alternates/LANDSCAPE_1200/2026-05-25T162223Z_591007958_RC2DGLAAKTGY_RTRMADP_3_IRAN-CRISIS-LEBANON-ISRAEL.JPG",
+          "video_url": null
+        },
+        {
+          "url": "https://www.timesofisrael.com/netanyahu-orders-idf-to-intensify-blows-against-hezbollah-amid-surge-in-drone-attacks/",
+          "headline": "Netanyahu orders IDF to ‘intensify blows’ against Hezbollah amid surge in drone attacks",
+          "snippet": "Israel will escalate strikes against Hezbollah in Lebanon, Prime Minister Benjamin Netanyahu said on Monday, as a official said the terror group had ignored warnings to halt firing at Israel in a conflict that could threaten US-Iran negotiations. The prime minister’s remarks were followed by…",
+          "source": "times_of_israel",
+          "source_name": "The Times of Israel",
+          "country": "IL",
+          "published": "Mon, 25 May 2026 23:03:41 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/mundo/2026/05/26/netanyahu-ordeno-intensificar-la-ofensiva-en-libano-para-aplastar-a-hezbollah-tras-los-ataques-con-drones-en-la-frontera/",
+          "headline": "Netanyahu ordenó intensificar la ofensiva en Líbano para “aplastar” a Hezbollah tras los ataques con drones en la frontera",
+          "snippet": "Benjamin Netanyahu durante una ceremonia en homenaje a los soldados israelíes caídos en el Monte Herzl, en Jerusalén (REUTERS/Archivo) El primer ministro de Israel, Benjamin Netanyahu , anunció este lunes una nueva escalada militar contra Hezbollah en Líbano y ordenó al Ejército incrementar la…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Tue, 26 May 2026 00:32:33 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/OW2KOTNZXVC7NBSET75SKO7YAY.jpg?auth=282ea6f372f207cfb8c6c20d3c6d2dff1269c57daae1a1c8830280f2829ebf6a&smart=true&width=1920&height=1280",
+          "video_url": null
+        },
+        {
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/5/26/netanyahu-vows-to-smite-hezbollah-with-overwhelming-force?traffic_source=rss",
+          "headline": "Netanyahu vows to ‘smite’ Hezbollah with ‘overwhelming’ force",
+          "snippet": "play Live Sign up Show navigation menu .css-15ru6p1{font-size:inherit;font-weight:normal;} Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Opinion Sport Video More Show more sections Features Economy Human Rights Climate…",
+          "source": "aljazeera",
+          "source_name": "Al Jazeera English",
+          "country": "QA",
+          "published": "Tue, 26 May 2026 03:12:14 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.124,
+        "zionist": 0.154,
+        "atlanticist": 0.322,
+        "statist": 0.258,
+        "financialized": 0.374
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 1,
+        "middle-east": 2,
+        "latin-america": 1,
+        "pacific-asia": 1,
+        "global-south": 1
+      },
+      "section": "tech"
     },
     {
       "id": "15b25aacc504",
