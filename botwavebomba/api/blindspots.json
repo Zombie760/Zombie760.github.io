@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T02:17:01.409694+00:00",
+  "generated_at": "2026-05-26T02:31:30.520395+00:00",
   "count": 68,
   "stories": [
     {
@@ -8935,6 +8935,317 @@
         "middle-east": 1,
         "eastern-europe": 3,
         "latin-america": 1
+      },
+      "section": "world"
+    },
+    {
+      "id": "2eb5e10d5d3f",
+      "headline": "Diego Milito explicó el despido de Gustavo Costas como DT de Racing: \"Nunca prensamos que podía llegar, pero el plantel necesita un cambio de aire\"",
+      "summary": "<ul><li>El presidente del club brinda una conferencia de prensa en Avellaneda y aclaró que la salida fue de común acuerdo.</li><li>Todos los detalles.</li></ul>",
+      "published": "Tue, 26 May 2026 02:15:44 +0000",
+      "image_url": "https://resizer.glanacion.com/resizer/v2/K6RO6D5T5JDRTAFHD2JCITRB24.jpg?auth=f410d8040cf93ed6494193b18d4417a738f71b2805f3fa3eb52c973f2286dd3d&smart=true&width=2000&height=1333",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 20,
+        "right_pct": 80,
+        "state_count": 0,
+        "dominant": "right",
+        "dominant_pct": 80
+      },
+      "bias_variance": 0.76,
+      "entity_count": 10,
+      "entity_list": [
+        "Academia",
+        "Argentina",
+        "Costas",
+        "Diego",
+        "Gustavo",
+        "Milito",
+        "Nunca",
+        "Pizarro",
+        "Racing",
+        "Sudamericana"
+      ],
+      "sources": [
+        {
+          "id": "la_nacion_ar",
+          "name": "La Nación (Argentina)",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "clarin_ar",
+          "name": "Clarín Argentina",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "tercera",
+          "name": "La Tercera",
+          "country": "CL",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "unknown",
+          "primary_vs_launder": "mixed",
+          "parent_company": ""
+        },
+        {
+          "id": "la_razon_bo",
+          "name": "La Razón Bolivia",
+          "country": "BO",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.lanacion.com.ar/deportes/futbol/racing-echo-a-gustavo-costas-nid23052026/",
+          "headline": "Racing echó a Gustavo Costas: el DT se despedirá del plantel este lunes",
+          "snippet": "Pese a que el presidente Milito le había renovado el contrato hasta el final de su mandato, tomó la drástica decisión luego de la eliminación en la Copa Sudamericana",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:45:37 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/K6RO6D5T5JDRTAFHD2JCITRB24.jpg?auth=f410d8040cf93ed6494193b18d4417a738f71b2805f3fa3eb52c973f2286dd3d&smart=true&width=2000&height=1333",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/23/gustavo-costas-dejo-de-ser-el-dt-de-racing-tras-la-eliminacion-de-la-copa-sudamericana/",
+          "headline": "Gustavo Costas dejó de ser el DT de Racing tras la eliminación de la Copa Sudamericana",
+          "snippet": "Gustavo Costas dejó de ser el entrenador de Racing . El de 63 años fue despedido luego de la dura eliminación en la primera fase de la Copa Sudamericana , consumada con el empate 2-2 en el Cilindro frente al Caracas. La decisión fue tomada por la comisión directiva que encabeza Diego Milito, según…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:58:00 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/NPP2KJLDRBDV7EA3V7KSRP64DE.JPG?auth=fbec14e4fcfd8f2501b95f87e3d107ed0d1c19f5c5f34332fbc83ea9b2386b60&smart=true&width=4354&height=2449",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/futbol/racing-echo-a-gustavo-costas-nid23052026/",
+          "headline": "Racing echó a Gustavo Costas: el DT se despedirá del plantel este domingo",
+          "snippet": "La noticia cayó como un bombazo: Racing despidió a Gustavo Costas. Este sábado el presidente Diego Milito tomó la decisión y se lo comunicó al cuerpo técnico, luego de evaluar los últimos resultados, sobre todo la dura eliminación de la Academia en la Copa Sudamericana. Costas se despedirá del…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 22:02:22 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/K6RO6D5T5JDRTAFHD2JCITRB24.jpg?auth=f410d8040cf93ed6494193b18d4417a738f71b2805f3fa3eb52c973f2286dd3d&smart=true&width=2000&height=1333",
+          "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/deportes/gustavo-costas-dejo-dt-racing-milito-decidio-siga-academia_0_kVKlYaAsXh.html",
+          "headline": "Gustavo Costas dejó de ser el DT de Racing: Milito decidió que no siga en la Academia",
+          "snippet": "Gustavo Costas dejó de ser el director técnico de Racing. Hoy a la mañana, Diego Milito decidió despedirlo. La eliminación en la Copa Sudamericana fue clave. Y muy a pesar de que en diciembre le firmó un contrato hasta el final de su mandato, el presidente tomó la decisión de concluir con un ciclo…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Sat, 23 May 2026 21:42:40 +0000",
+          "image_url": "https://www.clarin.com/img/2026/05/23/uUyaVk1Uv_1200x630__1.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.latercera.com/el-deportivo/noticia/damian-pizarro-se-queda-sin-tecnico-en-argentina-racing-despide-a-gustavo-costas/",
+          "headline": "Damián Pizarro se queda sin técnico en Argentina: Racing despide a Gustavo Costas",
+          "snippet": "Terremoto en Avellaneda. Racing anunció la salida de Gustavo Costas luego de una serie de malos resultados , marcados por la eliminación de Sudamericana a manos de Caracas a una jornada del final de la fase de grupos. Diego Milito le comunicó al decisión al técnico. En diciembre pasado, el timonel…",
+          "source": "tercera",
+          "source_name": "La Tercera",
+          "country": "CL",
+          "published": "Sat, 23 May 2026 23:00:54 +0000",
+          "image_url": "https://www.latercera.com/resizer/v2/QNXMTKCZ4JGQXAZ2WNWVE5FLGY.jpg?auth=26f1391a5a5e3722e530b68c133df40060f1e661956981e2374c2707e248ab9e&smart=true&width=1046&height=588",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/futbol/costas-no-merecia-este-final-y-ahora-quien-va-a-unir-a-racing-nid23052026/",
+          "headline": "Costas no merecía este final: ¿Y ahora quién va a unir a Racing?",
+          "snippet": "Gustavo Costas nunca fue del gusto de Diego Milito. Vaya uno a saber por qué le terminó renovando el contrato por tanto tiempo, hasta diciembre de 2028, pero el presidente de la Academia siempre quiso otro perfil de entrenador al mando de su gestión. El idilio generado por el con los hinchas luego…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 00:40:12 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/PSWINQVBTZFGZJJYRZXVQV4ZEQ.jpeg?auth=7cf9042925312f6ada84d3417b59888d3bc4d369356991d040593543289abc61&smart=true&width=1024&height=682",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/futbol/racing-echo-a-gustavo-costas-nid23052026/",
+          "headline": "Racing echó a Gustavo Costas: los candidatos del presidente Diego Milito para reemplazarlo",
+          "snippet": "La noticia cayó como un bombazo: Racing despidió a Gustavo Costas. Este sábado el presidente Diego Milito tomó la decisión y se lo comunicó al técnico , luego de evaluar los últimos resultados, agravados por la dura eliminación de la Academia en la Copa Sudamericana. Costas se despedirá del plantel…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 00:08:24 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/K6RO6D5T5JDRTAFHD2JCITRB24.jpg?auth=f410d8040cf93ed6494193b18d4417a738f71b2805f3fa3eb52c973f2286dd3d&smart=true&width=2000&height=1333",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/futbol/costas-no-merecia-este-final-y-ahora-quien-va-a-unir-a-racing-nid23052026/",
+          "headline": "¿Y ahora quién va a unir a Racing? Costas no merecía este final, pero el legado no se mancha",
+          "snippet": "Gustavo Costas nunca fue del gusto de Diego Milito. Vaya uno a saber por qué le terminó renovando el contrato por tanto tiempo, hasta diciembre de 2028, pero el presidente de la Academia siempre quiso otro perfil de entrenador al mando de su gestión. El idilio generado por el con los hinchas luego…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 00:40:12 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/PSWINQVBTZFGZJJYRZXVQV4ZEQ.jpeg?auth=7cf9042925312f6ada84d3417b59888d3bc4d369356991d040593543289abc61&smart=true&width=1024&height=682",
+          "video_url": null
+        },
+        {
+          "url": "https://larazon.bo/marcas/2026/05/24/racing-club-decidio-el-cese-del-dt-gustavo-costas-tras-eliminacion-en-la-sudamericana/",
+          "headline": "Racing Club decidió el cese del DT Gustavo Costas tras eliminación en la Sudamericana",
+          "snippet": "Racing de Avellaneda decidió cesar a su entrenador Gustavo Costas tras quedar eliminado el jueves en la fase de grupos de la Conmebol Sudamericana 2026, anunció la prensa argentina la noche del sábado. Según diversos medios, la salida de Costas se decidió después de que Racing se despidió de la…",
+          "source": "la_razon_bo",
+          "source_name": "La Razón Bolivia",
+          "country": "BO",
+          "published": "Sun, 24 May 2026 12:45:16 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/deportes/diego-milito-explico-despido-gustavo-costas-dt-racing-prensamos-podia-llegar-plantel-necesita-cambio-aire_0_ZfHShnBaaJ.html",
+          "headline": "Diego Milito explicó el despido de Gustavo Costas como DT de Racing: \"Nunca prensamos que podía llegar, pero el plantel necesita un cambio de aire\"",
+          "snippet": "Diego Milito , el presidente de Racing , dio la cara este domingo para explicar la decisión del despido de Gustavo Costas como entrenador . \" Es un día muy triste. Nunca pensamos que podía llegar . Pero bueno, es el fútbol y realmente estamos como todos los hinchas tristes por esta situación. Ayer…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 14:18:08 +0000",
+          "image_url": "https://www.clarin.com/img/2026/05/23/HdZoZM6Ym_1200x630__1.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/futbol/racing/diego-milito-hablo-del-despido-de-gustavo-costas-en-racing-es-un-dia-muy-triste-nunca-pensamos-que-nid24052026/",
+          "headline": "Diego Milito habló del despido de Gustavo Costas en Racing: “Es un día muy triste, nunca pensamos que podía llegar”",
+          "snippet": "El último día de Gustavo Costas en Racing incluyó un banderazo en apoyo a su figura y una sorpresiva conferencia de Diego Milito, el presidente del club, quien calificó la jornada como “muy triste”, pero sentenció que “lamentablemente lo que pasó en los últimos partidos marcaba que era un final de…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 15:28:11 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/N7LZZIWP3ZFEBACBQ7NUJK4SJM.png?auth=32619eb33c97944d6f12c300ff29fc637a5ead87f8e11b2adf4fe70ddf8169a0&smart=true&width=1227&height=741",
+          "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/deportes/gustavo-costas-dirigio-ultima-practica-racing-saludo-emocionado-hinchas-hijo-saco-pecho-quedaba-dar_0_dF7FVn4aD1.html",
+          "headline": "Gustavo Costas dirigió su última práctica en Racing, saludó emocionado a los hinchas y su hijo sacó pecho: \"Nos quedaba mucho por dar\"",
+          "snippet": "Fue una mañana de emociones en Avellaneda. Gustavo Costas dirigió la última práctica como de Racing , luego de haber recibido la comunicación por parte de la dirigencia del club de su despido. Los hinchas se habían autoconvocado a través de las redes sociales y se hicieron presentes en uno de los…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 15:28:11 +0000",
+          "image_url": "https://www.clarin.com/img/2026/05/24/__4YUYf5u_1200x630__1.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/24/el-contrapunto-entre-diego-milito-y-gustavo-costas-tras-su-salida-de-racing-que-genero-el-enojo-de-los-hinchas/",
+          "headline": "El contrapunto entre Diego Milito y Gustavo Costas tras su salida de Racing que generó el enojo de los hinchas",
+          "snippet": "En medio de un clima áspero en las afueras del Cilindro de Avellaneda , ya que un grupo de hinchas se autoconvocó para despedir a Gustavo Costas tras dejar de ser el entrenador de Racing Club , el presidente Diego Milito brindó una conferencia de prensa en la que brindó detalles de la charla que…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 16:30:29 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/U4YKKOHQ3VATPHNW2KD72ZGOWU.jpg?auth=00cf0f218549b8114b1667790278aeab978df52e80f1ccd57fa6014762d2a4da&smart=true&width=1200&height=675",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/futbol/gustavo-costas-hablo-tras-su-despido-de-racing-se-sorprendio-y-apunto-contra-la-dirigencia-del-club-nid24052026/",
+          "headline": "Gustavo Costas habló tras su despido de Racing: se sorprendió y apuntó contra la dirigencia del club",
+          "snippet": "Todavía con la ropa de Racing, Gustavo Costas salió del estadio Juan Domingo Perón y saludó a los hinchas. Todos querían abrazarlo. Le demostraron su cariño luego de que la dirigencia de la Academia haya decidido despedirlo de su cargo, este sábado. En ese escenario, habló con la prensa luego de…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Sun, 24 May 2026 17:50:03 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/SWEGV5ZCEVENVM72LB3PDQJUXA.jpg?auth=eaef3a41e29a03bc62f24156a11ec0f0c9aca019d4305fd560d654ad156a3f73&smart=true&width=2000&height=1333",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/deportes/futbol/racing-trata-de-cerrar-la-grieta-despues-de-los-dichos-de-gustavo-costas-y-diego-milito-nid25052026/",
+          "headline": "Racing trata de cerrar la grieta después de los dichos de Gustavo Costas y Diego Milito",
+          "snippet": "El último día de Gustavo Costas en Racing incluyó un banderazo en apoyo a su figura, desmanes en el playón e insultos a Diego Milito , el presidente del club, que calificó la jornada como “muy triste”, pero sentenció que “lo que pasó en los últimos partidos marcaba un final de ciclo”. “Casi que fue…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 16:00:33 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/KSBQ566T3NFI3ED7PZLXQ7CGEU.JPG?auth=9a401097b653bbe6f47b41667247628987132584cb8d82055e6bbbe11878598a&smart=true&width=2000&height=1333",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/25/racing-abrio-la-carrera-por-el-sucesor-de-gustavo-costas-los-cuatro-entrenadores-de-renombre-que-integran-la-lista-de-diego-milito/",
+          "headline": "Racing abrió la carrera por el sucesor de Gustavo Costas: los cuatro entrenadores de renombre que integran la lista de Diego Milito",
+          "snippet": "Los candidatos a asumir en Racing como entrenador en reemplazo de Gustavo Costas El despido de Gustavo Costas de Racing Club , confirmado el último sábado por el presidente Diego Milito , abrió de inmediato el operativo de búsqueda del nuevo director técnico de la Academia. Mientras la dupla…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 23:18:17 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/UVVIGRA3IZHYZHLBYRS57O2P4U.JPG?auth=8463a209005a108ba6efae1fdbdd2c9d6c610e5b6714c7d5335675b27ab7600a&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/deportes/2026/05/26/el-posteo-de-gustavo-costas-tras-su-conflictiva-salida-de-racing-del-mensaje-para-los-hinchas-a-una-llamativa-omision/",
+          "headline": "El posteo de Gustavo Costas tras su conflictiva salida de Racing: del mensaje para los hinchas a una llamativa omisión",
+          "snippet": "El posteo de Gustavo Costas tras su conflictiva salida de Racing Club Gustavo Costas se despidió este lunes de los hinchas de Racing Club a través de un mensaje en su cuenta de Instagram, dos días después de que el presidente Diego Milito le comunicara el fin de su ciclo como entrenador del equipo…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Tue, 26 May 2026 02:15:44 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/LTTHGF5W55DTVDGVTS64IYFNA4.JPG?auth=864ed76b3cea7d5c8b1738eb299d11682a410a892c28d577301eb18aec215717&smart=true&width=962&height=541",
+          "video_url": null
+        },
+        {
+          "url": "https://www.clarin.com/deportes/gustavo-costas-despidio-hinchas-racing-mencionar-dirigencia_0_ej5NiqnlQR.html",
+          "headline": "Gustavo Costas se despidió de los hinchas de Racing sin mencionar a la dirigencia",
+          "snippet": "El exitoso tercer ciclo de Gustavo Costas al frente del banco de suplentes de Racing ya es historia. Y, después de la desordenada conferencia de prensa que improvisó en las puertas del Cilindro de Avellaneda tras entrenar al plantel por última vez, el entrenador campeón de la Copa Sudamericana 2024…",
+          "source": "clarin_ar",
+          "source_name": "Clarín Argentina",
+          "country": "AR",
+          "published": "Tue, 26 May 2026 01:47:19 +0000",
+          "image_url": "https://www.clarin.com/img/2026/05/04/DINrwzCyG8_1200x630__1.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.18,
+        "zionist": 0.28,
+        "atlanticist": 0.43,
+        "statist": 0.274,
+        "financialized": 0.462
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "latin-america": 5
       },
       "section": "world"
     },
@@ -23783,6 +24094,17 @@
           "published": "Tue, 26 May 2026 02:07:50 GMT",
           "image_url": "https://i.dailymail.com/1s/2026/05/26/02/108863095-0-image-a-36_1779759650757.jpg",
           "video_url": null
+        },
+        {
+          "url": "https://www.hollywoodreporter.com/gallery/2026-american-music-awards-red-carpet-looks-arrivals-photos-1236605572/",
+          "headline": "2026 American Music Awards Arrivals: Paula Abdul, Ludacris and Hilary Duff Make the Scene in Las Vegas",
+          "snippet": "Queen Latifah at the 2026 American Music Awards at the MGM Grand in Las Vegas. Paula Abdul Ludacris Hilary Duff &#8216;Hacks&#8217; stars Megan Stalter and Paul W. Downs. Nikki Glaser KATSEYE Donnie Wahlberg, Jordan Knight, Joey McIntyre, Danny Wood and Jonathan Knight of New Kids on the Block.…",
+          "source": "hollywood_reporter",
+          "source_name": "The Hollywood Reporter",
+          "country": "US",
+          "published": "Tue, 26 May 2026 01:34:12 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -26100,248 +26422,6 @@
         "adversarial": 1
       },
       "section": "world"
-    },
-    {
-      "id": "27d2feb3831a",
-      "headline": "Trump, Xi set for high-stakes talks on trade, Iran, AI in Beijing",
-      "summary": "US President Donald Trump and Chinese President Xi Jinping are expected to discuss Iran, Taiwan, artificial intelligence and nuclear weapons during Trump’s two-day visit to China this week, according to US officials.",
-      "published": "Sun, 24 May 2026 11:43:15 +0000",
-      "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/08/998d79ed-6263-4135-bbaa-ed43164ce5a4_7b7ece56.jpg?itok=OFWHnVJr&v=1778230525",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 12% Left",
-      "blindspot_score": 5,
-      "coverage": {
-        "left_pct": 12,
-        "center_pct": 50,
-        "right_pct": 38,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 8.33,
-      "entity_count": 11,
-      "entity_list": [
-        "Beijing",
-        "Prashad",
-        "Putin",
-        "Readiness",
-        "Signals",
-        "Simboluri",
-        "Taiwan",
-        "Trade",
-        "Trump",
-        "Vijay",
-        "Wednesday"
-      ],
-      "sources": [
-        {
-          "id": "wsj",
-          "name": "The Wall Street Journal",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": "News Corp"
-        },
-        {
-          "id": "scmp_business",
-          "name": "SCMP Business",
-          "country": "HK",
-          "bloc": "adversarial",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "pacific-asia",
-          "factuality": "unknown",
-          "primary_vs_launder": "mixed",
-          "parent_company": ""
-        },
-        {
-          "id": "ft",
-          "name": "Financial Times",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Nikkei"
-        },
-        {
-          "id": "nst_my",
-          "name": "New Straits Times",
-          "country": "MY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "pacific-asia",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "mercopress",
-          "name": "MercoPress",
-          "country": "UY",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "pajhwok_en",
-          "name": "Pajhwok Afghan News",
-          "country": "AF",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "consortium_news",
-          "name": "Consortium News",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "far-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "g4media",
-          "name": "G4Media",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-          "headline": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-          "snippet": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-          "source": "wsj",
-          "source_name": "The Wall Street Journal",
-          "country": "US",
-          "published": "Fri, 24 Jan 2025 19:58:00 -0500",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.scmp.com/plus/news/china/diplomacy/article/3352886/trumps-beijing-trip-iran-war-diplomacy-tech-earnings?utm_source=rss_feed",
-          "headline": "Trump’s Beijing trip, Iran war diplomacy, tech earnings",
-          "snippet": "US President Donald Trump will bring a scaled-back group of chief executive officers with him on a trip to Beijing next week, reflecting limited expectations for a summit that may be overshadowed by the war on Iran. The White House considered inviting about a dozen business leaders on the May 14-15…",
-          "source": "scmp_business",
-          "source_name": "SCMP Business",
-          "country": "HK",
-          "published": "Fri, 08 May 2026 09:00:11 +0000",
-          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/08/998d79ed-6263-4135-bbaa-ed43164ce5a4_7b7ece56.jpg?itok=OFWHnVJr&v=1778230525",
-          "video_url": null
-        },
-        {
-          "url": "https://www.ft.com/content/76bdf230-b4a2-439b-bfcc-d604c2610d92",
-          "headline": "Trump embarks on two-day visit to Beijing",
-          "snippet": "Plus, US Treasury secretary visits Tokyo and Starmer attempts reset in the UK after disastrous local election results",
-          "source": "ft",
-          "source_name": "Financial Times",
-          "country": "GB",
-          "published": "Sun, 10 May 2026 17:15:06 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.nst.com.my/world/world/2026/05/1436755/trump-confront-xi-over-iran-high-stakes-beijing-talks",
-          "headline": "Trump to confront Xi over Iran in high-stakes Beijing talks",
-          "snippet": "WASHINGTON: US President Donald Trump will press China’s Xi Jinping on Iran when they meet in Beijing in coming days, but their “highly symbolic” superpower summit will focus on easing trade tensions, officials said Sunday.",
-          "source": "nst_my",
-          "source_name": "New Straits Times",
-          "country": "MY",
-          "published": "Mon, 11 May 2026 06:24:36 +0800",
-          "image_url": "https://assets.nst.com.my/images/listing-featured/4EC47AE174FAD2D5596D4F66A93214DD_data_0.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://en.mercopress.com/2026/05/11/trade-iran-and-taiwan-dominate-agenda-of-trump-xi-summit-beginning-wednesday-in-beijing?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss",
-          "headline": "Trade, Iran and Taiwan dominate agenda of Trump-Xi summit beginning Wednesday in Beijing",
-          "snippet": "Trade, Iran and Taiwan dominate agenda of Trump-Xi summit beginning Wednesday in Beijing Monday, May 11th 2026 - 03:55 Full article Trump will attend the official welcome ceremony on Thursday, hold his bilateral meeting with Xi, visit the Temple of Heaven, and attend a state banquet China confirmed…",
-          "source": "mercopress",
-          "source_name": "MercoPress",
-          "country": "UY",
-          "published": "Mon, 11 May 2026 03:55:00 GMT",
-          "image_url": "https://en.mercopress.com/data/cache/noticias/110078/100x80/dtchina.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://pajhwok.com/2026/05/11/trump-xi-set-for-high-stakes-talks-on-trade-iran-ai-in-beijing/",
-          "headline": "Trump, Xi set for high-stakes talks on trade, Iran, AI in Beijing",
-          "snippet": "KABUL (Pajhwok): President Donald Trump and Chinese President Xi Jinping are expected to discuss Iran, Taiwan, artificial intelligence and nuclear weapons during Trump’s two-day visit to China this week, according to officials. Trump is scheduled to arrive in Beijing on Wednesday, ahead of meetings…",
-          "source": "pajhwok_en",
-          "source_name": "Pajhwok Afghan News",
-          "country": "AF",
-          "published": "Mon, 11 May 2026 04:36:11 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://consortiumnews.com/2026/05/22/vijay-prashad-trump-in-beijing-hat-in-hand/",
-          "headline": "Vijay Prashad: Trump in Beijing, Hat in Hand",
-          "snippet": "For the Global South, Xi’s calmness at the summit offered an example of how to engage an unstable imperialist power. The United States remains militarily dangerous, but it no longer possesses unquestioned political authority. China’s President Xi Jinping and U.S. President Donald Trump in a…",
-          "source": "consortium_news",
-          "source_name": "Consortium News",
-          "country": "US",
-          "published": "Fri, 22 May 2026 18:00:11 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/trump-si-putin-la-curtea-imparatului-simboluri-in-cele-doua-vizite-la-beijing-si-interesele-lui-xi.html",
-          "headline": "Trump și Putin la curtea Împăratului: Simboluri în cele două vizite la Beijing și interesele lui Xi",
-          "snippet": "În ultima săptămână, cele mai importante drumuri din lume au dus la Beijing. Donald Trump a petrecut două zile în capitala Chinei, unde a primit un tratament „regal”, după cum îl descrie presa de stat chineză, câteva înțelegeri economice modeste și o amenințare voalată pe tema Taiwanului.…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Sun, 24 May 2026 11:43:15 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2025/10/profimedia-1041854473.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.058,
-        "zionist": 0.18,
-        "atlanticist": 0.224,
-        "statist": 0.091,
-        "financialized": 0.491
-      },
-      "fp_source_count": 8,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 3,
-        "eastern-europe": 1,
-        "latin-america": 1,
-        "pacific-asia": 2,
-        "global-south": 1
-      },
-      "section": "sports"
     },
     {
       "id": "c1818445ea55",
