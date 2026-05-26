@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-25T23:46:26.715048+00:00",
-  "article_count": 53229,
+  "generated_at": "2026-05-26T00:00:52.989131+00:00",
+  "article_count": 53304,
   "story_count": 160,
   "sections": [
     {
@@ -11,7 +11,7 @@
     {
       "id": "world",
       "label": "World",
-      "count": 70
+      "count": 71
     },
     {
       "id": "business",
@@ -36,7 +36,7 @@
     {
       "id": "sports",
       "label": "Sports",
-      "count": 41
+      "count": 39
     },
     {
       "id": "entertainment",
@@ -46,7 +46,7 @@
     {
       "id": "chisme",
       "label": "Chisme",
-      "count": 17
+      "count": 18
     }
   ],
   "stories": [
@@ -54,7 +54,7 @@
       "id": "64c47aff1fe9",
       "headline": "Guerra de Estados Unidos e Israel contra Irán, en vivo: tensión en Medio Oriente hoy, lunes 25 de mayo",
       "summary": "Cobertura en tiempo real con las novedades más importantes del conflicto y las acciones del mandatario estadounidense, Donald Trump",
-      "published": "Mon, 25 May 2026 23:22:46 +0000",
+      "published": "Mon, 25 May 2026 23:48:31 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/PW3F3Z5IGZC4BFXLBARQDTO6SA.JPG?auth=3bf20790eaa4596d49969391222e8e9aa7b9ed9737439096bf56bce53212e0c6&smart=true&width=8640&height=5760",
       "video_url": null,
       "has_video": false,
@@ -1500,6 +1500,17 @@
           "country": "AR",
           "published": "Mon, 25 May 2026 23:22:46 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/BSPETAVZR5B25IXUHZYALBTNSM.jpg?auth=d911c1516888c43ca5bca2b9f41453e6aca1a66045c9c0210fb0a2b14d630adc&smart=true&width=558&height=796",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/politica/2026/05/25/que-es-daga-atlantica-como-funciona-el-ejercicio-militar-conjunto-entre-argentina-y-estados-unidos/",
+          "headline": "Qué es Daga Atlántica: cómo funciona el ejercicio militar conjunto entre Argentina y Estados Unidos",
+          "snippet": "Daga Atlántica impulsa el aprendizaje y la actualización doctrinal, clave ante la falta de experiencia argentina en zonas de combate activas En una columna para Infobae al Regreso , el analista internacional Andrei Serbin Pont detalló el alcance de la Daga Atlántica , el ejercicio de cooperación…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 23:48:31 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/BULQVBX2EFBGBE2K7KX7XKWD4U.jpg?auth=cdbf817543af0f3238c709cdff76530696cd2f108231b7f52f98c06afeb44369&smart=true&width=2048&height=1362",
           "video_url": null
         }
       ],
@@ -5591,6 +5602,322 @@
       "section": "entertainment"
     },
     {
+      "id": "7f95970115d7",
+      "headline": "Bella Hadid turns heads in a plunging black dress as she steps out in Saint-Tropez during sun-soaked getaway",
+      "summary": "Bella Hadid showed off her jaw-dropping figure in a plunging black dress as she stepped out in Saint-Tropez during a sun-soaked getaway on Sunday.",
+      "published": "Mon, 25 May 2026 23:48:15 GMT",
+      "image_url": "https://i.dailymail.com/1s/2026/05/09/06/108487145-0-image-a-50_1778304817899.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 29,
+        "right_pct": 71,
+        "state_count": 0,
+        "dominant": "right",
+        "dominant_pct": 71
+      },
+      "bias_variance": 3.57,
+      "entity_count": 22,
+      "entity_list": [
+        "Ballerini",
+        "Barely",
+        "Bella",
+        "Bezos",
+        "Bikini",
+        "Brings",
+        "Cannes",
+        "Cannesu",
+        "Hadid",
+        "Kelsea",
+        "Palestinian",
+        "Rocks",
+        "Saint",
+        "Schiaparelli",
+        "String",
+        "Swimwear",
+        "TOPLESS",
+        "There",
+        "Tropez",
+        "Wears",
+        "White",
+        "Yacht"
+      ],
+      "sources": [
+        {
+          "id": "daily_mail_ent",
+          "name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "daily_mail",
+          "name": "Daily Mail",
+          "country": "GB",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "low",
+          "primary_vs_launder": "primary",
+          "parent_company": "Daily Mail and General Trust"
+        },
+        {
+          "id": "fox_news",
+          "name": "Fox News",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": "Fox Corp"
+        },
+        {
+          "id": "the_national_ae",
+          "name": "The National UAE",
+          "country": "AE",
+          "bloc": "western",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "middle-east",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "tmz",
+          "name": "TMZ",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "jutarnji",
+          "name": "Jutarnji List",
+          "country": "HR",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "ny_post",
+          "name": "New York Post",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15803453/bella-hadid-legs-dress-skip-met-gala.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Bella Hadid has legs for days in angelic snaps after skipping Met Gala amid anti-Bezos backlash",
+          "snippet": "Bella Hadid showed off her supermodel legs in angelic snapshots shared with her nearly 60,000 Instagram followers - after notably skipping the 2026 Met Gala . On Friday, the 29-year-old runway maven struck pose after pose in a sun-soaked location while wearing a bohemian chic dress from Chloe. The…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sat, 09 May 2026 05:59:26 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/09/06/108487145-0-image-a-50_1778304817899.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15842309/bella-hadid-cheeky-swimsuit-cannes-yacht-jump.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Bella Hadid puts on VERY cheeky display in plunging one-piece swimsuit... after death-defying yacht stunt that shocked her pals",
+          "snippet": "Bella Hadid was back relaxing on a superyacht in the French Riviera on Friday afternoon just days after her death-defying yacht jump . The supermodel, 29, flaunted her runway-worthy figure in a plunging white swimsuit in photos posted to her Instagram Story. Hadid put her toned backside and flat…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 12:34:16 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/02/108816551-0-image-a-56_1779500971706.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15842309/bella-hadid-cheeky-swimsuit-cannes-yacht-jump.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Bella Hadid puts on VERY cheeky display in plunging one-piece swimsuit... after death-defying yacht stunt that shocked her pals",
+          "snippet": "Bella Hadid was back relaxing on a superyacht in the French Riviera on Friday afternoon just days after her death-defying yacht jump . The supermodel, 29, flaunted her runway-worthy figure in a plunging white swimsuit in photos posted to her Instagram Story. Hadid put her toned backside and flat…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sat, 23 May 2026 11:34:16 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/23/02/108816551-0-image-a-56_1779500971706.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.foxnews.com/entertainment/bella-hadid-kelsea-ballerini-more-stars-kick-off-summer-early-bikini-photos",
+          "headline": "Bella Hadid, Kelsea Ballerini and more stars kick off summer early with bikini photos",
+          "snippet": "Ballerini wore a sparkly silver dress at the Awards, while Stokes wore a black suit. You can now listen to Fox News articles! Celebrities are getting ready for summer. Stars like Bella Hadid, Kelsea Ballerini and Elizabeth Hurley are heating things up with their bikini photos, whether at the beach,…",
+          "source": "fox_news",
+          "source_name": "Fox News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 12:00:15 -0400",
+          "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/931/523/bella-hadid-kelsea-ballerini.jpeg?ve=1&tl=1",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thenationalnews.com/lifestyle/fashion-beauty/2026/05/21/bella-hadid-palestinian-key-necklace-cannes/",
+          "headline": "The meaning behind Bella Hadid's Palestinian 'key of return' necklace at Cannes",
+          "snippet": "Bella Hadid is once again using the Cannes Film Festival red carpet to make a statement about her Palestinian identity. On Wednesday, the model arrived at the festival in an all-black Tom Ford look, accessorised with a key necklace. What does the Palestinian key symbol mean? The piece is notable…",
+          "source": "the_national_ae",
+          "source_name": "The National UAE",
+          "country": "AE",
+          "published": "Thu, 21 May 2026 08:47:34 +0000",
+          "image_url": "https://www.thenationalnews.com/resizer/v2/NVV2EPPAJRGN5LRPLBLOPXU3KI.jpg?auth=9b7c3eb41db080f438e5963900a20b3be45c7c17eca504bdb73d85fcc0cb4011&smart=true&width=2874&height=1617",
+          "video_url": null
+        },
+        {
+          "url": "https://www.tmz.com/2026/05/23/bella-hadid-wears-bikini-on-yacht-in-saint-tropez/",
+          "headline": "Bella Hadid Wears Barely-There Bikini During Saint-Tropez Yacht Trip",
+          "snippet": "Bella Hadid Wears Barely-There Bikini During Saint-Tropez Yacht Trip Bella Hadid From Stripes to Stripped Down ... Throws Off Cover-Up, Bares Bikini Bod Published May 23, 2026 1:53 Bella Hadid leaving her cares -- and clothes -- behind in Europe ... stripping down during a recent yacht trip to a…",
+          "source": "tmz",
+          "source_name": "TMZ",
+          "country": "US",
+          "published": "",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15843765/bella-hadid-red-bikini-yacht-st-tropez-cannes.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Bella Hadid strips down to tiny red bikini as she soaks up the sun aboard a luxury yacht in Saint-Tropez",
+          "snippet": "Bella Hadid turned heads in a red bikini while enjoying some rest and relaxation during the Cannes Film Festival . The 29-year-old supermodel was spotted soaking up the sun on a luxury yacht day in the French Riviera after making a show-stopping appearance at the film festival. For her day off, she…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sun, 24 May 2026 02:00:17 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/24/01/108828999-0-image-a-35_1779582238154.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.jutarnji.hr/scena/strane-zvijezde/bella-hadid-u-cipkastoj-schiaparelli-haljini-ovo-su-najbolji-modni-trenuci-u-cannesu-15711568",
+          "headline": "Bella Hadid u čipkastoj Schiaparelli haljini... Ovo su najbolji modni trenuci u Cannesu",
+          "snippet": "Filmski festival u Cannesu mjesto je na kojem se susreću film, kultura, slava i - moda. Za razliku od Oscara, koji više potencira glamur, zvijezde filmske industrije u Cannesu pridržavaju se više europski modnih normi u kojoj se ne ‘igra‘ toliko na šljokice koliko na eleganciju i jednostavnost.…",
+          "source": "jutarnji",
+          "source_name": "Jutarnji List",
+          "country": "HR",
+          "published": "Sun, 24 May 2026 11:01:13 +0200",
+          "image_url": "https://media.jutarnji.hr/images/slike/2026/05/24/f_38960495_1280.jpg?1779613712",
+          "video_url": null
+        },
+        {
+          "url": "https://www.tmz.com/2026/05/24/bella-hadid-heating-up-saint-tropez/",
+          "headline": "Bella Hadid Brings the Heat During Sexy Saint-Tropez Yacht Day",
+          "snippet": "Bella Hadid Brings the Heat During Sexy Saint-Tropez Yacht Day Bella Hadid Too Hot to Handle in Saint-Tropez!!! Published May 24, 2026 1:41 Bella Hadid is still soaking up every second of vacation ... this time, turning the waters of Saint-Tropez into her own personal playground. The supermodel was…",
+          "source": "tmz",
+          "source_name": "TMZ",
+          "country": "US",
+          "published": "",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15845517/Bella-Hadid-turns-heads-plunging-black-dress-steps-Saint-Tropez-sun-soaked-getaway.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Bella Hadid turns heads in a plunging black dress as she steps out in Saint-Tropez during sun-soaked getaway",
+          "snippet": "Bella Hadid showed off her jaw-dropping figure in a plunging black dress as she stepped out in Saint-Tropez during a sun-soaked getaway on Sunday. The supermodel, 29, looked incredible in the stylish long number which she teamed with a chunky gold necklace and matching earrings. Bella kept…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Sun, 24 May 2026 23:20:07 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/25/00/108840625-0-image-a-6_1779664202317.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15845599/Bella-Hadid-yacht-Saint-Tropez-france-cannes.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Bella Hadid flaunts supermodel figure in colorful swimsuit before hopping on a jet ski during Saint-Tropez getaway",
+          "snippet": "Bella Hadid continued her yachting adventures on the French Riviera on Sunday with a high-speed jet ski ride with her gal pal Fanny Bourdette-Donon. The 29-year-old supermodel - who's an avid equestrian - piloted the waverunner with ease as Bourdette-Donon held on to her for dear life. At 40, the…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Mon, 25 May 2026 01:51:48 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/25/01/108841951-0-image-a-78_1779669319277.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15845517/Bella-Hadid-turns-heads-plunging-black-dress-steps-Saint-Tropez-sun-soaked-getaway.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+          "headline": "Bella Hadid turns heads in a plunging black dress as she steps out in Saint-Tropez during sun-soaked getaway",
+          "snippet": "Bella Hadid showed off her jaw-dropping figure in a plunging black dress as she stepped out in Saint-Tropez during a sun-soaked getaway on Sunday. The supermodel, 29, looked incredible in the stylish long number which she teamed with a chunky gold necklace and matching earrings. Bella kept…",
+          "source": "daily_mail",
+          "source_name": "Daily Mail",
+          "country": "GB",
+          "published": "Mon, 25 May 2026 02:57:50 +0100",
+          "image_url": "https://i.dailymail.com/1s/2026/05/25/00/108840625-0-image-a-6_1779664202317.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://pagesix.com/2026/05/25/style/bella-hadid-skimpy-swimsuit-is-completely-open-on-the-back-and-sides/",
+          "headline": "Bella Hadid’s skimpy swimsuit is completely open on the back and sides",
+          "snippet": "Bella Hadid posed for pics in a white-hot one-piece while in Cannes. bellahadid/instagram Bella Hadid may be the queen of the Cannes Film Festival red carpet , but her off-duty looks are every bit as eye-catching. In between captivating the crowds with her glamorous premiere gowns , the 29-year-old…",
+          "source": "ny_post",
+          "source_name": "New York Post",
+          "country": "US",
+          "published": "Mon, 25 May 2026 08:01:29 -0700",
+          "image_url": "https://pagesix.com/wp-content%2Fuploads%2Fsites%2F3%2F2026%2F05%2Fwww-instagram-com-bellahadid-hl-128707625.jpg?w%3D628",
+          "video_url": null
+        },
+        {
+          "url": "https://www.tmz.com/2026/05/25/bella-hadid-swimwear-yacht-cannes/",
+          "headline": "Bella Hadid Rocks Tiny White String Swimwear For Cannes Yacht Day",
+          "snippet": "Bella Hadid Rocks Tiny White String Swimwear For Cannes Yacht Day Bella Hadid I'm Floatin' and Flauntin'!!!🔥 Published May 25, 2026 10:50 If you needed another reason to question your own life choices after seeing Bella Hadid ’s Cannes red carpet slay ... her latest bikini snaps just entered the…",
+          "source": "tmz",
+          "source_name": "TMZ",
+          "country": "US",
+          "published": "",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15847493/Bella-Hadid-topless-skimpy-swimsuits-Saint-Tropez.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "Bella Hadid poses TOPLESS as she continues her parade of skimpy swimsuits in Saint-Tropez",
+          "snippet": "Bella Hadid continued her streak of scantily-clad looks during her Saint-Tropez trip on Monday. The 29-year-old supermodel – who was spotted yachting in a red bikini over the weekend – took to her Instagram Stories to share a topless photo with her nearly 60 million followers. She sported a pale…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Mon, 25 May 2026 23:48:15 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/25/21/108858827-0-image-a-25_1779742417956.jpg",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.227,
+        "zionist": 0.323,
+        "atlanticist": 0.367,
+        "statist": 0.02,
+        "financialized": 0.43
+      },
+      "fp_source_count": 6,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 5,
+        "eastern-europe": 1,
+        "middle-east": 1
+      },
+      "section": "chisme"
+    },
+    {
       "id": "1e31dcaf1a16",
       "headline": "'Any Appropriately Located Alternate Plot?' Delhi Gymkhana Club Writes To Centre",
       "summary": "The Delhi Gymkhana Club wrote in a letter to the Centre that any sudden action against it would impact multiple stakeholders, including employees and patrons.",
@@ -8557,6 +8884,256 @@
       "section": "world"
     },
     {
+      "id": "3802fa608c45",
+      "headline": "Where Trump’s $1.8 billion payout fund gets its money and how it could work - The Washington Post",
+      "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOWl9aR1ZGYVgzNDhSSlNLbmlKVEtiaTZGT3VmYVFKVGxOREpXRGNKUEEtaEJtaUpUSWpyQUtMaGJMRVdscDZzaEM3VDNnVGJsZE9Zcnk3bVJySFYzeXhOTVRWRGFBaGZBSE55Z0xudU5weloyZTBZUG11Y3VHS29CSDR1N1lZLW56cWZyTG1zMnQ1RGNXZ3RSYTZzVVQzellQMEo3NUdFRGlaZExUc210Q012NF",
+      "published": "Mon, 25 May 2026 16:00:00 GMT",
+      "image_url": "https://www.infobae.com/resizer/v2/LYJDA3XFVZCZ5KGCQWFATAHAGI.JPG?auth=ca5134c65ab6cf3bcbcc76a07ea97659223927d36e206a3289563c43139b961a&smart=true&width=3392&height=2264",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Left",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 0,
+        "center_pct": 50,
+        "right_pct": 50,
+        "state_count": 1,
+        "dominant": "center",
+        "dominant_pct": 50
+      },
+      "bias_variance": 11.67,
+      "entity_count": 12,
+      "entity_list": [
+        "Bolsonaro",
+        "Capitol",
+        "Jeffries",
+        "Lawyers",
+        "Letter",
+        "Living",
+        "TikTok",
+        "Topsy",
+        "Trump",
+        "Turvy",
+        "Walter",
+        "Washington"
+      ],
+      "sources": [
+        {
+          "id": "infobae",
+          "name": "Infobae",
+          "country": "AR",
+          "bloc": "non-aligned",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "latin-america",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "rt",
+          "name": "RT (Russia Today)",
+          "country": "RU",
+          "bloc": "adversarial",
+          "bias_tier": "state-pro",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "low",
+          "primary_vs_launder": "launderer",
+          "parent_company": "Russian state"
+        },
+        {
+          "id": "balkan_insight",
+          "name": "Balkan Insight (BIRN)",
+          "country": "RS",
+          "bloc": "western",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "eastern-europe",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "washington_examiner",
+          "name": "Washington Examiner",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "lean-right",
+          "bias_bucket": "right",
+          "geo_cluster": "west",
+          "factuality": "mostly_factual",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.infobae.com/estados-unidos/2026/05/09/la-administracion-de-trump-negocia-un-acuerdo-de-usd-400-millones-con-tiktok-para-embellecer-washington-dc/",
+          "headline": "La administración de Trump negocia un acuerdo de USD 400 millones con TikTok para “embellecer” Washington D.C.",
+          "snippet": "El Departamento de Justicia demandó a TikTok y ByteDance en 2024 por violar la Ley de Protección de la Privacidad Infantil en Internet y exponer a menores a riesgos (REUTERS/Elizabeth Frantz). En el escenario de un litigio federal sin precedentes, la administración Trump se encuentra a punto de…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Sat, 09 May 2026 19:10:38 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/LYJDA3XFVZCZ5KGCQWFATAHAGI.JPG?auth=ca5134c65ab6cf3bcbcc76a07ea97659223927d36e206a3289563c43139b961a&smart=true&width=3392&height=2264",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rt.com/news/639657-us-israel-iran-war/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+          "headline": "Washington ignored intel warnings on Iran – Trump’s ex-counterterror chief",
+          "snippet": "The has been dragged into war by Israel despite assessments that Tehran was not building a bomb, Joe Kent has said Washington joined Israel’s war against Iran despite intelligence assessments that the Islamic Republic was not developing nuclear weapons, President Donald Trump’s former…",
+          "source": "rt",
+          "source_name": "RT (Russia Today)",
+          "country": "RU",
+          "published": "Fri, 08 May 2026 16:57:09 +0000",
+          "image_url": "https://mf.b37mrtl.ru/files/2026.05/thumbnail/69fe156785f5404a1055bd19.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://balkaninsight.com/2026/04/27/letter-from-washington-living-in-trumps-topsy-turvy-world/bi/",
+          "headline": "Letter from Washington: Living in Trump’s Topsy-Turvy World",
+          "snippet": "Washington is currently consumed by yet another war launched by the self-styled “president of peace,” Donald Trump. The conflict with Iran, vague in both its origins and objectives, has fractured Trump’s base and driven another wedge between the United States and its allies. Balkan leaders have,…",
+          "source": "balkan_insight",
+          "source_name": "Balkan Insight (BIRN)",
+          "country": "RS",
+          "published": "Mon, 27 Apr 2026 05:56:18 +0000",
+          "image_url": "https://balkaninsight.com/wp-content/uploads/2026/04/13492641-640x360.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.washingtonexaminer.com/news/house/4561513/trump-jeffries-feud-grows/",
+          "headline": "Trump and Jeffries could become Washington’s ultimate odd couple",
+          "snippet": "But the duo’s fraught relationship points to the latter. On Thursday, Trump implied Jeffries bore responsibility for the April 25 attempt on his life at the White House Correspondents’ Association dinner and suggested the Democratic leader should be charged with inciting violence. “This lunatic,…",
+          "source": "washington_examiner",
+          "source_name": "Washington Examiner",
+          "country": "US",
+          "published": "Sun, 10 May 2026 10:00:00 +0000",
+          "image_url": "https://www.washingtonexaminer.com/wp-content/uploads/2026/05/image-collage-bo8k53ur4-1778283070806-e1778284135656.jpg?1778268834&w=696",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOaFNpREw4d2JqZE95WWRyaTU5aUJPNnp3X0loLXROZW04bGxWN0dCbjQ4RFVxdk9HRVRxY1NETkRMSXpnal9UM1NmTS1MOVJZczctRXpaQTh4YThfYUVfNnVYei1MNVpDLTNKaUFBc09sUkZQaWVkdzEyNjZKOWNDQUNCMmxXbjA?oc=5",
+          "headline": "Lawyers for the global elite aren’t buying Trump’s gold card visa - The Washington Post",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxOaFNpREw4d2JqZE95WWRyaTU5aUJPNnp3X0loLXROZW04bGxWN0dCbjQ4RFVxdk9HRVRxY1NETkRMSXpnal9UM1NmTS1MOVJZczctRXpaQTh4YThfYUVfNnVYei1MNVpDLTNKaUFBc09sUkZQaWVkdzEyNjZKOWNDQUNCMmxXbjA?oc=5\" target=\"_blank\">Lawyers for the global elite aren’t buying…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 10 May 2026 15:32:28 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxON2RSNjhuM1Z2dzB2MmZKbTJybWI2aVFpMFJMdjBHZXk4OXc2UFdkUHdrWWM1enIyckUta1dDV0NiaEtiZnlPeW02UUlSRm5WckVVOUt0SWpHV3RkdHhRN2RVV1ZaMGw0bVdzbWc5OHM2NlhmT2NXOXd4Y1ZraUh5VEUtMGIydHZP?oc=5",
+          "headline": "Trump calls Iran’s response to peace plan ‘unacceptable’ as ceasefire is tested - The Washington Post",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxON2RSNjhuM1Z2dzB2MmZKbTJybWI2aVFpMFJMdjBHZXk4OXc2UFdkUHdrWWM1enIyckUta1dDV0NiaEtiZnlPeW02UUlSRm5WckVVOUt0SWpHV3RkdHhRN2RVV1ZaMGw0bVdzbWc5OHM2NlhmT2NXOXd4Y1ZraUh5VEUtMGIydHZP?oc=5\" target=\"_blank\">Trump calls Iran’s response to peace plan…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Mon, 11 May 2026 11:28:45 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNaDluYzF1NjdzU1BYT2g2b0NSazQ4eE9JNW5FYW5paXZkWEo5YzI4cnBRSVFlNk9kdHZUNUs5aEgyeGM5c3dJVnpMVmx4cDNrUlN6VU15ZldOaEE5ZGJGMTE3SGhzMHFzc1R4UG5CTmR1R0hZUVQyTnE3SlpwQlVMQXNhWW1ldlRjbEljQ0VNZjFKRlhobk5UV0stbm5sbEc5RnFrZ0xMQ013cE0yM1pTLQ?oc=5",
+          "headline": "A tough week for Trump on Capitol Hill, as Republicans deal him setbacks - The Washington Post",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNaDluYzF1NjdzU1BYT2g2b0NSazQ4eE9JNW5FYW5paXZkWEo5YzI4cnBRSVFlNk9kdHZUNUs5aEgyeGM5c3dJVnpMVmx4cDNrUlN6VU15ZldOaEE5ZGJGMTE3SGhzMHFzc1R4UG5CTmR1R0hZUVQyTnE3SlpwQlVMQXNhWW1ldlRjbEljQ0VNZjFKRlhobk5UV0stbm5sbEc5RnFrZ0xMQ013cE0yM1pTLQ?oc=5\"…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 12:03:54 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYklFT29rVDR4b2NENklrRXI5amduNVctSUE0M1dxOXJKUjhQZjFnNGJ1NllLUGhlZTBrZzExVW1wbXI0OHIyUU96T2ZwLXJ6VkpMUEFCb0Z0NDdZbkZpVGZqLWdhYkJoOGVHNDZwSGVRRGZXRjZwbEt3MTZiNnp3QV9TM3ppZmplaGlIYjA2cm4wS19aNEMtLWtmdEJYY1hacmRWWWUzbDdtYlBZMjdiSmlmQQ?oc=5",
+          "headline": "Trump’s $1.8 billion payout fund isn’t required to reveal how it actually works - The Washington Post",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPYklFT29rVDR4b2NENklrRXI5amduNVctSUE0M1dxOXJKUjhQZjFnNGJ1NllLUGhlZTBrZzExVW1wbXI0OHIyUU96T2ZwLXJ6VkpMUEFCb0Z0NDdZbkZpVGZqLWdhYkJoOGVHNDZwSGVRRGZXRjZwbEt3MTZiNnp3QV9TM3ppZmplaGlIYjA2cm4wS19aNEMtLWtmdEJYY1hacmRWWWUzbDdtYlBZMjdiSmlmQQ?oc=5\"…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sat, 23 May 2026 16:00:00 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcFh4TWl1cnI4MkdBMGRqZjZfZC1ZZEZLVWU3T0pLUFhvbjdBaTRhWmstc3lSUkhPSWRsTE4zRXBNbm5sdUlrbmtiQ2J0WURPc2tJQVYzeFBZejBHRG4tbWZ2MnNtUVdLUS1HOE50NlZocDJWSVdZVjF6Y0NPd1ZXRE51VWdXM0F4ZHJNMlZpUTZTMmljYUc2NWphNUw4cU53UEh1VHdzRnZkY0dEbHljSA?oc=5",
+          "headline": "Trump says Iran ceasefire deal in final stages, to be ‘announced shortly’ - The Washington Post",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOcFh4TWl1cnI4MkdBMGRqZjZfZC1ZZEZLVWU3T0pLUFhvbjdBaTRhWmstc3lSUkhPSWRsTE4zRXBNbm5sdUlrbmtiQ2J0WURPc2tJQVYzeFBZejBHRG4tbWZ2MnNtUVdLUS1HOE50NlZocDJWSVdZVjF6Y0NPd1ZXRE51VWdXM0F4ZHJNMlZpUTZTMmljYUc2NWphNUw4cU53UEh1VHdzRnZkY0dEbHljSA?oc=5\"…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Sun, 24 May 2026 03:27:00 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/america/agencias/2026/05/25/flavio-bolsonaro-viaja-a-washington-para-tratar-de-reunirse-con-trump/",
+          "headline": "Flávio Bolsonaro viaja a Washington para tratar de reunirse con Trump",
+          "snippet": "São Paulo, 25 may (EFE).- El senador derechista brasileño Flávio Bolsonaro, candidato presidencial a las elecciones de octubre, embarcó en la noche del domingo en São Paulo en un vuelo en dirección a Washington, donde espera reunirse con el mandatario estadounidense, Donald Trump. Bolsonaro viaja a…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 12:15:22 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPRDBFX3NfWjRZdWVNYmVsVVluTlBUaTBHRkZlR1hfNFQ1TEdsdVlvQmJDVVF0M3lQNFpJM29wMUNmR3dXd2pIcG14R2tWQzVVekhkcHYxLVo2Uk5uaTlyMUZnTDlGVVZhdUo2OWhHS3YwUzRXV0Q4V3hFcjY4N1YtT05kVVQtU1JSUlRsOGNVSENEUTFzbVB5OGY5Nlh3cWRvRXR1U2xFZ1VXbjFUa3NuNA?oc=5",
+          "headline": "Trump faces health questions ahead of another Walter Reed trip - The Washington Post",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPRDBFX3NfWjRZdWVNYmVsVVluTlBUaTBHRkZlR1hfNFQ1TEdsdVlvQmJDVVF0M3lQNFpJM29wMUNmR3dXd2pIcG14R2tWQzVVekhkcHYxLVo2Uk5uaTlyMUZnTDlGVVZhdUo2OWhHS3YwUzRXV0Q4V3hFcjY4N1YtT05kVVQtU1JSUlRsOGNVSENEUTFzbVB5OGY5Nlh3cWRvRXR1U2xFZ1VXbjFUa3NuNA?oc=5\"…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Mon, 25 May 2026 13:32:28 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOWl9aR1ZGYVgzNDhSSlNLbmlKVEtiaTZGT3VmYVFKVGxOREpXRGNKUEEtaEJtaUpUSWpyQUtMaGJMRVdscDZzaEM3VDNnVGJsZE9Zcnk3bVJySFYzeXhOTVRWRGFBaGZBSE55Z0xudU5weloyZTBZUG11Y3VHS29CSDR1N1lZLW56cWZyTG1zMnQ1RGNXZ3RSYTZzVVQzellQMEo3NUdFRGlaZExUc210Q012NFExR3FjX3E0aVdGM0t5a1ExU3JCaHVLTVdiZUU?oc=5",
+          "headline": "Where Trump’s $1.8 billion payout fund gets its money and how it could work - The Washington Post",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOWl9aR1ZGYVgzNDhSSlNLbmlKVEtiaTZGT3VmYVFKVGxOREpXRGNKUEEtaEJtaUpUSWpyQUtMaGJMRVdscDZzaEM3VDNnVGJsZE9Zcnk3bVJySFYzeXhOTVRWRGFBaGZBSE55Z0xudU5weloyZTBZUG11Y3VHS29CSDR1N1lZLW56cWZyTG1zMnQ1RGNXZ3RSYTZzVVQzellQMEo3NUdFRGlaZExUc210Q012NFExR3FjX3…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Mon, 25 May 2026 16:00:00 GMT",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.054,
+        "zionist": 0.122,
+        "atlanticist": 0.1,
+        "statist": 0.268,
+        "financialized": 0.31
+      },
+      "fp_source_count": 5,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "eastern-europe": 1,
+        "west": 2,
+        "latin-america": 1,
+        "adversarial": 1
+      },
+      "section": "world"
+    },
+    {
       "id": "abd4670c1e69",
       "headline": "Twisha Sharma death case: final rites to be held in Bhopal after second autopsy by AIIMS Delhi team",
       "summary": "The Sharma family reiterated that it has cooperated fully with the investigation and continues to place faith in the legal process",
@@ -10378,287 +10955,6 @@
         "global-south": 4
       },
       "section": "world"
-    },
-    {
-      "id": "abfc873f50e9",
-      "headline": "Oleksandr Usyk earns controversial 11th-round stoppage win over kickboxer Rico Verhoeven to retain his WBC belt with Anthony Joshua in support - as Dutchman demands rematch and questions ref's verdict",
-      "summary": "Usyk remarkably appeared at risk of losing to the impressive Dutchman, who was competing in just his second professional fight in front of the Egyptian pyramids in Giza.",
-      "published": "Mon, 25 May 2026 09:21:07 GMT",
-      "image_url": "https://i.dailymail.com/1s/2026/05/23/22/108826801-0-image-a-4_1779571848252.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Left",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 50,
-        "right_pct": 50,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 50
-      },
-      "bias_variance": 0.95,
-      "entity_count": 24,
-      "entity_list": [
-        "Anthony",
-        "Bleacher",
-        "Boxing",
-        "Controversial",
-        "Dutchman",
-        "Egypt",
-        "Fighting",
-        "Heavyweight",
-        "Illustrated",
-        "Joshua",
-        "Judges",
-        "Oleksandr",
-        "Peter",
-        "Reaction",
-        "Ringwalk",
-        "Round",
-        "Scorecards",
-        "Sports",
-        "Stoppage",
-        "Times",
-        "Tonight",
-        "Ukrainian",
-        "Verhoeven",
-        "Yahoo"
-      ],
-      "sources": [
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
-        },
-        {
-          "id": "espn",
-          "name": "ESPN",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": "Disney"
-        },
-        {
-          "id": "daily_mail",
-          "name": "Daily Mail",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "right",
-          "bias_bucket": "right",
-          "geo_cluster": "west",
-          "factuality": "low",
-          "primary_vs_launder": "primary",
-          "parent_company": "Daily Mail and General Trust"
-        },
-        {
-          "id": "the_national_ae",
-          "name": "The National UAE",
-          "country": "AE",
-          "bloc": "western",
-          "bias_tier": "lean-right",
-          "bias_bucket": "right",
-          "geo_cluster": "middle-east",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQZU1iVjFDckNhVHY4MmhueFVJdmVDTlFpbmtWQkEzM2ZXelNDaTNzWmF2ZjR1VnFpWkkwNUwtUE0yQTYtSmJhdlZfMk5nNjRuZ2hHazJHQ2lxQXMzeWZZUDF4dlY3c0I5dFFuRnZkVkFwdnh0Qm5tZGJqSDMwLVdnNzhvNXduMnBLMmNZNkEzRVgtQmtOVktZUlJPcTQ0MXcxWXJ2RzI3UzNYeE9mdGtnalFYWVJrVk5XaVNLbU5XNEh1dFJkbVMtb0JHTERGdmpyUGEzVWJ1cHpSeFFUdC1NejJWRHliR2M?oc=5",
-          "headline": "Oleksandr Usyk vs Rico Verhoeven: Live streaming results, round by round, reactions, how to watch - Bad Left Hook",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxQZU1iVjFDckNhVHY4MmhueFVJdmVDTlFpbmtWQkEzM2ZXelNDaTNzWmF2ZjR1VnFpWkkwNUwtUE0yQTYtSmJhdlZfMk5nNjRuZ2hHazJHQ2lxQXMzeWZZUDF4dlY3c0I5dFFuRnZkVkFwdnh0Qm5tZGJqSDMwLVdnNzhvNXduMnBLMmNZNkEzRVgtQmtOVktZUlJPcTQ0MXcxWXJ2RzI3UzNYeE9mdGtnalFYWVJrVk5XaV…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sat, 23 May 2026 04:00:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNlZSajdReHdodElnTnRxOXlLZ0N1a3A3Z010c2VPd194RlljU1hjdXNxNUFsWjBuWjE2QmZicTBYMHMyZWQ1bldValBFaEE3SWJEa2ZZX2h6WjZ5eDRZeFJ2ZTgweHBMRlNNSTEzRk5iRlM5Z1ZRVklTazU1dHFSMS1QN09sRlp3a2lPSlJrMGp0YWFuTzg5dEliZ0xLZw?oc=5",
-          "headline": "Oleksandr Usyk vs. Rico Verhoeven round-by-round updates - MMA Fighting",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPNlZSajdReHdodElnTnRxOXlLZ0N1a3A3Z010c2VPd194RlljU1hjdXNxNUFsWjBuWjE2QmZicTBYMHMyZWQ1bldValBFaEE3SWJEa2ZZX2h6WjZ5eDRZeFJ2ZTgweHBMRlNNSTEzRk5iRlM5Z1ZRVklTazU1dHFSMS1QN09sRlp3a2lPSlJrMGp0YWFuTzg5dEliZ0xLZw?oc=5\" target=\"_blank\">Oleksandr…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sat, 23 May 2026 07:30:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPLV9fRWotZ2x2RWg4Q1FSUEZQZnRsMnZlSjdUcnUzZUJQeEtXMEVfTkpvaE44Z2RIT3BKcFM4NFU1cVJqTHVEY0xDSmhaTnNQNkEzaVVrdGQ1NGQ2Tm9zQmFZZjM4emV3d3psYlZaeFdSSHNSalFMZ2tEbTFfMzI2TTBDZUYzOHFfWWtTTkpjbDF1WkZtc0ZRQWY4T0xGdFVmNTdKWmhMcjJFZkk?oc=5",
-          "headline": "Boxing Tonight: Ringwalk Times for Oleksandr Usyk vs Rico Verhoeven Card - Sports Illustrated",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPLV9fRWotZ2x2RWg4Q1FSUEZQZnRsMnZlSjdUcnUzZUJQeEtXMEVfTkpvaE44Z2RIT3BKcFM4NFU1cVJqTHVEY0xDSmhaTnNQNkEzaVVrdGQ1NGQ2Tm9zQmFZZjM4emV3d3psYlZaeFdSSHNSalFMZ2tEbTFfMzI2TTBDZUYzOHFfWWtTTkpjbDF1WkZtc0ZRQWY4T0xGdFVmNTdKWmhMcjJFZkk?oc=5\"…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sat, 23 May 2026 12:43:11 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOLTlhbHhIbGxxTjFDXzZNLXcyTjVEX1dUakQ4dWVQVjdvOUVrVm90Ul9XNGJJTFZCeWl1a3R3VnNqQnFMdjFGRTVyZkgwTUFOUFpRUjIwVkFwaEpuQlVOTklOWGwzc3J6M0h0czNBc3lGYkZtekRGRldkWGlCQk1OckZNSUQ0dHNETFZUVjQ1OHIyNWlYd3Q3b2FNX3Mydy1icXVITWJjUG5uVG4yZ1Y3ME1MLU93eGxfV29CelNzQlNhQWJodGU2Z2duNGZHS1VVT0xYVlJaZ2FZcUxhMWZFUVlVVjl0c1BLVUItU21jSlVRSVI5Vk1B?oc=5",
-          "headline": "Oleksandr Usyk vs. Rico Verhoeven live results, round-by-round updates, ring walks, start time for Egypt title fight - Yahoo Sports",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMi9wFBVV95cUxOLTlhbHhIbGxxTjFDXzZNLXcyTjVEX1dUakQ4dWVQVjdvOUVrVm90Ul9XNGJJTFZCeWl1a3R3VnNqQnFMdjFGRTVyZkgwTUFOUFpRUjIwVkFwaEpuQlVOTklOWGwzc3J6M0h0czNBc3lGYkZtekRGRldkWGlCQk1OckZNSUQ0dHNETFZUVjQ1OHIyNWlYd3Q3b2FNX3Mydy1icXVITWJjUG5uVG4yZ1Y3ME1MLU93eGxfV2…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sat, 23 May 2026 17:54:34 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.espn.com/boxing/story/_/id/48817587/oleksandr-usyk-vs-rico-verhoeven-live-updates-boxing-results-analysis",
-          "headline": "Oleksandr Usyk vs. Rico Verhoeven live updates, re...",
-          "snippet": "Heavyweight champion Oleksander Usyk takes on kickboxer Rico Verhoeven in a boxing match. Follow live.﻿",
-          "source": "espn",
-          "source_name": "ESPN",
-          "country": "US",
-          "published": "Sat, 23 May 2026 14:44:10 EST",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/sport/boxing/article-15840369/Oleksandr-Usyk-vs-Rico-Verhoeven-LIVE-Heavyweight-champions-puts-WBC-title-line-against-kickboxer.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Oleksandr Usyk vs Rico Verhoeven LIVE: Heavyweight champions puts WBC title on the line against kickboxer",
-          "snippet": "By CHARLOTTE DALY, MULTIMEDIA CONTENT REPORTER Updated: 17:45 EDT, 23 May 2026 Crawford makes his way ringside! Does Verhoeven have a chance? Tony Bellew, speaking on DAZN, said: “Verhoeven is going to come with a style that Usyk has never seen before. At times he’ll be square on, and at times…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 22:47:57 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/23/22/108826801-0-image-a-4_1779571848252.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/sport/boxing/article-15840369/Oleksandr-Usyk-vs-Rico-Verhoeven-LIVE-Heavyweight-champions-puts-WBC-title-line-against-kickboxer.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Oleksandr Usyk vs Rico Verhoeven LIVE: Heavyweight champion puts WBC title on the line against kickboxer - as Anthony Joshua watches on in support of Ukrainian",
-          "snippet": "By CHARLOTTE DALY, MULTIMEDIA CONTENT REPORTER Updated: 18:45 EDT, 23 May 2026 ROUND 6: Usyk vs Verhoeven Verhoeven continues to be the busier fighter, coming forward and piling together a solid combination with around 45 seconds left in the round that lifts the crowd and reasserts his presence.…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 23:48:11 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/23/23/108827749-0-image-a-20_1779576065424.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.dailymail.com/sport/boxing/article-15843479/Oleksandr-Usyk-escapes-11th-round-stoppage-retain-WBC-belt-Rico-Verhoeven-Anthony-Joshua.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
-          "headline": "Oleksandr Usyk earns controversial 11th-round stoppage win over kickboxer Rico Verhoeven to retain his WBC belt with Anthony Joshua in support - as Dutchman demands rematch and questions ref's verdict",
-          "snippet": "Oleksandr Usyk earns controversial 11th-round stoppage win over kickboxer Rico Verhoeven to retain his belt with Anthony Joshua in support - as Dutchman demands rematch and questions ref's verdict By MICHAEL PAVITT, SPORTS REPORTER Published: 19:38 EDT, 23 May 2026 | Updated: 19:50 EDT, 23 May 2026…",
-          "source": "daily_mail",
-          "source_name": "Daily Mail",
-          "country": "GB",
-          "published": "Sun, 24 May 2026 00:50:45 +0100",
-          "image_url": "https://i.dailymail.com/1s/2026/05/24/00/108828255-0-image-a-17_1779579412693.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPVDg3V0JzTzJWcWQ3Q0FhbkxITFhaNGJHZ1B3REJKQmU1eks0NGp6Q1REbWFfU1EzUFdGc3FwdHQ1Q2MzNl9Ocm53WlJ5QjRsSmc0LWg0dm8wcG9sVGtIcFdjbU8tM1Nma2EzQTFwYVVnSXpjRUl5dGRCQVlUSEMxTEJYdkNrWFZ2ZE5yTGpaMFh3QkZSV0pHa3l6NHZNMHR3S1hwek80cHM3X2IzUUE5dUE1YXlKNlJ6?oc=5",
-          "headline": "Boxing results: Oleksandr Usyk stops Rico Verhoeven in Round 11 - ESPN",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPVDg3V0JzTzJWcWQ3Q0FhbkxITFhaNGJHZ1B3REJKQmU1eks0NGp6Q1REbWFfU1EzUFdGc3FwdHQ1Q2MzNl9Ocm53WlJ5QjRsSmc0LWg0dm8wcG9sVGtIcFdjbU8tM1Nma2EzQTFwYVVnSXpjRUl5dGRCQVlUSEMxTEJYdkNrWFZ2ZE5yTGpaMFh3QkZSV0pHa3l6NHZNMHR3S1hwek80cHM3X2IzUUE5dUE1YXlKNlJ6?o…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sat, 23 May 2026 23:24:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNR005YU5NVG1XaE9wRjZydGlpSk5VdURvM1VucFFuUFlxSmFDM01pbFhpUkJHRU5iN240emluYmJwSmk1V0JBVEc5anEwaFNFWFU3UGRiWUVaSldVQW5MaEZlV2ZmSXI4NmdQNkVDTXlWLXhJTDB5cXpsa0U5VVBOQ2gwcGxUMmhjXzBoNXplZlBaUmpveHhVRUlFQVBYd3ZiQ3hoSkY2TkhRcHY2ZmxRYzd6LTJsVC1kTnV6UE9FbzVBdnZPcWZmNmJibmZVdw?oc=5",
-          "headline": "Oleksandr Usyk vs. Rico Verhoeven Judges' Scorecards, Reaction After Controversial Stoppage - Bleacher Report",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxNR005YU5NVG1XaE9wRjZydGlpSk5VdURvM1VucFFuUFlxSmFDM01pbFhpUkJHRU5iN240emluYmJwSmk1V0JBVEc5anEwaFNFWFU3UGRiWUVaSldVQW5MaEZlV2ZmSXI4NmdQNkVDTXlWLXhJTDB5cXpsa0U5VVBOQ2gwcGxUMmhjXzBoNXplZlBaUmpveHhVRUlFQVBYd3ZiQ3hoSkY2TkhRcHY2ZmxRYzd6LTJsVC1kTn…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sun, 24 May 2026 00:12:35 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQT0FXYjVFbTNoZVJhQ0dFa0NaV0Q3aFo1Q1hBWEJVSlRvRXVueTFQTFFvdGVkQURRUkZJQjVsTWYyMGJNVmhOSE5SMmRiZnBZTWxLU0w0SDBSV25UV3prRzlYbWpmZU02Q21GMWt0LUZYZjJrY2E4Q2JHRFFodWtsNTJuS29sNDhfX2cxYlVYXzA3dWdNLWNvQmJ4U0hQUS12NGtmUk9pajNJTW1B?oc=5",
-          "headline": "Rico Verhoeven coach Peter Fury calls for Oleksandr Usyk rematch - ESPN",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQT0FXYjVFbTNoZVJhQ0dFa0NaV0Q3aFo1Q1hBWEJVSlRvRXVueTFQTFFvdGVkQURRUkZJQjVsTWYyMGJNVmhOSE5SMmRiZnBZTWxLU0w0SDBSV25UV3prRzlYbWpmZU02Q21GMWt0LUZYZjJrY2E4Q2JHRFFodWtsNTJuS29sNDhfX2cxYlVYXzA3dWdNLWNvQmJ4U0hQUS12NGtmUk9pajNJTW1B?oc=5\"…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sun, 24 May 2026 00:40:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.thenationalnews.com/sport/combat-sports/2026/05/24/oleksandr-usyk-vs-rico-verhoeven-analysis-first-signs-of-decline-or-just-an-off-night/",
-          "headline": "Oleksandr Usyk vs Rico Verhoeven analysis: First signs of decline or just an off night?",
-          "snippet": "Ukraine's unbeaten ​heavyweight world champion Oleksandr Usyk ​stopped Dutch kickboxer Rico Verhoeven with one second left ⁠in the penultimate round of a title fight on Saturday after an unexpectedly difficult night's work. The 'Glory in Giza' ​fight at the Pyramids of Egypt was considered a…",
-          "source": "the_national_ae",
-          "source_name": "The National UAE",
-          "country": "AE",
-          "published": "Sun, 24 May 2026 05:49:17 +0000",
-          "image_url": "https://www.thenationalnews.com/resizer/v2/SMWXZ6PK65JYOZCL5AWS2AJV2Q.jpg?auth=7c0a067e816bb079b5d9d5a5346a9bf1bbc3e5f9d7a3313aec5596a412e9f7e8&smart=true&width=6037&height=3907",
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxON3M2MGEtb0g0UmtaeUR0UENTUlhvUGk2Q19TSE4yZDhrRE9XRjBmUVE0UmVPbzFjV0dub1JKaFBIMGlkTDliVk93azc2M3VJeVdhWjJWb1NoMEpqeTNSWmhFMkU2b0RZY3EtNy1YWHlTTlJENzZlM1BTc2FMN0RwYnp6TWl3enJHWVNzX0Jia1I4Q2UzUG5YVFRITVU0aWdzZnFHT19jM2FsWmdxZVQ0VHRES2ZIRWtrYTNad0lrOEd6NW8zbTZYTA?oc=5",
-          "headline": "‘Bro you lost that sh*t’: Jake Paul, pros rip boxing, Oleksandr Usyk’s win over Rico Verhoeven - MMA Fighting",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxON3M2MGEtb0g0UmtaeUR0UENTUlhvUGk2Q19TSE4yZDhrRE9XRjBmUVE0UmVPbzFjV0dub1JKaFBIMGlkTDliVk93azc2M3VJeVdhWjJWb1NoMEpqeTNSWmhFMkU2b0RZY3EtNy1YWHlTTlJENzZlM1BTc2FMN0RwYnp6TWl3enJHWVNzX0Jia1I4Q2UzUG5YVFRITVU0aWdzZnFHT19jM2FsWmdxZVQ0VHRES2ZIRWtrYT…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sat, 23 May 2026 23:48:51 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQNTdKWE1qU2xOaVYxMVN6U29mQTRTQ3BVRkhDdkluVURlYld2QlZHQXVQQ01xanU2LThzcGJJOEpJQW9yQUVQY2RTaUxWZmthM293b3FEeXF6ekZHS3MwX3hfdlZyNFl6aHZ0TmxNQ1NBS3pUQllGUXpwMWdRMUMxaHJNN3VCZVVwSXU5Rll5VExnRlI1M0lveEEyZEJtUlpvcU10WGJLRTFweU5FNk1Xd1hwLU9hTzhncDF5eGNn?oc=5",
-          "headline": "Rico Verhoeven reacts to controversial ref stoppage in Oleksandr Usyk fight, plans to appeal loss - MMA Fighting",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQNTdKWE1qU2xOaVYxMVN6U29mQTRTQ3BVRkhDdkluVURlYld2QlZHQXVQQ01xanU2LThzcGJJOEpJQW9yQUVQY2RTaUxWZmthM293b3FEeXF6ekZHS3MwX3hfdlZyNFl6aHZ0TmxNQ1NBS3pUQllGUXpwMWdRMUMxaHJNN3VCZVVwSXU5Rll5VExnRlI1M0lveEEyZEJtUlpvcU10WGJLRTFweU5FNk1Xd1hwLU9hTzhncD…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Sun, 24 May 2026 14:00:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1aYnc1M043MVRiTUVkc3d2S1l5bWNKUUhXSm8zZGR5SHIzXy1WMDV5dk5vOThIRGh3MnJEeS11T1AxRGQ4VW1Mb3FLNTNIV2RQeGY3LUFkcERGYTFCRjk1SHl3aHZIeTVnUXYzd2JMb1hjenVPYmZHSkpGMA?oc=5",
-          "headline": "Oleksandr Usyk responds to controversy over ‘early’ stoppage in Rico Verhoeven fight - boxingnewsonline.net",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE1aYnc1M043MVRiTUVkc3d2S1l5bWNKUUhXSm8zZGR5SHIzXy1WMDV5dk5vOThIRGh3MnJEeS11T1AxRGQ4VW1Mb3FLNTNIV2RQeGY3LUFkcERGYTFCRjk1SHl3aHZIeTVnUXYzd2JMb1hjenVPYmZHSkpGMA?oc=5\" target=\"_blank\">Oleksandr Usyk responds to controversy over ‘early’ stoppage…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Mon, 25 May 2026 09:21:07 GMT",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.255,
-        "zionist": 0.352,
-        "atlanticist": 0.473,
-        "statist": 0.155,
-        "financialized": 0.56
-      },
-      "fp_source_count": 4,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 3,
-        "middle-east": 1
-      },
-      "section": "sports"
     },
     {
       "id": "c3adccb0970e",
@@ -14638,7 +14934,7 @@
       "id": "89fc68ed80ae",
       "headline": "Periodista acusó a Gustavo Petro de drogarse por sus declaraciones sobre la violencia en Antioquia y el presidente respondió: “No saben entender la historia”",
       "summary": "Salud Hernández-Mora señaló que el jefe de Estado manipula la historia con el objetivo de menospreciar a Antioquia y recordó el tiempo que le resta en el cargo",
-      "published": "Mon, 25 May 2026 23:09:06 +0000",
+      "published": "Mon, 25 May 2026 23:38:01 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/4YGKTUGNJJCVXFYKLJYNWBQU34.png?auth=822d8e393a97e338eb0e23f9a66ca1d2ce894b6ede513d7829684edf59c45fbc&smart=true&width=1920&height=1080",
       "video_url": null,
       "has_video": false,
@@ -14654,7 +14950,7 @@
         "dominant_pct": 100
       },
       "bias_variance": 0.0,
-      "entity_count": 35,
+      "entity_count": 37,
       "entity_list": [
         "Abelardo",
         "Acusaciones",
@@ -14664,6 +14960,7 @@
         "Ayuso",
         "Bandido",
         "Barranquilla",
+        "Cabal",
         "Cabemos",
         "Cepeda",
         "Claudia",
@@ -14672,6 +14969,7 @@
         "Espriella",
         "Estado",
         "Falcao",
+        "Fernanda",
         "Fuerte",
         "Gaviria",
         "Gobierno",
@@ -15036,6 +15334,17 @@
           "country": "AR",
           "published": "Mon, 25 May 2026 23:09:06 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/QXTPEKGPSRCSTMSKXUYRAFZPKA.png?auth=83340f06ebe74dc851c7e32eeb321a44a8ed95afec6c277344b8f28c0e95a9a8&smart=true&width=1280&height=720",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/05/25/maria-fernanda-cabal-arremetio-contra-gustavo-petro-por-nueva-fake-news-en-sus-redes-sociales-el-mitomano-mas-grande-de-la-historia/",
+          "headline": "María Fernanda Cabal arremetió contra Gustavo Petro por nueva ‘fake news’ en sus redes sociales: “El mitómano más grande de la historia”",
+          "snippet": "Los señalamientos de la senadora María Fernanda Cabal contra el presidente Gustavo Petro no cesan, en la recta final de la administración del presidente de izquierda - crédito Joel González/Presidencia - Cristian Bayona/Colprensa Con una fuerte publicación en sus redes sociales, la senadora María…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 23:38:01 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/LX3ZT3RIYFDDJJYKT6SVTBYD2M.png?auth=be916c988397818917ac63f1e3fabc6d19fc8f932efb1d564f1cf71a93f09a8d&smart=true&width=1920&height=1080",
           "video_url": null
         }
       ],
@@ -15429,7 +15738,7 @@
       "id": "7b3391d10fa7",
       "headline": "Zé Ricardo proyecta un Sporting Cristal “más experimentado” con dos o tres refuerzos para el Torneo Clausura 2026",
       "summary": "El entrenador del conjunto ’cervecero’ se refirió a los movimientos en el mercado de cara al segundo certamen del año en el que los del Rímac deberán robustecer sus filas para exhibir una mejor imagen",
-      "published": "Mon, 25 May 2026 13:13:40 +0000",
+      "published": "Mon, 25 May 2026 23:42:17 +0000",
       "image_url": "https://www.infobae.com/resizer/v2/LAOFGXHRWRAADM3W4DA3UJVXHM.jpg?auth=5c65ff53b381a589ff9ec2af70f23bd038eb7c995cc291e34774e05656475dae&smart=true&width=1920&height=1080",
       "video_url": null,
       "has_video": false,
@@ -15445,11 +15754,12 @@
         "dominant_pct": 100
       },
       "bias_variance": 0.6,
-      "entity_count": 22,
+      "entity_count": 24,
       "entity_list": [
         "Alianza",
         "Araujo",
         "Cazonatti",
+        "Cerro",
         "Clausura",
         "Cristal",
         "Estamos",
@@ -15460,6 +15770,7 @@
         "Guivin",
         "Gustavo",
         "Jordan",
+        "Libertadores",
         "Miguel",
         "Pablo",
         "Paolo",
@@ -15605,6 +15916,17 @@
           "country": "AR",
           "published": "Mon, 25 May 2026 13:13:40 +0000",
           "image_url": "https://www.infobae.com/resizer/v2/C6XSGEY7IFGYHARVOZZNGDQC54.png?auth=aa2794227dccd236dc20cfcc821678acbb87cfd2bc0568be190d2d63e608bd7e&smart=true&width=1920&height=1080",
+          "video_url": null
+        },
+        {
+          "url": "https://www.infobae.com/peru/deportes/2026/05/25/sporting-cristal-vs-cerro-porteno-celestes-llegan-a-asuncion-con-cinco-bajas-para-el-duelo-por-copa-libertadores-2026/",
+          "headline": "Sporting Cristal vs Cerro Porteño: ‘celestes’ llegan a Asunción con cinco bajas para el duelo por Copa Libertadores 2026",
+          "snippet": "Sporting Cristal afrontará el jueves 28 de mayo en La Nueva Olla su visita a Cerro Porteño por la última fecha del Grupo F de la Copa Libertadores 2026 con cinco ausencias: tres descartes y dos jugadores en observación médica. (Sporting Cristal) A pocos días del partido decisivo de Sporting Cristal…",
+          "source": "infobae",
+          "source_name": "Infobae",
+          "country": "AR",
+          "published": "Mon, 25 May 2026 23:42:17 +0000",
+          "image_url": "https://www.infobae.com/resizer/v2/JSMMLXHPHZCCPMGH3N5SW2HQYA.jpg?auth=328bd427e0e68806eb8c9e42162bff761a50687fffe31e9411c943e78c689f05&smart=true&width=1920&height=1238",
           "video_url": null
         }
       ],
@@ -19208,136 +19530,6 @@
         "eastern-europe": 2
       },
       "section": "world"
-    },
-    {
-      "id": "47a1dd74434a",
-      "headline": "VIDEO: George Russell, amendat după abandonul din Canada",
-      "summary": "<p>George Russell a avut parte de un abandon neașteptat în Marele Premiu al Canadei de Formula 1, după ce motorul Mercedes a cedat când se afla la conducerea cursei, în turul 30. În plus, pilotul britanic a fost și amendat de comisarii de cursă. VIDEO: George Russell, moment viral după abandonul din",
-      "published": "Mon, 25 May 2026 09:57:06 +0000",
-      "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-george-russell-mercedes_7256261.jpg?20260523002258",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "No partisan coverage",
-      "blindspot_score": 5.0,
-      "coverage": {
-        "left_pct": 0,
-        "center_pct": 100,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "center",
-        "dominant_pct": 100
-      },
-      "bias_variance": 1.04,
-      "entity_count": 6,
-      "entity_list": [
-        "Canada",
-        "George",
-        "Piastri",
-        "Russell",
-        "Sprint",
-        "VIDEO"
-      ],
-      "sources": [
-        {
-          "id": "sky_sports",
-          "name": "Sky Sports",
-          "country": "GB",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "abc_pacific",
-          "name": "ABC Pacific",
-          "country": "AU",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "g4media",
-          "name": "G4Media",
-          "country": "RO",
-          "bloc": "western",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "eastern-europe",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.skysports.com/f1/news/12040/13547016/canadian-gp-mercedes-george-russell-did-not-need-validation-after-claiming-sprint-pole-in-montreal",
-          "headline": "Russell 'did not need validation' after earning Sprint pole in Canada",
-          "snippet": "George Russell says he did not need \"validation\" of his abilities after being outshone by Mercedes team-mate Kimi Antonelli so far this season ahead of earning pole position for the Canadian Grand Prix Sprint. Russell won the season-opening Australian Grand Prix, only for Antonelli to then reel off…",
-          "source": "sky_sports",
-          "source_name": "Sky Sports",
-          "country": "GB",
-          "published": "Sat, 23 May 2026 00:00:00 BST",
-          "image_url": "https://e0.365dm.com/26/05/1920x1080/skysports-george-russell-mercedes_7256261.jpg?20260523002258",
-          "video_url": null
-        },
-        {
-          "url": "https://www.abc.net.au/news/2026-05-25/f1-live-canadian-grand-prix-oscar-piastri-lando-norris/106011364",
-          "headline": "Live: Piastri's tyre gamble fails, Russell stops while leading in Canada",
-          "snippet": "Oscar Piastri's hopes of a great day in Canada have been felled by a failed tyre gamble, followed by a penalty for taking out Alex Albon. Meanwhile, Mercedes pole sitter George Russell has retired after his car stopped on track while he was leading the grand prix. Follow all the action of the…",
-          "source": "abc_pacific",
-          "source_name": "ABC Pacific",
-          "country": "AU",
-          "published": "Sun, 24 May 2026 18:07:54 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/video-george-russell-moment-viral-dupa-abandonul-din-canada-simt-ca-cineva-nu-vrea-sa-lupt-pentru-titlul-din-f1.html",
-          "headline": "VIDEO: George Russell, moment viral după abandonul din Canada: „Simt că cineva nu vrea să lupt pentru titlul din F1”",
-          "snippet": "George Russell a avut parte de un ghinion teribil în cursa din Canada. A fost neovit să abandoneze în turul 30 din cauza unei probleme la motorul Mercedes. Era lider al cursei în acel moment: „simt că cineva nu vrea să lupt pentru titul mondial”, a spus pilotul britanic. VIDEO: Faza zilei în F1:…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Mon, 25 May 2026 05:40:49 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/03/8059783-Hepta_Mediafax_Foto-DPA_Hepta.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.g4media.ro/video-george-russell-amendat-dupa-abandonul-din-canada.html",
-          "headline": "VIDEO: George Russell, amendat după abandonul din Canada",
-          "snippet": "George Russell a avut parte de un abandon neașteptat în Marele Premiu al Canadei de Formula 1, după ce motorul Mercedes a cedat când se afla la conducerea cursei, în turul 30. În plus, pilotul britanic a fost și amendat de comisarii de cursă. VIDEO: George Russell, moment viral după abandonul din…",
-          "source": "g4media",
-          "source_name": "G4Media",
-          "country": "RO",
-          "published": "Mon, 25 May 2026 09:57:06 +0000",
-          "image_url": "https://www.g4media.ro//wp-content/uploads/2026/02/8107384-Hepta_Mediafax_Foto-DPA_Hepta.jpg",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.087,
-        "zionist": 0.207,
-        "atlanticist": 0.427,
-        "statist": -0.06,
-        "financialized": 0.22
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 2,
-        "eastern-europe": 1
-      },
-      "section": "sports"
     },
     {
       "id": "38597d003623",
@@ -23287,7 +23479,7 @@
       "id": "88353299b6e4",
       "headline": "White House shooting live: Gun-wielding suspect killed by Secret Service as shots fired toward executive mansion",
       "summary": "<p>Trump was at home as incident unfolded in nation’s capital on Saturday evening </p>",
-      "published": "Mon, 25 May 2026 19:32:11 -0400",
+      "published": "Mon, 25 May 2026 23:34:21 +0000",
       "image_url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/931/523/save-girls-sports.jpeg?ve=1&tl=1",
       "video_url": null,
       "has_video": false,
@@ -26987,6 +27179,17 @@
           "published": "Mon, 25 May 2026 23:26:23 GMT",
           "image_url": "https://static.independent.co.uk/2026/05/25/23/33/SEI298946122.jpg?width=1200&auto=webp&crop=3%3A2",
           "video_url": null
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/5/25/trump-renews-petition-for-white-house-ballroom-pointing-to-nearby-shooting?traffic_source=rss",
+          "headline": "Trump renews petition for White House ballroom, pointing to nearby shooting",
+          "snippet": "The administration of President Donald Trump has renewed its push to lift a court ruling barring progress on a new White House ballroom, once again citing gun violence as a reason for pursuing the construction. In a court filing submitted on Sunday, acting Attorney General Todd Blanche argued it…",
+          "source": "aljazeera",
+          "source_name": "Al Jazeera English",
+          "country": "QA",
+          "published": "Mon, 25 May 2026 23:34:21 +0000",
+          "image_url": null,
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -29609,6 +29812,17 @@
           "country": "SG",
           "published": "Tue, 26 May 2026 07:15:00 +0800",
           "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://thehill.com/policy/international/5894245-us-iran-peace-deal/",
+          "headline": "What to know about the emerging US-Iran deal to end war, reopen Strait of Hormuz",
+          "snippet": "Iranian officials are in Qatar for talks amid efforts between the U.S. and Iran to bring about an end to the nearly three-month-long war and reopen the Strait of Hormuz, with a risk that hostilities could resume if neither side agrees to the latest emerging proposal President Trump on Monday took…",
+          "source": "the_hill",
+          "source_name": "The Hill",
+          "country": "US",
+          "published": "Mon, 25 May 2026 23:14:35 +0000",
+          "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/05/Leading-the-Day-e1778062263374.jpg?w=900",
           "video_url": null
         }
       ],
@@ -34694,7 +34908,7 @@
         "dominant_pct": 42
       },
       "bias_variance": 4.85,
-      "entity_count": 126,
+      "entity_count": 130,
       "entity_list": [
         "Aambasadorul",
         "Abandons",
@@ -34729,6 +34943,7 @@
         "Csetlik",
         "Details",
         "Donald",
+        "Dumocrats",
         "Elizabeth",
         "Epstein",
         "Espriella",
@@ -34768,10 +34983,12 @@
         "Matter",
         "Medio",
         "Memorial",
+        "Message",
         "Mother",
         "Muslim",
         "Netanyahu",
         "Newlin",
+        "Newsweek",
         "Olympics",
         "Options",
         "Oriente",
@@ -34804,6 +35021,7 @@
         "Sunday",
         "Swearing",
         "Taiwan",
+        "Targets",
         "Teheranul",
         "TheWire",
         "Thune",
@@ -36424,6 +36642,17 @@
           "country": "GB",
           "published": "Mon, 25 May 2026 21:49:14 GMT",
           "image_url": "https://static.independent.co.uk/2026/05/25/20/00/Donald-Trump-lays-wreath-at-Tomb-of-Unknown-Soldier-to-mark-Memorial-Day.jpeg?width=1200&auto=webp&trim=0%2C194%2C0%2C106",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNT3lSQkZSUncxWEFvcG8wZ1B3LWtPYklSODRSRkI5LTlKVTd6ZG1fMktRLUFHenowREVDT0d0SjlBQWIxYWwyaldPQVBYVGczS3hwc2RadzJtZlhDa20xbF95YTFlTV9BOHAtYWt4cVFCczdWbEhEV3B5NkZkMTJBa0VlSkpNbk41U3dTSmtMTlk1Zw?oc=5",
+          "headline": "Donald Trump Targets ‘Dumocrats’ In Memorial Day Message - Newsweek",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNT3lSQkZSUncxWEFvcG8wZ1B3LWtPYklSODRSRkI5LTlKVTd6ZG1fMktRLUFHenowREVDT0d0SjlBQWIxYWwyaldPQVBYVGczS3hwc2RadzJtZlhDa20xbF95YTFlTV9BOHAtYWt4cVFCczdWbEhEV3B5NkZkMTJBa0VlSkpNbk41U3dTSmtMTlk1Zw?oc=5\" target=\"_blank\">Donald Trump Targets…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Mon, 25 May 2026 10:41:00 GMT",
+          "image_url": null,
           "video_url": null
         }
       ],
@@ -41542,7 +41771,7 @@
         "dominant_pct": 38
       },
       "bias_variance": 5.56,
-      "entity_count": 28,
+      "entity_count": 29,
       "entity_list": [
         "Abraham",
         "Accords",
@@ -41571,7 +41800,8 @@
         "Trump",
         "Uncertainty",
         "Vision",
-        "Wants"
+        "Wants",
+        "Washington"
       ],
       "sources": [
         {
@@ -42373,6 +42603,17 @@
           "country": "GB",
           "published": "Mon, 25 May 2026 22:52:41 GMT",
           "image_url": "https://static.independent.co.uk/2025/10/14/3/32/Trump.jpeg?width=1200&auto=webp&trim=119%2C0%2C120%2C0",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQbG80dUZlanZBTUVzNDFSdFpWOXlUU0lkLTNvMU91NWU0VVViTlpiUmh4MktyZjBJSm5lZ0tydlRhdk9MLVFwQmdyWFl3anB3R3VjeXdmdFE5Ul9GbmZpbkloVHh1Uk9TVzRuNEwxQ2tKMTFFeDVYRFRyakxhbFlSUWJRZkpHYmQ1Wmpvem1QWWxiam9Pdjk3bzVlbXdMWi1vVnFsS1A5TGpQajBCcUtTemdHbXY3cFptWXc?oc=5",
+          "headline": "As new Iran deal faces sharp criticism, Trump seeks to widen Abraham Accords - The Washington Post",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQbG80dUZlanZBTUVzNDFSdFpWOXlUU0lkLTNvMU91NWU0VVViTlpiUmh4MktyZjBJSm5lZ0tydlRhdk9MLVFwQmdyWFl3anB3R3VjeXdmdFE5Ul9GbmZpbkloVHh1Uk9TVzRuNEwxQ2tKMTFFeDVYRFRyakxhbFlSUWJRZkpHYmQ1Wmpvem1QWWxiam9Pdjk3bzVlbXdMWi1vVnFsS1A5TGpQajBCcUtTemdHbXY3cFptWX…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Mon, 25 May 2026 22:46:14 GMT",
+          "image_url": null,
           "video_url": null
         }
       ],
@@ -71545,14 +71786,16 @@
         "dominant_pct": 44
       },
       "bias_variance": 5.7,
-      "entity_count": 24,
+      "entity_count": 26,
       "entity_list": [
+        "Accepting",
         "Action",
         "Anthony",
         "Atkinson",
         "Cavaliers",
         "Cleveland",
         "Conference",
+        "Defeat",
         "Eastern",
         "Finales",
         "Finals",
@@ -71967,6 +72210,17 @@
           "country": "US",
           "published": "Mon, 25 May 2026 14:23:36 -0700",
           "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Fnew-york-knicks-fans-attend-128714524.jpg?w%3D1024",
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPbHJtaTdnS2pJemFUQ2tHZnFKQjRZeWxxb1ozeWFSV0taTVdYeHUwRHNIZ29QOUw5SHZ5bmlEMXBSblNNek5oQWRXVWljb3RBeVVsOWJPblVTNm1PdTJDNl9XSXh3MW1kX3RHNmI0UHZvYUxxeXBEZjlOTXVMdi1ueFdKUWh3aHdyN2JCb3BwbU1TZlVKUTdhSkRZcENWMVduNEZFU3VsRkhUc0V1UXpSVXhYLUZJX1EzTlRKMjFwUmVYMmVweTBCSDhaMXVJQkJJ?oc=5",
+          "headline": "Knicks vs Cavaliers Prediction, Picks, Odds for Game 4: Cleveland Accepting Defeat - Action Network",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxPbHJtaTdnS2pJemFUQ2tHZnFKQjRZeWxxb1ozeWFSV0taTVdYeHUwRHNIZ29QOUw5SHZ5bmlEMXBSblNNek5oQWRXVWljb3RBeVVsOWJPblVTNm1PdTJDNl9XSXh3MW1kX3RHNmI0UHZvYUxxeXBEZjlOTXVMdi1ueFdKUWh3aHdyN2JCb3BwbU1TZlVKUTdhSkRZcENWMVduNEZFU3VsRkhUc0V1UXpSVXhYLUZJX1EzTl…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Mon, 25 May 2026 20:56:00 GMT",
+          "image_url": null,
           "video_url": null
         }
       ],
