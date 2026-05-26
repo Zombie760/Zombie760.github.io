@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-26T03:01:27.073784+00:00",
-  "article_count": 54419,
+  "generated_at": "2026-05-26T03:16:25.990152+00:00",
+  "article_count": 54538,
   "story_count": 160,
   "sections": [
     {
@@ -6420,216 +6420,6 @@
       "section": "tech"
     },
     {
-      "id": "9a07b8c72c5e",
-      "headline": "WHO Declares Global Health Emergency Over Ebola Outbreak",
-      "summary": "<p>World Health Organization on Sunday declared a public health emergency of international concern following more than 300 suspected Ebola cases and 88 deaths linked to outbreaks in Democratic Republic of the Congo and Uganda. The WHO said the outbreak does not currently meet the criteria for a glob",
-      "published": "Mon, 25 May 2026 03:10:53 +0000",
-      "image_url": "https://theintercept.com/wp-content/uploads/2026/05/GettyImages-2276542341-e1779219610343.jpg?fit=3594%2C1800",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 40,
-        "center_pct": 60,
-        "right_pct": 0,
-        "state_count": 1,
-        "dominant": "center",
-        "dominant_pct": 60
-      },
-      "bias_variance": 6.16,
-      "entity_count": 26,
-      "entity_list": [
-        "Alert",
-        "Attacks",
-        "Become",
-        "Cases",
-        "Deaths",
-        "Declares",
-        "Eastern",
-        "Ebola",
-        "Emergency",
-        "Facilities",
-        "Fears",
-        "Gutted",
-        "Health",
-        "HuffPost",
-        "Outbreak",
-        "Pandemic",
-        "Preparation",
-        "Rages",
-        "Raise",
-        "Regional",
-        "Safeguards",
-        "Significant",
-        "States",
-        "Trump",
-        "Urges",
-        "Warns"
-      ],
-      "sources": [
-        {
-          "id": "intercept",
-          "name": "The Intercept",
-          "country": "US",
-          "bloc": "adversarial",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "khaama",
-          "name": "Khaama Press Afghanistan",
-          "country": "AF",
-          "bloc": "non-aligned",
-          "bias_tier": "independent",
-          "bias_bucket": "center",
-          "geo_cluster": "global-south",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "google_news",
-          "name": "Google News",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "unknown",
-          "primary_vs_launder": "aggregator",
-          "parent_company": "unknown (aggregator)"
-        },
-        {
-          "id": "telesur",
-          "name": "Telesur English",
-          "country": "VE",
-          "bloc": "non-aligned",
-          "bias_tier": "state-pro",
-          "bias_bucket": "center",
-          "geo_cluster": "latin-america",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "nytimes",
-          "name": "The New York Times",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": "New York Times Co"
-        },
-        {
-          "id": "thisday_ng",
-          "name": "This Day Nigeria",
-          "country": "NG",
-          "bloc": "non-aligned",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "africa",
-          "factuality": "mixed",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://theintercept.com/2026/05/19/ebola-outbreak-trump-who/",
-          "headline": "Ebola Outbreak Rages After Trump Gutted Global Health Safeguards",
-          "snippet": "The World Health Organization’s chief said on Tuesday that he was “deeply concerned about the scale and speed” of an Ebola outbreak in the Democratic Republic of Congo and Uganda that has resulted in a spike in deaths — to at least 130 — and more than 500 suspected cases. The outbreak is…",
-          "source": "intercept",
-          "source_name": "The Intercept",
-          "country": "US",
-          "published": "Tue, 19 May 2026 20:58:12 +0000",
-          "image_url": "https://theintercept.com/wp-content/uploads/2026/05/GettyImages-2276542341-e1779219610343.jpg?fit=3594%2C1800",
-          "video_url": null
-        },
-        {
-          "url": "https://www.khaama.com/who-declares-global-health-emergency-over-ebola-outbreak/",
-          "headline": "WHO Declares Global Health Emergency Over Ebola Outbreak",
-          "snippet": "World Health Organization on Sunday declared a public health emergency of international concern following more than 300 suspected Ebola cases and 88 deaths linked to outbreaks in Democratic Republic of the Congo and Uganda. The WHO said the outbreak does not currently meet the criteria for a global…",
-          "source": "khaama",
-          "source_name": "Khaama Press Afghanistan",
-          "country": "AF",
-          "published": "Mon, 18 May 2026 09:40:00 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVl8xdjBJZkVybU5HLVlSNGFlR0dTT2FoakRHNDRsZkNxQkVqemxXb1R6ZGZEV21sTFIzemZiZGotSms3NU1mX3RmZk9qMkswSVphU2hrS0FTMXZWUE00dnR2b1AwbExZWFdmaXJOYVZ0RFlCYTI1bmlUem5DcFNDOFZNcFNFTlpTYnZmZk9kM3VtYThnN1h3QXBSUdIBoAFBVV95cUxPWWFDd0RXZENUbk1kOEJ0bDJGNXdhdUF6NFppbVREbkVJRG1CLXZ2UHc4LVlRVlR6Zlh2c3pFdWY4bEptWGxFOXFGdV9UdFRIR0RlREI3TE1GM194YjNXQXJKWklXbW1VaTJoemNlOXpLRGswNkZMQzhYdDZ5UTg3SG1ocDB0aVY1Z0I0cFdKZjBFUFJTZmpCOWg2N0g5MVkw?oc=5",
-          "headline": "Ex-CDC Chief Warns Ebola Outbreak Could Become ‘Very Significant Pandemic’ - HuffPost",
-          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQVl8xdjBJZkVybU5HLVlSNGFlR0dTT2FoakRHNDRsZkNxQkVqemxXb1R6ZGZEV21sTFIzemZiZGotSms3NU1mX3RmZk9qMkswSVphU2hrS0FTMXZWUE00dnR2b1AwbExZWFdmaXJOYVZ0RFlCYTI1bmlUem5DcFNDOFZNcFNFTlpTYnZmZk9kM3VtYThnN1h3QXBSUdIBoAFBVV95cUxPWWFDd0RXZENUbk1kOEJ0bDJGNX…",
-          "source": "google_news",
-          "source_name": "Google News",
-          "country": "US",
-          "published": "Fri, 22 May 2026 07:56:32 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.telesurenglish.net/easterndrc-ebola-regional-outbreak-fears/",
-          "headline": "Eastern DRC Ebola Attacks Raise Regional Outbreak Fears",
-          "snippet": "Attacks on Ebola facilities in eastern are increasing as mistrust over burial measures and resource shortages strain the response effort. Ebola treatment facilities in eastern have come under attack amid rising infections and tensions over burial protocols. Photo: May 24, 2026 Hour: 8:01 am 🔗…",
-          "source": "telesur",
-          "source_name": "Telesur English",
-          "country": "VE",
-          "published": "Sun, 24 May 2026 12:01:48 +0000",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.nytimes.com/2026/05/17/world/africa/what-to-know-ebola-africa.html",
-          "headline": "What to Know About the Ebola Outbreak as Cases and Deaths Rise",
-          "snippet": "More than 170 deaths and about 750 cases are suspected. The United States restricted entry for people who have been to three African countries.",
-          "source": "nytimes",
-          "source_name": "The New York Times",
-          "country": "US",
-          "published": "Sat, 23 May 2026 11:38:18 +0000",
-          "image_url": "https://static01.nyt.com/images/2026/05/22/multimedia/22int-ebola-WTK-zwlv/22int-ebola-WTK-zwlv-mediumSquareAt3X.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://www.thisdaylive.com/2026/05/25/ebola-outbreak-ncdc-puts-states-on-high-alert-urges-preparation-of-emergency-facilities/",
-          "headline": "Ebola Outbreak: NCDC Puts States on High Alert, Urges Preparation of Emergency Facilities",
-          "snippet": "Onyebuchi Ezigbo in Abuja The Nigeria Centre for Disease Control and Prevention (NCDC) has asked states to get their facilities ready in the event of a fresh Ebola disease outbreak in the country. It said its assessment estimated the risk of Ebola importation into Nigeria as high due to the ongoing…",
-          "source": "thisday_ng",
-          "source_name": "This Day Nigeria",
-          "country": "NG",
-          "published": "Mon, 25 May 2026 03:10:53 +0000",
-          "image_url": null,
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.078,
-        "zionist": 0.247,
-        "atlanticist": 0.337,
-        "statist": 0.123,
-        "financialized": 0.423
-      },
-      "fp_source_count": 6,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 3,
-        "global-south": 1,
-        "latin-america": 1,
-        "africa": 1
-      },
-      "section": "health"
-    },
-    {
       "id": "3fb022997151",
       "headline": "Dibu Martínez enciende las alarmas en Argentina tras sufrir una fractura antes del Mundial 2026",
       "summary": "Emiliano “Dibu” Martínez sufrió una pequeña fractura en el dedo durante la entrada en calor de la final de la Europa League y se perderá los próximos amistosos, aunque confían en que llegue al debut de Argentina en la Copa del Mundo.",
@@ -10361,7 +10151,7 @@
       "id": "47dd201d6ea1",
       "headline": "Clima hoy en Punta Lara, Buenos Aires: el pronóstico del tiempo para este domingo 24 mayo de 2026",
       "summary": "<ul><li>El SMN anticipa para este domingo temperaturas entre 9°C y 14°C.</li><li>El pronóstico extendido durante la jornada. ¿Cómo estará el cielo? ¿Cuál es la probabilidad de lluvias?</li></ul>",
-      "published": "Tue, 26 May 2026 01:17:19 +0000",
+      "published": "Tue, 26 May 2026 03:01:00 +0000",
       "image_url": "https://www.clarin.com/img/2025/04/30/k1TUADqrD_1200x630__1.jpg",
       "video_url": null,
       "has_video": false,
@@ -10885,6 +10675,17 @@
           "country": "AR",
           "published": "Tue, 26 May 2026 01:17:19 +0000",
           "image_url": "https://resizer.glanacion.com/resizer/v2/EWKFAIVCB5BBBLC5PQUNADMBBM.png?auth=f18674e396097c694f6294342f30fb2bf58c3fd77bbe7611826fa9bce426f085&smart=true&width=2000&height=1333",
+          "video_url": null
+        },
+        {
+          "url": "https://www.lanacion.com.ar/sabado/cuales-son-las-10-que-se-suman-a-la-lista-de-pizzerias-emblematicas-de-buenos-aires-nid26052026/",
+          "headline": "Cuáles son las 10 que se suman a la lista de “pízzerías emblemáticas” de Buenos Aires",
+          "snippet": "“ Hay pizzerías que no están en ninguna guía turística y aun así todos en el barrio las conocen . Son las que vieron crecer a varias generaciones, las que siempre tuvieron el mismo olor al entrar y la misma mesa donde la familia se juntaba los domingos. Más que comercios gastronómicos, son…",
+          "source": "la_nacion_ar",
+          "source_name": "La Nación (Argentina)",
+          "country": "AR",
+          "published": "Tue, 26 May 2026 03:01:00 +0000",
+          "image_url": "https://resizer.glanacion.com/resizer/v2/2G74NMMMPFDZBKYYT3IAOG2HUQ.jpg?auth=6ea8a3168e33bf3bf2adb9dc2efe59d7ee399919051e385d37eda78ff6b0e923&smart=true&width=2000&height=1334",
           "video_url": null
         }
       ],
@@ -19040,7 +18841,7 @@
       "id": "e1fef642dc7c",
       "headline": "La estrella de Hollywood que deliró con la magia de Lionel Messi en el último partido del Inter Miami antes del Mundial",
       "summary": "Tom Holland, uno de los actores que interpretó a Spider-Man, estuvo entre las decenas de celebridades que asistieron a ver al astro argentino en la MLS, una tendencia que arrancó desde la noche de su debut con Las Garzas en 2023",
-      "published": "Mon, 25 May 2026 23:12:21 GMT",
+      "published": "Tue, 26 May 2026 02:56:46 +0000",
       "image_url": "https://resizer.glanacion.com/resizer/v2/6WAJWOIFZNH6TD6TSVHDQCVFC4.jpg?auth=0964984e37b45bcd34eb8f7e92c3eee604a2795a3464f8bd27920be6d97e6337&smart=true&width=5958&height=3972",
       "video_url": null,
       "has_video": false,
@@ -19056,7 +18857,7 @@
         "dominant_pct": 50
       },
       "bias_variance": 4.67,
-      "entity_count": 20,
+      "entity_count": 21,
       "entity_list": [
         "Academia",
         "Alarma",
@@ -19073,6 +18874,7 @@
         "Monde",
         "Mundial",
         "Philadelphia",
+        "Reporte",
         "Rodrigo",
         "Susto",
         "Toronto",
@@ -19607,6 +19409,17 @@
           "country": "GB",
           "published": "Mon, 25 May 2026 23:12:21 GMT",
           "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1275/live/32e98660-5802-11f1-b48e-5df011d5772e.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.prensalibre.com/deportes/futbol-internacional/reporte-medico-de-messi-genera-expectativa-esto-revelo-inter-miami-sobre-su-estado-rumbo-al-mundial-2026-breaking/",
+          "headline": "Reporte médico de Messi genera expectativa: esto reveló Inter Miami sobre su estado rumbo al Mundial 2026",
+          "snippet": "La alarma se encendió por unas horas en la concentración de la selección de Argentina, luego de que Lionel Messi abandonara el partido del domingo entre Inter Miami y Philadelphia Union por la MLS, aumentando la preocupación de cara al Mundial 2026. El capitán albiceleste salió al minuto 72 del…",
+          "source": "prensa_libre",
+          "source_name": "Prensa Libre Guatemala",
+          "country": "GT",
+          "published": "Tue, 26 May 2026 02:56:46 +0000",
+          "image_url": null,
           "video_url": null
         }
       ],
@@ -23367,7 +23180,7 @@
       "id": "7a2129079804",
       "headline": "Hilary Duff dazzles in plunging metallic dress alongside Nikki Glaser and Teyana Taylor as they lead best dressed stars at the 2026 American Music Awards",
       "summary": "Music's biggest names delivered show-stopping fashion at the 2026 American Music Awards red carpet on Monday.",
-      "published": "Tue, 26 May 2026 02:48:13 GMT",
+      "published": "Tue, 26 May 2026 03:12:57 +0000",
       "image_url": "https://www.youtube.com/embed/W1jFZDPOiCg",
       "video_url": null,
       "has_video": false,
@@ -23383,7 +23196,7 @@
         "dominant_pct": 46
       },
       "bias_variance": 3.14,
-      "entity_count": 77,
+      "entity_count": 80,
       "entity_list": [
         "Abdul",
         "Achievement",
@@ -23399,7 +23212,9 @@
         "Brings",
         "Brunette",
         "Carpet",
+        "Celebrates",
         "Channel",
+        "Columbia",
         "Complete",
         "Downs",
         "Draper",
@@ -23440,6 +23255,7 @@
         "Playback",
         "Predictions",
         "Queen",
+        "Recuerdo",
         "Reporter",
         "Scene",
         "Shots",
@@ -24038,6 +23854,17 @@
           "country": "GB",
           "published": "Tue, 26 May 2026 02:48:13 GMT",
           "image_url": "https://i.dailymail.com/1s/2026/05/26/03/108864075-0-image-a-101_1779763654491.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.rollingstone.com/music/music-news/maluma-american-music-awards-performance-tu-recuerdo-1235566997/",
+          "headline": "Maluma Celebrates Columbia and Joy at the 2026 American Music Awards With ‘Tu Recuerdo’",
+          "snippet": "Maluma Celebrates Columbia and Joy at the 2026 American Music Awards With ‘Tu Recuerdo’ The Colombian star performed the new song from his latest album Loco x Volver Maluma officially returned to the American Music Awards stage for the first time in six years with a heartfelt performance of “Tu…",
+          "source": "rolling_stone",
+          "source_name": "Rolling Stone",
+          "country": "US",
+          "published": "Tue, 26 May 2026 03:12:57 +0000",
+          "image_url": null,
           "video_url": null
         }
       ],
@@ -27810,6 +27637,17 @@
           "published": "Tue, 26 May 2026 01:55:44 +0000",
           "image_url": "https://www.washingtonexaminer.com/wp-content/uploads/2026/05/AP26145689567662.jpg?w=696",
           "video_url": null
+        },
+        {
+          "url": "https://www.scmp.com/news/world/united-states-canada/article/3354818/us-justice-department-seeks-lift-injunction-ballroom-project-after-shooting?utm_source=rss_feed",
+          "headline": "Trump’s Justice Department seeks dismissal of White House ballroom lawsuit",
+          "snippet": "The Justice ⁠Department has again asked a ⁠federal judge to lift an injunction holding up progress on President Donald Trump’s ballroom project, saying Saturday’s shooting outside the White House showed an urgent need for improved security. The Justice Department, in ‌a five-page court filing on…",
+          "source": "scmp",
+          "source_name": "South China Morning Post",
+          "country": "HK",
+          "published": "Mon, 25 May 2026 21:55:20 +0000",
+          "image_url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/05/26/42158560-c594-401f-a7b2-5f58c3cc9ca7_03965566.jpg?itok=gaF9ZtfJ&v=1779764906",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -27838,7 +27676,7 @@
       "id": "3f6ed2e33eb2",
       "headline": "Trump says Strait of Hormuz to reopen after Iran peace deal ‘largely negotiated’",
       "summary": "<p>The announcement was delivered via a social media post detailing a high-level Oval Office conference call</p>",
-      "published": "Tue, 26 May 2026 08:23:45 +0530",
+      "published": "2026-05-25T23:01:41-0400",
       "image_url": "https://www.newsmax.com/cmspages/getfile.aspx?guid=5E0A7866-A170-47D9-992E-E8E324A69C46",
       "video_url": null,
       "has_video": false,
@@ -30510,6 +30348,17 @@
           "source_name": "The Hindu",
           "country": "IN",
           "published": "Tue, 26 May 2026 08:23:45 +0530",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/05/rubio-says-strait-hormuz-has-be-open-one-way-or-other",
+          "headline": "Rubio says Strait of Hormuz has to be open 'one way or the other'",
+          "snippet": ".cls-1 { fill: none; stroke: #fff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5px; } Search Main navigation Politics &amp; Security Culture Technology Economy &amp; Business Explore Interviews Explore Events Journalists Secondary Navigation Turkey Syria Saudi Arabia Iran United…",
+          "source": "al_monitor",
+          "source_name": "Al-Monitor",
+          "country": "US",
+          "published": "2026-05-25T23:01:41-0400",
           "image_url": null,
           "video_url": null
         }
@@ -56451,7 +56300,7 @@
       "id": "5d5730da2b7b",
       "headline": "Zelenskyy on latest Russian attack: 4 killed and 100 injured across Ukraine, 30 buildings damaged in Kyiv – photos",
       "summary": "Four people have been killed and around 100 injured across Ukraine as a result of a large-scale Russian attack on the night of 23-24 May, with approximately 30 residential buildings damaged or destroyed in Kyiv alone.",
-      "published": "Tue, 26 May 2026 10:31:24 +0800",
+      "published": "Tue, 26 May 2026 11:07:00 +0800",
       "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/2/b/825511/2b408af98babc691beeff7db58fcafce.jpeg",
       "video_url": null,
       "has_video": false,
@@ -57377,6 +57226,17 @@
           "country": "MY",
           "published": "Tue, 26 May 2026 10:31:24 +0800",
           "image_url": "https://assets.nst.com.my/images/listing-featured/F9BA5EF79EE15C3F5390D493010A2D6B_data.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.straitstimes.com/world/europe/rubio-says-us-still-prepared-to-mediate-on-ukraine-after-russian-strikes",
+          "headline": "Rubio says US still prepared to mediate on Ukraine after Russian strikes",
+          "snippet": "JAIPUR, India – The United States is still willing to mediate in the war between Russia and Ukraine, Secretary of State Marco Rubio said on May 26 after Moscow launched a major attack on Kyiv . “Every time you see these big strikes from one side or the other, it’s a reminder of why this is a…",
+          "source": "straits_times",
+          "source_name": "The Straits Times (Singapore)",
+          "country": "SG",
+          "published": "Tue, 26 May 2026 11:07:00 +0800",
+          "image_url": null,
           "video_url": null
         }
       ],
@@ -74051,7 +73911,7 @@
       "id": "dd762252d82d",
       "headline": "California Gov. Newsom declares state of emergency for Orange County chemical leak as officials search for solutions - CBS News",
       "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQZUZURDEzLUp2dUR0TEFmY0RkdXFyU3lWa0FXZEVPaWRJZVpSU0JZRFVMNVoxT1htRGpnR0RBdmFOQlExYkVhYzBCU3loUGdya2h0dGw1WUZpUTB3c2gwOEJmM3F0dlFwYmZBc2hlRERpclpnREZRMGIxdEZoVUxPbXppQW5IbE9NV21mYUxNa2xuQXRHTE03MkRYNklYZ3RLSl9MR3pxc0NVMUFFVkc0?oc=5\"",
-      "published": "Tue, 26 May 2026 01:44:00 GMT",
+      "published": "Mon, 25 May 2026 20:06:04 -0700",
       "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Funified-incident-commander-craig-covey-128578302.jpg?w%3D1024",
       "video_url": null,
       "has_video": false,
@@ -74067,7 +73927,7 @@
         "dominant_pct": 62
       },
       "bias_variance": 4.74,
-      "entity_count": 27,
+      "entity_count": 28,
       "entity_list": [
         "Angeles",
         "Calif",
@@ -74084,6 +73944,7 @@
         "Explosion",
         "Garden",
         "Gavin",
+        "Ghouls",
         "Grove",
         "Massive",
         "Newsom",
@@ -74645,6 +74506,17 @@
           "country": "US",
           "published": "Tue, 26 May 2026 01:44:00 GMT",
           "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://nypost.com/2026/05/25/us-news/ghouls-haunt-evacuated-orange-county-blast-zone-cops-make-multiple-arrests/",
+          "headline": "Ghouls haunt evacuated Orange County blast zone — cops make multiple arrests",
+          "snippet": "Primary Menu Sections US News California News Politics World News Page Six Page Six Hollywood Sports NFL MLB Olympics NBA NHL College Football College Basketball WNBA Opinion Tech Real Estate Business Personal Finance Entertainment TV Movies Music Celebrities Awards Theater Shopping Lifestyle Weird…",
+          "source": "ny_post",
+          "source_name": "New York Post",
+          "country": "US",
+          "published": "Mon, 25 May 2026 20:06:04 -0700",
+          "image_url": "https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2F2026-storage-tank-containing-chemical-128666306.jpg?w%3D1024",
           "video_url": null
         }
       ],
@@ -78900,6 +78772,216 @@
         "global-south": 5
       },
       "section": "world"
+    },
+    {
+      "id": "9a07b8c72c5e",
+      "headline": "WHO Declares Global Health Emergency Over Ebola Outbreak",
+      "summary": "<p>World Health Organization on Sunday declared a public health emergency of international concern following more than 300 suspected Ebola cases and 88 deaths linked to outbreaks in Democratic Republic of the Congo and Uganda. The WHO said the outbreak does not currently meet the criteria for a glob",
+      "published": "Mon, 25 May 2026 03:10:53 +0000",
+      "image_url": "https://theintercept.com/wp-content/uploads/2026/05/GettyImages-2276542341-e1779219610343.jpg?fit=3594%2C1800",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 40,
+        "center_pct": 60,
+        "right_pct": 0,
+        "state_count": 1,
+        "dominant": "center",
+        "dominant_pct": 60
+      },
+      "bias_variance": 6.16,
+      "entity_count": 26,
+      "entity_list": [
+        "Alert",
+        "Attacks",
+        "Become",
+        "Cases",
+        "Deaths",
+        "Declares",
+        "Eastern",
+        "Ebola",
+        "Emergency",
+        "Facilities",
+        "Fears",
+        "Gutted",
+        "Health",
+        "HuffPost",
+        "Outbreak",
+        "Pandemic",
+        "Preparation",
+        "Rages",
+        "Raise",
+        "Regional",
+        "Safeguards",
+        "Significant",
+        "States",
+        "Trump",
+        "Urges",
+        "Warns"
+      ],
+      "sources": [
+        {
+          "id": "intercept",
+          "name": "The Intercept",
+          "country": "US",
+          "bloc": "adversarial",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "khaama",
+          "name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "bloc": "non-aligned",
+          "bias_tier": "independent",
+          "bias_bucket": "center",
+          "geo_cluster": "global-south",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "google_news",
+          "name": "Google News",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "unknown",
+          "primary_vs_launder": "aggregator",
+          "parent_company": "unknown (aggregator)"
+        },
+        {
+          "id": "telesur",
+          "name": "Telesur English",
+          "country": "VE",
+          "bloc": "non-aligned",
+          "bias_tier": "state-pro",
+          "bias_bucket": "center",
+          "geo_cluster": "latin-america",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "New York Times Co"
+        },
+        {
+          "id": "thisday_ng",
+          "name": "This Day Nigeria",
+          "country": "NG",
+          "bloc": "non-aligned",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "africa",
+          "factuality": "mixed",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://theintercept.com/2026/05/19/ebola-outbreak-trump-who/",
+          "headline": "Ebola Outbreak Rages After Trump Gutted Global Health Safeguards",
+          "snippet": "The World Health Organization’s chief said on Tuesday that he was “deeply concerned about the scale and speed” of an Ebola outbreak in the Democratic Republic of Congo and Uganda that has resulted in a spike in deaths — to at least 130 — and more than 500 suspected cases. The outbreak is…",
+          "source": "intercept",
+          "source_name": "The Intercept",
+          "country": "US",
+          "published": "Tue, 19 May 2026 20:58:12 +0000",
+          "image_url": "https://theintercept.com/wp-content/uploads/2026/05/GettyImages-2276542341-e1779219610343.jpg?fit=3594%2C1800",
+          "video_url": null
+        },
+        {
+          "url": "https://www.khaama.com/who-declares-global-health-emergency-over-ebola-outbreak/",
+          "headline": "WHO Declares Global Health Emergency Over Ebola Outbreak",
+          "snippet": "World Health Organization on Sunday declared a public health emergency of international concern following more than 300 suspected Ebola cases and 88 deaths linked to outbreaks in Democratic Republic of the Congo and Uganda. The WHO said the outbreak does not currently meet the criteria for a global…",
+          "source": "khaama",
+          "source_name": "Khaama Press Afghanistan",
+          "country": "AF",
+          "published": "Mon, 18 May 2026 09:40:00 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVl8xdjBJZkVybU5HLVlSNGFlR0dTT2FoakRHNDRsZkNxQkVqemxXb1R6ZGZEV21sTFIzemZiZGotSms3NU1mX3RmZk9qMkswSVphU2hrS0FTMXZWUE00dnR2b1AwbExZWFdmaXJOYVZ0RFlCYTI1bmlUem5DcFNDOFZNcFNFTlpTYnZmZk9kM3VtYThnN1h3QXBSUdIBoAFBVV95cUxPWWFDd0RXZENUbk1kOEJ0bDJGNXdhdUF6NFppbVREbkVJRG1CLXZ2UHc4LVlRVlR6Zlh2c3pFdWY4bEptWGxFOXFGdV9UdFRIR0RlREI3TE1GM194YjNXQXJKWklXbW1VaTJoemNlOXpLRGswNkZMQzhYdDZ5UTg3SG1ocDB0aVY1Z0I0cFdKZjBFUFJTZmpCOWg2N0g5MVkw?oc=5",
+          "headline": "Ex-CDC Chief Warns Ebola Outbreak Could Become ‘Very Significant Pandemic’ - HuffPost",
+          "snippet": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQVl8xdjBJZkVybU5HLVlSNGFlR0dTT2FoakRHNDRsZkNxQkVqemxXb1R6ZGZEV21sTFIzemZiZGotSms3NU1mX3RmZk9qMkswSVphU2hrS0FTMXZWUE00dnR2b1AwbExZWFdmaXJOYVZ0RFlCYTI1bmlUem5DcFNDOFZNcFNFTlpTYnZmZk9kM3VtYThnN1h3QXBSUdIBoAFBVV95cUxPWWFDd0RXZENUbk1kOEJ0bDJGNX…",
+          "source": "google_news",
+          "source_name": "Google News",
+          "country": "US",
+          "published": "Fri, 22 May 2026 07:56:32 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.telesurenglish.net/easterndrc-ebola-regional-outbreak-fears/",
+          "headline": "Eastern DRC Ebola Attacks Raise Regional Outbreak Fears",
+          "snippet": "Attacks on Ebola facilities in eastern are increasing as mistrust over burial measures and resource shortages strain the response effort. Ebola treatment facilities in eastern have come under attack amid rising infections and tensions over burial protocols. Photo: May 24, 2026 Hour: 8:01 am 🔗…",
+          "source": "telesur",
+          "source_name": "Telesur English",
+          "country": "VE",
+          "published": "Sun, 24 May 2026 12:01:48 +0000",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.nytimes.com/2026/05/17/world/africa/what-to-know-ebola-africa.html",
+          "headline": "What to Know About the Ebola Outbreak as Cases and Deaths Rise",
+          "snippet": "More than 170 deaths and about 750 cases are suspected. The United States restricted entry for people who have been to three African countries.",
+          "source": "nytimes",
+          "source_name": "The New York Times",
+          "country": "US",
+          "published": "Sat, 23 May 2026 11:38:18 +0000",
+          "image_url": "https://static01.nyt.com/images/2026/05/22/multimedia/22int-ebola-WTK-zwlv/22int-ebola-WTK-zwlv-mediumSquareAt3X.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.thisdaylive.com/2026/05/25/ebola-outbreak-ncdc-puts-states-on-high-alert-urges-preparation-of-emergency-facilities/",
+          "headline": "Ebola Outbreak: NCDC Puts States on High Alert, Urges Preparation of Emergency Facilities",
+          "snippet": "Onyebuchi Ezigbo in Abuja The Nigeria Centre for Disease Control and Prevention (NCDC) has asked states to get their facilities ready in the event of a fresh Ebola disease outbreak in the country. It said its assessment estimated the risk of Ebola importation into Nigeria as high due to the ongoing…",
+          "source": "thisday_ng",
+          "source_name": "This Day Nigeria",
+          "country": "NG",
+          "published": "Mon, 25 May 2026 03:10:53 +0000",
+          "image_url": null,
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.078,
+        "zionist": 0.247,
+        "atlanticist": 0.337,
+        "statist": 0.123,
+        "financialized": 0.423
+      },
+      "fp_source_count": 6,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 3,
+        "global-south": 1,
+        "latin-america": 1,
+        "africa": 1
+      },
+      "section": "health"
     },
     {
       "id": "0ed1f8502fea",
