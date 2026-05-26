@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T03:46:27.478219+00:00",
+  "generated_at": "2026-05-26T04:01:29.775734+00:00",
   "count": 68,
   "stories": [
     {
@@ -10705,147 +10705,6 @@
       "section": "world"
     },
     {
-      "id": "c65bdd653c17",
-      "headline": "Trump is doing a Ukraine on Taiwan. And it exposes a startling new level of US weakness",
-      "summary": "<p>Trump has suspended weapons sales to Taiwan in a move that again shows he favours potential enemies over allies, explains world affairs editor Sam Kiley</p>",
-      "published": "Mon, 25 May 2026 04:00:16 GMT",
-      "image_url": "https://static01.nyt.com/images/2026/05/08/multimedia/08int-zelensky-us-assess-01-vfgm/08int-zelensky-us-assess-01-vfgm-mediumSquareAt3X.jpg",
-      "video_url": null,
-      "has_video": false,
-      "is_blindspot": true,
-      "blindspot_label": "Only 0% Right",
-      "blindspot_score": 17,
-      "coverage": {
-        "left_pct": 50,
-        "center_pct": 50,
-        "right_pct": 0,
-        "state_count": 0,
-        "dominant": "left",
-        "dominant_pct": 50
-      },
-      "bias_variance": 5.73,
-      "entity_count": 5,
-      "entity_list": [
-        "Looks",
-        "Rusland",
-        "Taiwan",
-        "Trump",
-        "Ukraine"
-      ],
-      "sources": [
-        {
-          "id": "dr_nyheder",
-          "name": "DR Nyheder",
-          "country": "DK",
-          "bloc": "western",
-          "bias_tier": "state-democratic",
-          "bias_bucket": "center",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        },
-        {
-          "id": "nytimes",
-          "name": "The New York Times",
-          "country": "US",
-          "bloc": "western",
-          "bias_tier": "left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "mixed",
-          "parent_company": "New York Times Co"
-        },
-        {
-          "id": "tass_en",
-          "name": "TASS English",
-          "country": "RU",
-          "bloc": "adversarial",
-          "bias_tier": "center",
-          "bias_bucket": "center",
-          "geo_cluster": "adversarial",
-          "factuality": "unknown",
-          "primary_vs_launder": "unknown",
-          "parent_company": ""
-        },
-        {
-          "id": "independent_uk",
-          "name": "The Independent (UK)",
-          "country": "GB",
-          "bloc": "adversarial",
-          "bias_tier": "lean-left",
-          "bias_bucket": "left",
-          "geo_cluster": "west",
-          "factuality": "high",
-          "primary_vs_launder": "primary",
-          "parent_company": ""
-        }
-      ],
-      "articles": [
-        {
-          "url": "https://www.dr.dk/nyheder/seneste/trump-haaber-midlertidig-vaabenhvile-mellem-ukraine-og-rusland-kan-vare-laengere",
-          "headline": "Trump håber, midlertidig våbenhvile mellem Ukraine og Rusland kan vare længere",
-          "snippet": "9. maj fejres 'Sejrsdagen' i Rusland, der traditionen tro markeres med en militærparade på Den Røde Plads i Moskva. Årets parade er dog tydeligt mærket af den igangværende krig mod Ukraine, hvorfor alt militærudstyr, undtaget kampfly, er skåret fra dagens opvisning. Det sker af frygt for en…",
-          "source": "dr_nyheder",
-          "source_name": "DR Nyheder",
-          "country": "DK",
-          "published": "Sat, 09 May 2026 00:54:00 GMT",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.nytimes.com/2026/05/11/world/europe/ukraine-war-zelensky-us-trump-russia.html",
-          "headline": "Ukraine Looks to Step Away From Trump and U.S.",
-          "snippet": "With peace talks on ice and Ukraine now more self-reliant, President Volodymyr Zelensky seems to be stepping away from the United States.",
-          "source": "nytimes",
-          "source_name": "The New York Times",
-          "country": "US",
-          "published": "Mon, 11 May 2026 09:01:36 +0000",
-          "image_url": "https://static01.nyt.com/images/2026/05/08/multimedia/08int-zelensky-us-assess-01-vfgm/08int-zelensky-us-assess-01-vfgm-mediumSquareAt3X.jpg",
-          "video_url": null
-        },
-        {
-          "url": "https://tass.com/world/1969433",
-          "headline": "Trump expects solution to Ukraine conflict to be found eventually",
-          "snippet": "WASHINGTON, June 5. /TASS/. A solution to the conflict in Ukraine will be found eventually, President Donald Trump said at a meeting with German Chancellor Friedrich Merz in the White House. According to the leader, he regularly discussed issues related to the Ukraine crisis with Merz. \"We'd like…",
-          "source": "tass_en",
-          "source_name": "TASS English",
-          "country": "RU",
-          "published": "Thu, 05 Jun 2025 19:39:12 +0300",
-          "image_url": null,
-          "video_url": null
-        },
-        {
-          "url": "https://www.independent.co.uk/asia/china/trump-china-taiwan-ukraine-putin-xi-jinping-arms-sales-b2982951.html",
-          "headline": "Trump is doing a Ukraine on Taiwan. And it exposes a startling new level of US weakness",
-          "snippet": "Your support helps us to tell the story From reproductive rights to climate change to Big Tech, The Independent is on the ground when the story is developing. Whether it's investigating the financials of Elon Musk's pro-Trump or producing our latest documentary, 'The A Word', which shines a light…",
-          "source": "independent_uk",
-          "source_name": "The Independent (UK)",
-          "country": "GB",
-          "published": "Mon, 25 May 2026 04:00:16 GMT",
-          "image_url": "https://static.independent.co.uk/2026/05/20/16/52/GettyImages-2275527400.jpg?width=1200&auto=webp&crop=3%3A2",
-          "video_url": null
-        }
-      ],
-      "axis_avg": {
-        "interventionist": 0.193,
-        "zionist": 0.27,
-        "atlanticist": 0.363,
-        "statist": 0.12,
-        "financialized": 0.277
-      },
-      "fp_source_count": 3,
-      "geo_frame": null,
-      "geo_frame_label": null,
-      "geo_frame_topic": null,
-      "geo_breakdown": {
-        "west": 3,
-        "adversarial": 1
-      },
-      "section": "world"
-    },
-    {
       "id": "04cb78e19fa1",
       "headline": "Rahul Gandhi trying to create ‘anarchy’ to topple Modi govt: BJP",
       "summary": "New Delhi, May 24 (PTI) The BJP on Sunday accused Congress leader Rahul Gandhi of conspiring to destabilise the Narendra Modi government by &#8220;creating anarchy&#8221; in the country, alleging that he was acting at the behest of foreign forces. Several BJP leaders, including Union minister Piyush",
@@ -20362,6 +20221,17 @@
           "published": "2026-05-26T03:24:08Z",
           "image_url": "https://www.stuff.co.nz/media/images/9Tzi8ywRz924XE3uHaD6DZ3Ef+IdbOiYlvIROR5vlqUeRrexTocZGobKRJ9od%2Fgnk3B%2FCeKTmTAsIjj6Q0YaYUa2qVvBaRzacHv2kqqAKRkvhPvXi9f+ikFNvYGQXvY92mQ7omWZm6J49jKCrFp8dxQIQiAOvcUjzriv7VQ37xWG73ovtQnsh4Oho4fqZF%2Ft6MnEA1HySJOn2+hPo3ATILOi3GTqeHoUl8xEa8LGFyo=?resolution=1240x700",
           "video_url": null
+        },
+        {
+          "url": "https://www.stuff.co.nz/sport/360984238/new-york-knicks-sweep-cleveland-reach-first-nba-finals-1999",
+          "headline": "New York Knicks end 27-year wait to return to the NBA Finals with blowout win",
+          "snippet": "The Knicks completed a four-game sweep of the Eastern Conference finals with a dominant 130-93 victory.",
+          "source": "stuff_nz",
+          "source_name": "Stuff NZ",
+          "country": "NZ",
+          "published": "2026-05-26T03:24:08Z",
+          "image_url": "https://www.stuff.co.nz/media/images/9Tzi8ywRz924XE3uHaD6DZ3Ef+IdbOiYlvIROR5vlqUeRrexTocZGobKRJ9od%2Fgnk3B%2FCeKTmTAsIjj6Q0YaYUa2qVvBaRzacHv2kqqAKRkvhPvXi9f+ikFNvYGQXvY92mQ7omWZm6J49jKCrFp8dxQIQiAOvcUjzriv7VQ37xWG73ovtQnsh4Oho4fqZF%2Ft6MnEA1HySJOn2+hPo3ATILOi3GTqeHoUl8xEa8LGFyo=?resolution=1240x700",
+          "video_url": null
         }
       ],
       "axis_avg": {
@@ -20383,8 +20253,8 @@
     },
     {
       "id": "7744a13538fc",
-      "headline": "Foreign Ministry to make statement on Russian strikes against Kiev soon — spokeswoman",
-      "summary": "Maria Zakharova said the ministry will also issue a detailed warning to the diplomatic corps abroad",
+      "headline": "Foreign Ministry confirms one Malaysian killed in Philippines building collapse [WATCH]",
+      "summary": "<p /><p>KUALA LUMPUR: The Foreign Ministry today confirmed that a Malaysian was killed in a building collapse in Angeles, the Philippines, yesterday.",
       "published": "Tue, 26 May 2026 10:02:15 +0800",
       "image_url": "https://img9.irna.ir/d/r2/2025/12/17/4/172595087.jpg",
       "video_url": null,
@@ -20401,7 +20271,7 @@
         "dominant_pct": 100
       },
       "bias_variance": 9.31,
-      "entity_count": 21,
+      "entity_count": 22,
       "entity_list": [
         "Africa",
         "BRIEF",
@@ -20423,6 +20293,7 @@
         "Trump",
         "Ukraine",
         "Ukrainian",
+        "WATCH",
         "Western"
       ],
       "sources": [
@@ -20697,6 +20568,17 @@
           "country": "MY",
           "published": "Tue, 26 May 2026 10:02:15 +0800",
           "image_url": "https://assets.nst.com.my/images/listing-featured/D39F37D087AB4821CE76515C7F50B7FA_data_0.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.nst.com.my/news/nation/2026/05/1448616/foreign-ministry-confirms-one-malaysian-killed-philippines-building",
+          "headline": "Foreign Ministry confirms one Malaysian killed in Philippines building collapse [WATCH]",
+          "snippet": "KUALA LUMPUR: The Foreign Ministry today confirmed that a Malaysian was killed in a building collapse in Angeles, the Philippines, yesterday.",
+          "source": "nst_my",
+          "source_name": "New Straits Times",
+          "country": "MY",
+          "published": "Tue, 26 May 2026 10:02:15 +0800",
+          "image_url": "https://assets.nst.com.my/images/listing-featured/D39F37D087AB4821CE76515C7F50B7FA_data_0_1.jpg",
           "video_url": null
         }
       ],
@@ -23451,7 +23333,7 @@
       "id": "7a2129079804",
       "headline": "Hilary Duff dazzles in plunging metallic dress alongside Nikki Glaser and Teyana Taylor as they lead best dressed stars at the 2026 American Music Awards",
       "summary": "Music's biggest names delivered show-stopping fashion at the 2026 American Music Awards red carpet on Monday.",
-      "published": "Tue, 26 May 2026 03:36:41 GMT",
+      "published": "Tue, 26 May 2026 03:55:38 GMT",
       "image_url": "https://www.youtube.com/embed/W1jFZDPOiCg",
       "video_url": null,
       "has_video": false,
@@ -23467,7 +23349,7 @@
         "dominant_pct": 46
       },
       "bias_variance": 3.14,
-      "entity_count": 88,
+      "entity_count": 89,
       "entity_list": [
         "Abdul",
         "Achievement",
@@ -23489,6 +23371,7 @@
         "Chrissy",
         "Columbia",
         "Complete",
+        "Dolls",
         "Downs",
         "Draper",
         "Eboni",
@@ -24177,6 +24060,17 @@
           "country": "GB",
           "published": "Tue, 26 May 2026 03:36:41 GMT",
           "image_url": "https://i.dailymail.com/1s/2026/05/26/04/108864631-0-image-a-119_1779766517248.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://www.dailymail.com/tvshowbiz/article-15848099/90s-Goo-Goo-Dolls-American-Music-Awards-family-Iris.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "headline": "'90s icons Goo Goo Dolls turn American Music Awards into a family affair after Iris viral resurgence",
+          "snippet": "ARTIST Alex Warren Ella Langley KATSEYE – WINNER Leon Thomas Olivia Dean sombr Alex Warren – Ordinary Ella Langley – Choosin’ Texas The Singing Voices of HUNTR/X: EJAE, Audrey Nuna, Rei Ami – Golden – WINNER Kehlani – Folded Leon Thomas – Morgan Wallen – I’m The Problem Olivia Dean – Man I Need…",
+          "source": "daily_mail_ent",
+          "source_name": "Daily Mail — Showbiz",
+          "country": "GB",
+          "published": "Tue, 26 May 2026 03:55:38 GMT",
+          "image_url": "https://i.dailymail.com/1s/2026/05/26/04/108864527-0-image-a-43_1779766080921.jpg",
           "video_url": null
         }
       ],
@@ -25389,6 +25283,147 @@
         "latin-america": 2
       },
       "section": "sports"
+    },
+    {
+      "id": "c65bdd653c17",
+      "headline": "Trump is doing a Ukraine on Taiwan. And it exposes a startling new level of US weakness",
+      "summary": "<p>Trump has suspended weapons sales to Taiwan in a move that again shows he favours potential enemies over allies, explains world affairs editor Sam Kiley</p>",
+      "published": "Mon, 25 May 2026 04:00:16 GMT",
+      "image_url": "https://static01.nyt.com/images/2026/05/08/multimedia/08int-zelensky-us-assess-01-vfgm/08int-zelensky-us-assess-01-vfgm-mediumSquareAt3X.jpg",
+      "video_url": null,
+      "has_video": false,
+      "is_blindspot": true,
+      "blindspot_label": "Only 0% Right",
+      "blindspot_score": 17,
+      "coverage": {
+        "left_pct": 50,
+        "center_pct": 50,
+        "right_pct": 0,
+        "state_count": 0,
+        "dominant": "left",
+        "dominant_pct": 50
+      },
+      "bias_variance": 5.73,
+      "entity_count": 5,
+      "entity_list": [
+        "Looks",
+        "Rusland",
+        "Taiwan",
+        "Trump",
+        "Ukraine"
+      ],
+      "sources": [
+        {
+          "id": "dr_nyheder",
+          "name": "DR Nyheder",
+          "country": "DK",
+          "bloc": "western",
+          "bias_tier": "state-democratic",
+          "bias_bucket": "center",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        },
+        {
+          "id": "nytimes",
+          "name": "The New York Times",
+          "country": "US",
+          "bloc": "western",
+          "bias_tier": "left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "mixed",
+          "parent_company": "New York Times Co"
+        },
+        {
+          "id": "tass_en",
+          "name": "TASS English",
+          "country": "RU",
+          "bloc": "adversarial",
+          "bias_tier": "center",
+          "bias_bucket": "center",
+          "geo_cluster": "adversarial",
+          "factuality": "unknown",
+          "primary_vs_launder": "unknown",
+          "parent_company": ""
+        },
+        {
+          "id": "independent_uk",
+          "name": "The Independent (UK)",
+          "country": "GB",
+          "bloc": "adversarial",
+          "bias_tier": "lean-left",
+          "bias_bucket": "left",
+          "geo_cluster": "west",
+          "factuality": "high",
+          "primary_vs_launder": "primary",
+          "parent_company": ""
+        }
+      ],
+      "articles": [
+        {
+          "url": "https://www.dr.dk/nyheder/seneste/trump-haaber-midlertidig-vaabenhvile-mellem-ukraine-og-rusland-kan-vare-laengere",
+          "headline": "Trump håber, midlertidig våbenhvile mellem Ukraine og Rusland kan vare længere",
+          "snippet": "9. maj fejres 'Sejrsdagen' i Rusland, der traditionen tro markeres med en militærparade på Den Røde Plads i Moskva. Årets parade er dog tydeligt mærket af den igangværende krig mod Ukraine, hvorfor alt militærudstyr, undtaget kampfly, er skåret fra dagens opvisning. Det sker af frygt for en…",
+          "source": "dr_nyheder",
+          "source_name": "DR Nyheder",
+          "country": "DK",
+          "published": "Sat, 09 May 2026 00:54:00 GMT",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.nytimes.com/2026/05/11/world/europe/ukraine-war-zelensky-us-trump-russia.html",
+          "headline": "Ukraine Looks to Step Away From Trump and U.S.",
+          "snippet": "With peace talks on ice and Ukraine now more self-reliant, President Volodymyr Zelensky seems to be stepping away from the United States.",
+          "source": "nytimes",
+          "source_name": "The New York Times",
+          "country": "US",
+          "published": "Mon, 11 May 2026 09:01:36 +0000",
+          "image_url": "https://static01.nyt.com/images/2026/05/08/multimedia/08int-zelensky-us-assess-01-vfgm/08int-zelensky-us-assess-01-vfgm-mediumSquareAt3X.jpg",
+          "video_url": null
+        },
+        {
+          "url": "https://tass.com/world/1969433",
+          "headline": "Trump expects solution to Ukraine conflict to be found eventually",
+          "snippet": "WASHINGTON, June 5. /TASS/. A solution to the conflict in Ukraine will be found eventually, President Donald Trump said at a meeting with German Chancellor Friedrich Merz in the White House. According to the leader, he regularly discussed issues related to the Ukraine crisis with Merz. \"We'd like…",
+          "source": "tass_en",
+          "source_name": "TASS English",
+          "country": "RU",
+          "published": "Thu, 05 Jun 2025 19:39:12 +0300",
+          "image_url": null,
+          "video_url": null
+        },
+        {
+          "url": "https://www.independent.co.uk/asia/china/trump-china-taiwan-ukraine-putin-xi-jinping-arms-sales-b2982951.html",
+          "headline": "Trump is doing a Ukraine on Taiwan. And it exposes a startling new level of US weakness",
+          "snippet": "Your support helps us to tell the story From reproductive rights to climate change to Big Tech, The Independent is on the ground when the story is developing. Whether it's investigating the financials of Elon Musk's pro-Trump or producing our latest documentary, 'The A Word', which shines a light…",
+          "source": "independent_uk",
+          "source_name": "The Independent (UK)",
+          "country": "GB",
+          "published": "Mon, 25 May 2026 04:00:16 GMT",
+          "image_url": "https://static.independent.co.uk/2026/05/20/16/52/GettyImages-2275527400.jpg?width=1200&auto=webp&crop=3%3A2",
+          "video_url": null
+        }
+      ],
+      "axis_avg": {
+        "interventionist": 0.193,
+        "zionist": 0.27,
+        "atlanticist": 0.363,
+        "statist": 0.12,
+        "financialized": 0.277
+      },
+      "fp_source_count": 3,
+      "geo_frame": null,
+      "geo_frame_label": null,
+      "geo_frame_topic": null,
+      "geo_breakdown": {
+        "west": 3,
+        "adversarial": 1
+      },
+      "section": "world"
     },
     {
       "id": "8a93127d9cac",
