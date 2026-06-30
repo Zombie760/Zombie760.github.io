@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNWARRANTED INFLUENCE — Smoke Screen, Distract, and Extract</title>
+  <meta name="description" content="A 900-year file. Two voices run through it: the file-room voice cites the documents; the narrator's voice tells you what they feel like when stacked in the same head. By Kyle Jimenez.">
+  <meta property="og:title" content="UNWARRANTED INFLUENCE — Smoke Screen, Distract, and Extract">
+  <meta property="og:description" content="A 900-year file. Two voices. 108,310 words. The mechanism, the file, the reader, the decision.">
+  <meta property="og:type" content="book">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;700&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bone: #e8e4dc;
+      --gold: #c9a227;
+      --crimson: #8b2635;
+      --rule: rgba(201,162,39,0.25);
+      --rule-dim: rgba(232,228,220,0.12);
+      --text2: rgba(232,228,220,0.65);
+      --text3: rgba(232,228,220,0.35);
+      --paper: #f4e9d5;
+      --ink: #050505;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--bone);
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 300;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+
+    /* HERO */
+    .hero {
+      padding: 96px 0 56px;
+      text-align: center;
+      border-bottom: 1px solid var(--rule);
+    }
+    .wordmark {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.5em;
+      color: var(--crimson);
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 7vw, 72px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--bone);
+      margin-bottom: 20px;
+    }
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .hero .file-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      color: var(--text2);
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+    .hero .lede {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text2);
+      max-width: 640px;
+      margin: 0 auto 36px;
+      line-height: 1.75;
+    }
+    .hero .meta {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--text3);
+      text-transform: uppercase;
+    }
+    .hero .meta span { padding: 6px 12px; border: 1px solid var(--rule-dim); }
+
+    /* DOWNLOAD CARDS */
+    .section { padding: 56px 0; border-bottom: 1px solid var(--rule-dim); }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .downloads {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .dl {
+      display: block;
+      padding: 28px 24px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--rule-dim);
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .dl:hover {
+      border-color: var(--gold);
+      background: rgba(201,162,39,0.05);
+    }
+    .dl-format {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .dl-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--bone);
+      margin-bottom: 8px;
+    }
+    .dl-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text2);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .dl-size {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text3);
+    }
+
+    /* ABOUT / TWO VOICES */
+    .about {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--rule-dim);
+    }
+    .about h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-style: italic;
+      color: var(--bone);
+      margin-bottom: 20px;
+    }
+    .about p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text2);
+      margin-bottom: 18px;
+      line-height: 1.75;
+    }
+    .about p strong { color: var(--bone); font-weight: 500; }
+    .about p em { color: var(--gold); font-style: italic; }
+
+    /* PROLOGUE TEASER */
+    .prologue-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--gold);
+      border-left: 3px solid var(--crimson);
+      padding: 24px 0 24px 28px;
+      margin: 32px 0;
+      line-height: 1.5;
+    }
+
+    /* NAV BACK */
+    .nav-back {
+      padding: 32px 0 64px;
+      text-align: center;
+    }
+    .nav-back a {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      border: 1px solid var(--rule);
+    }
+    .nav-back a:hover { border-color: var(--gold); background: rgba(201,162,39,0.05); }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="wordmark">A 900-Year File</div>
+  <h1>UNWARRANTED INFLUENCE</h1>
+  <h2>Smoke Screen, Distract, and Extract</h2>
+  <div class="file-tag">A documentary narrative · Draft of June 29, 2026</div>
+  <p class="lede">Two voices run through this book. The <em>file-room voice</em> cites the documents. The <em>narrator's voice</em> tells the reader what the documents feel like when stacked in the same head. Both are filed. Both are the writer. Both are the file.</p>
+  <div class="meta">
+    <span>108,310 words</span>
+    <span>306 pages</span>
+    <span>~1,100 cited sources</span>
+    <span>12 chapters</span>
+    <span>4 prologues</span>
+    <span>1 epilogue</span>
+  </div>
+</header>
+
+<section class="section">
+  <div class="section-label">Read the book</div>
+  <div class="downloads">
+    <a class="dl" href="smoke-screen.pdf">
+      <div class="dl-format">PDF · 915 KB</div>
+      <div class="dl-name">Print Edition</div>
+      <div class="dl-desc">306-page typeset edition. Title page, TOC, four prologues, twelve chapters, epilogue, afterword, photographic appendix, consolidated source index.</div>
+      <div class="dl-size">↓ Download PDF</div>
+    </a>
+    <a class="dl" href="smoke-screen.md">
+      <div class="dl-format">Markdown · 722 KB</div>
+      <div class="dl-name">Web Edition</div>
+      <div class="dl-desc">Clean Markdown. All citations, footnotes, and source blocks preserved. Narrator-voice paragraphs wrapped in blockquotes with disclosure frames.</div>
+      <div class="dl-size">↓ Download .md</div>
+    </a>
+    <a class="dl" href="smoke-screen.txt">
+      <div class="dl-format">Plain Text · 724 KB</div>
+      <div class="dl-name">Working File</div>
+      <div class="dl-desc">5,981 lines. The source from which the HTML and PDF are built. Ready for any text editor or downstream tool.</div>
+      <div class="dl-size">↓ Download .txt</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">Explore the evidence</div>
+  <div class="downloads">
+    <a class="dl" href="corkboard.html">
+      <div class="dl-format">Interactive · 198 KB</div>
+      <div class="dl-name">Corkboard — The Evidence Board</div>
+      <div class="dl-desc">130+ named persons. 40+ institutions. 50+ dated events. Documentary edges drawn from 1095 to 2026. Drag the board. Pull a thread. Every pin is a primary source.</div>
+      <div class="dl-size">⤴ Open the Corkboard</div>
+    </a>
+  </div>
+</section>
+
+<section class="about">
+  <div class="section-label">The two voices</div>
+  <h3>File-room voice</h3>
+  <p>The first voice cites the documents. It footnotes. It ends each section with a <em>"what the docket does not prove"</em> disclaimer. It is investigative non-fiction. It cites <strong>Vesting Order 248</strong> at the Federal Register, the <strong>Operation Mockingbird dispatch</strong> at the National Archives, the <strong>Palantir S-1</strong> at SEC EDGAR, the <strong>Bondi hearing</strong> on C-SPAN. It names every primary source. It lets the reader verify.</p>
+
+  <h3>Narrator's voice</h3>
+  <p>The second voice is the human voice of the writer telling the reader what the documents feel like when stacked in the same head. It appears under the heading <em>"A note on..."</em> and is preceded by a disclosure frame. The narrator's readings are speculation, framed honestly as the writer's reading of the file — not the file itself. The reader is asked to read the documents and disagree with the reading where the reader disagrees.</p>
+
+  <div class="prologue-quote">"The reader is the only part of the mechanism the mechanism cannot control."</div>
+
+  <p><strong>Both voices are filed. Both voices are the writer. Both voices are the file.</strong></p>
+</section>
+
+<div class="nav-back">
+  <a href="/">← Back to BOTWAVE</a>
+</div>
+
+</div>
+</body>
+</html>
