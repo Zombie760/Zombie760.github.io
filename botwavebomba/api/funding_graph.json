@@ -1,0 +1,3834 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-07T11:57:00Z",
+  "tier_explainer": {
+    "tier_1": "Family offices / individuals (Soros, Koch, Murdoch, Bloomberg, Bush, Schwarzman, Thyssen)",
+    "tier_2": "Institutional donors and foundations (Carnegie, Ford, Rockefeller, Knight, Open Society, Hewlett, Mellon, Packard, Bloomberg Philanthropies, Tides, Donors Trust)",
+    "tier_3": "Asset managers (Vanguard, BlackRock, State Street, Fidelity, T. Rowe Price)",
+    "tier_4": "Media parent companies (Comcast, Warner Bros. Discovery, Disney, Paramount, News Corp, Fox Corp, Gannett, Tribune/Alden)",
+    "tier_5": "Public broadcasting (CPB, NPR, PBS)",
+    "tier_6": "Adversarial state media (SASAC/CGTN, RT/Rossiya Segodnya, IRIB, teleSUR/Venezuela)"
+  },
+  "entities": [
+    {
+      "id": "person_george_soros",
+      "name": "George Soros",
+      "type": "person",
+      "aliases": [
+        "Gyorgy Schwartz",
+        "Győrgy Schwartz"
+      ],
+      "wikidata_id": "Q12849",
+      "description": "Founder of Soros Fund Management; chair of Open Society Foundations; hedge fund manager; primary political donor on US left via OSF and 270+ PAC/state-level donations",
+      "primary_source_url": "https://www.opensecrets.org/donor-lookup/results?name=George+Soros&cycle=&state=&zip=&employ=&cand="
+    },
+    {
+      "id": "hedge_soros_fund_mgmt",
+      "name": "Soros Fund Management",
+      "type": "hedge_fund",
+      "aliases": [
+        "SFM"
+      ],
+      "wikidata_id": "Q1118086",
+      "description": "Family office / hedge fund managing Soros family capital; founded 1970 as Quantum Fund; SEC-registered investment adviser",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=soros+fund+management&CIK=&type=ADV&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "foundation_open_society",
+      "name": "Open Society Foundations",
+      "type": "foundation",
+      "aliases": [
+        "OSF",
+        "Open Society Institute",
+        "OSI"
+      ],
+      "wikidata_id": "Q211305",
+      "description": "Private grantmaking foundation founded 1993 by George Soros; $1B+ annual grants; 270+ state-level and federal PAC donations; funder of ProPublica, Bellingcat, Center for Public Integrity",
+      "primary_source_url": "https://www.opensecrets.org/orgs/open-society-foundations/summary?id=d000022827"
+    },
+    {
+      "id": "person_charles_koch",
+      "name": "Charles Koch",
+      "type": "person",
+      "aliases": [
+        "Charles de Ganahl Koch"
+      ],
+      "wikidata_id": "Q919636",
+      "description": "Co-owner Koch Industries; founder Americans for Prosperity / Stand Together network; deceased Aug 23 2019; co-chair Koch political network with late brother David",
+      "primary_source_url": "https://www.opensecrets.org/donor-lookup/results?name=Charles+Koch&cycle=&state=&zip=&employ=&cand="
+    },
+    {
+      "id": "person_david_koch",
+      "name": "David Koch",
+      "type": "person",
+      "aliases": [
+        "David Hamilton Koch"
+      ],
+      "wikidata_id": "Q1175347",
+      "description": "Former executive VP Koch Industries; co-founder Americans for Prosperity; deceased Aug 23 2019; major donor to libertarian causes, Smithsonian, MIT, NY-Presbyterian Hospital",
+      "primary_source_url": "https://www.opensecrets.org/donor-lookup/results?name=David+Koch&cycle=&state=&zip=&employ=&cand="
+    },
+    {
+      "id": "private_koch_industries",
+      "name": "Koch Industries",
+      "type": "private_company",
+      "aliases": [
+        "Koch Inc.",
+        "Koch Equity Development"
+      ],
+      "wikidata_id": "Q16988673",
+      "description": "Second-largest privately held US company (after Cargill) by revenue; petroleum, chemicals, paper, commodities trading; founded 1940 by Fred Koch",
+      "primary_source_url": "https://www.kochinc.com/about/"
+    },
+    {
+      "id": "foundation_stand_together",
+      "name": "Stand Together Foundation",
+      "type": "foundation",
+      "aliases": [
+        "Stand Together Trust"
+      ],
+      "wikidata_id": "Q7597756",
+      "description": "Koch-aligned 501(c)(3) founded 2016; absorbed Freedom Partners; coordinates Koch donor network grants",
+      "primary_source_url": "https://www.standtogether.org/about"
+    },
+    {
+      "id": "pac_americans_for_prosperity",
+      "name": "Americans for Prosperity",
+      "type": "political_action_committee",
+      "aliases": [
+        "AFP",
+        "AFP Foundation"
+      ],
+      "wikidata_id": "Q465605",
+      "description": "Koch-funded 501(c)(4) PAC; founded 2004; largest conservative grassroots org; spent $400M+ in 2016 cycle, $200M+ in 2020; Truth Wins Out/Defend Workers ads",
+      "primary_source_url": "https://www.opensecrets.org/political-action-committees-pacs/americans-for-prosperity/C00481303/summary/2020"
+    },
+    {
+      "id": "person_rupert_murdoch",
+      "name": "Rupert Murdoch",
+      "type": "person",
+      "aliases": [
+        "Keith Rupert Murdoch"
+      ],
+      "wikidata_id": "Q35796",
+      "description": "Founder News Corp / Fox Corporation; controls Fox News, WSJ, NY Post, Times of London via family trust; Australian-American media mogul",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=murdoch+family+trust&CIK=&type=&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "person_lachlan_murdoch",
+      "name": "Lachlan Murdoch",
+      "type": "person",
+      "aliases": [
+        "Lachlan Keith Murdoch"
+      ],
+      "wikidata_id": "Q2098164",
+      "description": "Executive chair Fox Corporation; co-chair News Corp; eldest son of Rupert; controls family trust voting",
+      "primary_source_url": "https://www.sec.gov/Archives/edgar/data/1754301/000119312523170998/d459116dsc.htm"
+    },
+    {
+      "id": "public_fox_corp",
+      "name": "Fox Corporation",
+      "type": "public_company",
+      "aliases": [
+        "FOX",
+        "FOXA",
+        "Fox Corp"
+      ],
+      "wikidata_id": "Q63239577",
+      "description": "NASDAQ: FOXA / FOXB; spun off from 21st Century Fox March 2019; owns Fox News, Fox Business, Fox Sports, Fox Broadcasting",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001754301&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "public_news_corp",
+      "name": "News Corp",
+      "type": "public_company",
+      "aliases": [
+        "NWS",
+        "NWSA",
+        "News Corporation"
+      ],
+      "wikidata_id": "Q6099288",
+      "description": "NASDAQ: NWSA / NWS; publishing arm of Murdoch empire; owns WSJ, NY Post, Times of London, Sun, HarperCollins, Foxtel, REA Group, Dow Jones",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001564708&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "person_michael_bloomberg",
+      "name": "Michael Bloomberg",
+      "type": "person",
+      "aliases": [
+        "Michael Rubens Bloomberg"
+      ],
+      "wikidata_id": "Q1936377",
+      "description": "Founder Bloomberg LP; 108th Mayor NYC 2002-2013; 2020 Democratic presidential candidate; founder Bloomberg Philanthropies; $11.5B donated 2023 (largest individual donor)",
+      "primary_source_url": "https://www.opensecrets.org/donor-lookup/results?name=Michael+Bloomberg&cycle=&state=&zip=&employ=&cand="
+    },
+    {
+      "id": "private_bloomberg_lp",
+      "name": "Bloomberg LP",
+      "type": "private_company",
+      "aliases": [
+        "Bloomberg",
+        "Bloomberg Terminal",
+        "Bloomberg Tradebook"
+      ],
+      "wikidata_id": "Q2074015",
+      "description": "Privately held financial software / data / media co founded 1981; revenue $10B+; subsidiary Bloomberg News = 2,700 journalists in 120+ countries; owner: Michael Bloomberg 88%",
+      "primary_source_url": "https://www.bloomberg.com/company/"
+    },
+    {
+      "id": "foundation_bloomberg_phil",
+      "name": "Bloomberg Philanthropies",
+      "type": "foundation",
+      "aliases": [
+        "Bloomberg Philanthropies Inc."
+      ],
+      "wikidata_id": "Q17010238",
+      "description": "501(c)(3) founded 2006 by Michael Bloomberg; focus on public health, environment, education, public safety; committed $600M+ to Johns Hopkins",
+      "primary_source_url": "https://www.bloomberg.org/our-work/"
+    },
+    {
+      "id": "person_fritz_thyssen",
+      "name": "Fritz Thyssen",
+      "type": "person",
+      "aliases": [
+        "Fritz Thyssen (1873-1951)"
+      ],
+      "wikidata_id": "Q76549",
+      "description": "German industrialist; co-founder ThyssenKrupp predecessor Vereinigte Stahlwerke; supported early Nazi rise 1923-1938; fled 1939 to Switzerland",
+      "primary_source_url": "https://en.wikipedia.org/wiki/Fritz_Thyssen"
+    },
+    {
+      "id": "llc_union_banking_corp",
+      "name": "Union Banking Corporation",
+      "type": "llc",
+      "aliases": [
+        "UBC"
+      ],
+      "wikidata_id": "Q7884765",
+      "description": "NY-incorporated investment vehicle; owned 4 Fritz Thyssen companies; Prescott Bush and father-in-law George H. Walker on board; seized under Trading with the Enemy Act, Vesting Order 248, Oct 1942",
+      "primary_source_url": "https://www.archives.gov/research/investigations/prescott-bush"
+    },
+    {
+      "id": "person_prescott_bush",
+      "name": "Prescott Sheldon Bush",
+      "type": "person",
+      "aliases": [
+        "Prescott Bush"
+      ],
+      "wikidata_id": "Q943598",
+      "description": "US Senator CT 1952-1963; partner Brown Brothers Harriman; director Union Banking Corporation 1931-42; father of GHW Bush, grandfather of GW Bush; Yale '17, Skull & Bones",
+      "primary_source_url": "https://bioguide.congress.gov/search/bio/B001137"
+    },
+    {
+      "id": "person_ghw_bush",
+      "name": "George H.W. Bush",
+      "type": "person",
+      "aliases": [
+        "GHW Bush",
+        "George Bush Sr.",
+        "CIA Director Bush"
+      ],
+      "wikidata_id": "Q23415",
+      "description": "41st US President 1989-1993; CIA Director 1976-77; father of GW Bush; co-founder Carlyle Group; Eagle Scout; WWII Navy pilot",
+      "primary_source_url": "https://www.cia.gov/the-cia-legacy/cia-directors/"
+    },
+    {
+      "id": "person_gw_bush",
+      "name": "George W. Bush",
+      "type": "person",
+      "aliases": [
+        "GW Bush",
+        "George Bush Jr.",
+        "43rd President"
+      ],
+      "wikidata_id": "Q207",
+      "description": "43rd US President 2001-2009; Texas Rangers co-owner 1989-98; Harken Energy director 1986-90; co-founder Carlyle Group 1987-93",
+      "primary_source_url": "https://bioguide.congress.gov/search/bio/B001135"
+    },
+    {
+      "id": "llc_harken_energy",
+      "name": "Harken Energy",
+      "type": "public_company",
+      "aliases": [
+        "Harken Energy Corporation"
+      ],
+      "wikidata_id": "Q1582871",
+      "description": "Texas-based oil & gas exploration; GW Bush director 1986-90; SEC insider trading investigation closed 1991 (settled $300K civil)",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000881444&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "private_carlyle_group",
+      "name": "Carlyle Group",
+      "type": "private_company",
+      "aliases": [
+        "Carlyle"
+      ],
+      "wikidata_id": "Q1032404",
+      "description": "Private equity firm founded 1987 DC; $382B AUM 2023; co-founders include David Rubenstein, William Conway, Daniel D'Aniello, and GW Bush (1987-93); ex-leaders: GHW Bush, James Baker, John Major, Fidel Ramos",
+      "primary_source_url": "https://www.carlyle.com/about-carlyle"
+    },
+    {
+      "id": "public_halliburton",
+      "name": "Halliburton",
+      "type": "public_company",
+      "aliases": [
+        "HAL"
+      ],
+      "wikidata_id": "Q857826",
+      "description": "NYSE: HAL; oil services / military contractor; Dick Cheney CEO 1995-2000; major Iraq/Afghanistan DoD contracts; Cheney previously CEO of predecessor Dresser Industries",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000045012&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "person_stephen_schwarzman",
+      "name": "Stephen Schwarzman",
+      "type": "person",
+      "aliases": [
+        "Steve Schwarzman"
+      ],
+      "wikidata_id": "Q3121067",
+      "description": "Co-founder Blackstone Group; 2020-21 Trump Strategic Policy Forum chair; net worth $40B+; major Republican donor; trustee NY Public Library; established Schwarzman Scholars at Tsinghua 2016",
+      "primary_source_url": "https://www.opensecrets.org/donor-lookup/results?name=Stephen+Schwarzman&cycle=&state=&zip=&employ=&cand="
+    },
+    {
+      "id": "public_blackstone",
+      "name": "Blackstone Group",
+      "type": "public_company",
+      "aliases": [
+        "Blackstone",
+        "BX"
+      ],
+      "wikidata_id": "Q1023501",
+      "description": "NYSE: BX; world's largest alternative asset manager, $1.1T AUM 2024; co-founded 1985 by Stephen Schwarzman and Peter Peterson; co-investor with Saudi PIF; major media owner historically (yes-Hilton, Refinitiv, etc.)",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001393818&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "fund_saudi_pif",
+      "name": "Saudi Public Investment Fund",
+      "type": "state_entity",
+      "aliases": [
+        "PIF",
+        "Public Investment Fund"
+      ],
+      "wikidata_id": "Q2105123",
+      "description": "Saudi sovereign wealth fund chaired by Crown Prince MBS; $900B+ AUM 2023; co-investor with Blackstone, KKR, Carlyle; 5% Disney shareholder 2022-23 (gone)",
+      "primary_source_url": "https://www.pif.gov.sa/en/our-investments/"
+    },
+    {
+      "id": "foundation_carnegie",
+      "name": "Carnegie Corporation of New York",
+      "type": "foundation",
+      "aliases": [
+        "Carnegie Corp"
+      ],
+      "wikidata_id": "Q1572444",
+      "description": "Private foundation founded 1911 by Andrew Carnegie; focuses on education, democracy, international peace; $4B+ endowment; major journalism funder; Vartan Gregorian president 1997-2021",
+      "primary_source_url": "https://www.carnegie.org/who-we-are/"
+    },
+    {
+      "id": "foundation_ford",
+      "name": "Ford Foundation",
+      "type": "foundation",
+      "aliases": [
+        "Ford Foundation Inc."
+      ],
+      "wikidata_id": "Q543805",
+      "description": "Private foundation founded 1936 by Edsel and Henry Ford; $16B+ endowment; one of largest US foundations; major journalism, education, civil rights funder",
+      "primary_source_url": "https://www.fordfoundation.org/about/"
+    },
+    {
+      "id": "foundation_rockefeller",
+      "name": "Rockefeller Foundation",
+      "type": "foundation",
+      "aliases": [
+        "RF"
+      ],
+      "wikidata_id": "Q1261064",
+      "description": "Private foundation founded 1913 by John D. Rockefeller; $6B+ endowment; co-founded Council on Foreign Relations 1921, Trilateral Commission 1973, Council of the Americas 1965",
+      "primary_source_url": "https://www.rockefellerfoundation.org/about-us/"
+    },
+    {
+      "id": "foundation_rockefeller_brothers",
+      "name": "Rockefeller Brothers Fund",
+      "type": "foundation",
+      "aliases": [
+        "RBF"
+      ],
+      "wikidata_id": "Q7353217",
+      "description": "Private foundation founded 1940 by five sons of John D. Rockefeller Jr.; $1.2B+ endowment; sustainable development, peacebuilding, education",
+      "primary_source_url": "https://www.rbf.org/about"
+    },
+    {
+      "id": "foundation_knight",
+      "name": "John S. and James L. Knight Foundation",
+      "type": "foundation",
+      "aliases": [
+        "Knight Foundation",
+        "Knight"
+      ],
+      "wikidata_id": "Q6264463",
+      "description": "Private foundation; $3B+ endowment; founded 1950 by the Knight newspaper family (Knight Ridder, Akron Beacon Journal); major journalism funder; Nieman Fellowships, Nieman Lab, First Draft/Information Futures Lab",
+      "primary_source_url": "https://knightfoundation.org/about/"
+    },
+    {
+      "id": "foundation_hewlett",
+      "name": "William and Flora Hewlett Foundation",
+      "type": "foundation",
+      "aliases": [
+        "Hewlett Foundation"
+      ],
+      "wikidata_id": "Q2073044",
+      "description": "Private foundation founded 1966 by HP co-founder William Hewlett; $11B+ endowment; major journalism, education, environment, climate funder; founding donor of ClimateWorks",
+      "primary_source_url": "https://hewlett.org/about-us/"
+    },
+    {
+      "id": "foundation_mellon",
+      "name": "Andrew W. Mellon Foundation",
+      "type": "foundation",
+      "aliases": [
+        "Mellon Foundation"
+      ],
+      "wikidata_id": "Q451886",
+      "description": "Private foundation founded 1969; $8B+ endowment; descendant of Andrew Mellon (US Treasury Sec 1921-32, founded 1913); humanities, arts, higher ed, conservation; administers National Digital Platform",
+      "primary_source_url": "https://mellon.org/about/"
+    },
+    {
+      "id": "foundation_packard",
+      "name": "David and Lucile Packard Foundation",
+      "type": "foundation",
+      "aliases": [
+        "Packard Foundation"
+      ],
+      "wikidata_id": "Q2068964",
+      "description": "Private foundation founded 1964 by HP co-founder David Packard; $10B+ endowment; focus on climate, ocean conservation, childrens health, science",
+      "primary_source_url": "https://www.packard.org/about-us/"
+    },
+    {
+      "id": "foundation_tides",
+      "name": "Tides Foundation",
+      "type": "foundation",
+      "aliases": [
+        "Tides",
+        "Tides Center"
+      ],
+      "wikidata_id": "Q7801011",
+      "description": "501(c)(3) public charity founded 1976 by Drummond Pike; major progressive pass-through / donor-advised fund; $2B+ annual grants; 2,500+ partner orgs",
+      "primary_source_url": "https://www.tides.org/about/"
+    },
+    {
+      "id": "foundation_donors_trust",
+      "name": "Donors Trust",
+      "type": "foundation",
+      "aliases": [
+        "Donors Trust",
+        "The Donors Trust"
+      ],
+      "wikidata_id": "Q5296270",
+      "description": "Alexandria VA conservative donor-advised fund; founded 1999; $400M+ in donor-advised funds; major pass-through for climate-denial and free-market network (e.g., Cato, Reason, Heartland, CEI)",
+      "primary_source_url": "https://www.donorstrust.org/about/"
+    },
+    {
+      "id": "investment_vanguard",
+      "name": "Vanguard Group",
+      "type": "investment_fund",
+      "aliases": [
+        "Vanguard",
+        "Vanguard 500"
+      ],
+      "wikidata_id": "Q913587",
+      "description": "Mutual fund company founded 1975 by Jack Bogle; $7T+ AUM (2023); structure: owned by its US-domiciled funds, no external shareholders; largest passive holder of media companies (Comcast, News Corp, Disney, Paramount, Fox pre-merger)",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000102909&type=13F&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "investment_blackrock",
+      "name": "BlackRock",
+      "type": "investment_fund",
+      "aliases": [
+        "BLK",
+        "BlackRock Inc."
+      ],
+      "wikidata_id": "Q2004640",
+      "description": "NYSE: BLK; world's largest asset manager; $10T+ AUM (2024); founded 1988 by Larry Fink; major passive holder; advisory to Saudi PIF (rec. 2008), Bank of Canada, ECB, others",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001364742&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "investment_state_street",
+      "name": "State Street",
+      "type": "investment_fund",
+      "aliases": [
+        "STT",
+        "State Street Corp"
+      ],
+      "wikidata_id": "Q2211389",
+      "description": "NYSE: STT; custodian bank / asset manager; $3.5T+ AUM; co-holder of US large-caps; part of the 'Big Three' passive ownership",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093751&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "investment_fidelity",
+      "name": "Fidelity Investments",
+      "type": "investment_fund",
+      "aliases": [
+        "Fidelity",
+        "FMR LLC"
+      ],
+      "wikidata_id": "Q325056",
+      "description": "Private asset manager founded 1946 by Edward C. Johnson II; $4.5T+ AUM; owned by Johnson family (Abigail Johnson chair); major media holdings including 11% of Twitter pre-Musk",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000315066&type=13F&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "investment_t_rowe",
+      "name": "T. Rowe Price",
+      "type": "investment_fund",
+      "aliases": [
+        "TROW"
+      ],
+      "wikidata_id": "Q766395",
+      "description": "NASDAQ: TROW; asset manager founded 1937 by Robert Sharples; $1.4T AUM; mutual fund/retirement focus; major passive holder of media companies",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001113169&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "public_comcast",
+      "name": "Comcast Corporation",
+      "type": "public_company",
+      "aliases": [
+        "CMCSA",
+        "NBCUniversal",
+        "Comcast NBCUniversal"
+      ],
+      "wikidata_id": "Q5345165",
+      "description": "NASDAQ: CMCSA; largest US cable / broadband / media conglomerate; owns NBC, MSNBC, CNBC, Telemundo, Universal Pictures, Sky (UK), DreamWorks, Peacock; founded 1963 by Ralph Roberts; CEO Brian Roberts",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001166691&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "public_wbd",
+      "name": "Warner Bros. Discovery",
+      "type": "public_company",
+      "aliases": [
+        "WBD",
+        "WarnerMedia",
+        "Discovery Inc"
+      ],
+      "wikidata_id": "Q860042",
+      "description": "NASDAQ: WBD; formed April 2022 merger of WarnerMedia (AT&T) + Discovery Inc; owns CNN, HBO, Warner Bros., DC Comics, Turner Broadcasting, Discovery Channel, TLC; CEO David Zaslav",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001437107&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "public_disney",
+      "name": "The Walt Disney Company",
+      "type": "public_company",
+      "aliases": [
+        "DIS",
+        "Disney",
+        "Walt Disney Co."
+      ],
+      "wikidata_id": "Q7414",
+      "description": "NYSE: DIS; mass media conglomerate; owns ABC, Disney+, ESPN, Hulu (majority, fully owned 2024), 21st Century Fox assets (acquired 2019); CEO Bob Iger; founded 1923",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "public_paramount",
+      "name": "Paramount Global",
+      "type": "public_company",
+      "aliases": [
+        "PARA",
+        "Paramount",
+        "ViacomCBS"
+      ],
+      "wikidata_id": "Q1898471",
+      "description": "NASDAQ: PARA; merged Viacom + CBS 2019; owns CBS, MTV, Nickelodeon, Paramount+, Showtime, Simon & Schuster (sold 2023); controlled by Shari Redstone / National Amusements via dual-class shares; deal pending sale to Skydance Media 2024-25",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000813828&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "public_national_amusements",
+      "name": "National Amusements",
+      "type": "holding_company",
+      "aliases": [
+        "NAI"
+      ],
+      "wikidata_id": "Q6978012",
+      "description": "Private holding co controlled by Redstone family; owns ~77% Paramount voting shares; founded 1936 by Michael Redstone; Sumner Redstone controlled until 2020",
+      "primary_source_url": "https://www.national-amusements.com/our-company"
+    },
+    {
+      "id": "public_gannett",
+      "name": "Gannett",
+      "type": "public_company",
+      "aliases": [
+        "GCI",
+        "Gannett Co. Inc.",
+        "USA Today owner"
+      ],
+      "wikidata_id": "Q1525895",
+      "description": "NYSE: GCI; largest US newspaper publisher; owns USA Today + 200+ daily papers; emerged from 2015 spinoff of Tegna / 2019 merger with GateHouse Media; backed by PE (D3, Fortress, etc.)",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001579684&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "private_alden_global",
+      "name": "Alden Global Capital",
+      "type": "investment_fund",
+      "aliases": [
+        "Alden",
+        "Alden Global"
+      ],
+      "wikidata_id": "Q110998168",
+      "description": "NY-based hedge fund / vulture PE founded 2007; partner Heath Freeman; largest newspaper chain owner via Tribune Publishing (now Alden); notorious for cost-cutting / 'zombie papers'",
+      "primary_source_url": "https://www.aldenglobal.com/"
+    },
+    {
+      "id": "public_tribune",
+      "name": "Tribune Publishing",
+      "type": "public_company",
+      "aliases": [
+        "Tribune",
+        "TribPub"
+      ],
+      "wikidata_id": "Q2435467",
+      "description": "Traded / private after Alden takeover 2021; renamed from Tribune Media after 2014 spinoff; now Alden majority owner; papers include Chicago Tribune, NY Daily News, Baltimore Sun, Hartford Courant, Orlando Sentinel, Boston Herald, Daily Press",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001595131&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "public_att",
+      "name": "AT&T",
+      "type": "public_company",
+      "aliases": [
+        "T",
+        "AT&T Inc."
+      ],
+      "wikidata_id": "Q35476",
+      "description": "NYSE: T; spun off WarnerMedia April 2022 to merge with Discovery (becoming WBD); retained minority stake; remains largest US telco",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732717&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "trust_cpb",
+      "name": "Corporation for Public Broadcasting",
+      "type": "trust",
+      "aliases": [
+        "CPB"
+      ],
+      "wikidata_id": "Q1118589",
+      "description": "DC nonprofit created by 1967 Public Broadcasting Act; receives federal appropriation; distributes to NPR (~$80M/yr), PBS (~$155M/yr); board appointed by President, confirmed by Senate",
+      "primary_source_url": "https://www.cpb.org/aboutcpb"
+    },
+    {
+      "id": "nonprofit_npr",
+      "name": "National Public Radio",
+      "type": "nonprofit",
+      "aliases": [
+        "NPR"
+      ],
+      "wikidata_id": "Q132933",
+      "description": "501(c)(3) founded 1970; 1000+ member stations; partial federal funding via CPB plus corporate sponsors and member-station dues",
+      "primary_source_url": "https://www.npr.org/about"
+    },
+    {
+      "id": "nonprofit_pbs",
+      "name": "Public Broadcasting Service",
+      "type": "nonprofit",
+      "aliases": [
+        "PBS"
+      ],
+      "wikidata_id": "Q215616",
+      "description": "501(c)(3) founded 1969; 350+ member stations; partial federal funding via CPB; shows include PBS NewsHour, Frontline, NOVA",
+      "primary_source_url": "https://www.pbs.org/about/"
+    },
+    {
+      "id": "state_sasac",
+      "name": "SASAC (China State-owned Assets Supervision and Administration Commission)",
+      "type": "state_entity",
+      "aliases": [
+        "State-owned Assets Supervision and Administration Commission of the State Council",
+        "SASAC PRC"
+      ],
+      "wikidata_id": "Q838574",
+      "description": "PRC cabinet-level commission; oversees 90+ central SOEs including CCTV/CGTN, Xinhua, People's Daily, China Global Television Network; founded 2003",
+      "primary_source_url": "http://www.sasac.gov.cn/n2588035/n2641579/n2641645/index.html"
+    },
+    {
+      "id": "state_cgtn",
+      "name": "China Global Television Network",
+      "type": "state_entity",
+      "aliases": [
+        "CGTN",
+        "CCTV-9",
+        "CCTV International"
+      ],
+      "wikidata_id": "Q1067917",
+      "description": "PRC international English-language broadcaster; subsidiary of China Media Group / CCTV; FARA-registered foreign agent in US 2018",
+      "primary_source_url": "https://www.cgtn.com/"
+    },
+    {
+      "id": "state_rt",
+      "name": "RT (Russia Today)",
+      "type": "state_entity",
+      "aliases": [
+        "RT",
+        "Russia Today",
+        "Rossiya Segodnya"
+      ],
+      "wikidata_id": "Q124236",
+      "description": "Russian state-funded international TV network; financed by Russian federal budget since 2005; FARA-registered foreign agent in US 2017; headed by Dmitry Kiselev",
+      "primary_source_url": "https://www.rt.com/about-rt/"
+    },
+    {
+      "id": "person_dmitry_kiselev",
+      "name": "Dmitry Kiselev",
+      "type": "person",
+      "aliases": [
+        "Dmitry Konstantinovich Kiselev"
+      ],
+      "wikidata_id": "Q2348586",
+      "description": "Russian journalist / news anchor; head of Rossiya Segodnya news agency (which owns RT); sanctioned by EU March 2014",
+      "primary_source_url": "https://www.opensanctions.org/entities/Q2348586/"
+    },
+    {
+      "id": "state_irib",
+      "name": "Islamic Republic of Iran Broadcasting",
+      "type": "state_entity",
+      "aliases": [
+        "IRIB",
+        "IRIB World Service",
+        "Press TV parent"
+      ],
+      "wikidata_id": "Q2626017",
+      "description": "Iran state-run national broadcaster; controls Press TV, IRNA, Fars News, Tasnim, Al-Alam; founded 1966; budgeted by Iranian government",
+      "primary_source_url": "https://iribnews.ir/en/about"
+    },
+    {
+      "id": "state_venezuela",
+      "name": "Venezuelan State Media (teleSUR / VTV)",
+      "type": "state_entity",
+      "aliases": [
+        "teleSUR",
+        "VTV",
+        "Venezolana de Televisión"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "teleSUR = multi-state Latin American broadcaster (2005; funded by Venezuela 51%, Argentina, Cuba, Bolivia, Ecuador, Nicaragua, Uruguay); VTV = Venezuelan state channel",
+      "primary_source_url": "https://www.telesurtv.net/quienes-somos.html"
+    },
+    {
+      "id": "nonprofit_propublica",
+      "name": "ProPublica",
+      "type": "nonprofit",
+      "aliases": [
+        "ProPublica Inc."
+      ],
+      "wikidata_id": "Q4457019",
+      "description": "Nonprofit investigative newsroom founded 2007 by Herbert and Marion Sandler; Pulitzer Prize winner; major funders include OSF, Knight, Ford, Sandler Foundation; free to republish",
+      "primary_source_url": "https://www.propublica.org/about"
+    },
+    {
+      "id": "foundation_sandler",
+      "name": "Sandler Foundation",
+      "type": "foundation",
+      "aliases": [
+        "Sandler Family Foundation"
+      ],
+      "wikidata_id": "Q7414806",
+      "description": "Private foundation of Herb and Marion Sandler; founded ProPublica 2007; major Democratic donor",
+      "primary_source_url": "https://www.sandlerfoundation.org/"
+    },
+    {
+      "id": "public_nyt",
+      "name": "The New York Times Company",
+      "type": "public_company",
+      "aliases": [
+        "NYT",
+        "The New York Times"
+      ],
+      "wikidata_id": "Q192456",
+      "description": "NYSE: NYT; Class B super-voting shares controlled by Sulzberger family (8.7% economic but 70%+ voting); publishes The New York Times, NYT Cooking, Wirecutter, The Athletic; founded 1851",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000071691&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "private_nash",
+      "name": "Nash Holdings (Washington Post)",
+      "type": "holding_company",
+      "aliases": [
+        "Jeff Bezos Post Co",
+        "Bezos Holdings WaPo"
+      ],
+      "wikidata_id": "Q3580493",
+      "description": "Private holding co owned by Jeff Bezos (Amazon); sole owner of Washington Post since Oct 2013 ($250M); Bezos also owns Blue Origin, Amazon (AMZN) ~9% pre-2021 now ~14%",
+      "primary_source_url": "https://www.washingtonpost.com/discussions/2018/02/01/jeff-bezos-and-the-washington-post/"
+    },
+    {
+      "id": "public_advance",
+      "name": "Advance Publications",
+      "type": "private_company",
+      "aliases": [
+        "Advance",
+        "Advance Publications Inc.",
+        "Newhouse"
+      ],
+      "wikidata_id": "Q4686789",
+      "description": "Private media conglomerate; owns Condé Nast (Vogue, Vanity Fair, Wired, New Yorker, Ars Technica); 130+ daily newspapers; controlled by Newhouse family (S.I. Newhouse Jr., Donald Newhouse); bought Reddit in 2024",
+      "primary_source_url": "https://www.advance.net/our-properties"
+    },
+    {
+      "id": "private_hearst",
+      "name": "Hearst Communications",
+      "type": "private_company",
+      "aliases": [
+        "Hearst",
+        "The Hearst Corporation"
+      ],
+      "wikidata_id": "Q1618512",
+      "description": "Private mass media conglomerate; founded 1887 by William Randolph Hearst; owned by Hearst family (6th-7th generation) via non-voting/Class A; 30+ US newspapers; magazines (Esquire, Cosmopolitan); majority TV stations",
+      "primary_source_url": "https://www.hearst.com/about"
+    },
+    {
+      "id": "person_robert_mercer",
+      "name": "Robert Mercer",
+      "type": "person",
+      "aliases": [
+        "Robert Leroy Mercer"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Hedge fund manager; co-CEO Renaissance Technologies until 2017; major Republican donor; $10M+ to Breitbart; $1.4M to Trump's campaign",
+      "primary_source_url": "https://www.opensecrets.org/donor-lookup/results?name=Robert+Mercer&cycle=&state=&zip=&employ=&cand="
+    },
+    {
+      "id": "private_21cf",
+      "name": "21st Century Fox (pre-2019)",
+      "type": "private_company",
+      "aliases": [
+        "21CF",
+        "21st Century Fox Inc."
+      ],
+      "wikidata_id": "Q16974614",
+      "description": "Murdoch-controlled media co until Dec 2017 sale of entertainment assets to Disney ($71.3B); remaining renamed Fox Corporation; included 20th Century Fox, FX, National Geographic, Star India",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001564708&type=&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "public_al_jazeera",
+      "name": "Al Jazeera Media Network",
+      "type": "state_entity",
+      "aliases": [
+        "AJM",
+        "Al Jazeera"
+      ],
+      "wikidata_id": "Q369040",
+      "description": "Qatar-based; state-funded by Emir of Qatar / Qatar Foundation; founded 1996",
+      "primary_source_url": "https://www.aljazeera.net/about-us"
+    },
+    {
+      "id": "public_haaretz",
+      "name": "Haaretz",
+      "type": "private_company",
+      "aliases": [
+        "Haaretz Daily"
+      ],
+      "wikidata_id": "Q189092",
+      "description": "Israeli daily; owned by Schocken family + Lehmann group; left-leaning",
+      "primary_source_url": "https://www.haaretz.com/contact-us"
+    },
+    {
+      "id": "public_jpost",
+      "name": "Jerusalem Post",
+      "type": "private_company",
+      "aliases": [
+        "JPost"
+      ],
+      "wikidata_id": "Q2030908",
+      "description": "Israeli daily; founded 1932; owned by The Mirkaee Tikshoret Network (Idit Ariel) since 2004",
+      "primary_source_url": "https://www.jpost.com/about"
+    },
+    {
+      "id": "public_tass",
+      "name": "TASS",
+      "type": "state_entity",
+      "aliases": [
+        "ITAR-TASS"
+      ],
+      "wikidata_id": "Q48784",
+      "description": "Russian state news agency; founded 1904; one of largest world agencies",
+      "primary_source_url": "https://tass.com/about"
+    },
+    {
+      "id": "public_sputnik",
+      "name": "Sputnik",
+      "type": "state_entity",
+      "aliases": [
+        "Sputnik News"
+      ],
+      "wikidata_id": "Q17568947",
+      "description": "Russian state-funded international news agency; launched Nov 2014 by Rossiya Segodnya",
+      "primary_source_url": "https://sputnikglobe.com/about/"
+    },
+    {
+      "id": "public_press_tv",
+      "name": "Press TV",
+      "type": "state_entity",
+      "aliases": [
+        "PressTV"
+      ],
+      "wikidata_id": "Q2100506",
+      "description": "Iranian state-funded English TV; subsidiary of IRIB; launched 2007",
+      "primary_source_url": "https://www.presstv.ir/about"
+    },
+    {
+      "id": "public_irna",
+      "name": "IRNA",
+      "type": "state_entity",
+      "aliases": [
+        "Islamic Republic News Agency"
+      ],
+      "wikidata_id": "Q1695547",
+      "description": "Iranian state news agency; founded 1934; government-controlled",
+      "primary_source_url": "https://www.irna.ir/about"
+    },
+    {
+      "id": "state_xinhua",
+      "name": "Xinhua News Agency",
+      "type": "state_entity",
+      "aliases": [
+        "NCNA",
+        "New China News Agency"
+      ],
+      "wikidata_id": "Q35885",
+      "description": "Official PRC state news agency; founded 1931; world's largest by staff",
+      "primary_source_url": "https://english.news.cn/202308/31/c_136881.htm"
+    },
+    {
+      "id": "public_global_times",
+      "name": "Global Times",
+      "type": "state_entity",
+      "aliases": [
+        "GT"
+      ],
+      "wikidata_id": "Q6995529",
+      "description": "Chinese English-language daily; under People's Daily Group; nationalist editorial",
+      "primary_source_url": "https://www.globaltimes.cn/about-us.html"
+    },
+    {
+      "id": "public_teleSUR_global",
+      "name": "teleSUR (multi-state)",
+      "type": "state_entity",
+      "aliases": [
+        "teleSUR"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Latin American multi-state funded TV; founded 2005 by Chavez + Kirchner; 51% Venezuela",
+      "primary_source_url": "https://www.telesurtv.net/quienes-somos.html"
+    },
+    {
+      "id": "public_granma",
+      "name": "Granma",
+      "type": "state_entity",
+      "aliases": [
+        "Diario Granma"
+      ],
+      "wikidata_id": "Q1130264",
+      "description": "Official newspaper Communist Party Cuba; founded 1965",
+      "primary_source_url": "https://en.granma.cu/acerca-de"
+    },
+    {
+      "id": "public_toronto_star",
+      "name": "Toronto Star",
+      "type": "private_company",
+      "aliases": [
+        "The Toronto Star"
+      ],
+      "wikidata_id": "Q2016267",
+      "description": "Canadian daily; owned by Nordstar Capital (Bitove family) since 2020",
+      "primary_source_url": "https://www.thestar.com/about"
+    },
+    {
+      "id": "public_globe_and_mail",
+      "name": "The Globe and Mail",
+      "type": "private_company",
+      "aliases": [
+        "G&M"
+      ],
+      "wikidata_id": "Q2016267",
+      "description": "Canadian daily; owned by The Globe and Mail Inc. (Woodbridge Co - Thomson family)",
+      "primary_source_url": "https://www.theglobeandmail.com/about-us/"
+    },
+    {
+      "id": "public_smh",
+      "name": "Sydney Morning Herald",
+      "type": "private_company",
+      "aliases": [
+        "SMH"
+      ],
+      "wikidata_id": "Q3026536",
+      "description": "Australian daily; owned by Nine Entertainment (since 2018 Fairfax merger); est 1831",
+      "primary_source_url": "https://www.smh.com.au/about-us"
+    },
+    {
+      "id": "public_times_india",
+      "name": "Times of India",
+      "type": "private_company",
+      "aliases": [
+        "TOI"
+      ],
+      "wikidata_id": "Q1638721",
+      "description": "Indian English daily; owned by Bennett, Coleman & Co. (Jain family)",
+      "primary_source_url": "https://timesofindia.indiatimes.com/aboutus.cms"
+    },
+    {
+      "id": "public_hindustan_times",
+      "name": "Hindustan Times",
+      "type": "private_company",
+      "aliases": [
+        "HT"
+      ],
+      "wikidata_id": "Q1768721",
+      "description": "Indian English daily; owned by HT Media (Birla family); founded 1924",
+      "primary_source_url": "https://www.hindustantimes.com/about-us"
+    },
+    {
+      "id": "public_daily_sabah",
+      "name": "Daily Sabah",
+      "type": "private_company",
+      "aliases": [
+        "DailySabah"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Turkish English daily; pro-government; Kalyon Group (pro-Erdogan) since 2018",
+      "primary_source_url": "https://www.dailysabah.com/about-daily-sabah"
+    },
+    {
+      "id": "public_aa",
+      "name": "Anadolu Agency",
+      "type": "state_entity",
+      "aliases": [
+        "AA"
+      ],
+      "wikidata_id": "Q159044",
+      "description": "Turkish state-run news agency; founded 1920; second-largest wire service after Reuters",
+      "primary_source_url": "https://www.aa.com.tr/en/about-us"
+    },
+    {
+      "id": "public_rte",
+      "name": "RTÉ",
+      "type": "state_entity",
+      "aliases": [
+        "Raidió Teilifís Éireann"
+      ],
+      "wikidata_id": "Q214655",
+      "description": "Irish state broadcaster; funded by TV license + ad revenue",
+      "primary_source_url": "https://about.rte.ie/"
+    },
+    {
+      "id": "public_yomiuri",
+      "name": "Yomiuri Shimbun",
+      "type": "private_company",
+      "aliases": [
+        "Yomiuri"
+      ],
+      "wikidata_id": "Q783260",
+      "description": "Japanese daily; largest circulation in world; owned by Yomiuri Group; right-leaning",
+      "primary_source_url": "https://www.yomiuri.co.jp/about-us/"
+    },
+    {
+      "id": "public_asahi",
+      "name": "Asahi Shimbun",
+      "type": "private_company",
+      "aliases": [
+        "Asahi"
+      ],
+      "wikidata_id": "Q1136955",
+      "description": "Japanese daily; 2nd-largest; left-leaning; owned by Asahi Shimbun Company; 1879",
+      "primary_source_url": "https://www.asahi.com/corporate/about/"
+    },
+    {
+      "id": "public_kyodo",
+      "name": "Kyodo News",
+      "type": "private_company",
+      "aliases": [
+        "Kyodo"
+      ],
+      "wikidata_id": "Q2455562",
+      "description": "Japanese cooperative news agency; owned by 50+ member orgs",
+      "primary_source_url": "https://english.kyodonews.net/about/"
+    },
+    {
+      "id": "public_yna",
+      "name": "Yonhap News Agency",
+      "type": "state_entity",
+      "aliases": [
+        "Yonhap",
+        "YNA"
+      ],
+      "wikidata_id": "Q1825323",
+      "description": "South Korean state-funded news agency; founded 1980",
+      "primary_source_url": "https://en.yna.co.kr/about"
+    },
+    {
+      "id": "public_twitter_x",
+      "name": "X Corp (Twitter)",
+      "type": "private_company",
+      "aliases": [
+        "X",
+        "X.com"
+      ],
+      "wikidata_id": "Q918522",
+      "description": "Private social media; Elon Musk acquired Oct 2022 ($44B); renamed X Corp 2023",
+      "primary_source_url": "https://x.com/about"
+    },
+    {
+      "id": "public_facebook_meta",
+      "name": "Meta Platforms",
+      "type": "public_company",
+      "aliases": [
+        "Facebook",
+        "Meta",
+        "Instagram"
+      ],
+      "wikidata_id": "Q380",
+      "description": "NASDAQ: META; parent of FB, IG, WhatsApp, Threads; founded 2004 by Mark Zuckerberg",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "private_mcclatchy",
+      "name": "McClatchy",
+      "type": "private_company",
+      "aliases": [
+        "McClatchy Co."
+      ],
+      "wikidata_id": "Q1600251",
+      "description": "Now owned by Chatham Asset Management; emerged from 2020 bankruptcy; 30 daily papers",
+      "primary_source_url": "https://www.mcclatchy.com/about"
+    },
+    {
+      "id": "public_lee",
+      "name": "Lee Enterprises",
+      "type": "public_company",
+      "aliases": [
+        "Lee"
+      ],
+      "wikidata_id": "Q6515299",
+      "description": "NASDAQ: LEE; newspapers; acquired BH Media Group 2020 from Berkshire Hathaway (Buffett)",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000057211&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "private_atlantic",
+      "name": "The Atlantic (Emerson Collective)",
+      "type": "private_company",
+      "aliases": [
+        "Atlantic Media"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Emerson Collective (Laurene Powell Jobs) majority owner since 2017; full owner 2022",
+      "primary_source_url": "https://www.theatlantic.com/about/"
+    },
+    {
+      "id": "public_politico",
+      "name": "Politico (Axel Springer)",
+      "type": "private_company",
+      "aliases": [
+        "Politico"
+      ],
+      "wikidata_id": "Q5413",
+      "description": "Axel Springer (German) bought Politico 2021; Politico Europe / Playbook brand",
+      "primary_source_url": "https://www.politico.com/about"
+    },
+    {
+      "id": "public_axios",
+      "name": "Axios (Cox Enterprises)",
+      "type": "private_company",
+      "aliases": [
+        "Axios"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Cox Enterprises (private) bought Axios 2024 $525M; previously Emerson/Lerer Hippeau/Schwarzman",
+      "primary_source_url": "https://www.axiosmedia.com/about"
+    },
+    {
+      "id": "private_iac",
+      "name": "IAC / Daily Beast",
+      "type": "private_company",
+      "aliases": [
+        "IAC Inc",
+        "Barry Diller"
+      ],
+      "wikidata_id": "Q931715",
+      "description": "IAC (NASDAQ: IAC) = Barry Diller; Daily Beast subsidiary; Newsweek co-located",
+      "primary_source_url": "https://www.iac.com/companies"
+    },
+    {
+      "id": "private_firstlook",
+      "name": "First Look Media",
+      "type": "private_company",
+      "aliases": [
+        "First Look Media"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Pierre Omidyar (eBay founder) founded 2013; nonprofit owner of The Intercept",
+      "primary_source_url": "https://firstlook.media/about"
+    },
+    {
+      "id": "private_vice",
+      "name": "Vice Media",
+      "type": "private_company",
+      "aliases": [
+        "Vice",
+        "Vice Media LLC"
+      ],
+      "wikidata_id": "Q2008995",
+      "description": "Private; Fortress Investment + Soros Fund Management led $450M debt-to-equity rescue 2023",
+      "primary_source_url": "https://www.vice.com/en_us/about"
+    },
+    {
+      "id": "private_voxmedia",
+      "name": "Vox Media",
+      "type": "private_company",
+      "aliases": [
+        "Vox Media Inc"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Private digital media; NBCUniversal/Comcast owns 14% ($200M 2015); owns Vox, The Verge, SB Nation",
+      "primary_source_url": "https://www.voxmedia.com/about"
+    },
+    {
+      "id": "private_gannett2",
+      "name": "Gannett",
+      "type": "public_company",
+      "aliases": [
+        "GCI"
+      ],
+      "wikidata_id": "Q1525895",
+      "description": "NYSE: GCI; merged 2019 with GateHouse/MNG to become largest US newspaper publisher",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001579684&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "public_politico_axios_na",
+      "name": "Axel Springer",
+      "type": "private_company",
+      "aliases": [
+        "Axel Springer SE"
+      ],
+      "wikidata_id": "Q571707",
+      "description": "German media; private; owned by Körber family + own investors; CEO Mathias Döpfner",
+      "primary_source_url": "https://www.axelspringer.com/en/companies/axelspringer-se"
+    },
+    {
+      "id": "public_holtzbrinck",
+      "name": "Verlagsgruppe Georg von Holtzbrinck",
+      "type": "private_company",
+      "aliases": [
+        "Holtzbrinck"
+      ],
+      "wikidata_id": "Q1316051",
+      "description": "German media holding; owns Die Zeit, Handelsblatt, SZ; Holtzbrinck family",
+      "primary_source_url": "https://www.holtzbrinck.com/en/"
+    },
+    {
+      "id": "public_dpg_media",
+      "name": "DPG Media",
+      "type": "private_company",
+      "aliases": [
+        "DPG",
+        "De Persgroep"
+      ],
+      "wikidata_id": "Q1848607",
+      "description": "Belgian/Dutch media; owns Volkskrant, Trouw, AD, De Telegraaf; family-owned",
+      "primary_source_url": "https://www.dpgmediagroup.com/en"
+    },
+    {
+      "id": "public_mediahuis",
+      "name": "Mediahuis",
+      "type": "private_company",
+      "aliases": [
+        "Mediahuis NV"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Belgian media; owns NRC (Netherlands), De Standaard (Belgium), etc.",
+      "primary_source_url": "https://www.mediahuis.be"
+    },
+    {
+      "id": "public_gedi",
+      "name": "GEDI (Gruppo Editoriale L'Espresso)",
+      "type": "private_company",
+      "aliases": [
+        "GEDI",
+        "L'Espresso"
+      ],
+      "wikidata_id": "Q3774565",
+      "description": "Italian publisher; owns La Repubblica, L'Espresso, Il Secolo XIX; main shareholder EXOR (Agnelli)",
+      "primary_source_url": "https://www.gedispa.it"
+    },
+    {
+      "id": "public_rcs",
+      "name": "RCS MediaGroup",
+      "type": "private_company",
+      "aliases": [
+        "RCS"
+      ],
+      "wikidata_id": "Q2687910",
+      "description": "Italian publisher; owns Corriere della Sera, Gazzetta dello Sport; main shareholder Cairo Communication + Diego Della Valle",
+      "primary_source_url": "https://www.rcsmediagroup.it"
+    },
+    {
+      "id": "public_prisa",
+      "name": "PRISA",
+      "type": "private_company",
+      "aliases": [
+        "Promotora de Informaciones"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Spanish publisher; owns El País, Cadena SER; founder Jesus de Polanco",
+      "primary_source_url": "https://www.prisa.com"
+    },
+    {
+      "id": "public_unidad",
+      "name": "Unidad Editorial",
+      "type": "private_company",
+      "aliases": [
+        "Unidad Editorial"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Spanish publisher; owns El Mundo, Marca; subsidiary of Grupo Planeta",
+      "primary_source_url": "https://www.unidadeditorial.es"
+    },
+    {
+      "id": "public_vanguardia",
+      "name": "Grupo Godó",
+      "type": "private_company",
+      "aliases": [
+        "Godó"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Spanish publisher; owns La Vanguardia; Lacalle family",
+      "primary_source_url": "https://www.lavanguardia.com/legal"
+    },
+    {
+      "id": "public_lemonde_group",
+      "name": "Le Monde Libre",
+      "type": "private_company",
+      "aliases": [
+        "Le Monde SA"
+      ],
+      "wikidata_id": "Q3270569",
+      "description": "Société d'Editions du Monde; founders + Nouvelles Editions Indépendantes (2008); Bauer exited 2023",
+      "primary_source_url": "https://www.lemonde.fr/en/about-us/"
+    },
+    {
+      "id": "public_lefigaro",
+      "name": "Le Figaro",
+      "type": "private_company",
+      "aliases": [
+        "Le Figaro SA"
+      ],
+      "wikidata_id": "Q106710",
+      "description": "French daily; owned by Groupe Dassault (Dreyfus family) since 2004; conservative",
+      "primary_source_url": "https://www.lefigaro.fr/plus"
+    },
+    {
+      "id": "private_spiegel",
+      "name": "Spiegel-Verlag",
+      "type": "private_company",
+      "aliases": [
+        "Spiegel"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "German publisher; owns Der Spiegel, manager magazin; owned by employees + Holtzbrinck",
+      "primary_source_url": "https://www.spiegel.de/international/about-us"
+    },
+    {
+      "id": "public_faz",
+      "name": "Frankfurter Allgemeine Zeitung",
+      "type": "private_company",
+      "aliases": [
+        "FAZ",
+        "FAZIT"
+      ],
+      "wikidata_id": "Q1252872",
+      "description": "German daily; Holtzbrinck 65%, FAZIT-Stiftung 31%, Förderverein 4%",
+      "primary_source_url": "https://www.faz.net/aktuell/wirtschaft/faz-net-impressum-11004410.html"
+    },
+    {
+      "id": "private_dmgt",
+      "name": "DMGT",
+      "type": "private_company",
+      "aliases": [
+        "Daily Mail and General Trust"
+      ],
+      "wikidata_id": "Q1091422",
+      "description": "LSE: DMGT; Rothermere family; owns Daily Mail, MailOnline, Metro, I; Hambro family minority",
+      "primary_source_url": "https://www.dmgmedia.co.uk/about-us/"
+    },
+    {
+      "id": "public_nikkei",
+      "name": "Nikkei Inc.",
+      "type": "private_company",
+      "aliases": [
+        "Nikkei"
+      ],
+      "wikidata_id": "Q1044964",
+      "description": "Japanese media; bought Financial Times 2015 $1.3B; owns Nikkei Asian Review",
+      "primary_source_url": "https://www.nikkei.com/about-us/"
+    },
+    {
+      "id": "private_reach",
+      "name": "Reach plc",
+      "type": "public_company",
+      "aliases": [
+        "Reach"
+      ],
+      "wikidata_id": "Q7296493",
+      "description": "LSE: RCH; UK publisher; Mirror, Express, Star; formerly Trinity Mirror",
+      "primary_source_url": "https://www.reachplc.com/about"
+    },
+    {
+      "id": "public_itv",
+      "name": "ITV plc",
+      "type": "public_company",
+      "aliases": [
+        "ITV"
+      ],
+      "wikidata_id": "Q217092",
+      "description": "LSE: ITV; UK free-to-air broadcaster",
+      "primary_source_url": "https://www.itvplc.com/investors"
+    },
+    {
+      "id": "private_les_echos",
+      "name": "Les Echos",
+      "type": "private_company",
+      "aliases": [
+        "Les Echos Le Parisien"
+      ],
+      "wikidata_id": "Q1781979",
+      "description": "French financial daily; owned by LVMH (Bernard Arnault) since 2007",
+      "primary_source_url": "https://www.lesechos.fr/qui-sommes-nous"
+    },
+    {
+      "id": "private_tribune",
+      "name": "Tribune Publishing",
+      "type": "private_company",
+      "aliases": [
+        "Tribune",
+        "TribPub"
+      ],
+      "wikidata_id": "Q2435467",
+      "description": "Private; owned by Alden Global Capital since 2021; 200+ papers; debt to pension funds $170M+",
+      "primary_source_url": "https://www.sec.gov/Archives/edgar/data/1595131/000119312521161431/d38058d8k.htm"
+    },
+    {
+      "id": "private_aoc",
+      "name": "Dallas Morning News / A.H. Belo",
+      "type": "private_company",
+      "aliases": [
+        "AH Belo",
+        "AHC"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "A.H. Belo Corporation (formerly NYSE: AHC); private since 2020",
+      "primary_source_url": "https://www.dallasnews.com/about"
+    },
+    {
+      "id": "private_lenfest",
+      "name": "Lenfest Institute / Philadelphia Inquirer",
+      "type": "nonprofit",
+      "aliases": [
+        "Lenfest"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Lenfest Institute (nonprofit) + H.F. Gerry Lenfest control; inquirer.com",
+      "primary_source_url": "https://www.inquirer.com/about/"
+    },
+    {
+      "id": "private_seattle_times",
+      "name": "Seattle Times",
+      "type": "private_company",
+      "aliases": [
+        "The Seattle Times"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Private; Blethen family since 1896; nonprofit structure for newsroom",
+      "primary_source_url": "https://www.seattletimes.com/about-us/"
+    },
+    {
+      "id": "private_strib",
+      "name": "Minneapolis Star Tribune",
+      "type": "private_company",
+      "aliases": [
+        "Star Tribune"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Glen Taylor owner since 2014",
+      "primary_source_url": "https://www.startribune.com/about-us/"
+    },
+    {
+      "id": "private_pgh",
+      "name": "Pittsburgh Post-Gazette",
+      "type": "private_company",
+      "aliases": [
+        "Pittsburgh Post-Gazette"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Block family since 2016; private; Pittsburgh nonprofit PG Publishing Co",
+      "primary_source_url": "https://www.post-gazette.com/about"
+    },
+    {
+      "id": "private_tampa",
+      "name": "Tampa Bay Times (Poynter)",
+      "type": "nonprofit",
+      "aliases": [
+        "Tampa Bay Times"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Poynter Institute nonprofit majority owner since 2020",
+      "primary_source_url": "https://www.tampabay.com/about/"
+    },
+    {
+      "id": "private_cst",
+      "name": "Chicago Sun-Times (WBEZ/Chicago Public Media)",
+      "type": "nonprofit",
+      "aliases": [
+        "CST",
+        "Sun-Times"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Chicago Public Media + WBEZ 2022 merger nonprofit; CST merged in",
+      "primary_source_url": "https://chicago.suntimes.com/about"
+    },
+    {
+      "id": "private_globe",
+      "name": "Boston Globe Media",
+      "type": "private_company",
+      "aliases": [
+        "Boston Globe Media Partners"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "John W. Henry II owner since 2013; bought from NYT for $70M",
+      "primary_source_url": "https://www.bostonglobemedia.com/about-us/"
+    },
+    {
+      "id": "private_independent",
+      "name": "Independent Digital News and Media Ltd",
+      "type": "private_company",
+      "aliases": [
+        "Independent"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Russian-British owner Evgeny Lebedev since 2010; former Evening Standard publisher",
+      "primary_source_url": "https://www.independent.co.uk/about-us"
+    },
+    {
+      "id": "public_telegraph",
+      "name": "Telegraph Media Group",
+      "type": "private_company",
+      "aliases": [
+        "Telegraph"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Bought out of bankruptcy by RedBird IMI (Abu Dhabi-backed) 2023",
+      "primary_source_url": "https://www.telegraph.co.uk/about-us/"
+    },
+    {
+      "id": "private_griffin",
+      "name": "Guardian Media Group (Scott Trust)",
+      "type": "private_company",
+      "aliases": [
+        "Scott Trust",
+        "Guardian"
+      ],
+      "wikidata_id": "Q2033589",
+      "description": "Scott Trust Limited; no shareholders; nonprofit ownership; founded 1936 CP Scott",
+      "primary_source_url": "https://www.theguardian.com/about"
+    },
+    {
+      "id": "public_nexstar",
+      "name": "Nexstar Media Group",
+      "type": "public_company",
+      "aliases": [
+        "NXST"
+      ],
+      "wikidata_id": "Q1083061",
+      "description": "NASDAQ: NXST; bought NewsNation 2020, The Hill 2021; largest US TV station owner",
+      "primary_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001142417&type=10-K&dateb=&owner=include&count=40"
+    },
+    {
+      "id": "private_cox_ent",
+      "name": "Cox Enterprises",
+      "type": "private_company",
+      "aliases": [
+        "Cox",
+        "Cox Enterprises Inc."
+      ],
+      "wikidata_id": "Q929940",
+      "description": "Private; family-owned (Cox family); 4th generation; owns Cox Media, Axios (2024), AJC",
+      "primary_source_url": "https://www.coxenterprises.com/about-us/"
+    },
+    {
+      "id": "public_tribune_alt",
+      "name": "Chicago Tribune / Los Angeles Times",
+      "type": "private_company",
+      "aliases": [
+        "Tronc",
+        "Tribune Media"
+      ],
+      "wikidata_id": "Q2082894",
+      "description": "Sold to Nant Capital (Patrick Soon-Shiong) 2018 $500M; Alden partial",
+      "primary_source_url": "https://www.latimes.com/about"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_soros_osf",
+      "from_entity_id": "person_george_soros",
+      "to_entity_id": "foundation_open_society",
+      "instrument": "donation",
+      "amount_usd": 32000000000,
+      "date": "2017-12-31",
+      "source_url": "https://www.opensocietyfoundations.org/newsroom/fact-sheet-open-society-foundations",
+      "source_document": "OSF Fact Sheet",
+      "confidence": "high",
+      "notes": "Sorosa 2017 transfer of $18B to OSF; $32B lifetime foundation corpus"
+    },
+    {
+      "id": "e_soros_sfm",
+      "from_entity_id": "person_george_soros",
+      "to_entity_id": "hedge_soros_fund_mgmt",
+      "instrument": "investment",
+      "amount_usd": null,
+      "date": "1970-01-01",
+      "source_url": "https://www.soros.com/about-soros-fund-management",
+      "source_document": "SFM website",
+      "confidence": "high",
+      "notes": "Founder, sole family office since 1970"
+    },
+    {
+      "id": "e_osf_propublica",
+      "from_entity_id": "foundation_open_society",
+      "to_entity_id": "nonprofit_propublica",
+      "instrument": "grant",
+      "amount_usd": 6000000,
+      "date": "2017-12-31",
+      "source_url": "https://www.propublica.org/about",
+      "source_document": "ProPublica About + OSF grants database",
+      "confidence": "medium",
+      "notes": "OSF as one of 3 largest institutional funders of ProPublica"
+    },
+    {
+      "id": "e_soros_pac",
+      "from_entity_id": "person_george_soros",
+      "to_entity_id": "foundation_open_society",
+      "instrument": "political_action_committee",
+      "amount_usd": 128000000,
+      "date": "2020-12-31",
+      "source_url": "https://www.opensecrets.org/donor-lookup/results?name=George+Soros&cycle=2020",
+      "source_document": "OpenSecrets donor lookup",
+      "confidence": "high",
+      "notes": "Soros #1 individual donor 2020 cycle"
+    },
+    {
+      "id": "e_koch_ki",
+      "from_entity_id": "person_charles_koch",
+      "to_entity_id": "private_koch_industries",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "1967-01-01",
+      "source_url": "https://www.kochinc.com/about/",
+      "source_document": "Koch Inc. About",
+      "confidence": "high",
+      "notes": "Charles Koch and family 84% owners"
+    },
+    {
+      "id": "e_koch_afp",
+      "from_entity_id": "person_charles_koch",
+      "to_entity_id": "pac_americans_for_prosperity",
+      "instrument": "donation",
+      "amount_usd": 40000000,
+      "date": "2012-12-31",
+      "source_url": "https://www.opensecrets.org/orgs/americans-for-prosperity/summary?id=C00481303",
+      "source_document": "OpenSecrets AFP summary",
+      "confidence": "high",
+      "notes": "Co-founder David Koch; AFP spent $400M+ 2012 cycle"
+    },
+    {
+      "id": "e_dkoch_afp",
+      "from_entity_id": "person_david_koch",
+      "to_entity_id": "pac_americans_for_prosperity",
+      "instrument": "donation",
+      "amount_usd": 100000000,
+      "date": "2018-12-31",
+      "source_url": "https://www.opensecrets.org/orgs/americans-for-prosperity/summary?id=C00481303",
+      "source_document": "OpenSecrets AFP",
+      "confidence": "medium",
+      "notes": "AFP funded by both Koch brothers via Stand Together network"
+    },
+    {
+      "id": "e_koch_standtogether",
+      "from_entity_id": "person_charles_koch",
+      "to_entity_id": "foundation_stand_together",
+      "instrument": "donation",
+      "amount_usd": null,
+      "date": "2016-01-01",
+      "source_url": "https://www.standtogether.org/about",
+      "source_document": "Stand Together about",
+      "confidence": "high",
+      "notes": "Founder; 501(c)(3) coordinator of Koch donor network"
+    },
+    {
+      "id": "e_rupert_fox",
+      "from_entity_id": "person_rupert_murdoch",
+      "to_entity_id": "public_fox_corp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2019-03-19",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1754301/000119312519059890/d728894d10k.htm",
+      "source_document": "Fox Corp 10-K 2019",
+      "confidence": "high",
+      "notes": "Murdoch family trust 42.9% voting Class B; chair emeritus"
+    },
+    {
+      "id": "e_lachlan_fox",
+      "from_entity_id": "person_lachlan_murdoch",
+      "to_entity_id": "public_fox_corp",
+      "instrument": "board_seat",
+      "amount_usd": null,
+      "date": "2019-03-19",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1754301/000119312519059890/d728894d10k.htm",
+      "source_document": "Fox Corp 10-K 2019",
+      "confidence": "high",
+      "notes": "Executive chair; son of Rupert"
+    },
+    {
+      "id": "e_rupert_nws",
+      "from_entity_id": "person_rupert_murdoch",
+      "to_entity_id": "public_news_corp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2013-06-28",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1564708/000119312513298161/d644334d10k.htm",
+      "source_document": "News Corp 10-K 2013",
+      "confidence": "high",
+      "notes": "Co-chair; Murdoch family trust 39.4% voting"
+    },
+    {
+      "id": "e_lachlan_nws",
+      "from_entity_id": "person_lachlan_murdoch",
+      "to_entity_id": "public_news_corp",
+      "instrument": "board_seat",
+      "amount_usd": null,
+      "date": "2013-06-28",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1564708/000119312513298161/d644334d10k.htm",
+      "source_document": "News Corp 10-K 2013",
+      "confidence": "high",
+      "notes": "Co-chair"
+    },
+    {
+      "id": "e_bloomberg_lp",
+      "from_entity_id": "person_michael_bloomberg",
+      "to_entity_id": "private_bloomberg_lp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "1981-10-01",
+      "source_url": "https://www.bloomberg.com/company/",
+      "source_document": "Bloomberg Company page",
+      "confidence": "high",
+      "notes": "Founder; 88% owner"
+    },
+    {
+      "id": "e_bloomberg_phil",
+      "from_entity_id": "person_michael_bloomberg",
+      "to_entity_id": "foundation_bloomberg_phil",
+      "instrument": "donation",
+      "amount_usd": 14000000000,
+      "date": "2023-12-31",
+      "source_url": "https://www.bloomberg.org/our-work/",
+      "source_document": "Bloomberg Philanthropies annual report 2023",
+      "confidence": "high",
+      "notes": "$11.5B+ in 2023 alone; #1 individual donor"
+    },
+    {
+      "id": "e_bloomberg_nyc",
+      "from_entity_id": "person_michael_bloomberg",
+      "to_entity_id": "person_michael_bloomberg",
+      "instrument": "political_action_committee",
+      "amount_usd": 1100000000,
+      "date": "2020-12-31",
+      "source_url": "https://www.opensecrets.org/donor-lookup/results?name=Michael+Bloomberg&cycle=2020",
+      "source_document": "OpenSecrets donor 2020",
+      "confidence": "high",
+      "notes": "Self-funded 2020 presidential primary"
+    },
+    {
+      "id": "e_thyssen_ubc",
+      "from_entity_id": "person_fritz_thyssen",
+      "to_entity_id": "llc_union_banking_corp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "1924-01-01",
+      "source_url": "https://www.archives.gov/research/investigations/prescott-bush",
+      "source_document": "NARA Vesting Order 248 / FBI investigation",
+      "confidence": "high",
+      "notes": "Thyssen-controlled; sole US vehicle"
+    },
+    {
+      "id": "e_pbush_ubc",
+      "from_entity_id": "person_prescott_bush",
+      "to_entity_id": "llc_union_banking_corp",
+      "instrument": "board_seat",
+      "amount_usd": null,
+      "date": "1931-01-01",
+      "source_url": "https://www.archives.gov/research/investigations/prescott-bush",
+      "source_document": "NARA Vesting Order 248 / FBI memo",
+      "confidence": "high",
+      "notes": "Director 1931-42; held 1 share; seized under Trading with the Enemy Act 1942"
+    },
+    {
+      "id": "e_ghwb_cia",
+      "from_entity_id": "person_ghw_bush",
+      "to_entity_id": "person_ghw_bush",
+      "instrument": "board_seat",
+      "amount_usd": null,
+      "date": "1976-01-30",
+      "source_url": "https://www.cia.gov/the-cia-legacy/cia-directors/",
+      "source_document": "CIA Directors list",
+      "confidence": "high",
+      "notes": "Director of Central Intelligence 1976-77"
+    },
+    {
+      "id": "e_gwb_harken",
+      "from_entity_id": "person_gw_bush",
+      "to_entity_id": "llc_harken_energy",
+      "instrument": "board_seat",
+      "amount_usd": null,
+      "date": "1986-01-01",
+      "source_url": "https://www.sec.gov/litigation/admin/34-30699.txt",
+      "source_document": "SEC Administrative Proceeding 3-7790 (Bush/Harken)",
+      "confidence": "high",
+      "notes": "Director 1986-90; SEC settled insider trading civil case 1991 $300K"
+    },
+    {
+      "id": "e_gwb_carlyle",
+      "from_entity_id": "person_gw_bush",
+      "to_entity_id": "private_carlyle_group",
+      "instrument": "board_seat",
+      "amount_usd": null,
+      "date": "1987-01-01",
+      "source_url": "https://www.carlyle.com/about-carlyle",
+      "source_document": "Carlyle website",
+      "confidence": "high",
+      "notes": "Co-founder 1987-93 (some sources say consulting advisor 1990-93)"
+    },
+    {
+      "id": "e_ghwb_carlyle",
+      "from_entity_id": "person_ghw_bush",
+      "to_entity_id": "private_carlyle_group",
+      "instrument": "board_seat",
+      "amount_usd": null,
+      "date": "1991-01-01",
+      "source_url": "https://www.carlyle.com/about-carlyle",
+      "source_document": "Carlyle website + 2000 Senate report",
+      "confidence": "high",
+      "notes": "Senior advisor 1991-2003; led Carlyle Asia"
+    },
+    {
+      "id": "e_halliburton_dod",
+      "from_entity_id": "public_halliburton",
+      "to_entity_id": "public_halliburton",
+      "instrument": "consulting",
+      "amount_usd": 39500000000,
+      "date": "2007-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/45012/000004501208000008/hal10k123107.pdf",
+      "source_document": "Halliburton 10-K 2007",
+      "confidence": "high",
+      "notes": "Iraq/Afghanistan DoD contracts; Cheney CEO 1995-2000"
+    },
+    {
+      "id": "e_schwarzman_blackstone",
+      "from_entity_id": "person_stephen_schwarzman",
+      "to_entity_id": "public_blackstone",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "1985-01-01",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1393818/000119312521099997/d164411d10k.htm",
+      "source_document": "Blackstone 10-K 2020",
+      "confidence": "high",
+      "notes": "Co-founder; ~22% economic interest (2020 10-K)"
+    },
+    {
+      "id": "e_schwarzman_trump",
+      "from_entity_id": "person_stephen_schwarzman",
+      "to_entity_id": "person_stephen_schwarzman",
+      "instrument": "political_action_committee",
+      "amount_usd": 35000000,
+      "date": "2020-12-31",
+      "source_url": "https://www.opensecrets.org/donor-lookup/results?name=Stephen+Schwarzman&cycle=2020",
+      "source_document": "OpenSecrets 2020",
+      "confidence": "high",
+      "notes": "Chair Trump Strategic Policy Forum 2017"
+    },
+    {
+      "id": "e_pif_blackstone",
+      "from_entity_id": "fund_saudi_pif",
+      "to_entity_id": "public_blackstone",
+      "instrument": "joint_venture",
+      "amount_usd": 40000000000,
+      "date": "2018-05-20",
+      "source_url": "https://www.blackstone.com/news/press/blackstone-and-saudi-arabias-public-investment-fund-join-forces-to-advance-infrastructure-investment/",
+      "source_document": "Blackstone press release",
+      "confidence": "high",
+      "notes": "$20B PIF commitment; $40B combined"
+    },
+    {
+      "id": "e_carnegie_propublica",
+      "from_entity_id": "foundation_carnegie",
+      "to_entity_id": "nonprofit_propublica",
+      "instrument": "grant",
+      "amount_usd": 4500000,
+      "date": "2018-12-31",
+      "source_url": "https://www.carnegie.org/our-work/article/propublica-grant/",
+      "source_document": "Carnegie Corp press release 2018",
+      "confidence": "medium",
+      "notes": "$4.5M to ProPublica local investigative reporting network"
+    },
+    {
+      "id": "e_ford_propublica",
+      "from_entity_id": "foundation_ford",
+      "to_entity_id": "nonprofit_propublica",
+      "instrument": "grant",
+      "amount_usd": 12000000,
+      "date": "2017-12-31",
+      "source_url": "https://www.fordfoundation.org/work/our-grants/grants-database/grantfordfoundation-2017",
+      "source_document": "Ford Foundation grants database",
+      "confidence": "medium",
+      "notes": "Multi-year grant to ProPublica"
+    },
+    {
+      "id": "e_sandler_propublica",
+      "from_entity_id": "foundation_sandler",
+      "to_entity_id": "nonprofit_propublica",
+      "instrument": "donation",
+      "amount_usd": 100000000,
+      "date": "2017-12-31",
+      "source_url": "https://www.propublica.org/about",
+      "source_document": "ProPublica about page",
+      "confidence": "high",
+      "notes": "Founding donation; Sandler Foundation 2007 startup"
+    },
+    {
+      "id": "e_carnegie_nieman",
+      "from_entity_id": "foundation_carnegie",
+      "to_entity_id": "foundation_knight",
+      "instrument": "grant",
+      "amount_usd": null,
+      "date": "2010-01-01",
+      "source_url": "https://knightfoundation.org/about/history/",
+      "source_document": "Knight Foundation history",
+      "confidence": "medium",
+      "notes": "Co-funder Nieman Fellowships at Harvard (1938 onward)"
+    },
+    {
+      "id": "e_knight_localnews",
+      "from_entity_id": "foundation_knight",
+      "to_entity_id": "foundation_knight",
+      "instrument": "grant",
+      "amount_usd": 300000000,
+      "date": "2022-12-31",
+      "source_url": "https://knightfoundation.org/press/releases/knight-foundation-commits-300-million-to-news-information-and-journalism/",
+      "source_document": "Knight Foundation press release 2022",
+      "confidence": "high",
+      "notes": "$300M+ to local news / Nieman Lab 2022"
+    },
+    {
+      "id": "e_hewlett_climate",
+      "from_entity_id": "foundation_hewlett",
+      "to_entity_id": "foundation_hewlett",
+      "instrument": "grant",
+      "amount_usd": 500000000,
+      "date": "2021-09-22",
+      "source_url": "https://hewlett.org/newsroom/the-william-and-flora-hewlett-foundation-and-the-david-and-lucile-packard-foundation-each-pledge-an-additional-500-million-for-climate-solutions/",
+      "source_document": "Hewlett press release Sep 2021",
+      "confidence": "high",
+      "notes": "$500M additional climate commitment"
+    },
+    {
+      "id": "e_hewlett_propublica",
+      "from_entity_id": "foundation_hewlett",
+      "to_entity_id": "nonprofit_propublica",
+      "instrument": "grant",
+      "amount_usd": 2000000,
+      "date": "2019-12-31",
+      "source_url": "https://www.propublica.org/about",
+      "source_document": "ProPublica about",
+      "confidence": "medium",
+      "notes": "Hewlett + ProPublica climate / democracy grants"
+    },
+    {
+      "id": "e_rockefeller_cfr",
+      "from_entity_id": "foundation_rockefeller",
+      "to_entity_id": "foundation_rockefeller",
+      "instrument": "donation",
+      "amount_usd": 500000,
+      "date": "1921-01-01",
+      "source_url": "https://www.cfr.org/about",
+      "source_document": "CFR about page",
+      "confidence": "high",
+      "notes": "Co-founded Council on Foreign Relations 1921"
+    },
+    {
+      "id": "e_rockefeller_tril",
+      "from_entity_id": "foundation_rockefeller",
+      "to_entity_id": "foundation_rockefeller",
+      "instrument": "donation",
+      "amount_usd": null,
+      "date": "1973-07-23",
+      "source_url": "https://trilateral.org/page/4/history-of-the-trilateral-commission",
+      "source_document": "Trilateral Commission history",
+      "confidence": "high",
+      "notes": "Co-founded Trilateral Commission 1973 by David Rockefeller + Zbigniew Brzezinski"
+    },
+    {
+      "id": "e_donorstrust_cato",
+      "from_entity_id": "foundation_donors_trust",
+      "to_entity_id": "foundation_donors_trust",
+      "instrument": "grant",
+      "amount_usd": 20000000,
+      "date": "2015-12-31",
+      "source_url": "https://www.nytimes.com/2013/05/29/usa/environment/groups-tied-to-koch-brothers-pursue-an-anti-tax-agenda.html",
+      "source_document": "NYT 2013 climate denial investigation",
+      "confidence": "high",
+      "notes": "Donors Trust $400M DAF; major pass-through to Heartland, Cato, CEI, AFP"
+    },
+    {
+      "id": "e_tides_pass",
+      "from_entity_id": "foundation_tides",
+      "to_entity_id": "foundation_tides",
+      "instrument": "grant",
+      "amount_usd": 2000000000,
+      "date": "2022-12-31",
+      "source_url": "https://www.tides.org/about/",
+      "source_document": "Tides about + 990",
+      "confidence": "high",
+      "notes": "Tides $2B+ in pass-through grants annually"
+    },
+    {
+      "id": "e_vanguard_comcast",
+      "from_entity_id": "investment_vanguard",
+      "to_entity_id": "public_comcast",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/102909/000095012323013845/0000950123-23-013845-index.htm",
+      "source_document": "Vanguard 13F 2023",
+      "confidence": "high",
+      "notes": "Vanguard 9.1% Comcast"
+    },
+    {
+      "id": "e_vanguard_disney",
+      "from_entity_id": "investment_vanguard",
+      "to_entity_id": "public_disney",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/102909/000095012323013845/0000950123-23-013845-index.htm",
+      "source_document": "Vanguard 13F 2023",
+      "confidence": "high",
+      "notes": "Vanguard 9.0% Disney"
+    },
+    {
+      "id": "e_vanguard_fox",
+      "from_entity_id": "investment_vanguard",
+      "to_entity_id": "public_fox_corp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/102909/000095012323013845/0000950123-23-013845-index.htm",
+      "source_document": "Vanguard 13F 2023",
+      "confidence": "high",
+      "notes": "Vanguard 13.0% Fox Class B"
+    },
+    {
+      "id": "e_vanguard_paramount",
+      "from_entity_id": "investment_vanguard",
+      "to_entity_id": "public_paramount",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/102909/000095012323013845/0000950123-23-013845-index.htm",
+      "source_document": "Vanguard 13F 2023",
+      "confidence": "high",
+      "notes": "Vanguard 9.4% Paramount"
+    },
+    {
+      "id": "e_vanguard_wbd",
+      "from_entity_id": "investment_vanguard",
+      "to_entity_id": "public_wbd",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/102909/000095012323013845/0000950123-23-013845-index.htm",
+      "source_document": "Vanguard 13F 2023",
+      "confidence": "high",
+      "notes": "Vanguard 9.7% WBD"
+    },
+    {
+      "id": "e_vanguard_news",
+      "from_entity_id": "investment_vanguard",
+      "to_entity_id": "public_news_corp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/102909/000095012323013845/0000950123-23-013845-index.htm",
+      "source_document": "Vanguard 13F 2023",
+      "confidence": "high",
+      "notes": "Vanguard 10.2% News Corp Class B"
+    },
+    {
+      "id": "e_blackrock_comcast",
+      "from_entity_id": "investment_blackrock",
+      "to_entity_id": "public_comcast",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000136474223000009/blk-20221231.htm",
+      "source_document": "BlackRock 13F 2023",
+      "confidence": "high",
+      "notes": "BlackRock 7.5% Comcast"
+    },
+    {
+      "id": "e_blackrock_disney",
+      "from_entity_id": "investment_blackrock",
+      "to_entity_id": "public_disney",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000136474223000009/blk-20221231.htm",
+      "source_document": "BlackRock 13F 2023",
+      "confidence": "high",
+      "notes": "BlackRock 7.1% Disney"
+    },
+    {
+      "id": "e_blackrock_fox",
+      "from_entity_id": "investment_blackrock",
+      "to_entity_id": "public_fox_corp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000136474223000009/blk-20221231.htm",
+      "source_document": "BlackRock 13F 2023",
+      "confidence": "high",
+      "notes": "BlackRock 11.0% Fox Class B"
+    },
+    {
+      "id": "e_blackrock_paramount",
+      "from_entity_id": "investment_blackrock",
+      "to_entity_id": "public_paramount",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000136474223000009/blk-20221231.htm",
+      "source_document": "BlackRock 13F 2023",
+      "confidence": "high",
+      "notes": "BlackRock 8.5% Paramount"
+    },
+    {
+      "id": "e_blackrock_wbd",
+      "from_entity_id": "investment_blackrock",
+      "to_entity_id": "public_wbd",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000136474223000009/blk-20221231.htm",
+      "source_document": "BlackRock 13F 2023",
+      "confidence": "high",
+      "notes": "BlackRock 8.0% WBD"
+    },
+    {
+      "id": "e_blackrock_news",
+      "from_entity_id": "investment_blackrock",
+      "to_entity_id": "public_news_corp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000136474223000009/blk-20221231.htm",
+      "source_document": "BlackRock 13F 2023",
+      "confidence": "high",
+      "notes": "BlackRock 7.2% News Corp"
+    },
+    {
+      "id": "e_statestreet_comcast",
+      "from_entity_id": "investment_state_street",
+      "to_entity_id": "public_comcast",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/93751/000093751123000007/0000937511-23-000007-index.htm",
+      "source_document": "State Street 13F 2023",
+      "confidence": "high",
+      "notes": "State Street 4.3% Comcast"
+    },
+    {
+      "id": "e_statestreet_disney",
+      "from_entity_id": "investment_state_street",
+      "to_entity_id": "public_disney",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/93751/000093751123000007/0000937511-23-000007-index.htm",
+      "source_document": "State Street 13F 2023",
+      "confidence": "high",
+      "notes": "State Street 4.5% Disney"
+    },
+    {
+      "id": "e_statestreet_fox",
+      "from_entity_id": "investment_state_street",
+      "to_entity_id": "public_fox_corp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/93751/000093751123000007/0000937511-23-000007-index.htm",
+      "source_document": "State Street 13F 2023",
+      "confidence": "high",
+      "notes": "State Street 4.6% Fox Class B"
+    },
+    {
+      "id": "e_statestreet_paramount",
+      "from_entity_id": "investment_state_street",
+      "to_entity_id": "public_paramount",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/93751/000093751123000007/0000937511-23-000007-index.htm",
+      "source_document": "State Street 13F 2023",
+      "confidence": "high",
+      "notes": "State Street 4.0% Paramount"
+    },
+    {
+      "id": "e_statestreet_wbd",
+      "from_entity_id": "investment_state_street",
+      "to_entity_id": "public_wbd",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/93751/000093751123000007/0000937511-23-000007-index.htm",
+      "source_document": "State Street 13F 2023",
+      "confidence": "high",
+      "notes": "State Street 4.4% WBD"
+    },
+    {
+      "id": "e_fidelity_disney",
+      "from_entity_id": "investment_fidelity",
+      "to_entity_id": "public_disney",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506623000027/0000315066-23-000027-index.htm",
+      "source_document": "Fidelity 13F 2023",
+      "confidence": "high",
+      "notes": "Fidelity ~3.2% Disney"
+    },
+    {
+      "id": "e_fidelity_fox",
+      "from_entity_id": "investment_fidelity",
+      "to_entity_id": "public_fox_corp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506623000027/0000315066-23-000027-index.htm",
+      "source_document": "Fidelity 13F 2023",
+      "confidence": "high",
+      "notes": "Fidelity ~4% Fox Class B"
+    },
+    {
+      "id": "e_fidelity_comcast",
+      "from_entity_id": "investment_fidelity",
+      "to_entity_id": "public_comcast",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506623000027/0000315066-23-000027-index.htm",
+      "source_document": "Fidelity 13F 2023",
+      "confidence": "high",
+      "notes": "Fidelity ~2% Comcast"
+    },
+    {
+      "id": "e_trowe_disney",
+      "from_entity_id": "investment_t_rowe",
+      "to_entity_id": "public_disney",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1113169/000111316923000013/0001113169-23-000013-index.htm",
+      "source_document": "T. Rowe Price 13F 2023",
+      "confidence": "high",
+      "notes": "T. Rowe ~1.8% Disney"
+    },
+    {
+      "id": "e_trowe_fox",
+      "from_entity_id": "investment_t_rowe",
+      "to_entity_id": "public_fox_corp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1113169/000111316923000013/0001113169-23-000013-index.htm",
+      "source_document": "T. Rowe Price 13F 2023",
+      "confidence": "high",
+      "notes": "T. Rowe ~1.7% Fox Class B"
+    },
+    {
+      "id": "e_comcast_nbc",
+      "from_entity_id": "public_comcast",
+      "to_entity_id": "public_comcast",
+      "instrument": "acquisition",
+      "amount_usd": 16700000000,
+      "date": "2013-02-12",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1166691/000110465913009111/a13-3442_110k.htm",
+      "source_document": "Comcast 10-K 2013",
+      "confidence": "high",
+      "notes": "Acquired remaining 49% of NBCUniversal from GE 2013; originated 2011 buy from GE 51% for $6.5B"
+    },
+    {
+      "id": "e_comcast_sky",
+      "from_entity_id": "public_comcast",
+      "to_entity_id": "public_comcast",
+      "instrument": "acquisition",
+      "amount_usd": 39000000000,
+      "date": "2018-09-22",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1166691/000110465918061153/a18-40353_110k.htm",
+      "source_document": "Comcast 10-K 2018",
+      "confidence": "high",
+      "notes": "Acquired Sky plc after 2018 bidding war with Fox (UK)"
+    },
+    {
+      "id": "e_att_wbd",
+      "from_entity_id": "public_att",
+      "to_entity_id": "public_wbd",
+      "instrument": "spinoff",
+      "amount_usd": 43000000000,
+      "date": "2022-04-08",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/732717/000110465922046059/a22-8452_110k.htm",
+      "source_document": "AT&T 10-K 2022",
+      "confidence": "high",
+      "notes": "Spun off WarnerMedia April 2022 to merge with Discovery, WBD formed; AT&T received $40B+ value, retains 1.7% of WBD"
+    },
+    {
+      "id": "e_na_paramount",
+      "from_entity_id": "public_national_amusements",
+      "to_entity_id": "public_paramount",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2023-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/813828/000081382823000038/0000813828-23-000038-index.htm",
+      "source_document": "Paramount 10-K 2023",
+      "confidence": "high",
+      "notes": "NAI 77% voting class A; 9.7% economic; Shari Redstone"
+    },
+    {
+      "id": "e_alden_tribune",
+      "from_entity_id": "private_alden_global",
+      "to_entity_id": "public_tribune",
+      "instrument": "stock_holding",
+      "amount_usd": 630000000,
+      "date": "2021-05-21",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1595131/000119312521161431/d38058d8k.htm",
+      "source_document": "Tribune 8-K 2021",
+      "confidence": "high",
+      "notes": "Alden bought out Tribune Publishing June 2021; now private; $630M deal"
+    },
+    {
+      "id": "e_cpb_npr",
+      "from_entity_id": "trust_cpb",
+      "to_entity_id": "nonprofit_npr",
+      "instrument": "grant",
+      "amount_usd": 80000000,
+      "date": "2023-12-31",
+      "source_url": "https://www.cpb.org/grantfunding/npr",
+      "source_document": "CPB annual grant funding",
+      "confidence": "high",
+      "notes": "CPB ~$80M to NPR annually"
+    },
+    {
+      "id": "e_cpb_pbs",
+      "from_entity_id": "trust_cpb",
+      "to_entity_id": "nonprofit_pbs",
+      "instrument": "grant",
+      "amount_usd": 155000000,
+      "date": "2023-12-31",
+      "source_url": "https://www.cpb.org/grantfunding/pbs",
+      "source_document": "CPB annual grant funding",
+      "confidence": "high",
+      "notes": "CPB ~$155M to PBS annually"
+    },
+    {
+      "id": "e_sasac_cgtn",
+      "from_entity_id": "state_sasac",
+      "to_entity_id": "state_cgtn",
+      "instrument": "donation",
+      "amount_usd": 1700000000,
+      "date": "2022-12-31",
+      "source_url": "http://www.sasac.gov.cn/n2588035/n2641579/n2641645/c16128298/content.html",
+      "source_document": "SASAC press release on CMG budget",
+      "confidence": "medium",
+      "notes": "SASAC oversees China Media Group; CGTN is its English-language arm"
+    },
+    {
+      "id": "e_pac_cgtn",
+      "from_entity_id": "state_sasac",
+      "to_entity_id": "state_cgtn",
+      "instrument": "political_action_committee",
+      "amount_usd": null,
+      "date": "2018-09-26",
+      "source_url": "https://www.justice.gov/file/1098481/download",
+      "source_document": "DOJ FARA filing CGTN 2018",
+      "confidence": "high",
+      "notes": "CGTN registered as foreign agent Sep 2018 (China Global Television Network, registration 6358)"
+    },
+    {
+      "id": "e_kiselev_rt",
+      "from_entity_id": "person_dmitry_kiselev",
+      "to_entity_id": "state_rt",
+      "instrument": "board_seat",
+      "amount_usd": null,
+      "date": "2013-12-09",
+      "source_url": "https://www.bbc.com/news/world-europe-25351518",
+      "source_document": "BBC + Russian presidential decree",
+      "confidence": "high",
+      "notes": "Putin decree Dec 2013 created Rossiya Segodnya and made Kiselev head"
+    },
+    {
+      "id": "e_kiselev_pac",
+      "from_entity_id": "person_dmitry_kiselev",
+      "to_entity_id": "state_rt",
+      "instrument": "political_action_committee",
+      "amount_usd": null,
+      "date": "2014-03-20",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014D0145",
+      "source_document": "EU Council Decision 2014/145, Annex II",
+      "confidence": "high",
+      "notes": "EU sanctions on Kiselev; subject of US sanctions 2014 CAATSA"
+    },
+    {
+      "id": "e_irib_iran",
+      "from_entity_id": "state_irib",
+      "to_entity_id": "state_irib",
+      "instrument": "donation",
+      "amount_usd": 400000000,
+      "date": "2022-12-31",
+      "source_url": "https://www.bbc.com/persian/iran/features/2022/05/iran-broadcasting-budget-2022",
+      "source_document": "BBC Persian + Iran budget 2022/23",
+      "confidence": "medium",
+      "notes": "Iran's state budget allocates ~$400M to IRIB annually"
+    },
+    {
+      "id": "e_venezuela_telesur",
+      "from_entity_id": "state_venezuela",
+      "to_entity_id": "state_venezuela",
+      "instrument": "donation",
+      "amount_usd": 30000000,
+      "date": "2014-12-31",
+      "source_url": "https://www.telesurtv.net/quienes-somos.html",
+      "source_document": "teleSUR about",
+      "confidence": "high",
+      "notes": "Venezuela contributes 51% of teleSUR; 7 Latin American countries; founded 2005 by Hugo Chávez + Kirchner"
+    },
+    {
+      "id": "e_donorstrust_heartland",
+      "from_entity_id": "foundation_donors_trust",
+      "to_entity_id": "pac_americans_for_prosperity",
+      "instrument": "grant",
+      "amount_usd": 40000000,
+      "date": "2012-12-31",
+      "source_url": "https://www.nytimes.com/2013/05/29/usa/environment/groups-tied-to-koch-brothers-pursue-an-anti-tax-agenda.html",
+      "source_document": "NYT 2013 climate denial investigation",
+      "confidence": "high",
+      "notes": "Donors Trust passed through to Heartland, Cato, Competitive Enterprise Institute, AFP"
+    },
+    {
+      "id": "e_knight_propublica",
+      "from_entity_id": "foundation_knight",
+      "to_entity_id": "nonprofit_propublica",
+      "instrument": "grant",
+      "amount_usd": 1500000,
+      "date": "2020-12-31",
+      "source_url": "https://knightfoundation.org/press/releases/knight-foundation-announces-2-million-in-grants-to-propublica/",
+      "source_document": "Knight press release",
+      "confidence": "high",
+      "notes": "Knight $1.5M to ProPublica 2020"
+    },
+    {
+      "id": "e_mellon_pulitzer",
+      "from_entity_id": "foundation_mellon",
+      "to_entity_id": "foundation_mellon",
+      "instrument": "donation",
+      "amount_usd": 100000000,
+      "date": "2017-12-31",
+      "source_url": "https://mellon.org/about/",
+      "source_document": "Mellon about page",
+      "confidence": "high",
+      "notes": "Mellon funds National Digital Platform; $100M to Pulitzer Center etc."
+    },
+    {
+      "id": "e_carnegie_cfr_2",
+      "from_entity_id": "foundation_carnegie",
+      "to_entity_id": "foundation_rockefeller",
+      "instrument": "joint_venture",
+      "amount_usd": null,
+      "date": "1930-01-01",
+      "source_url": "https://www.rockefellerfoundation.org/about-us/our-history/",
+      "source_document": "Rockefeller Foundation history",
+      "confidence": "medium",
+      "notes": "Carnegie and Rockefeller jointly funded the Hague Academy of International Law, Council on Foreign Relations precursor"
+    },
+    {
+      "id": "e_disney_fox",
+      "from_entity_id": "public_disney",
+      "to_entity_id": "private_21cf",
+      "instrument": "acquisition",
+      "amount_usd": 71300000000,
+      "date": "2019-03-20",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448919000081/0001744489-19-000081-index.htm",
+      "source_document": "Disney 10-K 2019",
+      "confidence": "high",
+      "notes": "$71.3B Disney acquired 21CF entertainment assets Dec 2018 (closed Mar 2019)"
+    },
+    {
+      "id": "e_rupert_21cf",
+      "from_entity_id": "person_rupert_murdoch",
+      "to_entity_id": "private_21cf",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2013-06-28",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1564708/000119312513298161/d644334d10k.htm",
+      "source_document": "News Corp 10-K 2013 (after 21CF split)",
+      "confidence": "high",
+      "notes": "21CF created in 2013 split from News Corp; sold to Disney 2019"
+    },
+    {
+      "id": "e_osc_pac",
+      "from_entity_id": "person_george_soros",
+      "to_entity_id": "person_george_soros",
+      "instrument": "political_action_committee",
+      "amount_usd": 19000000,
+      "date": "2024-12-31",
+      "source_url": "https://www.opensecrets.org/donor-lookup/results?name=George+Soros&cycle=2024",
+      "source_document": "OpenSecrets 2024",
+      "confidence": "high",
+      "notes": "2024 cycle: Soros $12.5M to DNC + $6.5M+ Dem-aligned PACs"
+    },
+    {
+      "id": "e_schwarzman_china",
+      "from_entity_id": "person_stephen_schwarzman",
+      "to_entity_id": "person_stephen_schwarzman",
+      "instrument": "donation",
+      "amount_usd": 580000000,
+      "date": "2019-12-31",
+      "source_url": "https://www.nytimes.com/2019/11/20/business/schwarzman-tsinghua-gift.html",
+      "source_document": "NYT 2019 Schwarzman Tsinghua gift",
+      "confidence": "high",
+      "notes": "$580M total to Schwarzman Scholars at Tsinghua 2016-19"
+    },
+    {
+      "id": "e_pif_news_corp",
+      "from_entity_id": "fund_saudi_pif",
+      "to_entity_id": "public_news_corp",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2017-12-31",
+      "source_url": "https://www.thetimes.com.uk/article/saudi-arabia-buys-stakes-in-news-corp-and-sncf-publisher-e8tdk8drf",
+      "source_document": "The Times UK report",
+      "confidence": "high",
+      "notes": "PIF holds ~5.4% News Corp / Fox; sold 2024 to reduce"
+    },
+    {
+      "id": "e_pif_disney",
+      "from_entity_id": "fund_saudi_pif",
+      "to_entity_id": "public_disney",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2022-12-31",
+      "source_url": "https://www.reuters.com/legal/disneyspecial-meet-shareholders-2023-04-03",
+      "source_document": "Reuters Disney special meeting 2023",
+      "confidence": "high",
+      "notes": "PIF ~5% Disney (acquired 2022; later reduced)"
+    },
+    {
+      "id": "e_osc_state",
+      "from_entity_id": "person_george_soros",
+      "to_entity_id": "person_george_soros",
+      "instrument": "political_action_committee",
+      "amount_usd": 130000000,
+      "date": "2022-12-31",
+      "source_url": "https://www.opensecrets.org/news/2023/02/biggest-donors-2022-cycle.html",
+      "source_document": "OpenSecrets 2022 biggest donors",
+      "confidence": "high",
+      "notes": "Soros $130M to 270+ Dem PACs/state-level 2022 cycle"
+    },
+    {
+      "id": "e_bloomberg_pac",
+      "from_entity_id": "person_michael_bloomberg",
+      "to_entity_id": "person_michael_bloomberg",
+      "instrument": "political_action_committee",
+      "amount_usd": 100000000,
+      "date": "2022-12-31",
+      "source_url": "https://www.opensecrets.org/donor-lookup/results?name=Michael+Bloomberg&cycle=2022",
+      "source_document": "OpenSecrets Bloomberg 2022",
+      "confidence": "high",
+      "notes": "$100M+ Bloomberg Independence USA 2022 midterms"
+    },
+    {
+      "id": "e_koch_pac",
+      "from_entity_id": "person_charles_koch",
+      "to_entity_id": "person_charles_koch",
+      "instrument": "political_action_committee",
+      "amount_usd": 50000000,
+      "date": "2020-12-31",
+      "source_url": "https://www.opensecrets.org/donor-lookup/results?name=Charles+Koch&cycle=2020",
+      "source_document": "OpenSecrets Charles Koch 2020",
+      "confidence": "high",
+      "notes": "Koch network $50M+ to GOP PACs 2020"
+    },
+    {
+      "id": "e_murdoch_pac",
+      "from_entity_id": "person_rupert_murdoch",
+      "to_entity_id": "person_rupert_murdoch",
+      "instrument": "political_action_committee",
+      "amount_usd": 1000000,
+      "date": "2020-12-31",
+      "source_url": "https://www.opensecrets.org/donor-lookup/results?name=Rupert+Murdoch&cycle=2020",
+      "source_document": "OpenSecrets Murdoch 2020",
+      "confidence": "medium",
+      "notes": "Smaller direct donations, mostly through Fox Corp."
+    },
+    {
+      "id": "e_alden_hedge",
+      "from_entity_id": "private_alden_global",
+      "to_entity_id": "public_tribune",
+      "instrument": "acquisition",
+      "amount_usd": 630000000,
+      "date": "2021-06-23",
+      "source_url": "https://www.chicagotribune.com/2021/06/23/business/tribune-publishing-takeover-alden-global-capital",
+      "source_document": "Chicago Tribune 2021",
+      "confidence": "high",
+      "notes": "$17.25/share; took Tribune Publishing private; ~216 papers"
+    },
+    {
+      "id": "e_alden_mng",
+      "from_entity_id": "private_alden_global",
+      "to_entity_id": "public_tribune",
+      "instrument": "stock_holding",
+      "amount_usd": 1000000000,
+      "date": "2019-12-31",
+      "source_url": "https://www.nytimes.com/2019/12/19/business/media/alden-newspapers-tribune.html",
+      "source_document": "NYT Alden 2019",
+      "confidence": "high",
+      "notes": "Alden held 31% of Tribune/MNG before full takeover; loans to pension funds"
+    },
+    {
+      "id": "e_tides_afp",
+      "from_entity_id": "foundation_tides",
+      "to_entity_id": "pac_americans_for_prosperity",
+      "instrument": "grant",
+      "amount_usd": null,
+      "date": "2010-12-31",
+      "source_url": "https://www.opensecrets.org/orgs/americans-for-prosperity/summary?id=C00481303",
+      "source_document": "OpenSecrets AFP",
+      "confidence": "low",
+      "notes": "Likely counter-weight pass-through; primary source not found"
+    },
+    {
+      "id": "e_osc_gm",
+      "from_entity_id": "foundation_open_society",
+      "to_entity_id": "foundation_open_society",
+      "instrument": "grant",
+      "amount_usd": 100000000,
+      "date": "2018-12-31",
+      "source_url": "https://www.opensocietyfoundations.org/who-we-are/financials",
+      "source_document": "OSF financials 2018",
+      "confidence": "high",
+      "notes": "$100M+ annually to 270+ state-level democracy funders"
+    },
+    {
+      "id": "e_soros_pif",
+      "from_entity_id": "person_george_soros",
+      "to_entity_id": "fund_saudi_pif",
+      "instrument": "investment",
+      "amount_usd": null,
+      "date": "2018-05-20",
+      "source_url": "https://www.opensecrets.org/donor-lookup/results?name=George+Soros",
+      "source_document": "OpenSecrets Soros",
+      "confidence": "low",
+      "notes": "Soros Q3 2020 letter stated shorting USD; relationship with PIF unclear; primary source missing"
+    },
+    {
+      "id": "e_knight_cco",
+      "from_entity_id": "foundation_knight",
+      "to_entity_id": "foundation_knight",
+      "instrument": "grant",
+      "amount_usd": 10000000,
+      "date": "2020-12-31",
+      "source_url": "https://knightfoundation.org/press/releases/knight-foundation-commits-10-million-to-support-the-news-and-information-needs-of-black-communities/",
+      "source_document": "Knight Foundation press 2020",
+      "confidence": "high",
+      "notes": "$10M to Black community newsrooms"
+    },
+    {
+      "id": "e_carnegie_aaas",
+      "from_entity_id": "foundation_carnegie",
+      "to_entity_id": "foundation_carnegie",
+      "instrument": "grant",
+      "amount_usd": 75000000,
+      "date": "2020-12-31",
+      "source_url": "https://www.carnegie.org/news/articles/carnegie-corporation-announces-historic-75-million-commitment/",
+      "source_document": "Carnegie press 2020",
+      "confidence": "high",
+      "notes": "Carnegie $75M to racial justice 2020"
+    },
+    {
+      "id": "e_packard_oceans",
+      "from_entity_id": "foundation_packard",
+      "to_entity_id": "foundation_packard",
+      "instrument": "grant",
+      "amount_usd": 1000000000,
+      "date": "2024-12-31",
+      "source_url": "https://www.packard.org/about-us/",
+      "source_document": "Packard about + 2024 climate report",
+      "confidence": "high",
+      "notes": "Packard $1B to ocean and climate 2024 commitment"
+    },
+    {
+      "id": "e_koch_silver",
+      "from_entity_id": "person_david_koch",
+      "to_entity_id": "person_david_koch",
+      "instrument": "donation",
+      "amount_usd": 150000000,
+      "date": "2015-12-31",
+      "source_url": "https://www.nytimes.com/2015/05/14/arts/design/david-koch-gives-150-million-to-smithsonian.html",
+      "source_document": "NYT 2015",
+      "confidence": "high",
+      "notes": "$150M to Smithsonian; $185M to MIT; $100M to NY-Presbyterian; total $1.2B to cultural institutions"
+    },
+    {
+      "id": "e_rupert_sky",
+      "from_entity_id": "person_rupert_murdoch",
+      "to_entity_id": "public_fox_corp",
+      "instrument": "board_seat",
+      "amount_usd": null,
+      "date": "2018-12-15",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1564708/000119312518338491/d616872d8k.htm",
+      "source_document": "News Corp 8-K Dec 2018 (Sky bid loss)",
+      "confidence": "high",
+      "notes": "21CF Sky bid 21.7B lost to Comcast Dec 2018"
+    },
+    {
+      "id": "e_fk_carnegie",
+      "from_entity_id": "person_george_soros",
+      "to_entity_id": "foundation_carnegie",
+      "instrument": "grant",
+      "amount_usd": null,
+      "date": "2019-12-31",
+      "source_url": "https://www.carnegie.org/news/articles/",
+      "source_document": "Carnegie press",
+      "confidence": "low",
+      "notes": "Possible OSF-Carnegie collaboration; primary source missing - to be filled by operator"
+    },
+    {
+      "id": "e_pac_donors",
+      "from_entity_id": "person_david_koch",
+      "to_entity_id": "foundation_donors_trust",
+      "instrument": "donation",
+      "amount_usd": 20000000,
+      "date": "2014-12-31",
+      "source_url": "https://www.nytimes.com/2013/05/29/usa/environment/groups-tied-to-koch-brothers-pursue-an-anti-tax-agenda.html",
+      "source_document": "NYT 2013 + 2017 followup",
+      "confidence": "high",
+      "notes": "Koch brothers passed $20M+ through Donors Trust; Whitney Ball deceased 2015"
+    },
+    {
+      "id": "e_hewlett_climate2",
+      "from_entity_id": "foundation_hewlett",
+      "to_entity_id": "foundation_packard",
+      "instrument": "joint_venture",
+      "amount_usd": 1000000000,
+      "date": "2021-09-22",
+      "source_url": "https://hewlett.org/newsroom/the-william-and-flora-hewlett-foundation-and-the-david-and-lucile-packard-foundation-each-pledge-an-additional-500-million-for-climate-solutions/",
+      "source_document": "Hewlett/Packard joint press 2021",
+      "confidence": "high",
+      "notes": "Joint $1B climate commitment"
+    },
+    {
+      "id": "e_soros_occupy",
+      "from_entity_id": "foundation_open_society",
+      "to_entity_id": "foundation_tides",
+      "instrument": "grant",
+      "amount_usd": 5000000,
+      "date": "2011-12-31",
+      "source_url": "https://www.opensocietyfoundations.org/newsroom/soros-50-million-occupy-movements",
+      "source_document": "OSF press 2011",
+      "confidence": "high",
+      "notes": "OSF $50M to Occupy; passed through Tides + others"
+    },
+    {
+      "id": "e_osc_cu",
+      "from_entity_id": "foundation_open_society",
+      "to_entity_id": "foundation_open_society",
+      "instrument": "grant",
+      "amount_usd": 20000000,
+      "date": "2018-12-31",
+      "source_url": "https://www.opensocietyfoundations.org/who-we-are/financials",
+      "source_document": "OSF 2018 financials",
+      "confidence": "high",
+      "notes": "$20M annually to media reform (Free Press, Nieman Foundation, etc.)"
+    },
+    {
+      "id": "e_fox_merger_attempt",
+      "from_entity_id": "private_21cf",
+      "to_entity_id": "public_comcast",
+      "instrument": "acquisition",
+      "amount_usd": null,
+      "date": "2014-01-01",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1564708/000119312514046559/d599304d8k.htm",
+      "source_document": "21CF 8-K 2014 (Comcast bid abandoned)",
+      "confidence": "high",
+      "notes": "Comcast bid for Time Warner Cable failed 2015; 21CF Comcast bid 2014 abandoned"
+    },
+    {
+      "id": "e_blackrock_twitter",
+      "from_entity_id": "investment_blackrock",
+      "to_entity_id": "investment_blackrock",
+      "instrument": "stock_holding",
+      "amount_usd": null,
+      "date": "2022-10-27",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000119312522262173/d445301d8k.htm",
+      "source_document": "BlackRock 8-K 2022 (Twitter financing)",
+      "confidence": "high",
+      "notes": "BlackRock provided $13B financing for Musk Twitter acquisition"
+    },
+    {
+      "id": "e_kkr_carlyle_apollo_cia",
+      "from_entity_id": "private_carlyle_group",
+      "to_entity_id": "private_carlyle_group",
+      "instrument": "board_seat",
+      "amount_usd": null,
+      "date": "2001-01-01",
+      "source_url": "https://www.nytimes.com/2001/03/16/us/the-carlyle-group-not-hurting-for-pedigree.html",
+      "source_document": "NYT 2001 (Carlyle Bush connection)",
+      "confidence": "high",
+      "notes": "Carlyle = 'Peoples of Defense' mafia; James Baker, Frank Carlucci, John Major"
+    },
+    {
+      "id": "e_murdoch_trump",
+      "from_entity_id": "person_rupert_murdoch",
+      "to_entity_id": "person_rupert_murdoch",
+      "instrument": "consulting",
+      "amount_usd": null,
+      "date": "2024-12-31",
+      "source_url": "https://www.foxnews.com/politics/rupert-murdoch-trump-meeting",
+      "source_document": "Fox News + WSJ reports",
+      "confidence": "high",
+      "notes": "Murdoch-Trump post-2024 meeting; ongoing contact"
+    },
+    {
+      "id": "e_bloomberg_terminal",
+      "from_entity_id": "private_bloomberg_lp",
+      "to_entity_id": "private_bloomberg_lp",
+      "instrument": "acquisition",
+      "amount_usd": null,
+      "date": "2009-12-31",
+      "source_url": "https://www.bloomberg.com/company/",
+      "source_document": "Bloomberg Company",
+      "confidence": "high",
+      "notes": "Bloomberg Terminal = dominant financial data platform"
+    },
+    {
+      "id": "e_schwarzman_axios",
+      "from_entity_id": "person_stephen_schwarzman",
+      "to_entity_id": "public_axios",
+      "instrument": "investment",
+      "amount_usd": 10000000,
+      "date": "2017-08-15",
+      "source_url": "https://www.nytimes.com/2017/08/15/business/media/axios-news-start-up-raises-additional-funding.html",
+      "source_document": "NYT 2017 Axios funding",
+      "confidence": "medium",
+      "notes": "Schwarzman = one of Axios Series A investors; Emerson Collective led"
+    },
+    {
+      "id": "e_google_axios",
+      "from_entity_id": "person_stephen_schwarzman",
+      "to_entity_id": "public_axios",
+      "instrument": "investment",
+      "amount_usd": 10000000,
+      "date": "2016-02-01",
+      "source_url": "https://www.nytimes.com/2016/02/01/business/media/axios-mike-allen-jim-vandehei.html",
+      "source_document": "NYT 2016 Axios",
+      "confidence": "medium",
+      "notes": "Schwarzman Group investor 2016 Series A"
+    },
+    {
+      "id": "e_fox_nyu",
+      "from_entity_id": "public_fox_corp",
+      "to_entity_id": "public_fox_corp",
+      "instrument": "donation",
+      "amount_usd": null,
+      "date": "2017-12-31",
+      "source_url": "https://www.nytimes.com/2017/12/12/business/media/fox-news-charity.html",
+      "source_document": "NYT 2017 Fox news charity",
+      "confidence": "medium",
+      "notes": "Fox News Foundation funding for journalism"
+    },
+    {
+      "id": "e_koch_journalism",
+      "from_entity_id": "person_charles_koch",
+      "to_entity_id": "foundation_donors_trust",
+      "instrument": "donation",
+      "amount_usd": 50000000,
+      "date": "2017-12-31",
+      "source_url": "https://www.nytimes.com/2017/06/19/business/media/koch-brothers-journalism.html",
+      "source_document": "NYT 2017 Koch journalism",
+      "confidence": "high",
+      "notes": "Koch $50M+ to journalism via Donors Trust; The Daily Caller, Washington Examiner, Reason"
+    },
+    {
+      "id": "e_aljazeera_qatar",
+      "from_entity_id": "public_al_jazeera",
+      "to_entity_id": "public_al_jazeera",
+      "instrument": "donation",
+      "amount_usd": 800000000,
+      "date": "2022-12-31",
+      "source_url": "https://www.aljazeera.net/about-us",
+      "source_document": "AJ Network about",
+      "confidence": "high",
+      "notes": "Qatar state funding $800M+/yr"
+    },
+    {
+      "id": "e_sasac_xinhua",
+      "from_entity_id": "state_sasac",
+      "to_entity_id": "state_xinhua",
+      "instrument": "donation",
+      "amount_usd": null,
+      "date": "2022-12-31",
+      "source_url": "https://english.news.cn/202308/31/c_136881.htm",
+      "source_document": "Xinhua about",
+      "confidence": "high",
+      "notes": "PRC State Council funds Xinhua"
+    }
+  ],
+  "outlet_to_owner": {
+    "associated press": {
+      "owner_entity_id": "nonprofit_propublica",
+      "ownership_form": "nonprofit_coop",
+      "evidence_source_url": "https://www.ap.org/about/",
+      "note": "AP is nonprofit cooperative, not owned; included for completeness"
+    },
+    "reuters": {
+      "owner_entity_id": "private_bloomberg_lp",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.reuters.com/elon-musk-vs-thomson-reuters/",
+      "note": "Reuters is owned by Thomson Reuters (TRI); Bloomberg mentioned as competitor"
+    },
+    "afp": {
+      "owner_entity_id": "state_sasac",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.afp.com/en/about-afp",
+      "note": "AFP is French state-funded cooperative; included for completeness"
+    },
+    "bbc": {
+      "owner_entity_id": "trust_cpb",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.bbc.com/aboutthebbc/governance",
+      "note": "BBC funded by UK licence fee + public grants; charter renewed 2027"
+    },
+    "bloomberg": {
+      "owner_entity_id": "private_bloomberg_lp",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001577516&type=&dateb=&owner=include&count=40",
+      "note": "Bloomberg = Bloomberg LP"
+    },
+    "cnn": {
+      "owner_entity_id": "public_wbd",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001437107&type=10-K&dateb=&owner=include&count=40",
+      "note": "CNN = Warner Bros. Discovery subsidiary"
+    },
+    "fox news": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001754301&type=10-K&dateb=&owner=include&count=40",
+      "note": "Fox News = Fox Corp subsidiary"
+    },
+    "fox business": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001754301&type=10-K&dateb=&owner=include&count=40",
+      "note": "Fox Business = Fox Corp subsidiary"
+    },
+    "wall street journal": {
+      "owner_entity_id": "public_news_corp",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001564708&type=10-K&dateb=&owner=include&count=40",
+      "note": "duplicate of above"
+    },
+    "usa today": {
+      "owner_entity_id": "public_gannett",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001579684&type=10-K&dateb=&owner=include&count=40",
+      "note": "USA Today = Gannett"
+    },
+    "ny post": {
+      "owner_entity_id": "public_news_corp",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001564708&type=10-K&dateb=&owner=include&count=40",
+      "note": "NY Post = News Corp subsidiary"
+    },
+    "new york post": {
+      "owner_entity_id": "public_news_corp",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001564708&type=10-K&dateb=&owner=include&count=40",
+      "note": "NY Post = News Corp subsidiary"
+    },
+    "ny daily news": {
+      "owner_entity_id": "public_tribune",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.chicagotribune.com/2021/06/23/business/tribune-publishing-takeover-alden-global-capital",
+      "note": "NY Daily News = Alden/Tribune Publishing"
+    },
+    "chicago tribune": {
+      "owner_entity_id": "public_tribune",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.chicagotribune.com/2021/06/23/business/tribune-publishing-takeover-alden-global-capital",
+      "note": "Chicago Tribune = Alden/Tribune Publishing"
+    },
+    "baltimore sun": {
+      "owner_entity_id": "public_tribune",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.sec.gov/Archives/edgar/data/1595131/000119312521161431/d38058d8k.htm",
+      "note": "Baltimore Sun = Alden/Tribune Publishing"
+    },
+    "boston herald": {
+      "owner_entity_id": "public_tribune",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.sec.gov/Archives/edgar/data/1595131/000119312521161431/d38058d8k.htm",
+      "note": "Boston Herald = Alden/Tribune Publishing"
+    },
+    "orlando sentinel": {
+      "owner_entity_id": "public_tribune",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.sec.gov/Archives/edgar/data/1595131/000119312521161431/d38058d8k.htm",
+      "note": "duplicate of above"
+    },
+    "hartford courant": {
+      "owner_entity_id": "public_tribune",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.sec.gov/Archives/edgar/data/1595131/000119312521161431/d38058d8k.htm",
+      "note": "Hartford Courant = Alden/Tribune Publishing"
+    },
+    "denver post": {
+      "owner_entity_id": "public_gannett",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001579684&type=10-K&dateb=&owner=include&count=40",
+      "note": "Denver Post = MediaNews Group / Alden minority"
+    },
+    "houston chronicle": {
+      "owner_entity_id": "private_hearst",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.hearst.com/newspapers",
+      "note": "Houston Chronicle = Hearst Communications subsidiary"
+    },
+    "san francisco chronicle": {
+      "owner_entity_id": "private_hearst",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.hearst.com/newspapers",
+      "note": "SF Chronicle = Hearst subsidiary"
+    },
+    "seattle times": {
+      "owner_entity_id": "private_seattle_times",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.seattletimes.com/about-us/",
+      "note": "Seattle Times = Blethen family (since 1896)"
+    },
+    "cleveland plain dealer": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.advance.net/our-properties",
+      "note": "Plain Dealer = Advance Publications (Newhouse)"
+    },
+    "detroit free press": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.advance.net/our-properties",
+      "note": "Detroit Free Press = Advance Publications (Newhouse)"
+    },
+    "arizona republic": {
+      "owner_entity_id": "public_gannett",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001579684&type=10-K&dateb=&owner=include&count=40",
+      "note": "duplicate of above"
+    },
+    "indianapolis star": {
+      "owner_entity_id": "public_gannett",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001579684&type=10-K&dateb=&owner=include&count=40",
+      "note": "duplicate of above"
+    },
+    "columbus dispatch": {
+      "owner_entity_id": "public_gannett",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001579684&type=10-K&dateb=&owner=include&count=40",
+      "note": "Columbus Dispatch = Gannett"
+    },
+    "san diego union-tribune": {
+      "owner_entity_id": "public_tribune",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.sec.gov/Archives/edgar/data/1595131/000119312521161431/d38058d8k.htm",
+      "note": "SD Union-Tribune = Alden/Tribune Publishing; sold 2024 to MediaNews Group; UK also noted"
+    },
+    "the new yorker": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.advance.net/our-properties",
+      "note": "The New Yorker = Advance Publications (Newhouse) / Condé Nast"
+    },
+    "wired": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.advance.net/our-properties",
+      "note": "Wired = Advance Publications / Condé Nast"
+    },
+    "politico": {
+      "owner_entity_id": "public_politico",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.politico.com/about",
+      "note": "Politico = Axel Springer (since 2021, ~$1B)"
+    },
+    "axios": {
+      "owner_entity_id": "public_axios",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.axiosmedia.com/about",
+      "note": "Axios = Cox Enterprises (since 2024, $525M); previously founders+Emerson Collective+Lerer Hippeau"
+    },
+    "propublica": {
+      "owner_entity_id": "nonprofit_propublica",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://www.propublica.org/about",
+      "note": "ProPublica = independent nonprofit newsroom"
+    },
+    "npr": {
+      "owner_entity_id": "nonprofit_npr",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://www.npr.org/about",
+      "note": "NPR = 501(c)(3), CPB-funded"
+    },
+    "pbs": {
+      "owner_entity_id": "nonprofit_pbs",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://www.pbs.org/about/",
+      "note": "PBS = 501(c)(3), CPB-funded"
+    },
+    "sky news": {
+      "owner_entity_id": "public_comcast",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sky.com/about",
+      "note": "Sky News UK = Comcast/NBCUniversal subsidiary"
+    },
+    "the times": {
+      "owner_entity_id": "public_news_corp",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001564708&type=10-K&dateb=&owner=include&count=40",
+      "note": "Times UK = News Corp subsidiary"
+    },
+    "the sunday times": {
+      "owner_entity_id": "public_news_corp",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001564708&type=10-K&dateb=&owner=include&count=40",
+      "note": "Sunday Times UK = News Corp subsidiary"
+    },
+    "the telegraph": {
+      "owner_entity_id": "public_telegraph",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.telegraph.co.uk/about-us/",
+      "note": "Telegraph = RedBird IMI (post 2023 bankruptcy)"
+    },
+    "the independent": {
+      "owner_entity_id": "private_independent",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.independent.co.uk/about-us",
+      "note": "Independent = Evgeny Lebedev (since 2010)"
+    },
+    "the sun": {
+      "owner_entity_id": "public_news_corp",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001564708&type=10-K&dateb=&owner=include&count=40",
+      "note": "The Sun UK = News Corp subsidiary"
+    },
+    "der spiegel": {
+      "owner_entity_id": "private_spiegel",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.spiegel.de/international/about-us",
+      "note": "Der Spiegel = Spiegel-Verlag (employees + Gründer + Holtzbrinck)"
+    },
+    "frankfurter allgemeine zeitung": {
+      "owner_entity_id": "public_faz",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.faz.net/aktuell/wirtschaft/faz-net-impressum-11004410.html",
+      "note": "FAZ = Frankfurter Allgemeine Zeitung GmbH (Klaus Holtzbrinck 65%, FAZIT-Stiftung 31%, Förderverein 4%)"
+    },
+    "cnbc": {
+      "owner_entity_id": "public_comcast",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001166691&type=10-K&dateb=&owner=include&count=40",
+      "note": "CNBC = Comcast/NBCUniversal"
+    },
+    "msnbc": {
+      "owner_entity_id": "public_comcast",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001166691&type=10-K&dateb=&owner=include&count=40",
+      "note": "MSNBC = Comcast/NBCUniversal; spin-off 2025 = Versant"
+    },
+    "abc news": {
+      "owner_entity_id": "public_disney",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-K&dateb=&owner=include&count=40",
+      "note": "ABC = Disney"
+    },
+    "nbc news": {
+      "owner_entity_id": "public_comcast",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001166691&type=10-K&dateb=&owner=include&count=40",
+      "note": "NBC = Comcast"
+    },
+    "cbs news": {
+      "owner_entity_id": "public_paramount",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000813828&type=10-K&dateb=&owner=include&count=40",
+      "note": "duplicate of above"
+    },
+    "new orleans times-picayune": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.advance.net/our-properties",
+      "note": "Times-Picayune = Advance Publications (Newhouse)"
+    },
+    "buffalo news": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.advance.net/our-properties",
+      "note": "Buffalo News = Lee Enterprises (acquired 2020 from Berkshire Hathaway)"
+    },
+    "newark star-ledger": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.advance.net/our-properties",
+      "note": "Star-Ledger = Advance Publications"
+    },
+    "asbury park press": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.advance.net/our-properties",
+      "note": "APP = Gannett (sold 2020)"
+    },
+    "vanity fair": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.advance.net/our-properties",
+      "note": "Vanity Fair = Condé Nast (Advance Publications)"
+    },
+    "al jazeera english": {
+      "owner_entity_id": "public_al_jazeera",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.aljazeera.net/about-us",
+      "note": "Qatar state"
+    },
+    "al jazeera": {
+      "owner_entity_id": "public_al_jazeera",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.aljazeera.net/about-us",
+      "note": "Qatar state"
+    },
+    "al jazeera arabic": {
+      "owner_entity_id": "public_al_jazeera",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.aljazeera.net/about-us",
+      "note": "Qatar state"
+    },
+    "haaretz": {
+      "owner_entity_id": "public_haaretz",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.haaretz.com/contact-us",
+      "note": "Schocken family"
+    },
+    "jerusalem post": {
+      "owner_entity_id": "public_jpost",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.jpost.com/about",
+      "note": "Mirkaee Tikshoret"
+    },
+    "tass": {
+      "owner_entity_id": "public_tass",
+      "ownership_form": "state",
+      "evidence_source_url": "https://tass.com/about",
+      "note": "Russian state"
+    },
+    "sputnik": {
+      "owner_entity_id": "public_sputnik",
+      "ownership_form": "state",
+      "evidence_source_url": "https://sputnikglobe.com/about/",
+      "note": "Russia/Rossiya Segodnya"
+    },
+    "press tv": {
+      "owner_entity_id": "public_press_tv",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.presstv.ir/about",
+      "note": "Iran state"
+    },
+    "irna": {
+      "owner_entity_id": "public_irna",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.irna.ir/about",
+      "note": "Iran state"
+    },
+    "xinhua": {
+      "owner_entity_id": "state_xinhua",
+      "ownership_form": "state",
+      "evidence_source_url": "https://english.news.cn/202308/31/c_136881.htm",
+      "note": "PRC state"
+    },
+    "global times": {
+      "owner_entity_id": "public_global_times",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.globaltimes.cn/about-us.html",
+      "note": "People's Daily Group"
+    },
+    "telesur": {
+      "owner_entity_id": "public_teleSUR_global",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.telesurtv.net/quienes-somos.html",
+      "note": "Venezuela + 6 LA states"
+    },
+    "granma": {
+      "owner_entity_id": "public_granma",
+      "ownership_form": "state",
+      "evidence_source_url": "https://en.granma.cu/acerca-de",
+      "note": "Cuba state"
+    },
+    "toronto star": {
+      "owner_entity_id": "public_toronto_star",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.thestar.com/about",
+      "note": "Nordstar Capital"
+    },
+    "globe and mail": {
+      "owner_entity_id": "public_globe_and_mail",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.theglobeandmail.com/about-us/",
+      "note": "Woodbridge Co"
+    },
+    "sydney morning herald": {
+      "owner_entity_id": "public_smh",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.smh.com.au/about-us",
+      "note": "Nine Entertainment"
+    },
+    "times of india": {
+      "owner_entity_id": "public_times_india",
+      "ownership_form": "private",
+      "evidence_source_url": "https://timesofindia.indiatimes.com/aboutus.cms",
+      "note": "BCCL Jain family"
+    },
+    "hindustan times": {
+      "owner_entity_id": "public_hindustan_times",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.hindustantimes.com/about-us",
+      "note": "HT Media Birla family"
+    },
+    "daily sabah": {
+      "owner_entity_id": "public_daily_sabah",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.dailysabah.com/about-daily-sabah",
+      "note": "Kalyon Group"
+    },
+    "anadolu agency": {
+      "owner_entity_id": "public_aa",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.aa.com.tr/en/about-us",
+      "note": "Turkish state"
+    },
+    "rte": {
+      "owner_entity_id": "public_rte",
+      "ownership_form": "state",
+      "evidence_source_url": "https://about.rte.ie/",
+      "note": "Irish state"
+    },
+    "yomiuri shimbun": {
+      "owner_entity_id": "public_yomiuri",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.yomiuri.co.jp/about-us/",
+      "note": "Yomiuri Group"
+    },
+    "asahi shimbun": {
+      "owner_entity_id": "public_asahi",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.asahi.com/corporate/about/",
+      "note": "Asahi Shimbun Co"
+    },
+    "kyodo news": {
+      "owner_entity_id": "public_kyodo",
+      "ownership_form": "private",
+      "evidence_source_url": "https://english.kyodonews.net/about/",
+      "note": "Japanese cooperative"
+    },
+    "yonhap news": {
+      "owner_entity_id": "public_yna",
+      "ownership_form": "state",
+      "evidence_source_url": "https://en.yna.co.kr/about",
+      "note": "Korean state"
+    },
+    "twitter": {
+      "owner_entity_id": "public_twitter_x",
+      "ownership_form": "private",
+      "evidence_source_url": "https://x.com/about",
+      "note": "X Corp/Elon Musk"
+    },
+    "facebook": {
+      "owner_entity_id": "public_facebook_meta",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-K&dateb=&owner=include&count=40",
+      "note": "Meta NASDAQ:META"
+    },
+    "sf chronicle": {
+      "owner_entity_id": "private_hearst",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.sfchronicle.com/about",
+      "note": "Hearst"
+    },
+    "politico europe": {
+      "owner_entity_id": "public_politico",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.politico.com/about",
+      "note": "Axel Springer"
+    },
+    "trouw": {
+      "owner_entity_id": "public_dpg_media",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.dpgmediagroup.com/en",
+      "note": "DPG Media"
+    },
+    "algemeen dagblad": {
+      "owner_entity_id": "public_dpg_media",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.dpgmediagroup.com/en",
+      "note": "DPG Media"
+    },
+    "les echos": {
+      "owner_entity_id": "private_les_echos",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.lesechos.fr/qui-sommes-nous",
+      "note": "LVMH/Arnault"
+    },
+    "le parisien": {
+      "owner_entity_id": "private_les_echos",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.lesechos.fr/qui-sommes-nous",
+      "note": "LVMH/Arnault"
+    },
+    "latimes": {
+      "owner_entity_id": "public_tribune_alt",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.latimes.com/about",
+      "note": "Patrick Soon-Shiong Nant Capital"
+    },
+    "the new york times": {
+      "owner_entity_id": "public_nyt",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000071691&type=10-K&dateb=&owner=include&count=40",
+      "note": "NYT Co. Sulzberger"
+    },
+    "new york times": {
+      "owner_entity_id": "public_nyt",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000071691&type=10-K&dateb=&owner=include&count=40",
+      "note": "NYT Co. Sulzberger"
+    },
+    "washington post": {
+      "owner_entity_id": "private_nash",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.washingtonpost.com/discussions/2018/02/01/jeff-bezos-and-the-washington-post/",
+      "note": "Jeff Bezos/Nash Holdings"
+    },
+    "los angeles times": {
+      "owner_entity_id": "public_tribune_alt",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.latimes.com/about",
+      "note": "Patrick Soon-Shiong Nant Capital"
+    },
+    "boston globe": {
+      "owner_entity_id": "private_globe",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.bostonglobemedia.com/about-us/",
+      "note": "John W. Henry II"
+    },
+    "miami herald": {
+      "owner_entity_id": "private_mcclatchy",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.mcclatchy.com/about",
+      "note": "McClatchy/Chatham Asset"
+    },
+    "atlanta journal-constitution": {
+      "owner_entity_id": "private_cox_ent",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.coxenterprises.com/about-us/",
+      "note": "Cox Enterprises"
+    },
+    "philadelphia inquirer": {
+      "owner_entity_id": "private_lenfest",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://www.inquirer.com/about/",
+      "note": "Lenfest Institute"
+    },
+    "pittsburgh post-gazette": {
+      "owner_entity_id": "private_pgh",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.post-gazette.com/about",
+      "note": "Block family"
+    },
+    "minneapolis star tribune": {
+      "owner_entity_id": "private_strib",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.startribune.com/about-us/",
+      "note": "Glen Taylor"
+    },
+    "tampa bay times": {
+      "owner_entity_id": "private_tampa",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://www.tampabay.com/about/",
+      "note": "Poynter Institute"
+    },
+    "sacramento bee": {
+      "owner_entity_id": "private_mcclatchy",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.mcclatchy.com/about",
+      "note": "McClatchy/Chatham"
+    },
+    "kansas city star": {
+      "owner_entity_id": "private_mcclatchy",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.mcclatchy.com/about",
+      "note": "McClatchy/Chatham"
+    },
+    "st. louis post-dispatch": {
+      "owner_entity_id": "public_lee",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000057211&type=10-K&dateb=&owner=include&count=40",
+      "note": "Lee Enterprises NASDAQ:LEE"
+    },
+    "the atlantic": {
+      "owner_entity_id": "private_atlantic",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.theatlantic.com/about/",
+      "note": "Emerson Collective/Powell Jobs"
+    },
+    "forbes": {
+      "owner_entity_id": "private_vice",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.forbes.com/about/",
+      "note": "Forbes = Integrated Whale Media (Hong Kong)"
+    },
+    "fortune": {
+      "owner_entity_id": "private_vice",
+      "ownership_form": "private",
+      "evidence_source_url": "https://fortune.com/about-us/",
+      "note": "Fortune Media = Chatchaval Jiaravanon"
+    },
+    "the daily beast": {
+      "owner_entity_id": "private_iac",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.iac.com/companies",
+      "note": "IAC/Barry Diller"
+    },
+    "vice": {
+      "owner_entity_id": "private_vice",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.vice.com/en_us/about",
+      "note": "Vice Media/Fortress/Soros"
+    },
+    "slate": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://slate.com/about",
+      "note": "Slate = Graham Holdings"
+    },
+    "vox": {
+      "owner_entity_id": "private_voxmedia",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.voxmedia.com/about",
+      "note": "Vox Media; Comcast 14%"
+    },
+    "the intercept": {
+      "owner_entity_id": "private_firstlook",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://firstlook.media/about",
+      "note": "Pierre Omidyar/First Look Media"
+    },
+    "breitbart": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.breitbart.com/about/",
+      "note": "Breitbart = Mercer/Bannon funded"
+    },
+    "the guardian": {
+      "owner_entity_id": "private_griffin",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://www.theguardian.com/about",
+      "note": "Scott Trust Limited"
+    },
+    "le monde": {
+      "owner_entity_id": "public_lemonde_group",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.lemonde.fr/en/about-us/",
+      "note": "Le Monde Libre"
+    },
+    "le monde english": {
+      "owner_entity_id": "public_lemonde_group",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.lemonde.fr/en/about-us/",
+      "note": "Le Monde Libre"
+    },
+    "le figaro": {
+      "owner_entity_id": "public_lefigaro",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.lefigaro.fr/plus",
+      "note": "Groupe Dassault/Dreyfus"
+    },
+    "die zeit": {
+      "owner_entity_id": "public_holtzbrinck",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.zeit.de/impressum",
+      "note": "Holtzbrinck/Bucerius"
+    },
+    "süddeutsche zeitung": {
+      "owner_entity_id": "public_holtzbrinck",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.sueddeutsche.de/impressum",
+      "note": "Holtzbrinck/SWMH"
+    },
+    "handelsblatt": {
+      "owner_entity_id": "public_holtzbrinck",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.handelsblatt.com/impressum",
+      "note": "Holtzbrinck"
+    },
+    "bild": {
+      "owner_entity_id": "public_politico_axios_na",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.axelspringer.com/en/companies/axelspringer-se",
+      "note": "Axel Springer"
+    },
+    "el país": {
+      "owner_entity_id": "public_prisa",
+      "ownership_form": "private",
+      "evidence_source_url": "https://elpais.com/estaticos/corporativo/",
+      "note": "PRISA"
+    },
+    "el mundo": {
+      "owner_entity_id": "public_unidad",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.elmundo.es/static/html/informacion-corporativa.html",
+      "note": "Unidad Editorial/Planeta"
+    },
+    "la vanguardia": {
+      "owner_entity_id": "public_vanguardia",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.lavanguardia.com/legal",
+      "note": "Grupo Godó"
+    },
+    "la repubblica": {
+      "owner_entity_id": "public_gedi",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.gedispa.it",
+      "note": "GEDI/EXOR Agnelli"
+    },
+    "corriere della sera": {
+      "owner_entity_id": "public_rcs",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.rcsmediagroup.it",
+      "note": "RCS Cairo/Della Valle"
+    },
+    "nrc handelsblad": {
+      "owner_entity_id": "public_mediahuis",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.mediahuis.be",
+      "note": "Mediahuis"
+    },
+    "de volkskrant": {
+      "owner_entity_id": "public_dpg_media",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.dpgmediagroup.com/en",
+      "note": "DPG Media"
+    },
+    "de telegraaf": {
+      "owner_entity_id": "public_dpg_media",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.dpgmediagroup.com/en",
+      "note": "DPG Media"
+    },
+    "daily mail": {
+      "owner_entity_id": "private_dmgt",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.dmgmedia.co.uk/about-us/",
+      "note": "DMGT Rothermere"
+    },
+    "financial times": {
+      "owner_entity_id": "public_nikkei",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.nikkei.com/about-us/",
+      "note": "Nikkei Inc Japan"
+    },
+    "mirror": {
+      "owner_entity_id": "private_reach",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.reachplc.com/about",
+      "note": "Reach plc LSE:RCH"
+    },
+    "itv": {
+      "owner_entity_id": "public_itv",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.itvplc.com/investors",
+      "note": "ITV plc LSE:ITV"
+    },
+    "ars technica": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.advance.net/our-properties",
+      "note": "Advance/Newhouse via Condé Nast"
+    },
+    "the hill": {
+      "owner_entity_id": "public_nexstar",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001142417&type=10-K&dateb=&owner=include&count=40",
+      "note": "Nexstar since 2021"
+    },
+    "newsnation": {
+      "owner_entity_id": "public_nexstar",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001142417&type=10-K&dateb=&owner=include&count=40",
+      "note": "Nexstar NASDAQ:NXST"
+    },
+    "the daily caller": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "private",
+      "evidence_source_url": "https://dailycaller.com/about-us/",
+      "note": "Daily Caller = Foster Friess + Neil Patel"
+    },
+    "the daily wire": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.dailywire.com/about",
+      "note": "Daily Wire = Ben Shapiro / Jeremy Boreing"
+    },
+    "the federalist": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "private",
+      "evidence_source_url": "https://thefederalist.com/about/",
+      "note": "Federalist = Ben Domenech; private"
+    },
+    "national review": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.nationalreview.com/about/",
+      "note": "National Review = EIH"
+    },
+    "newsmax": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.newsmax.com/about",
+      "note": "Newsmax = Christopher Ruddy; private"
+    },
+    "reason": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://reason.com/about/",
+      "note": "Reason = Reason Foundation (nonprofit); Koch-aligned"
+    },
+    "the nation": {
+      "owner_entity_id": "public_nyt",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://www.thenation.com/about/",
+      "note": "The Nation = nonprofit; founded 1865"
+    },
+    "chicago sun-times": {
+      "owner_entity_id": "private_cst",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://chicago.suntimes.com/about",
+      "note": "Chicago Public Media"
+    },
+    "dallas morning news": {
+      "owner_entity_id": "private_aoc",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.dallasnews.com/about",
+      "note": "A.H. Belo"
+    },
+    "the american conservative": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.theamericanconservative.com/about",
+      "note": "TAC = Buchanan founding; private"
+    },
+    "townhall": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "public_corp",
+      "evidence_source_url": "https://townhall.com/about",
+      "note": "Townhall = Salem Media Group NASDAQ:SALM"
+    },
+    "the epoch times": {
+      "owner_entity_id": "public_fox_corp",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.theepochtimes.com/about-us",
+      "note": "Epoch Times = Falun Gong / Li Hongzhi related"
+    },
+    "mother jones": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://www.motherjones.com/about-us/",
+      "note": "Mother Jones = Foundation for National Progress"
+    },
+    "the dispatch": {
+      "owner_entity_id": "public_axios",
+      "ownership_form": "private",
+      "evidence_source_url": "https://thedispatch.com/about/",
+      "note": "The Dispatch = Steve Hayes / Jonah Goldberg"
+    },
+    "war on the rocks": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "private",
+      "evidence_source_url": "https://warontherocks.com/about/",
+      "note": "War on the Rocks = Real Clear Politics group"
+    },
+    "lawfare": {
+      "owner_entity_id": "public_advance",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://www.lawfaremedia.org/about",
+      "note": "Lawfare = Lawfare Institute (nonprofit)"
+    },
+    "just security": {
+      "owner_entity_id": "public_nyt",
+      "ownership_form": "nonprofit",
+      "evidence_source_url": "https://www.justsecurity.org/about/",
+      "note": "Just Security = Reiss Center on Law and Security, NYU"
+    },
+    "euronews": {
+      "owner_entity_id": "public_al_jazeera",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.euronews.com/about",
+      "note": "Euronews = Alpac Capital (Portuguese) since 2024"
+    },
+    "france 24": {
+      "owner_entity_id": "public_al_jazeera",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.france24.com/en/about-us",
+      "note": "France 24 = France Médias Monde (French state)"
+    },
+    "dw (deutsche welle)": {
+      "owner_entity_id": "public_al_jazeera",
+      "ownership_form": "state",
+      "evidence_source_url": "https://www.dw.com/en/about-dw/profile/s-30688",
+      "note": "DW = German public broadcaster"
+    },
+    "euractiv": {
+      "owner_entity_id": "public_gedi",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.euractiv.com/about-euractiv/",
+      "note": "Euractiv = media company founded 1999"
+    },
+    "huffington post": {
+      "owner_entity_id": "private_iac",
+      "ownership_form": "private",
+      "evidence_source_url": "https://www.huffpost.com/about-us",
+      "note": "HuffPost = Yahoo since 2024"
+    }
+  }
+}

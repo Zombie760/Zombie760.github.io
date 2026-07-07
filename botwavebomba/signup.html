@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SUBSCRIBE — DAILY BLINDSPOT BRIEF — BOTWAVEBOMBA</title>
+  <meta name="description" content="Three stories. One structural gap each. 5 minutes. In your inbox every morning at 7am Pacific. $49/mo or $499/yr.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <style>
+    .bwb-signup-wrap { max-width: 640px; margin: 0 auto; padding: 56px 24px 80px; }
+    .bwb-signup-hero { text-align: center; margin-bottom: 40px; }
+    .bwb-signup-hero .kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--theme-primary); margin: 0 0 12px; }
+    .bwb-signup-hero h1 { font-family: var(--font-display); font-size: 44px; line-height: 1.05; margin: 0 0 16px; }
+    .bwb-signup-hero .lede { font-size: 17px; line-height: 1.55; color: var(--text-secondary); max-width: 520px; margin: 0 auto; }
+    .bwb-signup-tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0 24px; }
+    .bwb-signup-tier { background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 24px; text-align: center; cursor: pointer; transition: border-color 120ms; }
+    .bwb-signup-tier:hover { border-color: var(--theme-primary); }
+    .bwb-signup-tier.selected { border-color: var(--theme-primary); background: var(--bg-card); }
+    .bwb-signup-tier .tier-name { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+    .bwb-signup-tier .tier-price { font-family: var(--font-display); font-size: 32px; font-weight: 700; line-height: 1; margin: 0 0 4px; }
+    .bwb-signup-tier .tier-cadence { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin: 0 0 12px; }
+    .bwb-signup-tier .tier-note { font-size: 12px; line-height: 1.5; color: var(--text-secondary); margin: 0; }
+    .bwb-signup-form { background: var(--bg-card); border: 1px solid var(--theme-primary); padding: 32px 28px; margin-top: 24px; }
+    .bwb-signup-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .bwb-signup-row label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
+    .bwb-signup-row input { font-family: var(--font-mono); font-size: 14px; padding: 10px 12px; background: var(--bg-base); border: 1px solid var(--border-subtle); color: var(--text-primary); }
+    .bwb-signup-row input:focus { outline: none; border-color: var(--theme-primary); }
+    .bwb-signup-submit { width: 100%; background: var(--theme-primary); color: #fff; border: none; padding: 14px 24px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; }
+    .bwb-signup-submit:hover { background: #d04a3a; }
+    .bwb-signup-submit:disabled { background: var(--text-muted); cursor: not-allowed; }
+    .bwb-signup-note { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); line-height: 1.6; margin: 16px 0 0; text-align: center; }
+    .bwb-signup-receipts { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border-subtle); }
+    .bwb-signup-receipts h3 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--theme-primary); margin: 0 0 14px; }
+    .bwb-signup-receipts ul { list-style: none; padding: 0; margin: 0; }
+    .bwb-signup-receipts li { font-size: 13px; line-height: 1.7; color: var(--text-secondary); padding-left: 16px; position: relative; margin-bottom: 8px; }
+    .bwb-signup-receipts li::before { content: '✓'; position: absolute; left: 0; color: var(--theme-primary); font-weight: 700; }
+    .bwb-signup-status { padding: 12px 16px; margin: 12px 0; font-family: var(--font-mono); font-size: 12px; display: none; }
+    .bwb-signup-status.show { display: block; }
+    .bwb-signup-status.error { background: rgba(191, 59, 45, 0.1); color: var(--theme-primary); border-left: 3px solid var(--theme-primary); }
+    .bwb-signup-status.success { background: rgba(95, 184, 168, 0.1); color: #5fb8a8; border-left: 3px solid #5fb8a8; }
+    .bwb-signup-status.info { background: var(--bg-card); color: var(--text-secondary); border-left: 3px solid var(--text-muted); }
+    .bwb-signup-archive-cta { text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-subtle); }
+    .bwb-signup-archive-cta a { color: var(--text-secondary); font-family: var(--font-mono); font-size: 12px; text-decoration: underline; text-decoration-color: var(--border-subtle); }
+    .bwb-signup-archive-cta a:hover { color: var(--theme-primary); text-decoration-color: var(--theme-primary); }
+    @media (max-width: 520px) {
+      .bwb-signup-tiers { grid-template-columns: 1fr; }
+      .bwb-signup-hero h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <header data-bwb-chrome="compact"></header>
+  <main class="bwb-signup-wrap">
+    <section class="bwb-signup-hero">
+      <p class="kicker">Daily Blindspot Brief · $49/mo or $499/yr</p>
+      <h1>See the gap<br>before it's a story.</h1>
+      <p class="lede">3 stories a day, picked from the 160-story working corpus. Each one a structural coverage gap. 5 minutes. 7am Pacific. Cancel anytime.</p>
+    </section>
+
+    <section class="bwb-signup-receipts" aria-label="What you get">
+      <h3>What you get, every morning</h3>
+      <ul>
+        <li>3 stories where the working corpus shows the widest structural gap</li>
+        <li>Bloc spread (Western / Non-Aligned / Adversarial) and geo spread on every pick</li>
+        <li>Primary source URLs — every claim links back to a filed original</li>
+        <li>Methodology transparency — what the bias bar measures and what it doesn't</li>
+        <li>Archive access — every brief since launch, browsable, free</li>
+      </ul>
+    </section>
+
+    <form class="bwb-signup-form" id="bwb-signup-form" novalidate>
+      <div class="bwb-signup-tiers" role="radiogroup" aria-label="Subscription tier">
+        <label class="bwb-signup-tier selected" data-tier="monthly">
+          <div class="tier-name">Monthly</div>
+          <div class="tier-price">$49</div>
+          <div class="tier-cadence">per month</div>
+          <p class="tier-note">Cancel anytime. Best for trying it.</p>
+        </label>
+        <label class="bwb-signup-tier" data-tier="annual">
+          <div class="tier-name">Annual <span style="color: var(--theme-primary);">— save 15%</span></div>
+          <div class="tier-price">$499</div>
+          <div class="tier-cadence">per year · $41.58/mo</div>
+          <p class="tier-note">Best for daily readers. Same as 10 months for the price of 8.</p>
+        </label>
+      </div>
+
+      <div class="bwb-signup-row">
+        <label for="bwb-signup-name">Name (optional)</label>
+        <input type="text" id="bwb-signup-name" name="name" autocomplete="name" placeholder="Casey Reporter">
+      </div>
+      <div class="bwb-signup-row">
+        <label for="bwb-signup-email">Email</label>
+        <input type="email" id="bwb-signup-email" name="email" autocomplete="email" required placeholder="you@newsroom.com">
+      </div>
+
+      <div class="bwb-signup-status" id="bwb-signup-status"></div>
+
+      <button type="submit" class="bwb-signup-submit" id="bwb-signup-submit">
+        Subscribe · proceed to checkout
+      </button>
+      <p class="bwb-signup-note">
+        Powered by Stripe. Card never touches our servers. Email is for the brief only — no list buys, no third-party sharing.
+      </p>
+    </form>
+
+    <div class="bwb-signup-archive-cta">
+      <a href="/brief.html">Not sure? Read today's brief free →</a>
+    </div>
+  </main>
+
+  <script>
+    // Tier selection
+    document.querySelectorAll('.bwb-signup-tier').forEach(function(t) {
+      t.addEventListener('click', function() {
+        document.querySelectorAll('.bwb-signup-tier').forEach(function(x) { x.classList.remove('selected'); });
+        t.classList.add('selected');
+      });
+    });
+
+    function setStatus(msg, kind) {
+      var el = document.getElementById('bwb-signup-status');
+      el.className = 'bwb-signup-status show ' + (kind || 'info');
+      el.textContent = msg;
+    }
+
+    document.getElementById('bwb-signup-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var email = document.getElementById('bwb-signup-email').value.trim();
+      var name  = document.getElementById('bwb-signup-name').value.trim();
+      var tier  = document.querySelector('.bwb-signup-tier.selected').dataset.tier;
+      var submit = document.getElementById('bwb-signup-submit');
+
+      if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        setStatus('That email doesn\'t look right. Try again.', 'error');
+        return;
+      }
+
+      submit.disabled = true;
+      setStatus('Provisioning your account...', 'info');
+
+      try {
+        // The actual checkout path: POST to /api/signup → returns Stripe Checkout URL
+        // For now, write to subscribers.jsonl on the local server (development)
+        // In production: replace with a serverless function that calls Stripe Checkout session.create
+        var r = await fetch((window.BWB_BASE || '/') + 'api/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, name: name, tier: tier })
+        });
+
+        if (r.ok) {
+          var data = await r.json().catch(function() { return {}; });
+          if (data.checkout_url) {
+            window.location.href = data.checkout_url;
+            return;
+          }
+          if (data.waitlist) {
+            setStatus('You\'re on the waitlist. We\'ll email when subscriptions open.', 'success');
+            submit.textContent = 'On the waitlist ✓';
+            return;
+          }
+          setStatus('Account created. Check your email for confirmation.', 'success');
+          submit.textContent = 'Subscribed ✓';
+        } else {
+          setStatus('Something went wrong. Email support@botwavebomba.com if it persists.', 'error');
+          submit.disabled = false;
+        }
+      } catch (err) {
+        // Network failure — likely local dev. Fall back to a polite local-storage success.
+        try { localStorage.setItem('bwb_signup_intent', JSON.stringify({ email: email, name: name, tier: tier, ts: Date.now() })); } catch (e) {}
+        setStatus('Captured locally (dev mode). In production, this would route to Stripe Checkout. Email us at support@botwavebomba.com to complete signup.', 'info');
+        submit.textContent = 'Captured (dev) ✓';
+      }
+    });
+  </script>
+  <script src="/assets/js/base-path.js"></script>
+  <script src="/assets/js/site-chrome.js" defer></script>
+</body>
+</html>

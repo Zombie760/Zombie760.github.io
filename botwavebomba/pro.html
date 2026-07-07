@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOTWAVEBOMBA PRO</title>
-  <meta name="description" content="Real-time SSE blindspot alerts, PAI summaries, exports, and private digests. The full intelligence layer.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BOTWAVEBOMBA PRO — $10/mo</title>
+  <meta name="description" content="The full intelligence layer — side-by-side 3-pane UI, blindspot alerts, full export, PAI summaries. Powered by TELOS+PAI substrate. $10/mo or $100/yr.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/mobile.css">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0a0a0a">
   <style>
     body {font-family:'DM Sans',system-ui,sans-serif;background:#0a0a0a;color:#F0EDE8;padding:0;margin:0}
-    .pro-wrap {max-width:680px;margin:0 auto;padding:80px 24px}
+    .pro-wrap {max-width:780px;margin:0 auto;padding:80px 24px 120px}
     .pro-badge {font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:#BF3B2D;border:1px solid #BF3B2D;padding:4px 12px;display:inline-block;margin-bottom:32px}
     .pro-h1 {font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#F0EDE8;margin:0 0 24px}
     .pro-h1 em {font-style:italic;color:#BF3B2D}
@@ -23,87 +22,75 @@
     .pro-features {list-style:none;padding:0;margin:0 0 48px}
     .pro-features li {padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:14px;color:rgba(240,237,232,0.85);display:flex;align-items:center;gap:12px}
     .pro-features li::before {content:'';display:block;width:6px;height:6px;border-radius:50%;background:#BF3B2D;flex-shrink:0}
-    .pro-price {font-family:'DM Mono',monospace;font-size:14px;letter-spacing:1px;color:rgba(240,237,232,0.5);margin-bottom:24px}
-    .pro-price strong {color:#F0EDE8;font-size:28px;font-weight:500}
+    .pro-price {font-family:'DM Mono',monospace;font-size:14px;letter-spacing:1px;color:rgba(240,237,232,0.5);margin-bottom:8px}
+    .pro-price strong {color:#F0EDE8;font-size:32px;font-weight:500}
+    .pro-price-billed {font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.5px;color:rgba(240,237,232,0.4);margin-bottom:28px}
+    .pro-price-source {font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.35);margin-bottom:24px;line-height:1.6}
+    .pro-price-source a {color:inherit;text-decoration:underline}
     .pro-cta {display:inline-block;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;background:#BF3B2D;color:#fff;text-decoration:none;border:none;cursor:pointer;transition:background 0.15s}
     .pro-cta:hover {background:#a83327}
     .pro-note {font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.3);margin-top:32px;line-height:1.6}
+    .pro-tiers {display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 36px}
+    .pro-tier {background:#161616;border:1px solid rgba(255,255,255,0.10);padding:18px 18px 22px}
+    .pro-tier-tier {font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#BF3B2D;margin-bottom:6px}
+    .pro-tier-name {font-family:'Playfair Display',Georgia,serif;font-size:22px;margin:0 0 8px;color:#F0EDE8}
+    .pro-tier-price {font-family:'DM Mono',monospace;font-size:13px;color:rgba(240,237,232,0.65);margin-bottom:10px}
+    .pro-tier-price strong {color:#F0EDE8;font-size:20px;font-weight:500}
+    .pro-tier-link {font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#BF3B2D;text-transform:uppercase;text-decoration:none;border-bottom:1px solid #BF3B2D;padding-bottom:2px}
+    @media (max-width:680px){ .pro-tiers{grid-template-columns:1fr} }
   </style>
+  <meta name="view-transition" content="same-origin">
+  <script type="speculationrules">
+  {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
+  </script>
 </head>
 <body>
-
-  <!-- ── HEADER (4-LAYER EDITORIAL STACK) ── -->
-
-  <aside class="bwb-promo" role="region" aria-label="Bomba positioning">
-    <div class="bwb-promo-inner">
-      <p class="bwb-promo-line">
-        <span class="bwb-promo-lede">See <em>who's funding</em> the side.</span>
-        <span class="bwb-promo-rest">Not just who's reporting it.</span>
-      </p>
-      <a class="bwb-promo-cta" href="about.html">Read methodology &rarr;</a>
-    </div>
-  </aside>
-
-  <div class="bwb-util" role="region" aria-label="Pipeline state">
-    <div class="bwb-util-inner">
-      <div class="bwb-util-group">
-        <span class="bwb-pipeline-badge"><span class="bwb-pipe-dot"></span>TELOS+PAI LIVE</span>
-        <span class="bwb-util-sep">&middot;</span>
-        <span class="bwb-util-stat"><b>26,542</b> sources cataloged</span>
-        <span class="bwb-util-sep">&middot;</span>
-        <span class="bwb-util-stat"><b>496</b> deep-fingerprinted</span>
-      </div>
-      <div class="bwb-util-group bwb-util-right">
-        <span class="bwb-util-date" id="util-date"></span>
-        <span class="bwb-util-sep">&middot;</span>
-        <a class="bwb-util-link" href="data/sources_wide.json">OPEN DATA &darr;</a>
-      </div>
-    </div>
-  </div>
-
-  <header class="bwb-header">
-    <div class="bwb-header-inner">
-      <a href="." class="bwb-brand" aria-label="BOTWAVEBOMBA &mdash; Home">
-        <span class="bwb-brand-mark">BOTWAVE<em>BOMBA</em></span>
-        <span class="bwb-brand-axes">5-axis &middot; 3-bloc &middot; adversarial included</span>
-      </a>
-      <nav class="bwb-topnav" aria-label="Primary">
-        <a href=".">Feed</a>
-        <a href="local.html">Local</a>
-        <a href="blindspots.html">Blindspots</a>
-        <a href="sources.html">Sources</a>
-        <a href="trades.html">Trades</a>
-        <a href="books.html">Books</a>
-        <a href="corkboard/">Corkboard</a>
-        <a href="corruption.html">Corruption</a>
-        <a href="about.html">Method</a>
-        <a href="funnies.html">Funnies</a>
-      </nav>
-      <div class="bwb-header-right">
-        <a class="bwb-pro-btn" href="pro.html">Pro</a>
-      </div>
-    </div>
-  </header>
-
-<div class="pro-wrap">
-    <div class="pro-badge">COMING SOON</div>
+  <div class="pro-wrap">
+    <div class="pro-badge">SUBSCRIBE — WEEK 2</div>
     <h1 class="pro-h1">The full <em>intelligence layer</em></h1>
     <p class="pro-body">
       The free feed shows you the gap. PRO shows you the architecture behind it.
-      Real-time SSE blindspot alerts. PAI-generated summaries. Full export. Private digests.
-      The same substrate that powers the journalism arm.
+      Real-time blindspot alerts, the side-by-side 3-pane view, PAI-generated
+      summaries, full export, private digests. The same TELOS+PAI substrate that
+      powers the journalism arm — with the throttle removed.
     </p>
+
     <ul class="pro-features">
-      <li>Real-time SSE alerts for Western Blackout and Mono-Frame events</li>
+      <li>Side-by-side 3-pane framing (Western / Non-Aligned / Adversarial)</li>
+      <li>Real-time alerts for Western Blackout and Mono-Frame events</li>
       <li>PAI-generated story summaries with 5-axis bias fingerprints per source</li>
       <li>Ownership concentration alerts — when 2+ sources share a parent company</li>
       <li>Full JSON/CSV export of stories, blindspots, and source data</li>
       <li>Private daily digest via Telegram or email</li>
-      <li>Priority access to new sources as the registry expands</li>
       <li>5-axis deep fingerprint overlay on every story card</li>
+      <li>Priority access to new sources as the registry expands (244 → 492)</li>
     </ul>
-    <div class="pro-price"><strong>$9</strong> / month</div>
-    <a href="https://gringo1904.gumroad.com/l/gmwcbj" target="_blank" class="pro-cta">Join Waitlist</a>
+
+    <div class="pro-tiers">
+      <div class="pro-tier">
+        <div class="pro-tier-tier">PRO · INDIVIDUAL</div>
+        <h3 class="pro-tier-name">Solo</h3>
+        <div class="pro-tier-price"><strong>$10</strong> / month</div>
+        <p style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.5);line-height:1.5;margin:0 0 14px">Unlimited cluster lookups · 3-pane view · blindspot alerts · export · PAI summaries.</p>
+        <a href="#pro-checkout" class="pro-tier-link" data-tier="pro" data-interval="month">Subscribe →</a>
+      </div>
+      <div class="pro-tier">
+        <div class="pro-tier-tier">TEAM · 5 SEATS</div>
+        <h3 class="pro-tier-name">Newsroom</h3>
+        <div class="pro-tier-price"><strong>$50</strong> / month</div>
+        <p style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.5);line-height:1.5;margin:0 0 14px">Everything in Pro · 5 seats · shared alert rules · Slack/Discord webhook · team digest.</p>
+        <a href="#team-checkout" class="pro-tier-link" data-tier="team" data-interval="month">Subscribe →</a>
+      </div>
+    </div>
+
+    <div class="pro-price"><strong>$10</strong> / month</div>
+    <div class="pro-price-billed">Billed monthly. Cancel anytime. Annual $100/yr (2 months free) — see Stripe.</div>
+    <div class="pro-price-source">
+      Pricing anchored to <a href="https://stripe.com/pricing" target="_blank" rel="noopener noreferrer">stripe.com/pricing</a>
+      · checkout via <a href="https://checkout.stripe.com" target="_blank" rel="noopener noreferrer">Stripe Checkout</a>
+      · <a href="/team.html">Team tier</a> · webhook signature verification per <a href="https://docs.stripe.com/webhooks/signatures" target="_blank" rel="noopener noreferrer">stripe docs</a>.
+    </div>
+    <a href="#" id="pro-checkout-btn" class="pro-cta" data-tier="pro" data-interval="month">Subscribe — $10/mo</a>
     <p class="pro-note">
       PRO is not a different product. It's the same TELOS+PAI substrate with the throttle removed.
       Free users get the public feed. PRO users get the intelligence that the feed is built on.
@@ -111,190 +98,52 @@
     </p>
   </div>
 
-    <!-- ── FOOTER (9-column — mirrors Ground News structure, Bomba content) ── -->
-  <footer class="bwb-footer-v2">
-    <div class="bwb-footer-cols">
-
-      <section class="bwb-footer-col">
-        <h4>News</h4>
-        <ul>
-          <li><a href=".">Home / Feed</a></li>
-          <li><a href="local.html">Local</a></li>
-          <li><a href="blindspots.html">Blindspot Feed</a></li>
-          <li><a href="status.html">Pipeline status</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>International</h4>
-        <ul>
-          <li><a href="local.html#region=north-america">North America</a></li>
-          <li><a href="local.html#region=south-america">South America / Latin</a></li>
-          <li><a href="local.html#region=europe">Europe</a></li>
-          <li><a href="local.html#region=middle-east">Middle East</a></li>
-          <li><a href="local.html#region=asia">Asia</a></li>
-          <li><a href="local.html#region=africa">Africa</a></li>
-          <li><a href="local.html#region=oceania">Oceania</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Trending Internationally</h4>
-        <ul id="footer-trending-intl">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Trending in U.S.</h4>
-        <ul id="footer-trending-us">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Adversarial-Bloc Trending</h4>
-        <ul id="footer-trending-adv">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Investigations</h4>
-        <ul>
-          <li><a href="corruption.html">Corruption tracker</a></li>
-          <li><a href="trades.html">Congressional trades</a></li>
-          <li><a href="same-hand.html">Same-hand ownership</a></li>
-          <li><a href="books.html">Books / long-form</a></li>
-          <li><a href="funnies.html">Funnies / MAD archive</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Method</h4>
-        <ul>
-          <li><a href="about.html">About BOTWAVEBOMBA</a></li>
-          <li><a href="about.html#axes">The 5 bias axes</a></li>
-          <li><a href="about.html#blocs">3 blocs explained</a></li>
-          <li><a href="about.html#blindspot">What is a blindspot?</a></li>
-          <li><a href="about.html#provenance">Citation receipts</a></li>
-          <li><a href="sources.html">Media bias ratings</a></li>
-          <li><a href="same-hand.html">Ownership &amp; factuality</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Open Data</h4>
-        <ul>
-          <li><a href="data/source_registry.json">source_registry.json</a></li>
-          <li><a href="data/sources_wide.json">sources_wide.json (26k)</a></li>
-          <li><a href="data/extension_lookup.json">extension_lookup.json</a></li>
-          <li><a href="data/same_hand_slice.json">same_hand_slice.json</a></li>
-          <li><a href="data/ownership_graph.json">ownership_graph.json</a></li>
-          <li><a href="api/latest.json">api/latest.json</a></li>
-          <li><a href="api/blindspots.json">api/blindspots.json</a></li>
-          <li><a href="api/corruption.json">api/corruption.json</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Tools &amp; Channels</h4>
-        <ul>
-          <li><a href="pro.html">Bomba Pro</a></li>
-          <li><a href="#" data-soon="Browser extension — beta soon">Browser extension</a></li>
-          <li><a href="#" data-soon="Android APK — sideload via Tailscale">Android app</a></li>
-          <li><a href="#" data-soon="iOS — built via Codemagic CI">iOS app</a></li>
-          <li><a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram digest</a></li>
-          <li><a href="https://github.com/Zombie760" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-      </section>
-
-    </div>
-
-    <div class="bwb-footer-base">
-      <div class="bwb-footer-brand">
-        <span class="bwb-footer-wordmark">BOTWAVEBOMBA</span>
-        <span class="bwb-footer-tagline">A BOTWAVE journalism arm project &middot; powered by TELOS+PAI substrate</span>
-      </div>
-      <div class="bwb-footer-mantra">
-        BE UNDENIABLE &mdash; every claim filed, every source named, every line auditable.
-      </div>
-    </div>
-
-    <div class="bwb-footer-disclaimer">
-      BOTWAVEBOMBA does not editorialize. It surfaces the framing delta between global sources.
-      Bias classification: AllSides + MBFC + hand-curated TELOS+PAI fingerprints.
-      Every source link is an original primary URL. Nothing invented.
-    </div>
-  </footer>
-
   <script>
-  // Populate trending-* footer columns from latest.json.
-  // Splits entities by which bloc covered them most.
-  (async function () {
-    const intl = document.getElementById('footer-trending-intl');
-    const us   = document.getElementById('footer-trending-us');
-    const adv  = document.getElementById('footer-trending-adv');
-    if (!intl && !us && !adv) return;
-    let data;
-    try {
-      const r = await fetch('api/latest.json', { cache: 'no-store' });
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      data = await r.json();
-    } catch (e) { return; }
-
-    // Per-entity bloc counts
-    const ents = {};
-    for (const s of (data.stories || [])) {
-      const hasUS  = (s.sources || []).some(src => src.country === 'US');
-      const hasAdv = (s.sources || []).some(src => src.bloc === 'adversarial');
-      for (const e of (s.entity_list || [])) {
-        if (!e || e.length < 3) continue;
-        const r = ents[e] || (ents[e] = { total: 0, us: 0, adv: 0 });
-        r.total += 1;
-        if (hasUS)  r.us  += 1;
-        if (hasAdv) r.adv += 1;
+    // Stripe Checkout wiring — the actual publishable key + price IDs are
+    // operator-controlled and live in a Cloudflare Worker (see
+    // /scripts/bomba_pipeline.sh and the worker that serves /api/checkout).
+    // The button below POSTs to /api/checkout/session with tier + interval,
+    // which creates a Stripe Checkout session and returns the redirect URL.
+    (function() {
+      function bind(id, tier, interval) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          fetch((window.BWB_BASE || '') + '/api/checkout/session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ tier: tier, interval: interval }),
+            credentials: 'include'
+          })
+          .then(function(r) { return r.json(); })
+          .then(function(data) {
+            if (data && data.url) { window.location = data.url; return; }
+            // Fallback — if the worker isn't deployed, the user sees a clear
+            // "checkout unavailable" message; we never silently fail.
+            alert('Checkout session creation failed: ' + (data && data.error ? data.error : 'no URL returned') +
+                  '. The free tier is fully functional at /.');
+          })
+          .catch(function(err) {
+            alert('Checkout unavailable: ' + err.message + '. The free tier is fully functional at /.');
+          });
+        });
       }
-    }
-    const arr = Object.entries(ents);
-    function render(targetEl, sortFn, limit) {
-      if (!targetEl) return;
-      const ranked = arr.slice().sort(sortFn).filter(([, r]) => r.total >= 2).slice(0, limit);
-      targetEl.textContent = '';
-      if (!ranked.length) {
-        const li = document.createElement('li');
-        li.className = 'bwb-footer-skeleton';
-        li.textContent = 'no data';
-        targetEl.appendChild(li);
-        return;
-      }
-      for (const [name, rec] of ranked) {
-        const li = document.createElement('li');
-        const a  = document.createElement('a');
-        a.href = '#trending=' + encodeURIComponent(name);
-        a.textContent = name;
-        li.appendChild(a);
-        targetEl.appendChild(li);
-      }
-    }
-    render(intl, (a, b) => (b[1].total - b[1].us) - (a[1].total - a[1].us), 6);
-    render(us,   (a, b) => b[1].us - a[1].us, 6);
-    render(adv,  (a, b) => b[1].adv - a[1].adv, 6);
-  })();
-
-  // "data-soon" tooltips so the not-yet-shipped links don't 404.
-  document.querySelectorAll('a[data-soon]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      alert(a.getAttribute('data-soon'));
-    });
-  });
-  </script>
-
-  <script>
-    (function () {
-      var d = document.getElementById('util-date');
-      if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+      bind('pro-checkout-btn', 'pro', 'month');
+      document.querySelectorAll('.pro-tier-link').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          e.preventDefault();
+          fetch((window.BWB_BASE || '') + '/api/checkout/session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ tier: a.dataset.tier, interval: a.dataset.interval }),
+            credentials: 'include'
+          })
+          .then(function(r) { return r.json(); })
+          .then(function(data) { if (data && data.url) window.location = data.url; })
+          .catch(function(err) { alert('Checkout unavailable: ' + err.message); });
+        });
+      });
     })();
   </script>
 </body>

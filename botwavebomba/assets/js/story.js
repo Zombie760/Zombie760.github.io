@@ -3,9 +3,12 @@
 document.addEventListener('DOMContentLoaded', async function() {
   const storyId = BWB_API.getStoryParam();
   if (!storyId) {
-    window.location = './';
+    window.location = '/';
     return;
   }
+
+  // W6: pre-warm funding graph for the story-page money trail.
+  if (typeof _loadFundingGraph === 'function') _loadFundingGraph();
 
   // Story detail needs full articles — use getStoryDetail which loads full data
   const story = await BWB_API.getStoryDetail(storyId);
@@ -36,13 +39,18 @@ document.addEventListener('DOMContentLoaded', async function() {
   // Headline
   document.getElementById('story-headline').textContent = story.headline || '';
 
+  // View-Transition name — match the source card so the morph lands
+  var vtName = 'bwb-card-' + story.id.replace(/[^a-zA-Z0-9_-]/g, '_');
+  var headlineEl = document.getElementById('story-headline');
+  if (headlineEl) headlineEl.style.setProperty('view-transition-name', vtName);
+
   // Hero image — article photo with card PNG fallback
   var heroEl = document.getElementById('story-hero');
   if (heroEl) {
     var heroImg = document.createElement('img');
     heroImg.alt     = story.headline || '';
     heroImg.loading = 'lazy';
-    var cardSrc = '/api/cards/' + story.id + '.png';
+    var cardSrc = (window.BWB_URL ? window.BWB_URL('api/cards/' + story.id + '.png') : '/api/cards/' + story.id + '.png');
     if (story.image_url) {
       heroImg.src = story.image_url;
       heroImg.onerror = function() {
@@ -104,14 +112,18 @@ document.addEventListener('DOMContentLoaded', async function() {
   // 5-axis narrative fingerprint (story-level aggregate)
   build5AxisFingerprint(story);
 
-  // Framing comparison — pass enriched sources (with headline/url/._articles)
-  buildFramingTable(sources);
+  // Side-by-side 3-pane framing (Western / Non-Aligned / Adversarial) — W1 deliverable
+  if (window.renderSideBySideFraming) renderSideBySideFraming(story);
 
   // Entity cloud
   buildEntityCloud(story);
 
   // Source links
   buildSourceLinks(sources);
+
+  // W6: money trail + W7: corruption cross-reference
+  buildFundingTrail(story, sources);
+  buildCorruptionXref(story, sources);
 });
 
 function build5AxisFingerprint(story) {
@@ -222,12 +234,47 @@ function buildFramingTable(sources) {
   const blocs = ['western', 'neutral', 'adversarial'];
   const blocLabels = { western: 'Western', neutral: 'Non-Aligned', adversarial: 'Adversarial' };
 
+  // Bloc toggle: 4 pills (All + the 3 blocs). Clicking a pill hides the other
+  // bloc sections so the reader can see one bloc's framing in isolation. Default = All.
+  const filterRow = document.createElement('div');
+  filterRow.className = 'bwb-bloc-filter';
+  filterRow.setAttribute('role', 'tablist');
+  filterRow.setAttribute('aria-label', 'Filter framing table by bloc');
+  const pills = [['all', 'All', null]].concat(
+    blocs.map(function(b) { return [b, blocLabels[b], b]; })
+  );
+  pills.forEach(function(p, i) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'bwb-bloc-filter-pill' + (i === 0 ? ' active' : '');
+    btn.dataset.bloc = p[0];
+    btn.textContent = p[1];
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    filterRow.appendChild(btn);
+  });
+  filterRow.addEventListener('click', function(e) {
+    const btn = e.target.closest('.bwb-bloc-filter-pill');
+    if (!btn) return;
+    filterRow.querySelectorAll('.bwb-bloc-filter-pill').forEach(function(b) {
+      var on = b === btn;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    const chosen = btn.dataset.bloc;
+    container.querySelectorAll('.bwb-framing-bloc').forEach(function(sec) {
+      const show = chosen === 'all' || sec.classList.contains('bwb-framing-bloc-' + chosen);
+      sec.style.display = show ? '' : 'none';
+    });
+  });
+  container.parentNode.insertBefore(filterRow, container);
+
   blocs.forEach(function(bloc) {
     const bSources = sources.filter(function(s) { return s.bloc === bloc; });
     if (!bSources.length) return;
 
     const section = document.createElement('div');
-    section.className = 'bwb-framing-bloc';
+    section.className = 'bwb-framing-bloc bwb-framing-bloc-' + bloc;
 
     const header = document.createElement('div');
     header.className = 'bwb-framing-bloc-header ' + bloc;
@@ -342,6 +389,32 @@ function buildSourceLinks(sources) {
       row.appendChild(country);
     }
 
+    // W7: PRIMARY chip — surfaces the primary source URL (FEC filing, court
+    // record, official transcript, etc.) so the reader can verify the framing
+    // is anchored, not laundered. Mirrors the feed-card chip.
+    if (src.primary_source_url) {
+      const prim = document.createElement('a');
+      prim.className   = 'bwb-source-link-primary';
+      prim.href        = src.primary_source_url;
+      prim.target      = '_blank';
+      prim.rel         = 'noopener noreferrer';
+      prim.textContent = 'PRIMARY';
+      prim.title       = 'Primary source (FEC / OpenSecrets / court / official): ' + src.primary_source_url;
+      row.appendChild(prim);
+    }
+
+    // W6: funding_breakdown tag — surfaces the dominant instrument on the
+    // story page so the reader sees the per-source funding chain without
+    // having to click into the Money Trail section.
+    var fb = src.funding_breakdown;
+    if (fb && fb.dominant_instrument) {
+      const fbTag = document.createElement('span');
+      fbTag.className   = 'bwb-source-link-funding';
+      fbTag.textContent = (fb.dominant_instrument || '').replace(/_/g, ' ');
+      if (fb.summary) fbTag.title = fb.summary;
+      row.appendChild(fbTag);
+    }
+
     if (src.url) {
       const link = document.createElement('a');
       link.className = 'bwb-source-link-url';
@@ -354,4 +427,199 @@ function buildSourceLinks(sources) {
 
     container.appendChild(row);
   });
+}
+
+// ── W6: FUNDING TRAIL — the manufacturing layer, surfaced on the story page ──
+// For every source in the story, resolve its owner from the funding graph and
+// render a row showing the owner chain. This is the operator's stated
+// differentiator vs Ground News: "see who paid for this framing" right next
+// to the article the reader just read. The full graph (entities + edges) is
+// in api/funding_graph.json; the chrome is here.
+function buildFundingTrail(story, sources) {
+  // Accept a few container ids — story.html may have any of these.
+  var container = document.getElementById('funding-trail')
+                || document.getElementById('money-trail')
+                || document.getElementById('funding-section');
+  if (!container) return;
+
+  // Lazy-load the graph if feed.js hasn't already.
+  if (typeof _loadFundingGraph === 'function') _loadFundingGraph();
+
+  if (!_fundingGraph) {
+    container.innerHTML = '<p class="bwb-funding-loading">Money trail loading…</p>';
+    // Retry once after a short delay in case the fetch is in flight.
+    setTimeout(function() {
+      if (_fundingGraph) buildFundingTrail(story, sources);
+    }, 600);
+    return;
+  }
+
+  var graph = _fundingGraph;
+  var owners = graph.outlet_to_owner || {};
+  var entities = (graph.entities || []).reduce(function(acc, e) {
+    acc[e.id] = e; return acc;
+  }, {});
+
+  var matched = 0;
+  var rows = sources.map(function(src) {
+    var rec = owners[(src.name || src.id || '').toLowerCase()];
+    if (!rec) return null;
+    matched++;
+    var entity = entities[rec.owner_entity_id];
+    var ownerName = entity ? entity.name : rec.owner_entity_id.replace(/_/g, ' ');
+
+    var row = document.createElement('div');
+    row.className = 'bwb-funding-row bwb-fund-' + (rec.ownership_form || 'unknown');
+
+    var src1 = document.createElement('span');
+    src1.className = 'bwb-funding-source';
+    src1.textContent = src.name || src.id;
+    row.appendChild(src1);
+
+    var arrow = document.createElement('span');
+    arrow.className = 'bwb-funding-arrow';
+    arrow.textContent = '→';
+    row.appendChild(arrow);
+
+    var owner = document.createElement('span');
+    owner.className = 'bwb-funding-owner';
+    owner.textContent = ownerName;
+    row.appendChild(owner);
+
+    if (entity && entity.primary_source_url) {
+      var cite = document.createElement('a');
+      cite.className = 'bwb-funding-cite';
+      cite.href = entity.primary_source_url;
+      cite.target = '_blank';
+      cite.rel = 'noopener noreferrer';
+      cite.textContent = 'primary source';
+      cite.title = entity.primary_source_url;
+      row.appendChild(cite);
+    }
+
+    return row;
+  }).filter(Boolean);
+
+  container.innerHTML = '';
+  var head = document.createElement('h3');
+  head.textContent = 'Money Trail — who funded the framing';
+  container.appendChild(head);
+
+  if (matched === 0) {
+    var note = document.createElement('p');
+    note.className = 'bwb-funding-empty';
+    note.textContent = 'No mapped owner for this story\'s sources yet. Funding graph '
+                     + 'covers ' + Object.keys(owners).length + ' outlets; this story\'s '
+                     + 'sources aren\'t in that map. Operator-pace expansion.';
+    container.appendChild(note);
+    return;
+  }
+
+  var sub = document.createElement('p');
+  sub.className = 'bwb-funding-sub';
+  sub.textContent = matched + ' of ' + sources.length + ' source'
+                  + (sources.length === 1 ? '' : 's')
+                  + ' mapped. Each owner links to the primary-source anchor.';
+  container.appendChild(sub);
+
+  rows.forEach(function(r) { container.appendChild(r); });
+
+  var more = document.createElement('p');
+  more.className = 'bwb-funding-more';
+  more.innerHTML = 'Full graph: <a href="api/funding_graph.json" target="_blank" rel="noopener">api/funding_graph.json</a> '
+                + '(' + (graph.entities || []).length + ' entities, '
+                + (graph.edges  || []).length + ' edges, '
+                + Object.keys(owners).length + ' outlet-to-owner mappings)';
+  container.appendChild(more);
+}
+
+// ── W7: CORRUPTION CROSS-REFERENCE — does the story touch a known super-donor PAC? ──
+// Loads api/corruption_v2.json (pre-existing AIPAC + 17 PACs + 20 money-trail
+// rows). If any PAC's name or its tagged entities appear in the story text
+// (headline, summary, source names), surface a "Corruption cross-reference"
+// section with the matching PAC + a money-trail summary. Surfaces the
+// manufacturing layer without forcing the reader to a separate page.
+function buildCorruptionXref(story, sources) {
+  var container = document.getElementById('corruption-xref')
+                || document.getElementById('corruption-section')
+                || document.getElementById('corruption-modal');
+  if (!container) return;
+
+  fetch('api/corruption_v2.json', { cache: 'force-cache' })
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(c) {
+      if (!c || !c.tier1_pacs) return;
+      var haystack = ((story.headline || '') + ' ' + (story.summary || ''))
+                     .toLowerCase();
+      sources.forEach(function(s) {
+        if (s.name) haystack += ' ' + s.name.toLowerCase();
+      });
+
+      var hits = [];
+      (c.tier1_pacs || []).forEach(function(p) {
+        if (haystack.indexOf((p.short_name || p.name || '').toLowerCase()) !== -1) {
+          hits.push(p);
+        }
+      });
+      // Also check the 20 money-trail rows if they exist
+      var trail = c.money_trail || c.money_trail_rows || [];
+      trail.forEach(function(row) {
+        var txt = (row.pac || row.recipient || '').toLowerCase();
+        if (txt && haystack.indexOf(txt) !== -1) {
+          hits.push({ name: row.pac, short_name: row.pac, notes: row.notes || '',
+                      fec_url: row.fec_url, opensecrets_url: row.opensecrets_url });
+        }
+      });
+
+      container.innerHTML = '';
+      var head = document.createElement('h3');
+      head.textContent = 'Corruption Cross-Reference';
+      container.appendChild(head);
+
+      if (hits.length === 0) {
+        var note = document.createElement('p');
+        note.className = 'bwb-corruption-empty';
+        note.textContent = 'No superdonor PAC match in this story\'s headline, summary, or source list. '
+                         + 'Coverage of ' + (c.tier1_pacs || []).length + ' PACs + '
+                         + trail.length + ' money-trail rows is in scope — this story doesn\'t trigger any.';
+        container.appendChild(note);
+        return;
+      }
+
+      hits.forEach(function(p) {
+        var row = document.createElement('div');
+        row.className = 'bwb-corruption-row';
+
+        var name = document.createElement('div');
+        name.className = 'bwb-corruption-pac';
+        name.textContent = p.name || p.short_name;
+        row.appendChild(name);
+
+        if (p.notes) {
+          var note = document.createElement('p');
+          note.className = 'bwb-corruption-notes';
+          note.textContent = p.notes;
+          row.appendChild(note);
+        }
+
+        var links = document.createElement('div');
+        links.className = 'bwb-corruption-links';
+        if (p.fec_url) {
+          var fec = document.createElement('a');
+          fec.href = p.fec_url; fec.target = '_blank'; fec.rel = 'noopener noreferrer';
+          fec.textContent = 'FEC filings';
+          links.appendChild(fec);
+        }
+        if (p.opensecrets_url) {
+          var os = document.createElement('a');
+          os.href = p.opensecrets_url; os.target = '_blank'; os.rel = 'noopener noreferrer';
+          os.textContent = 'OpenSecrets';
+          links.appendChild(os);
+        }
+        row.appendChild(links);
+
+        container.appendChild(row);
+      });
+    })
+    .catch(function() { /* silent — corruption is overlay, not core */ });
 }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Money Trail Flow — BOTWAVEBOMBA</title>
+  <meta name="description" content="Super-donor PAC to lobbyist to Congress to bill to agency: every money_trail row from corruption_v2.json, with primary sources.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color"="#0a0a0a">
+  <script src="/assets/js/base-path.js"></script>
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <style>
+    /* Inline minimal money-trail styles. No external libs. */
+    .mt-banner { display:none; background:#7a1f1f; color:#fff; padding:.75rem 1rem; font-family:'DM Mono',monospace; font-size:13px; border-radius:4px; margin:1rem 0; }
+    .mt-banner-warn { background:#3a2f12; color:#f7d77a; border:1px solid #6b5a1c; padding:.75rem 1rem; font-family:'DM Mono',monospace; font-size:13px; border-radius:4px; margin:1rem 0; line-height:1.45; }
+    .mt-stats { display:flex; flex-wrap:wrap; gap:.75rem; margin:1rem 0; font-family:'DM Mono',monospace; font-size:13px; }
+    .mt-stats .mt-stat { background:#111; color:#eee; padding:.35rem .65rem; border:1px solid #333; border-radius:3px; }
+    .mt-stats .mt-stat b { color:#fff; margin-right:.25rem; }
+    .mt-stats .mt-stat-green b { color:#3ec46d; }
+    .mt-stats .mt-stat-red b { color:#e26a6a; }
+    .mt-pac-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:.75rem; margin:1rem 0 2rem; }
+    .mt-pac-card { background:#0d0d0d; border:1px solid #2a2a2a; padding:.75rem .9rem; border-radius:4px; }
+    .mt-pac-name { font-family:'DM Sans',sans-serif; font-weight:500; color:#fff; font-size:14px; }
+    .mt-pac-meta { color:#888; font-family:'DM Mono',monospace; font-size:11px; margin:.15rem 0 .3rem; }
+    .mt-pac-links a { color:#7cb7ff; font-size:12px; text-decoration:none; margin-right:.35rem; }
+    .mt-pac-notes { color:#bbb; font-size:12px; line-height:1.4; margin-top:.3rem; }
+    .mt-row { border:1px solid #2a2a2a; border-radius:4px; margin-bottom:1rem; background:#0a0a0a; overflow:hidden; }
+    .mt-row.mt-verified-green { border-left:4px solid #3ec46d; }
+    .mt-row.mt-verified-yellow { border-left:4px solid #f7c948; }
+    .mt-row.mt-verified-red { border-left:4px solid #e26a6a; }
+    .mt-row-head { display:flex; align-items:center; gap:.6rem; padding:.5rem .75rem; background:#111; font-family:'DM Mono',monospace; font-size:12px; flex-wrap:wrap; }
+    .mt-row-head .mt-id { color:#7cb7ff; }
+    .mt-row-head .mt-amount { color:#fff; font-weight:500; }
+    .mt-row-head .mt-status { padding:.15rem .45rem; border-radius:2px; font-size:10px; letter-spacing:.08em; }
+    .mt-verified-green .mt-status { background:#1a3a25; color:#3ec46d; }
+    .mt-verified-yellow .mt-status { background:#3a2f12; color:#f7c948; }
+    .mt-verified-red .mt-status { background:#3a1717; color:#e26a6a; }
+    .mt-row-head .mt-toggle { margin-left:auto; background:#1c1c1c; color:#eee; border:1px solid #333; padding:.3rem .7rem; border-radius:3px; cursor:pointer; font-family:'DM Mono',monospace; font-size:11px; }
+    .mt-row-head .mt-toggle:hover { background:#2a2a2a; }
+    .mt-flow { display:flex; flex-wrap:wrap; gap:.4rem; align-items:stretch; padding:.75rem; }
+    .mt-flow .mt-node { display:flex; flex-direction:column; background:#151515; border:1px solid #2a2a2a; padding:.45rem .6rem; border-radius:3px; min-width:140px; text-decoration:none; color:#eee; font-family:'DM Sans',sans-serif; }
+    .mt-flow .mt-node:hover { background:#1d1d1d; }
+    .mt-flow .mt-node-label { font-size:12px; line-height:1.25; }
+    .mt-flow .mt-node-sub { color:#888; font-family:'DM Mono',monospace; font-size:10px; margin-top:.15rem; }
+    .mt-flow .mt-node-pac { border-left:3px solid #7cb7ff; }
+    .mt-flow .mt-node-lobby { border-left:3px solid #c98bff; }
+    .mt-flow .mt-node-congress { border-left:3px solid #3ec46d; }
+    .mt-flow .mt-node-bill { border-left:3px solid #f7c948; }
+    .mt-flow .mt-node-vote { border-left:3px solid #e26a6a; }
+    .mt-flow .mt-arrow { color:#666; align-self:center; font-size:14px; padding:0 .15rem; }
+    .mt-flow a { color:#eee; }
+    .mt-flow a:hover { color:#7cb7ff; }
+    .mt-detail { padding:1rem; background:#0d0d0d; border-top:1px solid #222; }
+    .mt-detail-table { width:100%; border-collapse:collapse; font-family:'DM Mono',monospace; font-size:12px; }
+    .mt-detail-table th { text-align:left; color:#888; padding:.3rem .5rem .3rem 0; width:140px; vertical-align:top; }
+    .mt-detail-table td { padding:.3rem 0; color:#eee; vertical-align:top; }
+    .mt-detail-table td a { color:#7cb7ff; text-decoration:none; }
+    .mt-detail-table td a:hover { text-decoration:underline; }
+    .mt-warn-illust { color:#f7c948; font-size:11px; }
+    .mt-missing { color:#888; }
+    .mt-empty { color:#888; font-family:'DM Mono',monospace; padding:1rem; }
+    .mt-byline { color:#888; font-family:'DM Mono',monospace; font-size:12px; margin-top:2rem; }
+    @media (max-width:640px) {
+      .mt-flow { flex-direction:column; }
+      .mt-flow .mt-arrow { transform:rotate(90deg); align-self:center; }
+      .mt-row-head .mt-toggle { margin-left:0; }
+    }
+  </style>
+  <meta name="view-transition" content="same-origin">
+  <script type="speculationrules">
+  {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
+  </script>
+</head>
+<body>
+
+  <header class="bwb-header bwb-header--compact">
+    <div class="bwb-header-inner">
+      <a href="/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <nav class="bwb-topnav">
+        <a href="/">Feed</a>
+        <a href="/blindspots.html">Blindspots</a>
+        <a href="/sources.html">Sources</a>
+        <a href="/trades.html">Trades</a>
+        <a href="/books.html">Books</a>
+        <a href="/corruption.html">Corruption</a>
+        <a href="/corruption-graph.html" class="active">Money Trail</a>
+        <a href="/about.html">Method</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="bwb-page-container">
+    <div class="bwb-page-header">
+      <h1 class="bwb-page-title">MONEY TRAIL FLOW</h1>
+      <p class="bwb-page-sub">
+        Donor PAC &rarr; Lobbyist &rarr; Congress Member &rarr; Bill / Rule &rarr; Agency + Contract + Vote.
+        Every row pulls from <code>api/corruption_v2.json</code>. Every claim has a primary source.
+      </p>
+    </div>
+
+    <div id="mt-banner-error" class="mt-banner"></div>
+
+    <div class="mt-banner-warn">
+      <strong>AMOUNTS ARE ILLUSTRATIVE PENDING OPERATOR VERIFY.</strong>
+      Each row's <code>amount</code> is the donor-side figure reported in the JSON; <code>verified: false</code> on every v2 row as of 2026-07-05.
+      Bill IDs, vote URLs, FEC committee IDs, and Congress.gov links are real primary sources.
+      Treat dollar figures as directional, not exact. Expand any row to see the full primary-source chain.
+    </div>
+
+    <div id="mt-stats" class="mt-stats"></div>
+
+    <h3 class="bwb-sidebar-title" style="margin-top:1.5rem;">TIER-1 PAC CLUSTER</h3>
+    <div id="mt-pac-grid" class="mt-pac-grid"></div>
+
+    <h3 class="bwb-sidebar-title" style="margin-top:1.5rem;">MONEY TRAIL &mdash; 20 ROWS</h3>
+    <div id="mt-rows"></div>
+
+    <p class="mt-byline">
+      Byline: <strong>Kyle Jimenez</strong>. Per <code>corruption_v2.json</code> byline constraint, no Al Gringo / no gringo1904 on any public surface.
+      Substrate: <code>api/corruption_v2.json</code> (schema_version 2, 18 Tier-1 PACs, 20 money_trail rows).
+    </p>
+  </div>
+
+  <footer class="bwb-footer">
+    <div class="bwb-footer-inner">
+      <div class="bwb-footer-left">
+        <span class="bwb-footer-logo">BOTWAVEBOMBA</span>
+        <span class="bwb-footer-sub">A BOTWAVE journalism arm project. Powered by TELOS+PAI substrate.</span>
+      </div>
+      <div class="bwb-footer-right">
+        <a href="/corruption.html">Corruption Tracker</a>
+        <a href="/about.html">About</a>
+        <a href="https://github.com/Zombie760" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="bwb-footer-disclaimer">
+      Money Trail Flow surfaces filed FEC committee data + Congress.gov + Senate.gov roll calls. Amounts in rows are illustrative pending operator verify; bill IDs and vote URLs are real primary sources.
+    </div>
+  </footer>
+
+  <script src="/assets/js/money-trail.js" defer></script>
+</body>
+</html>

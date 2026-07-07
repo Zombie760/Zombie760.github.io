@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-05T00:00:00Z",
+  "contract_doc": "/_index/receipts/alerts_contract_2026-07-05.md",
+  "subscribers": [],
+  "alert_types": [
+    {
+      "key": "western_blackout",
+      "label": "Western Blackout",
+      "description": "Story covered by Non-Aligned + Adversarial, ignored by Western bloc (score >= 80)",
+      "default_subscribed": true
+    },
+    {
+      "key": "mono_frame",
+      "label": "Mono-Frame Event",
+      "description": "A single-bloc story where 3+ sources in the same bloc dominate and 2+ other blocs are silent",
+      "default_subscribed": true
+    },
+    {
+      "key": "ownership_concentration",
+      "label": "Ownership Concentration",
+      "description": "When 2+ sources covering the same story share a parent company",
+      "default_subscribed": false
+    },
+    {
+      "key": "new_source_fingerprinted",
+      "label": "New Source Fingerprinted",
+      "description": "When a new source completes 5-axis fingerprinting (cadence: 20 sources/month)",
+      "default_subscribed": false
+    }
+  ],
+  "delivery_channels": [
+    {
+      "key": "email",
+      "label": "Email",
+      "worker_endpoint": "/api/alerts/subscribe",
+      "fields": ["email"]
+    },
+    {
+      "key": "telegram",
+      "label": "Telegram",
+      "worker_endpoint": "/api/alerts/subscribe",
+      "fields": ["telegram_handle"]
+    },
+    {
+      "key": "web_push",
+      "label": "Web Push (PWA)",
+      "worker_endpoint": "/api/alerts/subscribe",
+      "fields": ["push_subscription"]
+    },
+    {
+      "key": "slack_webhook",
+      "label": "Slack Webhook (Team tier only)",
+      "worker_endpoint": "/api/alerts/subscribe",
+      "fields": ["slack_webhook_url"],
+      "requires_tier": "team"
+    },
+    {
+      "key": "discord_webhook",
+      "label": "Discord Webhook (Team tier only)",
+      "worker_endpoint": "/api/alerts/subscribe",
+      "fields": ["discord_webhook_url"],
+      "requires_tier": "team"
+    }
+  ],
+  "rate_limits": {
+    "free_tier_daily_alert_emails": 3,
+    "pro_tier_daily_alert_emails": 50,
+    "team_tier_daily_alert_emails": 500
+  },
+  "notes": "Initial empty state. The Cloudflare Worker reads this file, validates subscribers against the Stripe customer tier, and dispatches via the operator-controlled Brevo SMTP relay (per the operator's send_email_appraisal.py pattern). Web push uses VAPID keys stored in the Worker env."
+}

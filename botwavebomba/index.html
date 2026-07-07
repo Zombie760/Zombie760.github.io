@@ -2,120 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>BOTWAVEBOMBA — Not Left/Right. Who Owns The Story.</title>
-  <meta name="description" content="26,542 sources cataloged · 496 deep-fingerprinted across 5 bias axes. Open data, citation receipts, adversarial bloc included — not suppressed. See who's funding the side.">
+  <meta name="description" content="496 sources deep-fingerprinted across 5 bias axes. Western, adversarial, non-aligned — see the gap. Powered by TELOS+PAI substrate.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/mobile.css">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
   <meta name="theme-color" content="#0a0a0a">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
-  <script src="assets/js/theme-switcher.js" defer></script>
-  <script src="assets/js/pwa.js" defer></script>
+  <meta name="view-transition" content="same-origin">
+  <script type="speculationrules">
+  {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
+  </script>
+  <!-- Base path support for GitHub Pages subpath + root deployments -->
+  <script src="/assets/js/base-path.js"></script>
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/pwa.js" defer></script>
 </head>
 <body>
 
-  <!-- ── HEADER (4-LAYER EDITORIAL STACK) ── -->
+  <!-- ── HEADER (injected by /assets/js/site-chrome.js) ── -->
+  <header data-bwb-chrome="full"></header>
 
-  <!-- Layer 1: declarative promo strip — the Bomba pitch in one line -->
-  <aside class="bwb-promo" role="region" aria-label="Bomba positioning">
-    <div class="bwb-promo-inner">
-      <p class="bwb-promo-line">
-        <span class="bwb-promo-lede">See <em>who's funding</em> the side.</span>
-        <span class="bwb-promo-rest">Not just who's reporting it.</span>
-      </p>
-      <a class="bwb-promo-cta" href="about.html">Read methodology &rarr;</a>
+  <!-- ── BLOC LEGEND ── -->
+  <div class="bwb-legend-bar">
+    <div class="bwb-legend-item">
+      <div class="bwb-legend-dot western"></div>
+      <span>Western — high atlanticist/interventionist score (US/NATO/Israel-aligned press)</span>
+    </div>
+    <div class="bwb-legend-item">
+      <div class="bwb-legend-dot neutral"></div>
+      <span>Non-Aligned — regional press, Global South, independent outlets</span>
+    </div>
+    <div class="bwb-legend-item">
+      <div class="bwb-legend-dot adversarial"></div>
+      <span>Adversarial — multipolar/anti-intervention framing (RT, IRNA, CGTN, Sputnik)</span>
+    </div>
+  </div>
+
+  <!-- ── TODAY'S FRAME — DREAM OUTCOME + BRIEF CTA ── -->
+  <aside class="bwb-editorial-frame" aria-label="Daily Blindspot Brief signup">
+    <div class="bwb-editorial-frame-label">DAILY BLINDSPOT BRIEF</div>
+    <p class="bwb-editorial-frame-body" id="bwb-editorial-frame-body">
+      See who covers a story and who doesn't — without trusting a US-partisan axis.
+    </p>
+    <div class="bwb-editorial-frame-cta">
+      <a href="/signup.html" class="bwb-editorial-frame-cta-btn">Subscribe — $49/mo or $499/yr</a>
+      <a href="/brief.html" class="bwb-editorial-frame-cta-link">or read today's brief free →</a>
+    </div>
+    <div class="bwb-editorial-frame-meta">
+      <span class="bwb-editorial-frame-stat" id="bwb-frame-story-count">— stories indexed</span>
+      <span class="bwb-editorial-frame-sep">·</span>
+      <span class="bwb-editorial-frame-stat" id="bwb-frame-source-count">— sources live</span>
+      <span class="bwb-editorial-frame-sep">·</span>
+      <span class="bwb-editorial-frame-stat" id="bwb-frame-bloc-count">3 blocs</span>
+      <span class="bwb-editorial-frame-sep">·</span>
+      <span class="bwb-editorial-frame-stat bwb-corpus-age" id="bwb-frame-corpus-age" title="When the feed corpus was last generated">— —</span>
+      <span class="bwb-editorial-frame-sep">·</span>
+      <a href="/methodology.html" class="bwb-editorial-frame-stat bwb-editorial-frame-link" title="What the bias bar measures, where the data comes from, and what it doesn't tell you">methodology ↗</a>
+    </div>
+    <div class="bwb-editorial-frame-live" id="bwb-frame-live">
+      <span class="bwb-live-dot" id="bwb-live-dot"></span>
+      <span class="bwb-live-text" id="bwb-live-text">pipeline —</span>
     </div>
   </aside>
-
-  <!-- Layer 2: utility bar — live pipeline state, no chrome -->
-  <div class="bwb-util" role="region" aria-label="Pipeline state">
-    <div class="bwb-util-inner">
-      <div class="bwb-util-group">
-        <span class="bwb-pipeline-badge">
-          <span class="bwb-pipe-dot"></span>
-          LIVE
-        </span>
-        <span class="bwb-util-sep">·</span>
-        <span class="bwb-util-stat"><b id="cataloged-count">26,542</b> sources cataloged</span>
-        <span class="bwb-util-sep">·</span>
-        <span class="bwb-util-stat"><b id="fp-count">496</b> deep-fingerprinted</span>
-        <span class="bwb-util-sep">·</span>
-        <span class="bwb-util-stat"><b id="story-count">&mdash;</b> stories · <b id="blindspot-count">&mdash;</b> blindspots</span>
-      </div>
-      <div class="bwb-util-group bwb-util-right">
-        <span class="bwb-util-date" id="util-date"></span>
-        <span class="bwb-util-sep">·</span>
-        <a class="bwb-util-link" href="data/sources_wide.json" title="Open data — JSON dump of the full source catalog">OPEN DATA &darr;</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Layer 3: main brand + nav -->
-  <header class="bwb-header" id="bwb-header">
-    <div class="bwb-header-inner">
-      <a href="." class="bwb-brand" aria-label="BOTWAVEBOMBA — Home">
-        <span class="bwb-brand-mark">BOTWAVE<em>BOMBA</em></span>
-        <span class="bwb-brand-axes" aria-hidden="true">5-axis · 3-bloc · adversarial included</span>
-      </a>
-
-      <nav class="bwb-topnav" aria-label="Primary">
-        <a href="." class="active">Feed</a>
-        <a href="local.html">Local</a>
-        <a href="blindspots.html">Blindspots</a>
-        <a href="sources.html">Sources</a>
-        <a href="trades.html">Trades</a>
-        <a href="books.html">Books</a>
-        <a href="corkboard/">Corkboard</a>
-        <a href="corruption.html">Corruption</a>
-        <a href="about.html">Method</a>
-        <a href="funnies.html">Funnies</a>
-      </nav>
-
-      <div class="bwb-header-right">
-        <button class="bwb-search-btn" type="button" aria-label="Search stories" id="bwb-search-btn">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <span>Search</span>
-        </button>
-        <a class="bwb-pro-btn" href="pro.html">Pro</a>
-      </div>
-    </div>
-
-    <!-- Layer 4: trending entities (chips populated from latest.json by feed.js) -->
-    <div class="bwb-trending" role="region" aria-label="Trending today">
-      <div class="bwb-trending-inner">
-        <span class="bwb-trending-label">Trending</span>
-        <div class="bwb-trending-chips" id="trending-chips" aria-live="polite">
-          <span class="bwb-trending-placeholder">loading&hellip;</span>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- bloc legend kept but visually demoted, sits under the header as a compact strip -->
-  <div class="bwb-legend-bar" aria-label="Bloc legend">
-    <div class="bwb-legend-item">
-      <span class="bwb-legend-dot western"></span>
-      <span class="bwb-legend-label"><b>Western</b> &mdash; US/NATO/Israel-aligned press</span>
-    </div>
-    <div class="bwb-legend-item">
-      <span class="bwb-legend-dot neutral"></span>
-      <span class="bwb-legend-label"><b>Non-Aligned</b> &mdash; regional &amp; Global South press</span>
-    </div>
-    <div class="bwb-legend-item">
-      <span class="bwb-legend-dot adversarial"></span>
-      <span class="bwb-legend-label"><b>Adversarial</b> &mdash; RT, IRNA, CGTN, Sputnik <em>(included, not suppressed)</em></span>
-    </div>
-    <span class="bwb-legend-byline" id="western-count" hidden>183</span>
-    <span hidden id="adversarial-count">33</span>
-    <span hidden id="nonaligned-count">280</span>
-  </div>
 
   <!-- ── SECTION TABS (populated dynamically from feed manifest) ── -->
   <nav class="bwb-filters bwb-section-tabs" id="section-nav">
@@ -132,6 +88,20 @@
     <button data-filter="left-heavy">Left-Heavy</button>
     <button data-filter="right-heavy">Right-Heavy</button>
   </nav>
+
+  <!-- ── GEO SCOPE FILTERS (local / regional / national / global) ── -->
+  <nav class="bwb-filters bwb-geo-filters" id="geo-nav">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="local">📍 Local</button>
+    <button data-filter="regional">🌍 Regional</button>
+    <button data-filter="national">🏛️ National</button>
+    <button data-filter="global">🌐 Global</button>
+  </nav>
+
+  <!-- ── SECTION PILLS (live count per section, injected by feed.js) ── -->
+  <div class="bwb-section-pills bwb-filters" id="section-pills">
+    <!-- pills injected by feed.js from latest_slim.json sections manifest -->
+  </div>
 
   <!-- ── PULL TO REFRESH INDICATOR ── -->
   <div class="ptr-indicator" id="ptr-indicator">
@@ -211,13 +181,25 @@
             <span class="axis-desc">pro-market vs critical</span>
           </div>
         </div>
-        <a href="about.html" class="bwb-sidebar-link">Read methodology →</a>
+        <a href="/about.html" class="bwb-sidebar-link">Read methodology →</a>
       </div>
 
       <div class="bwb-sidebar-block">
         <div class="bwb-sidebar-title">WHAT IS A BLINDSPOT?</div>
         <p class="bwb-sidebar-body">A story covered heavily by one bloc — and ignored by another. The gap is the story.</p>
-        <a href="blindspots.html" class="bwb-sidebar-link">View all blindspots →</a>
+        <a href="/blindspots.html" class="bwb-sidebar-link">View all blindspots →</a>
+      </div>
+
+      <div class="bwb-sidebar-block">
+        <div class="bwb-sidebar-title">PIPELINE LIVE
+          <span class="bwb-sidebar-title-pulse" id="bwb-sidebar-pipeline-dot" title="poller pipeline status"></span>
+        </div>
+        <div class="bwb-domain-grid" id="bwb-domain-grid">
+          <!-- injected by pipeline-live.js — 12 region pills, green/amber/red -->
+        </div>
+        <div class="bwb-sidebar-foot" id="bwb-sidebar-pipeline-foot">
+          loading…
+        </div>
       </div>
     </aside>
   </main>
@@ -225,16 +207,15 @@
   <!-- ── FOOTER ── -->
   <!-- ── MOBILE BOTTOM NAV ── -->
   <nav class="bwb-bottom-nav safe-bottom">
-    <a href="." class="active">Feed</a>
-    <a href="local.html">Local</a>
-    <a href="blindspots.html">Blindspots</a>
-    <a href="sources.html">Sources</a>
-    <a href="trades.html">Trades</a>
-    <a href="books.html">Books</a>
-    <a href="corkboard/">Corkboard</a>
-    <a href="corruption.html">Corruption</a>
-    <a href="about.html">Method</a>
-    <a href="funnies.html">Funnies</a>
+    <a href="/" class="active">Feed</a>
+    <a href="/blindspots.html">Blindspots</a>
+    <a href="/sources.html">Sources</a>
+    <a href="/trades.html">Trades</a>
+    <a href="/books.html">Books</a>
+    <a href="/corkboard/">Corkboard</a>
+    <a href="/corruption.html">Corruption</a>
+    <a href="/about.html">Method</a>
+    <a href="/funnies.html">Funnies</a>
   </nav>
 
   <!-- ── PWA INSTALL PROMPT ── -->
@@ -248,265 +229,137 @@
     </div>
   </div>
 
-  <!-- ── FOOTER (9-column — mirrors Ground News structure, Bomba content) ── -->
-  <footer class="bwb-footer-v2">
-    <div class="bwb-footer-cols">
+  <!-- ── FOOTER (injected by /assets/js/site-chrome.js) ── -->
+  <footer data-bwb-chrome="default"></footer>
 
-      <section class="bwb-footer-col">
-        <h4>News</h4>
-        <ul>
-          <li><a href=".">Home / Feed</a></li>
-          <li><a href="local.html">Local</a></li>
-          <li><a href="blindspots.html">Blindspot Feed</a></li>
-          <li><a href="status.html">Pipeline status</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>International</h4>
-        <ul>
-          <li><a href="local.html#region=north-america">North America</a></li>
-          <li><a href="local.html#region=south-america">South America / Latin</a></li>
-          <li><a href="local.html#region=europe">Europe</a></li>
-          <li><a href="local.html#region=middle-east">Middle East</a></li>
-          <li><a href="local.html#region=asia">Asia</a></li>
-          <li><a href="local.html#region=africa">Africa</a></li>
-          <li><a href="local.html#region=oceania">Oceania</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Trending Internationally</h4>
-        <ul id="footer-trending-intl">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Trending in U.S.</h4>
-        <ul id="footer-trending-us">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Adversarial-Bloc Trending</h4>
-        <ul id="footer-trending-adv">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Investigations</h4>
-        <ul>
-          <li><a href="corruption.html">Corruption tracker</a></li>
-          <li><a href="trades.html">Congressional trades</a></li>
-          <li><a href="same-hand.html">Same-hand ownership</a></li>
-          <li><a href="books.html">Books / long-form</a></li>
-          <li><a href="funnies.html">Funnies / MAD archive</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Method</h4>
-        <ul>
-          <li><a href="about.html">About BOTWAVEBOMBA</a></li>
-          <li><a href="about.html#axes">The 5 bias axes</a></li>
-          <li><a href="about.html#blocs">3 blocs explained</a></li>
-          <li><a href="about.html#blindspot">What is a blindspot?</a></li>
-          <li><a href="about.html#provenance">Citation receipts</a></li>
-          <li><a href="sources.html">Media bias ratings</a></li>
-          <li><a href="same-hand.html">Ownership &amp; factuality</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Open Data</h4>
-        <ul>
-          <li><a href="data/source_registry.json">source_registry.json</a></li>
-          <li><a href="data/sources_wide.json">sources_wide.json (26k)</a></li>
-          <li><a href="data/extension_lookup.json">extension_lookup.json</a></li>
-          <li><a href="data/same_hand_slice.json">same_hand_slice.json</a></li>
-          <li><a href="data/ownership_graph.json">ownership_graph.json</a></li>
-          <li><a href="api/latest.json">api/latest.json</a></li>
-          <li><a href="api/blindspots.json">api/blindspots.json</a></li>
-          <li><a href="api/corruption.json">api/corruption.json</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Tools &amp; Channels</h4>
-        <ul>
-          <li><a href="pro.html">Bomba Pro</a></li>
-          <li><a href="#" data-soon="Browser extension — beta soon">Browser extension</a></li>
-          <li><a href="#" data-soon="Android APK — sideload via Tailscale">Android app</a></li>
-          <li><a href="#" data-soon="iOS — built via Codemagic CI">iOS app</a></li>
-          <li><a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram digest</a></li>
-          <li><a href="https://github.com/Zombie760" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-      </section>
-
-    </div>
-
-    <div class="bwb-footer-base">
-      <div class="bwb-footer-brand">
-        <span class="bwb-footer-wordmark">BOTWAVEBOMBA</span>
-        <span class="bwb-footer-tagline">A BOTWAVE journalism arm project</span>
-      </div>
-      <div class="bwb-footer-mantra">
-        BE UNDENIABLE &mdash; every claim filed, every source named, every line auditable.
-      </div>
-    </div>
-
-    <div class="bwb-footer-disclaimer">
-      BOTWAVEBOMBA does not editorialize. It surfaces the framing delta between global sources.
-      Bias classification: AllSides + MBFC + hand-curated fingerprints.
-      Every source link is an original primary URL. Nothing invented.
-    </div>
-  </footer>
-
+  <script src="/assets/js/site-chrome.js" defer></script>
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/heatmap.js"></script>
+  <script src="/assets/js/status-badge.js"></script>
+  <script src="/assets/js/feed.js"></script>
+  <script src="/assets/js/identity-modal.js" defer></script>
   <script>
-  // Populate trending-* footer columns from latest.json.
-  // Splits entities by which bloc covered them most.
-  (async function () {
-    const intl = document.getElementById('footer-trending-intl');
-    const us   = document.getElementById('footer-trending-us');
-    const adv  = document.getElementById('footer-trending-adv');
-    if (!intl && !us && !adv) return;
-    let data;
-    try {
-      const r = await fetch('api/latest.json', { cache: 'no-store' });
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      data = await r.json();
-    } catch (e) { return; }
-
-    // Per-entity bloc counts
-    const ents = {};
-    for (const s of (data.stories || [])) {
-      const hasUS  = (s.sources || []).some(src => src.country === 'US');
-      const hasAdv = (s.sources || []).some(src => src.bloc === 'adversarial');
-      for (const e of (s.entity_list || [])) {
-        if (!e || e.length < 3) continue;
-        const r = ents[e] || (ents[e] = { total: 0, us: 0, adv: 0 });
-        r.total += 1;
-        if (hasUS)  r.us  += 1;
-        if (hasAdv) r.adv += 1;
-      }
-    }
-    const arr = Object.entries(ents);
-    function render(targetEl, sortFn, limit) {
-      if (!targetEl) return;
-      const ranked = arr.slice().sort(sortFn).filter(([, r]) => r.total >= 2).slice(0, limit);
-      targetEl.textContent = '';
-      if (!ranked.length) {
-        const li = document.createElement('li');
-        li.className = 'bwb-footer-skeleton';
-        li.textContent = 'no data';
-        targetEl.appendChild(li);
-        return;
-      }
-      for (const [name, rec] of ranked) {
-        const li = document.createElement('li');
-        const a  = document.createElement('a');
-        a.href = '#trending=' + encodeURIComponent(name);
-        a.textContent = name;
-        li.appendChild(a);
-        targetEl.appendChild(li);
-      }
-    }
-    render(intl, (a, b) => (b[1].total - b[1].us) - (a[1].total - a[1].us), 6);
-    render(us,   (a, b) => b[1].us - a[1].us, 6);
-    render(adv,  (a, b) => b[1].adv - a[1].adv, 6);
-  })();
-
-  // "data-soon" tooltips so the not-yet-shipped links don't 404.
-  document.querySelectorAll('a[data-soon]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      alert(a.getAttribute('data-soon'));
-    });
-  });
-  </script>
-
-  <script src="assets/js/api.js"></script>
-  <script src="assets/js/heatmap.js"></script>
-  <script src="assets/js/feed.js"></script>
-  <script>
-    // util-date in the layer-2 utility bar
+    // Hydrate the editorial-frame banner with live counts from latest_slim.json
     (function () {
-      var d = document.getElementById('util-date');
-      if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-    })();
-
-    // Trending entity chips — pull top entities across stories, render as clickable filters.
-    // Uses textContent + createElement (no innerHTML on dynamic data).
-    (async function () {
-      var chips = document.getElementById('trending-chips');
-      if (!chips) return;
-      var data;
-      try {
-        var r = await fetch('api/latest.json', { cache: 'no-store' });
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        data = await r.json();
-      } catch (e) {
-        chips.textContent = '';
-        var err = document.createElement('span');
-        err.className = 'bwb-trending-placeholder';
-        err.textContent = 'trending unavailable';
-        chips.appendChild(err);
-        return;
-      }
-      var counts = {};
-      for (var i = 0; i < (data.stories || []).length; i++) {
-        var ents = data.stories[i].entity_list || [];
-        for (var j = 0; j < ents.length; j++) {
-          var e = ents[j];
-          if (!e || e.length < 3) continue;
-          counts[e] = (counts[e] || 0) + 1;
+      var url = (window.BWB_BASE || '') + '/api/latest_slim.json';
+      fetch(url, { cache: 'no-store' }).then(function (r) {
+        return r.ok ? r.json() : null;
+      }).then(function (d) {
+        if (!d) return;
+        var stories = d.story_count || (d.stories || []).length || 0;
+        var articles = d.article_count || 0;
+        var a = document.getElementById('bwb-frame-story-count');
+        var b = document.getElementById('bwb-frame-source-count');
+        var c = document.getElementById('bwb-frame-corpus-age');
+        if (a) a.textContent = stories + ' stories indexed';
+        if (b) b.textContent = articles.toLocaleString() + ' source articles';
+        // Corpus age: visible receipt for the operator that generate_feed.py
+        // needs to run when this number is in days, not minutes.
+        if (c && d.generated_at) {
+          var t = Date.parse(d.generated_at);
+          if (!isNaN(t)) {
+            var ageMs = Date.now() - t;
+            var ageH = ageMs / 3600000;
+            var label, tier;
+            if (ageH < 1)         { label = Math.floor(ageMs / 60000) + 'm ago'; tier = 'live'; }
+            else if (ageH < 24)   { label = Math.floor(ageH) + 'h ago';          tier = 'fresh'; }
+            else if (ageH < 168)  { label = Math.floor(ageH / 24) + 'd ago';      tier = 'recent'; }
+            else                  { label = Math.floor(ageH / 24) + 'd ago — STALE'; tier = 'stale'; }
+            c.textContent = 'corpus ' + label;
+            c.className = 'bwb-editorial-frame-stat bwb-corpus-age bwb-corpus-age--' + tier;
+            c.title = 'Corpus generated ' + new Date(t).toUTCString();
+          }
         }
-      }
-      var ranked = Object.keys(counts).map(function (k) { return [k, counts[k]]; })
-        .sort(function (a, b) { return b[1] - a[1]; })
-        .filter(function (kv) { return kv[1] >= 3; })
-        .slice(0, 14);
-      chips.textContent = '';
-      if (!ranked.length) {
-        var none = document.createElement('span');
-        none.className = 'bwb-trending-placeholder';
-        none.textContent = 'no trending entities yet';
-        chips.appendChild(none);
-        return;
-      }
-      for (var k = 0; k < ranked.length; k++) {
-        var ent = ranked[k][0], n = ranked[k][1];
-        var a = document.createElement('a');
-        a.className = 'bwb-trending-chip';
-        a.href = '#trending=' + encodeURIComponent(ent);
-        a.dataset.entity = ent;
-        a.title = n + ' stories mention ' + ent;
-        var lbl = document.createElement('span');
-        lbl.textContent = ent;
-        var cnt = document.createElement('span');
-        cnt.className = 'count';
-        cnt.textContent = n;
-        a.appendChild(lbl);
-        a.appendChild(cnt);
-        a.addEventListener('click', function (ev) {
-          ev.preventDefault();
-          // toggle active state
-          var all = chips.querySelectorAll('.bwb-trending-chip');
-          for (var x = 0; x < all.length; x++) all[x].classList.remove('active');
-          ev.currentTarget.classList.add('active');
-          // dispatch a custom event feed.js can listen to for filtering
-          var evt = new CustomEvent('bwb-trending-filter', { detail: { entity: ev.currentTarget.dataset.entity } });
-          document.dispatchEvent(evt);
-        });
-        chips.appendChild(a);
-      }
+      }).catch(function () { /* keep em-dashes */ });
     })();
-
+  </script>
+  <script>
+    // Hydrate the live pipeline ticker from api/pipeline_live.json.
+    // The poller runs every 15 min; this receipt is regenerated by
+    // scripts/build_pipeline_live.py. Tier: live (green pulse) / degraded
+    // (amber) / dead (red). The editorial frame dot pulses if any domain
+    // is alive; the sidebar block shows all 12 domain cells.
+    (function () {
+      var url = (window.BWB_BASE || '') + '/api/pipeline_live.json';
+      var ageLabel = function(ts) {
+        if (!ts) return '—';
+        var t = Date.parse(ts);
+        if (isNaN(t)) return '—';
+        var ageMs = Date.now() - t;
+        var ageMin = Math.floor(ageMs / 60000);
+        if (ageMin < 1)   return 'just now';
+        if (ageMin < 60)  return ageMin + 'm ago';
+        var ageH = Math.floor(ageMin / 60);
+        if (ageH < 24)    return ageH + 'h ago';
+        return Math.floor(ageH / 24) + 'd ago';
+      };
+      var plural = function(n, one, many) { return n + ' ' + (n === 1 ? one : many); };
+      fetch(url, { cache: 'no-store' }).then(function (r) {
+        return r.ok ? r.json() : null;
+      }).then(function (d) {
+        if (!d) return;
+        var p = d.poller || {};
+        var b = d.bridge || {};
+        // Editorial frame: "poller live · 138 new in last 15m · bridge 2m ago"
+        var liveEl = document.getElementById('bwb-live-text');
+        var dotEl  = document.getElementById('bwb-live-dot');
+        var lastRun = ageLabel(p.last_run_ts);
+        var bridgeAge = ageLabel(b.last_bridge_ts);
+        var alive = p.domains_alive_24h || 0;
+        var total = (d.domains || []).length || 12;
+        var tier = alive === total ? 'live'
+                 : alive === 0     ? 'dead'
+                 : 'degraded';
+        if (liveEl) {
+          liveEl.textContent =
+            'poller ' + tier + ' · ' + alive + '/' + total + ' regions · '
+            + plural(p.total_runs_24h || 0, 'run', 'runs') + ' in 24h · '
+            + (b.articles_new || 0) + ' new in last 15m · bridge ' + bridgeAge;
+        }
+        if (dotEl) {
+          dotEl.className = 'bwb-live-dot bwb-live-dot--' + tier;
+          dotEl.title = 'Last poller run: ' + (p.last_run_ts || '—')
+                      + '\nLast bridge: ' + (b.last_bridge_ts || '—');
+        }
+        // Sidebar dot mirrors the same tier
+        var sidebarDot = document.getElementById('bwb-sidebar-pipeline-dot');
+        if (sidebarDot) {
+          sidebarDot.className = 'bwb-sidebar-title-pulse bwb-sidebar-title-pulse--' + tier;
+        }
+        // Sidebar domain grid: render 12 region cells, each with its status
+        var grid = document.getElementById('bwb-domain-grid');
+        var foot = document.getElementById('bwb-sidebar-pipeline-foot');
+        if (grid) {
+          grid.innerHTML = '';
+          (d.domains || []).forEach(function(dom) {
+            var cell = document.createElement('div');
+            cell.className = 'bwb-domain-cell bwb-domain-cell--' + (dom.status || 'dead');
+            cell.title = dom.name
+              + '\nlast run: ' + (dom.last_run_ts || '—')
+              + '\nnew articles: ' + (dom.last_new_articles || 0)
+              + '\nfeeds: ' + (dom.polled_ok || 0) + '/' + (dom.feeds_in_domain || 0) + ' ok';
+            cell.innerHTML = ''
+              + '<span class="bwb-domain-cell-dot"></span>'
+              + '<span class="bwb-domain-cell-name">' + dom.name.replace(/_/g, ' ') + '</span>'
+              + '<span class="bwb-domain-cell-num">'
+              +   (dom.last_new_articles != null ? dom.last_new_articles : '·')
+              + '</span>';
+            grid.appendChild(cell);
+          });
+        }
+        if (foot) {
+          var failTotal = (d.domains || []).reduce(function(s, x) { return s + (x.polled_failed || 0); }, 0);
+          foot.textContent = 'last cycle ' + lastRun
+            + ' · ' + failTotal + ' feed' + (failTotal === 1 ? '' : 's') + ' failing'
+            + ' · ' + alive + '/' + total + ' regions live';
+        }
+      }).catch(function () { /* keep loading */ });
+    })();
+  </script>
+  <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register("service-worker.js");
+      var swPath = (window.BWB_BASE || '') + '/service-worker.js';
+      navigator.serviceWorker.register(swPath);
     }
   </script>
 </body>

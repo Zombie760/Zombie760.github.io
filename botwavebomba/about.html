@@ -2,22 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Methodology — BOTWAVEBOMBA</title>
   <meta name="description" content="How BOTWAVEBOMBA works. Live pipeline architecture, source counts, bias-rating provenance. Every claim references the code that backs it.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/mobile.css">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
   <meta name="theme-color" content="#0a0a0a">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
-  <script src="assets/js/theme-switcher.js" defer></script>
-  <script src="assets/js/pwa.js" defer></script>
+  <meta name="view-transition" content="same-origin">
+  <script type="speculationrules">
+  {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
+  </script>
+  <!-- Base path support for GitHub Pages subpath + root deployments -->
+  <script src="/assets/js/base-path.js"></script>
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/pwa.js" defer></script>
   <style>
     .bwb-codeline { opacity:0.75; font-size:0.78em; }
     .bwb-roadmap-list { list-style:none; padding-left:0; }
@@ -33,64 +39,14 @@
 </head>
 <body>
 
-  <!-- ── HEADER (4-LAYER EDITORIAL STACK) ── -->
+  <!-- ── HEADER (injected by /assets/js/site-chrome.js) ── -->
+  <header data-bwb-chrome="compact"></header>
 
-  <aside class="bwb-promo" role="region" aria-label="Bomba positioning">
-    <div class="bwb-promo-inner">
-      <p class="bwb-promo-line">
-        <span class="bwb-promo-lede">See <em>who's funding</em> the side.</span>
-        <span class="bwb-promo-rest">Not just who's reporting it.</span>
-      </p>
-      <a class="bwb-promo-cta" href="about.html">Read methodology &rarr;</a>
-    </div>
-  </aside>
-
-  <div class="bwb-util" role="region" aria-label="Pipeline state">
-    <div class="bwb-util-inner">
-      <div class="bwb-util-group">
-        <span class="bwb-pipeline-badge"><span class="bwb-pipe-dot"></span>LIVE</span>
-        <span class="bwb-util-sep">&middot;</span>
-        <span class="bwb-util-stat"><b>26,542</b> sources cataloged</span>
-        <span class="bwb-util-sep">&middot;</span>
-        <span class="bwb-util-stat"><b>496</b> deep-fingerprinted</span>
-      </div>
-      <div class="bwb-util-group bwb-util-right">
-        <span class="bwb-util-date" id="util-date"></span>
-        <span class="bwb-util-sep">&middot;</span>
-        <a class="bwb-util-link" href="data/sources_wide.json">OPEN DATA &darr;</a>
-      </div>
-    </div>
-  </div>
-
-  <header class="bwb-header">
-    <div class="bwb-header-inner">
-      <a href="." class="bwb-brand" aria-label="BOTWAVEBOMBA &mdash; Home">
-        <span class="bwb-brand-mark">BOTWAVE<em>BOMBA</em></span>
-        <span class="bwb-brand-axes">5-axis &middot; 3-bloc &middot; adversarial included</span>
-      </a>
-      <nav class="bwb-topnav" aria-label="Primary">
-        <a href=".">Feed</a>
-        <a href="local.html">Local</a>
-        <a href="blindspots.html">Blindspots</a>
-        <a href="sources.html">Sources</a>
-        <a href="trades.html">Trades</a>
-        <a href="books.html">Books</a>
-        <a href="corkboard/">Corkboard</a>
-        <a href="corruption.html">Corruption</a>
-        <a href="about.html" class="active">Method</a>
-        <a href="funnies.html">Funnies</a>
-      </nav>
-      <div class="bwb-header-right">
-        <a class="bwb-pro-btn" href="pro.html">Pro</a>
-      </div>
-    </div>
-  </header>
-
-<div class="bwb-page-container bwb-about">
+  <div class="bwb-page-container bwb-about">
 
     <div class="bwb-about-honesty" role="status" style="border:1px solid #b8860b;background:#3a2a08;color:#fff3c4;padding:1rem 1.25rem;margin:1rem 0 2rem;font-family:'DM Mono',ui-monospace,Menlo,monospace;font-size:0.82rem;line-height:1.55;">
       <strong style="color:#ffd95a;letter-spacing:0.05em;">LAST METHODOLOGY AUDIT — 2026-05-10</strong><br>
-      Pipeline decomposition: <strong>6 of 6 modules extracted</strong> (<code>event_clusterer</code> + <code>bias_scorer</code> + <code>framing_differ</code> + <code>blindspot_analyzer</code> + <code>coverage_mapper</code> + <code>broadcast</code> — all extracted, all fixture-equivalence verified). The monolith is now six discrete modules plus the pre-existing <code>global_ingestor</code>. Live pipeline state: <a href="status.html" style="color:#ffd95a;">/status.html</a>. Audit trail: <a href="audit/about_audit_2026-05-10.md" style="color:#ffd95a;">audit/about_audit_2026-05-10.md</a> · plan: <a href="PLAN_HYBRID.md" style="color:#ffd95a;">PLAN_HYBRID.md</a>. Cannot-verify is a first-class output — every factual claim below references the file and line that backs it.
+      Pipeline decomposition: <strong>6 of 6 modules extracted</strong> (<code>event_clusterer</code> + <code>bias_scorer</code> + <code>framing_differ</code> + <code>blindspot_analyzer</code> + <code>coverage_mapper</code> + <code>broadcast</code> — all extracted, all fixture-equivalence verified). The monolith is now six discrete modules plus the pre-existing <code>global_ingestor</code>. Live pipeline state: <a href="/status.html" style="color:#ffd95a;">/status.html</a>. Audit trail: <a href="/audit/about_audit_2026-05-10.md" style="color:#ffd95a;">audit/about_audit_2026-05-10.md</a> · plan: <a href="/PLAN_HYBRID.md" style="color:#ffd95a;">PLAN_HYBRID.md</a>. Cannot-verify is a first-class output — every factual claim below references the file and line that backs it.
     </div>
 
     <div class="bwb-page-header">
@@ -107,28 +63,33 @@
         <h2>What BOTWAVEBOMBA Is</h2>
         <p>
           BOTWAVEBOMBA is the public face of a private journalism research
-          infrastructure. Every article shown here was
+          infrastructure called TELOS+PAI. Every article shown here was
           ingested by <code>global_ingestor.py</code>, clustered across information
           blocs, and tagged with a per-source five-axis bias fingerprint. The
           pipeline runs every six hours on a systemd timer.
           <span class="bwb-codeline">(<code>bomba_pipeline.sh</code>, <code>botwave-bomba-pipeline.timer</code>: <code>OnCalendar=*-*-* 00,06,12,18:00:00</code>)</span>
         </p>
         <p>
-          <strong>492</strong> sources are ingested every six hours
-          <span class="bwb-codeline">(<code>book_arm/memory/sources_global.json</code>)</span>.
-          <strong>496</strong> carry full five-axis bias fingerprints
-          <span class="bwb-codeline">(<code>data/source_registry.json</code>)</span>.
+          <strong id="about-fp-count">244</strong> sources are deep-fingerprinted across the five bias axes
+          <span class="bwb-codeline">(<code>api/pipeline_state.json</code>: <code>.source_counts.fingerprinted</code>)</span>.
+          <strong id="about-awaiting-count">248</strong> sources are in the registry and awaiting fingerprinting
+          <span class="bwb-codeline">(<code>api/pipeline_state.json</code>: <code>.source_counts.awaiting_fingerprinting</code>)</span>.
+          The substrate runs every six hours; fingerprinting cadence is
+          <strong>20 sources per month</strong>; full parity (492/492) is targeted for
+          <strong>Q4 2026</strong>
+          <span class="bwb-codeline">(see <code>_index/receipts/</code> for the per-month cadence receipts)</span>.
           Every source is classified by bloc (Western / Adversarial / Non-Aligned),
           factuality (high / mixed / low), and primary-vs-launderer status.
         </p>
         <p>
-          It is not a news aggregator in the Google News sense. It is not a
-          fact-checker. It is a <strong>bloc-level coverage-and-bias comparison
-          engine</strong>: which information bloc covered each story, where the
-          volume gaps are, and how each source's five-axis bias profile maps
-          across blocs. Sentence-level framing analysis (verb-choice, propaganda
-          lexicon) is on the decomposition roadmap below — it is not in the
-          live pipeline yet.
+          The five-axis fingerprints are <strong>per-source</strong>, computed at
+          fingerprinting time and looked up at render time. Story-level scores
+          (the bloc coverage percentages you see in the feed) are aggregations
+          across the source mix, not fresh per-article inference. The substrate
+          is a coverage-and-bias <em>comparison</em> engine — the per-article
+          sentence-level framing pass is on the decomposition roadmap
+          <span class="bwb-codeline">(see <code>api/pipeline_state.json</code>: <code>.decomposition.modules_extracted</code>)</span>
+          and is not in the live pipeline yet.
         </p>
       </section>
 
@@ -210,7 +171,7 @@
           per calendar week, with fixture-equivalence to the monolith as the
           acceptance test. After six weeks the monolith is six discrete modules;
           a seventh week replaces the glue with a proper orchestrator.
-          <span class="bwb-codeline">Full plan: <a href="PLAN_HYBRID.md"><code>PLAN_HYBRID.md</code></a>. Live state: <a href="pipeline_state.json"><code>pipeline_state.json</code></a>.</span>
+          <span class="bwb-codeline">Full plan: <a href="/PLAN_HYBRID.md"><code>PLAN_HYBRID.md</code></a>. Live state: <a href="/pipeline_state.json"><code>pipeline_state.json</code></a>.</span>
         </p>
         <p class="bwb-callout-soft">
           The roadmap entries below reflect <code>pipeline_state.json</code> at
@@ -221,7 +182,7 @@
           <li>
             <span class="bwb-roadmap-status bwb-roadmap-status--discrete">discrete</span>
             <strong><code>global_ingestor.py</code></strong>
-            — pulls RSS + article full-text from the 496 deep-fingerprinted T0 sources (out of <strong>26,542 cataloged</strong> in the wider tier graph), dedup by hash, writes <code>news_cache.jsonl</code>.
+            — pulls RSS + article full-text from 492 sources, dedup by hash, writes <code>news_cache.jsonl</code>.
             Pre-existing; not part of the decomposition.
             <span class="bwb-codeline">(<code>book_arm/pai_modules/global_ingestor.py</code>)</span>
           </li>
@@ -305,7 +266,7 @@
           </li>
         </ul>
         <p class="bwb-callout-soft">
-          All six modules have flipped to <span class="bwb-roadmap-status bwb-roadmap-status--extracted">extracted</span>. Next: wire the modules behind a proper orchestrator (<code>run_pipeline.py</code>) that emits a per-cycle <code>pipeline_run.json</code> the status page reads for live per-stage health. The orchestrator schema is already drafted: <a href="schemas/pipeline_run.schema.json"><code>schemas/pipeline_run.schema.json</code></a>.
+          All six modules have flipped to <span class="bwb-roadmap-status bwb-roadmap-status--extracted">extracted</span>. Next: wire the modules behind a proper orchestrator (<code>run_pipeline.py</code>) that emits a per-cycle <code>pipeline_run.json</code> the status page reads for live per-stage health. The orchestrator schema is already drafted: <a href="/schemas/pipeline_run.schema.json"><code>schemas/pipeline_run.schema.json</code></a>.
         </p>
       </section>
 
@@ -356,14 +317,18 @@
           it is on the methodology-audit roadmap.
         </p>
         <p>
-          The current registry ships <strong>496</strong> deep-fingerprinted sources
-          with full 5-axis bias data, bloc classification, factuality ratings,
-          and primary-vs-launderer tags
-          <span class="bwb-codeline">(<code>data/source_registry.json</code>)</span>.
-          The original 244-source registry was introduced in commit <code>c6a088bf</code>;
-          the enriched 496-source version merges data from
-          <code>source_fingerprints.json</code>. Subsequent updates are logged in
-          <code>pipeline_state.json</code>.
+          The current registry ships <strong id="about-fp-count-2">244</strong>
+          deep-fingerprinted sources with full 5-axis bias data, bloc
+          classification, factuality ratings, and primary-vs-launderer tags
+          <span class="bwb-codeline">(<code>api/pipeline_state.json</code>:</span>
+          <code>.source_counts.fingerprinted</code><span class="bwb-codeline">)</span>.
+          The original 244-source registry was introduced in commit
+          <code>c6a088bf</code>; the next 248 sources are in the fingerprinting
+          queue at a cadence of 20 sources/month, with full parity targeted for
+          Q4 2026. Per-source provenance (which axis value for which source came
+          from which input) is published on <a href="/sources.html">/sources.html</a>
+          with each source card; the underlying machine-traceable artifact is
+          on the methodology-audit roadmap.
         </p>
         <p>
           Hand-curation methodology — editorial stance analysis, entity framing
@@ -378,231 +343,66 @@
 
   </div>
 
-    <!-- ── FOOTER (5-column editorial) ── -->
-    <!-- ── FOOTER (9-column — mirrors Ground News structure, Bomba content) ── -->
-  <footer class="bwb-footer-v2">
-    <div class="bwb-footer-cols">
-
-      <section class="bwb-footer-col">
-        <h4>News</h4>
-        <ul>
-          <li><a href=".">Home / Feed</a></li>
-          <li><a href="local.html">Local</a></li>
-          <li><a href="blindspots.html">Blindspot Feed</a></li>
-          <li><a href="status.html">Pipeline status</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>International</h4>
-        <ul>
-          <li><a href="local.html#region=north-america">North America</a></li>
-          <li><a href="local.html#region=south-america">South America / Latin</a></li>
-          <li><a href="local.html#region=europe">Europe</a></li>
-          <li><a href="local.html#region=middle-east">Middle East</a></li>
-          <li><a href="local.html#region=asia">Asia</a></li>
-          <li><a href="local.html#region=africa">Africa</a></li>
-          <li><a href="local.html#region=oceania">Oceania</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Trending Internationally</h4>
-        <ul id="footer-trending-intl">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Trending in U.S.</h4>
-        <ul id="footer-trending-us">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Adversarial-Bloc Trending</h4>
-        <ul id="footer-trending-adv">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Investigations</h4>
-        <ul>
-          <li><a href="corruption.html">Corruption tracker</a></li>
-          <li><a href="trades.html">Congressional trades</a></li>
-          <li><a href="same-hand.html">Same-hand ownership</a></li>
-          <li><a href="books.html">Books / long-form</a></li>
-          <li><a href="funnies.html">Funnies / MAD archive</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Method</h4>
-        <ul>
-          <li><a href="about.html">About BOTWAVEBOMBA</a></li>
-          <li><a href="about.html#axes">The 5 bias axes</a></li>
-          <li><a href="about.html#blocs">3 blocs explained</a></li>
-          <li><a href="about.html#blindspot">What is a blindspot?</a></li>
-          <li><a href="about.html#provenance">Citation receipts</a></li>
-          <li><a href="sources.html">Media bias ratings</a></li>
-          <li><a href="same-hand.html">Ownership &amp; factuality</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Open Data</h4>
-        <ul>
-          <li><a href="data/source_registry.json">source_registry.json</a></li>
-          <li><a href="data/sources_wide.json">sources_wide.json (26k)</a></li>
-          <li><a href="data/extension_lookup.json">extension_lookup.json</a></li>
-          <li><a href="data/same_hand_slice.json">same_hand_slice.json</a></li>
-          <li><a href="data/ownership_graph.json">ownership_graph.json</a></li>
-          <li><a href="api/latest.json">api/latest.json</a></li>
-          <li><a href="api/blindspots.json">api/blindspots.json</a></li>
-          <li><a href="api/corruption.json">api/corruption.json</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Tools &amp; Channels</h4>
-        <ul>
-          <li><a href="pro.html">Bomba Pro</a></li>
-          <li><a href="#" data-soon="Browser extension — beta soon">Browser extension</a></li>
-          <li><a href="#" data-soon="Android APK — sideload via Tailscale">Android app</a></li>
-          <li><a href="#" data-soon="iOS — built via Codemagic CI">iOS app</a></li>
-          <li><a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram digest</a></li>
-          <li><a href="https://github.com/Zombie760" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-      </section>
-
-    </div>
-
-    <div class="bwb-footer-base">
-      <div class="bwb-footer-brand">
-        <span class="bwb-footer-wordmark">BOTWAVEBOMBA</span>
-        <span class="bwb-footer-tagline">A BOTWAVE journalism arm project</span>
-      </div>
-      <div class="bwb-footer-mantra">
-        BE UNDENIABLE &mdash; every claim filed, every source named, every line auditable.
-      </div>
-    </div>
-
-    <div class="bwb-footer-disclaimer">
-      BOTWAVEBOMBA does not editorialize. It surfaces the framing delta between global sources.
-      Bias classification: AllSides + MBFC + hand-curated fingerprints.
-      Every source link is an original primary URL. Nothing invented.
-    </div>
-  </footer>
-
-  <script>
-  // Populate trending-* footer columns from latest.json.
-  // Splits entities by which bloc covered them most.
-  (async function () {
-    const intl = document.getElementById('footer-trending-intl');
-    const us   = document.getElementById('footer-trending-us');
-    const adv  = document.getElementById('footer-trending-adv');
-    if (!intl && !us && !adv) return;
-    let data;
-    try {
-      const r = await fetch('api/latest.json', { cache: 'no-store' });
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      data = await r.json();
-    } catch (e) { return; }
-
-    // Per-entity bloc counts
-    const ents = {};
-    for (const s of (data.stories || [])) {
-      const hasUS  = (s.sources || []).some(src => src.country === 'US');
-      const hasAdv = (s.sources || []).some(src => src.bloc === 'adversarial');
-      for (const e of (s.entity_list || [])) {
-        if (!e || e.length < 3) continue;
-        const r = ents[e] || (ents[e] = { total: 0, us: 0, adv: 0 });
-        r.total += 1;
-        if (hasUS)  r.us  += 1;
-        if (hasAdv) r.adv += 1;
-      }
-    }
-    const arr = Object.entries(ents);
-    function render(targetEl, sortFn, limit) {
-      if (!targetEl) return;
-      const ranked = arr.slice().sort(sortFn).filter(([, r]) => r.total >= 2).slice(0, limit);
-      targetEl.textContent = '';
-      if (!ranked.length) {
-        const li = document.createElement('li');
-        li.className = 'bwb-footer-skeleton';
-        li.textContent = 'no data';
-        targetEl.appendChild(li);
-        return;
-      }
-      for (const [name, rec] of ranked) {
-        const li = document.createElement('li');
-        const a  = document.createElement('a');
-        a.href = '#trending=' + encodeURIComponent(name);
-        a.textContent = name;
-        li.appendChild(a);
-        targetEl.appendChild(li);
-      }
-    }
-    render(intl, (a, b) => (b[1].total - b[1].us) - (a[1].total - a[1].us), 6);
-    render(us,   (a, b) => b[1].us - a[1].us, 6);
-    render(adv,  (a, b) => b[1].adv - a[1].adv, 6);
-  })();
-
-  // "data-soon" tooltips so the not-yet-shipped links don't 404.
-  document.querySelectorAll('a[data-soon]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      alert(a.getAttribute('data-soon'));
-    });
-  });
-  </script>
+  <!-- ── FOOTER (injected by /assets/js/site-chrome.js) ── -->
+  <footer data-bwb-chrome="default"></footer>
 
   <!-- Mobile bottom nav -->
   <nav class="bwb-bottom-nav safe-bottom">
-    <a href=".">
+    <a href="/">
       <span class="bwb-bottom-nav-icon">📰</span>
       <span>Feed</span>
     </a>
-    <a href="blindspots.html">
+    <a href="/blindspots.html">
       <span class="bwb-bottom-nav-icon">👁️</span>
       <span>Blindspots</span>
     </a>
-    <a href="sources.html">
+    <a href="/sources.html">
       <span class="bwb-bottom-nav-icon">🌐</span>
       <span>Sources</span>
     </a>
-    <a href="trades.html">
+    <a href="/trades.html">
       <span class="bwb-bottom-nav-icon">🔧</span>
       <span>Trades</span>
     </a>
-    <a href="books.html">
+    <a href="/books.html">
       <span class="bwb-bottom-nav-icon">📚</span>
       <span>Books</span>
     </a>
-    <a href="about.html" class="active">
+    <a href="/about.html" class="active">
       <span class="bwb-bottom-nav-icon">📋</span>
       <span>Method</span>
     </a>
-    <a href="funnies.html">
+    <a href="/funnies.html">
       <span class="bwb-bottom-nav-icon">🎭</span>
       <span>Funnies</span>
     </a>
   </nav>
 
+  <script src="/assets/js/site-chrome.js" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register("service-worker.js");
+      var swPath = (window.BWB_BASE || '') + '/service-worker.js';
+      navigator.serviceWorker.register(swPath);
     }
-  </script>
-
-  <script>
-    (function () {
-      var d = document.getElementById('util-date');
-      if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    // ISC-31/50: read source-count at runtime so the page never lies about
+    // the substrate state. Falls back to the hardcoded "244" if the fetch
+    // fails (offline / before the worker warms up).
+    (function() {
+      fetch((window.BWB_BASE || '') + '/api/pipeline_state.json', { cache: 'no-store' })
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(s) {
+          if (!s || !s.source_counts) return;
+          var fp = s.source_counts.fingerprinted;
+          var aw = s.source_counts.awaiting_fingerprinting;
+          if (typeof fp === 'number') {
+            document.querySelectorAll('#about-fp-count, #about-fp-count-2').forEach(function(el) { el.textContent = fp; });
+          }
+          if (typeof aw === 'number') {
+            var el2 = document.getElementById('about-awaiting-count');
+            if (el2) el2.textContent = aw;
+          }
+        }).catch(function() { /* keep the hardcoded fallback */ });
     })();
   </script>
-
 </body>
 </html>

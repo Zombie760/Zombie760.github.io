@@ -79,7 +79,7 @@ function buildBlindspostCard(story) {
   const card = document.createElement('article');
   card.className = 'bwb-card bwb-blindspot-card ' + bsType;
   card.addEventListener('click', function() {
-    window.location = 'story.html?id=' + encodeURIComponent(story.id);
+    window.location = '/story.html?id=' + encodeURIComponent(story.id);
   });
 
   // Thumbnail — article photo with card PNG fallback
@@ -88,7 +88,7 @@ function buildBlindspostCard(story) {
   var thumbImg = document.createElement('img');
   thumbImg.alt     = story.headline || '';
   thumbImg.loading = 'lazy';
-  var cardSrc = '/api/cards/' + story.id + '.png';
+  var cardSrc = (window.BWB_URL ? window.BWB_URL('api/cards/' + story.id + '.png') : '/api/cards/' + story.id + '.png');
   if (story.image_url) {
     thumbImg.src = story.image_url;
     thumbImg.onerror = function() { this.src = cardSrc; this.onerror = null; };

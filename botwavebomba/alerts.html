@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BOTWAVEBOMBA — Blindspot Alerts</title>
+  <meta name="description" content="Subscribe to Western Blackout, Mono-Frame, and Ownership Concentration alerts. Email, Telegram, Web Push, or Slack/Discord webhook (Team).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0a0a0a">
+  <style>
+    body {font-family:'DM Sans',system-ui,sans-serif;background:#0a0a0a;color:#F0EDE8;padding:0;margin:0}
+    .alerts-wrap {max-width:780px;margin:0 auto;padding:80px 24px 120px}
+    .alerts-badge {font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:#BF3B2D;border:1px solid #BF3B2D;padding:4px 12px;display:inline-block;margin-bottom:32px}
+    .alerts-h1 {font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#F0EDE8;margin:0 0 24px}
+    .alerts-h1 em {font-style:italic;color:#BF3B2D}
+    .alerts-body {font-weight:300;font-size:15px;line-height:1.8;color:rgba(240,237,232,0.75);margin:0 0 40px}
+    .alert-types {list-style:none;padding:0;margin:0 0 40px}
+    .alert-type {background:#161616;border:1px solid rgba(255,255,255,0.10);padding:18px 18px 18px 22px;margin-bottom:12px;display:flex;gap:16px;align-items:flex-start}
+    .alert-type-checkbox {flex-shrink:0;margin-top:4px;accent-color:#BF3B2D;width:18px;height:18px}
+    .alert-type-body {flex-grow:1}
+    .alert-type-label {font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#BF3B2D;text-transform:uppercase;margin-bottom:4px}
+    .alert-type-desc {font-size:13px;color:rgba(240,237,232,0.75);line-height:1.5}
+    .alert-channel {margin-bottom:32px}
+    .alert-channel-label {font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(240,237,232,0.5);text-transform:uppercase;margin-bottom:10px}
+    .alert-input {width:100%;background:#0a0a0a;border:1px solid rgba(255,255,255,0.20);color:#F0EDE8;padding:12px 14px;font-family:'DM Mono',monospace;font-size:13px;margin-bottom:10px}
+    .alert-input:focus {outline:none;border-color:#BF3B2D}
+    .alerts-cta {display:inline-block;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;background:#BF3B2D;color:#fff;text-decoration:none;border:none;cursor:pointer;transition:background 0.15s}
+    .alerts-cta:hover {background:#a83327}
+    .alerts-note {font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.3);margin-top:32px;line-height:1.6}
+    .alerts-stat {font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,237,232,0.4);margin-bottom:32px;letter-spacing:0.5px}
+  </style>
+  <meta name="view-transition" content="same-origin">
+  <script type="speculationrules">
+  {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
+  </script>
+</head>
+<body>
+  <div class="alerts-wrap">
+    <div class="alerts-badge">BLINDSPOT ALERTS — WEEK 3</div>
+    <h1 class="alerts-h1">Get pinged when the <em>gap</em> opens</h1>
+    <p class="alerts-body">
+      The blindspot feed shows you what one bloc is covering that another bloc is
+      ignoring. The alert layer pushes those events to you the moment they fire —
+      before the story walks off the front page. Free tier gets email + Telegram.
+      Pro gets Web Push + raised daily limits. Team gets Slack/Discord webhooks
+      and per-seat routing.
+    </p>
+
+    <div class="alerts-stat" id="alerts-stat">
+      <span id="alerts-stat-count">—</span> active blindspots in the last 24h · pipeline runs every 6h
+    </div>
+
+    <h2 style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.12em;color:rgba(240,237,232,0.6);text-transform:uppercase;margin-bottom:14px">1 · Pick your alert types</h2>
+    <ul class="alert-types" id="alert-types-list">
+      <!-- alert types injected by alerts.js from api/alerts.json -->
+    </ul>
+
+    <h2 style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.12em;color:rgba(240,237,232,0.6);text-transform:uppercase;margin-bottom:14px">2 · Pick your channel</h2>
+    <div class="alert-channel">
+      <div class="alert-channel-label">Email</div>
+      <input class="alert-input" type="email" id="alert-email" placeholder="you@example.com" autocomplete="email">
+    </div>
+    <div class="alert-channel">
+      <div class="alert-channel-label">Telegram (Pro+)</div>
+      <input class="alert-input" type="text" id="alert-telegram" placeholder="@your_handle" autocomplete="off">
+    </div>
+    <div class="alert-channel">
+      <div class="alert-channel-label">Web Push (PWA · Pro+)</div>
+      <button type="button" class="alert-input" id="alert-push-btn" style="cursor:pointer;text-align:left">Enable browser push notifications</button>
+    </div>
+    <div class="alert-channel">
+      <div class="alert-channel-label">Slack Webhook (Team only)</div>
+      <input class="alert-input" type="url" id="alert-slack" placeholder="https://hooks.slack.com/services/..." autocomplete="off">
+    </div>
+    <div class="alert-channel">
+      <div class="alert-channel-label">Discord Webhook (Team only)</div>
+      <input class="alert-input" type="url" id="alert-discord" placeholder="https://discord.com/api/webhooks/..." autocomplete="off">
+    </div>
+
+    <a href="#" id="alerts-subscribe-btn" class="alerts-cta">Subscribe to alerts</a>
+    <p class="alerts-note">
+      Alerts are delivered by the same TELOS+PAI pipeline that surfaces the
+      blindspots — the substrate that classifies framing also classifies what
+      a "gap" looks like. We never sell, share, or rent your contact info.
+      The PII we hold: your email (or Telegram handle / webhook URL), your
+      selected alert types, your subscription tier, and the timestamp of
+      your last delivery. Unsubscribe is one click in every email and one
+      POST to <code>/api/alerts/unsubscribe</code>.
+    </p>
+  </div>
+
+  <script src="/assets/js/alerts.js"></script>
+</body>
+</html>

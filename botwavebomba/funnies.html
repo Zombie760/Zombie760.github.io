@@ -2,91 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>BOTWAVEBOMBA — Funnies</title>
   <meta name="description" content="MAD Magazine archive — 74 issues from 1952 to 2024. Because the real world is the best satire.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/funnies.css">
-  <link rel="stylesheet" href="assets/css/mobile.css">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/funnies.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
   <meta name="theme-color" content="#0a0a0a">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
-  <script src="assets/js/theme-switcher.js" defer></script>
-  <script src="assets/js/pwa.js" defer></script>
+  <meta name="view-transition" content="same-origin">
+  <script type="speculationrules">
+  {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
+  </script>
+  <!-- Base path support for GitHub Pages subpath + root deployments -->
+  <script src="/assets/js/base-path.js"></script>
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/pwa.js" defer></script>
 </head>
 <body>
 
-  <!-- ── HEADER (4-LAYER EDITORIAL STACK) ── -->
+  <!-- ── HEADER (injected by /assets/js/site-chrome.js) ── -->
+  <header data-bwb-chrome="compact"></header>
 
-  <aside class="bwb-promo" role="region" aria-label="Bomba positioning">
-    <div class="bwb-promo-inner">
-      <p class="bwb-promo-line">
-        <span class="bwb-promo-lede">See <em>who's funding</em> the side.</span>
-        <span class="bwb-promo-rest">Not just who's reporting it.</span>
-      </p>
-      <a class="bwb-promo-cta" href="about.html">Read methodology &rarr;</a>
-    </div>
-  </aside>
-
-  <div class="bwb-util" role="region" aria-label="Pipeline state">
-    <div class="bwb-util-inner">
-      <div class="bwb-util-group">
-        <span class="bwb-pipeline-badge"><span class="bwb-pipe-dot"></span>TELOS+PAI LIVE</span>
-        <span class="bwb-util-sep">&middot;</span>
-        <span class="bwb-util-stat"><b>26,542</b> sources cataloged</span>
-        <span class="bwb-util-sep">&middot;</span>
-        <span class="bwb-util-stat"><b>496</b> deep-fingerprinted</span>
-      </div>
-      <div class="bwb-util-group bwb-util-right">
-        <span class="bwb-util-date" id="util-date"></span>
-        <span class="bwb-util-sep">&middot;</span>
-        <a class="bwb-util-link" href="data/sources_wide.json">OPEN DATA &darr;</a>
-      </div>
-    </div>
-  </div>
-
-  <header class="bwb-header">
-    <div class="bwb-header-inner">
-      <a href="." class="bwb-brand" aria-label="BOTWAVEBOMBA &mdash; Home">
-        <span class="bwb-brand-mark">BOTWAVE<em>BOMBA</em></span>
-        <span class="bwb-brand-axes">5-axis &middot; 3-bloc &middot; adversarial included</span>
-      </a>
-      <nav class="bwb-topnav" aria-label="Primary">
-        <a href=".">Feed</a>
-        <a href="local.html">Local</a>
-        <a href="blindspots.html">Blindspots</a>
-        <a href="sources.html">Sources</a>
-        <a href="trades.html">Trades</a>
-        <a href="books.html">Books</a>
-        <a href="corkboard/">Corkboard</a>
-        <a href="corruption.html">Corruption</a>
-        <a href="about.html">Method</a>
-        <a href="funnies.html" class="active">Funnies</a>
-      </nav>
-      <div class="bwb-header-right">
-        <a class="bwb-pro-btn" href="pro.html">Pro</a>
-      </div>
-    </div>
-  </header>
-
-<!-- ── FUNNIES MASTHEAD ── -->
+  <!-- ── FUNNIES MASTHEAD ── -->
   <div class="fny-masthead">
     <div class="fny-masthead-inner">
       <div class="fny-title-block">
         <div class="fny-pretitle">THE FUNNY PAGES</div>
         <h1 class="fny-title">MAD MAGAZINE ARCHIVE</h1>
-        <div class="fny-subtitle"><span id="fny-stat-issues">—</span> issues &middot; 1952&ndash;2018 &middot; cover gallery + readable archive</div>
+        <div class="fny-subtitle">74 issues · 1952–2024 · Because someone has to say it</div>
       </div>
       <div class="fny-masthead-meta">
-        <div class="fny-meta-stat"><span class="fny-meta-num" id="fny-stat-num">—</span><span class="fny-meta-label">issues</span></div>
-        <div class="fny-meta-stat"><span class="fny-meta-num" id="fny-stat-curated">—</span><span class="fny-meta-label">self-hosted PDFs</span></div>
-        <div class="fny-meta-stat"><span class="fny-meta-num">7</span><span class="fny-meta-label">decades</span></div>
+        <div class="fny-meta-stat"><span class="fny-meta-num">74</span><span class="fny-meta-label">issues</span></div>
+        <div class="fny-meta-stat"><span class="fny-meta-num">72</span><span class="fny-meta-label">years</span></div>
+        <div class="fny-meta-stat"><span class="fny-meta-num">8</span><span class="fny-meta-label">decades</span></div>
       </div>
     </div>
   </div>
@@ -127,446 +83,53 @@
     <div class="fny-grid" id="mad-grid">
       <div class="bwb-loading">
         <div class="bwb-loading-pulse">LOADING ARCHIVE</div>
-        <div class="bwb-loading-sub">540+ issues · local covers + IA full PDFs</div>
+        <div class="bwb-loading-sub">74 issues · archive.org</div>
       </div>
     </div>
   </main>
 
-  <!-- ── READER MODAL ── -->
-  <div id="fny-modal" class="fny-modal" hidden role="dialog" aria-modal="true" aria-labelledby="fny-modal-title">
-    <div class="fny-modal-backdrop" data-close></div>
-    <div class="fny-modal-window">
-      <button class="fny-modal-close" type="button" data-close aria-label="Close">×</button>
-      <header class="fny-modal-head">
-        <div class="fny-modal-titleblock">
-          <div class="fny-modal-pretitle" id="fny-modal-pretitle">MAD #</div>
-          <h2 id="fny-modal-title" class="fny-modal-title">—</h2>
-        </div>
-        <div class="fny-modal-actions">
-          <button type="button" class="fny-tab active" data-tab="pdf">PDF</button>
-          <button type="button" class="fny-tab" data-tab="text">OCR Text</button>
-          <a href="#" id="fny-modal-ia" target="_blank" rel="noopener" class="fny-modal-ialink">archive.org &rarr;</a>
-        </div>
-      </header>
-      <section id="fny-modal-pdf-pane" class="fny-modal-pane">
-        <iframe id="fny-modal-pdf" title="MAD PDF" loading="lazy"></iframe>
-        <p id="fny-modal-pdf-empty" class="fny-modal-empty" hidden>
-          This issue isn't self-hosted (only ~60 iconic issues are).<br>
-          Read the OCR text on the next tab, or open the full scan on archive.org.
-        </p>
-      </section>
-      <section id="fny-modal-text-pane" class="fny-modal-pane" hidden>
-        <pre id="fny-modal-text" class="fny-modal-text"></pre>
-        <p id="fny-modal-text-empty" class="fny-modal-empty" hidden>OCR text not available for this issue.</p>
-      </section>
-    </div>
-  </div>
-
-  <!-- ── FOOTER ── -->
-    <!-- ── FOOTER (5-column editorial) ── -->
-    <!-- ── FOOTER (9-column — mirrors Ground News structure, Bomba content) ── -->
-  <footer class="bwb-footer-v2">
-    <div class="bwb-footer-cols">
-
-      <section class="bwb-footer-col">
-        <h4>News</h4>
-        <ul>
-          <li><a href=".">Home / Feed</a></li>
-          <li><a href="local.html">Local</a></li>
-          <li><a href="blindspots.html">Blindspot Feed</a></li>
-          <li><a href="status.html">Pipeline status</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>International</h4>
-        <ul>
-          <li><a href="local.html#region=north-america">North America</a></li>
-          <li><a href="local.html#region=south-america">South America / Latin</a></li>
-          <li><a href="local.html#region=europe">Europe</a></li>
-          <li><a href="local.html#region=middle-east">Middle East</a></li>
-          <li><a href="local.html#region=asia">Asia</a></li>
-          <li><a href="local.html#region=africa">Africa</a></li>
-          <li><a href="local.html#region=oceania">Oceania</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Trending Internationally</h4>
-        <ul id="footer-trending-intl">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Trending in U.S.</h4>
-        <ul id="footer-trending-us">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Adversarial-Bloc Trending</h4>
-        <ul id="footer-trending-adv">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Investigations</h4>
-        <ul>
-          <li><a href="corruption.html">Corruption tracker</a></li>
-          <li><a href="trades.html">Congressional trades</a></li>
-          <li><a href="same-hand.html">Same-hand ownership</a></li>
-          <li><a href="books.html">Books / long-form</a></li>
-          <li><a href="funnies.html">Funnies / MAD archive</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Method</h4>
-        <ul>
-          <li><a href="about.html">About BOTWAVEBOMBA</a></li>
-          <li><a href="about.html#axes">The 5 bias axes</a></li>
-          <li><a href="about.html#blocs">3 blocs explained</a></li>
-          <li><a href="about.html#blindspot">What is a blindspot?</a></li>
-          <li><a href="about.html#provenance">Citation receipts</a></li>
-          <li><a href="sources.html">Media bias ratings</a></li>
-          <li><a href="same-hand.html">Ownership &amp; factuality</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Open Data</h4>
-        <ul>
-          <li><a href="data/source_registry.json">source_registry.json</a></li>
-          <li><a href="data/sources_wide.json">sources_wide.json (26k)</a></li>
-          <li><a href="data/extension_lookup.json">extension_lookup.json</a></li>
-          <li><a href="data/same_hand_slice.json">same_hand_slice.json</a></li>
-          <li><a href="data/ownership_graph.json">ownership_graph.json</a></li>
-          <li><a href="api/latest.json">api/latest.json</a></li>
-          <li><a href="api/blindspots.json">api/blindspots.json</a></li>
-          <li><a href="api/corruption.json">api/corruption.json</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Tools &amp; Channels</h4>
-        <ul>
-          <li><a href="pro.html">Bomba Pro</a></li>
-          <li><a href="#" data-soon="Browser extension — beta soon">Browser extension</a></li>
-          <li><a href="#" data-soon="Android APK — sideload via Tailscale">Android app</a></li>
-          <li><a href="#" data-soon="iOS — built via Codemagic CI">iOS app</a></li>
-          <li><a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram digest</a></li>
-          <li><a href="https://github.com/Zombie760" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-      </section>
-
-    </div>
-
-    <div class="bwb-footer-base">
-      <div class="bwb-footer-brand">
-        <span class="bwb-footer-wordmark">BOTWAVEBOMBA</span>
-        <span class="bwb-footer-tagline">A BOTWAVE journalism arm project &middot; powered by TELOS+PAI substrate</span>
-      </div>
-      <div class="bwb-footer-mantra">
-        BE UNDENIABLE &mdash; every claim filed, every source named, every line auditable.
-      </div>
-    </div>
-
-    <div class="bwb-footer-disclaimer">
-      BOTWAVEBOMBA does not editorialize. It surfaces the framing delta between global sources.
-      Bias classification: AllSides + MBFC + hand-curated TELOS+PAI fingerprints.
-      Every source link is an original primary URL. Nothing invented.
-    </div>
-  </footer>
-
-  <script>
-  // Populate trending-* footer columns from latest.json.
-  // Splits entities by which bloc covered them most.
-  (async function () {
-    const intl = document.getElementById('footer-trending-intl');
-    const us   = document.getElementById('footer-trending-us');
-    const adv  = document.getElementById('footer-trending-adv');
-    if (!intl && !us && !adv) return;
-    let data;
-    try {
-      const r = await fetch('api/latest.json', { cache: 'no-store' });
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      data = await r.json();
-    } catch (e) { return; }
-
-    // Per-entity bloc counts
-    const ents = {};
-    for (const s of (data.stories || [])) {
-      const hasUS  = (s.sources || []).some(src => src.country === 'US');
-      const hasAdv = (s.sources || []).some(src => src.bloc === 'adversarial');
-      for (const e of (s.entity_list || [])) {
-        if (!e || e.length < 3) continue;
-        const r = ents[e] || (ents[e] = { total: 0, us: 0, adv: 0 });
-        r.total += 1;
-        if (hasUS)  r.us  += 1;
-        if (hasAdv) r.adv += 1;
-      }
-    }
-    const arr = Object.entries(ents);
-    function render(targetEl, sortFn, limit) {
-      if (!targetEl) return;
-      const ranked = arr.slice().sort(sortFn).filter(([, r]) => r.total >= 2).slice(0, limit);
-      targetEl.textContent = '';
-      if (!ranked.length) {
-        const li = document.createElement('li');
-        li.className = 'bwb-footer-skeleton';
-        li.textContent = 'no data';
-        targetEl.appendChild(li);
-        return;
-      }
-      for (const [name, rec] of ranked) {
-        const li = document.createElement('li');
-        const a  = document.createElement('a');
-        a.href = '#trending=' + encodeURIComponent(name);
-        a.textContent = name;
-        li.appendChild(a);
-        targetEl.appendChild(li);
-      }
-    }
-    render(intl, (a, b) => (b[1].total - b[1].us) - (a[1].total - a[1].us), 6);
-    render(us,   (a, b) => b[1].us - a[1].us, 6);
-    render(adv,  (a, b) => b[1].adv - a[1].adv, 6);
-  })();
-
-  // "data-soon" tooltips so the not-yet-shipped links don't 404.
-  document.querySelectorAll('a[data-soon]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      alert(a.getAttribute('data-soon'));
-    });
-  });
-  </script>
+  <!-- ── FOOTER (injected by /assets/js/site-chrome.js) ── -->
+  <footer data-bwb-chrome="default"></footer>
 
   <!-- Mobile bottom nav -->
   <nav class="bwb-bottom-nav safe-bottom">
-    <a href=".">
+    <a href="/">
       <span class="bwb-bottom-nav-icon">📰</span>
       <span>Feed</span>
     </a>
-    <a href="blindspots.html">
+    <a href="/blindspots.html">
       <span class="bwb-bottom-nav-icon">👁️</span>
       <span>Blindspots</span>
     </a>
-    <a href="sources.html">
+    <a href="/sources.html">
       <span class="bwb-bottom-nav-icon">🌐</span>
       <span>Sources</span>
     </a>
-    <a href="trades.html">
+    <a href="/trades.html">
       <span class="bwb-bottom-nav-icon">🔧</span>
       <span>Trades</span>
     </a>
-    <a href="books.html">
+    <a href="/books.html">
       <span class="bwb-bottom-nav-icon">📚</span>
       <span>Books</span>
     </a>
-    <a href="about.html">
+    <a href="/about.html">
       <span class="bwb-bottom-nav-icon">📋</span>
       <span>Method</span>
     </a>
-    <a href="funnies.html" class="active">
+    <a href="/funnies.html" class="active">
       <span class="bwb-bottom-nav-icon">🎭</span>
       <span>Funnies</span>
     </a>
   </nav>
 
+  <script src="/assets/js/site-chrome.js" defer></script>
+  <script src="/assets/js/funnies.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register("service-worker.js");
+      var swPath = (window.BWB_BASE || '') + '/service-worker.js';
+      navigator.serviceWorker.register(swPath);
     }
-    (function () {
-      var d = document.getElementById('util-date');
-      if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-    })();
   </script>
-
-  <!-- ── NEW FUNNIES GALLERY (2026-05-23) — loads from funnies_manifest.json ── -->
-  <script>
-  (async function () {
-    const grid = document.getElementById('mad-grid');
-    let manifest = null;
-    try {
-      const r = await fetch('data/funnies_manifest.json', { cache: 'no-store' });
-      if (r.ok) manifest = await r.json();
-    } catch (e) {}
-    if (!manifest || !Array.isArray(manifest.issues) || !manifest.issues.length) {
-      grid.textContent = '';
-      const empty = document.createElement('div');
-      empty.className = 'bwb-loading';
-      empty.textContent = 'Archive manifest unavailable.';
-      grid.appendChild(empty);
-      return;
-    }
-
-    // Header stats
-    const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
-    set('fny-stat-issues', manifest.total);
-    set('fny-stat-num', manifest.total);
-    set('fny-stat-curated', manifest.curated_count || 0);
-
-    let activeDecade = 'all';
-
-    function render() {
-      grid.textContent = '';
-      const list = activeDecade === 'all'
-        ? manifest.issues
-        : manifest.issues.filter(i => (String(i.decade) + 's') === activeDecade);
-      if (!list.length) {
-        const empty = document.createElement('div');
-        empty.className = 'bwb-loading';
-        empty.textContent = 'No issues in this decade.';
-        grid.appendChild(empty);
-        return;
-      }
-      for (const it of list) {
-        const card = document.createElement('button');
-        card.type = 'button';
-        card.className = 'fny-card';
-        card.dataset.issue = it.num;
-        card.setAttribute('aria-label', 'MAD #' + it.num + (it.year ? ' (' + it.year + ')' : ''));
-
-        const coverWrap = document.createElement('div');
-        coverWrap.className = 'fny-card-cover';
-
-        if (it.cover) {
-          const img = document.createElement('img');
-          img.src = it.cover;
-          img.alt = '';
-          img.loading = 'lazy';
-          coverWrap.appendChild(img);
-        } else {
-          const ph = document.createElement('div');
-          ph.className = 'fny-card-cover-placeholder';
-          ph.textContent = '#' + it.num;
-          coverWrap.appendChild(ph);
-        }
-
-        if (it.pdf_local) {
-          const dot = document.createElement('span');
-          dot.className = 'fny-card-selfhost';
-          dot.title = 'Self-hosted PDF available';
-          dot.textContent = '●';
-          coverWrap.appendChild(dot);
-        }
-
-        const meta = document.createElement('div');
-        meta.className = 'fny-card-meta';
-        const numEl = document.createElement('span');
-        numEl.className = 'fny-card-num';
-        numEl.textContent = '#' + it.num;
-        const yearEl = document.createElement('span');
-        yearEl.className = 'fny-card-year';
-        yearEl.textContent = it.year || '—';
-        meta.appendChild(numEl);
-        meta.appendChild(yearEl);
-
-        card.appendChild(coverWrap);
-        card.appendChild(meta);
-        card.addEventListener('click', () => openModal(it));
-        grid.appendChild(card);
-      }
-    }
-
-    // ── MODAL ──
-    const modal = document.getElementById('fny-modal');
-    const modalTitle = document.getElementById('fny-modal-title');
-    const modalPretitle = document.getElementById('fny-modal-pretitle');
-    const modalIA = document.getElementById('fny-modal-ia');
-    const pdfFrame = document.getElementById('fny-modal-pdf');
-    const pdfEmpty = document.getElementById('fny-modal-pdf-empty');
-    const textPre = document.getElementById('fny-modal-text');
-    const textEmpty = document.getElementById('fny-modal-text-empty');
-    const pdfPane = document.getElementById('fny-modal-pdf-pane');
-    const textPane = document.getElementById('fny-modal-text-pane');
-
-    async function openModal(it) {
-      modal.hidden = false;
-      modalPretitle.textContent = 'MAD #' + String(it.num).padStart(3, '0');
-      modalTitle.textContent = it.year ? it.year + ' issue' : 'MAD Magazine';
-      modalIA.href = it.ia_url;
-      // PDF pane
-      if (it.pdf_local) {
-        pdfFrame.src = it.pdf_local;
-        pdfFrame.hidden = false;
-        pdfEmpty.hidden = true;
-      } else {
-        pdfFrame.removeAttribute('src');
-        pdfFrame.hidden = true;
-        pdfEmpty.hidden = false;
-      }
-      // Text pane (lazy load on first switch)
-      textPre.textContent = '';
-      textEmpty.hidden = true;
-      textPre.dataset.path = it.txt || '';
-      textPre.dataset.loaded = '';
-      // Default to PDF tab
-      switchTab('pdf');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      modal.hidden = true;
-      pdfFrame.removeAttribute('src');
-      document.body.style.overflow = '';
-    }
-
-    function switchTab(name) {
-      document.querySelectorAll('.fny-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
-      if (name === 'pdf') {
-        pdfPane.hidden = false;
-        textPane.hidden = true;
-      } else {
-        pdfPane.hidden = true;
-        textPane.hidden = false;
-        if (!textPre.dataset.loaded && textPre.dataset.path) {
-          textPre.textContent = 'loading…';
-          fetch(textPre.dataset.path).then(r => r.ok ? r.text() : null).then(t => {
-            if (t) {
-              textPre.textContent = t;
-              textPre.dataset.loaded = '1';
-            } else {
-              textPre.textContent = '';
-              textEmpty.hidden = false;
-            }
-          }).catch(() => {
-            textPre.textContent = '';
-            textEmpty.hidden = false;
-          });
-        } else if (!textPre.dataset.path) {
-          textEmpty.hidden = false;
-        }
-      }
-    }
-
-    modal.addEventListener('click', e => {
-      if (e.target.dataset.close !== undefined) closeModal();
-    });
-    document.querySelectorAll('.fny-tab').forEach(b => {
-      b.addEventListener('click', () => switchTab(b.dataset.tab));
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && !modal.hidden) closeModal();
-    });
-
-    // Decade nav
-    document.querySelectorAll('#decade-nav button').forEach(b => {
-      b.addEventListener('click', () => {
-        document.querySelectorAll('#decade-nav button').forEach(x => x.classList.remove('active'));
-        b.classList.add('active');
-        activeDecade = b.dataset.decade;
-        render();
-      });
-    });
-
-    render();
-  })();
-  </script>
-
 </body>
 </html>

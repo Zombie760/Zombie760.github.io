@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DAILY BLINDSPOT BRIEF — ARCHIVE — BOTWAVEBOMBA</title>
+  <meta name="description" content="Every Daily Blindspot Brief, since launch. The 3 stories with the widest structural coverage gap from the working corpus. Free, public, no paywall. Subscribe to get it in your inbox.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <style>
+    .bwb-archive-wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .bwb-archive-hero { border-bottom: 1px solid var(--border-subtle); padding-bottom: 28px; margin-bottom: 32px; }
+    .bwb-archive-hero .kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--theme-primary); margin: 0 0 8px; }
+    .bwb-archive-hero h1 { font-family: var(--font-display); font-size: 38px; line-height: 1.1; margin: 0 0 14px; }
+    .bwb-archive-hero .lede { font-size: 16px; line-height: 1.6; color: var(--text-secondary); max-width: 600px; margin: 0 0 24px; }
+    .bwb-archive-cta { display: inline-block; background: var(--theme-primary); color: #fff; text-decoration: none; padding: 12px 28px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+    .bwb-archive-list { display: flex; flex-direction: column; gap: 0; }
+    .bwb-archive-item { display: flex; gap: 24px; padding: 24px 0; border-top: 1px solid var(--border-subtle); align-items: flex-start; }
+    .bwb-archive-item:last-child { border-bottom: 1px solid var(--border-subtle); }
+    .bwb-archive-date { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); flex-shrink: 0; width: 100px; padding-top: 4px; letter-spacing: 0.04em; }
+    .bwb-archive-content { flex: 1; }
+    .bwb-archive-content h2 { font-family: var(--font-display); font-size: 18px; line-height: 1.3; margin: 0 0 6px; font-weight: 400; }
+    .bwb-archive-content h2 a { color: var(--text-primary); text-decoration: none; }
+    .bwb-archive-content h2 a:hover { color: var(--theme-primary); }
+    .bwb-archive-meta { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+    .bwb-archive-empty { padding: 48px 0; text-align: center; color: var(--text-muted); font-family: var(--font-mono); font-size: 13px; }
+    .bwb-archive-tag { display: inline-block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; margin-right: 6px; background: var(--bg-card); color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+  <header data-bwb-chrome="compact"></header>
+  <main class="bwb-archive-wrap">
+    <section class="bwb-archive-hero">
+      <p class="kicker">Daily Blindspot Brief · Archive</p>
+      <h1>Every brief, since launch.</h1>
+      <p class="lede">3 stories a day. Each one a receipt — the primary URLs, the bloc spread, the geographic spread. Free to read. $49/mo or $499/yr to get it in your inbox every morning at 7am Pacific.</p>
+      <a href="/signup.html" class="bwb-archive-cta">Subscribe →</a>
+    </section>
+    <div class="bwb-archive-list" id="bwb-archive-list">
+      <p class="bwb-archive-empty">Loading archive...</p>
+    </div>
+    <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-top: 32px;">
+      <a href="/methodology.html">methodology</a> · <a href="/">back to feed</a>
+    </p>
+  </main>
+  <script>
+    // Try to load an index of briefs. If no index exists, we manually list from /daily/.
+    // The simplest approach: fetch /daily/index.html — if 200, embed. If not, we build from a manifest.
+    // Since the build_daily_brief.py script doesn't yet write a manifest, fall back to known brief URLs.
+    (function() {
+      var KNOWN_BRIEFS = [
+        { date: '2026-07-06', url: '/daily/2026-07-06.html', picks: 3 }
+      ];
+      var list = document.getElementById('bwb-archive-list');
+      if (!list) return;
+      list.innerHTML = '';
+      if (KNOWN_BRIEFS.length === 0) {
+        list.innerHTML = '<p class="bwb-archive-empty">No briefs yet. Subscribe to be the first to get tomorrow\'s.</p>';
+        return;
+      }
+      KNOWN_BRIEFS.forEach(function(b) {
+        var a = document.createElement('article');
+        a.className = 'bwb-archive-item';
+        a.innerHTML =
+          '<div class="bwb-archive-date">' + b.date + '</div>' +
+          '<div class="bwb-archive-content">' +
+            '<h2><a href="' + b.url + '">Daily Blindspot Brief — ' + b.date + '</a></h2>' +
+            '<div class="bwb-archive-meta">' +
+              '<span class="bwb-archive-tag">' + b.picks + ' stories</span>' +
+              '<span class="bwb-archive-tag">free</span>' +
+            '</div>' +
+          '</div>';
+        list.appendChild(a);
+      });
+    })();
+  </script>
+  <script src="/assets/js/base-path.js"></script>
+  <script src="/assets/js/site-chrome.js" defer></script>
+</body>
+</html>

@@ -2,22 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>BOTWAVE BOOKS — BOTWAVEBOMBA</title>
-  <meta name="description" content="One standard. Every genre. Primary-source verification across investigative non-fiction, sports journalism, and thriller fiction.">
+  <meta name="description" content="One pipeline. Every genre. The same TELOS+PAI substrate that detects blindspots in your news feed also wrote every book on this shelf. AI used within a framework — and the framework is the point.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/mobile.css">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
   <meta name="theme-color" content="#0a0a0a">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
-  <script src="assets/js/theme-switcher.js" defer></script>
-  <script src="assets/js/pwa.js" defer></script>
+  <meta name="view-transition" content="same-origin">
+  <script type="speculationrules">
+  {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
+  </script>
+  <!-- Base path support for GitHub Pages subpath + root deployments -->
+  <script src="/assets/js/base-path.js"></script>
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/pwa.js" defer></script>
   <style>
     .bwb-pipeline-thesis { background: var(--bg-card); border: 1px solid var(--theme-primary); padding: 32px 24px; margin-bottom: 32px; }
     .bwb-pipeline-thesis h2 { font-family: var(--font-display); font-size: 28px; font-style: italic; color: var(--text-primary); margin: 0 0 12px; line-height: 1.2; }
@@ -56,76 +62,39 @@
 </head>
 <body>
 
-  <!-- ── HEADER (4-LAYER EDITORIAL STACK) ── -->
-
-  <aside class="bwb-promo" role="region" aria-label="Bomba positioning">
-    <div class="bwb-promo-inner">
-      <p class="bwb-promo-line">
-        <span class="bwb-promo-lede">See <em>who's funding</em> the side.</span>
-        <span class="bwb-promo-rest">Not just who's reporting it.</span>
-      </p>
-      <a class="bwb-promo-cta" href="about.html">Read methodology &rarr;</a>
-    </div>
-  </aside>
-
-  <div class="bwb-util" role="region" aria-label="Pipeline state">
-    <div class="bwb-util-inner">
-      <div class="bwb-util-group">
-        <span class="bwb-pipeline-badge"><span class="bwb-pipe-dot"></span>LIVE</span>
-        <span class="bwb-util-sep">&middot;</span>
-        <span class="bwb-util-stat"><b>26,542</b> sources cataloged</span>
-        <span class="bwb-util-sep">&middot;</span>
-        <span class="bwb-util-stat"><b>496</b> deep-fingerprinted</span>
-      </div>
-      <div class="bwb-util-group bwb-util-right">
-        <span class="bwb-util-date" id="util-date"></span>
-        <span class="bwb-util-sep">&middot;</span>
-        <a class="bwb-util-link" href="data/sources_wide.json">OPEN DATA &darr;</a>
-      </div>
-    </div>
-  </div>
-
-  <header class="bwb-header">
+  <header class="bwb-header bwb-header--compact">
     <div class="bwb-header-inner">
-      <a href="." class="bwb-brand" aria-label="BOTWAVEBOMBA &mdash; Home">
-        <span class="bwb-brand-mark">BOTWAVE<em>BOMBA</em></span>
-        <span class="bwb-brand-axes">5-axis &middot; 3-bloc &middot; adversarial included</span>
-      </a>
-      <nav class="bwb-topnav" aria-label="Primary">
-        <a href=".">Feed</a>
-        <a href="local.html">Local</a>
-        <a href="blindspots.html">Blindspots</a>
-        <a href="sources.html">Sources</a>
-        <a href="trades.html">Trades</a>
-        <a href="books.html" class="active">Books</a>
-        <a href="corkboard/">Corkboard</a>
-        <a href="corruption.html">Corruption</a>
-        <a href="about.html">Method</a>
-        <a href="funnies.html">Funnies</a>
+      <a href="/" class="bwb-logo bwb-logo--small">BOTWAVEBOMBA</a>
+      <nav class="bwb-topnav">
+        <a href="/">Feed</a>
+        <a href="/blindspots.html">Blindspots</a>
+        <a href="/sources.html">Sources</a>
+        <a href="/trades.html">Trades</a>
+        <a href="/books.html" class="active">Books</a>
+        <a href="/about.html">Method</a>
+        <a href="/funnies.html">Funnies</a>
       </nav>
-      <div class="bwb-header-right">
-        <a class="bwb-pro-btn" href="pro.html">Pro</a>
-      </div>
     </div>
   </header>
 
-<div class="bwb-page-container">
+  <div class="bwb-page-container">
 
     <div class="bwb-pipeline-thesis">
       <h2>Built by a plumber. Pointed at the truth.</h2>
       <p>
-        I'm not a writer. I'm a plumber who built a framework
+        I'm not a writer. I'm not a coder. I'm a plumber who built a pipeline
         from open-source tools and pointed it at what nobody else was looking at.
-        It enforces a <span class="bwb-diff-highlight">standard</span>: every claim must trace to a filed primary source,
-        or it gets cut. The voice framework holds the narrator's authority across
+        TELOS+PAI is that pipeline. It doesn't generate opinions —
+        it enforces a <span class="bwb-diff-highlight">framework</span>: every claim must trace to a filed primary source,
+        or it gets cut. The voice DNA pipeline holds the narrator's authority across
         investigative non-fiction, sports journalism, and thriller fiction — without drift.
-        Open-source code. A direction that hasn't been tried yet.
+        Open-source code. Open-source models. A direction that hasn't been tried yet.
       </p>
       <p>
         The material is heavy. <span class="bwb-diff-highlight">Too heavy for the general public to digest casually.</span>
         That's the point. These books don't tell you what to think. They show you, through cold receipts,
         that everything you were told was a lie — and that you never had a chance to see it coming.
-        The framework makes that possible at scale. The books prove it works.
+        The pipeline makes that possible at scale. The books prove it works.
       </p>
     </div>
 
@@ -168,7 +137,7 @@
         <p class="book-desc">From the First Crusade through 2026. Federal Register entries, SEC filings, court records, Vatican archives. The paper trail IS the narrative.</p>
         <div class="book-keywords"><span class="book-kw">influence</span><span class="book-kw">Vatican</span><span class="book-kw">SEC</span><span class="book-kw">crusade</span></div>
         <div class="book-stories" data-book="unwarranted"></div>
-        <a href="https://gringo1904.gumroad.com/l/unwarranted-influence" target="_blank" class="book-cta">Get the book</a>
+        <a href="https://store.example.com/l/unwarranted-influence" target="_blank" class="book-cta">Get the book</a>
       </div>
 
       <div class="book-card" data-keywords="DOGE,Musk,efficiency,government,energy,budget,Federal Register,cut,spending,Tesla,SpaceX,department,agency,federal worker,layoff,fired">
@@ -178,7 +147,7 @@
         <p class="book-desc">Filed while the servers were still warm. What happens when a government efficiency commission moves faster than the archivists can catalog.</p>
         <div class="book-keywords"><span class="book-kw">DOGE</span><span class="book-kw">Musk</span><span class="book-kw">energy</span><span class="book-kw">budget</span></div>
         <div class="book-stories" data-book="doge"></div>
-        <a href="https://gringo1904.gumroad.com/l/doge" target="_blank" class="book-cta">Get the book</a>
+        <a href="https://store.example.com/l/doge" target="_blank" class="book-cta">Get the book</a>
       </div>
 
       <div class="book-card" data-keywords="surveillance,infrastructure,access,systems,keys,NSA,CIA,FBI,intelligence,spy,data,privacy,cyber,hack">
@@ -188,7 +157,7 @@
         <p class="book-desc">Who holds the keys to the systems that hold the keys to everything else. Not a manifesto. An architecture diagram with receipts.</p>
         <div class="book-keywords"><span class="book-kw">surveillance</span><span class="book-kw">infrastructure</span><span class="book-kw">access</span><span class="book-kw">keys</span></div>
         <div class="book-stories" data-book="sudo"></div>
-        <a href="https://gringo1904.gumroad.com/l/sudo-kingdom" target="_blank" class="book-cta">Get the book</a>
+        <a href="https://store.example.com/l/sudo-kingdom" target="_blank" class="book-cta">Get the book</a>
       </div>
 
       <div class="book-card" data-keywords="boxing,contract,sports,fight,sanctioning,athlete,UFC,MMA,prize,purse">
@@ -198,7 +167,7 @@
         <p class="book-desc">Two men. One ring. The fight that never happened. Every contract, every purse bid, every sanctioning-body ruling filed and cross-referenced.</p>
         <div class="book-keywords"><span class="book-kw">boxing</span><span class="book-kw">contract</span><span class="book-kw">sports</span><span class="book-kw">fight</span></div>
         <div class="book-stories" data-book="captain"></div>
-        <a href="https://gringo1904.gumroad.com/l/did-not-step-forward" target="_blank" class="book-cta">Get the book</a>
+        <a href="https://store.example.com/l/did-not-step-forward" target="_blank" class="book-cta">Get the book</a>
       </div>
 
       <div class="book-card" data-keywords="energy,water,shell,subsidy,consumption,climate,ocean,digital,infrastructure,resource,utility">
@@ -208,7 +177,7 @@
         <p class="book-desc">The resources you pay for and the documented lies behind the data. Musk's 2027 energy plans, the hidden subsidies, the shell games behind consumption numbers.</p>
         <div class="book-keywords"><span class="book-kw">energy</span><span class="book-kw">water</span><span class="book-kw">subsidy</span><span class="book-kw">shell</span></div>
         <div class="book-stories" data-book="digital-ocean"></div>
-        <a href="https://gringo1904.gumroad.com/l/digital-ocean" target="_blank" class="book-cta">Get the book</a>
+        <a href="https://store.example.com/l/digital-ocean" target="_blank" class="book-cta">Get the book</a>
       </div>
 
       <div class="book-card" data-keywords="law enforcement,accountability,police,oversight,public record,use of force,shooting,body camera,qualified immunity,arrest">
@@ -218,7 +187,7 @@
         <p class="book-desc">The documented intersection of law enforcement, accountability, and the public record. Filed documents, not allegations.</p>
         <div class="book-keywords"><span class="book-kw">law enforcement</span><span class="book-kw">accountability</span><span class="book-kw">police</span></div>
         <div class="book-stories" data-book="shield"></div>
-        <a href="https://gringo1904.gumroad.com/l/the-shield" target="_blank" class="book-cta">Get the book</a>
+        <a href="https://store.example.com/l/the-shield" target="_blank" class="book-cta">Get the book</a>
       </div>
 
       <!-- FREE TEASER -->
@@ -227,18 +196,18 @@
         <h3 class="book-title">Digital Ocean — Preview</h3>
         <div class="book-subtitle">First chapters, free &middot; $0.00</div>
         <p class="book-desc">Read the opening before you buy. The pipeline in action.</p>
-        <a href="https://gringo1904.gumroad.com/l/digital-ocean-teaser" target="_blank" class="book-cta free">Download free</a>
+        <a href="https://store.example.com/l/digital-ocean-teaser" target="_blank" class="book-cta free">Download free</a>
       </div>
 
     </div>
 
     <!-- ── FICTION ── -->
-    <div class="books-section-title">Fiction — same framework, different voice</div>
+    <div class="books-section-title">Fiction — same pipeline, different voice DNA</div>
 
     <div class="bwb-receipt-banner">
       <p>
         Fiction is where the pipeline proves it can hold tone across genres. The Sudoers Cantos runs 40% Palahniuk, 30% Ellis, 30% Wu-Tang.
-        The Al Gringo Thrillers run 60% Palahniuk, 40% Ellis. Different DNA, same substrate, same Prime Directive —
+        The Kyle Jimenez Thrillers run 60% Palahniuk, 40% Ellis. Different DNA, same substrate, same Prime Directive —
         <span class="bwb-diff-highlight">no invented facts in non-fiction, no fabricated specificity in fiction</span>.
         A plumber built the pipeline. The pipeline writes the books. That's the honest answer.
       </p>
@@ -247,17 +216,17 @@
     <div class="books-grid">
 
       <div class="book-card" data-keywords="terminal,hacker,sudo,access,system,code,hack,linux,sysadmin,root">
-        <span class="book-tag">Thriller — Al Gringo</span>
+        <span class="book-tag">Thriller — Kyle Jimenez</span>
         <h3 class="book-title" style="font-style:normal;">#!/usr/TERMINAL STATIKVOID</h3>
         <div class="book-subtitle">The Sudoers Cantos &middot; $14.99</div>
         <p class="book-desc">Root access. The terminal IS the narrative. Voice DNA: 60% Palahniuk, 40% Ellis. Same framework, different genre.</p>
         <div class="book-keywords"><span class="book-kw">terminal</span><span class="book-kw">hacker</span><span class="book-kw">sudo</span><span class="book-kw">root</span></div>
         <div class="book-stories" data-book="terminal"></div>
-        <a href="https://gringo1904.gumroad.com/l/terminal" target="_blank" class="book-cta">Get the book</a>
+        <a href="https://store.example.com/l/terminal" target="_blank" class="book-cta">Get the book</a>
       </div>
 
       <div class="book-card" data-keywords="sovereign,cipher,nation,encryption,trilogy,revolution">
-        <span class="book-tag">Thriller — Al Gringo</span>
+        <span class="book-tag">Thriller — Kyle Jimenez</span>
         <h3 class="book-title">Sovereign Cipher</h3>
         <div class="book-subtitle">3-book series: First Chamber, Build Protocol, Transmission</div>
         <p class="book-desc">Opens at a filed document. Voice DNA: 40% Palahniuk, 30% Ellis, 30% Wu-Tang. Built for the 85%.</p>
@@ -266,13 +235,13 @@
       </div>
 
       <div class="book-card" data-keywords="compound,ranch,zoning,property,land,development,bunker">
-        <span class="book-tag">Thriller — Al Gringo</span>
+        <span class="book-tag">Thriller — Kyle Jimenez</span>
         <h3 class="book-title">The Compound</h3>
         <div class="book-subtitle">Zorro Ranch series &middot; $12.99</div>
         <p class="book-desc">The property that doesn't exist on any public map. The filings that do. Built on real deeds, real zoning, real shell companies.</p>
         <div class="book-keywords"><span class="book-kw">compound</span><span class="book-kw">ranch</span><span class="book-kw">property</span><span class="book-kw">shell company</span></div>
         <div class="book-stories" data-book="compound"></div>
-        <a href="https://gringo1904.gumroad.com/l/the-compound" target="_blank" class="book-cta">Get the book</a>
+        <a href="https://store.example.com/l/the-compound" target="_blank" class="book-cta">Get the book</a>
       </div>
 
     </div>
@@ -366,218 +335,44 @@
   </div>
 
   <nav class="bwb-bottom-nav safe-bottom">
-    <a href=".">
+    <a href="/">
       <span class="bwb-bottom-nav-icon">&#x1F4F0;</span>
       <span>Feed</span>
     </a>
-    <a href="blindspots.html">
+    <a href="/blindspots.html">
       <span class="bwb-bottom-nav-icon">&#x1F441;</span>
       <span>Blindspots</span>
     </a>
-    <a href="sources.html">
+    <a href="/sources.html">
       <span class="bwb-bottom-nav-icon">&#x1F310;</span>
       <span>Sources</span>
     </a>
-    <a href="trades.html">
+    <a href="/trades.html">
       <span class="bwb-bottom-nav-icon">&#x1F527;</span>
       <span>Trades</span>
     </a>
-    <a href="books.html" class="active">
+    <a href="/books.html" class="active">
       <span class="bwb-bottom-nav-icon">&#x1F4DA;</span>
       <span>Books</span>
     </a>
-    <a href="about.html">
+    <a href="/about.html">
       <span class="bwb-bottom-nav-icon">&#x1F4CB;</span>
       <span>Method</span>
     </a>
-    <a href="funnies.html">
+    <a href="/funnies.html">
       <span class="bwb-bottom-nav-icon">&#x1F3AD;</span>
       <span>Funnies</span>
     </a>
   </nav>
 
-    <!-- ── FOOTER (5-column editorial) ── -->
-    <!-- ── FOOTER (9-column — mirrors Ground News structure, Bomba content) ── -->
-  <footer class="bwb-footer-v2">
-    <div class="bwb-footer-cols">
-
-      <section class="bwb-footer-col">
-        <h4>News</h4>
-        <ul>
-          <li><a href=".">Home / Feed</a></li>
-          <li><a href="local.html">Local</a></li>
-          <li><a href="blindspots.html">Blindspot Feed</a></li>
-          <li><a href="status.html">Pipeline status</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>International</h4>
-        <ul>
-          <li><a href="local.html#region=north-america">North America</a></li>
-          <li><a href="local.html#region=south-america">South America / Latin</a></li>
-          <li><a href="local.html#region=europe">Europe</a></li>
-          <li><a href="local.html#region=middle-east">Middle East</a></li>
-          <li><a href="local.html#region=asia">Asia</a></li>
-          <li><a href="local.html#region=africa">Africa</a></li>
-          <li><a href="local.html#region=oceania">Oceania</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Trending Internationally</h4>
-        <ul id="footer-trending-intl">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Trending in U.S.</h4>
-        <ul id="footer-trending-us">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Adversarial-Bloc Trending</h4>
-        <ul id="footer-trending-adv">
-          <li class="bwb-footer-skeleton">&hellip;</li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Investigations</h4>
-        <ul>
-          <li><a href="corruption.html">Corruption tracker</a></li>
-          <li><a href="trades.html">Congressional trades</a></li>
-          <li><a href="same-hand.html">Same-hand ownership</a></li>
-          <li><a href="books.html">Books / long-form</a></li>
-          <li><a href="funnies.html">Funnies / MAD archive</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Method</h4>
-        <ul>
-          <li><a href="about.html">About BOTWAVEBOMBA</a></li>
-          <li><a href="about.html#axes">The 5 bias axes</a></li>
-          <li><a href="about.html#blocs">3 blocs explained</a></li>
-          <li><a href="about.html#blindspot">What is a blindspot?</a></li>
-          <li><a href="about.html#provenance">Citation receipts</a></li>
-          <li><a href="sources.html">Media bias ratings</a></li>
-          <li><a href="same-hand.html">Ownership &amp; factuality</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Open Data</h4>
-        <ul>
-          <li><a href="data/source_registry.json">source_registry.json</a></li>
-          <li><a href="data/sources_wide.json">sources_wide.json (26k)</a></li>
-          <li><a href="data/extension_lookup.json">extension_lookup.json</a></li>
-          <li><a href="data/same_hand_slice.json">same_hand_slice.json</a></li>
-          <li><a href="data/ownership_graph.json">ownership_graph.json</a></li>
-          <li><a href="api/latest.json">api/latest.json</a></li>
-          <li><a href="api/blindspots.json">api/blindspots.json</a></li>
-          <li><a href="api/corruption.json">api/corruption.json</a></li>
-        </ul>
-      </section>
-
-      <section class="bwb-footer-col">
-        <h4>Tools &amp; Channels</h4>
-        <ul>
-          <li><a href="pro.html">Bomba Pro</a></li>
-          <li><a href="#" data-soon="Browser extension — beta soon">Browser extension</a></li>
-          <li><a href="#" data-soon="Android APK — sideload via Tailscale">Android app</a></li>
-          <li><a href="#" data-soon="iOS — built via Codemagic CI">iOS app</a></li>
-          <li><a href="https://t.me/botwave_news" target="_blank" rel="noopener">Telegram digest</a></li>
-          <li><a href="https://github.com/Zombie760" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-      </section>
-
-    </div>
-
-    <div class="bwb-footer-base">
-      <div class="bwb-footer-brand">
-        <span class="bwb-footer-wordmark">BOTWAVEBOMBA</span>
-        <span class="bwb-footer-tagline">A BOTWAVE journalism arm project &middot; powered by TELOS+PAI substrate</span>
-      </div>
-      <div class="bwb-footer-mantra">
-        BE UNDENIABLE &mdash; every claim filed, every source named, every line auditable.
-      </div>
-    </div>
-
-    <div class="bwb-footer-disclaimer">
-      BOTWAVEBOMBA does not editorialize. It surfaces the framing delta between global sources.
-      Bias classification: AllSides + MBFC + hand-curated TELOS+PAI fingerprints.
-      Every source link is an original primary URL. Nothing invented.
+  <footer class="bwb-footer">
+    <div class="bwb-footer-inner">
+      <span class="bwb-footer-logo">BOTWAVE BOOKS</span>
+      <span class="bwb-footer-sub">One pipeline. Every genre. AI within a framework — and the framework is the point.</span>
     </div>
   </footer>
 
-  <script>
-  // Populate trending-* footer columns from latest.json.
-  // Splits entities by which bloc covered them most.
-  (async function () {
-    const intl = document.getElementById('footer-trending-intl');
-    const us   = document.getElementById('footer-trending-us');
-    const adv  = document.getElementById('footer-trending-adv');
-    if (!intl && !us && !adv) return;
-    let data;
-    try {
-      const r = await fetch('api/latest.json', { cache: 'no-store' });
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      data = await r.json();
-    } catch (e) { return; }
-
-    // Per-entity bloc counts
-    const ents = {};
-    for (const s of (data.stories || [])) {
-      const hasUS  = (s.sources || []).some(src => src.country === 'US');
-      const hasAdv = (s.sources || []).some(src => src.bloc === 'adversarial');
-      for (const e of (s.entity_list || [])) {
-        if (!e || e.length < 3) continue;
-        const r = ents[e] || (ents[e] = { total: 0, us: 0, adv: 0 });
-        r.total += 1;
-        if (hasUS)  r.us  += 1;
-        if (hasAdv) r.adv += 1;
-      }
-    }
-    const arr = Object.entries(ents);
-    function render(targetEl, sortFn, limit) {
-      if (!targetEl) return;
-      const ranked = arr.slice().sort(sortFn).filter(([, r]) => r.total >= 2).slice(0, limit);
-      targetEl.textContent = '';
-      if (!ranked.length) {
-        const li = document.createElement('li');
-        li.className = 'bwb-footer-skeleton';
-        li.textContent = 'no data';
-        targetEl.appendChild(li);
-        return;
-      }
-      for (const [name, rec] of ranked) {
-        const li = document.createElement('li');
-        const a  = document.createElement('a');
-        a.href = '#trending=' + encodeURIComponent(name);
-        a.textContent = name;
-        li.appendChild(a);
-        targetEl.appendChild(li);
-      }
-    }
-    render(intl, (a, b) => (b[1].total - b[1].us) - (a[1].total - a[1].us), 6);
-    render(us,   (a, b) => b[1].us - a[1].us, 6);
-    render(adv,  (a, b) => b[1].adv - a[1].adv, 6);
-  })();
-
-  // "data-soon" tooltips so the not-yet-shipped links don't 404.
-  document.querySelectorAll('a[data-soon]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      alert(a.getAttribute('data-soon'));
-    });
-  });
-  </script>
-
-  <script src="assets/js/api.js"></script>
+  <script src="/assets/js/api.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       BWB_API.getLatest().then(function(data) {
@@ -627,13 +422,5 @@
       });
     });
   </script>
-
-  <script>
-    (function () {
-      var d = document.getElementById('util-date');
-      if (d) d.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-    })();
-  </script>
-
 </body>
 </html>

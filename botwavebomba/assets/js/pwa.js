@@ -105,8 +105,8 @@ if ('serviceWorker' in navigator) {
     if (event.data.type === 'BLINDSPOT_ALERT') {
       new Notification('BOTWAVEBOMBA Blindspot', {
         body: event.data.title,
-        icon: '/assets/icons/icon-192.png',
-        badge: '/assets/icons/icon-192.png',
+        icon: (window.BWB_URL ? window.BWB_URL('assets/icons/icon-192.png') : '/assets/icons/icon-192.png'),
+        badge: (window.BWB_URL ? window.BWB_URL('assets/icons/icon-192.png') : '/assets/icons/icon-192.png'),
         tag: event.data.id,
         requireInteraction: false
       });

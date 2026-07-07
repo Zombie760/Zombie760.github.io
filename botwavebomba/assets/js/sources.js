@@ -136,6 +136,33 @@ function renderSourceTable(sources) {
     fact.textContent = src.factuality || '—';
     row.appendChild(fact);
 
+    // Provenance (ISC-34/42) — per-source evidence chain. We surface
+    // MBFC credibility as a self-documenting label and the upstream
+    // AllSides/MBFC search URL as a one-click citation. The hand-curated
+    // fingerprint lives in api/sources.json; the operator's curation
+    // notes live in _index/receipts/source_provenance.jsonl.
+    const prov = document.createElement('span');
+    prov.className = 'bwb-src-provenance hide-sm';
+    prov.title = 'Primary-source anchor: MBFC factuality rating. ' +
+                 'Full provenance chain (which axis value came from which input) ' +
+                 'is published in _index/receipts/source_provenance.jsonl.';
+    const mbfc = src.mbfc_credibility || 'unrated';
+    const provText = document.createElement('span');
+    provText.className = 'bwb-prov-label';
+    provText.textContent = 'MBFC: ' + mbfc;
+    prov.appendChild(provText);
+    if (src.name) {
+      const a = document.createElement('a');
+      a.className = 'bwb-prov-link';
+      a.href = 'https://www.allsides.com/search?query=' + encodeURIComponent(src.name);
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.title = 'Look up "' + src.name + '" on AllSides (external primary source)';
+      a.textContent = '↗';
+      prov.appendChild(a);
+    }
+    row.appendChild(prov);
+
     // Link
     const linkCell = document.createElement('span');
     linkCell.className = 'bwb-src-link';

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BOTWAVEBOMBA TEAM — $50/mo</title>
+  <meta name="description" content="Newsroom tier — 5 seats, shared blindspot rules, Slack/Discord webhook, team digest. $50/mo or $500/yr.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0a0a0a">
+  <style>
+    body {font-family:'DM Sans',system-ui,sans-serif;background:#0a0a0a;color:#F0EDE8;padding:0;margin:0}
+    .team-wrap {max-width:780px;margin:0 auto;padding:80px 24px 120px}
+    .team-badge {font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:#BF3B2D;border:1px solid #BF3B2D;padding:4px 12px;display:inline-block;margin-bottom:32px}
+    .team-h1 {font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#F0EDE8;margin:0 0 24px}
+    .team-h1 em {font-style:italic;color:#BF3B2D}
+    .team-body {font-weight:300;font-size:15px;line-height:1.8;color:rgba(240,237,232,0.75);margin:0 0 40px}
+    .team-features {list-style:none;padding:0;margin:0 0 40px}
+    .team-features li {padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:14px;color:rgba(240,237,232,0.85);display:flex;align-items:center;gap:12px}
+    .team-features li::before {content:'';display:block;width:6px;height:6px;border-radius:50%;background:#BF3B2D;flex-shrink:0}
+    .team-price {font-family:'DM Mono',monospace;font-size:14px;letter-spacing:1px;color:rgba(240,237,232,0.5);margin-bottom:8px}
+    .team-price strong {color:#F0EDE8;font-size:32px;font-weight:500}
+    .team-price-billed {font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.5px;color:rgba(240,237,232,0.4);margin-bottom:28px}
+    .team-price-source {font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.35);margin-bottom:24px;line-height:1.6}
+    .team-price-source a {color:inherit;text-decoration:underline}
+    .team-cta {display:inline-block;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;background:#BF3B2D;color:#fff;text-decoration:none;border:none;cursor:pointer;transition:background 0.15s}
+    .team-cta:hover {background:#a83327}
+    .team-note {font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.3);margin-top:32px;line-height:1.6}
+  </style>
+  <meta name="view-transition" content="same-origin">
+  <script type="speculationrules">
+  {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
+  </script>
+</head>
+<body>
+  <div class="team-wrap">
+    <div class="team-badge">TEAM · 5 SEATS — WEEK 2</div>
+    <h1 class="team-h1">For <em>newsrooms</em>, not solo operators</h1>
+    <p class="team-body">
+      Everything in Pro, plus 5 seats, shared blindspot rules, Slack/Discord
+      webhook delivery, and a daily team digest. Designed for newsletter
+      writers, OSINT research desks, and small newsrooms that need shared
+      access to the same 6-stage TELOS+PAI pipeline.
+    </p>
+    <ul class="team-features">
+      <li>Everything in Pro — 3-pane view, alerts, export, PAI summaries</li>
+      <li>5 seats included (6th seat triggers in-app upgrade CTA)</li>
+      <li>Shared blindspot rules — one team can subscribe to the same Western-Blackout watchlist</li>
+      <li>Slack and Discord webhook delivery for new blindspots</li>
+      <li>Daily team digest — 06:00 local, summarising the last 24h of blindspots</li>
+      <li>Per-seat usage analytics (lookups, exports, alert fires)</li>
+      <li>Team admin console — invite / remove seats, billing</li>
+    </ul>
+    <div class="team-price"><strong>$50</strong> / month</div>
+    <div class="team-price-billed">Billed monthly. 5 seats. Cancel anytime. Annual $500/yr (2 months free).</div>
+    <div class="team-price-source">
+      Pricing anchored to <a href="https://stripe.com/pricing" target="_blank" rel="noopener noreferrer">stripe.com/pricing</a>
+      · checkout via <a href="https://checkout.stripe.com" target="_blank" rel="noopener noreferrer">Stripe Checkout</a>
+      · webhook signature verification per <a href="https://docs.stripe.com/webhooks/signatures" target="_blank" rel="noopener noreferrer">stripe docs</a>.
+    </div>
+    <a href="#" id="team-checkout-btn" class="team-cta" data-tier="team" data-interval="month">Subscribe — $50/mo</a>
+    <p class="team-note">
+      Team tier is the small-operator COO tier per the operator TELOS M2
+      ($50-200/mo SaaS for small operators). The 5-seat cap is a soft cap —
+      the 6th seat triggers an in-app upgrade prompt. No surprise overage
+      charges. The data is the argument.
+    </p>
+  </div>
+  <script>
+    (function() {
+      var el = document.getElementById('team-checkout-btn');
+      if (!el) return;
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        fetch((window.BWB_BASE || '') + '/api/checkout/session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ tier: 'team', interval: 'month' }),
+          credentials: 'include'
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(data) { if (data && data.url) window.location = data.url; })
+        .catch(function(err) { alert('Checkout unavailable: ' + err.message); });
+      });
+    })();
+  </script>
+</body>
+</html>
