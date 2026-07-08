@@ -5,7 +5,7 @@
 // docs accessible without network. BE UNDENIABLE — claims auditable even
 // when offline.
 
-const CACHE_VERSION = 'bwb-v3-mobile';
+const CACHE_VERSION = 'bwb-v4-2026-07-08';
 
 const APP_SHELL = [
   '/',

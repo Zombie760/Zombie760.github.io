@@ -312,6 +312,426 @@
   --shadow-hover: 0 4px 12px rgba(255,0,84,0.18);
 }
 
+/* ── THEME 12: CORKBOARD (Unwarranted Influence aesthetic) ── */
+/* Black paper-textured background, cream cards, Special Elite + Oswald.
+   The "corkboard" theme is the default for the visual-rearchitecture
+   pass. All variables needed for the rest of the stylesheet to render
+   as black/cream/red are present here. Cross-ref: botwavebomba visual
+   upgrade 2026-07-07. */
+[data-theme="corkboard"] {
+  /* Color tokens (book-on-corkboard palette) */
+  --theme-primary:    #d71920;          /* obey-red */
+  --theme-accent:     #d71920;
+  --theme-gold:       #ffb800;          /* pin-yellow */
+  --theme-bg-deep:    #0a0a0a;
+  --theme-bg-card:    #f4e9d5;          /* cream index-card */
+  --theme-bg-nav:     #0a0a0a;
+  --theme-border:     rgba(212, 207, 196, 0.30);
+  --theme-text:       #f4e9d5;          /* cream on black */
+  --theme-text-muted: rgba(244, 233, 213, 0.45);
+  /* Surfaces */
+  --bg:            #0a0a0a;
+  --bg-card:       #f4e9d5;            /* paper cards on black */
+  --bg-hover:      #ead9b8;
+  --bg-surface:    #141210;            /* darker surface for inputs/modals */
+  --text-primary:  #0a0a0a;            /* dark ink on cream cards */
+  --text-secondary: rgba(10,10,10,0.75);
+  --text-muted:    rgba(10,10,10,0.45);
+  --border-subtle:  rgba(244, 233, 213, 0.10);
+  --border-default: rgba(212, 207, 196, 0.30);
+  /* Strings (the bias / ownership graph) */
+  --string:        #ff1a1a;
+  --string-glow:   rgba(255, 50, 50, 0.55);
+  /* Tag colors (per-source classification) */
+  --tag-convicted: #d71920;
+  --tag-enabler:   #c95e30;
+  --tag-associate: #ffb800;
+  --tag-mentioned: #6b6b6b;
+  --tag-shell:     #2d5a3d;
+  --tag-property:  #5a3d2d;
+  --tag-aircraft:  #3d2d5a;
+  --tag-org:       #2d3d5a;
+  /* Shadows (paper drops on black, not dark on dark) */
+  --shadow-card:   0 4px 12px rgba(0,0,0,0.55), 0 1px 0 rgba(244,233,213,0.04) inset;
+  --shadow-hover:  0 8px 22px rgba(0,0,0,0.70), 0 0 0 1px rgba(215,25,32,0.30);
+}
+
+/* Paper texture overlay — only in corkboard theme, applied to body */
+[data-theme="corkboard"] body {
+  background:
+    radial-gradient(ellipse at center, #1a1410 0%, #0a0a0a 70%),
+    #0a0a0a;
+  font-family: 'Special Elite', 'Courier Prime', monospace;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+[data-theme="corkboard"] body::before {
+  content: "";
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.4  0 0 0 0 0.4  0 0 0 0 0.4  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 180px 180px;
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+}
+
+/* Headings: Oswald condensed uppercase (book promo treatment) */
+[data-theme="corkboard"] h1,
+[data-theme="corkboard"] h2,
+[data-theme="corkboard"] h3,
+[data-theme="corkboard"] .bwb-display {
+  font-family: 'Oswald', 'Impact', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #f4e9d5;
+}
+[data-theme="corkboard"] body { color: #f4e9d5; }
+[data-theme="corkboard"] .bwb-topnav a { color: #f4e9d5; }
+[data-theme="corkboard"] .bwb-topnav a:hover,
+[data-theme="corkboard"] .bwb-topnav a.active { color: var(--theme-primary); border-color: var(--theme-primary); }
+[data-theme="corkboard"] h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 0.95; }
+[data-theme="corkboard"] h1 span,
+[data-theme="corkboard"] .bwb-accent { color: var(--theme-primary); }
+[data-theme="corkboard"] h2 { font-size: 1.4rem; line-height: 1.05; margin-bottom: 0.5em; }
+[data-theme="corkboard"] h3 { font-size: 1rem; line-height: 1.1; }
+
+/* Cards: cream paper with paper-clip corner + subtle drop */
+[data-theme="corkboard"] .bwb-card,
+[data-theme="corkboard"] article.bwb-card {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid rgba(10,10,10,0.10);
+  border-radius: 1px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* slight rotation for the pinned-receipt feel */
+  transform: rotate(-0.25deg);
+}
+[data-theme="corkboard"] .bwb-card:nth-child(even) { transform: rotate(0.35deg); }
+[data-theme="corkboard"] .bwb-card:nth-child(3n)   { transform: rotate(-0.15deg); }
+[data-theme="corkboard"] .bwb-card:hover {
+  transform: rotate(0deg) translateY(-3px) scale(1.012);
+  box-shadow: var(--shadow-hover);
+  z-index: 5;
+}
+/* Top color ribbon — the "category tab" on a pinned index card */
+[data-theme="corkboard"] .bwb-card::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg,
+    var(--theme-primary) 0%, var(--theme-primary) 30%,
+    var(--theme-gold) 30%, var(--theme-gold) 60%,
+    var(--theme-primary) 60%, var(--theme-primary) 100%);
+  z-index: 2;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+/* Pin dot top-center — the "pinned" effect */
+[data-theme="corkboard"] .bwb-card::after {
+  content: "";
+  position: absolute; top: -4px; left: 50%; transform: translateX(-50%);
+  width: 11px; height: 11px;
+  background: radial-gradient(circle at 30% 30%, #ff5050 0%, var(--theme-primary) 50%, #8b0000 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.45);
+  z-index: 3;
+}
+[data-theme="corkboard"] .bwb-card-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+[data-theme="corkboard"] .bwb-card-summary {
+  font-family: 'Lora', Georgia, serif;
+  color: rgba(10,10,10,0.78);
+  line-height: 1.5;
+}
+[data-theme="corkboard"] .bwb-card-source-count,
+[data-theme="corkboard"] .bwb-bias-meta,
+[data-theme="corkboard"] .bwb-card-thumb-badges {
+  font-family: 'Special Elite', 'Courier Prime', monospace;
+  color: rgba(10,10,10,0.75);
+}
+
+/* Receipts — red border on cream */
+[data-theme="corkboard"] .bwb-receipt,
+[data-theme="corkboard"] .bwb-funding-chip,
+[data-theme="corkboard"] .bwb-editorial-frame {
+  border-color: var(--theme-primary) !important;
+}
+[data-theme="corkboard"] .bwb-funding-chip {
+  background: rgba(215, 25, 32, 0.08);
+  color: #8b0000;
+  border: 1px solid rgba(215, 25, 32, 0.30);
+  font-family: 'Special Elite', monospace;
+}
+[data-theme="corkboard"] .bwb-editorial-frame {
+  background: var(--bg-surface);
+  color: var(--theme-text);
+  border: 1px solid rgba(215, 25, 32, 0.40);
+  box-shadow: 0 0 0 1px rgba(215, 25, 32, 0.10) inset;
+}
+[data-theme="corkboard"] .bwb-editorial-frame-label {
+  color: var(--theme-primary);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+}
+
+/* Legend dots: large, with red-string glow */
+[data-theme="corkboard"] .bwb-legend-dot {
+  width: 10px; height: 10px;
+  box-shadow: 0 0 8px currentColor;
+}
+
+/* ── COVERAGE GAP PANEL (the front-page differentiator) ── */
+.bwb-coverage-gap {
+  max-width: 1400px;
+  margin: 0 auto 18px;
+  padding: 14px 18px;
+  background: rgba(10,10,10,0.04);
+  border: 1px solid rgba(10,10,10,0.10);
+  border-left: 4px solid var(--theme-primary);
+  font-family: var(--font-mono);
+}
+.bwb-cg-eyebrow {
+  font-family: 'Oswald', 'Impact', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--theme-primary);
+  margin-bottom: 10px;
+}
+.bwb-cg-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.bwb-cg-stat {
+  display: flex; flex-direction: column; align-items: flex-start;
+  min-width: 70px;
+}
+.bwb-cg-num {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.bwb-cg-lbl {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-top: 3px;
+}
+.bwb-cg-bar-wrap { flex: 1; min-width: 240px; }
+.bwb-cg-bar-lbl {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+}
+.bwb-cg-bar {
+  display: flex;
+  height: 12px;
+  background: rgba(10,10,10,0.06);
+  border: 1px solid rgba(10,10,10,0.10);
+  overflow: hidden;
+  width: 100%;
+}
+.bwb-cg-seg {
+  height: 100%;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.bwb-cg-seg.western     { background: var(--bloc-western, #3b82f6); }
+.bwb-cg-seg.non-aligned { background: var(--bloc-neutral, #10b981); }
+.bwb-cg-seg.adversarial { background: var(--bloc-adversarial, #ef4444); }
+.bwb-cg-seg.other       { background: rgba(10,10,10,0.18); }
+.bwb-cg-bar-legend {
+  margin-top: 6px;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+.bwb-cg-bar-legend .bwb-bloc-bullet {
+  display: inline-block; width: 8px; height: 8px;
+  margin: 0 4px 0 8px; border-radius: 50%;
+  vertical-align: -1px;
+}
+.bwb-cg-headline {
+  flex-basis: 100%;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(10,10,10,0.15);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.4;
+  max-width: 80ch;
+}
+.bwb-cg-headline b { color: var(--theme-primary); font-style: normal; }
+
+/* G17 — region gap grid (per non-Western region % of corpus) */
+.bwb-cg-region-row {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.bwb-cg-region-lbl {
+  font-family: var(--font-mono, 'DM Mono', ui-monospace, monospace);
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--signal-faded, rgba(255,255,255,0.4));
+  margin-bottom: 8px;
+}
+.bwb-cg-region-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.bwb-cg-region-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 4px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-family: var(--font-mono, 'DM Mono', ui-monospace, monospace);
+  transition: background 0.2s;
+}
+.bwb-cg-region-cell--green { background: rgba(46, 160, 67, 0.16); border-color: rgba(46, 160, 67, 0.35); }
+.bwb-cg-region-cell--amber { background: rgba(255, 184, 0, 0.14); border-color: rgba(255, 184, 0, 0.35); }
+.bwb-cg-region-cell--red   { background: rgba(215, 25, 32, 0.18); border-color: rgba(215, 25, 32, 0.4); }
+.bwb-cg-region-name {
+  font-size: 8.5px;
+  letter-spacing: 0.6px;
+  color: var(--text-secondary, rgba(255,255,255,0.55));
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.bwb-cg-region-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary, #fff);
+  line-height: 1;
+}
+.bwb-cg-delta {
+  font-size: 11px;
+  color: var(--text-secondary, rgba(255,255,255,0.65));
+  font-style: italic;
+  line-height: 1.4;
+  border-top: 1px dashed rgba(255,255,255,0.08);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+.bwb-cg-delta b {
+  color: var(--text-primary, #fff);
+  font-style: normal;
+  font-family: var(--font-mono, 'DM Mono', ui-monospace, monospace);
+  font-size: 9.5px;
+  letter-spacing: 1px;
+}
+[data-bwb-theme="corkboard"] .bwb-cg-region-row { border-top-color: rgba(10,10,10,0.12); }
+[data-bwb-theme="corkboard"] .bwb-cg-region-cell { background: rgba(0,0,0,0.04); }
+[data-bwb-theme="corkboard"] .bwb-cg-region-name { color: rgba(10,10,10,0.6); }
+[data-bwb-theme="corkboard"] .bwb-cg-region-val  { color: #0a0a0a; }
+[data-bwb-theme="corkboard"] .bwb-cg-delta { color: rgba(10,10,10,0.7); border-top-color: rgba(10,10,10,0.12); }
+[data-bwb-theme="corkboard"] .bwb-cg-delta b { color: #0a0a0a; }
+[data-bwb-theme="corkboard"] .bwb-cg-region-cell--green { background: rgba(46, 160, 67, 0.18); border-color: rgba(46, 160, 67, 0.4); }
+[data-bwb-theme="corkboard"] .bwb-cg-region-cell--amber { background: rgba(180, 130, 0, 0.18); border-color: rgba(180, 130, 0, 0.4); }
+[data-bwb-theme="corkboard"] .bwb-cg-region-cell--red   { background: rgba(180, 30, 30, 0.18); border-color: rgba(180, 30, 30, 0.4); }
+
+/* Corkboard-specific coverage gap — cream paper with red tape */
+[data-theme="corkboard"] .bwb-coverage-gap {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid rgba(10,10,10,0.15);
+  border-left: 4px solid var(--theme-primary);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transform: rotate(-0.2deg);
+}
+[data-theme="corkboard"] .bwb-coverage-gap::after {
+  content: ""; position: absolute; top: -6px; left: 50%; transform: translateX(-50%) rotate(2deg);
+  width: 50px; height: 14px;
+  background: rgba(255, 184, 0, 0.55);
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+[data-theme="corkboard"] .bwb-cg-num { color: #0a0a0a; }
+[data-theme="corkboard"] .bwb-cg-lbl { color: rgba(10,10,10,0.6); }
+[data-theme="corkboard"] .bwb-cg-headline { color: #0a0a0a; border-top-color: rgba(10,10,10,0.15); }
+
+/* Header / nav (injected by site-chrome.js) */
+[data-theme="corkboard"] [data-bwb-chrome] {
+  background: var(--bg) !important;
+  border-color: rgba(215, 25, 32, 0.25) !important;
+  color: var(--theme-text) !important;
+}
+[data-theme="corkboard"] [data-bwb-chrome] a {
+  color: var(--theme-text) !important;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 12px;
+}
+[data-theme="corkboard"] [data-bwb-chrome] a.active,
+[data-theme="corkboard"] [data-bwb-chrome] a:hover {
+  color: var(--theme-primary) !important;
+}
+
+/* Hero / page-intro block (used on super-donor.html) */
+[data-theme="corkboard"] .bwb-hero {
+  border: 2px solid var(--theme-primary);
+  background: rgba(215, 25, 32, 0.04);
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  position: relative;
+}
+[data-theme="corkboard"] .bwb-hero::before {
+  content: ""; position: absolute; top: -1px; left: -1px; right: -1px; height: 3px;
+  background: var(--theme-primary);
+  box-shadow: 0 0 12px rgba(215,25,32,0.60);
+}
+[data-theme="corkboard"] .bwb-hero-eyebrow {
+  font-family: 'Special Elite', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--theme-primary);
+  margin-bottom: 8px;
+}
+[data-theme="corkboard"] .bwb-hero-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--theme-text);
+  margin-bottom: 14px;
+}
+[data-theme="corkboard"] .bwb-hero-body {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: rgba(244,233,213,0.85);
+  max-width: 70ch;
+}
+
 /* ── GLOBAL RESET + BODY ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -403,6 +823,20 @@ img { max-width: 100%; }
   background: var(--signal-verified);
   animation: livepulse 2s infinite;
 }
+
+/* Corpus-age sub-label inside the BIAS-FP badge. Sits underneath the
+   "N rated · M awaiting" line, shows "53d ago" / "8h ago" / "just now" to
+   surface pipeline freshness without crowding the chrome. */
+.bwb-fp-gap-asof {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 1.2px;
+  color: var(--signal-faded, rgba(255,255,255,0.35));
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+[data-bwb-theme="corkboard"] .bwb-fp-gap-asof { color: rgba(26,20,16,0.45); }
 
 @keyframes livepulse {
   0%, 100% { opacity: 1; transform: scale(1); }
@@ -633,6 +1067,32 @@ img { max-width: 100%; }
 
 .bwb-card:hover .bwb-card-thumb img {
   transform: scale(1.04);
+}
+
+/* G3.2 — archive-card treatment. Applied to thumbs that fell through to an
+   orphan card from /api/orphan_cards.json. Subtle sepia + scanline filter
+   signals "this is from the archive pool" without hiding the image. */
+.bwb-card-thumb--archive img {
+  filter: sepia(0.18) saturate(0.85) contrast(1.04);
+  position: relative;
+}
+.bwb-card-thumb--archive::after {
+  content: 'ARCHIVE';
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  font-family: var(--font-mono, 'DM Mono', ui-monospace, monospace);
+  font-size: 8px;
+  letter-spacing: 1.2px;
+  color: #fff;
+  background: rgba(0,0,0,0.55);
+  padding: 2px 5px;
+  border-radius: 2px;
+  pointer-events: none;
+}
+[data-bwb-theme="corkboard"] .bwb-card-thumb--archive::after {
+  background: rgba(26,20,16,0.7);
+  color: rgba(255,245,225,0.9);
 }
 
 .bwb-card-thumb-badges {
@@ -2007,6 +2467,42 @@ code {
   border-radius: 4px;
 }
 
+/* ── G2: PER-CARD SOURCE COUNT + BLOC BREAKDOWN ──
+   Sits above the bias bar. Names the source count and bloc split in
+   inline text: "12 sources · ●9W ●2N ●1A". The bias bar below becomes
+   a visualization of the number the reader just read. Surfaces the
+   substrate receipt, not a cipher. Cross-ref: ISA G2, _index/w12-g2.md */
+.bwb-card-source-count {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin: 12px 0 6px;
+  padding: 6px 10px 5px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary, #888);
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--border-subtle);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+.bwb-card-count-sep { opacity: 0.4; font-weight: 400; }
+.bwb-card-count-empty { opacity: 0.5; font-style: italic; }
+.bwb-bloc-bullet {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 3px;
+  vertical-align: 1px;
+}
+.bwb-bloc-bullet.western     { background: #2563eb; }   /* blue: NATO/US-aligned */
+.bwb-bloc-bullet.non-aligned { background: #0d9488; }   /* teal: regional/global south */
+.bwb-bloc-bullet.adversarial { background: #dc2626; }   /* red: state-media/multipolar */
+.bwb-bloc-bullet.other       { background: #6b7280; opacity: 0.5; }
+
 .bwb-bias-bar {
   height: 10px;
   background: var(--bg-card);
@@ -2065,6 +2561,60 @@ code {
 .bwb-bias-pct.bwb-bias-center { color: var(--signal-center); }
 .bwb-bias-pct.bwb-bias-right  { color: var(--signal-right); }
 .bwb-bias-pct.state            { color: var(--text-muted); font-style: italic; }
+
+/* ── W13: FACTUALITY BADGE (per-story aggregate) + DOT (per-source) ──
+   The signature Ground News "FACT High/Mixed/Low" rating. The aggregate
+   surfaces the trust level of the entire source set; the dot is the
+   individual source's MBFC factuality tier. Reader gets both signals. */
+.bwb-factuality-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 1px 6px;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  background: rgba(255, 255, 255, 0.02);
+}
+.bwb-factuality-high {
+  color: #22c55e;     /* green = High factuality */
+}
+.bwb-factuality-mixed {
+  color: #f59e0b;     /* amber = Mixed factuality (the Ground News default) */
+}
+.bwb-factuality-low {
+  color: #ef4444;     /* red = Low factuality */
+}
+.bwb-factuality-unknown {
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.bwb-fact-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-left: 4px;
+  vertical-align: 1px;
+  flex-shrink: 0;
+}
+.bwb-fact-dot.high, .bwb-fact-dot.mostly_factual {
+  background: #22c55e;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.2);
+}
+.bwb-fact-dot.medium, .bwb-fact-dot.mixed {
+  background: #f59e0b;
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.2);
+}
+.bwb-fact-dot.low {
+  background: #ef4444;
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.2);
+}
+.bwb-fact-dot.unknown {
+  display: none;
+}
 
 /* Blindspot flag — amber, prominent */
 .bwb-blindspot-flag {
@@ -2214,6 +2764,30 @@ code {
   flex: 1;
   height: 1px;
   background: var(--border-default);
+}
+
+/* Corkboard section dividers — look like torn-paper tape strips */
+[data-theme="corkboard"] .bwb-section-divider {
+  padding: 28px 0 6px;
+}
+[data-theme="corkboard"] .bwb-section-divider-label {
+  font-family: 'Oswald', 'Impact', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f4e9d5;
+  background: var(--theme-primary);
+  padding: 6px 14px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  transform: rotate(-0.5deg);
+  display: inline-block;
+}
+[data-theme="corkboard"] .bwb-section-divider-line {
+  background: var(--theme-primary);
+  opacity: 0.25;
+  height: 2px;
 }
 
 /* ── SECTION NAV ── */
@@ -2458,3 +3032,294 @@ code {
   text-decoration-color: var(--border-subtle);
 }
 .bwb-corruption-hit-links a:hover { text-decoration-color: var(--theme-primary, #3B82F6); }
+
+/* ── ENTITLEMENT / PRO GATE CHROME ────────────────────────────────────────── */
+/* The visual cue that a feature is paywalled. Small lock pill that sits   */
+/* inline with chips, sections, or as a corner stamp. Used by:               */
+/*   - funding-chip (when chain owner name is hidden)                        */
+/*   - corruption cross-ref header (when not Pro)                           */
+/*   - money-trail body (when not Pro)                                      */
+/*   - any element painted via BWB_Entitlements.paintLockBadge()            */
+
+.bwb-pro-lock {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 6px 1px 4px;
+  background: linear-gradient(135deg, #d71920 0%, #8b0000 100%);
+  color: #fff;
+  font-family: var(--font-mono, "Special Elite", "Courier Prime", monospace);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(255, 184, 0, 0.5);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.4);
+  cursor: pointer;
+  vertical-align: middle;
+  transition: transform 120ms, box-shadow 120ms;
+}
+.bwb-pro-lock:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.4), 0 0 12px rgba(255, 184, 0, 0.4);
+  color: #fff;
+  text-decoration: none;
+}
+.bwb-pro-lock-key { font-size: 10px; line-height: 1; }
+.bwb-pro-lock-lbl { letter-spacing: 0.18em; }
+
+/* Variant: corner stamp for sections. */
+.bwb-pro-corner {
+  position: absolute;
+  top: -8px;
+  right: 12px;
+  z-index: 2;
+}
+
+/* Section paywall: blurred body + CTA lockup. */
+.bwb-pro-section {
+  position: relative;
+  border: 1px dashed var(--border-subtle, #444);
+  padding: 18px 20px 22px;
+  margin: 18px 0 24px;
+  background: rgba(215, 25, 32, 0.04);
+}
+.bwb-pro-section-eyebrow {
+  font-family: var(--font-mono, "Special Elite", monospace);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--theme-primary, #d71920);
+  margin: 0 0 6px;
+}
+.bwb-pro-section-h {
+  font-family: var(--font-display, "Oswald", sans-serif);
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 0 0 8px;
+  color: var(--text-primary, #f4e9d5);
+}
+.bwb-pro-section-body {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary, #c0b89a);
+  margin: 0 0 14px;
+  max-width: 600px;
+}
+.bwb-pro-section-cta {
+  display: inline-block;
+  background: var(--theme-primary, #d71920);
+  color: #fff;
+  text-decoration: none;
+  padding: 9px 18px;
+  font-family: var(--font-mono, "Special Elite", monospace);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: transform 120ms, background 120ms;
+}
+.bwb-pro-section-cta:hover {
+  background: #b51319;
+  transform: translateY(-1px);
+  color: #fff;
+  text-decoration: none;
+}
+.bwb-pro-section-meta {
+  display: inline-block;
+  margin-left: 12px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text-muted, #888);
+  text-transform: uppercase;
+}
+.bwb-pro-section-meta strong { color: var(--theme-primary, #d71920); font-weight: 400; }
+
+/* Corkboard variant: cream paper paywall block, red stamp diagonal. */
+[data-theme="corkboard"] .bwb-pro-section {
+  background: rgba(215, 25, 32, 0.06);
+  border: 1px dashed rgba(215, 25, 32, 0.4);
+}
+[data-theme="corkboard"] .bwb-pro-section-h {
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-style: italic;
+  font-weight: 700;
+  color: #1a0e08;
+}
+[data-theme="corkboard"] .bwb-pro-section-body { color: #4a3a2a; }
+[data-theme="corkboard"] .bwb-pro-section-eyebrow { color: #d71920; }
+[data-theme="corkboard"] .bwb-pro-section-cta {
+  background: #d71920;
+  box-shadow: 2px 2px 0 #1a0e08;
+}
+[data-theme="corkboard"] .bwb-pro-section-cta:hover {
+  background: #8b0000;
+  box-shadow: 3px 3px 0 #1a0e08;
+}
+
+/* Vantage badge — small star + label that sits next to a section title
+   to mark Vantage-exclusive data products. */
+.bwb-vantage-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  padding: 3px 8px 3px 7px;
+  margin-left: 10px;
+  background: linear-gradient(135deg, #d4a017 0%, #b8860b 100%);
+  color: #1a0e08;
+  vertical-align: middle;
+  border: 1px solid #8b6914;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Ownership breakdown — Vantage table */
+.bwb-ownership-breakdown { padding: 4px 0; }
+.bwb-ownership-breakdown h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  color: var(--theme-fg, #F0EDE8);
+  margin: 0 0 12px;
+}
+.bwb-ownership-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--theme-hairline, rgba(255,255,255,0.10));
+}
+.bwb-ownership-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1.4fr 0.7fr 0.5fr 0.6fr;
+  gap: 8px;
+  padding: 8px 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--theme-fg-dim, rgba(240,237,232,0.75));
+  border-bottom: 1px solid var(--theme-hairline, rgba(255,255,255,0.06));
+  align-items: center;
+}
+.bwb-ownership-row:last-child { border-bottom: none; }
+.bwb-ownership-row--head {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--theme-fg-faint, rgba(240,237,232,0.35));
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.15);
+}
+.bwb-ownership-source { color: var(--theme-fg, #F0EDE8); font-weight: 500; }
+.bwb-ownership-parent { color: var(--theme-fg, #F0EDE8); }
+.bwb-ownership-form {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border: 1px solid currentColor;
+  display: inline-block;
+  text-align: center;
+  width: fit-content;
+}
+.bwb-ownership-form-independent { color: #4a8a4a; }
+.bwb-ownership-form-chain { color: #c97a2a; }
+.bwb-ownership-form-state { color: #c0392b; }
+.bwb-ownership-form-nonprofit { color: #5a7fb8; }
+.bwb-ownership-form-unknown { color: var(--theme-fg-faint, rgba(240,237,232,0.35)); }
+.bwb-ownership-conc { color: var(--theme-fg-dim, rgba(240,237,232,0.75)); }
+.bwb-ownership-cite a { color: var(--theme-primary, #BF3B2D); text-decoration: underline; }
+.bwb-ownership-empty { font-size: 12px; color: var(--theme-fg-faint, rgba(240,237,232,0.45)); padding: 12px 0; }
+.bwb-ownership-foot {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--theme-fg-faint, rgba(240,237,232,0.35));
+  margin-top: 14px;
+  line-height: 1.7;
+}
+.bwb-ownership-foot a { color: var(--theme-primary, #BF3B2D); text-decoration: underline; }
+[data-theme="corkboard"] .bwb-ownership-table { border-color: rgba(90,60,30,0.25); }
+[data-theme="corkboard"] .bwb-ownership-row { border-bottom-color: rgba(90,60,30,0.15); color: rgba(26,20,16,0.78); }
+[data-theme="corkboard"] .bwb-ownership-row--head { background: rgba(90,60,30,0.08); color: rgba(26,20,16,0.55); }
+@media (max-width: 720px) {
+  .bwb-ownership-row { grid-template-columns: 1fr 1fr; gap: 4px 8px; font-size: 10px; }
+  .bwb-ownership-row--head { display: none; }
+  .bwb-ownership-cell:nth-child(n+3) { grid-column: span 1; }
+  .bwb-ownership-source::before { content: 'Source: '; color: var(--theme-fg-faint, rgba(240,237,232,0.35)); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .bwb-ownership-parent::before { content: 'Parent: '; color: var(--theme-fg-faint, rgba(240,237,232,0.35)); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .bwb-ownership-form::before { content: 'Form: '; color: var(--theme-fg-faint, rgba(240,237,232,0.35)); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; border: none; padding: 0; }
+  .bwb-ownership-conc::before { content: 'Conc: '; color: var(--theme-fg-faint, rgba(240,237,232,0.35)); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .bwb-ownership-cite::before { content: 'Cite: '; color: var(--theme-fg-faint, rgba(240,237,232,0.35)); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; }
+}
+
+/* Inline teaser: "FUNDED BY [redacted-shape]" — used in the free card chip
+   to show a colored geometric placeholder instead of the real owner name. */
+.bwb-funding-tease {
+  display: inline-block;
+  width: 60px;
+  height: 8px;
+  margin-left: 6px;
+  background: linear-gradient(90deg,
+    currentColor 0%, currentColor 20%,
+    transparent 20%, transparent 35%,
+    currentColor 35%, currentColor 50%,
+    transparent 50%, transparent 70%,
+    currentColor 70%, currentColor 100%);
+  opacity: 0.7;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+.bwb-funding-tease::after {
+  content: 'LOCKED';
+  position: absolute;
+  right: -2px;
+  top: -10px;
+  font-family: var(--font-mono, "Special Elite", monospace);
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  color: var(--theme-primary, #d71920);
+  background: var(--bg-card, #1a1a1a);
+  padding: 0 3px;
+}
+
+/* Funding chip — when free, the chip becomes a tap-to-upgrade affordance. */
+.bwb-funding-chip.is-locked { cursor: pointer; }
+.bwb-funding-chip.is-locked:hover { opacity: 1; box-shadow: 0 0 0 1px var(--theme-primary, #d71920); }
+
+/* Inline "🔒 PRO" badge inside the locked funding chip. */
+.bwb-pro-lock-inline {
+  display: inline-block;
+  font-family: var(--font-mono, "Special Elite", monospace);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: #fff;
+  background: var(--theme-primary, #d71920);
+  padding: 1px 5px;
+  margin-left: 6px;
+  border-radius: 2px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+  top: -1px;
+}
+
+/* Owner-only tier toggle (dev mode). Hidden from public users. */
+#bwb-owner-tier-toggle {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 9999;
+  font-family: var(--font-mono, "Special Elite", monospace);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #fff;
+  background: #1a1a1a;
+  border: 1px solid var(--theme-primary, #d71920);
+  padding: 8px 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+#bwb-owner-tier-toggle:hover { background: #2a2a2a; }

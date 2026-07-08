@@ -1,48 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-  // BOTWAVEBOMBA — Base Path Detection (inlined so the <base> tag
-  // is injected BEFORE any external resource below tries to load).
-  // Makes the site work both at root (Cloudflare Pages / custom domain)
-  // and under GitHub Pages project subpath (zombie760.github.io/botwavebomba/).
-  (function () {
-    'use strict';
-    function detectBasePath() {
-      var host = location.hostname;
-      var path = location.pathname;
-      if (host === 'zombie760.github.io' || host === 'www.zombie760.github.io') {
-        if (path.indexOf('/botwavebomba') === 0) return '/botwavebomba';
-        if (path.indexOf('/botwave-bomba') === 0) return '/botwave-bomba';
-      }
-      return '';
-    }
-    var base = detectBasePath();
-    window.BWB_BASE = base;
-    if (base && base !== '') {
-      try {
-        var existingBase = document.querySelector('base');
-        if (!existingBase) {
-          var b = document.createElement('base');
-          b.href = base + '/';
-          var head = document.head || document.getElementsByTagName('head')[0];
-          if (head.firstChild) head.insertBefore(b, head.firstChild);
-          else head.appendChild(b);
-        }
-      } catch (e) { console.warn('[BWB] base tag injection failed', e); }
-    }
-    window.BWB_URL = function (p) {
-      if (!p) return base || '/';
-      if (p[0] === '/') p = p.slice(1);
-      return (base ? base + '/' : '/') + p;
-    };
-  })();
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>BOTWAVEBOMBA — Not Left/Right. Who Owns The Story.</title>
-  <meta name="description" content="496 sources deep-fingerprinted across 5 bias axes. Western, adversarial, non-aligned — see the gap. Powered by TELOS+PAI substrate.">
+  <meta name="description" content="1,651 sources deep-fingerprinted across 5 bias axes. Western (80%) / Non-Aligned (13%) / Adversarial (4%) — see the gap, name the funding. Powered by TELOS+PAI substrate.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -52,12 +14,15 @@
   <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
   <meta name="theme-color" content="#0a0a0a">
   <meta name="mobile-web-app-capable" content="yes">
+  <meta name="bwb-default-theme" content="corkboard">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
   <meta name="view-transition" content="same-origin">
   <script type="speculationrules">
   {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
   </script>
+  <!-- Base path support for GitHub Pages subpath + root deployments -->
+  <script src="/assets/js/base-path.js"></script>
   <script src="/assets/js/theme-switcher.js" defer></script>
   <script src="/assets/js/pwa.js" defer></script>
 </head>
@@ -115,6 +80,56 @@
     <!-- additional section buttons injected by feed.js -->
   </nav>
 
+  <!-- ── TODAY'S COVERAGE GAP (renders after data load) ── -->
+  <!-- The BWB differentiator made visible: a single panel that names the
+       bloc + funding gap the corpus has right now. Lands before any
+       filter pill, before any card. Replaces the implied "all news is
+       the same" framing with a receipt. Cross-ref: ISA G7.
+       G17 upgrade: also shows region-level gap (central_asia 4, east_asia 7,
+       se_asia 22…) and the bloc delta from the editorial target (40/40/20). -->
+  <aside class="bwb-coverage-gap" id="bwb-coverage-gap" aria-label="Today coverage gap">
+    <div class="bwb-cg-eyebrow">TODAY'S COVERAGE GAP</div>
+    <div class="bwb-cg-row" id="bwb-cg-row">
+      <div class="bwb-cg-stat">
+        <span class="bwb-cg-num" id="bwb-cg-stories">—</span>
+        <span class="bwb-cg-lbl">stories</span>
+      </div>
+      <div class="bwb-cg-stat">
+        <span class="bwb-cg-num" id="bwb-cg-sources">—</span>
+        <span class="bwb-cg-lbl">sources</span>
+      </div>
+      <div class="bwb-cg-stat">
+        <span class="bwb-cg-num" id="bwb-cg-countries">—</span>
+        <span class="bwb-cg-lbl">countries</span>
+      </div>
+      <div class="bwb-cg-bar-wrap">
+        <div class="bwb-cg-bar-lbl">BLOC MIX</div>
+        <div class="bwb-cg-bar" id="bwb-cg-bar">
+          <div class="bwb-cg-seg western"    id="bwb-cg-seg-w"   style="width:0%"><span></span></div>
+          <div class="bwb-cg-seg non-aligned" id="bwb-cg-seg-n"   style="width:0%"><span></span></div>
+          <div class="bwb-cg-seg adversarial" id="bwb-cg-seg-a"   style="width:0%"><span></span></div>
+          <div class="bwb-cg-seg other"      id="bwb-cg-seg-o"   style="width:0%"><span></span></div>
+        </div>
+        <div class="bwb-cg-bar-legend" id="bwb-cg-bar-legend">—</div>
+      </div>
+      <div class="bwb-cg-headline" id="bwb-cg-headline">—</div>
+    </div>
+    <div class="bwb-cg-region-row" id="bwb-cg-region-row" aria-label="Regional coverage gap">
+      <div class="bwb-cg-region-lbl">REGION GAP — target ≥5% per non-Western region</div>
+      <div class="bwb-cg-region-grid" id="bwb-cg-region-grid">
+        <div class="bwb-cg-region-cell" data-region="mena"><span class="bwb-cg-region-name">MENA</span><span class="bwb-cg-region-val" id="bwb-cg-region-mena">—</span></div>
+        <div class="bwb-cg-region-cell" data-region="latam"><span class="bwb-cg-region-name">LATAM</span><span class="bwb-cg-region-val" id="bwb-cg-region-latam">—</span></div>
+        <div class="bwb-cg-region-cell" data-region="subsaharan"><span class="bwb-cg-region-name">Sub-Saharan</span><span class="bwb-cg-region-val" id="bwb-cg-region-subsaharan">—</span></div>
+        <div class="bwb-cg-region-cell" data-region="south_asia"><span class="bwb-cg-region-name">South Asia</span><span class="bwb-cg-region-val" id="bwb-cg-region-south_asia">—</span></div>
+        <div class="bwb-cg-region-cell" data-region="east_asia"><span class="bwb-cg-region-name">East Asia</span><span class="bwb-cg-region-val" id="bwb-cg-region-east_asia">—</span></div>
+        <div class="bwb-cg-region-cell" data-region="se_asia"><span class="bwb-cg-region-name">SE Asia</span><span class="bwb-cg-region-val" id="bwb-cg-region-se_asia">—</span></div>
+        <div class="bwb-cg-region-cell" data-region="eastern_europe"><span class="bwb-cg-region-name">E. Europe</span><span class="bwb-cg-region-val" id="bwb-cg-region-eastern_europe">—</span></div>
+        <div class="bwb-cg-region-cell" data-region="central_asia"><span class="bwb-cg-region-name">Central Asia</span><span class="bwb-cg-region-val" id="bwb-cg-region-central_asia">—</span></div>
+      </div>
+      <div class="bwb-cg-delta" id="bwb-cg-delta">—</div>
+    </div>
+  </aside>
+
   <!-- ── SIGNAL FILTERS ── -->
   <nav class="bwb-filters bwb-signal-filters" id="filter-nav">
     <button data-filter="blindspot">BLINDSPOT</button>
@@ -123,6 +138,9 @@
     <button data-filter="has-video">Has Video</button>
     <button data-filter="left-heavy">Left-Heavy</button>
     <button data-filter="right-heavy">Right-Heavy</button>
+    <button data-filter="fact-high" class="bwb-filter-fact">FACT HIGH</button>
+    <button data-filter="fact-mixed" class="bwb-filter-fact">FACT MIXED</button>
+    <button data-filter="fact-low" class="bwb-filter-fact">FACT LOW</button>
   </nav>
 
   <!-- ── GEO SCOPE FILTERS (local / regional / national / global) ── -->
@@ -272,6 +290,7 @@
   <script src="/assets/js/api.js"></script>
   <script src="/assets/js/heatmap.js"></script>
   <script src="/assets/js/status-badge.js"></script>
+  <script src="/assets/js/entitlements.js"></script>
   <script src="/assets/js/feed.js"></script>
   <script src="/assets/js/identity-modal.js" defer></script>
   <script>
@@ -306,6 +325,118 @@
             c.title = 'Corpus generated ' + new Date(t).toUTCString();
           }
         }
+
+        // ── TODAY'S COVERAGE GAP (the front-page differentiator) ──
+        // Single panel that names the gap the corpus has right now.
+        // Operator-visible differentiator vs Ground News: we name the gap
+        // (e.g. "12 of 20 stories are covered only by Latin-American press")
+        // and we cite the country + bloc mix, not just the percent.
+        if (d.stories && d.stories.length) {
+          var stories  = d.stories;
+          var allSrcs  = [];
+          stories.forEach(function (s) {
+            (s.sources || []).forEach(function (src) { allSrcs.push(src); });
+          });
+          var storiesN = stories.length;
+          var srcN     = allSrcs.length;
+          var countries = {};
+          allSrcs.forEach(function (src) {
+            var c = (src.country || '').toUpperCase();
+            if (c && c.length === 2) countries[c] = true;
+          });
+          var countryN = Object.keys(countries).length;
+
+          var bloc = { western: 0, 'non-aligned': 0, adversarial: 0, other: 0 };
+          allSrcs.forEach(function (src) {
+            var b = (src.bloc || 'other').toLowerCase();
+            if (b === 'western') bloc.western++;
+            else if (b === 'non-aligned' || b === 'neutral' || b === 'non_aligned') bloc['non-aligned']++;
+            else if (b === 'adversarial') bloc.adversarial++;
+            else bloc.other++;
+          });
+          var totalBloc = bloc.western + bloc['non-aligned'] + bloc.adversarial + bloc.other || 1;
+          var wPct = (bloc.western      / totalBloc) * 100;
+          var nPct = (bloc['non-aligned'] / totalBloc) * 100;
+          var aPct = (bloc.adversarial  / totalBloc) * 100;
+          var oPct = (bloc.other        / totalBloc) * 100;
+
+          var fmt = function (n) { return Math.round(n).toLocaleString(); };
+          document.getElementById('bwb-cg-stories').textContent  = fmt(storiesN);
+          document.getElementById('bwb-cg-sources').textContent  = fmt(srcN);
+          document.getElementById('bwb-cg-countries').textContent = fmt(countryN);
+          document.getElementById('bwb-cg-seg-w').style.width = wPct + '%';
+          document.getElementById('bwb-cg-seg-n').style.width = nPct + '%';
+          document.getElementById('bwb-cg-seg-a').style.width = aPct + '%';
+          document.getElementById('bwb-cg-seg-o').style.width = oPct + '%';
+
+          // Legend
+          document.getElementById('bwb-cg-bar-legend').innerHTML =
+            '<span class="bwb-bloc-bullet western"></span>Western ' + Math.round(wPct) + '%' +
+            '<span class="bwb-bloc-bullet non-aligned"></span>Non-Aligned ' + Math.round(nPct) + '%' +
+            '<span class="bwb-bloc-bullet adversarial"></span>Adversarial ' + Math.round(aPct) + '%' +
+            (bloc.other ? '<span class="bwb-bloc-bullet other"></span>Untagged ' + Math.round(oPct) + '%' : '');
+
+          // Headline gap: the largest bloc (and the largest bloc that is *missing*).
+          var biggestBloc = bloc.western, biggestName = 'Western';
+          if (bloc['non-aligned'] > biggestBloc) { biggestBloc = bloc['non-aligned']; biggestName = 'Non-Aligned'; }
+          if (bloc.adversarial  > biggestBloc) { biggestBloc = bloc.adversarial;  biggestName = 'Adversarial'; }
+          var smallestPct = Math.min(wPct, nPct, aPct);
+          var smallestName = smallestPct === wPct ? 'Western' : smallestPct === nPct ? 'Non-Aligned' : 'Adversarial';
+          var head = '<b>Today\'s coverage gap:</b> ' + biggestName + ' press leads the corpus at '
+                   + Math.round(Math.max(wPct, nPct, aPct)) + '%. '
+                   + smallestName + ' press trails at ' + Math.round(smallestPct) + '%. '
+                   + (countryN >= 10
+                       ? '<b>' + countryN + ' countries</b> represented in ' + storiesN + ' stories.'
+                       : '<b>Only ' + countryN + ' countries</b> in ' + storiesN + ' stories — narrow geo spread.');
+          document.getElementById('bwb-cg-headline').innerHTML = head;
+        }
+
+        // ── G17: REGION GRID + BLOC DELTA FROM TARGET ──
+        // Pulls from /api/coverage_gap.json (built from sources.json at
+        // pipeline time). Region cells are color-coded by gap severity:
+        // green ≥5%, amber 1-4.9%, red <1% (the editorial floor). The delta
+        // line reports the bloc-mix distance from the 40/40/20 target.
+        var gapUrl = (window.BWB_BASE || '') + '/api/coverage_gap.json';
+        var row = document.getElementById('bwb-cg-region-row');
+        fetch(gapUrl, { cache: 'no-store' }).then(function (r) {
+          return r.ok ? r.json() : null;
+        }).then(function (g) {
+          if (!g || !g.region) {
+            if (row) row.setAttribute('data-gap-state', 'no-data');
+            return;
+          }
+          var hit = 0, miss = 0;
+          Object.keys(g.region).forEach(function (rk) {
+            var el = document.getElementById('bwb-cg-region-' + rk);
+            if (!el) { miss++; return; }
+            hit++;
+            var v = g.region[rk];
+            el.textContent = v.pct + '%';
+            el.parentElement.classList.remove('bwb-cg-region-cell--green',
+                                              'bwb-cg-region-cell--amber',
+                                              'bwb-cg-region-cell--red');
+            if (v.pct >= 5)        el.parentElement.classList.add('bwb-cg-region-cell--green');
+            else if (v.pct >= 1)   el.parentElement.classList.add('bwb-cg-region-cell--amber');
+            else                   el.parentElement.classList.add('bwb-cg-region-cell--red');
+          });
+          if (row) row.setAttribute('data-gap-state', 'live');
+          if (row) row.setAttribute('data-gap-hit', String(hit));
+          if (row) row.setAttribute('data-gap-miss', String(miss));
+          if (g.gap) {
+            var dEl = document.getElementById('bwb-cg-delta');
+            if (dEl) {
+              var wd = g.gap.western_delta, nd = g.gap.non_aligned_delta, ad = g.gap.adversarial_delta;
+              var sign = function (n) { return n > 0 ? '+' + n : '' + n; };
+              dEl.innerHTML =
+                '<b>BLOC DELTA from 40/40/20 target:</b> ' +
+                'Western ' + sign(wd) + 'pt · ' +
+                'Non-Aligned ' + sign(nd) + 'pt · ' +
+                'Adversarial ' + sign(ad) + 'pt.';
+            }
+          }
+        }).catch(function () {
+          if (row) row.setAttribute('data-gap-state', 'fetch-failed');
+        });
       }).catch(function () { /* keep em-dashes */ });
     })();
   </script>

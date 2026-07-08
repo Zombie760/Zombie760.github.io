@@ -23,6 +23,118 @@ function _resolveOwner(name) {
   return _fundingGraph.outlet_to_owner[name.toLowerCase()] || null;
 }
 
+// ── W13: Source-registry cache — factuality, political_lean, parent_company ──
+// The pipeline-side factuality defaults to "unknown" for sources not in
+// `scored_by_cid` (because bias_scorer.py is dead code per DIAGNOSTIC.md).
+// The chrome-side can recover it from source_registry_deploy.json which
+// has 374/603 sources with non-unknown factuality. Loaded once, indexed
+// by source id AND by lowercased name. Story-side sources often carry
+// display names (e.g. "Al Jazeera English") while the registry carries
+// slugs ("al-jazeera-english") — the name fallback is what makes the
+// enrichment actually fire. Cross-ref: W13 ISC.
+let _registryById     = null;   // { source_id: registry_record } or null while loading
+let _registryByName   = null;   // { lowercase_name: registry_record } for display-name fallback
+let _registryTried    = false;
+function _loadRegistry() {
+  if (_registryById || _registryTried) return;
+  _registryTried = true;
+  if (typeof BWB_API === 'undefined' || !BWB_API.getSources) {
+    return;  // BWB_API not loaded yet — caller will retry on next render
+  }
+  BWB_API.getSources()
+    .then(function(registry) {
+      var byId = {};
+      var byName = {};
+      (registry.sources || []).forEach(function(s) {
+        if (s && s.id) byId[s.id] = s;
+        if (s && s.name) byName[String(s.name).toLowerCase()] = s;
+      });
+      _registryById   = byId;
+      _registryByName = byName;
+      // Re-render any cards already on the page so they pick up the new data
+      _reenrichRenderedCards();
+    })
+    .catch(function() { /* silent fail — bias bar shows without enrichment */ });
+}
+function _resolveRegistry(idOrName) {
+  if (!_registryById) return null;
+  if (!idOrName) return null;
+  return _registryById[idOrName] || _registryByName[String(idOrName).toLowerCase()] || null;
+}
+// Apply registry enrichment to a source object in place, returning it.
+// Pipeline values win when present and non-default; registry fills the gaps.
+function _enrichSource(src) {
+  if (!src) return src;
+  if (!src.id && !src.name) return src;
+  // Try id first, then name
+  var reg = _resolveRegistry(src.id) || _resolveRegistry(src.name);
+  if (!reg) return src;
+  // Factuality — registry has it, pipeline clobbers to "unknown"
+  if ((!src.factuality || src.factuality === 'unknown') && reg.factuality) {
+    src.factuality = reg.factuality;
+  }
+  // political_lean → bias_bucket mapping
+  // Pipeline clobbers bias_bucket to "center"; registry has political_lean
+  if ((!src.bias_bucket || src.bias_bucket === 'center') && reg.political_lean) {
+    src.bias_bucket = _leanToBucket(reg.political_lean);
+  }
+  // bias_tier — registry has it as `political_lean` directly
+  if ((!src.bias_tier || src.bias_tier === 'unknown') && reg.political_lean) {
+    src.bias_tier = reg.political_lean;
+  }
+  // parent_company
+  if (!src.parent_company && reg.parent_company) {
+    src.parent_company = reg.parent_company;
+  }
+  return src;
+}
+function _leanToBucket(lean) {
+  if (!lean) return 'center';
+  var l = String(lean).toLowerCase();
+  if (l === 'left' || l === 'lean_left')              return 'left';
+  if (l === 'right' || l === 'lean_right')            return 'right';
+  if (l === 'center' || l === 'mostly_factual')       return 'center';
+  // non-aligned / state_aligned / independent / anti-western / western-non-us
+  // — Ground News only knows L/C/R; we treat non-aligned regional press as
+  // "center" (independent regional coverage) and adversarial as its own
+  // bucket that the bias bar can render with a fourth color.
+  if (l === 'non-aligned' || l === 'independent')     return 'center';
+  if (l === 'state_aligned' || l === 'anti-western')  return 'right';  // state press skews right in L/C/R frame
+  return 'center';
+}
+// Per-story factuality aggregation: high/mixed/low per Ground News pattern.
+function _aggregateFactuality(sources) {
+  var counts = { high: 0, mostly_factual: 0, medium: 0, mixed: 0, low: 0, unknown: 0 };
+  sources.forEach(function(s) {
+    var f = (s && s.factuality) || 'unknown';
+    if (counts[f] !== undefined) counts[f]++;
+    else counts.unknown++;
+  });
+  var rated = counts.high + counts.mostly_factual + counts.medium + counts.mixed + counts.low;
+  if (rated === 0) return { label: '—', tone: 'unknown', counts: counts };
+  if (counts.high + counts.mostly_factual >= 0.7 * rated) return { label: 'High', tone: 'high', counts: counts };
+  if (counts.low >= 0.3 * rated)                            return { label: 'Low', tone: 'low', counts: counts };
+  return { label: 'Mixed', tone: 'mixed', counts: counts };
+}
+// Re-fire buildCard for any card already in the DOM. Idempotent — guards
+// against double-render by checking the enrichment marker.
+function _reenrichRenderedCards() {
+  if (!document || !document.querySelectorAll) return;
+  var cards = document.querySelectorAll('.bwb-card[data-story-id]');
+  // For each card, find the matching story in _allStories, re-render
+  cards.forEach(function(cardEl) {
+    var sid = cardEl.getAttribute('data-story-id');
+    if (!sid) return;
+    var story = _allStories.find(function(s) { return s.id === sid; });
+    if (!story) return;
+    // Strip the old card and re-render in its place
+    var parent = cardEl.parentNode;
+    if (!parent) return;
+    var fresh = buildCard(story);
+    parent.replaceChild(fresh, cardEl);
+  });
+}
+
 // Section display labels — newspaper feel, no emojis in labels
 var SECTION_LABELS = {
   'front-page':    'Front Page',
@@ -41,10 +153,16 @@ var SECTION_LABELS = {
 
 // W6: pre-warm the funding-graph cache on page load so the first card
 // render can resolve the owner chain without a visible flicker.
-if (typeof window !== 'undefined' && document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', _loadFundingGraph);
-} else {
+// W13: pre-warm the source-registry cache for the same reason — factuality
+// + political_lean data is critical to the bias bar's accuracy.
+function _warmCaches() {
   _loadFundingGraph();
+  _loadRegistry();
+}
+if (typeof window !== 'undefined' && document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', _warmCaches);
+} else {
+  _warmCaches();
 }
 
 function buildSectionDivider(sectionId) {
@@ -74,6 +192,17 @@ async function renderFeed(filter) {
     _allStories   = data.stories  || [];
     _sectionsData = data.sections || [];
 
+    // G3.2: lazy-load orphan card pool (deterministic fallback for stories
+    // without a live card PNG or source image). Fire-and-forget — feed
+    // renders first; orphans are used for cards that still need an image.
+    if (!window._orphanCards) {
+      window._orphanCards = [];
+      fetch((window.BWB_BASE || '') + '/api/orphan_cards.json', { cache: 'no-store' })
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(d) { if (d && d.cards) window._orphanCards = d.cards; })
+        .catch(function() { /* keep empty array */ });
+    }
+
     var bsCount = _allStories.filter(function(s) { return s.is_blindspot; }).length;
     var storyEl = document.getElementById('story-count');
     var bsEl    = document.getElementById('blindspot-count');
@@ -83,7 +212,7 @@ async function renderFeed(filter) {
     buildSectionTabs(_sectionsData);
   }
 
-  var signalFilters = ['blindspot','mono-frame','blackout','has-video','left-heavy','right-heavy','adversarial'];
+  var signalFilters = ['blindspot','mono-frame','blackout','has-video','left-heavy','right-heavy','adversarial','fact-high','fact-mixed','fact-low'];
   var isSignal = signalFilters.indexOf(filter) !== -1;
 
   var filtered = _allStories;
@@ -96,6 +225,18 @@ async function renderFeed(filter) {
   if (filter === 'adversarial') filtered = _allStories.filter(function(s) {
     return (s.sources || []).some(function(src) { return src.bloc === 'adversarial'; });
   });
+  // W13: factuality filters. Each story is matched against the aggregate
+  // factuality label of its source set. Requires registry enrichment to
+  // have populated; if not, the filter returns the empty set quietly.
+  if (filter === 'fact-high' || filter === 'fact-mixed' || filter === 'fact-low') {
+    var targetTone = filter === 'fact-high' ? 'high'
+                   : filter === 'fact-mixed' ? 'mixed'
+                   : 'low';
+    filtered = _allStories.filter(function(s) {
+      (s.sources || []).forEach(function(src) { _enrichSource(src); });
+      return _aggregateFactuality(s.sources || []).tone === targetTone;
+    });
+  }
   if (!isSignal && filter !== 'all') {
     filtered = _allStories.filter(function(s) { return s.section === filter; });
   }
@@ -164,6 +305,12 @@ function buildSectionTabs(sections) {
 function buildCard(story) {
   var sources  = story.sources  || [];
   var articles = story.articles || [];
+  // W13: enrich each source with registry data (factuality, political_lean,
+  // parent_company) before computing the bias bar. The pipeline-side data
+  // has these clobbered to defaults because bias_scorer.py is dead code.
+  // Registry-side recovery is what makes the bias bar + factuality display
+  // actually mean something on every card.
+  sources.forEach(function(s) { _enrichSource(s); });
   var cov      = story.coverage || {};
   var lPct     = cov.left_pct   || 0;
   var cPct     = cov.center_pct || 0;
@@ -173,6 +320,7 @@ function buildCard(story) {
 
   var card = document.createElement('article');
   card.className = 'bwb-card';
+  card.setAttribute('data-story-id', story.id || '');
   // Left-edge bloc indicator
   if (story.is_blindspot) card.classList.add('blindspot');
   else if (story.geo_frame === 'mono-frame') card.classList.add('mono-frame');
@@ -194,18 +342,48 @@ function buildCard(story) {
   });
 
   // ── THUMBNAIL ─────────────────────────────────────────────────────────────
+  // G3: prefer locally-generated card PNG (/api/cards/{story.id}.png — 160/160
+  // match rate, 1200x630 social-aspect, generated nightly by the on-bridge cron).
+  // Falls back to story image, then picsum. picsum is the dead-weight safety
+  // net; the chrome surfaces our own pipeline's output first.
+  // G3.2: when both the live card and the source image are missing, pick a
+  // stable orphan from /api/orphan_cards.json (deterministic by story.id hash).
+  // Orphans are card PNGs from prior pipeline runs — better than picsum, honest
+  // about provenance (we label them "ARCHIVE" in the card).
   var thumb = document.createElement('div');
   thumb.className = 'bwb-card-thumb';
 
   var img = document.createElement('img');
-  var heroSrc = (articles.find(function(a) { return a.image_url; }) || {}).image_url
-    || story.image_url
-    || ('https://picsum.photos/seed/' + encodeURIComponent(story.id) + '/800/450');
+  var liveCardSrc = '/api/cards/' + encodeURIComponent(story.id) + '.png';
+  var sourceImg   = (articles.find(function(a) { return a.image_url; }) || {}).image_url
+                    || story.image_url;
+  // Try live card first; onerror chain handles the rest.
+  var heroSrc = liveCardSrc;
   img.src     = heroSrc;
   img.alt     = story.headline || '';
   img.loading = 'lazy';
+  img.dataset.kind = 'live';
   img.onerror = function() {
-    this.src     = 'https://picsum.photos/seed/' + encodeURIComponent(story.id) + '/800/450';
+    // 1) Source image
+    if (this.dataset.kind === 'live' && sourceImg) {
+      this.dataset.kind = 'source';
+      this.src = sourceImg;
+      return;
+    }
+    // 2) Orphan pool (deterministic by story.id)
+    if (this.dataset.kind !== 'orphan' && window._orphanCards && window._orphanCards.length) {
+      var idx = 0;
+      var s = story.id || '';
+      for (var i = 0; i < s.length; i++) idx = (idx * 31 + s.charCodeAt(i)) >>> 0;
+      var orphanId = window._orphanCards[idx % window._orphanCards.length];
+      this.dataset.kind = 'orphan';
+      this.src = '/api/cards/' + orphanId + '.png';
+      thumb.classList.add('bwb-card-thumb--archive');
+      return;
+    }
+    // 3) picsum last resort
+    this.dataset.kind = 'picsum';
+    this.src = 'https://picsum.photos/seed/' + encodeURIComponent(story.id) + '/800/450';
     this.onerror = null;
   };
   thumb.appendChild(img);
@@ -242,6 +420,33 @@ function buildCard(story) {
   // ── CARD BODY ─────────────────────────────────────────────────────────────
   var body = document.createElement('div');
   body.className = 'bwb-card-body';
+
+  // ── G2: SOURCE COUNT + BLOC BREAKDOWN (above the bar) ─────────────────────
+  // Surfaces the substrate receipt before the visual. "12 sources · 9W 2N 1A"
+  // is the gap the bias bar then renders. The bar becomes a *visualization* of
+  // a number the reader just read — not a cipher. Operator-visible differentiator
+  // vs Ground News: the per-card bloc split is named, not implied.
+  var srcCountEl = document.createElement('div');
+  srcCountEl.className = 'bwb-card-source-count';
+  if (sources.length > 0) {
+    var bCounts = { western: 0, 'non-aligned': 0, adversarial: 0, other: 0 };
+    sources.forEach(function(src) {
+      var b = (src.bloc || 'other').toLowerCase();
+      if (b === 'western')      bCounts.western++;
+      else if (b === 'non-aligned' || b === 'neutral' || b === 'non_aligned') bCounts['non-aligned']++;
+      else if (b === 'adversarial') bCounts.adversarial++;
+      else bCounts.other++;
+    });
+    var parts = [total + ' source' + (total === 1 ? '' : 's')];
+    if (bCounts.western)      parts.push('<span class="bwb-bloc-bullet western"></span>' + bCounts.western + 'W');
+    if (bCounts['non-aligned']) parts.push('<span class="bwb-bloc-bullet non-aligned"></span>' + bCounts['non-aligned'] + 'N');
+    if (bCounts.adversarial)  parts.push('<span class="bwb-bloc-bullet adversarial"></span>' + bCounts.adversarial + 'A');
+    if (bCounts.other)        parts.push('<span class="bwb-bloc-bullet other"></span>' + bCounts.other + '·');
+    srcCountEl.innerHTML = parts.join(' <span class="bwb-card-count-sep">·</span> ');
+  } else {
+    srcCountEl.innerHTML = '<span class="bwb-card-count-empty">no sources mapped</span>';
+  }
+  body.appendChild(srcCountEl);
 
   // ── BIAS COVERAGE BAR (Left / Center / Right) ─────────────────────────────
   // Wave-9 card-render polish: bias bar moves to TOP of body, between
@@ -287,6 +492,22 @@ function buildCard(story) {
     flag.className   = 'bwb-blindspot-flag';
     flag.textContent = '⚑ ' + story.blindspot_label;
     biasMeta.appendChild(flag);
+  }
+
+  // W13: Factuality badge — Ground News signature feature. Per-story
+  // aggregation of source factuality ratings into High / Mixed / Low.
+  // Shows how trustworthy the source set is for this story.
+  var factuality = _aggregateFactuality(sources);
+  if (factuality.tone !== 'unknown') {
+    var fbadge = document.createElement('span');
+    fbadge.className   = 'bwb-factuality-badge bwb-factuality-' + factuality.tone;
+    fbadge.textContent = 'FACT ' + factuality.label;
+    fbadge.title = 'Source factuality — High: ' + factuality.counts.high
+                 + ' · Medium: ' + factuality.counts.medium
+                 + ' · Mixed: ' + factuality.counts.mixed
+                 + ' · Low: ' + factuality.counts.low
+                 + ' (unrated: ' + factuality.counts.unknown + ')';
+    biasMeta.appendChild(fbadge);
   }
   bucketData.forEach(function(item) {
     var bucket = item[0], n = item[1], short = item[3];
@@ -358,19 +579,33 @@ function buildCard(story) {
     }
     if (owners.length > 1) chainTxt += ' +' + (owners.length - 1);
 
-    chip.innerHTML = '<span class="bwb-funding-label">' + label + '</span>'
-                   + '<span class="bwb-funding-chain">' + chainTxt + '</span>';
-
-    chip.title = 'Click to see the full money trail — owners, family offices, '
-               + 'donors, all primary-source anchored. Surfaces the manufacturing layer, not the framing.';
-    chip.addEventListener('click', function(e) {
-      e.stopPropagation();
-      // Reuse the identity modal as the chain-viewer for now; full graph
-      // viewer is a follow-up.
-      if (window.BWB_IdentityModal && typeof window.BWB_IdentityModal.open === 'function') {
-        window.BWB_IdentityModal.open(owners[0].src);
-      }
-    });
+    // Subscription gate: bias is free, the owner name is paid.
+    // Free users see the chip form (color = ownership type) but the chain
+    // text becomes a striped redacted shape. Click routes to /pro.html.
+    var isPro = window.BWB_Entitlements && window.BWB_Entitlements.has('funding-name');
+    if (isPro) {
+      chip.innerHTML = '<span class="bwb-funding-label">' + label + '</span>'
+                     + '<span class="bwb-funding-chain">' + chainTxt + '</span>';
+      chip.title = 'Click to see the full money trail — owners, family offices, '
+                 + 'donors, all primary-source anchored. Surfaces the manufacturing layer, not the framing.';
+      chip.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (window.BWB_IdentityModal && typeof window.BWB_IdentityModal.open === 'function') {
+          window.BWB_IdentityModal.open(owners[0].src);
+        }
+      });
+    } else {
+      chip.classList.add('is-locked');
+      chip.innerHTML = '<span class="bwb-funding-label">' + label + '</span>'
+                     + '<span class="bwb-funding-chain bwb-funding-tease" aria-label="Owner name locked — Pro feature"></span>'
+                     + '<span class="bwb-pro-lock-inline" title="Pro feature — see the money trail">🔒 PRO</span>';
+      chip.title = 'Owner name is a Pro feature. Sign up to see the full money trail.';
+      chip.addEventListener('click', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        window.location.href = '/pro.html?from=feed&feature=funding-name';
+      });
+    }
     body.appendChild(chip);
   })();
 
@@ -720,4 +955,12 @@ document.addEventListener('DOMContentLoaded', function() {
       renderFeed(btn.dataset.filter);
     });
   }
+
+  // Tier change → re-paint the feed so locked funding chips flip back
+  // to the real owner names. Fires from the "Try Pro" button or any
+  // other BWB_Entitlements.setTier call. Free → Pro: chips unlock.
+  window.addEventListener('bwb:entitlements-changed', function() {
+    var active = document.querySelector('.bwb-filters .active[data-filter]');
+    renderFeed(active ? active.dataset.filter : 'all');
+  });
 });
