@@ -2616,6 +2616,52 @@ code {
   display: none;
 }
 
+/* W14: Source Diversity Score badge — composite L/C/R + bloc spread */
+.bwb-diversity-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 1px 6px;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  background: rgba(255, 255, 255, 0.02);
+}
+.bwb-diversity-high {
+  color: #06b6d4;  /* cyan: well-distributed */
+}
+.bwb-diversity-mixed {
+  color: #a78bfa;  /* violet: partial */
+}
+.bwb-diversity-low {
+  color: #94a3b8;  /* slate: single-bloc */
+}
+.bwb-diversity-unknown {
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+/* W14: Coverage gap warning — name the missing bloc */
+.bwb-gap-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 1px 6px;
+  border-radius: 2px;
+  border: 1px solid #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+  text-transform: uppercase;
+  animation: bwb-gap-pulse 2.4s ease-in-out infinite;
+}
+@keyframes bwb-gap-pulse {
+  0%, 100% { background: rgba(239, 68, 68, 0.08); }
+  50%      { background: rgba(239, 68, 68, 0.18); }
+}
+
 /* Blindspot flag — amber, prominent */
 .bwb-blindspot-flag {
   font-family: var(--font-mono);

@@ -116,6 +116,63 @@ function _aggregateFactuality(sources) {
   if (counts.low >= 0.3 * rated)                            return { label: 'Low', tone: 'low', counts: counts };
   return { label: 'Mixed', tone: 'mixed', counts: counts };
 }
+
+// W14: Source Diversity Score (0-100) — Ground News's "Story Rating".
+// Two factors: (1) L/C/R spread — penalize stories that are 100% one bucket;
+// (2) bloc spread — penalize stories missing Non-Aligned or Adversarial.
+// Both factors are 0-50; total 0-100. A 100 means perfectly balanced
+// (all 3 L/C/R and all 3 blocs represented). A 0 means single-source.
+function _computeDiversityScore(sources) {
+  if (!sources || sources.length === 0) return { score: 0, tier: 'unknown', factors: {} };
+  var total = sources.length;
+
+  // Factor 1: L/C/R spread — Herfindahl-Hirschman inverse.
+  // 3 equal buckets = 1.0, 1 bucket only = 0.0.
+  var lN = 0, cN = 0, rN = 0;
+  sources.forEach(function(s) {
+    var b = s.bias_bucket || 'center';
+    if (b === 'left') lN++;
+    else if (b === 'right') rN++;
+    else cN++;
+  });
+  var pL = lN / total, pC = cN / total, pR = rN / total;
+  var hhi = pL*pL + pC*pC + pR*pR;             // 1/3=0.33 (perfect), 1=1.0 (single)
+  var lcrFactor = Math.max(0, Math.min(1, (1 - hhi) / 0.67)) * 50;  // 0..50
+
+  // Factor 2: bloc spread — 1.0 if all 3 blocs present, 0.33 if 1.
+  var blocs = { western: 0, 'non-aligned': 0, adversarial: 0 };
+  sources.forEach(function(s) {
+    var b = (s.bloc || '').toLowerCase();
+    if (b === 'western') blocs.western++;
+    else if (b === 'non-aligned' || b === 'neutral' || b === 'non_aligned') blocs['non-aligned']++;
+    else if (b === 'adversarial') blocs.adversarial++;
+  });
+  var present = (blocs.western > 0 ? 1 : 0) + (blocs['non-aligned'] > 0 ? 1 : 0) + (blocs.adversarial > 0 ? 1 : 0);
+  var blocFactor = (present / 3) * 50;          // 0..50
+
+  var score = Math.round(lcrFactor + blocFactor);
+  var tier = score >= 70 ? 'high' : score >= 40 ? 'mixed' : 'low';
+  return { score: score, tier: tier, factors: { lcr: Math.round(lcrFactor), bloc: Math.round(blocFactor), present: present } };
+}
+
+// W14: Coverage gaps — what blocs are MISSING from this story.
+// Returns array like ['non-aligned', 'adversarial'] or [] if all present.
+function _detectCoverageGaps(sources) {
+  if (!sources || sources.length === 0) return ['western', 'non-aligned', 'adversarial'];
+  var seen = { western: false, 'non-aligned': false, adversarial: false };
+  sources.forEach(function(s) {
+    var b = (s.bloc || '').toLowerCase();
+    if (b === 'western') seen.western = true;
+    else if (b === 'non-aligned' || b === 'neutral' || b === 'non_aligned') seen['non-aligned'] = true;
+    else if (b === 'adversarial') seen.adversarial = true;
+  });
+  var missing = [];
+  if (!seen.western) missing.push('western');
+  if (!seen['non-aligned']) missing.push('non-aligned');
+  if (!seen.adversarial) missing.push('adversarial');
+  return missing;
+}
+
 // Re-fire buildCard for any card already in the DOM. Idempotent — guards
 // against double-render by checking the enrichment marker.
 function _reenrichRenderedCards() {
@@ -508,6 +565,31 @@ function buildCard(story) {
                  + ' · Low: ' + factuality.counts.low
                  + ' (unrated: ' + factuality.counts.unknown + ')';
     biasMeta.appendChild(fbadge);
+  }
+
+  // W14: Source Diversity Score — Ground News's "Story Rating" equivalent.
+  // 0-100, composite of L/C/R spread + bloc spread. Visible score badge.
+  var diversity = _computeDiversityScore(sources);
+  if (diversity.score > 0 && total > 1) {
+    var dbadge = document.createElement('span');
+    dbadge.className   = 'bwb-diversity-badge bwb-diversity-' + diversity.tier;
+    dbadge.textContent = 'DIVERSITY ' + diversity.score;
+    dbadge.title = 'Source Diversity — L/C/R spread: ' + diversity.factors.lcr
+                 + '/50 · Bloc spread: ' + diversity.factors.bloc + '/50'
+                 + ' (blocs present: ' + diversity.factors.present + '/3)';
+    biasMeta.appendChild(dbadge);
+  }
+
+  // W14: Coverage gap warning — fires when a story is missing a bloc.
+  // Single-source or all-Western stories get tagged. Operator-visible
+  // differentiator vs Ground News: name the gap.
+  var gaps = _detectCoverageGaps(sources);
+  if (gaps.length > 0 && total > 0) {
+    var gapBadge = document.createElement('span');
+    gapBadge.className = 'bwb-gap-badge';
+    gapBadge.textContent = 'NO ' + gaps.map(function(g) { return g === 'non-aligned' ? 'NON-ALIGNED' : g.toUpperCase(); }).join(' + NO ');
+    gapBadge.title = 'Coverage gap: this story has no ' + gaps.join(' / ') + ' sources. Click to see the framing delta in the side-by-side view.';
+    biasMeta.appendChild(gapBadge);
   }
   bucketData.forEach(function(item) {
     var bucket = item[0], n = item[1], short = item[3];
