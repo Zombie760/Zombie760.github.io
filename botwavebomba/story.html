@@ -1,56 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-  // BOTWAVEBOMBA — Base Path Detection (inlined so the <base> tag
-  // is injected BEFORE any external resource below tries to load).
-  // Makes the site work both at root (Cloudflare Pages / custom domain)
-  // and under GitHub Pages project subpath (zombie760.github.io/botwavebomba/).
-  (function () {
-    'use strict';
-    function detectBasePath() {
-      var host = location.hostname;
-      var path = location.pathname;
-      if (host === 'zombie760.github.io' || host === 'www.zombie760.github.io') {
-        if (path.indexOf('/botwavebomba') === 0) return '/botwavebomba';
-        if (path.indexOf('/botwave-bomba') === 0) return '/botwave-bomba';
-      }
-      return '';
-    }
-    var base = detectBasePath();
-    window.BWB_BASE = base;
-    if (base && base !== '') {
-      try {
-        var existingBase = document.querySelector('base');
-        if (!existingBase) {
-          var b = document.createElement('base');
-          b.href = base + '/';
-          var head = document.head || document.getElementsByTagName('head')[0];
-          if (head.firstChild) head.insertBefore(b, head.firstChild);
-          else head.appendChild(b);
-        }
-      } catch (e) { console.warn('[BWB] base tag injection failed', e); }
-    }
-    window.BWB_URL = function (p) {
-      if (!p) return base || '/';
-      if (p[0] === '/') p = p.slice(1);
-      return (base ? base + '/' : '/') + p;
-    };
-  })();
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title id="page-title">Story — BOTWAVEBOMBA</title>
   <meta name="description" content="Multi-source framing analysis. See how Western, non-aligned, and adversarial press cover the same event.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;700;900&family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/mobile.css">
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
   <meta name="theme-color" content="#0a0a0a">
+  <meta name="bwb-default-theme" content="corkboard">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
@@ -58,6 +21,8 @@
   <script type="speculationrules">
   {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
   </script>
+  <!-- Base path support for GitHub Pages subpath + root deployments -->
+  <script src="/assets/js/base-path.js"></script>
   <script src="/assets/js/theme-switcher.js" defer></script>
   <script src="/assets/js/pwa.js" defer></script>
 </head>
@@ -146,6 +111,18 @@
       <div id="corruption-xref" class="bwb-corruption-xref"></div>
     </section>
 
+    <!-- W12: Per-source ownership breakdown (Vantage-exclusive) -->
+    <section class="bwb-section">
+      <div class="bwb-section-header">
+        <h2 class="bwb-section-title">
+          OWNERSHIP BREAKDOWN
+          <span class="bwb-vantage-badge" title="Vantage-exclusive data product">★ VANTAGE</span>
+        </h2>
+        <span class="bwb-section-sub">Per-source parent company, ownership form, and concentration. Vantage members see the full chain.</span>
+      </div>
+      <div id="ownership-breakdown" class="bwb-ownership-breakdown"></div>
+    </section>
+
     <!-- Back link -->
     <div class="bwb-back-row">
       <a href="/" class="bwb-back-link">← Back to feed</a>
@@ -182,8 +159,10 @@
 
   <script src="/assets/js/site-chrome.js" defer></script>
   <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/article-analyzer.js"></script>
   <script src="/assets/js/heatmap.js"></script>
   <script src="/assets/js/side-by-side.js"></script>
+  <script src="/assets/js/entitlements.js"></script>
   <script src="/assets/js/story.js"></script>
   <script src="/assets/js/axis-breakdown.js"></script>
   <script src="/assets/js/identity-modal.js" defer></script>

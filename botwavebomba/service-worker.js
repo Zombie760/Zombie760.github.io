@@ -35,6 +35,7 @@ const APP_SHELL = [
   '/assets/css/funnies.css',
   '/assets/js/api.js',
   '/assets/js/feed.js',
+  '/assets/js/article-analyzer.js',
   '/assets/js/blindspot.js',
   '/assets/js/sources.js',
   '/assets/js/story.js',

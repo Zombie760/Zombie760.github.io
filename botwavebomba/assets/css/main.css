@@ -2662,6 +2662,83 @@ code {
   50%      { background: rgba(239, 68, 68, 0.18); }
 }
 
+/* W15: Per-article factuality badge — distinct from FACT (source-registry).
+   Same palette as FACT so the eye learns the color, but the label is
+   A-FACT (article) to mark the different signal source. */
+.bwb-article-fact-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 1px 6px;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  background: rgba(255, 255, 255, 0.02);
+  font-style: italic;
+}
+.bwb-article-fact-high {
+  color: #10b981;
+}
+.bwb-article-fact-mixed {
+  color: #f59e0b;
+}
+.bwb-article-fact-low {
+  color: #ef4444;
+}
+
+/* W15: Article-level bloc frame pill. BWB's frame is W/N/A, not L/R.
+   W-FRAME = western editorial posture dominates the article snippets
+   (NATO/EU framing, "regime" pejorative for adversaries, sanctions
+   as law enforcement). N-FRAME = non-aligned / Global South framing
+   (multipolar, sovereignty-first, sanctions as coercion). A-FRAME =
+   adversarial framing (anti-Western, anti-imperial).
+   The pill is italic to distinguish from the source-level L/C/R
+   bias counts that the bias bar already shows. */
+.bwb-frame-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 1px 6px;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  background: rgba(255, 255, 255, 0.02);
+  font-style: italic;
+}
+.bwb-frame-western {
+  color: #3b82f6;
+}
+.bwb-frame-non-aligned {
+  color: #14b8a6;
+}
+.bwb-frame-adversarial {
+  color: #f43f5e;
+}
+
+/* W15: 5-axis frame pill. Operator-visible differentiator vs Ground
+   News — names the *worldview axis* (interventionist, zionist,
+   atlanticist, statist, financialized) the article coverage aligns
+   with, not just the bias_bucket. Each axis gets its own color. */
+.bwb-axis-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 1px 6px;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  background: rgba(255, 255, 255, 0.04);
+  text-transform: uppercase;
+}
+.bwb-axis-interventionist { color: #f97316; }   /* orange — military action */
+.bwb-axis-zionist         { color: #06b6d4; }   /* cyan — Israel/Western */
+.bwb-axis-atlanticist     { color: #6366f1; }   /* indigo — NATO/transatlantic */
+.bwb-axis-statist         { color: #a855f7; }   /* purple — strong state */
+.bwb-axis-financialized   { color: #eab308; }   /* yellow — capital markets */
+
 /* Blindspot flag — amber, prominent */
 .bwb-blindspot-flag {
   font-family: var(--font-mono);

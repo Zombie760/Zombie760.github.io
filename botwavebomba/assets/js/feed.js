@@ -591,6 +591,75 @@ function buildCard(story) {
     gapBadge.title = 'Coverage gap: this story has no ' + gaps.join(' / ') + ' sources. Click to see the framing delta in the side-by-side view.';
     biasMeta.appendChild(gapBadge);
   }
+
+  // W15: Per-article factuality + bloc/axis frame extraction. Operates on
+  // the per-source article snippets from the full payload (api/latest.json).
+  // Complements the W13 per-source registry factuality and the W14
+  // per-story aggregation with a ground-level read of each article's
+  // own text. Skips silently if article-analyzer.js hasn't loaded or
+  // if the slim payload has no articles.
+  //
+  // BWB's frame model is BLOC, not L/R. We surface:
+  //   - A-FACT (per-article factuality, distinct from source-registry FACT)
+  //   - W/N/A FRAME (the dominant editorial bloc in the article text)
+  //   - 5-axis frame strip when one axis dominates
+  if (window.BWB_ARTICLE_ANALYZER && articles && articles.length > 0) {
+    var art = window.BWB_ARTICLE_ANALYZER.analyzeStory(story);
+    if (art && art.articlesAnalyzed > 0) {
+      var ab = document.createElement('span');
+      ab.className   = 'bwb-article-fact-badge bwb-article-fact-' + art.factTone;
+      ab.textContent = 'A-FACT ' + art.avgFactuality;
+      ab.title = 'Per-article factuality (avg of ' + art.articlesAnalyzed + ' articles) — '
+               + 'high: ' + art.tones.high + ' · mixed: ' + art.tones.mixed + ' · low: ' + art.tones.low
+               + '\nDistinct from source-registry factuality (FACT badge above). Click card to see per-article breakdown.';
+      biasMeta.appendChild(ab);
+
+      if (art.bloc && art.bloc !== 'mixed') {
+        var blocLabel = art.bloc === 'western' ? 'W-FRAME'
+                      : art.bloc === 'adversarial' ? 'A-FRAME'
+                      : 'N-FRAME';
+        var bp = document.createElement('span');
+        bp.className = 'bwb-frame-pill bwb-frame-' + art.bloc;
+        bp.textContent = blocLabel;
+        bp.title = 'Article-level bloc frame — '
+                 + 'western cues: ' + art.westernScore
+                 + ' · non-aligned cues: ' + art.nonAlignedScore
+                 + ' · adversarial cues: ' + art.adversarialScore
+                 + ' · per-article: W' + art.blocTally.western
+                 + ' N' + art.blocTally['non-aligned']
+                 + ' A' + art.blocTally.adversarial
+                 + ' X' + art.blocTally.mixed
+                 + '\nW=western, N=non-aligned, A=adversarial. X=insufficient signal.';
+        biasMeta.appendChild(bp);
+      }
+
+      // 5-axis: render the dominant axis if it's significantly stronger
+      // than the others. This is the operator-visible differentiator
+      // against Ground News — we name the *axis* (interventionist,
+      // zionist, atlanticist, statist, financialized) the article
+      // coverage aligns with, not just the bias_bucket.
+      var axisOrder = [
+        ['interventionist', art.axes.interventionist],
+        ['zionist',         art.axes.zionist],
+        ['atlanticist',     art.axes.atlanticist],
+        ['statist',         art.axes.statist],
+        ['financialized',   art.axes.financialized]
+      ].sort(function(a, b) { return b[1] - a[1]; });
+      if (axisOrder[0][1] >= 3 && axisOrder[0][1] - axisOrder[1][1] >= 2) {
+        var ap = document.createElement('span');
+        ap.className = 'bwb-axis-pill bwb-axis-' + axisOrder[0][0];
+        var axisShort = axisOrder[0][0].slice(0, 4).toUpperCase();
+        ap.textContent = axisShort;
+        ap.title = '5-axis frame — ' + axisOrder[0][0] + ' (score ' + axisOrder[0][1] + ')'
+                 + '\ninterventionist: ' + art.axes.interventionist
+                 + ' · zionist: ' + art.axes.zionist
+                 + ' · atlanticist: ' + art.axes.atlanticist
+                 + ' · statist: ' + art.axes.statist
+                 + ' · financialized: ' + art.axes.financialized;
+        biasMeta.appendChild(ap);
+      }
+    }
+  }
   bucketData.forEach(function(item) {
     var bucket = item[0], n = item[1], short = item[3];
     var span = document.createElement('span');
