@@ -1,6 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  // BOTWAVEBOMBA — Base Path Detection (inlined so the <base> tag
+  // is injected BEFORE any external resource below tries to load).
+  // Makes the site work both at root (Cloudflare Pages / custom domain)
+  // and under GitHub Pages project subpath (zombie760.github.io/botwavebomba/).
+  (function () {
+    'use strict';
+    function detectBasePath() {
+      var host = location.hostname;
+      var path = location.pathname;
+      if (host === 'zombie760.github.io' || host === 'www.zombie760.github.io') {
+        if (path.indexOf('/botwavebomba') === 0) return '/botwavebomba';
+        if (path.indexOf('/botwave-bomba') === 0) return '/botwave-bomba';
+      }
+      return '';
+    }
+    var base = detectBasePath();
+    window.BWB_BASE = base;
+    if (base && base !== '') {
+      try {
+        var existingBase = document.querySelector('base');
+        if (!existingBase) {
+          var b = document.createElement('base');
+          b.href = base + '/';
+          var head = document.head || document.getElementsByTagName('head')[0];
+          if (head.firstChild) head.insertBefore(b, head.firstChild);
+          else head.appendChild(b);
+        }
+      } catch (e) { console.warn('[BWB] base tag injection failed', e); }
+    }
+    window.BWB_URL = function (p) {
+      if (!p) return base || '/';
+      if (p[0] === '/') p = p.slice(1);
+      return (base ? base + '/' : '/') + p;
+    };
+  })();
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Status — BOTWAVEBOMBA</title>
@@ -20,8 +58,6 @@
   <script type="speculationrules">
   {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
   </script>
-  <!-- Base path support for GitHub Pages subpath + root deployments -->
-  <script src="/botwavebomba/assets/js/base-path.js"></script>
   <script src="/assets/js/theme-switcher.js" defer></script>
   <script src="/assets/js/pwa.js" defer></script>
   <style>
