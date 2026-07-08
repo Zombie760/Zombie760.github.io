@@ -1,6 +1,6 @@
 // BOTWAVEBOMBA — Base Path Detection
 // Makes the site work both at root (Cloudflare Pages / custom domain)
-// and under GitHub Pages project subpath (zombie760.github.io/botwave-bomba/)
+// and under GitHub Pages project subpath (zombie760.github.io/botwavebomba/)
 
 (function () {
   'use strict';
@@ -9,8 +9,13 @@
     var host = location.hostname;
     var path = location.pathname;
 
-    // GitHub Pages project site under /botwave-bomba/
+    // GitHub Pages project site under /botwavebomba/ (no hyphen — current deployment)
     if (host === 'zombie760.github.io' || host === 'www.zombie760.github.io') {
+      if (path.indexOf('/botwavebomba') === 0) {
+        return '/botwavebomba';
+      }
+      // Legacy: /botwave-bomba/ (with hyphen) — kept for backwards compat
+      // with any external links still using the old project-name spelling.
       if (path.indexOf('/botwave-bomba') === 0) {
         return '/botwave-bomba';
       }
