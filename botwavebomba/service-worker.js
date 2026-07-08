@@ -5,7 +5,18 @@
 // docs accessible without network. BE UNDENIABLE — claims auditable even
 // when offline.
 
-const CACHE_VERSION = 'bwb-v5-2026-07-08-w14';
+const CACHE_VERSION = 'bwb-v6-2026-07-08-subpath';
+
+// Derive base path from this SW's own URL. On canonical (Cloudflare Pages) the
+// SW is served from /service-worker.js, so SW_BASE === ''. On the umbrella
+// GitHub Pages mirror the SW is at /botwavebomba/service-worker.js, so
+// SW_BASE === '/botwavebomba'. Every APP_SHELL entry is then prefixed with the
+// actual base path, so precache installs succeed on both deployments.
+const SW_URL = self.location.pathname;
+const SW_BASE = SW_URL.endsWith('/service-worker.js')
+  ? SW_URL.slice(0, -'/service-worker.js'.length)
+  : SW_URL.replace(/\/service-worker\.js$/, '');
+const ASSET = (p) => SW_BASE + p;
 
 const APP_SHELL = [
   '/',
@@ -33,7 +44,7 @@ const APP_SHELL = [
   '/assets/icons/icon-192.png',
   '/assets/icons/icon-512.png',
   '/manifest.json',
-];
+].map(ASSET);
 
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -102,7 +113,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(
       caches.match(event.request).then(cached =>
         cached || fetch(event.request).catch(() =>
-          caches.match('/index.html')
+          caches.match(ASSET('/index.html'))
         )
       )
     );
