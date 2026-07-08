@@ -88,6 +88,26 @@ document.addEventListener('DOMContentLoaded', async function() {
     });
   });
 
+  // ── W15: ARTICLE_CARDS WITH BLOC ATTACHED ─────────────────────────────────
+  // The 3-pane side-by-side renderer (side-by-side.js) expects each article
+  // to carry its bloc. We map source → bloc from the source list, attach
+  // it to every article, and write the result to story.article_cards so
+  // renderSideBySideFraming can bucket by bloc. This is the missing bridge
+  // between the per-source story data and the per-article framing view.
+  var blocBySource = {};
+  sources.forEach(function(s) {
+    if (s && s.id) {
+      var b = s.bloc || 'non-aligned';
+      if (b === 'neutral') b = 'non-aligned';
+      blocBySource[s.id] = b;
+    }
+  });
+  story.article_cards = (story.articles || []).map(function(a) {
+    return Object.assign({}, a, {
+      bloc: blocBySource[a.source] || 'non-aligned'
+    });
+  });
+
   const total = sources.length;
   const western = sources.filter(function(s) { return s.bloc === 'western'; }).length;
   const adversarial = sources.filter(function(s) { return s.bloc === 'adversarial'; }).length;
@@ -124,6 +144,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   // W6: money trail + W7: corruption cross-reference
   buildFundingTrail(story, sources);
   buildCorruptionXref(story, sources);
+  buildOwnershipBreakdown(story, sources);
 });
 
 function build5AxisFingerprint(story) {
@@ -429,6 +450,27 @@ function buildSourceLinks(sources) {
   });
 }
 
+// ── SUBSCRIPTION GATE — paywall block painter ─────────────────────────────
+// Builds a `.bwb-pro-section` inside the container when the user lacks the
+// feature. Used by buildFundingTrail + buildCorruptionXref; reusable for any
+// future gated chrome. CSS lives in main.css (.bwb-pro-section*).
+function _paintPaywall(container, opts) {
+  if (!container) return;
+  var feature = opts.feature || 'pro';
+  var from = 'story-' + feature;
+  var url = (window.BWB_Entitlements && window.BWB_Entitlements.upgradeUrl)
+            ? window.BWB_Entitlements.upgradeUrl(feature)
+            : '/pro.html?from=' + from + '&feature=' + feature;
+  container.innerHTML = ''
+    + '<div class="bwb-pro-section">'
+    +   '<div class="bwb-pro-section-eyebrow">' + opts.eyebrow + '</div>'
+    +   '<h3 class="bwb-pro-section-h">' + opts.h + '</h3>'
+    +   '<p class="bwb-pro-section-body">' + opts.body + '</p>'
+    +   '<a class="bwb-pro-section-cta" href="' + url + '">' + opts.cta + '</a>'
+    +   '<p class="bwb-pro-section-meta">' + opts.meta + '</p>'
+    + '</div>';
+}
+
 // ── W6: FUNDING TRAIL — the manufacturing layer, surfaced on the story page ──
 // For every source in the story, resolve its owner from the funding graph and
 // render a row showing the owner chain. This is the operator's stated
@@ -441,6 +483,24 @@ function buildFundingTrail(story, sources) {
                 || document.getElementById('money-trail')
                 || document.getElementById('funding-section');
   if (!container) return;
+
+  // Subscription gate: full money trail is a Pro feature. Bias is free;
+  // who paid for the framing is the upsell — same playbook as Ground News
+  // gating the Blindspot feed.
+  if (window.BWB_Entitlements && !window.BWB_Entitlements.has('funding-trail')) {
+    _paintPaywall(container, {
+      feature: 'funding-trail',
+      eyebrow: 'PRO · MONEY TRAIL',
+      h: 'See who funded the framing',
+      body: 'The full funding chain — corporate parents, family offices, '
+          + 'donor clusters, state ownership — with primary-source anchors '
+          + 'at every node. Free users see the bias. Pro users see the '
+          + 'manufacturing layer behind it.',
+      cta: 'Unlock the Money Trail →',
+      meta: 'Pro · $9.99/yr · cancel anytime',
+    });
+    return;
+  }
 
   // Lazy-load the graph if feed.js hasn't already.
   if (typeof _loadFundingGraph === 'function') _loadFundingGraph();
@@ -545,6 +605,23 @@ function buildCorruptionXref(story, sources) {
                 || document.getElementById('corruption-modal');
   if (!container) return;
 
+  // Subscription gate: cross-referencing the story to a super-donor PAC
+  // (AIPAC + 17 Tier-1 PACs + 20 money-trail rows) is a Pro feature.
+  if (window.BWB_Entitlements && !window.BWB_Entitlements.has('corruption-xref')) {
+    _paintPaywall(container, {
+      feature: 'corruption-xref',
+      eyebrow: 'PRO · CORRUPTION CROSS-REF',
+      h: 'Does this story touch a super-donor?',
+      body: 'Cross-references the story headline, summary, and source list '
+          + 'against the 18 Tier-1 PACs + 20 money-trail rows in '
+          + 'corruption_v2.json. Surfaces the donor → lobbyist → Congress → '
+          + 'bill → agency chain when a match lands.',
+      cta: 'Unlock Corruption Cross-Ref →',
+      meta: 'Pro · $9.99/yr · cancel anytime',
+    });
+    return;
+  }
+
   fetch('api/corruption_v2.json', { cache: 'force-cache' })
     .then(function(r) { return r.ok ? r.json() : null; })
     .then(function(c) {
@@ -622,4 +699,142 @@ function buildCorruptionXref(story, sources) {
       });
     })
     .catch(function() { /* silent — corruption is overlay, not core */ });
+}
+
+// W12: Per-source ownership breakdown — Vantage-exclusive data product.
+// Shows the per-source parent entity, ownership form (independent / chain /
+// state / nonprofit / unknown), and concentration score. Data sourced from
+// the same funding graph (api/funding_graph.json) as the Pro Money Trail,
+// but exposed with the operator-only fields (parent_tax_id, ultimate_parent,
+// concentration_pct) that free + Pro + Premium do not see.
+function buildOwnershipBreakdown(story, sources) {
+  var container = document.getElementById('ownership-breakdown');
+  if (!container) return;
+
+  // Vantage-only gate.
+  if (window.BWB_Entitlements && !window.BWB_Entitlements.has('ownership-breakdown')) {
+    _paintPaywall(container, {
+      feature: 'ownership-breakdown',
+      eyebrow: '★ VANTAGE · DATA PRODUCT',
+      h: 'Per-source ownership breakdown',
+      body: 'Every source in this story broken down to its parent company, '
+          + 'ownership form (independent / chain / state / nonprofit), and '
+          + 'concentration score. The Vantage data product — built from '
+          + 'the same funding graph the Money Trail runs on, plus '
+          + 'operator-only fields (ultimate parent, tax-id, concentration %).',
+      cta: 'Unlock Vantage — $99.99/yr →',
+      meta: 'Vantage-exclusive · $99.99/yr · 1,000 API calls/mo included',
+    });
+    return;
+  }
+
+  // Lazy-load the funding graph (shared with buildFundingTrail).
+  var loadGraph = function() {
+    if (_fundingGraph) return Promise.resolve(_fundingGraph);
+    return fetch('api/funding_graph.json', { cache: 'force-cache' })
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(g) { _fundingGraph = g; return g; })
+      .catch(function() { return null; });
+  };
+
+  loadGraph().then(function(graph) {
+    container.innerHTML = '';
+    if (!graph) {
+      var note = document.createElement('p');
+      note.className = 'bwb-ownership-empty';
+      note.textContent = 'Funding graph unavailable — ownership breakdown requires api/funding_graph.json to be live.';
+      container.appendChild(note);
+      return;
+    }
+    var owners = graph.outlet_to_owner || {};
+    var entities = (graph.entities || []).reduce(function(acc, e) {
+      acc[e.id] = e; return acc;
+    }, {});
+
+    var rows = sources.map(function(src) {
+      var key = (src.name || src.id || '').toLowerCase();
+      var rec = owners[key];
+      var entity = rec ? entities[rec.owner_entity_id] : null;
+      return { src: src, rec: rec, entity: entity };
+    });
+
+    var matched = rows.filter(function(r) { return r.rec; }).length;
+
+    var head = document.createElement('h3');
+    head.textContent = 'Per-source ownership — ' + matched + ' / ' + rows.length + ' sourced';
+    container.appendChild(head);
+
+    if (matched === 0) {
+      var note = document.createElement('p');
+      note.className = 'bwb-ownership-empty';
+      note.textContent = 'No ownership records in the funding graph for this story\'s sources. Coverage of '
+                       + Object.keys(owners).length + ' outlets is in scope — this story doesn\'t trigger any.';
+      container.appendChild(note);
+      return;
+    }
+
+    var table = document.createElement('div');
+    table.className = 'bwb-ownership-table';
+
+    var header = document.createElement('div');
+    header.className = 'bwb-ownership-row bwb-ownership-row--head';
+    header.innerHTML = ''
+      + '<span class="bwb-ownership-cell">SOURCE</span>'
+      + '<span class="bwb-ownership-cell">PARENT</span>'
+      + '<span class="bwb-ownership-cell">FORM</span>'
+      + '<span class="bwb-ownership-cell">CONC.</span>'
+      + '<span class="bwb-ownership-cell">PRIMARY</span>';
+    table.appendChild(header);
+
+    rows.forEach(function(r) {
+      if (!r.rec) return;
+      var row = document.createElement('div');
+      row.className = 'bwb-ownership-row bwb-ownership-form-' + (r.rec.ownership_form || 'unknown');
+
+      var srcCell = document.createElement('span');
+      srcCell.className = 'bwb-ownership-cell bwb-ownership-source';
+      srcCell.textContent = r.src.name || r.src.id;
+      row.appendChild(srcCell);
+
+      var ownerCell = document.createElement('span');
+      ownerCell.className = 'bwb-ownership-cell bwb-ownership-parent';
+      ownerCell.textContent = r.entity ? (r.entity.name || r.rec.owner_entity_id) : r.rec.owner_entity_id;
+      row.appendChild(ownerCell);
+
+      var formCell = document.createElement('span');
+      formCell.className = 'bwb-ownership-cell bwb-ownership-form';
+      formCell.textContent = r.rec.ownership_form || 'unknown';
+      row.appendChild(formCell);
+
+      var concCell = document.createElement('span');
+      concCell.className = 'bwb-ownership-cell bwb-ownership-conc';
+      concCell.textContent = (r.rec.concentration_pct != null) ? (r.rec.concentration_pct + '%') : '—';
+      row.appendChild(concCell);
+
+      var citeCell = document.createElement('span');
+      citeCell.className = 'bwb-ownership-cell bwb-ownership-cite';
+      if (r.entity && r.entity.primary_source_url) {
+        var a = document.createElement('a');
+        a.href = r.entity.primary_source_url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = 'source';
+        citeCell.appendChild(a);
+      } else {
+        citeCell.textContent = '—';
+      }
+      row.appendChild(citeCell);
+
+      table.appendChild(row);
+    });
+
+    container.appendChild(table);
+
+    // Vantage footer — pitch the API + priority ingest
+    var foot = document.createElement('p');
+    foot.className = 'bwb-ownership-foot';
+    foot.innerHTML = 'Vantage includes the <a href="/pro.html?from=story&feature=api-ratelimit">1,000/mo API rate limit</a> '
+                   + 'and <a href="/pro.html?from=story&feature=ownership-breakdown">priority ingest</a> for the funding graph.';
+    container.appendChild(foot);
+  });
 }
