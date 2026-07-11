@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-07T22:33:02Z",
+  "total_sources": 1651,
+  "bloc": {
+    "western": {
+      "count": 1323,
+      "pct": 80.1
+    },
+    "non-aligned": {
+      "count": 216,
+      "pct": 13.1
+    },
+    "adversarial": {
+      "count": 64,
+      "pct": 3.9
+    },
+    "unknown": {
+      "count": 48,
+      "pct": 2.9
+    }
+  },
+  "region": {
+    "western": {
+      "count": 1157,
+      "pct": 70.1
+    },
+    "mena": {
+      "count": 46,
+      "pct": 2.8
+    },
+    "latam": {
+      "count": 42,
+      "pct": 2.5
+    },
+    "subsaharan": {
+      "count": 39,
+      "pct": 2.4
+    },
+    "south_asia": {
+      "count": 21,
+      "pct": 1.3
+    },
+    "east_asia": {
+      "count": 7,
+      "pct": 0.4
+    },
+    "se_asia": {
+      "count": 22,
+      "pct": 1.3
+    },
+    "eastern_europe": {
+      "count": 17,
+      "pct": 1.0
+    },
+    "central_asia": {
+      "count": 4,
+      "pct": 0.2
+    },
+    "podcasts": {
+      "count": 156,
+      "pct": 9.4
+    },
+    "unknown": {
+      "count": 90,
+      "pct": 5.5
+    }
+  },
+  "factuality": {
+    "high": {
+      "count": 418,
+      "pct": 25.3
+    },
+    "medium": {
+      "count": 881,
+      "pct": 53.4
+    },
+    "low": {
+      "count": 16,
+      "pct": 1.0
+    },
+    "unknown": {
+      "count": 336,
+      "pct": 20.4
+    }
+  },
+  "target": {
+    "western": 40.0,
+    "non-aligned": 40.0,
+    "adversarial": 20.0
+  },
+  "gap": {
+    "western_delta": 40.1,
+    "non_aligned_delta": 26.9,
+    "adversarial_delta": 16.1
+  },
+  "headline": "13.1% Non-Aligned \u00b7 3.9% Adversarial \u00b7 80.1% Western. The gap IS the story."
+}

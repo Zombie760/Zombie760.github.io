@@ -1,34 +1,34 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-07T14:31:19.506654+00:00",
+  "generated_at": "2026-07-11T08:51:54.940876+00:00",
   "poller": {
-    "total_runs_24h": 961,
-    "runs_last_15m": 10,
-    "last_run_ts": "2026-07-07T14:30:21.085729+00:00",
+    "total_runs_24h": 944,
+    "runs_last_15m": 9,
+    "last_run_ts": "2026-07-11T08:50:24.804285+00:00",
     "last_run_domain": "east_asia",
     "domains_alive_24h": 12,
     "domains_dead_24h": 0
   },
   "bridge": {
-    "last_bridge_ts": "2026-07-07T14:30:11.808033+00:00",
-    "articles_in": 7778,
-    "articles_new": 91,
-    "articles_dedup": 7687
+    "last_bridge_ts": "2026-07-11T08:45:06.321303+00:00",
+    "articles_in": 5222,
+    "articles_new": 80,
+    "articles_dedup": 5142
   },
   "domains": [
     {
       "name": "east_asia",
-      "last_run_ts": "2026-07-07T14:30:15.376756+00:00",
-      "last_new_articles": 2,
-      "polled_ok": 4,
-      "polled_failed": 2,
+      "last_run_ts": "2026-07-11T08:45:09.839352+00:00",
+      "last_new_articles": 1,
+      "polled_ok": 6,
+      "polled_failed": 0,
       "feeds_in_domain": 6,
       "status": "live"
     },
     {
       "name": "europe_east",
-      "last_run_ts": "2026-07-07T14:20:23.797649+00:00",
-      "last_new_articles": 37,
+      "last_run_ts": "2026-07-11T08:50:24.804285+00:00",
+      "last_new_articles": 16,
       "polled_ok": 21,
       "polled_failed": 1,
       "feeds_in_domain": 22,
@@ -36,8 +36,8 @@
     },
     {
       "name": "europe_west",
-      "last_run_ts": "2026-07-07T14:30:14.334017+00:00",
-      "last_new_articles": 20,
+      "last_run_ts": "2026-07-11T08:45:21.066022+00:00",
+      "last_new_articles": 7,
       "polled_ok": 11,
       "polled_failed": 0,
       "feeds_in_domain": 11,
@@ -45,8 +45,8 @@
     },
     {
       "name": "gulf",
-      "last_run_ts": "2026-07-07T14:20:10.230657+00:00",
-      "last_new_articles": 4,
+      "last_run_ts": "2026-07-11T08:50:06.156180+00:00",
+      "last_new_articles": 2,
       "polled_ok": 3,
       "polled_failed": 0,
       "feeds_in_domain": 3,
@@ -54,7 +54,7 @@
     },
     {
       "name": "iran",
-      "last_run_ts": "2026-07-07T14:25:07.473723+00:00",
+      "last_run_ts": "2026-07-11T08:40:10.247882+00:00",
       "last_new_articles": 0,
       "polled_ok": 3,
       "polled_failed": 0,
@@ -63,17 +63,17 @@
     },
     {
       "name": "latam",
-      "last_run_ts": "2026-07-07T14:05:11.673187+00:00",
-      "last_new_articles": 6,
-      "polled_ok": 10,
-      "polled_failed": 1,
-      "feeds_in_domain": 11,
+      "last_run_ts": "2026-07-11T08:35:33.137007+00:00",
+      "last_new_articles": 0,
+      "polled_ok": 16,
+      "polled_failed": 14,
+      "feeds_in_domain": 30,
       "status": "live"
     },
     {
       "name": "levant",
-      "last_run_ts": "2026-07-07T14:30:21.085729+00:00",
-      "last_new_articles": 10,
+      "last_run_ts": "2026-07-11T08:45:16.893849+00:00",
+      "last_new_articles": 4,
       "polled_ok": 6,
       "polled_failed": 1,
       "feeds_in_domain": 7,
@@ -81,8 +81,8 @@
     },
     {
       "name": "oceania",
-      "last_run_ts": "2026-07-07T14:25:07.655003+00:00",
-      "last_new_articles": 1,
+      "last_run_ts": "2026-07-11T08:40:06.382591+00:00",
+      "last_new_articles": 0,
       "polled_ok": 5,
       "polled_failed": 0,
       "feeds_in_domain": 5,
@@ -90,8 +90,8 @@
     },
     {
       "name": "russia_ukraine_caucasus",
-      "last_run_ts": "2026-07-07T14:20:20.108178+00:00",
-      "last_new_articles": 12,
+      "last_run_ts": "2026-07-11T08:50:15.725984+00:00",
+      "last_new_articles": 3,
       "polled_ok": 9,
       "polled_failed": 1,
       "feeds_in_domain": 10,
@@ -99,8 +99,8 @@
     },
     {
       "name": "se_asia",
-      "last_run_ts": "2026-07-07T14:25:21.458390+00:00",
-      "last_new_articles": 3,
+      "last_run_ts": "2026-07-11T08:25:12.028544+00:00",
+      "last_new_articles": 0,
       "polled_ok": 3,
       "polled_failed": 1,
       "feeds_in_domain": 4,
@@ -108,8 +108,8 @@
     },
     {
       "name": "south_asia",
-      "last_run_ts": "2026-07-07T14:30:13.513662+00:00",
-      "last_new_articles": 31,
+      "last_run_ts": "2026-07-11T08:30:07.442644+00:00",
+      "last_new_articles": 11,
       "polled_ok": 4,
       "polled_failed": 0,
       "feeds_in_domain": 4,
@@ -117,10 +117,10 @@
     },
     {
       "name": "subsaharan",
-      "last_run_ts": "2026-07-07T14:10:30.095244+00:00",
-      "last_new_articles": 17,
-      "polled_ok": 14,
-      "polled_failed": 2,
+      "last_run_ts": "2026-07-11T08:40:25.197108+00:00",
+      "last_new_articles": 10,
+      "polled_ok": 13,
+      "polled_failed": 3,
       "feeds_in_domain": 16,
       "status": "live"
     }
