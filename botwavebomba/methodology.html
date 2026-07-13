@@ -1,226 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-  // BOTWAVEBOMBA — Base Path Detection (inlined so the <base> tag
-  // is injected BEFORE any external resource below tries to load).
-  // Makes the site work both at root (Cloudflare Pages / custom domain)
-  // and under GitHub Pages project subpath (zombie760.github.io/botwavebomba/).
-  (function () {
-    'use strict';
-    function detectBasePath() {
-      var host = location.hostname;
-      var path = location.pathname;
-      if (host === 'zombie760.github.io' || host === 'www.zombie760.github.io') {
-        if (path.indexOf('/botwavebomba') === 0) return '/botwavebomba';
-        if (path.indexOf('/botwave-bomba') === 0) return '/botwave-bomba';
-      }
-      return '';
-    }
-    var base = detectBasePath();
-    window.BWB_BASE = base;
-    if (base && base !== '') {
-      try {
-        var existingBase = document.querySelector('base');
-        if (!existingBase) {
-          var b = document.createElement('base');
-          b.href = base + '/';
-          var head = document.head || document.getElementsByTagName('head')[0];
-          if (head.firstChild) head.insertBefore(b, head.firstChild);
-          else head.appendChild(b);
-        }
-      } catch (e) { console.warn('[BWB] base tag injection failed', e); }
-    }
-    window.BWB_URL = function (p) {
-      if (!p) return base || '/';
-      if (p[0] === '/') p = p.slice(1);
-      return (base ? base + '/' : '/') + p;
-    };
-  })();
-  </script>
-
+  <base href="/botwavebomba/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>METHODOLOGY — BOTWAVEBOMBA</title>
-  <meta name="description" content="What the bias bar measures, where the data comes from, and what it doesn't tell you. A substrate-honesty page — not a credibility claim.">
+  <title>Methodology — BOTWAVEBOMBA</title>
+  <meta name="description" content="How BotwaveBomba clusters stories, scores coverage gaps, and joins ownership data. The receipts behind the brief.">
+  <meta name="theme-color" content="#FAFAF7">
+  <link rel="canonical" href="https://zombie760.github.io/botwavebomba/methodology.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/mobile.css">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
-  <meta name="view-transition" content="same-origin">
-  <script type="speculationrules">
-  {"prerender":[{"where":{"href_matches":"/methodology.html"},"eagerness":"moderate"}]}
-  </script>
-  <script src="/assets/js/theme-switcher.js" defer></script>
-  <script src="/assets/js/pwa.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=1">
+  <link rel="stylesheet" href="assets/css/base.css?v=1">
   <style>
-    .bwb-meth-hero { padding: 56px 24px 40px; max-width: 760px; margin: 0 auto; }
-    .bwb-meth-hero h1 { font-family: var(--font-display); font-size: 44px; font-weight: 700; line-height: 1.1; margin: 0 0 12px; color: var(--text-primary); }
-    .bwb-meth-hero .kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--theme-primary); margin: 0 0 8px; }
-    .bwb-meth-hero .lede { font-size: 17px; line-height: 1.6; color: var(--text-secondary); margin: 0; max-width: 640px; }
-    .bwb-meth-body { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
-    .bwb-meth-body h2 { font-family: var(--font-display); font-size: 26px; font-weight: 700; line-height: 1.2; margin: 48px 0 12px; color: var(--text-primary); border-top: 1px solid var(--border-subtle); padding-top: 32px; }
-    .bwb-meth-body h2:first-of-type { border-top: none; padding-top: 0; }
-    .bwb-meth-body h3 { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--theme-primary); margin: 28px 0 8px; }
-    .bwb-meth-body p { font-size: 15px; line-height: 1.75; color: var(--text-secondary); margin: 0 0 14px; max-width: 680px; }
-    .bwb-meth-body p strong { color: var(--text-primary); }
-    .bwb-meth-body ul { font-size: 15px; line-height: 1.75; color: var(--text-secondary); padding-left: 20px; }
-    .bwb-meth-body ul li { margin-bottom: 6px; }
-    .bwb-meth-body code { font-family: var(--font-mono); font-size: 13px; background: var(--bg-card); padding: 2px 6px; border-radius: 3px; }
-    .bwb-meth-callout { background: var(--bg-card); border-left: 3px solid var(--theme-primary); padding: 20px 24px; margin: 24px 0; }
-    .bwb-meth-callout p { margin: 0; font-size: 14px; line-height: 1.7; }
-    .bwb-meth-callout .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--theme-primary); margin-bottom: 6px; }
-    .bwb-meth-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 13px; }
-    .bwb-meth-table th { text-align: left; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--border-subtle); padding: 8px 12px 8px 0; font-weight: 500; }
-    .bwb-meth-table td { padding: 8px 12px 8px 0; border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); }
-    .bwb-meth-table td.num { font-family: var(--font-mono); color: var(--text-primary); text-align: right; width: 80px; }
-    .bwb-meth-bar { display: inline-block; height: 8px; border-radius: 2px; vertical-align: middle; margin-right: 8px; }
-    .bwb-meth-bar.western { background: var(--bloc-western); }
-    .bwb-meth-bar.non-aligned { background: var(--bloc-neutral); }
-    .bwb-meth-bar.adversarial { background: var(--bloc-adversarial); }
-    .bwb-meth-registry-snapshot { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin: 8px 0 16px; }
-    .bwb-meth-refs { font-size: 13px; line-height: 1.7; color: var(--text-muted); margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-subtle); }
-    .bwb-meth-refs a { color: var(--text-secondary); text-decoration: underline; text-decoration-color: var(--border-subtle); }
-    .bwb-meth-refs a:hover { color: var(--theme-primary); text-decoration-color: var(--theme-primary); }
+    body { background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); line-height: var(--lh-normal); }
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { color: var(--color-accent-hover); text-decoration: underline; }
+    .bwb-chrome { border-bottom: 1px solid var(--color-border); background: var(--color-bg-elevated); position: sticky; top: 0; z-index: var(--z-sticky); }
+    .bwb-chrome-inner { max-width: var(--max-w-grid); margin: 0 auto; padding: var(--space-3) var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+    .bwb-wordmark { font-family: var(--font-display); font-size: var(--fs-lg); font-weight: var(--fw-bold); color: var(--color-text-strong); letter-spacing: -0.02em; }
+    .bwb-wordmark span { color: var(--color-accent); }
+    .bwb-chrome-nav { display: flex; gap: var(--space-4); align-items: center; }
+    .bwb-chrome-nav a { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); text-decoration: none; }
+    .bwb-chrome-nav a:hover { color: var(--color-text); }
+    .bwb-theme-btn { font-size: var(--fs-md); line-height: 1; padding: var(--space-2); border-radius: var(--radius); }
+    .bwb-prose { max-width: var(--max-w-prose); margin: 0 auto; padding: var(--space-7) var(--gutter) var(--space-10); }
+    .bwb-hero { padding-bottom: var(--space-6); border-bottom: 1px solid var(--color-border); margin-bottom: var(--space-6); }
+    .bwb-hero .kicker { font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent); margin: 0 0 var(--space-3); }
+    .bwb-hero h1 { font-family: var(--font-display); font-size: var(--fs-3xl); line-height: var(--lh-tight); margin: 0 0 var(--space-4); color: var(--color-text-strong); }
+    .bwb-prose h2 { font-family: var(--font-display); font-size: var(--fs-xl); margin: var(--space-6) 0 var(--space-3); color: var(--color-text-strong); }
+    .bwb-prose h3 { font-family: var(--font-display); font-size: var(--fs-lg); margin: var(--space-5) 0 var(--space-2); color: var(--color-text-strong); }
+    .bwb-prose p, .bwb-prose li { font-size: var(--fs-md); line-height: var(--lh-loose); color: var(--color-text); margin-bottom: var(--space-3); }
+    .bwb-prose ul { padding-left: var(--space-5); margin-bottom: var(--space-4); }
+    .bwb-prose li { margin-bottom: var(--space-2); }
+    .bwb-prose code { font-family: var(--font-mono); font-size: var(--fs-sm); background: var(--color-bg-inset); padding: 2px 5px; border-radius: var(--radius-sm); }
+    .bwb-prose pre { background: var(--color-bg-inset); padding: var(--space-4); border-radius: var(--radius); overflow-x: auto; font-family: var(--font-mono); font-size: var(--fs-sm); }
+    .bwb-prose strong { color: var(--color-text-strong); }
+    .bwb-prose .note { background: var(--color-bg-elevated); border-left: 3px solid var(--color-accent); padding: var(--space-4); margin: var(--space-5) 0; }
+    .bwb-prose .note p { margin: 0; }
+    .bwb-footer { border-top: 1px solid var(--color-border); padding: var(--space-6) var(--gutter); text-align: center; font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--color-text-muted); }
+    @media (max-width: 600px) { .bwb-hero h1 { font-size: var(--fs-2xl); } }
   </style>
 </head>
 <body>
+  <header class="bwb-chrome">
+    <div class="bwb-chrome-inner">
+      <a class="bwb-wordmark" href="./">BOTWAVE<span>BOMBA</span></a>
+      <nav class="bwb-chrome-nav" aria-label="Primary">
+        <a href="index.html">Feed</a>
+        <a href="brief.html">Brief</a>
+        <a href="sources.html">Sources</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="pro.html">Pricing</a>
+        <button class="bwb-theme-btn" id="themeToggle" aria-label="Toggle theme">☀️</button>
+      </nav>
+    </div>
+  </header>
 
-  <!-- ── HEADER (injected by /assets/js/site-chrome.js) ── -->
-  <header data-bwb-chrome="full"></header>
+  <main class="bwb-prose">
+    <section class="bwb-hero">
+      <p class="kicker">Methodology</p>
+      <h1>How this brief is built.</h1>
+    </section>
 
-  <!-- ── HERO ── -->
-  <section class="bwb-meth-hero">
-    <p class="kicker">Methodology · Substrate honesty · 2026-07-06</p>
-    <h1>What the bias bar measures, where the data comes from, and what it doesn't tell you.</h1>
-    <p class="lede">A bias rating is a measurement you can disagree with. A blindspot is a heuristic you can falsify. Every number on this site inherits upstream choices. This page names them.</p>
-  </section>
+    <h2>1. The corpus</h2>
+    <p>BotwaveBomba starts with a working corpus of English-language headlines gathered from hundreds of outlets across the Western, non-aligned, and adversarial blocs. The corpus is refreshed daily. We do not claim the corpus is complete; we claim it is <strong>diverse enough to expose structural coverage gaps</strong> in the U.S.-partisan press.</p>
 
-  <!-- ── BODY ── -->
-  <article class="bwb-meth-body">
-
-    <h2>1. The bias bar is downstream of three vendors with documented conflicts.</h2>
-    <p>The 5-axis fingerprint (interventionist, zionist, atlanticist, statist, financialized) and the bloc classification (Western, Non-Aligned, Adversarial) are built on top of bias ratings from <strong>AllSides</strong>, <strong>Ad Fontes Media</strong>, and <strong>Media Bias / Fact Check</strong>. Each is a single-vendor heuristic. Each has a structural conflict of interest we inherit by using it:</p>
+    <h2>2. Story clustering</h2>
+    <p>Headlines are clustered into stories using:</p>
     <ul>
-      <li><strong>AllSides</strong> sells <em>Balance Certification</em> to newsrooms — the same newsrooms it then rates on its bias chart. Client list includes Newsweek, AP, and Axel Springer. Direct conflict of interest between the rating product and the certification product.</li>
-      <li><strong>Ad Fontes Media</strong> uses a "proprietary, patent pending" weighting algorithm. Its methodology page describes a 3-rater pod system (one right-leaning, one center, one left-leaning per article) but <strong>publishes no inter-rater reliability statistic</strong> — no Cohen's kappa, no Krippendorff's alpha, no ICC. The 93,200+ article ratings cannot be independently replicated.</li>
-      <li><strong>NewsGuard</strong> (used secondarily for factuality only) upgraded the <em>Daily Mail</em> from "untrustworthy" to "trustworthy" in January 2019 after a private meeting with a Daily Mail executive. NewsGuard publicly said "we were wrong" on multiple criteria — but a private meeting with a rated party should not flip a content-based rating. As of December 2024, Publicis Groupe (a top-4 global ad-agency holding company) holds a minority equity stake in NewsGuard. 76% of NewsGuard's rated sources are US-based; <strong>zero Global South coverage</strong>.</li>
+      <li><strong>Jaccard similarity</strong> on normalized headline tokens,</li>
+      <li>a <strong>bigram phrase gate</strong> that forces a shared named-entity or phrase before two headlines can cluster,</li>
+      <li><strong>union-find</strong> with a max-size cap so one mega-topic does not swallow the day.</li>
     </ul>
-    <div class="bwb-meth-callout">
-      <p class="label">What this means for the bias bar</p>
-      <p>If the upstream vendor is wrong about an outlet, we are wrong too. We don't have a neutral ground truth to point at. The bias bar is the best of three contestable options, not a measurement against a fixed reference.</p>
+    <div class="note">
+      <p>Clustering is deterministic. Run the same corpus twice, get the same clusters.</p>
     </div>
 
-    <h2>2. "Blindspot" is a single-vendor formula, not a peer-reviewed metric.</h2>
-    <p>The BLINDSPOT badge on a story means the upstream clusterer flagged it using a 4-condition heuristic: fewer than 10 left-leaning sources reporting, right-leaning coverage ≥ 33%, left-leaning coverage ≤ (R/L% − 33) × (30/37), and not more than 35% low-factuality coverage. The thresholds (10, 33, 30/37, 35) are stated in prose on the vendor's methodology page. <strong>They are not justified, not peer-reviewed, and not independently auditable.</strong></p>
-    <p>The FAccT '24 literature on recommender systems is the academic framing: "diversity of what" is an essentially contested concept, and any single-vendor score is a normative choice wearing the mask of a measurement. We use the heuristic because it surfaces stories that are structurally under-covered by the working set. <strong>We do not claim it is a fact.</strong></p>
-
-    <h2>3. The geographic spread (geo_gap) is honest about its own limits.</h2>
-    <p>Each story has a <code>geo_gap</code> field with two normalized metrics:</p>
+    <h2>3. The scoring function</h2>
+    <p>Each story gets a score from three inputs:</p>
+    <pre>score = non_west_pct × entropy × log₂(source_count + 1)</pre>
     <ul>
-      <li><code>entropy</code> — Shannon entropy of the geographic source distribution, normalized 0.0–1.0 by the count of non-zero geo cells.</li>
-      <li><code>non_west_pct</code> — fraction of sources that did <em>not</em> originate in the "west" bloc.</li>
-    </ul>
-    <p>What this measures: the spread of the <em>working source set</em> across geographic regions, not the spread of the actual global news ecosystem. A story with <code>non_west_pct: 1.0</code> means <em>every</em> source we ingested for that story was non-Western — it does not mean the Western press ignored the story (it may not have, or it may have; we don't have the comparative denominator).</p>
-    <p>What it doesn't measure: global coverage, editorial reach, agenda-setting power, or the relationship between what we ingested and what got missed. It is a self-honest number about the corpus, not a claim about the world.</p>
-
-    <h2>4. The source registry is where the structural bias actually lives.</h2>
-    <p>The corpus is a working set, not the global news ecosystem. The 1,090-Western / 0-Non-Aligned framing that this site carried in early 2026 was a structural fact — a registry populated almost entirely from US, UK, and European outlets. The number on this page is the <em>current</em> registry, which has shifted through a 2026-07-05 expansion that added 288 sources across 27 regions.</p>
-    <h3>Live registry snapshot · 2026-07-06</h3>
-    <p class="bwb-meth-registry-snapshot" id="bwb-meth-registry-snapshot">loading...</p>
-    <table class="bwb-meth-table" id="bwb-meth-registry-table">
-      <thead>
-        <tr><th>Bloc</th><th>Sources</th><th class="num">%</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><span class="bwb-meth-bar non-aligned"></span>Non-Aligned</td><td>376</td><td class="num">62.4%</td></tr>
-        <tr><td><span class="bwb-meth-bar western"></span>Western</td><td>183</td><td class="num">30.3%</td></tr>
-        <tr><td><span class="bwb-meth-bar adversarial"></span>Adversarial</td><td>43</td><td class="num">7.1%</td></tr>
-      </tbody>
-    </table>
-    <p>The earlier framing (84% Western, 0% Non-Aligned) was correct <em>as of 2026-07-04</em> and obsolete <em>as of 2026-07-06</em>. The page updates when the registry updates. Numbers in commentary age faster than numbers in the table.</p>
-
-    <h2>5. Per-story coverage is closer to 50/50 than 84/0.</h2>
-    <p>Across the 160 stories in the current corpus, 94 have non-zero geo_gap entropy. The world section averages 59% entropy and 43% non-Western coverage. Sports is the actual disaster (entropy 0.17, 8% non-Western). The bias bar is not the whole story — the section matters.</p>
-    <p>The per-card "why this gap" line is the receipt. Each card shows the working source count, the bloc spread, and the geographic cell count. If a card shows "1 source: 1 Western" and the story is in <em>climate</em>, that's a fact the user can act on. The page does not pretend the corpus is balanced where it isn't.</p>
-
-    <h2>6. What this site is not claiming.</h2>
-    <ul>
-      <li>It is not claiming the bias bar is a neutral ground truth.</li>
-      <li>It is not claiming the BLINDSPOT badge is a peer-reviewed metric.</li>
-      <li>It is not claiming the registry is the global news ecosystem.</li>
-      <li>It is not claiming the geo_gap is global coverage — it is working-set spread.</li>
-      <li>It is not claiming that more sources means more truth. Source quality is a separate axis from source count.</li>
+      <li><strong>non_west_pct</strong> — share of sources that are non-aligned or adversarial (not Western). Higher means the story is less covered by the U.S.-partisan axis.</li>
+      <li><strong>entropy</strong> — Shannon entropy across the three blocs. A story covered evenly by all three blocs scores higher than one dominated by a single bloc.</li>
+      <li><strong>log₂(source_count + 1)</strong> — more sources raise the score, but with diminishing returns.</li>
     </ul>
 
-    <h2>7. What this site is claiming.</h2>
+    <h2>4. From score to brief</h2>
+    <p>The daily brief picks the top 3 scored stories, deduplicated by headline signature so you do not get three versions of the same event. Each pick links to its top 5 primary sources, shows the bloc/country spread, and includes a lede excerpt when available.</p>
+
+    <h2>5. Body excerpts</h2>
+    <p>For the recent-3-day English slice we fetch the article URL, run Mozilla Readability over the HTML, and extract the first <code>≤600</code> characters of body text. If Readability cannot parse the page or the body is too short, we fall back to the meta description. Paywalled, bot-blocked, or expired-certificate pages are logged and skipped. The cache is read-only.</p>
+
+    <h2>6. Ownership and motive</h2>
+    <p>Bias labels only tell you <em>where</em> an outlet sits. The ownership layer tells you <em>who pays for the framing</em>. We join a manually-curated ownership registry to each source domain. Every entry includes the owner, owner type, parent company, motive, and a named evidence URL. No inference — primary sources or nothing.</p>
+
+    <h2>7. What this is not</h2>
     <ul>
-      <li>Every story link is a primary-source URL, filed, no inference.</li>
-      <li>The bias classification is reproducible from the working set (you can run the same source through the same vendor ratings and get the same answer).</li>
-      <li>The substrate is named. The vendors are named. The conflicts are named.</li>
-      <li>The page is wrong in places. Where it is, the byline and the date of the assertion are right here, and the corrections are filed in <code>/_index/</code>.</li>
+      <li>We do not rate “truth.” We rate <strong>coverage structure</strong> and <strong>ownership transparency</strong>.</li>
+      <li>We do not claim a story is underreported in absolute terms. We claim it is underreported <strong>relative to the non-Western share of sources covering it</strong>.</li>
+      <li>We do not scrape paywalled full articles. Excerpts are lede-length only, rate-limited, and fall back gracefully.</li>
     </ul>
 
-    <div class="bwb-meth-callout">
-      <p class="label">The load-bearing test</p>
-      <p>If you can name a single story on this site where the working set has a structural bias you can verify against an independent source (e.g., a peer-reviewed media-coverage study, an external corpus, a primary-source roster), and the page does not flag the gap — that's a bug. Report it. The contact is in the footer.</p>
-    </div>
+    <h2>8. Run it yourself</h2>
+    <p>The pipeline is one command:</p>
+    <pre>bun run scripts/run_pipeline.ts --date 2026-07-13</pre>
+    <p>It clusters stories, fetches excerpts, renders the brief, rebuilds the archive index, and refreshes the ownership registry.</p>
+  </main>
 
-    <div class="bwb-meth-refs">
-      <strong>Primary sources cited above</strong><br>
-      · AllSides methodology &amp; ownership: <a href="https://www.allsides.com/media-bias/methodology" target="_blank" rel="noopener">allsides.com/media-bias/methodology</a><br>
-      · Ad Fontes Media methodology: <a href="https://adfontesmedia.com/methodology/" target="_blank" rel="noopener">adfontesmedia.com/methodology</a><br>
-      · NewsGuard rating process: <a href="https://www.newsguardtech.com/ratings/rating-process-criteria/" target="_blank" rel="noopener">newsguardtech.com/ratings/rating-process-criteria</a><br>
-      · NewsGuard / Publicis minority stake (Reuters, 2024-12-10): <a href="https://www.reuters.com/business/media-telecom/publicis-announces-minority-investment-newsguard-2024-12-10/" target="_blank" rel="noopener">reuters.com</a><br>
-      · NewsGuard Daily Mail rating flip (Nieman Lab, 2019-01): <a href="https://www.niemanlab.org/2019/01/newsguard-changed-its-mind-about-the-daily-mails-quality-its-green-now-not-red/" target="_blank" rel="noopener">niemanlab.org</a><br>
-      · Luehring et al. 2025, Journal of Quantitative Description: Digital Media: <a href="https://journalqd.org/article/view/4500" target="_blank" rel="noopener">journalqd.org</a> (DOI 10.51685/jqd.2025.003)<br>
-      · Vrijenhoek, Daniil, Sandel, Hollink. "Diversity of What?" FAccT '24: <a href="https://ir.cwi.nl/pub/34291/34291.pdf" target="_blank" rel="noopener">ir.cwi.nl/pub/34291</a><br>
-      · Bakshy, Messing, Adamic 2015 (filter-bubble empirical study, Science): <a href="https://www.science.org/doi/10.1126/science.aaa1160" target="_blank" rel="noopener">science.org</a><br>
-      · Page compiled: 2026-07-06 · BOTWAVEBOMBA · byline per <code>/about.html</code>
-    </div>
-  </article>
+  <footer class="bwb-footer">
+    BOTWAVEBOMBA · Not Left/Right. Who Owns The Story. · <a href="brief.html">Today's brief</a>
+  </footer>
 
   <script>
-    // Inject live registry numbers from data/source_registry.json
-    fetch((window.BWB_BASE || '/') + 'data/source_registry.json')
-      .then(function(r) { return r.ok ? r.json() : null; })
-      .then(function(d) {
-        if (!d || !d.sources) return;
-        var counts = { western: 0, 'non-aligned': 0, adversarial: 0, other: 0 };
-        d.sources.forEach(function(s) {
-          var b = s.bloc || 'other';
-          if (counts[b] === undefined) counts.other++;
-          else counts[b]++;
-        });
-        var total = d.sources.length;
-        var snap = document.getElementById('bwb-meth-registry-snapshot');
-        if (snap) snap.textContent = 'Total: ' + total + ' sources · generated ' + new Date().toISOString().slice(0, 10);
-        var rows = [
-          ['non-aligned', counts['non-aligned']],
-          ['western', counts.western],
-          ['adversarial', counts.adversarial]
-        ];
-        var tbody = document.querySelector('#bwb-meth-registry-table tbody');
-        if (!tbody) return;
-        tbody.innerHTML = '';
-        rows.forEach(function(r) {
-          var tr = document.createElement('tr');
-          var pct = total ? (r[1] / total * 100).toFixed(1) : '0.0';
-          tr.innerHTML = '<td><span class="bwb-meth-bar ' + r[0] + '"></span>' + r[0].replace('-', ' ') + '</td><td>' + r[1] + '</td><td class="num">' + pct + '%</td>';
-          tbody.appendChild(tr);
-        });
-      })
-      .catch(function() {});
+    const themeBtn = document.getElementById('themeToggle');
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeBtn.textContent = theme === 'dark' ? '🌙' : '☀️';
+      localStorage.setItem('bwb-theme', theme);
+    }
+    const saved = localStorage.getItem('bwb-theme');
+    if (saved) setTheme(saved);
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+    themeBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
   </script>
-
-  <!-- ── FOOTER (injected by /assets/js/site-chrome.js) ── -->
-  <footer data-bwb-chrome="footer"></footer>
 </body>
 </html>

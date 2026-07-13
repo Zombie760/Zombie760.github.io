@@ -1,150 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>BOTWAVEBOMBA PRO — $10/mo</title>
-  <meta name="description" content="The full intelligence layer — side-by-side 3-pane UI, blindspot alerts, full export, PAI summaries. Powered by TELOS+PAI substrate. $10/mo or $100/yr.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/mobile.css">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing · BotwaveBomba</title>
+  <meta name="description" content="BotwaveBomba Pro pricing and access tiers.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
   <style>
-    body {font-family:'DM Sans',system-ui,sans-serif;background:#0a0a0a;color:#F0EDE8;padding:0;margin:0}
-    .pro-wrap {max-width:780px;margin:0 auto;padding:80px 24px 120px}
-    .pro-badge {font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:#BF3B2D;border:1px solid #BF3B2D;padding:4px 12px;display:inline-block;margin-bottom:32px}
-    .pro-h1 {font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#F0EDE8;margin:0 0 24px}
-    .pro-h1 em {font-style:italic;color:#BF3B2D}
-    .pro-body {font-weight:300;font-size:15px;line-height:1.8;color:rgba(240,237,232,0.75);margin:0 0 40px}
-    .pro-features {list-style:none;padding:0;margin:0 0 48px}
-    .pro-features li {padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:14px;color:rgba(240,237,232,0.85);display:flex;align-items:center;gap:12px}
-    .pro-features li::before {content:'';display:block;width:6px;height:6px;border-radius:50%;background:#BF3B2D;flex-shrink:0}
-    .pro-price {font-family:'DM Mono',monospace;font-size:14px;letter-spacing:1px;color:rgba(240,237,232,0.5);margin-bottom:8px}
-    .pro-price strong {color:#F0EDE8;font-size:32px;font-weight:500}
-    .pro-price-billed {font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.5px;color:rgba(240,237,232,0.4);margin-bottom:28px}
-    .pro-price-source {font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.35);margin-bottom:24px;line-height:1.6}
-    .pro-price-source a {color:inherit;text-decoration:underline}
-    .pro-cta {display:inline-block;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;background:#BF3B2D;color:#fff;text-decoration:none;border:none;cursor:pointer;transition:background 0.15s}
-    .pro-cta:hover {background:#a83327}
-    .pro-note {font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.3);margin-top:32px;line-height:1.6}
-    .pro-tiers {display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 36px}
-    .pro-tier {background:#161616;border:1px solid rgba(255,255,255,0.10);padding:18px 18px 22px}
-    .pro-tier-tier {font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#BF3B2D;margin-bottom:6px}
-    .pro-tier-name {font-family:'Playfair Display',Georgia,serif;font-size:22px;margin:0 0 8px;color:#F0EDE8}
-    .pro-tier-price {font-family:'DM Mono',monospace;font-size:13px;color:rgba(240,237,232,0.65);margin-bottom:10px}
-    .pro-tier-price strong {color:#F0EDE8;font-size:20px;font-weight:500}
-    .pro-tier-link {font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#BF3B2D;text-transform:uppercase;text-decoration:none;border-bottom:1px solid #BF3B2D;padding-bottom:2px}
-    @media (max-width:680px){ .pro-tiers{grid-template-columns:1fr} }
+    .bwb-pricing-grid{display:grid;gap:var(--space-4);grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:var(--space-6)}
+    .bwb-pricing-card{border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);background:var(--color-surface)}
+    .bwb-pricing-card.featured{border-color:var(--color-accent);background:color-mix(in oklch,var(--color-accent) 8%,var(--color-surface))}
+    .bwb-price{font-family:var(--font-display);font-size:var(--fs-3xl);font-weight:700}
+    .bwb-price span{font-size:var(--fs-base);font-weight:400;color:var(--color-muted)}
+    .bwb-features{list-style:none;margin-top:var(--space-4)}
+    .bwb-features li{padding:var(--space-2) 0;border-bottom:1px solid var(--color-border-subtle)}
+    .bwb-cta{display:inline-block;margin-top:var(--space-4);padding:var(--space-3) var(--space-5);border-radius:var(--radius-md);background:var(--color-accent);color:var(--color-bg);font-weight:600}
   </style>
-  <meta name="view-transition" content="same-origin">
-  <script type="speculationrules">
-  {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
-  </script>
 </head>
 <body>
-  <div class="pro-wrap">
-    <div class="pro-badge">SUBSCRIBE — WEEK 2</div>
-    <h1 class="pro-h1">The full <em>intelligence layer</em></h1>
-    <p class="pro-body">
-      The free feed shows you the gap. PRO shows you the architecture behind it.
-      Real-time blindspot alerts, the side-by-side 3-pane view, PAI-generated
-      summaries, full export, private digests. The same TELOS+PAI substrate that
-      powers the journalism arm — with the throttle removed.
-    </p>
-
-    <ul class="pro-features">
-      <li>Side-by-side 3-pane framing (Western / Non-Aligned / Adversarial)</li>
-      <li>Real-time alerts for Western Blackout and Mono-Frame events</li>
-      <li>PAI-generated story summaries with 5-axis bias fingerprints per source</li>
-      <li>Ownership concentration alerts — when 2+ sources share a parent company</li>
-      <li>Full JSON/CSV export of stories, blindspots, and source data</li>
-      <li>Private daily digest via Telegram or email</li>
-      <li>5-axis deep fingerprint overlay on every story card</li>
-      <li>Priority access to new sources as the registry expands (244 → 492)</li>
-    </ul>
-
-    <div class="pro-tiers">
-      <div class="pro-tier">
-        <div class="pro-tier-tier">PRO · INDIVIDUAL</div>
-        <h3 class="pro-tier-name">Solo</h3>
-        <div class="pro-tier-price"><strong>$10</strong> / month</div>
-        <p style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.5);line-height:1.5;margin:0 0 14px">Unlimited cluster lookups · 3-pane view · blindspot alerts · export · PAI summaries.</p>
-        <a href="#pro-checkout" class="pro-tier-link" data-tier="pro" data-interval="month">Subscribe →</a>
-      </div>
-      <div class="pro-tier">
-        <div class="pro-tier-tier">TEAM · 5 SEATS</div>
-        <h3 class="pro-tier-name">Newsroom</h3>
-        <div class="pro-tier-price"><strong>$50</strong> / month</div>
-        <p style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,237,232,0.5);line-height:1.5;margin:0 0 14px">Everything in Pro · 5 seats · shared alert rules · Slack/Discord webhook · team digest.</p>
-        <a href="#team-checkout" class="pro-tier-link" data-tier="team" data-interval="month">Subscribe →</a>
-      </div>
+  <header class="bwb-site-header">
+    <div class="bwb-header-inner">
+      <a class="bwb-logo" href="./">BOTWAVEBOMBA</a>
+      <nav class="bwb-chrome-nav" aria-label="Primary">
+        <a href="index.html">Feed</a>
+        <a href="brief.html">Brief</a>
+        <a href="sources.html">Sources</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="pro.html" aria-current="page">Pricing</a>
+      </nav>
+      <button class="bwb-theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
     </div>
+  </header>
 
-    <div class="pro-price"><strong>$10</strong> / month</div>
-    <div class="pro-price-billed">Billed monthly. Cancel anytime. Annual $100/yr (2 months free) — see Stripe.</div>
-    <div class="pro-price-source">
-      Pricing anchored to <a href="https://stripe.com/pricing" target="_blank" rel="noopener noreferrer">stripe.com/pricing</a>
-      · checkout via <a href="https://checkout.stripe.com" target="_blank" rel="noopener noreferrer">Stripe Checkout</a>
-      · <a href="/team.html">Team tier</a> · webhook signature verification per <a href="https://docs.stripe.com/webhooks/signatures" target="_blank" rel="noopener noreferrer">stripe docs</a>.
-    </div>
-    <a href="#" id="pro-checkout-btn" class="pro-cta" data-tier="pro" data-interval="month">Subscribe — $10/mo</a>
-    <p class="pro-note">
-      PRO is not a different product. It's the same TELOS+PAI substrate with the throttle removed.
-      Free users get the public feed. PRO users get the intelligence that the feed is built on.
-      No upsell psychology. No dark patterns. The data is the argument.
-    </p>
-  </div>
+  <main class="bwb-page bwb-pad">
+    <section class="bwb-hero-small">
+      <h1>Pricing</h1>
+      <p class="bwb-lead">BotwaveBomba is free to read. Pro unlocks ownership datasets, exportable briefs, API access, and the tools to build your own bias-aware news feed.</p>
+    </section>
 
-  <script>
-    // Stripe Checkout wiring — the actual publishable key + price IDs are
-    // operator-controlled and live in a Cloudflare Worker (see
-    // /scripts/bomba_pipeline.sh and the worker that serves /api/checkout).
-    // The button below POSTs to /api/checkout/session with tier + interval,
-    // which creates a Stripe Checkout session and returns the redirect URL.
-    (function() {
-      function bind(id, tier, interval) {
-        var el = document.getElementById(id);
-        if (!el) return;
-        el.addEventListener('click', function(e) {
-          e.preventDefault();
-          fetch((window.BWB_BASE || '') + '/api/checkout/session', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ tier: tier, interval: interval }),
-            credentials: 'include'
-          })
-          .then(function(r) { return r.json(); })
-          .then(function(data) {
-            if (data && data.url) { window.location = data.url; return; }
-            // Fallback — if the worker isn't deployed, the user sees a clear
-            // "checkout unavailable" message; we never silently fail.
-            alert('Checkout session creation failed: ' + (data && data.error ? data.error : 'no URL returned') +
-                  '. The free tier is fully functional at /.');
-          })
-          .catch(function(err) {
-            alert('Checkout unavailable: ' + err.message + '. The free tier is fully functional at /.');
-          });
-        });
-      }
-      bind('pro-checkout-btn', 'pro', 'month');
-      document.querySelectorAll('.pro-tier-link').forEach(function(a) {
-        a.addEventListener('click', function(e) {
-          e.preventDefault();
-          fetch((window.BWB_BASE || '') + '/api/checkout/session', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ tier: a.dataset.tier, interval: a.dataset.interval }),
-            credentials: 'include'
-          })
-          .then(function(r) { return r.json(); })
-          .then(function(data) { if (data && data.url) window.location = data.url; })
-          .catch(function(err) { alert('Checkout unavailable: ' + err.message); });
-        });
-      });
-    })();
-  </script>
+    <section class="bwb-pricing-grid">
+      <article class="bwb-pricing-card">
+        <h2>Reader</h2>
+        <p class="bwb-price">$0<span> / forever</span></p>
+        <ul class="bwb-features">
+          <li>Daily clustered feed</li>
+          <li>Outlet bloc tags</li>
+          <li>Methodology transparency</li>
+          <li>Public sources index</li>
+        </ul>
+        <a class="bwb-cta" href="index.html">Read now</a>
+      </article>
+
+      <article class="bwb-pricing-card featured">
+        <h2>Pro</h2>
+        <p class="bwb-price">$12<span> / month</span></p>
+        <ul class="bwb-features">
+          <li>Full ownership + motive dataset</li>
+          <li>Exportable briefs (PDF / markdown)</li>
+          <li>Coverage-gap alerts by region</li>
+          <li>Early API access</li>
+        </ul>
+        <a class="bwb-cta" href="mailto:hello@botwavebomba.com?subject=BotwaveBomba+Pro+signup">Request access</a>
+      </article>
+
+      <article class="bwb-pricing-card">
+        <h2>Organization</h2>
+        <p class="bwb-price">Custom<span> / annual</span></p>
+        <ul class="bwb-features">
+          <li>Multiple seats + SSO</li>
+          <li>Private source ingestion</li>
+          <li>Slack / webhook alerts</li>
+          <li>Custom research support</li>
+        </ul>
+        <a class="bwb-cta" href="mailto:hello@botwavebomba.com?subject=BotwaveBomba+Organization+plan">Contact sales</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="bwb-site-footer" id="siteFooter"></footer>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

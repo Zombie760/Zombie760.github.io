@@ -1,207 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <script>
-  // BOTWAVEBOMBA — Base Path Detection (inlined so the <base> tag
-  // is injected BEFORE any external resource below tries to load).
-  // Makes the site work both at root (Cloudflare Pages / custom domain)
-  // and under GitHub Pages project subpath (zombie760.github.io/botwavebomba/).
-  (function () {
-    'use strict';
-    function detectBasePath() {
-      var host = location.hostname;
-      var path = location.pathname;
-      if (host === 'zombie760.github.io' || host === 'www.zombie760.github.io') {
-        if (path.indexOf('/botwavebomba') === 0) return '/botwavebomba';
-        if (path.indexOf('/botwave-bomba') === 0) return '/botwave-bomba';
-      }
-      return '';
-    }
-    var base = detectBasePath();
-    window.BWB_BASE = base;
-    if (base && base !== '') {
-      try {
-        var existingBase = document.querySelector('base');
-        if (!existingBase) {
-          var b = document.createElement('base');
-          b.href = base + '/';
-          var head = document.head || document.getElementsByTagName('head')[0];
-          if (head.firstChild) head.insertBefore(b, head.firstChild);
-          else head.appendChild(b);
-        }
-      } catch (e) { console.warn('[BWB] base tag injection failed', e); }
-    }
-    window.BWB_URL = function (p) {
-      if (!p) return base || '/';
-      if (p[0] === '/') p = p.slice(1);
-      return (base ? base + '/' : '/') + p;
-    };
-  })();
-  </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>496 Sources — BOTWAVEBOMBA</title>
-  <meta name="description" content="496 global news outlets deep-fingerprinted across 5 bias axes. Western, adversarial, non-aligned — every source, every score, every owner. Nothing hidden.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/mobile.css">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="BOTWAVEBOMBA">
-  <meta name="view-transition" content="same-origin">
-  <script type="speculationrules">
-  {"prerender":[{"where":{"href_matches":"/"},"eagerness":"moderate"}]}
-  </script>
-  <script src="/assets/js/theme-switcher.js" defer></script>
-  <script src="/assets/js/pwa.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sources · BotwaveBomba</title>
+  <meta name="description" content="Outlet registry and ownership index for BotwaveBomba coverage.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
 </head>
 <body>
-
-  <!-- ── HEADER (injected by /assets/js/site-chrome.js) ── -->
-  <header data-bwb-chrome="compact"></header>
-
-  <div class="bwb-page-container">
-
-    <div class="bwb-page-header">
-      <h1 class="bwb-page-title">THE 496 SOURCES</h1>
-      <p class="bwb-page-sub">
-        496 outlets ingested every six hours. All carry five-axis bias fingerprints
-        (atlanticist, interventionist, zionist, statist, financialized), factuality ratings,
-        and primary-vs-launderer classification. Ownership shown when concentrated.
-        The scores are transparent. The methodology is documented. No black boxes.
-      </p>
-      <div class="bwb-sources-summary" id="sources-summary">
-        <div class="bwb-sum-bloc western">
-          <span class="bwb-sum-num" id="count-western">183</span>
-          <span class="bwb-sum-label">Western</span>
-        </div>
-        <div class="bwb-sum-bloc neutral">
-          <span class="bwb-sum-num" id="count-neutral">280</span>
-          <span class="bwb-sum-label">Non-Aligned</span>
-        </div>
-        <div class="bwb-sum-bloc adversarial">
-          <span class="bwb-sum-num" id="count-adversarial">33</span>
-          <span class="bwb-sum-label">Adversarial</span>
-        </div>
-      </div>
+  <header class="bwb-site-header">
+    <div class="bwb-header-inner">
+      <a class="bwb-logo" href="./">BOTWAVEBOMBA</a>
+      <nav class="bwb-chrome-nav" aria-label="Primary">
+        <a href="index.html">Feed</a>
+        <a href="brief.html">Brief</a>
+        <a href="sources.html" aria-current="page">Sources</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="pro.html">Pricing</a>
+      </nav>
+      <button class="bwb-theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
     </div>
+  </header>
 
-    <!-- Filter + Search -->
-    <div class="bwb-source-controls">
-      <input type="text" id="source-search" class="bwb-search" placeholder="Search sources...">
-      <div class="bwb-source-filters">
-        <button class="active" data-src-filter="all">All</button>
-        <button data-src-filter="western">Western</button>
-        <button data-src-filter="neutral">Non-Aligned</button>
-        <button data-src-filter="adversarial">Adversarial</button>
-      </div>
-    </div>
+  <main class="bwb-page bwb-pad">
+    <section class="bwb-hero-small">
+      <h1>Sources</h1>
+      <p class="bwb-lead">The allow-listed outlets that power the BotwaveBomba feed. Every outlet is tagged by country, ownership type, and geopolitical bloc so you can see who paid for the framing.</p>
+    </section>
 
-    <!-- Source table -->
-    <div id="source-table" class="bwb-source-table">
-      <div class="bwb-source-table-header">
-        <span>Source</span>
-        <span>Country</span>
-        <span>Bloc</span>
-        <span>Lean</span>
-        <span class="hide-sm">Atlanticist</span>
-        <span class="hide-sm">Interventionist</span>
-        <span class="hide-sm">Factuality</span>
-        <span class="hide-sm">Provenance</span>
-        <span>Link</span>
-      </div>
-      <div id="source-rows" class="bwb-loading">
-        <!-- Skeleton loaders -->
-        <div class="skeleton skeleton-card">
-          <div class="skeleton skeleton-title" style="height: 20px"></div>
-          <div class="skeleton skeleton-text"></div>
-        </div>
-        <div class="skeleton skeleton-card">
-          <div class="skeleton skeleton-title" style="height: 20px"></div>
-          <div class="skeleton skeleton-text"></div>
-        </div>
-        <div class="skeleton skeleton-card">
-          <div class="skeleton skeleton-title" style="height: 20px"></div>
-          <div class="skeleton skeleton-text"></div>
-        </div>
-      </div>
-    </div>
+    <section class="bwb-card bwb-pad" id="sources-mount">
+      <p class="bwb-empty">Loading outlet registry…</p>
+    </section>
+  </main>
 
-    <!-- Axis legend -->
-    <div class="bwb-axis-explainer">
-      <h3 class="bwb-sidebar-title">WHAT ARE THE 5 AXES?</h3>
-      <div class="bwb-axis-grid-full">
-        <div class="bwb-axis-card">
-          <div class="bwb-axis-card-name">INTERVENTIONIST</div>
-          <div class="bwb-axis-card-range">-1.0 = peace / +1.0 = pro-military</div>
-          <p>Does this outlet support or oppose military intervention? High scores = outlets that routinely frame US/NATO military action as necessary or legitimate.</p>
-        </div>
-        <div class="bwb-axis-card">
-          <div class="bwb-axis-card-name">ZIONIST</div>
-          <div class="bwb-axis-card-range">-1.0 = critical of Israel / +1.0 = pro-Israel</div>
-          <p>How does coverage frame Israeli state action? Scores derived from language patterns, sourcing, and framing of Gaza/West Bank coverage.</p>
-        </div>
-        <div class="bwb-axis-card">
-          <div class="bwb-axis-card-name">ATLANTICIST</div>
-          <div class="bwb-axis-card-range">-1.0 = multipolar / +1.0 = US-led world order</div>
-          <p>The primary bloc-classification axis. High = assumes US primacy is legitimate. Low = frames US hegemony as contested or illegitimate.</p>
-        </div>
-        <div class="bwb-axis-card">
-          <div class="bwb-axis-card-name">STATIST</div>
-          <div class="bwb-axis-card-range">-1.0 = anti-state / +1.0 = pro-state authority</div>
-          <p>Does the outlet challenge or reinforce state power? State media scores high. Libertarian/dissident outlets score low.</p>
-        </div>
-        <div class="bwb-axis-card">
-          <div class="bwb-axis-card-name">FINANCIALIZED</div>
-          <div class="bwb-axis-card-range">-1.0 = anti-market / +1.0 = pro-market finance</div>
-          <p>Does the outlet treat financial capitalism as natural or as a system to interrogate? High = Bloomberg/FT framing. Low = economic justice framing.</p>
-        </div>
-      </div>
-    </div>
+  <footer class="bwb-site-footer" id="siteFooter"></footer>
 
-  </div>
-
-  <!-- Mobile bottom nav -->
-  <nav class="bwb-bottom-nav safe-bottom">
-    <a href="/">
-      <span class="bwb-bottom-nav-icon">📰</span>
-      <span>Feed</span>
-    </a>
-    <a href="/blindspots.html">
-      <span class="bwb-bottom-nav-icon">👁️</span>
-      <span>Blindspots</span>
-    </a>
-    <a href="/sources.html" class="active">
-      <span class="bwb-bottom-nav-icon">🌐</span>
-      <span>Sources</span>
-    </a>
-    <a href="/about.html">
-      <span class="bwb-bottom-nav-icon">📋</span>
-      <span>Method</span>
-    </a>
-    <a href="/funnies.html">
-      <span class="bwb-bottom-nav-icon">🎭</span>
-      <span>Funnies</span>
-    </a>
-  </nav>
-
-  <!-- ── FOOTER (injected by /assets/js/site-chrome.js) ── -->
-  <footer data-bwb-chrome="default"></footer>
-
-  <script src="/assets/js/site-chrome.js" defer></script>
-  <script src="/assets/js/api.js"></script>
-  <script src="/assets/js/sources.js"></script>
+  <script src="assets/js/main.js" defer></script>
   <script>
-    if ('serviceWorker' in navigator) {
-      var swPath = (window.BWB_BASE || '') + '/service-worker.js';
-      navigator.serviceWorker.register(swPath);
-    }
+    (function () {
+      const mount = document.getElementById('sources-mount');
+      if (!mount) return;
+
+      function badgeClass(bloc) {
+        if (bloc === 'western') return 'bwb-badge-western';
+        if (bloc === 'adversarial') return 'bwb-badge-adversarial';
+        return 'bwb-badge-nonaligned';
+      }
+
+      function normBloc(bloc) {
+        if (!bloc) return 'non-aligned';
+        const s = String(bloc).toLowerCase().replace(/[^a-z]/g, '');
+        if (s.includes('west')) return 'western';
+        if (s.includes('advers') || s.includes('eastern') || s.includes('axis')) return 'adversarial';
+        return 'non-aligned';
+      }
+
+      fetch('api/sources_real_seed.json')
+        .then(r => r.json())
+        .then(data => {
+          const list = Array.isArray(data) ? data : (data && data.sources);
+          if (!Array.isArray(list) || !list.length) {
+            mount.innerHTML = '<p class="bwb-empty">No outlets in the registry yet.</p>';
+            return;
+          }
+          const grouped = { western: [], 'non-aligned': [], adversarial: [] };
+          list.forEach(s => {
+            const bloc = normBloc(s.bloc || s.alignment);
+            (grouped[bloc] || grouped['non-aligned']).push(s);
+          });
+
+          const order = ['western', 'non-aligned', 'adversarial'];
+          const names = { western: 'Western-aligned', 'non-aligned': 'Non-aligned / Global South', adversarial: 'Adversarial bloc' };
+          let html = '';
+          order.forEach(bloc => {
+            const items = grouped[bloc];
+            if (!items.length) return;
+            html += '<h2 class="bwb-section-title">' + names[bloc] + ' <span class="bwb-count">' + items.length + '</span></h2>';
+            html += '<ul class="bwb-source-list">';
+            items.forEach(s => {
+              const country = s.country ? ' <span class="bwb-source-country">(' + s.country + ')</span>' : '';
+              const owner = s.owner || s.ownership || (s.is_state_owned ? 'State-owned' : 'Independent / private');
+              const paywall = s.paywall_status ? ' · ' + s.paywall_status : '';
+              html += '<li class="bwb-source-row">' +
+                '<span class="bwb-source-name">' + (s.name || s.outlet || 'Unknown') + '</span>' +
+                '<span class="bwb-badge ' + badgeClass(bloc) + '">' + bloc + '</span>' +
+                country +
+                '<span class="bwb-source-owner">' + owner + paywall + '</span>' +
+                '</li>';
+            });
+            html += '</ul>';
+          });
+          mount.innerHTML = html;
+        })
+        .catch(err => {
+          mount.innerHTML = '<p class="bwb-error">Could not load outlet registry. <a href="index.html">Back to Feed</a></p>';
+          console.warn('Sources page load failed:', err);
+        });
+    })();
   </script>
 </body>
 </html>

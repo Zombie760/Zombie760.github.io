@@ -1,120 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-  // BOTWAVEBOMBA — Base Path Detection (inlined so the <base> tag
-  // is injected BEFORE any external resource below tries to load).
-  // Makes the site work both at root (Cloudflare Pages / custom domain)
-  // and under GitHub Pages project subpath (zombie760.github.io/botwavebomba/).
-  (function () {
-    'use strict';
-    function detectBasePath() {
-      var host = location.hostname;
-      var path = location.pathname;
-      if (host === 'zombie760.github.io' || host === 'www.zombie760.github.io') {
-        if (path.indexOf('/botwavebomba') === 0) return '/botwavebomba';
-        if (path.indexOf('/botwave-bomba') === 0) return '/botwave-bomba';
-      }
-      return '';
-    }
-    var base = detectBasePath();
-    window.BWB_BASE = base;
-    if (base && base !== '') {
-      try {
-        var existingBase = document.querySelector('base');
-        if (!existingBase) {
-          var b = document.createElement('base');
-          b.href = base + '/';
-          var head = document.head || document.getElementsByTagName('head')[0];
-          if (head.firstChild) head.insertBefore(b, head.firstChild);
-          else head.appendChild(b);
-        }
-      } catch (e) { console.warn('[BWB] base tag injection failed', e); }
-    }
-    window.BWB_URL = function (p) {
-      if (!p) return base || '/';
-      if (p[0] === '/') p = p.slice(1);
-      return (base ? base + '/' : '/') + p;
-    };
-  })();
-  </script>
-
+  <base href="/botwavebomba/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>DAILY BLINDSPOT BRIEF — ARCHIVE — BOTWAVEBOMBA</title>
-  <meta name="description" content="Every Daily Blindspot Brief, since launch. The 3 stories with the widest structural coverage gap from the working corpus. Free, public, no paywall. Subscribe to get it in your inbox.">
+  <title>Daily Blindspot Brief — BOTWAVEBOMBA</title>
+  <meta name="description" content="Three stories. One structural coverage gap each. The daily brief that names what the rest of the press didn't.">
+  <meta name="theme-color" content="#FAFAF7">
+  <link rel="canonical" href="https://zombie760.github.io/botwavebomba/brief.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=1">
+  <link rel="stylesheet" href="assets/css/base.css?v=1">
   <style>
-    .bwb-archive-wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
-    .bwb-archive-hero { border-bottom: 1px solid var(--border-subtle); padding-bottom: 28px; margin-bottom: 32px; }
-    .bwb-archive-hero .kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--theme-primary); margin: 0 0 8px; }
-    .bwb-archive-hero h1 { font-family: var(--font-display); font-size: 38px; line-height: 1.1; margin: 0 0 14px; }
-    .bwb-archive-hero .lede { font-size: 16px; line-height: 1.6; color: var(--text-secondary); max-width: 600px; margin: 0 0 24px; }
-    .bwb-archive-cta { display: inline-block; background: var(--theme-primary); color: #fff; text-decoration: none; padding: 12px 28px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
-    .bwb-archive-list { display: flex; flex-direction: column; gap: 0; }
-    .bwb-archive-item { display: flex; gap: 24px; padding: 24px 0; border-top: 1px solid var(--border-subtle); align-items: flex-start; }
-    .bwb-archive-item:last-child { border-bottom: 1px solid var(--border-subtle); }
-    .bwb-archive-date { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); flex-shrink: 0; width: 100px; padding-top: 4px; letter-spacing: 0.04em; }
-    .bwb-archive-content { flex: 1; }
-    .bwb-archive-content h2 { font-family: var(--font-display); font-size: 18px; line-height: 1.3; margin: 0 0 6px; font-weight: 400; }
-    .bwb-archive-content h2 a { color: var(--text-primary); text-decoration: none; }
-    .bwb-archive-content h2 a:hover { color: var(--theme-primary); }
-    .bwb-archive-meta { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
-    .bwb-archive-empty { padding: 48px 0; text-align: center; color: var(--text-muted); font-family: var(--font-mono); font-size: 13px; }
-    .bwb-archive-tag { display: inline-block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; margin-right: 6px; background: var(--bg-card); color: var(--text-secondary); }
+    :root { --max-w-brief: 760px; }
+    body { background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); line-height: var(--lh-normal); }
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { color: var(--color-accent-hover); text-decoration: underline; }
+    .bwb-chrome { border-bottom: 1px solid var(--color-border); background: var(--color-bg-elevated); position: sticky; top: 0; z-index: var(--z-sticky); }
+    .bwb-chrome-inner { max-width: var(--max-w-grid); margin: 0 auto; padding: var(--space-3) var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+    .bwb-wordmark { font-family: var(--font-display); font-size: var(--fs-lg); font-weight: var(--fw-bold); color: var(--color-text-strong); letter-spacing: -0.02em; }
+    .bwb-wordmark span { color: var(--color-accent); }
+    .bwb-chrome-nav { display: flex; gap: var(--space-4); align-items: center; }
+    .bwb-chrome-nav a { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); }
+    .bwb-chrome-nav a:hover { color: var(--color-text); }
+    .bwb-theme-btn { font-size: var(--fs-md); line-height: 1; padding: var(--space-2); border-radius: var(--radius); }
+    .bwb-hero { max-width: var(--max-w-brief); margin: 0 auto; padding: var(--space-7) var(--gutter) var(--space-5); }
+    .bwb-hero .kicker { font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent); margin: 0 0 var(--space-3); }
+    .bwb-hero h1 { font-family: var(--font-display); font-size: var(--fs-3xl); line-height: var(--lh-tight); margin: 0 0 var(--space-4); color: var(--color-text-strong); }
+    .bwb-hero p { font-size: var(--fs-md); color: var(--color-text-muted); max-width: 58ch; margin: 0; }
+    .bwb-brief { max-width: var(--max-w-brief); margin: 0 auto; padding: 0 var(--gutter) var(--space-8); }
+    .bwb-brief-loading { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--color-text-muted); padding: var(--space-6) 0; }
+    .bwb-brief-error { background: var(--color-bg-inset); border-left: 3px solid var(--color-error); padding: var(--space-4); color: var(--color-text); }
+    .bwb-brief-date { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--color-text-muted); margin-bottom: var(--space-5); }
+    .bwb-story { border-top: 1px solid var(--color-border); padding: var(--space-6) 0; }
+    .bwb-story:first-of-type { border-top: none; }
+    .bwb-story-rank { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--color-accent); letter-spacing: 0.08em; margin-bottom: var(--space-2); }
+    .bwb-story h2 { font-family: var(--font-display); font-size: var(--fs-xl); line-height: var(--lh-snug); margin: 0 0 var(--space-3); color: var(--color-text-strong); }
+    .bwb-story-meta { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-3); }
+    .bwb-chip { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; padding: 3px 7px; border-radius: var(--radius-sm); background: var(--color-bg-inset); color: var(--color-text-muted); border: 1px solid var(--color-border); }
+    .bwb-chip.western { background: var(--color-bias-western); color: var(--color-text-inverse); border-color: transparent; }
+    .bwb-chip.non-aligned { background: var(--color-bias-non-aligned); color: var(--color-text-inverse); border-color: transparent; }
+    .bwb-chip.adversarial { background: var(--color-bias-adversarial); color: var(--color-text-inverse); border-color: transparent; }
+    .bwb-story-excerpt { font-size: var(--fs-md); line-height: var(--lh-loose); color: var(--color-text); margin: 0 0 var(--space-3); }
+    .bwb-story-stats { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--color-text-muted); line-height: var(--lh-loose); margin: 0 0 var(--space-3); }
+    .bwb-story-sources summary { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); cursor: pointer; padding: var(--space-2) 0; }
+    .bwb-story-sources ol { font-family: var(--font-mono); font-size: var(--fs-xs); line-height: 1.7; padding-left: var(--space-5); margin: var(--space-2) 0 0; color: var(--color-text-muted); }
+    .bwb-story-sources li { word-break: break-all; margin-bottom: var(--space-2); }
+    .bwb-story-sources a { color: var(--color-accent); }
+    .bwb-story-full { margin-top: var(--space-3); font-family: var(--font-mono); font-size: var(--fs-sm); }
+    .bwb-cta { max-width: var(--max-w-brief); margin: 0 auto var(--space-8); padding: 0 var(--gutter); }
+    .bwb-cta-inner { background: var(--color-bg-elevated); border: 1px solid var(--color-accent); border-radius: var(--radius-lg); padding: var(--space-6); text-align: center; }
+    .bwb-cta h3 { font-family: var(--font-display); font-size: var(--fs-xl); margin: 0 0 var(--space-2); }
+    .bwb-cta p { color: var(--color-text-muted); margin: 0 0 var(--space-4); }
+    .bwb-cta a { display: inline-block; background: var(--color-accent); color: var(--color-accent-text); padding: var(--space-3) var(--space-5); border-radius: var(--radius-pill); font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; }
+    .bwb-cta a:hover { background: var(--color-accent-hover); color: var(--color-accent-text); }
+    .bwb-archive { max-width: var(--max-w-brief); margin: 0 auto; padding: 0 var(--gutter) var(--space-10); }
+    .bwb-archive h2 { font-family: var(--font-display); font-size: var(--fs-xl); margin: 0 0 var(--space-4); }
+    .bwb-archive table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: var(--fs-sm); }
+    .bwb-archive th, .bwb-archive td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-border); }
+    .bwb-archive th { color: var(--color-text-muted); text-transform: uppercase; font-size: var(--fs-xs); letter-spacing: 0.08em; }
+    .bwb-archive a { color: var(--color-text); }
+    .bwb-archive a:hover { color: var(--color-accent); }
+    .bwb-footer { border-top: 1px solid var(--color-border); padding: var(--space-6) var(--gutter); text-align: center; font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--color-text-muted); }
+    @media (max-width: 600px) {
+      .bwb-hero h1 { font-size: var(--fs-2xl); }
+      .bwb-chrome-inner { flex-wrap: wrap; }
+      .bwb-archive th:nth-child(3), .bwb-archive td:nth-child(3), .bwb-archive th:nth-child(4), .bwb-archive td:nth-child(4) { display: none; }
+    }
   </style>
 </head>
 <body>
-  <header data-bwb-chrome="compact"></header>
-  <main class="bwb-archive-wrap">
-    <section class="bwb-archive-hero">
-      <p class="kicker">Daily Blindspot Brief · Archive</p>
-      <h1>Every brief, since launch.</h1>
-      <p class="lede">3 stories a day. Each one a receipt — the primary URLs, the bloc spread, the geographic spread. Free to read. $49/mo or $499/yr to get it in your inbox every morning at 7am Pacific.</p>
-      <a href="/signup.html" class="bwb-archive-cta">Subscribe →</a>
-    </section>
-    <div class="bwb-archive-list" id="bwb-archive-list">
-      <p class="bwb-archive-empty">Loading archive...</p>
+  <header class="bwb-chrome">
+    <div class="bwb-chrome-inner">
+      <a class="bwb-wordmark" href="./">BOTWAVE<span>BOMBA</span></a>
+      <nav class="bwb-chrome-nav" aria-label="Primary">
+        <a href="index.html">Feed</a>
+        <a href="brief.html">Brief</a>
+        <a href="sources.html">Sources</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="pro.html">Pricing</a>
+        <button class="bwb-theme-btn" id="themeToggle" aria-label="Toggle theme">☀️</button>
+      </nav>
     </div>
-    <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-top: 32px;">
-      <a href="/methodology.html">methodology</a> · <a href="/">back to feed</a>
-    </p>
+  </header>
+
+  <section class="bwb-hero">
+    <p class="kicker">Daily Blindspot Brief</p>
+    <h1>Three stories. One gap each. 5 minutes.</h1>
+    <p>Every morning we pick the stories where the structural coverage gap is widest — non-Western sources, cross-bloc entropy, named primary URLs. Not left/right. Who owns the story.</p>
+  </section>
+
+  <main class="bwb-brief" id="brief">
+    <div class="bwb-brief-loading">Loading today’s brief…</div>
   </main>
+
+  <section class="bwb-cta">
+    <div class="bwb-cta-inner">
+      <h3>Get this in your inbox every morning.</h3>
+      <p>7am Pacific. $49/mo or $499/yr. Cancel anytime.</p>
+      <a href="signup.html">Subscribe →</a>
+    </div>
+  </section>
+
+  <section class="bwb-archive" id="archive" hidden>
+    <h2>Archive</h2>
+    <table>
+      <thead>
+        <tr><th>Date</th><th>Top story</th><th>Sources</th><th>Non-West</th></tr>
+      </thead>
+      <tbody id="archiveBody"></tbody>
+    </table>
+  </section>
+
+  <footer class="bwb-footer">
+    BOTWAVEBOMBA · Not Left/Right. Who Owns The Story. · <a href="methodology.html">Methodology</a>
+  </footer>
+
   <script>
-    // Try to load an index of briefs. If no index exists, we manually list from /daily/.
-    // The simplest approach: fetch /daily/index.html — if 200, embed. If not, we build from a manifest.
-    // Since the build_daily_brief.py script doesn't yet write a manifest, fall back to known brief URLs.
-    (function() {
-      var KNOWN_BRIEFS = [
-        { date: '2026-07-06', url: '/daily/2026-07-06.html', picks: 3 }
-      ];
-      var list = document.getElementById('bwb-archive-list');
-      if (!list) return;
-      list.innerHTML = '';
-      if (KNOWN_BRIEFS.length === 0) {
-        list.innerHTML = '<p class="bwb-archive-empty">No briefs yet. Subscribe to be the first to get tomorrow\'s.</p>';
-        return;
+    const briefEl = document.getElementById('brief');
+    const archiveEl = document.getElementById('archive');
+    const archiveBody = document.getElementById('archiveBody');
+    const themeBtn = document.getElementById('themeToggle');
+
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeBtn.textContent = theme === 'dark' ? '🌙' : '☀️';
+      localStorage.setItem('bwb-theme', theme);
+    }
+    const saved = localStorage.getItem('bwb-theme');
+    if (saved) setTheme(saved);
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+    themeBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    function esc(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function renderBrief(summary) {
+      briefEl.innerHTML = `<p class="bwb-brief-date">${esc(summary.date)} · ${summary.picks.length} stories</p>` +
+        summary.picks.map(p => {
+          const chips = p.primary_sources.slice(0, 3).map(s =>
+            `<span class="bwb-chip ${esc(s.bloc)}">${esc(s.name)} (${esc(s.country)})</span>`
+          ).join('');
+          const sources = p.primary_sources.map(s =>
+            `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url)}</a></li>`
+          ).join('');
+          const excerpt = p.primary_sources.find(s => s.excerpt)?.excerpt || '';
+          return `<article class="bwb-story">
+            <p class="bwb-story-rank">#${p.rank} · ${esc(p.section)}</p>
+            <h2>${esc(p.headline)}</h2>
+            <div class="bwb-story-meta">${chips}</div>
+            ${excerpt ? `<p class="bwb-story-excerpt">${esc(excerpt)}</p>` : ''}
+            <p class="bwb-story-stats">${p.sources} sources · ${p.non_west_pct}% non-Western · entropy ${p.entropy} · score ${p.score}</p>
+            <details class="bwb-story-sources">
+              <summary>Primary sources (${p.primary_sources.length})</summary>
+              <ol>${sources}</ol>
+            </details>
+            <p class="bwb-story-full"><a href="story.html?id=${esc(p.id)}">View full coverage →</a></p>
+          </article>`;
+        }).join('');
+    }
+
+    function renderArchive(index) {
+      if (!index.briefs || index.briefs.length <= 1) return;
+      archiveEl.hidden = false;
+      archiveBody.innerHTML = index.briefs.slice(0, 14).map(b =>
+        `<tr>
+          <td><a href="${esc(b.url)}">${esc(b.date)}</a></td>
+          <td>${esc(b.top_headline)}</td>
+          <td>${b.picks_count}</td>
+          <td>${b.top_non_west_pct}%</td>
+        </tr>`
+      ).join('');
+    }
+
+    async function load() {
+      try {
+        const index = await fetch('daily/index.json').then(r => r.ok ? r.json() : null);
+        if (index && index.latest) {
+          const summary = await fetch(`daily/${index.latest}.json`).then(r => r.ok ? r.json() : null);
+          if (summary && summary.picks) renderBrief(summary);
+          else throw new Error('latest brief summary unavailable');
+          renderArchive(index);
+        } else {
+          throw new Error('brief index unavailable');
+        }
+      } catch (e) {
+        briefEl.innerHTML = `<div class="bwb-brief-error">
+          <strong>Couldn’t load the brief.</strong><br>
+          ${esc(String(e.message || e))}<br>
+          <a href="index.html">Try the main feed →</a>
+        </div>`;
       }
-      KNOWN_BRIEFS.forEach(function(b) {
-        var a = document.createElement('article');
-        a.className = 'bwb-archive-item';
-        a.innerHTML =
-          '<div class="bwb-archive-date">' + b.date + '</div>' +
-          '<div class="bwb-archive-content">' +
-            '<h2><a href="' + b.url + '">Daily Blindspot Brief — ' + b.date + '</a></h2>' +
-            '<div class="bwb-archive-meta">' +
-              '<span class="bwb-archive-tag">' + b.picks + ' stories</span>' +
-              '<span class="bwb-archive-tag">free</span>' +
-            '</div>' +
-          '</div>';
-        list.appendChild(a);
-      });
-    })();
+    }
+    load();
   </script>
-  <script src="/assets/js/site-chrome.js" defer></script>
 </body>
 </html>
